@@ -9,13 +9,13 @@ makedepends=('intltool')
 replaces=('gnome-themes')
 conflicts=('gnome-themes')
 options=('!emptydirs' '!libtool')
-url="http://matsusoft.com.ar/projects"
+url="http://matsusoft.com.ar/projects/mate/"
 groups=('mate')
-source=(http://sourceforge.net/projects/matede/files/${pkgver}/${pkgname}.tar.gz/download)
-sha256sums=('3de0c73eb7613a58e6e49a059ac79fea53f8396c09a1e23b2f8a42398fbf8aa7')
+source=()
+sha256sums=()
 
 build() {
-    cd "${srcdir}/${pkgname}"
+	cd "${srcdir}/../../../"
 
     ./autogen.sh \
         --prefix=/usr \
@@ -25,6 +25,6 @@ build() {
 }
 
 package() {
-    cd "${srcdir}/${pkgname}"
+	cd "${srcdir}/../../../"
     make DESTDIR="$pkgdir" install || return 1
 }
