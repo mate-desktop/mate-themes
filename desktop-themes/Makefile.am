@@ -1,5 +1,5 @@
 SUBDIRS=		\
-	aldabra		\
+	Aldabra		\
 	Crux		\
 	Clearlooks	\
 	Glider		\
@@ -15,7 +15,7 @@ SUBDIRS=		\
 	$(TEST_THEMES)
 
 DIST_SUBDIRS=		\
-	aldabra		\
+	Aldabra		\
 	Crux		\
 	Clearlooks	\
 	Glider		\
