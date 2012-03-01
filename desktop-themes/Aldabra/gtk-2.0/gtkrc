@@ -23,8 +23,9 @@ style "default" {
 
 	GtkExpander	::expander-size		= 14
 
-	GtkMenuBar	::internal-padding	= 2
+	GtkMenuBar	::internal-padding	= 0
 	GtkMenuBar	::shadow-type		= GTK_SHADOW_NONE
+	GtkMenuBar	::window-dragging	= 1
 	GtkMenu		::horizontal-padding	= 0
 	GtkMenu		::vertical-padding	= 0
 	GtkSeparatorMenuItem	::horizontal-padding = 7
@@ -48,6 +49,7 @@ style "default" {
 	GtkScrollbar	::min-slider-length	= 32
 
 	GtkToolbar	::internal-padding	= 5
+	GtkToolbar	::window-dragging	= 1
 
 	GtkTreeView	::expander-size		= 14
 	GtkTreeView	::odd_row_color		= "#FFF"
@@ -100,7 +102,7 @@ style "default" {
 		menubaritemstyle	= 1 # 0 = menuitem look, 1 = button look
 		menubarstyle		= 2 # 0 = flat, 1 = glassy, 2 = gradient, 3 = striped
 		menuitemstyle		= 0 # 0 = flat, 1 = glassy, 2 = striped
-		menustyle		= 0 # 0 = no vertical menu stripe, 1 = display vertical menu stripe
+		menustyle		= 3 # 0 = no vertical menu stripe, 1 = display vertical menu stripe, 2 = faint? 3 = borderless
 		progressbarstyle	= 1
 		reliefstyle		= 0 # 0 = flat, 1 = inset, 2 = shadow, 3 = shadow with gradient, 4 = stronger shadow with gradient
 		rgba			= FALSE	# alpha transparency
@@ -283,13 +285,13 @@ style "menubar" {
 
 	engine "murrine" {
 		gradient_shades		= {1.0, 1.0, 1.0, 1.0}
-		roundness		= 3 # 0 = squared
+		roundness		= 6 # 0 = squared
 	}
 }
 
 style "menu" {
-	xthickness	= 3
-	ythickness	= 3
+	xthickness	= 0
+	ythickness	= 0
 
 	bg[NORMAL]	= shade (1.08, @bg_color)
 
@@ -297,23 +299,31 @@ style "menu" {
 
 	engine "murrine" {
 		gradient_shades		= {1.0, 1.0, 1.0, 1.0}
-		roundness		= 1 # 0 = squared
+		roundness		= 0 # 0 = squared
 	}
 }
 
 style "menu_item_white" {
 	xthickness	= 2
-	ythickness	= 3
+	ythickness	= 4
 
 	fg[PRELIGHT]	= @selected_fg_color
 	text[PRELIGHT]	= @selected_fg_color
+
+	engine "murrine" {
+		border_shades = {1.5, 1.5}
+	}
 }
 
 style "menu_item_black" {
 	xthickness	= 2
-	ythickness	= 3
+	ythickness	= 4
 
 	fg[PRELIGHT]	= @text_color
+
+	engine "murrine" {
+		border_shades = {1.5, 1.5}
+	}
 }
 
 style "notebook" { # tab
@@ -773,6 +783,7 @@ style "spinbutton" { # input/stepper
 }
 
 style "toolbar" {
+	GtkWidget::window-dragging	= 1
 	engine "pixmap" {
 		image {
 			function	= BOX
@@ -793,6 +804,10 @@ style "tooltips" {
 	fg[NORMAL]	= @tooltip_fg_color
 
 	GtkWidget::new-tooltip-style	= 0
+
+	engine "murrine" {
+		border_colors	= { "#343434", "#343434" }
+	}
 }
 
 style "treeview" {
