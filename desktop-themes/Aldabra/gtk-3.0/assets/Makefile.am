@@ -1,5 +1,5 @@
 
-themedir = $(datadir)/themes/aldabra/gtk-3.0/assets
+themedir = $(datadir)/themes/Aldabra/gtk-3.0/assets
 
 theme_DATA = \
 	checkbox-checked-insensitive.svg \

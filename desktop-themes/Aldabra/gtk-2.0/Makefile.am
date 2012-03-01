@@ -1,5 +1,5 @@
 
-themedir = $(datadir)/themes/aldabra/gtk-2.0
+themedir = $(datadir)/themes/Aldabra/gtk-2.0
 
 theme_DATA = gtkrc
 
