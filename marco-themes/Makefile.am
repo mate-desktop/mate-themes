@@ -2,7 +2,7 @@ THEMES = \
 	TraditionalOk \
 	TraditionalOkClassic \
 	Glider \
-	Glossy \
+	Shiny \
 	Inverted \
 	Fog
 

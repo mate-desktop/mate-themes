@@ -3,7 +3,7 @@ SUBDIRS = \
 	Quid \
 	TraditionalOk \
 	Glider \
-	Glossy \
+	Shiny \
 	HighContrast \
 	HighContrastInverse \
 	HighContrastLargePrint \
@@ -11,7 +11,7 @@ SUBDIRS = \
 	LargePrint \
 	LowContrast \
 	LowContrastLargePrint \
-	Mist \
+	Fog \
 	$(TEST_THEMES)
 
 DIST_SUBDIRS = \
@@ -19,7 +19,7 @@ DIST_SUBDIRS = \
 	Quid \
 	TraditionalOk \
 	Glider \
-	Glossy \
+	Shiny \
 	HighContrast \
 	HighContrastInverse \
 	HighContrastLargePrint \

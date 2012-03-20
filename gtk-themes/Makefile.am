@@ -1,6 +1,6 @@
 SUBDIRS = \
 	Glider \
-	Glossy \
+	Shiny \
 	TraditionalOkClassic \
 	Simple \
 	HighContrast \
@@ -15,7 +15,7 @@ SUBDIRS = \
 
 DIST_SUBDIRS = \
 	Glider \
-	Glossy \
+	Shiny \
 	TraditionalOkClassic \
 	Simple \
 	HighContrast \

@@ -1,4 +1,4 @@
-themedir = $(datadir)/themes/Glossy/gtk-2.0
+themedir = $(datadir)/themes/Shiny/gtk-2.0
 
 theme_DATA = gtkrc
 
