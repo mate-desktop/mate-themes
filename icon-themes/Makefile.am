@@ -6,5 +6,5 @@ SUBDIRS = \
 	HighContrastLargePrintInverse \
 	HighContrast-SVG \
 	LargePrint \
-	Mist
+	Fog
 

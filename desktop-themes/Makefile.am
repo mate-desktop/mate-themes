@@ -27,6 +27,6 @@ DIST_SUBDIRS = \
 	LargePrint \
 	LowContrast \
 	LowContrastLargePrint \
-	Mist \
+	Fog \
 	TraditionalOkTest
 

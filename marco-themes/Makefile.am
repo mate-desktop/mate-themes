@@ -4,7 +4,7 @@ THEMES = \
 	Glider \
 	Glossy \
 	Inverted \
-	Mist
+	Fog
 
 THEME_DIR=$(datadir)/themes
 THEME_SUBDIR=metacity-1
@@ -28,14 +28,14 @@ install-data-local:
 	done
 
 dist-hook:
-	mkdir $(distdir)/themes;							\
-	for THEME in $(THEMES); do							\
-		echo '-- Disting theme '$$THEME;					\
-		mkdir $(distdir)/$$THEME;						\
-		(installfiles=`find $(srcdir)/$$THEME -name "*.png" -o -name "*.xml"`;	\
-		 for i in $$installfiles; do						\
-			echo '-- Disting '$$i ;						\
-				cp $$i $(distdir)/$$THEME;					\
-		 done)									\
+	mkdir $(distdir)/themes; \
+	for THEME in $(THEMES); do \
+		echo '-- Disting theme '$$THEME; \
+		mkdir $(distdir)/$$THEME; \
+		(installfiles=`find $(srcdir)/$$THEME -name "*.png" -o -name "*.xml"`; \
+		 for i in $$installfiles; do \
+			echo '-- Disting '$$i ; \
+				cp $$i $(distdir)/$$THEME; \
+		 done) \
 	done
 
