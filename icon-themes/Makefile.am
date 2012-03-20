@@ -1,8 +1,10 @@
-SUBDIRS=Crux \
-	HighContrast		\
-	HighContrastInverse	\
-	HighContrastLargePrint	\
+SUBDIRS = \
+	Quid \
+	HighContrast \
+	HighContrastInverse \
+	HighContrastLargePrint \
 	HighContrastLargePrintInverse \
-	HighContrast-SVG 	\
-	LargePrint 		\
-	Mist 
+	HighContrast-SVG \
+	LargePrint \
+	Mist
+

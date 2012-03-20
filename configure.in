@@ -102,7 +102,7 @@ AC_ARG_ENABLE(test-themes,
  [enable_test_themes=no])
 
 if test "x$enable_test_themes" = "xyes"; then
-	TEST_THEMES="ClearlooksTest"
+	TEST_THEMES="TraditionalOkTest"
 else
 	TEST_THEMES=""
 fi
@@ -188,8 +188,8 @@ desktop-themes/Aldabra/gtk-3.0/Makefile
 desktop-themes/Aldabra/gtk-3.0/assets/Makefile
 desktop-themes/Aldabra/metacity-1/Makefile
 desktop-themes/Crux/Makefile
-desktop-themes/Clearlooks/Makefile
-desktop-themes/ClearlooksTest/Makefile
+desktop-themes/TraditionalOk/Makefile
+desktop-themes/TraditionalOkTest/Makefile
 desktop-themes/Glider/Makefile
 desktop-themes/Glossy/Makefile
 desktop-themes/HighContrast/Makefile
@@ -208,8 +208,8 @@ marco-themes/Makefile
 gtk-themes/Makefile
 gtk-themes/Glider/Makefile
 gtk-themes/Glossy/Makefile
-gtk-themes/ClearlooksClassic/Makefile
-gtk-themes/ClearlooksTest/Makefile
+gtk-themes/TraditionalOkClassic/Makefile
+gtk-themes/TraditionalOkTest/Makefile
 gtk-themes/HighContrast/Makefile
 gtk-themes/HighContrast/gtkrc
 gtk-themes/HighContrastInverse/Makefile

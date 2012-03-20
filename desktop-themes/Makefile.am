@@ -1,6 +1,6 @@
 SUBDIRS = \
 	Aldabra \
-	Crux \
+	Quid \
 	TraditionalOk \
 	Glider \
 	Glossy \
@@ -16,7 +16,7 @@ SUBDIRS = \
 
 DIST_SUBDIRS = \
 	Aldabra \
-	Crux \
+	Quid \
 	TraditionalOk \
 	Glider \
 	Glossy \
