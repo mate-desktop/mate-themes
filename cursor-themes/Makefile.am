@@ -1,6 +1,6 @@
 cursordir = $(datadir)/icons/mate/cursors
 
-cursor_DATA =\
+cursor_DATA = \
 	08e8e1c95fe2fc01f976f1e063a24ccd \
 	double_arrow \
 	left_ptr_watch \

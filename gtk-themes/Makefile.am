@@ -1,7 +1,7 @@
 SUBDIRS=	\
 	Glider		\
 	Glossy		\
-	ClearlooksClassic	\
+	TraditionalOkClassic	\
 	Simple		\
 	HighContrast	\
 	HighContrastInverse	\
@@ -16,7 +16,7 @@ SUBDIRS=	\
 DIST_SUBDIRS=		\
 	Glider		\
 	Glossy		\
-	ClearlooksClassic	\
+	TraditionalOkClassic	\
 	Simple		\
 	HighContrast	\
 	HighContrastInverse	\
@@ -26,4 +26,4 @@ DIST_SUBDIRS=		\
 	LowContrast	\
 	LowContrastLargePrint	\
 	LargePrint	\
-	ClearlooksTest
+	TraditionalOkTest

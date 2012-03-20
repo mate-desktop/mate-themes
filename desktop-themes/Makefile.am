@@ -1,31 +1,32 @@
-SUBDIRS=		\
-	Aldabra		\
-	Crux		\
-	Clearlooks	\
-	Glider		\
-	Glossy		\
-	HighContrast	\
-	HighContrastInverse	\
-	HighContrastLargePrint	\
+SUBDIRS = \
+	Aldabra \
+	Crux \
+	TraditionalOk \
+	Glider \
+	Glossy \
+	HighContrast \
+	HighContrastInverse \
+	HighContrastLargePrint \
 	HighContrastLargePrintInverse \
-	LargePrint	\
-	LowContrast	\
-	LowContrastLargePrint	\
-	Mist		\
+	LargePrint \
+	LowContrast \
+	LowContrastLargePrint \
+	Mist \
 	$(TEST_THEMES)
 
-DIST_SUBDIRS=		\
-	Aldabra		\
-	Crux		\
-	Clearlooks	\
-	Glider		\
-	Glossy		\
-	HighContrast	\
-	HighContrastInverse	\
-	HighContrastLargePrint	\
+DIST_SUBDIRS = \
+	Aldabra \
+	Crux \
+	TraditionalOk \
+	Glider \
+	Glossy \
+	HighContrast \
+	HighContrastInverse \
+	HighContrastLargePrint \
 	HighContrastLargePrintInverse \
-	LargePrint	\
-	LowContrast	\
-	LowContrastLargePrint	\
-	Mist		\
-	ClearlooksTest
+	LargePrint \
+	LowContrast \
+	LowContrastLargePrint \
+	Mist \
+	TraditionalOkTest
+

@@ -346,13 +346,13 @@ dnl ==========================================================================
 echo "
 mate-themes-$VERSION:
 
-        Installation prefix:	${prefix}
+	Installation prefix:	${prefix}
 
 	Enable placeholders:         ${enable_placeholders}
 	Enable legacy icons:         ${enable_mapping}
 	Enable all themes:           ${enable_all_themes}
 	Enable test themes:          ${enable_test_themes}
-        LargePrint cursor theme:     ${LARGEPRINT_CURSOR_THEME}
+	LargePrint cursor theme:     ${LARGEPRINT_CURSOR_THEME}
 	HC LargePrint cursor theme:  ${LARGEPRINT_HC_CURSOR_THEME}
 	HCI LargePrint cursor theme: ${LARGEPRINT_HCI_CURSOR_THEME}
 

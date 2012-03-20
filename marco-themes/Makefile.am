@@ -1,6 +1,6 @@
 THEMES= \
-	Clearlooks \
-	ClearlooksClassic \
+	TraditionalOk \
+	TraditionalOkClassic \
 	Glider \
 	Glossy \
 	Inverted \

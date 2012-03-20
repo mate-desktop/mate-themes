@@ -1,10 +1,11 @@
-SUBDIRS=	gtk-themes \
-		marco-themes \
-		icon-themes \
-		desktop-themes \
-		cursor-themes \
-		common \
-		po
+SUBDIRS = \
+	gtk-themes \
+	marco-themes \
+	icon-themes \
+	desktop-themes \
+	cursor-themes \
+	common \
+	po
 
 EXTRA_DIST = \
 	mate-themes.spec \
