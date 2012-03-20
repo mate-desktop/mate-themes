@@ -1,4 +1,4 @@
-themedir = $(datadir)/themes/Inverted/gtk-2.0
+themedir = $(datadir)/themes/Reverse/gtk-2.0
 
 theme_DATA = gtkrc
 

@@ -7,7 +7,7 @@ SUBDIRS = \
 	HighContrastInverse \
 	HighContrastLargePrint \
 	HighContrastLargePrintInverse \
-	Inverted \
+	Reverse \
 	LowContrast \
 	LowContrastLargePrint \
 	LargePrint \
@@ -22,7 +22,7 @@ DIST_SUBDIRS = \
 	HighContrastInverse \
 	HighContrastLargePrint \
 	HighContrastLargePrintInverse \
-	Inverted \
+	Reverse \
 	LowContrast \
 	LowContrastLargePrint \
 	LargePrint \
