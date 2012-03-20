@@ -1,4 +1,4 @@
-THEMES= \
+THEMES = \
 	TraditionalOk \
 	TraditionalOkClassic \
 	Glider \
@@ -7,7 +7,7 @@ THEMES= \
 	Mist
 
 THEME_DIR=$(datadir)/themes
-THEME_SUBDIR=marco-1
+THEME_SUBDIR=metacity-1
 
 uninstall: uninstall-am
 	for THEME in $(THEMES) ; do \
@@ -15,16 +15,16 @@ uninstall: uninstall-am
 	done
 
 install-data-local:
-	$(mkinstalldirs) $(DESTDIR)$(THEME_DIR);					     \
-	for THEME in $(THEMES); do							     \
-		echo '-- Installing theme '$$THEME;					     \
-		$(mkinstalldirs) $(DESTDIR)$(THEME_DIR)/$$THEME;			     \
-		$(mkinstalldirs) $(DESTDIR)$(THEME_DIR)/$$THEME/$(THEME_SUBDIR);	     \
-		(installfiles=`find $(srcdir)/$$THEME -name "*.png" -o -name "*.xml"`;	     \
-		 for i in $$installfiles; do						     \
-			echo '-- Installing '$$i ;					     \
-		    	$(INSTALL_DATA) $$i $(DESTDIR)$(THEME_DIR)/$$THEME/$(THEME_SUBDIR) ; \
-	  	 done)									     \
+	$(mkinstalldirs) $(DESTDIR)$(THEME_DIR); \
+	for THEME in $(THEMES); do \
+		echo '-- Installing theme '$$THEME; \
+		$(mkinstalldirs) $(DESTDIR)$(THEME_DIR)/$$THEME; \
+		$(mkinstalldirs) $(DESTDIR)$(THEME_DIR)/$$THEME/$(THEME_SUBDIR); \
+		(installfiles=`find $(srcdir)/$$THEME -name "*.png" -o -name "*.xml"`; \
+		 for i in $$installfiles; do \
+			echo '-- Installing '$$i ; \
+				$(INSTALL_DATA) $$i $(DESTDIR)$(THEME_DIR)/$$THEME/$(THEME_SUBDIR) ; \
+		 done) \
 	done
 
 dist-hook:
@@ -35,6 +35,7 @@ dist-hook:
 		(installfiles=`find $(srcdir)/$$THEME -name "*.png" -o -name "*.xml"`;	\
 		 for i in $$installfiles; do						\
 			echo '-- Disting '$$i ;						\
-		    	cp $$i $(distdir)/$$THEME;					\
-	  	 done)									\
+				cp $$i $(distdir)/$$THEME;					\
+		 done)									\
 	done
+
