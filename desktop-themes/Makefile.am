@@ -9,8 +9,8 @@ SUBDIRS = \
 	ContrastHighLargePrint \
 	ContrastHighLargePrintInverse \
 	LargePrint \
-	LowContrast \
-	LowContrastLargePrint \
+	ContrastLow \
+	ContrastLowLargePrint \
 	Fog \
 	$(TEST_THEMES)
 
@@ -25,8 +25,8 @@ DIST_SUBDIRS = \
 	ContrastHighLargePrint \
 	ContrastHighLargePrintInverse \
 	LargePrint \
-	LowContrast \
-	LowContrastLargePrint \
+	ContrastLow \
+	ContrastLowLargePrint \
 	Fog \
 	TraditionalOkTest
 

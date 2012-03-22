@@ -1,4 +1,4 @@
-THEME_NAME=LowContrast
+THEME_NAME=ContrastLowLargePrint
 THEME_IN_FILES=index.theme.in
 
 @INTLTOOL_THEME_RULE@ 
