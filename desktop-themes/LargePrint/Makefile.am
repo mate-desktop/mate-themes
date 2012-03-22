@@ -1,4 +1,4 @@
-THEME_NAME=LargePrint
+THEME_NAME=PrintLarge
 THEME_IN_FILES=index.theme.in
 
 @INTLTOOL_THEME_RULE@ 
