@@ -4,10 +4,10 @@ SUBDIRS = \
 	TraditionalOk \
 	Glider \
 	Shiny \
-	HighContrast \
-	HighContrastInverse \
-	HighContrastLargePrint \
-	HighContrastLargePrintInverse \
+	ContrastHigh \
+	ContrastHighInverse \
+	ContrastHighLargePrint \
+	ContrastHighLargePrintInverse \
 	LargePrint \
 	LowContrast \
 	LowContrastLargePrint \
@@ -20,10 +20,10 @@ DIST_SUBDIRS = \
 	TraditionalOk \
 	Glider \
 	Shiny \
-	HighContrast \
-	HighContrastInverse \
-	HighContrastLargePrint \
-	HighContrastLargePrintInverse \
+	ContrastHigh \
+	ContrastHighInverse \
+	ContrastHighLargePrint \
+	ContrastHighLargePrintInverse \
 	LargePrint \
 	LowContrast \
 	LowContrastLargePrint \

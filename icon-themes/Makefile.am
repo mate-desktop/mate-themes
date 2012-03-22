@@ -1,10 +1,10 @@
 SUBDIRS = \
 	Quid \
-	HighContrast \
-	HighContrastInverse \
-	HighContrastLargePrint \
-	HighContrastLargePrintInverse \
-	HighContrast-SVG \
+	ContrastHigh \
+	ContrastHighInverse \
+	ContrastHighLargePrint \
+	ContrastHighLargePrintInverse \
+	ContrastHigh-SVG \
 	LargePrint \
 	Fog
 
