@@ -1,4 +1,4 @@
-themedir = $(datadir)/icons/MateContrastHighLargePrint
+themedir = $(datadir)/icons/ContrastHighLargePrint
 
 SUBDIRS = 36x36 48x48
 
