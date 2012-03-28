@@ -1,4 +1,5 @@
 THEMES = \
+	Atantla \
 	TraditionalOk \
 	TraditionalOkClassic \
 	Glider \
