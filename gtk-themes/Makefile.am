@@ -1,5 +1,5 @@
 SUBDIRS = \
-	Glider \
+	AlaDelta \
 	Shiny \
 	TraditionalOkClassic \
 	Simply \
@@ -14,7 +14,7 @@ SUBDIRS = \
 	$(TEST_THEMES)
 
 DIST_SUBDIRS = \
-	Glider \
+	AlaDelta \
 	Shiny \
 	TraditionalOkClassic \
 	Simply \

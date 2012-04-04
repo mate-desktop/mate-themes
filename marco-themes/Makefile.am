@@ -2,7 +2,7 @@ THEMES = \
 	Atantla \
 	TraditionalOk \
 	TraditionalOkClassic \
-	Glider \
+	AlaDelta \
 	Shiny \
 	Reverse \
 	Fog

@@ -2,7 +2,7 @@ SUBDIRS = \
 	Aldabra \
 	Quid \
 	TraditionalOk \
-	Glider \
+	AlaDelta \
 	Shiny \
 	ContrastHigh \
 	ContrastHighInverse \
@@ -18,7 +18,7 @@ DIST_SUBDIRS = \
 	Aldabra \
 	Quid \
 	TraditionalOk \
-	Glider \
+	AlaDelta \
 	Shiny \
 	ContrastHigh \
 	ContrastHighInverse \
