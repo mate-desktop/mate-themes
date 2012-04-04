@@ -4,7 +4,7 @@ THEMES = \
 	TraditionalOkClassic \
 	Glider \
 	Shiny \
-	Inverted \
+	Reverse \
 	Fog
 
 THEME_DIR=$(datadir)/themes
