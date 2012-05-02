@@ -1,5 +1,7 @@
-themedir = $(datadir)/themes/TraditionalOkClassic/gtk-2.0
+SUBDIRS =		\
+	gtk-2.0		\
+	gtk-3.0
 
-theme_DATA = gtkrc
-
-EXTRA_DIST = $(theme_DATA)
+DIST_SUBDIRS =		\
+	gtk-2.0		\
+	gtk-3.0
