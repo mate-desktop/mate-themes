@@ -1,5 +1,5 @@
 
-themedir = $(datadir)/themes/Aldabra/metacity-1
+themedir = $(datadir)/themes/Aldabras/metacity-1
 
 theme_DATA = \
 	metacity-theme-1.xml \

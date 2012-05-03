@@ -1,5 +1,5 @@
 
-themedir = $(datadir)/themes/Aldabra/gtk-3.0
+themedir = $(datadir)/themes/Aldabras/gtk-3.0
 
 theme_DATA = \
 	settings.ini \

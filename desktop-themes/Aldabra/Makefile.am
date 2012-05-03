@@ -1,4 +1,4 @@
-THEME_NAME=Aldabra
+THEME_NAME=Aldabras
  
 themedir = $(datadir)/themes/$(THEME_NAME)
 
