@@ -713,7 +713,7 @@ GtkComboBox .button:prelight {
     padding: 2;
 
     -GtkWidget-window-dragging: true;
-    -GtkToolbar-button-relief: 0;
+    -GtkToolbar-button-relief: normal;
 }
 
 .primary-toolbar.toolbar:insensitive {
