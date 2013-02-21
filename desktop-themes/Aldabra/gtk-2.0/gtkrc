@@ -941,3 +941,11 @@ widget "vim-main-window.*Scrollbar*"	style "vim-scrollbar"
 
 # For Eclipse (swt) toolbars.
 widget "*swt*toolbar*"			style "default"
+
+# caja improvement
+style "aldabra-caja-location"
+{
+	bg[NORMAL]  = mix (0.60, shade (1.05, @bg_color), @bg_color)
+}
+
+widget "*.caja-extra-view-widget" style : highest "aldabra-caja-location"

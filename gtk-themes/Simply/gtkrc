@@ -76,3 +76,11 @@ class "GtkCheckButton" style "togglebuttons"
 class "GtkRadioButton" style "togglebuttons"
 class "GtkProgressBar" style "progressbar"
 class "GtkEntry" style "entry"
+
+# caja improvment
+style "simply-caja-location"
+{
+	bg[NORMAL]  = mix (0.60, shade (1.05, "#e2e2de"), "#e2e2de")
+}
+
+widget "*.caja-extra-view-widget" style : highest "simply-caja-location"

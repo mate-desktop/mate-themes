@@ -169,4 +169,11 @@ widget_class "*<GtkListItem>*" style "glider-fg-is-text-color-workaround"
 # Only match GtkCList and not the parent widgets, because that would also change the headers.
 widget_class "*<GtkCList>" style "glider-fg-is-text-color-workaround"
 
+#caja fix
 
+style "AlaDelta-caja-location"
+{
+	bg[NORMAL]  = mix (0.60, shade (1.05, @bg_color), @bg_color)
+}
+
+widget "*.caja-extra-view-widget" style : highest "AlaDelta-caja-location"
