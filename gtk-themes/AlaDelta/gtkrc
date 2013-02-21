@@ -173,7 +173,7 @@ widget_class "*<GtkCList>" style "glider-fg-is-text-color-workaround"
 
 style "AlaDelta-caja-location"
 {
-	bg[NORMAL]  = @bg_color
+	bg[NORMAL]  = mix (0.60, shade (1.05, @bg_color), @bg_color)
 }
 
 widget "*.caja-extra-view-widget" style : highest "AlaDelta-caja-location"
