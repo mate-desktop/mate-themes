@@ -1,6 +1,6 @@
 * {
     engine: adwaita;
-    padding: 1;
+    padding: 1px;
 
     /* Style properties */
     -GtkToolButton-icon-spacing: 4;
@@ -43,7 +43,7 @@
     /* Style */
     background-color: @theme_bg_color;
     color: @theme_fg_color;
-    border-radius: 3;
+    border-radius: 3px;
 
     -GtkWidget-focus-padding: 2;
     -GtkWidget-focus-line-width: 1;
@@ -88,7 +88,7 @@
 }
 
 .tooltip {
-    padding: 4 4;
+    padding: 4px 4px;
     border-style: none;
     background-color: @theme_tooltip_bg_color;
     color: @theme_tooltip_fg_color;
@@ -117,15 +117,15 @@
     background-color: @theme_base_color;
     background-image: none;
 
-    border-radius: 2;
-    border-width: 1;
+    border-radius: 2px;
+    border-width: 1px;
     border-style: solid;
     -adwaita-border-gradient: -gtk-gradient (linear,
                                              left top, left bottom,
                                              from (shade (@internal_element_color, 1.14)),
                                              to (shade (@internal_element_color, 1.37)));
 
-    padding: 3;
+    padding: 3px;
 }
 
 .entry:focused {
@@ -144,8 +144,8 @@
     background-color: @theme_selected_bg_color;
     color: @theme_selected_fg_color;
 
-    border-width: 1;
-    border-radius: 1;
+    border-width: 1px;
+    border-radius: 1px;
     border-color: @progressbar_border;
 }
 
@@ -158,12 +158,12 @@
 .spinbutton.button:active {
     background-image: none;
     background-color: @theme_base_color;
-    border-width: 1;
+    border-width: 1px;
     border-style: none;
 }
 
 .spinbutton {
-    padding: 3 2;
+    padding: 3px 2px;
 }
 
 /****************
@@ -175,7 +175,7 @@ GtkProgressBar.progressbar {
                                      from (@progressbar_background_a),
                                      to (@progressbar_background_b));
 
-    border-radius: 3;
+    border-radius: 3px;
     border-style: solid;
     border-color: @progressbar_border;
 }
@@ -186,9 +186,9 @@ GtkProgressBar.trough {
                                      from (@trough_bg_color_a),
                                      to (@trough_bg_color_b));
 
-    border-width: 1;
+    border-width: 1px;
     border-style: solid;
-    border-radius: 3;
+    border-radius: 3px;
     border-color: shade (@inactive_frame_color, 0.925);
 }
 
@@ -202,8 +202,8 @@ GtkScale {
 }
 
 GtkScale.slider {
-    border-width: 1;
-    border-radius: 3;
+    border-width: 1px;
+    border-radius: 3px;
 
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
@@ -250,8 +250,8 @@ GtkScale.scale-has-marks-above.slider.vertical {
 }
 
 GtkScale.trough {
-    border-width: 1;
-    border-radius: 2;
+    border-width: 1px;
+    border-radius: 2px;
     border-style: solid;
     border-color: @internal_element_color;
 }
@@ -282,8 +282,8 @@ GtkScale.progressbar {
                                      to (@scale_fill_b));
 
     border-color: #1864b2;
-    border-width: 1;
-    border-radius: 3;
+    border-width: 1px;
+    border-radius: 3px;
     border-style: solid;
 }
 
@@ -293,7 +293,7 @@ GtkScale.mark {
 
 GtkFrame,
 GtkCalendar {
-    padding: 2;
+    padding: 2px;
 }
 
 .frame {
@@ -307,11 +307,11 @@ GtkCalendar {
  * tabs          *
  *****************/
 .notebook {
-    padding: 2;
+    padding: 2px;
 
     border-color: @notebook_border;
     border-style: solid;
-    border-width: 1;
+    border-width: 1px;
     border-radius: 0;
 
     background-color: @theme_base_color;
@@ -321,7 +321,7 @@ GtkCalendar {
 }
 
 .notebook tab {
-    padding: 3 8 0;
+    padding: 3px 8px 0px;
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (@notebook_tab_gradient_a),
@@ -331,7 +331,7 @@ GtkCalendar {
 }
 
 .notebook tab:active {
-    border-width: 1;
+    border-width: 1px;
 
     -adwaita-border-gradient: -gtk-gradient (linear,
                                              left top, left bottom,
@@ -356,7 +356,7 @@ GtkCalendar {
  **************/
 
 GtkComboBox {
-    padding: 1 2;
+    padding: 1px 2px;
 
     -GtkWidget-focus-padding: 0;
     -GtkWidget-focus-line-width: 0;
@@ -367,7 +367,7 @@ GtkComboBox {
 
 GtkComboBox .button {
     color: @internal_element_color;
-    padding: 1;
+    padding: 1px;
 }
 
 GtkComboBox .button:prelight {
@@ -403,8 +403,8 @@ GtkComboBox .button:prelight {
     background-image: none;
     background-color: @theme_base_color;
     border-color: @button_border;
-    border-radius: 3;
-    border-width: 1;
+    border-radius: 3px;
+    border-width: 1px;
 }
 
 .scrollbar.slider:prelight {
@@ -452,7 +452,7 @@ GtkComboBox .button:prelight {
  * Buttons *
  ***********/
 .button {
-    padding: 1 4;
+    padding: 1px 4px;
 
     -adwaita-focus-fill-color: alpha (@theme_base_color, 0.35);
     -adwaita-focus-border-gradient: -gtk-gradient (linear,
@@ -470,8 +470,8 @@ GtkComboBox .button:prelight {
     -GtkButton-default-border: 0;
     -GtkButton-inner-border: 0;
 
-    border-radius: 2;
-    border-width: 1;
+    border-radius: 2px;
+    border-width: 1px;
     border-color: @button_border;
     border-style: solid;
 
@@ -508,7 +508,7 @@ GtkComboBox .button:prelight {
 }
 
 .button.default {
-    border-width: 2;
+    border-width: 2px;
     border-color: shade (@button_border, 1.10);
 }
 
@@ -525,7 +525,7 @@ GtkComboBox .button:prelight {
 				     to (shade (@theme_bg_color, 0.99)));
     border-width: 0;
     border-style: none;
-    padding: 4;
+    padding: 4px;
     color: @theme_text_color;
 
     -GtkWidget-window-dragging: true;
@@ -539,23 +539,23 @@ GtkComboBox .button:prelight {
     color: @theme_text_color;
 
     border-style: solid;
-    border-radius: 3;
-    border-width: 1;
+    border-radius: 3px;
+    border-width: 1px;
     border-color: @inactive_frame_color;
 }
 
 .menubar.menuitem {
-    border-width: 1;
+    border-width: 1px;
     border-style: none;
 }
 
 .menu {
-    padding: 2;
+    padding: 2px;
 
     background-color: @theme_base_color;
 
     border-style: solid;
-    border-width: 1;
+    border-width: 1px;
     border-radius: 0;
     border-color: @inactive_frame_color;
 
@@ -580,8 +580,8 @@ GtkComboBox .button:prelight {
     background-color: @theme_selected_bg_color;
     color: @theme_selected_fg_color;
     border-style: solid;
-    border-width: 1;
-    border-radius: 1;
+    border-width: 1px;
+    border-radius: 1px;
     border-color: darker (@theme_selected_bg_color);
 }
 
@@ -681,9 +681,9 @@ GtkComboBox .button:prelight {
 .toolbar {
     border-style: solid;
     border-color: darker (@theme_bg_color);
-    border-width: 1;
+    border-width: 1px;
     border-radius: 0;
-    padding: 1;
+    padding: 1px;
 }
 
 .toolbar:insensitive {
@@ -710,7 +710,7 @@ GtkComboBox .button:prelight {
     border-radius: 0;
     border-style: none;
 
-    padding: 2;
+    padding: 2px;
 
     -GtkWidget-window-dragging: true;
     -GtkToolbar-button-relief: normal;
@@ -721,14 +721,14 @@ GtkComboBox .button:prelight {
     background-color: shade (@theme_bg_color, 0.97);
 
     border-style: solid;
-    border-width: 1;
+    border-width: 1px;
     border-color: shade (@theme_bg_color, 0.91);
 }
 
 /* primary toolbar buttons */
 .primary-toolbar.toolbar.button {
     border-style: none;
-    border-width: 1;
+    border-width: 1px;
     background-image: none;
     background-color: alpha (@theme_base_color, 0.0);
 
@@ -758,7 +758,7 @@ GtkComboBox .button:prelight {
 
 .primary-toolbar.toolbar.button:active {
     border-style: solid;
-    border-radius: 4;
+    border-radius: 4px;
     -adwaita-border-gradient: -gtk-gradient (linear,
                                              left top, left bottom,
                                              from (@toolbar_active_button_color),
@@ -774,7 +774,7 @@ GtkComboBox .button:prelight {
 
 .primary-toolbar.toolbar.button:active:prelight {
     border-style: solid;
-    border-radius: 3;
+    border-radius: 3px;
     background-image: -gtk-gradient (linear,
 				     left top, left bottom,
 				     from (alpha (shade (@toolbar_gradient_base, 0.76), 0.7)),
@@ -785,7 +785,7 @@ GtkComboBox .button:prelight {
 
 .primary-toolbar.toolbar.button:active:insensitive {
     border-style: solid;
-    border-radius: 3;
+    border-radius: 3px;
     border-color: @inactive_frame_color;
     -adwaita-border-gradient: none;
 }
@@ -795,15 +795,15 @@ GtkComboBox .button:prelight {
     -GtkWidget-separator-width: 1;
 
     border-style: solid;
-    border-width: 1;
+    border-width: 1px;
     border-color: shade (@theme_bg_color, 0.56);
 }
 
 /* primary toolbar raised buttons */
 .primary-toolbar.toolbar.raised.button,
 .primary-toolbar.toolbar.raised.button:insensitive {
-    border-radius: 2;
-    border-width: 1;
+    border-radius: 2px;
+    border-width: 1px;
     border-color: @button_border;
     border-style: solid;
 
@@ -821,7 +821,7 @@ GtkComboBox .button:prelight {
 				     left top, left bottom,
 				     from (@button_hover_gradient_color_a),
 				     to (@button_hover_gradient_color_b));
-    border-width: 1;
+    border-width: 1px;
     border-style: solid;
 }
 
@@ -834,7 +834,7 @@ GtkComboBox .button:prelight {
     background-color: @theme_base_color;
 
     border-color: @highlighted_border;
-    border-width: 1;
+    border-width: 1px;
     border-style: solid;
 }
 
@@ -847,7 +847,7 @@ GtkComboBox .button:prelight {
                                      to (@trough_bg_color_b));
 
     border-width: 0;
-    border-radius: 2;
+    border-radius: 2px;
     border-color: shade (@inactive_frame_color, 0.925);
 }
 
@@ -856,8 +856,8 @@ GtkComboBox .button:prelight {
  *******************/
 
 .inline-toolbar.toolbar {
-    border-width: 1;
-    border-radius: 3;
+    border-width: 1px;
+    border-radius: 3px;
     border-style: solid;
 
     background-image: -gtk-gradient (linear,
@@ -881,8 +881,8 @@ GtkSwitch {
 
 GtkSwitch.trough {
     color: @internal_element_color;
-    border-radius: 1;
-    border-width: 1;
+    border-radius: 1px;
+    border-width: 1px;
     border-style: solid;
     border-color: shade (@frame_color, 1.22);
     background-image: -gtk-gradient (linear,
@@ -911,11 +911,11 @@ GtkSwitch.trough:insensitive {
 }
 
 GtkSwitch.slider {
-    border-width: 1;
-    border-radius: 1;
+    border-width: 1px;
+    border-radius: 1px;
     border-color: shade (@frame_color, 1.31);
     border-style: solid;
-    padding: 2;
+    padding: 2px;
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (@switch_slider_color),
@@ -939,7 +939,7 @@ GtkSwitch.slider:insensitive {
 }
 
 GtkStatusbar {
-    padding: 5;
+    padding: 5px;
     color: @theme_fg_color;
     -GtkStatusbar-shadow-type: none;
 }
@@ -947,20 +947,20 @@ GtkStatusbar {
 GtkScrolledWindow.frame {
     border-style: solid;
     border-color: darker (@theme_bg_color);
-    border-width: 1;
-    border-radius: 3;
+    border-width: 1px;
+    border-radius: 3px;
 }
 
 GtkViewport,
 GtkIconView {
-    border-radius: 3;
+    border-radius: 3px;
     padding: 0;
 }
 
 GtkIconView.view.cell:selected,
 GtkIconView.view.cell:selected:focused {
     background-color: @theme_selected_bg_color;
-    border-radius: 4;
+    border-radius: 4px;
 
     /* FIXME: this probably needs to be better;
      * see https://bugzilla.gnome.org/show_bug.cgi?id=644157
@@ -974,7 +974,7 @@ GtkIconView.view.cell:selected:focused {
     background-color: @theme_base_color;
     color: @theme_fg_color;
     border-radius: 0;
-    border-width: 3;
+    border-width: 3px;
 }
 
 GtkTreeView {
@@ -992,7 +992,7 @@ GtkTreeView.separator {
 }
 
 column-header {
-    padding: 1 2;
+    padding: 1px 2px;
 }
 
 column-header .button {
@@ -1031,7 +1031,7 @@ row:selected {
 
 .cell {
     color: @theme_text_color;
-    padding: 2;
+    padding: 2px;
     border-width: 0;
 }
 
@@ -1069,10 +1069,10 @@ row:selected {
 
 /* Calendars */
 GtkCalendar.view {
-    border-radius: 3;
+    border-radius: 3px;
     border-style: solid;
-    border-width: 1;
-    padding: 2;
+    border-width: 1px;
+    padding: 2px;
 }
 
 GtkCalendar.header {
@@ -1179,7 +1179,7 @@ PanelApplet GtkToggleButton {
     background-color: @os_chrome_bg_color;
     background-image: none;
     border-color: @os_chrome_bg_color;
-    border-width: 1;
+    border-width: 1px;
     color: @os_chrome_fg_color;
 }
 
@@ -1188,7 +1188,7 @@ PanelApplet GtkToggleButton:active {
     background-color: @os_chrome_selected_bg_color;
     background-image: none;
     border-color: lighter (@os_chrome_selected_bg_color);
-    border-width: 1;
+    border-width: 1px;
     color: @os_chrome_selected_fg_color;
 }
 
@@ -1196,7 +1196,7 @@ PanelApplet GtkToggleButton:prelight {
     background-color: @os_chrome_bg_color;
     background-image: none;
     border-color: @os_chrome_bg_color;
-    border-width: 1;
+    border-width: 1px;
     color: @os_chrome_selected_fg_color;
 }
 
