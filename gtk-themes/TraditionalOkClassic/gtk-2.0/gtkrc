@@ -401,11 +401,11 @@ widget_class "*<EelEditableLabel>" style "fg_is_text_color_workaround"
 # See the documentation of the style.
 widget_class "EShellWindow.GtkVBox.MateComponentDock.MateComponentDockBand.MateComponentDockItem*" style "evo_new_button_workaround"
 
-#caja fix
+# caja improvement
 
 style "TraditionalOkClassic-caja-location"
 {
-	bg[NORMAL]  = @bg_color
+	bg[NORMAL]  = mix (0.60, shade (1.05, @bg_color), @bg_color)
 }
 
 widget "*.caja-extra-view-widget" style : highest "TraditionalOkClassic-caja-location"
