@@ -283,7 +283,7 @@ style "clearlooks-tooltips" {
 
 style "clearlooks-caja_location" {
 
-	bg[NORMAL]        = mix (0.60, shade (1.05, @bg_color), @selected_bg_color)
+	bg[NORMAL]        = mix (0.60, shade (1.05, @bg_color), @bg_color)
 }
 
 # Wrokaroudn style for places where the text color is used instead of the fg color.
