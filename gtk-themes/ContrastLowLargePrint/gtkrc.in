@@ -70,3 +70,10 @@ style "default"
 @media_stock_icons_rc@
 @capplet_stock_icons_rc@
 @marco_stock_icons_rc@
+
+style "caja-location"
+{
+	bg[NORMAL]  = mix (0.60, shade (1.05, "#9A9A9A"), "#9A9A9A")
+}
+
+widget "*.caja-extra-view-widget" style : highest "caja-location"
