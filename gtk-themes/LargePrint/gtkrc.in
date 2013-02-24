@@ -45,3 +45,10 @@ style "default"
 }
 
 class "GtkWidget" style "default"
+
+style "caja-location"
+{
+	bg[NORMAL]  = mix (0.60, shade (1.05, "#DCDAD5"), "#DCDAD5")
+}
+
+widget "*.caja-extra-view-widget" style : highest "caja-location"

@@ -1,4 +1,4 @@
-# High-Contrast, "Large Print" Theme
+# High-Contrast, "Normal Size" Theme
 #
 # Original gtkrc by Bill Haneman, based on Standard theme by T. Liebeck, 
 # which was in turn based on lots of different gtkrc files but
@@ -7,8 +7,6 @@
 # High-contrast pixmap icons by jimmac with input from tigert.
 
 pixmap_path "@prefix@/share/themes/ContrastHighLargePrint/pixmaps"
-
-gtk-icon-sizes = "@LARGEPRINT_ICON_SIZES@"
 
 #TODO: move sun-jds style downstream
 style "sun-jds"
@@ -20,54 +18,39 @@ class "GtkWidget" style "sun-jds"
 
 style "default"
 {
-  engine "hcengine"
-  {
-	edge_thickness = 3
-
-	#Work around for Indicator Size bug
-	cell_indicator_size = 18
+  engine "hcengine" {
+    edge_thickness = 2
   }
 
-  xthickness = 3
-  ythickness = 3
+  xthickness = 2
+  ythickness = 2
 
   EelEditableLabel::cursor_aspect_ratio = 0.1
   EelEditableLabel::cursor_color    = "#cc0000"
 
-  GtkCheckButton::indicator_size = 18
-  GtkCheckMenuItem::indicator_size = 18
-
   GtkEntry::cursor_color    = "#cc0000"
   GtkEntry::cursor_aspect_ratio = 0.1
 
-  GtkExpander::expander-size = 24
-  GtkExpander::expander-spacing = 8
-
   GtkHSV::focus-line-pattern = "\0"
 
-  GtkPaned::handle-size = 10
-
-  GtkRange::slider_width = 20
   GtkRange::stepper-size = 20
 
   GtkTextView::cursor_aspect_ratio = 0.1
   GtkTextView::cursor_color    = "#cc0000"
 
-  GtkTreeView::grid-line-width = 2
-  GtkTreeView::expander-size = 24
+  GtkTreeView::expander-size = 16
 
-# GtkWidget::cursor_aspect_ratio = 0.1
-  GtkWidget::focus-line-pattern = "\10\3"
-  GtkWidget::focus-line-width = 3
+  GtkWidget::focus-line-pattern = "\4\2"
+  GtkWidget::focus-line-width = 2
   GtkWidget::focus-padding = 0
   GtkWidget::interior_focus = 1
   GtkWidget::link-color = "#000060"
   GtkWidget::visited-link-color = "#600000"
 
-  PanelToplevel::arrow-size = 18
-
-  #Caja
+  # Caja
   CajaIconContainer::frame_text = 1
+
+
 
   # Pidgin
   GtkIMHtml::hyperlink-color = "#000060"
@@ -78,7 +61,7 @@ style "default"
   GtkHTML::link_color = "#000060"
   GtkHTML::vlink_color = "#600000"
   GtkHTML::cite_color = "#003000"
- 
+
   fg[NORMAL]      = "#000000"
   text[NORMAL]    = "#000000"
   bg[NORMAL]      = "#ffffff"
@@ -89,14 +72,14 @@ style "default"
   bg[INSENSITIVE]      = "#ccccff"
   base[INSENSITIVE]    = "#ccccff"
 
-  fg[PRELIGHT]    = "#ffffff"
-  text[PRELIGHT]  = "#ffffff"
+  fg[PRELIGHT]    = "#ccccff"
+  text[PRELIGHT]  = "#ccccff"
   bg[PRELIGHT]    = "#000000"
   base[PRELIGHT]  = "#000000"
 
   fg[ACTIVE]      = "#000000"
   text[ACTIVE]    = "#000000"
-  bg[ACTIVE]      =  "#b8b891"
+  bg[ACTIVE]      = "#b8b891"
   base[ACTIVE]    = "#b8b891"
 
   fg[SELECTED]    = "#ffffff"
@@ -112,9 +95,11 @@ style "default"
 
 #caja improvements
 
-style "caja-location"
+style "contrasthigh-caja-location"
 {
-	bg[NORMAL]  = mix (0.60, shade (1.05, "#FFFFFF"), "#FFFFFF")
+	bg[NORMAL]  = "#FFFFFF"
 }
 
-widget "*.caja-extra-view-widget" style : highest "caja-location"
+widget "*.caja-extra-view-widget" style : highest "contrasthigh-caja-location"
+
+
