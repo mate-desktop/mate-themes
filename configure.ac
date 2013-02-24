@@ -26,6 +26,26 @@ AC_SUBST(localedir)
 # Workaround to make aclocal get the right flags
 AC_SUBST(ACLOCAL_AMFLAGS, "\${ACLOCAL_FLAGS}")
 
+AC_ARG_ENABLE([gtk3-engines],
+              AC_HELP_STRING([--disable-gtk3-engines],
+                             [Disable Gtk+ 3.x engines [default=no]]),
+              enable_gtk3=$enableval,
+              enable_gtk3=yes)
+AC_MSG_CHECKING([building gtk3 engines])
+AM_CONDITIONAL(GTK3, test "x$enable_gtk3" = "xyes")
+AC_MSG_RESULT([$enable_gtk3])
+GTK_VERSION_REQUIRED=3.5.17
+
+if test "x$enable_gtk3" = "xyes"; then
+  PKG_CHECK_MODULES([DEPENDENCIES], [gtk+-3.0 >= $GTK_VERSION_REQUIRED librsvg-2.0])
+  PKG_CHECK_MODULES([CONTRASTHIGH], [cairo gio-2.0 gdk-pixbuf-2.0 gdk-3.0])
+fi
+AC_SUBST(DEPENDENCIES_CFLAGS)
+AC_SUBST(DEPENDENCIES_LIBS)
+
+GTK_VERSION=`$PKG_CONFIG --variable=gtk_binary_version gtk+-3.0`
+AC_SUBST(GTK_VERSION)
+
 # Check GTK+ theme engines
 PKG_CHECK_MODULES(THEME_ENGINE,
  [gtk+-2.0 >= 2.0.0 dnl
@@ -34,6 +54,9 @@ PKG_CHECK_MODULES(THEME_ENGINE,
 
 GTK_VERSION=`$PKG_CONFIG --variable=gtk_binary_version gtk+-2.0`
 AC_SUBST(GTK_VERSION)
+
+GLIB_COMPILE_RESOURCES=`$PKG_CONFIG --variable glib_compile_resources gio-2.0`
+AC_SUBST(GLIB_COMPILE_RESOURCES)
 
 # Check if it's a development (odd minor) version (obsolete with date versions)
 #AC_MSG_CHECKING([development series build])
@@ -213,7 +236,10 @@ gtk-themes/TraditionalOkClassic/gtk-3.0/Makefile
 gtk-themes/TraditionalOkClassic/gtk-3.0/assets/Makefile
 gtk-themes/TraditionalOkTest/Makefile
 gtk-themes/ContrastHigh/Makefile
-gtk-themes/ContrastHigh/gtkrc
+gtk-themes/ContrastHigh/gtk-2.0/Makefile
+gtk-themes/ContrastHigh/gtk-2.0/gtkrc
+gtk-themes/ContrastHigh/gtk-3.0/Makefile
+gtk-themes/ContrastHigh/metacity-1/Makefile
 gtk-themes/ContrastHighInverse/Makefile
 gtk-themes/ContrastHighInverse/gtkrc
 gtk-themes/ContrastHighLargePrint/Makefile
@@ -353,6 +379,7 @@ mate-themes-$VERSION:
 	Enable placeholders:         ${enable_placeholders}
 	Enable legacy icons:         ${enable_mapping}
 	Enable all themes:           ${enable_all_themes}
+	Enable gtk-3.0 themes:       ${enable_gtk3}
 	Enable test themes:          ${enable_test_themes}
 	LargePrint cursor theme:     ${LARGEPRINT_CURSOR_THEME}
 	HC LargePrint cursor theme:  ${LARGEPRINT_HC_CURSOR_THEME}
