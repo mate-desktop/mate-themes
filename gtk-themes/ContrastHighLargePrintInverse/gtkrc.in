@@ -109,3 +109,12 @@ style "default"
 @media_stock_icons_rc@
 @capplet_stock_icons_rc@
 @marco_stock_icons_rc@
+
+#caja improvements
+
+style "caja-location"
+{
+	bg[NORMAL]  = mix (0.60, shade (1.05, "#000033"), "#000033")
+}
+
+widget "*.caja-extra-view-widget" style : highest "caja-location"
