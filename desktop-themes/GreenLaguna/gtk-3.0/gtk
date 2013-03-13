@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+	<gresource prefix="/org/gnome/gnomishbeige">
+		<file>gtk-main.css</file>
+		<file>gtk-main-common.css</file>
+		<file>gtk-widgets.css</file>
+		<file preprocess="to-pixdata">assets/menu-border.svg</file>
+		<file preprocess="to-pixdata">assets/pane-separator-grip.svg</file>
+		<file preprocess="to-pixdata">assets/pane-separator-grip-vertical.svg</file>
+		<file preprocess="to-pixdata">assets/pane-separator-grip-hover.svg</file>
+		<file preprocess="to-pixdata">assets/pane-separator-grip-vertical-hover.svg</file>
+		<file preprocess="to-pixdata">assets/switch-slider-grip.svg</file>
+		<file preprocess="to-pixdata">assets/grid-selection-unchecked.svg</file>
+		<file preprocess="to-pixdata">assets/grid-selection-checked.svg</file>
+		<file>gtk-widgets-assets.css</file>
+		<file preprocess="to-pixdata">assets/entry-border-normal.svg</file>
+		<file preprocess="to-pixdata">assets/scale-slider-horizontal.svg</file>
+		<file preprocess="to-pixdata">assets/scale-slider-horizontal-insensitive.svg</file>
+		<file preprocess="to-pixdata">assets/scale-slider-vertical.svg</file>
+		<file preprocess="to-pixdata">assets/scale-slider-vertical-insensitive.svg</file>
+		<file preprocess="to-pixdata">assets/scale-slider-marks-below-horizontal.svg</file>
+		<file preprocess="to-pixdata">assets/scale-slider-marks-below-horizontal-insensitive.svg</file>
+		<file preprocess="to-pixdata">assets/scale-slider-marks-below-vertical.svg</file>
+		<file preprocess="to-pixdata">assets/scale-slider-marks-below-vertical-insensitive.svg</file>
+		<file preprocess="to-pixdata">assets/scale-slider-marks-above-horizontal.svg</file>
+		<file preprocess="to-pixdata">assets/scale-slider-marks-above-horizontal-insensitive.svg</file>
+		<file preprocess="to-pixdata">assets/scale-slider-marks-above-vertical.svg</file>
+		<file preprocess="to-pixdata">assets/scale-slider-marks-above-vertical-insensitive.svg</file>
+		<file preprocess="to-pixdata">assets/button-border.svg</file>
+		<file preprocess="to-pixdata">assets/button-active-border.svg</file>
+		<file preprocess="to-pixdata">assets/button-default-border.svg</file>
+		<file preprocess="to-pixdata">assets/button-default-active-border.svg</file>
+		<file preprocess="to-pixdata">assets/toolbar-button-border.svg</file>
+		<file preprocess="to-pixdata">assets/switch-trough-border-active.svg</file>
+		<file preprocess="to-pixdata">assets/radio-menuitem-checked.svg</file>
+		<file preprocess="to-pixdata">assets/radio-menuitem-checked-prelight.svg</file>
+		<file preprocess="to-pixdata">assets/radio-menuitem-checked-insensitive.svg</file>
+		<file preprocess="to-pixdata">assets/radio-menuitem-mixed.svg</file>
+		<file preprocess="to-pixdata">assets/radio-menuitem-mixed-prelight.svg</file>
+		<file preprocess="to-pixdata">assets/radio-menuitem-mixed-insensitive.svg</file>
+		<file preprocess="to-pixdata">assets/checkbox-menuitem-checked.svg</file>
+		<file preprocess="to-pixdata">assets/checkbox-menuitem-checked-prelight.svg</file>
+		<file preprocess="to-pixdata">assets/checkbox-menuitem-checked-insensitive.svg</file>
+		<file preprocess="to-pixdata">assets/checkbox-menuitem-mixed.svg</file>
+		<file preprocess="to-pixdata">assets/checkbox-menuitem-mixed-prelight.svg</file>
+		<file preprocess="to-pixdata">assets/checkbox-menuitem-mixed-insensitive.svg</file>
+		<file preprocess="to-pixdata">assets/checkbox-unchecked.svg</file>
+		<file preprocess="to-pixdata">assets/checkbox-unchecked-insensitive.svg</file>
+		<file preprocess="to-pixdata">assets/checkbox-checked.svg</file>
+		<file preprocess="to-pixdata">assets/checkbox-checked-insensitive.svg</file>
+		<file preprocess="to-pixdata">assets/checkbox-mixed.svg</file>
+		<file preprocess="to-pixdata">assets/checkbox-mixed-insensitive.svg</file>
+		<file preprocess="to-pixdata">assets/radio-unselected.svg</file>
+		<file preprocess="to-pixdata">assets/radio-unselected-insensitive.svg</file>
+		<file preprocess="to-pixdata">assets/radio-selected.svg</file>
+		<file preprocess="to-pixdata">assets/radio-selected-insensitive.svg</file>
+		<file preprocess="to-pixdata">assets/radio-mixed.svg</file>
+		<file preprocess="to-pixdata">assets/radio-mixed-insensitive.svg</file>
+	</gresource>
+</gresources>

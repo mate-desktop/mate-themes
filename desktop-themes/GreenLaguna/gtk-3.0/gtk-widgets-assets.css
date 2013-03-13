@@ -1,0 +1,231 @@
+.entry,
+.toolbar.entry {
+	border-image: url("assets/entry-border-normal.svg") 3 / 3px stretch;
+}
+
+GtkScale.slider,
+GtkScale.slider.horizontal {
+	background-image: url("assets/scale-slider-horizontal.svg");
+}
+
+GtkScale.slider:insensitive,
+GtkScale.slider.horizontal:insensitive {
+	background-image: url("assets/scale-slider-horizontal-insensitive.svg");
+}
+
+GtkScale.slider.vertical {
+	background-image: url("assets/scale-slider-vertical.svg");
+}
+
+GtkScale.slider.vertical:insensitive {
+	background-image: url("assets/scale-slider-vertical-insensitive.svg");
+}
+
+GtkScale.scale-has-marks-below.slider.horizontal {
+	background-image: url("assets/scale-slider-marks-below-horizontal.svg");
+}
+
+GtkScale.scale-has-marks-below.slider.horizontal:insensitive {
+	background-image: url("assets/scale-slider-marks-below-horizontal-insensitive.svg");
+}
+
+GtkScale.scale-has-marks-below.slider.vertical {
+	background-image: url("assets/scale-slider-marks-below-vertical.svg");
+}
+
+GtkScale.scale-has-marks-below.slider.vertical:insensitive {
+	background-image: url("assets/scale-slider-marks-below-vertical-insensitive.svg");
+}
+
+GtkScale.scale-has-marks-above.slider.horizontal {
+	background-image: url("assets/scale-slider-marks-above-horizontal.svg");
+}
+
+GtkScale.scale-has-marks-above.slider.horizontal:insensitive {
+	background-image: url("assets/scale-slider-marks-above-horizontal-insensitive.svg");
+}
+
+GtkScale.scale-has-marks-above.slider.vertical {
+	background-image: url("assets/scale-slider-marks-above-vertical.svg");
+}
+
+GtkScale.scale-has-marks-above.slider.vertical:insensitive {
+	background-image: url("assets/scale-slider-marks-above-vertical-insensitive.svg");
+}
+
+.cursor-handle.top {
+	background-image: url("assets/scale-slider-marks-above-horizontal-dark.svg");
+}
+
+.cursor-handle.bottom {
+	background-image: url("assets/scale-slider-marks-below-horizontal-dark.svg");
+}
+
+.button {
+	border-image: url("assets/button-border.svg") 3 / 3px stretch;
+}
+
+.button:active,
+.button:hover:active {
+	border-image: url("assets/button-active-border.svg") 3 / 3px stretch;
+}
+
+.button.default {
+	border-image: url("assets/button-default-border.svg") 3 / 3px stretch;
+}
+
+.button.default:active {
+	border-image: url("assets/button-default-active-border.svg") 3 / 3px stretch;
+}
+
+.toolbar .button:active,
+.primary-toolbar .button:active,
+.primary-toolbar .toolbar .button:active,
+.primary-toolbar.toolbar .button:active,
+.toolbar GtkComboBox .button,
+.primary-toolbar .toolbar GtkComboBox .button,
+.primary-toolbar.toolbar GtkComboBox .button/*,
+.toolbar .button:active:hover,
+.primary-toolbar .toolbar .button:active:hover,
+.primary-toolbar.toolbar .button:active:hover,
+.primary-toolbar .toolbar GtkComboBox .button:hover,
+.primary-toolbar.toolbar GtkComboBox .button:hover*/ {
+	border-image: url("assets/toolbar-button-border.svg") 3 / 3px stretch;
+}
+
+GtkSwitch.trough:active {
+	border-image: url("assets/switch-trough-border-active.svg") 3 / 3px stretch;
+}
+
+/*************************
+ * Check and Radio items *
+ *************************/
+ 
+.menuitem.radio:active {
+	background-image: url("assets/radio-menuitem-checked.svg");
+}
+
+.menuitem.radio:active:hover {
+	background-image: url("assets/radio-menuitem-checked-prelight.svg");
+}
+
+.menuitem.radio:active:insensitive {
+	background-image: url("assets/radio-menuitem-checked-insensitive.svg");
+}
+
+.menuitem.radio:inconsistent {
+	background-image: url("assets/radio-menuitem-mixed.svg");
+}
+
+.menuitem.radio:inconsistent:hover {
+	background-image: url("assets/radio-menuitem-mixed-prelight.svg");
+}
+
+.menuitem.radio:inconsistent:insensitive {
+	background-image: url("assets/radio-menuitem-mixed-insensitive.svg");
+}
+
+.menuitem.check:active {
+	background-image: url("assets/checkbox-menuitem-checked.svg");
+}
+
+.menuitem.check:active:hover {
+	background-image: url("assets/checkbox-menuitem-checked-prelight.svg");
+}
+
+.menuitem.check:active:insensitive {
+	background-image: url("assets/checkbox-menuitem-checked-insensitive.svg");
+}
+
+.menuitem.check:inconsistent {
+	background-image: url("assets/checkbox-menuitem-mixed.svg");
+}
+
+.menuitem.check:inconsistent:hover {
+	background-image: url("assets/checkbox-menuitem-mixed-prelight.svg");
+}
+
+.menuitem.check:inconsistent:insensitive {
+	background-image: url("assets/checkbox-menuitem-mixed-insensitive.svg");
+}
+
+/* draw regular check and radio items using our SVG assets */
+.check,
+.check row:selected,
+.check row:selected:focus {
+	background-image: url("assets/checkbox-unchecked.svg");
+}
+
+.check:insensitive,
+.check row:selected:insensitive,
+.check row:selected:focus:insensitive {
+	background-image: url("assets/checkbox-unchecked-insensitive.svg");
+}
+
+.check:active,
+.check row:selected:active,
+.check row:selected:focus:active {
+	background-image: url("assets/checkbox-checked.svg");
+}
+
+.check:active:insensitive,
+.check row:selected:active:insensitive,
+.check row:selected:focus:active:insensitive
+{
+	background-image: url("assets/checkbox-checked-insensitive.svg");
+}
+
+.check:inconsistent,
+.check row:selected:inconsistent,
+.check row:selected:focus:inconsistent {
+	background-image: url("assets/checkbox-mixed.svg");
+}
+
+.check:inconsistent:insensitive,
+.check row:selected:inconsistent:insensitive,
+.check row:selected:focus:inconsistent:insensitive {
+	background-image: url("assets/checkbox-mixed-insensitive.svg");
+}
+
+.radio,
+.radio row:selected,
+.radio row:selected:focus {
+	background-image: url("assets/radio-unselected.svg");
+}
+
+.radio:insensitive,
+.radio row:selected:insensitive,
+.radio row:selected:focus:insensitive {
+	background-image: url("assets/radio-unselected-insensitive.svg");
+}
+
+.radio:active,
+.radio row:selected:active,
+.radio row:selected:focus:active {
+	background-image: url("assets/radio-selected.svg");
+}
+
+.radio:active:insensitive,
+.radio row:selected:active:insensitive,
+.radio row:selected:focus:active:insensitive {
+	background-image: url("assets/radio-selected-insensitive.svg");
+}
+
+.radio:inconsistent,
+.radio row:selected:inconsistent,
+.radio row:selected:focus:inconsistent {
+	background-image: url("assets/radio-mixed.svg");
+}
+
+.radio:inconsistent:insensitive,
+.radio row:selected:inconsistent:insensitive,
+.radio row:selected:focus:inconsistent:insensitive {
+	background-image: url("assets/radio-mixed-insensitive.svg");
+}
+
+/*.menuitem:active,
+.menuitem *:active,
+.menuitem:prelight,
+.menuitem *:prelight {
+	border-image: url("assets/menu-border.svg") 2 / 2px stretch;
+}*/

@@ -203,6 +203,12 @@ desktop-themes/ContrastLow/Makefile
 desktop-themes/ContrastLowLargePrint/Makefile
 desktop-themes/ContrastLowLargePrint/index.theme.in
 desktop-themes/Fog/Makefile
+desktop-themes/GreenLaguna/Makefile
+desktop-themes/GreenLaguna/gtk-2.0/Makefile
+desktop-themes/GreenLaguna/gtk-2.0/Styles/Makefile
+desktop-themes/GreenLaguna/gtk-3.0/Makefile
+desktop-themes/GreenLaguna/gtk-3.0/assets/Makefile
+desktop-themes/GreenLaguna/metacity-1/Makefile
 marco-themes/Makefile
 gtk-themes/Makefile
 gtk-themes/AlaDelta/Makefile
