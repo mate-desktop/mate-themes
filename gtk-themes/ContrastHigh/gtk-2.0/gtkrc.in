@@ -50,6 +50,8 @@ style "default"
   # Caja
   CajaIconContainer::frame_text = 1
 
+
+
   # Pidgin
   GtkIMHtml::hyperlink-color = "#000060"
   GtkIMHtml::hyperlink-visited-color = "#600000" 
@@ -90,3 +92,14 @@ style "default"
 @media_stock_icons_rc@
 @capplet_stock_icons_rc@
 @marco_stock_icons_rc@
+
+#caja improvements
+
+style "contrasthigh-caja-location"
+{
+	bg[NORMAL]  = "#FFFFFF"
+}
+
+widget "*.caja-extra-view-widget" style : highest "contrasthigh-caja-location"
+
+

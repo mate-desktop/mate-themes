@@ -1,5 +1,10 @@
-themedir = $(datadir)/themes/ContrastHigh/gtk-2.0
+SUBDIRS = \
+   gtk-3.0 \
+   gtk-2.0 \
+   metacity-1
 
-theme_DATA = gtkrc
+DIST_SUBDIRS = \
+   gtk-3.0 \
+   gtk-2.0 \
+   metacity-1
 
-EXTRA_DIST= $(theme_DATA)

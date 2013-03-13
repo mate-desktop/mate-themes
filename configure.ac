@@ -213,7 +213,10 @@ gtk-themes/TraditionalOkClassic/gtk-3.0/Makefile
 gtk-themes/TraditionalOkClassic/gtk-3.0/assets/Makefile
 gtk-themes/TraditionalOkTest/Makefile
 gtk-themes/ContrastHigh/Makefile
-gtk-themes/ContrastHigh/gtkrc
+gtk-themes/ContrastHigh/gtk-2.0/Makefile
+gtk-themes/ContrastHigh/gtk-2.0/gtkrc
+gtk-themes/ContrastHigh/gtk-3.0/Makefile
+gtk-themes/ContrastHigh/metacity-1/Makefile
 gtk-themes/ContrastHighInverse/Makefile
 gtk-themes/ContrastHighInverse/gtkrc
 gtk-themes/ContrastHighLargePrint/Makefile
