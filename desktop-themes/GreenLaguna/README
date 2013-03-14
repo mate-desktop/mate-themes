@@ -1,0 +1,14 @@
+There may be a minor readability issue in Epiphany. To fix it:
+
+(1) Select "Use custom stylesheet" in "Preferences > Font & Style"; and
+
+(2) Create '~/.config/epiphany/user-stylesheet.css' as:
+
+select {
+	border-radius: 0 !important;
+	border-color: transparent !important;
+}
+
+input {
+	color: #000 !important;
+}
