@@ -188,6 +188,15 @@ desktop-themes/Aldabra/gtk-3.0/assets/Makefile
 desktop-themes/Aldabra/metacity-1/Makefile
 desktop-themes/Quid/Makefile
 desktop-themes/TraditionalOk/Makefile
+desktop-themes/TraditionalOk/doc/Makefile
+desktop-themes/TraditionalOk/gtk-2.0/Makefile
+desktop-themes/TraditionalOk/gtk-3.0/Makefile
+desktop-themes/TraditionalOk/gtk-3.0/img/Makefile
+desktop-themes/TraditionalOk/metacity-1/Makefile
+desktop-themes/TraditionalOk/openbox-3/Makefile
+desktop-themes/TraditionalOk/wallpapers/Makefile
+desktop-themes/TraditionalOk/xfwm4/Makefile
+desktop-themes/TraditionalOk/xfwm4/png/Makefile
 desktop-themes/TraditionalOkTest/Makefile
 desktop-themes/AlaDelta/Makefile
 desktop-themes/Shiny/Makefile
@@ -213,11 +222,6 @@ marco-themes/Makefile
 gtk-themes/Makefile
 gtk-themes/AlaDelta/Makefile
 gtk-themes/Shiny/Makefile
-gtk-themes/TraditionalOkClassic/Makefile
-gtk-themes/TraditionalOkClassic/gtk-2.0/Makefile
-gtk-themes/TraditionalOkClassic/gtk-3.0/Makefile
-gtk-themes/TraditionalOkClassic/gtk-3.0/assets/Makefile
-gtk-themes/TraditionalOkTest/Makefile
 gtk-themes/ContrastHigh/Makefile
 gtk-themes/ContrastHigh/gtk-2.0/Makefile
 gtk-themes/ContrastHigh/gtk-2.0/gtkrc
@@ -240,6 +244,7 @@ gtk-themes/ContrastLowLargePrint/Makefile
 gtk-themes/ContrastLowLargePrint/gtkrc
 gtk-themes/ContrastLowLargePrint/pixmaps/Makefile
 gtk-themes/Simply/Makefile
+gtk-themes/TraditionalOkTest/Makefile
 icon-themes/Makefile
 icon-themes/Quid/Makefile
 icon-themes/Quid/16x16/Makefile
