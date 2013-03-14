@@ -1,11 +1,32 @@
 THEME_NAME=TraditionalOk
-THEME_IN_FILES=index.theme.in
  
-%.theme:   %.theme.in $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*.po) ; $(INTLTOOL_MERGE) $(top_srcdir)/po $< $@ -d -u -c $(top_builddir)/po/.intltool-merge-cache
-
 themedir = $(datadir)/themes/$(THEME_NAME)
 
 theme_DATA = index.theme
 
-DISTCLEANFILES=index.theme
-EXTRA_DIST=index.theme.in index.theme
+EXTRA_DIST = $(theme_DATA)
+
+SUBDIRS =		\
+	doc			\
+	gtk-2.0		\
+	gtk-3.0		\
+	metacity-1	\
+	openbox-3	\
+	wallpapers	\
+	xfwm4
+
+DIST_SUBDIRS =	\
+	doc			\
+	gtk-2.0		\
+	gtk-3.0		\
+	metacity-1	\
+	openbox-3	\
+	wallpapers	\
+	xfwm4
+
+CLEANFILES = index.theme
+
+index.theme: index.theme.in
+	$(AM_V_GEN)sed \
+		-e s!\@BACKGROUND_DIR\@!$(datadir)/pixmaps/backgrounds/mate/desktop! \
+		< $< > $@
