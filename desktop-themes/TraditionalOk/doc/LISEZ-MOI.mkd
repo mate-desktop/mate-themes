@@ -1,0 +1,205 @@
+<p lang="en"><strong><a hreflang="en" href="http://www.jpfleury.net/en/software/clearlooks-phenix.php">Read this page in English.</a></strong></p>
+
+## À propos
+
+Le projet Clearlooks-Phénix (anciennement nommé Clearwaita) a pour but de créer une version GTK3 de Clearlooks, thème par défaut de Gnome 2. Un style est également inclus pour GTK2, Unity et les gestionnaires de fenêtres Metacity, Openbox et Xfwm4.
+
+Voici quelques captures d'écran (s'il y a lieu, cliquer pour télécharger l'image au format original):
+
+<a href="http://jpfleury.indefero.net/p/clearlooks-phenix/source/tree/master/doc/exemple1.png"><img src="http://jpfleury.indefero.net/p/clearlooks-phenix/source/tree/master/doc/exemple1.png" alt="Capture d'écran du bureau sous Gnome 3 (mode fallback) avec le thème Clearlooks-Phénix" width="658" height="493" /></a>
+
+<img src="http://jpfleury.indefero.net/p/clearlooks-phenix/source/tree/master/doc/exemple2.png" alt="Capture d'écran de gedit 3 avec le thème Clearlooks-Phénix" width="659" height="537" />
+
+<a href="http://jpfleury.indefero.net/p/clearlooks-phenix/source/tree/master/doc/exemple3.png"><img src="http://jpfleury.indefero.net/p/clearlooks-phenix/source/tree/master/doc/exemple3.png" alt="Capture d'écran de GTK+ Widget Factory avec le thème Clearlooks-Phénix" width="658" height="443" /></a>
+
+## Dépendances
+
+- Dépendances de Clearlooks-Phénix 1: paquets `gtk2-engines` (si des logiciels GTK2 sont utilisés) et `gnome-themes-standard`.
+
+- Dépendances de Clearlooks-Phénix 2: paquets `gtk2-engines` (si des logiciels GTK2 sont utilisés), `gnome-themes-standard` et `gtk3-engines-unico`.
+
+- Dépendances de Clearlooks-Phénix 3: paquet `gtk2-engines` (si des logiciels GTK2 sont utilisés).
+
+## Installation
+
+Peu importe la méthode d'installation choisie, le thème devra être sélectionné une fois l'installation terminée:
+
+- Sous Gnome: avec le logiciel [gnome-tweak-tool](https://live.gnome.org/GnomeTweakTool), en paramétrant *Theme > Window theme* et *Theme > GTK+ theme*, ou en console:
+
+		dconf write /org/gnome/desktop/wm/preferences/theme \'Clearlooks-Phenix\'
+		dconf write /org/gnome/desktop/interface/gtk-theme \'Clearlooks-Phenix\'
+
+- Sous Xfce: en allant dans *Paramètres > Apparence > Style* du menu principal pour le thème GTK, et dans *Paramètres > Gestionnaire de fenêtres > Style* pour le thème de Xfwm4, ou en console:
+
+		xfconf-query -s Clearlooks-Phenix -c xfwm4 -p /general/theme
+		xfconf-query -s Clearlooks-Phenix -c xsettings -p /Net/ThemeName
+
+### Manuellement
+
+**La méthode manuelle assure d'installer la dernière version du thème.** Voir plus bas pour d'autres méthodes d'installation.
+
+- Télécharger l'archive de la version correspondant à votre situation:
+
+	- pour GTK 3.0 et 3.2: [télécharger Clearlooks-Phénix 1](http://jpfleury.indefero.net/p/clearlooks-phenix/source/download/v1/);
+	
+	- pour GTK 3.4: [télécharger Clearlooks-Phénix 2](http://jpfleury.indefero.net/p/clearlooks-phenix/source/download/v2/).
+	
+	- pour GTK 3.6 et versions suivantes: [télécharger Clearlooks-Phénix 3](http://jpfleury.indefero.net/p/clearlooks-phenix/source/download/master/).
+	
+	Pour connaître sa version de GTK:
+	
+	- Vous pouvez vérifier dans votre gestionnaire de paquets la version du paquet `libgtk-3-0`.
+	
+	- Si vous utilisez Ubuntu, voici une correspondance entre ses versions et celles de GTK (pour une installation par défaut d'Ubuntu):
+	
+		- Ubuntu 11.10: GTK 3.2
+		- Ubuntu 12.04: GTK 3.4
+		- Ubuntu 12.10: GTK 3.6
+
+- Extraire l'archive.
+
+- Renommer le dossier extrait en `Clearlooks-Phenix`.
+
+- Copier le dossier `Clearlooks-Phenix` dans un des deux emplacements suivants:
+
+	- `~/.themes/` pour l'utilisateur courant;
+	
+	- `/usr/share/themes/` pour tous les utilisateurs, incluant le style des logiciels lancés en tant que superutilisateur (par exemple Synaptic).
+
+### Arch Linux
+
+Un [paquet AUR](https://aur.archlinux.org/packages.php?ID=60380) est maintenu par eworm.
+
+### Debian
+
+Le paquet [`clearlooks-phenix-theme`](http://packages.debian.org/sid/clearlooks-phenix-theme) peut être installé sous Debian unstable.
+
+### Gentoo
+
+Le `ebuild` suivant peut être utilisé:
+
+	http://bbgentoo.ilb.ru/repos/bbgentoo/bbgentoo_overlay/tags/current/x11-themes/clearlooks-phenix/clearlooks-phenix-2.0.10.ebuild
+
+### Ubuntu
+
+Le paquet [`clearlooks-phenix-theme`](http://packages.ubuntu.com/quantal/clearlooks-phenix-theme) peut être installé sous Ubuntu 12.10 ou toute version ultérieure. Cependant, le paquet n'est pas à jour, et le [PPA d'Andrew Shadura](https://launchpad.net/~andrewshadoura/+archive/clearlooks-phenix) peut être utilisé à la place.
+
+## Configuration
+
+### Arrière-plan
+
+L'arrière-plan utilisé dans la capture d'écran du bureau de Gnome est disponible dans le dossier `wallpapers`.
+
+### Icônes
+
+Le thème d'icônes utilisé dans la même capture d'écran est Mist, installé avec le paquet [`gnome-themes`](http://packages.ubuntu.com/oneiric/gnome-themes), sous licence LGPL. Cependant, ce paquet n'est plus disponible pour les dernières versions d'Ubuntu. Voici une méthode simple pour installer Mist:
+
+- [Télécharger l'archive du thème d'icônes Mist.](http://www.jpfleury.net/site/fichiers/Mist.tar)
+
+- Extraire l'archive.
+
+- Copier le dossier `Mist` dans un des deux emplacements suivants:
+
+	- `~/.icons/` pour l'utilisateur courant;
+	
+	- `/usr/share/icons/` pour tous les utilisateurs.
+
+- Ensuite, choisir le thème d'icônes Mist:
+
+	- sous Gnome: avec le logiciel gnome-tweak-tool en paramétrant *Theme > Icon theme*;
+	
+	- sous Xfce: en allant dans *Paramètres > Apparence > Icônes* du menu principal.
+
+Aussi, des jeux de couleurs ont été réalisés par DDZ pour s'agencer avec Clearlooks-Phénix:
+
+- [Gnome-Colors-Clearlooks](http://opendesktop.org/content/show.php?content=151907), jeu de couleurs pour le thème d'icônes Gnome-Colors;
+
+- [Humanities-Clearlooks](http://opendesktop.org/content/show.php?content=151908), jeu de couleurs pour le thème d'icônes Humanities.
+
+- [KDE3-Clearlooks-Colors](http://opendesktop.org/content/show.php?content=151994), jeu de couleurs pour KDE 3.
+
+- [KDE4-Clearlooks-Colors](http://opendesktop.org/content/show.php?content=151993), jeu de couleurs pour KDE 4.
+
+### Bureau géré par Nautilus
+
+Par défaut, le texte des icônes sur un bureau géré par Nautilus est noir. Pour afficher le texte en blanc, ouvrir le fichier `gtk-3.0/applications.css` dans un éditeur de texte, trouver le code relatif à Nautilus:
+
+	/************
+	 * Nautilus *
+	 ************/
+	
+	/*
+	CODE
+	CSS
+	COMMENTÉ
+	*/
+
+et le décommenter, ce qui donne:
+
+	/************
+	 * Nautilus *
+	 ************/
+	
+	CODE
+	CSS
+	DÉCOMMENTÉ
+
+Pour avoir une couleur personnalisée, modifier la couleur directement dans le fichier `gtk-3.0/applications.css`.
+
+### Variantes de couleurs
+
+À partir de Clearlooks-Phénix 2, il est très facile de créer une variante de couleurs du thème GTK3. Seulement quelques déclarations de couleur doivent être modifiées dans le fichier `gtk-3.0/gtk-variant.css`.
+
+En ce qui concerne la bordure des boutons, elle provient de fichiers au format SVG, qui peuvent être modifiés avec [Inkscape](http://inkscape.org/). Pour plus de détails, voir la capture vidéo [Utiliser Inkscape pour modifier la couleur de la bordure d'un bouton](http://www.youtube.com/watch?v=DWJHDS5hQsw). Un script Bash est également inclus avec Clearlooks-Phénix dans le but d'accélérer la modification des images SVG et PNG. Pour l'utiliser, copier le fichier `doc/images.sh.txt`, le coller à la racine du thème en cours de développement (au même emplacement que le fichier `index.theme`) et le renommer `images.sh`. Ensuite, il ne reste plus qu'à modifier les variables dans la première section du fichier selon la variante de couleurs voulue et à lancer le script dans une console (`bash images.sh`). Le paquet `imagemagick` est requis.
+
+### Emplacement des boutons de fenêtres
+
+Si après une installation ou une mise à jour d'Ubuntu, les boutons de fenêtres se trouvent à gauche, mais que vous les voulez à droite, lancez la commande suivante dans une console:
+
+	gconftool-2 --set /apps/metacity/general/button_layout --type string ":minimize,maximize,close"
+
+## Développement
+
+Dernière version: 3.0.13 (2012-12-09)
+
+Le logiciel Git est utilisé pour la gestion de versions. [Le dépôt peut être consulté en ligne ou récupéré en local.][git]
+
+Clearlooks-Phénix dispose également d'un [système de suivi], sur lequel les rapports de bogues et les suggestions peuvent être soumis. Des commentaires peuvent également être postés sur la page de [Clearlooks-Phénix sur GNOME-Look.org][gnome-look].
+
+[git]: http://jpfleury.indefero.net/p/clearlooks-phenix/source/tree/master/
+[système de suivi]: http://jpfleury.indefero.net/p/clearlooks-phenix/issues/
+[gnome-look]: http://gnome-look.org/content/show.php?content=145210
+
+## Licence
+
+Auteur: Jean-Philippe Fleury <contact@jpfleury.net>  
+Copyright © Jean-Philippe Fleury, 2011-2012.
+
+Ce programme est un logiciel libre; vous pouvez le redistribuer ou le
+modifier suivant les termes de la GNU General Public License telle que
+publiée par la Free Software Foundation: soit la version 3 de cette
+licence, soit (à votre gré) toute version ultérieure.
+
+Ce programme est distribué dans l'espoir qu'il vous sera utile, mais SANS
+AUCUNE GARANTIE: sans même la garantie implicite de COMMERCIALISABILITÉ
+ni d'ADÉQUATION À UN OBJECTIF PARTICULIER. Consultez la Licence publique
+générale GNU pour plus de détails.
+
+Vous devriez avoir reçu une copie de la Licence publique générale GNU avec
+ce programme; si ce n'est pas le cas, consultez
+<http://www.gnu.org/licenses/>.
+
+### Matériel tiers
+
+- Thème Adwaita, provenant du paquet [`gnome-themes-standard`](http://packages.ubuntu.com/oneiric/gnome-themes-standard), sous licence LGPL.
+
+- Fichier `gtk-2.0/gtkrc`, provenant du paquet [`gtk2-engines`](http://packages.ubuntu.com/oneiric/gtk2-engines), sous licence LGPL.
+
+- Fichier `metacity-1/metacity-theme-1.xml`, provenant du paquet [`gnome-themes-selected`](http://packages.ubuntu.com/oneiric/gnome-themes-selected), sous licence LGPL.
+
+- Fichier `openbox-3/themerc`, provenant du paquet [`openbox`](http://packages.ubuntu.com/oneiric/openbox), sous licence GPL.
+
+- Thème [Clearlooks XFWM4](http://xfce-look.org/content/show.php/Clearlooks+for+XFWM4?content=137055), sous licence GPL.
+
+- Fichiers dans `wallpapers`, basés sur une [image de volvoguy](http://gnome-look.org/content/show.php?content=22210), sous licence GPL.
+

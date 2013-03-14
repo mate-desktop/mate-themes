@@ -1,7 +1,6 @@
 SUBDIRS = \
 	AlaDelta \
 	Shiny \
-	TraditionalOkClassic \
 	Simply \
 	ContrastHigh \
 	ContrastHighInverse \
@@ -16,7 +15,6 @@ SUBDIRS = \
 DIST_SUBDIRS = \
 	AlaDelta \
 	Shiny \
-	TraditionalOkClassic \
 	Simply \
 	ContrastHigh \
 	ContrastHighInverse \
