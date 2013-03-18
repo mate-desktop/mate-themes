@@ -13,6 +13,7 @@ SUBDIRS = \
 	ContrastLowLargePrint \
 	Fog \
 	GreenLaguna \
+	Menta \
 	$(TEST_THEMES)
 
 DIST_SUBDIRS = \
@@ -30,5 +31,6 @@ DIST_SUBDIRS = \
 	ContrastLowLargePrint \
 	Fog \
 	GreenLaguna \
+	Menta \
 	TraditionalOkTest
 
