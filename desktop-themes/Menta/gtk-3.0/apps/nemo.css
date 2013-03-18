@@ -1,0 +1,144 @@
+@define-color cluebar_color shade (@base_color, 0.9);
+
+NemoWindow * {
+	-GtkPaned-handle-size: 1;
+}
+
+NemoWindow .view {
+	background-color: @base_color;
+}
+
+NemoWindow .view:selected {
+	background-color: @selected_bg_color;
+}
+
+NemoWindow .view:selected:backdrop {
+	background-color: @backdrop_selected_bg_color;
+}
+
+NemoWindow .view.rubberband {
+	background-color: alpha (@selected_bg_color, 0.35);
+}
+
+.nemo-inactive-pane .view {
+	background-color: shade (@base_color, 0.96);
+}
+
+.nemo-inactive-pane .view:selected,
+.nemo-inactive-pane .nemo-canvas-item:selected {
+	background-color: @backdrop_selected_bg_color;
+	color: @backdrop_selected_fg_color;
+}
+
+.nemo-inactive-pane .expander.view:selected {
+	background-color: @backdrop_selected_bg_color;
+}
+
+.nemo-canvas-item {
+	border-radius: 2px;
+}
+
+/* desktop mode */
+.nemo-desktop.nemo-canvas-item {
+	color: @bg_color;
+	text-shadow: 1px 1px alpha (#000000, 0.8);
+}
+
+.nemo-desktop.nemo-canvas-item:active {
+	background-image: none;
+	background-color: alpha (@bg_color, 0.84);
+	color: @fg_color;
+}
+
+.nemo-desktop.nemo-canvas-item:selected {
+	background-image: none;
+	background-color: alpha (@selected_bg_color, 0.84);
+	color: @selected_fg_color;
+}
+
+.nemo-desktop.nemo-canvas-item:active,
+.nemo-desktop.nemo-canvas-item:prelight,
+.nemo-desktop.nemo-canvas-item:selected {
+	text-shadow: none;
+}
+
+/* browser window */
+NemoTrashBar.info,
+NemoXContentBar.info,
+NemoSearchBar.info,
+NemoQueryEditor.info {
+	background-image: -gtk-gradient (linear, left top, left bottom,
+		from (shade (@cluebar_color, 1.0)),
+		to (shade (@cluebar_color, 1.0)));
+	background-color: @cluebar_color;
+	border-bottom-color: shade (@cluebar_color, 0.92);
+	border-radius: 0;
+	border-style: solid;
+	border-width: 0px 0px 1px 0px;
+	color: @fg_color;
+}
+
+#nemo-search-button *:active,
+#nemo-search-button *:active:prelight {
+	color: @fg_color;
+}
+
+NemoWindow .toolbar {
+	padding: 2px;
+}
+
+NemoWindow > GtkGrid > .pane-separator {
+	border-width: 1px 1px 0 0;
+	border-style: solid;
+	border-color: shade (@bg_color, 0.84);
+}
+
+NemoWindow > GtkGrid > .pane-separator,
+NemoWindow > GtkGrid > .pane-separator:hover {
+	border-width: 1px 1px 0 0;
+	border-style: solid;
+	border-color: shade (@bg_color, 0.84);
+	background-color: @bg_color;
+	color: shade (@bg_color, 0.9);
+}
+
+NemoView.frame,
+NemoNotebook.notebook {
+	border-right-width: 0;
+	border-left-width: 0;
+	border-bottom-width: 0;
+}
+
+NemoNotebook.notebook tab.top,
+NemoNotebook.notebook tab.bottom {
+	border-right-width: 1px;
+	border-left-width: 1px;
+}
+
+NemoNotebook .frame {
+	border-width: 1px 0 0 0;
+}
+
+/* sidebar */
+NemoWindow .sidebar,
+NemoWindow .sidebar .view {
+	background-color: shade (@bg_color, 1.08);
+	color: @fg_color;
+	text-shadow: 0 1px shade (shade (@bg_color, 0.95), 1.04);  
+}
+
+NemoWindow .sidebar row:selected {
+	color: @selected_fg_color;
+	text-shadow: 0 -1px shade (@selected_bg_color, 0.8); 
+}
+
+NemoWindow .sidebar row:backdrop:selected {
+	color: @backdrop_selected_fg_color;
+	text-shadow: none; 
+}
+
+NemoWindow .sidebar .frame {
+	border-top-width: 1px;
+	border-style: solid;
+	border-color: shade (@bg_color, 0.82);
+}
