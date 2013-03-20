@@ -1,11 +1,11 @@
 THEMES = \
 	Atantla \
 	TraditionalOk \
-	TraditionalOkClassic \
 	AlaDelta \
 	Shiny \
 	Reverse \
-	Fog
+	Fog \
+	Menta-Black
 
 THEME_DIR=$(datadir)/themes
 THEME_SUBDIR=metacity-1
