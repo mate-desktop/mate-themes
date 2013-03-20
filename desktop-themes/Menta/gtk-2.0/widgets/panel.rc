@@ -3,7 +3,7 @@ style "theme-panel"
 	xthickness = 4 # The spacing (padding) inside and between applets. Add a lower value for a more compact look.
 	ythickness = 0
 
-# Disable (comment out) for normal panel backgrounds or to get an transparancy panel.
+# Disable (comment out) for normal panel backgrounds or to get a transparancy panel.
 	bg_pixmap[NORMAL] = "/Panel/panel-bg.png"
 
 	fg[NORMAL]	= "#000000"
@@ -72,11 +72,11 @@ style "theme-panel-light"
 style "theme-panel-text"
 {
 	fg[NORMAL]	= "#000000"
-	fg[PRELIGHT]	= "#ffffff"
-	fg[ACTIVE]	= "#000000"
+	fg[PRELIGHT]	= "#000000"
+	fg[ACTIVE]	= "#ffffff"
 	text[NORMAL]	= "#000000"
-	text[PRELIGHT]	= "#ffffff"
-	text[ACTIVE]	= "#000000"
+	text[PRELIGHT]	= "#000000"
+	text[ACTIVE]	= "#ffffff"
 }
 
 style "theme-main-menu-text" = "theme-panel-text"
