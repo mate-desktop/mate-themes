@@ -227,6 +227,11 @@ desktop-themes/Menta/unity/Makefile
 desktop-themes/Menta/xfwm4/Makefile
 desktop-themes/Quid/Makefile
 desktop-themes/Shiny/Makefile
+desktop-themes/TraditionalGreen/Makefile
+desktop-themes/TraditionalGreen/gtk-2.0/Makefile
+desktop-themes/TraditionalGreen/gtk-3.0/Makefile
+desktop-themes/TraditionalGreen/gtk-3.0/img/Makefile
+desktop-themes/TraditionalGreen/metacity-1/Makefile
 desktop-themes/TraditionalOk/Makefile
 desktop-themes/TraditionalOk/doc/Makefile
 desktop-themes/TraditionalOk/gtk-2.0/Makefile
