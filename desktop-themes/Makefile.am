@@ -1,5 +1,6 @@
 SUBDIRS = \
 	Aldabra \
+	BlackMATE \
 	Quid \
 	TraditionalOk \
 	TraditionalGreen \
@@ -19,6 +20,7 @@ SUBDIRS = \
 
 DIST_SUBDIRS = \
 	Aldabra \
+	BlackMATE \
 	Quid \
 	TraditionalOk \
 	TraditionalGreen \
