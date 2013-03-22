@@ -187,6 +187,16 @@ desktop-themes/Aldabra/gtk-2.0/assets/Makefile
 desktop-themes/Aldabra/gtk-3.0/Makefile
 desktop-themes/Aldabra/gtk-3.0/assets/Makefile
 desktop-themes/Aldabra/metacity-1/Makefile
+desktop-themes/BlackMATE/Makefile
+desktop-themes/BlackMATE/gtk-2.0/Makefile
+desktop-themes/BlackMATE/gtk-2.0/assets/Makefile
+desktop-themes/BlackMATE/gtk-2.0/Styles/Makefile
+desktop-themes/BlackMATE/gtk-3.0/Makefile
+desktop-themes/BlackMATE/gtk-3.0/assets/Makefile
+desktop-themes/BlackMATE/metacity-1/Makefile
+desktop-themes/BlackMATE/gnome-shell/Makefile
+desktop-themes/BlackMATE/gnome-shell/dashtodock/Makefile
+desktop-themes/BlackMATE/cinnamon/Makefile
 desktop-themes/ContrastHigh/Makefile
 desktop-themes/ContrastHighInverse/Makefile
 desktop-themes/ContrastHighLargePrint/Makefile

@@ -1,0 +1,348 @@
+/*************************
+ * Check and Radio items *
+ *************************/
+
+/* First draw regular check and radio items */
+
+.check,
+.check row:selected,
+.check row:selected:focus {
+	background-image: url("assets/checkbox-unchecked-dark.svg");
+}
+
+.notebook .check,
+.notebook .check row:selected,
+.notebook .check row:selected:focus,
+GtkTreeView.check,
+GtkTreeView.check row:selected,
+GtkTreeView.check row:selected:focus {
+	background-image: url("assets/checkbox-unchecked-lessdark.svg");
+}
+
+.check:insensitive,
+.check row:selected:insensitive,
+.check row:selected:focus:insensitive {
+	background-image: url("assets/checkbox-unchecked-insensitive-dark.svg");
+}
+
+.check:active,
+.check row:selected:active,
+.check row:selected:focus:active {
+	background-image: url("assets/checkbox-checked-dark.svg");
+}
+
+.notebook .check:active,
+.notebook .check row:selected:active,
+.notebook .check row:selected:focus:active,
+GtkTreeView.check:active,
+GtkTreeView.check row:selected:active,
+GtkTreeView.check row:selected:focus:active {
+	background-image: url("assets/checkbox-checked-lessdark.svg");
+}
+
+.check:active:insensitive,
+.check row:selected:active:insensitive,
+.check row:selected:focus:active:insensitive
+{
+	background-image: url("assets/checkbox-checked-insensitive-dark.svg");
+}
+
+.check:inconsistent,
+.check row:selected:inconsistent,
+.check row:selected:focus:inconsistent {
+	background-image: url("assets/checkbox-mixed-dark.svg");
+}
+
+.notebook .check:inconsistent,
+.notebook .check row:selected:inconsistent,
+.notebook .check row:selected:focus:inconsistent,
+GtkTreeView.check:inconsistent,
+GtkTreeView.check row:selected:inconsistent,
+GtkTreeView.check row:selected:focus:inconsistent {
+	background-image: url("assets/checkbox-mixed-lessdark.svg");
+}
+
+.check:inconsistent:insensitive,
+.check row:selected:inconsistent:insensitive,
+.check row:selected:focus:inconsistent:insensitive {
+	background-image: url("assets/checkbox-mixed-insensitive-dark.svg");
+}
+
+.radio,
+.radio row:selected,
+.radio row:selected:focus {
+	background-image: url("assets/radio-unselected-dark.svg");
+}
+
+.notebook .radio,
+.notebook .radio row:selected,
+.notebook .radio row:selected:focus,
+GtkTreeView.radio,
+GtkTreeView.radio row:selected,
+GtkTreeView.radio row:selected:focus {
+	background-image: url("assets/radio-unselected-lessdark.svg");
+}
+
+.radio:insensitive,
+.radio row:selected:insensitive,
+.radio row:selected:focus:insensitive {
+	background-image: url("assets/radio-unselected-insensitive-dark.svg");
+}
+
+.radio:active,
+.radio row:selected:active,
+.radio row:selected:focus:active {
+	background-image: url("assets/radio-selected-dark.svg");
+}
+
+.notebook .radio:active,
+.notebook .radio row:selected:active,
+.notebook .radio row:selected:focus:active,
+GtkTreeView.radio:active,
+GtkTreeView.radio row:selected:active,
+GtkTreeView.radio row:selected:focus:active {
+	background-image: url("assets/radio-selected-lessdark.svg");
+}
+
+.radio:active:insensitive,
+.radio row:selected:active:insensitive,
+.radio row:selected:focus:active:insensitive {
+	background-image: url("assets/radio-selected-insensitive-dark.svg");
+}
+
+.radio:inconsistent,
+.radio row:selected:inconsistent,
+.radio row:selected:focus:inconsistent {
+	background-image: url("assets/radio-mixed-dark.svg");
+}
+
+.notebook .radio:inconsistent,
+.notebook .radio row:selected:inconsistent,
+.notebook .radio row:selected:focus:inconsistent,
+GtkTreeView.radio:inconsistent,
+GtkTreeView.radio row:selected:inconsistent,
+GtkTreeView.radio row:selected:focus:inconsistent {
+	background-image: url("assets/radio-mixed-lessdark.svg");
+}
+
+.radio:inconsistent:insensitive,
+.radio row:selected:inconsistent:insensitive,
+.radio row:selected:focus:inconsistent:insensitive {
+	background-image: url("assets/radio-mixed-insensitive-dark.svg");
+}
+
+.sidebar .radio:active,
+.sidebar .radio:active:focus,
+.sidebar .radio:active:prelight {
+	background-image: url("assets/sidebar-radio-checked-dark.svg");
+}
+
+.sidebar .radio:prelight {
+	background-image: url("assets/sidebar-radio-prelight.svg");
+}
+
+.sidebar .radio:active:selected,
+.sidebar .radio:active:selected:focus {
+	background-image: url("assets/sidebar-radio-selected-dark.svg");
+}
+
+.sidebar .radio:selected:prelight,
+.sidebar .radio:selected:focus {
+	background-image: url("assets/sidebar-radio-selected-prelight.svg");    
+}
+
+/* Now draw menu check and radio items */
+
+.menuitem.radio,
+.menuitem.radio:hover,
+.menuitem.radio:insensitive,
+.menuitem.check,
+.menuitem.check:hover,
+.menuitem.check:insensitive {
+	background-color: transparent;
+	background-image: none;
+	border-style: none;
+	border-image: none;
+}
+
+.menuitem.radio:active {
+	background-image: url("assets/radio-menuitem-checked.svg");
+}
+
+.menuitem.radio:active:hover {
+	background-image: url("assets/radio-menuitem-checked-prelight.svg");
+}
+
+.menuitem.radio:active:insensitive {
+	background-image: url("assets/radio-menuitem-checked-insensitive.svg");
+}
+
+.menuitem.radio:inconsistent {
+	background-image: url("assets/radio-menuitem-mixed.svg");
+}
+
+.menuitem.radio:inconsistent:hover {
+	background-image: url("assets/radio-menuitem-mixed-prelight.svg");
+}
+
+.menuitem.radio:inconsistent:insensitive {
+	background-image: url("assets/radio-menuitem-mixed-insensitive.svg");
+}
+
+.menuitem.check:active {
+	background-image: url("assets/checkbox-menuitem-checked.svg");
+}
+
+.menuitem.check:active:hover {
+	background-image: url("assets/checkbox-menuitem-checked-prelight.svg");
+}
+
+.menuitem.check:active:insensitive {
+	background-image: url("assets/checkbox-menuitem-checked-insensitive.svg");
+}
+
+.menuitem.check:inconsistent {
+	background-image: url("assets/checkbox-menuitem-mixed.svg");
+}
+
+.menuitem.check:inconsistent:hover {
+	background-image: url("assets/checkbox-menuitem-mixed-prelight.svg");
+}
+
+.menuitem.check:inconsistent:insensitive {
+	background-image: url("assets/checkbox-menuitem-mixed-insensitive.svg");
+}
+
+/***********
+ * Entries *
+ ***********/
+
+/*.entry:focus {
+    border-image: url("assets/entry-border-focused-dark.svg") 3 / 3px stretch;
+}*/
+
+.primary-toolbar GtkComboBox.combobox-entry .button:active,
+.primary-toolbar GtkComboBox.combobox-entry .button:hover:active,
+.primary-toolbar GtkComboBox.combobox-entry .button,
+GtkComboBox.combobox-entry .button:active,
+GtkComboBox.combobox-entry .button:hover:active,
+GtkComboBox.combobox-entry .button {
+	border-image: url("assets/entry-border-normal-dark.svg") 3 / 3px stretch;
+}
+
+/***********
+ * Sliders *
+ ***********/
+
+GtkScale.slider,
+GtkScale.slider.horizontal {
+	background-image: url("assets/scale-slider-horizontal-dark.svg");
+}
+
+GtkScale.slider:insensitive,
+GtkScale.slider.horizontal:insensitive {
+	background-image: url("assets/scale-slider-horizontal-insensitive-dark.svg");
+}
+
+GtkScale.slider.vertical {
+	background-image: url("assets/scale-slider-vertical-dark.svg");
+}
+
+GtkScale.slider.vertical:insensitive {
+	background-image: url("assets/scale-slider-vertical-insensitive-dark.svg");
+}
+
+GtkScale.scale-has-marks-above.slider.horizontal {
+	background-image: url("assets/scale-slider-marks-above-horizontal-dark.svg");
+}
+
+GtkScale.scale-has-marks-above.slider.horizontal:insensitive {
+	background-image: url("assets/scale-slider-marks-above-horizontal-insensitive-dark.svg");
+}
+
+GtkScale.scale-has-marks-above.slider.vertical {
+	background-image: url("assets/scale-slider-marks-above-vertical-dark.svg");
+}
+
+GtkScale.scale-has-marks-above.slider.vertical:insensitive {
+	background-image: url("assets/scale-slider-marks-above-vertical-insensitive-dark.svg");
+}
+
+GtkScale.scale-has-marks-below.slider.horizontal {
+	background-image: url("assets/scale-slider-marks-below-horizontal-dark.svg");
+}
+
+GtkScale.scale-has-marks-below.slider.horizontal:insensitive {
+	background-image: url("assets/scale-slider-marks-below-horizontal-insensitive-dark.svg");
+}
+
+GtkScale.scale-has-marks-below.slider.vertical {
+	background-image: url("assets/scale-slider-marks-below-vertical-dark.svg");
+}
+
+GtkScale.scale-has-marks-below.slider.vertical:insensitive {
+	background-image: url("assets/scale-slider-marks-below-vertical-insensitive-dark.svg");
+}
+
+.cursor-handle.top {
+	background-image: url("assets/scale-slider-marks-above-horizontal-dark.svg");
+}
+
+.cursor-handle.bottom {
+	background-image: url("assets/scale-slider-marks-below-horizontal-dark.svg");
+}
+
+/***********
+ * Buttons *
+ ***********/
+
+.button {
+	border-image: url("assets/button-border-dark.svg") 3 / 3px stretch;
+}
+
+.button:active,
+.button:hover:active {
+	border-image: url("assets/button-active-border-dark.svg") 3 / 3px stretch;
+}
+
+.button.default,
+.notebook .button.default {
+	border-image: url("assets/button-default-border-dark.svg") 3 / 3px stretch;
+}
+
+.button.default:active,
+.notebook .button.default:active {
+	border-image: url("assets/button-default-active-border-dark.svg") 3 / 3px stretch;
+}
+
+.toolbar .button:active,
+.primary-toolbar .button:active,
+.primary-toolbar .toolbar .button:active,
+.primary-toolbar.toolbar .button:active,
+.toolbar GtkComboBox .button,
+.primary-toolbar .toolbar GtkComboBox .button,
+.primary-toolbar.toolbar GtkComboBox .button/*,
+.toolbar .button:active:hover,
+.primary-toolbar .toolbar .button:active:hover,
+.primary-toolbar.toolbar .button:active:hover,
+.primary-toolbar .toolbar GtkComboBox .button:hover,
+.primary-toolbar.toolbar GtkComboBox .button:hover*/ {
+	border-image: url("assets/primary-toolbar-button-active-border-dark.svg") 3 / 3px stretch;
+}
+
+/**************
+ * Tree Views *
+ **************/
+
+GtkTreeView row:selected {
+	border-image: url("assets/treeview-border-dark.svg") 3 / 3px stretch;
+}
+
+GtkTreeView row:selected:focus {
+	border-image: url("assets/treeview-focus-border-dark.svg") 3 / 3px stretch;
+}
+
+/*.menuitem:hover,
+.menu .menuitem:hover {
+	border-image: url("assets/menu-border-dark.svg") 3 / 3px stretch;
+}*/

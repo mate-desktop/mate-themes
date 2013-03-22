@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+	<gresource prefix="/org/gnome/gnomishdark">
+		<file>gtk-main.css</file>
+		<file>gtk-main-dark.css</file>
+		<file>gtk-widgets.css</file>
+		<file preprocess="to-pixdata">assets/menu-border-dark.svg</file>
+		<file preprocess="to-pixdata">assets/button-border-dark1.svg</file>
+		<file preprocess="to-pixdata">assets/pane-separator-grip.svg</file>
+		<file preprocess="to-pixdata">assets/pane-separator-grip-vertical.svg</file>
+		<file preprocess="to-pixdata">assets/pane-separator-grip-hover.svg</file>
+		<file preprocess="to-pixdata">assets/pane-separator-grip-vertical-hover.svg</file>
+		<file preprocess="to-pixdata">assets/notebook-pane-separator-grip.svg</file>
+		<file preprocess="to-pixdata">assets/notebook-pane-separator-grip-vertical.svg</file>
+		<file preprocess="to-pixdata">assets/notebook-pane-separator-grip-hover.svg</file>
+		<file preprocess="to-pixdata">assets/notebook-pane-separator-grip-vertical-hover.svg</file>
+		<file preprocess="to-pixdata">assets/switch-slider-grip.svg</file>
+		<file preprocess="to-pixdata">assets/grid-selection-unchecked.svg</file>
+		<file preprocess="to-pixdata">assets/grid-selection-checked.svg</file>
+		<file>gtk-widgets-assets-dark.css</file>
+		<file preprocess="to-pixdata">assets/radio-menuitem-checked.svg</file>
+		<file preprocess="to-pixdata">assets/radio-menuitem-checked-prelight.svg</file>
+		<file preprocess="to-pixdata">assets/radio-menuitem-checked-insensitive.svg</file>
+		<file preprocess="to-pixdata">assets/radio-menuitem-mixed.svg</file>
+		<file preprocess="to-pixdata">assets/radio-menuitem-mixed-prelight.svg</file>
+		<file preprocess="to-pixdata">assets/radio-menuitem-mixed-insensitive.svg</file>
+		<file preprocess="to-pixdata">assets/checkbox-menuitem-checked.svg</file>
+		<file preprocess="to-pixdata">assets/checkbox-menuitem-checked-prelight.svg</file>
+		<file preprocess="to-pixdata">assets/checkbox-menuitem-checked-insensitive.svg</file>
+		<file preprocess="to-pixdata">assets/checkbox-menuitem-mixed.svg</file>
+		<file preprocess="to-pixdata">assets/checkbox-menuitem-mixed-prelight.svg</file>
+		<file preprocess="to-pixdata">assets/checkbox-menuitem-mixed-insensitive.svg</file>
+		<file preprocess="to-pixdata">assets/checkbox-unchecked-dark.svg</file>
+		<file preprocess="to-pixdata">assets/checkbox-unchecked-lessdark.svg</file>
+		<file preprocess="to-pixdata">assets/checkbox-unchecked-insensitive-dark.svg</file>
+		<file preprocess="to-pixdata">assets/checkbox-checked-dark.svg</file>
+		<file preprocess="to-pixdata">assets/checkbox-checked-lessdark.svg</file>
+		<file preprocess="to-pixdata">assets/checkbox-checked-insensitive-dark.svg</file>
+		<file preprocess="to-pixdata">assets/checkbox-mixed-dark.svg</file>
+		<file preprocess="to-pixdata">assets/checkbox-mixed-lessdark.svg</file>
+		<file preprocess="to-pixdata">assets/checkbox-mixed-insensitive-dark.svg</file>
+		<file preprocess="to-pixdata">assets/radio-unselected-dark.svg</file>
+		<file preprocess="to-pixdata">assets/radio-unselected-lessdark.svg</file>
+		<file preprocess="to-pixdata">assets/radio-unselected-insensitive-dark.svg</file>
+		<file preprocess="to-pixdata">assets/radio-selected-dark.svg</file>
+		<file preprocess="to-pixdata">assets/radio-selected-lessdark.svg</file>
+		<file preprocess="to-pixdata">assets/radio-selected-insensitive-dark.svg</file>
+		<file preprocess="to-pixdata">assets/radio-mixed-dark.svg</file>
+		<file preprocess="to-pixdata">assets/radio-mixed-lessdark.svg</file>
+		<file preprocess="to-pixdata">assets/radio-mixed-insensitive-dark.svg</file>
+		<file preprocess="to-pixdata">assets/sidebar-radio-checked-dark.svg</file>
+		<file preprocess="to-pixdata">assets/sidebar-radio-prelight.svg</file>
+		<file preprocess="to-pixdata">assets/sidebar-radio-selected-dark.svg</file>
+		<file preprocess="to-pixdata">assets/sidebar-radio-selected-prelight.svg</file>
+		<file preprocess="to-pixdata">assets/entry-border-normal-dark.svg</file>
+		<file preprocess="to-pixdata">assets/trough-border-horizontal-dark.svg</file>
+		<file preprocess="to-pixdata">assets/trough-border-horizontal-dark1.svg</file>
+		<file preprocess="to-pixdata">assets/trough-border-vertical-dark.svg</file>
+		<file preprocess="to-pixdata">assets/trough-border-vertical-dark1.svg</file>
+		<file preprocess="to-pixdata">assets/scale-slider-horizontal-dark.svg</file>
+		<file preprocess="to-pixdata">assets/scale-slider-horizontal-insensitive-dark.svg</file>
+		<file preprocess="to-pixdata">assets/scale-slider-vertical-dark.svg</file>
+		<file preprocess="to-pixdata">assets/scale-slider-vertical-insensitive-dark.svg</file>
+		<file preprocess="to-pixdata">assets/scale-slider-marks-above-horizontal-dark.svg</file>
+		<file preprocess="to-pixdata">assets/scale-slider-marks-above-horizontal-insensitive-dark.svg</file>
+		<file preprocess="to-pixdata">assets/scale-slider-marks-above-vertical-dark.svg</file>
+		<file preprocess="to-pixdata">assets/scale-slider-marks-above-vertical-insensitive-dark.svg</file>
+		<file preprocess="to-pixdata">assets/scale-slider-marks-below-horizontal-dark.svg</file>
+		<file preprocess="to-pixdata">assets/scale-slider-marks-below-horizontal-insensitive-dark.svg</file>
+		<file preprocess="to-pixdata">assets/scale-slider-marks-below-vertical-dark.svg</file>
+		<file preprocess="to-pixdata">assets/scale-slider-marks-below-vertical-insensitive-dark.svg</file>
+		<file preprocess="to-pixdata">assets/button-border-dark.svg</file>
+		<file preprocess="to-pixdata">assets/button-active-border-dark.svg</file>
+		<file preprocess="to-pixdata">assets/button-active-border-dark1.svg</file>
+		<file preprocess="to-pixdata">assets/button-default-border-dark.svg</file>
+		<file preprocess="to-pixdata">assets/button-default-active-border-dark.svg</file>
+		<file preprocess="to-pixdata">assets/primary-toolbar-button-active-border-dark.svg</file>
+		<file preprocess="to-pixdata">assets/treeview-border-dark.svg</file>
+		<file preprocess="to-pixdata">assets/treeview-focus-border-dark.svg</file>
+	</gresource>
+</gresources>
