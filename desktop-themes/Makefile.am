@@ -2,6 +2,7 @@ SUBDIRS = \
 	Aldabra \
 	Quid \
 	TraditionalOk \
+	TraditionalGreen \
 	AlaDelta \
 	Shiny \
 	ContrastHigh \
@@ -20,6 +21,7 @@ DIST_SUBDIRS = \
 	Aldabra \
 	Quid \
 	TraditionalOk \
+	TraditionalGreen \
 	AlaDelta \
 	Shiny \
 	ContrastHigh \
