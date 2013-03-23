@@ -253,6 +253,10 @@ desktop-themes/TraditionalOk/wallpapers/Makefile
 desktop-themes/TraditionalOk/xfwm4/Makefile
 desktop-themes/TraditionalOk/xfwm4/png/Makefile
 desktop-themes/TraditionalOkTest/Makefile
+desktop-themes/TraditionalOkTest/gtk-2.0/Makefile
+desktop-themes/TraditionalOkTest/gtk-3.0/Makefile
+desktop-themes/TraditionalOkTest/gtk-3.0/img/Makefile
+desktop-themes/TraditionalOkTest/metacity-1/Makefile
 marco-themes/Makefile
 gtk-themes/Makefile
 gtk-themes/AlaDelta/Makefile
@@ -279,7 +283,6 @@ gtk-themes/LargePrint/gtkrc
 gtk-themes/Reverse/Makefile
 gtk-themes/Shiny/Makefile
 gtk-themes/Simply/Makefile
-gtk-themes/TraditionalOkTest/Makefile
 icon-themes/Makefile
 icon-themes/ContrastHigh/Makefile
 icon-themes/ContrastHighInverse/Makefile
