@@ -9,8 +9,7 @@ SUBDIRS = \
 	Reverse \
 	ContrastLow \
 	ContrastLowLargePrint \
-	LargePrint \
-	$(TEST_THEMES)
+	LargePrint
 
 DIST_SUBDIRS = \
 	AlaDelta \
@@ -23,6 +22,5 @@ DIST_SUBDIRS = \
 	Reverse \
 	ContrastLow \
 	ContrastLowLargePrint \
-	LargePrint \
-	TraditionalOkTest
+	LargePrint
 
