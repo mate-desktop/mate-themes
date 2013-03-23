@@ -340,11 +340,11 @@
 
 <!-- ::: TITLES ::: -->
 <draw_ops name="title_text">
-	<title color="shade/gtk:bg[SELECTED]/0.7" x="((3 `max` (width-title_width)) / 2)" y="(((height - title_height) / 2) `max` 0) + 1"/>
-	<title color="shade/gtk:bg[SELECTED]/0.7" x="((3 `max` (width-title_width)) / 2)+1" y="(((height - title_height) / 2) `max` 0)"/>
-	<title color="shade/gtk:bg[SELECTED]/0.7" x="((3 `max` (width-title_width)) / 2)-1" y="(((height - title_height) / 2) `max` 0)"/>
-	<title color="shade/gtk:bg[SELECTED]/0.7" x="((3 `max` (width-title_width)) / 2)" y="(((height - title_height) / 2) `max` 0)-1"/>
-	<title color="#FFFFFF" x="(3 `max` (width-title_width)) / 2" y="(((height - title_height) / 2) `max` 0)"/>
+	<!--<title color="shade/gtk:bg[SELECTED]/0.7" x="((3 `max` (width-title_width)) / 2)" y="(((height - title_height) / 2) `max` 0) + 1"/>-->
+	<!--<title color="shade/gtk:bg[SELECTED]/0.7" x="((3 `max` (width-title_width)) / 2)+1" y="(((height - title_height) / 2) `max` 0)"/>-->
+	<!--<title color="shade/gtk:bg[SELECTED]/0.7" x="((3 `max` (width-title_width)) / 2)-1" y="(((height - title_height) / 2) `max` 0)"/>-->
+	<!--<title color="shade/gtk:bg[SELECTED]/0.7" x="((3 `max` (width-title_width)) / 2)" y="(((height - title_height) / 2) `max` 0)-1"/>-->
+	<title color="#5D6157" x="(3 `max` (width-title_width)) / 2" y="(((height - title_height) / 2) `max` 0)"/>
 </draw_ops>
 
 <draw_ops name="title_text_unfocused">
