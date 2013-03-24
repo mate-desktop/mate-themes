@@ -1,6 +1,5 @@
 THEMES = \
 	Atantla \
-	TraditionalOk \
 	AlaDelta \
 	Shiny \
 	Reverse \
