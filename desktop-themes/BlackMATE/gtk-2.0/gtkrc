@@ -9,7 +9,7 @@
 # Based on Murrine			#
 #########################################
 
-gtk_color_scheme = "bg_color:#3b3b3e\nbg_active_color:#666669\nscroll_slider:#3b3b3b"
+#gtk_color_scheme = "bg_color:#3b3b3e\nbg_active_color:#666669\nscroll_slider:#3b3b3b"
 
 gtk-auto-mnemonics = 1 # press alt for underline
 
@@ -73,16 +73,16 @@ style "murrine-default"
 	fg[SELECTED]      = "#ffffff"
 	fg[INSENSITIVE]   = "#b3b3b3"
 
-	bg[NORMAL]        = @bg_color
-	bg[PRELIGHT]      = shade (0.5, @bg_color)
-	bg[ACTIVE]        = shade (1.1, @bg_color)
-	bg[SELECTED]      = @bg_active_color # scaler trough, pressed buttons
-	bg[INSENSITIVE]   = @bg_color
+	bg[NORMAL]        = "#3b3b3e"
+	bg[PRELIGHT]      = shade (0.5, "#3b3b3e")
+	bg[ACTIVE]        = shade (1.1, "#3b3b3e")
+	bg[SELECTED]      = "#666669" # scaler trough, pressed buttons
+	bg[INSENSITIVE]   = "#3b3b3e"
 
-	base[NORMAL]      = @bg_color # for some old GTK2 apps
+	base[NORMAL]      = "#3b3b3e" # for some old GTK2 apps
 	base[PRELIGHT]    = "#ffffff"
-	base[ACTIVE]      = shade (1.22, @bg_active_color)
-	base[SELECTED]    = @bg_active_color # selected text
+	base[ACTIVE]      = shade (1.22, "#666669")
+	base[SELECTED]    = "#666669" # selected text
 	base[INSENSITIVE] = "#595959" # "#B3B3B3"
 
 	text[NORMAL]      = "#FFFFFF"
@@ -122,7 +122,7 @@ style "murrine-default"
 
 style "menu"
 {
-	bg[NORMAL]   = shade (0.9, @bg_active_color)
+	bg[NORMAL]   = shade (0.9, "#666669")
 	fg[NORMAL]   =  "#ffffff"
 	text[NORMAL] =  "#ffffff"
 
@@ -140,10 +140,10 @@ style "menu"
 style "menuitem"
 {
 	#fg[PRELIGHT]   = "#ffffff"
-	#bg[SELECTED]   = shade (1.08, @bg_color)
+	#bg[SELECTED]   = shade (1.08, "#3b3b3e")
 	fg[PRELIGHT]   = "#000000"
 	text[PRELIGHT] = "#000000"
-	bg[SELECTED]   = shade (4.2, @bg_color)
+	bg[SELECTED]   = shade (4.2, "#3b3b3e")
 
 	xthickness = 2
 	ythickness = 3
@@ -162,7 +162,7 @@ style "menubar-menuitem"
 {
 	fg[NORMAL]     = "#ffffff"
 	fg[PRELIGHT]   = "#ffffff"
-	bg[SELECTED]   = shade (1.2, @bg_active_color)
+	bg[SELECTED]   = shade (1.2, "#666669")
 
 	xthickness = 2
 	ythickness = 3
@@ -193,11 +193,11 @@ style "murrine-button"
 	#xthickness = 3
 	#ythickness = 3
 
-	bg[NORMAL]      = shade (0.9, @bg_color) #1.0
-	bg[PRELIGHT]    = shade (1.0, @bg_color)
-	#bg[SELECTED]    = shade (1.0, @bg_color)
-	bg[ACTIVE]      = shade (0.9, @bg_color)
-	bg[INSENSITIVE] = @bg_color
+	bg[NORMAL]      = shade (0.9, "#3b3b3e") #1.0
+	bg[PRELIGHT]    = shade (1.0, "#3b3b3e")
+	#bg[SELECTED]    = shade (1.0, "#3b3b3e")
+	bg[ACTIVE]      = shade (0.9, "#3b3b3e")
+	bg[INSENSITIVE] = "#3b3b3e"
 	fg[ACTIVE]      = "#ffffff"
 	fg[PRELIGHT]    = "#ffffff"
 
@@ -215,8 +215,8 @@ style "murrine-togglebutton"
 	fg[NORMAL]   = "#ffffff"
 	fg[ACTIVE]   = "#000000"
 	fg[PRELIGHT]   = "#000000"
-	bg[ACTIVE]   = shade (3.0, @bg_color)
-	bg[PRELIGHT] = shade (3.2, @bg_color)
+	bg[ACTIVE]   = shade (3.0, "#3b3b3e")
+	bg[PRELIGHT] = shade (3.2, "#3b3b3e")
 	engine "murrine"
 	{
 		gradient_shades = {3.0, 1.0, 0.6, 0.5}
@@ -227,7 +227,7 @@ style "murrine-menubar"
 {
 	#xthickness = 3
 	#ythickness = 0
-	#bg[NORMAL] = @bg_color
+	#bg[NORMAL] = "#3b3b3e"
 	fg[SELECTED] = "#ffffff"
 	engine "murrine"
 	{
@@ -239,7 +239,7 @@ style "murrine-toolbar"
 {
 	xthickness = 3
 	#ythickness = 0
-	#bg[NORMAL] = @bg_color
+	#bg[NORMAL] = "#3b3b3e"
 	engine "murrine"
 	{
 		gradient_shades = {0.6, 1.0, 1.32, 1.73}
@@ -268,9 +268,9 @@ style "murrine-progressbar"
 
 style "murrine-scale"
 {
-	bg[NORMAL]      = shade (0.95, @bg_color)
-	bg[PRELIGHT]    = shade (1.1, @bg_color)
-	bg[INSENSITIVE] = shade (0.99, @bg_color)
+	bg[NORMAL]      = shade (0.95, "#3b3b3e")
+	bg[PRELIGHT]    = shade (1.1, "#3b3b3e")
+	bg[INSENSITIVE] = shade (0.99, "#3b3b3e")
 
 	engine "murrine"
 	{
@@ -289,16 +289,16 @@ style "scrollbar"
 {
 	GtkScrollbar::slider-width = 11
 
-	bg[NORMAL]      = shade (2.5, @scroll_slider)
-	bg[PRELIGHT]    = shade (2.8, @scroll_slider)
-	bg[ACTIVE]      = shade (3.0, @scroll_slider)
-	bg[INSENSITIVE]	= shade (1.5, @scroll_slider)
+	bg[NORMAL]      = shade (2.5, "#3b3b3b")
+	bg[PRELIGHT]    = shade (2.8, "#3b3b3b")
+	bg[ACTIVE]      = shade (3.0, "#3b3b3b")
+	bg[INSENSITIVE]	= shade (1.5, "#3b3b3b")
 
 	engine "murrine"
 	{
 		#rgba = FALSE
 		border_shades = {0.3, 0.8} # draw a gradient on the border.
-		border_colors = { @bg_color,@bg_color }
+		border_colors = { "#3b3b3e", "#3b3b3e" }
 		#contrast = 1.0
 		glow_shade = 1.14   # sets glow amount for buttons or widgets
 		glowstyle = 0    # 0=top, 1=bottom, 2=top and bottom, 3=center (vertical), 4=center (horizontal) 
@@ -321,9 +321,9 @@ style "vscrollbar"
 
 style "murrine-radiocheck"
 {
-	bg[SELECTED] = shade (1.3, @bg_color)
-	bg[PRELIGHT] = shade (1.44, @bg_color)
-	bg[ACTIVE]   = shade (0.2, @bg_color)  # for Synaptic
+	bg[SELECTED] = shade (1.3, "#3b3b3e")
+	bg[PRELIGHT] = shade (1.44, "#3b3b3e")
+	bg[ACTIVE]   = shade (0.2, "#3b3b3e")  # for Synaptic
 	fg[ACTIVE]   = "#ffffff"  # for Synaptic
 	fg[PRELIGHT] = "#ffffff"  # for Synaptic
 	text[NORMAL] = "#ffffff"
@@ -378,7 +378,7 @@ style "misc-panel"
 
 	bg[NORMAL]   = "#4b4a46"  # for the (dark) Ambiance background
 	bg[PRELIGHT] = "#c6b9a6" #for the (dark) Ambiance background
-	bg[SELECTED] = shade (0.6, @bg_color)  # to be compatible with menus
+	bg[SELECTED] = shade (0.6, "#3b3b3e")  # to be compatible with menus
 	fg[NORMAL]   = "#FFFFFF"  # for dark panel
 	#fg[PRELIGHT] = "#FFFFFF"
 
@@ -442,7 +442,7 @@ style "combobox"
 	{
 		#rgba = FALSE
 		border_shades = {1.5, 1.2}
-		focus_color = shade (1.48, @bg_color)
+		focus_color = shade (1.48, "#3b3b3e")
 		contrast = 0.8
 	}
 }
@@ -456,7 +456,7 @@ style "comboboxentry"
 	{
 		#rgba = FALSE
 		border_shades = {1.5, 1.2}
-		focus_color = shade (1.48, @bg_color)
+		focus_color = shade (1.48, "#3b3b3e")
 		contrast = 0.8
 	}
 }
@@ -474,7 +474,7 @@ style "spinbutton"
 	{
 		gradient_shades = {2.5, 1.5, 0.8, 0.4}
 		border_shades = {2.6, 0.9}
-		focus_color = @bg_color
+		focus_color = "#3b3b3e"
 		contrast = 0.8
 	}
 }
@@ -483,10 +483,10 @@ style "murrine-notebook"
 {
 	#bg[ACTIVE]   = "#D0C9C2"
 	#bg[NORMAL]   = "#f5f2ef"
-	#bg[SELECTED] = @bg_color
+	#bg[SELECTED] = "#3b3b3e"
 
-	bg[NORMAL] = @bg_color	# selected tab
-	bg[ACTIVE] = shade (0.8, @bg_color)	# unselected tab
+	bg[NORMAL] = "#3b3b3e"	# selected tab
+	bg[ACTIVE] = shade (0.8, "#3b3b3e")	# unselected tab
 
 	xthickness = 3
 	ythickness = 3
@@ -531,7 +531,7 @@ style "chrome-gtk-frame"
 	ChromeGtkFrame::frame-gradient-color = "#444447"
 
 	ChromeGtkFrame::scrollbar-trough-color = "#ffffff"
-	ChromeGtkFrame::scrollbar-slider-prelight-color = "#C5C5C5"  #@bg_active_color
+	ChromeGtkFrame::scrollbar-slider-prelight-color = "#C5C5C5"  #"#666669"
 	ChromeGtkFrame::scrollbar-slider-normal-color = "#B3B3B3"
 }
 
