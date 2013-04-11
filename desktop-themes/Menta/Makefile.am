@@ -5,7 +5,6 @@ themedir = $(datadir)/themes/$(THEME_NAME)
 theme_DATA = \
 	COPYING \
 	index.theme \
-	panelbg.png \
 	README
 
 
