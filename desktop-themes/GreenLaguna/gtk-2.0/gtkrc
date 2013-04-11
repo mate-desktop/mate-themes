@@ -361,12 +361,16 @@ style "misc-panel"
 		roundness=3
 	}
 
-	bg[NORMAL]   = "#C2D0BD"  # for the (dark) Ambiance background
-	bg[PRELIGHT] = "#AEC6A6" #for the (dark) Ambiance background
+	bg[NORMAL]   = "#C2D0BD"  # for the (light) Ambiance background
+#	bg[NORMAL]   = "#5A6C5F"  # for the (dark) Ambiance background
+	bg[PRELIGHT] = "#AEC6A6" #for the (light) Ambiance background
+#	bg[PRELIGHT] = "#C7E3BE" #for the (dark) Ambiance background
 	bg[SELECTED] = shade (0.6, @bg_color)  # to be compatible with menus
+#	bg[SELECTED] = shade (1.08, @bg_color)  # to be compatible with menus (dark) Ambiance background
 	fg[NORMAL]   = "#000000"  # for light panel
 #	fg[NORMAL]   = "#FFFFFF"  # for dark panel
-	#fg[PRELIGHT] = "#FFFFFF"
+#	fg[PRELIGHT] = "#000000"  # for dark panel
+#	fg[SELECTED] = "#000000"  # for dark panel
 
 #	font_name = "Bitstream Charter Bold 9"
 	xthickness = 2
