@@ -9,12 +9,12 @@
 
 # NOTE: Uncommenting means to delete the "#" at the beginning of a line. Commenting means to add a "#" at the beginning of a line. The "#" tells the theme wether to ignore the specified line or not.
 
-# These are the defined colors for the theme, you can change them in GNOME's appearance preferences.
+# These are the defined colors for the theme, you can change them in MATE's appearance preferences.
 gtk_color_scheme = "bg_color:#dcdcdc\nselected_bg_color:#accd8a\nbase_color:#f7f7f7" # Background, base.
 gtk_color_scheme = "fg_color:#2c2c2c\nselected_fg_color:#f5f5f5\ntext_color:#2c2c2c" # Foreground, text.
 gtk_color_scheme = "tooltip_bg_color:#F5F5B5\ntooltip_fg_color:#000000" # Tooltips.
 gtk_color_scheme = "link_color:#08c" # Hyperlinks
-gtk_color_scheme = "bg_color_dark:#383838\ntext_color_dark:#FFF" # Dark colors
+gtk_color_scheme = "bg_color_dark:#3f3f3f\ntext_color_dark:#FFF" # Dark colors
 
 ### EXTERNAL FILES ###
 # This includes the file that handles the panels with a light grey background.
@@ -72,8 +72,8 @@ style "murrine-default" {
 	GtkRange	::stepper_spacing		= 0
 	GtkRange	::trough-under-steppers		= 0
 
-	GtkScale	::slider-length			= 14
-	GtkScale	::slider-width			= 14
+	GtkScale	::slider-length			= 16
+	GtkScale	::slider-width			= 16
 
 	GtkMenuBar	::internal-padding		= 0
 	GtkExpander	::expander-size			= 16
@@ -95,8 +95,8 @@ style "murrine-default" {
 	GtkEntry	::state-hint			= 0
 	GtkEntry	::progress-border		= { 2, 2, 2, 2 }
 
-	GtkProgressBar	::min-horizontal-bar-height	= 10
-	GtkProgressBar	::min-vertical-bar-width	= 10
+	GtkProgressBar	::min-horizontal-bar-height	= 16
+	GtkProgressBar	::min-vertical-bar-width	= 16
 	
 	#GtkToolbar	::shadow-type = GTK_SHADOW_NONE # Makes toolbars flat and unified.
 	#GtkMenuBar	::shadow-type = GTK_SHADOW_NONE # Makes menus flat and unified.
@@ -138,7 +138,7 @@ style "murrine-default" {
 	engine "murrine" {
 		animation		= FALSE
 		arrowstyle		= 1			# 0 = normal arrows, 1 = filled arrows		
-		border_shades		= {1.0, 0.7}		# gradient to draw on border		
+		border_shades		= {1.0, 0.8}		# gradient to draw on border		
 		colorize_scrollbar	= FALSE		
 		comboboxstyle		= 0			# 0 = normal combobox, 1 = colorized combobox below arrow		
 		contrast		= 0.4 			# 0.8 for less contrast, more than 1.0 for more contrast on borders
@@ -146,8 +146,8 @@ style "murrine-default" {
 		focus_color		= @selected_bg_color
 		focusstyle		= 3
 		glazestyle		= 1			# 0 = flat highlight, 1 = curved highlight, 2 = concave style, 3 = top curved highlight, 4 = beryl highlight
-		gradient_shades		= {1.1,1.1,0.95,0.95}	# Sets the gradients on the widgets.
-		glowstyle		= 4			# 0,1,2,3,4
+		gradient_shades		= {1.1,1.1,0.94,0.94}	# Sets the gradients on the widgets.
+		glowstyle		= 0			# 0,1,2,3,4
 		glow_shade		= 1.1
 		highlight_shade		= 1.0			# set highlight amount for buttons or widgets
 		lightborder_shade	= 1.1			# sets lightborder amount for buttons or widgets
@@ -166,7 +166,7 @@ style "murrine-default" {
 		separatorstyle		= 1			# 0 = Hard seperators 1 = Smooth seperators
 		sliderstyle		= 0			# 0 = nothing added, 1 = handles
 		stepperstyle		= 1			# 0 = standard, 1 = integrated stepper handles, 2 = unknown
-		progressbarstyle	= 0			# 0 = nothing, 1 = stripes, 2 = lines
+		progressbarstyle	= 1			# 0 = nothing, 1 = stripes, 2 = lines
 		shadow_shades		= {0.5, 0.0}		# gradient for shadows.		
 		textstyle		= 0			# 0 = normal text, 1 = inset		
 		toolbarstyle		= 2			# 0 = flat, 1 = glassy, 2 = gradient		
@@ -225,7 +225,9 @@ style "murrine-button" = "murrine-wider" {
   	engine "murrine" {
 		contrast		= .8
 		lightborder_shade	= 1.9
-		roundness		= 1
+		roundness		= 2
+		border_shades		= {0.95, 0.8}
+		shadow_shades		= {1.0, 0.1}
 	}
 }
 
@@ -244,6 +246,7 @@ style "murrine-notebook" = "murrine-notebook-bg" {
 		gradient_shades		= {1.28,1.28,0.87,0.87}
 		focusstyle		= 2
 		lightborder_shade	= 1.16
+		roundness		= 4
 	}
 }
 
@@ -361,7 +364,7 @@ style "murrine-progressbar" = "murrine-thin" {
 		trough_shades		= { 1.06, 1.16}
 		gradient_shades		= {0.95,0.95,1.1,1.1}
 		border_shades		= { 1.1, 1.1 }
-		roundness		= 0
+		roundness		= 20
 	}
 }
 
@@ -387,6 +390,111 @@ style "murrine-scale" = "murrine-wider" {
 		contrast	= .8
 		border_shades	= {1.0, 1.0}
 		trough_shades	= {1.06, 1.16}
+	}
+}
+
+style "pixmap-scale" {
+	engine "pixmap" {
+	image
+		{
+			function	= BOX
+			detail		= "trough"
+			file		= "widgets/Scale/trough-horizontal.png"
+			border		= { 2, 2, 0, 0 }
+			stretch		= TRUE
+			orientation	= HORIZONTAL
+		}
+	image
+		{
+			function	= BOX
+			detail		= "trough"
+			file		= "widgets/Scale/trough-vertical.png"
+			border		= { 0, 0, 2, 2 }
+			stretch		= TRUE
+			orientation	= VERTICAL
+		}
+
+# Horizontal
+
+	image
+		{
+			function	= SLIDER
+			state           = NORMAL
+			file		= "widgets/Others/null.png"
+			border		= { 0, 0, 0, 0 }
+			stretch		= FALSE
+			overlay_file	= "widgets/Scale/slider.png"
+			overlay_stretch	= FALSE
+			orientation	= HORIZONTAL
+		}
+	image
+		{
+			function	= SLIDER
+			state           = PRELIGHT
+			file		= "widgets/Others/null.png"
+			border		= { 0, 0, 0, 0 }
+			stretch		= FALSE
+			overlay_file	= "widgets/Scale/slider-hover.png"
+			overlay_stretch	= FALSE
+			orientation	= HORIZONTAL
+		}
+	image
+		{
+			function	= SLIDER
+			state           = INSENSITIVE
+			file		= "widgets/Others/null.png"
+			border		= { 0, 0, 0, 0 }
+			stretch		= FALSE
+			overlay_file	= "widgets/Scale/slider-ins.png"
+			overlay_stretch	= FALSE
+			orientation	= HORIZONTAL
+		}
+
+# Vertical
+
+	image
+		{
+			function	= SLIDER
+			state           = NORMAL
+			file		= "widgets/Others/null.png"
+			border		= { 0, 0, 0, 0 }
+			stretch		= FALSE
+			overlay_file	= "widgets/Scale/slider.png"
+			overlay_stretch	= FALSE
+			orientation	= VERTICAL
+		}
+	image
+		{
+			function	= SLIDER
+			state           = PRELIGHT
+			file		= "widgets/Others/null.png"
+			border		= { 0, 0, 0, 0 }
+			stretch		= FALSE
+			overlay_file	= "widgets/Scale/slider-hover.png"
+			overlay_stretch	= FALSE
+			orientation	= VERTICAL
+		}
+	image
+		{
+			function	= SLIDER
+			state           = INSENSITIVE
+			file		= "widgets/Others/null.png"
+			border		= { 0, 0, 0, 0 }
+			stretch		= FALSE
+			overlay_file	= "widgets/Scale/slider-ins.png"
+			overlay_stretch	= FALSE
+			orientation	= VERTICAL
+		}
+
+# Function below removes ugly boxes
+	image
+		{
+			function	= BOX
+			file        	= "widgets/Others/null.png"
+			border      	= { 3, 3, 3, 3 }
+			stretch         = TRUE
+		}
+
 	}
 }
 
@@ -484,9 +592,9 @@ class "GtkIconView"	style "murrine-default"
 class "GtkToolbar"	style "murrine-toolbar"
 
 class "GtkSpinButton"	style "murrine-spinbutton"
-class "GtkScale"	style "murrine-scale"
-class "GtkVScale"	style "murrine-scale"
-class "GtkHScale"	style "murrine-scale"
+class "GtkScale"	style "pixmap-scale"
+class "GtkVScale"	style "pixmap-scale"
+class "GtkHScale"	style "pixmap-scale"
 
 class "GtkScrollbar"	style "murrine-scrollbar"
 class "GtkVScrollbar"	style "murrine-scrollbar"

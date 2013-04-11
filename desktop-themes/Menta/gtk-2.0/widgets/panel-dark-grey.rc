@@ -6,12 +6,33 @@ style "theme-panel"
 # Disable (comment out) for normal panel backgrounds or to get a transparancy panel.
 	bg_pixmap[NORMAL] = "/Panel/panel-bg-dark-grey.png"
 
-	fg[NORMAL]	= "#F7F7F7"
-	fg[PRELIGHT]	= "#2C5C31"
-	fg[ACTIVE]	= "#F7F7F7"
-	text[NORMAL]	= "#F7F7F7"
-	text[PRELIGHT]	= "#2C5C31"
-	text[ACTIVE]	= "#F7F7F7"
+	base[NORMAL]		= @bg_color
+	base[PRELIGHT]		= shade (1.06, @bg_color)
+	base[INSENSITIVE]	= @bg_color
+	bg[NORMAL]			= "#80867A"
+	bg[PRELIGHT]		= shade (1.20, "#80867A")
+	bg[SELECTED]		= shade (0.90, @selected_bg_color)
+	bg[INSENSITIVE]		= "#80867A"
+	bg[ACTIVE]			= shade (0.8, "#80867A")
+	fg[NORMAL]			= "#F7F7F7"
+	fg[PRELIGHT]		= "#2C5C31"
+	fg[SELECTED]		= @selected_fg_color
+	fg[ACTIVE]			= "#F7F7F7"
+	fg[INSENSITIVE]		= "#f0f0f0"
+	text[NORMAL]		= "#F7F7F7"
+	text[PRELIGHT]		= "#2C5C31"
+	text[ACTIVE]		= "#F7F7F7"
+	text[SELECTED]		= @selected_fg_color
+	text[INSENSITIVE]	= "#f0f0f0"
+	
+	engine "murrine" {
+	}
+}
+
+style "theme-panel-buttons"
+{
+# Disable (comment out) for normal panel backgrounds or to get a transparancy panel.
+	bg_pixmap[NORMAL] = "/Panel/panel-bg-dark-grey.png"
 	
 	engine "pixmap" {
 		image {
@@ -105,8 +126,11 @@ widget "*indicator-applet*"		style "theme-panel"
 class "PanelApp*"			style "theme-panel"
 class "PanelToplevel*"			style "theme-panel"
 widget_class "*PanelToplevel*"		style "theme-panel"
-widget_class "*notif*"			style "theme-panel"
-widget_class "*Notif*"			style "theme-panel"
+widget_class "*PanelFrame*" 		style "theme-panel"
+widget_class "*PanelAppletFrame*" 	style "theme-panel"
+widget_class "*PanelWidget*.*"		style "theme-panel"
+#widget_class "*notif*"			style "theme-panel"
+#widget_class "*Notif*"			style "theme-panel"
 widget_class "*Tray*"			style "theme-panel" 
 widget_class "*tray*"			style "theme-panel"
 widget_class "*computertemp*"		style "theme-panel"
@@ -121,10 +145,20 @@ widget_class "*Notif*Brasero*"	style "theme-panel-light"
 widget "*Xfce*Panel*"	style "theme-panel"
 class "*Xfce*Panel*"	style "theme-panel"
 
+# Panel buttons
+widget_class "*Panel*GtkToggleButton"	style:highest "theme-panel-buttons"
+#widget_class "*Panel*GtkButton"	style:highest "theme-panel-buttons"
+
+# XFCE panel buttons
+widget "*Xfce*Panel*Button*"	style:highest "theme-panel-buttons"
+class "*Xfce*Panel*Button*"	style:highest "theme-panel-buttons"
+widget_class "*LauncherPlugin*"	style:highest "theme-panel-buttons"
+widget_class "*ActionsPlugin*"	style:highest "theme-panel-buttons"
+
 # lxpanel and fbpanel
-widget "*.tclock.*"		style "theme-panel"
-widget "*.taskbar.*"		style "theme-panel"
-widget_class "*GtkBgbox*"	style "theme-panel"
+widget "*.tclock.*"		style "theme-panel-buttons"
+widget "*.taskbar.*"		style "theme-panel-buttons"
+widget_class "*GtkBgbox*"	style "theme-panel-buttons"
 
 # Make sure panel text color doesn't change
 widget_class "*Panel*MenuBar*"		style "theme-main-menu-text"
@@ -159,3 +193,12 @@ engine "pixmap" {
 }
 
 widget_class "*PanelToplevel*" style "panel-arrow-remove"
+
+# Fix xfce-notifyd button
+style "xfce-notifyd-button" {
+	fg[NORMAL]	= @text_color
+	fg[PRELIGHT]	= @text_color
+	fg[ACTIVE]	= @text_color
+}
+
+widget_class "XfceNotifyWindow.*.GtkButton*" style "xfce-notifyd-button"
