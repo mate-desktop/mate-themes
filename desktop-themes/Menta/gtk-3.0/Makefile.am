@@ -4,7 +4,7 @@ themedir = $(datadir)/themes/Menta/gtk-3.0
 theme_DATA = \
 	gnome-applications.css \
 	gtk.css \
-	gtk-fallback.css
+	gtk-fallback.css \
 	gtk-main.css \
 	gtk-main-common.css \
 	gtk-widgets.css \
