@@ -156,9 +156,9 @@ widget_class "*LauncherPlugin*"	style:highest "theme-panel-buttons"
 widget_class "*ActionsPlugin*"	style:highest "theme-panel-buttons"
 
 # lxpanel and fbpanel
-+widget "*.tclock.*"		style "theme-panel-buttons"
-+widget "*.taskbar.*"		style "theme-panel-buttons"
-+widget_class "*GtkBgbox*"	style "theme-panel-buttons"
+widget "*.tclock.*"		style "theme-panel-buttons"
+widget "*.taskbar.*"		style "theme-panel-buttons"
+widget_class "*GtkBgbox*"	style "theme-panel-buttons"
 
 # Make sure panel text color doesn't change
 widget_class "*Panel*MenuBar*"		style "theme-main-menu-text"
