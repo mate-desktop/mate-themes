@@ -1751,11 +1751,12 @@ GtkComboBox .button *:hover {
 	background-image: none;
 	border-style: solid;
 	-GtkRange-trough-border: 0;
-	-GtkScrollbar-has-backward-stepper: false;
-	-GtkScrollbar-has-forward-stepper: false;
+	-GtkScrollbar-has-backward-stepper: true;
+	-GtkScrollbar-has-forward-stepper: true;
 	-GtkRange-slider-width: 13;
 	-GtkScrollbar-min-slider-length: 42; /* minimum size for the slider. sadly can't be in '.slider' where it belongs */
 
+	-GtkRange-stepper-size: 16;
 	-GtkRange-stepper-spacing: 0;
 	-GtkRange-trough-under-steppers: 1;
 }
