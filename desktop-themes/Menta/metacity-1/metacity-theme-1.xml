@@ -6,7 +6,7 @@
 	<author>Wolfgang Ulbrich</author>
 	<copyright>GPL</copyright>
 	<date>April 2013</date>
-	<description>Menta Metacity theme</description>
+	<description>Metacity theme</description>
 </info>
 
 <!-- General window layout -->
@@ -20,7 +20,7 @@
 	<distance name="button_height" value="24"/>
 	<distance name="title_vertical_pad" value="8"/>
 	<border name="title_border" left="2" right="2" top="0" bottom="0"/>
-	<border name="button_border" left="0" right="0" top="0" bottom="0"/>
+	<border name="button_border" left="0" right="0" top="4" bottom="0"/>
 </frame_geometry>
 
 <frame_geometry name="frame_geometry_abnormal" title_scale="medium" rounded_top_left="false" rounded_top_right="false">
@@ -78,8 +78,7 @@
 	<!-- Background gradient -->
 	<gradient type="vertical" x="0" y="0" width="width" height="top_height">
 		<color value="#e8e8e8" />
-		<color value="#e2e2e2" />
-		<color value="#dcdcdc" />
+		<color value="#d2d2d2" />
 	</gradient>
 	
 	<!-- Titlebar outline -->
@@ -107,8 +106,7 @@
 	<!-- Background gradient -->
 	<gradient type="vertical" x="0" y="0" width="width+9" height="height">
 		<color value="#e8e8e8" />
-		<color value="#e2e2e2" />
-		<color value="#dcdcdc" />
+		<color value="#d2d2d2" />
 	</gradient>
 
 	<!-- Titlebar outline -->
@@ -140,8 +138,7 @@
 	<!-- Background gradient -->
 	<gradient type="vertical" x="0" y="0" width="width" height="top_height">
 		<color value="#e8e8e8" />
-		<color value="#e2e2e2" />
-		<color value="#dcdcdc" />
+		<color value="#d2d2d2" />
 	</gradient>
 	
 	<!-- Topmost dark line -->
@@ -154,8 +151,7 @@
 	<!-- Background gradient -->
 	<gradient type="vertical" x="0" y="0" width="width" height="top_height">
 		<color value="#e8e8e8" />
-		<color value="#e2e2e2" />
-		<color value="#dcdcdc" />
+		<color value="#d2d2d2" />
 	</gradient>
 	
 	<!-- Topmost dark line -->
@@ -287,76 +283,76 @@
    		<image filename="menu_prelight.png" x="0" y="1" width="object_width" height="object_height"/>
 	</draw_ops>
 	<draw_ops name="minimize_focused_normal">
-		<image filename="minimize_focused_normal.png" x="0" y="1" width="object_width" height="object_height"/>
+		<image filename="minimize_focused_normal.svg" x="0" y="1" width="object_width" height="object_height"/>
 	</draw_ops>
 	<draw_ops name="minimize_focused_prelight">
-		<image filename="minimize_focused_prelight.png" x="0" y="1" width="object_width" height="object_height"/>
+		<image filename="minimize_focused_prelight.svg" x="0" y="1" width="object_width" height="object_height"/>
 	</draw_ops>
 	<draw_ops name="minimize_focused_pressed">
-		<image filename="minimize_focused_pressed.png" x="0" y="1" width="object_width" height="object_height"/>
+		<image filename="minimize_focused_pressed.svg" x="0" y="1" width="object_width" height="object_height"/>
 	</draw_ops>
 	<draw_ops name="minimize_unfocused_normal">
-		<image filename="minimize_unfocused.png" x="0" y="1" width="object_width" height="object_height"/>
+		<image filename="minimize_unfocused.svg" x="0" y="1" width="object_width" height="object_height"/>
 	</draw_ops>
 	<draw_ops name="minimize_unfocused_prelight">
-		<image filename="minimize_unfocused_prelight.png" x="0" y="1" width="object_width" height="object_height"/>
+		<image filename="minimize_unfocused_prelight.svg" x="0" y="1" width="object_width" height="object_height"/>
 	</draw_ops>
 	<draw_ops name="minimize_unfocused_pressed">
-		<image filename="minimize_unfocused_prelight.png" x="0" y="1" width="object_width" height="object_height"/>
+		<image filename="minimize_unfocused_prelight.svg" x="0" y="1" width="object_width" height="object_height"/>
 	</draw_ops>
 	<draw_ops name="maximize_focused_normal">
-		<image filename="maximize_focused_normal.png" x="0" y="1" width="object_width" height="object_height"/>
+		<image filename="maximize_focused_normal.svg" x="0" y="1" width="object_width" height="object_height"/>
 	</draw_ops>
 	<draw_ops name="maximize_focused_prelight">
-		<image filename="maximize_focused_prelight.png" x="0" y="1" width="object_width" height="object_height"/>
+		<image filename="maximize_focused_prelight.svg" x="0" y="1" width="object_width" height="object_height"/>
 	</draw_ops>
 	<draw_ops name="maximize_focused_pressed">
-		<image filename="maximize_focused_pressed.png" x="0" y="1" width="object_width" height="object_height"/>
+		<image filename="maximize_focused_pressed.svg" x="0" y="1" width="object_width" height="object_height"/>
 	</draw_ops>
 	<draw_ops name="maximize_unfocused_normal">
-		<image filename="maximize_unfocused.png" x="0" y="1" width="object_width" height="object_height"/>
+		<image filename="maximize_unfocused.svg" x="0" y="1" width="object_width" height="object_height"/>
 	</draw_ops>
 	<draw_ops name="maximize_unfocused_prelight">
-		<image filename="maximize_unfocused_prelight.png" x="0" y="1" width="object_width" height="object_height"/>
+		<image filename="maximize_unfocused_prelight.svg" x="0" y="1" width="object_width" height="object_height"/>
 	</draw_ops>
 	<draw_ops name="maximize_unfocused_pressed">
-		<image filename="maximize_unfocused_prelight.png" x="0" y="1" width="object_width" height="object_height"/>
+		<image filename="maximize_unfocused_prelight.svg" x="0" y="1" width="object_width" height="object_height"/>
 	</draw_ops>
 	<draw_ops name="unmaximize_focused_normal">
-		<image filename="unmaximize_focused_normal.png" x="0" y="1" width="object_width" height="object_height"/>
+		<image filename="unmaximize_focused_normal.svg" x="0" y="1" width="object_width" height="object_height"/>
 	</draw_ops>
 	<draw_ops name="unmaximize_focused_prelight">
-		<image filename="unmaximize_focused_prelight.png" x="0" y="1" width="object_width" height="object_height"/>
+		<image filename="unmaximize_focused_prelight.svg" x="0" y="1" width="object_width" height="object_height"/>
 	</draw_ops>
 	<draw_ops name="unmaximize_focused_pressed">
-		<image filename="unmaximize_focused_pressed.png" x="0" y="1" width="object_width" height="object_height"/>
+		<image filename="unmaximize_focused_pressed.svg" x="0" y="1" width="object_width" height="object_height"/>
 	</draw_ops>
 	<draw_ops name="unmaximize_unfocused_normal">
-		<image filename="unmaximize_unfocused.png" x="0" y="1" width="object_width" height="object_height"/>
+		<image filename="unmaximize_unfocused.svg" x="0" y="1" width="object_width" height="object_height"/>
 	</draw_ops>
 	<draw_ops name="unmaximize_unfocused_prelight">
-		<image filename="unmaximize_unfocused_prelight.png" x="0" y="1" width="object_width" height="object_height"/>
+		<image filename="unmaximize_unfocused_prelight.svg" x="0" y="1" width="object_width" height="object_height"/>
 	</draw_ops>
 	<draw_ops name="unmaximize_unfocused_pressed">
-		<image filename="unmaximize_unfocused_prelight.png" x="0" y="1" width="object_width" height="object_height"/>
+		<image filename="unmaximize_unfocused_prelight.svg" x="0" y="1" width="object_width" height="object_height"/>
 	</draw_ops>
 	<draw_ops name="close_focused_normal">
-		<image filename="close_focused_normal.png" x="0" y="1" width="object_width" height="object_height"/>
+		<image filename="close_focused_normal.svg" x="0" y="1" width="object_width" height="object_height"/>
 	</draw_ops>
 	<draw_ops name="close_focused_prelight">
-		<image filename="close_focused_prelight.png" x="0" y="1" width="object_width" height="object_height"/>
+		<image filename="close_focused_prelight.svg" x="0" y="1" width="object_width" height="object_height"/>
 	</draw_ops>
 	<draw_ops name="close_focused_pressed">
-		<image filename="close_focused_pressed.png" x="0" y="1" width="object_width" height="object_height"/>
+		<image filename="close_focused_pressed.svg" x="0" y="1" width="object_width" height="object_height"/>
 	</draw_ops>
 	<draw_ops name="close_unfocused_normal">
-		<image filename="close_unfocused.png" x="0" y="1" width="object_width" height="object_height"/>
+		<image filename="close_unfocused.svg" x="0" y="1" width="object_width" height="object_height"/>
 	</draw_ops>
 	<draw_ops name="close_unfocused_prelight">
-		<image filename="close_unfocused_prelight.png" x="0" y="1" width="object_width" height="object_height"/>
+		<image filename="close_unfocused_prelight.svg" x="0" y="1" width="object_width" height="object_height"/>
 	</draw_ops>
 	<draw_ops name="close_unfocused_pressed">
-		<image filename="close_unfocused_prelight.png" x="0" y="1" width="object_width" height="object_height"/>
+		<image filename="close_unfocused_prelight.svg" x="0" y="1" width="object_width" height="object_height"/>
 	</draw_ops>
 
 <!-- FRAME STYLE -->

@@ -12,9 +12,11 @@ EXTRA_DIST = $(theme_DATA)
 SUBDIRS = \
 	Panel \
 	Null \
-	Others
+	Others \
+	Scale
 
 DIST_SUBDIRS = \
 	Panel \
 	Null \
-	Others
+	Others \
+	Scale
