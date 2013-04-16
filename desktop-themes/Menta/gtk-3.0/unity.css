@@ -1,0 +1,29 @@
+UnityPanelWidget,
+.unity-panel {
+	background-image: linear-gradient(to bottom,
+		shade (@theme_bg_color, 1.15),
+		shade (@theme_bg_color, 1.0));
+	border-top-color: shade (@theme_bg_color, 1.6);
+	border-style: solid;
+	border-width: 0;
+}
+
+.unity-panel.menubar,
+.unity-panel .menubar {
+	color: @theme_fg_color;
+	text-shadow: 0 1px @button_text_shadow;
+}
+
+.unity-panel.menuitem,
+.unity-panel .menuitem {
+	border-width: 1px 1px 0 1px;
+	text-shadow: 0 1px @button_text_shadow;
+}
+
+.unity-panel.menubar.menuitem:hover,
+.unity-panel.menubar .menuitem *:hover {
+	background-image: linear-gradient(to bottom,
+		shade (@theme_selected_bg_color, 0.96),
+		shade (@theme_selected_bg_color, 1.15));
+	color: @selected_fg_color;
+}

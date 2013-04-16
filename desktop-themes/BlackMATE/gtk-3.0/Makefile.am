@@ -4,8 +4,6 @@ themedir = $(datadir)/themes/$(THEME_NAME)/gtk-3.0
 
 theme_DATA = \
 	gtk.css \
-	gtk.gresource \
-	gtk.gresource.xml \
 	gtk-dark.css \
 	gtk-main.css \
 	gtk-main-dark.css \

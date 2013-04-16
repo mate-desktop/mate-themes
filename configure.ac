@@ -228,8 +228,8 @@ desktop-themes/Menta/gtk-2.0/widgets/Makefile
 desktop-themes/Menta/gtk-2.0/widgets/Null/Makefile
 desktop-themes/Menta/gtk-2.0/widgets/Others/Makefile
 desktop-themes/Menta/gtk-2.0/widgets/Panel/Makefile
+desktop-themes/Menta/gtk-2.0/widgets/Scale/Makefile
 desktop-themes/Menta/gtk-3.0/Makefile
-desktop-themes/Menta/gtk-3.0/apps/Makefile
 desktop-themes/Menta/gtk-3.0/assets/Makefile
 desktop-themes/Menta/gtk-3.0/borders/Makefile
 desktop-themes/Menta/metacity-1/Makefile
