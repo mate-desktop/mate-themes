@@ -12,7 +12,6 @@ EXTRA_DIST = $(theme_DATA)
 
 SUBDIRS = \
 	cinnamon \
-	gnome-shell \
 	gtk-2.0	\
 	gtk-3.0	\
 	metacity-1 \
@@ -21,7 +20,6 @@ SUBDIRS = \
 
 DIST_SUBDIRS = \
 	cinnamon \
-	gnome-shell \
 	gtk-2.0	\
 	gtk-3.0	\
 	metacity-1 \

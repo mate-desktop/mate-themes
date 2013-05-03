@@ -194,8 +194,6 @@ desktop-themes/BlackMATE/gtk-2.0/Styles/Makefile
 desktop-themes/BlackMATE/gtk-3.0/Makefile
 desktop-themes/BlackMATE/gtk-3.0/assets/Makefile
 desktop-themes/BlackMATE/metacity-1/Makefile
-desktop-themes/BlackMATE/gnome-shell/Makefile
-desktop-themes/BlackMATE/gnome-shell/dashtodock/Makefile
 desktop-themes/BlackMATE/cinnamon/Makefile
 desktop-themes/ContrastHigh/Makefile
 desktop-themes/ContrastHighInverse/Makefile
@@ -217,7 +215,6 @@ desktop-themes/LargePrint/Makefile
 desktop-themes/LargePrint/index.theme.in
 desktop-themes/Menta/Makefile
 desktop-themes/Menta/cinnamon/Makefile
-desktop-themes/Menta/gnome-shell/Makefile
 desktop-themes/Menta/gtk-2.0/Makefile
 desktop-themes/Menta/gtk-2.0/apps/Makefile
 desktop-themes/Menta/gtk-2.0/apps/Caja/Makefile
