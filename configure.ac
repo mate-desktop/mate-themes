@@ -196,6 +196,10 @@ desktop-themes/BlackMATE/gtk-3.0/assets/Makefile
 desktop-themes/BlackMATE/metacity-1/Makefile
 desktop-themes/BlackMATE/cinnamon/Makefile
 desktop-themes/ContrastHigh/Makefile
+desktop-themes/ContrastHigh/gtk-2.0/Makefile
+desktop-themes/ContrastHigh/gtk-2.0/gtkrc
+desktop-themes/ContrastHigh/gtk-3.0/Makefile
+desktop-themes/ContrastHigh/metacity-1/Makefile
 desktop-themes/ContrastHighInverse/Makefile
 desktop-themes/ContrastHighLargePrint/Makefile
 desktop-themes/ContrastHighLargePrint/index.theme.in
@@ -257,11 +261,6 @@ desktop-themes/TraditionalOkTest/metacity-1/Makefile
 marco-themes/Makefile
 gtk-themes/Makefile
 gtk-themes/AlaDelta/Makefile
-gtk-themes/ContrastHigh/Makefile
-gtk-themes/ContrastHigh/gtk-2.0/Makefile
-gtk-themes/ContrastHigh/gtk-2.0/gtkrc
-gtk-themes/ContrastHigh/gtk-3.0/Makefile
-gtk-themes/ContrastHigh/metacity-1/Makefile
 gtk-themes/ContrastHighInverse/Makefile
 gtk-themes/ContrastHighInverse/gtkrc
 gtk-themes/ContrastHighLargePrint/Makefile

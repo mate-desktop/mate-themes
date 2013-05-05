@@ -1,11 +1,25 @@
 THEME_NAME=ContrastHigh
-THEME_IN_FILES=index.theme.in
-
-@INTLTOOL_THEME_RULE@ 
-
+ 
 themedir = $(datadir)/themes/$(THEME_NAME)
 
 theme_DATA = index.theme
 
-DISTCLEANFILES=index.theme
-EXTRA_DIST=index.theme.in
+EXTRA_DIST = $(theme_DATA)
+
+SUBDIRS = \
+   gtk-3.0 \
+   gtk-2.0 \
+   metacity-1
+
+DIST_SUBDIRS = \
+   gtk-3.0 \
+   gtk-2.0 \
+   metacity-1
+
+CLEANFILES = index.theme
+
+index.theme: index.theme.in
+	$(AM_V_GEN)sed \
+		-e s!\@BACKGROUND_DIR\@!$(datadir)/backgrounds/mate/abstract! \
+		< $< > $@
+
