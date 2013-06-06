@@ -1,5 +1,4 @@
 SUBDIRS = \
-	Aldabra \
 	BlackMATE \
 	Quid \
 	TraditionalOk \
@@ -19,7 +18,6 @@ SUBDIRS = \
 	$(TEST_THEMES)
 
 DIST_SUBDIRS = \
-	Aldabra \
 	BlackMATE \
 	Quid \
 	TraditionalOk \

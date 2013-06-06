@@ -181,12 +181,6 @@ common/Makefile
 cursor-themes/Makefile
 desktop-themes/Makefile
 desktop-themes/AlaDelta/Makefile
-desktop-themes/Aldabra/Makefile
-desktop-themes/Aldabra/gtk-2.0/Makefile
-desktop-themes/Aldabra/gtk-2.0/assets/Makefile
-desktop-themes/Aldabra/gtk-3.0/Makefile
-desktop-themes/Aldabra/gtk-3.0/assets/Makefile
-desktop-themes/Aldabra/metacity-1/Makefile
 desktop-themes/BlackMATE/Makefile
 desktop-themes/BlackMATE/gtk-2.0/Makefile
 desktop-themes/BlackMATE/gtk-2.0/assets/Makefile
