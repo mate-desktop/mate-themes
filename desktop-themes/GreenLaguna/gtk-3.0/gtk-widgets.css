@@ -1136,10 +1136,15 @@ GtkTreeMenu .menuitem * {
 
 .menu .menuitem,
 .menu .menuitem GtkImage {
+	background-color: shade(@theme_selected_bg_color,0.9);
 	color: @theme_selected_fg_color;
 }
 
 .menu .menuitem GtkImage:hover {
+	background-color: shade(@theme_selected_bg_color,1.7);
+	background-image:  linear-gradient(to bottom,
+	                                  @theme_bg_color,
+	                                  shade(@theme_bg_color, 0.55));
 	color: @theme_fg_color;
 }
 
