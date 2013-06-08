@@ -25,7 +25,7 @@
 @define-color keyboard_focus_border shade(@bg_color, 0.8);
 
 @define-color button_gradient_color_a shade(@theme_bg_color, 1.4);
-@define-color button_gradient_color_b #bab2aa; /*shade(@theme_bg_color, 0.75);*/
+@define-color button_gradient_color_b shade(@theme_bg_color, 0.75);
 @define-color button_border #AAABA9;
 
 @define-color button_hover_gradient_color_a shade(@theme_bg_color, 1.1);
