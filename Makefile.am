@@ -8,8 +8,6 @@ SUBDIRS = \
 	po
 
 EXTRA_DIST = \
-	mate-themes.spec \
-	mate-themes.spec.in \
 	low-contrast-preset.scm \
 	intltool-extract.in \
 	intltool-merge.in \

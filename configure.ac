@@ -3,7 +3,7 @@ AC_PREREQ(2.53)
 AC_INIT([mate-themes], [1.6.0], [http://www.mate-desktop.org])
 AC_CONFIG_SRCDIR([icon-themes])
 
-AM_INIT_AUTOMAKE([1.9 tar-ustar])
+AM_INIT_AUTOMAKE([1.9 tar-ustar dist-xz])
 
 # Enable silent build rules by default, requires at least
 # Automake-1.11. Disable by either passing --disable-silent-rules to
@@ -29,8 +29,7 @@ AC_SUBST(ACLOCAL_AMFLAGS, "\${ACLOCAL_FLAGS}")
 # Check GTK+ theme engines
 PKG_CHECK_MODULES(THEME_ENGINE,
  [gtk+-2.0 >= 2.0.0 dnl
-  gdk-pixbuf-2.0 >= 2.0.0 dnl
-  gtk-engines-2 >= 2.15.3 ])
+  gdk-pixbuf-2.0 >= 2.0.0 ])
 
 GTK_VERSION=`$PKG_CONFIG --variable=gtk_binary_version gtk+-2.0`
 AC_SUBST(GTK_VERSION)

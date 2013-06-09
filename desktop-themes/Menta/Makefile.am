@@ -7,8 +7,7 @@ theme_DATA = \
 	index.theme \
 	README
 
-
-EXTRA_DIST = $(theme_DATA)
+EXTRA_DIST = $(theme_DATA) index.theme.in
 
 SUBDIRS = \
 	cinnamon \

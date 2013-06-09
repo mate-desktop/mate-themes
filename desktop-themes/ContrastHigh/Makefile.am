@@ -4,7 +4,7 @@ themedir = $(datadir)/themes/$(THEME_NAME)
 
 theme_DATA = index.theme
 
-EXTRA_DIST = $(theme_DATA)
+EXTRA_DIST = $(theme_DATA) index.theme.in
 
 SUBDIRS = \
    gtk-3.0 \
