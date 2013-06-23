@@ -376,9 +376,9 @@ style "misc-panel"
 		roundness=3
 	}
 
-	bg[NORMAL]   = "#4b4a46"  # for the (dark) Ambiance background
+	bg[NORMAL]   = shade (0.9, "#666669")  # for the (dark) Ambiance background
 	bg[PRELIGHT] = "#c6b9a6" #for the (dark) Ambiance background
-	bg[SELECTED] = shade (0.6, "#3b3b3e")  # to be compatible with menus
+#	bg[SELECTED]   = shade (4.2, "#3b3b3e")  # to be compatible with menus
 	fg[NORMAL]   = "#FFFFFF"  # for dark panel
 	#fg[PRELIGHT] = "#FFFFFF"
 
