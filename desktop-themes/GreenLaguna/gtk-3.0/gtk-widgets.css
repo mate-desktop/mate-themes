@@ -25,6 +25,8 @@
 
 	-GtkToolItemGroup-expander-size: 12;
 	-GtkExpander-expander-size: 12;
+	-GtkTreeView-expander-size: 13;
+	-GtkTreeView-horizontal-separator: 4;
 	-GtkMenuBar-shadow-type: none;
 
 	-GtkMenu-horizontal-padding: 0;
@@ -41,12 +43,17 @@
 
 	-GtkWidget-focus-padding: 2;
 	-GtkWidget-focus-line-width: 1;
-	-adwaita-focus-border-color: @focus_border;
-	-adwaita-focus-border-radius: 2;
-	-adwaita-focus-border-dashes: 1;
 
 	-GtkWindow-resize-grip-width: 10;
-	-GtkWindow-resize-grip-height: 10; 
+	-GtkWindow-resize-grip-height: 10;
+
+	/* We use the outline properties to signal the focus properties
+	 * to the adwaita engine: using real CSS properties is faster,
+	 * and we don't use any outlines for now.
+	 */
+	outline-color: @focus_border;
+	outline-style: dashed;
+	outline-offset: 2px;
 }
 
 /***************
@@ -510,8 +517,8 @@ GtkLevelBar.vertical {
 .level-bar.fill-block.empty-fill-block {
 	background-color: transparent;
 	background-image: linear-gradient(to bottom,
-					shade(@less_dark_color, 0.5),
-					shade(@less_dark_color, 1.7));
+					  shade(@theme_bg_color, 0.7),
+					  shade(@theme_bg_color, 1.2));
 }
 
 /*************
@@ -548,8 +555,6 @@ GtkLevelBar.vertical {
 	background-image: linear-gradient(to bottom,
 	                                  shade(@theme_bg_color, 1.1),
 	                                  shade(@theme_bg_color, 0.77));
-
-	-adwaita-focus-border-radius: 2;
 }
 
 .notebook tab:active {
@@ -639,13 +644,7 @@ GtkTreeView {
 	background-color: @theme_main_color;
 
 	-GtkTreeView-vertical-separator: 0;
-	-GtkTreeView-expander-size: 13;
-
-	-GtkWidget-focus-line-width: 1;
 	-GtkWidget-focus-padding: 1;
-	-adwaita-focus-border-radius: 2;
-	-adwaita-focus-border-dashes: 1;
-	-adwaita-focus-border-color: @keyboard_focus_border;
 }
 
 GtkTreeView row:selected {
@@ -849,9 +848,6 @@ GtkTreeMenu .menuitem * {
  ***********/
 .button {
 	padding: 0px;
-
-	-adwaita-focus-border-radius: 1;
-	/*-adwaita-focus-border-dashes: 0;*/
 	-GtkWidget-focus-line-width: 1;
 
 	border-radius: 3px;
@@ -862,6 +858,11 @@ GtkTreeMenu .menuitem * {
 	background-image: linear-gradient(to bottom,
 	                                  @button_gradient_color_a,
 	                                  @button_gradient_color_b);
+}
+
+.button.image-button,
+.primary-toolbar.toolbar .button.image-button {
+	padding: 3px 4px 4px;
 }
 
 .button GtkImage,
@@ -942,7 +943,7 @@ GtkTreeMenu .menuitem * {
 }
 
 /****************
- * Link Buttons *
+ * Linked Buttons *
  ****************/
 
 /* We don't make them different. */
@@ -1119,19 +1120,26 @@ GtkTreeMenu .menuitem * {
 	background-color: @theme_bg_color;
 	border-width: 0px;
 	border-style: none;
-	/*this has no effect anymore */
-	/*padding: 2px;*/
+	padding: 0px;
 	color: @theme_text_color;
 
 	-GtkWidget-window-dragging: true;
-	-GtkMenuBar-internal-padding: 0;
+	/*-GtkMenuBar-internal-padding: 0;*/
+}
+
+.menubar .menuitem {
+	padding: 3px 7px;
+}
+
+.menu .menuitem {
+	padding: 3px 4px;
 }
 
 .menubar .menuitem,
 .menu .menuitem {
 	border-width: 0px;
 	border-style: none;
-	padding: 3px 4px;
+	background-color: transparent;
 }
 
 .menu .menuitem,
@@ -1283,6 +1291,14 @@ GtkTreeMenu .menuitem * {
 	-GtkToolbar-button-relief: normal;
 }
 
+.toolbar .button.text-button {
+	padding: 2px 5px;
+}
+
+.toolbar .button.image-button {
+	padding: 5px 4px 4px 5px;
+}
+
 /********************
  * Primary Toolbars *
  ********************/
@@ -1310,8 +1326,6 @@ GtkTreeMenu .menuitem * {
 	border-color: transparent;
 	background-image: none;
 	background-color: transparent;
-
-	-adwaita-focus-border-radius: 2;
 }
 
 .toolbar .button:hover,
@@ -1408,10 +1422,38 @@ GtkTreeMenu .menuitem * {
 	                                  shade(@theme_bg_color, 1.5));
 }
 
+/***************
+ * Header bars *
+ ***************/
+.header-bar {
+	border-width: 0 0 1px;
+	border-style: solid;
+	padding: 0 1px;
+
+	background-color: @theme_bg_color;
+	background-image: linear-gradient(to bottom,
+	                                  @toolbar_gradient_base,
+	                                  shade(@theme_bg_color, 1.6));
+	border-color: alpha(@frame_color, 0.6);
+}
+
+.notebook GtkContainer .header-bar {
+	border-color: alpha(@frame_color, 0.6);
+}
+
+
+.header-bar .button.text-button {
+	padding: 2px 16px;
+}
+
+.header-bar .button.image-button {
+	padding: 5px 4px 4px 5px;
+}
+
 /*******
  * OSD *
  *******/
-GtkWindow.osd {
+.background.osd {
 	color: @osd_fg;
 	background-image: none;
 	background-color: @osd_bg;
@@ -1421,6 +1463,8 @@ GtkOverlay.osd {
 	background-color: transparent;
 }
 
+.osd.button,
+.osd.button:active,
 .osd .button,
 .osd .button:active {
 	border-width: 1px;
@@ -1430,6 +1474,7 @@ GtkOverlay.osd {
 	border-radius: 5px;
 }
 
+.osd.button,
 .osd .button {
 	padding: 4px;
 	background-image: linear-gradient(to bottom,
@@ -1441,22 +1486,28 @@ GtkOverlay.osd {
 	icon-shadow: 0 -1px @osd_button_shadow;
 }
 
+.osd.button,
+.osd.button:prelight,
+.osd.button:active,
 .osd .button,
 .osd .button:prelight,
 .osd .button:active {
 	background-color: transparent;
 }
 
+.osd.button:insensitive,
 .osd .button:insensitive {
 	background-image: none;
 	background-color: @osd_button_bg_insensitive;
 }
 
+.osd.button:active:insensitive,
 .osd .button:active:insensitive {
 	background-image: none;
 	background-color: @osd_button_bg_insensitive_active;
 }
 
+.osd.button *:hover,
 .osd .button *:hover {
 	color: @osd_button_fg_hover;
 }
@@ -1466,11 +1517,14 @@ GtkOverlay.osd {
 	color: @osd_button_fg_active;
 }
 
+.osd.button *:insensitive,
+.osd.button *:insensitive:active,
 .osd .button *:insensitive,
 .osd .button *:insensitive:active {
 	color: @osd_button_fg_insensitive;
 }
 
+.osd.button:hover,
 .osd .button:hover {
 	background-image: linear-gradient(to bottom,
 	                                  @osd_button_bg_hover_a,
@@ -1478,12 +1532,25 @@ GtkOverlay.osd {
 	                                  @osd_button_bg_hover_c);
 }
 
+.osd.button:active,
+.osd.button:active:hover,
 .osd .button:active,
-.osd .button:active:hover {
+.osd .button:active:hover,
+.osd GtkMenuButton.button:active {
 	background-image: linear-gradient(to bottom,
 	                                  @osd_button_bg_active_a,
 	                                  @osd_button_bg_active_b 68%,
 	                                  @osd_button_bg_active_c);
+}
+
+.osd GtkMenuButton.button:active {
+    background-color: transparent;
+    border-color: @osd_button_border;
+}
+
+.osd GtkMenuButton.button *:active {
+    color: @osd_button_fg_active;
+    text-shadow: 0 -1px @osd_button_shadow;
 }
 
 .osd.toolbar {
@@ -1555,14 +1622,16 @@ GtkOverlay.osd {
 	background-color: transparent;
 }
 
-.osd GtkProgressBar {
+.osd GtkProgressBar,
+GtkProgressBar.osd {
 	padding: 0;
 	-GtkProgressBar-xspacing: 0;
 	-GtkProgressBar-yspacing: 3px;
 	-GtkProgressBar-min-horizontal-bar-height: 3px;
 }
 
-.osd GtkProgressBar.trough {
+.osd GtkProgressBar.trough,
+GtkProgressBar.osd.trough {
 	padding: 0;
 	border-image: none;
 	border-style: none;
@@ -1572,7 +1641,8 @@ GtkOverlay.osd {
 	border-radius: 0;
 }
 
-.osd GtkProgressBar.progressbar {
+.osd GtkProgressBar.progressbar,
+GtkProgressBar.osd.progressbar {
 	border-style: none;
 	background-color: @theme_selected_bg_color;
 	background-image: none;
@@ -1733,9 +1803,9 @@ GtkIconView.view.cell:selected:focus {
 	/* FIXME: this probably needs to be better;
 	 * see https://bugzilla.gnome.org/show_bug.cgi?id=644157
 	 */
-	-adwaita-focus-border-color: @progressbar_border;
-	-adwaita-focus-border-radius: 3;
-	-adwaita-focus-border-dashes: 0;
+	outline-color: @progressbar_border;
+	outline-style: solid;
+	outline-offset: 3px;
 }
 
 /* row as a separator */
@@ -1874,7 +1944,7 @@ GtkRadioButton:selected:focus {
 	background-color: @content_view_bg;
 }
 
-.content-view.view:prelight {
+.content-view.view:hover {
 	background-color: shade(@content_view_bg, 1.1);
 }
 
@@ -1906,7 +1976,7 @@ GtkIconView.content-view.check:active {
 	background-color: transparent;
 }
 
-GtkIconView.content-view.check:prelight,
+GtkIconView.content-view.check:hover,
 GtkIconView.content-view.check:insensitive,
 GtkIconView.content-view.check:selected {
 	background-color: transparent;
