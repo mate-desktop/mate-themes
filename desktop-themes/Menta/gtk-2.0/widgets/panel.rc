@@ -77,6 +77,12 @@ style "theme-panel-buttons"
 	}
 }
 
+style "theme-applet"
+{
+  fg[NORMAL] = "#000000"
+  bg[NORMAL] = @base_color
+}
+
 style "theme-panel-light"
 {
 	xthickness = 1
@@ -119,12 +125,13 @@ style "theme-panel-handle"
 }
 
 widget "*PanelWidget*"			style "theme-panel"
-widget "*PanelApplet*"			style "theme-panel"
+#widget "*PanelApplet*"			style "theme-panel"
 widget "*fast-user-switch*"		style "theme-panel"
 widget "*CPUFreq*Applet*"		style "theme-panel"
 widget "*indicator-applet*"		style "theme-panel"
-class "PanelApp*"			style "theme-panel"
+#class "PanelApp*"			style "theme-panel"
 class "PanelToplevel*"			style "theme-panel"
+widget_class "*MatePanelAppletFrameDBus*" style "theme-applet"
 widget_class "*PanelToplevel*"		style "theme-panel"
 widget_class "*PanelFrame*" 		style "theme-panel"
 widget_class "*PanelAppletFrame*" 	style "theme-panel"

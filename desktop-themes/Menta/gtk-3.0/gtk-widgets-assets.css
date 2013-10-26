@@ -7,6 +7,27 @@
 	background-image: url("assets/resize-grip.svg");
 }
 
+/*******************
+ * Pane separators *
+ *******************/
+/*.pane-separator {
+	background-image: url("assets/pane-separator-grip.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.pane-separator:hover {
+	background-image: url("assets/pane-separator-grip-prelight.svg");
+}
+
+.pane-separator.vertical {
+	background-image: url("assets/pane-separator-grip-vertical.svg");
+}
+
+.pane-separator.vertical:hover {
+	background-image: url("assets/pane-separator-grip-vertical-prelight.svg");
+}*/
+
 /*************************
  * Check and Radio items *
  *************************/
@@ -290,5 +311,5 @@ GtkSwitch.trough:active:insensitive {
  * Content view *
  ****************/
 .content-view.view {
-	/*background-image: url("assets/noise-texture-light.png");*/
+	/* background-image: url("assets/noise-texture-light.png"); */
 }

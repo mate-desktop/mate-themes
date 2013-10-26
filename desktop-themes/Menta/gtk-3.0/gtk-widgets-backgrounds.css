@@ -65,7 +65,7 @@
 		shade (@button_active_gradient_color_a, 1.05),
 		shade (@button_active_gradient_color_b, 1.05));
 	background-color: transparent;
-}	
+}
 
 /* Prelit button background */
 .button:hover,
@@ -195,7 +195,20 @@ GtkComboBox.combobox-entry .button:insensitive,
 	background-color: transparent;
 }
 
+.scale.trough {
+	background-image: linear-gradient(to bottom,
+		@scale_trough_bg_a,
+		@scale_trough_bg_b);
+}
+
+.scale.trough.vertical {
+	background-image: linear-gradient(to right,
+		@scale_trough_bg_a,
+		@scale_trough_bg_b);
+}
+
 /* Active switch background*/
+GtkSwitch.trough:active,
 .scale.progressbar {
 	background-image: linear-gradient(to bottom,
 		@switch_trough_active_bg_a,

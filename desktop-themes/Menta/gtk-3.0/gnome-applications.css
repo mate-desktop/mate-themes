@@ -1,5 +1,7 @@
 @define-color documents_emblem_bg @theme_selected_bg_color;
 @define-color documents_collection_bg @theme_bg_color;
+@define-color gedit_not_found_bg rgb (237, 54, 54);
+@define-color gedit_not_found_fg white;
 
 /****************
  * Applications *
@@ -10,7 +12,7 @@ SushiFontWidget {
 }
 
 /* gnome-terminal */
-TerminalScreen {
+VteTerminal {
 	background-color: @theme_base_color;
 	color: @theme_fg_color;
 	-TerminalScreen-background-darkness: 0.95;
@@ -47,10 +49,7 @@ TerminalWindow GtkNotebook.notebook {
 }
 
 NautilusWindow .sidebar .frame {
-	border-width: 1px 0 0 0;
-	border-style: solid;
-	border-color: @borders;
-	border-radius: 0;
+	border-style: none;
 }
 
 NautilusWindow * {
@@ -63,59 +62,38 @@ NautilusWindow .pane-separator {
 
 NautilusWindow > GtkGrid > .pane-separator,
 NautilusWindow > GtkGrid > .pane-separator:hover {
-	border-width: 1px 1px 0 0;
+	border-width: 0 1px 0 0;
 	border-style: solid;
 	border-color: @borders;
 	background-color: @sidebar_bg;
 	color: shade (@theme_bg_color, 0.9);
 }
 
-NautilusView.frame,
 NautilusNotebook.notebook {
 	border-right-width: 0;
 	border-left-width: 0;
 	border-bottom-width: 0;
 }
 
-NautilusNotebook.notebook tab.top,
-NautilusNotebook.notebook tab.bottom {
-	border-right-width: 1px;
-	border-left-width: 1px;
-	padding-top: 0;
-	padding-bottom: 0;
-}
-
-NautilusNotebook.notebook tab.top:active {
-	padding-top: 2px;
-}
-NautilusNotebook.notebook tab.bottom:active {
-	padding-bottom: 2px;
-}
-
 NautilusNotebook .frame {
-	border-width: 1px 0 0 0;
+	border-width: 0;
 }
 
 NautilusToolbar .button {
 	icon-shadow: 0 1px @button_text_shadow;
 }
 
-NautilusToolbar .toolbar {
-	background-image: linear-gradient(to bottom,
-		@theme_bg_color,
-		shade (@theme_bg_color, 0.94));
-}
-
-NautilusToolbar .button *:active {
+NautilusToolbar .button:active {
 	icon-shadow: 0 1px @button_active_text_shadow;
 }
 
-NautilusToolbar .button *:insensitive,
-NautilusToolbar .button *:active:insensitive {
-	text-shadow: none;
+NautilusToolbar .button:insensitive,
+NautilusToolbar .button:active *:insensitive {
+	icon-shadow: none;
 }
 
 NautilusQueryEditor .primary-toolbar.toolbar {
+	border-top-width: 0;
 	border-bottom-width: 0;
 }
 
@@ -134,15 +112,134 @@ NautilusQueryEditor .toolbar:nth-child(2) {
 	border-color: @borders;
 }
 
-NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar {
-	border-top-width: 0;
-}
-
-NautilusNotebook.notebook NautilusQueryEditor .toolbar:last-child,
-NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar:only-child {
+NautilusQueryEditor .toolbar:last-child,
+NautilusQueryEditor .primary-toolbar.toolbar:only-child {
 	border-bottom-width: 1px;
 	border-bottom-color: @borders;
 }
+
+/* nemo */
+.nemo-canvas-item {
+	border-radius: 5px;
+}
+
+.nemo-desktop.nemo-canvas-item {
+	color: @theme_selected_fg_color;
+	text-shadow: 1px 1px black;
+}
+
+.nemo-desktop.nemo-canvas-item:active {
+	color: @theme_text_color;
+}
+
+.nemo-desktop.nemo-canvas-item:selected {
+	color: @theme_selected_fg_color;
+}
+
+.nemo-desktop.nemo-canvas-item:active,
+.nemo-desktop.nemo-canvas-item:prelight,
+.nemo-desktop.nemo-canvas-item:selected {
+	text-shadow: none;
+}
+
+NemoWindow .sidebar .frame {
+	border-width: 1px 0 0 0;
+	border-style: solid;
+	border-color: @borders;
+	border-radius: 0;
+}
+
+NemoWindow * {
+	-GtkPaned-handle-size: 1;
+}
+
+NemoWindow .pane-separator {
+	background-image: url("assets/null.png");
+}
+
+NemoWindow > GtkGrid > .pane-separator,
+NemoWindow > GtkGrid > .pane-separator:hover {
+	border-width: 1px 1px 0 0;
+	border-style: solid;
+	border-color: @borders;
+	background-color: @sidebar_bg;
+	color: shade (@theme_bg_color, 0.9);
+}
+
+NemoView.frame,
+NemoNotebook.notebook {
+	border-right-width: 0;
+	border-left-width: 0;
+	border-bottom-width: 0;
+}
+
+NemoNotebook.notebook tab.top,
+NemoNotebook.notebook tab.bottom {
+	border-right-width: 1px;
+	border-left-width: 1px;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+NemoNotebook.notebook tab.top:active {
+	padding-top: 2px;
+}
+NemoNotebook.notebook tab.bottom:active {
+	padding-bottom: 2px;
+}
+
+NemoNotebook .frame {
+	border-width: 1px 0 0 0;
+}
+
+NemoToolbar .button {
+	icon-shadow: 0 1px @button_text_shadow;
+}
+
+NemoToolbar .toolbar {
+	background-image: linear-gradient(to bottom,
+		@theme_bg_color,
+		shade (@theme_bg_color, 0.94));
+}
+
+NemoToolbar .button:active {
+	icon-shadow: 0 1px @button_active_text_shadow;
+}
+
+NemoToolbar .button:insensitive,
+NemoToolbar .button:active:insensitive {
+	text-shadow: none;
+}
+
+NemoQueryEditor .primary-toolbar.toolbar {
+	border-bottom-width: 0;
+}
+
+NemoQueryEditor .toolbar {
+	padding-top: 3px;
+	padding-bottom: 2px;
+
+	border-width: 1px 0 0 0;
+	border-style: solid;
+	border-color: @theme_bg_color;
+	
+	background-color: mix(@theme_bg_color, @theme_base_color, 0.5);
+}
+
+NemoQueryEditor .toolbar:nth-child(2) {
+	border-color: @borders;
+}
+
+NemoNotebook.notebook NemoQueryEditor .primary-toolbar.toolbar {
+	border-top-width: 0;
+}
+
+NemoNotebook.notebook NemoQueryEditor .toolbar:last-child,
+NemoNotebook.notebook NemoQueryEditor .primary-toolbar.toolbar:only-child {
+	border-bottom-width: 1px;
+	border-bottom-color: @borders;
+}
+
 
 /* gedit */
 
@@ -155,41 +252,38 @@ GeditWindow .pane-separator:hover {
 	color: @borders;
 }
 
-GeditPanel.title GtkLabel {
-	padding: 7px 0 6px 0;
-}
-
-GeditPanel .toolbar {
+GeditPanel.vertical .title {
 	border-style: none;
-	background-color: transparent;
+	padding: 7px 0 6px 3px;
 }
 
 GeditDocumentsPanel .view {
 	background-color: @sidebar_bg;
 }
 
-GeditPanel .notebook {
+GeditPanel.vertical .notebook {
 	padding: 0px;
 	border-width: 1px 0;
 }
 
-GeditWindow .notebook {
-	border-width: 1px 0;
+GeditPanel.horizontal .notebook {
+	padding: 0px;
+	border-width: 0 1px 1px 0;
 }
 
-GeditPanel .notebook tab,
-GeditWindow .notebook tab {
-	border-width: 1px 1px 0 1px;
+GeditPanel .notebook tab
+{
+	border-width: 0;
 }
 
-GeditStatusComboBox .button {
+GeditStatusMenuButton {
 	text-shadow: none;
 }
 
-GeditStatusComboBox .button,
-GeditStatusComboBox .button:hover,
-GeditStatusComboBox .button:active,
-GeditStatusComboBox .button:active:hover {
+GeditStatusMenuButton.button,
+GeditStatusMenuButton.button:hover,
+GeditStatusMenuButton.button:active,
+GeditStatusMenuButton.button:active:hover {
 	border-image: none;
 	border-style: solid;
 	border-width: 0 1px;
@@ -197,10 +291,19 @@ GeditStatusComboBox .button:active:hover {
 	padding: 1px 8px 2px 4px;
 }
 
-GeditStatusComboBox .button:hover,
-GeditStatusComboBox .button:active,
-GeditStatusComboBox .button:active:hover {
+GeditStatusMenuButton.button:hover,
+GeditStatusMenuButton.button:active,
+GeditStatusMenuButton.button:active:hover {
 	border-color: @borders;
+}
+
+GeditStatusMenuButton.button:active {
+	background-image: linear-gradient(to bottom,
+		@borders,
+		shade(@theme_bg_color, 0.95));
+	background-color: transparent;
+	color: @theme_selected_fg_color;
+	text-shadow: 0 1px @button_text_shadow;
 }
 
 GeditViewFrame .gedit-search-slider {
@@ -213,14 +316,27 @@ GeditViewFrame .gedit-search-slider {
 }
 
 GeditViewFrame .gedit-search-slider .not-found {
-	color: @error_fg_color;
+	color: @gedit_not_found_fg;
 	background-image: none;
-	background-color: @error_bg_color;
+	background-color: @gedit_not_found_bg;
 }
 
 GeditViewFrame .gedit-search-slider .not-found:selected {
 	background-color: @theme_selected_bg_color;
 	color: @theme_selected_fg_color;
+}
+
+GeditFileBrowserWidget .primary-toolbar.toolbar  {
+	background-image: none;
+	background-color: @theme_bg_color;
+	border-top: none;
+	padding: 2px;
+}
+
+.gedit-search-entry-occurrences-tag {
+	color: shade (@theme_unfocused_fg_color, 0.8);
+	margin: 2px;
+	padding: 2px;
 }
 
 /* gnome-documents */
@@ -295,8 +411,8 @@ GeditViewFrame .gedit-search-slider .not-found:selected {
 	font: bold;
 }
 
-.documents-favorite.button *:active,
-.documents-favorite.button *:active:hover {
+.documents-favorite.button:active,
+.documents-favorite.button:active:hover {
 	color: shade(@theme_selected_bg_color, 1.20);
 }
 
@@ -331,12 +447,6 @@ GeditViewFrame .gedit-search-slider .not-found:selected {
 }
 
 /* baobab */
-
-.baobab-toolbar.toolbar {
-	border-style: solid;
-	border-width: 0 0 1px 0;
-	border-radius: 0;
-}
 
 .cell.baobab-level-cell,
 .cell.baobab-level-cell:hover,
@@ -378,7 +488,7 @@ GeditViewFrame .gedit-search-slider .not-found:selected {
 	color: @theme_selected_fg_color;
 }
 
-BaobabWindow.background GdStack > GtkGrid > GtkScrolledWindow.frame {
+BaobabWindow.background GtkStack > GtkGrid > GtkScrolledWindow.frame {
 	border-radius: 0;
 	border-width: 0 1px 0 0;
 }
@@ -388,6 +498,22 @@ BaobabWindow GtkInfoBar.error {
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
 	border-bottom-color: @borders;
+}
+
+BaobabRingschart {
+	background-color: @theme_bg_color;
+	padding: 13px 13px 13px 13px;
+}
+
+BaobabRingschart.subfolder-tip {
+	border-radius: 3px;
+	border-style: none;
+	padding: 3px 3px 3px 3px;
+
+	background-color: alpha(@theme_tooltip_bg_color, 0.90);
+	color: @theme_tooltip_fg_color;
+
+	text-shadow: 1px 1px black;
 }
 
 /* epiphany */
@@ -431,7 +557,7 @@ EphyToolbar .location-entry .button {
 	border-image-slice: 3 3 4 3;
 	border-image-repeat: stretch;
 	border-width: 2px;
-	border-radius: 3px;
+	border-radius: 4px;
 	padding-left: 4px;
 	padding-right: 4px;
 	box-shadow: inset 1px 0 @inset_dark_color,
@@ -475,8 +601,7 @@ EphyToolbar .location-entry .button:active:hover {
 }
 
 EphyToolbar .location-entry .button:hover,
-EphyToolbar .location-entry .button:active,
-EphyToolbar .location-entry .button *:active {
+EphyToolbar .location-entry .button:active {
 	color: @theme_text_color;
 }
 
@@ -494,11 +619,12 @@ EphyToolbar.toolbar .button {
 }
 
 #ephy-page-menu-button.active-menu {
-	background-image: linear-gradient(to bottom,
-		@button_active_gradient_color_a,
-		@button_active_gradient_color_b);
-	background-color: transparent;
-	border-image: url("borders/button-active.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
+	background-image: none;
+	background-color: @menu_bg_color;
+
+	border-image: none;
+	border-color: @menu_bg_color;
+	border-radius: 4px 4px 0 0;
 }
 
 EphyOverview GtkScrolledWindow {
@@ -540,29 +666,31 @@ EphyWindow.background EphyNotebook.notebook:last-child {
 
 /* Background color in contacts pane, similar to .documents-main-view.view */
 .contacts-main-view.view {
- background-color: #f1f2f1;
+	background-color: #f1f2f1;
 }
 
 .contacts-suggestion {
- background-color: #D3D7CF;
- border-radius: 4px;
+	background-color: #D3D7CF;
+	border-radius: 4px;
 }
 
 /* Border on the right in the left menu toolbar */
-.contacts-left-toolbar.toolbar.menubar {
-	border-image: linear-gradient(to bottom, @theme_bg_color, shade(@borders, 1.2));
-	border-image-width: 0 1px 0 0;
-	border-image-slice: 1;
+.contacts-left-header-bar:dir(ltr) {
+	border-right-width: 1px;
 }
 
-/* Sidebar with line at top and the left */
-ContactsWindow .sidebar.frame {
-	border-width: 1px 1px 0 0;
-	border-style: solid;
-	border-color: @borders;
-	border-image: none;
-	border-radius: 0;
-	padding: 0;
+.contacts-left-header-bar:dir(rtl) {
+	border-left-width: 1px;
+}
+
+.contacts-left-header-bar:dir(ltr),
+.contacts-right-header-bar:dir(rtl) {
+	border-top-right-radius: 0;
+}
+
+.contacts-right-header-bar:dir(ltr),
+.contacts-left-header-bar:dir(rtl) {
+	border-top-left-radius: 0;
 }
 
 .contacts-avatar-frame.frame {
@@ -574,17 +702,16 @@ ContactsWindow .sidebar.frame {
 	padding: 0;
 }
 
+.main-avatar-frame.frame {
+	border-width: 1px;
+	border-style: solid;
+	border-color: @borders;
+	border-radius: 6px;
+}
+
 /* Primary toolbar with no line at top to avoid conflicts with frame border */
 ContactsWindow .primary-toolbar.toolbar {
 	border-width: 0 0 1px 0;
-}
-
-ContactsWindow .sidebar .view {
-	background-color: #ebebeb;
-}
-ContactsWindow .sidebar .view:selected,
-ContactsWindow .sidebar .view:selected:focus {
-	background-color: @theme_selected_bg_color;
 }
 
 .contacts-button:active {
@@ -655,6 +782,17 @@ ContactsWindow .sidebar .view:selected:focus {
 	border-style: solid;
 	border-color: @borders;
 	border-image: none;
+}
+
+.contacts-watermark {
+	color: #bebebe;
+	text-shadow: 1px 1px alpha(white, 0.6);
+}
+
+/* gnome-photos */
+
+.photos-icon-bg {
+	icon-shadow: 0 1px #000000;
 }
 
 /* Gucharmap */
