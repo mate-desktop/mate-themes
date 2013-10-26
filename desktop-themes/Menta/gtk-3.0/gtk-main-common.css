@@ -1,11 +1,20 @@
 /* common color definitions to the light and dark variations */
 
+/******************************
+ * Destructive action buttons *
+ ******************************/
+@define-color destructive_action_button_a #e03d3d;
+@define-color destructive_action_button_b #ef2929;
+@define-color destructive_action_button_border #9d4242;
+@define-color destructive_action_button_fg #ffffff;
+@define-color destructive_action_button_shadow shade(@destructive_action_button_border, 1.15);
+
 /*******
  * OSD *
  *******/
 @define-color osd_highlight #ffffff;
 @define-color osd_lowlight #525252;
-@define-color osd_base #252621;
+@define-color osd_base #212526;
 @define-color osd_base_backdrop shade(@osd_base, 1.40);
 
 @define-color osd_fg #ededed;
@@ -77,18 +86,8 @@
 @define-color error_color #cc0000;
 @define-color success_color #4e9a06;
 
-@define-color info_fg_color black;
-@define-color info_text_shadow alpha(black, 0.1);
-@define-color info_bg_color rgb (252, 252, 189);
-@define-color warning_fg_color black;
-@define-color warning_text_shadow alpha(black, 0.1);
-@define-color warning_bg_color rgb (250, 173, 61);
-@define-color question_fg_color white;
-@define-color question_text_shadow alpha(black, 0.3);
-@define-color question_bg_color rgb (138, 173, 212);
-@define-color error_fg_color white;
-@define-color error_text_shadow alpha(black, 0.5);
-@define-color error_bg_color rgb (237, 54, 54);
+@define-color infobar_fg_color white;
+@define-color infobar_text_shadow alpha(black, 0.3);
 
 /*****************
  * Fallback Mode *
