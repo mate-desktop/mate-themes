@@ -30,29 +30,29 @@
 	<distance name="right_width" value="1" />
 	<distance name="bottom_height" value="1" />
 	<distance name="left_titlebar_edge" value="4"/>
-	<distance name="right_titlebar_edge" value="4"/>
-	<distance name="title_vertical_pad" value="9"/>
-	<border name="title_border" left="10" right="10" top="2" bottom="2"/>
-	<border name="button_border" left="0" right="0" top="0" bottom="2"/>
+	<distance name="right_titlebar_edge" value="1"/>
+	<distance name="title_vertical_pad" value="8"/>
+	<border name="title_border" left="2" right="2" top="0" bottom="0"/>
+	<border name="button_border" left="0" right="0" top="4" bottom="0"/>
 	<aspect_ratio name="button" value="1"/>
 </frame_geometry>
 
 <frame_geometry name="normal_unfocused" title_scale="medium" rounded_top_left="4" rounded_top_right="4" parent="normal">
 	<distance name="left_titlebar_edge" value="4"/>
-	<distance name="right_titlebar_edge" value="4"/>
+	<distance name="right_titlebar_edge" value="1"/>
 </frame_geometry>
 
-<frame_geometry name="max" title_scale="medium" parent="normal" rounded_top_left="false" rounded_top_right="false">
+<frame_geometry name="max" title_scale="medium" parent="normal" rounded_top_left="true" rounded_top_right="true">
 	<distance name="left_width" value="0" />
 	<distance name="right_width" value="0" />
 	<distance name="left_titlebar_edge" value="4"/>
-	<distance name="right_titlebar_edge" value="4"/>
+	<distance name="right_titlebar_edge" value="1"/>
 	<distance name="title_vertical_pad" value="8"/> <!-- 
 							This needs to be 1 less then the
 							title_vertical_pad on normal state
 							or you'll have bigger buttons -->
-	<border name="title_border" left="10" right="10" top="1" bottom="2"/>
-	<border name="button_border" left="0" right="0" top="0" bottom="2"/>
+	<border name="title_border" left="2" right="2" top="4" bottom="0"/>
+	<border name="button_border" left="0" right="0" top="4" bottom="0"/>
 	<distance name="bottom_height" value="0" />
 </frame_geometry>
 
@@ -137,23 +137,23 @@
 
 <draw_ops name="titlebar_fill_focused">
 	<gradient type="vertical" x="0" y="0" width="width" height="top_height">
-		<color value="gtk:custom(wm_bg_a,blend/gtk:bg[NORMAL]/gtk:base[NORMAL]/0.4)" />
-		<color value="gtk:custom(wm_bg_b,gtk:bg[NORMAL])" />
+		<color value="#e8e8e8" />
+		<color value="#d2d2d2" />
 	</gradient>
 </draw_ops>
 
 
 <draw_ops name="titlebar_fill_attached_focused"> <!-- gradient for attached and modal dialogs titlebar-->
 	<gradient type="vertical" x="0" y="0" width="width" height="top_height">
-		<color value="gtk:custom(wm_bg_a,blend/gtk:bg[NORMAL]/gtk:base[NORMAL]/0.4)" />
-		<color value="gtk:custom(wm_bg_b,gtk:bg[NORMAL])" />
+		<color value="#e8e8e8" />
+		<color value="#d2d2d2" />
 	</gradient>
 </draw_ops>
 
 <draw_ops name="titlebar_fill_unfocused">
 	<gradient type="vertical" x="0" y="0" width="width" height="top_height">
-		<color value="gtk:custom(wm_bg_a,blend/gtk:bg[NORMAL]/gtk:base[NORMAL]/0.9)" />
-		<color value="gtk:custom(wm_bg_b,gtk:bg[NORMAL])" />
+		<color value="#e8e8e8" />
+		<color value="#d2d2d2" />
 	</gradient>
 </draw_ops>
 
