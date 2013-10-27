@@ -144,6 +144,38 @@ GtkImage:insensitive {
 
 .floating-bar {
     background-color: @theme_insensitive_bg;
+    border-width: 1px;
+    border-radius: 3px;
+    border-style: solid;
+}
+
+.floating-bar.top {
+    border-top-width: 0;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.floating-bar.right {
+    border-right-width: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.floating-bar.bottom {
+    border-bottom-width: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.floating-bar.left {
+    border-left-width: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.floating-bar .button {
+    background-color: transparent;
+    border-style: none;
 }
 
 GtkColorButton.button {
