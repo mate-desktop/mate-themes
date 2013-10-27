@@ -501,38 +501,34 @@ GtkComboBox .button {
 /*********
  * Menus *
  *********/
-.menuitem {
-    color: @theme_fg_color;
-}
-
-.menuitem:insensitive {
-    color: @theme_button_insensitive_fg;
-}
-
-.menubar .menuitem {
-    padding: 3px 5px;
-}
-
-.menubar .menuitem:hover {
-    background-color: @theme_active_color;
-    color: @theme_base_color;
-}
-
-.menu .menuitem {
-    padding: 4px;
-}
-
-.menu .menuitem:hover {
-    background-color: @theme_active_color;
-    color: @theme_base_color;
-}
-
 .menu {
     border-style: solid;
     border-color: @theme_fg_color;
     border-width: 1px;
 
     color: @theme_fg_color;
+}
+
+.menuitem {
+    color: @theme_fg_color;
+    background-color: transparent;
+}
+
+.menuitem:insensitive {
+    color: @theme_button_insensitive_fg;
+}
+
+.menuitem:hover {
+    color: @theme_base_color;
+    background-color: @theme_active_color;
+}
+
+.menu .menuitem {
+    padding: 4px;
+}
+
+.menubar .menuitem {
+    padding: 3px 5px;
 }
 
 .menuitem.separator {
