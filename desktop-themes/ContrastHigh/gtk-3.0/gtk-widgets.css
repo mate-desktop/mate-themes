@@ -556,6 +556,14 @@ GtkComboBox .button {
     padding: 1px;
 }
 
+.toolbar .button.text-button {
+    padding: 2px 16px;
+}
+
+.toolbar .button.image-button {
+    padding: 5px;
+}
+
 .toolbar .button:insensitive {
     background-color: @theme_base_color;
 }
@@ -1102,6 +1110,90 @@ GtkProgressBar.osd.progressbar {
     background-color: @theme_highlight_color;
     border-radius: 0;
     border-style: none;
+}
+
+/***************
+ * Header bars *
+ ***************/
+.header-bar {
+    border-width: 0 0 1px;
+    border-style: solid;
+    border-color: @theme_border_color;
+
+    background-color: @theme_base_color;
+
+    padding: 6px 6px 5px 6px;
+}
+
+.header-bar .button.text-button {
+    padding: 2px 16px;
+}
+
+.header-bar .button.image-button {
+    padding: 5px;
+}
+
+.header-bar .title {
+    font: Bold 11;
+}
+
+.header-bar .subtitle {
+    font: 9;
+}
+
+/*******
+ * CSD *
+ *******/
+.titlebar {
+    background-color: @theme_base_color;
+    border-radius: 7px 7px 0px 0px;
+}
+
+/* this is the default titlebar that is added by GTK
+ * when client-side decorations are in use and the application
+ * did not set a custom titlebar.
+ */
+.titlebar.default-decoration {
+    border: none;
+}
+
+.titlebar .title {
+    font: Bold 11;
+}
+
+.titlebar .titlebutton {
+    color: @theme_button_fg;
+    background-color: transparent;
+    padding: 5px;
+
+    border-color: transparent;
+}
+
+.titlebar .titlebutton:hover {
+    background-color: @theme_button_bg;
+    border-color: @theme_button_fg;
+    color: @theme_button_fg;
+}
+
+.titlebar .titlebutton:active {
+    background-color: @theme_button_active_bg;
+    color: @theme_base_color;
+}
+
+.window-frame {
+    border-color: darker(@theme_bg_color);
+    border-radius: 7px 7px 0 0;
+    border-width: 1px;
+    border-style: solid;
+
+    box-shadow: 0 2px 8px 3px alpha(black, 0.7);
+
+    /* this is used for the resize cursor area */
+    margin: 10px;
+}
+
+.window-frame:backdrop {
+    box-shadow: 0 2px 5px 1px alpha(black, 0.7);
 }
 
 /**********************
