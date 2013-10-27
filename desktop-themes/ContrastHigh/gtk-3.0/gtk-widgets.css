@@ -1315,19 +1315,24 @@ TerminalScreen {
     font: bold;
 }
 
-NautilusWindow .pane-separator {
-    border-style: solid;
-    border-width: 1px;
-    border-color: @theme_border_color;
-}
-
 NautilusWindow .sidebar .frame {
-    border-style: solid;
-    border-width: 1px 0 0 0;
+    border-style: none;
 }
 
-.nautilus-inactive-pane .view {
-    background-color: @theme_insensitive_bg;
+NautilusNotebook.notebook {
+    border-right-width: 0;
+    border-left-width: 0;
+    border-bottom-width: 0;
+}
+
+NautilusNotebook .frame {
+    border-width: 0;
+}
+
+NautilusWindow .pane-separator {
+    border-width: 0 1px 0 0;
+    border-style: solid;
+    border-color: @theme_border_color;
 }
 
 .nautilus-desktop.nautilus-canvas-item {
