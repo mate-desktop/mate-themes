@@ -47,10 +47,12 @@
     -GtkWindow-resize-grip-width: 0;
     -GtkWindow-resize-grip-height: 0;
 
+    -GtkStatusbar-shadow-type: none;
+
     background-clip: padding-box;
 }
 
-GtkWindow {
+.background {
     color: @theme_fg_color;
     background-color: @theme_base_color;
 }
@@ -63,6 +65,7 @@ GtkClutterOffscreen {
 *:insensitive {
     background-color: @theme_button_insensitive_bg;
     border-color: @theme_button_insensitive_active_bg;
+    color: @theme_insensitive_color;
 }
 
 *:selected {
@@ -143,6 +146,38 @@ GtkImage:insensitive {
 
 .floating-bar {
     background-color: @theme_insensitive_bg;
+    border-width: 1px;
+    border-radius: 3px;
+    border-style: solid;
+}
+
+.floating-bar.top {
+    border-top-width: 0;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.floating-bar.right {
+    border-right-width: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.floating-bar.bottom {
+    border-bottom-width: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.floating-bar.left {
+    border-left-width: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.floating-bar .button {
+    background-color: transparent;
+    border-style: none;
 }
 
 GtkColorButton.button {
@@ -242,6 +277,10 @@ GtkLevelBar.vertical {
     color: @theme_button_fg;
 }
 
+.button.image-button {
+    padding: 5px;
+}
+
 .button:active {
     background-color: @theme_button_active_bg;
     color: @theme_base_color;
@@ -250,18 +289,20 @@ GtkLevelBar.vertical {
 
 .button:insensitive {
     background-color: @theme_button_insensitive_bg;
-    color: @theme_button_insensitive_fg;
     border-color: @theme_button_insensitive_border;
 }
 
-GtkComboBox:insensitive {
-    color: @theme_button_insensitive_fg
+.button:active *:insensitive {
+    background-color: @theme_button_insensitive_active_bg;
+    border-color: @theme_button_insensitive_active_border;
 }
 
-.button:insensitive:active {
-    background-color: @theme_button_insensitive_active_bg;
+.button *:insensitive {
+    color: @theme_button_insensitive_fg;
+}
+
+.button *:insensitive:active {
     color: @theme_button_insensitive_active_fg;
-    border-color: @theme_button_insensitive_active_border;
 }
 
 .button:hover {
@@ -273,6 +314,17 @@ GtkComboBox:insensitive {
 .button:hover:active {
     background-color: @theme_fg_color;
     border-color: @theme_fg_color;
+}
+
+GtkComboBox .separator {
+    /* always disable separators */
+    -GtkWidget-wide-separators: true;
+    -GtkWidget-horizontal-separator: 0;
+    -GtkWidget-vertical-separator: 0;
+}
+
+GtkComboBox *:insensitive {
+    color: @theme_button_insensitive_fg
 }
 
 /***********
@@ -455,38 +507,34 @@ GtkComboBox .button {
 /*********
  * Menus *
  *********/
-.menuitem {
-    color: @theme_fg_color;
-}
-
-.menuitem:insensitive {
-    color: @theme_button_insensitive_fg;
-}
-
-.menubar .menuitem {
-    padding: 3px 5px;
-}
-
-.menubar .menuitem:hover {
-    background-color: @theme_active_color;
-    color: @theme_base_color;
-}
-
-.menu .menuitem {
-    padding: 4px;
-}
-
-.menu .menuitem:hover {
-    background-color: @theme_active_color;
-    color: @theme_base_color;
-}
-
 .menu {
     border-style: solid;
     border-color: @theme_fg_color;
     border-width: 1px;
 
     color: @theme_fg_color;
+}
+
+.menuitem {
+    color: @theme_fg_color;
+    background-color: transparent;
+}
+
+.menuitem:insensitive {
+    color: @theme_button_insensitive_fg;
+}
+
+.menuitem:hover {
+    color: @theme_base_color;
+    background-color: @theme_active_color;
+}
+
+.menu .menuitem {
+    padding: 4px;
+}
+
+.menubar .menuitem {
+    padding: 3px 5px;
 }
 
 .menuitem.separator {
@@ -508,6 +556,14 @@ GtkComboBox .button {
 .toolbar .button {
     background-color: transparent;
     padding: 1px;
+}
+
+.toolbar .button.text-button {
+    padding: 2px 16px;
+}
+
+.toolbar .button.image-button {
+    padding: 5px;
 }
 
 .toolbar .button:insensitive {
@@ -659,6 +715,20 @@ GtkComboBox .button {
 .linked .button:only-child {
     border-radius: 3px;
     border-width: 2px;
+}
+
+.linked.vertical .button {
+    border-width: 0 2px 2px;
+    border-radius: 0;
+}
+
+.linked.vertical .button:first-child {
+    border-radius: 3px 3px 0 0;
+    border-width: 2px;
+}
+
+.linked.vertical .button:last-child {
+    border-radius: 0 0 3px 3px;
 }
 
 /**********
@@ -987,6 +1057,13 @@ GtkIconView.view.cell {
     border-radius: 4px;
 }
 
+/**************
+ * List boxes *
+ **************/
+.list-row:hover {
+    background-color: @theme_button_bg;
+}
+
 /*******
  * OSD *
  *******/
@@ -1025,6 +1102,107 @@ GtkIconView.view.cell {
 .osd .button:active {
     color: @theme_fg_color;
     background-color: @theme_base_color;
+}
+
+GtkProgressBar.osd {
+    -GtkProgressBar-min-horizontal-bar-height: 12px;
+}
+
+GtkProgressBar.osd.trough {
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
+    border-style: none;
+}
+
+GtkProgressBar.osd.progressbar {
+    background-color: @theme_highlight_color;
+    border-radius: 0;
+    border-style: none;
+}
+
+/***************
+ * Header bars *
+ ***************/
+.header-bar {
+    border-width: 0 0 1px;
+    border-style: solid;
+    border-color: @theme_border_color;
+
+    background-color: @theme_base_color;
+
+    padding: 6px 6px 5px 6px;
+}
+
+.header-bar .button.text-button {
+    padding: 2px 16px;
+}
+
+.header-bar .button.image-button {
+    padding: 5px;
+}
+
+.header-bar .title {
+    font: Bold 11;
+}
+
+.header-bar .subtitle {
+    font: 9;
+}
+
+/*******
+ * CSD *
+ *******/
+.titlebar {
+    background-color: @theme_base_color;
+    border-radius: 7px 7px 0px 0px;
+}
+
+/* this is the default titlebar that is added by GTK
+ * when client-side decorations are in use and the application
+ * did not set a custom titlebar.
+ */
+.titlebar.default-decoration {
+    border: none;
+}
+
+.titlebar .title {
+    font: Bold 11;
+}
+
+.titlebar .titlebutton {
+    color: @theme_button_fg;
+    background-color: transparent;
+    padding: 5px;
+
+    border-color: transparent;
+}
+
+.titlebar .titlebutton:hover {
+    background-color: @theme_button_bg;
+    border-color: @theme_button_fg;
+    color: @theme_button_fg;
+}
+
+.titlebar .titlebutton:active {
+    background-color: @theme_button_active_bg;
+    color: @theme_base_color;
+}
+
+.window-frame {
+    border-color: darker(@theme_bg_color);
+    border-radius: 7px 7px 0 0;
+    border-width: 1px;
+    border-style: solid;
+
+    box-shadow: 0 2px 8px 3px alpha(black, 0.7);
+
+    /* this is used for the resize cursor area */
+    margin: 10px;
+}
+
+.window-frame:backdrop {
+    box-shadow: 0 2px 5px 1px alpha(black, 0.7);
 }
 
 /**********************
@@ -1146,19 +1324,24 @@ TerminalScreen {
     font: bold;
 }
 
-NautilusWindow .pane-separator {
-    border-style: solid;
-    border-width: 1px;
-    border-color: @theme_border_color;
-}
-
 NautilusWindow .sidebar .frame {
-    border-style: solid;
-    border-width: 1px 0 0 0;
+    border-style: none;
 }
 
-.nautilus-inactive-pane .view {
-    background-color: @theme_insensitive_bg;
+NautilusNotebook.notebook {
+    border-right-width: 0;
+    border-left-width: 0;
+    border-bottom-width: 0;
+}
+
+NautilusNotebook .frame {
+    border-width: 0;
+}
+
+NautilusWindow .pane-separator {
+    border-width: 0 1px 0 0;
+    border-style: solid;
+    border-color: @theme_border_color;
 }
 
 .nautilus-desktop.nautilus-canvas-item {
