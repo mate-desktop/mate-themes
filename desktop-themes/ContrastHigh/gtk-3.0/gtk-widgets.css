@@ -675,6 +675,20 @@ GtkComboBox .button {
     border-width: 2px;
 }
 
+.linked.vertical .button {
+    border-width: 0 2px 2px;
+    border-radius: 0;
+}
+
+.linked.vertical .button:first-child {
+    border-radius: 3px 3px 0 0;
+    border-width: 2px;
+}
+
+.linked.vertical .button:last-child {
+    border-radius: 0 0 3px 3px;
+}
+
 /**********
  * Scales *
  **********/
