@@ -1055,6 +1055,23 @@ GtkIconView.view.cell {
     background-color: @theme_base_color;
 }
 
+GtkProgressBar.osd {
+    -GtkProgressBar-min-horizontal-bar-height: 12px;
+}
+
+GtkProgressBar.osd.trough {
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
+    border-style: none;
+}
+
+GtkProgressBar.osd.progressbar {
+    background-color: @theme_highlight_color;
+    border-radius: 0;
+    border-style: none;
+}
+
 /**********************
  * Fallback Mode Panel
  **********************/
