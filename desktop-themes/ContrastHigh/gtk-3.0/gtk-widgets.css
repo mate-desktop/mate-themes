@@ -277,6 +277,10 @@ GtkLevelBar.vertical {
     color: @theme_button_fg;
 }
 
+.button.image-button {
+    padding: 5px;
+}
+
 .button:active {
     background-color: @theme_button_active_bg;
     color: @theme_base_color;
