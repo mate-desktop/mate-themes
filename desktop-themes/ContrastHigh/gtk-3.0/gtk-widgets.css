@@ -63,6 +63,7 @@ GtkClutterOffscreen {
 *:insensitive {
     background-color: @theme_button_insensitive_bg;
     border-color: @theme_button_insensitive_active_bg;
+    color: @theme_insensitive_color;
 }
 
 *:selected {
@@ -250,18 +251,20 @@ GtkLevelBar.vertical {
 
 .button:insensitive {
     background-color: @theme_button_insensitive_bg;
-    color: @theme_button_insensitive_fg;
     border-color: @theme_button_insensitive_border;
-}
-
-GtkComboBox:insensitive {
-    color: @theme_button_insensitive_fg
 }
 
 .button:insensitive:active {
     background-color: @theme_button_insensitive_active_bg;
-    color: @theme_button_insensitive_active_fg;
     border-color: @theme_button_insensitive_active_border;
+}
+
+.button *:insensitive {
+    color: @theme_button_insensitive_fg;
+}
+
+.button *:insensitive:active {
+    color: @theme_button_insensitive_active_fg;
 }
 
 .button:hover {
@@ -273,6 +276,17 @@ GtkComboBox:insensitive {
 .button:hover:active {
     background-color: @theme_fg_color;
     border-color: @theme_fg_color;
+}
+
+GtkComboBox .separator {
+    /* always disable separators */
+    -GtkWidget-wide-separators: true;
+    -GtkWidget-horizontal-separator: 0;
+    -GtkWidget-vertical-separator: 0;
+}
+
+GtkComboBox *:insensitive {
+    color: @theme_button_insensitive_fg
 }
 
 /***********
