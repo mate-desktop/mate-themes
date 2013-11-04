@@ -96,15 +96,16 @@ style "theme-panel-light"
 	}
 }
 
-style "theme-panel-text"
-{
-	fg[NORMAL]	= "#000000"
-	fg[PRELIGHT]	= "#000000"
-	fg[ACTIVE]	= "#ffffff"
-	text[NORMAL]	= "#000000"
-	text[PRELIGHT]	= "#000000"
-	text[ACTIVE]	= "#ffffff"
-}
+# disable for syncronize menu selected fonts
+#style "theme-panel-text"
+#{
+#	fg[NORMAL]	= "#000000"
+#	fg[PRELIGHT]	= "#000000"
+#	fg[ACTIVE]	= "#ffffff"
+#	text[NORMAL]	= "#000000"
+#	text[PRELIGHT]	= "#000000"
+#	text[ACTIVE]	= "#ffffff"
+#}
 
 style "theme-main-menu-text" = "theme-panel-text"
 {
@@ -170,8 +171,8 @@ widget_class "*GtkBgbox*"	style "theme-panel-buttons"
 # Make sure panel text color doesn't change
 widget_class "*Panel*MenuBar*"		style "theme-main-menu-text"
 widget_class "*Panel*<GtkMenuBar>*"	style "theme-main-menu-text"
-widget "*.clock-applet-button.*"	style "theme-panel-text"
-widget "*PanelApplet*"			style "theme-panel-text"
+#widget "*.clock-applet-button.*"	style "theme-panel-text"
+#widget "*PanelApplet*"			style "theme-panel-text"
 
 # Hide ugly handle
 class "PanelAppletFrame" style:highest "theme-panel-handle"
