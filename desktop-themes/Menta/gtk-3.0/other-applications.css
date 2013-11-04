@@ -346,7 +346,7 @@ PanelApplet {
 PanelSeparator {
 	border-width: 0;
 	background-image: -gtk-gradient (linear, left top, left bottom,
-		from (shade (@menu_bg_color, 0-96)),
+		from (shade (@menu_bg_color, 0.96)),
 		to (shade (@menu_bg_color, 1.05)));
 	-unico-inner-stroke-width: 0;
 	-unico-outer-stroke-width: 0;
