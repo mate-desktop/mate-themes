@@ -377,6 +377,11 @@ style "misc-panel"
 	ythickness = 2
 }
 
+# syncronize panel menus
+style "applet"
+{
+}
+
 style "entry"
 {
 	xthickness = 3
@@ -504,9 +509,11 @@ widget "gtk-tooltip"				style "murrine-tooltips"
 ########
 class "Panel"					style "misc-panel"
 class "*Separator*"				style "misc-sep"
+# syncronize panel menus
+widget_class "*MatePanelAppletFrameDBus*" style "applet"
 # This is suitable for dark panels:
-widget "*PanelApplet*"				style "misc-panel"
-widget_class "*PanelWidget*"			style "misc-panel"
+#widget "*PanelApplet*"				style "misc-panel"
+#widget_class "*PanelWidget*"			style "misc-panel"
 widget "*fast-user-switch-applet*"		style "misc-panel"
 ########################################
 # Combo
