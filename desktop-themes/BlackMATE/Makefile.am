@@ -5,7 +5,7 @@ themedir = $(datadir)/themes/$(THEME_NAME)
 theme_DATA = index.theme \
 			README
 
-EXTRA_DIST = $(theme_DATA) index.theme.in
+EXTRA_DIST = $(theme_DATA) index.theme.in COPYING
 
 SUBDIRS =		\
 	gtk-2.0		\
