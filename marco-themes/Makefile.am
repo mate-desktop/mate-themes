@@ -4,7 +4,7 @@ THEMES = \
 	Shiny \
 	Reverse \
 	Fog \
-	Menta-Black
+	BlackMenta
 
 THEME_DIR=$(datadir)/themes
 THEME_SUBDIR=metacity-1
