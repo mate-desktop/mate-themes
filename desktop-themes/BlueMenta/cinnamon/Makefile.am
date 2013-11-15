@@ -1,5 +1,4 @@
-
-themedir = $(datadir)/themes/Menta/cinnamon
+themedir = $(datadir)/themes/BlueMenta/cinnamon
 
 theme_DATA = \
 	add-workspace.png \
