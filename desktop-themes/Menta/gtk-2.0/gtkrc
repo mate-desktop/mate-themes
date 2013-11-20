@@ -142,7 +142,7 @@ style "murrine-default" {
 		colorize_scrollbar	= FALSE		
 		comboboxstyle		= 0			# 0 = normal combobox, 1 = colorized combobox below arrow		
 		contrast		= 0.4 			# 0.8 for less contrast, more than 1.0 for more contrast on borders
-		default_button_color	= shade (1.12, @selected_bg_color)
+		default_button_color	= shade (1.22, @selected_bg_color)
 		focus_color		= @selected_bg_color
 		focusstyle		= 3
 		glazestyle		= 1			# 0 = flat highlight, 1 = curved highlight, 2 = concave style, 3 = top curved highlight, 4 = beryl highlight
