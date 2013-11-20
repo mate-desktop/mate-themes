@@ -49,8 +49,8 @@ style "murrine-default" {
 
 	GtkImage	::x-ayatana-indicator-dynamic	= 1
 
-	GtkScrollbar	::has-backward-stepper		= 0  
-	GtkScrollbar	::has-forward-stepper		= 0
+	GtkScrollbar	::has-backward-stepper		= 1  
+	GtkScrollbar	::has-forward-stepper		= 1
 	GtkScrollbar	::min-slider-length		= 15
 	GtkScrollbar	::slider-width			= 13
 	GtkScrollbar	::trough-border			= 0
@@ -63,7 +63,7 @@ style "murrine-default" {
 
 	GtkRange	::trough-border			= 0
 	GtkRange	::slider-width			= 11
-	GtkRange	::stepper-size			= 0
+	GtkRange	::stepper-size			= 16
 	GtkRange	::stepper_spacing		= 0
 	GtkRange	::trough-under-steppers		= 0
 
