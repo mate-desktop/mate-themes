@@ -24,8 +24,8 @@
 	/* this is more stylish with this theme */
 	-GtkScrolledWindow-scrollbars-within-bevel: 0;
 
-	-GtkToolItemGroup-expander-size: 12;
-	-GtkExpander-expander-size: 12;
+	-GtkTreeView-expander-size: 13;
+	-GtkTreeView-horizontal-separator: 4;
 	-GtkMenuBar-shadow-type: none;
 
 	-GtkMenu-horizontal-padding: 0;
@@ -44,12 +44,17 @@
 
 	-GtkWidget-focus-padding: 2;
 	-GtkWidget-focus-line-width: 1;
-	-adwaita-focus-border-color: @focus_border;
-	-adwaita-focus-border-radius: 2;
-	-adwaita-focus-border-dashes: 1;
 
 	-GtkWindow-resize-grip-width: 10;
-	-GtkWindow-resize-grip-height: 10; 
+	-GtkWindow-resize-grip-height: 10;
+
+	/* We use the outline properties to signal the focus properties
+	 * to the adwaita engine: using real CSS properties is faster,
+	 * and we don't use any outlines for now.
+	 */
+	outline-color: @focus_border;
+	outline-style: dashed;
+	outline-offset: 2px;
 }
 
 /***************
@@ -172,9 +177,18 @@
 	color: @theme_selected_fg_color;
 }
 
+.notebook GtkContainer .view:selected,
+.notebook GtkContainer .view:active {
+	background-color: shade(@theme_selected_bg_color, 1.23);
+}
+
 .view:selected:focus {
 	background-color: @theme_selected_bg_color;
 	color: @theme_selected_fg_color;
+}
+
+.notebook GtkContainer .view:selected:focus {
+	background-color: @theme_selected_bg_color;
 }
 
 /* It's better not to have too bright text views. */
@@ -185,10 +199,20 @@ GtkHTML { /* For Evolution (not enough; see entries section below) */
 	color: @theme_main_color;
 }
 
+.notebook GtkContainer GtkTextView.view,
+.notebook GtkContainer GtkTextView.view:insensitive,
+.notebook GtkContainer GtkHTML {
+	background-color: @view_color;
+}
+
 /* This is for highlighting the current line in source views. */
 GtkTextView {
 	background-color: #D9D9D9; /* #dddddd; */
 	color: @theme_main_color;
+}
+
+.notebook GtkContainer GtkTextView {
+	background-color: #D9D9D9; /* #dddddd; */
 }
 
 /* Exceptional views */
@@ -197,6 +221,11 @@ GtkIconView.view,
 GtkDialog .view {
 	background-color: @theme_bg_color;
 	color: @theme_fg_color;
+}
+
+.notebook GtkContainer GtkCalendar.view,
+.notebook GtkContainer GtkIconView.view {
+	background-color: @theme_bg_color;
 }
 
 /**************
@@ -317,6 +346,11 @@ GtkTreeView .separator,
 	box-shadow: none;
 }
 
+.notebook GtkContainer .entry.progressbar,
+.notebook GtkContainer .entry.progressbar:focus {
+	background-color: transparent;
+}
+
 .entry.progressbar.pulse,
 .entry.progressbar.pulse:focus {
 	background-image: linear-gradient(to top, 
@@ -337,6 +371,11 @@ GtkTextView.entry,
 GtkHTML.entry {
 	background-color: @view_color;
 	color: @theme_main_color;
+}
+
+.notebook GtkContainer GtkTextView.entry,
+.notebook GtkContainer GtkHTML.entry {
+	background-color: @view_color;
 }
 
 /* for Totem's search */
@@ -495,6 +534,10 @@ GtkLevelBar {
 	background-color: transparent;
 }
 
+.notebook GtkContainer GtkLevelBar {
+	background-color: transparent;
+}
+
 GtkLevelBar.vertical {
 	-GtkLevelBar-min-block-width: 3;
 	-GtkLevelBar-min-block-height: 34;
@@ -536,7 +579,8 @@ GtkLevelBar.vertical {
 	                                  shade(@warning_bg_color, 0.7));
 }
 
-.level-bar.fill-block.empty-fill-block {
+.level-bar.fill-block.empty-fill-block,
+.notebook GtkContainer .level-bar.fill-block.empty-fill-block {
 	background-color: transparent;
 	background-image: linear-gradient(to bottom,
 					shade(@less_dark_color, 0.5),
@@ -578,10 +622,10 @@ GtkNotebook {
 }
 
 .notebook tab:active {
-	-adwaita-border-gradient: -gtk-gradient (linear,
-					         left top, left bottom,
-					         from (shade(@notebook_active_tab_border, 1.35)),
-					         to (@less_dark_color));
+	border-image-source: -gtk-gradient (linear,
+					    left top, left bottom,
+					    from (shade(@notebook_active_tab_border, 1.35)),
+					    to (@less_dark_color));
 
 	-adwaita-selected-tab-color: transparent; /*shade(@less_dark_color, 0.8);*/
 	background-image: linear-gradient(to bottom,
@@ -644,7 +688,9 @@ GtkNotebook {
 .notebook GtkIconView,
 .notebook GtkDrawingArea,
 .notebook GtkPaned,
-.notebook GtkEventBox {
+.notebook GtkEventBox,
+/* isn't this extreme? */
+.notebook GtkContainer {
 	background-color: @less_dark_color;
 }
 
@@ -835,8 +881,6 @@ GtkTreeView {
 	background-color: @less_dark_color;
 
 	-GtkTreeView-vertical-separator: 0;
-	-GtkTreeView-expander-size: 13;
-
 	-GtkWidget-focus-padding: 1;
 }
 
@@ -856,7 +900,8 @@ GtkTreeView.view.separator:hover {
 	color: alpha(@light_frame_color, 0.6);
 }
 
-GtkTreeView row:hover {
+GtkTreeView row:hover,
+.notebook GtkContainer GtkTreeView row:hover {
 	/*color: @theme_main_color;*/
 	background-color: alpha(@theme_selected_bg_color, 0.2);
 }
@@ -878,12 +923,16 @@ GtkTreeView row:selected:focus {
 }*/
 
 GtkTreeView row:nth-child(odd),
-GtkTreeView row:nth-child(odd):hover {
+GtkTreeView row:nth-child(odd):hover,
+.notebook GtkContainer GtkTreeView row:nth-child(odd),
+.notebook GtkContainer GtkTreeView row:nth-child(odd):hover {
 	background-color: @less_dark_color;
 }
 
 GtkTreeView row:nth-child(even),
-GtkTreeView row:nth-child(even):hover {
+GtkTreeView row:nth-child(even):hover,
+.notebook GtkContainer GtkTreeView row:nth-child(even),
+.notebook GtkContainer GtkTreeView row:nth-child(even):hover {
 	background-color: shade(@less_dark_color, 1.05);
 }
 
@@ -893,12 +942,16 @@ GtkTreeView row:nth-child(even):insensitive {
 }
 
 GtkTreeView column:sorted row:nth-child(odd),
-GtkTreeView column:sorted row:nth-child(odd):hover {
+GtkTreeView column:sorted row:nth-child(odd):hover,
+.notebook GtkContainer GtkTreeView column:sorted row:nth-child(odd),
+.notebook GtkContainer GtkTreeView column:sorted row:nth-child(odd):hover {
 	background-color: shade(@less_dark_color, 0.85);
 }
 
 GtkTreeView column:sorted row:nth-child(even),
-GtkTreeView column:sorted row:nth-child(even):hover {
+GtkTreeView column:sorted row:nth-child(even):hover,
+.notebook GtkContainer GtkTreeView column:sorted row:nth-child(even),
+.notebook GtkContainer GtkTreeView column:sorted row:nth-child(even):hover {
 	background-color: shade(@less_dark_color, 0.9);
 }
 
@@ -978,6 +1031,12 @@ row {
 	background-color: transparent;
 }
 
+.notebook GtkContainer .scale.slider,
+.notebook GtkContainer .scale.slider:hover,
+.notebook GtkContainer .scale.slider:insensitive {
+	background-color: transparent;
+}
+
 .scale.trough {
 	background-image: linear-gradient(to bottom,
 	                                  shade(@theme_bg_color, 0.5),
@@ -1021,7 +1080,8 @@ row {
 	                                  shade(@theme_bg_color, 0.8));
 }
 
-.scale.mark {
+.scale.mark,
+.notebook GtkContainer .scale.mark {
 	background-color: shade(@theme_bg_color, 0.56);
 }
 
@@ -1087,6 +1147,11 @@ GtkComboBox .menu {
 					to (shade(@button_gradient_color_b, 0.7)));
 }
 
+.button.image-button,
+.primary-toolbar.toolbar .button.image-button {
+	padding: 3px 4px 4px;
+}
+
 .button GtkImage,
 .button GtkImage:hover,
 .button GtkImage:active,
@@ -1144,9 +1209,9 @@ GtkComboBox .menu {
 	color: @insensitive_fg_color;
 }
 
-/****************
- * Link Buttons *
- ****************/
+/******************
+ * Linked Buttons *
+ ******************/
 
 /* We don't make them different. */
 
@@ -1164,6 +1229,14 @@ GtkComboBox .menu {
 	border-style: none;
 	border-image: none;
 	padding: 0px 4px 0px 0px;
+}
+
+.notebook GtkContainer .spinbutton .button,
+.notebook GtkContainer .spinbutton .button:insensitive,
+.notebook GtkContainer .spinbutton .button:hover,
+.notebook GtkContainer .spinbutton .button:active,
+.notebook GtkContainer .spinbutton .button:focus {
+	background-color: transparent;
 }
 
 .spinbutton .button,
@@ -1325,23 +1398,34 @@ GtkComboBox .menu {
 	background-color: @theme_bg_color;
 	border-width: 0px;
 	border-style: none;
-	/*this has no effect anymore */
-	/*padding: 2px;*/
+	padding: 0px;
 	color: @theme_text_color;
 
 	-GtkWidget-window-dragging: true;
-	-GtkMenuBar-internal-padding: 0;
+	/*-GtkMenuBar-internal-padding: 0;*/
+}
+
+.notebook GtkContainer .menubar {
+	background-color: @theme_bg_color;
 }
 
 /*.menubar * {
 	background-color: transparent;
 }*/
 
+.menubar .menuitem {
+	padding: 3px 7px;
+}
+
+.menu .menuitem {
+	padding: 3px 4px;
+}
+
 .menubar .menuitem,
 .menu .menuitem {
 	border-width: 0px;
 	border-style: none;
-	padding: 3px 4px;
+	background-color: transparent;
 }
 
 .menubar .menuitem:hover {
@@ -1476,10 +1560,19 @@ GtkMenuButton .menu {
 	-GtkToolbar-button-relief: normal;
 }
 
+.toolbar .button.text-button {
+	padding: 2px 16px;
+}
+
+.toolbar .button.image-button {
+	padding: 5px 4px 4px 5px;
+}
+
 /********************
  * Primary Toolbars *
  ********************/
-.toolbar:insensitive {
+.toolbar:insensitive,
+.notebook GtkContainer .toolbar:insensitive {
 	background-image: none;
 	background-color: shade(@theme_bg_color, 0.97);
 }
@@ -1505,6 +1598,21 @@ GtkMenuButton .menu {
 	background-color: transparent;
 }
 
+.notebook GtkContainer .toolbar .button,
+.notebook GtkContainer .primary-toolbar .button,
+.notebook GtkContainer .primary-toolbar .toolbar .button,
+.notebook GtkContainer .primary-toolbar.toolbar .button,
+.notebook GtkContainer .toolbar .button:insensitive,
+.notebook GtkContainer .primary-toolbar .button:insensitive,
+.notebook GtkContainer .primary-toolbar .toolbar .button:insensitive,
+.notebook GtkContainer .primary-toolbar.toolbar .button:insensitive,
+.notebook GtkContainer .toolbar .button:insensitive:hover,
+.notebook GtkContainer .primary-toolbar .button:insensitive:hover,
+.notebook GtkContainer .primary-toolbar .toolbar .button:insensitive:hover,
+.notebook GtkContainer .primary-toolbar.toolbar .button:insensitive:hover {
+	background-color: transparent;
+}
+
 .toolbar .button:hover,
 .primary-toolbar .button:hover,
 .primary-toolbar .toolbar .button:hover,
@@ -1513,6 +1621,13 @@ GtkMenuButton .menu {
 	border-color: shade(@button_border, 1.1);
 	border-radius: 3px;
 	background-image: none;
+	background-color: @theme_bg_color;
+}
+
+.notebook GtkContainer .toolbar .button:hover,
+.notebook GtkContainer .primary-toolbar .button:hover,
+.notebook GtkContainer .primary-toolbar .toolbar .button:hover,
+.notebook GtkContainer .primary-toolbar.toolbar .button:hover {
 	background-color: @theme_bg_color;
 }
 
@@ -1602,10 +1717,38 @@ GtkMenuButton .menu {
 	border-color: alpha(@frame_color, 0.6); /*shade(@theme_bg_color, 0.8);*/
 }
 
+/***************
+ * Header bars *
+ ***************/
+.header-bar {
+	border-width: 0 0 1px;
+	border-style: solid;
+	padding: 0 1px;
+
+	background-color: @theme_bg_color;
+	background-image: linear-gradient(to bottom,
+	                                  @toolbar_gradient_base,
+	                                  shade(@theme_bg_color, 1.6));
+	border-color: alpha(@frame_color, 0.6);
+}
+
+.notebook GtkContainer .header-bar {
+	border-color: alpha(@frame_color, 0.6);
+}
+
+
+.header-bar .button.text-button {
+	padding: 2px 16px;
+}
+
+.header-bar .button.image-button {
+	padding: 5px 4px 4px 5px;
+}
+
 /*******
  * OSD *
  *******/
-GtkWindow.osd {
+.background.osd {
 	color: @osd_fg;
 	background-image: none;
 	background-color: @osd_bg;
@@ -1615,6 +1758,8 @@ GtkOverlay.osd {
 	background-color: transparent;
 }
 
+.osd.button,
+.osd.button:active,
 .osd .button,
 .osd .button:active {
 	border-width: 1px;
@@ -1624,6 +1769,7 @@ GtkOverlay.osd {
 	border-radius: 5px;
 }
 
+.osd.button,
 .osd .button {
 	padding: 4px;
 	background-image: linear-gradient(to bottom,
@@ -1635,22 +1781,28 @@ GtkOverlay.osd {
 	icon-shadow: 0 -1px @osd_button_shadow;
 }
 
+.osd.button,
+.osd.button:prelight,
+.osd.button:active,
 .osd .button,
 .osd .button:prelight,
 .osd .button:active {
 	background-color: transparent;
 }
 
+.osd.button:insensitive,
 .osd .button:insensitive {
 	background-image: none;
 	background-color: @osd_button_bg_insensitive;
 }
 
+.osd.button:active:insensitive,
 .osd .button:active:insensitive {
 	background-image: none;
 	background-color: @osd_button_bg_insensitive_active;
 }
 
+.osd.button *:hover,
 .osd .button *:hover {
 	color: @osd_button_fg_hover;
 }
@@ -1660,11 +1812,14 @@ GtkOverlay.osd {
 	color: @osd_button_fg_active;
 }
 
+.osd.button *:insensitive,
+.osd.button *:insensitive:active,
 .osd .button *:insensitive,
 .osd .button *:insensitive:active {
 	color: @osd_button_fg_insensitive;
 }
 
+.osd.button:hover,
 .osd .button:hover {
 	background-image: linear-gradient(to bottom,
 	                                  @osd_button_bg_hover_a,
@@ -1672,12 +1827,25 @@ GtkOverlay.osd {
 	                                  @osd_button_bg_hover_c);
 }
 
+.osd.button:active,
+.osd.button:active:hover,
 .osd .button:active,
-.osd .button:active:hover {
+.osd .button:active:hover,
+.osd GtkMenuButton.button:active {
 	background-image: linear-gradient(to bottom,
 	                                  @osd_button_bg_active_a,
 	                                  @osd_button_bg_active_b 68%,
 	                                  @osd_button_bg_active_c);
+}
+
+.osd GtkMenuButton.button:active {
+    background-color: transparent;
+    border-color: @osd_button_border;
+}
+
+.osd GtkMenuButton.button *:active {
+    color: @osd_button_fg_active;
+    text-shadow: 0 -1px @osd_button_shadow;
 }
 
 .osd.toolbar {
@@ -1749,14 +1917,16 @@ GtkOverlay.osd {
 	background-color: transparent;
 }
 
-.osd GtkProgressBar {
+.osd GtkProgressBar,
+GtkProgressBar.osd {
 	padding: 0;
 	-GtkProgressBar-xspacing: 0;
 	-GtkProgressBar-yspacing: 3px;
 	-GtkProgressBar-min-horizontal-bar-height: 3px;
 }
 
-.osd GtkProgressBar.trough {
+.osd GtkProgressBar.trough,
+GtkProgressBar.osd.trough {
 	padding: 0;
 	border-image: none;
 	border-style: none;
@@ -1766,10 +1936,13 @@ GtkOverlay.osd {
 	border-radius: 0;
 }
 
-.osd GtkProgressBar.progressbar {
+.osd GtkProgressBar.progressbar,
+GtkProgressBar.osd.progressbar {
 	border-style: none;
-	background-color: @theme_selected_bg_color;
-	background-image: none;
+	background-color: shade(@progressbar_background_b, 1.3);
+	background-image: linear-gradient(to bottom,
+	                                  @progressbar_background_a,
+	                                  @progressbar_background_b);
 	border-radius: 0;    
 }
 
@@ -1852,6 +2025,10 @@ GtkSwitch.trough:insensitive {
 	border-image: none;
 }
 
+.notebook GtkContainer GtkSwitch.trough:insensitive {
+	background-color: shade(@theme_bg_color, 0.9);
+}
+
 GtkSwitch.trough:insensitive {
 	color: @insensitive_fg_color;
 }
@@ -1882,6 +2059,10 @@ GtkSwitch.slider:insensitive {
 	background-color: shade(@switch_slider_color, 0.6)
 }
 
+.notebook GtkContainer GtkSwitch.slider:insensitive {
+	background-color: shade(@switch_slider_color, 0.6)
+}
+
 GtkStatusbar {
 	padding: 5px;
 	color: @theme_fg_color;
@@ -1906,7 +2087,17 @@ GtkLabel,
 GtkLabel:hover,
 GtkLabel:active,
 GtkLabel:hover:active,
-GtkLabel:insensitive {
+GtkLabel:insensitive,
+.notebook GtkContainer GtkImage,
+.notebook GtkContainer GtkImage:hover,
+.notebook GtkContainer GtkImage:active,
+.notebook GtkContainer GtkImage:hover:active,
+.notebook GtkContainer GtkImage:insensitive,
+.notebook GtkContainer GtkLabel,
+.notebook GtkContainer GtkLabel:hover,
+.notebook GtkContainer GtkLabel:active,
+.notebook GtkContainer GtkLabel:hover:active,
+.notebook GtkContainer GtkLabel:insensitive {
 	background-image: none;
 	background-color: transparent;
 }
@@ -1929,9 +2120,14 @@ GtkIconView.view.cell:selected:focus {
 	/* FIXME: this probably needs to be better;
 	 * see https://bugzilla.gnome.org/show_bug.cgi?id=644157
 	 */
-	-adwaita-focus-border-color: @progressbar_border;
-	-adwaita-focus-border-radius: 3;
-	-adwaita-focus-border-dashes: 0;
+	outline-color: @progressbar_border;
+	outline-style: solid;
+	outline-offset: 3px;
+}
+
+.notebook GtkContainer GtkIconView.view.cell:selected,
+.notebook GtkContainer GtkIconView.view.cell:selected:focus {
+	background-color: transparent;
 }
 
 /* These are for Evolution, whose new version can also
@@ -1940,6 +2136,11 @@ EMailDisplay,
 EPreviewPane .entry {
 	background-color: @view_color;
 	color: @theme_main_color;
+}
+
+.notebook GtkContainer EMailDisplay,
+.notebook GtkContainer EPreviewPane .entry {
+	background-color: @view_color;
 }
 
 /* make plain-text preview readable */
@@ -1960,15 +2161,18 @@ GtkHTML:active {
 	color: #ffffff;
 }
 
-EShellWindow *:active {
+EShellWindow *:active,
+.notebook GtkContainer EShellWindow *:active {
 	background-color: #717175;
 }
 
-EShellWindow .button *:active {
+EShellWindow .button *:active,
+.notebook GtkContainer EShellWindow .button *:active {
 	background-color: transparent;
 }
 
-EShellWindow:insensitive { /* removes the "flash" when quitting */
+EShellWindow:insensitive,
+.notebook GtkContainer EShellWindow .button *:active { /* removes the "flash" when quitting */
 	background-color: @theme_bg_color;
 }
 
@@ -1981,7 +2185,9 @@ EShellWindow:insensitive { /* removes the "flash" when quitting */
  * Color Chooser *
  *****************/
 GtkColorSwatch,
-GtkColorSwatch:selected {
+GtkColorSwatch:selected,
+.notebook GtkContainer GtkColorSwatch,
+.notebook GtkContainer GtkColorSwatch:selected {
 	background-image: none;
 	background-color: transparent;
 
@@ -2012,7 +2218,9 @@ GtkColorSwatch:selected:hover {
 }
 
 GtkColorSwatch.color-light:selected:hover,
-GtkColorSwatch.color-dark:selected:hover {
+GtkColorSwatch.color-dark:selected:hover,
+.notebook GtkContainer GtkColorSwatch.color-light:selected:hover,
+.notebook GtkContainer GtkColorSwatch.color-dark:selected:hover {
 	background-image: none;
 }
 
@@ -2043,6 +2251,25 @@ GtkColorSwatch.color-dark:selected:hover {
 	background-color: transparent;
 }
 
+.notebook GtkContainer .radio,
+.notebook GtkContainer .check,
+.notebook GtkContainer .radio:selected, 
+.notebook GtkContainer .check:selected,
+.notebook GtkContainer .radio:selected:focus, 
+.notebook GtkContainer .check:selected:focus,
+.notebook GtkContainer .cell.radio,
+.notebook GtkContainer .cell.check,
+.notebook GtkContainer .cell.radio:selected, 
+.notebook GtkContainer .cell.check:selected,
+.notebook GtkContainer .cell.radio:selected:focus, 
+.notebook GtkContainer .cell.check:selected:focus,
+.notebook GtkContainer .check:hover,
+.notebook GtkContainer .check:selected:hover,
+.notebook GtkContainer .radio:hover,
+.notebook GtkContainer .radio:selected:hover {
+	background-color: transparent;
+}
+
 /*****************
  * GtkCheckButton *
  *****************/
@@ -2050,7 +2277,8 @@ GtkCheckButton:hover {
 	background-color: alpha(@theme_main_color, 0.09); /*shade(@theme_bg_color, 0.9)*/
 }
 
-GtkCheckButton:selected:hover {
+GtkCheckButton:selected:hover,
+.notebook GtkContainer GtkCheckButton:selected:hover {
 	background-color: alpha(@theme_main_color, 0.15); /*shade(@theme_bg_color, 0.8)*/
 }
 
@@ -2061,7 +2289,8 @@ GtkRadioButton:hover {
 	background-color: alpha(@theme_main_color, 0.09); /*shade(@theme_bg_color, 0.9)*/
 }
 
-GtkRadioButton:selected:hover {
+GtkRadioButton:selected:hover,
+.notebook GtkContainer GtkRadioButton:selected:hover {
 	background-color: alpha(@theme_main_color, 0.15); /*shade(@theme_bg_color, 0.8)*/
 }
 
@@ -2114,23 +2343,42 @@ GtkRadioButton:selected:hover {
 	background-color: transparent;
 }
 
+.notebook GtkContainer .expander,
+.notebook GtkContainer .expander:active,
+.notebook GtkContainer .expander row:selected,
+.notebook GtkContainer .expander row:selected:focus,
+.notebook GtkContainer .expander row:selected:hover,
+.notebook GtkContainer .expander column:sorted:selected,
+.notebook GtkContainer .expander column:sorted:selected:hover {
+	background-color: transparent;
+}
+
 /****************
  * Content view *
  ****************/
-.content-view.view {
+.content-view.view,
+.notebook GtkContainer .content-view.view {
 	background-color: @content_view_bg;
 }
 
-.content-view.view:prelight {
+.content-view.view:hover {
+	background-color: shade(@content_view_bg, 1.1);
+	color: @theme_text_color;
+}
+
+.notebook GtkContainer .content-view.view {
 	background-color: shade(@content_view_bg, 1.1);
 }
 
 .content-view.view:selected,
-.content-view.view:active {
+.content-view.view:active,
+.notebook GtkContainer .content-view.view:selected,
+.notebook GtkContainer .content-view.view:active {
 	background-color: @theme_selected_bg_color;
 }
 
-.content-view.view:insensitive {
+.content-view.view:insensitive,
+.notebook GtkContainer .content-view.view:insensitive {
 	background-color: @theme_unfocused_base_color;
 }
 
@@ -2153,11 +2401,20 @@ GtkIconView.content-view.check:active {
 	background-color: transparent;
 }
 
-GtkIconView.content-view.check:prelight,
+GtkIconView.content-view.check:hover,
 GtkIconView.content-view.check:insensitive,
 GtkIconView.content-view.check:selected {
 	background-color: transparent;
 }
+
+.notebook GtkContainer GtkIconView.content-view.check,
+.notebook GtkContainer GtkIconView.content-view.check:active,
+.notebook GtkContainer .content-view.view.check,
+.notebook GtkContainer .content-view.view.check:active,
+.notebook GtkContainer GtkIconView.content-view.check:hover,
+.notebook GtkContainer GtkIconView.content-view.check:insensitive,
+.notebook GtkContainer GtkIconView.content-view.check:selected {
+	background-color: transparent;
 
 /*********************
  * App Notifications *
@@ -2198,7 +2455,9 @@ GtkCalendar.header {
 }
 
 GtkCalendar.button,
-GtkCalendar.button:insensitive {
+GtkCalendar.button:insensitive,
+.notebook GtkContainer GtkCalendar.button,
+.notebook GtkContainer GtkCalendar.button:insensitive {
 	background-image: none;
 	background-color: transparent;
 }
@@ -2210,6 +2469,11 @@ GtkCalendar.highlight {
 	border-radius: 0;
 	padding: 0px;
 	border-width: 0px;
+}
+
+.notebook GtkContainer .highlight,
+.notebook GtkContainer GtkCalendar.highlight {
+	background-color: @theme_selected_bg_color;
 }
 
 /**************
@@ -2244,9 +2508,17 @@ GtkInfoBar {
 	color: @info_fg_color;
 }
 
+.notebook GtkContainer .info {
+	background-color: @info_bg_color;
+}
+
 .warning {
 	background-color: @warning_bg_color;
 	color: @warning_fg_color;
+}
+
+.notebook GtkContainer .warning {
+	background-color: @warning_bg_color;
 }
 
 .question {
@@ -2254,9 +2526,18 @@ GtkInfoBar {
 	color: @question_fg_color;
 }
 
+.notebook GtkContainer .question {
+	background-color: @question_bg_color;
+}
+
 .error {
 	background-color: @error_bg_color;
 	color: @error_fg_color;
+}
+
+.error,
+.notebook GtkContainer .error {
+	background-color: @error_bg_color;
 }
 
 /* some apps need this */
@@ -2701,10 +2982,10 @@ NautilusWindow .notebook tab.top,
 NemoWindow .notebook tab.top {
 	/* top right-left bottom */
 	padding: 4px 8px 4px;
-	-adwaita-border-gradient: -gtk-gradient (linear,
-					left top, left bottom,
-					from (shade(@notebook_active_tab_border, 1.35)),
-					to (@less_dark_color));
+	border-image-source: -gtk-gradient (linear,
+	                                    left top, left bottom,
+	                                    from (shade(@notebook_active_tab_border, 1.35)),
+	                                    to (@less_dark_color));
 }
 
 NautilusWindow .notebook tab.top:active,
@@ -2724,10 +3005,10 @@ NemoWindow .notebook tab.top:active {
 
 .nautilus-inactive-pane .notebook tab.top:active,
 .nemo-inactive-pane .notebook tab.top:active {
-	-adwaita-border-gradient: -gtk-gradient (linear,
-					left top, left bottom,
-					from (shade(@notebook_active_tab_border, 1.35)),
-					to (shade(@less_dark_color, 1.3)));
+	border-image-source: -gtk-gradient (linear,
+					    left top, left bottom,
+					    from (shade(@notebook_active_tab_border, 1.35)),
+					    to (shade(@less_dark_color, 1.3)));
 	background-image: linear-gradient(to bottom,
 	                                  shade(@less_dark_color, 1.05),
 	                                  shade(@less_dark_color, 1.16) 40%,
