@@ -376,9 +376,9 @@ style "misc-panel"
 		roundness=3
 	}
 
-	bg[NORMAL]   = "#4b4a46"  # for the (dark) Ambiance background
+	bg[NORMAL]   = shade (0.9, "#666669")  # for the (dark) Ambiance background
 	bg[PRELIGHT] = "#c6b9a6" #for the (dark) Ambiance background
-	bg[SELECTED] = shade (0.6, "#3b3b3e")  # to be compatible with menus
+#	bg[SELECTED]   = shade (4.2, "#3b3b3e")  # to be compatible with menus
 	fg[NORMAL]   = "#FFFFFF"  # for dark panel
 	#fg[PRELIGHT] = "#FFFFFF"
 
@@ -490,8 +490,8 @@ style "murrine-notebook"
 	#bg[NORMAL]   = "#f5f2ef"
 	#bg[SELECTED] = "#3b3b3e"
 
-	bg[NORMAL] = "#3b3b3e"	# selected tab
-	bg[ACTIVE] = shade (0.8, "#3b3b3e")	# unselected tab
+	bg[NORMAL] = "#4D4D4D"	# selected tab
+	bg[ACTIVE] = shade (0.8, "#4D4D4D")	# unselected tab
 
 	xthickness = 3
 	ythickness = 3
