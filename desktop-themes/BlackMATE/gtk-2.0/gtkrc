@@ -139,11 +139,11 @@ style "menu"
 
 style "menuitem"
 {
-	#fg[PRELIGHT]   = "#ffffff"
-	#bg[SELECTED]   = shade (1.08, "#3b3b3e")
-	fg[PRELIGHT]   = "#000000"
+	fg[PRELIGHT]   = "#ffffff"
+	bg[SELECTED]   = shade (1.08, "#666669")
+#	fg[PRELIGHT]   = "#000000"
 	text[PRELIGHT] = "#000000"
-	bg[SELECTED]   = shade (4.2, "#3b3b3e")
+#	bg[SELECTED]   = shade (4.2, "#3b3b3e")
 
 	xthickness = 2
 	ythickness = 3
@@ -376,7 +376,7 @@ style "misc-panel"
 		roundness=3
 	}
 
-	bg[NORMAL]   = shade (0.9, "#666669")  # for the (dark) Ambiance background
+	bg[NORMAL]   = shade (0.7, "#4D4D4D")  # for the (dark) Ambiance background
 	bg[PRELIGHT] = "#c6b9a6" #for the (dark) Ambiance background
 #	bg[SELECTED]   = shade (4.2, "#3b3b3e")  # to be compatible with menus
 	fg[NORMAL]   = "#FFFFFF"  # for dark panel
@@ -390,6 +390,11 @@ style "misc-panel"
 # syncronize panel menus
 style "applet"
 {
+	bg[NORMAL]   = shade (0.7, "#4D4D4D")  # for the (dark) Ambiance background
+	bg[ACTIVE]   = shade (0.78, "#666669")  # to be compatible with menus
+	fg[ACTIVE]   = "#FFFFFF"
+	bg[PRELIGHT] = shade (0.68, "#666669") #for the (dark) Ambiance background
+	fg[PRELIGHT] = "#FFFFFF"
 }
 
 style "view"
@@ -581,9 +586,9 @@ class "Panel"					style "misc-panel"
 class "*Separator*"				style "misc-sep"
 # syncronize panel menus
 widget_class "*MatePanelAppletFrameDBus*" style "applet"
+widget "*PanelApplet*"				style "applet"
 # This is suitable for dark panels:
-#widget "*PanelApplet*"				style "misc-panel"
-#widget_class "*PanelWidget*"			style "misc-panel"
+widget_class "*PanelWidget*"			style "misc-panel"
 widget "*fast-user-switch-applet*"		style "misc-panel"
 ########################################
 # Combo
