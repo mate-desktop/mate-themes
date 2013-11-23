@@ -1497,8 +1497,8 @@ GtkComboBox .menu {
 .menuitem:hover,
 .menu .menuitem:hover {
 	background-image: linear-gradient(to bottom,
-	                                  #ffffff,
-	                                  #595959);
+	                                  #808080,
+	                                  #000000);
 	/*color: @theme_main_color;*/
 	color: #000000;
 	border-style: solid;
@@ -1509,7 +1509,7 @@ GtkComboBox .menu {
 
 .menuitem *:hover,
 .menu .menuitem *:hover {
-	color: #000000;
+	color: #ffffff;
 }
 
 .menu .menuitem:insensitive,
