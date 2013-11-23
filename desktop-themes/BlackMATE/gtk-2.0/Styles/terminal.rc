@@ -1,0 +1,14 @@
+style "terminal_screen"
+{
+	text[NORMAL] = "#EBEBEB"
+	base[NORMAL] = "#000000"
+
+	TerminalScreen::background-darkness = 0.95
+}
+
+widget "*TerminalWindow.*.TerminalScreen*"              style "terminal_screen"
+
+
+
+
+
