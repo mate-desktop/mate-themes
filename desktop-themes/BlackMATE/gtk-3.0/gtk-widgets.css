@@ -24,6 +24,8 @@
 	/* this is more stylish with this theme */
 	-GtkScrolledWindow-scrollbars-within-bevel: 0;
 
+	-GtkToolItemGroup-expander-size: 12;
+	-GtkExpander-expander-size: 12;
 	-GtkTreeView-expander-size: 13;
 	-GtkTreeView-horizontal-separator: 4;
 	-GtkMenuBar-shadow-type: none;
@@ -46,7 +48,7 @@
 	-GtkWidget-focus-line-width: 1;
 
 	-GtkWindow-resize-grip-width: 10;
-	-GtkWindow-resize-grip-height: 10;
+	-GtkWindow-resize-grip-height: 10; 
 
 	/* We use the outline properties to signal the focus properties
 	 * to the adwaita engine: using real CSS properties is faster,
@@ -2415,6 +2417,7 @@ GtkIconView.content-view.check:selected {
 .notebook GtkContainer GtkIconView.content-view.check:insensitive,
 .notebook GtkContainer GtkIconView.content-view.check:selected {
 	background-color: transparent;
+}
 
 /*********************
  * App Notifications *
