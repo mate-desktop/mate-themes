@@ -142,7 +142,7 @@ style "menuitem"
 	fg[PRELIGHT]   = "#ffffff"
 	bg[SELECTED]   = shade (1.08, "#666669")
 #	fg[PRELIGHT]   = "#000000"
-	text[PRELIGHT] = "#000000"
+	text[PRELIGHT] = "#ffffff"
 #	bg[SELECTED]   = shade (4.2, "#3b3b3e")
 
 	xthickness = 2
@@ -213,10 +213,10 @@ style "murrine-button"
 style "murrine-togglebutton"
 {
 	fg[NORMAL]   = "#ffffff"
-	fg[ACTIVE]   = "#000000"
-	fg[PRELIGHT]   = "#000000"
-	bg[ACTIVE]   = shade (3.0, "#3b3b3e")
-	bg[PRELIGHT] = shade (3.2, "#3b3b3e")
+	fg[ACTIVE]   = "#ffffff"
+	fg[PRELIGHT]   = "#ffffff"
+	bg[ACTIVE]   = shade (0.68, "#666669")
+	bg[PRELIGHT] = shade (0.68, "#666669")
 	engine "murrine"
 	{
 		gradient_shades = {3.0, 1.0, 0.6, 0.5}
