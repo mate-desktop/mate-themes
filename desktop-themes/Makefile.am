@@ -1,5 +1,6 @@
 SUBDIRS = \
 	BlackMATE \
+	BlueMenta \
 	Quid \
 	TraditionalOk \
 	TraditionalGreen \
@@ -19,6 +20,7 @@ SUBDIRS = \
 
 DIST_SUBDIRS = \
 	BlackMATE \
+	BlueMenta \
 	Quid \
 	TraditionalOk \
 	TraditionalGreen \
