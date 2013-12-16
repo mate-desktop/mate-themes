@@ -13,15 +13,10 @@ m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 IT_PROG_INTLTOOL([0.35.0])
 PKG_PROG_PKG_CONFIG([0.19])
 
-GETTEXT_PACKAGE="${PACKAGE}"
-AC_SUBST(GETTEXT_PACKAGE)
-
 AM_GLIB_GNU_GETTEXT
-
-# AM_GLIB_GNU_GETTEXT above subst. $DATADIRNAME
-# this is the directory where the *.{mo,gmo} files are installed
-localedir='${prefix}/${DATADIRNAME}/locale'
-AC_SUBST(localedir)
+GETTEXT_PACKAGE=AC_PACKAGE_NAME
+AC_SUBST(GETTEXT_PACKAGE)
+AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Gettext package.])
 
 # Workaround to make aclocal get the right flags
 AC_SUBST(ACLOCAL_AMFLAGS, "\${ACLOCAL_FLAGS}")
