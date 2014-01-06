@@ -1,6 +1,7 @@
 THEMES = \
 	Atantla \
 	AlaDelta \
+	Quid \
 	Shiny \
 	Reverse \
 	Fog \
