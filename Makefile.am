@@ -8,6 +8,7 @@ SUBDIRS = \
 	po
 
 EXTRA_DIST = \
+	autogen.sh \
 	low-contrast-preset.scm \
 	intltool-extract.in \
 	intltool-merge.in \
