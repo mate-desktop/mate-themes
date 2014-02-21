@@ -11,8 +11,8 @@ style "theme-panel"
 	base[INSENSITIVE]	= @bg_color
 	bg[NORMAL]			= @bg_color
 	bg[PRELIGHT]		= shade (1.20, @bg_color)
-	bg[SELECTED]		= shade (0.90, @selected_bg_color)
-	bg[INSENSITIVE]		= @bg_color_dark
+	bg[SELECTED]		= @bg_color
+	bg[INSENSITIVE]		= @bg_color
 	bg[ACTIVE]			= shade (0.8, @bg_color)
 	fg[NORMAL]			= "#000000"
 	fg[PRELIGHT]		= "#000000"
@@ -32,7 +32,7 @@ style "theme-panel"
 style "theme-panel-buttons"
 {
 # Disable (comment out) for normal panel backgrounds or to get a transparancy panel.
-	bg_pixmap[NORMAL] = "/Panel/panel-bg.png"
+	#bg_pixmap[NORMAL] = "/Panel/panel-bg.png"
 	
 	engine "pixmap" {
 		image {
