@@ -52,6 +52,10 @@ NautilusWindow .sidebar .frame {
 	border-style: none;
 }
 
+NautilusWindow .sidebar row:hover {
+	background-color: shade (@theme_bg_color, 0.95);
+}
+
 NautilusWindow * {
 	-GtkPaned-handle-size: 1;
 }

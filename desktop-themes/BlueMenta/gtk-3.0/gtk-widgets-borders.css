@@ -224,7 +224,7 @@ column-header .button:active:hover,
 column-header .button.dnd {
 	border-image: linear-gradient(to top,
 		alpha(@theme_base_color, 0.0),
-		@theme_bg_color) 0 1 1 0;
+		shade(@borders, 1.0)) 0 1 1 0;
 }
 
 column-header.button:insensitive,
@@ -241,6 +241,15 @@ column-header:last-child .button:active,
 column-header.button:last-child:active:hover,
 column-header:last-child .button:active:hover {
 	border-right-width: 0;
+}
+
+column-header.button:focus,
+column-header .button:focus {
+	border-image: linear-gradient(to top,
+		alpha(@theme_base_color, 0.0),
+		shade(@borders, 1.0)) 0 1 1 0;
+	border-width: 0 1px 1px 0;
+	border-radius: 0;
 }
 
 /* pushed colored buttons borders */

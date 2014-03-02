@@ -4,7 +4,7 @@ theme_DATA = \
 	chromium.rc \
 	combo_down.png \
 	dummy.png \
-	pcmanfm.rc \
+	thunar.rc \
 	stock_back.png \
 	stock_find.png \
 	stock_forward.png \
