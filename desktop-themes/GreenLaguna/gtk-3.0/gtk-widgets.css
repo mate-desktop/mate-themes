@@ -113,6 +113,7 @@
 	background-color: shade(@inactive_frame_color, 0.93);
 }*/
 
+.content-view.view.rubberband,
 .view.rubberband,
 .rubberband {
 	background-color: alpha(@theme_selected_bg_color, 0.35);
@@ -765,6 +766,15 @@ row {
 	background-color: transparent;
 }
 
+.scale.slider.fine-tune:active,
+.scale.slider.fine-tune:active:hover,
+.scale.slider.fine-tune.horizontal:active,
+.scale.slider.fine-tune.horizontal:active:hover {
+	background-size: 80%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
 .scale.trough {
 	background-image: linear-gradient(to bottom,
 	                                  shade(@theme_bg_color, 0.7),
@@ -847,7 +857,9 @@ GtkTreeMenu .menuitem * {
  * Buttons *
  ***********/
 .button {
-	padding: 0px;
+	/* Due to a bug somewhere in gtk or cairo,
+	   a padding of zero (or even one) doesn't work always! */
+	padding: 2px;
 	-GtkWidget-focus-line-width: 1;
 
 	border-radius: 3px;
@@ -1110,6 +1122,24 @@ GtkTreeMenu .menuitem * {
 	background-color: shade(@theme_bg_color, 1.5);
 }
 
+.scrollbar.slider.fine-tune:prelight:active {
+	background-image: url("assets/slider_fine_horizontal.svg"),
+	                  linear-gradient(to top,
+	                                  shade(@theme_bg_color, 1.5),
+	                                  shade(@theme_bg_color, 0.9));
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.scrollbar.slider.vertical.fine-tune:prelight:active {
+	background-image: url("assets/slider_fine_vertical.svg"),
+	                  linear-gradient(to left,
+	                                  shade(@theme_bg_color, 1.5),
+	                                  shade(@theme_bg_color, 0.9));
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
 /*********
  * Menus *
  *********/
@@ -1221,9 +1251,8 @@ GtkTreeMenu .menuitem * {
 .menuitem:hover,
 .menu .menuitem:hover {
 	background-image:  linear-gradient(to bottom,
-	                                  shade(@theme_bg_color, 2.0),
-	                                  @theme_bg_color 1%,
-	                                  shade(@theme_selected_bg_color, 0.9));
+	                                  shade(@theme_selected_bg_color, 1.6),
+	                                  shade(@theme_selected_bg_color, 0.6));
 	color: @theme_text_color;
 	border-style: solid;
 	border-width: 1px;
@@ -1431,19 +1460,19 @@ GtkTreeMenu .menuitem * {
 	padding: 0 1px;
 
 	background-color: @theme_bg_color;
-	background-image: linear-gradient(to bottom,
+	/*background-image: linear-gradient(to bottom,
 	                                  @toolbar_gradient_base,
-	                                  shade(@theme_bg_color, 1.6));
+	                                  shade(@theme_bg_color, 1.6));*/
 	border-color: alpha(@frame_color, 0.6);
 }
 
 .notebook GtkContainer .header-bar {
-	border-color: alpha(@frame_color, 0.6);
+	background-color: @theme_bg_color;
 }
 
 
 .header-bar .button.text-button {
-	padding: 2px 16px;
+	padding: 2px 6px;
 }
 
 .header-bar .button.image-button {
@@ -1655,6 +1684,12 @@ GtkProgressBar.osd.progressbar {
 
 /* Not different from other buttons */
 
+/******************************
+ * Destructive action buttons *
+ ******************************/
+
+/* not different from other buttons */
+
 /**************************
  * Selection Mode classes *
  **************************/
@@ -1692,7 +1727,7 @@ GtkAssistant .sidebar {
  * GtkSwitch *
  *************/
 GtkSwitch {
-	font: bold condensed 10;
+	font: bold condensed;
 }
 
 GtkSwitch.trough {
@@ -2159,8 +2194,13 @@ MathWindow GtkScrolledWindow GtkViewport.frame {
 
 /* empathy and gnome-contacts */
 
+ContactsListPane.frame * {
+	background-color: transparent;
+	color: @theme_text_color;
+}
+
 EmpathyRosterView:selected,
-ContactsListPane.frame *:selected {
+ContactsView:selected {
 	background-image: linear-gradient(to bottom,
 	                                  shade(@theme_bg_color, 0.8),
 	                                  shade(@theme_bg_color, 1.2));

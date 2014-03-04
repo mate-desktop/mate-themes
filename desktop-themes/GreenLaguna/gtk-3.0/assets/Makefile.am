@@ -52,6 +52,8 @@ theme_DATA = \
 	scale-slider-marks-below-vertical.svg \
 	scale-slider-vertical-insensitive.svg \
 	scale-slider-vertical.svg \
+	slider_fine_horizontal.svg \
+	slider_fine_vertical.svg \
 	sidebar-radio-prelight.svg \
 	sidebar-radio-selected-prelight.svg \
 	switch-slider-grip.svg \
