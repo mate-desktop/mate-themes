@@ -70,6 +70,8 @@ theme_DATA = \
 	scale-slider-vertical-dark.svg \
 	scale-slider-vertical-insensitive-dark.svg \
 	sidebar-radio-checked-dark.svg \
+	slider_fine_horizontal.svg \
+	slider_fine_vertical.svg
 	sidebar-radio-prelight.svg \
 	sidebar-radio-selected-dark.svg \
 	sidebar-radio-selected-prelight.svg \

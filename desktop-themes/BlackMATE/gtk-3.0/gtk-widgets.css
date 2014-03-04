@@ -42,7 +42,8 @@
 
 	-WnckTasklist-fade-overlay-rect: 0;
 
-	border-radius: 3px;
+	/* this makes emacs behave weirdly */
+	/*border-radius: 3px;*/
 
 	-GtkWidget-focus-padding: 2;
 	-GtkWidget-focus-line-width: 1;
@@ -116,6 +117,7 @@
 	background-color: shade(@inactive_frame_color, 0.93);
 }*/
 
+.content-view.view.rubberband,
 .view.rubberband,
 .rubberband {
 	background-color: alpha(@theme_selected_bg_color, 0.35);
@@ -524,6 +526,7 @@ GtkCalendar {
 	border-width: 1px;
 	border-color: alpha(@frame_color, 0.6);
 	padding: 2px;
+	border-radius: 3px;
 }
 
 /***************
@@ -594,6 +597,7 @@ GtkLevelBar.vertical {
  *************/
 GtkNotebook {
 	background-color: transparent;
+	border-radius: 3px;
 }
 
 .notebook {
@@ -1039,6 +1043,15 @@ row {
 	background-color: transparent;
 }
 
+.scale.slider.fine-tune:active,
+.scale.slider.fine-tune:active:hover,
+.scale.slider.fine-tune.horizontal:active,
+.scale.slider.fine-tune.horizontal:active:hover {
+	background-size: 80%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
 .scale.trough {
 	background-image: linear-gradient(to bottom,
 	                                  shade(@theme_bg_color, 0.5),
@@ -1132,7 +1145,9 @@ GtkComboBox .menu {
  * Buttons *
  ***********/
 .button {
-	padding: 0;
+	/* Due to a bug somewhere in gtk or cairo,
+	   a padding of zero (or even one) doesn't work always!!! */
+	padding: 2px;
 
 	border-radius: 3px;
 	border-width: 1px;
@@ -1390,6 +1405,26 @@ GtkComboBox .menu {
 	background-color: shade(@theme_bg_color, 1.5);
 }
 
+.scrollbar.slider.fine-tune:prelight:active {
+	background-image: url("assets/slider_fine_horizontal.svg"),
+	                  linear-gradient(to top,
+	                                  shade(@scroll_slider_color, 3.3),
+	                                  shade(@scroll_slider_color, 1.6) 55%,
+	                                  shade(@scroll_slider_color, 0.6));
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.scrollbar.slider.vertical.fine-tune:prelight:active {
+	background-image: url("assets/slider_fine_vertical.svg"),
+	                  linear-gradient(to left,
+	                                  shade(@scroll_slider_color, 3.3),
+	                                  shade(@scroll_slider_color, 1.6) 55%,
+	                                  shade(@scroll_slider_color, 0.6));
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
 /*********
  * Menus *
  *********/
@@ -1484,8 +1519,8 @@ GtkComboBox .menu {
 .menu.button:hover {
 	color: @theme_main_color;
 	background-image: linear-gradient(to bottom,
-	                                  #ffffff,
-	                                  #808080);
+	                                  #999999,
+	                                  #404040);
 }
 
 .menu.button:insensitive {
@@ -1563,7 +1598,7 @@ GtkMenuButton .menu {
 }
 
 .toolbar .button.text-button {
-	padding: 2px 16px;
+	padding: 2px 5px;
 }
 
 .toolbar .button.image-button {
@@ -1726,16 +1761,17 @@ GtkMenuButton .menu {
 	border-width: 0 0 1px;
 	border-style: solid;
 	padding: 0 1px;
+	border-radius: 0px;
 
 	background-color: @theme_bg_color;
-	background-image: linear-gradient(to bottom,
+	/*background-image: linear-gradient(to bottom,
 	                                  @toolbar_gradient_base,
-	                                  shade(@theme_bg_color, 1.6));
+	                                  shade(@theme_bg_color, 1.6));*/
 	border-color: alpha(@frame_color, 0.6);
 }
 
 .notebook GtkContainer .header-bar {
-	border-color: alpha(@frame_color, 0.6);
+	background-color: @theme_bg_color;
 }
 
 
@@ -1804,20 +1840,20 @@ GtkOverlay.osd {
 	background-color: @osd_button_bg_insensitive_active;
 }
 
-.osd.button *:hover,
-.osd .button *:hover {
+.osd.button:hover,
+.osd .button:hover {
 	color: @osd_button_fg_hover;
 }
 
-.osd .button *:active,
-.osd .button *:hover:active {
+.osd .button:active,
+.osd .button:hover:active {
 	color: @osd_button_fg_active;
 }
 
-.osd.button *:insensitive,
-.osd.button *:insensitive:active,
-.osd .button *:insensitive,
-.osd .button *:insensitive:active {
+.osd.button:insensitive,
+.osd.button:insensitive:active,
+.osd .button:insensitive,
+.osd .button:active *:insensitive {
 	color: @osd_button_fg_insensitive;
 }
 
@@ -1845,7 +1881,7 @@ GtkOverlay.osd {
     border-color: @osd_button_border;
 }
 
-.osd GtkMenuButton.button *:active {
+.osd GtkMenuButton.button:active {
     color: @osd_button_fg_active;
     text-shadow: 0 -1px @osd_button_shadow;
 }
@@ -1954,6 +1990,12 @@ GtkProgressBar.osd.progressbar {
 
 /* Not different from other buttons. */
 
+/******************************
+ * Destructive action buttons *
+ ******************************/
+
+/* not different from other buttons */
+
 /**************************
  * Selection Mode classes *
  **************************/
@@ -1995,7 +2037,7 @@ GtkAssistant .sidebar {
  * GtkSwitch *
  *************/
 GtkSwitch {
-	font: bold condensed 10;
+	font: bold condensed;
 }
 
 GtkSwitch.trough {
@@ -2058,11 +2100,11 @@ GtkSwitch.slider:active {
 GtkSwitch.slider:insensitive {
 	border-style: none;
 	background-image: none;
-	background-color: shade(@switch_slider_color, 0.6)
+	background-color: shade(@switch_slider_color, 0.6);
 }
 
 .notebook GtkContainer GtkSwitch.slider:insensitive {
-	background-color: shade(@switch_slider_color, 0.6)
+	background-color: shade(@switch_slider_color, 0.6);
 }
 
 GtkStatusbar {
@@ -2485,6 +2527,7 @@ GtkCalendar.highlight {
 GtkInfoBar {
 	border-width: 0;
 	border-style: none;
+	border-radius: 3px;
 }
 
 .info .entry,
