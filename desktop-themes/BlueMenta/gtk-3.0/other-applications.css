@@ -502,8 +502,10 @@ PanelApplet .button:prelight,
 	text-shadow: none;
 }
 
-ClockBox {
-	text-shadow: none;
+ClockBox,
+.mate-panel-menu-bar.menubar,
+PanelApplet > GtkMenuBar.menubar {
+	font: normal;
 }
 
 WnckPager, WnckTasklist {
