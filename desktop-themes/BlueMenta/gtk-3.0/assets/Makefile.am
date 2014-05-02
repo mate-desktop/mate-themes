@@ -46,6 +46,6 @@ theme_DATA = \
 	switch-on-ins.svg \
 	switch-on.png \
 	switch-on.svg \
-	thumbnail-frame.png \
+	thumbnail-frame.png
 
 EXTRA_DIST = $(theme_DATA)
