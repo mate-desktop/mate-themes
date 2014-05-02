@@ -189,12 +189,14 @@
 @define-color wm_unfocused_title @theme_unfocused_fg_color;
 @define-color wm_highlight #ffffff;
 @define-color wm_title_highlight_dark alpha(#ffffff, 0.0);
+@define-color wm_title_highlight #ffffff;
 @define-color wm_title_shadow @wm_title_highlight;
 
 @define-color wm_bg_a shade (@theme_bg_color, 1.1);
 @define-color wm_bg_b @theme_bg_color;
 
 @define-color wm_shadow alpha(black, 0.5);
+@define-color wm_border alpha(black,0.18);
 
 @define-color wm_button_bg_a shade (@theme_bg_color, 1.0);
 @define-color wm_button_bg_b shade (@theme_bg_color, 0.85);
