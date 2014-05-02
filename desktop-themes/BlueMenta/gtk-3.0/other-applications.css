@@ -394,9 +394,10 @@ PanelWidget,
 PanelApplet,
 PanelToplevel,
 .desktop-panel {
-	background-image: -gtk-gradient (linear, left top, left bottom,
+/*	background-image: -gtk-gradient (linear, left top, left bottom,
 		from (shade (@theme_bg_color, 1.5)),
-		to (shade (@theme_bg_color, 1.05)));
+		to (shade (@theme_bg_color, 1.05)));*/
+	background-color: @theme_bg_color;
 	padding: 0;
 	-unico-inner-stroke-width: 0;
 	-unico-outer-stroke-width: 0;
@@ -426,9 +427,10 @@ PanelMenuBar.menubar,
 PanelMenuBar.menubar.menuitem,
 .desktop-panel .menubar,
 .desktop-panel .menubar .menuitem {
-	background-image: -gtk-gradient (linear, left top, left bottom,
+	/*background-image: -gtk-gradient (linear, left top, left bottom,
 		from (shade (@theme_bg_color, 1.5)),
-		to (shade (@theme_bg_color, 1.05)));
+		to (shade (@theme_bg_color, 1.05)));*/
+	background-color: @theme_bg_color;
 	-unico-inner-stroke-width: 0;
 	-unico-outer-stroke-width: 0;
 	text-shadow: none;
