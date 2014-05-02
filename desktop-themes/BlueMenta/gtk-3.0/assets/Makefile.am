@@ -10,6 +10,8 @@ theme_DATA = \
 	dnd-counter.svg \
 	grid-selection-checked.svg \
 	grid-selection-unchecked.svg \
+	header-separator@2.png \
+	header-separator.png \
 	menuitem-checkbox-checked-insensitive.svg \
 	menuitem-checkbox-checked-selected.svg \
 	menuitem-checkbox-checked.svg \
@@ -36,11 +38,14 @@ theme_DATA = \
 	slider-hover.png \
 	slider-ins.png \
 	slider.png \
+	switch-off-ins.png \
 	switch-off-ins.svg \
+	switch-off.png \
 	switch-off.svg \
+	switch-on-ins.png \
 	switch-on-ins.svg \
 	switch-on.png \
 	switch-on.svg \
-	thumbnail-frame.png
+	thumbnail-frame.png \
 
 EXTRA_DIST = $(theme_DATA)
