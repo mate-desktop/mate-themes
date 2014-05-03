@@ -9,20 +9,18 @@ theme_DATA = \
 
 EXTRA_DIST = $(theme_DATA) index.theme.in
 
-SUBDIRS =		\
-	cinnamon \
-	gtk-2.0		\
-	gtk-3.0		\
+SUBDIRS = \
+	gtk-2.0    \
+	gtk-3.0    \
 	metacity-1 \
-	unity	\
+	unity      \
 	xfwm4
 
-DIST_SUBDIRS =		\
-	cinnamon \
-	gtk-2.0		\
-	gtk-3.0		\
+DIST_SUBDIRS = \
+	gtk-2.0    \
+	gtk-3.0    \
 	metacity-1 \
-	unity	\
+	unity      \
 	xfwm4
 
 CLEANFILES = index.theme
