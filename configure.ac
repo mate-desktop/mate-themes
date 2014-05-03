@@ -206,7 +206,6 @@ desktop-themes/GreenLaguna/metacity-1/Makefile
 desktop-themes/LargePrint/Makefile
 desktop-themes/LargePrint/index.theme.in
 desktop-themes/Menta/Makefile
-desktop-themes/Menta/cinnamon/Makefile
 desktop-themes/Menta/gtk-2.0/Makefile
 desktop-themes/Menta/gtk-2.0/apps/Makefile
 desktop-themes/Menta/gtk-2.0/apps/Caja/Makefile
@@ -225,7 +224,6 @@ desktop-themes/Menta/metacity-1/Makefile
 desktop-themes/Menta/unity/Makefile
 desktop-themes/Menta/xfwm4/Makefile
 desktop-themes/BlueMenta/Makefile
-desktop-themes/BlueMenta/cinnamon/Makefile
 desktop-themes/BlueMenta/gtk-2.0/Makefile
 desktop-themes/BlueMenta/gtk-2.0/apps/Makefile
 desktop-themes/BlueMenta/gtk-2.0/apps/Caja/Makefile
