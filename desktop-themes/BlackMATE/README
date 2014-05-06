@@ -70,3 +70,14 @@ table.headmeta {color: #fff;}
 	color: #000;
 }
 
+Ubuntu Software Center
+======================
+Find the following definitions in '/usr/share/software-center/ui/gtk3/css/softwarecenter.css':
+
+@define-color light-aubergine
+@define-color super-light-aubergine
+
+Then, change their values to #4D4D4D and #3B3B3E respectively, i.e.
+
+@define-color light-aubergine #4D4D4D;
+@define-color super-light-aubergine #3B3B3E;

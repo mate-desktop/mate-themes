@@ -11,13 +11,15 @@ SUBDIRS =		\
 	gtk-2.0		\
 	gtk-3.0		\
 	metacity-1	\
-	cinnamon
+	cinnamon    \
+	unity
 
 DIST_SUBDIRS =	\
 	gtk-2.0		\
 	gtk-3.0		\
 	metacity-1	\
-	cinnamon
+	cinnamon    \
+	unity
 
 CLEANFILES = index.theme
 
