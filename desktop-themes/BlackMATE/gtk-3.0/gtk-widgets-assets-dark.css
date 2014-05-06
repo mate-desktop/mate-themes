@@ -346,3 +346,25 @@ GtkTreeView row:selected:focus {
 .menu .menuitem:hover {
 	border-image: url("assets/menu-border-dark.svg") 3 / 3px stretch;
 }*/
+
+
+/*********************
+ * Notebook and Tabs *
+ *********************/
+
+.notebook tab:active {
+	border-image: url("assets/tab-active-border.svg") 3 3 0 3 / 3px 3px 0px 3px stretch;
+}
+
+.notebook tab.bottom:active {
+	border-image: url("assets/tab-bottom-active-border.svg") 0 3 3 3 / 0px 3px 3px 3px stretch;
+}
+
+.notebook tab.left:active {
+	border-image: url("assets/tab-left-active-border.svg") 3 0 3 3 / 3px 0px 3px 3px stretch;
+}
+
+.notebook tab.right:active {
+	border-image: url("assets/tab-right-active-border.svg") 3 3 3 0 / 3px 3px 3px 0px stretch;
+}
+
