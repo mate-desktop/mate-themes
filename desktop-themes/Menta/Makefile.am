@@ -10,6 +10,7 @@ theme_DATA = \
 EXTRA_DIST = $(theme_DATA) index.theme.in
 
 SUBDIRS = \
+	cinnamon \
 	gtk-2.0	\
 	gtk-3.0	\
 	metacity-1 \
@@ -17,6 +18,7 @@ SUBDIRS = \
 	xfwm4
 
 DIST_SUBDIRS = \
+	cinnamon \
 	gtk-2.0	\
 	gtk-3.0	\
 	metacity-1 \
