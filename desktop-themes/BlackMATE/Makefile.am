@@ -10,12 +10,14 @@ EXTRA_DIST = $(theme_DATA) index.theme.in COPYING
 SUBDIRS =		\
 	gtk-2.0		\
 	gtk-3.0		\
-	metacity-1
+	metacity-1	\
+	cinnamon
 
 DIST_SUBDIRS =	\
 	gtk-2.0		\
 	gtk-3.0		\
-	metacity-1
+	metacity-1	\
+	cinnamon
 
 CLEANFILES = index.theme
 
