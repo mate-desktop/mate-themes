@@ -204,6 +204,7 @@ desktop-themes/GreenLaguna/gtk-2.0/Styles/Makefile
 desktop-themes/GreenLaguna/gtk-3.0/Makefile
 desktop-themes/GreenLaguna/gtk-3.0/assets/Makefile
 desktop-themes/GreenLaguna/metacity-1/Makefile
+desktop-themes/GreenLaguna/unity/Makefile
 desktop-themes/LargePrint/Makefile
 desktop-themes/LargePrint/index.theme.in
 desktop-themes/Menta/Makefile
