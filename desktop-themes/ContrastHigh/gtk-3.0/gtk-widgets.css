@@ -800,6 +800,22 @@ GtkScale.slider:insensitive {
     border-color: @theme_button_insensitive_active_bg;
 }
 
+GtkScale.slider.fine-tune,
+GtkScale.slider.fine-tune:active,
+GtkScale.slider.fine-tune:active:hover,
+GtkScale.slider.fine-tune.horizontal:active,
+GtkScale.slider.fine-tune.horizontal:active:hover {
+  background-color: transparent;
+  background-image: -gtk-gradient(radial, 
+                                                              center center, 0, 
+                                                              center center, 1, 
+                                                              from(@theme_fg_color),
+                                                              color-stop(0.3, @theme_fg_color),
+                                                              color-stop(0.31, transparent),
+                                                              to(transparent));
+  border-width: 0;
+}
+
 /**********
  * Switch *
  **********/
@@ -955,6 +971,14 @@ GtkScrolledWindow GtkViewport.frame {
     border-color: transparent;
 }
 
+.scrollbar.slider.fine-tune:prelight:active {
+      background-image: none;
+      border-style: solid;
+      border-image: none;
+      border-color: transparent;
+      border-width: 5px;
+}
+ 
 /******************
  * Column headers *
  ******************/
