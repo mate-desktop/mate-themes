@@ -292,7 +292,7 @@ GtkLevelBar.vertical {
     border-color: @theme_button_insensitive_border;
 }
 
-.button:active *:insensitive {
+.button:insensitive:active {
     background-color: @theme_button_insensitive_active_bg;
     border-color: @theme_button_insensitive_active_border;
 }
@@ -301,7 +301,7 @@ GtkLevelBar.vertical {
     color: @theme_button_insensitive_fg;
 }
 
-.button *:insensitive:active {
+.button:active *:insensitive {
     color: @theme_button_insensitive_active_fg;
 }
 
