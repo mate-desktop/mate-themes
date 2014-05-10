@@ -187,125 +187,95 @@ CajaQueryEditor .button {
  * Mate-Panel *
  ****************/
 
-PanelWidget,
-PanelApplet,
+MatePanelApplet > GtkMenuBar.menubar,
 PanelToplevel,
-.desktop-panel {
-/*	background-image: -gtk-gradient (linear, left top, left bottom,
-		from (shade (@theme_bg_color, 1.5)),
-		to (shade (@theme_bg_color, 1.05)));*/
+PanelWidget,
+MatePanelAppletFrame,
+MatePanelApplet,
+.mate-panel {
+	background-image: none;
 	background-color: @theme_bg_color;
 	padding: 0;
-	-unico-inner-stroke-width: 0;
-	-unico-outer-stroke-width: 0;
 	color: @theme_fg_color;
 	text-shadow: none;
 }
 
-PanelApplet {
+MatePanelApplet {
 	border-width: 0;
 }
 
 PanelSeparator {
 	border-width: 0;
 	background-image: -gtk-gradient (linear, left top, left bottom,
-		from (shade (@theme_bg_color, 0.96)),
-		to (shade (@theme_bg_color, 1.05)));
-	-unico-inner-stroke-width: 0;
-	-unico-outer-stroke-width: 0;
-	color: shade (@theme_bg_color, 0.85);
+		from (shade (@theme_bg_color, 1.03)),
+		to (shade (@theme_bg_color, 0.95)));
+	color: shade (@theme_fg_color, 4.30);
 	text-shadow: none;
 }
 
 .mate-panel-menu-bar,
-PanelApplet > GtkMenuBar.menubar,
-PanelApplet > GtkMenuBar.menubar.menuitem,
 PanelMenuBar.menubar,
 PanelMenuBar.menubar.menuitem,
-.desktop-panel .menubar,
-.desktop-panel .menubar .menuitem {
-	/*background-image: -gtk-gradient (linear, left top, left bottom,
-		from (shade (@theme_bg_color, 1.5)),
-		to (shade (@theme_bg_color, 1.05)));*/
+.mate-panel .menubar,
+.mate-panel .menubar .menuitem {
+	background-image: none;
 	background-color: @theme_bg_color;
-	-unico-inner-stroke-width: 0;
-	-unico-outer-stroke-width: 0;
 	text-shadow: none;
 }
 
-PanelAppletFrame {
+MatePanelAppletFrame {
 	background-color: @color;
-	background-image: -gtk-gradient (linear, left top, left bottom,
-		from (shade (@theme_bg_color, 1.5)),
-		to (shade (@theme_bg_color, 1.05)));
+	background-image: none;
 	border-width: 0;
-	-unico-inner-stroke-width: 0;
-	-unico-outer-stroke-width: 0;
 	text-shadow: none;
 }
 
-PanelApplet .button,
-.desktop-panel .button {
-	-GtkButton-inner-border: 2;
-
-	background-image: -gtk-gradient (linear, left top, left bottom,
-		from (shade (@theme_bg_color, 1.5)),
-		to (shade (@theme_bg_color, 1.05)));
-
+MatePanelApplet .button,
+WnckTasklist .button,
+.mate-panel .button {
+	background-image: none;
 	border-color: @transparent;
 	border-radius: 0;
 	border-width: 0 1px 0 1px;
-
 	color: @theme_fg_color;
 	text-shadow: none;
-
-	-unico-border-gradient: none;
-	-unico-glow-radius: 0;
-	-unico-inner-stroke-width: 0;
-	-unico-outer-stroke-width: 0;
+	padding: 2px;
 }
 
-PanelApplet .button:prelight:active,
-PanelApplet .button:active,
-.desktop-panel .button:prelight:active,
-.desktop-panel .button:active {
-	background-image: -gtk-gradient (linear, left top, left bottom,
-		from (shade (@theme_bg_color, 0.85)),
-		to (shade (@theme_bg_color, 1.0)));
+MatePanelApplet .button:prelight:active,
+MatePanelApplet .button:active,
+WnckTasklist .button:prelight:active,
+WnckTasklist .button:active,
+.mate-panel .button:prelight:active,
+.mate-panel .button:active {
+	background-image: none;
 	border-color: shade (@theme_bg_color, 0.78);
 	border-radius: 0;
 	border-width: 0 1px 0 1px;
-
-	-unico-border-gradient: none;
-	-unico-glow-radius: 0;
-	-unico-inner-stroke-width: 0;
-	-unico-outer-stroke-width: 0;
 	text-shadow: none;
+	padding: 2px;
 }
 
-PanelApplet .button:prelight,
-.desktop-panel .button:prelight {
-	background-image: -gtk-gradient (linear, left top, left bottom,
-		from (shade (@theme_bg_color, 1.7)),
-		to (shade (@theme_bg_color, 1.25)));
+MatePanelApplet .button:prelight,
+WnckTasklist .button:prelight,
+.mate-panel .button:prelight {
+	background-image: none;
 	border-color: @transparent;
 	border-radius: 0;
 	border-width: 0 1px 0 1px;
-
-	-unico-border-gradient: none;
-	-unico-glow-radius: 0;
-	-unico-inner-stroke-width: 0;
-	-unico-outer-stroke-width: 0;
 	text-shadow: none;
+	padding: 2px;
 }
 
 ClockBox,
 .mate-panel-menu-bar.menubar,
-PanelApplet > GtkMenuBar.menubar {
+MatePanelApplet > GtkMenuBar.menubar {
 	font: normal;
 }
 
-WnckPager, WnckTasklist {
+WnckPager {
+	background-image: none;
+	border-color: @transparent;
 	background-color: @theme_bg_color;
 	text-shadow: none;
 }
@@ -336,10 +306,4 @@ WnckPager, WnckTasklist {
 .mate-panel-menu-bar .menu .menuitem:hover {
 	color: @theme_selected_fg_color;
 }
-
-
-/****************
- * Pluma *
- ****************/
-
 
