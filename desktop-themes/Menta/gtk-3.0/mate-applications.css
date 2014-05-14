@@ -187,16 +187,15 @@ CajaQueryEditor .button {
  * Mate-Panel *
  ****************/
 
+/* the panel bar itself */
+.mate-panel-menu-bar,
 MatePanelApplet > GtkMenuBar.menubar,
 PanelToplevel,
 PanelWidget,
-MatePanelAppletFrameDBus,
-MatePanelAppletFrame
-MatePanelApplet,
-.mate-panel {
-	background-image: none;
+PanelAppletFrame,
+MatePanelApplet {
 	background-color: @theme_bg_color;
-	padding: 0;
+	background-image: none;
 	color: @theme_fg_color;
 	text-shadow: none;
 }
@@ -214,45 +213,31 @@ PanelSeparator {
 	text-shadow: none;
 }
 
-.mate-panel-menu-bar,
-PanelMenuBar.menubar,
-PanelMenuBar.menubar.menuitem,
-.mate-panel .menubar,
-.mate-panel .menubar .menuitem {
+/* prelight of WnckPager */
+MatePanelApplet *:hover {
+	background-image: linear-gradient(to bottom,
+		@theme_bg_color,
+		shade (@theme_selected_bg_color, 0.86));
+	background-color: @theme_base_color;
+}
+
+/* desktop-applet, clockapplet, drivemount, character-map,
+dictionary */
+MatePanelApplet .button {
 	background-image: none;
 	background-color: @theme_bg_color;
-	text-shadow: none;
-}
-
-MatePanelAppletFrame,
-MatePanelAppletFrameDBus {
-	background-color: @color;
-	background-image: none;
-	border-width: 0;
-	text-shadow: none;
-}
-
-MatePanelApplet .button,
-WnckTasklist .button,
-.mate-panel .button {
-	background-image: linear-gradient(to bottom,
-		shade (@theme_bg_color, 1.0)
-		shade (@theme_bg_color, 0.96));
-	background-color: @theme_base_color;
 	color: @theme_text_color;
 
 	border-image: none;
-	border-style: none;
-	border-width: 0;
+	border-style: solid;
+	border-width: 0px;
+	border-radius: 0px;
+	text-shadow: none;
 	-GtkWidget-window-dragging: true;
 }
 
-MatePanelApplet .button:prelight:active,
-MatePanelApplet .button:active,
-WnckTasklist .button:prelight:active,
-WnckTasklist .button:active,
-.mate-panel .button:prelight:active,
-.mate-panel .button:active {
+MatePanelApplet .button:active:hover,
+MatePanelApplet .button:active {
 	background-image: linear-gradient(to bottom,
 		shade (@theme_selected_bg_color, 0.86),
 		shade (@theme_selected_bg_color, 0.26));
@@ -260,14 +245,14 @@ WnckTasklist .button:active,
 	color: shade (@theme_selected_fg_color, 1.00);
 
 	border-image: none;
-	border-style: none;
-	border-width: 0;
+	border-style: solid;
+	border-width: 0px;
+	border-radius: 5px;
+	text-shadow: none;
 	-GtkWidget-window-dragging: true;
 }
 
-MatePanelApplet .button:prelight,
-WnckTasklist .button:prelight,
-.mate-panel .button:prelight {
+MatePanelApplet .button:hover {
 	background-image: linear-gradient(to bottom,
 		@theme_bg_color,
 		shade (@theme_selected_bg_color, 0.86));
@@ -275,9 +260,118 @@ WnckTasklist .button:prelight,
 	color: shade (@theme_text_color, 1.0);
 
 	border-image: none;
-	border-style: none;
-	border-width: 0;
+	border-style: solid;
+	border-width: 0px;
+	border-radius: 5px;
+	text-shadow: none;
 	-GtkWidget-window-dragging: true;
+}
+
+/*Wncklist */
+WnckTasklist .button {
+	background-image: linear-gradient(to bottom,
+		shade (@theme_bg_color, 1.0),
+		shade (@theme_bg_color, 0.96));
+	background-color: @theme_base_color;
+	color: @theme_text_color;
+
+	border-image: none;
+	border-style: solid;
+	border-width: 0px;
+	border-radius: 0px;
+	text-shadow: none;
+	-GtkWidget-window-dragging: true;
+}
+
+WnckTasklist .button:active:hover,
+WnckTasklist .button:active {
+	background-image: linear-gradient(to bottom,
+		shade (@theme_selected_bg_color, 0.86),
+		shade (@theme_selected_bg_color, 0.26));
+	background-color: @theme_base_color;
+	color: shade (@theme_selected_fg_color, 1.00);
+
+	border-image: none;
+	border-style: solid;
+	border-width: 0px;
+	border-radius: 5px;
+	text-shadow: none;
+	-GtkWidget-window-dragging: true;
+}
+
+WnckTasklist .button:hover {
+	background-image: linear-gradient(to bottom,
+		@theme_bg_color,
+		shade (@theme_selected_bg_color, 0.86));
+	background-color: @theme_base_color;
+	color: shade (@theme_text_color, 1.0);
+
+	border-image: none;
+	border-style: solid;
+	border-width: 0px;
+	border-radius: 5px;
+	text-shadow: none;
+	-GtkWidget-window-dragging: true;
+}
+
+/* set selected menubar button */
+PanelMenuBar.menubar .menuitem:hover {
+	background-image: linear-gradient(to bottom,
+		shade (@theme_selected_bg_color, 0.86),
+		shade (@theme_selected_bg_color, 0.26));
+	background-color: @theme_base_color;
+	color: shade (@theme_selected_fg_color, 1.00);
+	text-shadow: none;
+	border-style: solid;
+	border-width: 0px;
+	border-radius: 5px;
+}
+
+/* set selected menubar menuitem */
+PanelMenuBar.menubar .menu .menuitem:active:hover,
+PanelMenuBar.menubar .menu .menuitem:hover {
+	background-color: @theme_selected_bg_color;
+	background-image: linear-gradient(to bottom,
+		shade (@theme_selected_bg_color, 1.0),
+		shade (@theme_selected_bg_color, 0.85));
+	color: shade (@theme_selected_fg_color, 1.00);
+	text-shadow: none;
+	border-style: none;
+	border-width: 0px;
+	border-radius: 0px;
+}
+
+/* set normal button WnckSelector */
+.mate-panel-window-menu-menu-bar .menuitem,
+MatePanelApplet > WnckSelector.menubar .menuitem {
+	background-image: none;
+	background-color: @theme_bg_color;
+	border-style: solid;
+	border-width: 0px;
+	border-radius: 0px;
+}
+
+/* set selected button WnckSelector */
+.mate-panel-window-menu-menu-bar .menuitem:hover,
+MatePanelApplet > WnckSelector.menubar .menuitem:hover {
+	background-image: linear-gradient(to bottom,
+		shade (@theme_selected_bg_color, 0.86),
+		shade (@theme_selected_bg_color, 0.26));
+	background-color: @theme_base_color;
+	border-style: solid;
+	border-width: 0px;
+	border-radius: 5px;
+}
+
+/* set WnckSelector selected menuitem */
+.mate-panel-window-menu-menu-bar .menu .menuitem:hover,
+MatePanelApplet > WnckSelector.menubar .menu .menuitem:hover {
+	background-color: @theme_selected_bg_color;
+	background-image: linear-gradient(to bottom,
+		shade (@theme_selected_bg_color, 1.0),
+		shade (@theme_selected_bg_color, 0.85));
+	color: shade (@theme_selected_fg_color, 1.00);
+	text-shadow: none;
 }
 
 ClockBox,
@@ -290,7 +384,11 @@ WnckPager {
 	background-image: none;
 	border-color: @transparent;
 	background-color: @theme_bg_color;
-	text-shadow: none;
+}
+
+NaTrayApplet {
+/*	-NaTrayApplet-icon-padding: 12;
+	-NaTrayApplet-icon-size: 16;*/
 }
 
 /* Classic icon style */
@@ -302,21 +400,5 @@ WnckPager {
 .mate-panel-menu-bar .menuitem {
 	color: @theme_fg_color;
 	text-shadow: none;
-}
-
-.mate-panel-menu-bar .menuitem:hover {
-	background-image: -gtk-gradient (linear, left top, left bottom,
-		from (shade (@theme_selected_bg_color, 1.0)),
-		to (shade (@theme_selected_bg_color, 0.85)));
-	border-width: 0;
-	color: @theme_fg_color;
-	text-shadow: none;
-	-unico-inner-stroke-width: 0;
-	-unico-outer-stroke-width: 0;
-}
-
-.mate-panel-menu-bar .menu.menuitem:hover,
-.mate-panel-menu-bar .menu .menuitem:hover {
-	color: @theme_selected_fg_color;
 }
 
