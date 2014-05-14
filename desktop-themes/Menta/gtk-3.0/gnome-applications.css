@@ -314,6 +314,12 @@ GeditViewFrame .gedit-search-slider {
 	border-style: solid;
 }
 
+/* gedit line numbers */
+
+GeditView {
+    background-color: shade (@theme_bg_color, 1.07);
+}
+
 GeditViewFrame .gedit-search-slider .not-found {
 	color: @gedit_not_found_fg;
 	background-image: none;

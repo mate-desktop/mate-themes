@@ -402,3 +402,13 @@ NaTrayApplet {
 	text-shadow: none;
 }
 
+/****************
+ * Pluma *
+ ****************/
+
+/* pluma line numbers */
+
+PlumaView {
+    background-color: shade (@theme_bg_color, 1.07);
+}
+
