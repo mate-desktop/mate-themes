@@ -247,6 +247,8 @@ style "murrine-notebook" = "murrine-notebook-bg" {
 		focusstyle		= 2
 		lightborder_shade	= 1.16
 		roundness		= 4
+		# disable the ugly button look in tabs if focused
+		focusstyle = 0
 	}
 }
 
@@ -507,6 +509,7 @@ style "murrine-scrollbar" {
 	engine "murrine" {
 		roundness	= 8
 		border_shades	= {0.80, 0.80}
+
 		contrast	= 0.0
 	}
 }
