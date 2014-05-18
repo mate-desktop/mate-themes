@@ -411,3 +411,20 @@ NaTrayApplet {
 PlumaView {
     background-color: shade (@theme_bg_color, 1.07);
 }
+
+/****************
+ * Mate-Terminal *
+ ****************/
+
+TerminalWindow GtkNotebook.notebook tab {
+	padding: 2px;
+	border-color: transparent;
+	border-width: 0px;
+	background-image: none;
+	background-color: transparent;
+}
+
+TerminalWindow GtkNotebook.notebook tab.top,
+.notebook tab.bottom {
+	padding: 2px;
+}
