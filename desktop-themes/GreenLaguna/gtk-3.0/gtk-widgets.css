@@ -41,7 +41,7 @@
 	-WnckTasklist-fade-overlay-rect: 0;
 
 	-GtkWidget-focus-padding: 2;
-	-GtkWidget-focus-line-width: 1;
+	-GtkWidget-focus-line-width: 0;
 
 	-GtkWindow-resize-grip-width: 12;
 	-GtkWindow-resize-grip-height: 12; 
@@ -645,8 +645,8 @@ GtkLevelBar.vertical {
 	-GtkButton-child-displacement-x: 0;
 	-GtkButton-child-displacement-y: 0;
 
-	/*-GtkWidget-focus-line-width: 0;
-	-GtkWidget-focus-padding: 0;*/
+	-GtkWidget-focus-line-width: 0;
+	-GtkWidget-focus-padding: 0;
 }
 
 .notebook .pane-separator {
@@ -884,7 +884,7 @@ GtkTreeMenu .menuitem * {
 	/* Due to a bug somewhere in gtk or cairo,
 	   a padding of zero (or even one) doesn't work always! */
 	padding: 2px;
-	-GtkWidget-focus-line-width: 1;
+	-GtkWidget-focus-line-width: 0;
 
 	border-radius: 3px;
 	border-width: 1px;

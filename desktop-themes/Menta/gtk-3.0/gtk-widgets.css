@@ -41,7 +41,7 @@
 	-WnckTasklist-fade-overlay-rect: 0;
 
 	-GtkWidget-focus-padding: 2;
-	-GtkWidget-focus-line-width: 1;
+	-GtkWidget-focus-line-width: 0;
 	-GtkWindow-resize-grip-width: 13;
 	-GtkWindow-resize-grip-height: 13;
 
@@ -3186,7 +3186,7 @@ GtkSwitch.slider {
 GtkTreeView {
 	-GtkTreeView-vertical-separator: 0;
 
-	-GtkWidget-focus-line-width: 1;
+	-GtkWidget-focus-line-width: 0;
 	-GtkWidget-focus-padding: 1;
 
 	outline-color: alpha(@theme_text_color, 0.6);
