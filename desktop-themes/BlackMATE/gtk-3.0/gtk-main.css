@@ -50,8 +50,8 @@
 @define-color internal_element_prelight #a3a3a3;
 @define-color internal_element_insensitive shade(@internal_element_color, 0.75);
 
-@define-color progressbar_background_a white;
-@define-color progressbar_background_b #999999;
+@define-color progressbar_background_a @less_dark_color;
+@define-color progressbar_background_b #636363;
 @define-color progressbar_border #a1a1a1;
 @define-color progressbar_pattern #000000;
 
