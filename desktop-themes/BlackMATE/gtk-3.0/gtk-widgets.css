@@ -47,8 +47,8 @@
 	-GtkWidget-focus-padding: 2;
 	-GtkWidget-focus-line-width: 1;
 
-	-GtkWindow-resize-grip-width: 10;
-	-GtkWindow-resize-grip-height: 10; 
+	-GtkWindow-resize-grip-width: 13;
+	-GtkWindow-resize-grip-height: 13; 
 
 	outline-color: @focus_border;
 	outline-style: dashed;
@@ -108,9 +108,10 @@
 	color: @theme_tooltip_fg_color;
 }
 
-/*.grip {
-	background-color: shade(@inactive_frame_color, 0.93);
-}*/
+.grip {
+	background-color: transparent;
+	background-image: url("assets/resize-grip.svg");
+}
 
 .content-view.view.rubberband,
 .view.rubberband,

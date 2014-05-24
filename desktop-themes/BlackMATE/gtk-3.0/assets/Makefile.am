@@ -57,6 +57,7 @@ theme_DATA = \
 	radio-unselected-dark.svg \
 	radio-unselected-insensitive-dark.svg \
 	radio-unselected-lessdark.svg \
+	resize-grip.svg \
 	scale-slider-horizontal-dark.svg \
 	scale-slider-horizontal-insensitive-dark.svg \
 	scale-slider-marks-above-horizontal-dark.svg \

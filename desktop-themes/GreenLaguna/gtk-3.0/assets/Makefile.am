@@ -38,6 +38,7 @@ theme_DATA = \
 	radio-selected-insensitive.svg \
 	radio-selected.svg \
 	radio-unselected-insensitive.svg \
+	resize-grip.svg \
 	radio-unselected.svg \
 	scale-slider-horizontal-insensitive.svg \
 	scale-slider-horizontal.svg \
