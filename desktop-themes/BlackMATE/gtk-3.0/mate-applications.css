@@ -32,6 +32,11 @@ CajaWindow .view {
 	background-color: shade (@theme_bg_color, 1.08);
 }
 
+/* the small line between sidebar and view */
+CajaWindow * {
+	-GtkPaned-handle-size: 2px;
+}
+
 CajaWindow GtkPaned {
 	background-color: @less_dark_color;
 }
@@ -258,19 +263,27 @@ CajaQueryEditor .toolbar .entry:focus {
  * Mate-Panel *
  ****************/
 
-PanelApplet > GtkMenuBar.menubar,
+/* the panel bar itself */
+.mate-panel-menu-bar,
+MatePanelApplet > GtkMenuBar.menubar,
 PanelToplevel,
 PanelWidget,
 PanelAppletFrame,
-PanelApplet,
-NotificationArea,
-.mate-panel {
+MatePanelApplet {
 	background-image: none;
 	background-color: @theme_bg_color;
 	padding: 0;
-	-unico-inner-stroke-width: 0;
-	-unico-outer-stroke-width: 0;
 	color: @theme_fg_color;
+	text-shadow: none;
+}
+
+/* needed for a working top panel with 24px (default) */
+PanelMenuBar.menubar * {
+	background-image: none;
+	background-color: transparent;
+	border-width: 0px;
+	border-style: none;
+	padding: 0px;
 	text-shadow: none;
 }
 
@@ -283,96 +296,132 @@ PanelSeparator {
 	background-image: -gtk-gradient (linear, left top, left bottom,
 		from (shade (@theme_bg_color, 0.96)),
 		to (shade (@theme_bg_color, 1.05)));
-	-unico-inner-stroke-width: 0;
-	-unico-outer-stroke-width: 0;
 	color: shade (@theme_fg_color, 0.45);
 	text-shadow: none;
 }
 
-.mate-panel-menu-bar,
-PanelMenuBar.menubar,
-PanelMenuBar.menubar.menuitem,
-.mate-panel .menubar,
-.mate-panel .menubar .menuitem {
-	background-image: none;
-	background-color: @theme_bg_color;
-	-unico-inner-stroke-width: 0;
-	-unico-outer-stroke-width: 0;
-	text-shadow: none;
-}
 
-PanelAppletFrame {
-	background-color: @color;
-	background-image: none;
-	border-width: 0;
-	-unico-inner-stroke-width: 0;
-	-unico-outer-stroke-width: 0;
-	text-shadow: none;
-}
+/* desktop-applet, clockapplet, drivemount, character-map,
+dictionary */
+MatePanelApplet .button {
+	/* Due to a bug somewhere in gtk or cairo,
+	   a padding of zero (or even one) doesn't work always!!! */
+	padding: 2px;
 
-PanelApplet .button,
-.mate-panel .button {
-	-GtkButton-inner-border: 2;
-
-	background-image: none;
-
-	border-color: @transparent;
-	border-radius: 0;
-	border-width: 0 1px 0 1px;
+	border-radius: 3px;
+	border-width: 1px;
+	border-style: solid;
+	text-shadow: 0 -1px black;
 
 	color: @theme_fg_color;
-	text-shadow: none;
-
-	-unico-border-gradient: none;
-	-unico-glow-radius: 0;
-	-unico-inner-stroke-width: 0;
-	-unico-outer-stroke-width: 0;
+	background-image: -gtk-gradient (radial,
+					0.5 -2.0, 2.0,
+					0.5 -2.0, 3.0,
+					from (shade(@button_gradient_color_a, 1.5)),
+					color-stop (0.42, shade(@button_gradient_color_a, 0.7)),
+					color-stop (0.43, @theme_bg_color),
+					to (shade(@button_gradient_color_b, 0.7)));
 }
 
-PanelApplet .button:prelight:active,
-PanelApplet .button:active,
-.mate-panel .button:prelight:active,
-.mate-panel .button:active {
-	background-image: none;
-	border-color: shade (@theme_bg_color, 0.78);
-	border-radius: 0;
-	border-width: 0 1px 0 1px;
-
-	-unico-border-gradient: none;
-	-unico-glow-radius: 0;
-	-unico-inner-stroke-width: 0;
-	-unico-outer-stroke-width: 0;
-	text-shadow: none;
+MatePanelApplet .button:active:hover,
+MatePanelApplet .button:active {
+	color: @theme_fg_color;
+	border-style: solid;
+	background-image: linear-gradient(to bottom,
+	                                  shade(@button_gradient_color_b, 0.7),
+	                                  @theme_bg_color 50%,
+	                                  shade(@button_gradient_color_a, 1.5));
 }
 
-PanelApplet .button:prelight,
-.mate-panel .button:prelight {
-	background-image: none;
-	border-color: @transparent;
-	border-radius: 0;
-	border-width: 0 1px 0 1px;
-
-	-unico-border-gradient: none;
-	-unico-glow-radius: 0;
-	-unico-inner-stroke-width: 0;
-	-unico-outer-stroke-width: 0;
-	text-shadow: none;
+MatePanelApplet .button:hover {
+	border-image: none;
+	border-style: solid;
+	border-color: shade(@button_border, 1.1);
+	background-image: linear-gradient(to bottom,
+	                                  @button_hover_gradient_color_a,
+	                                  @button_hover_gradient_color_b);
 }
 
-/*NotificationArea {
-    -NotificationArea-icon-padding: 12;
-    -NotificationArea-icon-size: 16;
-}*/
+/*Wncklist */
+WnckTasklist .button {
+	/* Due to a bug somewhere in gtk or cairo,
+	   a padding of zero (or even one) doesn't work always!!! */
+	padding: 2px;
+
+	border-radius: 3px;
+	border-width: 1px;
+	border-style: solid;
+	text-shadow: 0 -1px black;
+
+	color: @theme_fg_color;
+	background-image: -gtk-gradient (radial,
+					0.5 -2.0, 2.0,
+					0.5 -2.0, 3.0,
+					from (shade(@button_gradient_color_a, 1.5)),
+					color-stop (0.42, shade(@button_gradient_color_a, 0.7)),
+					color-stop (0.43, @theme_bg_color),
+					to (shade(@button_gradient_color_b, 0.7)));
+}
+
+WnckTasklist .button:active:hover,
+WnckTasklist .button:active {
+	color: @theme_fg_color;
+	border-style: solid;
+	background-image: linear-gradient(to bottom,
+	                                  shade(@button_gradient_color_b, 0.7),
+	                                  @theme_bg_color 50%,
+	                                  shade(@button_gradient_color_a, 1.5));
+}
+
+WnckTasklist .button:hover {
+	border-image: none;
+	border-style: solid;
+	border-color: shade(@button_border, 1.1);
+	background-image: linear-gradient(to bottom,
+	                                  @button_hover_gradient_color_a,
+	                                  @button_hover_gradient_color_b);
+}
+
+/* set selected button WnckSelector */
+.mate-panel-window-menu-menu-bar .menuitem:hover,
+MatePanelApplet > WnckSelector.menubar .menuitem:hover {
+	color: @theme_fg_color;
+	border-style: solid;
+	background-image: linear-gradient(to bottom,
+	                                  shade(@button_gradient_color_b, 0.7),
+	                                  @theme_bg_color 50%,
+	                                  shade(@button_gradient_color_a, 1.5));
+}
+
+/* set WnckSelector selected menuitem */
+.mate-panel-window-menu-menu-bar .menu .menuitem:hover,
+MatePanelApplet > WnckSelector.menubar .menu .menuitem:hover {
+	border-image: none;
+	color: @theme_fg_color;
+	background-image: linear-gradient(to bottom,
+	                                  shade(@theme_selected_bg_color, 1.3),
+	                                  shade(@theme_selected_bg_color, 0.5));
+}
 
 ClockBox,
 .mate-panel-menu-bar.menubar,
-PanelApplet > GtkMenuBar.menubar {
+MatePanelApplet > GtkMenuBar.menubar {
 	font: normal;
 }
 
-WnckPager, WnckTasklist {
+WnckPager {
+	background-image: none;
+	border-color: @transparent;
 	background-color: @theme_bg_color;
 	text-shadow: none;
+}
+
+/* prelight of WnckPager */
+MatePanelApplet *:hover {
+	background-image: linear-gradient(to bottom,
+		@theme_bg_color,
+		shade (@theme_selected_bg_color, 0.86));
+	background-color: @theme_base_color;
 }
 
 /* Classic icon style */
@@ -380,25 +429,8 @@ WnckPager, WnckTasklist {
 	-PanelMenuBar-icon-visible: true;
 }
 
-/* Makes the text color on the light panel black */
-/*.mate-panel-menu-bar .menuitem {
-	color: @theme_fg_color;
-	text-shadow: none;
-}*/
-
-/*.mate-panel-menu-bar .menuitem:hover {
-	background-image: -gtk-gradient (linear, left top, left bottom,
-		from (shade (@theme_selected_bg_color, 1.0)),
-		to (shade (@theme_selected_bg_color, 0.85)));
-	border-width: 0;
-	color: @theme_fg_color;
-	text-shadow: none;
-	-unico-inner-stroke-width: 0;
-	-unico-outer-stroke-width: 0;
+NaTrayApplet {
+/*	-NaTrayApplet-icon-padding: 12;
+	-NaTrayApplet-icon-size: 16;*/
 }
-
-.mate-panel-menu-bar .menu.menuitem:hover,
-.mate-panel-menu-bar .menu .menuitem:hover {
-	color: @theme_selected_fg_color;
-}*/
 
