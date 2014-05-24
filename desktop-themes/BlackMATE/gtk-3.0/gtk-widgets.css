@@ -2061,8 +2061,8 @@ GtkProgressBar.osd.progressbar {
 }
  
 .window-frame {
-    border-color: darker(@theme_bg_color);
-    border-radius: 9px 9px 0 0;
+    border-color: @theme_bg_color;
+    border-radius: 7px 7px 0 0;
     border-width: 1px;
     border-style: solid;
     background-color: @theme_bg_color;

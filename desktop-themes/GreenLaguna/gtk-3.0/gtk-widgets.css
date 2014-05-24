@@ -1762,9 +1762,7 @@ GtkProgressBar.osd.progressbar {
 					0.5 -2.0, 2.0,
 					0.5 -2.0, 3.0,
 					from (shade(@button_gradient_color_a, 1.5)),
-					color-stop (0.42, shade(@button_gradient_color_a, 0.7)),
-					color-stop (0.43, @theme_bg_color),
-					to (shade(@button_gradient_color_b, 0.7)));
+					to (shade(@button_gradient_color_b, 1.1)));
 }
  
 .titlebar .titlebutton:hover,
@@ -1790,7 +1788,7 @@ GtkProgressBar.osd.progressbar {
 	color: @theme_fg_color;
 	border-style: solid;
 	background-image: linear-gradient(to bottom,
-	                                  shade(@button_gradient_color_b, 0.7),
+	                                  shade(@button_gradient_color_b, 1.0),
 	                                  @theme_bg_color 50%,
 	                                  shade(@button_gradient_color_a, 1.5));
 }
@@ -1827,8 +1825,8 @@ GtkProgressBar.osd.progressbar {
 }
  
 .window-frame {
-    border-color: darker(@theme_bg_color);
-    border-radius: 9px 9px 0 0;
+    border-color: @theme_bg_color;
+    border-radius: 7px 7px 0 0;
     border-width: 1px;
     border-style: solid;
     background-color: @theme_bg_color;
