@@ -1226,25 +1226,23 @@ GtkTreeMenu .menuitem * {
 }
 
 .menu,
-.menubar .menu .menuitem:active:hover,
-.menubar .menu .menuitem:hover,
+.menubar .menu,
 .menuitem .menu {
-	background-image:  linear-gradient(to bottom,
-	                                  shade(@theme_selected_bg_color, 1.6),
-	                                  shade(@theme_selected_bg_color, 0.6));
-	color: @theme_text_color;
-	border-style: solid;
-	border-width: 1px;
-	border-radius: 3px;
-	border-color: alpha(@theme_selected_bg_color, 1.0);
+	background-color: shade(@theme_selected_bg_color, 0.8);
+	background-image: linear-gradient(to bottom,
+	                                  shade(@theme_selected_bg_color, 1.1),
+	                                  shade(@theme_selected_bg_color, 0.65));
+
+	border-style: none;
+	border-width: 0px;
+	border-radius: 0px;
+	padding: 1px;
 }
 
 .menuitem,
 .menuitem * {
 	-GtkMenuItem-arrow-scaling: 0.5;
 	padding: 2px 0px;
-	/*needed for panel menu-bar*/
-	color: @theme_fg_color;
 }
 
 /* scroll arrows */
