@@ -1,0 +1,238 @@
+/************
+ * Caja *
+ ************/
+
+.caja-cluebar-label {
+    color: @theme_base_color;
+    font: bold;
+}
+
+CajaWindow .sidebar .frame {
+    border-style: none;
+}
+
+CajaNotebook.notebook {
+    border-right-width: 0;
+    border-left-width: 0;
+    border-bottom-width: 0;
+}
+
+CajaNotebook .frame {
+    border-width: 0;
+}
+
+CajaWindow .pane-separator {
+    border-width: 0 1px 0 0;
+    border-style: solid;
+    border-color: @theme_border_color;
+}
+
+.caja-desktop.caja-canvas-item {
+    color: @theme_base_color;
+    text-shadow: 1px 1px black;
+}
+
+.caja-desktop.caja-canvas-item:selected {
+    color: @theme_base_color;
+}
+
+.caja-desktop.caja-canvas-item:backdrop {
+    background-color: @theme_fg_color;
+}
+
+.caja-desktop.caja-canvas-item:active,
+.caja-desktop.caja-canvas-item:prelight,
+.caja-desktop.caja-canvas-item:selected {
+    text-shadow: none;
+}
+
+/****************
+ * Mate-Panel *
+ ****************/
+
+/* the panel bar itself */
+.mate-panel-menu-bar,
+MatePanelApplet > GtkMenuBar.menubar,
+PanelToplevel,
+PanelWidget,
+PanelFrame,
+PanelAppletFrame,
+MatePanelAppletFrameDBus,
+MatePanelAppletContainer,
+MatePanelApplet {
+	background-image: none;
+	background-color: @theme_base_color;
+	padding: 0;
+	color: @theme_fg_color;
+	text-shadow: none;
+}
+
+MatePanelApplet {
+	border-width: 0;
+}
+
+PanelSeparator {
+	border-width: 0;
+	background-image: none;
+	color: shade (@theme_fg_color, 1.65);
+	text-shadow: none;
+}
+
+.mate-panel-menu-bar .menuitem,
+MatePanelApplet > GtkMenuBar.menubar .menuitem {
+    color: @os_chrome_fg_color;
+}
+
+.mate-panel-menu-bar .menuitem:hover,
+MatePanelApplet > GtkMenuBar.menubar .menuitem:hover {
+    color: @os_chrome_selected_fg_color;
+    background-color: @os_chrome_selected_bg_color;
+}
+
+.mate-panel-menu-bar .menuitem *:hover,
+MatePanelApplet > GtkMenuBar.menubar .menuitem *:hover {
+    text-shadow: 0 1px @os_chrome_bg_color;
+}
+
+/* dropdown menus from applets */
+.mate-panel-menu-bar .menu,
+MatePanelApplet > GtkMenuBar.menubar .menu {
+    font: regular;
+}
+
+.mate-panel-menu-bar .menu *:hover,
+MatePanelApplet > GtkMenuBar.menubar .menu *:hover {
+    text-shadow: none;
+}
+
+.mate-panel-menu-bar .menu .menuitem,
+MatePanelApplet > GtkMenuBar.menubar .menu .menuitem {
+    color: @theme_fg_color;
+}
+
+.mate-panel-menu-bar .menu .menuitem:hover,
+MatePanelApplet > GtkMenuBar.menubar .menu .menuitem:hover {
+    color: @os_chrome_selected_fg_color;
+    background-color: @os_chrome_selected_bg_color;
+}
+
+/* desktop-applet, clockapplet, drivemount, character-map,
+dictionary */
+MatePanelApplet .button {
+	padding: 4px;
+
+	border-radius: 0px;
+	border-width: 0px;
+	border-style: solid;
+	text-shadow: none;
+
+    color: @theme_fg_color;
+    background-image: none;
+    background-color: @os_chrome_bg_color;
+}
+
+MatePanelApplet .button:active:hover,
+MatePanelApplet .button:active {
+    border-image: none;
+    background-image: none;
+    background-color: @os_chrome_selected_bg_color;
+    border-width: 0;
+    border-radius: 0;
+}
+
+MatePanelApplet .button:hover {
+    border-image: none;
+    background-image: none;
+    background-color: @os_chrome_selected_bg_color;
+    border-width: 0;
+    border-radius: 0;
+}
+
+MatePanelApplet *:hover {
+    color: @os_chrome_selected_fg_color;
+}
+
+MatePanelApplet *:active,
+MatePanelApplet *:hover:active {
+    color: @os_chrome_selected_fg_color;
+    text-shadow: 0 1px @os_chrome_bg_color;
+}
+
+/*Wncklist */
+WnckTasklist .button {
+	padding: 4px;
+
+	border-radius: 0px;
+	border-width: 0px;
+	border-style: solid;
+	text-shadow: none;
+
+    color: @os_chrome_fg_color;
+    background-image: none;
+    background-color: @os_chrome_bg_color;
+}
+
+WnckTasklist .button:active:hover,
+WnckTasklist .button:active {
+    border-image: none;
+    background-image: none;
+    background-color: @os_chrome_selected_bg_color;
+    border-width: 0;
+    border-radius: 0;
+}
+
+WnckTasklist .button:hover {
+    border-image: none;
+    background-image: none;
+    background-color: @os_chrome_selected_bg_color;
+    border-width: 0;
+    border-radius: 0;
+}
+
+ClockBox,
+.mate-panel-menu-bar.menubar,
+MatePanelApplet > GtkMenuBar.menubar {
+	font: normal;
+}
+
+WnckPager {
+	background-image: none;
+	border-color: transparent;
+	background-color: shade(@theme_base_color, 0.9);
+	text-shadow: none;
+}
+
+/* prelight of WnckPager */
+MatePanelApplet *:hover {
+	background-image: linear-gradient(to bottom,
+		shade (@theme_selected_bg_color, 2.86),
+		shade (@theme_selected_bg_color, 1.0));
+	background-color: @theme_base_color;
+}
+
+/* Classic icon style */
+/*.mate-panel-menu-bar {
+	-PanelMenuBar-icon-visible: true;
+}*/
+
+NaTrayApplet {
+	background-image: none;
+	background-color: @theme_base_color;
+	padding: 0;
+	color: @theme_fg_color;
+	text-shadow: none;
+/*	-NaTrayApplet-icon-padding: 12;
+	-NaTrayApplet-icon-size: 16;*/
+}
+
+/****************
+ * Mate-Terminal *
+ ****************/
+
+/* Background mate-terminal, this isn't the normal way to style that! */
+TerminalWindow .entry {
+    -TerminalWindow-background-darkness: 0.95;
+    background-color: shade (@theme_base_color, 0.95);
+    color: @theme_fg_color;
+}
+
