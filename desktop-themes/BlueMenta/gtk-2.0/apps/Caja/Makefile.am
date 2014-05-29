@@ -10,7 +10,7 @@ theme_DATA = \
 	mode_prelight.png \
 	mode_pressed.png \
 	caja-toolbar.png \
-	resize_grip.png \
+	resize-grip.png \
 	right_slider_normal.png \
 	slider.png \
 	slider-prelight.png \
