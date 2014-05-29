@@ -35,11 +35,20 @@ style "caja-handle" {
 
 style "caja-statusbar"
 {
-	bg[NORMAL] = @base_color
-	base[NORMAL] = @base_color
-	fg[NORMAL] = shade (1.2, @fg_color)
-
-	engine "murrine" {}
+	xthickness = 0
+	engine "pixmap"
+	{
+	    image
+	    {
+		function		= RESIZE_GRIP
+		recolorable		= TRUE
+		state			= NORMAL
+		detail			= "statusbar"
+		overlay_file	= "Caja/resize-grip.png"
+		overlay_border	= {0,0,0,0 }
+		overlay_stretch	= FALSE
+	    }
+	}
 }
 
 style "caja-location"

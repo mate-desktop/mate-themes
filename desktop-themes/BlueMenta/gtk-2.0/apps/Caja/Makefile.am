@@ -9,8 +9,8 @@ theme_DATA = \
 	mode_normal.png \
 	mode_prelight.png \
 	mode_pressed.png \
-	nautilus-toolbar.png \
-	resize_grip.png \
+	caja-toolbar.png \
+	resize-grip.png \
 	right_slider_normal.png \
 	slider.png \
 	slider-prelight.png \

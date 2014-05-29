@@ -5,7 +5,8 @@ theme_DATA = \
 	close.png \
 	handle.png \
 	null.png \
-	toolbar.png
+	toolbar.png \
+	resize-grip.png
 
 EXTRA_DIST = $(theme_DATA)
 
