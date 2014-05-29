@@ -19,7 +19,7 @@ style "caja-view" {
 }
 
 style "caja-handle" {
-	GtkPaned::handle-size = 1
+	GtkPaned::handle-size = 2
 	
 	engine "pixmap" {
 		# for the thin gray line separating the sidepane and viewpane
