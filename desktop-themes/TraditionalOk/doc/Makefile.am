@@ -8,6 +8,7 @@ theme_DATA = \
 	exemple3.png \
 	gpl-3.0-fr.txt \
 	gpl-3.0.txt \
+	images.sh.txt \
 	LISEZ-MOI.mkd \
 	README.mkd \
 	version.txt
