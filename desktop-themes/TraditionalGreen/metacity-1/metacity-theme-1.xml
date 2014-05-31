@@ -349,7 +349,7 @@
 
 <draw_ops name="title_text_unfocused">
 	<!--<title color="shade/gtk:bg[NORMAL]/1.07" x="5 `max` (width-title_width)/2+1" y="1 `max` ((height-title_height)/2)+1"/>-->
-	<title color="blend/gtk:fg[NORMAL]/gtk:bg[NORMAL]/0.45" x="4 `max` (width-title_width)/2" y="0 `max` ((height-title_height)/2)"/>
+	<title color="blend/gtk:fg[NORMAL]/gtk:text[NORMAL]/5.45" x="4 `max` (width-title_width)/2" y="0 `max` ((height-title_height)/2)"/>
 </draw_ops>
 
 <draw_ops name="title">
@@ -463,12 +463,12 @@
 
 	<!-- fill gradient -->
 	<gradient type="vertical" x="3" y="3" width="width-6" height="(height)/2-1">
-		<color value="shade/gtk:bg[NORMAL]/1.15"/>
-		<color value="shade/gtk:bg[NORMAL]/1.07"/>
+		<color value="shade/gtk:bg[NORMAL]/0.95"/>
+		<color value="shade/gtk:bg[NORMAL]/0.87"/>
 	</gradient>
 	<gradient type="vertical" x="3" y="(height)/2" width="width-6" height="(height)/2-2">
-		<color value="shade/gtk:bg[NORMAL]/1.05"/>
-		<color value="shade/gtk:bg[NORMAL]/0.97"/>
+		<color value="shade/gtk:bg[NORMAL]/0.85"/>
+		<color value="shade/gtk:bg[NORMAL]/0.77"/>
 	</gradient>
 
 	<!-- bottom border smooth effect -->
