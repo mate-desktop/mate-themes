@@ -615,8 +615,8 @@ GtkComboBox.combobox-entry .button:hover,
 GtkColorChooserWidget #add-color-button:hover {
 	background-color: transparent;
 	background-image: linear-gradient(to bottom,
-	                  @button_hover_gradient_a 50%,
-	                  @button_hover_gradient_b 50%,
+	                  @button_hover_gradient_a 5%,
+	                  @button_hover_gradient_b 95%,
 	                  @button_hover_gradient_c);
 }
 
@@ -1133,8 +1133,6 @@ GtkTreeMenu .menuitem {
 	                  left top,
 	                  left bottom,
 	                  from (@menubar_menuitem_hover_gradient_a),
-	                  color-stop (0.50, @menubar_menuitem_hover_gradient_b),
-	                  color-stop (0.50, @menubar_menuitem_hover_gradient_c),
 	                  to (@menubar_menuitem_hover_gradient_d));
 }
 
@@ -1771,8 +1769,8 @@ GtkInfoBar:last-child,
 
 .titlebar {
 	background-image: linear-gradient(to bottom,
-	                  @theme_base_color,
-	                  @theme_bg_color);
+	                  shade (@theme_selected_bg_color, 1.10),
+	                  @theme_selected_bg_color);
 	background-color: transparent;
 	border-radius: 7px 7px 0px 0px;
 	border-bottom: 1px solid;
@@ -1801,6 +1799,18 @@ GtkInfoBar:last-child,
 	padding: 5px 5px 6px 5px;
 }
 
+.titlebar .titlebutton:hover {
+	background-image: linear-gradient(to bottom,
+	                  shade (@theme_selected_bg_color, 1.30),
+	                  shade (@theme_selected_bg_color, 1.05));
+	border-image: url("img/border.svg") 3 3 4 3 / 3px 3px 4px 3px repeat;
+	border-radius: 3px;
+	border-width: 1px 1px 2px 1px;
+	border-style: solid;
+	border-color: transparent;
+	padding: 5px 5px 6px 5px;
+}
+
 .window-frame {
 	border-width: 1px;
 	border-radius: 7px 7px 0 0;
@@ -1823,3 +1833,4 @@ GtkPopover > .toolbar,
 GtkPopover.osd > .toolbar .button {
 	background-color: transparent;
 }
+
