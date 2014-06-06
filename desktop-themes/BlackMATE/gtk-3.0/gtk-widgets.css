@@ -113,9 +113,10 @@
 	color: @theme_tooltip_fg_color;
 }
 
-/*.grip {
-	background-color: shade(@inactive_frame_color, 0.93);
-}*/
+.grip {
+	background-color: transparent;
+	background-image: url("assets/resize-grip.svg");
+}
 
 .content-view.view.rubberband,
 .view.rubberband,
