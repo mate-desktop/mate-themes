@@ -1145,6 +1145,7 @@ GtkComboBox .menu {
  * Buttons *
  ***********/
 .button {
+    -GtkWidget-focus-line-width: 0;
 	/* Due to a bug somewhere in gtk or cairo,
 	   a padding of zero (or even one) doesn't work always!!! */
 	padding: 2px;
@@ -1298,22 +1299,36 @@ GtkComboBox .menu {
 	background-image: linear-gradient(to top,
 	                                  shade(@scroll_slider_color, 0.6),
 	                                  shade(@scroll_slider_color, 1.6) 50%,
-	                                  shade(@scroll_slider_color, 3.4));
+	                                  shade(@scroll_slider_color, 2.0));
 	border-color: transparent;
-	border-radius: 5px;
-	border-width: 3px 2px 3px;
+	border-radius: 6px;
+	border-width: 1px;
 	border-image: none;
 }
 
 .scrollbar.slider.vertical {
-	border-width: 2px 3px 2px;
+	border-width: 1px;
+	background-image: linear-gradient(to top,
+	                                  shade(@scroll_slider_color, 0.6),
+	                                  shade(@scroll_slider_color, 1.6) 50%,
+	                                  shade(@scroll_slider_color, 2.0));
+}
+
+.scrollbar.slider.horizontal {
+	border-width: 1px;
 	background-image: linear-gradient(to left,
 	                                  shade(@scroll_slider_color, 0.6),
 	                                  shade(@scroll_slider_color, 1.6) 50%,
-	                                  shade(@scroll_slider_color, 3.4));
+	                                  shade(@scroll_slider_color, 2.0));
 }
 
 .scrollbar.slider:prelight {
+	border-width: 1px;
+	border-color: @scroll_slider_color;
+	border-radius: 6px;
+}
+
+.scrollbar.slider.horizontal:prelight {
 	border-width: 1px;
 	border-color: @scroll_slider_color;
 	border-radius: 6px;
@@ -1330,7 +1345,7 @@ GtkComboBox .menu {
 	border-color: @scroll_slider_color;
 	border-radius: 6px;
 	background-image: linear-gradient(to top,
-	                                  shade(@scroll_slider_color, 3.3),
+	                                  shade(@scroll_slider_color, 2.0),
 	                                  shade(@scroll_slider_color, 1.6) 55%,
 	                                  shade(@scroll_slider_color, 0.6));
 }
@@ -1339,8 +1354,18 @@ GtkComboBox .menu {
 	border-width: 1px;
 	border-color: @scroll_slider_color;
 	border-radius: 6px;
+	background-image: linear-gradient(to top,
+	                                  shade(@scroll_slider_color, 2.0),
+	                                  shade(@scroll_slider_color, 1.6) 55%,
+	                                  shade(@scroll_slider_color, 0.6));
+}
+
+.scrollbar.slider.horizontal:prelight:active {
+	border-width: 1px;
+	border-color: @scroll_slider_color;
+	border-radius: 6px;
 	background-image: linear-gradient(to left,
-	                                  shade(@scroll_slider_color, 3.3),
+	                                  shade(@scroll_slider_color, 2.0),
 	                                  shade(@scroll_slider_color, 1.6) 55%,
 	                                  shade(@scroll_slider_color, 0.6));
 }
@@ -2776,86 +2801,6 @@ EphyWindow GtkProgressBar.trough {
 	background-color: shade(@theme_selected_bg_color, 1.23);
 }
 
-/**********************
- * Fallback Mode Panel
- **********************/
-.gnome-panel-menu-bar,
-PanelApplet > GtkMenuBar.menubar,
-PanelToplevel,
-PanelWidget,
-PanelAppletFrame,
-PanelApplet {
-	background-color: @os_chrome_bg_color;
-	background-image: none;
-	color: @os_chrome_fg_color;
-}
-
-ClockBox,
-.gnome-panel-menu-bar,
-PanelApplet > GtkMenuBar.menubar {
-	font: bold;
-}
-
-.gnome-panel-menu-bar .menuitem:hover,
-PanelApplet > GtkMenuBar.menubar .menuitem:hover {
-	background-color: @os_chrome_selected_bg_color;
-	color: @os_chrome_selected_fg_color;
-}
-
-PanelApplet .button,
-PanelApplet .button:hover {
-	padding: 4px;
-
-	border-image: none;
-	border-width: 0;
-	border-radius: 0;
-
-	background-image: none;
-	background-color: transparent;
-
-	color: @os_chrome_fg_color;
-}
-
-PanelApplet .button:active:hover,
-PanelApplet .button:active {
-	border-image: none;
-	background-image: none;
-	background-color: @os_chrome_selected_bg_color;
-	border-width: 0px;
-	border-radius: 0;
-}
-
-PanelApplet *:hover {
-	color: @os_chrome_selected_fg_color;
-}
-
-PanelApplet *:active,
-PanelApplet *:hover:active {
-	color: @os_chrome_selected_fg_color;
-}
-
-NaTrayApplet {
-    -NaTrayApplet-icon-padding: 12;
-    -NaTrayApplet-icon-size: 16;
-}
-
-WnckPager, WnckTasklist {
-	background-color: @os_chrome_selected_bg_color;
-	background-image: none;
-	color: @os_chrome_fg_color;
-}
-
-GsmFailWhaleDialog {
-	background-color: @os_chrome_bg_color;
-	background-image: none;
-	color: @os_chrome_fg_color;
-}
-
-GsmFailWhaleDialog * {
-	background-color: @os_chrome_bg_color;
-	background-image: none;
-}
-
 /************
  * Nautilus *
  ************/
@@ -2866,6 +2811,13 @@ GsmFailWhaleDialog * {
 	background-color: @less_dark_color;
 	color: @theme_fg_color;
 }*/
+
+/* the small line between sidebar and view */
+NautilusWindow * ,
+NemoWindow * {
+	-GtkPaned-handle-size: 2px;
+}
+
 
 .nautilus-inactive-pane .view,
 .nemo-inactive-pane .view {
