@@ -44,8 +44,8 @@
 	-GtkWidget-focus-padding: 2;
 	-GtkWidget-focus-line-width: 1;
 
-	-GtkWindow-resize-grip-width: 10;
-	-GtkWindow-resize-grip-height: 10;
+	-GtkWindow-resize-grip-width: 12;
+	-GtkWindow-resize-grip-height: 12;
 
 	/* We use the outline properties to signal the focus properties
 	 * to the adwaita engine: using real CSS properties is faster,
@@ -241,7 +241,7 @@ GtkTreeView .separator,
 /****************
  * Text Entries *
  ****************/
-.entry,
+
 .toolbar.entry {
 	/*background-color: @theme_main_color;*/
 	background-image: linear-gradient(to bottom,
@@ -249,6 +249,15 @@ GtkTreeView .separator,
 	                                  shade(@internal_element_color, 1.57) 20%,
 	                                  shade(@internal_element_color, 1.7) 50%,
 	                                  @theme_main_color);
+	border-width: 1px;
+	border-style: none;
+	border-radius: 3px;
+	padding: 4px;
+	color: @theme_text_color;
+}
+
+.entry {
+	background-color: shade(@theme_bg_color, 1.09);
 	border-width: 1px;
 	border-style: none;
 	border-radius: 3px;
@@ -1025,8 +1034,9 @@ GtkTreeMenu .menuitem * {
 }
 
 .scrollbar.slider.vertical {
-	border-width: 2px 3px 2px;
-	background-image: linear-gradient(to left,
+	border-width: 1px;
+	border-radius: 6px;
+	background-image: linear-gradient(to top,
 	                                  shade(@toolbar_gradient_base, 0.82),
 	                                  white);
 }
@@ -1205,17 +1215,17 @@ GtkTreeMenu .menuitem * {
 }
 
 .menu,
-.menubar .menu,
+.menubar .menu .menuitem:active:hover,
+.menubar .menu .menuitem:hover,
 .menuitem .menu {
-	background-color: shade(@theme_selected_bg_color, 0.8);
-	background-image: linear-gradient(to bottom,
-	                                  shade(@theme_selected_bg_color, 1.1),
-	                                  shade(@theme_selected_bg_color, 0.65));
-
-	border-style: none;
-	border-width: 0px;
-	border-radius: 0px;
-	padding: 1px;
+	background-image:  linear-gradient(to bottom,
+	                                  shade(@theme_selected_bg_color, 1.6),
+	                                  shade(@theme_selected_bg_color, 0.6));
+	color: @theme_text_color;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 3px;
+	border-color: alpha(@theme_selected_bg_color, 1.0);
 }
 
 .menuitem,
@@ -2156,9 +2166,9 @@ CheeseThumbView /* Cheese */
 
 /* gnome-terminal */
 TerminalScreen {
-	background-color: @theme_bg_color;
+	background-color: @selected_fg_color;
 	color: @theme_text_color;
-	-TerminalScreen-background-darkness: 1.0;
+	-TerminalScreen-background-darkness: 0.95;
 }
 
 /* gnome-contacts */
@@ -2258,97 +2268,14 @@ RBSource .cell.image {
 	color: black;
 }
 
-/***********************
- * Fallback Mode Panel *
- ***********************/
-.gnome-panel-menu-bar,
-PanelApplet > GtkMenuBar.menubar,
-PanelToplevel,
-PanelWidget,
-PanelAppletFrame,
-PanelApplet {
-	background-color: @os_chrome_bg_color;
-	background-image: none;
-	color: @os_chrome_fg_color;
-}
-
-/* because of what we did with GtkLabel before */
-PanelToplevel GtkLabel,
-PanelWidget GtkLabel,
-PanelApplet GtkLabel {
-	color: @os_chrome_fg_color;
-}
-
-ClockBox,
-.gnome-panel-menu-bar,
-PanelApplet > GtkMenuBar.menubar {
-	font: bold;
-}
-
-.gnome-panel-menu-bar .menuitem:hover,
-PanelApplet > GtkMenuBar.menubar .menuitem:hover {
-	background-color: @os_chrome_selected_bg_color;
-	color: @os_chrome_selected_fg_color;
-}
-
-PanelApplet .button,
-PanelApplet .button:hover {
-	padding: 4px;
-
-	border-image: none;
-	border-width: 0;
-	border-radius: 0;
-
-	background-image: none;
-	background-color: transparent;
-
-	color: @os_chrome_fg_color;
-}
-
-PanelApplet .button:active:hover,
-PanelApplet .button:active {
-	border-image: none;
-	background-image: none;
-	background-color: @os_chrome_selected_bg_color;
-	border-width: 0px;
-	border-radius: 0;
-}
-
-PanelApplet *:hover,
-PanelApplet *:active,
-PanelApplet *:hover:active {
-	color: @os_chrome_selected_fg_color;
-}
-
-NaTrayApplet {
-    -NaTrayApplet-icon-padding: 12;
-    -NaTrayApplet-icon-size: 16;
-}
-
-WnckPager, WnckTasklist {
-	background-color: @os_chrome_selected_bg_color;
-	background-image: none;
-	color: @os_chrome_fg_color;
-}
-
-GsmFailWhaleDialog {
-	background-color: @os_chrome_bg_color;
-	background-image: none;
-	color: @os_chrome_fg_color;
-}
-
-GsmFailWhaleDialog * {
-	background-color: @os_chrome_bg_color;
-	background-image: none;
-}
-
 /************
  * Nautilus *
  ************/
-/*NautilusView .view {
-	background-color: @theme_bg_color;;
-}*/
 
+NemoView .view,
+NautilusView .view {
+	background-color: shade(@base_color, 1.08)
+}
 .nautilus-inactive-pane .view,
 .nemo-inactive-pane .view {
 	background-color: shade(@theme_bg_color, 0.9);
@@ -2407,6 +2334,12 @@ NemoView .expander column:sorted:selected:hover {
 	background-color: transparent;
 }
 
+/* the small line between sidebar and view */
+NautilusWindow * ,
+NemoWindow * {
+	-GtkPaned-handle-size: 2px;
+}
+
 NautilusWindow GtkStatusbar,
 NautilusWindow .floating-bar,
 NemoWindow GtkStatusbar,
@@ -2447,6 +2380,12 @@ NemoWindow .notebook .view.rubberband,
 NemoWindow .notebook .rubberband {
 	background-color: alpha(@theme_selected_bg_color, 0.35);
 	border-radius: 6px;
+}
+
+NautilusWindow .sidebar .view,
+NemoWindow .sidebar .view{
+	background-color: shade(@theme_bg_color, 1.03);
+	border-width: 0px;
 }
 
 NautilusWindow .sidebar .frame,
