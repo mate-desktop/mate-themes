@@ -1,5 +1,4 @@
 * {
-	engine: none;
 	padding: 1px;
 
 	background-clip: padding-box;
@@ -42,15 +41,11 @@
 	-WnckTasklist-fade-overlay-rect: 0;
 
 	-GtkWidget-focus-padding: 2;
-	-GtkWidget-focus-line-width: 1;
+	-GtkWidget-focus-line-width: 0;
 
 	-GtkWindow-resize-grip-width: 13;
-	-GtkWindow-resize-grip-height: 13;
+	-GtkWindow-resize-grip-height: 13; 
 
-	/* We use the outline properties to signal the focus properties
-	 * to the adwaita engine: using real CSS properties is faster,
-	 * and we don't use any outlines for now.
-	 */
 	outline-color: @focus_border;
 	outline-style: dashed;
 	outline-offset: 2px;
@@ -242,7 +237,6 @@ GtkTreeView .separator,
 /****************
  * Text Entries *
  ****************/
-
 .toolbar.entry {
 	/*background-color: @theme_main_color;*/
 	background-image: linear-gradient(to bottom,
@@ -535,6 +529,15 @@ GtkLevelBar.vertical {
 /*************
  * Notebooks *
  *************/
+/* gtk-3.12 */
+.notebook.header {
+	background-image: none;
+	background-color: transparent;
+	border-style: none;
+    border-image: none;
+    border-width: 0px;
+}
+
 .notebook {
 	padding: 1px 0px 1px 1px;
 	background-clip: border-box;
@@ -549,9 +552,12 @@ GtkLevelBar.vertical {
 	   highlights invisible in text views */
 	/*background-color: @theme_main_color;*/
 
-	-GtkNotebook-tab-overlap: 8;
-	-GtkNotebook-tab-curvature: 6;
+	-GtkNotebook-tab-overlap: 1;
+	-GtkNotebook-tab-curvature: 0;
 	-GtkNotebook-initial-gap: 0;
+	-GtkNotebook-has-tab-gap: true;
+	-GtkWidget-focus-padding: 2;
+	-GtkWidget-focus-line-width: 0;
 }
 
 .notebook.arrow:insensitive {
@@ -561,21 +567,14 @@ GtkLevelBar.vertical {
 .notebook tab {
 	padding: 3px 8px 0px;
 	border-style: solid;
-	border-width: 0;
-	border-radius: 0px;
+	border-width: 1px 1px 0px 1px;
+	border-color: @notebook_border;
 	background-image: linear-gradient(to bottom,
 	                                  shade(@theme_bg_color, 1.1),
 	                                  shade(@theme_bg_color, 0.77));
 }
 
 .notebook tab:active {
-	border-radius: 3px;
-	-adwaita-border-gradient: -gtk-gradient (linear,
-					         left top, left bottom,
-					         from (@notebook_active_tab_border),
-					         to (@notebook_border));
-
-	-adwaita-selected-tab-color: transparent;
 	background-image: linear-gradient(to bottom,
 	                                  shade(@theme_bg_color, 0.9),
 	                                  shade(@theme_bg_color, 0.96) 40%,
@@ -592,26 +591,42 @@ GtkLevelBar.vertical {
 	padding: 4px 8px 0px;
 }
 
+.notebook tab.top,
+.notebook tab.top:active {
+	border-radius: 3px 3px 0px 0px;
+}
+
 .notebook tab.bottom {
 	padding: 0px 8px 3px;
 }
 
 .notebook tab.bottom:active {
-    	padding: 0px 8px 4px;
+	padding: 0px 8px 4px;
+	background-image: linear-gradient(to top,
+	                                  shade(@theme_bg_color, 1.1),
+	                                  shade(@theme_bg_color, 1.04) 40%,
+	                                  shade(@theme_bg_color, 1.02) 70%,
+	                                  @theme_bg_color);
+}
+
+.notebook tab.bottom,
+.notebook tab.bottom:active {
+	border-radius: 0px 0px 3px 3px;
+	border-width: 0px 1px 1px 1px;
 }
 
 .notebook tab.left,
 .notebook tab.left:active {
 	border-radius: 3px 0px 0px 3px;
 	padding: 2px 4px 2px;
-	border-width: 1px;
+	border-width: 1px 0px 1px 1px;
 }
 
 .notebook tab.right,
 .notebook tab.right:active {
 	border-radius: 0px 3px 3px 0px;
 	padding: 2px 4px 2px;
-	border-width: 1px;
+	border-width: 1px 1px 1px 0px;
 }
 
 .notebook tab.left:active,
@@ -631,8 +646,8 @@ GtkLevelBar.vertical {
 	-GtkButton-child-displacement-x: 0;
 	-GtkButton-child-displacement-y: 0;
 
-	/*-GtkWidget-focus-line-width: 0;
-	-GtkWidget-focus-padding: 0;*/
+	-GtkWidget-focus-line-width: 0;
+	-GtkWidget-focus-padding: 0;
 }
 
 .notebook .pane-separator {
@@ -870,7 +885,7 @@ GtkTreeMenu .menuitem * {
 	/* Due to a bug somewhere in gtk or cairo,
 	   a padding of zero (or even one) doesn't work always! */
 	padding: 2px;
-	-GtkWidget-focus-line-width: 1;
+	-GtkWidget-focus-line-width: 0;
 
 	border-radius: 3px;
 	border-width: 1px;
@@ -964,9 +979,9 @@ GtkTreeMenu .menuitem * {
 	border-image: none;
 }
 
-/****************
+/******************
  * Linked Buttons *
- ****************/
+ ******************/
 
 /* We don't make them different. */
 
@@ -1052,7 +1067,7 @@ GtkTreeMenu .menuitem * {
 }
 
 .scrollbar.slider.vertical:prelight {
-	background-image: linear-gradient(to left,
+	background-image: linear-gradient(to top,
 	                                  shade(@toolbar_gradient_base, 0.88),
 	                                  shade(@theme_bg_color, 1.6));
 	border-width: 1px;
@@ -1074,7 +1089,7 @@ GtkTreeMenu .menuitem * {
 	border-width: 1px;
 	border-color: shade(@button_border, 1.1);
 	border-radius: 6px;
-	background-image: linear-gradient(to left,
+	background-image: linear-gradient(to top,
 	                                  shade(@theme_bg_color, 1.5),
 	                                  shade(@theme_bg_color, 0.9));
 }
@@ -1185,15 +1200,10 @@ GtkTreeMenu .menuitem * {
 
 .menu .menuitem,
 .menu .menuitem GtkImage {
-	background-color: shade(@theme_selected_bg_color,0.9);
 	color: @theme_selected_fg_color;
 }
 
 .menu .menuitem GtkImage:hover {
-	background-color: shade(@theme_selected_bg_color,1.7);
-	background-image:  linear-gradient(to bottom,
-	                                  @theme_bg_color,
-	                                  shade(@theme_bg_color, 0.55));
 	color: @theme_fg_color;
 }
 
@@ -1216,22 +1226,21 @@ GtkTreeMenu .menuitem * {
 }
 
 .menu,
-.menubar .menu .menuitem:active:hover,
-.menubar .menu .menuitem:hover,
+.menubar .menu,
 .menuitem .menu {
-	background-image:  linear-gradient(to bottom,
-	                                  shade(@theme_selected_bg_color, 1.6),
-	                                  shade(@theme_selected_bg_color, 0.6));
-	color: @theme_text_color;
-	border-style: solid;
-	border-width: 1px;
-	border-radius: 3px;
-	border-color: alpha(@theme_selected_bg_color, 1.0);
+	background-color: shade(@theme_selected_bg_color, 0.8);
+	background-image: linear-gradient(to bottom,
+	                                  shade(@theme_selected_bg_color, 1.1),
+	                                  shade(@theme_selected_bg_color, 0.65));
+
+	border-style: none;
+	border-width: 0px;
+	border-radius: 0px;
+	padding: 1px;
 }
 
 .menuitem,
 .menuitem * {
-	-adwaita-menuitem-arrow-color: @menu_controls_color;
 	-GtkMenuItem-arrow-scaling: 0.5;
 	padding: 2px 0px;
 }
@@ -1324,7 +1333,7 @@ GtkTreeMenu .menuitem * {
 	                                  shade(@theme_bg_color, 1.5));
 	border-style: none;
 	border-width: 0;
-	border-radius: 3px;
+	border-radius: 0px;
 	padding: 1px;
 
 	-GtkWidget-window-dragging: true;
@@ -1689,6 +1698,142 @@ GtkProgressBar.osd.progressbar {
 	border-radius: 0;    
 }
 
+/*******
+ * CSD *
+ *******/
+
+.titlebar {
+    text-shadow: none;
+ 
+    background-image: linear-gradient(to bottom,
+                                      shade (@theme_bg_color, 1.50),
+                                      shade (@theme_bg_color, 1.0));
+
+    border-radius: 7px 7px 0px 0px;
+}
+
+.tiled .titlebar {
+    border-radius: 0;
+}
+
+.maximized .titlebar {
+    border-radius: 0;
+}
+
+/* this is the default titlebar that is added by GTK
+ * when client-side decorations are in use and the application
+ * did not set a custom titlebar.
+ */
+.titlebar.default-decoration {
+    border: none;
+    box-shadow: none;
+}
+ 
+.titlebar .title {
+    font: Bold 10;
+    background: none;
+    color: @theme_fg_color;
+}
+
+ /* Colour when unfocused? does this work?*/
+.titlebar:backdrop {
+    color: #747473;
+    text-shadow: none;
+    background-image: none;
+    background-color: #747473;
+}
+ 
+.titlebar .titlebutton,
+.header-bar.frame.titlebar .button.image-button.titlebutton,
+.button.text-button.titlebutton {
+	/* Due to a bug somewhere in gtk or cairo,
+	   a padding of zero (or even one) doesn't work always!!! */
+	padding: 0px;
+
+	border-radius: 3px;
+	border-width: 1px;
+	border-style: solid;
+	text-shadow: 0 -1px black;
+
+	color: #D9D9D9;
+	background-image: -gtk-gradient (radial,
+					0.5 -2.0, 2.0,
+					0.5 -2.0, 3.0,
+					from (shade(@button_gradient_color_a, 1.5)),
+					to (shade(@button_gradient_color_b, 1.1)));
+}
+ 
+.titlebar .titlebutton:hover,
+.header-bar.frame.titlebar .button.image-button.titlebutton:hover,
+.button.text-button.titlebutton:hover {
+	border-image: none;
+	border-style: solid;
+	border-color: shade(@button_border, 1.1);
+	background-image: linear-gradient(to bottom,
+	                                  @button_hover_gradient_color_a,
+	                                  @button_hover_gradient_color_b);
+}
+ 
+.titlebar .titlebutton:active,
+.titlebar .titlebutton:active:hover,
+.header-bar.frame.titlebar:active,
+.header-bar.frame.titlebar:active:hover,
+.button.image-button.titlebutton:active,
+.button.image-button.titlebutton:active:hover,
+.button.text-button.titlebutton:active,
+.button.text-button.titlebutton:active:hover {
+	/* some apps need this */
+	color: @theme_fg_color;
+	border-style: solid;
+	background-image: linear-gradient(to bottom,
+	                                  shade(@button_gradient_color_b, 1.0),
+	                                  @theme_bg_color 50%,
+	                                  shade(@button_gradient_color_a, 1.5));
+}
+ 
+.titlebar .right .titlebutton:first-child {
+    border-left: 1px solid @menu_separator; 
+}
+ 
+.titlebar .right .titlebutton:last-child {
+ 
+}
+ 
+.titlebar .left .titlebutton:last-child {
+    border-right: 1px solid @menu_separator; 
+}
+ 
+.titlebar .left .titlebutton:first-child {
+ 
+}
+ 
+.titlebar .titlebutton:backdrop,
+.titlebar .titlebutton:hover:backdrop,
+.header-bar.frame.titlebar .button.image-button.titlebutton:backdrop,
+.header-bar.frame.titlebar .button.image-button.titlebutton:hover:backdrop {
+    background: none;
+    color: @theme_main_color;
+    border-image: none;
+    icon-shadow: none;
+}
+
+.titlebar .titlebutton:hover:backdrop,
+.header-bar.frame.titlebar .button.image-button.titlebutton:hover:backdrop {
+	color: #747473;
+}
+ 
+.window-frame {
+    border-color: @theme_bg_color;
+    border-radius: 7px 7px 0 0;
+    border-width: 1px;
+    border-style: solid;
+    background-color: @theme_bg_color;
+    box-shadow: 0 0 0 2px @osd_button_shadow, 0 2px 8px 3px @osd_button_shadow;
+
+    /* this is used for the resize cursor area */
+    margin: 10px;
+}
+
 /****************************
  * Suggested action buttons *
  ****************************/
@@ -1800,6 +1945,12 @@ GtkStatusbar {
 	-GtkStatusbar-shadow-type: none;
 }
 
+GtkStatusbar .frame {
+	background-image: none;
+	/* gtk-3.12 */
+	background-color: transparent;
+}
+
 GtkScrolledWindow,
 GtkOverlay /* for floating bars */ {
 	background-color: transparent;
@@ -1826,7 +1977,12 @@ GtkLabel,
 GtkLabel:hover,
 GtkLabel:active,
 GtkLabel:hover:active,
-GtkLabel:insensitive {
+GtkLabel:insensitive,
+/* gtk-3.12 */
+GtkBox,
+GtkBox:insensitive,
+GtkGrid,
+GtkGrid:insensitive {
 	background-image: none;
 	background-color: transparent;
 }
@@ -2040,7 +2196,7 @@ GtkIconView.content-view.check:selected {
 
 	background-image: linear-gradient(to bottom,
 	                                  @app_notification_a,
-	                                  @app_notification_b 18%,
+	                                  @app_notification_b 20%,
 	                                  @app_notification_c);
 
 	color: @theme_text_color;
@@ -2172,18 +2328,6 @@ TerminalScreen {
 	-TerminalScreen-background-darkness: 0.95;
 }
 
-/* gnome-contacts */
-.contacts-main-view.view {
-	background-color: @theme_bg_color;
-	color: @theme_fg_color;
-}
-
-.contacts-left-toolbar.toolbar.menubar {
-	border-width: 0 2px 0 0;
-	border-style: solid;
-	border-color: @theme_bg_color;
-}
-
 /* gcalctool */
 MathWindow {
 	background-image: none;
@@ -2203,15 +2347,49 @@ MathWindow GtkScrolledWindow GtkViewport.frame {
 	border-color: @theme_main_color;
 }
 
-/* empathy and gnome-contacts */
+/* gnome-contacts */
+.contacts-main-view.view {
+	background-color: @theme_bg_color;
+	color: @theme_fg_color;
+}
 
+.contacts-left-toolbar.toolbar.menubar {
+	border-width: 0 2px 0 0;
+	border-style: solid;
+	border-color: @theme_bg_color;
+}
+
+/* empathy and gnome-contacts */
+EmpathyRosterView,
 ContactsListPane.frame * {
-	background-color: transparent;
+	background-color: @theme_bg_color;
 	color: @theme_text_color;
 }
 
+
+ContactsListPane.frame GtkLabel,
+ContactsListPane.frame GtkImage,
+/* gtk-3.12 */
+ContactsListPane.frame GtkBox,
+ContactsListPane.frame GtkGrid {
+	background-color: transparent;
+}
+
+EmpathyRosterView:hover,
+ContactsView:hover,
+EmpathyRosterView GtkBin:hover,
+ContactsView GtkBin:hover {
+	background-color: alpha(shade(@theme_bg_color, 1.1), 0.4);
+}
+
+.contacts-suggestion {
+	background-color: @theme_bg_color;
+}
+
 EmpathyRosterView:selected,
-ContactsView:selected {
+ContactsView:selected,
+EmpathyRosterView GtkBin:selected,
+ContactsView GtkBin:selected {
 	background-image: linear-gradient(to bottom,
 	                                  shade(@theme_bg_color, 0.8),
 	                                  shade(@theme_bg_color, 1.2));
@@ -2219,6 +2397,11 @@ ContactsView:selected {
 
 ContactsWindow .toolbar {
 	background-image: none;
+}
+
+ContactsListPane.frame GtkToolbar,
+ContactsListPane GtkScrolledWindow {
+	border-radius: 0px;
 }
 
 ContactsListPane.frame GtkToolbar {
@@ -2277,6 +2460,7 @@ NemoView .view,
 NautilusView .view {
 	background-color: shade(@base_color, 1.08)
 }
+
 .nautilus-inactive-pane .view,
 .nemo-inactive-pane .view {
 	background-color: shade(@theme_bg_color, 0.9);
@@ -2289,10 +2473,6 @@ NautilusView .view {
 
 .nautilus-inactive-pane .notebook tab.top:active,
 .nemo-inactive-pane .notebook tab.top:active {
-	-adwaita-border-gradient: -gtk-gradient (linear,
-					left top, left bottom,
-					from (shade(@notebook_active_tab_border, 0.9)),
-					to (shade(@notebook_border, 0.9)));
 	background-image: linear-gradient(to bottom,
 	                                  shade(@theme_bg_color, 0.8),
 	                                  shade(@theme_bg_color, 0.86) 40%,
@@ -2318,9 +2498,9 @@ NemoView .view .entry:focus {
 	border-color: @theme_selected_bg_color;
 }
 
-NemoToolbar .toolbar {
+/*NemoToolbar .toolbar {
 	border-radius: 0px;
-}
+}*/
 
 NautilusWindow GtkScrolledWindow.frame,
 NemoWindow GtkScrolledWindow.frame {
