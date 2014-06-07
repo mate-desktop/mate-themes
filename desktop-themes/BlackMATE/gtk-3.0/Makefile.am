@@ -9,7 +9,7 @@ theme_DATA = \
 	gtk-main-dark.css \
 	gtk-widgets.css \
 	gtk-widgets-assets-dark.css \
-	mate-applications \
+	mate-applications.css \
 	settings.ini
 
 EXTRA_DIST = $(theme_DATA)
