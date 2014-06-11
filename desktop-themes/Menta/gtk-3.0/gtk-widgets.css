@@ -24,7 +24,7 @@
 	 */
 
 	-GtkScrolledWindow-scrollbar-spacing: 0;
-	-GtkScrolledWindow-scrollbars-within-bevel: 1;
+	-GtkScrolledWindow-scrollbars-within-bevel: 0;
 
 	-GtkToolItemGroup-expander-size: 11;
 	-GtkExpander-expander-size: 11;
@@ -43,9 +43,9 @@
 	-WnckTasklist-fade-overlay-rect: 0;
 
 	-GtkWidget-focus-padding: 2;
-	-GtkWidget-focus-line-width: 1;
-	-GtkWindow-resize-grip-width: 0;
-	-GtkWindow-resize-grip-height: 0;
+	-GtkWidget-focus-line-width: 0;
+	-GtkWindow-resize-grip-width: 13;
+	-GtkWindow-resize-grip-height: 13;
 
 	/* We use the outline properties to signal the focus properties
 	 * to the adwaita engine: using real CSS properties is faster,
