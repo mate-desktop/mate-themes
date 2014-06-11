@@ -2,6 +2,7 @@ themedir = $(datadir)/themes/BlueMenta/gtk-3.0
 
 theme_DATA = \
 	gnome-applications.css \
+	mate-applications.css \
 	gtk.css \
 	gtk-fallback.css \
 	gtk-main-common.css \
