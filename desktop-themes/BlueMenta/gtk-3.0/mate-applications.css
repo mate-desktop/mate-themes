@@ -247,6 +247,7 @@ PanelMenuBar.menubar .menu .menuitem:hover {
 /* desktop-applet, clockapplet, drivemount, character-map,
 dictionary */
 MatePanelApplet .button {
+	padding: 1px 0px 1px 0px;
 	background-image: none;
 	background-color: @theme_bg_color;
 	color: @theme_text_color;
