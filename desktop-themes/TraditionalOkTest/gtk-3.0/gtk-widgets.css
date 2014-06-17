@@ -1092,7 +1092,7 @@ GtkTreeMenu .menuitem * {
 /* this controls the general appearance of the menubar */
 .menubar {
 	border-style: none;
-	padding: 4px;
+	padding: 0px;
 	-GtkWidget-window-dragging: true;
 	-GtkMenuBar-internal-padding: 1;
 	background-image: -gtk-gradient (linear,
