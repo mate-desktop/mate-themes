@@ -66,69 +66,6 @@ GtkIconView.documents-main-view.check {
 	border-radius: 3px;
 }
 
-/***************
- * gnome-panel *
- ***************/
-
-.gnome-panel-menu-bar,
-PanelApplet > GtkMenuBar.menubar,
-PanelToplevel,
-PanelWidget,
-PanelApplet {
-	background-color: @os_chrome_bg_color;
-	background-image: none;
-	color: @os_chrome_fg_color;
-}
-
-.gnome-panel-menu-bar,
-PanelApplet > GtkMenuBar.menubar,
-PanelApplet > GtkMenuBar.menubar.menuitem,
-PanelMenuBar.menubar,
-PanelMenuBar.menubar.menuitem {
-	-PanelMenuBar-icon-visible: true;
-}
-
-PanelAppletFrame {
-	background-color: @applet_frame_bg_color;
-	background-image: none;
-	color: @os_chrome_fg_color;
-}
-
-PanelApplet .button,
-PanelApplet .button:active,
-PanelApplet .button:hover,
-PanelApplet .button:hover:active {
-	border-image: url("img/border-gnome-panel-button.svg") 3 3 4 3 / 3px 3px 4px 3px repeat;
-}
-
-PanelApplet .menu .menuitem *:active {
-	color: @theme_text_color;
-}
-
-PanelApplet .menu .menuitem *:selected {
-	color: @theme_selected_fg_color;
-}
-
-PanelWidget > .button
-{
-	padding: 0;
-}
-
-WnckPager {
-	background-color: @pager_bg_color;
-}
-
-NaTrayApplet {
-	-NaTrayApplet-icon-padding: 7;
-	-NaTrayApplet-icon-size: 22;
-}
-
-GsmFailWhaleDialog {
-	background-color: @os_chrome_bg_color;
-	background-image: none;
-	color: @os_chrome_fg_color;
-}
-
 /******************
  * gnome-terminal *
  ******************/
