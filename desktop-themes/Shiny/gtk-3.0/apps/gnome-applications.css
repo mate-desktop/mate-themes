@@ -159,7 +159,7 @@ NautilusNotebook.notebook {
 
 /* gedit */
 
-GeditWindow .pane-separator, 
+GeditWindow .pane-separator,
 GeditWindow .pane-separator:hover {
    border-width: 0 1px 1px 1px;
    border-style: solid;
@@ -178,7 +178,7 @@ GeditWindow .sidebar {
     border-width: 0 0 1px 0;
     border-style: solid;
     border-color: @borders;
-    
+
 }
 
 GeditPanel .notebook {
@@ -497,7 +497,7 @@ EphyToolbar .location-entry .button:active:hover {
                                     from(shade(@entry_background_a, 0.9)),
                                     to(@entry_background_b));
     box-shadow: 1 0 inset @inset_dark_color,
-                0 1 inset @entry_inset, 
+                0 1 inset @entry_inset,
                 0 2 inset alpha(@entry_inset, 0.4);
 }
 
