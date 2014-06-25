@@ -245,6 +245,8 @@ desktop-themes/BlueMenta/unity/Makefile
 desktop-themes/BlueMenta/xfwm4/Makefile
 desktop-themes/Quid/Makefile
 desktop-themes/Shiny/Makefile
+desktop-themes/Shiny/gtk-2.0/Makefile
+desktop-themes/Shiny/metacity-1/Makefile
 desktop-themes/TraditionalGreen/Makefile
 desktop-themes/TraditionalGreen/gtk-2.0/Makefile
 desktop-themes/TraditionalGreen/gtk-3.0/Makefile
@@ -284,7 +286,6 @@ gtk-themes/ContrastLowLargePrint/pixmaps/Makefile
 gtk-themes/LargePrint/Makefile
 gtk-themes/LargePrint/gtkrc
 gtk-themes/Reverse/Makefile
-gtk-themes/Shiny/Makefile
 gtk-themes/Simply/Makefile
 icon-themes/Makefile
 icon-themes/ContrastHigh/Makefile
