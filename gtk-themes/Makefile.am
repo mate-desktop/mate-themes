@@ -1,6 +1,5 @@
 SUBDIRS = \
 	AlaDelta \
-	Shiny \
 	Simply \
 	ContrastHighInverse \
 	ContrastHighLargePrint \
@@ -12,7 +11,6 @@ SUBDIRS = \
 
 DIST_SUBDIRS = \
 	AlaDelta \
-	Shiny \
 	Simply \
 	ContrastHighInverse \
 	ContrastHighLargePrint \
