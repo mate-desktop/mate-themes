@@ -11,7 +11,10 @@ EXTRA_DIST=index.theme.in index.theme
 SUBDIRS =	\
 	gtk-2.0	\
 	gtk-3.0 \
-	metacity-1
+	metacity-1 \
+	openbox-3 \
+	unity \
+	xfwm4
 
 DIST_SUBDIRS = $(SUBDIRS)
 
