@@ -1,6 +1,6 @@
 THEME_NAME=Shiny
 THEME_IN_FILES=index.theme.in
- 
+
 themedir = $(datadir)/themes/$(THEME_NAME)
 
 theme_DATA = index.theme
