@@ -1,4 +1,4 @@
-THEMA_NAME=Shiny
+THEME_NAME=Shiny
 
 themedir = $(datadir)/themes/$(THEME_NAME)/gtk-3.0/assets
 
