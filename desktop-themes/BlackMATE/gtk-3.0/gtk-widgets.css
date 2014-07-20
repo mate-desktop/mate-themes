@@ -452,7 +452,8 @@ GtkProgressBar.progressbar.vertical {
 GtkProgressBar.progressbar {
 	border-radius: 12px;
 	border-style: none;
-	color: @theme_main_color;
+/* Label font color of progressbar*/
+	color: @theme_text_color;
 	/*border-color: @progressbar_border;*/
 }
 
