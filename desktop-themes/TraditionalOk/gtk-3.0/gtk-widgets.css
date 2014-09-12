@@ -1240,29 +1240,75 @@ GtkTreeMenu .menuitem *:hover,
 	border-style: solid;
 }
 
-/****************
- * Radiobuttons *
- ****************/
+/*****************************************************************************************************
+ * Check and Radio items                                                                             *
+ * Related to recent gtk3 development, to reveal checkboxes as part of the dialogue                  *
+ * of some of the applications whose notification icons appear in the system tray                    *
+ * the reference section of the HighContrast theme is used.                                          *
+ * https://git.gnome.org/browse/gnome-themes-standard/tree/themes/HighContrast/gtk-3.0/gtk.css#n1398 *
+ *****************************************************************************************************/
 
-.check,
-.radio,
-.check:insensitive,
-.radio:insensitive {
-	background-color: transparent;
-	border-style: none;
-}
+GtkCheckButton.text-button, GtkRadioButton.text-button {
+  padding: 1px;
+  outline-offset: 0; }
 
-.check row:selected:insensitive,
-.check row:selected:focus:insensitive {
-	background-color: transparent;
-}
+.check {
+  color: rgba(0, 0, 0, 0.1);
+  background-image: none;
+  -gtk-icon-source: -gtk-scaled(url("img/checkbox-unchecked.png")); }
+  .check:hover {
+    color: #7f7f7f; }
+  .check:checked, .check:active {
+    -gtk-icon-source: -gtk-scaled(url("img/checkbox-checked.png"));
+    color: #000; }
+    .check:checked:hover, .check:active:hover {
+      color: #7f7f7f; }
+    .check:checked:insensitive, .check:active:insensitive {
+    -gtk-icon-source: -gtk-scaled(url("img/checkbox-checked-insensitive.png"));
+      color: #7f7f7f; }
+      .check:checked:insensitive:backdrop, .check:active:insensitive:backdrop {
+        color: #7f7f7f; }
+    .check:checked:backdrop, .check:active:backdrop {
+      color: #000; }
+  .check:insensitive {
+    color: rgba(127, 127, 127, 0.1); }
+    .check:insensitive:backdrop {
+      color: transparent; }
+  .check:inconsistent {
+    -gtk-icon-source: -gtk-scaled(url("img/checkbox-mixed.png")); }
+  .check:backdrop {
+    color: rgba(0, 0, 0, 0.1); }
+    .check:backdrop:selected {
+      color: rgba(255, 255, 255, 0.1); }
 
-GtkCheckButton:hover,
-GtkCheckButton:active:hover,
-GtkCheckButton:selected,
-GtkCheckButton:selected:focus {
-	background-color: transparent;
-}
+.radio {
+  color: rgba(0, 0, 0, 0.1);
+  background-image: none;
+  -gtk-icon-source: -gtk-scaled(url("img/radio-unchecked.png")); }
+  .radio:hover {
+    color: #7f7f7f; }
+  .radio:checked, .radio:active {
+    -gtk-icon-source: -gtk-scaled(url("img/radio-checked.png"));
+    color: #000; }
+    .radio:checked:hover, .radio:active:hover {
+      color: #7f7f7f; }
+    .radio:checked:insensitive, .radio:active:insensitive {
+    -gtk-icon-source: -gtk-scaled(url("img/radio-checked-insensitive.png"));
+      color: #7f7f7f; }
+      .radio:checked:insensitive:backdrop, .radio:active:insensitive:backdrop {
+        color: #7f7f7f; }
+    .radio:checked:backdrop, .radio:active:backdrop {
+      color: #000; }
+  .radio:insensitive {
+    color: rgba(127, 127, 127, 0.1); }
+    .radio:insensitive:backdrop {
+      color: transparent; }
+  .radio:inconsistent {
+    -gtk-icon-source: -gtk-scaled(url("img/radio-mixed.png")); }
+  .radio:backdrop {
+    color: rgba(0, 0, 0, 0.1); }
+    .radio:backdrop:selected {
+      color: rgba(255, 255, 255, 0.1); }
 
 /************
  * Toolbars *
@@ -1788,7 +1834,7 @@ GtkInfoBar:last-child,
 	border-color: shade(@border_color, 1.30);
     color: @theme_selected_fg_color;
     font: Bold 10;
-    text-shadow: 1px 1px 1px 1px @theme_fg_color;
+    text-shadow: 1px 1px @theme_fg_color;
 }
 
  /* Colour when unfocused? */
@@ -1848,20 +1894,27 @@ GtkInfoBar:last-child,
     icon-shadow: none;
 }
 
+/****************************************************************************************
+ * Give and take related to recent gtk3 development,                                    *
+ * to achieve full size of the icon menu of some of the applications whose notification *
+ * icons appear in the system tray, the "shadow" is disabled.                           *
+ ****************************************************************************************/
+/*
 .window-frame {
 	border-width: 1px;
 	border-radius: 7px 7px 0 0;
 	border-style: solid;
     background-color: @theme_bg_color;
-/* dummy to avoid resizing mate-appearence-properties if theme changed */
+ * dummy to avoid resizing mate-appearence-properties if theme changed
     box-shadow: 0px 0px 0px 0px;
 	margin: 10px;
 }
 
 .window-frame:backdrop {
-/* dummy to avoid resizing mate-appearence-properties if theme changed */
+ * dummy to avoid resizing mate-appearence-properties if theme changed
     box-shadow: 0 0 0 2px @insensitive_text_shadow_color, 0 2px 5px 1px @insensitive_text_shadow_color;
 }
+*/
 
 /************
  * Popovers *
