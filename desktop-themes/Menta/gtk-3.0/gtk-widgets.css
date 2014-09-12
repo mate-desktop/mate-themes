@@ -2220,24 +2220,75 @@ GtkMenuButton .menu {
 	text-shadow: none;
 }
 
-/****************
- * Radiobuttons *
- ****************/
+/*****************************************************************************************************
+ * Check and Radio items                                                                             *
+ * Related to recent gtk3 development, to reveal checkboxes as part of the dialogue                  *
+ * of some of the applications whose notification icons appear in the system tray                    *
+ * the reference section of the HighContrast theme is used.                                          *
+ * https://git.gnome.org/browse/gnome-themes-standard/tree/themes/HighContrast/gtk-3.0/gtk.css#n1398 *
+ *****************************************************************************************************/
 
-.check,
-.radio,
-.check:insensitive,
-.radio:insensitive {
-	background-color: transparent;
-	border-style: none;
-}
+GtkCheckButton.text-button, GtkRadioButton.text-button {
+  padding: 1px;
+  outline-offset: 0; }
 
-GtkCheckButton:hover,
-GtkCheckButton:active:hover,
-GtkCheckButton:selected,
-GtkCheckButton:selected:focus {
-	background-color: transparent;
-}
+.check {
+  color: rgba(0, 0, 0, 0.1);
+  background-image: none;
+  -gtk-icon-source: -gtk-scaled(url("assets/check-normal.png")); }
+  .check:hover {
+    color: #7f7f7f; }
+  .check:checked, .check:active {
+    -gtk-icon-source: -gtk-scaled(url("assets/check-active.png"));
+    color: #000; }
+    .check:checked:hover, .check:active:hover {
+      color: #7f7f7f; }
+    .check:checked:insensitive, .check:active:insensitive {
+    -gtk-icon-source: -gtk-scaled(url("assets/check-active-ins.png"));
+      color: #7f7f7f; }
+      .check:checked:insensitive:backdrop, .check:active:insensitive:backdrop {
+        color: #7f7f7f; }
+    .check:checked:backdrop, .check:active:backdrop {
+      color: #000; }
+  .check:insensitive {
+    color: rgba(127, 127, 127, 0.1); }
+    .check:insensitive:backdrop {
+      color: transparent; }
+  .check:inconsistent {
+    -gtk-icon-source: -gtk-scaled(url("assets/check-mixed-active-ins.png")); }
+  .check:backdrop {
+    color: rgba(0, 0, 0, 0.1); }
+    .check:backdrop:selected {
+      color: rgba(255, 255, 255, 0.1); }
+
+.radio {
+  color: rgba(0, 0, 0, 0.1);
+  background-image: none;
+  -gtk-icon-source: -gtk-scaled(url("assets/radio-normal.png")); }
+  .radio:hover {
+    color: #7f7f7f; }
+  .radio:checked, .radio:active {
+    -gtk-icon-source: -gtk-scaled(url("assets/radio-active.png"));
+    color: #000; }
+    .radio:checked:hover, .radio:active:hover {
+      color: #7f7f7f; }
+    .radio:checked:insensitive, .radio:active:insensitive {
+    -gtk-icon-source: -gtk-scaled(url("assets/radio-active-ins.png"));
+      color: #7f7f7f; }
+      .radio:checked:insensitive:backdrop, .radio:active:insensitive:backdrop {
+        color: #7f7f7f; }
+    .radio:checked:backdrop, .radio:active:backdrop {
+      color: #000; }
+  .radio:insensitive {
+    color: rgba(127, 127, 127, 0.1); }
+    .radio:insensitive:backdrop {
+      color: transparent; }
+  .radio:inconsistent {
+    -gtk-icon-source: -gtk-scaled(url("assets/radio-mixed-active.png")); }
+  .radio:backdrop {
+    color: rgba(0, 0, 0, 0.1); }
+    .radio:backdrop:selected {
+      color: rgba(255, 255, 255, 0.1); }
 
 /************
  * Toolbars *
@@ -3674,13 +3725,19 @@ GtkModelButton.button:selected {
 	icon-shadow: none;
 }
 
+/****************************************************************************************
+ * Give and take related to recent gtk3 development,                                    *
+ * to achieve full size of the icon menu of some of the applications whose notification *
+ * icons appear in the system tray, the "shadow" is disabled.                           *
+ ****************************************************************************************/
+/*
 .window-frame {
 	border-radius: 6px 6px 0 0;
-	/* lamefun trick to get rounded borders regardless of CSD use */
+ * lamefun trick to get rounded borders regardless of CSD use
 	border-width: 0px;	
 	box-shadow: 0 0 0 1px @wm_border, 0 2px 8px 3px @wm_shadow;
 
-	/* this is used for the resize cursor area */
+ * this is used for the resize cursor area *
 	margin: 10px;
 }
 
@@ -3692,4 +3749,4 @@ GtkModelButton.button:selected {
 .window-frame:backdrop {
 	box-shadow: 0 0 0 1px shade(@wm_border,1.1), 0 2px 5px 1px @wm_shadow;
 }
-
+*/
