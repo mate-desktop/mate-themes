@@ -38,7 +38,7 @@
 }
 
 .check:insensitive {
-    background-image: url("assets/check-unselected.png");
+    -gtk-icon-source: -gtk-scaled(url("assets/check-unselected.png"));
 }
 
 .check row:insensitive {
@@ -78,8 +78,9 @@
     background-image: url("assets/check-unselected-disabled.png");
 }
 
+.check:checked,
 .check:active {
-    background-image: url("assets/check-selected.png");
+    -gtk-icon-source: -gtk-scaled(url("assets/check-selected.png"));
 }
 
 .check:active:hover {
@@ -99,7 +100,7 @@
 }
 
 .check:active:insensitive {
-    background-image: url("assets/check-selected-disabled.png");
+    -gtk-icon-source: -gtk-scaled(url("assets/check-selected-disabled.png"));
 }
 
 .check row:active:insensitive,
@@ -135,7 +136,7 @@
 }
 
 .check:inconsistent {
-    background-image: url("assets/check-mixed.png");
+    -gtk-icon-source: -gtk-scaled(url("assets/check-mixed.png"));
 }
 
 .check:inconsistent:hover {
@@ -155,7 +156,7 @@
 }
 
 .check:inconsistent:insensitive {
-    background-image: url("assets/check-mixed-disabled.png");
+    -gtk-icon-source: -gtk-scaled(url("assets/check-mixed-disabled.png"));
 }
 
 .check row:inconsistent:insensitive,
@@ -191,7 +192,7 @@
 }
 
 .radio {
-    background-image: url("assets/radio-unselected.png");
+    -gtk-icon-source: -gtk-scaled(url("assets/radio-unselected.png"));
 }
 
 .radio:hover {
@@ -211,7 +212,7 @@
 }
 
 .radio:insensitive {
-    background-image: url("assets/radio-unselected-disabled.png");
+    -gtk-icon-source: -gtk-scaled(url("assets/radio-unselected-disabled.png"));
 }
 
 .radio row:insensitive {
@@ -250,8 +251,9 @@
     background-image: url("assets/radio-unselected-disabled.png");
 }
 
+.radio:checked,
 .radio:active {
-    background-image: url("assets/radio-selected.png");
+    -gtk-icon-source: -gtk-scaled(url("assets/radio-selected.png"));
 }
 
 .radio:active:hover {
@@ -271,7 +273,7 @@
 }
 
 .radio:active:insensitive {
-    background-image: url("assets/radio-selected-disabled.png");
+    -gtk-icon-source: -gtk-scaled(url("assets/radio-selected-disabled.png"));
 }
 
 .radio row:insensitive,
@@ -307,7 +309,7 @@
 }
 
 .radio:inconsistent {
-    background-image: url("assets/radio-mixed.png");
+    -gtk-icon-source: -gtk-scaled(url("assets/radio-mixed.png"));
 }
 
 .radio:inconsistent:hover {
@@ -327,7 +329,7 @@
 }
 
 .radio:inconsistent:insensitive {
-    background-image: url("assets/radio-mixed-disabled.png");
+    -gtk-icon-source: -gtk-scaled(url("assets/radio-mixed-disabled.png"));
 }
 
 .radio row:inconsistent:insensitive,

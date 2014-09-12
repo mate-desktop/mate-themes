@@ -664,29 +664,75 @@ row:selected:backdrop {
     /*text-shadow: 0 -1px shade (@selected_bg_color, 0.7);*/
 }
 
-/*******************
- * check and radio *
- *******************/
-.check,
-.radio,
-.check:insensitive,
-.radio:insensitive {
+/*****************************************************************************************************
+ * Check and Radio items                                                                             *
+ * Related to recent gtk3 development, to reveal checkboxes as part of the dialogue                  *
+ * of some of the applications whose notification icons appear in the system tray                    *
+ * the reference section of the HighContrast theme is used.                                          *
+ * https://git.gnome.org/browse/gnome-themes-standard/tree/themes/HighContrast/gtk-3.0/gtk.css#n1398 *
+ *****************************************************************************************************/
 
-    background-color: transparent;
-    border-style: none;
-    margin: 1px 0;
-}
+GtkCheckButton.text-button, GtkRadioButton.text-button {
+  padding: 1px;
+  outline-offset: 0; }
 
-GtkCheckButton:hover,
-GtkCheckButton:active:hover,
-GtkCheckButton:selected,
-GtkCheckButton:selected:focus {
-    background-color: transparent;
-}
+.check {
+  color: rgba(0, 0, 0, 0.1);
+  background-image: none;
+  -gtk-icon-source: -gtk-scaled(url("assets/check-unselected.png")); }
+  .check:hover {
+    color: #7f7f7f; }
+  .check:checked, .check:active {
+    -gtk-icon-source: -gtk-scaled(url("assets/check-selected.png"));
+    color: #000; }
+    .check:checked:hover, .check:active:hover {
+      color: #7f7f7f; }
+    .check:checked:insensitive, .check:active:insensitive {
+      -gtk-icon-source: -gtk-scaled(url("assets/check-selected-disabled.png"));
+      color: #7f7f7f; }
+      .check:checked:insensitive:backdrop, .check:active:insensitive:backdrop {
+        color: #7f7f7f; }
+    .check:checked:backdrop, .check:active:backdrop {
+      color: #000; }
+  .check:insensitive {
+    color: rgba(127, 127, 127, 0.1); }
+    .check:insensitive:backdrop {
+      color: transparent; }
+  .check:inconsistent {
+    -gtk-icon-source: -gtk-scaled(url("assets/check-mixed.png")); }
+  .check:backdrop {
+    color: rgba(0, 0, 0, 0.1); }
+    .check:backdrop:selected {
+      color: rgba(255, 255, 255, 0.1); }
 
-.menu .radio * {
-    box-shadow: none;
-}
+.radio {
+  color: rgba(0, 0, 0, 0.1);
+  background-image: none;
+  -gtk-icon-source: -gtk-scaled(url("assets/radio-unselected.png")); }
+  .radio:hover {
+    color: #7f7f7f; }
+  .radio:checked, .radio:active {
+    -gtk-icon-source: -gtk-scaled(url("assets/radio-selected.png"));
+    color: #000; }
+    .radio:checked:hover, .radio:active:hover {
+      color: #7f7f7f; }
+    .radio:checked:insensitive, .radio:active:insensitive {
+      -gtk-icon-source: -gtk-scaled(url("assets/radio-selected-disabled.png"));
+      color: #7f7f7f; }
+      .radio:checked:insensitive:backdrop, .radio:active:insensitive:backdrop {
+        color: #7f7f7f; }
+    .radio:checked:backdrop, .radio:active:backdrop {
+      color: #000; }
+  .radio:insensitive {
+    color: rgba(127, 127, 127, 0.1); }
+    .radio:insensitive:backdrop {
+      color: transparent; }
+  .radio:inconsistent {
+    -gtk-icon-source: -gtk-scaled(url("assets/radio-mixed.png")); }
+  .radio:backdrop {
+    color: rgba(0, 0, 0, 0.1); }
+    .radio:backdrop:selected {
+      color: rgba(255, 255, 255, 0.1); }
 
 /*****************
  * column-header *
