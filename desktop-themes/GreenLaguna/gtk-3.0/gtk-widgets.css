@@ -1822,6 +1822,12 @@ GtkProgressBar.osd.progressbar {
 	color: #747473;
 }
  
+/****************************************************************************************
+ * Give and take related to recent gtk3 development,                                    *
+ * to achieve full size of the icon menu of some of the applications whose notification *
+ * icons appear in the system tray, the "shadow" is disabled.                           *
+ ****************************************************************************************/
+/*
 .window-frame {
     border-color: @theme_bg_color;
     border-radius: 7px 7px 0 0;
@@ -1830,9 +1836,10 @@ GtkProgressBar.osd.progressbar {
     background-color: @theme_bg_color;
     box-shadow: 0 0 0 2px @osd_button_shadow, 0 2px 8px 3px @osd_button_shadow;
 
-    /* this is used for the resize cursor area */
+ * this is used for the resize cursor area
     margin: 10px;
 }
+*/
 
 /****************************
  * Suggested action buttons *
@@ -2050,25 +2057,75 @@ GtkColorSwatch:selected:hover {
 	border-color: alpha(black, 0.5);
 }
 
-/***************************
- * Radio and Check Buttons *
- ***************************/
-.radio,
-.check,
-.radio:selected, 
-.check:selected,
-.radio:selected:focus, 
-.check:selected:focus,
-.cell.radio,
-.cell.check,
-.cell.radio:selected, 
-.cell.check:selected,
-.cell.radio:selected:focus, 
-.cell.check:selected:focus {
-	background-color: transparent;
-	border-width: 0px;
-	border-style: none;
-}
+/*****************************************************************************************************
+ * Check and Radio items                                                                             *
+ * Related to recent gtk3 development, to reveal checkboxes as part of the dialogue                  *
+ * of some of the applications whose notification icons appear in the system tray                    *
+ * the reference section of the HighContrast theme is used.                                          *
+ * https://git.gnome.org/browse/gnome-themes-standard/tree/themes/HighContrast/gtk-3.0/gtk.css#n1398 *
+ *****************************************************************************************************/
+
+GtkCheckButton.text-button, GtkRadioButton.text-button {
+  padding: 1px;
+  outline-offset: 0; }
+
+.check {
+  color: rgba(0, 0, 0, 0.1);
+  background-image: none;
+  -gtk-icon-source: -gtk-scaled(url("assets/checkbox-unchecked.svg")); }
+  .check:hover {
+    color: #7f7f7f; }
+  .check:checked, .check:active {
+    -gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked.svg"));
+    color: #000; }
+    .check:checked:hover, .check:active:hover {
+      color: #7f7f7f; }
+    .check:checked:insensitive, .check:active:insensitive {
+      -gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked-insensitive.svg"));
+      color: #7f7f7f; }
+      .check:checked:insensitive:backdrop, .check:active:insensitive:backdrop {
+        color: #7f7f7f; }
+    .check:checked:backdrop, .check:active:backdrop {
+      color: #000; }
+  .check:insensitive {
+    color: rgba(127, 127, 127, 0.1); }
+    .check:insensitive:backdrop {
+      color: transparent; }
+  .check:inconsistent {
+    -gtk-icon-source: -gtk-scaled(url("assets/checkbox-mixed.svg")); }
+  .check:backdrop {
+    color: rgba(0, 0, 0, 0.1); }
+    .check:backdrop:selected {
+      color: rgba(255, 255, 255, 0.1); }
+
+.radio {
+  color: rgba(0, 0, 0, 0.1);
+  background-image: none;
+  -gtk-icon-source: -gtk-scaled(url("assets/radio-unselected.svg")); }
+  .radio:hover {
+    color: #7f7f7f; }
+  .radio:checked, .radio:active {
+    -gtk-icon-source: -gtk-scaled(url("assets/radio-selected.svg"));
+    color: #000; }
+    .radio:checked:hover, .radio:active:hover {
+      color: #7f7f7f; }
+    .radio:checked:insensitive, .radio:active:insensitive {
+      -gtk-icon-source: -gtk-scaled(url("assets/radio-selected-insensitive.svg"));
+      color: #7f7f7f; }
+      .radio:checked:insensitive:backdrop, .radio:active:insensitive:backdrop {
+        color: #7f7f7f; }
+    .radio:checked:backdrop, .radio:active:backdrop {
+      color: #000; }
+  .radio:insensitive {
+    color: rgba(127, 127, 127, 0.1); }
+    .radio:insensitive:backdrop {
+      color: transparent; }
+  .radio:inconsistent {
+    -gtk-icon-source: -gtk-scaled(url("assets/radio-mixed.svg")); }
+  .radio:backdrop {
+    color: rgba(0, 0, 0, 0.1); }
+    .radio:backdrop:selected {
+      color: rgba(255, 255, 255, 0.1); }
 
 /*****************
  * GtkCheckButton *
