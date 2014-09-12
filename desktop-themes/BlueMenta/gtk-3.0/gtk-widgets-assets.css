@@ -65,24 +65,26 @@ GtkModelButton.button.check:insensitive,
 	background-color: transparent;
 }
 
+GtkModelButton.button.check:checked,
 GtkModelButton.button.check:active,
 GtkModelButton.button.check:active:hover,
+.check:checked,
 .check:active,
 .view.cell.check:active {
-	background-image: url("assets/check-active.png");
+	-gtk-icon-source: -gtk-scaled(url("assets/check-active.png"));
 }
 
 GtkModelButton.button.check:active:insensitive,
 .check:active:insensitive {
-	background-image: url("assets/check-active-ins.png");
+	-gtk-icon-source: -gtk-scaled(url("assets/check-active-ins.png"));
 }
 
 .check:inconsistent {
-	background-image: url("assets/check-mixed-active.png");
+	-gtk-icon-source: -gtk-scaled(url("assets/check-mixed-active.png"));
 }
 
 .check:inconsistent:insensitive {
-	background-image: url("assets/check-mixed-active-ins.png");
+	-gtk-icon-source: -gtk-scaled(url("assets/check-mixed-active-ins.png"));
 }
 
 GtkModelButton.button.radio,
@@ -96,28 +98,29 @@ GtkModelButton.button.radio:hover,
 
 GtkModelButton.button.radio:insensitive,
 .radio:insensitive {
-	background-image: url("assets/radio-normal-ins.png");
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-normal-ins.png"));
 }
 
 .radio row:insensitive {
 	background-color: transparent;
 }
 
+.radio:checked,
 .radio:active,
 .view.cell.radio:active {
-	background-image: url("assets/radio-active.png");
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-active.png"));
 }
 
 .radio:active:insensitive {
-	background-image: url("assets/radio-active-ins.png");
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-active-ins.png"));
 }
 
 .radio:inconsistent {
-	background-image: url("assets/radio-mixed-active.png");
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-mixed-active.png"));
 }
 
 .radio:inconsistent:insensitive {
-	background-image: url("assets/radio-mixed-active-ins.png");
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-mixed-active-ins.png"));
 }
 
 .sidebar .view.radio:active,
