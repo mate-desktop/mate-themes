@@ -7,7 +7,7 @@
 .check,
 .check row:selected,
 .check row:selected:focus {
-	background-image: url("assets/checkbox-unchecked-dark.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/checkbox-unchecked-dark.svg"));
 }
 
 .notebook .check,
@@ -22,13 +22,15 @@ GtkTreeView.check row:selected:focus {
 .check:insensitive,
 .check row:selected:insensitive,
 .check row:selected:focus:insensitive {
-	background-image: url("assets/checkbox-unchecked-insensitive-dark.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/checkbox-unchecked-insensitive-dark.svg"));
 }
 
+.check:checked,
 .check:active,
+.check row:selected:checked,
 .check row:selected:active,
 .check row:selected:focus:active {
-	background-image: url("assets/checkbox-checked-dark.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked-dark.svg"));
 }
 
 .notebook .check:active,
@@ -44,13 +46,13 @@ GtkTreeView.check row:selected:focus:active {
 .check row:selected:active:insensitive,
 .check row:selected:focus:active:insensitive
 {
-	background-image: url("assets/checkbox-checked-insensitive-dark.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked-insensitive-dark.svg"));
 }
 
 .check:inconsistent,
 .check row:selected:inconsistent,
 .check row:selected:focus:inconsistent {
-	background-image: url("assets/checkbox-mixed-dark.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/checkbox-mixed-dark.svg"));
 }
 
 .notebook .check:inconsistent,
@@ -65,13 +67,13 @@ GtkTreeView.check row:selected:focus:inconsistent {
 .check:inconsistent:insensitive,
 .check row:selected:inconsistent:insensitive,
 .check row:selected:focus:inconsistent:insensitive {
-	background-image: url("assets/checkbox-mixed-insensitive-dark.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/checkbox-mixed-insensitive-dark.svg"));
 }
 
 .radio,
 .radio row:selected,
 .radio row:selected:focus {
-	background-image: url("assets/radio-unselected-dark.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-unselected-dark.svg"));
 }
 
 .notebook .radio,
@@ -80,19 +82,21 @@ GtkTreeView.check row:selected:focus:inconsistent {
 GtkTreeView.radio,
 GtkTreeView.radio row:selected,
 GtkTreeView.radio row:selected:focus {
-	background-image: url("assets/radio-unselected-lessdark.svg");
+	background-image: -gtk-scaled(url("assets/radio-unselected-lessdark.svg"));
 }
 
 .radio:insensitive,
 .radio row:selected:insensitive,
 .radio row:selected:focus:insensitive {
-	background-image: url("assets/radio-unselected-insensitive-dark.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-unselected-insensitive-dark.svg"));
 }
 
+.radio:checked,
 .radio:active,
+.radio row:selected:checked,
 .radio row:selected:active,
 .radio row:selected:focus:active {
-	background-image: url("assets/radio-selected-dark.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-selected-dark.svg"));
 }
 
 .notebook .radio:active,
@@ -107,13 +111,13 @@ GtkTreeView.radio row:selected:focus:active {
 .radio:active:insensitive,
 .radio row:selected:active:insensitive,
 .radio row:selected:focus:active:insensitive {
-	background-image: url("assets/radio-selected-insensitive-dark.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-selected-insensitive-dark.svg"));
 }
 
 .radio:inconsistent,
 .radio row:selected:inconsistent,
 .radio row:selected:focus:inconsistent {
-	background-image: url("assets/radio-mixed-dark.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-mixed-dark.svg"));
 }
 
 .notebook .radio:inconsistent,
@@ -128,7 +132,7 @@ GtkTreeView.radio row:selected:focus:inconsistent {
 .radio:inconsistent:insensitive,
 .radio row:selected:inconsistent:insensitive,
 .radio row:selected:focus:inconsistent:insensitive {
-	background-image: url("assets/radio-mixed-insensitive-dark.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-mixed-insensitive-dark.svg"));
 }
 
 .sidebar .radio:active,
