@@ -153,74 +153,78 @@ GtkSwitch.trough:active {
 .check,
 .check row:selected,
 .check row:selected:focus {
-	background-image: url("assets/checkbox-unchecked.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/checkbox-unchecked.svg"));
 }
 
 .check:insensitive,
 .check row:selected:insensitive,
 .check row:selected:focus:insensitive {
-	background-image: url("assets/checkbox-unchecked-insensitive.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/checkbox-unchecked-insensitive.svg"));
 }
 
+.check:checked,
 .check:active,
+.check row:selected:checked,
 .check row:selected:active,
 .check row:selected:focus:active {
-	background-image: url("assets/checkbox-checked.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked.svg"));
 }
 
 .check:active:insensitive,
 .check row:selected:active:insensitive,
 .check row:selected:focus:active:insensitive
 {
-	background-image: url("assets/checkbox-checked-insensitive.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked-insensitive.svg"));
 }
 
 .check:inconsistent,
 .check row:selected:inconsistent,
 .check row:selected:focus:inconsistent {
-	background-image: url("assets/checkbox-mixed.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/checkbox-mixed.svg"));
 }
 
 .check:inconsistent:insensitive,
 .check row:selected:inconsistent:insensitive,
 .check row:selected:focus:inconsistent:insensitive {
-	background-image: url("assets/checkbox-mixed-insensitive.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/checkbox-mixed-insensitive.svg"));
 }
 
 .radio,
 .radio row:selected,
 .radio row:selected:focus {
-	background-image: url("assets/radio-unselected.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-unselected.svg"));
 }
 
 .radio:insensitive,
 .radio row:selected:insensitive,
 .radio row:selected:focus:insensitive {
-	background-image: url("assets/radio-unselected-insensitive.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-unselected-insensitive.svg"));
 }
 
+.radio:checked,
 .radio:active,
+.radio row:selected:checked,
 .radio row:selected:active,
 .radio row:selected:focus:active {
-	background-image: url("assets/radio-selected.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-selected.svg"));
 }
 
 .radio:active:insensitive,
 .radio row:selected:active:insensitive,
 .radio row:selected:focus:active:insensitive {
-	background-image: url("assets/radio-selected-insensitive.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-selected-insensitive.svg"));
 }
 
 .radio:inconsistent,
 .radio row:selected:inconsistent,
 .radio row:selected:focus:inconsistent {
-	background-image: url("assets/radio-mixed.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-mixed.svg"));
 }
 
 .radio:inconsistent:insensitive,
 .radio row:selected:inconsistent:insensitive,
 .radio row:selected:focus:inconsistent:insensitive {
-	background-image: url("assets/radio-mixed-insensitive.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-mixed-insensitive.svg"));
 }
 
 /*.menuitem:active,
