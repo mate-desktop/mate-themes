@@ -2115,50 +2115,49 @@ GtkModelMenuItem GtkBox GtkImage {
 	background-color: transparent;
 }
 
-.menuitem.check:active,
-.menuitem.radio:active {
+.menuitem.check:checked,
+.menuitem.radio:checked {
 	background-color: transparent;
 }
 
-.menuitem.check:active {
-	background-image: url("assets/menuitem-checkbox-checked.svg");
+.menuitem.check:checked {
+	-gtk-icon-source: -gtk-scaled(url("assets/menuitem-checkbox-checked.svg"));
 }
 
-.menuitem.check:active:hover {
-	background-image: url("assets/menuitem-checkbox-checked-selected.svg");
+.menuitem.check:checked:hover {
+	-gtk-icon-source: -gtk-scaled(url("assets/menuitem-checkbox-checked-selected.svg"));
 }
 
-.menuitem.check:active:insensitive {
-	background-image: url("assets/menuitem-checkbox-checked-insensitive.svg");
+.menuitem.check:checked:insensitive {
+	-gtk-icon-source: -gtk-scaled(url("assets/menuitem-checkbox-checked-insensitive.svg"));
 }
 
 .menuitem.check:inconsistent,
 .menuitem.radio:inconsistent {
-	background-image: url("assets/menuitem-checkbox-mixed.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/menuitem-checkbox-mixed.svg"));
 }
 
 .menuitem.check:inconsistent:insensitive,
 .menuitem.radio:inconsistent:insensitive {
-	background-image: url("assets/menuitem-checkbox-mixed-insensitive.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/menuitem-checkbox-mixed-insensitive.svg"));
 }
 
 .menuitem.check:inconsistent:hover,
 .menuitem.radio:inconsistent:hover {
-	background-image: url("assets/menuitem-checkbox-mixed-selected.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/menuitem-checkbox-mixed-selected.svg"));
 }
 
-.menuitem.radio:active {
-	background-image: url("assets/menuitem-radio-checked.svg");
+.menuitem.radio:checked {
+	-gtk-icon-source: -gtk-scaled(url("assets/menuitem-radio-checked.svg"));
 }
 
-.menuitem.radio:active:hover {
-	background-image: url("assets/menuitem-radio-checked-selected.svg");
+.menuitem.radio:checked:hover {
+	-gtk-icon-source: -gtk-scaled(url("assets/menuitem-radio-checked-selected.svg"));
 }
 
-.menuitem.radio:active:insensitive {
-	background-image: url("assets/menuitem-radio-checked-insensitive.svg");
+.menuitem.radio:checked:insensitive {
+	-gtk-icon-source: -gtk-scaled(url("assets/menuitem-radio-checked-insensitive.svg"));
 }
-
 
 /***************
  * Menu Button *
@@ -2233,62 +2232,83 @@ GtkCheckButton.text-button, GtkRadioButton.text-button {
   outline-offset: 0; }
 
 .check {
-  color: rgba(0, 0, 0, 0.1);
-  background-image: none;
-  -gtk-icon-source: -gtk-scaled(url("assets/check-normal.png")); }
-  .check:hover {
-    color: #7f7f7f; }
-  .check:checked, .check:active {
-    -gtk-icon-source: -gtk-scaled(url("assets/check-active.png"));
-    color: #000; }
-    .check:checked:hover, .check:active:hover {
-      color: #7f7f7f; }
-    .check:checked:insensitive, .check:active:insensitive {
-    -gtk-icon-source: -gtk-scaled(url("assets/check-active-ins.png"));
-      color: #7f7f7f; }
-      .check:checked:insensitive:backdrop, .check:active:insensitive:backdrop {
-        color: #7f7f7f; }
-    .check:checked:backdrop, .check:active:backdrop {
-      color: #000; }
-  .check:insensitive {
-    color: rgba(127, 127, 127, 0.1); }
-    .check:insensitive:backdrop {
-      color: transparent; }
-  .check:inconsistent {
-    -gtk-icon-source: -gtk-scaled(url("assets/check-mixed-active-ins.png")); }
-  .check:backdrop {
-    color: rgba(0, 0, 0, 0.1); }
-    .check:backdrop:selected {
-      color: rgba(255, 255, 255, 0.1); }
+	color: rgba(0, 0, 0, 0.1);
+	background-image: none;
+	-gtk-icon-source: -gtk-scaled(url("assets/check-normal.png"));
+}
+
+.check:hover,
+.radio:hover {
+	color: #7f7f7f;
+}
+
+.check:checked {
+	-gtk-icon-source: -gtk-scaled(url("assets/check-active.png"));
+	color: #000;
+}
+
+.check:checked:hover,
+.radio:checked:hover {
+color: #7f7f7f;
+}
+
+.check:checked:insensitive {
+	-gtk-icon-source: -gtk-scaled(url("assets/check-active-ins.png"));
+	color: #7f7f7f;
+}
+
+.check:checked:insensitive:backdrop,
+.radio:checked:insensitive:backdrop {
+	color: #7f7f7f;
+}
+
+.check:checked:backdrop,
+.radio:checked:backdrop {
+	color: #000;
+}
+
+.check:insensitive,
+.radio:insensitive {
+	color: rgba(127, 127, 127, 0.1);
+}
+.check:insensitive:backdrop,
+.radio:insensitive:backdrop {
+	color: transparent;
+}
+
+.check:inconsistent {
+	-gtk-icon-source: -gtk-scaled(url("assets/check-mixed-active.png"));
+}
+
+.check:backdrop,
+.radio:backdrop {
+	color: rgba(0, 0, 0, 0.1);
+}
+
+.check:backdrop:selected,
+.radio:backdrop:selected {
+	color: rgba(255, 255, 255, 0.1);
+}
 
 .radio {
-  color: rgba(0, 0, 0, 0.1);
-  background-image: none;
-  -gtk-icon-source: -gtk-scaled(url("assets/radio-normal.png")); }
-  .radio:hover {
-    color: #7f7f7f; }
-  .radio:checked, .radio:active {
-    -gtk-icon-source: -gtk-scaled(url("assets/radio-active.png"));
-    color: #000; }
-    .radio:checked:hover, .radio:active:hover {
-      color: #7f7f7f; }
-    .radio:checked:insensitive, .radio:active:insensitive {
-    -gtk-icon-source: -gtk-scaled(url("assets/radio-active-ins.png"));
-      color: #7f7f7f; }
-      .radio:checked:insensitive:backdrop, .radio:active:insensitive:backdrop {
-        color: #7f7f7f; }
-    .radio:checked:backdrop, .radio:active:backdrop {
-      color: #000; }
-  .radio:insensitive {
-    color: rgba(127, 127, 127, 0.1); }
-    .radio:insensitive:backdrop {
-      color: transparent; }
-  .radio:inconsistent {
-    -gtk-icon-source: -gtk-scaled(url("assets/radio-mixed-active.png")); }
-  .radio:backdrop {
-    color: rgba(0, 0, 0, 0.1); }
-    .radio:backdrop:selected {
-      color: rgba(255, 255, 255, 0.1); }
+	color: rgba(0, 0, 0, 0.1);
+	background-image: none;
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-normal.png"));
+}
+
+.radio:checked {
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-active.png"));
+	color: #000;
+}
+
+.radio:checked:insensitive {
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-active-ins.png"));
+	color: #7f7f7f;
+}
+
+.radio:inconsistent {
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-mixed-active.png"));
+}
 
 /************
  * Toolbars *
