@@ -51,14 +51,14 @@ GtkModelButton.button.check,
 GtkModelButton.button.check:hover,
 .check,
 .view.cell.check {
-	background-image: url("assets/check-normal.png");
+	-gtk-icon-source: -gtk-scaled(url("assets/check-normal.png"));
 	background-repeat: no-repeat;
 	background-position: center;
 }
 
 GtkModelButton.button.check:insensitive,
 .check:insensitive {
-	background-image: url("assets/check-normal-ins.png");
+	-gtk-icon-source: -gtk-scaled(url("assets/check-normal-ins.png"));
 }
 
 .check row:insensitive {
@@ -66,15 +66,13 @@ GtkModelButton.button.check:insensitive,
 }
 
 GtkModelButton.button.check:checked,
-GtkModelButton.button.check:active,
-GtkModelButton.button.check:active:hover,
+GtkModelButton.button.check:checked:hover,
 .check:checked,
-.check:active,
-.view.cell.check:active {
+.view.cell.check:checked {
 	-gtk-icon-source: -gtk-scaled(url("assets/check-active.png"));
 }
 
-GtkModelButton.button.check:active:insensitive,
+GtkModelButton.button.check:checked:insensitive,
 .check:active:insensitive {
 	-gtk-icon-source: -gtk-scaled(url("assets/check-active-ins.png"));
 }
@@ -91,7 +89,7 @@ GtkModelButton.button.radio,
 GtkModelButton.button.radio:hover,
 .radio,
 .view.cell.radio {
-	background-image: url("assets/radio-normal.png");
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-normal.png"));
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -106,8 +104,7 @@ GtkModelButton.button.radio:insensitive,
 }
 
 .radio:checked,
-.radio:active,
-.view.cell.radio:active {
+.view.cell.radio:checked {
 	-gtk-icon-source: -gtk-scaled(url("assets/radio-active.png"));
 }
 
@@ -123,24 +120,24 @@ GtkModelButton.button.radio:insensitive,
 	-gtk-icon-source: -gtk-scaled(url("assets/radio-mixed-active-ins.png"));
 }
 
-.sidebar .view.radio:active,
-.sidebar .view.radio:active:focus,
-.sidebar .view.radio:active:hover {
-	background-image: url("assets/sidebar-radio-checked.svg");
+.sidebar .view.radio:checked,
+.sidebar .view.radio:checked:focus,
+.sidebar .view.radio:checked:hover {
+	-gtk-icon-source: -gtk-scaled(url("assets/sidebar-radio-checked.svg"));
 }
 
 .sidebar .view.radio:hover {
-	background-image: url("assets/sidebar-radio-prelight.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/sidebar-radio-prelight.svg"));
 }
 
-.sidebar .view.radio:active:selected,
-.sidebar .view.radio:active:selected:focus {
-	background-image: url("assets/sidebar-radio-selected.svg");
+.sidebar .view.radio:checked:active,
+.sidebar .view.radio:checked:active:focus {
+	-gtk-icon-source: -gtk-scaled(url("assets/sidebar-radio-selected.svg"));
 }
 
-.sidebar .view.radio:selected:hover,
-.sidebar .view.radio:selected:focus {
-	background-image: url("assets/sidebar-radio-selected-prelight.svg");	
+.sidebar .view.radio:active:hover,
+.sidebar .view.radio:active:focus {
+	-gtk-icon-source: -gtk-scaled(url("assets/sidebar-radio-selected-prelight.svg"));	
 }
 
 /*************
