@@ -254,6 +254,23 @@ style "murrine-progressbar"
     	}
 }
 
+style "murrine-statusbar" {
+	xthickness = 0
+	engine "pixmap"
+	{
+	    image
+	    {
+		function		= RESIZE_GRIP
+		recolorable		= TRUE
+		state			= NORMAL
+		detail			= "statusbar"
+		overlay_file	= "resize-grip.png"
+		overlay_border	= {0,0,0,0 }
+		overlay_stretch	= FALSE
+	    }
+	}
+}
+
 style "murrine-scale"
 {
 	bg[NORMAL]      = shade (0.95, @bg_color)
@@ -499,6 +516,7 @@ class "GtkCheckButton"	style:highest "murrine-radiocheck"
 
 widget_class "*<GtkMenuItem>*"			style "menuitem"
 widget_class "*<GtkMenuBar>.<GtkMenuItem>*"	style "menubar-menuitem"
+widget_class "*<GtkStatusbar>*"	style "murrine-statusbar"
 ########################################
 # Tooltips
 ###########
