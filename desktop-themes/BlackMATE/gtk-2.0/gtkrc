@@ -266,6 +266,23 @@ style "murrine-progressbar"
     	}
 }
 
+style "murrine-statusbar" {
+	xthickness = 0
+	engine "pixmap"
+	{
+	    image
+	    {
+		function		= RESIZE_GRIP
+		recolorable		= TRUE
+		state			= NORMAL
+		detail			= "assetsstatusbar"
+		overlay_file	= "assets/resize-grip.png"
+		overlay_border	= {0,0,0,0 }
+		overlay_stretch	= FALSE
+	    }
+	}
+}
+
 style "murrine-scale"
 {
 	bg[NORMAL]      = shade (0.95, "#3b3b3e")
@@ -574,6 +591,7 @@ widget_class "*<GtkSpinButton>*"		style "spinbutton"
 widget_class "*.<GtkTextView>*"			style "view"
 widget_class "*<GtkMenuItem>*"			style "menuitem"
 widget_class "*<GtkMenuBar>.<GtkMenuItem>*"	style "menubar-menuitem"
+widget_class "*<GtkStatusbar>*"	style "murrine-statusbar"
 widget_class "*<GtkInfoBar>*"			style "info"
 ########################################
 # Tooltips
