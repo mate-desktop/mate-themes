@@ -3,7 +3,7 @@ AC_PREREQ(2.53)
 AC_INIT([mate-themes], [3.8.0], [http://www.mate-desktop.org])
 AC_CONFIG_SRCDIR([icon-themes])
 
-AM_INIT_AUTOMAKE([1.9 tar-ustar dist-xz])
+AM_INIT_AUTOMAKE([1.9 tar-ustar dist-xz no-dist-gzip check-news])
 
 # Enable silent build rules by default, requires at least
 # Automake-1.11. Disable by either passing --disable-silent-rules to
