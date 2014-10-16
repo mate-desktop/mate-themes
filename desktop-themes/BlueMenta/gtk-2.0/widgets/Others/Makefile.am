@@ -4,7 +4,7 @@ theme_DATA = \
 	close.png \
 	handle.png \
 	null.png \
-	resize-grip.png \
+	resize-grip.png
 
 EXTRA_DIST = $(theme_DATA)
 
