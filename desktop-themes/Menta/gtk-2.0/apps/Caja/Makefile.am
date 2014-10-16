@@ -11,7 +11,7 @@ theme_DATA = \
 	mode_normal.png \
 	mode_prelight.png \
 	mode_pressed.png \
-	resize_grip.png \
+	resize-grip.png \
 	right_slider_normal.png \
 	slider.png \
 	slider-prelight.png \

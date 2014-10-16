@@ -366,7 +366,20 @@ style "murrine-progressbar" = "murrine-thin" {
 }
 
 style "murrine-statusbar" {
-	xthickness = 2
+	xthickness = 0
+	engine "pixmap"
+	{
+	    image
+	    {
+		function		= RESIZE_GRIP
+		recolorable		= TRUE
+		state			= NORMAL
+		detail			= "statusbar"
+		overlay_file	= "widgets/Others/resize-grip.png"
+		overlay_border	= {0,0,0,0 }
+		overlay_stretch	= FALSE
+	    }
+	}
 }
 
 style "murrine-comboboxentry" { engine "murrine" { contrast = .4 }}
