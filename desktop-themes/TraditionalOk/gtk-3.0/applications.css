@@ -20,12 +20,72 @@
 	border-image: none;
 }
 
+NautilusToolbar .linked.raised GtkToggleButton.button:first-child,
+NautilusToolbar .linked.raised GtkToggleButton.button:first-child:active:hover {
+	border-right-width: 1px;
+}
+
 /*********
  * gedit *
  *********/
 
-GeditFloatingSlider .entry.not-found:focus {
-	border-image: url("img/border-error.svg") 3 3 4 3 / 3px 3px 4px 3px repeat;
+GeditMenuStackSwitcher.button.flat {
+	border-image: url("img/border.svg") 3 3 4 3 / 3px 3px 4px 3px repeat;
+	border-radius: 3px;
+	border-width: 1px 1px 2px 1px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+.gedit-side-panel-paned,
+.gedit-bottom-panel-paned,
+.gedit-bottom-panel-stack-switcher .notebook GtkBox.vertical {
+	border-style: solid;
+	border-color: @toolbar_border_top_color;
+}
+
+.gedit-side-panel-paned {
+	border-width: 0px 1px 0px 0px;
+}
+
+.gedit-bottom-panel-paned {
+	border-width: 1px 0px 0px 0px;
+}
+
+.gedit-bottom-panel-stack-switcher .notebook GtkBox.vertical {
+	border-width: 1px;
+}
+
+.gedit-menu-stack-switcher {
+	padding: 15px 15px 2px 15px;
+}
+
+GeditMultiNotebook .notebook {
+	border-width: 0px 0px 1px 1px;
+}
+
+GeditViewFrame .gedit-search-slider {
+	padding: 4px;
+	border-image: url("img/border-focused.svg") 3 3 4 3 / 3px 3px 4px 3px repeat;
+}
+
+.gedit-search-entry-occurrences-tag {
+	color: @theme_text_color;
+	background-color: @theme_bg_color;
+	margin: 2px 0px 2px 2px;
+	padding: 2px;
+}
+
+GeditStatusbar .frame.flat {
+	border: none;
+}
+
+/**********
+ * evince *
+ **********/
+
+EvPageActionWidget .linked .entry:first-child {
+	border-right-width: 0px;
 }
 
 /*******************
