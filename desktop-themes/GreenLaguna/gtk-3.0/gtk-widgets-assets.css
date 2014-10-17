@@ -227,6 +227,13 @@ GtkSwitch.trough:active {
 	-gtk-icon-source: -gtk-scaled(url("assets/radio-mixed-insensitive.svg"));
 }
 
+/*the little usefull helper*/
+
+.grip {
+background-color: transparent;
+background-image: url("assets/resize-grip.svg");
+}
+
 /*.menuitem:active,
 .menuitem *:active,
 .menuitem:prelight,
