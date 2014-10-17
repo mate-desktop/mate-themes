@@ -296,6 +296,13 @@ GtkScale.scale-has-marks-below.slider.vertical:insensitive {
 	background-image: url("assets/scale-slider-marks-below-horizontal-dark.svg");
 }
 
+/*the little usefull helper*/
+
+.grip {
+background-color: transparent;
+background-image: url("assets/resize-grip.svg");
+}
+
 /***********
  * Buttons *
  ***********/
