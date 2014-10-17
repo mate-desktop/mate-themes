@@ -38,11 +38,12 @@ theme_DATA = \
 	radio-selected-insensitive.svg \
 	radio-selected.svg \
 	radio-unselected-insensitive.svg \
-	resize-grip.svg \
 	radio-unselected.svg \
+	resize-grip.svg \
 	scale-slider-horizontal-insensitive.svg \
 	scale-slider-horizontal.svg \
 	scale-slider-marks-above-horizontal-dark.svg \
+	scale-slider-marks-above-horizontal-insensitive.svg \
 	scale-slider-marks-above-horizontal.svg \
 	scale-slider-marks-above-vertical-insensitive.svg \
 	scale-slider-marks-above-vertical.svg \
@@ -53,10 +54,10 @@ theme_DATA = \
 	scale-slider-marks-below-vertical.svg \
 	scale-slider-vertical-insensitive.svg \
 	scale-slider-vertical.svg \
-	slider_fine_horizontal.svg \
-	slider_fine_vertical.svg \
 	sidebar-radio-prelight.svg \
 	sidebar-radio-selected-prelight.svg \
+	slider_fine_horizontal.svg \
+	slider_fine_vertical.svg \
 	switch-slider-grip.svg \
 	switch-trough-border-active.svg \
 	toolbar-button-border.svg
