@@ -47,8 +47,8 @@
 	-GtkWidget-focus-padding: 2;
 	-GtkWidget-focus-line-width: 1;
 
-	-GtkWindow-resize-grip-width: 10;
-	-GtkWindow-resize-grip-height: 10; 
+	-GtkWindow-resize-grip-width: 14;
+	-GtkWindow-resize-grip-height: 12; 
 
 	/* We use the outline properties to signal the focus properties
 	 * to the adwaita engine: using real CSS properties is faster,
@@ -111,10 +111,6 @@
 	background-color: @theme_tooltip_bg_color;
 	color: @theme_tooltip_fg_color;
 }
-
-/*.grip {
-	background-color: shade(@inactive_frame_color, 0.93);
-}*/
 
 .view.rubberband,
 .rubberband {
