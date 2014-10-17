@@ -55,6 +55,5 @@ theme_DATA = \
 	scale-slider-vert.png \
 	slider-horz-grip.png \
 	slider-vert-grip.png
-
-
+	
 EXTRA_DIST = $(theme_DATA)

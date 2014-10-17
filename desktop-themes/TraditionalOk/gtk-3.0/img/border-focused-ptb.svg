@@ -7,7 +7,6 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="16px"
@@ -15,54 +14,52 @@
    id="svg33222"
    version="1.1"
    inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="button-default-border-dark.svg">
+   sodipodi:docname="border-focused-2.svg">
   <defs
      id="defs33224">
     <linearGradient
-       id="linearGradient7928">
+       id="linearGradient3837">
       <stop
-         style="stop-color:#505050;stop-opacity:1;"
+         style="stop-color:#ffffff;stop-opacity:1;"
          offset="0"
-         id="stop7930" />
+         id="stop3839" />
       <stop
-         id="stop3762"
-         offset="0.75114173"
-         style="stop-color:#aaaaaa;stop-opacity:1;" />
-      <stop
-         style="stop-color:#aaaaaa;stop-opacity:1;"
+         style="stop-color:#ffffff;stop-opacity:0;"
          offset="1"
-         id="stop7932" />
+         id="stop3841" />
     </linearGradient>
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient7928"
-       id="linearGradient7934"
-       x1="5.0061774"
-       y1="8.9020138"
-       x2="14.827382"
-       y2="1.0544924"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.99998621,0,0,0.99998621,-15.999891,1.0988204e-4)" />
   </defs>
   <sodipodi:namedview
      id="base"
-     pagecolor="#ffffff"
+     pagecolor="#8e8e8e"
      bordercolor="#666666"
      borderopacity="1.0"
-     inkscape:pageopacity="0.0"
+     inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="22.172911"
-     inkscape:cx="7.2404508"
-     inkscape:cy="9.7450004"
+     inkscape:zoom="44.5625"
+     inkscape:cx="8"
+     inkscape:cy="8"
      inkscape:current-layer="layer1"
-     showgrid="true"
+     showgrid="false"
      inkscape:grid-bbox="true"
      inkscape:document-units="px"
-     inkscape:window-width="849"
-     inkscape:window-height="744"
-     inkscape:window-x="242"
-     inkscape:window-y="148"
-     inkscape:window-maximized="0" />
+     inkscape:window-width="1280"
+     inkscape:window-height="949"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:snap-nodes="false"
+     inkscape:snap-bbox="true"
+     inkscape:showpageshadow="false"
+     showborder="false">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2992"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true" />
+  </sodipodi:namedview>
   <metadata
      id="metadata33227">
     <rdf:RDF>
@@ -80,14 +77,22 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer">
     <rect
-       ry="3"
-       rx="3"
-       y="0.500103"
-       x="-15.499897"
-       height="14.999794"
-       width="14.999794"
+       ry="2.5"
+       rx="2.5000005"
+       y="0.5"
+       x="0.5"
+       height="13.999999"
+       width="15"
        id="rect17861"
-       style="color:#000000;fill:none;stroke:url(#linearGradient7934);stroke-width:1.00020635000000002;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-       transform="matrix(0,-1,1,0,0,0)" />
+       style="color:#000000;fill:none;stroke:#869bb7;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    <rect
+       ry="1.5"
+       rx="1.5"
+       y="1.5"
+       x="1.5"
+       height="12"
+       width="13.000001"
+       id="rect17861-6"
+       style="color:#000000;fill:none;stroke:#cccccc;stroke-width:0.99999994000000003;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;opacity:0.25" />
   </g>
 </svg>

@@ -11,40 +11,64 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="16px"
    height="16px"
-   id="svg12251"
+   id="svg33222"
    version="1.1"
-   inkscape:version="0.48.1 r9760"
-   sodipodi:docname="entry-border-focused-dark.svg">
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="button-border-focused.svg">
   <defs
-     id="defs12253" />
+     id="defs33224">
+    <linearGradient
+       id="linearGradient3837">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop3839" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0;"
+         offset="1"
+         id="stop3841" />
+    </linearGradient>
+  </defs>
   <sodipodi:namedview
      id="base"
-     pagecolor="#ffffff"
+     pagecolor="#8e8e8e"
      bordercolor="#666666"
      borderopacity="1.0"
-     inkscape:pageopacity="0.0"
+     inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="22.197802"
-     inkscape:cx="2.9655938"
-     inkscape:cy="8"
+     inkscape:zoom="16"
+     inkscape:cx="2.68732"
+     inkscape:cy="9.5803639"
      inkscape:current-layer="layer1"
-     showgrid="true"
+     showgrid="false"
      inkscape:grid-bbox="true"
      inkscape:document-units="px"
-     inkscape:window-width="1216"
-     inkscape:window-height="739"
-     inkscape:window-x="5"
-     inkscape:window-y="26"
-     inkscape:window-maximized="0" />
+     inkscape:window-width="1280"
+     inkscape:window-height="951"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:snap-nodes="false"
+     inkscape:snap-bbox="true"
+     inkscape:showpageshadow="false"
+     showborder="false">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2992"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true" />
+  </sodipodi:namedview>
   <metadata
-     id="metadata12256">
+     id="metadata33227">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -52,23 +76,29 @@
      id="layer1"
      inkscape:label="Layer 1"
      inkscape:groupmode="layer">
+    <path
+       style="color:#000000;fill:none;stroke:#ffffff;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;opacity:0.6"
+       d="m 15.5,4 0,8.999999 c 0,1.385 -1.115,2.5 -2.5,2.5 l -9.9999995,0 c -1.3850003,0 -2.5000005,-1.115 -2.5000005,-2.5 L 0.5,4"
+       id="rect17861-5"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cssssc" />
     <rect
-       style="fill:#ffffff;fill-opacity:0;stroke:#6c6c6c;stroke-width:0.99999994000000003;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline;enable-background:new"
-       id="rect5836"
-       width="15.000001"
-       height="15"
-       x="0.49999997"
-       y="-15.5"
-       rx="2.2980974"
-       ry="2.2980971"
-       transform="scale(1,-1)" />
+       ry="2.5"
+       rx="2.5000005"
+       y="0.5"
+       x="0.5"
+       height="13.999999"
+       width="15"
+       id="rect17861"
+       style="color:#000000;fill:none;stroke:#4b6e99;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
     <rect
-       transform="matrix(0,1,-1,0,0,0)"
-       style="opacity:1;fill:#6c6c6c;fill-opacity:0.27450982;stroke:none;display:inline;enable-background:new"
-       id="rect6042"
-       width="1"
+       ry="1.5"
+       rx="1.5"
+       y="1.5"
+       x="1.5"
        height="12"
-       x="1"
-       y="-14" />
+       width="13.000001"
+       id="rect17861-6"
+       style="color:#000000;fill:none;stroke:#c8daef;stroke-width:0.99999994000000003;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;opacity:0.80000000000000004" />
   </g>
 </svg>
