@@ -45,8 +45,8 @@
 	-adwaita-focus-border-radius: 2;
 	-adwaita-focus-border-dashes: 1;
 
-	-GtkWindow-resize-grip-width: 10;
-	-GtkWindow-resize-grip-height: 10; 
+	-GtkWindow-resize-grip-width: 14;
+	-GtkWindow-resize-grip-height: 12; 
 }
 
 /***************
@@ -101,10 +101,6 @@
 	background-color: @theme_tooltip_bg_color;
 	color: @theme_tooltip_fg_color;
 }
-
-/*.grip {
-	background-color: shade(@inactive_frame_color, 0.93);
-}*/
 
 .view.rubberband,
 .rubberband {
