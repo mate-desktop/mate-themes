@@ -602,7 +602,7 @@ GtkComboBox.combobox-entry .button:active,
 	                  @trough_gradient_b 4px);
 }
 
-/* Prelit button background */
+/* Prelight button background */
 .button:hover,
 .spinbutton .button:hover,
 .toolbar .button:hover,
@@ -1068,6 +1068,7 @@ GtkTreeMenu .menuitem {
 }
 
 .menu {
+	font: normal;
 	background-color: @menu_bg_color;
 	color: @menu_fg_color;
 	padding: 1px;
@@ -1105,7 +1106,7 @@ GtkTreeMenu .menuitem {
 /* this controls the general appearance of the menubar */
 .menubar {
 	border-style: none;
-	padding: 0px;
+	padding: 1px;
 	-GtkWidget-window-dragging: true;
 	-GtkMenuBar-internal-padding: 1;
 	background-image: -gtk-gradient (linear,
@@ -1133,6 +1134,8 @@ GtkTreeMenu .menuitem {
 	                  left top,
 	                  left bottom,
 	                  from (@menubar_menuitem_hover_gradient_a),
+	                  color-stop (0.50, @menubar_menuitem_hover_gradient_b),
+	                  color-stop (0.50, @menubar_menuitem_hover_gradient_c),
 	                  to (@menubar_menuitem_hover_gradient_d));
 }
 
@@ -1767,33 +1770,30 @@ GtkInfoBar:last-child,
  * Titlebar *
  ************/
 
-/* this is the default titlebar that is added by GTK
- * when client-side decorations are in use and the application
- * did not set a custom titlebar.
- */
-.titlebar.default-decoration {
-    border: none;
-    box-shadow: none;
-}
-
 .titlebar {
 	background-image: linear-gradient(to bottom,
-	                  shade (@theme_selected_bg_color, 1.20),
-	                  @theme_selected_bg_color);
+	                  @theme_base_color,
+	                  @theme_bg_color);
 	background-color: transparent;
 	border-radius: 7px 7px 0px 0px;
 	border-bottom: 1px solid;
 	border-color: shade(@border_color, 1.30);
-    color: @theme_selected_fg_color;
-    font: Bold 10;
-    text-shadow: 1px 1px 1px 1px @theme_fg_color;
 }
 
- /* Colour when unfocused? */
-.titlebar:backdrop {
-    text-shadow: none;
-    background-image: none;
-    background-color: @theme_bg_color;
+.titlebar > * {
+	background: none;
+}
+
+.tiled .titlebar {
+	border-radius: 0;
+}
+
+.maximized .titlebar {
+	border-radius: 0;
+}
+
+.titlebar .title {
+	font: Bold;
 }
 
 .titlebar .titlebutton {
@@ -1802,63 +1802,11 @@ GtkInfoBar:last-child,
 	padding: 5px 5px 6px 5px;
 }
 
-.titlebar .titlebutton:hover {
-	background-image: linear-gradient(to bottom,
-	                  shade (@theme_selected_bg_color, 1.30),
-	                  shade (@theme_selected_bg_color, 1.05));
-	border-image: url("img/border.svg") 3 3 4 3 / 3px 3px 4px 3px repeat;
-	border-radius: 3px;
-	border-width: 1px 1px 2px 1px;
-	border-style: solid;
-	border-color: transparent;
-	padding: 5px 5px 6px 5px;
-}
-
-.titlebar .titlebutton:active {
-	background-image: linear-gradient(to bottom,
-	                  shade (@theme_selected_bg_color, 1.05),
-	                  shade (@theme_selected_bg_color, 1.25));
-	border-image: url("img/border.svg") 3 3 4 3 / 3px 3px 4px 3px repeat;
-    color: @theme_fg_color;
-    icon-shadow: none;
-}
-
-.titlebar .right .titlebutton:first-child {
-    border-left: 1px solid @menu_separator;
-}
-
-.titlebar .right .titlebutton:last-child {
-
-}
-
-.titlebar .left .titlebutton:last-child {
-    border-right: 1px solid @menu_separator;
-}
-
-.titlebar .left .titlebutton:first-child {
-
-}
-
-.titlebar .titlebutton:backdrop {
-    background: none;
-    color: @theme_text_color;
-    border-image: none;
-    icon-shadow: none;
-}
-
 .window-frame {
-	border-width: 1px;
+	border-width: 0px;
 	border-radius: 7px 7px 0 0;
 	border-style: solid;
-    background-color: @theme_bg_color;
-/* dummy to avoid resizing mate-appearence-properties if theme changed */
-    box-shadow: 0px 0px 0px 0px;
-	margin: 10px;
-}
-
-.window-frame:backdrop {
-/* dummy to avoid resizing mate-appearence-properties if theme changed */
-    box-shadow: 0 0 0 2px @insensitive_text_shadow_color, 0 2px 5px 1px @insensitive_text_shadow_color;
+	margin: 0px;
 }
 
 /************
@@ -1876,4 +1824,3 @@ GtkPopover > .toolbar,
 GtkPopover.osd > .toolbar .button {
 	background-color: transparent;
 }
-
