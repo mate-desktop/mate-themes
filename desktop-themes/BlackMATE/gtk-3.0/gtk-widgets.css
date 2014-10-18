@@ -108,15 +108,7 @@
 	color: @theme_tooltip_fg_color;
 }
 
-<<<<<<< HEAD
-.grip {
-	background-color: transparent;
-	background-image: url("assets/resize-grip.svg");
-}
-
 .content-view.view.rubberband,
-=======
->>>>>>> 0958588... BlackMate GTK3: use an image as resize grip
 .view.rubberband,
 .rubberband {
 	background-color: alpha(@theme_selected_bg_color, 0.35);
