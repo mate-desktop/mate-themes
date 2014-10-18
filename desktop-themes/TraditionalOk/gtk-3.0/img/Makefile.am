@@ -3,7 +3,6 @@ THEME_NAME=TraditionalOk
 themedir = $(datadir)/themes/$(THEME_NAME)/gtk-3.0/img
 
 theme_DATA = \
-	border-error.svg \
 	border-focused-ptb.svg \
 	border-focused.svg \
 	border-focused-switch.svg \
