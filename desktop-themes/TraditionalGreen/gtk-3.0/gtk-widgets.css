@@ -710,7 +710,7 @@ GtkListBoxRow.button.list-row:selected {
 	                  @trough_gradient_b 4px);
 }
 
-/* Prelit button background */
+/* Prelight button background */
 .button:hover,
 .spinbutton .button:hover,
 .toolbar .button:hover,
@@ -723,8 +723,8 @@ GtkListBoxRow.button.list-row:selected {
 GtkColorChooserWidget #add-color-button:hover {
 	background-color: transparent;
 	background-image: linear-gradient(to bottom,
-	                  @button_hover_gradient_a 50%,
-	                  @button_hover_gradient_b 50%,
+	                  @button_hover_gradient_a 5%,
+	                  @button_hover_gradient_b 95%,
 	                  @button_hover_gradient_c);
 }
 
