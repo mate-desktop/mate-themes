@@ -10,6 +10,20 @@
 	background-color: transparent;
 }
 
+.button.default {
+	background-image: linear-gradient(to bottom, 
+		shade(@theme_selected_bg_color, 1.05),
+		shade(@theme_selected_bg_color, 1.0));
+	background-color: transparent;
+}
+
+.button.default:hover {
+	background-image: linear-gradient(to bottom, 
+		shade(@theme_selected_bg_color, 1.1),
+		shade(@theme_selected_bg_color, 1.05));
+	background-color: transparent;
+}
+
 /* Pushed button and progressbar through background */
 .button:active,
 .button:active:hover,
@@ -138,7 +152,7 @@ GtkComboBox.combobox-entry .button:active,
 column-header.button,
 column-header .button {
 	background-image: linear-gradient(to bottom,
-		shade(@entry_background_a, 1.0),
+		shade(@entry_background_b, 1.0),
 		@entry_background_b);
 	box-shadow: inset 0 2px 0 0 alpha(@borders, 0.3);
 }
@@ -146,7 +160,7 @@ column-header .button {
 column-header.button:hover,
 column-header .button:hover {
 	background-image: linear-gradient(to bottom,
-		shade(@entry_background_a, 0.96),
+		shade(@entry_background_b, 0.96),
 		@entry_background_b);
 	box-shadow: inset 0 2px 0 0 alpha(@theme_selected_bg_color, 0.3);
 }

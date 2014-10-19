@@ -21,7 +21,6 @@ GtkComboBox.combobox-entry .button,
 	border: 1px solid @borders;
 }
 
-
 .entry:insensitive,
 GtkComboBox.combobox-entry .entry:insensitive,
 GtkComboBox.combobox-entry .button:insensitive,
@@ -60,6 +59,7 @@ GtkComboBox.combobox-entry .button:insensitive,
 
 /* focused element borders */
 .entry:focus,
+GtkComboBox.combobox-entry .entry:focus,
 GtkComboBox.combobox-entry .button:focus,
 .button.default:active,
 .inline-toolbar.toolbar.vertical .button.default:active,
@@ -172,7 +172,6 @@ GtkComboBox.combobox-entry .button:focus,
 }
 
 /* primary toolbar - focused element borders */
-.primary-toolbar .button:active:focus,
 .primary-toolbar .entry:focus,
 .primary-toolbar GtkComboBox.combobox-entry .entry:focus,
 .primary-toolbar .button.raised.default:active,

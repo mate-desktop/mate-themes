@@ -103,11 +103,14 @@ GtkModelButton.button.radio:insensitive,
 	background-color: transparent;
 }
 
+GtkModelButton.button.radio:active,
+GtkModelButton.button.radio:active:hover,
 .radio:active,
 .view.cell.radio:active {
 	background-image: url("assets/radio-active.png");
 }
 
+GtkModelButton.button.radio:active:insensitive,
 .radio:active:insensitive {
 	background-image: url("assets/radio-active-ins.png");
 }

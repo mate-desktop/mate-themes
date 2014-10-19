@@ -443,7 +443,7 @@ GtkTreeView.separator,
 }
 
 .spinbutton .button:insensitive {
-	color: @internal_element_insensitive;
+	color: @internal_element_color;
 }
 
 .spinbutton .button:active,
@@ -972,7 +972,7 @@ GtkComboBox.combobox-entry .button {
 
 .button.default {
 	text-shadow: none;
-	color: @theme_fg_color;
+	color: @theme_selected_fg_color;
 }
 
 /* We may want a background for focused buttons, but in the meantime let's remove it too */
@@ -1541,7 +1541,7 @@ GtkLinkButton.button:active {
 
 .notebook tab.top,
 .notebook tab.bottom {
-	padding: 6px 20px 4px;
+	padding: 8px 20px 6px;
 }
 
 .notebook tab.top:active,
@@ -1672,7 +1672,7 @@ GtkLinkButton.button:active {
 
 	border-color: alpha(black, 0.27)
 		alpha(black, 0.13) 
-		alpha(black, 0.13) 
+		alpha(black, 0.13)
 		alpha(black, 0.13);
 }
 
@@ -1823,7 +1823,6 @@ GtkFileChooserButton GtkImage:last-child {
 	border-width: 0;
 	border-radius: 0;
 	border-image: none;
-	box-shadow: none;
 }
 
 .scrollbar.trough,
@@ -1836,6 +1835,7 @@ GtkFileChooserButton GtkImage:last-child {
 	border-color: shade (@theme_bg_color, 0.94);
 	border-radius: 0;
 	border-image: none;
+	box-shadow: none;
 }
 
 .scrollbar.trough.horizontal {
@@ -2351,8 +2351,8 @@ GtkCheckButton:selected:focus {
 .prompt,
 GtkMessageDialog {
 	-GtkDialog-content-area-border: 0;
-	-GtkDialog-action-area-border: 15;
-	-GtkDialog-button-spacing: 10;
+	-GtkDialog-action-area-border: 0;
+	-GtkDialog-button-spacing: 0;
 	margin: 0;
 	padding: 0;
 }
@@ -2895,7 +2895,7 @@ GtkProgressBar.osd.progressbar {
 	icon-shadow: none;
 	background-image: none;
 	background-color: @insentitive_bg_color;
-	border: 1px solid @insensitive_borders;
+/*	border: 1px solid @insensitive_borders;*/
 }
 
 .suggested-action.button GtkLabel:insensitive {
@@ -3236,7 +3236,7 @@ GtkIconView.cell:selected:focus {
 }
 
 .cell {
-	color: @theme_text_color;
+	/*color: @theme_text_color;*/ /* Don't use, seems to change hover effect on combobox menuitems */
 	padding: 2px;
 	text-shadow: none;
 }
@@ -3381,7 +3381,26 @@ column-header .button.dnd {
 }
 
 .list-row:selected {
-	background-color: @theme_selected_bg_color;
+	border-width: 1px 0 1px 0;
+	border-style: solid;
+	border-color: shade (@theme_selected_bg_color, 0.85);
+	background-image: linear-gradient(to bottom,
+		shade (@theme_selected_bg_color, 1.0),
+		shade (@theme_selected_bg_color, 0.85));
+	box-shadow: none;
+	color: @theme_selected_fg_color;
+}
+
+.list-row:selected:backdrop {
+	border-width: 1px 0 1px 0;
+	border-style: solid;
+	border-color: shade (@theme_bg_color, 0.85);
+	background-image: linear-gradient(to bottom,
+		shade (@theme_bg_color, 1.0),
+		shade (@theme_bg_color, 0.85));
+	color: @theme_fg_color;
+	text-shadow: none;
+	box-shadow: none;
 }
 
 /**************

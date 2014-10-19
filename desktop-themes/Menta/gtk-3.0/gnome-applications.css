@@ -78,6 +78,10 @@ TerminalWindow GtkNotebook.notebook {
 	text-shadow: none;
 }
 
+.nautilus-desktop.nautilus-canvas-item:selected:backdrop {
+	color: @theme_unfocused_selected_fg_color;
+}
+
 NautilusWindow .sidebar .frame {
 	border-style: none;
 }
@@ -170,6 +174,11 @@ GeditWindow .pane-separator:hover {
 	background-image: url("assets/null.png");
 	color: @borders;
 }
+
+.gedit-headerbar-paned:backdrop {
+	background-image: url("assets/null.png");
+}
+
 
 .gedit-document-panel {
 	background-color: @sidebar_bg;
