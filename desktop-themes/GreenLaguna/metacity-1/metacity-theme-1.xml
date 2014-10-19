@@ -327,6 +327,8 @@
 
 <draw_ops name="title_text_focused">
   <clip x="0" y="0" width="width" height="height"/>
+  <title color="#9f9f9f"
+         x="(width - title_width) / 2+1" y="(height - title_height) / 2+1"/>
   <title color="#000000"
          x="(width - title_width) / 2" y="(height - title_height) / 2"/> 
 </draw_ops>
