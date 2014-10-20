@@ -238,15 +238,15 @@ style "murrine-progressbar"
 {
 	xthickness = 0
 	ythickness = 0
-	bg[SELECTED] = "#C3C5C3"	# sets the progressbar color
+	bg[SELECTED] = shade (0.75, @bg_color)	# sets the progressbar color
 
 	engine "murrine" 
 	{
 		glazestyle = 1
 		highlight_shade = 1.1
 		glow_shade = 2.0
-		gradient_shades = {3.0, 1.0, 1.0, 3.0}
-		progressbarstyle = 1	# 0 = nothing, 1 = striped, 2 = cells
+		gradient_shades = {1.4, 1.0, 1.0, 1.4}
+		progressbarstyle = 0	# 0 = nothing, 1 = striped, 2 = cells
         	contrast = 1.130 # Darken unfilled progressbar background
         	roundness = 12
 		#animation = TRUE
