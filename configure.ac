@@ -189,6 +189,7 @@ desktop-themes/ContrastHigh/gtk-2.0/Makefile
 desktop-themes/ContrastHigh/gtk-2.0/gtkrc
 desktop-themes/ContrastHigh/gtk-3.0/Makefile
 desktop-themes/ContrastHigh/metacity-1/Makefile
+desktop-themes/ContrastHigh/pixmaps/Makefile
 desktop-themes/ContrastHighInverse/Makefile
 desktop-themes/ContrastHighLargePrint/Makefile
 desktop-themes/ContrastHighLargePrint/index.theme.in
@@ -282,7 +283,6 @@ gtk-themes/ContrastHighInverse/Makefile
 gtk-themes/ContrastHighInverse/gtkrc
 gtk-themes/ContrastHighLargePrint/Makefile
 gtk-themes/ContrastHighLargePrint/gtkrc
-gtk-themes/ContrastHighLargePrint/pixmaps/Makefile
 gtk-themes/ContrastHighLargePrintInverse/Makefile
 gtk-themes/ContrastHighLargePrintInverse/gtkrc
 gtk-themes/ContrastHighLargePrintInverse/pixmaps/Makefile

@@ -9,12 +9,14 @@ EXTRA_DIST = $(theme_DATA) index.theme.in
 SUBDIRS = \
    gtk-3.0 \
    gtk-2.0 \
-   metacity-1
+   metacity-1 \
+   pixmaps
 
 DIST_SUBDIRS = \
    gtk-3.0 \
    gtk-2.0 \
-   metacity-1
+   metacity-1 \
+   pixmaps
 
 CLEANFILES = index.theme
 
