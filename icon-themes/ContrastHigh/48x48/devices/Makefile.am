@@ -1,22 +1,24 @@
 NULL=
 
-themedir = $(datadir)/icons/ContrastHighLargePrint
+themedir = $(datadir)/icons/ContrastHigh
 size = 48x48
-context = mimetypes
+context = devices
 
 icondir = $(themedir)/$(size)/$(context)
 
 icon_DATA=	\
-		application-x-executable.png \
-		audio-x-generic.png \
-		font-x-generic.png \
-		mate-mime-application-x-core-file.png \
-		image-x-generic.png \
-		package-x-generic.png \
-		text-x-generic.png \
-		text-x-preview.png \
-		video-x-generic.png \
-		x-office-address-book.png \
+		computer.png \
+		drive-harddisk.png \
+		drive-optical.png \
+		drive-removable-media.png \
+		mate-dev-printer-network.png \
+		mate-dev-printer-new.png \
+		input-keyboard.png \
+		input-mouse.png \
+		media-floppy.png \
+		media-optical.png \
+		pda.png \
+		printer.png \
 		$(NULL)
 
 EXTRA_DIST=	$(icon_DATA) \
@@ -35,6 +37,6 @@ uninstall-symlinks:
 	if test -h $(DESTDIR)$(icondir)/$$p; then \
 		rm -f $(DESTDIR)$(icondir)/$$p; \
 	fi; \
-done
+	done
 
 uninstall-am: uninstall-iconDATA uninstall-symlinks

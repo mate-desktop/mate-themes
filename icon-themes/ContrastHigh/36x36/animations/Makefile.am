@@ -1,6 +1,6 @@
 NULL=
 
-themedir = $(datadir)/icons/ContrastHighLargePrint
+themedir = $(datadir)/icons/ContrastHigh
 size = 36x36
 context = animations
 
