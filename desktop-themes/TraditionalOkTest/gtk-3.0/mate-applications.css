@@ -61,6 +61,7 @@ PanelMenuBar.menubar .menuitem:hover {
 }
 
 /* set selected menubar menuitem */
+PanelMenuBar.menubar .menu .menuitem:checked:hover,
 PanelMenuBar.menubar .menu .menuitem:active:hover,
 PanelMenuBar.menubar .menu .menuitem:hover {
 	background-image: none;
@@ -105,6 +106,8 @@ MatePanelApplet .button {
 	                  to (@button_gradient_d));
 }
 
+MatePanelApplet .button:checked:hover,
+MatePanelApplet .button:checked,
 MatePanelApplet .button:active:hover,
 MatePanelApplet .button:active {
 	border-style: solid;
@@ -143,6 +146,8 @@ WnckTasklist .button {
 	                  to (@button_gradient_d));
 }
 
+WnckTasklist .button:checked:hover,
+WnckTasklist .button:checked,
 WnckTasklist .button:active:hover,
 WnckTasklist .button:active {
 	border-style: solid;

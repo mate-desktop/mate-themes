@@ -323,6 +323,8 @@ MatePanelApplet .button {
 					to (shade(@button_gradient_color_b, 0.7)));
 }
 
+MatePanelApplet .button:checked:hover,
+MatePanelApplet .button:checked,
 MatePanelApplet .button:active:hover,
 MatePanelApplet .button:active {
 	color: @theme_fg_color;
@@ -363,6 +365,8 @@ WnckTasklist .button {
 					to (shade(@button_gradient_color_b, 0.7)));
 }
 
+WnckTasklist .button:checked:hover,
+WnckTasklist .button:checked,
 WnckTasklist .button:active:hover,
 WnckTasklist .button:active {
 	color: @theme_fg_color;

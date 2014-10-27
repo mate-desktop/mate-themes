@@ -236,6 +236,8 @@ MatePanelApplet .button {
 	-GtkWidget-window-dragging: true;
 }
 
+MatePanelApplet .button:checked:hover,
+MatePanelApplet .button:checked,
 MatePanelApplet .button:active:hover,
 MatePanelApplet .button:active {
 	background-image: linear-gradient(to bottom,
@@ -283,6 +285,8 @@ WnckTasklist .button {
 	-GtkWidget-window-dragging: true;
 }
 
+WnckTasklist .button:checked:hover,
+WnckTasklist .button:checked,
 WnckTasklist .button:active:hover,
 WnckTasklist .button:active {
 	background-image: linear-gradient(to bottom,
@@ -328,6 +332,7 @@ PanelMenuBar.menubar .menuitem:hover {
 }
 
 /* set selected menubar menuitem */
+PanelMenuBar.menubar .menu .menuitem:checked:hover,
 PanelMenuBar.menubar .menu .menuitem:active:hover,
 PanelMenuBar.menubar .menu .menuitem:hover {
 	background-color: @theme_selected_bg_color;
