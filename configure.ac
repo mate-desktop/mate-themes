@@ -193,6 +193,7 @@ desktop-themes/ContrastHigh/pixmaps/Makefile
 desktop-themes/ContrastHighInverse/Makefile
 desktop-themes/ContrastHighInverse/gtk-2.0/Makefile
 desktop-themes/ContrastHighInverse/gtk-2.0/gtkrc
+desktop-themes/ContrastHighInverse/gtk-3.0/Makefile
 desktop-themes/ContrastHighInverse/metacity-1/Makefile
 desktop-themes/ContrastHighLargePrint/Makefile
 desktop-themes/ContrastHighLargePrint/index.theme.in
