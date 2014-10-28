@@ -296,7 +296,6 @@ gtk-themes/LargePrint/gtkrc
 gtk-themes/Reverse/Makefile
 gtk-themes/Simply/Makefile
 icon-themes/Makefile
-icon-themes/ContrastHighInverse/Makefile
 icon-themes/ContrastHigh/Makefile
 icon-themes/ContrastHigh/36x36/Makefile
 icon-themes/ContrastHigh/36x36/animations/Makefile
