@@ -1,7 +1,6 @@
 SUBDIRS = \
 	AlaDelta \
 	Simply \
-	ContrastHighInverse \
 	ContrastHighLargePrint \
 	ContrastHighLargePrintInverse \
 	Reverse \
@@ -12,7 +11,6 @@ SUBDIRS = \
 DIST_SUBDIRS = \
 	AlaDelta \
 	Simply \
-	ContrastHighInverse \
 	ContrastHighLargePrint \
 	ContrastHighLargePrintInverse \
 	Reverse \
