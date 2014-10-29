@@ -1,0 +1,153 @@
+/**************
+ * Mate-Panel *
+ **************/
+
+/* the panel bar itself */
+.mate-panel-menu-bar,
+MatePanelApplet > GtkMenuBar.menubar,
+PanelToplevel,
+PanelWidget,
+PanelFrame,
+PanelAppletFrame,
+MatePanelAppletFrameDBus,
+MatePanelAppletContainer,
+MatePanelApplet {
+    color: @theme_fg_color;
+
+    background-color: @theme_base_color;
+    background-image: none;
+}
+
+/* applets on the panel */
+ClockBox,
+.mate-panel-menu-bar,
+MatePanelApplet > GtkMenuBar.menubar {
+    font: bold;
+}
+
+.mate-panel-menu-bar .menuitem,
+MatePanelApplet > GtkMenuBar.menubar .menuitem {
+    color: @theme_fg_color;
+}
+
+.mate-panel-menu-bar .menuitem:hover,
+MatePanelApplet > GtkMenuBar.menubar .menuitem:hover {
+    color: @theme_fg_active_color;
+    background-color: @theme_active_color;
+}
+
+.mate-panel-menu-bar .menuitem *:hover,
+MatePanelApplet > GtkMenuBar.menubar .menuitem *:hover {
+    text-shadow: 0 1px @theme_base_color;
+}
+
+/* dropdown menus from applets */
+.mate-panel-menu-bar .menu,
+MatePanelApplet > GtkMenuBar.menubar .menu {
+    font: regular;
+}
+
+.mate-panel-menu-bar .menu *:hover,
+MatePanelApplet > GtkMenuBar.menubar .menu *:hover {
+    text-shadow: none;
+}
+
+.mate-panel-menu-bar .menu .menuitem,
+MatePanelApplet > GtkMenuBar.menubar .menu .menuitem {
+    color: @theme_fg_color;
+}
+
+.mate-panel-menu-bar .menu .menuitem:hover,
+MatePanelApplet > GtkMenuBar.menubar .menu .menuitem:hover {
+    color: @theme_fg_active_color;
+    background-color: @theme_active_color;
+}
+
+/* application buttons */
+MatePanelApplet .button,
+MatePanelApplet .button:hover {
+    padding: 4px;
+
+    border-image: none;
+    border-width: 0;
+    border-radius: 0;
+
+    background-image: none;
+    background-color: @theme_base_color;
+
+    color: @theme_fg_color;
+    text-shadow: none;
+}
+
+MatePanelApplet .button:checked:hover,
+MatePanelApplet .button:checked,
+MatePanelApplet .button:active:hover,
+MatePanelApplet .button:active {
+    border-image: none;
+    background-image: none;
+    background-color: @theme_active_color;
+    border-width: 0;
+    border-radius: 0;
+}
+
+/* prelight of WnckPager */
+MatePanelApplet *:hover {
+	background-image: linear-gradient(to bottom,
+		shade (@theme_active_color, 2.86),
+		shade (@theme_active_color, 1.0));
+	background-color: @theme_base_color;
+    color: @theme_fg_active_color;
+}
+
+MatePanelApplet *:checked,
+MatePanelApplet *:hover:checked,
+MatePanelApplet *:active,
+MatePanelApplet *:hover:active {
+    color: @theme_fg_active_color;
+    text-shadow: 0 1px @theme_base_color;
+}
+
+/*Wncklist */
+WnckTasklist .button {
+	padding: 4px;
+
+	border-radius: 0px;
+	border-width: 0px;
+	border-style: solid;
+	text-shadow: none;
+
+    color: @theme_fg_color;
+    background-image: none;
+    background-color: @theme_base_color;
+}
+
+WnckTasklist .button:checked:hover,
+WnckTasklist .button:checked,
+WnckTasklist .button:active:hover,
+WnckTasklist .button:active {
+    border-image: none;
+    color: @theme_fg_active_color;
+    background-image: none;
+    background-color: @theme_active_color;
+    border-width: 0;
+    border-radius: 0;
+}
+
+WnckTasklist .button:hover {
+    border-image: none;
+    color: @theme_fg_active_color;
+    background-image: none;
+    background-color: @theme_active_color;
+    border-width: 0;
+    border-radius: 0;
+}
+
+WnckPager {
+    background-color: lighter(@theme_active_color);
+}
+
+NaTrayApplet {
+    -NaTrayApplet-icon-padding: 12;
+    -NaTrayApplet-icon-size: 16;
+}
+
