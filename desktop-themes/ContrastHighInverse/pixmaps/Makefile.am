@@ -1,4 +1,4 @@
-pixmapdir=	$(datadir)/themes/ContrastHighLargePrintInverse/pixmaps
+pixmapdir=	$(datadir)/themes/ContrastHighInverse/pixmaps
 
 EXTRA_DIST=	$(pixmap_DATA)
 

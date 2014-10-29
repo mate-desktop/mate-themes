@@ -10,12 +10,14 @@ theme_DATA = index.theme
 SUBDIRS =      \
 	gtk-2.0	   \
 	gtk-3.0	   \
-	metacity-1
+	metacity-1 \
+	pixmaps
 
 DIST_SUBDIRS = \
 	gtk-2.0	   \
 	gtk-3.0	   \
-	metacity-1
+	metacity-1 \
+	pixmaps
 
 DISTCLEANFILES=index.theme
 EXTRA_DIST=index.theme.in
