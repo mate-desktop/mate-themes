@@ -62,7 +62,7 @@
 }
 
 *:insensitive {
-	background-color: @insensitive_bg_color;
+	/*background-color: @insensitive_bg_color;*/
 	color: @insensitive_fg_color;
 	border-color: @insensitive_borders;
 }
@@ -883,6 +883,7 @@ GtkComboBox.combobox-entry .button {
 	-GtkButton-interior-focus: true;
 	-GtkButton-default-border: 0;
 	-GtkButton-inner-border: 3;
+	-GtkArrow-arrow-scaling: 0.5;
 
 	border-style: solid;
 	border-color: transparent;
@@ -2090,7 +2091,7 @@ GtkTreeMenu .menuitem,
 }
 
 .menu .menuitem {
-	-GtkMenuItem-arrow-scaling: 0.4;
+	-GtkMenuItem-arrow-scaling: 0.6;
 	padding: 4px;
 }
 
@@ -2513,15 +2514,14 @@ GtkMessageDialog {
  */
 .primary-toolbar .toolbar,
 .primary-toolbar.toolbar {
-	/*border-bottom-color: shade (@theme_bg_color, 0.92);*/
 	border-style: solid;
 	border-width: 0 0 1px 0;
 	border-color: alpha(@borders, 0.4);
 	-GtkWidget-window-dragging: true;
 	-GtkToolbar-button-relief: normal;
 	text-shadow: 0 1px @button_text_shadow;
-	padding-top: 1px;
-	padding-bottom: 1px;
+	padding-top: 3px;
+	padding-bottom: 3px;
 	box-shadow: inset 0 1px 0 0 alpha(@borders, 0.4);
 }
 
@@ -2564,21 +2564,16 @@ GtkMessageDialog {
 	border-color: @borders;
 
 	-GtkToolbar-button-relief: normal;
-	/*box-shadow: inset 0 3px alpha(black, 0.02), inset 0 2px alpha(black, 0.02), inset 0 1px alpha(black, 0.02);*/
 	padding: 2px;
 }
 
 .inline-toolbar.toolbar:last-child {
 	border-top-width: 0;
-	/*padding-top: 4px; FIXME: why a specific padding here? */
-
 	border-radius: 0 0 3px 3px;
 }
 
 .inline-toolbar.toolbar.vertical:last-child {
 	border-left-width: 0;
-	/*padding-left: 4px; FIXME: why a specific padding here? */
-
 	border-radius: 0;
 }
 
@@ -3984,16 +3979,6 @@ GtkModelButton.button:selected {
 /* Various hacks and shit */
 /* FIXME - BELOW: Some stuff that can probably be done better or in another way */
 
-GtkRevealer {
-	background-color: @theme_bg_color;
-	color: @theme_fg_color;
-}
-
-GtkRevealer .button,
-GtkRevealer GtkLabel {
-	color: @theme_fg_color;
-}
-
 /* gedit */
 .gedit-headerbar-paned:backdrop {
 	background-image: url("assets/null.png");
@@ -4067,3 +4052,31 @@ GtkRevealer GtkLabel {
 	-GtkButton-inner-border: 0;
 }
 
+
+/* Nautilus desktop */
+.nautilus-canvas-item {
+	border-radius: 5px;
+}
+
+.nautilus-desktop.nautilus-canvas-item {
+	color: @theme_selected_fg_color;
+	text-shadow: 1px 1px black;
+}
+
+.nautilus-desktop.nautilus-canvas-item:active {
+	color: @theme_text_color;
+}
+
+.nautilus-desktop.nautilus-canvas-item:selected {
+	color: @theme_selected_fg_color;
+}
+
+.nautilus-desktop.nautilus-canvas-item:active,
+.nautilus-desktop.nautilus-canvas-item:prelight,
+.nautilus-desktop.nautilus-canvas-item:selected {
+	text-shadow: none;
+}
+
+.nautilus-desktop.nautilus-canvas-item:selected:backdrop {
+	color: @theme_unfocused_selected_fg_color;
+}
