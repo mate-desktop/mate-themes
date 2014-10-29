@@ -182,8 +182,8 @@
 
 <draw_ops name="title_gradient">
   <gradient type="diagonal" x="0" y="0" width="width-SpacerWidth" height="height">
-    <color value="blend/gtk:bg[NORMAL]/gtk:bg[SELECTED]/0.6"/>
-    <color value="gtk:bg[SELECTED]"/>
+    <color value="#666699"/>
+    <color value="#666699"/>
   </gradient>
 </draw_ops>
 
@@ -195,7 +195,7 @@
 	     
 <draw_ops name="title_text_focused_with_icon">
   <clip x="0" y="0" width="width-SpacerWidth" height="height"/>
-  <title color="gtk:fg[SELECTED]"
+  <title color="#000000"
          x="(0 `max` (width-title_width-mini_icon_width-IconTitleSpacing)) / 2 + mini_icon_width + IconTitleSpacing"
          y="((height - title_height) / 2) `max` 0"/>
   <icon  x="(0 `max` (width-title_width-mini_icon_width-IconTitleSpacing)) / 2"
