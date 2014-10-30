@@ -1383,6 +1383,10 @@ GtkTreeMenu .menuitem * {
 	background-color: @theme_bg_color;
 }
 
+.toolbar .button:checked,
+.primary-toolbar .button:checked,
+.primary-toolbar .toolbar .button:checked,
+.primary-toolbar.toolbar .button:checked,
 .toolbar .button:active,
 .primary-toolbar .button:active,
 .primary-toolbar .toolbar .button:active,
@@ -1399,6 +1403,10 @@ GtkTreeMenu .menuitem * {
 	/*border-image is defined in gtk-widgets-assets.css*/
 }
 
+.toolbar .button:checked:hover,
+.primary-toolbar .button:checked:hover,
+.primary-toolbar .toolbar .button:checked:hover,
+.primary-toolbar.toolbar .button:checked:hover,
 .toolbar .button:active:hover,
 .primary-toolbar .button:active:hover,
 .primary-toolbar .toolbar .button:active:hover,
@@ -1414,6 +1422,10 @@ GtkTreeMenu .menuitem * {
 	                                  @button_hover_gradient_color_b);
 }
 
+.toolbar .button:checked:insensitive,
+.primary-toolbar .button:checked:insensitive,
+.primary-toolbar .toolbar .button:checked:insensitive,
+.primary-toolbar.toolbar .button:checked:insensitive,
 .toolbar .button:active:insensitive,
 .primary-toolbar .button:active:insensitive,
 .primary-toolbar .toolbar .button:active:insensitive,
@@ -1508,8 +1520,10 @@ GtkOverlay.osd {
 }
 
 .osd.button,
+.osd.button:checked,
 .osd.button:active,
 .osd .button,
+.osd .button:checked,
 .osd .button:active {
 	border-width: 1px;
 	border-style: solid;
@@ -1532,9 +1546,11 @@ GtkOverlay.osd {
 
 .osd.button,
 .osd.button:prelight,
+.osd.button:checked,
 .osd.button:active,
 .osd .button,
 .osd .button:prelight,
+.osd .button:checked,
 .osd .button:active {
 	background-color: transparent;
 }
@@ -1545,6 +1561,8 @@ GtkOverlay.osd {
 	background-color: @osd_button_bg_insensitive;
 }
 
+.osd.button:checked:insensitive,
+.osd .button:checked:insensitive,
 .osd.button:active:insensitive,
 .osd .button:active:insensitive {
 	background-image: none;
@@ -1556,14 +1574,18 @@ GtkOverlay.osd {
 	color: @osd_button_fg_hover;
 }
 
+.osd .button *:checked,
+.osd .button *:hover:checked,
 .osd .button *:active,
 .osd .button *:hover:active {
 	color: @osd_button_fg_active;
 }
 
 .osd.button *:insensitive,
+.osd.button *:insensitive:checked,
 .osd.button *:insensitive:active,
 .osd .button *:insensitive,
+.osd .button *:insensitive:checked,
 .osd .button *:insensitive:active {
 	color: @osd_button_fg_insensitive;
 }
@@ -1576,6 +1598,11 @@ GtkOverlay.osd {
 	                                  @osd_button_bg_hover_c);
 }
 
+.osd.button:checked,
+.osd.button:checked:hover,
+.osd .button:checked,
+.osd .button:checked:hover,
+.osd GtkMenuButton.button:checked,
 .osd.button:active,
 .osd.button:active:hover,
 .osd .button:active,
@@ -1587,11 +1614,13 @@ GtkOverlay.osd {
 	                                  @osd_button_bg_active_c);
 }
 
+.osd GtkMenuButton.button:checked,
 .osd GtkMenuButton.button:active {
     background-color: transparent;
     border-color: @osd_button_border;
 }
 
+.osd GtkMenuButton.button *:checked,
 .osd GtkMenuButton.button *:active {
     color: @osd_button_fg_active;
     text-shadow: 0 -1px @osd_button_shadow;
@@ -2052,75 +2081,25 @@ GtkColorSwatch:selected:hover {
 	border-color: alpha(black, 0.5);
 }
 
-/*****************************************************************************************************
- * Check and Radio items                                                                             *
- * Related to recent gtk3 development, to reveal checkboxes as part of the dialogue                  *
- * of some of the applications whose notification icons appear in the system tray                    *
- * the reference section of the HighContrast theme is used.                                          *
- * https://git.gnome.org/browse/gnome-themes-standard/tree/themes/HighContrast/gtk-3.0/gtk.css#n1398 *
- *****************************************************************************************************/
-
-GtkCheckButton.text-button, GtkRadioButton.text-button {
-  padding: 1px;
-  outline-offset: 0; }
-
-.check {
-  color: rgba(0, 0, 0, 0.1);
-  background-image: none;
-  -gtk-icon-source: -gtk-scaled(url("assets/checkbox-unchecked.svg")); }
-  .check:hover {
-    color: #7f7f7f; }
-  .check:checked, .check:active {
-    -gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked.svg"));
-    color: #000; }
-    .check:checked:hover, .check:active:hover {
-      color: #7f7f7f; }
-    .check:checked:insensitive, .check:active:insensitive {
-      -gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked-insensitive.svg"));
-      color: #7f7f7f; }
-      .check:checked:insensitive:backdrop, .check:active:insensitive:backdrop {
-        color: #7f7f7f; }
-    .check:checked:backdrop, .check:active:backdrop {
-      color: #000; }
-  .check:insensitive {
-    color: rgba(127, 127, 127, 0.1); }
-    .check:insensitive:backdrop {
-      color: transparent; }
-  .check:inconsistent {
-    -gtk-icon-source: -gtk-scaled(url("assets/checkbox-mixed.svg")); }
-  .check:backdrop {
-    color: rgba(0, 0, 0, 0.1); }
-    .check:backdrop:selected {
-      color: rgba(255, 255, 255, 0.1); }
-
-.radio {
-  color: rgba(0, 0, 0, 0.1);
-  background-image: none;
-  -gtk-icon-source: -gtk-scaled(url("assets/radio-unselected.svg")); }
-  .radio:hover {
-    color: #7f7f7f; }
-  .radio:checked, .radio:active {
-    -gtk-icon-source: -gtk-scaled(url("assets/radio-selected.svg"));
-    color: #000; }
-    .radio:checked:hover, .radio:active:hover {
-      color: #7f7f7f; }
-    .radio:checked:insensitive, .radio:active:insensitive {
-      -gtk-icon-source: -gtk-scaled(url("assets/radio-selected-insensitive.svg"));
-      color: #7f7f7f; }
-      .radio:checked:insensitive:backdrop, .radio:active:insensitive:backdrop {
-        color: #7f7f7f; }
-    .radio:checked:backdrop, .radio:active:backdrop {
-      color: #000; }
-  .radio:insensitive {
-    color: rgba(127, 127, 127, 0.1); }
-    .radio:insensitive:backdrop {
-      color: transparent; }
-  .radio:inconsistent {
-    -gtk-icon-source: -gtk-scaled(url("assets/radio-mixed.svg")); }
-  .radio:backdrop {
-    color: rgba(0, 0, 0, 0.1); }
-    .radio:backdrop:selected {
-      color: rgba(255, 255, 255, 0.1); }
+/***************************
+ * Radio and Check Buttons *
+ ***************************/
+.radio,
+.check,
+.radio:selected,
+.check:selected,
+.radio:selected:focus,
+.check:selected:focus,
+.cell.radio,
+.cell.check,
+.cell.radio:selected,
+.cell.check:selected,
+.cell.radio:selected:focus,
+.cell.check:selected:focus {
+ background-color: transparent;
+ border-width: 0px;
+ border-style: none;
+}
 
 /*****************
  * GtkCheckButton *
@@ -2301,16 +2280,19 @@ GtkInfoBar {
 .info .button,
 .info .button:insensitive,
 .info .button:active,
+.info .button:checked,
 .warning .entry,
 .warning .entry:focus,
 .warning .button,
 .warning .button:insensitive,
 .warning .button:active,
+.warning .button:checked,
 .error .entry,
 .error .entry:focus,
 .error .button,
 .error .button:insensitive,
-.error .button:active {
+.error .button:active,
+.error .button:checked {
 	border-image: none;
 	border-style: none;
 }

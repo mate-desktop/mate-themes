@@ -65,6 +65,8 @@ GtkScale.scale-has-marks-above.slider.vertical:insensitive {
 	border-image: url("assets/button-border.svg") 3 / 3px stretch;
 }
 
+.button:checked,
+.button:hover:checked,
 .button:active,
 .button:hover:active {
 	border-image: url("assets/button-active-border.svg") 3 / 3px stretch;
@@ -78,6 +80,10 @@ GtkScale.scale-has-marks-above.slider.vertical:insensitive {
 	border-image: url("assets/button-default-active-border.svg") 3 / 3px stretch;
 }
 
+.toolbar .button:checked,
+.primary-toolbar .button:checked,
+.primary-toolbar .toolbar .button:checked,
+.primary-toolbar.toolbar .button:checked,
 .toolbar .button:active,
 .primary-toolbar .button:active,
 .primary-toolbar .toolbar .button:active,
@@ -100,53 +106,59 @@ GtkSwitch.trough:active {
 /*************************
  * Check and Radio items *
  *************************/
- 
-.menuitem.radio:active {
-	background-image: url("assets/radio-menuitem-checked.svg");
+
+.menuitem.radio:active, 
+.menuitem.radio:checked {
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-menuitem-checked.svg"));
 }
 
-.menuitem.radio:active:hover {
-	background-image: url("assets/radio-menuitem-checked-prelight.svg");
+.menuitem.radio:active:hover,
+.menuitem.radio:checked:hover {
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-menuitem-checked-prelight.svg"));
 }
 
-.menuitem.radio:active:insensitive {
-	background-image: url("assets/radio-menuitem-checked-insensitive.svg");
+.menuitem.radio:active:insensitive,
+.menuitem.radio:checked:insensitive {
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-menuitem-checked-insensitive.svg"));
 }
 
 .menuitem.radio:inconsistent {
-	background-image: url("assets/radio-menuitem-mixed.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-menuitem-mixed.svg"));
 }
 
 .menuitem.radio:inconsistent:hover {
-	background-image: url("assets/radio-menuitem-mixed-prelight.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-menuitem-mixed-prelight.svg"));
 }
 
 .menuitem.radio:inconsistent:insensitive {
-	background-image: url("assets/radio-menuitem-mixed-insensitive.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-menuitem-mixed-insensitive.svg"));
 }
 
-.menuitem.check:active {
-	background-image: url("assets/checkbox-menuitem-checked.svg");
+.menuitem.check:active,
+.menuitem.check:checked {
+	-gtk-icon-source: -gtk-scaled(url("assets/checkbox-menuitem-checked.svg"));
 }
 
-.menuitem.check:active:hover {
-	background-image: url("assets/checkbox-menuitem-checked-prelight.svg");
+.menuitem.check:active:hover,
+.menuitem.check:checked:hover {
+	-gtk-icon-source: -gtk-scaled(url("assets/checkbox-menuitem-checked-prelight.svg"));
 }
 
-.menuitem.check:active:insensitive {
-	background-image: url("assets/checkbox-menuitem-checked-insensitive.svg");
+.menuitem.check:active:insensitive,
+.menuitem.check:checked:insensitive {
+	-gtk-icon-source: -gtk-scaled(url("assets/checkbox-menuitem-checked-insensitive.svg"));
 }
 
 .menuitem.check:inconsistent {
-	background-image: url("assets/checkbox-menuitem-mixed.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/checkbox-menuitem-mixed.svg"));
 }
 
 .menuitem.check:inconsistent:hover {
-	background-image: url("assets/checkbox-menuitem-mixed-prelight.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/checkbox-menuitem-mixed-prelight.svg"));
 }
 
 .menuitem.check:inconsistent:insensitive {
-	background-image: url("assets/checkbox-menuitem-mixed-insensitive.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/checkbox-menuitem-mixed-insensitive.svg"));
 }
 
 /* draw regular check and radio items using our SVG assets */
@@ -170,6 +182,9 @@ GtkSwitch.trough:active {
 	-gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked.svg"));
 }
 
+.check:checked:insensitive,
+.check row:selected:checked:insensitive,
+.check row:selected:focus:checked:insensitive,
 .check:active:insensitive,
 .check row:selected:active:insensitive,
 .check row:selected:focus:active:insensitive
@@ -205,6 +220,7 @@ GtkSwitch.trough:active {
 .radio:active,
 .radio row:selected:checked,
 .radio row:selected:active,
+.radio row:selected:focus:checked,
 .radio row:selected:focus:active {
 	-gtk-icon-source: -gtk-scaled(url("assets/radio-selected.svg"));
 }
