@@ -1052,6 +1052,14 @@ GtkTreeMenu .menuitem * {
 	                                  white);
 }
 
+.scrollbar.slider.horizontal {
+	border-width: 1px;
+	border-radius: 6px;
+	background-image: linear-gradient(to left,
+	                                  shade(@toolbar_gradient_base, 0.82),
+	                                  white);
+}
+
 .scrollbar.slider:prelight {
 	background-image: linear-gradient(to top,
 	                                  shade(@toolbar_gradient_base, 0.88),
@@ -1063,6 +1071,15 @@ GtkTreeMenu .menuitem * {
 
 .scrollbar.slider.vertical:prelight {
 	background-image: linear-gradient(to top,
+	                                  shade(@toolbar_gradient_base, 0.88),
+	                                  shade(@theme_bg_color, 1.6));
+	border-width: 1px;
+	border-color: shade(@button_border, 1.1);
+	border-radius: 6px;
+}
+
+.scrollbar.slider.horizontal:prelight {
+	background-image: linear-gradient(to left,
 	                                  shade(@toolbar_gradient_base, 0.88),
 	                                  shade(@theme_bg_color, 1.6));
 	border-width: 1px;
@@ -1085,6 +1102,15 @@ GtkTreeMenu .menuitem * {
 	border-color: shade(@button_border, 1.1);
 	border-radius: 6px;
 	background-image: linear-gradient(to top,
+	                                  shade(@theme_bg_color, 1.5),
+	                                  shade(@theme_bg_color, 0.9));
+}
+
+.scrollbar.slider.horizontal:prelight:active {
+	border-width: 1px;
+	border-color: shade(@button_border, 1.1);
+	border-radius: 6px;
+	background-image: linear-gradient(to left,
 	                                  shade(@theme_bg_color, 1.5),
 	                                  shade(@theme_bg_color, 0.9));
 }
