@@ -1279,19 +1279,27 @@ GtkComboBox .menu {
 	background-image: linear-gradient(to top,
 	                                  shade(@scroll_slider_color, 0.6),
 	                                  shade(@scroll_slider_color, 1.6) 50%,
-	                                  shade(@scroll_slider_color, 3.4));
+	                                  shade(@scroll_slider_color, 2.0));
 	border-color: transparent;
-	border-radius: 5px;
-	border-width: 3px 2px 3px;
+	border-radius: 6px;
+	border-width: 1px;
 	border-image: none;
 }
 
 .scrollbar.slider.vertical {
-	border-width: 2px 3px 2px;
+	border-width: 1px;
+	background-image: linear-gradient(to top,
+	                                  shade(@scroll_slider_color, 0.6),
+	                                  shade(@scroll_slider_color, 1.6) 50%,
+	                                  shade(@scroll_slider_color, 2.0));
+}
+
+.scrollbar.slider.horizontal {
+	border-width: 1px;
 	background-image: linear-gradient(to left,
 	                                  shade(@scroll_slider_color, 0.6),
 	                                  shade(@scroll_slider_color, 1.6) 50%,
-	                                  shade(@scroll_slider_color, 3.4));
+	                                  shade(@scroll_slider_color, 2.0));
 }
 
 .scrollbar.slider:prelight {
@@ -1306,12 +1314,18 @@ GtkComboBox .menu {
 	border-radius: 6px;
 }
 
+.scrollbar.slider.horizontal:prelight {
+	border-width: 1px;
+	border-color: @scroll_slider_color;
+	border-radius: 6px;
+}
+
 .scrollbar.slider:prelight:active {
 	border-width: 1px;
 	border-color: @scroll_slider_color;
 	border-radius: 6px;
 	background-image: linear-gradient(to top,
-	                                  shade(@scroll_slider_color, 3.3),
+	                                  shade(@scroll_slider_color, 2.0),
 	                                  shade(@scroll_slider_color, 1.6) 55%,
 	                                  shade(@scroll_slider_color, 0.6));
 }
@@ -1320,12 +1334,21 @@ GtkComboBox .menu {
 	border-width: 1px;
 	border-color: @scroll_slider_color;
 	border-radius: 6px;
-	background-image: linear-gradient(to left,
-	                                  shade(@scroll_slider_color, 3.3),
+	background-image: linear-gradient(to top,
+	                                  shade(@scroll_slider_color, 2.0),
 	                                  shade(@scroll_slider_color, 1.6) 55%,
 	                                  shade(@scroll_slider_color, 0.6));
 }
 
+.scrollbar.slider.horizontal:prelight:active {
+	border-width: 1px;
+	border-color: @scroll_slider_color;
+	border-radius: 6px;
+	background-image: linear-gradient(to left,
+	                                  shade(@scroll_slider_color, 2.0),
+	                                  shade(@scroll_slider_color, 1.6) 55%,
+	                                  shade(@scroll_slider_color, 0.6));
+}
 .scrollbar.button,
 .scrollbar.button.horizontal,
 .scrollbar.button.vertical {
