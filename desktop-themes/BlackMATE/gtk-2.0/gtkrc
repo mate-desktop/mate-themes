@@ -193,11 +193,11 @@ style "murrine-button"
 	#xthickness = 3
 	#ythickness = 3
 
-	bg[NORMAL]      = shade (0.9, "#3b3b3e") #1.0
-	bg[PRELIGHT]    = shade (1.0, "#3b3b3e")
+	bg[NORMAL]      = shade (0.6, "#4D4D4D") #1.0
+	bg[PRELIGHT]    = shade (0.7, "#4D4D4D")
 	#bg[SELECTED]    = shade (1.0, "#3b3b3e")
-	bg[ACTIVE]      = shade (0.9, "#3b3b3e")
-	bg[INSENSITIVE] = "#3b3b3e"
+	bg[ACTIVE]      = shade (0.9, "#4D4D4D")
+	bg[INSENSITIVE] = "#4D4D4D"
 	fg[ACTIVE]      = "#ffffff"
 	fg[PRELIGHT]    = "#ffffff"
 
@@ -215,8 +215,8 @@ style "murrine-togglebutton"
 	fg[NORMAL]   = "#ffffff"
 	fg[ACTIVE]   = "#ffffff"
 	fg[PRELIGHT]   = "#ffffff"
-	bg[ACTIVE]   = shade (0.68, "#666669")
-	bg[PRELIGHT] = shade (0.68, "#666669")
+	bg[ACTIVE]   = shade (0.58, "#4D4D4D")
+	bg[PRELIGHT] = shade (0.58, "#4D4D4D")
 	engine "murrine"
 	{
 		gradient_shades = {3.0, 1.0, 0.6, 0.5}
