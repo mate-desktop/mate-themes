@@ -4,8 +4,6 @@ SUBDIRS = \
 	ContrastHighLargePrint \
 	ContrastHighLargePrintInverse \
 	Reverse \
-	ContrastLow \
-	ContrastLowLargePrint \
 	LargePrint
 
 DIST_SUBDIRS = \
@@ -14,7 +12,5 @@ DIST_SUBDIRS = \
 	ContrastHighLargePrint \
 	ContrastHighLargePrintInverse \
 	Reverse \
-	ContrastLow \
-	ContrastLowLargePrint \
 	LargePrint
 
