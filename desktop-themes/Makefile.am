@@ -10,8 +10,6 @@ SUBDIRS = \
 	ContrastHighLargePrint \
 	ContrastHighLargePrintInverse \
 	LargePrint \
-	ContrastLow \
-	ContrastLowLargePrint \
 	Fog \
 	GreenLaguna \
 	Menta \
@@ -30,8 +28,6 @@ DIST_SUBDIRS = \
 	ContrastHighLargePrint \
 	ContrastHighLargePrintInverse \
 	LargePrint \
-	ContrastLow \
-	ContrastLowLargePrint \
 	Fog \
 	GreenLaguna \
 	Menta \
