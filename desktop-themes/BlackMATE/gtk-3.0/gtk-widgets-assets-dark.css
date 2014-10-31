@@ -16,7 +16,7 @@
 GtkTreeView.check,
 GtkTreeView.check row:selected,
 GtkTreeView.check row:selected:focus {
-	background-image: url("assets/checkbox-unchecked-lessdark.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/checkbox-unchecked-lessdark.svg"));
 }
 
 .check:insensitive,
@@ -29,19 +29,29 @@ GtkTreeView.check row:selected:focus {
 .check:active,
 .check row:selected:checked,
 .check row:selected:active,
+.check row:selected:focus:checked,
 .check row:selected:focus:active {
 	-gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked-dark.svg"));
 }
 
+.notebook .check:checked,
+.notebook .check row:selected:checked,
+.notebook .check row:selected:focus:checked,
+GtkTreeView.check:checked,
+GtkTreeView.check row:selected:checked,
+GtkTreeView.check row:selected:focus:checked,
 .notebook .check:active,
 .notebook .check row:selected:active,
 .notebook .check row:selected:focus:active,
 GtkTreeView.check:active,
 GtkTreeView.check row:selected:active,
 GtkTreeView.check row:selected:focus:active {
-	background-image: url("assets/checkbox-checked-lessdark.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked-lessdark.svg"));
 }
 
+.check:checked:insensitive,
+.check row:selected:checked:insensitive,
+.check row:selected:focus:checked:insensitive,
 .check:active:insensitive,
 .check row:selected:active:insensitive,
 .check row:selected:focus:active:insensitive
@@ -61,7 +71,7 @@ GtkTreeView.check row:selected:focus:active {
 GtkTreeView.check:inconsistent,
 GtkTreeView.check row:selected:inconsistent,
 GtkTreeView.check row:selected:focus:inconsistent {
-	background-image: url("assets/checkbox-mixed-lessdark.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/checkbox-mixed-lessdark.svg"));
 }
 
 .check:inconsistent:insensitive,
@@ -82,7 +92,7 @@ GtkTreeView.check row:selected:focus:inconsistent {
 GtkTreeView.radio,
 GtkTreeView.radio row:selected,
 GtkTreeView.radio row:selected:focus {
-	background-image: -gtk-scaled(url("assets/radio-unselected-lessdark.svg"));
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-unselected-lessdark.svg"));
 }
 
 .radio:insensitive,
@@ -95,19 +105,29 @@ GtkTreeView.radio row:selected:focus {
 .radio:active,
 .radio row:selected:checked,
 .radio row:selected:active,
+.radio row:selected:focus:checked,
 .radio row:selected:focus:active {
 	-gtk-icon-source: -gtk-scaled(url("assets/radio-selected-dark.svg"));
 }
 
+.notebook .radio:checked,
+.notebook .radio row:selected:checked,
+.notebook .radio row:selected:focus:checked,
+GtkTreeView.radio:checked,
+GtkTreeView.radio row:selected:checked,
+GtkTreeView.radio row:selected:focus:checked,
 .notebook .radio:active,
 .notebook .radio row:selected:active,
 .notebook .radio row:selected:focus:active,
 GtkTreeView.radio:active,
 GtkTreeView.radio row:selected:active,
 GtkTreeView.radio row:selected:focus:active {
-	background-image: url("assets/radio-selected-lessdark.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-selected-lessdark.svg"));
 }
 
+.radio:checked:insensitive,
+.radio row:selected:checked:insensitive,
+.radio row:selected:focus:checked:insensitive,
 .radio:active:insensitive,
 .radio row:selected:active:insensitive,
 .radio row:selected:focus:active:insensitive {
@@ -126,7 +146,7 @@ GtkTreeView.radio row:selected:focus:active {
 GtkTreeView.radio:inconsistent,
 GtkTreeView.radio row:selected:inconsistent,
 GtkTreeView.radio row:selected:focus:inconsistent {
-	background-image: url("assets/radio-mixed-lessdark.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-mixed-lessdark.svg"));
 }
 
 .radio:inconsistent:insensitive,
@@ -135,24 +155,29 @@ GtkTreeView.radio row:selected:focus:inconsistent {
 	-gtk-icon-source: -gtk-scaled(url("assets/radio-mixed-insensitive-dark.svg"));
 }
 
+.sidebar .radio:checked,
+.sidebar .radio:checked:focus,
+.sidebar .radio:checked:prelight,
 .sidebar .radio:active,
 .sidebar .radio:active:focus,
 .sidebar .radio:active:prelight {
-	background-image: url("assets/sidebar-radio-checked-dark.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/sidebar-radio-checked-dark.svg"));
 }
 
 .sidebar .radio:prelight {
-	background-image: url("assets/sidebar-radio-prelight.svg");
+	-gtk-icon-source: -gtk-scaled(url("assets/sidebar-radio-prelight.svg"));
 }
 
+.sidebar .radio:checked:selected,
+.sidebar .radio:checked:selected:focus,
 .sidebar .radio:active:selected,
 .sidebar .radio:active:selected:focus {
-	background-image: url("assets/sidebar-radio-selected-dark.svg");
+	-gtk-icon-source: -url("assets/sidebar-radio-selected-dark.svg"));
 }
 
 .sidebar .radio:selected:prelight,
 .sidebar .radio:selected:focus {
-	background-image: url("assets/sidebar-radio-selected-prelight.svg");    
+	-gtk-icon-source: -gtk-scaled(url("assets/sidebar-radio-selected-prelight.svg"));
 }
 
 /* Now draw menu check and radio items */
@@ -169,52 +194,58 @@ GtkTreeView.radio row:selected:focus:inconsistent {
 	border-image: none;
 }
 
+.menuitem.radio:checked,
 .menuitem.radio:active {
-	background-image: url("assets/radio-menuitem-checked.svg");
+	-gtk-icon-source: -url("assets/radio-menuitem-checked.svg"));
 }
 
+.menuitem.radio:checked:hover,
 .menuitem.radio:active:hover {
-	background-image: url("assets/radio-menuitem-checked-prelight.svg");
+	-gtk-icon-source: -url("assets/radio-menuitem-checked-prelight.svg"));
 }
 
+.menuitem.radio:checked:insensitive,
 .menuitem.radio:active:insensitive {
-	background-image: url("assets/radio-menuitem-checked-insensitive.svg");
+	-gtk-icon-source: -url("assets/radio-menuitem-checked-insensitive.svg"));
 }
 
 .menuitem.radio:inconsistent {
-	background-image: url("assets/radio-menuitem-mixed.svg");
+	-gtk-icon-source: -url("assets/radio-menuitem-mixed.svg"));
 }
 
 .menuitem.radio:inconsistent:hover {
-	background-image: url("assets/radio-menuitem-mixed-prelight.svg");
+	-gtk-icon-source: -url("assets/radio-menuitem-mixed-prelight.svg"));
 }
 
 .menuitem.radio:inconsistent:insensitive {
-	background-image: url("assets/radio-menuitem-mixed-insensitive.svg");
+	-gtk-icon-source: -url("assets/radio-menuitem-mixed-insensitive.svg"));
 }
 
+.menuitem.check:checked,
 .menuitem.check:active {
-	background-image: url("assets/checkbox-menuitem-checked.svg");
+	-gtk-icon-source: -url("assets/checkbox-menuitem-checked.svg"));
 }
 
+.menuitem.check:checked:hover,
 .menuitem.check:active:hover {
-	background-image: url("assets/checkbox-menuitem-checked-prelight.svg");
+	-gtk-icon-source: -url("assets/checkbox-menuitem-checked-prelight.svg"));
 }
 
+.menuitem.check:checked:insensitive,
 .menuitem.check:active:insensitive {
-	background-image: url("assets/checkbox-menuitem-checked-insensitive.svg");
+	-gtk-icon-source: -url("assets/checkbox-menuitem-checked-insensitive.svg"));
 }
 
 .menuitem.check:inconsistent {
-	background-image: url("assets/checkbox-menuitem-mixed.svg");
+	-gtk-icon-source: -url("assets/checkbox-menuitem-mixed.svg"));
 }
 
 .menuitem.check:inconsistent:hover {
-	background-image: url("assets/checkbox-menuitem-mixed-prelight.svg");
+	-gtk-icon-source: -url("assets/checkbox-menuitem-mixed-prelight.svg"));
 }
 
 .menuitem.check:inconsistent:insensitive {
-	background-image: url("assets/checkbox-menuitem-mixed-insensitive.svg");
+	-gtk-icon-source: -url("assets/checkbox-menuitem-mixed-insensitive.svg"));
 }
 
 /***********
@@ -225,9 +256,13 @@ GtkTreeView.radio row:selected:focus:inconsistent {
     border-image: url("assets/entry-border-focused-dark.svg") 3 / 3px stretch;
 }*/
 
+.primary-toolbar GtkComboBox.combobox-entry .button:checked,
+.primary-toolbar GtkComboBox.combobox-entry .button:hover:checked,
 .primary-toolbar GtkComboBox.combobox-entry .button:active,
 .primary-toolbar GtkComboBox.combobox-entry .button:hover:active,
 .primary-toolbar GtkComboBox.combobox-entry .button,
+GtkComboBox.combobox-entry .button:checked,
+GtkComboBox.combobox-entry .button:hover:checked,
 GtkComboBox.combobox-entry .button:active,
 GtkComboBox.combobox-entry .button:hover:active,
 GtkComboBox.combobox-entry .button {
@@ -311,6 +346,8 @@ background-image: url("assets/resize-grip.svg");
 	border-image: url("assets/button-border-dark.svg") 3 / 3px stretch;
 }
 
+.button:checked,
+.button:hover:checked,
 .button:active,
 .button:hover:active {
 	border-image: url("assets/button-active-border-dark.svg") 3 / 3px stretch;
@@ -321,11 +358,17 @@ background-image: url("assets/resize-grip.svg");
 	border-image: url("assets/button-default-border-dark.svg") 3 / 3px stretch;
 }
 
+.button.default:checked,
+.notebook .button.default:checked,
 .button.default:active,
 .notebook .button.default:active {
 	border-image: url("assets/button-default-active-border-dark.svg") 3 / 3px stretch;
 }
 
+.toolbar .button:checked,
+.primary-toolbar .button:checked,
+.primary-toolbar .toolbar .button:checked,
+.primary-toolbar.toolbar .button:checked,
 .toolbar .button:active,
 .primary-toolbar .button:active,
 .primary-toolbar .toolbar .button:active,
