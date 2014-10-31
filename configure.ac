@@ -200,9 +200,6 @@ desktop-themes/ContrastHighLargePrint/Makefile
 desktop-themes/ContrastHighLargePrint/index.theme.in
 desktop-themes/ContrastHighLargePrintInverse/Makefile
 desktop-themes/ContrastHighLargePrintInverse/index.theme.in
-desktop-themes/ContrastLow/Makefile
-desktop-themes/ContrastLowLargePrint/Makefile
-desktop-themes/ContrastLowLargePrint/index.theme.in
 desktop-themes/Fog/Makefile
 desktop-themes/GreenLaguna/Makefile
 desktop-themes/GreenLaguna/gtk-2.0/Makefile
@@ -288,11 +285,6 @@ gtk-themes/ContrastHighLargePrint/Makefile
 gtk-themes/ContrastHighLargePrint/gtkrc
 gtk-themes/ContrastHighLargePrintInverse/Makefile
 gtk-themes/ContrastHighLargePrintInverse/gtkrc
-gtk-themes/ContrastLow/Makefile
-gtk-themes/ContrastLow/gtkrc
-gtk-themes/ContrastLowLargePrint/Makefile
-gtk-themes/ContrastLowLargePrint/gtkrc
-gtk-themes/ContrastLowLargePrint/pixmaps/Makefile
 gtk-themes/LargePrint/Makefile
 gtk-themes/LargePrint/gtkrc
 gtk-themes/Reverse/Makefile
