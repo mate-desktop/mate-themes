@@ -293,11 +293,15 @@ GtkSwitch.slider:backdrop,
 .primary-toolbar .linked .button,
 .primary-toolbar .linked .button:active,
 .primary-toolbar .linked .button:active:hover,
+.primary-toolbar .linked .button:checked,
+.primary-toolbar .linked .button:checked:hover,
 .primary-toolbar .linked .button:insensitive,
 .menubar.toolbar .linked .entry,
 .menubar.toolbar .linked .button,
 .menubar.toolbar .linked .button:active,
 .menubar.toolbar .linked .button:active:hover,
+.menubar.toolbar .linked .button:checked,
+.menubar.toolbar .linked .button:checked:hover,
 .menubar.toolbar .linked .button:insensitive,
 .header-bar .linked .entry,
 .header-bar .linked .button,
@@ -428,8 +432,11 @@ background-image: -gtk-gradient (linear,
 .linked .button,
 .linked .button:active,
 .linked .button:active:hover,
+.linked .button:checked,
+.linked .button:checked:hover,
 .linked .button:focus,
 .linked .button:focus:active,
+.linked .button:focus:checked,
 .linked .button:insensitive {
 background-image: -gtk-gradient (linear,
 	                  left top,
@@ -449,8 +456,11 @@ background-image: -gtk-gradient (linear,
 .linked .button:first-child,
 .linked .button:active:first-child,
 .linked .button:active:hover:first-child,
+.linked .button:checked:first-child,
+.linked .button:checked:hover:first-child,
 .linked .button:focus:first-child,
 .linked .button:focus:active:first-child,
+.linked .button:focus:checked:first-child,
 .linked .button:insensitive:first-child {
 background-image: -gtk-gradient (linear,
 	                  left top,
@@ -472,8 +482,11 @@ background-image: -gtk-gradient (linear,
 .linked .button:last-child,
 .linked .button:active:last-child,
 .linked .button:active:hover:last-child,
+.linked .button:checked:last-child,
+.linked .button:checked:hover:last-child,
 .linked .button:focus:last-child,
 .linked .button:focus:active:last-child,
+.linked .button:focus:checked:last-child,
 .linked .button:insensitive:last-child {
 background-image: -gtk-gradient (linear,
 	                  left top,
@@ -495,8 +508,11 @@ background-image: -gtk-gradient (linear,
 .linked .button:only-child,
 .linked .button:active:only-child,
 .linked .button:active:hover:only-child,
+.linked .button:checked:only-child,
+.linked .button:checked:hover:only-child,
 .linked .button:focus:only-child,
 .linked .button:focus:active:only-child,
+.linked .button:focus:checked:only-child,
 .linked .button:insensitive:only-child {
 background-image: -gtk-gradient (linear,
 	                  left top,
@@ -569,6 +585,12 @@ background-image: -gtk-gradient (linear,
 .menubar.toolbar .linked .button:active,
 .menubar.toolbar .button.raised.linked:active
 .menubar.toolbar .raised.linked .button:active,
+.primary-toolbar .linked .button:checked,
+.primary-toolbar .button.raised.linked:checked,
+.primary-toolbar .raised.linked .button:checked,
+.menubar.toolbar .linked .button:checked,
+.menubar.toolbar .button.raised.linked:checked
+.menubar.toolbar .raised.linked .button:checked,
 .header-bar .linked .button:active,
 .header-bar .button.raised.linked:active,
 .header-bar .raised.linked .button:active {
@@ -617,11 +639,15 @@ background-image: -gtk-gradient (linear,
 .primary-toolbar .linked .button:only-child,
 .primary-toolbar .linked .button:active:only-child,
 .primary-toolbar .linked .button:active:hover:only-child,
+.primary-toolbar .linked .button:checked:only-child,
+.primary-toolbar .linked .button:checked:hover:only-child,
 .primary-toolbar .linked .button:insensitive:only-child,
 .menubar.toolbar .linked .entry:only-child,
 .menubar.toolbar .linked .button:only-child,
 .menubar.toolbar .linked .button:active:only-child,
 .menubar.toolbar .linked .button:active:hover:only-child,
+.menubar.toolbar .linked .button:checked:only-child,
+.menubar.toolbar .linked .button:checked:hover:only-child,
 .menubar.toolbar .linked .button:insensitive:only-child,
 .header-bar .linked .entry:only-child,
 .header-bar .linked .button:only-child,
@@ -664,81 +690,36 @@ row:selected:backdrop {
     /*text-shadow: 0 -1px shade (@selected_bg_color, 0.7);*/
 }
 
-/*****************************************************************************************************
- * Check and Radio items                                                                             *
- * Related to recent gtk3 development, to reveal checkboxes as part of the dialogue                  *
- * of some of the applications whose notification icons appear in the system tray                    *
- * the reference section of the HighContrast theme is used.                                          *
- * https://git.gnome.org/browse/gnome-themes-standard/tree/themes/HighContrast/gtk-3.0/gtk.css#n1398 *
- *****************************************************************************************************/
+/*******************
+ * check and radio *
+ *******************/
+.check,
+.radio,
+.check:insensitive,
+.radio:insensitive {
 
-GtkCheckButton.text-button, GtkRadioButton.text-button {
-  padding: 1px;
-  outline-offset: 0; }
+     background-color: transparent;
+     border-style: none;
+     margin: 1px 0;
+}
 
-.check {
-  color: rgba(0, 0, 0, 0.1);
-  background-image: none;
-  -gtk-icon-source: -gtk-scaled(url("assets/check-unselected.png")); }
-  .check:hover {
-    color: #7f7f7f; }
-  .check:checked, .check:active {
-    -gtk-icon-source: -gtk-scaled(url("assets/check-selected.png"));
-    color: #000; }
-    .check:checked:hover, .check:active:hover {
-      color: #7f7f7f; }
-    .check:checked:insensitive, .check:active:insensitive {
-      -gtk-icon-source: -gtk-scaled(url("assets/check-selected-disabled.png"));
-      color: #7f7f7f; }
-      .check:checked:insensitive:backdrop, .check:active:insensitive:backdrop {
-        color: #7f7f7f; }
-    .check:checked:backdrop, .check:active:backdrop {
-      color: #000; }
-  .check:insensitive {
-    color: rgba(127, 127, 127, 0.1); }
-    .check:insensitive:backdrop {
-      color: transparent; }
-  .check:inconsistent {
-    -gtk-icon-source: -gtk-scaled(url("assets/check-mixed.png")); }
-  .check:backdrop {
-    color: rgba(0, 0, 0, 0.1); }
-    .check:backdrop:selected {
-      color: rgba(255, 255, 255, 0.1); }
+GtkCheckButton:hover,
+GtkCheckButton:active:hover,
+GtkCheckButton:selected,
+GtkCheckButton:selected:focus {
+     background-color: transparent;
+}
 
-.radio {
-  color: rgba(0, 0, 0, 0.1);
-  background-image: none;
-  -gtk-icon-source: -gtk-scaled(url("assets/radio-unselected.png")); }
-  .radio:hover {
-    color: #7f7f7f; }
-  .radio:checked, .radio:active {
-    -gtk-icon-source: -gtk-scaled(url("assets/radio-selected.png"));
-    color: #000; }
-    .radio:checked:hover, .radio:active:hover {
-      color: #7f7f7f; }
-    .radio:checked:insensitive, .radio:active:insensitive {
-      -gtk-icon-source: -gtk-scaled(url("assets/radio-selected-disabled.png"));
-      color: #7f7f7f; }
-      .radio:checked:insensitive:backdrop, .radio:active:insensitive:backdrop {
-        color: #7f7f7f; }
-    .radio:checked:backdrop, .radio:active:backdrop {
-      color: #000; }
-  .radio:insensitive {
-    color: rgba(127, 127, 127, 0.1); }
-    .radio:insensitive:backdrop {
-      color: transparent; }
-  .radio:inconsistent {
-    -gtk-icon-source: -gtk-scaled(url("assets/radio-mixed.png")); }
-  .radio:backdrop {
-    color: rgba(0, 0, 0, 0.1); }
-    .radio:backdrop:selected {
-      color: rgba(255, 255, 255, 0.1); }
+.menu .radio * {
+     box-shadow: none;
+}
 
 /*****************
  * column-header *
  *****************/
 column-header .button,
-column-header .button:active {
+column-header .button:active,
+column-header .button:checked {
     border-radius: 0;
     border-width: 0 1px 1px 0;
     border-image: none;
@@ -1249,7 +1230,9 @@ GtkComboBox .menuitem *:hover {
 }
 
 .menuitem.check:active,
-.menuitem.radio:active {
+.menuitem.radio:active,
+.menuitem.check:checked,
+.menuitem.radio:checked {
     color: @fg_color;
 }
 
@@ -2192,11 +2175,13 @@ background-image: -gtk-gradient (linear,
 .primary-toolbar .raised.button,
 .primary-toolbar .button:hover,
 .primary-toolbar .button:active,
+.primary-toolbar .button:checked,
 .primary-toolbar .button:insensitive,
 .menubar.toolbar .raised .button,
 .menubar.toolbar .raised.button,
 .menubar.toolbar .button:hover,
 .menubar.toolbar .button:active,
+.menubar.toolbar .button:checked,
 .menubar.toolbar .button:insensitive,
 .header-bar .raised .button,
 .header-bar .raised.button,
@@ -2215,6 +2200,8 @@ background-image: -gtk-gradient (linear,
 
 .primary-toolbar .button:active,
 .menubar.toolbar .button:active,
+.primary-toolbar .button:checked,
+.menubar.toolbar .button:checked,
 .header-bar .button:active {
     background-image: -gtk-gradient (linear, left top, left bottom,
                                      from (shade (@dark_bg_color, 0.9)),
@@ -2225,6 +2212,8 @@ background-image: -gtk-gradient (linear,
 
 .primary-toolbar .button:active:hover,
 .menubar.toolbar .button:active:hover,
+.primary-toolbar .button:checked:hover,
+.menubar.toolbar .button:checked:hover,
 .header-bar .button:active:hover {
     background-image: -gtk-gradient (linear, left top, left bottom,
                                      from (shade (@dark_bg_color, 0.95)),
@@ -2232,8 +2221,10 @@ background-image: -gtk-gradient (linear,
 }
 
 .primary-toolbar .button:active:insensitive,
+.primary-toolbar .button:checked:insensitive,
 .primary-toolbar .button:insensitive,
 .menubar.toolbar .button:active:insensitive,
+.menubar.toolbar .button:checked:insensitive,
 .menubar.toolbar .button:insensitive,
 .header-bar .button:active:insensitive,
 .header-bar .button:insensitive {
@@ -2250,6 +2241,8 @@ background-image: -gtk-gradient (linear,
 
 .primary-toolbar .button:active:insensitive,
 .menubar.toolbar .button:active:insensitive,
+.primary-toolbar .button:checked:insensitive,
+.menubar.toolbar .button:checked:insensitive,
 .header-bar .button:active:insensitive {
     background-image: -gtk-gradient (linear, left top, left bottom,
                                      from (shade (@dark_bg_color, 0.94)),
@@ -2303,22 +2296,29 @@ background-image: -gtk-gradient (linear,
 /* Middle button */
 .primary-toolbar .button.raised.linked,
 .primary-toolbar .button.raised.linked:active,
+.primary-toolbar .button.raised.linked:checked,
 .primary-toolbar .button.raised.linked:focus,
 .primary-toolbar .button.raised.linked:focus:active,
+.primary-toolbar .button.raised.linked:focus:checked,
 .primary-toolbar .button.raised.linked:insensitive,
 .primary-toolbar .button.raised.linked:backdrop,
 .primary-toolbar .raised.linked .button,
 .primary-toolbar .raised.linked .button:active,
+.primary-toolbar .raised.linked .button:checked,
 .primary-toolbar .raised.linked .button:focus,
 .primary-toolbar .raised.linked .button:focus:active,
+.primary-toolbar .raised.linked .button:focus:checked,
 .primary-toolbar .raised.linked .button:insensitive,
 .primary-toolbar .raised.linked .button:backdrop,
 .menubar.toolbar .linked .button,
 .menubar.toolbar .linked .button:active,
+.menubar.toolbar .linked .button:checked,
 .menubar.toolbar .linked .button:focus,
 .menubar.toolbar .linked .button:focus:active,
+.menubar.toolbar .linked .button:focus:checked,
 .menubar.toolbar .linked .button:hover,
 .menubar.toolbar .linked .button:hover:active,
+.menubar.toolbar .linked .button:hover:checked,
 .menubar.toolbar .linked .button:insensitive,
 .menubar.toolbar .linked .button:backdrop,
 .menubar.toolbar .linked .entry,
@@ -2328,8 +2328,10 @@ background-image: -gtk-gradient (linear,
 .menubar.toolbar .linked .entry:insensitive,
 .menubar.toolbar .raised.linked .button,
 .menubar.toolbar .raised.linked .button:active,
+.menubar.toolbar .raised.linked .button:checked,
 .menubar.toolbar .raised.linked .button:focus,
 .menubar.toolbar .raised.linked .button:focus:active,
+.menubar.toolbar .raised.linked .button:focus:checked,
 .menubar.toolbar .raised.linked .button:insensitive,
 .menubar.toolbar .raised.linked .button:backdrop,
 .header-bar .linked .button,
@@ -2351,15 +2353,19 @@ background-image: -gtk-gradient (linear,
 .header-bar .raised.linked .button:backdrop,
 .inline-toolbar.toolbar .button,
 .inline-toolbar.toolbar .button:active,
+.inline-toolbar.toolbar .button:checked,
 .inline-toolbar.toolbar .button:focus,
 .inline-toolbar.toolbar .button:focus:active,
+.inline-toolbar.toolbar .button:focus:checked,
 .inline-toolbar.toolbar .button:insensitive,
 .inline-toolbar.toolbar .button:backdrop,
 .inline-toolbar.toolbar .button:backdrop:insensitive,
 .inline-toolbar.toolbar GtkToolButton .button,
 .inline-toolbar.toolbar GtkToolButton .button:active,
+.inline-toolbar.toolbar GtkToolButton .button:checked,
 .inline-toolbar.toolbar GtkToolButton .button:focus,
 .inline-toolbar.toolbar GtkToolButton .button:focus:active,
+.inline-toolbar.toolbar GtkToolButton .button:focus:checked,
 .inline-toolbar.toolbar GtkToolButton .button:insensitive,
 .inline-toolbar.toolbar GtkToolButton .button:backdrop,
 .inline-toolbar.toolbar GtkToolButton .button:backdrop:insensitive {
@@ -2372,31 +2378,41 @@ background-image: -gtk-gradient (linear,
 /* Leftmost button */
 .primary-toolbar .button.raised.linked:first-child,
 .primary-toolbar .button.raised.linked:active:first-child,
+.primary-toolbar .button.raised.linked:checked:first-child,
 .primary-toolbar .button.raised.linked:focus:first-child,
 .primary-toolbar .button.raised.linked:focus:active:first-child,
+.primary-toolbar .button.raised.linked:focus:checked:first-child,
 .primary-toolbar .button.raised.linked:insensitive:first-child,
 .primary-toolbar .button.raised.linked:backdrop:first-child,
 .primary-toolbar .raised.linked .button:first-child,
 .primary-toolbar .raised.linked .button:active:first-child,
+.primary-toolbar .raised.linked .button:checked:first-child,
 .primary-toolbar .raised.linked .button:focus:first-child,
 .primary-toolbar .raised.linked .button:focus:active:first-child,
+.primary-toolbar .raised.linked .button:focus:checked:first-child,
 .primary-toolbar .raised.linked .button:insensitive:first-child,
 .primary-toolbar .raised.linked .button:backdrop:first-child,
 .menubar.toolbar .linked .button:first-child,
 .menubar.toolbar .linked .button:active:first-child,
+.menubar.toolbar .linked .button:checked:first-child,
 .menubar.toolbar .linked .button:focus:first-child,
 .menubar.toolbar .linked .button:focus:active:first-child,
+.menubar.toolbar .linked .button:focus:checked:first-child,
 .menubar.toolbar .linked .button:insensitive:first-child,
 .menubar.toolbar .linked .button:backdrop:first-child,
 .menubar.toolbar .linked .entry:first-child,
 .menubar.toolbar .linked .entry:active:first-child,
+.menubar.toolbar .linked .entry:checked:first-child,
 .menubar.toolbar .linked .entry:focused:first-child,
 .menubar.toolbar .linked .entry:focused:active:first-child,
+.menubar.toolbar .linked .entry:focused:checked:first-child,
 .menubar.toolbar .linked .entry:insensitive:first-child,
 .menubar.toolbar .raised.linked .button:first-child,
 .menubar.toolbar .raised.linked .button:active:first-child,
+.menubar.toolbar .raised.linked .button:checked:first-child,
 .menubar.toolbar .raised.linked .button:focus:first-child,
 .menubar.toolbar .raised.linked .button:focus:active:first-child,
+.menubar.toolbar .raised.linked .button:focus:checked:first-child,
 .menubar.toolbar .raised.linked .button:insensitive:first-child,
 .menubar.toolbar .raised.linked .button:backdrop:first-child,
 .header-bar .linked .button:first-child,
@@ -2418,15 +2434,19 @@ background-image: -gtk-gradient (linear,
 .header-bar .raised.linked .button:backdrop:first-child,
 .inline-toolbar.toolbar .button:first-child,
 .inline-toolbar.toolbar .button:active:first-child,
+.inline-toolbar.toolbar .button:checked:first-child,
 .inline-toolbar.toolbar .button:focus:first-child,
 .inline-toolbar.toolbar .button:focus:active:first-child,
+.inline-toolbar.toolbar .button:focus:checked:first-child,
 .inline-toolbar.toolbar .button:insensitive:first-child,
 .inline-toolbar.toolbar .button:backdrop:first-child,
 .inline-toolbar.toolbar .button:backdrop:insensitive:first-child,
 .inline-toolbar.toolbar GtkToolButton:first-child .button,
 .inline-toolbar.toolbar GtkToolButton:first-child .button:active,
+.inline-toolbar.toolbar GtkToolButton:first-child .button:checked,
 .inline-toolbar.toolbar GtkToolButton:first-child .button:focus,
 .inline-toolbar.toolbar GtkToolButton:first-child .button:focus:active,
+.inline-toolbar.toolbar GtkToolButton:first-child .button:focus:checked,
 .inline-toolbar.toolbar GtkToolButton:first-child .button:insensitive,
 .inline-toolbar.toolbar GtkToolButton:first-child .button:backdrop,
 .inline-toolbar.toolbar GtkToolButton:first-child .button:backdrop:insensitive {
@@ -2441,33 +2461,43 @@ background-image: -gtk-gradient (linear,
 /* Rightmost button */
 .primary-toolbar .button.raised.linked:last-child,
 .primary-toolbar .button.raised.linked:active:last-child,
+.primary-toolbar .button.raised.linked:checked:last-child,
 .primary-toolbar .button.raised.linked:focus:last-child,
 .primary-toolbar .button.raised.linked:focus:active:last-child,
+.primary-toolbar .button.raised.linked:focus:checked:last-child,
 .primary-toolbar .button.raised.linked:insensitive:last-child,
 .primary-toolbar .button.raised.linked:backdrop:last-child,
 .primary-toolbar .raised.linked .button:last-child,
 .primary-toolbar .raised.linked .button:active:last-child,
+.primary-toolbar .raised.linked .button:checked:last-child,
 .primary-toolbar .raised.linked .button:focus:last-child,
 .primary-toolbar .raised.linked .button:focus:active:last-child,
+.primary-toolbar .raised.linked .button:focus:checked:last-child,
 .primary-toolbar .raised.linked .button:insensitive:last-child,
 .primary-toolbar .raised.linked .button:backdrop:last-child,
 .menubar.toolbar .linked .button:last-child,
 .menubar.toolbar .linked .button:active:last-child,
+.menubar.toolbar .linked .button:checked:last-child,
 .menubar.toolbar .linked .button:focus:last-child,
 .menubar.toolbar .linked .button:focus:active:last-child,
+.menubar.toolbar .linked .button:focus:checked:last-child,
 .menubar.toolbar .linked .button:insensitive:last-child,
 .menubar.toolbar .linked .button:backdrop:last-child,
 .menubar.toolbar .linked .entry:last-child,
-.menubar.toolbar .linked .entry.active:last-child,
+.menubar.toolbar .linked .entry:active:last-child,
+.menubar.toolbar .linked .entry:checked:last-child,
 .menubar.toolbar .linked .entry:focused:last-child,
 .menubar.toolbar .linked .entry:focused:active:last-child,
+.menubar.toolbar .linked .entry:focused:checked:last-child,
 .menubar.toolbar .linked .entry:insensitive:last-child,
-.menubar.toolbar .linked .raised.linked .button:last-child,
-.menubar.toolbar .linked .raised.linked .button:active:last-child,
-.menubar.toolbar .linked .raised.linked .button:focus:last-child,
-.menubar.toolbar .linked .raised.linked .button:focus:active:last-child,
-.menubar.toolbar .linked .raised.linked .button:insensitive:last-child,
-.menubar.toolbar .linked .raised.linked .button:backdrop:last-child,
+.menubar.toolbar .raised.linked .button:last-child,
+.menubar.toolbar .raised.linked .button:active:last-child,
+.menubar.toolbar .raised.linked .button:checked:last-child,
+.menubar.toolbar .raised.linked .button:focus:last-child,
+.menubar.toolbar .raised.linked .button:focus:active:last-child,
+.menubar.toolbar .raised.linked .button:focus:checked:last-child,
+.menubar.toolbar .raised.linked .button:insensitive:last-child,
+.menubar.toolbar .raised.linked .button:backdrop:last-child,
 .header-bar .linked .button:last-child,
 .header-bar .linked .button:active:last-child,
 .header-bar .linked .button:focus:last-child,
@@ -2475,27 +2505,31 @@ background-image: -gtk-gradient (linear,
 .header-bar .linked .button:insensitive:last-child,
 .header-bar .linked .button:backdrop:last-child,
 .header-bar .linked .entry:last-child,
-.header-bar .linked .entry.active:last-child,
+.header-bar .linked .entry:active:last-child,
 .header-bar .linked .entry:focused:last-child,
 .header-bar .linked .entry:focused:active:last-child,
 .header-bar .linked .entry:insensitive:last-child,
-.header-bar .linked .raised.linked .button:last-child,
-.header-bar .linked .raised.linked .button:active:last-child,
-.header-bar .linked .raised.linked .button:focus:last-child,
-.header-bar .linked .raised.linked .button:focus:active:last-child,
-.header-bar .linked .raised.linked .button:insensitive:last-child,
-.header-bar .linked .raised.linked .button:backdrop:last-child,
+.header-bar .raised.linked .button:last-child,
+.header-bar .raised.linked .button:active:last-child,
+.header-bar .raised.linked .button:focus:last-child,
+.header-bar .raised.linked .button:focus:active:last-child,
+.header-bar .raised.linked .button:insensitive:last-child,
+.header-bar .raised.linked .button:backdrop:last-child,
 .inline-toolbar.toolbar .button:last-child,
 .inline-toolbar.toolbar .button:active:last-child,
+.inline-toolbar.toolbar .button:checked:last-child,
 .inline-toolbar.toolbar .button:focus:last-child,
 .inline-toolbar.toolbar .button:focus:active:last-child,
+.inline-toolbar.toolbar .button:focus:checked:last-child,
 .inline-toolbar.toolbar .button:insensitive:last-child,
 .inline-toolbar.toolbar .button:backdrop:last-child,
 .inline-toolbar.toolbar .button:backdrop:insensitive:last-child,
 .inline-toolbar.toolbar GtkToolButton:last-child .button,
 .inline-toolbar.toolbar GtkToolButton:last-child .button:active,
+.inline-toolbar.toolbar GtkToolButton:last-child .button:checked,
 .inline-toolbar.toolbar GtkToolButton:last-child .button:focus,
 .inline-toolbar.toolbar GtkToolButton:last-child .button:focus:active,
+.inline-toolbar.toolbar GtkToolButton:last-child .button:focus:checked,
 .inline-toolbar.toolbar GtkToolButton:last-child .button:insensitive,
 .inline-toolbar.toolbar GtkToolButton:last-child .button:backdrop,
 .inline-toolbar.toolbar GtkToolButton:last-child .button:backdrop:insensitive {
@@ -2509,59 +2543,77 @@ background-image: -gtk-gradient (linear,
 }
 
 /* Single button */
-.primary-toolbar.toolbar .button:only-child,
-.primary-toolbar.toolbar .button:active:only-child,
-.primary-toolbar.toolbar .button:focus:only-child,
-.primary-toolbar.toolbar .button:focus:active:only-child,
-.primary-toolbar.toolbar .button:insensitive:only-child,
-.primary-toolbar.toolbar .button:backdrop:only-child,
-.primary-toolbar.toolbar .button:backdrop:insensitive:only-child,
-.primary-toolbar.toolbar GtkToolButton:only-child .button,
-.primary-toolbar.toolbar GtkToolButton:only-child .button:active,
-.primary-toolbar.toolbar GtkToolButton:only-child .button:focus,
-.primary-toolbar.toolbar GtkToolButton:only-child .button:focus:active,
-.primary-toolbar.toolbar GtkToolButton:only-child .button:insensitive,
-.primary-toolbar.toolbar GtkToolButton:only-child .button:backdrop,
-.primary-toolbar.toolbar GtkToolButton:only-child .button:backdrop:insensitive,
-.menubar.toolbar.toolbar .button:only-child,
-.menubar.toolbar.toolbar .button:active:only-child,
-.menubar.toolbar.toolbar .button:focus:only-child,
-.menubar.toolbar.toolbar .button:focus:active:only-child,
-.menubar.toolbar.toolbar .button:insensitive:only-child,
-.menubar.toolbar.toolbar .button:backdrop:only-child,
-.menubar.toolbar.toolbar .button:backdrop:insensitive:only-child,
-.menubar.toolbar.toolbar GtkToolButton:only-child .button,
-.menubar.toolbar.toolbar GtkToolButton:only-child .button:active,
-.menubar.toolbar.toolbar GtkToolButton:only-child .button:focus,
-.menubar.toolbar.toolbar GtkToolButton:only-child .button:focus:active,
-.menubar.toolbar.toolbar GtkToolButton:only-child .button:insensitive,
-.menubar.toolbar.toolbar GtkToolButton:only-child .button:backdrop,
-.menubar.toolbar.toolbar GtkToolButton:only-child .button:backdrop:insensitive,
-.header-bar .button:only-child,
-.header-bar .button:active:only-child,
-.header-bar .button:focus:only-child,
-.header-bar .button:focus:active:only-child,
-.header-bar .button:insensitive:only-child,
-.header-bar .button:backdrop:only-child,
-.header-bar .button:backdrop:insensitive:only-child,
-.header-bar GtkToolButton:only-child .button,
-.header-bar GtkToolButton:only-child .button:active,
-.header-bar GtkToolButton:only-child .button:focus,
-.header-bar GtkToolButton:only-child .button:focus:active,
-.header-bar GtkToolButton:only-child .button:insensitive,
-.header-bar GtkToolButton:only-child .button:backdrop,
-.header-bar GtkToolButton:only-child .button:backdrop:insensitive,
+.primary-toolbar .button.raised.linked:only-child,
+.primary-toolbar .button.raised.linked:active:only-child,
+.primary-toolbar .button.raised.linked:checked:only-child,
+.primary-toolbar .button.raised.linked:focus:only-child,
+.primary-toolbar .button.raised.linked:focus:active:only-child,
+.primary-toolbar .button.raised.linked:focus:checked:only-child,
+.primary-toolbar .button.raised.linked:insensitive:only-child,
+.primary-toolbar .button.raised.linked:backdrop:only-child,
+.primary-toolbar .raised.linked .button:only-child,
+.primary-toolbar .raised.linked .button:active:only-child,
+.primary-toolbar .raised.linked .button:checked:only-child,
+.primary-toolbar .raised.linked .button:focus:only-child,
+.primary-toolbar .raised.linked .button:focus:active:only-child,
+.primary-toolbar .raised.linked .button:focus:checked:only-child,
+.primary-toolbar .raised.linked .button:insensitive:only-child,
+.primary-toolbar .raised.linked .button:backdrop:only-child,
+.menubar.toolbar .linked .button:only-child,
+.menubar.toolbar .linked .button:active:only-child,
+.menubar.toolbar .linked .button:checked:only-child,
+.menubar.toolbar .linked .button:focus:only-child,
+.menubar.toolbar .linked .button:focus:active:only-child,
+.menubar.toolbar .linked .button:focus:checked:only-child,
+.menubar.toolbar .linked .button:insensitive:only-child,
+.menubar.toolbar .linked .button:backdrop:only-child,
+.menubar.toolbar .linked .entry:only-child,
+.menubar.toolbar .linked .entry:active:only-child,
+.menubar.toolbar .linked .entry:checked:only-child,
+.menubar.toolbar .linked .entry:focused:only-child,
+.menubar.toolbar .linked .entry:focused:active:only-child,
+.menubar.toolbar .linked .entry:focused:checked:only-child,
+.menubar.toolbar .linked .entry:insensitive:only-child,
+.menubar.toolbar .raised.linked .button:only-child,
+.menubar.toolbar .raised.linked .button:active:only-child,
+.menubar.toolbar .raised.linked .button:checked:only-child,
+.menubar.toolbar .raised.linked .button:focus:only-child,
+.menubar.toolbar .raised.linked .button:focus:active:only-child,
+.menubar.toolbar .raised.linked .button:focus:checked:only-child,
+.menubar.toolbar .raised.linked .button:insensitive:only-child,
+.menubar.toolbar .raised.linked .button:backdrop:only-child,
+.header-bar .linked .button:only-child,
+.header-bar .linked .button:active:only-child,
+.header-bar .linked .button:focus:only-child,
+.header-bar .linked .button:focus:active:only-child,
+.header-bar .linked .button:insensitive:only-child,
+.header-bar .linked .button:backdrop:only-child,
+.header-bar .linked .entry:only-child,
+.header-bar .linked .entry:active:only-child,
+.header-bar .linked .entry:focused:only-child,
+.header-bar .linked .entry:focused:active:only-child,
+.header-bar .linked .entry:insensitive:only-child,
+.header-bar .raised.linked .button:only-child,
+.header-bar .raised.linked .button:active:only-child,
+.header-bar .raised.linked .button:focus:only-child,
+.header-bar .raised.linked .button:focus:active:only-child,
+.header-bar .raised.linked .button:insensitive:only-child,
+.header-bar .raised.linked .button:backdrop:only-child,
 .inline-toolbar.toolbar .button:only-child,
 .inline-toolbar.toolbar .button:active:only-child,
+.inline-toolbar.toolbar .button:checked:only-child,
 .inline-toolbar.toolbar .button:focus:only-child,
 .inline-toolbar.toolbar .button:focus:active:only-child,
+.inline-toolbar.toolbar .button:focus:checked:only-child,
 .inline-toolbar.toolbar .button:insensitive:only-child,
 .inline-toolbar.toolbar .button:backdrop:only-child,
 .inline-toolbar.toolbar .button:backdrop:insensitive:only-child,
 .inline-toolbar.toolbar GtkToolButton:only-child .button,
 .inline-toolbar.toolbar GtkToolButton:only-child .button:active,
+.inline-toolbar.toolbar GtkToolButton:only-child .button:checked,
 .inline-toolbar.toolbar GtkToolButton:only-child .button:focus,
 .inline-toolbar.toolbar GtkToolButton:only-child .button:focus:active,
+.inline-toolbar.toolbar GtkToolButton:only-child .button:focus:checked,
 .inline-toolbar.toolbar GtkToolButton:only-child .button:insensitive,
 .inline-toolbar.toolbar GtkToolButton:only-child .button:backdrop,
 .inline-toolbar.toolbar GtkToolButton:only-child .button:backdrop:insensitive {
