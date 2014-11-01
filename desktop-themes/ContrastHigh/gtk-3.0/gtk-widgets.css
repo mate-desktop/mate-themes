@@ -44,8 +44,8 @@
     -GtkComboBox-arrow-scaling: 0.9;
     -GtkButton-default-border: 0;
 
-    -GtkWindow-resize-grip-width: 0;
-    -GtkWindow-resize-grip-height: 0;
+    -GtkWindow-resize-grip-width: 15;
+    -GtkWindow-resize-grip-height: 15;
 
     -GtkStatusbar-shadow-type: none;
 
@@ -140,8 +140,9 @@ GtkImage:insensitive {
     background-color: @theme_insensitive_color;
 }
 
-.separator {
-    color: @theme_insensitive_border;
+.grip {
+	background-color: transparent;
+	background-image: url("resize-grip.svg");
 }
 
 .floating-bar {
