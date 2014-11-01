@@ -1,5 +1,11 @@
 @define-color cluebar_color shade (mix (@bg_color, @base_color, 0.5), 0.95);
 
+NemoView .view,
+NautilusView .view {
+	background-color: @base_color;
+	color: @theme_fg_color;
+}
+
 NautilusWindow * {
     -GtkPaned-handle-size: 1;
 }
