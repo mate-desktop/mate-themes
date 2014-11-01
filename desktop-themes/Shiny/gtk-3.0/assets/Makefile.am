@@ -133,6 +133,7 @@ theme_DATA = \
 	radio-unselected-hover-alt.png \
 	radio-unselected-hover.png \
 	radio-unselected.png \
+	resize-grip.svg \
 	scale-horizontal-fill-backdrop.png \
 	scale-horizontal-fill-disabled.png \
 	scale-horizontal-fill.png \
