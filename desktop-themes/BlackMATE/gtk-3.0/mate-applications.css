@@ -63,6 +63,8 @@ CajaWindow .button:hover {
 
 }
 
+CajaWindow .button:checked,
+CajaWindow .button:hover:checked,
 CajaWindow .button:active,
 CajaWindow .button:hover:active {
 	background-image: linear-gradient(to bottom,
