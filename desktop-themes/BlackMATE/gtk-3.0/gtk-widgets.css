@@ -1705,9 +1705,7 @@ GtkMenuButton .menu {
 .primary-toolbar .toolbar GtkComboBox .button,
 .primary-toolbar.toolbar GtkComboBox .button {
 	border-radius: 3px;
-	background-image: linear-gradient(to bottom,
-	                                  @button_hover_gradient_color_a,
-	                                  @button_hover_gradient_color_b);
+	background-image: none;;
 
 }
 
@@ -1721,13 +1719,9 @@ GtkMenuButton .menu {
 	border-image: none;
 	border-style: solid;
 	border-color: shade(@button_border, 1.1);
-	background-image: -gtk-gradient (radial,
-					0.5 -2.0, 2.0,
-					0.5 -2.0, 3.0,
-					from (shade(@button_gradient_color_a, 1.5)),
-					color-stop (0.42, shade(@button_gradient_color_a, 0.7)),
-					color-stop (0.43, @theme_bg_color),
-					to (shade(@button_gradient_color_b, 0.7)));
+	background-image: linear-gradient(to bottom,
+                                      @button_hover_gradient_color_a,
+                                      @button_hover_gradient_color_b);
 }
 
 .toolbar .button:active:insensitive,
