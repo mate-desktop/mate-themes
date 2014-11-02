@@ -1552,15 +1552,15 @@ GtkComboBox .menu {
 	border-image: none;
 	color: @theme_fg_color;
 	background-image: linear-gradient(to bottom,
-	                                  shade(@theme_selected_bg_color, 1.3),
-	                                  shade(@theme_selected_bg_color, 0.5));
+	                                  @button_hover_gradient_color_a,
+	                                  @button_hover_gradient_color_b);
 }
 
 .menu.button:hover {
 	color: @theme_main_color;
 	background-image: linear-gradient(to bottom,
-	                                  #ffffff,
-	                                  #808080)
+	                                  shade(@theme_selected_bg_color, 1.3),
+	                                  shade(@theme_selected_bg_color, 0.5));
 }
 
 .menu.button:insensitive {
