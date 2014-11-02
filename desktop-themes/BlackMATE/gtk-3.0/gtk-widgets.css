@@ -101,6 +101,36 @@
 	background-color: shade(@theme_bg_color, 0.915);
 }
 
+.gtkstyle-fallback {
+	background-color: @theme_bg_color;
+	color: @theme_fg_color;
+}
+
+.gtkstyle-fallback:prelight {
+	background-color: shade(@theme_bg_color, 1.10);
+	color: @theme_fg_color;
+}
+
+.gtkstyle-fallback:active {
+	background-color: shade(@theme_bg_color, 0.915);
+	color: @theme_fg_color;
+}
+
+.gtkstyle-fallback:insensitive {
+	background-color: @less_dark_color; /*@insensitive_bg_color;*/
+	color: @insensitive_fg_color;
+	border-color: @insensitive_border_color;
+ }
+
+.gtkstyle-fallback:selected {
+	background-color: @theme_selected_bg_color;
+	color: @theme_selected_fg_color;
+}
+
+/************
+ * Tooltips *
+ ************/
+
 .tooltip {
 	padding: 4px 4px;
 	border-style: none;
@@ -113,6 +143,10 @@
 	background-color: @theme_tooltip_bg_color;
 	color: @theme_tooltip_fg_color;
 }
+
+/*****************
+ * Miscellaneous *
+ *****************/
 
 .content-view.view.rubberband,
 .view.rubberband,
@@ -493,6 +527,24 @@ GtkCalendar {
 	border-radius: 3px;
 }
 
+.frame.flat {
+	border-style: none;
+}
+
+.frame.action-bar {
+	padding: 6px;
+	border-width: 1px 0 0;
+}
+
+GtkScrolledWindow.frame {
+	background-color: transparent;
+}
+
+/* no double frames */
+GtkScrolledWindow GtkViewport.frame {
+	border-style: none;
+}
+
 /***************
  * GtkLevelBar *
  ***************/
@@ -703,6 +755,8 @@ GtkNotebook {
 	border-image: url("assets/button-border-dark1.svg") 3 / 3px stretch;
 }
 
+.notebook .button:checked,
+.notebook .button:hover:checked,
 .notebook .button:active,
 .notebook .button:hover:active {
 	border-image: url("assets/button-active-border-dark1.svg") 3 / 3px stretch;
@@ -1136,11 +1190,15 @@ GtkComboBox .menu {
 
 .button GtkImage,
 .button GtkImage:hover,
+.button GtkImage:checked,
+.button GtkImage:hover:checked,
 .button GtkImage:active,
 .button GtkImage:hover:active,
 .button GtkImage:insensitive,
 .button GtkLabel,
 .button GtkLabel:hover,
+.button GtkLabel:checked,
+.button GtkLabel:hover:checked,
 .button GtkLabel:active,
 .button GtkLabel:hover:active,
 .button GtkLabel:insensitive {
@@ -1162,6 +1220,8 @@ GtkComboBox .menu {
 					to (shade(@button_gradient_color_b, 0.7)));
 }
 
+.button:checked,
+.button:hover:checked,
 .button:active,
 .button:hover:active {
 	/* some apps need this */
@@ -1723,6 +1783,47 @@ GtkMenuButton .menu {
 	border-color: alpha(@frame_color, 0.6); /*shade(@theme_bg_color, 0.8);*/
 }
 
+/* Stack switcher */
+.stack-switcher > .button > GtkLabel, .header-bar .stack-switcher > .button.titlebutton > GtkLabel,
+.titlebar .stack-switcher > .button.titlebutton > GtkLabel,
+GtkCalendar.header .stack-switcher > .button.titlebutton > GtkLabel {
+	padding-left: 6px;
+	padding-right: 6px;
+}
+.stack-switcher > .button > GtkImage, .header-bar .stack-switcher > .button.titlebutton > GtkImage,
+.titlebar .stack-switcher > .button.titlebutton > GtkImage,
+GtkCalendar.header .stack-switcher > .button.titlebutton > GtkImage {
+	padding-left: 6px;
+	padding-right: 6px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+.stack-switcher > .button.text-button {
+	padding: 5px 10px 6px;
+}
+.stack-switcher > .button.image-button, .header-bar .stack-switcher > .titlebutton.button,
+.titlebar .stack-switcher > .titlebutton.button,
+GtkCalendar.header .stack-switcher > .titlebutton.button {
+	padding: 5px 2px;
+}
+.stack-switcher > .button.needs-attention > GtkLabel, .stack-switcher > .button.needs-attention > GtkImage {
+	animation: needs_attention 150ms ease-in;
+	background-color: @theme_bg_color; /* FIXME: ? */
+	background-size: 6px 6px, 6px 6px;
+	background-repeat: no-repeat;
+	background-position: right 3px, right 4px;
+}
+.stack-switcher > .button.needs-attention > GtkLabel:backdrop, .stack-switcher > .button.needs-attention > GtkImage:backdrop {
+	background-size: 6px 6px, 0 0;
+}
+.stack-switcher > .button.needs-attention > GtkLabel:dir(rtl), .stack-switcher > .button.needs-attention > GtkImage:dir(rtl) {
+	background-position: left 3px, left 4px;
+}
+.stack-switcher > .button.needs-attention:active > GtkLabel, .stack-switcher > .button.needs-attention:active > GtkImage, .stack-switcher > .button.needs-attention:checked > GtkLabel, .stack-switcher > .button.needs-attention:checked > GtkImage {
+	animation: none;
+	background-image: none;
+}
+
 /***************
  * Header bars *
  ***************/
@@ -2241,15 +2342,6 @@ GtkStatusbar .frame {
 	background-image: none;
 	/* gtk-3.12 */
 	background-color: transparent;
-}
-
-GtkScrolledWindow {
-	background-color: transparent;
-}
-
-/* no double frames */
-GtkScrolledWindow GtkViewport.frame {
-	border-style: none;
 }
 
 GtkImage,
@@ -2898,6 +2990,12 @@ NemoWindow .button:hover {
 
 }
 
+ContactsWindow .button:checked,
+ContactsWindow .button:hover:checked,
+NautilusWindow .button:checked,
+NautilusWindow .button:hover:checked,
+NemoWindow .button:checked,
+NemoWindow .button:hover:checked,
 ContactsWindow .button:active,
 ContactsWindow .button:hover:active,
 NautilusWindow .button:active,
