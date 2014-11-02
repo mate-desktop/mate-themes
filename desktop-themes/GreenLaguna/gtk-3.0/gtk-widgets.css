@@ -54,9 +54,17 @@
 /***************
  * Base States *
  ***************/
-* {
+.background {
 	color: @theme_fg_color;
 	background-color: @theme_bg_color;
+	border-style: none;
+	border-width: 0px;
+	border-radius: 0px;
+}
+
+.background:backdrop {
+	text-shadow: none;
+	icon-shadow: none;
 }
 
 *:hover {
@@ -74,6 +82,11 @@
 	color: @theme_selected_fg_color;
 }
 
+*:selected:backdrop {
+	text-shadow: none;
+	icon-shadow: none;
+}
+
 *:insensitive {
 	/* no need to a different background */
 	background-color: @theme_bg_color; /*@insensitive_bg_color;*/
@@ -85,11 +98,35 @@
 	background-color: shade(@theme_bg_color, 0.915);
 }
 
-.background {
-	border-style: none;
-	border-width: 0px;
-	border-radius: 0px;
+.gtkstyle-fallback {
+	background-color: @theme_bg_color;
+	color: @theme_fg_color;
 }
+
+.gtkstyle-fallback:prelight {
+	background-color: shade(@theme_bg_color, 1.10);
+	color: @theme_fg_color;
+}
+
+.gtkstyle-fallback:active {
+	background-color: shade(@theme_bg_color, 0.915);
+	color: @theme_fg_color;
+}
+
+.gtkstyle-fallback:insensitive {
+	background-color: @less_dark_color; /*@insensitive_bg_color;*/
+	color: @insensitive_fg_color;
+	border-color: @insensitive_border_color;
+}
+
+.gtkstyle-fallback:selected {
+	background-color: @theme_selected_bg_color;
+	color: @theme_selected_fg_color;
+}
+
+/************
+ * Tooltips *
+ ************/
 
 .tooltip {
 	padding: 4px 4px;
@@ -103,6 +140,10 @@
 	background-color: @theme_tooltip_bg_color;
 	color: @theme_tooltip_fg_color;
 }
+
+/*****************
+ * Miscellaneous *
+ *****************/
 
 .content-view.view.rubberband,
 .view.rubberband,
@@ -461,6 +502,24 @@ GtkCalendar {
 	border-radius: 3px;
 	border-color: alpha(@frame_color, 0.6);
 	padding: 2px;
+}
+
+.frame.flat {
+	border-style: none;
+}
+
+.frame.action-bar {
+	padding: 6px;
+	border-width: 1px 0 0;
+}
+
+GtkScrolledWindow.frame {
+	background-color: transparent;
+}
+
+/* no double frames */
+GtkScrolledWindow GtkViewport.frame {
+	border-style: none;
 }
 
 /***************
@@ -899,11 +958,15 @@ GtkTreeMenu .menuitem * {
 
 .button GtkImage,
 .button GtkImage:hover,
+.button GtkImage:checked,
+.button GtkImage:hover:checked,
 .button GtkImage:active,
 .button GtkImage:hover:active,
 .button GtkImage:insensitive,
 .button GtkLabel,
 .button GtkLabel:hover,
+.button GtkLabel:checked,
+.button GtkLabel:hover:checked,
 .button GtkLabel:active,
 .button GtkLabel:hover:active,
 .button GtkLabel:insensitive {
@@ -913,6 +976,8 @@ GtkTreeMenu .menuitem * {
 
 .button GtkImage,
 .button GtkImage:hover,
+.button GtkImage:checked,
+.button GtkImage:hover:checked,
 .button GtkImage:active,
 .button GtkImage:hover:active {
 	color: shade(@theme_selected_bg_color, 0.75);
@@ -932,6 +997,9 @@ GtkTreeMenu .menuitem * {
 	                                  @button_hover_gradient_color_b);
 }
 
+.button:checked,
+.button:hover:checked,
+.button.default:checked,
 .button:active,
 .button:hover:active,
 .button.default:active {
@@ -953,6 +1021,7 @@ GtkTreeMenu .menuitem * {
 }
 
 /* insensitive active toggle buttons */
+.button:checked:insensitive.
 .button:active:insensitive {
 	background-image: linear-gradient(to bottom,
 	                                  alpha(@button_gradient_color_b, 0.5),
@@ -1422,9 +1491,7 @@ GtkTreeMenu .menuitem * {
 .primary-toolbar.toolbar GtkComboBox .button {
 	border-radius: 3px;
 
-	background-image: linear-gradient(to bottom,
-	                                  @button_gradient_color_a,
-	                                  @button_gradient_color_b);
+	background-image: none;
 	/*border-color: shade(@button_border, 1.12);*/
 	/*border-image is defined in gtk-widgets-assets.css*/
 }
@@ -1502,6 +1569,47 @@ GtkTreeMenu .menuitem * {
 	background-image: linear-gradient(to bottom,
 	                                  shade(@toolbar_gradient_base, 0.88),
 	                                  shade(@theme_bg_color, 1.5));
+}
+
+/* Stack switcher */
+.stack-switcher > .button > GtkLabel, .header-bar .stack-switcher > .button.titlebutton > GtkLabel,
+.titlebar .stack-switcher > .button.titlebutton > GtkLabel,
+GtkCalendar.header .stack-switcher > .button.titlebutton > GtkLabel {
+	padding-left: 6px;
+	padding-right: 6px;
+}
+.stack-switcher > .button > GtkImage, .header-bar .stack-switcher > .button.titlebutton > GtkImage,
+.titlebar .stack-switcher > .button.titlebutton > GtkImage,
+GtkCalendar.header .stack-switcher > .button.titlebutton > GtkImage {
+	padding-left: 6px;
+	padding-right: 6px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+.stack-switcher > .button.text-button {
+	padding: 5px 10px 6px;
+}
+.stack-switcher > .button.image-button, .header-bar .stack-switcher > .titlebutton.button,
+.titlebar .stack-switcher > .titlebutton.button,
+GtkCalendar.header .stack-switcher > .titlebutton.button {
+	padding: 5px 2px;
+}
+.stack-switcher > .button.needs-attention > GtkLabel, .stack-switcher > .button.needs-attention > GtkImage {
+	animation: needs_attention 150ms ease-in;
+	background-color: @theme_bg_color; /* FIXME: ? */
+	background-size: 6px 6px, 6px 6px;
+	background-repeat: no-repeat;
+	background-position: right 3px, right 4px;
+}
+.stack-switcher > .button.needs-attention > GtkLabel:backdrop, .stack-switcher > .button.needs-attention > GtkImage:backdrop {
+	background-size: 6px 6px, 0 0;
+}
+.stack-switcher > .button.needs-attention > GtkLabel:dir(rtl), .stack-switcher > .button.needs-attention > GtkImage:dir(rtl) {
+	background-position: left 3px, left 4px;
+}
+.stack-switcher > .button.needs-attention:active > GtkLabel, .stack-switcher > .button.needs-attention:active > GtkImage, .stack-switcher > .button.needs-attention:checked > GtkLabel, .stack-switcher > .button.needs-attention:checked > GtkImage {
+	animation: none;
+	background-image: none;
 }
 
 /***************
@@ -2011,18 +2119,6 @@ GtkStatusbar .frame {
 GtkScrolledWindow,
 GtkOverlay /* for floating bars */ {
 	background-color: transparent;
-}
-
-/*GtkScrolledWindow.frame {
-	border-style: solid;
-	border-color: darker (@theme_bg_color);
-	border-width: 1px;
-	border-radius: 3px;
-}*/
-
-/* no double frames */
-GtkScrolledWindow GtkViewport.frame {
-	border-style: none;
 }
 
 GtkImage,
@@ -2693,8 +2789,8 @@ NemoSearchBar.info {
 
 NautilusWindow NautilusQueryEditor .toolbar,
 NautilusWindow .notebook NautilusQueryEditor .toolbar,
-NemoWindow NautilusQueryEditor .toolbar,
-NemoWindow .notebook NautilusQueryEditor .toolbar {
+NemoWindow NemoQueryEditor .toolbar,
+NemoWindow .notebook NemoQueryEditor .toolbar {
 	background-image: none;
 	background-color: transparent;
 	padding: 5px 7px;
@@ -2706,26 +2802,26 @@ NemoWindow .notebook NautilusQueryEditor .toolbar {
 }
 
 .nautilus-desktop.nautilus-canvas-item,
-.nemo-desktop.nautilus-canvas-item {
+.nemo-desktop.nemo-canvas-item {
 	color: @theme_bg_color;
 	text-shadow: 1px 1px black;
 }
 
 .nautilus-desktop.nautilus-canvas-item:active,
-.nemo-desktop.nautilus-canvas-item:active {
+.nemo-desktop.nemo-canvas-item:active {
 	color: @theme_text_color;
 }
 
 .nautilus-desktop.nautilus-canvas-item:selected,
-.nemo-desktop.nautilus-canvas-item:selected {
+.nemo-desktop.nemo-canvas-item:selected {
 	color: @theme_selected_fg_color;
 }
 
 .nautilus-desktop.nautilus-canvas-item:active,
 .nautilus-desktop.nautilus-canvas-item:prelight,
 .nautilus-desktop.nautilus-canvas-item:selected,
-.nemo-desktop.nautilus-canvas-item:active,
-.nemo-desktop.nautilus-canvas-item:prelight,
-.nemo-desktop.nautilus-canvas-item:selected {
+.nemo-desktop.nemo-canvas-item:active,
+.nemo-desktop.nemo-canvas-item:prelight,
+.nemo-desktop.nemo-canvas-item:selected {
 	text-shadow: none;
 }
