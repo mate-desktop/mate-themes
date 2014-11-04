@@ -14,7 +14,6 @@ theme_DATA = \
 	menu.png \
 	menu_prelight.png \
 	metacity-theme-1.xml \
-	metacity-theme-2.xml \
 	metacity-theme-3.xml \
 	minimize_focused_normal.svg \
 	minimize_focused_prelight.svg \
