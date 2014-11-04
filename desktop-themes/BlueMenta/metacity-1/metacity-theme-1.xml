@@ -50,14 +50,14 @@
 </frame_geometry>
 
 <frame_geometry name="border" has_title="false">
-	<distance name="left_width" value="1"/>
-	<distance name="right_width" value="1"/>
-	<distance name="bottom_height" value="1"/>
+	<distance name="left_width" value="2"/>
+	<distance name="right_width" value="2"/>
+	<distance name="bottom_height" value="2"/>
 	<distance name="left_titlebar_edge" value="0"/>
 	<distance name="right_titlebar_edge" value="0"/>
   	<distance name="button_width" value="0"/>
   	<distance name="button_height" value="0"/>
-	<distance name="title_vertical_pad" value="1"/>
+	<distance name="title_vertical_pad" value="2"/>
   	<border name="title_border" left="0" right="0" top="0" bottom="0"/>
   	<border name="button_border" left="0" right="0" top="0" bottom="0"/>
 </frame_geometry>
@@ -83,6 +83,33 @@
 	
 	<!-- Titlebar outline -->
 	<rectangle color="shade/#3c3c3c/1.2" filled="false" x="0" y="0" width="width - 1" height="top_height - 0"/>
+
+	<!-- Topmost lines -->
+	<line color="shade/#3c3c3c/1.2" x1="0" x2="width" y1="0" y2="0"/>
+	
+	<!-- Darkening of the left arch -->
+	<line color="shade/#3c3c3c/1.2" x1="0" x2="4" y1="1" y2="1"/>
+	<line color="shade/#3c3c3c/1.2" x1="0" x2="2" y1="2" y2="2"/>
+	<line color="shade/#3c3c3c/1.2" x1="0" x2="1" y1="3" y2="3"/>
+	<line color="shade/#3c3c3c/1.2" x1="0" x2="1" y1="4" y2="4"/>
+	
+	<line color="shade/#3c3c3c/1.2" x1="width-5" x2="width" y1="1" y2="1"/>
+	<line color="shade/#3c3c3c/1.2" x1="width-3" x2="width" y1="2" y2="2"/>
+	<line color="shade/#3c3c3c/1.2" x1="width-2" x2="width" y1="3" y2="3"/>
+	<line color="shade/#3c3c3c/1.2" x1="width-2" x2="width" y1="4" y2="4"/>
+
+	<line color="shade/#3c3c3c/0.9" x1="1" y1="top_height - 0" x2="width - 2" y2="top_height - 0"/>
+</draw_ops>
+
+<draw_ops name="draw_title-borders">
+	<!-- Background gradient -->
+	<gradient type="vertical" x="0" y="0" width="width" height="top_height">
+		<color value="#e8e8e8" />
+		<color value="#d2d2d2" />
+	</gradient>
+	
+	<!-- Titlebar outline -->
+	<rectangle color="shade/#3c3c3c/1.2" filled="false" x="0" y="0" width="width - 1" height="top_height - 1"/>
 
 	<!-- Topmost lines -->
 	<line color="shade/#3c3c3c/1.2" x1="0" x2="width" y1="0" y2="0"/>
@@ -465,7 +492,7 @@
 </frame_style>
 
 <frame_style name="border" geometry="border" parent="normal_focused">
-  <piece position="title" draw_ops="draw_title"/>
+  <piece position="title" draw_ops="draw_title-borders"/>
 	<piece position="titlebar" draw_ops="draw_title_inactive"/>
 </frame_style>
 
