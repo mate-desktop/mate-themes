@@ -1730,12 +1730,10 @@ GtkProgressBar.osd.progressbar {
 
 .titlebar {
     text-shadow: none;
- 
     background-image: linear-gradient(to bottom,
                                       shade (@theme_bg_color, 1.50),
                                       shade (@theme_bg_color, 1.0));
-
-    border-radius: 7px 7px 0px 0px;
+    border-radius: 0;
 }
 
 .tiled .titlebar {
@@ -1774,7 +1772,7 @@ GtkProgressBar.osd.progressbar {
 .button.text-button.titlebutton {
 	/* Due to a bug somewhere in gtk or cairo,
 	   a padding of zero (or even one) doesn't work always!!! */
-	padding: 0px;
+	padding: 4px 4px 4px 4px;
 
 	border-radius: 3px;
 	border-width: 1px;
