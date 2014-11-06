@@ -3461,7 +3461,7 @@ GtkBubbleWindow .toolbar {
 	background-image: linear-gradient(to bottom,
 		@wm_bg_a,
 		@wm_bg_b);
-	border-radius: 6px 6px 0px 0px;
+	border-radius: 0px;
 }
 
 .tiled .titlebar {
@@ -3495,7 +3495,7 @@ GtkBubbleWindow .toolbar {
 	icon-shadow: 0px 1px @wm_title_shadow;
 	color: @wm_title;
 	background: none;
-	padding: 5px 5px 6px 5px;
+	padding: 5px 5px 5px 5px;
 
 	border-radius: 4px;
 	border-width: 2px;
