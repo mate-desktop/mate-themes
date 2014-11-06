@@ -61,9 +61,9 @@ MatePanelAppletFrameDBus,
 MatePanelAppletContainer,
 MatePanelApplet {
 	background-image: none;
-	background-color: @theme_base_color;
+    background-color: @os_chrome_bg_color;
 	padding: 0;
-	color: @theme_fg_color;
+    color: @os_chrome_fg_color;
 	text-shadow: none;
 }
 
@@ -126,7 +126,7 @@ MatePanelApplet .button {
 	border-style: solid;
 	text-shadow: none;
 
-    color: @theme_fg_color;
+    color: @os_chrome_fg_color;
     background-image: none;
     background-color: @os_chrome_bg_color;
 }
