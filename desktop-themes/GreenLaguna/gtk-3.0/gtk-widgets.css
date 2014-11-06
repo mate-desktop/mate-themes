@@ -1978,12 +1978,6 @@ GtkProgressBar.osd.progressbar {
 	color: #747473;
 }
  
-/****************************************************************************************
- * Give and take related to recent gtk3 development,                                    *
- * to achieve full size of the icon menu of some of the applications whose notification *
- * icons appear in the system tray, the "shadow" is disabled.                           *
- ****************************************************************************************/
-/*
 .window-frame {
     border-color: @theme_bg_color;
     border-radius: 7px 7px 0 0;
@@ -1991,11 +1985,9 @@ GtkProgressBar.osd.progressbar {
     border-style: solid;
     background-color: @theme_bg_color;
     box-shadow: 0 0 0 2px @osd_button_shadow, 0 2px 8px 3px @osd_button_shadow;
-
- * this is used for the resize cursor area
+    /* this is used for the resize cursor area */
     margin: 10px;
 }
-*/
 
 /****************************
  * Suggested action buttons *

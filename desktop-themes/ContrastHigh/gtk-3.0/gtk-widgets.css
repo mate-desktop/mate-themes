@@ -1234,28 +1234,19 @@ GtkProgressBar.osd.progressbar {
     color: @theme_base_color;
 }
 
-/****************************************************************************************
- * Give and take related to recent gtk3 development,                                    *
- * to achieve full size of the icon menu of some of the applications whose notification *
- * icons appear in the system tray, the "shadow" is disabled.                           *
- ****************************************************************************************/
-/*
 .window-frame {
     border-color: darker(@theme_bg_color);
     border-radius: 7px 7px 0 0;
     border-width: 1px;
     border-style: solid;
-
     box-shadow: 0 2px 8px 3px alpha(black, 0.7);
-
- * this is used for the resize cursor area
+    /* this is used for the resize cursor area */
     margin: 10px;
 }
 
 .window-frame:backdrop {
     box-shadow: 0 2px 5px 1px alpha(black, 0.7);
 }
-*/
 
 /****************
  * App-specific *
