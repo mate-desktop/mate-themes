@@ -1004,73 +1004,72 @@ column-header:first-child .button {
     border-left-width: 0;
 }
 
-/*****************************************************************************************************
- * Check and Radio items                                                                             *
- * Related to recent gtk3 development, to reveal checkboxes as part of the dialogue                  *
- * of some of the applications whose notification icons appear in the system tray                    *
- * the reference section of the HighContrast theme is used.                                          *
- * https://git.gnome.org/browse/gnome-themes-standard/tree/themes/HighContrast/gtk-3.0/gtk.css#n1398 *
- *****************************************************************************************************/
+/*******************
+ * Checks & Radios *
+ *******************/
+.check,
+.radio {
+    border-width: 1px;
+    border-style: solid;
+    border-color: @theme_check_radio_border;
+    color: @theme_active_color;
+
+    background-color: @theme_check_radio_bg;
+}
+
+GtkCheckButton:hover,
+GtkCheckButton:active:hover,
+GtkCheckButton:selected,
+GtkCheckButton:selected:focus,
+GtkCheckButton:insensitive {
+	background-color: transparent;
+}
+
+.check:insensitive,
+.radio:insensitive {
+    border-color: @theme_button_insensitive_border;
+    color: @theme_button_insensitive_fg;
+    background-color: @theme_button_insensitive_bg;
+}
+
+.menuitem.check,
+.menuitem.radio {
+    background-color: transparent;
+    color: transparent;
+    border-color: transparent;
+}
+
+.menuitem.radio:active,
+.menuitem.check:active,
+.menuitem.radio:checked,
+.menuitem.check:checked,
+.menuitem.radio:inconsistent,
+.menuitem.check:inconsistent {
+    color: @theme_active_color;
+}
+
+.menuitem.radio:active:hover,
+.menuitem.check:active:hover,
+.menuitem.radio:checked:hover,
+.menuitem.check:checked:hover,
+.menuitem.radio:inconsistent:hover,
+.menuitem.check:inconsistent:hover {
+    color: @theme_base_color;
+}
+
+.menuitem.radio:active:insensitive,
+.menuitem.check:active:insensitive,
+.menuitem.radio:checked:insensitive,
+.menuitem.check:checked:insensitive,
+.menuitem.radio:inconsistent:insensitive,
+.menuitem.check:inconsistent:insensitive {
+    color: @theme_button_insensitive_fg;
+}
 
 GtkCheckButton.text-button, GtkRadioButton.text-button {
   padding: 1px;
-  outline-offset: 0; }
-
-.check {
-  color: rgba(0, 0, 0, 0.1);
-  background-image: none;
-  -gtk-icon-source: -gtk-icontheme("checkbox-symbolic"); }
-  .check:hover {
-    color: #7f7f7f; }
-  .check:checked, .check:active {
-    -gtk-icon-source: -gtk-icontheme("checkbox-checked-symbolic");
-    color: #000; }
-    .check:checked:hover, .check:active:hover {
-      color: #7f7f7f; }
-    .check:checked:insensitive, .check:active:insensitive {
-      color: #7f7f7f; }
-      .check:checked:insensitive:backdrop, .check:active:insensitive:backdrop {
-        color: #7f7f7f; }
-    .check:checked:backdrop, .check:active:backdrop {
-      color: #000; }
-  .check:insensitive {
-    color: rgba(127, 127, 127, 0.1); }
-    .check:insensitive:backdrop {
-      color: transparent; }
-  .check:inconsistent {
-    -gtk-icon-source: -gtk-icontheme("checkbox-mixed-symbolic"); }
-  .check:backdrop {
-    color: rgba(0, 0, 0, 0.1); }
-    .check:backdrop:selected {
-      color: rgba(255, 255, 255, 0.1); }
-
-.radio {
-  color: rgba(0, 0, 0, 0.1);
-  background-image: none;
-  -gtk-icon-source: -gtk-icontheme("radio-symbolic"); }
-  .radio:hover {
-    color: #7f7f7f; }
-  .radio:checked, .radio:active {
-    -gtk-icon-source: -gtk-icontheme("radio-checked-symbolic");
-    color: #000; }
-    .radio:checked:hover, .radio:active:hover {
-      color: #7f7f7f; }
-    .radio:checked:insensitive, .radio:active:insensitive {
-      color: #7f7f7f; }
-      .radio:checked:insensitive:backdrop, .radio:active:insensitive:backdrop {
-        color: #7f7f7f; }
-    .radio:checked:backdrop, .radio:active:backdrop {
-      color: #000; }
-  .radio:insensitive {
-    color: rgba(127, 127, 127, 0.1); }
-    .radio:insensitive:backdrop {
-      color: transparent; }
-  .radio:inconsistent {
-    -gtk-icon-source: -gtk-icontheme("radio-mixed-symbolic"); }
-  .radio:backdrop {
-    color: rgba(0, 0, 0, 0.1); }
-    .radio:backdrop:selected {
-      color: rgba(255, 255, 255, 0.1); }
+  outline-offset: 0;
+}
 
 /*********
  * Views *
