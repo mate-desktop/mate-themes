@@ -6,21 +6,24 @@ context = places
 
 icondir = $(themedir)/$(size)/$(context)
 
-icon_DATA=	\
-		folder-remote.png \
-		folder.icon \
-		folder.png \
-		network-server.png \
-		network-workgroup.png \
-		start-here.png \
-		user-desktop.png \
-		user-home.png \
-		user-trash.png \
-		$(NULL)
+icon_DATA= \
+	distributor-logo.png \
+	folder-documents.png \
+	folder-download.png \
+	folder-music.png \
+	folder-pictures.png \
+	folder.png \
+	folder-publicshare.png \
+	folder-remote.png \
+	folder-saved-search.png \
+	folder-templates.png \
+	folder-videos.png \
+	network-server.png \
+	network-workgroup.png \
+	start-here.png \
+	user-bookmarks.png \
+	user-desktop.png \
+	user-home.png \
+	user-trash.png
 
-EXTRA_DIST=	$(icon_DATA)
-
-if LEGACY_ICON_MAPPING
-install-data-local: install-iconDATA
-	(cd $(DESTDIR)$(themedir)/$(size) && $(ICONMAP) -c $(context))
-endif
+EXTRA_DIST=	$(icon_DATA) 
