@@ -6,18 +6,17 @@ context = emblems
 
 icondir = $(themedir)/$(size)/$(context)
 
-icon_DATA=	\
-		emblem-default.png \
-		emblem-desktop.png \
-		emblem-important.png \
-		emblem-personal.png \
-		emblem-special.png \
-		emblem-unreadable.png \
-		$(NULL)
+icon_DATA= \
+	emblem-default.png \
+	emblem-documents.png \
+	emblem-favorite.png \
+	emblem-important.png \
+	emblem-music.png \
+	emblem-ok.png \
+	emblem-photos.png \
+	emblem-shared.png \
+	emblem-synchronizing.png \
+	emblem-system.png \
+	emblem-videos.png
 
-EXTRA_DIST=	$(icon_DATA)
-
-if LEGACY_ICON_MAPPING
-install-data-local: install-iconDATA
-	(cd $(DESTDIR)$(themedir)/$(size) && $(ICONMAP) -c $(context))
-endif
+EXTRA_DIST=	$(icon_DATA) 

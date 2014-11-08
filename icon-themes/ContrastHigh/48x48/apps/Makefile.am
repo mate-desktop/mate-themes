@@ -6,99 +6,145 @@ context = apps
 
 icondir = $(themedir)/$(size)/$(context)
 
-icon_DATA=	\
-		accessories-calculator.png \
-		accessories-character-map.png \
-		accessories-text-editor.png \
-		accessories-dictionary.png \
-		advanced-directory.png \
-		applets-screenshooter.png \
-		ax-applet.png \
-		brasero.png \
-		charpick.png \
-		clock.png \
-		display-capplet.png \
-		eog.png \
-		evince.png \
-		evolution.png \
-		file-roller.png \
-		firefox-icon.png \
-		ghex.png \
-		gimp.png \
-		gkb.png \
-		gtkam-camera.png \
-		mate-application-generic.png \
-		mate-audio2.png \
-		mate-calc3.png \
-		mate-ccmime.png \
-		mate-ccscreensaver.png \
-		mate-cd.png \
-		mate-folder-generic.png \
-		mate-grecord.png \
-		mate-home.png \
-		mate-info.png \
-		mate-log.png \
-		mate-logo-icon-transparent.png \
-		mate-mailcheck.png \
-		mate-mini-commander.png \
-		mate-mixer-applet.png \
-		mate-palm.png \
-		mate-panel.png \
-		mate-searchtool-animation-rest.png \
-		mate-searchtool-animation.png \
-		mate-settings-accessibility-keyboard.png \
-		mate-settings-default-applications.png \
-		mate-settings-ui-behavior.png \
-		mate-starthere.png \
-		mate-windows.png \
-		mate-workspace.png \
-		gok.png \
-		help-browser.png \
-		launcher-program.png \
-		mozilla-icon.png \
-		multimedia-volume-control.png \
-		orca.png \
-		pidgin.png \
-		panel-drawer.png \
-		panel-force-quit.png \
-		perfmeter.png \
-		preferences-desktop-accessibility.png \
-		preferences-desktop-font.png \
-		preferences-desktop-keyboard.png \
-		preferences-desktop-keyboard-shortcuts.png \
-		preferences-desktop-locale.png \
-		preferences-desktop-sound.png \
-		preferences-desktop-theme.png \
-		preferences-desktop-wallpaper.png \
-		preferences-system-session.png \
-		preferences-system-windows.png \
-		rhythmbox.png \
-		smc.png \
-		sound-juicer.png \
-		star.png \
-		totem.png \
-		system-file-manager.png \
-		thunderbird-icon.png \
-		utilities-terminal.png \
-		utilities-system-monitor.png \
-		window-capplet.png \
-		$(NULL)
+icon_DATA= \
+	accessories-calculator.png \
+	accessories-character-map.png \
+	accessories-dictionary.png \
+	accessories-text-editor.png \
+	anaconda.png \
+	applets-screenshooter.png \
+	applications-blender.png \
+	atril.png \
+	audiobook.png \
+	ax-applet.png \
+	blender.png \
+	bluetooth.png \
+	boxes.png \
+	brasero.png \
+	cheese.png \
+	clock.png \
+	config-firewall.png \
+	configuration-editor.png \
+	dconf-editor.png \
+	deja-dup.png \
+	desktop.png \
+	devhelp.png \
+	display-capplet.png \
+	documents.png \
+	empathy.png \
+	engrampa.png \
+	eog.png \
+	eom.png \
+	evince.png \
+	evolution.png \
+	fedora-release-notes.png \
+	file-roller.png \
+	firefox.png \
+	gcolor2.png \
+	ghex.png \
+	gimp.png \
+	gkb.png \
+	glade.png \
+	gnome-abrt.png \
+	gnome-aisleriot.png \
+	gnome-boxes.png \
+	gnome-disks.png \
+	gnome-documents.png \
+	gnome-freecell.png \
+	gnome-nettool.png \
+	gnome-power-manager.png \
+	gnome-tweak-tool.png \
+	goa-panel.png \
+	gok.png \
+	gtkam-camera.png \
+	gtranslator.png \
+	haguichi.png \
+	headpin.png \
+	help-browser.png \
+	ifolder.png \
+	inkscape.png \
+	katello.png \
+	libreoffice-base.png \
+	libreoffice-calc.png \
+	libreoffice-draw.png \
+	libreoffice-impress.png \
+	libreoffice-math.png \
+	libreoffice-startcenter.png \
+	libreoffice-writer.png \
+	mate-application-generic.png \
+	mate-brightness-applet.png \
+	mate-invest-applet.png \
+	mate-logo-icon-transparent.png \
+	mate-log.png \
+	mate-netspeed-applet.png \
+	mate-network-properties.png \
+	mate-notification-properties.png \
+	mate-panel-clock.png \
+	mate-panel-drawer.png \
+	mate-panel-force-quit.png \
+	mate-panel-launcher.png \
+	mate-panel-window-list.png \
+	mate-panel-window-menu.png \
+	mate-panel-workspace-switcher.png \
+	mate-preferences-desktop-display.png \
+	mate-session-properties.png \
+	mate-starthere.png \
+	miro.png \
+	mozo.png \
+	multimedia-volume-control.png \
+	orca.png \
+	palimpsest.png \
+	pidgin.png \
+	pino.png \
+	preferences-color.png \
+	preferences-desktop-accessibility.png \
+	preferences-desktop-default-applications.png \
+	preferences-desktop-display.png \
+	preferences-desktop-keyboard.png \
+	preferences-desktop-keyboard-shortcuts.png \
+	preferences-desktop-locale.png \
+	preferences-desktop-remote-desktop.png \
+	preferences-desktop-screensaver.png \
+	preferences-desktop-sound.png \
+	preferences-desktop-theme.png \
+	preferences-desktop-wallpaper.png \
+	preferences-system-date-and-time.png \
+	preferences-system-network.png \
+	preferences-system-network-proxy.png \
+	preferences-system-notifications.png \
+	preferences-system-privacy.png \
+	preferences-system-search.png \
+	preferences-system-session.png \
+	preferences-system-sharing.png \
+	preferences-system-time.png \
+	preferences-system-windows.png \
+	rhythmbox.png \
+	scribus.png \
+	seahorse.png \
+	session-properties.png \
+	shotwell.png \
+	smc.png \
+	sound-juicer.png \
+	sparkleshare.png \
+	system-config-authentication.png \
+	system-file-manager.png \
+	system-software-install.png \
+	system-software-update.png \
+	system-users.png \
+	tasque.png \
+	terminal.png \
+	text-editor.png \
+	thunderbird-icon.png \
+	tomboy.png \
+	totem.png \
+	transmission.png \
+	user-info.png \
+	utilities-system-monitor.png \
+	utilities-terminal.png \
+	vim.png \
+	web-browser.png \
+	window-capplet.png \
+	xchat-gnome.png \
+	xchat.png
 
-EXTRA_DIST=	$(icon_DATA) \
-		symlinks.dat
-
-if LEGACY_ICON_MAPPING
-install-data-local: install-iconDATA
-	(cd $(DESTDIR)$(themedir)/$(size) && $(ICONMAP) -c $(context))
-endif
-
-install: install-am
-	$(SHELL) $(top_srcdir)/common/mkiconlinks.sh $(srcdir)/symlinks.dat $(DESTDIR)$(icondir) 
- 
-uninstall-symlinks:
-	list=`ls $(DESTDIR)$(icondir)`; for p in $$list; do \
-		if test -h $(DESTDIR)$(icondir)/$$p; then \
-			rm -f $(DESTDIR)$(icondir)/$$p; \
-		fi; \
-	done
-uninstall-am: uninstall-iconDATA uninstall-symlinks
+EXTRA_DIST=	$(icon_DATA) 
