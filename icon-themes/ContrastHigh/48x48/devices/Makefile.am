@@ -7,36 +7,52 @@ context = devices
 icondir = $(themedir)/$(size)/$(context)
 
 icon_DATA=	\
-		computer.png \
-		drive-harddisk.png \
-		drive-optical.png \
-		drive-removable-media.png \
-		mate-dev-printer-network.png \
-		mate-dev-printer-new.png \
-		input-keyboard.png \
-		input-mouse.png \
-		media-floppy.png \
-		media-optical.png \
-		pda.png \
-		printer.png \
-		$(NULL)
-
-EXTRA_DIST=	$(icon_DATA) \
-		symlinks.dat
-
-if LEGACY_ICON_MAPPING
-install-data-local: install-iconDATA
-	(cd $(DESTDIR)$(themedir)/$(size) && $(ICONMAP) -c $(context))
-endif
-
-install: install-am
-	$(SHELL) $(top_srcdir)/common/mkiconlinks.sh $(srcdir)/symlinks.dat $(DESTDIR)$(icondir)
-
-uninstall-symlinks:
-	list=`ls $(DESTDIR)$(icondir)`; for p in $$list; do \
-	if test -h $(DESTDIR)$(icondir)/$$p; then \
-		rm -f $(DESTDIR)$(icondir)/$$p; \
-	fi; \
-	done
-
-uninstall-am: uninstall-iconDATA uninstall-symlinks
+	audio-card.png \
+	audio-headphones.png \
+	audio-headset.png \
+	audio-input-microphone.png \
+	audio-speakers.png \
+	camera-photo.png \
+	camera-video.png \
+	camera-web.png \
+	colorimeter-colorhug.png \
+	computer-apple-ipad.png \
+	computer.png \
+	display-projector.png \
+	drive-harddisk-ieee1394.png \
+	drive-harddisk.png \
+	drive-harddisk-system.png \
+	drive-harddisk-usb.png \
+	drive-multidisk-alt2.png \
+	drive-multidisk-alt.png \
+	drive-multidisk.png \
+	drive-optical.png \
+	drive-removable-media.png \
+	headphones.png \
+	input-dialpad.png \
+	input-gaming.png \
+	input-keyboard.png \
+	input-mouse.png \
+	input-tablet.png \
+	input-touchpad.png \
+	media-flash.png \
+	media-floppy.png \
+	media-optical-bd.png \
+	media-optical-cd-audio.png \
+	media-optical-dvd.png \
+	media-optical.png \
+	media-removable.png \
+	media-zip.png \
+	multimedia-player-apple-ipod-touch.png \
+	multimedia-player.png \
+	network-wired.png \
+	network-wireless.png \
+	nm-applet.png \
+	phone-apple-iphone.png \
+	phone.png \
+	printer-network.png \
+	printer.png \
+	scanner.png \
+	video-display.png
+	
+EXTRA_DIST=	$(icon_DATA) 

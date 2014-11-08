@@ -3,7 +3,6 @@ SUBDIRS = \
 	ContrastHigh \
 	ContrastHighLargePrint \
 	ContrastHighLargePrintInverse \
-	ContrastHigh-SVG \
 	LargePrint \
 	Fog
 
