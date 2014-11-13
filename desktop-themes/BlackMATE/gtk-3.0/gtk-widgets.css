@@ -45,7 +45,8 @@
 	/*border-radius: 3px;*/
 
 	-GtkWidget-focus-padding: 2;
-	-GtkWidget-focus-line-width: 1;
+	/* disable focusline on active notebook tabs if focused*/
+	-GtkWidget-focus-line-width: 0;
 
 	-GtkWindow-resize-grip-width: 13;
 	-GtkWindow-resize-grip-height: 13; 
