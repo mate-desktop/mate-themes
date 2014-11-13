@@ -30,7 +30,8 @@
 	-WnckTasklist-fade-overlay-rect: 0;
 
 	-GtkWidget-focus-padding: 2;
-	-GtkWidget-focus-line-width: 1;
+	/* disable focusline on active notebook tabs if focused*/
+	-GtkWidget-focus-line-width: 0;
 	-GtkWindow-resize-grip-width: 11;
 	-GtkWindow-resize-grip-height: 11;
 }
