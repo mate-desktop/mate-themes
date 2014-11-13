@@ -41,7 +41,7 @@ style "default"
   GtkTreeView::expander-size = 16
 
   GtkWidget::focus-line-pattern = "\4\2"
-  GtkWidget::focus-line-width = 2
+  GtkWidget::focus-line-width = 0
   GtkWidget::focus-padding = 0
   GtkWidget::interior_focus = 1
   GtkWidget::link-color = "#000060"
@@ -69,23 +69,23 @@ style "default"
 
   fg[INSENSITIVE]      = "#999999"
   text[INSENSITIVE]    = "#999999"
-  bg[INSENSITIVE]      = "#ccccff"
-  base[INSENSITIVE]    = "#ccccff"
+  bg[INSENSITIVE]      = "#f4f4f2"
+  base[INSENSITIVE]    = "#f4f4f2"
 
-  fg[PRELIGHT]    = "#ccccff"
-  text[PRELIGHT]  = "#ccccff"
-  bg[PRELIGHT]    = "#000000"
-  base[PRELIGHT]  = "#000000"
+  fg[PRELIGHT]    = "#fff"
+  text[PRELIGHT]  = "#fff"
+  bg[PRELIGHT]    = "#555753"
+  base[PRELIGHT]  = "#555753"
 
   fg[ACTIVE]      = "#000000"
   text[ACTIVE]    = "#000000"
-  bg[ACTIVE]      = "#b8b891"
-  base[ACTIVE]    = "#b8b891"
+  bg[ACTIVE]      = "#d6d6d6"
+  base[ACTIVE]    = "#d6d6d6"
 
   fg[SELECTED]    = "#ffffff"
   text[SELECTED]  = "#ffffff"
   bg[SELECTED]    = "#000000"
-  base[SELECTED]  = "#333300"
+  base[SELECTED]  = "#000000"
 
 @gtk_stock_icons_rc@
 @panel_stock_icons_rc@
