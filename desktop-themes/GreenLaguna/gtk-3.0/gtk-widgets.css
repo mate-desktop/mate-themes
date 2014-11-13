@@ -40,7 +40,8 @@
 	-WnckTasklist-fade-overlay-rect: 0;
 
 	-GtkWidget-focus-padding: 2;
-	-GtkWidget-focus-line-width: 1;
+	/* disable focusline on active notebook tabs if focused*/
+	-GtkWidget-focus-line-width: 0;
 	-adwaita-focus-border-color: @focus_border;
 	-adwaita-focus-border-radius: 2;
 	-adwaita-focus-border-dashes: 1;
