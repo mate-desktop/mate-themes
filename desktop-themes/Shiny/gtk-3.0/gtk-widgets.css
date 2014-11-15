@@ -1360,6 +1360,12 @@ GtkComboBox .menu .menuitem *:insensitive {
     /*font-weight: 300;*/
 }
 
+.notebook :hover {
+    -gtk-image-effect: highlight;
+    background-color: shade(@bg_color, 1.05);
+    color: @fg_color;
+}
+
 .notebook tab {
     background-image: none;
     background-color: transparent;
