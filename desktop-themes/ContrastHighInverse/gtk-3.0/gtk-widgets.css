@@ -863,6 +863,12 @@ GtkSwitch.trough:active:insensitive {
     background-color: @theme_notebook_bg;
 }
 
+.notebook :hover {
+	-gtk-image-effect: highlight;
+	background-color: shade(@theme_notebook_bg, 1.03);
+	color: @theme_fg_color;
+}
+
 .notebook tab {
     padding: 3px;
     background-color: @theme_base_color;
