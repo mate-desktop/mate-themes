@@ -533,6 +533,12 @@ GtkLevelBar.vertical {
 	-GtkNotebook-initial-gap: 0;
 }
 
+.notebook :hover {
+	-gtk-image-effect: highlight;
+	background-color: shade(@theme_bg_color, 1.03);
+	color: @theme_fg_color;
+}
+
 .notebook.arrow:insensitive {
 	color: transparent;
 }
