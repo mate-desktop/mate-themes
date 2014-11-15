@@ -1559,6 +1559,12 @@ GtkCalendar.header .stack-switcher > .titlebutton.button {
 	border-width: 0px;
 }
 
+.notebook :hover {
+	-gtk-image-effect: highlight;
+	background-color: shade(@theme_bg_color, 1.07);
+	color: @theme_fg_color;
+}
+
 .notebook tab {
 	border-color: transparent;
 	border-width: 0px;
