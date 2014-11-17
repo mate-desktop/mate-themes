@@ -457,12 +457,19 @@ GtkComboBox .button {
 /*********
  * Menus *
  *********/
+
 .menuitem {
     color: @theme_fg_color;
 }
 
 .menuitem:insensitive {
     color: @theme_button_insensitive_fg;
+    border-style: solid;
+    border-left-color: @theme_fg_color;
+    border-right-color: @theme_fg_color;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-width: 1px;
 }
 
 .menubar .menuitem {
