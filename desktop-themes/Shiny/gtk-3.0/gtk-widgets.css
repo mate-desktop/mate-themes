@@ -1316,6 +1316,14 @@ GtkComboBox .menu .menuitem *:insensitive {
     padding-left: 6px;
 }
 
+/*******
+ * CSD *
+ *******/
+.titlebar {
+    background-color: @theme_base_color;
+    border-radius: 0px;
+}
+
 /************
  * notebook *
  ************/
