@@ -32,7 +32,8 @@
     -GtkWidget-cursor-aspect-ratio: 0.08;
 
     -GtkWidget-focus-padding: 1;
-    -GtkWidget-focus-line-width: 2;
+    /* disable focusline on active notebook tabs if focused*/
+    -GtkWidget-focus-line-width: 0;
     -GtkWidget-focus-line-pattern: "\002\002";
 
     -GtkMenu-horizontal-padding: 0;
