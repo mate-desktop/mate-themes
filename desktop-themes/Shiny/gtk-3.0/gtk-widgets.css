@@ -48,7 +48,8 @@
     -GtkWidget-separator-height: 2;
     -GtkWidget-wide-separators: true;
     -GtkWidget-focus-padding: 0;
-    -GtkWidget-focus-line-width: 1px;
+	/* disable focusline on active notebook tabs if focused*/
+	-GtkWidget-focus-line-width: 0;
     -GtkWidget-link-color: @link_color;
     -GtkWidget-visited-link-color: @link_color;
     -GtkWindow-decoration-button-layout: "close:";
