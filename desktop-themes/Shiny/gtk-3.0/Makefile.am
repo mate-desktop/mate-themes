@@ -13,5 +13,3 @@ theme_DATA = \
 EXTRA_DIST = $(theme_DATA)
 
 SUBDIRS = apps assets
-
-DIST_SUBDIRS = $(SUBDIRS)

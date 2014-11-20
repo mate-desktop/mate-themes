@@ -16,5 +16,3 @@ EXTRA_DIST = $(theme_DATA)
 
 SUBDIRS = assets
 
-DIST_SUBDIRS = assets
-

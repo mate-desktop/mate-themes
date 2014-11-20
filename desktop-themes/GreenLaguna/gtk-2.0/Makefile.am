@@ -8,5 +8,3 @@ theme_DATA = gtkrc \
 EXTRA_DIST = $(theme_DATA)
 
 SUBDIRS = Styles
-
-DIST_SUBDIRS = Styles
