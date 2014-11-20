@@ -50,5 +50,3 @@ theme_DATA = \
 EXTRA_DIST = $(theme_DATA)
 
 SUBDIRS = png
-
-DIST_SUBDIRS = png
