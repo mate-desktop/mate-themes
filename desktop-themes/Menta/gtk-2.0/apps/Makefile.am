@@ -21,8 +21,3 @@ SUBDIRS = Handles \
 	Caja \
 	Null \
 	Others
-
-DIST_SUBDIRS =  Handles \
-	Caja \
-	Null \
-	Others

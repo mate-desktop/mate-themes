@@ -8,6 +8,3 @@ EXTRA_DIST = $(theme_DATA)
 
 SUBDIRS = assets \
 			Styles
-
-DIST_SUBDIRS = assets \
-			Styles
