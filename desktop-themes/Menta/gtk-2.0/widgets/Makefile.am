@@ -14,9 +14,3 @@ SUBDIRS = \
 	Null \
 	Others \
 	Scale
-
-DIST_SUBDIRS = \
-	Panel \
-	Null \
-	Others \
-	Scale

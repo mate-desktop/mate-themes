@@ -17,14 +17,6 @@ SUBDIRS =		\
 	unity	\
 	xfwm4
 
-DIST_SUBDIRS =		\
-	cinnamon \
-	gtk-2.0		\
-	gtk-3.0		\
-	metacity-1 \
-	unity	\
-	xfwm4
-
 CLEANFILES = index.theme
 
 index.theme: index.theme.in

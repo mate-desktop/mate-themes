@@ -19,7 +19,3 @@ EXTRA_DIST = $(theme_DATA)
 SUBDIRS = \
 	assets \
 	borders
-
-DIST_SUBDIRS =  \
-	assets \
-	borders

@@ -12,12 +12,6 @@ SUBDIRS = \
    metacity-1 \
    pixmaps
 
-DIST_SUBDIRS = \
-   gtk-3.0 \
-   gtk-2.0 \
-   metacity-1 \
-   pixmaps
-
 CLEANFILES = index.theme
 
 index.theme: index.theme.in

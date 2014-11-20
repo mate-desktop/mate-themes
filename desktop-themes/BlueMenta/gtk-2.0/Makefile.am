@@ -6,6 +6,3 @@ EXTRA_DIST = $(theme_DATA)
 
 SUBDIRS = apps \
 	widgets
-
-DIST_SUBDIRS =  apps \
-	widgets
