@@ -89,19 +89,6 @@ AC_ARG_ENABLE(all-themes,
  [enable_all_themes=no])
 AM_CONDITIONAL(CORE_THEMES_ONLY, test "$enable_all_themes" = no)
 
-# Configure option for testing themes
-AC_ARG_ENABLE(test-themes,
- AC_HELP_STRING([--enable-test-themes],
-     [Install themes to test applications.]),,
- [enable_test_themes=no])
-
-if test "x$enable_test_themes" = "xyes"; then
-	TEST_THEMES="TraditionalOkTest"
-else
-	TEST_THEMES=""
-fi
-AC_SUBST(TEST_THEMES)
-
 ### Cursor theme to use for large print desktop themes.
 ### TODO: Should probably check whether specified/default themes are
 ### installed too, and do something appropriate if not.
@@ -455,7 +442,6 @@ mate-themes-$VERSION:
 	Enable placeholders:         ${enable_placeholders}
 	Enable legacy icons:         ${enable_mapping}
 	Enable all themes:           ${enable_all_themes}
-	Enable test themes:          ${enable_test_themes}
 	LargePrint cursor theme:     ${LARGEPRINT_CURSOR_THEME}
 	HC LargePrint cursor theme:  ${LARGEPRINT_HC_CURSOR_THEME}
 	HCI LargePrint cursor theme: ${LARGEPRINT_HCI_CURSOR_THEME}
