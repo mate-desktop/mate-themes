@@ -15,15 +15,6 @@ SUBDIRS =		\
 	wallpapers	\
 	xfwm4
 
-DIST_SUBDIRS =	\
-	doc			\
-	gtk-2.0		\
-	gtk-3.0		\
-	metacity-1	\
-	openbox-3	\
-	wallpapers	\
-	xfwm4
-
 CLEANFILES = index.theme
 
 index.theme: index.theme.in
