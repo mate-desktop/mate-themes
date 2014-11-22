@@ -1730,6 +1730,139 @@ GtkProgressBar.osd.progressbar {
 	border-radius: 0;    
 }
 
+/*******
+ * CSD *
+ *******/
+
+.titlebar {
+    text-shadow: none;
+    background-image: linear-gradient(to bottom,
+                                      shade (@theme_bg_color, 1.50),
+                                      shade (@theme_bg_color, 1.0));
+    border-radius: 0px 0px 0px 0px;
+}
+
+.tiled .titlebar {
+    border-radius: 0;
+}
+
+.maximized .titlebar {
+    border-radius: 0;
+}
+
+/* this is the default titlebar that is added by GTK
+ * when client-side decorations are in use and the application
+ * did not set a custom titlebar.
+ */
+
+.titlebar.default-decoration {
+    border: none;
+    box-shadow: none;
+}
+
+.titlebar .title {
+    font: Bold 10;
+    background: none;
+    color: @theme_fg_color;
+}
+
+ /* Colour when unfocused? does this work?*/
+.titlebar:backdrop {
+    color: #747473;
+    text-shadow: none;
+    background-image: none;
+    background-color: #747473;
+}
+
+.titlebar .titlebutton,
+.header-bar.frame.titlebar .button.image-button.titlebutton,
+.button.text-button.titlebutton {
+	/* Due to a bug somewhere in gtk or cairo,
+	   a padding of zero (or even one) doesn't work always!!! */
+	padding: 4px 4px 4px 4px;
+
+	border-radius: 3px;
+	border-width: 1px;
+	border-style: solid;
+	text-shadow: 0 -1px black;
+
+	color: #D9D9D9;
+	background-image: -gtk-gradient (radial,
+					0.5 -2.0, 2.0,
+					0.5 -2.0, 3.0,
+					from (shade(@button_gradient_color_a, 1.5)),
+					to (shade(@button_gradient_color_b, 1.1)));
+}
+
+.titlebar .titlebutton:hover,
+.header-bar.frame.titlebar .button.image-button.titlebutton:hover,
+.button.text-button.titlebutton:hover {
+	border-image: none;
+	border-style: solid;
+	border-color: shade(@button_border, 1.1);
+	background-image: linear-gradient(to bottom,
+	                                  @button_hover_gradient_color_a,
+	                                  @button_hover_gradient_color_b);
+}
+
+.titlebar .titlebutton:active,
+.titlebar .titlebutton:active:hover,
+.header-bar.frame.titlebar:active,
+.header-bar.frame.titlebar:active:hover,
+.button.image-button.titlebutton:active,
+.button.image-button.titlebutton:active:hover,
+.button.text-button.titlebutton:active,
+.button.text-button.titlebutton:active:hover {
+	/* some apps need this */
+	color: @theme_fg_color;
+	border-style: solid;
+	background-image: linear-gradient(to bottom,
+	                                  shade(@button_gradient_color_b, 1.0),
+	                                  @theme_bg_color 50%,
+	                                  shade(@button_gradient_color_a, 1.5));
+}
+
+.titlebar .right .titlebutton:first-child {
+    border-left: 1px solid @menu_separator;
+}
+
+.titlebar .right .titlebutton:last-child {
+}
+
+.titlebar .left .titlebutton:last-child {
+    border-right: 1px solid @menu_separator;
+}
+
+.titlebar .left .titlebutton:first-child {
+}
+
+.titlebar .titlebutton:backdrop,
+.titlebar .titlebutton:hover:backdrop,
+.header-bar.frame.titlebar .button.image-button.titlebutton:backdrop,
+.header-bar.frame.titlebar .button.image-button.titlebutton:hover:backdrop {
+    background: none;
+    color: @theme_main_color;
+    border-image: none;
+    icon-shadow: none;
+}
+
+.titlebar .titlebutton:hover:backdrop,
+.header-bar.frame.titlebar .button.image-button.titlebutton:hover:backdrop {
+	color: #747473;
+}
+
+.window-frame {
+    border-color: @theme_bg_color;
+    border-radius: 7px 7px 0 0;
+    border-width: 1px;
+    border-style: solid;
+    background-color: @theme_bg_color;
+    box-shadow: 0 0 0 2px @osd_button_shadow, 0 2px 8px 3px @osd_button_shadow;
+
+    /* this is used for the resize cursor area */
+    margin: 10px;
+}
+
 /****************************
  * Suggested action buttons *
  ****************************/
