@@ -913,7 +913,6 @@ row {
 GtkComboBox {
 	/* align with side buttons */
 	padding: 0;
-
 	-GtkComboBox-arrow-scaling: 0.5;
 	-GtkComboBox-shadow-type: none;
 	color: @theme_fg_color;
@@ -2104,12 +2103,15 @@ GtkStatusbar {
 	padding: 5px;
 	color: @theme_fg_color;
 	-GtkStatusbar-shadow-type: none;
+	font-size: smaller;
 }
 
 GtkStatusbar .frame {
 	background-image: none;
 	/* gtk-3.12 */
 	background-color: transparent;
+	padding: 0px;
+	border-width: 0;
 }
 
 GtkScrolledWindow,
