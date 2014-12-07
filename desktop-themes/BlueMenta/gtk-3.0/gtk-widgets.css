@@ -199,8 +199,12 @@ GtkStatusbar {
 	padding: 5px;
 	color: @theme_fg_color;
 	-GtkStatusbar-shadow-type: none;
-	box-shadow: inset 0 1px 0 0 @borders;
 	font-size: smaller;
+}
+
+GtkStatusbar .frame {
+	padding: 0px;
+	border-width: 0;
 }
 
 .dnd {

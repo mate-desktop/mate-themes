@@ -2318,12 +2318,15 @@ GtkStatusbar {
 	padding: 5px;
 	color: @theme_fg_color;
 	-GtkStatusbar-shadow-type: none;
+	font-size: smaller;
 }
 
 GtkStatusbar .frame {
 	background-image: none;
 	/* gtk-3.12 */
 	background-color: transparent;
+	padding: 0px;
+	border-width: 0;
 }
 
 GtkImage,
