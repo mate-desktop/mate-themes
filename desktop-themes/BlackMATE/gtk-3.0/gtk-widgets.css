@@ -2272,10 +2272,13 @@ GtkStatusbar {
 	padding: 5px;
 	color: @theme_fg_color;
 	-GtkStatusbar-shadow-type: none;
+	font-size: smaller;
 }
 
 GtkScrolledWindow {
 	background-color: transparent;
+	padding: 0px;
+	border-width: 0;
 }
 
 /* no double frames */
