@@ -270,7 +270,10 @@ CajaQueryEditor .toolbar .entry:focus {
 MatePanelApplet > GtkMenuBar.menubar,
 PanelToplevel,
 PanelWidget,
+PanelFrame,
 PanelAppletFrame,
+MatePanelAppletFrameDBus,
+MatePanelAppletContainer,
 MatePanelApplet {
 	background-image: none;
 	background-color: @theme_bg_color;
