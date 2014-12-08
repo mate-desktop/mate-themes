@@ -193,7 +193,10 @@ CajaQueryEditor .button {
 MatePanelApplet > GtkMenuBar.menubar,
 PanelToplevel,
 PanelWidget,
+PanelFrame,
 PanelAppletFrame,
+MatePanelAppletFrameDBus,
+MatePanelAppletContainer,
 MatePanelApplet {
 	padding: 0;
 	background-image: linear-gradient(to bottom,
