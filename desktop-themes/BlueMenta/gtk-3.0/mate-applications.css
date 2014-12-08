@@ -192,7 +192,10 @@ CajaQueryEditor .button {
 MatePanelApplet > GtkMenuBar.menubar,
 PanelToplevel,
 PanelWidget,
+PanelFrame,
 PanelAppletFrame,
+MatePanelAppletFrameDBus,
+MatePanelAppletContainer,
 MatePanelApplet {
 	background-color: @theme_bg_color;
 	background-image: none;
