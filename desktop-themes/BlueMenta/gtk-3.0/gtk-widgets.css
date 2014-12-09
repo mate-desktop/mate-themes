@@ -3957,12 +3957,20 @@ GtkModelButton.button:selected {
 	icon-shadow: none;
 }
 
+/****************************************************************************************
+* Give and take related to recent gtk3.3.14 development,                                *
+* to achieve full size of the icon menu of some of the applications whose notification  *
+* icons appear in the system tray, the "shadow" is disabled.                            *
+* same affect in mate-panel main menu, csd apps, header-bars apps                       *
+* if compositor is disable !!!!!                                                        *
+*****************************************************************************************/
+/*
 .window-frame {
 	border-radius: 0;
-	border-width: 0px;	
-	box-shadow: 0 0 0 1px @wm_border, 0 2px 8px 3px @wm_shadow;
+	border-width: 0px;
+	box-shadow: 0 0 0 1px @wm_border, 0 2px 8px 3px @wm_shadow;*/
 	/* this is used for the resize cursor area */
-	margin: 10px;
+/*	margin: 10px;
 }
 
 .window-frame.tiled {
@@ -3973,6 +3981,7 @@ GtkModelButton.button:selected {
 .window-frame:backdrop {
 	box-shadow: 0 0 0 1px shade(@wm_border,1.1), 0 2px 5px 1px @wm_shadow;
 }
+*/
 
 /* Various hacks and shit */
 /* FIXME - BELOW: Some stuff that can probably be done better or in another way */
