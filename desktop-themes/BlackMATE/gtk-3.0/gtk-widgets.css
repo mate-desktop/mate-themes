@@ -2146,7 +2146,15 @@ GtkProgressBar.osd.progressbar {
 .button.image-button.titlebutton:active,
 .button.image-button.titlebutton:active:hover,
 .button.text-button.titlebutton:active,
-.button.text-button.titlebutton:active:hover {
+.button.text-button.titlebutton:active:hover,
+.titlebar .titlebutton:checked,
+.titlebar .titlebutton:checked:hover,
+.header-bar.frame.titlebar:checked,
+.header-bar.frame.titlebar:checked:hover,
+.button.image-button.titlebutton:checked,
+.button.image-button.titlebutton:checked:hover,
+.button.text-button.titlebutton:checked,
+.button.text-button.titlebutton:checked:hover {
 	/* some apps need this */
 	color: @theme_fg_color;
 	border-style: solid;
@@ -2157,7 +2165,7 @@ GtkProgressBar.osd.progressbar {
 }
  
 .titlebar .right .titlebutton:first-child {
-    border-left: 1px solid @menu_separator;
+/*    border-left: 1px solid @menu_separator;*/
 }
  
 .titlebar .right .titlebutton:last-child {
@@ -2165,7 +2173,7 @@ GtkProgressBar.osd.progressbar {
 }
  
 .titlebar .left .titlebutton:last-child {
-    border-right: 1px solid @menu_separator;
+/*    border-right: 1px solid @menu_separator;*/
 }
  
 .titlebar .left .titlebutton:first-child {
