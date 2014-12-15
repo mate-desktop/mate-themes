@@ -201,18 +201,9 @@ MatePanelApplet {
 	text-shadow: none;
 }
 
-/* needed for a working top panel with 24px (default) */
-PanelMenuBar.menubar * {
-	background-image: none;
-	background-color: transparent;
-	border-width: 0px;
-	border-style: none;
-	padding: 0px;
-	text-shadow: none;
-}
-
 /* set selected menubar button */
 PanelMenuBar.menubar .menuitem:hover {
+    transition: all 300ms ease-out;
 	background-image: none;
 	background-color: shade(@theme_selected_bg_color, 1.1);
 	border-style: none;
@@ -227,6 +218,7 @@ PanelMenuBar.menubar .menuitem:hover {
 PanelMenuBar.menubar .menu .menuitem:checked:hover,
 PanelMenuBar.menubar .menu .menuitem:active:hover,
 PanelMenuBar.menubar .menu .menuitem:hover {
+    transition: all 300ms ease-out;
 	background-image:  linear-gradient(to bottom,
 	                                  shade(@theme_selected_bg_color, 1.6),
 	                                  shade(@theme_selected_bg_color, 0.6));
