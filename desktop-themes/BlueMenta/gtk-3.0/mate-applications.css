@@ -227,6 +227,7 @@ MatePanelApplet *:hover {
 /* desktop-applet, clockapplet, drivemount, character-map,
 dictionary */
 MatePanelApplet .button {
+	transition: all 300ms ease-out;
 	background-image: none;
 	background-color: @theme_bg_color;
 	color: @theme_text_color;
@@ -243,6 +244,7 @@ MatePanelApplet .button:checked:hover,
 MatePanelApplet .button:checked,
 MatePanelApplet .button:active:hover,
 MatePanelApplet .button:active {
+	transition: all 300ms ease-out;
 	background-image: linear-gradient(to bottom,
 		shade (@theme_selected_bg_color, 0.86),
 		shade (@theme_selected_bg_color, 0.26));
@@ -258,6 +260,7 @@ MatePanelApplet .button:active {
 }
 
 MatePanelApplet .button:hover {
+	transition: all 300ms ease-out;
 	background-image: linear-gradient(to bottom,
 		@theme_bg_color,
 		shade (@theme_selected_bg_color, 0.86));
@@ -274,6 +277,7 @@ MatePanelApplet .button:hover {
 
 /*Wncklist */
 WnckTasklist .button {
+	transition: all 300ms ease-out;
 	background-image: linear-gradient(to bottom,
 		shade (@theme_bg_color, 1.0),
 		shade (@theme_bg_color, 0.96));
@@ -283,7 +287,7 @@ WnckTasklist .button {
 	border-image: none;
 	border-style: solid;
 	border-width: 0px;
-	border-radius: 0px;
+	border-radius: 5px;
 	text-shadow: none;
 	-GtkWidget-window-dragging: true;
 }
@@ -292,6 +296,7 @@ WnckTasklist .button:checked:hover,
 WnckTasklist .button:checked,
 WnckTasklist .button:active:hover,
 WnckTasklist .button:active {
+	transition: all 300ms ease-out;
 	background-image: linear-gradient(to bottom,
 		shade (@theme_selected_bg_color, 0.86),
 		shade (@theme_selected_bg_color, 0.26));
@@ -307,6 +312,7 @@ WnckTasklist .button:active {
 }
 
 WnckTasklist .button:hover {
+	transition: all 300ms ease-out;
 	background-image: linear-gradient(to bottom,
 		@theme_bg_color,
 		shade (@theme_selected_bg_color, 0.86));
@@ -323,6 +329,7 @@ WnckTasklist .button:hover {
 
 /* set selected menubar button */
 PanelMenuBar.menubar .menuitem:hover {
+	transition: all 300ms ease-out;
 	background-image: linear-gradient(to bottom,
 		shade (@theme_selected_bg_color, 0.86),
 		shade (@theme_selected_bg_color, 0.26));
@@ -338,6 +345,7 @@ PanelMenuBar.menubar .menuitem:hover {
 PanelMenuBar.menubar .menu .menuitem:checked:hover,
 PanelMenuBar.menubar .menu .menuitem:active:hover,
 PanelMenuBar.menubar .menu .menuitem:hover {
+	transition: all 200ms ease-out;
 	background-color: @theme_selected_bg_color;
 	background-image: linear-gradient(to bottom,
 		shade (@theme_selected_bg_color, 1.0),
@@ -395,8 +403,8 @@ WnckPager {
 }
 
 NaTrayApplet {
-/*	-NaTrayApplet-icon-padding: 12;
-	-NaTrayApplet-icon-size: 16;*/
+	-NaTrayApplet-icon-padding: 12px;
+	-NaTrayApplet-icon-size: 16;
 }
 
 /* Classic icon style */

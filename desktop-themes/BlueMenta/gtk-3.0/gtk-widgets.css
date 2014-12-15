@@ -883,6 +883,7 @@ GtkComboBox.combobox-entry .button {
 }
 
 .button {
+	transition: all 200ms ease-out;
 	-GtkButton-image-spacing: 4;
 	-GtkButton-interior-focus: true;
 	-GtkButton-default-border: 0;
@@ -2085,6 +2086,7 @@ GtkTreeMenu .menuitem,
 }
 
 .menubar .menuitem {
+	transition: all 200ms ease-out;
 	border-style: none;
 	padding: 4px 6px;
 	text-shadow: 0 1px @button_text_shadow;
@@ -2102,6 +2104,7 @@ GtkTreeMenu .menuitem,
 
 .menu .menuitem {
 	-GtkMenuItem-arrow-scaling: 0.6;
+	transition: all 100ms ease-out;
 	padding: 4px;
 }
 
