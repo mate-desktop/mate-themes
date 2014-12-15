@@ -1182,6 +1182,7 @@ GtkComboBox .menu {
 	background-image: linear-gradient(to bottom,
 	                                  @button_hover_gradient_color_a,
 	                                  @button_hover_gradient_color_b);
+    transition: all 200ms ease-out;
 }
 
 .button.image-button,
@@ -1493,10 +1494,12 @@ GtkComboBox .menu {
 }*/
 
 .menubar .menuitem {
+    transition: all 200ms ease-out;
 	padding: 3px 7px;
 }
 
 .menu .menuitem {
+    transition: all 200ms ease-out;
 	padding: 3px 4px;
 }
 
@@ -2154,7 +2157,7 @@ GtkProgressBar.osd.progressbar {
 }
  
 .titlebar .right .titlebutton:first-child {
-    border-left: 1px solid @menu_separator; 
+    border-left: 1px solid @menu_separator;
 }
  
 .titlebar .right .titlebutton:last-child {
@@ -2162,7 +2165,7 @@ GtkProgressBar.osd.progressbar {
 }
  
 .titlebar .left .titlebutton:last-child {
-    border-right: 1px solid @menu_separator; 
+    border-right: 1px solid @menu_separator;
 }
  
 .titlebar .left .titlebutton:first-child {
