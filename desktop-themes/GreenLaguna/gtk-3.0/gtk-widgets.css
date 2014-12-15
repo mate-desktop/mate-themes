@@ -941,19 +941,18 @@ GtkTreeMenu .menuitem * {
  * Buttons *
  ***********/
 .button {
-	/* Due to a bug somewhere in gtk or cairo,
-	   a padding of zero (or even one) doesn't work always! */
-	padding: 2px;
-	-GtkWidget-focus-line-width: 0;
-
-	border-radius: 3px;
-	border-width: 1px;
-	border-style: solid;
-	/*border-image is defined in gtk-widgets-assets.css*/
-
-	background-image: linear-gradient(to bottom,
-	                                  @button_gradient_color_a,
-	                                  @button_gradient_color_b);
+    /* Due to a bug somewhere in gtk or cairo,
+    a padding of zero (or even one) doesn't work always! */
+    padding: 2px;
+    -GtkWidget-focus-line-width: 0;
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: solid;
+    /*border-image is defined in gtk-widgets-assets.css*/
+    background-image: linear-gradient(to bottom,
+                                      @button_gradient_color_a,
+                                      @button_gradient_color_b);
+    transition: all 200ms ease-out;
 }
 
 .button.image-button,
@@ -1267,23 +1266,24 @@ GtkTreeMenu .menuitem * {
 
 /* this controls the general appearance of the menubar */
 .menubar {
-	background-image: none;
-	background-color: @theme_bg_color;
-	border-width: 0px;
-	border-style: none;
-	padding: 0px;
-	color: @theme_text_color;
-
-	-GtkWidget-window-dragging: true;
-	/*-GtkMenuBar-internal-padding: 0;*/
+    background-image: none;
+    background-color: @theme_bg_color;
+    border-width: 0px;
+    border-style: none;
+    padding: 0px;
+    color: @theme_text_color;
+    -GtkWidget-window-dragging: true;
+    /*-GtkMenuBar-internal-padding: 0;*/
 }
 
 .menubar .menuitem {
-	padding: 3px 7px;
+    transition: all 200ms ease-out;
+    padding: 3px 7px;
 }
 
 .menu .menuitem {
-	padding: 3px 4px;
+    transition: all 200ms ease-out;
+    padding: 3px 4px;
 }
 
 .menubar .menuitem,
