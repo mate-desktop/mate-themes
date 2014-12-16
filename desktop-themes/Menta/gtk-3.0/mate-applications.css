@@ -250,7 +250,7 @@ PanelMenuBar.menubar .menu .menuitem:hover {
 /* desktop-applet, clockapplet, drivemount, character-map,
 dictionary */
 MatePanelApplet .button {
-	padding: 1px 0px 1px 0px;
+	transition: all 300ms ease-out;
 	background-image: none;
 	background-color: @theme_bg_color;
 	color: @theme_text_color;
@@ -265,12 +265,12 @@ MatePanelApplet .button {
 
 MatePanelApplet .button:active:hover,
 MatePanelApplet .button:active {
+	transition: all 300ms ease-out;
 	background-image: linear-gradient(to bottom,
 		shade (@theme_selected_bg_color, 0.86),
 		shade (@theme_selected_bg_color, 0.26));
 	background-color: @theme_base_color;
 	color: shade (@theme_selected_fg_color, 1.00);
-
 	border-image: none;
 	border-style: solid;
 	border-width: 0px;
@@ -280,12 +280,12 @@ MatePanelApplet .button:active {
 }
 
 MatePanelApplet .button:hover {
+	transition: all 300ms ease-out;
 	background-image: linear-gradient(to bottom,
 		@theme_bg_color,
 		shade (@theme_selected_bg_color, 0.86));
 	background-color: @theme_base_color;
 	color: shade (@theme_text_color, 1.0);
-
 	border-image: none;
 	border-style: solid;
 	border-width: 0px;
@@ -296,6 +296,7 @@ MatePanelApplet .button:hover {
 
 /*Wncklist */
 WnckTasklist .button {
+	transition: all 300ms ease-out;
 	background-image: linear-gradient(to bottom,
 		shade (@theme_bg_color, 1.0),
 		shade (@theme_bg_color, 0.96));
@@ -312,12 +313,12 @@ WnckTasklist .button {
 
 WnckTasklist .button:active:hover,
 WnckTasklist .button:active {
+	transition: all 300ms ease-out;
 	background-image: linear-gradient(to bottom,
 		shade (@theme_selected_bg_color, 0.86),
 		shade (@theme_selected_bg_color, 0.26));
 	background-color: @theme_base_color;
 	color: shade (@theme_selected_fg_color, 1.00);
-
 	border-image: none;
 	border-style: solid;
 	border-width: 0px;
@@ -327,18 +328,47 @@ WnckTasklist .button:active {
 }
 
 WnckTasklist .button:hover {
+	transition: all 300ms ease-out;
 	background-image: linear-gradient(to bottom,
 		@theme_bg_color,
 		shade (@theme_selected_bg_color, 0.86));
 	background-color: @theme_base_color;
 	color: shade (@theme_text_color, 1.0);
-
 	border-image: none;
 	border-style: solid;
 	border-width: 0px;
 	border-radius: 5px;
 	text-shadow: none;
 	-GtkWidget-window-dragging: true;
+}
+
+/* set selected menubar button */
+PanelMenuBar.menubar .menuitem:hover {
+	transition: all 300ms ease-out;
+	background-image: linear-gradient(to bottom,
+		shade (@theme_selected_bg_color, 0.86),
+		shade (@theme_selected_bg_color, 0.26));
+	background-color: @theme_base_color;
+	color: shade (@theme_selected_fg_color, 1.00);
+	text-shadow: none;
+	border-style: solid;
+	border-width: 0px;
+	border-radius: 5px;
+}
+
+/* set selected menubar menuitem */
+PanelMenuBar.menubar .menu .menuitem:active:hover,
+PanelMenuBar.menubar .menu .menuitem:hover {
+	transition: all 200ms ease-out;
+	background-color: @theme_selected_bg_color;
+	background-image: linear-gradient(to bottom,
+		shade (@theme_selected_bg_color, 1.0),
+		shade (@theme_selected_bg_color, 0.85));
+	color: shade (@theme_selected_fg_color, 1.00);
+	text-shadow: none;
+	border-style: none;
+	border-width: 0px;
+	border-radius: 0px;
 }
 
 /* set normal button WnckSelector */
