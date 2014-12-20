@@ -1,3 +1,10 @@
+{
+	bg[SELECTED] = shade (1.0, @selected_bg_color)
+	bg[PRELIGHT] = shade (1.0, @selected_bg_color)
+}
+
+widget "*WnckPager*"	    	    style "workspace-switcher"
+
 # Workaround for the evolution ETable (bug #527532)
 widget_class "*.<ETable>.<ECanvas>" style "treeview_header"
 # Workaround for the evolution ETree
