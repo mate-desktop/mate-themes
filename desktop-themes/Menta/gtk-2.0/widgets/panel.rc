@@ -124,6 +124,12 @@ style "theme-panel-handle"
 	}
 }
 
+style "workspace-switcher"
+{
+	bg[SELECTED] = shade (1.0, @selected_bg_color)
+	bg[PRELIGHT] = shade (1.2, @selected_bg_color)
+}
+
 widget "*PanelWidget*"			style "theme-panel"
 #widget "*PanelApplet*"			style "theme-panel"
 widget "*fast-user-switch*"		style "theme-panel"
@@ -143,6 +149,7 @@ widget_class "*tray*"			style "theme-panel"
 widget_class "*computertemp*"		style "theme-panel"
 widget_class "*Applet*Tomboy*"		style "theme-panel"
 widget_class "*Applet*Netstatus*"	style "theme-panel"
+widget "*WnckPager*"	    	    style "workspace-switcher"
 
 # Fixes for tooltip text in some apps.
 widget_class "*Notif*Beagle*"	style "theme-panel-light"
