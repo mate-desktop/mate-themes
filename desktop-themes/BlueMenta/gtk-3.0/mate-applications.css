@@ -72,6 +72,13 @@ CajaWindow .view {
 	background-color: shade (@theme_bg_color, 1.08);
 }
 
+/*FIXME normaly this isn't the right entry for adjusting
+the sidebar entry hover color*/
+CajaWindow .view row:hover {
+	background-color: shade (@theme_selected_bg_color, 1.15);
+	color: shade (@theme_selected_bg_color, 0.35);
+}
+
 CajaWindow .rubberband,
 CajaWindow .view.rubberband {
 	background-color: alpha (@theme_selected_bg_color, 0.35);
@@ -423,9 +430,15 @@ NaTrayApplet {
  ****************/
 
 /* pluma line numbers */
-
 PlumaView {
     background-color: shade (@theme_bg_color, 1.07);
+}
+
+/*FIXME normaly this isn't the right entry for adjusting
+the sidebar entry hover color*/
+PlumaWindow .view row:hover {
+	background-color: shade (@theme_selected_bg_color, 1.15);
+	color: shade (@theme_selected_bg_color, 0.35);
 }
 
 /****************
