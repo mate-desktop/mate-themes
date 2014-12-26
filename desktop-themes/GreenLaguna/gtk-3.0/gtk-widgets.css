@@ -183,6 +183,14 @@
 	color: @theme_selected_fg_color;
 }
 
+/* ie. pluma open dialog */
+.view row:hover {
+	background-image:  linear-gradient(to bottom,
+	                                  @theme_bg_color,
+	                                  shade(@theme_bg_color, 0.80));
+	color: shade (@theme_selected_bg_color, 0.35);
+}
+
 /* Exceptional views */
 GtkTextView.view,
 GtkTextView.view:insensitive,
@@ -1291,7 +1299,7 @@ GtkTreeMenu .menuitem * {
 	/*border-color: shade(@theme_selected_bg_color, 0.8);*/
 	background-image:  linear-gradient(to bottom,
 	                                  @theme_bg_color,
-	                                  shade(@theme_bg_color, 0.55));
+	                                  shade(@theme_bg_color, 0.80));
 }
 
 .menu.button:insensitive {
@@ -2335,6 +2343,21 @@ GtkLabel {
 .sidebar.separator,
 .sidebar.separator:hover {
 	color: alpha(@frame_color, 0.6);
+}
+
+.sidebar row:hover {
+	background-image:  linear-gradient(to bottom,
+	                                  @theme_bg_color,
+	                                  shade(@theme_bg_color, 0.80));
+	color: shade (@theme_selected_bg_color, 0.35);
+}
+
+/* ie. pluma open dialog */
+.sidebar GtkTreeView row:hover {
+	background-image:  linear-gradient(to bottom,
+	                                  @theme_bg_color,
+	                                  shade(@theme_bg_color, 0.80));
+	color: shade (@theme_selected_bg_color, 0.35);
 }
 
 ApDocView, /* Abiword */
