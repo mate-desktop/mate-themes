@@ -1757,17 +1757,19 @@ GtkComboBox.combobox-entry .button:insensitive:last-child {
 	box-shadow: inset 1px 0 @inset_dark_color;
 }
 
+GtkComboBox.combobox-entry .button:hover,
 GtkComboBox.combobox-entry .button:active,
 GtkComboBox.combobox-entry .button:active:hover {
-	color: @theme_text_color;
+    color: shade (@theme_selected_bg_color, 0.80);
+    transition: all 200ms ease-in;
 }
 
 GtkComboBox .button {
-	color: @theme_text_color;
+    color: @theme_text_color;
 }
 
 GtkComboBox .button:hover {
-	color: @theme_text_color;
+    color: shade (@theme_selected_bg_color, 0.80);
 }
 
 /**************
@@ -3022,7 +3024,7 @@ GtkSwitch.slider {
 GtkTreeView {
 	-GtkTreeView-vertical-separator: 0;
 
-	-GtkWidget-focus-line-width: 1;
+	-GtkWidget-focus-line-width: 0;
 	-GtkWidget-focus-padding: 1;
 
 	outline-color: alpha(@theme_text_color, 0.6);
@@ -3072,7 +3074,7 @@ GtkIconView.cell:selected:focus {
 }
 
 .cell {
-	color: @theme_text_color;
+	/*color: @theme_text_color;*/ /* Don't use, seems to change hover effect on combobox menuitems */
 	padding: 2px;
 	text-shadow: none;
 }
