@@ -1486,8 +1486,11 @@ GtkComboBox.combobox-entry .button {
 }
 
 GtkLinkButton.button,
-GtkLinkButton.button:active {
-	text-shadow: none;
+GtkLinkButton.button:hover,
+GtkLinkButton.button:active,
+GtkLinkButton.button:active:hover {
+    transition: all 400ms ease-in;
+    text-shadow: none;
 }
 
 .button .separator { 
