@@ -1130,16 +1130,15 @@ GtkComboBox .menu {
  ***********/
 .button {
 	padding: 0;
-
 	border-radius: 3px;
 	border-width: 1px;
 	border-style: solid;
 	text-shadow: 0 -1px black;
-
 	color: @theme_fg_color;
 	background-image: linear-gradient(to bottom,
 	                                  @button_hover_gradient_color_a,
 	                                  @button_hover_gradient_color_b);
+	transition: all 200ms ease-out;
 }
 
 .button.image-button,
@@ -1436,10 +1435,12 @@ GtkComboBox .menu {
 }*/
 
 .menubar .menuitem {
+	transition: all 200ms ease-out;
 	padding: 3px 7px;
 }
 
 .menu .menuitem {
+	transition: all 200ms ease-out;
 	padding: 3px 4px;
 }
 
