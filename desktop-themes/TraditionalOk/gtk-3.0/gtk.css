@@ -255,6 +255,7 @@
 @define-color osd_bg_color @theme_tooltip_bg_color;
 @define-color osd_fg_color @theme_tooltip_fg_color;
 @define-color osd_border_color @theme_tooltip_border_color;
+@define-color osd_text_shadow alpha(black, 0.75);
 
 /***************
  * progressbar *
@@ -426,6 +427,9 @@
 
 @define-color trough_gradient_a shade(@core_color_b, 0.81);
 @define-color trough_gradient_b shade(@core_color_b, 0.90);
+
+
+@define-color wm_shadow alpha(black, 0.5);
 
 /***********
  * imports *
