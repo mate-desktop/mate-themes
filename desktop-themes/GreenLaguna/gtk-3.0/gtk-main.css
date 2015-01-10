@@ -96,10 +96,16 @@
 @define-color app_notification_c @theme_bg_color;
 @define-color app_notification_border #939493;
 
+/***********
+ * Popover *
+ ***********/
+@define-color osd_popover_bg alpha(@osd_base, 0.90);
+
 @define-color wm_a shade(@theme_bg_color, 1.3);
 @define-color wm_b @theme_bg_color;
 @define-color wm_util shade(@theme_bg_color, 1.2);
 @define-color wm_unfocus shade(@theme_bg_color, 1.05);
+@define-color wm_shadow alpha(black, 0.5);
 
 @import url("gtk-main-common.css");
 @import url("gtk-widgets.css");

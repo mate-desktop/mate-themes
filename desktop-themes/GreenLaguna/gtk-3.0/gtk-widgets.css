@@ -1729,6 +1729,84 @@ GtkProgressBar.osd.progressbar {
 	border-radius: 0;    
 }
 
+/*************************
+ * Touch text selections *
+ *************************/
+
+GtkPopover {
+	border-radius: 5px;
+	background-clip: border-box;
+	/*
+	background-color: @osd_popover_bg;
+	*/
+	background-color: @theme_bg_color;
+
+	border-color: darker(@theme_bg_color);
+	border-width: 1px;
+	border-style: solid;
+
+	box-shadow: 0 2px 3px @wm_shadow;
+	margin: 10px;
+	padding: 2px;
+}
+
+GtkPopover.osd {
+	background-color: @osd_popover_bg;
+	border-color: @theme_bg_color;
+	box-shadow: 0 2px 8px 3px alpha(@wm_shadow, 0.4);
+	color: darker(white);
+}
+
+GtkPopover > .list,
+GtkPopover > .view,
+GtkPopover > .toolbar {
+	background-color: transparent;
+}
+
+GtkPopover.osd > .toolbar .button {
+	border-radius: 0px;
+	border-width: 0px;
+	background-image: none;
+	background-color: transparent;
+}
+
+GtkModelButton.button {
+	color: @theme_fg_color;
+}
+
+GtkModelButton.button:active,
+GtkModelButton.button:insensitive,
+GtkModelButton.button:active:insensitive,
+GtkModelButton.button {
+	background-color: transparent;
+	background-image: none;
+	border-color: transparent;
+	border-image: none;
+	border-style: none;
+	box-shadow: none;
+}
+
+GtkPopover .separator {
+	font-size: 80%;
+	font-weight: bold;
+	color: alpha(@theme_text_color,0.4);
+	text-shadow: none;
+	background-color: transparent;
+	icon-shadow: none;
+	border: 0;
+}
+
+GtkModelButton.button:active:hover,
+GtkModelButton.button:hover,
+GtkModelButton.button:selected {
+	background-image: none;
+	background-color: @theme_selected_bg_color;
+	color: @theme_selected_fg_color;
+	text-shadow: none;
+	border-width: 0;
+	border-color: transparent;
+}
+
 /*******
  * CSD *
  *******/
@@ -2699,5 +2777,11 @@ NemoWindow .notebook NautilusQueryEditor .toolbar {
 .nemo-desktop.nautilus-canvas-item:active,
 .nemo-desktop.nautilus-canvas-item:prelight,
 .nemo-desktop.nautilus-canvas-item:selected {
+	text-shadow: none;
+}
+
+/* needed for left menu popovers menuitems */
+NautilusWindow .menubar .menuitem,
+NautilusWindow .menu .menuitem {
 	text-shadow: none;
 }
