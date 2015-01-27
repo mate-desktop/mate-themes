@@ -1410,6 +1410,7 @@ GtkPopover .separator {
 .titlebar {
     background-color: @theme_base_color;
     border-radius: 7px 7px 0px 0px;
+    padding: 6px 6px 5px 6px;
 }
 
 /* this is the default titlebar that is added by GTK
@@ -1451,21 +1452,44 @@ GtkPopover .separator {
 * same affect in mate-panel main menu, csd apps, header-bars apps                       *
 * if compositor is disable !!!!!                                                        *
 *****************************************************************************************/
-/*
+
 .window-frame {
     border-color: darker(@theme_bg_color);
     border-radius: 7px 7px 0 0;
     border-width: 1px;
     border-style: solid;
-    box-shadow: 0 2px 8px 3px alpha(black, 0.7);*/
+    box-shadow: 0 0 0 @wm_shadow;
+/*    box-shadow: 0 2px 8px 3px alpha(black, 0.7);*/
     /* this is used for the resize cursor area */
-/*    margin: 10px;
+    margin: 2px;
+    padding: 6px 6px 5px 6px;
+}
+
+.window-frame.tiled {
+	border-radius: 0;
+	background-color: @theme_bg_color;
 }
 
 .window-frame:backdrop {
-    box-shadow: 0 2px 5px 1px alpha(black, 0.7);
+    box-shadow: 0 0 0 @wm_shadow;
+/*    box-shadow: 0 2px 5px 1px alpha(black, 0.7);*/
+    padding: 6px 6px 5px 6px;
 }
-*/
+
+.window-frame.csd.popup {
+    border-radius: 0;
+    box-shadow: 0 1px 5px @wm_shadow;
+}
+
+.window-frame.csd.tooltip {
+    border-radius: 5px;
+    box-shadow: 0 1px 5px @wm_shadow;
+}
+
+.window-frame.csd.message-dialog {
+    border-radius: 7px;
+    box-shadow: 0 1px 5px @wm_shadow;
+}
 
 /****************
  * App-specific *
