@@ -3920,19 +3920,19 @@ GtkModelButton.button:selected {
  * CSD *
  *******/
 .titlebar {
-	text-shadow: 0 1px @wm_title_shadow;
-	background-image: none;
-	border-radius: 0;
-	box-shadow: inset 0 -1px alpha(@theme_base_color, 0.4);
-	border-color: @borders;
+    text-shadow: 0 1px @wm_title_shadow;
+    background-image: none;
+    border-radius: 6px 6px 0px 0px;
+    box-shadow: inset 0 -1px alpha(@theme_base_color, 0.4);
+    border-color: @borders;
 }
 
 .tiled .titlebar {
-	border-radius: 0;
+    border-radius: 0;
 }
 
 .maximized .titlebar {
-	border-radius: 0;
+    border-radius: 0;
 }
 
 /* this is the default titlebar that is added by GTK
@@ -3940,38 +3940,38 @@ GtkModelButton.button:selected {
  * did not set a custom titlebar.
  */
 .titlebar.default-decoration {
-	border: none;
-	box-shadow: none;
+    border: none;
+    box-shadow: none;
 }
 
 .titlebar .title {
-	font: Bold 10;
+    font: Bold 10;
 }
 
 .titlebar:backdrop {
-	color: @theme_unfocused_fg_color;
+    color: @theme_unfocused_fg_color;
 }
 
 .titlebar .titlebutton {
-	color: @wm_title;
-	padding: 5px 5px 5px 5px;
-	border: none;
-	border-image: none;
+    color: @wm_title;
+    padding: 5px 5px 5px 5px;
+    border: none;
+    border-image: none;
 }
 
 .titlebar .titlebutton:hover {
-	border: none;
-	border-image: none;
+    border: none;
+    border-image: none;
 }
 
 .titlebar .titlebutton:active {
-	border: none;
-	border-image: none;
+    border: none;
+    border-image: none;
 }
 
 .titlebar .titlebutton:backdrop {
-	color: @wm_unfocused_title;
-	icon-shadow: none;
+    color: @wm_unfocused_title;
+    icon-shadow: none;
 }
 
 /****************************************************************************************
@@ -3979,26 +3979,40 @@ GtkModelButton.button:selected {
 * to achieve full size of the icon menu of some of the applications whose notification  *
 * icons appear in the system tray, the "shadow" is disabled.                            *
 * same affect in mate-panel main menu, csd apps, header-bars apps                       *
-* if compositor is disable !!!!!                                                        *
+* if compositor switch to disable !!!!!                                                 *
 *****************************************************************************************/
-/*
+
 .window-frame {
-	border-radius: 6px 6px 0 0;
-	border-width: 0px;
-	box-shadow: 0 0 0 1px @wm_border, 0 2px 8px 3px @wm_shadow;*/
-	/* this is used for the resize cursor area */
-/*	margin: 10px;
+    border-radius: 0px 0px 0px 0px;
+    border-width: 1px;
+    box-shadow: 0 0 0 @wm_shadow;
+    /* this is used for the resize cursor area */
+    margin: 2px;
 }
 
 .window-frame.tiled {
-	border-radius: 0;
-	background-color: @theme_bg_color;
+    border-radius: 0;
+    background-color: @theme_bg_color;
 }
 
 .window-frame:backdrop {
-	box-shadow: 0 0 0 1px shade(@wm_border,1.1), 0 2px 5px 1px @wm_shadow;
+    box-shadow: 0 0 0 @wm_shadow;
 }
-*/
+
+.window-frame.csd.popup {
+    border-radius: 0;
+    box-shadow: 0 1px 5px @wm_shadow;
+}
+
+.window-frame.csd.tooltip {
+    border-radius: 5px;
+    box-shadow: 0 1px 5px @wm_shadow;
+}
+
+.window-frame.csd.message-dialog {
+    border-radius: 7px;
+    box-shadow: 0 1px 5px @wm_shadow;
+}
 
 /* Various hacks and shit */
 /* FIXME - BELOW: Some stuff that can probably be done better or in another way */
