@@ -1646,28 +1646,28 @@ GtkCalendar.header .stack-switcher > .titlebutton.button {
  * Header bars *
  ***************/
 .header-bar {
-	border-width: 0 0 1px;
-	border-style: solid;
-	padding: 0 1px;
-	padding: 6px;
-	background-color: @theme_bg_color;
-	/*background-image: linear-gradient(to bottom,
-	                                  @toolbar_gradient_base,
-	                                  shade(@theme_bg_color, 1.6));*/
-	border-color: alpha(@frame_color, 0.6);
+    border-width: 0 0 1px;
+    border-style: solid;
+    border-radius: 7px 7px 0 0;
+    padding: 0 1px;
+    padding: 6px;
+    background-color: @theme_bg_color;
+    /*background-image: linear-gradient(to bottom,
+                                        @toolbar_gradient_base,
+                                        shade(@theme_bg_color, 1.6));*/
+    border-color: alpha(@frame_color, 0.6);
 }
 
 .notebook GtkContainer .header-bar {
-	background-color: @theme_bg_color;
+    background-color: @theme_bg_color;
 }
 
-
 .header-bar .button.text-button {
-	padding: 2px 6px;
+    padding: 2px 6px;
 }
 
 .header-bar .button.image-button {
-	padding: 5px 4px 4px 5px;
+    padding: 5px 4px 4px 5px;
 }
 
 /*******
@@ -2025,7 +2025,7 @@ GtkPopover .separator {
     background-image: linear-gradient(to bottom,
                                       shade (@theme_bg_color, 1.50),
                                       shade (@theme_bg_color, 1.0));
-    border-radius: 0;
+    border-radius: 7px 7px 0 0;
 }
 
 .tiled .titlebar {
@@ -2143,20 +2143,40 @@ GtkPopover .separator {
 * to achieve full size of the icon menu of some of the applications whose notification  *
 * icons appear in the system tray, the "shadow" is disabled.                            *
 * same affect in mate-panel main menu, csd apps, header-bars apps                       *
-* if compositor is disable !!!!!                                                        *
+* if compositor switch to disable !!!!!                                                        *
 *****************************************************************************************/
-/*
+
 .window-frame {
-    border-color: @theme_bg_color;
-    border-radius: 7px 7px 0 0;
+    border-radius: 7px 7px 0px 0px;
     border-width: 1px;
-    border-style: solid;
-    background-color: @theme_bg_color;
-    box-shadow: 0 0 0 2px @osd_button_shadow, 0 2px 8px 3px @osd_button_shadow;*/
+    box-shadow: 0 0 0 @wm_shadow;
     /* this is used for the resize cursor area */
-/*    margin: 10px;
+    margin: 2px;
 }
-*/
+
+.window-frame.tiled {
+    border-radius: 0;
+    background-color: @theme_bg_color;
+}
+
+.window-frame:backdrop {
+    box-shadow: 0 0 0 @wm_shadow;
+}
+
+.window-frame.csd.popup {
+    border-radius: 0;
+    box-shadow: 0 1px 5px @wm_shadow;
+}
+
+.window-frame.csd.tooltip {
+    border-radius: 5px;
+    box-shadow: 0 1px 5px @wm_shadow;
+}
+
+.window-frame.csd.message-dialog {
+    border-radius: 7px;
+    box-shadow: 0 1px 5px @wm_shadow;
+}
 
 /****************************
  * Suggested action buttons *
