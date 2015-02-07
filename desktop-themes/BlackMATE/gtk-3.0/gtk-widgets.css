@@ -950,20 +950,14 @@ GtkTreeView .button {
 
 column-header .button {
 	background-image: linear-gradient(to bottom,
-	                                  shade(@button_gradient_color_a, 1.5),
-	                                  shade(@button_gradient_color_a, 0.7) 39%,
-	                                  @theme_bg_color 40%,
+	                                  shade(@less_dark_color, 1.3),
 	                                  shade(@less_dark_color, 0.4));
 }
 
 GtkTreeView .button {
-	background-image: -gtk-gradient (radial,
-					0.5 -2.0, 2.0,
-					0.5 -2.0, 3.0,
-					from (shade(@button_gradient_color_a, 1.5)),
-					color-stop (0.42, shade(@button_gradient_color_a, 0.7)),
-					color-stop (0.43, @theme_bg_color),
-					to (shade(@less_dark_color, 0.4)));
+	background-image: linear-gradient(to bottom,
+	                                  shade(@less_dark_color, 1.3),
+	                                  shade(@less_dark_color, 0.4));
 }
 
 column-header .button:hover,
@@ -974,7 +968,9 @@ GtkTreeView .button:hover {
 	border-style: solid;
 	border-color: @less_dark_color;
 	background-image: linear-gradient(to bottom,
-	                                  shade(@less_dark_color, 1.3),
+	                                  shade(@button_gradient_color_a, 1.5),
+	                                  shade(@button_gradient_color_a, 0.7) 39%,
+	                                  @theme_bg_color 40%,
 	                                  shade(@less_dark_color, 0.4));
 }
 
@@ -1091,6 +1087,14 @@ GtkComboBox .button {
 	padding: 3px;
 	/* These buttons may be wide. */
 	background-image: linear-gradient(to bottom,
+	                                  @button_hover_gradient_color_a,
+	                                  @button_hover_gradient_color_b);
+}
+
+GtkComboBox .button:hover {
+	padding: 3px;
+	/* These buttons may be wide. */
+	background-image: linear-gradient(to bottom,
 	                                  shade(@button_gradient_color_a, 1.5),
 	                                  shade(@button_gradient_color_a, 0.7) 39%,
 	                                  @theme_bg_color 40%,
@@ -1113,25 +1117,46 @@ GtkComboBox .menu {
  ***********/
 .button {
     -GtkWidget-focus-line-width: 0;
-	/* Due to a bug somewhere in gtk or cairo,
-	   a padding of zero (or even one) doesn't work always!!! */
-	padding: 2px;
-
-	border-radius: 3px;
-	border-width: 1px;
-	border-style: solid;
-	text-shadow: 0 -1px black;
-
-	color: @theme_fg_color;
-	background-image: linear-gradient(to bottom,
-	                                  @button_hover_gradient_color_a,
-	                                  @button_hover_gradient_color_b);
-    transition: all 200ms ease-out;
+    /* Due to a bug somewhere in gtk or cairo,
+     a padding of zero (or even one) doesn't work always!!! */
+    padding: 2px;
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: solid;
+    text-shadow: 0 -1px black;
+    color: @theme_fg_color;
+    background-image: linear-gradient(to bottom,
+                                      @button_hover_gradient_color_a,
+                                      @button_hover_gradient_color_b);
+    transition: all 400ms ease-out;
 }
 
 .button.image-button,
 .primary-toolbar.toolbar .button.image-button {
-	padding: 3px 4px 4px;
+    padding: 3px 4px 4px;
+}
+
+.button.default {
+    transition: all 400ms ease-out;
+    text-shadow: none;
+    color: @theme_fg_color;
+}
+
+/* ie. mate-control-center */
+.button.flat {
+    transition: all 400ms ease-out;
+    padding: 0px;
+    border-color: transparent;
+    background-color: transparent;
+    background-image: none;
+    box-shadow: inset 0 1px rgba(255,255,255,0), 0 1px rgba(255,255,255,0);
+    text-shadow: none;
+    icon-shadow: none;
+    border-image: none;
+}
+
+.button.flat:hover {
+    border-radius: 8px;
 }
 
 .button GtkImage,
@@ -1416,142 +1441,140 @@ GtkComboBox .menu {
 
 /* this controls the general appearance of the menubar */
 .menubar {
-	background-image: none;
-	background-color: @theme_bg_color;
-	border-width: 0px;
-	border-style: none;
-	padding: 0px;
-	color: @theme_text_color;
-
-	-GtkWidget-window-dragging: true;
-	/*-GtkMenuBar-internal-padding: 0;*/
+    background-image: none;
+    background-color: @theme_bg_color;
+    border-width: 0px;
+    border-style: none;
+    padding: 0px;
+    color: @theme_text_color;
+    -GtkWidget-window-dragging: true;
+    /*-GtkMenuBar-internal-padding: 0;*/
 }
 
 /*.menubar * {
-	background-color: transparent;
+    background-color: transparent;
 }*/
 
 .menubar .menuitem {
-    transition: all 200ms ease-out;
-	padding: 3px 7px;
+    transition: all 300ms ease-out;
+    padding: 3px 7px;
 }
 
 .menu .menuitem {
-    transition: all 200ms ease-out;
-	padding: 3px 4px;
+    transition: all 300ms ease-out;
+    padding: 3px 4px;
 }
 
 .menubar .menuitem,
 .menu .menuitem {
-	border-width: 0px;
-	border-style: none;
-	background-color: transparent;
+    border-width: 0px;
+    border-style: none;
+    background-color: transparent;
 }
 
 .menubar .menuitem:hover {
-	background-image: none;
-	background-color: @theme_selected_bg_color;
-
-	border-style: solid;
-	border-image: none;
-	/* join menuitem to menu */
-	border-radius: 3px 3px 0px 0px;
-	border-width: 0px;
-	border-color: @theme_selected_bg_color;
+    background-image: none;
+    background-color: @theme_selected_bg_color;
+    border-style: solid;
+    border-image: none;
+    /* join menuitem to menu */
+    border-radius: 3px 3px 0px 0px;
+    border-width: 0px;
+    border-color: @theme_selected_bg_color;
 }
 
 .menubar .menuitem *:insensitive, /* gdebi bug? */
 .menubar .menuitem *:hover {
-	color: @theme_text_color;
+    color: @theme_text_color;
 }
 
 .menu,
 .menubar .menu,
 .menuitem .menu {
-	background-color: shade(@theme_selected_bg_color, 0.8);
-	background-image: linear-gradient(to bottom,
-	                                  @theme_selected_bg_color,
-	                                  shade(@theme_selected_bg_color, 0.5));
+    background-color: shade(@theme_selected_bg_color, 0.8);
+    background-image: linear-gradient(to bottom,
+                                      @theme_selected_bg_color,
+                                      shade(@theme_selected_bg_color, 0.5));
 
-	border-style: none;
-	border-width: 0px;
-	border-radius: 0;
-	padding: 1px;
+    border-style: none;
+    border-width: 0px;
+    border-radius: 0;
+    padding: 1px;
 }
 
 /*.menu *{
-	background-color: transparent;
+    background-color: transparent;
 }*/
 
 .menuitem,
 .menuitem * {
-	-GtkMenuItem-arrow-scaling: 0.5;
-	padding: 2px 0px;
+    -GtkMenuItem-arrow-scaling: 0.5;
+    padding: 2px 0px;
 }
 
 /* scroll arrows */
 .menu.button {
-	border-image: none;
-	color: @theme_fg_color;
-	background-image: linear-gradient(to bottom,
-	                                  @button_hover_gradient_color_a,
-	                                  @button_hover_gradient_color_b);
+    border-image: none;
+    color: @theme_fg_color;
+    background-image: linear-gradient(to bottom,
+                                      @button_hover_gradient_color_a,
+                                      @button_hover_gradient_color_b);
 }
 
 .menu.button:hover {
-	color: @theme_main_color;
-	background-image: linear-gradient(to bottom,
-	                                  shade(@theme_selected_bg_color, 1.3),
-	                                  shade(@theme_selected_bg_color, 0.5));
+    color: @theme_main_color;
+    background-image: linear-gradient(to bottom,
+                                      shade(@theme_selected_bg_color, 1.3),
+                                      shade(@theme_selected_bg_color, 0.5));
 }
 
 .menu.button:insensitive {
-	background-image: none;
-	background-color: transparent;
-	border-style: none;
+    background-image: none;
+    background-color: transparent;
+    border-style: none;
 }
 
 .menuitem:hover,
 .menu .menuitem:hover {
-	background-image: linear-gradient(to bottom,
-	                                  #999999,
-	                                  #404040);
-	/*color: @theme_main_color;*/
-	color: #000000;
-	border-style: solid;
-	border-width: 1px;
-	border-radius: 3px;
-	border-image: url("assets/menu-border-dark.svg") 2 / 2px stretch;
+    background-image: linear-gradient(to bottom,
+                                      #999999,
+                                      #404040);
+    /*color: @theme_main_color;*/
+    color: #000000;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    border-image: url("assets/menu-border-dark.svg") 2 / 2px stretch;
 }
 
 .menuitem *:hover,
 .menu .menuitem *:hover {
-	color: #000000;
+    color: #000000;
 }
 
 .menu .menuitem:insensitive,
 .menu .menuitem *:insensitive {
-	color: @insensitive_fg_color;
+    color: @insensitive_fg_color;
 }
 
 .menuitem.separator {
-	padding: 4px;
-	border-style: none;
-	border-color: @theme_selected_bg_color;
-	-GtkMenuItem-horizontal-padding: 0;
-	-GtkWidget-separator-height: 1;
+    padding: 4px;
+    border-style: none;
+    border-color: @theme_selected_bg_color;
+    -GtkMenuItem-horizontal-padding: 0;
+    -GtkWidget-separator-height: 1;
 }
 
 .menuitem.accelerator,
 .menu .menuitem.accelerator {
-	color: alpha(@theme_main_color, 0.66);
+    color: alpha(@theme_main_color, 0.66);
 }
 
 .menuitem.accelerator:hover,
 .menuitem.accelerator:active,
 .menu .menuitem.accelerator:hover,
 .menu .menuitem.accelerator:active {
-	color: alpha(@theme_text_color, 0.45);
+    color: alpha(@theme_text_color, 0.45);
 }
 
 /***************
@@ -1559,7 +1582,7 @@ GtkComboBox .menu {
  ***************/
 /* compensation for combo shadow */
 GtkMenuButton .menu {
-	text-shadow: none;
+    text-shadow: none;
 }
 
 /************
@@ -1623,8 +1646,13 @@ GtkMenuButton .menu {
 	border-style: solid;
 	border-color: shade(@button_border, 1.1);
 	border-radius: 3px;
-	background-image: none;
-	background-color: @theme_bg_color;
+	background-image: -gtk-gradient (radial,
+					0.5 -2.0, 2.0,
+					0.5 -2.0, 3.0,
+					from (shade(@button_gradient_color_a, 1.5)),
+					color-stop (0.42, shade(@button_gradient_color_a, 0.7)),
+					color-stop (0.43, @theme_bg_color),
+					to (shade(@button_gradient_color_b, 0.7)));
 }
 
 .toolbar .button:active,
