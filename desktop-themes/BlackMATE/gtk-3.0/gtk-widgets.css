@@ -384,10 +384,13 @@ GtkHTML.entry {
 	background-color: @view_color;
 }
 
-/* for Totem's search */
-/*.entry GtkEntry {
+.entry.cursor-handle,
+.cursor-handle {
 	background-color: transparent;
-}*/
+	background-image: none;
+	box-shadow: none;
+	border-style: none;
+}
 
 .cursor-handle.top,
 .cursor-handle.bottom {
@@ -1152,20 +1155,17 @@ GtkComboBox .menu {
  ***********/
 .button {
     -GtkWidget-focus-line-width: 0;
-	/* Due to a bug somewhere in gtk or cairo,
-	   a padding of zero (or even one) doesn't work always!!! */
-	padding: 2px;
-	border-radius: 3px;
-	border-width: 1px;
-	border-style: solid;
-	text-shadow: 0 -1px black;
-	color: @theme_fg_color;
-	border-image: none;
-	border-style: solid;
-	border-color: shade(@button_border, 1.1);
-	background-image: linear-gradient(to bottom,
-	                                  @button_hover_gradient_color_a,
-	                                  @button_hover_gradient_color_b);
+    /* Due to a bug somewhere in gtk or cairo,
+       a padding of zero (or even one) doesn't work always!!! */
+    padding: 2px;
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: solid;
+    text-shadow: 0 -1px black;
+    color: @theme_fg_color;
+    background-image: linear-gradient(to bottom,
+                                      @button_hover_gradient_color_a,
+                                      @button_hover_gradient_color_b);
     transition: all 400ms ease-out;
 }
 
@@ -1193,6 +1193,7 @@ GtkComboBox .menu {
     border-image: none;
 }
 
+/* mate-control-center */
 .button.flat:hover {
     border-radius: 8px;
 }
@@ -1545,7 +1546,6 @@ GtkComboBox .menu {
     background-image: linear-gradient(to bottom,
                                       @theme_selected_bg_color,
                                       shade(@theme_selected_bg_color, 0.5));
-
     border-style: none;
     border-width: 0px;
     border-radius: 0;
@@ -1830,11 +1830,11 @@ GtkMenuButton .menu {
 
 
 .header-bar .button.text-button {
-	padding: 2px 16px;
+    padding: 2px 16px;
 }
 
 .header-bar .button.image-button {
-	padding: 5px 4px 4px 5px;
+    padding: 5px 4px 4px 5px;
 }
 
 /*******
