@@ -146,8 +146,17 @@ CajaWindow .notebook .rubberband {
 }
 
 /* Caja places bar */
-CajaWindow .button.flat:hover {
+CajaWindow .button.flat {
+    border-style: none;
+    border-image: url("assets/primary-toolbar-button-active-border-dark.svg") 3 / 3px stretch;
     border-radius: 3px;
+    padding: 2px 5px;
+}
+
+CajaWindow .button.flat:hover {
+    border-image: none;
+    border-radius: 3px;
+    padding: 2px 5px;
 }
 
 /**** Sidebar ***/
@@ -488,7 +497,27 @@ NaTrayApplet {
  *********/
 
 /* Pluma status bar */
-PlumaWindow .button.flat:hover {
+PlumaWindow .button.flat {
+    border-style: none;
+    border-image: url("assets/primary-toolbar-button-active-border-dark.svg") 3 / 3px stretch;
     border-radius: 5px;
+}
+
+PlumaWindow .button.flat:hover {
+    border-image: none;
+    border-radius: 5px;
+}
+
+/***********************
+ * Mate-Control-Center *
+ ***********************/
+
+GtkScrolledWindow .button.flat {
+    border-image: none;
+}
+
+/* button hover of applications */
+GtkScrolledWindow .button.flat:hover {
+    border-radius: 8px;
 }
 
