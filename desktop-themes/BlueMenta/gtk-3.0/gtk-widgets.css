@@ -965,7 +965,7 @@ GtkComboBox.combobox-entry .button {
 }
 
 .button {
-	transition: all 200ms ease-out;
+	transition: all 400ms ease-out;
 	-GtkButton-image-spacing: 4;
 	-GtkButton-interior-focus: true;
 	-GtkButton-default-border: 0;
@@ -980,6 +980,10 @@ GtkComboBox.combobox-entry .button {
 .button.default {
 	text-shadow: none;
 	color: @theme_selected_fg_color;
+}
+
+.button.flat.hover {
+	border-radius: 3px;
 }
 
 /* We may want a background for focused buttons, but in the meantime let's remove it too */
@@ -2067,8 +2071,8 @@ GtkTreeMenu .menuitem,
 }
 
 .menu .menuitem {
-	-GtkMenuItem-arrow-scaling: 0.4;
-	transition: all 100ms ease-out;
+	-GtkMenuItem-arrow-scaling: 0.6;
+	transition: all 150ms ease-out;
 	padding: 4px;
 }
 
