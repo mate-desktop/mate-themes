@@ -31,7 +31,7 @@
 	outline-color: alpha(@theme_text_color, 0.3);
 	outline-style: dashed;
 	outline-offset: -3px; /* 2px */
-	outline-width: 1px;
+	outline-width: 0px; /* disable ugly focus-line */
 	outline-radius: 2px;
 }
 
@@ -883,7 +883,7 @@ GtkComboBox.combobox-entry .button {
 }
 
 .button {
-	transition: all 200ms ease-out;
+	transition: all 400ms ease-out;
 	-GtkButton-image-spacing: 4;
 	-GtkButton-interior-focus: true;
 	-GtkButton-default-border: 0;
@@ -909,6 +909,10 @@ GtkComboBox.combobox-entry .button {
 	text-shadow: none;
 	icon-shadow: none;
 	border-image: none; 
+}
+
+.button.flat.hover {
+	border-radius: 3px;
 }
 
 /* We may want a background for focused buttons, but in the meantime let's remove it too */
@@ -1827,7 +1831,7 @@ GtkComboBox.combobox-entry .button:hover,
 GtkComboBox.combobox-entry .button:active,
 GtkComboBox.combobox-entry .button:active:hover {
     color: shade (@theme_selected_bg_color, 0.80);
-    transition: all 200ms ease-in;
+    transition: all 400ms ease-in;
 }
 
 GtkComboBox .button {
@@ -2108,7 +2112,7 @@ GtkTreeMenu .menuitem,
 
 .menu .menuitem {
 	-GtkMenuItem-arrow-scaling: 0.6;
-	transition: all 100ms ease-out;
+	transition: all 150ms ease-out;
 	padding: 4px;
 }
 
