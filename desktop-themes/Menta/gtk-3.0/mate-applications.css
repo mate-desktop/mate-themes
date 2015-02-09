@@ -67,7 +67,6 @@ CajaWindow .button.flat {
                                       @button_gradient_color_a,
                                       @button_gradient_color_b);
     border-image: url("borders/button.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
-    padding: 2px 5px;
 }
 
 CajaWindow .button.flat:hover {
@@ -76,7 +75,6 @@ CajaWindow .button.flat:hover {
                                       @button_hover_gradient_color_a,
                                       @button_hover_gradient_color_b);
     border-image: url("borders/button.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
-    padding: 2px 5px;
 }
 
 /* some overrides for button.flat */
