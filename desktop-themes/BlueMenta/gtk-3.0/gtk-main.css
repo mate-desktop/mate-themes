@@ -177,6 +177,11 @@
 @define-color selection_menu_active shade(@selection_menu_fg, 0.60);
 
 /**************
+ * MATE Apps  *
+ **************/
+@define-color cluebar_color shade (@theme_base_color, 0.9);
+
+/**************
  * GNOME Apps *
  **************/
 @define-color entry_tag_bg shade(@theme_selected_bg_color, 0.89);
