@@ -461,11 +461,20 @@ GtkComboBox .button {
  * Menus *
  *********/
 
-.menuitem {
+.menu {
+    border-style: solid;
+    border-color: @theme_fg_color;
+    border-width: 1px;
     color: @theme_fg_color;
 }
 
-.menuitem:insensitive {
+.menuitem,
+.menu .menuitem {
+    color: @theme_fg_color;
+}
+
+.menuitem:insensitive,
+.menu .menuitem:insensitive {
     color: @theme_button_insensitive_fg;
     border-style: solid;
     border-left-color: @theme_fg_color;
@@ -480,8 +489,8 @@ GtkComboBox .button {
 }
 
 .menubar .menuitem:hover {
+    color: @theme_fg_color;
     background-color: @theme_active_color;
-    color: @theme_base_color;
 }
 
 .menu .menuitem {
@@ -489,19 +498,17 @@ GtkComboBox .button {
 }
 
 .menu .menuitem:hover {
-    background-color: @theme_active_color;
-    color: @theme_base_color;
-}
-
-.menu {
-    border-style: solid;
-    border-color: @theme_fg_color;
-    border-width: 1px;
-
     color: @theme_fg_color;
+    background-color: @theme_active_color;
+    border-style: solid;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-left-color: @theme_fg_color;
+    border-right-color: @theme_fg_color;
 }
 
-.menuitem.separator {
+.menuitem.separator,
+.menu .menuitem.separator {
     -GtkMenuItem-horizontal-padding: 0;
 }
 
