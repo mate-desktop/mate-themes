@@ -1,4 +1,5 @@
 @define-color theme_base_color #000000;
+@define-color theme_bg_color @theme_base_color;
 @define-color theme_fg_color #ffffff;
 @define-color theme_active_color #666699;
 @define-color theme_border_color @theme_active_color;
@@ -73,6 +74,82 @@
 @define-color wm_button_prelight_fg @theme_base_color;
 @define-color wm_button_pressed_fg @theme_base_color;
 
+/*******
+ * OSD *
+ *******/
+@define-color osd_highlight #ffffff;
+@define-color osd_lowlight #525252;
+@define-color osd_base #212526;
+
+@define-color osd_fg #ededed;
+@define-color osd_bg alpha(@osd_base, 0.80);
+
+@define-color osd_text_shadow alpha(black, 0.75);
+
+@define-color osd_toolbar_bg_a alpha(@osd_base, 0.80);
+@define-color osd_toolbar_bg_b alpha(#101010, 0.80);
+@define-color osd_toolbar_bg_c alpha(shade(@osd_base, 1.02), 0.80);
+
+@define-color osd_button_bg_a alpha(@osd_highlight, 0.16);
+@define-color osd_button_bg_b alpha(@osd_lowlight, 0.05);
+@define-color osd_button_bg_c alpha(@osd_highlight, 0.12);
+
+@define-color osd_button_bg_insensitive alpha(@osd_highlight, 0.25);
+@define-color osd_button_bg_insensitive_active alpha(@osd_highlight, 0.16);
+
+@define-color osd_button_bg_hover_a alpha(@osd_highlight, 0.28);
+@define-color osd_button_bg_hover_b alpha(@osd_lowlight, 0.14);
+@define-color osd_button_bg_hover_c alpha(@osd_highlight, 0.14);
+
+@define-color osd_button_bg_active_a alpha(@osd_lowlight, 0.18);
+@define-color osd_button_bg_active_b alpha(@osd_highlight, 0.23);
+@define-color osd_button_bg_active_c alpha(@osd_lowlight, 0.17);
+
+@define-color osd_button_fg shade(@osd_fg, 0.80);
+@define-color osd_button_fg_hover shade(@osd_fg, 0.96);
+@define-color osd_button_fg_active shade(@osd_fg, 1.10);
+@define-color osd_button_fg_insensitive shade(@osd_fg, 0.70);
+
+@define-color osd_button_border alpha(@osd_highlight, 0.40);
+@define-color osd_button_inset shade(@osd_fg, 0.67);
+@define-color osd_button_shadow alpha(black, 0.35);
+
+@define-color osd_trough_bg alpha(@osd_button_fg, 0.10);
+
+/***********
+ * Popover *
+ ***********/
+@define-color osd_popover_bg alpha(@osd_base, 0.90);
+@define-color wm_shadow alpha(black, 0.5);
+
+/************************
+ * Info, Warnings, etc. *
+ ************************/
+
+@define-color warning_color #ff4400;
+@define-color warning_bg_color @warning_color;
+@define-color warning_fg_color white;
+
+@define-color question_color #0000ff;
+@define-color question_bg_color @question_color;
+@define-color question_fg_color white;
+
+@define-color error_color #ff0000;
+@define-color error_bg_color @error_color;
+@define-color error_fg_color white;
+
+@define-color error_color #ff0000;
+@define-color success_color #00ff00;
+
+/*****************
+ * fallback mode *
+ *****************/
+
+@define-color os_chrome_bg_color white;
+@define-color os_chrome_fg_color #ccc;
+@define-color os_chrome_selected_bg_color #333;
+@define-color os_chrome_selected_fg_color black;
+
 * {
     /* Pidgin */
     -GtkIMHtml-hyperlink-color: #ffff9f;
@@ -89,3 +166,4 @@
 }
 
 @import url("gtk-widgets.css");
+@import url("mate-applications.css");
