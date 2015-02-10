@@ -1,26 +1,3 @@
-/* common color definitions */
-
-@define-color warning_color #faad3d;
-@define-color warning_bg_color @warning_color;
-@define-color warning_fg_color black;
-
-@define-color question_color #8aadd4;
-@define-color question_bg_color @question_color;
-@define-color question_fg_color white;
-
-@define-color error_color #ed3636;
-@define-color error_bg_color @error_color;
-@define-color error_fg_color white;
-
-@define-color error_color #cc0000;
-@define-color success_color #4e9a06;
-
-/* fallback mode */
-@define-color os_chrome_bg_color black;
-@define-color os_chrome_fg_color #ccc;
-@define-color os_chrome_selected_bg_color #333;
-@define-color os_chrome_selected_fg_color white;
-
 * {
     -GtkRange-stepper-size: 2;
     -GtkScale-slider-length: 28;
@@ -289,10 +266,7 @@ GtkLevelBar.vertical {
 }
 
 /* ie. mate-control-center */
-.button.flat,
-.button.flat:hover,
-.button.flat:active:hover,
-.button.flat:checked:hover {
+.button.flat {
     padding: 0px;
     border-color: transparent;
     background-color: transparent;
@@ -302,6 +276,10 @@ GtkLevelBar.vertical {
     text-shadow: none;
     icon-shadow: none;
     border-image: none;
+}
+
+.button.flat.hover {
+	border-radius: 3px;
 }
 
 .button:active,
@@ -927,6 +905,10 @@ GtkSwitch.trough:active:insensitive {
     border-color: @theme_notebook_border;
     border-style: solid;
     background-color: @theme_notebook_bg;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
 
 .notebook GtkScrolledWindow {
@@ -1035,30 +1017,108 @@ GtkScrolledWindow GtkViewport.frame {
     border-style: none;
 }
 
+/**************
+ * Scrollbars *
+ **************/
+
 .scrollbar {
     -GtkRange-slider-width: 17;
     -GtkRange-stepper-size: 17;
     -GtkRange-trough-border: 0;
-    -GtkScrollbar-has-backward-stepper: false;
-    -GtkScrollbar-has-forward-stepper: false;
+    -GtkScrollbar-has-backward-stepper: true;
+    -GtkScrollbar-has-forward-stepper: true;
     -GtkScrollbar-min-slider-length: 64;
 }
 
-.scrollbar.trough {
-    background-color: @theme_internal_bg;
-
-    border-width: 0;
-    border-color: transparent;
-    border-radius: 0;
-}
-
 .scrollbars-junction {
+    background-image: linear-gradient(to bottom,
+                                      shade (@theme_internal_bg, 1.0),
+                                      shade (@theme_internal_bg, 1.0));
     background-color: @theme_internal_bg;
+    border-width: 0px;
+    border-color: @theme_internal_bg;
+    border-radius: 0px;
+    border-image: linear-gradient(to bottom,
+                                  shade (@theme_internal_bg, 1.0),
+                                  shade (@theme_internal_bg, 1.0));
+    box-shadow: none;
 }
 
-.scrollbar.slider {
-    background-color: @theme_slider_bg;
+.scrollbar.trough,
+.scrollbar.trough.vertical,
+.sidebar .scrollbar.trough,
+.osd .scrollbar.trough {
+    background-image: none;
+    background-color: @theme_internal_bg;
+    border-left-width: 1px;
+    border-style: solid;
+    border-color: @theme_internal_bg;
+    border-radius: 0;
+    border-image: none;
+}
 
+.scrollbar.trough.horizontal {
+    background-image: none;
+    background-color: @theme_internal_bg;
+    border-top-width: 1px;
+    border-style: solid;
+    border-color: @theme_internal_bg;
+    border-radius: 0;
+    border-image: none;
+}
+
+.scrollbar.button,
+.scrollbar.button:active,
+.scrollbar.button:active:hover,
+.scrollbar.button:insensitive {
+    border-style: none;
+    border-image: none;
+    border-radius: 0;
+    background-image: none;
+    background-color: transparent;
+}
+
+.scrollbar.button:active,
+.scrollbar.button:active:hover {
+    background-color: alpha(shade(@scrollbar_trough, 0.8), 0.5);
+}
+
+.scrollbar.button.top:hover {
+    box-shadow: inset 0 -1px mix(@theme_slider_bg, @scrollbar_trough, 0.8);
+}
+
+.scrollbar.button.bottom:hover {
+    box-shadow: inset 0 1px mix(@theme_slider_bg, @scrollbar_trough, 0.8);
+}
+
+.scrollbar.button.right:hover {
+    box-shadow: inset 1px 0 mix(@theme_slider_bg, @scrollbar_trough, 0.8);
+}
+
+.scrollbar.button.left:hover {
+    box-shadow: inset -1px 0 mix(@theme_slider_bg, @scrollbar_trough, 0.8);
+}
+
+.scrollbar.button {
+    color: @theme_fg_color;
+}
+
+.scrollbar.button:hover {
+    color: @theme_fg_color;
+}
+
+.scrollbar.button:insensitive {
+    color: @theme_insensitive_color;
+}
+
+.scrollbar.button:active {
+    color: @theme_fg_color;
+}
+
+.scrollbar.slider,
+.sidebar .scrollbar.slider,
+.osd .scrollbar.slider {
+    background-color: @theme_slider_bg;
     border-style: solid;
     border-radius: 12px;
     border-width: 3px;
@@ -1066,7 +1126,15 @@ GtkScrolledWindow GtkViewport.frame {
 }
 
 .scrollbar.slider:hover,
-.scrollbar.slider:active:hover {
+.scrollbar.slider:active:hover,
+.scrollbar.slider.vertical:hover,
+.scrollbar.slider.vertical:active:hover,
+.scrollbar.slider.horizontal:hover,
+.scrollbar.slider.horizontal:active:hover,
+.sidebar .scrollbar.slider:hover,
+.sidebar .scrollbar.slider:hover:active,
+.osd .scrollbar.slider:hover,
+.osd .scrollbar.slider:active {
     background-color: @theme_fg_color;
     border-width: 3px;
     border-color: transparent;
@@ -1079,7 +1147,7 @@ GtkScrolledWindow GtkViewport.frame {
       border-color: transparent;
       border-width: 5px;
 }
- 
+
 /******************
  * Column headers *
  ******************/
