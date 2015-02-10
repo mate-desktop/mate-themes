@@ -1,4 +1,5 @@
 @define-color theme_base_color #fff;
+@define-color theme_bg_color @theme_base_color;
 @define-color theme_fg_color #000;
 @define-color theme_active_color #555753;
 @define-color theme_border_color @theme_active_color;
@@ -116,6 +117,35 @@
 
 @define-color osd_trough_bg alpha(@osd_button_fg, 0.10);
 
+@define-color scrollbar_trough shade(@theme_bg_color, 0.98);
+
+/************************
+ * Info, Warnings, etc. *
+ ************************/
+
+@define-color warning_color #faad3d;
+@define-color warning_bg_color @warning_color;
+@define-color warning_fg_color black;
+
+@define-color question_color #8aadd4;
+@define-color question_bg_color @question_color;
+@define-color question_fg_color white;
+
+@define-color error_color #ed3636;
+@define-color error_bg_color @error_color;
+@define-color error_fg_color white;
+
+@define-color error_color #cc0000;
+@define-color success_color #4e9a06;
+
+/*****************
+ * fallback mode *
+ *****************/
+
+@define-color os_chrome_bg_color black;
+@define-color os_chrome_fg_color #ccc;
+@define-color os_chrome_selected_bg_color #333;
+@define-color os_chrome_selected_fg_color white;
 
 * {
     /* Pidgin */
