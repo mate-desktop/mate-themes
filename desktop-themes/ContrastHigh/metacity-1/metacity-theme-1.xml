@@ -8,14 +8,14 @@
   <description>Simple low-overhead default theme that comes with Metacity.</description>
 </info>
 
-<frame_geometry name="normal">
+<frame_geometry name="normal" rounded_top_left="false" rounded_top_right="false"  rounded_bottom_left="false" rounded_bottom_right="false">
   <distance name="left_width" value="6"/>
   <distance name="right_width" value="6"/>
   <distance name="bottom_height" value="7"/>
-  <distance name="left_titlebar_edge" value="6"/>
-  <distance name="right_titlebar_edge" value="6"/>
+  <distance name="left_titlebar_edge" value="4"/>
+  <distance name="right_titlebar_edge" value="1"/>
   <aspect_ratio name="button" value="1.0"/>
-  <distance name="title_vertical_pad" value="3"/>
+  <distance name="title_vertical_pad" value="8"/>
   <border name="title_border" left="3" right="4" top="4" bottom="3"/>
   <border name="button_border" left="0" right="0" top="1" bottom="1"/>
 </frame_geometry>
