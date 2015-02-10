@@ -521,18 +521,30 @@ GtkComboBox .button {
     color: @theme_fg_color;
 }
 
-.menuitem {
+.menuitem,
+.menu .menuitem {
     color: @theme_fg_color;
     background-color: transparent;
 }
 
-.menuitem:insensitive {
+.menuitem:insensitive,
+.menu .menuitem:insensitive {
     color: @theme_button_insensitive_fg;
 }
 
-.menuitem:hover {
-    color: @theme_base_color;
+.menubar .menuitem:hover {
+    color: @theme_fg_color;
     background-color: @theme_active_color;
+}
+
+.menu .menuitem:hover {
+    color: @theme_fg_color;
+    background-color: @theme_active_color;
+    border-style: solid;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-left-color: @theme_fg_color;
+    border-right-color: @theme_fg_color;
 }
 
 .menu .menuitem {
@@ -543,7 +555,8 @@ GtkComboBox .button {
     padding: 3px 5px;
 }
 
-.menuitem.separator {
+.menuitem.separator,
+.menu .menuitem.separator {
     -GtkMenuItem-horizontal-padding: 0;
 }
 
