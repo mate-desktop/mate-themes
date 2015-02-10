@@ -1,4 +1,5 @@
 @define-color theme_base_color #000000;
+@define-color theme_bg_color @theme_base_color;
 @define-color theme_fg_color #ffffff;
 @define-color theme_active_color #666699;
 @define-color theme_border_color @theme_active_color;
@@ -116,6 +117,34 @@
 
 @define-color osd_trough_bg alpha(@osd_button_fg, 0.10);
 
+/************************
+ * Info, Warnings, etc. *
+ ************************/
+
+@define-color warning_color #ff4400;
+@define-color warning_bg_color @warning_color;
+@define-color warning_fg_color white;
+
+@define-color question_color #0000ff;
+@define-color question_bg_color @question_color;
+@define-color question_fg_color white;
+
+@define-color error_color #ff0000;
+@define-color error_bg_color @error_color;
+@define-color error_fg_color white;
+
+@define-color error_color #ff0000;
+@define-color success_color #00ff00;
+
+/*****************
+ * fallback mode *
+ *****************/
+
+@define-color os_chrome_bg_color white;
+@define-color os_chrome_fg_color #ccc;
+@define-color os_chrome_selected_bg_color #333;
+@define-color os_chrome_selected_fg_color black;
+
 * {
     /* Pidgin */
     -GtkIMHtml-hyperlink-color: #ffff9f;
@@ -132,3 +161,4 @@
 }
 
 @import url("gtk-widgets.css");
+@import url("mate-applications.css");
