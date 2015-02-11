@@ -2468,7 +2468,6 @@ GtkLabel {
 /* ie. pluma open dialog */
 .sidebar GtkTreeView row:hover,
 .sidebar GtkTreeView row:active:hover,
-.sidebar GtkTreeView row:checked:hover,
 .sidebar GtkTreeView row:selected:hover {
 	background-image:  linear-gradient(to bottom,
 	                                  @theme_bg_color,
