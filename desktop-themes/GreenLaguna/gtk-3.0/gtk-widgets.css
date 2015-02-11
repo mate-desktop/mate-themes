@@ -461,6 +461,28 @@ GtkCalendar {
 	padding: 2px;
 }
 
+.frame.flat {
+	border-style: none;
+}
+
+.frame.action-bar {
+	padding: 6px;
+	border-width: 1px 0 0;
+}
+
+GtkScrolledWindow.frame {
+	border-style: solid;
+	border-color: @borders;
+	border-width: 1px;
+	border-radius: 2px;
+	padding: 0;
+}
+
+/* no double frames */
+GtkScrolledWindow GtkViewport.frame {
+	border-style: none;
+}
+
 /***************
  * GtkLevelBar *
  ***************/
@@ -870,7 +892,30 @@ GtkTreeMenu .menuitem * {
     background-image: linear-gradient(to bottom,
                                       @button_gradient_color_a,
                                       @button_gradient_color_b);
-    transition: all 200ms ease-out;
+    transition: all 400ms ease-out;
+}
+
+.button.default {
+    transition: all 400ms ease-out;
+    text-shadow: none;
+    color: @theme_fg_color;
+}
+
+/* ie. mate-control-center */
+.button.flat {
+    transition: all 400ms ease-out;
+    padding: 0px;
+    border-color: transparent;
+    background-color: transparent;
+    background-image: none;
+    box-shadow: inset 0 1px rgba(255,255,255,0), 0 1px rgba(255,255,255,0);
+    text-shadow: none;
+    icon-shadow: none;
+    border-image: none;
+}
+
+.button.flat:hover {
+    border-radius: 3px;
 }
 
 .button GtkImage,
@@ -1162,9 +1207,14 @@ GtkTreeMenu .menuitem * {
     -GtkMenuBar-internal-padding: 0;
 }
 
+.menubar .menuitem {
+    transition: all 300ms ease-out;
+    padding: 3px 7px;
+}
+
 .menubar .menuitem,
 .menu .menuitem {
-    transition: all 200ms ease-out;
+    transition: all 300ms ease-out;
     border-width: 0px;
     border-style: none;
     padding: 3px 4px;
@@ -1350,17 +1400,6 @@ GtkTreeMenu .menuitem * {
 	-adwaita-focus-border-radius: 2;
 }
 
-.toolbar .button:hover,
-.primary-toolbar .button:hover,
-.primary-toolbar .toolbar .button:hover,
-.primary-toolbar.toolbar .button:hover {
-	border-style: solid;
-	border-color: shade(@theme_main_color, 0.8);
-	border-radius: 3px;
-	background-image: none;
-	background-color: @theme_bg_color;
-}
-
 .toolbar .button:active,
 .primary-toolbar .button:active,
 .primary-toolbar .toolbar .button:active,
@@ -1369,14 +1408,15 @@ GtkTreeMenu .menuitem * {
 .primary-toolbar .toolbar GtkComboBox .button,
 .primary-toolbar.toolbar GtkComboBox .button {
 	border-radius: 3px;
-
-	background-image: linear-gradient(to bottom,
-	                                  @button_gradient_color_a,
-	                                  @button_gradient_color_b);
+	background-image: none;
 	/*border-color: shade(@button_border, 1.12);*/
 	/*border-image is defined in gtk-widgets-assets.css*/
 }
 
+.toolbar .button:hover,
+.primary-toolbar .button:hover,
+.primary-toolbar .toolbar .button:hover,
+.primary-toolbar.toolbar .button:hover,
 .toolbar .button:active:hover,
 .primary-toolbar .button:active:hover,
 .primary-toolbar .toolbar .button:active:hover,
@@ -2091,7 +2131,9 @@ GtkLabel {
 }
 
 /* ie. pluma open dialog */
-.sidebar GtkTreeView row:hover {
+.sidebar GtkTreeView row:hover,
+.sidebar GtkTreeView row:active:hover,
+.sidebar GtkTreeView row:selected:hover {
 	background-image:  linear-gradient(to bottom,
 	                                  @theme_bg_color,
 	                                  shade(@theme_bg_color, 0.80));
@@ -2293,9 +2335,9 @@ GsmFailWhaleDialog * {
  * Nautilus *
  ************/
 
-NautilusView .view,
-NemoView .view {
-	background-color: shade(@base_color, 1.02);
+NemoView .view,
+NautilusView .view {
+	background-color: shade(@base_color, 1.06)
 }
 
 .nautilus-inactive-pane .view,

@@ -78,18 +78,20 @@ GtkScale.scale-has-marks-above.slider.vertical:insensitive {
 	border-image: url("assets/button-default-active-border.svg") 3 / 3px stretch;
 }
 
+.toolbar .button:hover,
+.primary-toolbar .button:hover,
+.primary-toolbar .toolbar .button:hover,
+.primary-toolbar.toolbar .button:hover,
 .toolbar .button:active,
 .primary-toolbar .button:active,
 .primary-toolbar .toolbar .button:active,
 .primary-toolbar.toolbar .button:active,
 .toolbar GtkComboBox .button,
 .primary-toolbar .toolbar GtkComboBox .button,
-.primary-toolbar.toolbar GtkComboBox .button/*,
 .toolbar .button:active:hover,
 .primary-toolbar .toolbar .button:active:hover,
 .primary-toolbar.toolbar .button:active:hover,
-.primary-toolbar .toolbar GtkComboBox .button:hover,
-.primary-toolbar.toolbar GtkComboBox .button:hover*/ {
+.primary-toolbar .toolbar GtkComboBox .button:hover {
 	border-image: url("assets/toolbar-button-border.svg") 3 / 3px stretch;
 }
 
