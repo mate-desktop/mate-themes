@@ -80,6 +80,10 @@ GtkScale.scale-has-marks-above.slider.vertical:insensitive {
 	border-image: url("assets/button-default-active-border.svg") 3 / 3px stretch;
 }
 
+.toolbar .button:hover,
+.primary-toolbar .button:hover,
+.primary-toolbar .toolbar .button:hover,
+.primary-toolbar.toolbar .button:hover,
 .toolbar .button:checked,
 .primary-toolbar .button:checked,
 .primary-toolbar .toolbar .button:checked,
