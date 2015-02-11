@@ -3504,6 +3504,12 @@ GtkTreeView row:nth-child(even):backdrop:hover {
 	color: shade (@theme_selected_bg_color, 0.35);
 }
 
+.sidebar GtkTreeView row:active:hover,
+.sidebar GtkTreeView row:checked:hover,
+.sidebar GtkTreeView row:selected:hover {
+	color: shade (@theme_selected_fg_color, 1.00);
+}
+
 column-header.button,
 column-header .button {
 	color: @theme_fg_color;
