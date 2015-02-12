@@ -2,6 +2,16 @@
  * Caja *
  ************/
 
+/* caja sidebar */
+CajaWindow FMTreeView .view,
+CajaWindow CajaNotesViewer .view,
+CajaWindow CajaPlacesSidebar .view,
+CajaWindow CajaHistorySidebar .view,
+CajaWindow CajaEmblemSidebar .frame,
+CajaWindow CajaInformationPanel .vertical {
+	background-color: shade (@theme_base_color, 1.00);
+	color: @theme_fg_color;
+}
 
 .caja-desktop.caja-canvas-item {
 	color: @theme_base_color;
