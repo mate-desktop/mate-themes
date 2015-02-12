@@ -115,10 +115,24 @@ CajaWindow * {
 	-GtkPaned-handle-size: 0;
 }
 
-/*FIXME normaly this isn't the right entry for adjusting
-the sidebar background color*/
-CajaWindow .view {
+/* caja sidebar */
+CajaWindow FMTreeView .view,
+CajaWindow CajaNotesViewer .view,
+CajaWindow CajaPlacesSidebar .view,
+CajaWindow CajaHistorySidebar .view,
+CajaWindow CajaInformationPanel GtkVBox,
+CajaWindow CajaEmblemSidebar GtkViewport {
 	background-color: shade (@theme_bg_color, 1.08);
+	color: @theme_fg_color;
+}
+
+CajaWindow CajaPlacesSidebar row:active:hover,
+CajaWindow CajaPlacesSidebar row:selected:hover,
+CajaWindow CajaHistorySidebar row:active:hover,
+CajaWindow CajaHistorySidebar row:selected:hover,
+CajaWindow FMTreeView row:active:hover,
+CajaWindow FMTreeView row:selected:hover {
+	color: shade (@theme_selected_fg_color, 1.00);
 }
 
 CajaWindow .rubberband,
@@ -126,14 +140,7 @@ CajaWindow .view.rubberband {
 	background-color: alpha (@theme_selected_bg_color, 0.35);
 }
 
-/* sidebar */
-
-CajaWindow .sidebar .view {
-	background-color: shade (@theme_bg_color, 1.08);
-	color: @theme_fg_color;
-}
-
-CajaWindow .sidebar .frame {
+CajaWindow CajaPlacesSidebar .frame {
 	border-right-width: 1px;
 	border-style: solid;
 	border-color: shade (@theme_bg_color, 0.90);
@@ -142,16 +149,16 @@ CajaWindow .sidebar .frame {
 	border-bottom: none;
 }
 
-CajaWindow .sidebar row:selected {
+CajaWindow CajaPlacesSidebar row:selected {
 	color: @theme_selected_fg_color;
 }
 
-CajaWindow .sidebar row:backdrop:selected {
+CajaWindow CajaPlacesSidebar row:backdrop:selected {
 	color: @theme_fg_color;
 	text-shadow: none; 
 }
 
-CajaWindow .sidebar row:hover {
+CajaWindow CajaPlacesSidebar row:hover {
 	background-color: shade (@theme_bg_color, 0.97);
 }
 
@@ -280,7 +287,6 @@ MatePanelApplet .button {
 	background-image: none;
 	background-color: @theme_bg_color;
 	color: @theme_text_color;
-
 	border-image: none;
 	border-style: solid;
 	border-width: 0px;
@@ -326,11 +332,10 @@ WnckTasklist .button {
 		shade (@theme_bg_color, 0.96));
 	background-color: @theme_base_color;
 	color: @theme_text_color;
-
 	border-image: none;
 	border-style: solid;
 	border-width: 0px;
-	border-radius: 0px;
+	border-radius: 5px;
 	text-shadow: none;
 	-GtkWidget-window-dragging: true;
 }
@@ -365,7 +370,7 @@ WnckTasklist .button:hover {
 }
 
 /* set normal menubar button */
-PanelMenuBar.menubar .menuitem:hover {
+PanelMenuBar.menubar .menuitem {
 	transition: all 200ms ease-out;
 }
 
@@ -447,8 +452,8 @@ WnckPager {
 }
 
 NaTrayApplet {
-/*	-NaTrayApplet-icon-padding: 12;
-	-NaTrayApplet-icon-size: 16;*/
+	-NaTrayApplet-icon-padding: 12px;
+	-NaTrayApplet-icon-size: 16;
 }
 
 /* Classic icon style */
