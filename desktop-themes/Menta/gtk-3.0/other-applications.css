@@ -40,6 +40,11 @@ NemoWindow .sidebar row:backdrop:selected {
 	text-shadow: none; 
 }
 
+NemoWindow .sidebar row:hover {
+	background-color: shade (@theme_selected_bg_color, 1.15);
+	color: shade (@theme_selected_bg_color, 0.35);
+}
+
 /* desktop mode */
 .nemo-desktop.nemo-canvas-item {
 	color: @theme_bg_color;

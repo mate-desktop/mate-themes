@@ -11,6 +11,7 @@ theme_DATA = \
 	gtk-widgets-assets.css \
 	gtk-widgets-backgrounds.css \
 	gtk-widgets-borders.css \
+	mate-applications.css \
 	other-applications.css \
 	settings.ini \
 	unity.css
