@@ -35,7 +35,7 @@
 	outline-color: @focus_border_color;
 	outline-style: dashed;
 	outline-offset: -2px;
-	outline-width: 1px;
+	outline-width: 0px; /* disable ugly focus-line */
 	outline-radius: 2px;
 	
 	-GtkWindow-resize-grip-width: 11;
@@ -479,7 +479,7 @@ GtkScrolledWindow GtkViewport.frame {
 .toolbar.horizontal .button:active,
 .titlebar .linked.raised .button,
 .titlebar .linked.raised .button:active {
-	padding: 5px 8px 6px;
+	padding: 5px 5px 6px; /* larger values makes the button arrow smaller*/
 }
 
 .button.default {
@@ -543,6 +543,7 @@ GtkComboBoxText GtkToggleButton.button,
 	-GtkButton-interior-focus: true;
 	-GtkButton-default-border: 0;
 	-GtkButton-inner-border: 3;
+	-GtkArrow-arrow-scaling: 0.5;
 	color: @theme_text_color;
 	border-style: solid;
 	border-color: transparent;
