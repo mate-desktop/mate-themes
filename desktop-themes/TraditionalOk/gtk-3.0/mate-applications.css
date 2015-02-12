@@ -58,6 +58,17 @@ PanelMenuBar.menubar .menuitem:hover {
 	padding: 3px 5px;
 }
 
+/* set menubar menuitem */
+PanelMenuBar.menubar .menu .menuitem {
+	background-image: none;
+	color: @theme_text_color;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 3px;
+	border-color: alpha(@theme_bg_color, 0.1);
+	padding: 3px 5px;
+}
+
 /* set selected menubar menuitem */
 PanelMenuBar.menubar .menu .menuitem:checked:hover,
 PanelMenuBar.menubar .menu .menuitem:active:hover,
@@ -88,12 +99,10 @@ MatePanelApplet .button {
 	/* Due to a bug somewhere in gtk or cairo,
 	   a padding of zero (or even one) doesn't work always!!! */
 	padding: 0px;
-
 	border-radius: 3px;
 	border-width: 1px;
 	border-style: solid;
 	text-shadow: none;
-
 	color: @theme_fg_color;
 	background-image: -gtk-gradient (linear,
 	                  left top,
@@ -132,7 +141,6 @@ WnckTasklist .button {
 	border-width: 1px;
 	border-style: solid;
 	text-shadow: none;
-
 	color: @theme_fg_color;
 	background-color: transparent;
 	background-image: -gtk-gradient (linear,
@@ -148,6 +156,7 @@ WnckTasklist .button:checked:hover,
 WnckTasklist .button:checked,
 WnckTasklist .button:active:hover,
 WnckTasklist .button:active {
+	padding: 0px;
 	border-style: solid;
 	background-color: transparent;
 	background-image: linear-gradient(to bottom,
@@ -160,6 +169,7 @@ WnckTasklist .button:active {
 }
 
 WnckTasklist .button:hover {
+	padding: 0px;
 	border-style: solid;
 	background-color: transparent;
 	background-image: linear-gradient(to bottom,
@@ -207,17 +217,17 @@ WnckPager {
 }
 
 /* prelight of WnckPager */
-MatePanelApplet *:hover {
+WnckPager:hover {
 	background-image: linear-gradient(to bottom,
-		shade (@theme_selected_bg_color, 2.86),
+		shade (@theme_selected_bg_color, 1.86),
 		shade (@theme_selected_bg_color, 1.0));
 	background-color: @theme_base_color;
 }
 
 /* Classic icon style */
-/*.mate-panel-menu-bar {
+.mate-panel-menu-bar {
 	-PanelMenuBar-icon-visible: true;
-}*/
+}
 
 NaTrayApplet {
 	background-image: none;
@@ -225,6 +235,22 @@ NaTrayApplet {
 	padding: 0;
 	color: @theme_fg_color;
 	text-shadow: none;
-/*	-NaTrayApplet-icon-padding: 12;
-	-NaTrayApplet-icon-size: 16;*/
+	-NaTrayApplet-icon-padding: 12;
+	-NaTrayApplet-icon-size: 16;
 }
+
+/***********************
+ * Mate-Control-Center *
+ ***********************/
+
+ShellWindow .button.flat {
+    border-image: none;
+    padding: 3px;
+}
+
+/* button hover of applications */
+ShellWindow GtkScrolledWindow .button.flat:hover {
+    background-color: transparent;
+    padding: 3px;
+}
+
