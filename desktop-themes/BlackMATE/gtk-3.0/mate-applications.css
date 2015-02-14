@@ -512,6 +512,11 @@ PlumaWindow .button.flat:hover {
  * Mate-Control-Center *
  ***********************/
 
+/* background */
+ShellWindow AppResizer {
+    background-color: @less_dark_color;
+}
+
 GtkScrolledWindow .button.flat {
     border-image: none;
 }
