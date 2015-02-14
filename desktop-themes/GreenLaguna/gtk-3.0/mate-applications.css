@@ -499,6 +499,11 @@ PlumaWindow .notebook tab .button.flat:hover {
  * Mate-Control-Center *
  ***********************/
 
+/* background */
+ShellWindow AppResizer SlabSection {
+    background-color: shade(@theme_main_color, 1.00)
+}
+
 ShellWindow .button.flat {
     border-image: none;
 }
@@ -514,5 +519,5 @@ ShellWindow GtkScrolledWindow .button.flat:hover {
 
 /* mate-appearance-properties view */
 GtkDialog GtkScrolledWindow .view {
-    background-color: @theme_main_color;
+    background-color: shade(@base_color, 1.06)
 }
