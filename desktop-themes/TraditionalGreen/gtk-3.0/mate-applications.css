@@ -251,6 +251,11 @@ NaTrayApplet {
  * Mate-Control-Center *
  ***********************/
 
+/* background */
+ShellWindow AppResizer {
+    background-color: @theme_base_color;
+}
+
 ShellWindow .button.flat {
     border-image: none;
     padding: 3px;
