@@ -1,9 +1,7 @@
 * {
 	engine: none;
 	padding: 1px;
-
 	background-clip: padding-box;
-
 	/* Style properties */
 	-GtkButton-child-displacement-x: 1;
 	-GtkButton-child-displacement-y: 1;
@@ -11,41 +9,30 @@
 	-GtkButton-image-spacing: 4;
 	-GtkButton-interior-focus: true;
 	-GtkToolButton-icon-spacing: 4;
-
 	-GtkTextView-error-underline-color: @error_color;
-
 	-GtkPaned-handle-size: 5;
-
 	-GtkCheckButton-indicator-size: 16;
 	-GtkCheckButton-indicator-spacing: 0;
 	-GtkCheckMenuItem-indicator-size: 12;
-
 	-GtkScrolledWindow-scrollbar-spacing: 0;
 	-GtkScrolledWindow-scrollbars-within-bevel: 0;
-
 	-GtkToolItemGroup-expander-size: 12;
 	-GtkExpander-expander-size: 12;
 	-GtkMenuBar-shadow-type: none;
-
 	-GtkMenu-horizontal-padding: 0;
 	-GtkMenu-vertical-padding: 0;
-
 	-GtkWidget-link-color: @link_color;
 	-GtkWidget-visited-link-color: @link_color;
 	-GtkIMHtml-hyperlink-color: @link_color;
 	-GtkHTML-link-color: @link_color;
-
 	-GtkWidget-wide-separators: true;
-
 	-WnckTasklist-fade-overlay-rect: 0;
-
 	-GtkWidget-focus-padding: 2;
 	/* disable focusline on active notebook tabs if focused*/
 	-GtkWidget-focus-line-width: 0;
 	-adwaita-focus-border-color: @focus_border;
 	-adwaita-focus-border-radius: 2;
 	-adwaita-focus-border-dashes: 1;
-
 	-GtkWindow-resize-grip-width: 14;
 	-GtkWindow-resize-grip-height: 12; 
 }
@@ -670,7 +657,7 @@ GtkLevelBar.vertical {
  ***************/
 GtkTreeView {
 	background-color: @theme_main_color;
-
+	-GtkWidget-wide-separators: false; /* avoid padding issue in file-chooser open */
 	-GtkTreeView-vertical-separator: 0;
 	-GtkTreeView-expander-size: 13;
 
