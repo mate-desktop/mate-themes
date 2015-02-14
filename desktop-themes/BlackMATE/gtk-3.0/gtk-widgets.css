@@ -54,6 +54,7 @@
 	outline-color: @focus_border;
 	outline-style: dashed;
 	outline-offset: 2px;
+	-gtk-icon-style: regular; /* disable symbolic icons */
 }
 
 /***************

@@ -37,7 +37,7 @@
 	outline-offset: -2px;
 	outline-width: 0px; /* disable ugly focus-line */
 	outline-radius: 2px;
-	
+	-gtk-icon-style: regular; /* disable symbolic icons */
 	-GtkWindow-resize-grip-width: 11;
 	-GtkWindow-resize-grip-height: 11;
 }
