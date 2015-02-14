@@ -1,9 +1,7 @@
 * {
 	engine: none;
 	padding: 1px;
-
 	background-clip: padding-box;
-
 	/* Style properties */
 	-GtkButton-child-displacement-x: 1;
 	-GtkButton-child-displacement-y: 1;
@@ -11,44 +9,32 @@
 	-GtkButton-image-spacing: 4;
 	-GtkButton-interior-focus: true;
 	-GtkToolButton-icon-spacing: 4;
-
 	-GtkTextView-error-underline-color: @error_color;
-
 	-GtkPaned-handle-size: 5;
-
 	-GtkCheckButton-indicator-size: 16;
 	-GtkCheckButton-indicator-spacing: 0;
 	-GtkCheckMenuItem-indicator-size: 12;
-
 	-GtkScrolledWindow-scrollbar-spacing: 0;
 	/* this is more stylish with this theme */
 	-GtkScrolledWindow-scrollbars-within-bevel: 0;
-
 	-GtkToolItemGroup-expander-size: 12;
 	-GtkExpander-expander-size: 12;
 	-GtkTreeView-expander-size: 13;
 	-GtkTreeView-horizontal-separator: 4;
 	-GtkMenuBar-shadow-type: none;
-
 	-GtkMenu-horizontal-padding: 0;
 	-GtkMenu-vertical-padding: 0;
-
 	-GtkWidget-link-color: @link_color;
 	-GtkWidget-visited-link-color: @link_color;
 	-GtkIMHtml-hyperlink-color: @link_color;
 	-GtkHTML-link-color: @link_color;
-
 	-GtkWidget-wide-separators: true;
-
 	-WnckTasklist-fade-overlay-rect: 0;
-
 	/* this makes emacs behave weirdly */
 	/*border-radius: 3px;*/
-
 	-GtkWidget-focus-padding: 2;
 	/* disable focusline on active notebook tabs if focused*/
 	-GtkWidget-focus-line-width: 0;
-
 	-GtkWindow-resize-grip-width: 14;
 	-GtkWindow-resize-grip-height: 12; 
 
@@ -59,6 +45,7 @@
 	outline-color: @focus_border;
 	outline-style: dashed;
 	outline-offset: 2px;
+	outline-width: 0px; /* disable ugly focus-line */
 }
 
 /***************
@@ -890,7 +877,7 @@ GtkNotebook {
  ***************/
 GtkTreeView {
 	background-color: @less_dark_color;
-
+	-GtkWidget-wide-separators: false; /* avoid padding issue in file-chooser open */
 	-GtkTreeView-vertical-separator: 0;
 	-GtkWidget-focus-padding: 1;
 }
