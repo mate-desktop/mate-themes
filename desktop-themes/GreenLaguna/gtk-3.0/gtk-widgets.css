@@ -2065,6 +2065,12 @@ GtkIconView.view.cell:selected:focus {
 	outline-offset: 3px;
 }
 
+GtkIconView.view.cell:hover,
+GtkIconView.view.cell:hover:focus {
+	border-style: none;
+	border-radius: 12px;
+}
+
 /* row as a separator */
 GtkTreeView.view.separator,
 GtkTreeView.view.separator:hover {
