@@ -28,6 +28,7 @@
     -GtkStatusbar-shadow-type: none;
 
     background-clip: padding-box;
+    outline-width: 0px; /* disable ugly focus-line */
     -gtk-icon-style: regular; /* disable symbolic icons */
 }
 
@@ -522,30 +523,18 @@ GtkComboBox .button {
     color: @theme_fg_color;
 }
 
-.menuitem,
-.menu .menuitem {
+.menuitem {
     color: @theme_fg_color;
     background-color: transparent;
 }
 
-.menuitem:insensitive,
-.menu .menuitem:insensitive {
+.menuitem:insensitive {
     color: @theme_button_insensitive_fg;
 }
 
-.menubar .menuitem:hover {
-    color: @theme_fg_color;
+.menuitem:hover {
+    color: @theme_base_color;
     background-color: @theme_active_color;
-}
-
-.menu .menuitem:hover {
-    color: @theme_fg_color;
-    background-color: @theme_active_color;
-    border-style: solid;
-    border-left-width: 1px;
-    border-right-width: 1px;
-    border-left-color: @theme_fg_color;
-    border-right-color: @theme_fg_color;
 }
 
 .menu .menuitem {
@@ -556,8 +545,7 @@ GtkComboBox .button {
     padding: 3px 5px;
 }
 
-.menuitem.separator,
-.menu .menuitem.separator {
+.menuitem.separator {
     -GtkMenuItem-horizontal-padding: 0;
 }
 
@@ -1262,6 +1250,7 @@ GtkCheckButton.text-button, GtkRadioButton.text-button {
 }
 
 GtkViewport {
+    padding: 0px;
     background-color: @theme_view_bg;
 }
 
@@ -1278,6 +1267,12 @@ GtkViewport {
 .view:selected:focus {
     background-color: @theme_fg_color;
     color: @theme_base_color;
+}
+
+GtkIconView,
+GtkViewport {
+    /* avoid resizing theme thumbnails in mate-appearance-properties */
+    padding: 0px;
 }
 
 GtkIconView.view.cell {
