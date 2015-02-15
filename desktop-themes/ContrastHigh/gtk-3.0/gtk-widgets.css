@@ -28,6 +28,7 @@
     -GtkStatusbar-shadow-type: none;
 
     background-clip: padding-box;
+    outline-width: 0px; /* disable ugly focus-line */
     -gtk-icon-style: regular; /* disable symbolic icons */
 }
 
@@ -1249,6 +1250,7 @@ GtkCheckButton.text-button, GtkRadioButton.text-button {
 }
 
 GtkViewport {
+    padding: 0px;
     background-color: @theme_view_bg;
 }
 
@@ -1265,6 +1267,12 @@ GtkViewport {
 .view:selected:focus {
     background-color: @theme_fg_color;
     color: @theme_base_color;
+}
+
+GtkIconView,
+GtkViewport {
+    /* avoid resizing theme thumbnails in mate-appearance-properties */
+    padding: 0px;
 }
 
 GtkIconView.view.cell {
