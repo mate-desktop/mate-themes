@@ -1807,6 +1807,12 @@ GtkIconView.view.cell:selected:focus {
 	-adwaita-focus-border-dashes: 0;
 }
 
+GtkIconView.view.cell:hover,
+GtkIconView.view.cell:hover:focus {
+	border-style: none;
+	border-radius: 12px;
+}
+
 /* row as a separator */
 GtkTreeView.view.separator,
 GtkTreeView.view.separator:hover {
