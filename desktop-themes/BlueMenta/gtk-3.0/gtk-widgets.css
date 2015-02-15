@@ -3224,6 +3224,12 @@ GtkTreeView:selected:focus {
 	outline-color: mix(@theme_selected_fg_color, @theme_selected_bg_color, 0.30);
 }
 
+GtkIconView,
+GtkViewport {
+    /* avoid resizing theme thumbnails in mate-appearance-properties */
+    padding: 0px;
+}
+
 GtkIconView.cell:selected,
 GtkIconView.cell:selected:focus {
 	border-radius: 4px;
@@ -3234,6 +3240,11 @@ GtkIconView.cell:selected:focus {
 	outline-color: @treeview_focus_border;
 	outline-style: solid;
 	outline-offset: 3px;
+}
+
+GtkIconView.cell:hover,
+GtkIconView.cell:hover:focus {
+	border-radius: 4px;
 }
 
 .view {
