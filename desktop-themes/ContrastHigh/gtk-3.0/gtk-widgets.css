@@ -26,6 +26,7 @@
     -GtkWindow-resize-grip-height: 15;
 
     background-clip: padding-box;
+    outline-width: 0px; /* disable ugly focus-line */
 }
 
 GtkWindow {
@@ -468,13 +469,11 @@ GtkComboBox .button {
     color: @theme_fg_color;
 }
 
-.menuitem,
-.menu .menuitem {
+.menuitem {
     color: @theme_fg_color;
 }
 
-.menuitem:insensitive,
-.menu .menuitem:insensitive {
+.menuitem:insensitive {
     color: @theme_button_insensitive_fg;
     border-style: solid;
     border-left-color: @theme_fg_color;
@@ -488,8 +487,8 @@ GtkComboBox .button {
     padding: 3px 5px;
 }
 
-.menubar .menuitem:hover {
-    color: @theme_fg_color;
+.menuitem:hover {
+    color: @theme_base_color;
     background-color: @theme_active_color;
 }
 
@@ -1082,6 +1081,7 @@ column-header:first-child .button {
 }
 
 GtkViewport {
+    padding: 0px;
     background-color: @theme_view_bg;
 }
 
@@ -1098,6 +1098,12 @@ GtkViewport {
 .view:selected:focus {
     background-color: @theme_fg_color;
     color: @theme_base_color;
+}
+
+GtkIconView,
+GtkViewport {
+    /* avoid resizing theme thumbnails in mate-appearance-properties */
+    padding: 0px;
 }
 
 GtkIconView.view.cell {
