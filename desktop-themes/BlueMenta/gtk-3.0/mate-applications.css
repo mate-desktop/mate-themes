@@ -58,13 +58,28 @@ CajaPlacesTreeView:hover {
 CajaPlacesTreeView:selected:hover {
 }
 
-/* Caja places bar */
+/* Caja places combobox */
 CajaWindow .button.flat {
     background-color: transparent;
     background-image: linear-gradient(to bottom,
                                       @button_gradient_color_a,
                                       @button_gradient_color_b);
-    border-image: url("borders/button.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
+}
+
+CajaWindow .button.flat:first-child {
+	transition: all 400ms ease-out;
+    border-radius: 6px 0 0 6px;
+    border-right-width: 0;
+/* remove left border */
+    border-image: url("borders/button.png") 3 3 4 3 / 3px 0px 4px 3px stretch;
+}
+
+CajaWindow .button.flat:last-child {
+	transition: all 400ms ease-out;
+    border-radius: 0 6px 6px 0;
+    border-left-width: 0;
+/* remove right border */
+    border-image: url("borders/button.png") 3 3 4 3 / 3px 3px 4px 0px stretch;
 }
 
 CajaWindow .button.flat:hover {
@@ -72,20 +87,45 @@ CajaWindow .button.flat:hover {
     background-image: linear-gradient(to bottom,
                                       @button_hover_gradient_color_a,
                                       @button_hover_gradient_color_b);
-    border-image: url("borders/button.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
+}
+
+CajaWindow .button.flat:hover:first-child {
+    border-radius: 6px 0 0 6px;
+    border-right-width: 0;
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      @button_hover_gradient_color_a,
+                                      @button_hover_gradient_color_b);
+    border-image: url("borders/button.png") 3 3 4 3 / 3px 0px 4px 3px stretch;
+}
+
+CajaWindow .button.flat:hover:last-child  {
+    border-radius: 0 6px 6px 0;
+    border-left-width: 0;
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      @button_hover_gradient_color_a,
+                                      @button_hover_gradient_color_b);
+    border-image: url("borders/button.png") 3 3 4 3 / 3px 3px 4px 0px stretch;
 }
 
 /* some overrides for button.flat */
 /* zoom button */
-CajaWindow .primary-toolbar .button.flat {
+CajaWindow .primary-toolbar .button.flat,
+CajaWindow .primary-toolbar .button.flat:first-child,
+CajaWindow .primary-toolbar .button.flat:last-child {
+	transition: all 400ms ease-out;
+    border-width: 3px;
     background-color: transparent;
     background-image: linear-gradient(to bottom,
                                       shade (@theme_bg_color, 1.0),
                                       shade (@theme_bg_color, 0.96));
+    border-image: none;
 }
 
 /* zoom button */
 CajaWindow .primary-toolbar .button.flat:hover {
+    border-width: 3px;
     background-color: transparent;
     background-image: linear-gradient(to bottom,
                                       @button_gradient_color_a,
