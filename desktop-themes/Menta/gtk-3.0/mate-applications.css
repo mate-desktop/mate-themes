@@ -434,6 +434,12 @@ PanelMenuBar.menubar .menuitem:hover {
 	border-radius: 5px;
 }
 
+/* set menubar menuitem separator */
+PanelMenuBar.menubar .menu .menuitem.separator {
+	color: @menu_separator;
+	-GtkMenuItem-horizontal-padding: 0;
+}
+
 /* set normal menubar menuitem */
 PanelMenuBar.menubar .menu .menuitem {
     padding: 6px;
