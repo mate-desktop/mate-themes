@@ -314,6 +314,11 @@ PanelMenuBar.menubar .menuitem {
 PanelMenuBar.menubar .menuitem:hover {
 }
 
+/* set normal menubar menuitem */
+PanelMenuBar.menubar .menu .menuitem {
+    padding: 6px;
+}
+
 /* set selected menubar menuitem */
 PanelMenuBar.menubar .menu .menuitem:active:hover,
 PanelMenuBar.menubar .menu .menuitem:hover {

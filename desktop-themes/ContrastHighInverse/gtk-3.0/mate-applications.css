@@ -35,6 +35,11 @@ MatePanelApplet > GtkMenuBar.menubar .menuitem {
     color: @theme_fg_color;
 }
 
+/* set normal menubar menuitem */
+PanelMenuBar.menubar .menu .menuitem {
+    padding: 6px;
+}
+
 .mate-panel-menu-bar .menuitem:hover,
 MatePanelApplet > GtkMenuBar.menubar .menuitem:hover {
     color: @theme_fg_color;
