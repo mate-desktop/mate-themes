@@ -434,7 +434,8 @@ PanelMenuBar.menubar .menuitem:hover {
 
 /* set normal menubar menuitem */
 PanelMenuBar.menubar .menu .menuitem {
-	transition: all 150ms ease-out;
+    transition: all 150ms ease-out;
+    padding: 6px;
 }
 
 /* set selected menubar menuitem */
