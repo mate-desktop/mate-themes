@@ -77,8 +77,8 @@ PanelMenuBar.menubar .menu .menuitem {
 	border-style: solid;
 	border-width: 1px;
 	border-radius: 3px;
-	border-color: alpha(@theme_bg_color, 0.1);
-	padding: 3px 5px;
+	border-color: @theme_base_color;
+	padding: 6px 5px;
 }
 
 /* set selected menubar menuitem */
@@ -87,10 +87,9 @@ PanelMenuBar.menubar .menu .menuitem:hover {
 	background-image: none;
 	color: @theme_selected_fg_color;
 	border-style: solid;
-	border-width: 0px;
+	border-width: 1px;
 	border-radius: 3px;
 	border-color: alpha(@theme_selected_bg_color, 0.1);
-	padding: 3px 5px;
 }
 
 MatePanelApplet {
