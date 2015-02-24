@@ -149,6 +149,11 @@ CajaWindow .toolbar GtkComboBox .button:hover {
     padding: 4px 4px;
 }
 
+/* to avoid padding when executing toogle button */
+CajaLocationBar .entry {
+      padding: 4px;
+}
+
 CajaWindow * {
 	-GtkPaned-handle-size: 0;
 }
@@ -164,16 +169,23 @@ CajaWindow CajaEmblemSidebar GtkViewport {
 	color: @theme_fg_color;
 }
 
-CajaWindow CajaPlacesSidebar row:active:hover,
-CajaWindow CajaPlacesSidebar row:checked:hover,
-CajaWindow CajaPlacesSidebar row:selected:hover,
-CajaWindow CajaHistorySidebar row:active:hover,
-CajaWindow CajaHistorySidebar row:checked:hover,
-CajaWindow CajaHistorySidebar row:selected:hover,
-CajaWindow FMTreeView row:active:hover,
-CajaWindow FMTreeView row:checked:hover,
-CajaWindow FMTreeView row:selected:hover {
+CajaWindow CajaPlacesSidebar .view row:active:hover,
+CajaWindow CajaPlacesSidebar .view row:checked:hover,
+CajaWindow CajaPlacesSidebar .view row:selected:hover,
+CajaWindow CajaHistorySidebar .view row:active:hover,
+CajaWindow CajaHistorySidebar .view row:checked:hover,
+CajaWindow CajaHistorySidebar .view row:selected:hover,
+CajaWindow FMTreeView .view row:active:hover,
+CajaWindow FMTreeView .view row:checked:hover,
+CajaWindow FMTreeView .view row:selected:hover {
 	color: shade (@theme_selected_fg_color, 1.00);
+}
+
+CajaWindow CajaPlacesSidebar .view row:hover,
+CajaWindow FMTreeView .view row:hover,
+CajaWindow CajaHistorySidebar .view row:hover {
+	background-color: shade (@theme_selected_bg_color, 1.15);
+	color: shade (@theme_selected_bg_color, 0.35);
 }
 
 CajaWindow .rubberband,
@@ -600,5 +612,19 @@ ShellWindow .button.flat:hover {
                                       @button_hover_gradient_color_a,
                                       @button_hover_gradient_color_b);
     border-image: url("borders/button.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
+}
+
+/*********
+ * Atril *
+ *********/
+
+/* size of page entry */
+EvPageActionWidget .entry {
+    padding: 2px;
+}
+
+EvWindow .toolbar .button,
+EvWindow .toolbar .button.flat {
+    padding: 0px 4px;
 }
 
