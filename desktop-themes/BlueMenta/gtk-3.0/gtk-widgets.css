@@ -2123,7 +2123,6 @@ GtkTreeMenu .menuitem,
 	background-image: none;
 	background-color: @theme_base_color;
 	color: @internal_element_color;
-
 	border-image: none;
 	border-style: none;
 }
@@ -2132,7 +2131,6 @@ GtkTreeMenu .menuitem,
 	background-image: none;
 	background-color: @theme_base_color;
 	color: @theme_text_color;
-
 	border-image: none;
 	border-style: none;
 }
@@ -2140,18 +2138,17 @@ GtkTreeMenu .menuitem,
 .menu.button:insensitive {
 	background-color: @theme_base_color;
 	color: lighter(@internal_element_color);
-
 	border-image: none;
 	border-style: none;
 }
 
 /* this controls the general appearance of the menubar */
 .menubar {
-	background-image: linear-gradient(to bottom,
-		@theme_bg_color,
-		shade (@theme_bg_color, 0.96));
-	border-width: 0;
-	-GtkWidget-window-dragging: true;
+    background-image: linear-gradient(to bottom,
+                                      @theme_bg_color,
+                                      shade (@theme_bg_color, 0.96));
+    border-width: 0;
+    -GtkWidget-window-dragging: true;
 }
 
 .menubar .menuitem {
@@ -2162,9 +2159,9 @@ GtkTreeMenu .menuitem,
 }
 
 .menubar .menuitem:hover {
-	background-image: linear-gradient(to bottom,
-		shade (@theme_bg_color, 1.0),
-		shade (@theme_bg_color, 0.82));
+    background-image: linear-gradient(to bottom,
+                                      shade (@theme_bg_color, 1.0),
+                                      shade (@theme_bg_color, 0.82));
 }
 
 .menubar .menuitem:hover {
@@ -2172,9 +2169,10 @@ GtkTreeMenu .menuitem,
 }
 
 .menu .menuitem {
-	-GtkMenuItem-arrow-scaling: 0.6;
-	transition: all 150ms ease-out;
-	padding: 4px;
+    background-color: transparent;
+    -GtkMenuItem-arrow-scaling: 0.6;
+    transition: all 150ms ease-out;
+    padding: 6px 5px;
 }
 
 .menu .menuitem:hover {
@@ -3429,7 +3427,8 @@ GtkSwitch.trough:insensitive {
 	text-shadow: none;
 }
 
-GtkSwitch.slider {
+GtkSwitch.slider,
+GtkSwitch.slider:hover {
 	background-color: transparent;
 	border: none;
 	border-image: none;
@@ -3682,7 +3681,7 @@ column-header .button.dnd {
 
 .app-notification,
 .app-notification.frame {
-    color: @theme_selected_fg_color;
+    color: @theme_fg_color;
     padding: 10px;
     border: none;
     border-radius: 0 0 4px 4px;
@@ -3706,7 +3705,7 @@ column-header .button.dnd {
 .app-notification GtkCalendar.header .button.titlebutton,
 GtkCalendar.header .app-notification .button.titlebutton,
 .app-notification.frame .button {
-    color: #eeeeec;
+    color: @theme_fg_color;
     border-color: rgba(75, 89, 112, 0.7);
     background-image: linear-gradient(to bottom,
                                       rgba(102, 153, 204, 0.7));
@@ -4092,7 +4091,7 @@ GtkInfoBar {
 	border-width: 1px;
 	border-style: solid;
 	border-radius: 3px;
-	background-color: @theme_bg_color;
+	background-color: @menu_bg_color;
 	box-shadow: 0 1px 5px @wm_shadow;
 	text-shadow: none;
 	icon-shadow: none; 
@@ -4182,7 +4181,7 @@ GtkModelButton.button.flat,
 GtkModelButton.button.flat:focus,
 GtkModelButton.button.flat:active:focus,
 GtkModelButton.button.flat:checked:focus {
-	background-color: @theme_bg_color;
+	background-color: @menu_bg_color;
 	background-image: none;
 	border-color: transparent;
 	border-image: none;
