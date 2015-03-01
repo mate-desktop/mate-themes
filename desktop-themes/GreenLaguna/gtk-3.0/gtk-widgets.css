@@ -133,6 +133,11 @@
  * Miscellaneous *
  *****************/
 
+/* displays at end of mouse scrolling */
+.overshoot {
+	background-color: alpha (@theme_bg_color, 0.35);
+}
+
 .content-view.view.rubberband,
 .view.rubberband,
 .rubberband {
@@ -288,7 +293,7 @@ GtkTreeView .separator,
 	border-width: 1px;
 	border-style: none;
 	border-radius: 3px;
-	padding: 4px;
+	padding: 4px 4px;
 	color: @theme_text_color;
 }
 
@@ -302,6 +307,7 @@ GtkTreeView .separator,
 }
 
 .entry:focus {
+	padding: 3px 3px;
 	border-image: none;
 	border-style: solid;
 	border-color: @theme_selected_bg_color;
@@ -715,14 +721,11 @@ GtkLevelBar.vertical {
 .notebook tab .button,
 .notebook tab .button:hover,
 .notebook tab .button:hover:active {
-	border-style: none;
 	border-image: none;
-	/*border-color: shade(@theme_bg_color, 0.9);*/
 	background-color: alpha(@theme_bg_color, 0.9);
 	background-image: none;
 	-GtkButton-child-displacement-x: 0;
 	-GtkButton-child-displacement-y: 0;
-
 	-GtkWidget-focus-line-width: 0;
 	-GtkWidget-focus-padding: 0;
 }
