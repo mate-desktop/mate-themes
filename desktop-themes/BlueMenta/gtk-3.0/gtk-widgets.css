@@ -191,6 +191,7 @@ GtkTextView {
 	border-radius: 0px;
 }
 
+/* displays at end of mouse scrolling */
 .overshoot {
 	background-color: alpha (@theme_selected_bg_color, 0.35);
 }
@@ -1586,9 +1587,11 @@ GtkCalendar.header .stack-switcher > .titlebutton.button {
 	-GtkWidget-focus-line-width: 0;
 }
 
+/* fix view in mate-appearence-properties
 .notebook GtkScrolledWindow {
 	background-color: @theme_base_color;
 }
+*/
 
 .notebook.frame {
 	border-width: 1px;
@@ -1631,11 +1634,14 @@ GtkCalendar.header .stack-switcher > .titlebutton.button {
 	border-width: 0px;
 }
 
-.notebook :hover {
+/* looks ugly with GTK3-3.16 */
+/*
+.notebook:hover {
 	-gtk-image-effect: highlight;
 	background-color: shade(@theme_bg_color, 1.07);
 	color: @theme_fg_color;
 }
+*/
 
 .notebook tab {
 	border-color: transparent;
@@ -1796,6 +1802,32 @@ GtkCalendar.header .stack-switcher > .titlebutton.button {
 		alpha(black, 0.13)
 		alpha(black, 0.13) 
 		alpha(black, 0.13);
+}
+
+.notebook.arrow {
+    /* FIXME, why this doesn't work? */
+	-GtkNotebook-arrow-scaling: 0.5;
+    color: shade(@theme_fg_color, 2.6);
+}
+
+.notebook.arrow:hover {
+    color: @theme_selected_bg_color;
+}
+
+.notebook.arrow:active {
+    color: @theme_fg_color;
+}
+
+.notebook.arrow:insensitive {
+    color: rgba(141, 144, 145, 0.3);
+}
+
+.notebook.arrow:backdrop {
+    color: rgba(84, 89, 90, 0.4);
+}
+
+.notebook.arrow:backdrop:insensitive {
+    color: #c7c7c7;
 }
 
 /**************
