@@ -39,7 +39,7 @@
 	outline-color: @focus_border;
 	outline-style: dashed;
 	outline-offset: 2px;
-	outline-width: 2px; /* disable ugly focus-line */
+	outline-width: 0px; /* disable ugly focus-line */
 	-gtk-icon-style: regular; /* no symbolic icons */
 }
 
@@ -135,6 +135,11 @@
 /*****************
  * Miscellaneous *
  *****************/
+
+/* displays at end of mouse scrolling */
+.overshoot {
+	background-color: alpha (@theme_selected_bg_color, 0.35);
+}
 
 .content-view.view.rubberband,
 .view.rubberband,
@@ -310,8 +315,6 @@ GtkTreeView .separator,
 
 .entry:focus {
 	border-image: none;
-	border-style: solid;
-	border-color: shade(@less_dark_color, 1.2);
 	box-shadow: inset 0 -2px alpha(@entry_shadow, 0.05),
 	            inset 0 -1px alpha(@entry_shadow, 0.07);
 }
@@ -536,9 +539,12 @@ GtkCalendar {
 	border-width: 1px 0 0;
 }
 
+/* disable for GTK3-3.16 , issue with caja list-view frame*/
+/*
 GtkScrolledWindow.frame {
 	background-color: transparent;
 }
+*/
 
 /* no double frames */
 GtkScrolledWindow GtkViewport.frame {
@@ -1324,18 +1330,91 @@ GtkComboBox .menu {
 	background-image: none;
 	border-style: solid;
 	-GtkRange-trough-border: 0;
-	-GtkRange-arrow-scaling: 0.5;
-	-GtkRange-slider-width: 12;
+	-GtkScrollbar-has-backward-stepper: true;
+	-GtkScrollbar-has-forward-stepper: true;
 	-GtkRange-stepper-size: 16;
-	-GtkScrollbar-min-slider-length: 34; /* minimum size for the slider. sadly can't be in '.slider' where it belongs */
-
+	-GtkRange-slider-width: 13;
+	-GtkScrollbar-min-slider-length: 42; /* minimum size for the slider. sadly can't be in '.slider' where it belongs */
 	-GtkRange-stepper-spacing: 0;
-	-GtkRange-trough-under-steppers: 0;
+	-GtkRange-trough-under-steppers: 1;
 }
 
-.scrollbar.trough {
-	background-color: transparent;
+.scrollbars-junction { /* the small square between scrollbars!!! */
+    background-image: none;
+    background-color: @less_dark_color;
+    border-width: 0;
+    border-radius: 0;
+    border-image: none;
+    box-shadow: none;
+}
+
+.scrollbar.trough,
+.scrollbar.trough.vertical {
+	background-image: linear-gradient(to right,
+		@scrollbar_trough,
+		shade (@scrollbar_trough, 1.08));
+	border-left-width: 1px;
+	border-style: solid;
+	border-color: shade (@theme_bg_color, 0.94);
+	border-radius: 0;
+	border-image: none;
+}
+
+.scrollbar.trough.horizontal {
+	background-image: linear-gradient(to bottom,
+		@scrollbar_trough,
+		shade (@scrollbar_trough, 1.08));
+	border-top-width: 1px;
+	border-style: solid;
+	border-color: shade (@theme_bg_color, 0.94);
+	border-radius: 0;
+	border-image: none;
+}
+
+.scrollbar.button,
+.scrollbar.button.horizontal,
+.scrollbar.button.vertical {
+	color: @theme_fg_color; /*@internal_element_color*/
+	border-image: none;
+	border-style: none;
+	border-width: 0px;
 	background-image: none;
+	background-color: @less_dark_color;
+}
+
+.scrollbar.button:hover,
+.scrollbar.button.horizontal:hover,
+.scrollbar.button.vertical:hover {
+	background-image: none;
+	background-color: shade(@less_dark_color, 1.4);
+	/*border-color: shade(@highlighted_border, 1.1);*/
+	color: @theme_fg_color;
+	border-image: none;
+	border-style: none;
+	border-width: 0px;
+}
+
+.scrollbar.button:hover:active,
+.scrollbar.button.vertical:hover:active,
+.scrollbar.button.horizontal:hover:active {
+	background-color: @less_dark_color;
+	background-image: linear-gradient(to top,
+	                                  shade(@less_dark_color, 1.5),
+	                                  shade(@less_dark_color, 0.86));
+	color: @theme_fg_color;
+	border-image: none;
+	border-style: none;
+	border-width: 0px;
+	/*border-color: shade(@highlighted_border, 1.1);*/
+}
+
+.scrollbar.button:insensitive,
+.scrollbar.button.horizontal:insensitive,
+.scrollbar.button.vertical:insensitive {
+	background-image: none;
+	background-color: transparent;
+	color: transparent;
+	border-image: none;
 	border-style: none;
 	border-width: 0px;
 }
@@ -1414,61 +1493,6 @@ GtkComboBox .menu {
 	                                  shade(@scroll_slider_color, 2.0),
 	                                  shade(@scroll_slider_color, 1.6) 55%,
 	                                  shade(@scroll_slider_color, 0.6));
-}
-
-.scrollbar.button,
-.scrollbar.button.horizontal,
-.scrollbar.button.vertical {
-	color: @theme_fg_color; /*@internal_element_color*/
-	border-image: none;
-	border-style: none;
-	border-width: 0px;
-	background-image: none;
-	background-color: transparent;
-}
-
-.scrollbar.button:hover,
-.scrollbar.button.horizontal:hover,
-.scrollbar.button.vertical:hover {
-	background-image: none;
-	background-color: shade(@theme_bg_color, 1.4);
-	/*border-color: shade(@highlighted_border, 1.1);*/
-	color: @theme_fg_color;
-	border-image: none;
-	border-style: none;
-	border-width: 0px;
-}
-
-.scrollbar.button:hover:active,
-.scrollbar.button.horizontal:hover:active {
-	background-image: linear-gradient(to top,
-	                                  shade(@theme_bg_color, 1.5),
-	                                  shade(@theme_bg_color, 0.86));
-	color: @theme_fg_color;
-	border-image: none;
-	border-style: none;
-	border-width: 0px;
-	/*border-color: shade(@highlighted_border, 1.1);*/
-}
-
-.scrollbar.button.vertical:hover:active {
-	background-image: linear-gradient(to left,
-	                                  shade(@theme_bg_color, 1.5),
-	                                  shade(@theme_bg_color, 0.86));
-	border-image: none;
-	border-style: none;
-	border-width: 0px;
-}
-
-.scrollbar.button:insensitive,
-.scrollbar.button.horizontal:insensitive,
-.scrollbar.button.vertical:insensitive {
-	background-image: none;
-	background-color: transparent;
-	color: transparent;
-	border-image: none;
-	border-style: none;
-	border-width: 0px;
 }
 
 .scrollbar.slider:insensitive {

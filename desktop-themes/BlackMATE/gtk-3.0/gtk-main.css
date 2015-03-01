@@ -60,6 +60,8 @@
 
 @define-color scroll_slider_color #3b3b3b;
 
+@define-color scrollbar_trough shade(@less_dark_color, 0.98);
+
 @define-color less_dark_color #4d4d4d; /*shade(@scroll_slider_color, 1.3)*/
 
 @define-color menu_controls_color #ffffff;
