@@ -546,7 +546,7 @@ WnckPager {
 }
 
 /* prelight of WnckPager */
-MatePanelApplet:hover {
+WnckPager:hover {
     background-image: linear-gradient(to bottom,
                                       @theme_bg_color,
                                       shade (@theme_selected_bg_color, 0.86));
@@ -640,21 +640,34 @@ PlumaWindow .notebook tab .button.flat:hover {
  ***********************/
 
 /* background */
-ShellWindow AppResizer {
+ShellWindow AppResizer SlabSection {
     background-color: @theme_base_color;
 }
 
+/* button of sidebar */
 ShellWindow .button.flat {
+    border-image: none;
+    padding: 4px 1px;
+}
+
+ShellWindow .button.flat:hover {
+    padding: 4px 1px;
+
+}
+
+/* button of applications */
+ShellWindow GtkScrolledWindow .button.flat {
+    padding: 4px 0px;
     border-image: none;
 }
 
-/* button hover of applications */
-ShellWindow .button.flat:hover {
+ShellWindow GtkScrolledWindow .button.flat:hover {
     background-color: transparent;
     background-image: linear-gradient(to bottom,
                                       @button_hover_gradient_color_a,
                                       @button_hover_gradient_color_b);
     border-image: url("borders/button.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
+    padding: 4px 0px;
 }
 
 /*********
