@@ -2,12 +2,7 @@
  * Caja *
  ************/
 
-/*background of icon view */
-CajaView .entry {
-    background-color: shade(@base_color, 1.06)
-}
-
-/*background of list view */
+/* background of all views */
 CajaWindow .view {
     background-color: shade(@base_color, 1.06)
 }
@@ -35,6 +30,7 @@ CajaWindow .view {
 }
 
 /* file renaming */
+/*
 CajaView .view .entry,
 CajaView .view .entry:focus {
 	background-image: none;
@@ -43,6 +39,7 @@ CajaView .view .entry:focus {
 	border-radius: 1px;
 	border-color: @theme_selected_bg_color;
 }
+*/
 
 /*CajaToolbar .toolbar {
 	border-radius: 0px;

@@ -4,17 +4,9 @@
 
 /**** View ***/
 
-/* Look out !
-FIXME This is the background color of caja view */
-/*background of icon view */
-CajaView .entry {
-    background-color: shade(@theme_bg_color, 1.00);
-	color: @theme_fg_color;
-}
-
-/*background of list view */
+/* background of all views */
 CajaWindow .view {
-    background-color: shade(@theme_bg_color, 1.00);
+    background-color: shade (@theme_bg_color, 1.08);
 	color: @theme_fg_color;
     border-color: transparent;
 }
@@ -23,7 +15,7 @@ CajaWindow .view {
 	background-color: shade(@less_dark_color, 1.3);
 }
 
-/* file renaming */
+/* file renaming *//*
 CajaView .view .entry,
 CajaView .view .entry:focus {
 	background-image: none;
@@ -33,6 +25,7 @@ CajaView .view .entry:focus {
 	border-color: @theme_selected_bg_color;
 	background-color: shade(@theme_selected_bg_color, 0.3);
 }
+*/
 
 /**** Window ***/
 
