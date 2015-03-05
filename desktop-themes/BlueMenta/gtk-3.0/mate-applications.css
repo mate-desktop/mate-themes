@@ -640,7 +640,7 @@ PlumaWindow .notebook tab .button.flat:hover {
  ***********************/
 
 /* background */
-ShellWindow AppResizer SlabSection {
+ShellWindow AppResizer .view {
     background-color: @theme_base_color;
 }
 
