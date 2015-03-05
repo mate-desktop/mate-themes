@@ -269,7 +269,7 @@ TerminalWindow .entry {
  ***********************/
 
 /* background */
-ShellWindow AppResizer {
+ShellWindow AppResizer .view {
     background-color: @theme_base_color;
 }
 
