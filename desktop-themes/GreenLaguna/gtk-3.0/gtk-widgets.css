@@ -116,18 +116,26 @@
  * Tooltips *
  ************/
 
-.tooltip,
-.tooltip.background {
-	padding: 4px 4px;
+.tooltip {
+	padding: 4px;
 	border-style: none;
 	border-radius: 3px;
-	background-color: @theme_tooltip_bg_color;
-	color: @theme_tooltip_fg_color;
+}
+
+.tooltip.background {
+	background-image: linear-gradient(to left,
+	                                  shade(@theme_selected_bg_color, 1.1),
+	                                  shade(@theme_selected_bg_color, 0.65));
+	color: @theme_selected_fg_color;
+}
+
+.tooltip.window-frame.csd {
+    background-color: transparent;
 }
 
 .tooltip * {
-	background-color: @theme_tooltip_bg_color;
-	color: @theme_tooltip_fg_color;
+	background-color: transparent;
+	color: @theme_selected_fg_color;
 }
 
 /*****************
