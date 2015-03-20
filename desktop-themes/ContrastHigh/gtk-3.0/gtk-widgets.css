@@ -102,9 +102,13 @@ GtkImage:insensitive {
     background-color: transparent;
 }
 
-.tooltip {
-    background-color: @theme_fg_color;
-    color: @theme_insensitive_bg;
+.tooltip,
+.tooltip.background {
+    background-color: @theme_bg_color;
+    color: @theme_fg_color;
+    border-color: @theme_fg_color;
+    border-style: solid;
+    border-width: 1px;
 }
 
 .view.rubberband,
