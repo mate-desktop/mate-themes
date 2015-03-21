@@ -208,6 +208,12 @@ GtkTreeView.separator,
 	background-position: center;
 }
 
+/* displays at end of mouse scrolling */
+.overshoot,
+.sidebar.overshoot {
+	background-color: alpha (@theme_selected_bg_color, 0.35);
+}
+
 /****************
  * Text Entries *
  ****************/
@@ -1506,8 +1512,7 @@ GtkCheckButton:selected:focus {
  ***********/
 
 .sidebar,
-.sidebar .view,
-.sidebar GtkScrolledWindow {
+.sidebar .view {
 	background-color: @sidebar_bg_color;
 }
 
