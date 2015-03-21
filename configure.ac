@@ -236,15 +236,6 @@ desktop-themes/BlueMenta/metacity-1/Makefile
 desktop-themes/BlueMenta/unity/Makefile
 desktop-themes/BlueMenta/xfwm4/Makefile
 desktop-themes/Quid/Makefile
-desktop-themes/Shiny/Makefile
-desktop-themes/Shiny/gtk-2.0/Makefile
-desktop-themes/Shiny/gtk-3.0/Makefile
-desktop-themes/Shiny/gtk-3.0/assets/Makefile
-desktop-themes/Shiny/gtk-3.0/apps/Makefile
-desktop-themes/Shiny/metacity-1/Makefile
-desktop-themes/Shiny/openbox-3/Makefile
-desktop-themes/Shiny/unity/Makefile
-desktop-themes/Shiny/xfwm4/Makefile
 desktop-themes/TraditionalGreen/Makefile
 desktop-themes/TraditionalGreen/gtk-2.0/Makefile
 desktop-themes/TraditionalGreen/gtk-3.0/Makefile
