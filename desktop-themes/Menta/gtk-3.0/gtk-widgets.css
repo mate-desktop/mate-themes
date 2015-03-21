@@ -193,7 +193,8 @@ GtkTextView {
 }
 
 /* displays at end of mouse scrolling */
-.overshoot {
+.overshoot,
+.sidebar.overshoot {
 	background-color: alpha (@theme_selected_bg_color, 0.35);
 }
 
@@ -2734,8 +2735,7 @@ GtkMessageDialog {
  * Sidebar *
  ***********/
 .sidebar,
-.sidebar .view,
-.sidebar GtkScrolledWindow {
+.sidebar .view {
 	background-color: @sidebar_bg;
 }
 
