@@ -1,9 +1,9 @@
 /* dconf editor */
 /* sidebar */
-DConfDirView .view {
+DConfDirView.view {
 	background-color: shade(@theme_bg_color, 1.03);
 }
 
-DConfKeyView .view {
-    background-color: @selected_fg_color;
+DConfKeyView.view {
+    background-color: shade(@base_color, 1.06)
 }
