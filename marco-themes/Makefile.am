@@ -1,9 +1,4 @@
 THEMES = \
-	Atantla \
-	AlaDelta \
-	Quid \
-	Reverse \
-	Fog \
 	BlackMenta
 
 THEME_DIR=$(datadir)/themes
