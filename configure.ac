@@ -82,13 +82,6 @@ fi
 AC_SUBST(ICONMAP)
 AM_CONDITIONAL(LEGACY_ICON_MAPPING, test "x$enable_mapping" != "xno")
 
-# Configure options for extra a11y themes
-AC_ARG_ENABLE(all-themes,
- AC_HELP_STRING([--enable-all-themes],
-     [Install all a11y theme sets, default is core a11y themes only]),,
- [enable_all_themes=no])
-AM_CONDITIONAL(CORE_THEMES_ONLY, test "$enable_all_themes" = no)
-
 dnl used to substitute in common sections of theme gtkrc files
 gtk_stock_icons_rc=${srcdir}/common/gtk-stock-icons.rc
 panel_stock_icons_rc=${srcdir}/common/panel-stock-icons.rc
@@ -288,6 +281,5 @@ mate-themes-$VERSION:
 
 	Enable placeholders:         ${enable_placeholders}
 	Enable legacy icons:         ${enable_mapping}
-	Enable all themes:           ${enable_all_themes}
 
 "
