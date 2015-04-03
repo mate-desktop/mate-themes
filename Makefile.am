@@ -1,5 +1,4 @@
 SUBDIRS = \
-	gtk-themes \
 	marco-themes \
 	icon-themes \
 	desktop-themes \
@@ -9,7 +8,6 @@ SUBDIRS = \
 
 EXTRA_DIST = \
 	autogen.sh \
-	low-contrast-preset.scm \
 	intltool-extract.in \
 	intltool-merge.in \
 	intltool-update.in
