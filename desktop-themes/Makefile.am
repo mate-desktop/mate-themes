@@ -5,7 +5,6 @@ SUBDIRS = \
 	TraditionalOk \
 	TraditionalOkTest \
 	AlaDelta \
-	Shiny \
 	ContrastHigh \
 	ContrastHighInverse \
 	ContrastHighLargePrint \
