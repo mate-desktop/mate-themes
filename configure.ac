@@ -29,59 +29,6 @@ PKG_CHECK_MODULES(THEME_ENGINE,
 GTK_VERSION=`$PKG_CONFIG --variable=gtk_binary_version gtk+-2.0`
 AC_SUBST(GTK_VERSION)
 
-# Check if it's a development (odd minor) version (obsolete with date versions)
-#AC_MSG_CHECKING([development series build])
-#MINOR_VERSION="`echo $PACKAGE_VERSION|cut -d. -f2`"
-#if expr $MINOR_VERSION % 2 > /dev/null != "0"; then
-   # Development version, disable mapping
-   # and enable placeholder by default
-#   icon_mapping_policy=no
-#   placeholders_policy=yes
-#   enable_test_themes=yes
-#   AC_MSG_RESULT([yes])
-#else
-  # Stable version, enable mapping
-  # and disable placeholders by default
-  icon_mapping_policy=yes
-  placeholders_policy=no
-#  AC_MSG_RESULT([no])
-#fi
-
-# Configure option to force placeholders
-AC_ARG_ENABLE([placeholders],
-	AC_HELP_STRING([--enable-placeholders],
-			[Enable placeholder icons [default=auto]]),
-	enable_placeholders=$enableval,
-	enable_placeholders=$placeholders_policy)
-
-AM_CONDITIONAL(PLACEHOLDERS, test "x$enable_placeholders" != "xno")
-
-# Configure option to force icon mapping
-AC_ARG_ENABLE([icon-mapping],
-        AC_HELP_STRING([--enable-icon-mapping],
-                        [Enable compatibility symlinks [default=auto]]),
-        enable_mapping=$enableval,
-        enable_mapping=$icon_mapping_policy)
-
-# Check for icon-naming-utils
-ICONMAP="true"
-if test "x$enable_mapping" != "xno"; then
-   UTILS_REQUIRED=0.8.7
-
-   AC_MSG_CHECKING([icon-naming-utils >= $UTILS_REQUIRED])
-   PKG_CHECK_EXISTS(icon-naming-utils >= $UTILS_REQUIRED, have_utils=yes, have_utils=no)
-   if test "x$have_utils" = "xyes"; then
-      UTILS_PATH="`$PKG_CONFIG --variable=program_path icon-naming-utils`"
-      ICONMAP="$UTILS_PATH/icon-name-mapping"
-      AC_MSG_RESULT([yes])
-   else
-	AC_MSG_RESULT([no])
-   	AC_MSG_ERROR([icon-naming-utils >= $UTILS_REQUIRED is required to build and install mate-themes])
-   fi
-fi
-AC_SUBST(ICONMAP)
-AM_CONDITIONAL(LEGACY_ICON_MAPPING, test "x$enable_mapping" != "xno")
-
 dnl used to substitute in common sections of theme gtkrc files
 gtk_stock_icons_rc=${srcdir}/common/gtk-stock-icons.rc
 panel_stock_icons_rc=${srcdir}/common/panel-stock-icons.rc
@@ -278,8 +225,5 @@ echo "
 mate-themes-$VERSION:
 
 	Installation prefix:	${prefix}
-
-	Enable placeholders:         ${enable_placeholders}
-	Enable legacy icons:         ${enable_mapping}
 
 "
