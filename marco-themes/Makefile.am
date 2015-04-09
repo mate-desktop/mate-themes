@@ -1,5 +1,6 @@
 THEMES = \
-	BlackMenta
+	BlackMenta \
+	Shiny
 
 THEME_DIR=$(datadir)/themes
 THEME_SUBDIR=metacity-1
