@@ -1,0 +1,83 @@
+WORKAROUNDS
+
+Like it's the case with other dark themes, there may be readability issues in LibreOffice and also in webpage input fields when seen with Firefox or Epiphany. Fortunately, there are workarounds:
+
+LibreOffice
+============
+The first issue can be fixed by changing "OOO > Tools > Options > LibreOffice > Appearance > Document background" to white after disabling automatic detection of high contrast in Accessibility.
+
+Firefox
+========
+To fix the second issue for Firefox, create '~/.mozilla/firefox/<YOUR_PROFILE>/chrome/userContent.css' with these lines in it:
+ 
+/*------------ start ------------*/
+
+input, textarea, select {
+	-moz-appearance: none !important;
+	background-color: white;
+	color: black;
+}
+
+a[class="file"],
+a[class="dir"],
+a[class="symlink"] {
+	color: #2EB8E6 !important;
+}
+
+a:visited[class="file"],
+a:visited[class="dir"],
+a:visited[class="symlink"] {
+	color: #FF6666 !important;
+}
+/*------------- end -------------*/
+
+Seamonkey
+==========
+Do the same thing for Seamonkey. The difference is just your profile folder, which is inside '~/.mozilla/seamonkey/'.
+
+Thunderbird
+============
+The same as above but inside Thunderbird's profile folder.
+
+Epiphany
+=========
+Take control of Epiphany by selecting "Use custom stylesheet" in "Preferences > Font & Style" and creating '~/.config/epiphany/user-stylesheet.css' as:
+ 
+/*------------ start ------------*/
+
+select {
+	color: #fff !important;
+	border-radius: 0 !important;
+	border-color: transparent !important;
+}
+
+input {
+	background-color: #fcfcfc !important;
+	color: #000 !important;
+}
+/*------------- end -------------*/
+
+Meld
+=====
+Just for more readability, you could change #880000" to #e60000" in '/usr/lib/meld/meld/tree.py' but this isn't necessary.
+
+Liferea
+========
+Go to or create '~/.liferea_X.Y/liferea.css' (X.Y is the version of Liferea) and add this to it:
+
+table.headmeta {color: #fff;}
+#errors, #commentFeedError {
+	color: #000;
+}
+
+Ubuntu Software Center
+======================
+Find the following definitions in '/usr/share/software-center/ui/gtk3/css/softwarecenter.css':
+
+@define-color light-aubergine
+@define-color super-light-aubergine
+
+Then, change their values to #4D4D4D and #3B3B3E respectively, i.e.
+
+@define-color light-aubergine #4D4D4D;
+@define-color super-light-aubergine #3B3B3E;

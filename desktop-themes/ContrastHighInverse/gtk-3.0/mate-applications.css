@@ -1,0 +1,243 @@
+/**************
+ * Mate-Panel *
+ **************/
+
+/* the panel bar itself */
+.mate-panel-menu-bar,
+MatePanelApplet > GtkMenuBar.menubar,
+PanelToplevel,
+PanelWidget,
+PanelFrame,
+PanelAppletFrame,
+MatePanelAppletFrameDBus,
+MatePanelAppletContainer,
+MatePanelApplet {
+    color: @theme_fg_color;
+    background-color: @theme_base_color;
+    background-image: none;
+}
+
+MatePanelApplet {
+    border-width: 0;
+}
+
+PanelSeparator {
+    border-width: 0;
+    background-image: none;
+    color: @theme_fg_color;
+    text-shadow: none;
+}
+
+/* applets on the panel */
+
+.mate-panel-menu-bar .menuitem,
+MatePanelApplet > GtkMenuBar.menubar .menuitem {
+    color: @theme_fg_color;
+}
+
+/* set normal menubar menuitem */
+PanelMenuBar.menubar .menu .menuitem {
+    padding: 6px;
+}
+
+.mate-panel-menu-bar .menuitem:hover,
+MatePanelApplet > GtkMenuBar.menubar .menuitem:hover {
+    color: @theme_fg_color;
+    background-color: @theme_active_color;
+}
+
+.mate-panel-menu-bar .menuitem *:hover,
+MatePanelApplet > GtkMenuBar.menubar .menuitem *:hover {
+    text-shadow: none;
+}
+
+/* dropdown menus from applets */
+.mate-panel-menu-bar .menu,
+MatePanelApplet > GtkMenuBar.menubar .menu {
+    font: regular;
+}
+
+.mate-panel-menu-bar .menu *:hover,
+MatePanelApplet > GtkMenuBar.menubar .menu *:hover {
+    text-shadow: none;
+}
+
+.mate-panel-menu-bar .menu .menuitem,
+MatePanelApplet > GtkMenuBar.menubar .menu .menuitem {
+    color: @theme_fg_color;
+}
+
+.mate-panel-menu-bar .menu .menuitem:hover,
+MatePanelApplet > GtkMenuBar.menubar .menu .menuitem:hover {
+    color: @theme_fg_color;
+    background-color: @theme_active_color;
+}
+
+/* application buttons */
+MatePanelApplet .button,
+MatePanelApplet .button.flat {
+    padding: 3px;
+    border-image: none;
+    border-width: 0;
+    border-radius: 0;
+    background-image: none;
+    background-color: @theme_bg_color;
+    color: @theme_fg_color;
+    text-shadow: none;
+}
+
+MatePanelApplet .button:hover,
+MatePanelApplet .button.flat:hover {
+    padding: 3px;
+    border-image: none;
+    border-width: 0;
+    border-radius: 0;
+    background-image: none;
+    background-color: @theme_fg_color;
+    color: @theme_bg_color;
+    text-shadow: none;
+}
+
+MatePanelApplet .button:active:hover,
+MatePanelApplet .button:active,
+MatePanelApplet .button.flat:active:hover,
+MatePanelApplet .button.flat:active,
+MatePanelApplet .button:checked:hover,
+MatePanelApplet .button:checked,
+MatePanelApplet .button.flat:checked:hover,
+MatePanelApplet .button.flat:checked {
+    padding: 3px;
+    border-image: none;
+    background-image: none;
+    background-color: @theme_active_color;
+    border-width: 0;
+    border-radius: 0;
+    color: @theme_fg_color;
+}
+
+MatePanelApplet *:checked,
+MatePanelApplet *:hover:checked,
+MatePanelApplet *:active,
+MatePanelApplet *:hover:active {
+    padding: 3px;
+    color: @theme_fg_color;
+    text-shadow: none;
+}
+
+/*Wncklist */
+WnckTasklist .button,
+WnckTasklist .button.flat {
+    padding: 3px;
+    border-radius: 0px;
+    border-width: 0px;
+    border-style: solid;
+    text-shadow: none;
+    color: @theme_fg_color;
+    background-image: none;
+    background-color: @theme_bg_color;
+}
+
+WnckTasklist .button:active:hover,
+WnckTasklist .button:active,
+WnckTasklist .button.flat:active:hover,
+WnckTasklist .button.flat:active,
+WnckTasklist .button:checked:hover,
+WnckTasklist .button:checked,
+WnckTasklist .button.flat:checked:hover,
+WnckTasklist .button.flat:checked {
+    padding: 3px;
+    border-image: none;
+    color: @theme_fg_color;
+    background-image: none;
+    background-color: @theme_active_color;
+    border-width: 0;
+    border-radius: 0;
+}
+
+WnckTasklist .button:hover,
+WnckTasklist .button.flat:hover {
+    padding: 3px;
+    border-image: none;
+    color: @theme_bg_color;
+    background-image: none;
+    background-color: @theme_fg_color;
+    border-width: 0;
+    border-radius: 0;
+}
+
+/* set WnckSelector selected menuitem */
+.mate-panel-window-menu-menu-bar .menu .menuitem:hover,
+MatePanelApplet > WnckSelector.menubar .menu .menuitem:hover {
+    background-color: @theme_active_color;
+    background-image: none;
+    border-radius: 0px;
+    text-shadow: none;
+    color: @theme_fg_color;
+}
+
+WnckPager {
+    background-color: lighter(@theme_active_color);
+}
+
+/* prelight of WnckPager */
+WnckPager:hover {
+    background-image: linear-gradient(to bottom,
+                                      shade (@theme_active_color, 2.86),
+                                      shade (@theme_active_color, 1.0));
+    background-color: @theme_base_color;
+    color: @theme_fg_active_color;
+}
+
+ClockBox,
+.mate-panel-menu-bar,
+MatePanelApplet > GtkMenuBar.menubar {
+    font: bold;
+}
+
+NaTrayApplet {
+    -NaTrayApplet-icon-padding: 12;
+    -NaTrayApplet-icon-size: 16;
+}
+
+/****************
+ * Pluma *
+ ****************/
+
+/* pluma line numbers */
+PlumaView {
+    background-color: shade (@theme_slider_bg, 0.16);
+    color: @theme_fg_color;
+}
+
+PlumaWindow GtkStatusbar .frame,
+CajaWindow GtkStatusbar .frame {
+    border-radius: 3px;
+}
+
+/* Pluma status bar */
+PlumaWindow .button.flat {
+    border-radius: 5px;
+    padding: 2px 5px;
+}
+
+PlumaWindow .button.flat:hover {
+    border-radius: 5px;
+    padding: 2px 5px;
+}
+
+/***********************
+ * Mate-Control-Center *
+ ***********************/
+
+ShellWindow .button.flat {
+    border-image: none;
+}
+
+/* button hover of applications */
+ShellWindow GtkScrolledWindow .button.flat:hover {
+    background-color: @theme_fg_color;
+    border-color: @theme_fg_color;
+    color: @theme_base_color;
+    border-radius: 12px;
+}
+

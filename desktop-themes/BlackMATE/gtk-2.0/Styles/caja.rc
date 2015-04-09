@@ -1,0 +1,73 @@
+##########################################
+# CAJA	
+##########################################
+gtk_color_scheme = "fg_color:#101010\nbg_color:#4D4D4D"
+
+style "caja-sidebar"
+{
+
+#	text[NORMAL]	= @fg_color
+	base[NORMAL]	= @bg_color
+	font_name		= "Regular"
+
+	GtkTreeView::odd_row_color	= @bg_color
+	GtkTreeView::even_row_color	= @bg_color
+
+#	padding from the left edge
+	GtkTreeView::horizontal_separator = 15
+    xthickness = 0
+	ythickness = 0
+}
+
+style "caja-view"
+{
+	xthickness		= 0
+	ythickness		= 0
+	bg[NORMAL]		= @bg_color
+	base[NORMAL]	= @bg_color
+}
+
+style "caja-statusbar"
+{
+	bg[NORMAL]	= mix (0.60, shade (1.05, "#454548"), "#454548")
+	xthickness	= 4
+	ythickness	= 1
+}
+
+style "caja-location" {
+
+	bg[NORMAL]	= mix (0.60, shade (1.05, @bg_color), @bg_color)
+}
+
+style "caja-scrollbar"
+{
+	GtkScrollbar::slider-width = 11
+
+	bg[NORMAL]      = shade (2.5, "#3b3b3b")
+	bg[PRELIGHT]    = shade (2.8, "#3b3b3b")
+	bg[ACTIVE]      = shade (3.0, "#3b3b3b")
+	bg[INSENSITIVE]	= shade (1.5, "#3b3b3b")
+
+	engine "murrine"
+	{
+		#rgba = FALSE
+		border_shades = {0.3, 0.8} # draw a gradient on the border.
+		border_colors = { "#3b3b3e", "#3b3b3e" }
+		#contrast = 1.0
+		glow_shade = 1.14   # sets glow amount for buttons or widgets
+		glowstyle = 0    # 0=top, 1=bottom, 2=top and bottom, 3=center (vertical), 4=center (horizontal) 
+		highlight_shade = 1.02  # set highlight amount for buttons or widgets
+		lightborder_shade = 1.2   # sets lightborder amount for buttons or widgets
+		gradient_shades = {0.34, 0.6, 0.6, 0.34}
+		roundness = 8
+		trough_shades = {1.0, 1.0} #{0.8, 2.0}
+		contrast = 0.0
+	}
+}
+
+widget_class	"*Caja*Places*Sidebar*"			style "caja-sidebar"
+widget_class	"*Caja*View*"					style "caja-view"
+widget_class	"*Caja*Statusbar*"				style "caja-statusbar"
+widget			"*.caja-extra-view-widget" 		style : highest "caja-location"
+widget			"*Caja*Scrollbar*"				style "caja-scrollbar"
+

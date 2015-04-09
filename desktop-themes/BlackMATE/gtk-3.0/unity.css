@@ -1,0 +1,92 @@
+/* Decorations */
+
+UnityDecoration {
+    -UnityDecoration-extents: 28px 1px 1px 1px;
+    -UnityDecoration-input-extents: 10px;
+
+    -UnityDecoration-shadow-offset-x: 1px;
+    -UnityDecoration-shadow-offset-y: 1px;
+    -UnityDecoration-active-shadow-color: rgba (0, 0, 0, 0.647);
+    -UnityDecoration-active-shadow-radius: 15px;
+    -UnityDecoration-inactive-shadow-color: rgba (0, 0, 0, 0.647);
+    -UnityDecoration-inactive-shadow-radius: 10px;
+
+    -UnityDecoration-glow-size: 10px;
+    -UnityDecoration-glow-color: rgb (221, 72, 20);
+
+    -UnityDecoration-title-indent: 10px;
+    -UnityDecoration-title-fade: 35px;
+    -UnityDecoration-title-alignment: 0.0;
+}
+
+UnityDecoration.top {
+    border: 0px;
+    border-bottom-width: 0;
+    border-radius: 8px 8px 0 0;
+    padding: 1px 8px 0 8px;
+
+    background-color: transparent;
+    background-clip: border-box;
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (#59595b),
+                                     color-stop (0.5, #454547),
+                                     to (#3b3b3e));
+
+    color: @theme_text_color;
+    text-shadow: none;
+}
+
+UnityDecoration.top:backdrop {
+    border: 0px;
+    border-bottom-width: 0;
+    background-color: transparent;
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (#59595b),
+                                     color-stop (0.5, #454547),
+                                     to (#3b3b3e));
+    color: #747473;
+    text-shadow: none;
+}
+
+UnityDecoration.left,
+UnityDecoration.right,
+UnityDecoration.bottom,
+UnityDecoration.left:backdrop,
+UnityDecoration.right:backdrop,
+UnityDecoration.bottom:backdrop {
+    background-color: @theme_bg_color;
+}
+
+/* Panel Style */
+
+UnityPanelWidget,
+.unity-panel {
+    background-color: transparent;
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (#585858),
+                                     to (#000000));
+
+    color: @theme_text_color;
+}
+
+.unity-panel.menubar,
+.unity-panel .menubar {
+}
+
+.unity-panel.menuitem,
+.unity-panel .menuitem {
+    border-width: 1px 1px 0 1px;
+    icon-shadow: 0 -1px #000000;
+}
+
+.unity-panel.menubar:backdrop,
+.unity-panel .menubar *:backdrop {
+    color: #747473;
+}
+
+.unity-panel.menubar.menuitem:hover,
+.unity-panel.menubar .menuitem *:hover {
+	background-image: none;
+	background-color: @theme_selected_bg_color;
+	color: @theme_text_color;
+}
