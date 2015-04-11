@@ -199,7 +199,7 @@
  *********/
 .view,
 .view:insensitive { /* gdebi bug? */
-	background-color: @theme_bg_color;
+	background-color: shade(@base_color, 1.06);
 	color: @theme_text_color;
 	border-radius: 0px;
 	/*border-width: 3px;*/
@@ -413,7 +413,11 @@ GtkTreeView .separator,
  * Progress bar *
  ****************/
 GtkProgressBar {
+	-GtkProgressBar-min-horizontal-bar-height: 16;
+	-GtkProgressBar-min-vertical-bar-width: 16;
+	border-radius: 16px;
 	padding: 0px;
+	font-size: smaller;
 }
 
 .progressbar row,
@@ -491,7 +495,7 @@ GtkProgressBar.progressbar.vertical {
 }
 
 GtkProgressBar.progressbar {
-	border-radius: 12px;
+	border-radius: 16px;
 	border-width: 1px;
 	border-style: solid;
 	border-color: shade(@theme_bg_color, 0.9);
@@ -505,7 +509,7 @@ GtkProgressBar.trough {
 
 	border-width: 0;
 	border-style: solid;
-	border-radius: 12px;
+	border-radius: 16px;
 }
 
 GtkProgressBar.trough.vertical {
@@ -570,11 +574,14 @@ GtkLevelBar.vertical {
 }
 
 .level-bar.trough {
+	border-radius: 2px;
 	padding: 2px;
 }
 
 .level-bar.fill-block {
-	border-style: none;
+	border-width: 1px;
+	border-style: solid;
+	border-color: @progressbar_border;
 	background-image: linear-gradient(to bottom,
 	                                  shade(@link_color, 1.2),
 	                                  shade(@link_color, 0.6));
@@ -618,7 +625,7 @@ GtkLevelBar.vertical {
 /* gtk-3.12 */
 .notebook.header {
 	background-image: none;
-	background-color: transparent;
+	background-color: @base_color;
 	border-style: none;
     border-image: none;
     border-width: 0px;
@@ -627,6 +634,7 @@ GtkLevelBar.vertical {
 .notebook {
 	padding: 1px 0px 1px 1px;
 	background-clip: border-box;
+	background-color: shade(@base_color, 1.06);
 	border-color: @notebook_border;
 	color: @theme_fg_color; /* gdebi bug? */
 	border-style: solid;
@@ -1028,6 +1036,10 @@ GtkTreeMenu .menuitem * {
 .button GtkLabel:insensitive {
 	background-image: none;
 	background-color: transparent;
+}
+
+.button GtkLabel {
+	color: @fg_color;
 }
 
 .button GtkImage,
@@ -1674,7 +1686,7 @@ GtkCalendar.header .stack-switcher > .titlebutton.button {
     /*background-image: linear-gradient(to bottom,
                                         @toolbar_gradient_base,
                                         shade(@theme_bg_color, 1.6));*/
-    border-color: alpha(@frame_color, 0.6);
+    border-color: shade(@theme_bg_color, 0.8);
 }
 
 .notebook GtkContainer .header-bar {
@@ -1987,6 +1999,10 @@ GtkProgressBar.osd.progressbar {
 	background-color: @theme_base_color;
 }
 
+.popover .button GtkLabel {
+	color: @theme_selected_fg_color;
+}
+
 GtkModelButton.button {
 	color: @theme_selected_fg_color;
 	border-radius: 3px;
@@ -2000,11 +2016,20 @@ GtkModelButton.button:checked:insensitive,
 GtkModelButton.button,
 GtkModelButton.button:focus,
 GtkModelButton.button:active:focus,
-GtkModelButton.button:checked:focus {
+GtkModelButton.button:checked:focus,
+GtkModelButton.button.flat:checked,
+GtkModelButton.button.flat:active,
+GtkModelButton.button.flat:insensitive,
+GtkModelButton.button.flat:active:insensitive,
+GtkModelButton.button.flat:checked:insensitive,
+GtkModelButton.button.flat,
+GtkModelButton.button.flat:focus,
+GtkModelButton.button.flat:active:focus,
+GtkModelButton.button.flat:checked:focus {
 	color: @theme_selected_fg_color;
 	background-color: transparent;
 	background-image: none;
-	border-color: transparent;
+	border-color: @button_border;
 	border-image: none;
 	border-style: none;
 	box-shadow: none;
@@ -2014,7 +2039,11 @@ GtkModelButton.button:checked:focus {
 GtkModelButton.button:checked:hover,
 GtkModelButton.button:active:hover,
 GtkModelButton.button:hover,
-GtkModelButton.button:selected {
+GtkModelButton.button:selected,
+GtkModelButton.button.flat:checked:hover,
+GtkModelButton.button.flat:active:hover,
+GtkModelButton.button.flat:hover,
+GtkModelButton.button.flat:selected {
 	color: @theme_selected_fg_color;
 	background-image:  linear-gradient(to bottom,
 	                                  shade(@theme_selected_bg_color, 1.6),
@@ -2116,7 +2145,15 @@ GtkPopover .separator {
 .button.image-button.titlebutton:active,
 .button.image-button.titlebutton:active:hover,
 .button.text-button.titlebutton:active,
-.button.text-button.titlebutton:active:hover {
+.button.text-button.titlebutton:active:hover,
+.titlebar .titlebutton:checked,
+.titlebar .titlebutton:checked:hover,
+.header-bar.frame.titlebar:checked,
+.header-bar.frame.titlebar:checked:hover,
+.button.image-button.titlebutton:checked,
+.button.image-button.titlebutton:checked:hover,
+.button.text-button.titlebutton:checked,
+.button.text-button.titlebutton:checked:hover {
 	/* some apps need this */
 	color: @theme_fg_color;
 	border-style: solid;
@@ -2246,10 +2283,14 @@ GtkAssistant .sidebar {
  * GtkSwitch *
  *************/
 GtkSwitch {
+    -GtkSwitch-slider-width: 45px;
+    font-weight: bold;
+    font-size: smaller;
 	font: bold condensed;
 }
 
-GtkSwitch.trough {
+GtkSwitch.trough,
+GtkSwitch.trough:backdrop {
 	color: @internal_element_color;
 	border-radius: 3px;
 	border-width: 1px;
@@ -2261,7 +2302,8 @@ GtkSwitch.trough {
 	                                  @trough_bg_color_b);
 }
 
-GtkSwitch.trough:active {
+GtkSwitch.trough:active,
+GtkSwitch.trough:backdrop:active {
 	color: @theme_main_color;
 	border-style: none;
 	/*border-image is defined in gtk-widgets-assets.css*/
@@ -2270,14 +2312,16 @@ GtkSwitch.trough:active {
 	                                  @active_switch_bg_color_b);
 }
 
-GtkSwitch.trough:insensitive {
+GtkSwitch.trough:insensitive,
+GtkSwitch.trough:backdrop:insensitive {
 	background-image: none;
 	background-color: shade(@theme_bg_color, 0.9);
 	border-color: shade(@inactive_frame_color, 0.845);
 	border-image: none;
 }
 
-GtkSwitch.slider {
+GtkSwitch.slider,
+GtkSwitch.slider:backdrop {
 	border-width: 1px;
 	border-radius: 2px;
 	border-color: shade(@frame_color, 1.31);
@@ -2292,14 +2336,42 @@ GtkSwitch.slider {
 	background-position: center;
 }
 
-GtkSwitch.slider:active {
+GtkSwitch.slider:active,
+GtkSwitch.slider:backdrop:active {
 	border-color: @switch_slider_border;
 }
 
-GtkSwitch.slider:insensitive {
+GtkSwitch.slider:insensitive,
+GtkSwitch.slider:backdrop:insensitive {
 	border-style: none;
 	background-image: none;
 	background-color: shade(@insensitive_bg_color, 1.02);
+}
+
+GtkSwitch.slider:insensitive > GtkLabel,
+GtkSwitch.slider:backdrop:insensitive > GtkLabel {
+    color: inherit;
+}
+
+.list-row GtkSwitch,
+.list-row GtkSwitch:backdrop,
+.list-row:selected GtkSwitch,
+.list-row:selected GtkSwitch:backdrop {
+    box-shadow: none;
+    border-color: shade(@button_border, 1.0);
+}
+
+.list-row:selected GtkSwitch.slider:dir(rtl) {
+    border-left-color: @borders;
+}
+
+.list-row:selected GtkSwitch.slider:dir(ltr) {
+    border-right-color: @borders;
+}
+
+.list-row:selected GtkSwitch.slider,
+.list-row:selected GtkSwitch.slider:active {
+    border-color: shade(@button_border, 1.0);
 }
 
 GtkStatusbar {
@@ -2547,20 +2619,134 @@ GtkIconView.content-view.check:selected {
 /*********************
  * App Notifications *
  *********************/
-.app-notification {
+.app-notification,
+.app-notification.frame {
 	border-style: solid;
-	border-color: @app_notification_border;
+	border-color: rgba(112, 129, 106, 0.9);
 	border-width: 0 1px 1px 1px;
 	border-radius: 0 0 5px 5px;
 	padding: 8px;
+    background-color: rgba(112, 129, 106, 0.3);
+    background-image: linear-gradient(to bottom,
+                                      rgba(112, 129, 106, 0.2),
+                                      transparent 2px);
+    background-clip: padding-box;
+	color: @theme_fg_color;
+}
 
-	background-image: linear-gradient(to bottom,
-	                                  @app_notification_a,
-	                                  @app_notification_b 20%,
-	                                  @app_notification_c);
+.app-notification:backdrop,
+.app-notification.frame:backdrop {
+    background-image: none;
+}
 
-	color: @theme_text_color;
-	text-shadow: 0 1px white;
+.app-notification .button,
+.app-notification .header-bar .button.titlebutton,
+.header-bar .app-notification .button.titlebutton,
+.app-notification .titlebar .button.titlebutton,
+.titlebar .app-notification .button.titlebutton,
+.app-notification GtkCalendar.header .button.titlebutton,
+GtkCalendar.header .app-notification .button.titlebutton,
+.app-notification.frame .button {
+    color: @theme_selected_fg_color;
+    border-color: rgba(112, 129, 106, 0.9);
+    border-image: none;
+    background-image: linear-gradient(to bottom,
+                                      rgba(177, 204, 168, 0.9));
+    background-clip: padding-box;
+    box-shadow: inset 0 1px rgba(0, 0, 0, 0.1);
+    text-shadow: none;
+    icon-shadow: 0 1px black;
+    outline-color: rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    padding: 0 0px 2px 0px;
+}
+
+.app-notification .button.flat,
+.app-notification .header-bar .titlebutton.button,
+.header-bar .app-notification .titlebutton.button,
+.app-notification .titlebar .titlebutton.button,
+.titlebar .app-notification .titlebutton.button,
+.app-notification GtkCalendar.header .titlebutton.button,
+GtkCalendar.header .app-notification .titlebutton.button,
+.app-notification.frame .button.flat,
+.app-notification.frame .header-bar .titlebutton.button,
+.header-bar .app-notification.frame .titlebutton.button,
+.app-notification.frame .titlebar .titlebutton.button,
+.titlebar .app-notification.frame .titlebutton.button,
+.app-notification.frame GtkCalendar.header .titlebutton.button,
+GtkCalendar.header .app-notification.frame .titlebutton.button {
+    border-image: none;
+    icon-shadow: 0 1px black;
+    text-shadow: 0 1px black;
+}
+
+.app-notification .button:hover,
+.app-notification.frame .button:hover {
+    color: @theme_selected_fg_color;
+    border-color: rgba(112, 129, 106, 0.7);
+    border-image: none;
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      rgba(177, 204, 168, 0.1));
+    background-clip: padding-box;
+    box-shadow: inset 0 1px rgba(0, 0, 0, 0.1);
+    text-shadow: none;
+    icon-shadow: 0 1px black;
+    outline-color: rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+}
+
+.app-notification .button,
+.app-notification .button:active,
+.app-notification .button:checked,
+.app-notification .button:backdrop:active,
+.app-notification .button:backdrop:checked,
+.app-notification.frame .button,
+.app-notification.frame .button:active,
+.app-notification.frame .button:checked,
+.app-notification.frame .button:backdrop:active,
+.app-notification.frame .button:backdrop:checked {
+    color: white;
+    border-color: rgba(112, 129, 106, 0.7);
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      rgba(170, 196, 161, 0.9));
+    background-clip: padding-box;
+    box-shadow: none;
+    text-shadow: none;
+    icon-shadow: none;
+    outline-color: rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+}
+
+.app-notification .button:insensitive,
+.app-notification .button:backdrop:insensitive,
+.app-notification.frame .button:insensitive,
+.app-notification.frame .button:backdrop:insensitive {
+    color: #878989;
+    border-color: rgba(112, 129, 106, 0.7);
+    background-image: linear-gradient(to bottom,
+                                      rgba(198, 207, 181, 0.5));
+    background-clip: padding-box;
+    box-shadow: none;
+    text-shadow: none;
+    icon-shadow: none;
+    border-radius: 3px;
+    padding: 0px;
+}
+
+.app-notification .button:backdrop,
+.app-notification.frame .button:backdrop {
+    color: #eeeeec;
+    border-color: rgba(112, 129, 106, 0.7);
+    background-image: linear-gradient(to bottom,
+                                      rgba(172, 205, 138, 0.7));
+    background-clip: padding-box;
+    box-shadow: none;
+    text-shadow: none;
+    icon-shadow: none;
+    border-radius: 3px;
+    padding: 0px;
 }
 
 /*************
