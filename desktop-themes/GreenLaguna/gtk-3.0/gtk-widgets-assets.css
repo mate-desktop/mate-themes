@@ -76,7 +76,8 @@ GtkScale.scale-has-marks-above.slider.vertical:insensitive {
 	border-image: url("assets/button-default-border.svg") 3 / 3px stretch;
 }
 
-.button.default:active {
+.button.default:active,
+.button.default:checked {
 	border-image: url("assets/button-default-active-border.svg") 3 / 3px stretch;
 }
 
@@ -101,6 +102,11 @@ GtkScale.scale-has-marks-above.slider.vertical:insensitive {
 .primary-toolbar .toolbar GtkComboBox .button:hover,
 .primary-toolbar.toolbar GtkComboBox .button:hover*/ {
 	border-image: url("assets/toolbar-button-border.svg") 3 / 3px stretch;
+}
+
+/* overrride for osd */
+.osd.toolbar .button:hover {
+	border-image: none;
 }
 
 GtkSwitch.trough:active {
