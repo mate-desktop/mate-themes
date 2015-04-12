@@ -739,7 +739,7 @@ GtkLevelBar.vertical {
 .notebook tab .button:hover,
 .notebook tab .button:hover:active {
 	border-image: none;
-	background-color: alpha(@theme_bg_color, 0.9);
+	background-color: transparent;
 	background-image: none;
 	-GtkButton-child-displacement-x: 0;
 	-GtkButton-child-displacement-y: 0;
@@ -1714,6 +1714,11 @@ GtkOverlay.osd {
 	background-color: transparent;
 }
 
+.osd.frame {
+	background-clip: border-box;
+	background-origin: border-box;
+}
+
 .osd.button,
 .osd.button:checked,
 .osd.button:active,
@@ -1741,12 +1746,15 @@ GtkOverlay.osd {
 
 .osd.button,
 .osd.button:prelight,
-.osd.button:checked,
 .osd.button:active,
+.osd.button:checked {
+	background-color: shade(@osd_bg, 1.10);
+}
+
 .osd .button,
 .osd .button:prelight,
-.osd .button:checked,
-.osd .button:active {
+.osd .button:active,
+.osd .button:checked {
 	background-color: transparent;
 }
 
@@ -1764,24 +1772,28 @@ GtkOverlay.osd {
 	background-color: @osd_button_bg_insensitive_active;
 }
 
-.osd.button *:hover,
-.osd .button *:hover {
+.osd.button:hover,
+.osd .button:hover {
 	color: @osd_button_fg_hover;
 }
 
-.osd .button *:checked,
-.osd .button *:hover:checked,
-.osd .button *:active,
-.osd .button *:hover:active {
+.osd.button:active,
+.osd.button:hover:active,
+.osd .button:active,
+.osd .button:hover:active,
+.osd.button:checked,
+.osd.button:hover:checked,
+.osd .button:checked,
+.osd .button:hover:checked {
 	color: @osd_button_fg_active;
 }
 
-.osd.button *:insensitive,
-.osd.button *:insensitive:checked,
-.osd.button *:insensitive:active,
-.osd .button *:insensitive,
-.osd .button *:insensitive:checked,
-.osd .button *:insensitive:active {
+.osd.button:insensitive,
+.osd.button:active *:insensitive,
+.osd.button:checked *:insensitive,
+.osd .button:insensitive,
+.osd .button:active *:insensitive,
+.osd .button:checked *:insensitive {
 	color: @osd_button_fg_insensitive;
 }
 
@@ -1828,10 +1840,9 @@ GtkOverlay.osd {
 	padding: 10px;
 	border-style: none;
 	border-radius: 7px;
-	background-image: linear-gradient(to bottom,
-	                                  @osd_toolbar_bg_a,
-	                                  @osd_toolbar_bg_b 63%,
-	                                  @osd_toolbar_bg_c);
+	background-image: linear-gradient(to left,
+	                                  shade(@theme_selected_bg_color, 1.1),
+	                                  shade(@theme_selected_bg_color, 0.65));
 	background-color: transparent;
 
 	-GtkToolbar-button-relief: normal;
@@ -1839,8 +1850,8 @@ GtkOverlay.osd {
 
 .osd.toolbar .button {
 	padding: 4px;
-	border-width: 1px 0;
-	border-radius: 0;
+	border-width: 1px;
+	border-radius: 5px;
 	box-shadow: inset -1px 0 @osd_button_inset;
 }
 
@@ -1876,6 +1887,7 @@ GtkOverlay.osd {
    and Epiphany */
 .osd.trough {
 	background-color: @osd_trough_bg;
+	border-width: 0;
 }
 
 .osd.progressbar {
@@ -1883,10 +1895,22 @@ GtkOverlay.osd {
 }
 
 .osd .scale.trough {
-	border-color: @osd_button_border;
+	border: 1px solid rgba(0,0,0,0.1);
+	border-image: none;
 	background-image: linear-gradient(to bottom,
 	                                  shade(@osd_button_border, 0.70),
 	                                  shade(@osd_button_border, 0.90));
+	background-color: transparent;
+}
+
+.osd .scale.trough.highlight {
+	background-image: none;
+	background-color: @theme_selected_bg_color;
+}
+
+.osd .scale.trough:insensitive,
+.osd .scale.trough.highlight:insensitive {
+	background-image: none;
 	background-color: transparent;
 }
 
@@ -1915,6 +1939,49 @@ GtkProgressBar.osd.progressbar {
 	background-color: @theme_selected_bg_color;
 	background-image: none;
 	border-radius: 0;    
+}
+
+.osd .view,
+.osd.view {
+	background-color: @osd_view_bg;
+}
+
+.osd .scrollbar.trough {
+	background-color: @osd_scrollbar_trough;
+}
+
+.osd .scrollbar.slider {
+	background-color: @osd_scrollbar_slider;
+}
+
+.osd .scrollbar.slider:hover {
+	background-color: @osd_scrollbar_slider_prelight;
+}
+
+.osd .scrollbar.slider:active {
+	background-color: @osd_scrollbar_slider_active;
+}
+
+.osd GtkIconView.cell:selected,
+.osd GtkIconView.cell:selected:focus {
+	background-color: transparent;
+
+	border-style: solid;
+	border-radius: 15px;
+	border-width: 3px;
+	border-color: @osd_button_fg;
+
+	outline-color: transparent;
+}
+
+/* used by Documents */
+.osd .page-thumbnail {
+	border-style: solid;
+	border-width: 1px;
+	border-color: @osd_lowlight;
+
+	/* when there's no pixbuf yet */
+	background-color: @osd_bg;
 }
 
 /*************
