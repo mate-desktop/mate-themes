@@ -731,7 +731,7 @@ GtkNotebook {
 	border-style: none;
 	border-image: none;
 	border-radius: 5px;
-	background-color: alpha(@theme_bg_color, 0.6);
+	background-color: transparent;
 	background-image: none;
 	-GtkButton-child-displacement-x: 0;
 	-GtkButton-child-displacement-y: 0;
@@ -1916,6 +1916,11 @@ GtkOverlay.osd {
 	background-color: transparent;
 }
 
+.osd.frame {
+	background-clip: border-box;
+	background-origin: border-box;
+}
+
 .osd.button,
 .osd.button:checked,
 .osd.button:active,
@@ -2017,8 +2022,8 @@ GtkOverlay.osd {
     border-color: @osd_button_border;
 }
 
-.osd GtkMenuButton.button:checked,
-.osd GtkMenuButton.button:active {
+.osd GtkMenuButton.button *:checked,
+.osd GtkMenuButton.button *:active {
     color: @osd_button_fg_active;
     text-shadow: 0 -1px @osd_button_shadow;
 }
@@ -2026,7 +2031,6 @@ GtkOverlay.osd {
 .osd.toolbar {
 	color: @osd_fg;
 	text-shadow: 0 1px @osd_text_shadow;
-
 	padding: 10px;
 	border-style: none;
 	border-radius: 7px;
@@ -2035,15 +2039,14 @@ GtkOverlay.osd {
 	                                  @osd_toolbar_bg_b 63%,
 	                                  @osd_toolbar_bg_c);
 	background-color: transparent;
-
 	-GtkToolbar-button-relief: normal;
 }
 
 .osd.toolbar .button {
 	padding: 4px;
-	border-width: 1px 0;
-	border-radius: 0;
-	box-shadow: inset -1px 0 @osd_button_inset;
+	border-width: 1px 1px;
+	border-radius: 5px;
+	box-shadow: @osd_button_inset;
 }
 
 .osd.toolbar .button:first-child {
@@ -2066,7 +2069,6 @@ GtkOverlay.osd {
 	border-width: 1px;
 	border-radius: 5px;
 	border-style: solid;
-
 	box-shadow: none;
 }
 
@@ -2089,6 +2091,17 @@ GtkOverlay.osd {
 	background-image: linear-gradient(to bottom,
 	                                  shade(@osd_button_border, 0.70),
 	                                  shade(@osd_button_border, 0.90));
+	background-color: transparent;
+}
+
+.osd .scale.trough.highlight {
+	background-image: none;
+	background-color: @theme_selected_bg_color;
+}
+
+.osd .scale.trough:insensitive,
+.osd .scale.trough.highlight:insensitive {
+	background-image: none;
 	background-color: transparent;
 }
 
@@ -2119,6 +2132,49 @@ GtkProgressBar.osd.progressbar {
 	                                  @progressbar_background_a,
 	                                  @progressbar_background_b);
 	border-radius: 0; 
+}
+
+.osd .view,
+.osd.view {
+	background-color: @osd_view_bg;
+}
+
+.osd .scrollbar.trough {
+	background-color: @osd_scrollbar_trough;
+}
+
+.osd .scrollbar.slider {
+	background-color: @osd_scrollbar_slider;
+}
+
+.osd .scrollbar.slider:hover {
+	background-color: @osd_scrollbar_slider_prelight;
+}
+
+.osd .scrollbar.slider:active {
+	background-color: @osd_scrollbar_slider_active;
+}
+
+.osd GtkIconView.cell:selected,
+.osd GtkIconView.cell:selected:focus {
+	background-color: transparent;
+
+	border-style: solid;
+	border-radius: 15px;
+	border-width: 3px;
+	border-color: @osd_button_fg;
+
+	outline-color: transparent;
+}
+
+/* used by Documents */
+.osd .page-thumbnail {
+	border-style: solid;
+	border-width: 1px;
+	border-color: @osd_lowlight;
+
+	/* when there's no pixbuf yet */
+	background-color: @osd_bg;
 }
 
 /*************
