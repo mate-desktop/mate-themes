@@ -39,7 +39,7 @@
 	outline-color: @focus_border;
 	outline-style: dashed;
 	outline-offset: 2px;
-	outline-width: 2px; /* disable ugly focus-line */
+	outline-width: 0px; /* disable ugly focus-line */
 	-gtk-icon-style: regular; /* no symbolic icons */
 }
 
@@ -562,11 +562,14 @@ GtkLevelBar.vertical {
 }
 
 .level-bar.trough {
+	border-radius: 2px;
 	padding: 2px;
 }
 
 .level-bar.fill-block {
-	border-style: none;
+	border-width: 1px;
+	border-style: solid;
+	border-color: @progressbar_border;
 	background-image: linear-gradient(to bottom,
 	                                  shade(@link_color, 1.2),
 	                                  shade(@link_color, 0.6));
@@ -719,7 +722,7 @@ GtkNotebook {
 	border-style: none;
 	border-image: none;
 	border-radius: 5px;
-	background-color: alpha(@theme_bg_color, 0.6);
+	background-color: transparent;
 	background-image: none;
 	-GtkButton-child-displacement-x: 0;
 	-GtkButton-child-displacement-y: 0;
@@ -1862,7 +1865,7 @@ GtkCalendar.header .stack-switcher > .titlebutton.button {
     /*background-image: linear-gradient(to bottom,
                                         @toolbar_gradient_base,
                                         shade(@theme_bg_color, 1.6));*/
-    border-color: alpha(@frame_color, 0.6);
+    border-color: shade(@theme_bg_color, 0.8);
 }
 
 .header-bar .button.text-button {
@@ -2446,10 +2449,14 @@ GtkAssistant .sidebar {
  * GtkSwitch *
  *************/
 GtkSwitch {
+    -GtkSwitch-slider-width: 45px;
+    font-weight: bold;
+    font-size: smaller;
 	font: bold condensed;
 }
 
-GtkSwitch.trough {
+GtkSwitch.trough,
+GtkSwitch.trough:backdrop {
 	color: @internal_element_color;
 	border-radius: 3px;
 	border-width: 1px;
@@ -2461,7 +2468,8 @@ GtkSwitch.trough {
 	                                  @trough_bg_color_b);
 }
 
-GtkSwitch.trough:active {
+GtkSwitch.trough:active,
+GtkSwitch.trough:backdrop:active {
 	color: @theme_main_color;
 	border-image: none;
 	border-color: shade(@frame_color, 1.22);
@@ -2471,7 +2479,8 @@ GtkSwitch.trough:active {
 	                                  @active_switch_bg_color_b);
 }
 
-GtkSwitch.trough:insensitive {
+GtkSwitch.trough:insensitive,
+GtkSwitch.trough:backdrop:insensitive {
 	background-image: none;
 	background-color: shade(@theme_bg_color, 0.9);
 	border-color: shade(@inactive_frame_color, 0.845);
@@ -2486,7 +2495,8 @@ GtkSwitch.trough:insensitive {
 	color: @insensitive_fg_color;
 }
 
-GtkSwitch.slider {
+GtkSwitch.slider,
+GtkSwitch.slider:backdrop {
 	border-width: 1px;
 	border-radius: 2px;
 	border-color: shade(@frame_color, 0.8);
@@ -2502,14 +2512,37 @@ GtkSwitch.slider {
 	background-position: center;
 }
 
-GtkSwitch.slider:active {
+GtkSwitch.slider:active,
+GtkSwitch.slider:backdrop:active {
 	border-color: @switch_slider_border;
 }
 
-GtkSwitch.slider:insensitive {
+GtkSwitch.slider:insensitive,
+GtkSwitch.slider:backdrop:insensitive {
 	border-style: none;
 	background-image: none;
 	background-color: shade(@switch_slider_color, 0.6);
+}
+
+.list-row GtkSwitch,
+.list-row GtkSwitch:backdrop,
+.list-row:selected GtkSwitch,
+.list-row:selected GtkSwitch:backdrop {
+    box-shadow: none;
+    border-color: shade(@button_border, 1.0);
+}
+
+.list-row:selected GtkSwitch.slider:dir(rtl) {
+    border-left-color: @borders;
+}
+
+.list-row:selected GtkSwitch.slider:dir(ltr) {
+    border-right-color: @borders;
+}
+
+.list-row:selected GtkSwitch.slider,
+.list-row:selected GtkSwitch.slider:active {
+    border-color: shade(@button_border, 1.0);
 }
 
 GtkStatusbar {
