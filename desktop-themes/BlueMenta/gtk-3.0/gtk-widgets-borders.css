@@ -125,6 +125,11 @@ GtkComboBox.combobox-entry .button:focus,
 	border-image: url("borders/button.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
 }
 
+/* overrride for osd */
+.osd.toolbar .button:hover {
+	border-image: none;
+}
+
 /* primary toolbar button borders */
 .primary-toolbar .button:hover {
 	border-image: url("borders/button.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
