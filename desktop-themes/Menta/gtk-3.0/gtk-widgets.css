@@ -33,7 +33,7 @@
 	outline-offset: -3px; /* 2px */
 	outline-width: 0px; /* disable ugly focus-line */
 	outline-radius: 2px;
-	-gtk-icon-style: regular; /* disable symbolic icons */
+/*	-gtk-icon-style: regular;*/ /* disable symbolic icons */
 }
 
 /***************
@@ -867,6 +867,7 @@ GtkLevelBar.vertical {
 }
 
 GtkScrolledWindow.frame {
+	-gtk-icon-style: regular;
 	border-style: solid;
 	border-color: @borders;
 	border-width: 1px;
@@ -887,6 +888,7 @@ GtkScrolledWindow GtkViewport.frame {
 .button.menuitem.menubar,
 GtkColorButton.button,
 GtkComboBox.combobox-entry .button {
+	-gtk-icon-style: regular;
 	padding: 4px;
 }
 
@@ -2764,6 +2766,7 @@ GtkMessageDialog {
  ***********/
 .sidebar,
 .sidebar .view {
+	-gtk-icon-style: regular;
 	background-color: @sidebar_bg;
 }
 
@@ -3889,6 +3892,7 @@ GtkTreeView.view.expander:checked {
 }
 
 GtkExpander {
+	-gtk-icon-style: regular;
 	-gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
 }
 GtkExpander:dir(rtl) {
@@ -4357,10 +4361,13 @@ GtkModelButton.button.flat:selected {
     border-image: none;*/
 }
 
-/* borders are in gtk-widget-assets */
-.titlebar .titlebutton:hover {
-/*    border: none;
-    border-image: none;*/
+.titlebar .titlebutton {
+    /* fake request for hardcoded icons,
+     to avoid usage of regular window-close button*/
+    -gtk-icon-style: requested;
+    color: @wm_title;
+    padding: 4px;
+    border-image: none;
 }
 
 .titlebar .titlebutton:active {
