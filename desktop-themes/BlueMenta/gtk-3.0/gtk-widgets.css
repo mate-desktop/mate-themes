@@ -192,12 +192,6 @@ GtkTextView {
 	border-radius: 0px;
 }
 
-/* displays at end of mouse scrolling */
-.overshoot,
-.sidebar.overshoot {
-	background-color: alpha (@theme_selected_bg_color, 0.35);
-}
-
 GtkStatusbar {
 	padding: 5px;
 	color: @theme_fg_color;
@@ -248,6 +242,188 @@ GtkTreeView.separator,
 .notebook .pane-separator,
 .notebook .pane-separator:hover {
 	background-color: @theme_base_color;
+}
+
+/************************
+ * overshoot/undershoot *
+ ************************/
+
+/* displays at end of mouse scrolling */
+.overshoot.top {
+    background-image: -gtk-gradient(radial,
+                                    center top, 0,
+                                    center top, 0.5,
+                                    to(@overshoot_bg_color),
+                                    to(rgba(137, 158, 179, 0))),
+                      -gtk-gradient(radial,
+                                    center top, 0,
+                                    center top, 0.6,
+                                    from(rgba(56, 73, 87, 0.17)),
+                                    to(rgba(56, 73, 87, 0)));
+    background-size: 100% 5%, 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.overshoot.top:backdrop {
+    background-image: -gtk-gradient(radial,
+                                    center top, 0,
+                                    center top, 0.5,
+                                    to(@overshoot_backdrop_bg_color),
+                                    to(rgba(131, 137, 145, 0)));
+    background-size: 100% 5%;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.overshoot.bottom {
+    background-image: -gtk-gradient(radial,
+                                    center bottom, 0,
+                                    center bottom, 0.5,
+                                    to(@overshoot_bg_color),
+                                    to(rgba(137, 158, 179, 0))),
+                      -gtk-gradient(radial,
+                                    center bottom, 0,
+                                    center bottom, 0.6,
+                                    from(rgba(56, 73, 87, 0.17)),
+                                    to(rgba(56, 73, 87, 0)));
+    background-size: 100% 5%, 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.overshoot.bottom:backdrop {
+    background-image: -gtk-gradient(radial,
+                                    center bottom, 0,
+                                    center bottom, 0.5,
+                                    to(@overshoot_backdrop_bg_color),
+                                    to(rgba(131, 137, 145, 0)));
+    background-size: 100% 5%;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.overshoot.left {
+    background-image: -gtk-gradient(radial,
+                                    left center, 0,
+                                    left center, 0.5,
+                                    to(@overshoot_bg_color),
+                                    to(rgba(137, 158, 179, 0))),
+                      -gtk-gradient(radial,
+                                    left center, 0,
+                                    left center, 0.6,
+                                    from(rgba(56, 73, 87, 0.07)),
+                                    to(rgba(56, 73, 87, 0)));
+    background-size: 5% 100%, 100% 100%;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.overshoot.left:backdrop {
+    background-image: -gtk-gradient(radial,
+                                    left center, 0,
+                                    left center, 0.5,
+                                    to(@overshoot_backdrop_bg_color),
+                                    to(rgba(131, 137, 145, 0)));
+    background-size: 5% 100%;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.overshoot.right {
+    background-image: -gtk-gradient(radial,
+                                    right center, 0,
+                                    right center, 0.5,
+                                    to(@overshoot_bg_color),
+                                    to(rgba(137, 158, 179, 0))),
+                      -gtk-gradient(radial,
+                                    right center, 0,
+                                    right center, 0.6,
+                                    from(rgba(56, 73, 87, 0.07)),
+                                    to(rgba(56, 73, 87, 0)));
+    background-size: 5% 100%, 100% 100%;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.overshoot.right:backdrop {
+    background-image: -gtk-gradient(radial,
+                                    right center, 0,
+                                    right center, 0.5,
+                                    to(@overshoot_backdrop_bg_color),
+                                    to(rgba(131, 137, 145, 0)));
+    background-size: 5% 100%;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* result is disable undershoot */
+.undershoot.top {
+    background-color: transparent;
+    background-image: linear-gradient(to left,
+                                      rgba(255, 255, 255, 0.2) 50%,
+                                      rgba(0, 0, 0, 0.2) 50%);
+    background-size: 10px 0px;
+    background-repeat: repeat-x;
+    background-origin: content-box;
+    background-position: center top;
+}
+
+.undershoot.bottom {
+    background-color: transparent;
+    background-image: linear-gradient(to left,
+                                      rgba(255, 255, 255, 0.2) 50%,
+                                      rgba(0, 0, 0, 0.2) 50%);
+    background-size: 10px 0px;
+    background-repeat: repeat-x;
+    background-origin: content-box;
+    background-position: center bottom;
+}
+
+.undershoot.left {
+    background-color: transparent;
+    background-image: linear-gradient(to top,
+                                      rgba(255, 255, 255, 0.2) 50%,
+                                      rgba(0, 0, 0, 0.2) 50%);
+    background-size: 0px 10px;
+    background-repeat: repeat-y;
+    background-origin: content-box;
+    background-position: left center;
+}
+
+.undershoot.right {
+    background-color: transparent;
+    background-image: linear-gradient(to top,
+                                      rgba(255, 255, 255, 0.2) 50%,
+                                      rgba(0, 0, 0, 0.2) 50%);
+    background-size: 0px 10px;
+    background-repeat: repeat-y;
+    background-origin: content-box;
+    background-position: right center;
 }
 
 /****************
@@ -867,7 +1043,7 @@ GtkLevelBar.vertical {
 }
 
 GtkScrolledWindow.frame {
-	-gtk-icon-style: regular;
+    -gtk-icon-style: regular;
 	border-style: solid;
 	border-color: @borders;
 	border-width: 1px;
@@ -888,7 +1064,7 @@ GtkScrolledWindow GtkViewport.frame {
 .button.menuitem.menubar,
 GtkColorButton.button,
 GtkComboBox.combobox-entry .button {
-	-gtk-icon-style: regular;
+    -gtk-icon-style: regular;
 	padding: 4px;
 }
 
@@ -2761,15 +2937,32 @@ GtkMessageDialog {
  * Sidebar *
  ***********/
 .sidebar,
-.sidebar .view {
-	-gtk-icon-style: regular;
+GtkPlacesSidebar.sidebar .view {
+    -gtk-icon-style: regular;
 	background-color: @sidebar_bg;
 }
 
+.sidebar:backdrop {
+    background-color: @sidebar_bg;
+}
+
+/*
+  GtkPlacesSidebar.sidebar .view .image {
+    color: #6b6f70; }
+    GtkPlacesSidebar.sidebar .view .image:selected {
+      color: #ecf3fb; }
+      GtkPlacesSidebar.sidebar .view .image:selected:backdrop {
+        color: #ecf3fb; }
+    GtkPlacesSidebar.sidebar .view .image:backdrop {
+      color: #adafb0; }
+  GtkPlacesSidebar.sidebar .view:backdrop {
+    color: #8d9091; }
+*/
+/*
 .sidebar .frame {
 	border-style: none;
 }
-
+*/
 .sidebar row:hover {
 	background-color: shade (@theme_selected_bg_color, 1.15);
 	color: shade (@theme_selected_bg_color, 0.35);
@@ -3881,7 +4074,7 @@ GtkTreeView.view.expander:checked {
 }
 
 GtkExpander {
-	-gtk-icon-style: regular;
+    -gtk-icon-style: regular;
 	-gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
 }
 GtkExpander:dir(rtl) {
