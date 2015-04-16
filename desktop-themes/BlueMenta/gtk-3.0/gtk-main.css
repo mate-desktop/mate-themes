@@ -176,6 +176,13 @@
 @define-color selection_menu_hover shade(@selection_menu_fg, 0.80);
 @define-color selection_menu_active shade(@selection_menu_fg, 0.60);
 
+/************************
+ * overshoot/undershoot *
+ ************************/
+
+@define-color overshoot_bg_color alpha (@theme_selected_bg_color, 0.55);
+@define-color overshoot_backdrop_bg_color #96C8FA;
+
 /**************
  * MATE Apps  *
  **************/
