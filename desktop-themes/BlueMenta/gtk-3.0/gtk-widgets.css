@@ -2954,6 +2954,15 @@ GtkOverlay.osd {
 		);
 }
 
+/* button in osd-toolbar */
+.osd .linked .button:active:first-child {
+	border-left-width: 1px;
+}
+
+.osd .linked .button:active:last-child {
+	border-right-width: 1px;
+}
+
 .osd GtkMenuButton.menu-button:active {
 	background-color: transparent;
 	border-color: @osd_button_border;
@@ -2967,25 +2976,21 @@ GtkOverlay.osd {
 .osd.toolbar {
 	color: @osd_fg;
 	text-shadow: 0 1px @osd_text_shadow;
-
 	padding: 10px;
 	border-style: none;
 	border-radius: 7px;
-	background-image: linear-gradient(to bottom,
-		@osd_toolbar_bg_a,
-		@osd_toolbar_bg_b 63%,
-		@osd_toolbar_bg_c
-		);
+	background-image: linear-gradient(to left,
+	                                  shade(@theme_selected_bg_color, 1.1),
+	                                  shade(@theme_selected_bg_color, 0.65));
 	background-color: transparent;
-
 	-GtkToolbar-button-relief: normal;
 }
 
 .osd.toolbar .button {
 	padding: 4px;
-	border-width: 1px 0;
-	border-radius: 0;
-	box-shadow: inset -1px 0 @osd_button_inset;
+	border-width: 1px;
+	border-radius: 5px;
+	box-shadow: inset @osd_button_inset;
 }
 
 .osd.toolbar .button:first-child {
@@ -3008,7 +3013,6 @@ GtkOverlay.osd {
 	border-width: 1px;
 	border-radius: 5px;
 	border-style: solid;
-
 	box-shadow: none;
 }
 
