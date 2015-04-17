@@ -14,7 +14,7 @@
    height="16px"
    id="svg33222"
    version="1.1"
-   inkscape:version="0.48.3.1 r9886"
+   inkscape:version="0.91 r13725"
    sodipodi:docname="button-border.svg">
   <defs
      id="defs33224">
@@ -42,6 +42,53 @@
        x2="2.9802322e-08"
        y2="2.9802322e-08"
        gradientUnits="userSpaceOnUse" />
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Colorize"
+       id="filter3387">
+      <feComposite
+         in2="SourceGraphic"
+         operator="arithmetic"
+         k1="0"
+         k2="1"
+         result="composite1"
+         id="feComposite3389" />
+      <feColorMatrix
+         in="composite1"
+         values="1"
+         type="saturate"
+         result="colormatrix1"
+         id="feColorMatrix3391" />
+      <feFlood
+         flood-opacity="0.447059"
+         flood-color="rgb(0,159,87)"
+         result="flood1"
+         id="feFlood3393" />
+      <feBlend
+         in="flood1"
+         in2="colormatrix1"
+         mode="multiply"
+         result="blend1"
+         id="feBlend3395" />
+      <feBlend
+         in2="blend1"
+         mode="screen"
+         result="blend2"
+         id="feBlend3397" />
+      <feColorMatrix
+         in="blend2"
+         values="1"
+         type="saturate"
+         result="colormatrix2"
+         id="feColorMatrix3399" />
+      <feComposite
+         in="colormatrix2"
+         in2="SourceGraphic"
+         operator="in"
+         k2="1"
+         result="composite2"
+         id="feComposite3401" />
+    </filter>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -50,17 +97,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="16"
-     inkscape:cx="5.9495018"
-     inkscape:cy="4.7426064"
+     inkscape:zoom="17.092403"
+     inkscape:cx="8.1510305"
+     inkscape:cy="7.1990728"
      inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:grid-bbox="true"
      inkscape:document-units="px"
-     inkscape:window-width="860"
-     inkscape:window-height="732"
-     inkscape:window-x="702"
-     inkscape:window-y="221"
+     inkscape:window-width="477"
+     inkscape:window-height="658"
+     inkscape:window-x="501"
+     inkscape:window-y="40"
      inkscape:window-maximized="0"
      inkscape:snap-bbox="true"
      inkscape:bbox-nodes="true" />
@@ -88,6 +135,6 @@
        height="15"
        width="15"
        id="rect17861"
-       style="color:#000000;fill:none;stroke:url(#linearGradient3766);stroke-width:0.99999994;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+       style="color:#000000;fill:none;stroke:url(#linearGradient3766);stroke-width:0.99999994;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;filter:url(#filter3387)" />
   </g>
 </svg>
