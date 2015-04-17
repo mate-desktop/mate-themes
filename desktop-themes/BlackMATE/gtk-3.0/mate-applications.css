@@ -259,7 +259,7 @@ CajaQueryEditor .toolbar .entry:focus {
 
 .caja-desktop.caja-canvas-item {
 	color: @theme_fg_color;
-	text-shadow: 1px 1px black;
+	text-shadow: none;
 }
 
 .caja-desktop.caja-canvas-item:active {
@@ -352,7 +352,7 @@ MatePanelApplet .button.flat {
     border-radius: 3px;
     border-width: 1px;
     border-style: solid;
-    text-shadow: 0 -1px black;
+    text-shadow: none;
     color: @theme_fg_color;
     background-image: linear-gradient(to bottom,
                                       @button_hover_gradient_color_a,
@@ -396,7 +396,7 @@ WnckTasklist .button {
     border-radius: 3px;
     border-width: 1px;
     border-style: solid;
-    text-shadow: 0 -1px black;
+    text-shadow: none;
     color: @theme_fg_color;
     background-image: -gtk-gradient (radial,
                       0.5 -2.0, 2.0,
