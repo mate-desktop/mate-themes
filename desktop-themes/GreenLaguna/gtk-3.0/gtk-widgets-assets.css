@@ -65,6 +65,7 @@ GtkScale.scale-has-marks-above.slider.vertical:insensitive {
 	border-image: url("assets/button-border.svg") 3 / 3px stretch;
 }
 
+.button:hover,
 .button:checked,
 .button:hover:checked,
 .button:active,
@@ -76,15 +77,12 @@ GtkScale.scale-has-marks-above.slider.vertical:insensitive {
 	border-image: url("assets/button-default-border.svg") 3 / 3px stretch;
 }
 
+.button.default:hover,
 .button.default:active,
 .button.default:checked {
 	border-image: url("assets/button-default-active-border.svg") 3 / 3px stretch;
 }
 
-.toolbar .button:hover,
-.primary-toolbar .button:hover,
-.primary-toolbar .toolbar .button:hover,
-.primary-toolbar.toolbar .button:hover,
 .toolbar .button:checked,
 .primary-toolbar .button:checked,
 .primary-toolbar .toolbar .button:checked,
@@ -98,10 +96,52 @@ GtkScale.scale-has-marks-above.slider.vertical:insensitive {
 .primary-toolbar.toolbar GtkComboBox .button/*,
 .toolbar .button:active:hover,
 .primary-toolbar .toolbar .button:active:hover,
-.primary-toolbar.toolbar .button:active:hover,
-.primary-toolbar .toolbar GtkComboBox .button:hover,
-.primary-toolbar.toolbar GtkComboBox .button:hover*/ {
+.primary-toolbar.toolbar .button:active:hover */ {
 	border-image: url("assets/toolbar-button-border.svg") 3 / 3px stretch;
+}
+
+.toolbar .button:hover,
+.primary-toolbar .button:hover,
+.primary-toolbar .toolbar .button:hover,
+.primary-toolbar.toolbar .button:hover,
+.primary-toolbar .toolbar GtkComboBox .button:hover,
+.primary-toolbar.toolbar GtkComboBox .button:hover,
+.titlebar .titlebutton:hover,
+.header-bar.frame.titlebar .button.image-button.titlebutton:hover,
+.button.text-button.titlebutton:hover,
+.toolbar .button:active:hover,
+.primary-toolbar .toolbar .button:active:hover,
+.primary-toolbar.toolbar .button:active:hover,
+.toolbar .button:checked:hover,
+.primary-toolbar .toolbar .button:checked:hover,
+.primary-toolbar.toolbar .button:checked:hover,
+.toolbar .button:hover:first-child,
+.primary-toolbar .button:hover:first-child,
+.primary-toolbar .toolbar .button:hover:first-child,
+.primary-toolbar.toolbar .button:hover:first-child,
+.titlebar .titlebutton:hover:first-child,
+.header-bar.frame.titlebar .button.image-button.titlebutton:hover:first-child,
+.button.text-button.titlebutton:hover:first-child,
+.toolbar .button:active:hover:first-child,
+.primary-toolbar .toolbar .button:active:hover:first-child,
+.primary-toolbar.toolbar .button:active:hover:first-child,
+.toolbar .button:checked:hover:first-child,
+.primary-toolbar .toolbar .button:checked:hover:first-child,
+.primary-toolbar.toolbar .button:checked:hover:first-child,
+.toolbar .button:hover:last-child,
+.primary-toolbar .button:hover:last-child,
+.primary-toolbar .toolbar .button:hover:last-child,
+.primary-toolbar.toolbar .button:hover:last-child,
+.titlebar .titlebutton:hover:last-child,
+.header-bar.frame.titlebar .button.image-button.titlebutton:hover:last-child,
+.button.text-button.titlebutton:hover:last-child,
+.toolbar .button:active:hover:last-child,
+.primary-toolbar .toolbar .button:active:hover:last-child,
+.primary-toolbar.toolbar .button:active:hover:last-child,
+.toolbar .button:checked:hover:last-child,
+.primary-toolbar .toolbar .button:checked:hover:last-child,
+.primary-toolbar.toolbar .button:checked:hover:last-child {
+	border-image: url("assets/button-active-border.svg") 3 / 3px stretch;
 }
 
 /* overrride for osd */
