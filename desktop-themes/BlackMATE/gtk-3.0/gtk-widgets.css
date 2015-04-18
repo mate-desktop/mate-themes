@@ -40,7 +40,7 @@
 	outline-style: dashed;
 	outline-offset: 2px;
 	outline-width: 0px; /* disable ugly focus-line */
-	-gtk-icon-style: regular; /* no symbolic icons */
+	/*-gtk-icon-style: regular; *//* no symbolic icons */
 	text-shadow: none;
 }
 
@@ -147,6 +147,18 @@
 	border-style: solid;
 	border-width: 1px;
 	border-radius: 2px;
+}
+
+GtkExpander {
+    -gtk-icon-style: regular;
+}
+
+/***********
+ * Sidebar *
+ ***********/
+.sidebar,
+GtkPlacesSidebar.sidebar .view {
+    -gtk-icon-style: regular;
 }
 
 /****************
@@ -540,6 +552,7 @@ GtkCalendar {
 
 GtkScrolledWindow.frame {
 	background-color: transparent;
+	-gtk-icon-style: regular;
 }
 
 /* no double frames */
@@ -1176,6 +1189,7 @@ GtkComboBox .menu {
  * Buttons *
  ***********/
 .button {
+    -gtk-icon-style: regular;
     -GtkWidget-focus-line-width: 0;
     /* Due to a bug somewhere in gtk or cairo,
        a padding of zero (or even one) doesn't work always!!! */
@@ -2266,7 +2280,7 @@ GtkPopover .separator {
     background-image: none;
     background-color: #747473;
 }
- 
+
 .titlebar .titlebutton,
 .header-bar.frame.titlebar .button.image-button.titlebutton,
 .button.text-button.titlebutton {
@@ -2284,6 +2298,17 @@ GtkPopover .separator {
 	                                  @button_hover_gradient_color_a,
 	                                  @button_hover_gradient_color_b);
 }
+
+.titlebar .titlebutton {
+    /* fake request for hardcoded icons,
+     to avoid usage of regular window-close button*/
+    -gtk-icon-style: requested;
+    border-width: 0px;
+    border-style: none;
+    border-image-source: none;
+    background-image: none;
+    padding: 4px 0px 4px 0px;
+}
  
 .titlebar .titlebutton:hover,
 .header-bar.frame.titlebar .button.image-button.titlebutton:hover,
@@ -2299,7 +2324,12 @@ GtkPopover .separator {
 					color-stop (0.43, @theme_bg_color),
 					to (shade(@button_gradient_color_b, 0.7)));
 }
- 
+
+.titlebar .titlebutton:hover {
+    background-image: none;
+    background-color: transparent;
+}
+
 .titlebar .titlebutton:active,
 .titlebar .titlebutton:active:hover,
 .header-bar.frame.titlebar:active,
