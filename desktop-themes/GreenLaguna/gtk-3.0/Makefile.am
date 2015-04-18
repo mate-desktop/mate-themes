@@ -11,9 +11,11 @@ theme_DATA = \
 	mate-applications.css \
 	other-applications.css \
 	settings.ini \
-	unity.css
+	unity.css \
+	window-controls.css
 
 EXTRA_DIST = $(theme_DATA)
 
-SUBDIRS = assets
+SUBDIRS = assets \
+	window-controls
 
