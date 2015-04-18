@@ -52,6 +52,7 @@ desktop-themes/BlackMATE/gtk-2.0/assets/Makefile
 desktop-themes/BlackMATE/gtk-2.0/Styles/Makefile
 desktop-themes/BlackMATE/gtk-3.0/Makefile
 desktop-themes/BlackMATE/gtk-3.0/assets/Makefile
+desktop-themes/BlackMATE/gtk-3.0/window-controls/Makefile
 desktop-themes/BlackMATE/metacity-1/Makefile
 desktop-themes/BlackMATE/cinnamon/Makefile
 desktop-themes/BlackMATE/unity/Makefile
