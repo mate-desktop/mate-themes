@@ -11,8 +11,10 @@ theme_DATA = \
 	gtk-widgets-assets-dark.css \
 	mate-applications.css \
 	settings.ini \
-	unity.css
+	unity.css \
+	window-controls.css
 
 EXTRA_DIST = $(theme_DATA)
 
-SUBDIRS = assets
+SUBDIRS = assets \
+	window-controls
