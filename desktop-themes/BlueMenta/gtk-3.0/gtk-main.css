@@ -224,6 +224,9 @@
 @define-color wm_button_bg_active_b shade (@theme_bg_color, 0.9);
 @define-color wm_button_bg_active_c shade (@theme_bg_color, 0.9);
 
+/* csd border */
+@define-color wm_csd_solid_border_color shade (#3c3c3c, 1.2);
+
 @import url("gtk-main-common.css");
 @import url("gtk-widgets-backgrounds.css");
 @import url("gtk-widgets-borders.css");

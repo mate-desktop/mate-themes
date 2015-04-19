@@ -207,7 +207,8 @@
 @define-color wm_bg_a shade (@theme_bg_color, 1.1);
 @define-color wm_bg_b @theme_bg_color;
 
-@define-color wm_shadow alpha(black, 0.18);
+@define-color wm_shadow alpha(black, 0.5);
+@define-color wm_border alpha(black,0.18);
 
 @define-color wm_button_bg_a shade (@theme_bg_color, 1.0);
 @define-color wm_button_bg_b shade (@theme_bg_color, 0.85);
@@ -222,6 +223,9 @@
 @define-color wm_button_bg_active_a shade (@theme_bg_color, 0.7);
 @define-color wm_button_bg_active_b shade (@theme_bg_color, 0.9);
 @define-color wm_button_bg_active_c shade (@theme_bg_color, 0.9);
+
+/* csd border */
+@define-color wm_csd_solid_border_color shade (#3c3c3c, 1.2);
 
 @import url("gtk-main-common.css");
 @import url("gtk-widgets-backgrounds.css");
