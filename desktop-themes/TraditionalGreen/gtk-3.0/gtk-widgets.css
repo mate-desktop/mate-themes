@@ -1953,20 +1953,32 @@ GtkInfoBar:last-child,
 }
 
 .window-frame {
-	border-width: 1px;
+	border-width: 0px;
 	border-radius: 7px 7px 0 0;
 	border-style: solid;
-	box-shadow: 0 2px 8px 3px @wm_shadow;
+	box-shadow: 0 0 0 1px @wm_border, 0 2px 8px 3px @wm_shadow;
 	margin: 10px;
 }
 
 .window-frame:backdrop {
-	box-shadow: 0 2px 8px 3px @wm_shadow;
+	box-shadow: 0 0 0 1px shade(@wm_border,1.1), 0 2px 5px 1px
 }
 
 .window-frame.tiled {
 	border-radius: 0;
 	background-color: @theme_bg_color;
+}
+
+.window-frame.ssd {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.23);
+}
+
+.window-frame.solid-csd {
+    border-radius: 0;
+    margin: 4px;
+    background-color: @wm_bg_a;
+    border: solid 1px @wm_csd_solid_border_color;
+    box-shadow: none;
 }
 
 .window-frame.csd.popup {
