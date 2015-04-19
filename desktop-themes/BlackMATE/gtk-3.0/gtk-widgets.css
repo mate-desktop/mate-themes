@@ -2475,7 +2475,7 @@ GtkPopover .separator {
     border-width: 0px;
     box-shadow: 0 0 0 2px @wm_csd_border_color, 0 2px 8px 3px @wm_shadow;
     /* this is used for the resize cursor area */
-    margin: 2px;
+    margin: 10px;
 }
 
 .window-frame.tiled {
