@@ -2184,7 +2184,11 @@ GtkFileChooserButton GtkImage:last-child {
 }
 
 .scrollbar.trough,
-.scrollbar.trough.vertical {
+.scrollbar.trough.vertical,
+.sidebar.scrollbar.trough,
+.sidebar.scrollbar.trough.vertical,
+GtkPlacesSidebar .scrollbar.trough,
+GtkPlacesSidebar .scrollbar.trough.vertical {
 	background-image: linear-gradient(to right,
 		@scrollbar_trough,
 		shade (@scrollbar_trough, 1.08));
@@ -2195,7 +2199,9 @@ GtkFileChooserButton GtkImage:last-child {
 	border-image: none;
 }
 
-.scrollbar.trough.horizontal {
+.scrollbar.trough.horizontal,
+.sidebar.scrollbar.trough.horizontal,
+GtkPlacesSidebar .scrollbar.trough.horizontal {
 	background-image: linear-gradient(to bottom,
 		@scrollbar_trough,
 		shade (@scrollbar_trough, 1.08));
@@ -4685,7 +4691,6 @@ GtkModelButton.button.flat:selected {
 	-GtkButton-image-spacing: 0;
 	-GtkButton-inner-border: 0;
 }
-
 
 /* Nautilus desktop */
 .nautilus-canvas-item {
