@@ -74,6 +74,9 @@
 @define-color wm_button_prelight_fg @theme_base_color;
 @define-color wm_button_pressed_fg @theme_base_color;
 @define-color wm_shadow alpha(black, 0.5);
+@define-color wm_bg_a shade (@theme_bg_color, 1.1);
+@define-color wm_bg_b @theme_bg_color;
+@define-color wm_csd_solid_border_color shade (@theme_fg_color, 1.0);
 
 /*******
  * OSD *
