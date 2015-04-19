@@ -428,6 +428,16 @@
 @define-color trough_gradient_a shade(@core_color_b, 0.81);
 @define-color trough_gradient_b shade(@core_color_b, 0.90);
 
+/************************
+ * overshoot/undershoot *
+ ************************/
+
+@define-color overshoot_bg_color alpha (@theme_selected_bg_color, 0.15);
+@define-color overshoot_backdrop_bg_color theme_selected_bg_color;
+
+/**********
+ * WM *
+ **********/
 
 @define-color wm_shadow alpha(black, 0.5);
 @define-color wm_border alpha(black,0.18);
