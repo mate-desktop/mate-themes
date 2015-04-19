@@ -132,6 +132,11 @@
 @define-color wm_util shade(@theme_bg_color, 1.2);
 @define-color wm_unfocus shade(@theme_bg_color, 1.05);
 @define-color wm_shadow alpha(black, 0.5);
+@define-color wm_border alpha(black,0.18);
+
+/* csd border */
+@define-color wm_csd_border_color shade (#595959, 1.35);
+@define-color wm_csd_solid_border_color shade (#595959, 1.0);
 
 /* FIXME: needs dark colors from here */
 @define-color link_color #2EB8E6; /*#4a90d9*/
