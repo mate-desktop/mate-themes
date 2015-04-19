@@ -1434,7 +1434,7 @@ GtkComboBox .menu {
 .scrollbar.button.vertical:insensitive {
 	background-image: none;
 	background-color: transparent;
-	color: transparent;
+	color: @insensitive_fg_color;
 	border-image: none;
 	border-style: none;
 	border-width: 0px;
@@ -3461,7 +3461,7 @@ NemoWindow .sidebar .frame {
 
 NautilusWindow .sidebar .scrollbar.button,
 NemoWindow .sidebar .scrollbar.button {
-	color: transparent;
+	color: @theme_fg_color;
 }
 
 NautilusWindow .sidebar .scrollbar.button:hover,
