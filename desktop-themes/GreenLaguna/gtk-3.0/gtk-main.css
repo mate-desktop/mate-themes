@@ -152,6 +152,10 @@
 @define-color wm_util shade(@theme_bg_color, 1.2);
 @define-color wm_unfocus shade(@theme_bg_color, 1.05);
 @define-color wm_shadow alpha(black, 0.5);
+/* csd border */
+@define-color wm_csd_solid_bg shade(@theme_bg_color, 1.05);
+@define-color wm_csd_border_color shade (#B4B5B3, 1.35);
+@define-color wm_csd_solid_border_color shade (#B4B5B3, 1.2);
 
 /********
  * Misc *
