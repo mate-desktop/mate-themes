@@ -1484,6 +1484,7 @@ GtkTreeMenu .menuitem * {
 }
 
 .menubar .menuitem {
+    -gtk-icon-style: regular;
     transition: all 300ms ease-out;
     padding: 3px 7px;
 }
