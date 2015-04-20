@@ -3686,6 +3686,12 @@ GtkSwitch.trough:insensitive {
 	text-shadow: none;
 }
 
+/* don't display on/off */
+GtkSwitch.trough:hover,
+GtkSwitch.trough:insensitive:hover {
+	color: transparent;
+}
+
 GtkSwitch.slider,
 GtkSwitch.slider:hover {
 	background-color: transparent;
