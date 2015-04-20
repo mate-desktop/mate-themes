@@ -2392,6 +2392,7 @@ GtkTreeMenu .menuitem,
 
 .menubar .menuitem {
 	transition: all 200ms ease-out;
+	-gtk-icon-style: regular;
 	border-style: none;
 	padding: 4px 6px;
 	text-shadow: 0 1px @button_text_shadow;
