@@ -497,6 +497,11 @@ PlumaWindow .notebook tab .button.flat:hover {
     border-image: none;
 }
 
+/* pluma line numbers */
+PlumaView {
+    background-color: @theme_bg_color;
+}
+
 /***********************
  * Mate-Control-Center *
  ***********************/
