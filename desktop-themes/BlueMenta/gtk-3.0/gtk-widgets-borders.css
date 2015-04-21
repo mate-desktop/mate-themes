@@ -277,6 +277,16 @@ column-header .button.dnd {
 		shade(@borders, 1.0)) 0 1 1 0;
 }
 
+/* ie. yumex-dnf */
+GtkStack column-header .button {
+    border-width: 0px 1px 1px 0px;
+	border-color: transparent;
+    border-style: solid;
+	border-image: linear-gradient(to bottom,
+		alpha(@borders, 0.0),
+		shade(@borders, 1.0)) 0 1 1 0;
+}
+
 column-header.button:insensitive,
 column-header .button:insensitive {
 	border-image: linear-gradient(to top,

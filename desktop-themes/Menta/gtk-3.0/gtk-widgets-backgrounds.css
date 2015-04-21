@@ -167,12 +167,19 @@ column-header .button {
 	box-shadow: inset 0 2px 0 0 alpha(@borders, 0.3);
 }
 
+/* ie. yumex-dnf */
+GtkStack column-header .button {
+    background-image: linear-gradient(to bottom,
+                                      shade(@theme_bg_color, 1.18),
+                                      shade(@theme_bg_color, 1.1));
+}
+
 column-header.button:hover,
 column-header .button:hover {
 	background-image: linear-gradient(to bottom,
 		shade(@entry_background_a, 0.96),
 		@entry_background_b);
-	box-shadow: inset 0 2px 0 0 alpha(@theme_selected_bg_color, 0.3);
+	box-shadow: inset 0 2px 0 0 alpha(@theme_selected_bg_color, 0.7);
 }
 
 column-header.button:focus,
@@ -189,7 +196,7 @@ column-header .button:active:hover {
 		shade(@entry_background_a, 0.92),
 		@entry_background_b);
 	background-color: transparent;
-	box-shadow: inset 0 2px 0 0 alpha(@theme_selected_bg_color, 0.5);
+	box-shadow: inset 0 2px 0 0 alpha(@theme_selected_bg_color, 1.0);
 	border-image: none;
 }
 
