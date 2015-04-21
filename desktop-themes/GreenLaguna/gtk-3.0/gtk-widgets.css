@@ -2563,7 +2563,7 @@ GtkPopover .separator {
 }
 
 /* avoid double displaying of window controls */
-.titlebar .button GtkImage {
+.titlebar .button.titlebutton GtkImage {
 	color: transparent;
 }
 
