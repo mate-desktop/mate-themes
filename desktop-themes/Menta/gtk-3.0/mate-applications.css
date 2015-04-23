@@ -255,22 +255,6 @@ CajaNotebook .frame {
 	border-width: 1px 0 0 0;
 }
 
-/* close button styling */
-/* surpress styling of close button */
-CajaWindow .notebook tab .button.flat,
-CajaWindow .notebook tab .button.flat:hover {
-    border-color: transparent;
-    background-color: transparent;
-    background-image: none;
-    text-shadow: none;
-    icon-shadow: none;
-    border-image: none;
-}
-
-CajaWindow .notebook tab.top {
-    padding: 6px 3px 6px 0px;
-}
-
 .caja-cluebar-label {
 	font: normal;
 	text-shadow: 0 1px shade (@cluebar_color, 1.06);
@@ -620,10 +604,6 @@ PlumaWindow .notebook tab .button.flat:hover {
     text-shadow: none;
     icon-shadow: none;
     border-image: none;
-}
-
-PlumaWindow .notebook tab.top {
-    padding: 6px 0px 6px 6px;
 }
 
 /***********************
