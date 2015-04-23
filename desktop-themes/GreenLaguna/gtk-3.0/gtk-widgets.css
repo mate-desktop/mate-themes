@@ -2384,6 +2384,11 @@ GtkLabel {
 	text-shadow: none;
 }
 
+.sidebar,
+GtkPlacesSidebar.sidebar .view {
+	background-color: shade(@theme_bg_color, 1.03);
+}
+
 .sidebar.separator,
 .sidebar.separator:hover {
 	color: alpha(@frame_color, 0.6);
