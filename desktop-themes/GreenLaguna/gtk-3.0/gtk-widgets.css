@@ -84,19 +84,6 @@
 	border-radius: 0px;
 }
 
-.tooltip {
-	padding: 4px 4px;
-	border-style: none;
-	border-radius: 3px;
-	background-color: @theme_tooltip_bg_color;
-	color: @theme_tooltip_fg_color;
-}
-
-.tooltip * {
-	background-color: @theme_tooltip_bg_color;
-	color: @theme_tooltip_fg_color;
-}
-
 .grip {
 	background-color: transparent;
 	background-image: url("assets/resize-grip.svg");
@@ -111,6 +98,32 @@
 	border-style: solid;
 	border-width: 1px;
 	border-radius: 2px;
+}
+
+/************
+ * Tooltips *
+ ************/
+
+.tooltip {
+	padding: 4px;
+	border-style: none;
+	border-radius: 3px;
+}
+
+.tooltip.background {
+	background-image: linear-gradient(to left,
+	                                  shade(@theme_selected_bg_color, 1.1),
+	                                  shade(@theme_selected_bg_color, 0.65));
+	color: @theme_selected_fg_color;
+}
+
+.tooltip.window-frame.csd {
+    background-color: transparent;
+}
+
+.tooltip * {
+	background-color: transparent;
+	color: @theme_selected_fg_color;
 }
 
 /****************
