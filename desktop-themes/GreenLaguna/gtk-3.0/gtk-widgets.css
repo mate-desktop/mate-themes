@@ -569,6 +569,7 @@ GtkLevelBar.vertical {
 .notebook {
 	padding: 1px 0px 1px 1px;
 	background-clip: border-box;
+	background-color: shade(@theme_bg_color, 1.03);
 	border-color: @notebook_border;
 	color: @theme_fg_color; /* gdebi bug? */
 	border-style: solid;
