@@ -1212,10 +1212,11 @@ GtkTreeMenu .menuitem * {
 	                                  shade(@toolbar_gradient_base, 0.88));
 }
 
-.scrollbar.button:insensitive {
+.scrollbar.button:insensitive,
+.siderbar .scrollbar.button:insensitive {
 	background-image: none;
 	background-color: @theme_bg_color;
-	color: transparent;
+	color: @insensitive_fg_color;
 	/*border-color: alpha(@internal_element_color, 0.3);*/
 	/* does Nautilus need these? */
 	/*border-radius: 4px;
