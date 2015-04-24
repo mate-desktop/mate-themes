@@ -101,11 +101,7 @@ MatePanelApplet .button.flat:hover {
 MatePanelApplet .button:active:hover,
 MatePanelApplet .button:active,
 MatePanelApplet .button.flat:active:hover,
-MatePanelApplet .button.flat:active,
-MatePanelApplet .button:checked:hover,
-MatePanelApplet .button:checked,
-MatePanelApplet .button.flat:checked:hover,
-MatePanelApplet .button.flat:checked {
+MatePanelApplet .button.flat:active {
     padding: 3px;
     border-image: none;
     background-image: none;
@@ -115,8 +111,6 @@ MatePanelApplet .button.flat:checked {
     color: @theme_fg_color;
 }
 
-MatePanelApplet *:checked,
-MatePanelApplet *:hover:checked,
 MatePanelApplet *:active,
 MatePanelApplet *:hover:active {
     padding: 3px;
@@ -140,11 +134,7 @@ WnckTasklist .button.flat {
 WnckTasklist .button:active:hover,
 WnckTasklist .button:active,
 WnckTasklist .button.flat:active:hover,
-WnckTasklist .button.flat:active,
-WnckTasklist .button:checked:hover,
-WnckTasklist .button:checked,
-WnckTasklist .button.flat:checked:hover,
-WnckTasklist .button.flat:checked {
+WnckTasklist .button.flat:active {
     padding: 3px;
     border-image: none;
     color: @theme_fg_color;
