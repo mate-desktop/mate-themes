@@ -1138,8 +1138,8 @@ GtkTreeMenu .menuitem * {
 .scrollbar.button.horizontal:hover,
 .scrollbar.button.vertical:hover {
 	background-image: none;
-	background-color: @theme_main_color;
-	/*border-color: shade(@highlighted_border, 1.1);*/
+	background-color: background-color: shade(@theme_bg_color, 1.03);
+	border-color: shade(@highlighted_border, 1.1);
 	color: shade(@highlighted_border, 0.8);
 }
 
@@ -1148,7 +1148,7 @@ GtkTreeMenu .menuitem * {
 	background-image: linear-gradient(to top,
 	                                  shade(@theme_bg_color, 1.6),
 	                                  shade(@toolbar_gradient_base, 0.88));
-	/*border-color: shade(@highlighted_border, 1.1);*/
+	border-color: shade(@highlighted_border, 1.1);
 	border-image: none;
 	color: @theme_fg_color;
 	border-image: none;
@@ -1162,10 +1162,12 @@ GtkTreeMenu .menuitem * {
 	                                  shade(@toolbar_gradient_base, 0.88));
 }
 
-.scrollbar.button:insensitive {
+.scrollbar.button:insensitive,
+.scrollbar.button.horizontal:insensitive,
+.scrollbar.button.vertical:insensitive {
 	background-image: none;
 	background-color: @theme_bg_color;
-	color: transparent;
+	color: @insensitive_fg_color;
 	/*border-color: alpha(@internal_element_color, 0.3);*/
 	/* does Nautilus need these? */
 	/*border-radius: 4px;
@@ -2437,16 +2439,6 @@ NemoWindow .notebook .rubberband {
 NautilusWindow .sidebar .frame,
 NemoWindow .sidebar .frame {
 	border-width: 0px;
-}
-
-NautilusWindow .sidebar .scrollbar.button,
-NemoWindow .sidebar .scrollbar.button {
-	color: transparent;
-}
-
-NautilusWindow .sidebar .scrollbar.button:hover,
-NemoWindow .sidebar .scrollbar.button:hover {
-	color: @theme_fg_color;
 }
 
 NautilusPlacesSidebar .cell:selected,
