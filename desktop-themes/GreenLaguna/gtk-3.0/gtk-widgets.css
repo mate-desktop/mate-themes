@@ -149,7 +149,7 @@
  *********/
 .view,
 .view:insensitive { /* gdebi bug? */
-	background-color: @theme_bg_color;
+	background-color: shade(@theme_bg_color, 1.02);
 	color: @theme_text_color;
 	border-radius: 0px;
 	/*border-width: 3px;*/
@@ -575,7 +575,6 @@ GtkLevelBar.vertical {
 	background-image: linear-gradient(to bottom,
 	                                  shade(@theme_bg_color, 1.1),
 	                                  shade(@theme_bg_color, 0.77));
-
 	-adwaita-focus-border-radius: 2;
 }
 
@@ -1141,7 +1140,7 @@ GtkTreeMenu .menuitem * {
 .scrollbar.button.horizontal:hover,
 .scrollbar.button.vertical:hover {
 	background-image: none;
-	background-color: background-color: shade(@theme_bg_color, 1.03);
+	background-color: shade(@theme_bg_color, 1.03);
 	border-color: shade(@highlighted_border, 1.1);
 	color: shade(@highlighted_border, 0.8);
 }
