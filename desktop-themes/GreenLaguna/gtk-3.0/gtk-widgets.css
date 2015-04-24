@@ -1786,6 +1786,7 @@ GtkLabel:insensitive {
 
 GtkViewport,
 GtkIconView {
+	background-color: @theme_main_color;
 	border-radius: 3px;
 	padding: 0px;
 }
