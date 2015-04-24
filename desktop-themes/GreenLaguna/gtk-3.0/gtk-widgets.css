@@ -542,17 +542,16 @@ GtkLevelBar.vertical {
 .notebook {
 	padding: 1px 0px 1px 1px;
 	background-clip: border-box;
+	background-color: shade(@theme_bg_color, 1.02);
 	border-color: @notebook_border;
 	color: @theme_fg_color; /* gdebi bug? */
 	border-style: solid;
 	border-width: 1px;
 	border-radius: 3px;
-
 	/* With .notebook instead of GtkNotebook,
 	   if commented out, this will make line
 	   highlights invisible in text views */
 	/*background-color: @theme_main_color;*/
-
 	-GtkNotebook-tab-overlap: 8;
 	-GtkNotebook-tab-curvature: 6;
 	-GtkNotebook-initial-gap: 0;
@@ -586,13 +585,12 @@ GtkLevelBar.vertical {
 					         left top, left bottom,
 					         from (@notebook_active_tab_border),
 					         to (@notebook_border));
-
 	-adwaita-selected-tab-color: transparent;
 	background-image: linear-gradient(to bottom,
 	                                  shade(@theme_bg_color, 0.9),
-	                                  shade(@theme_bg_color, 0.96) 40%,
-	                                  shade(@theme_bg_color, 0.98) 70%,
-	                                  @theme_bg_color);
+	                                  shade(@theme_bg_color, 0.98) 40%,
+	                                  shade(@theme_bg_color, 1.0) 70%,
+	                                  shade(@theme_bg_color, 1.02));
 }
 
 .notebook tab.top {
@@ -642,9 +640,6 @@ GtkLevelBar.vertical {
 	background-image: none;
 	-GtkButton-child-displacement-x: 0;
 	-GtkButton-child-displacement-y: 0;
-
-	/*-GtkWidget-focus-line-width: 0;
-	-GtkWidget-focus-padding: 0;*/
 }
 
 .notebook .pane-separator {
