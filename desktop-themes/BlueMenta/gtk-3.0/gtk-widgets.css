@@ -3049,6 +3049,7 @@ GtkTreeView:selected:focus {
 
 GtkIconView,
 GtkViewport {
+    background-color: @theme_selected_fg_color;
     /* avoid resizing theme thumbnails in mate-appearance-properties */
     padding: 0px;
 }
