@@ -610,19 +610,19 @@ GtkLevelBar.vertical {
 
 .notebook tab.top {
 	/* top right-left bottom */
-	padding: 3px 8px 0px;
+	padding: 3px 9px 0px;
 }
 
 .notebook tab.top:active {
-	padding: 4px 8px 0px;
+	padding: 4px 9px 0px;
 }
 
 .notebook tab.bottom {
-	padding: 0px 8px 3px;
+	padding: 0px 9px 3px;
 }
 
 .notebook tab.bottom:active {
-    	padding: 0px 8px 4px;
+	padding: 0px 9px 4px;
 }
 
 .notebook tab.left,
