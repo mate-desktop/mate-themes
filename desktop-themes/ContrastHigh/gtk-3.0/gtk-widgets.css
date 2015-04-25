@@ -926,8 +926,7 @@ GtkSwitch.slider {
     border-style: solid;
     border-radius: 3px;
     border-color: @theme_switch_slider_border;
-
-    background-color: @theme_switch_slider_bg;
+    background-color: shade(@theme_button_bg, 0.8);
     background-clip: border-box;
 }
 
@@ -937,8 +936,8 @@ GtkSwitch.slider:insensitive {
 }
 
 GtkSwitch.slider:active {
-    border-color: @theme_switch_slider_active_bg;
-    background-color: @theme_switch_slider_active_bg;
+    border-color: @theme_highlight_color;
+    background-color: @theme_button_active_bg;
 }
 
 GtkSwitch.slider:active:insensitive {
@@ -952,8 +951,7 @@ GtkSwitch.trough {
 }
 
 GtkSwitch.trough:active {
-    color: @theme_switch_slider_active_bg;
-    background-color: @theme_highlight_color;
+    color: @theme_button_fg;
     border-color: @theme_highlight_alt;
 }
 
@@ -1347,8 +1345,59 @@ GtkIconView.view.cell {
 /**************
  * List boxes *
  **************/
-.list-row:hover {
+
+.list,
+.list-row {
+    background-color: @base_color;
+    border-color: @borders_color;
+}
+
+.list:backdrop,
+.list-row:backdrop {
+    background-color: @backdrop_base_color;
+    border-color: @backdrop_borders_color;
+}
+
+.list-row,
+.grid-child {
+    padding: 2px;
+}
+
+.list-row.button {
+    background-color: @base_color;
+    border-style: none;
+    border-radius: 0px;
+    box-shadow: none;
+}
+
+.list-row.button:hover,
+.list-row.button:backdrop:hover,
+.list-row.button:selected:hover {
+    background-color: @theme_active_color;
+    color: @theme_base_color;
+    border-radius: 4px;
+}
+
+.list-row.button:active {
+    box-shadow: inset 0 2px 2px -2px transparentize(black,0.8);
+}
+
+.list-row.button:selected,
+.list-row.button:selected:active {
+    color: @theme_fg_color;
+    box-shadow: inset 0 2px 3px -1px transparentize(black,0.5);
+    border-radius: 4px;
+}
+
+.list-row:selected {
     background-color: @theme_button_bg;
+    color: @theme_fg_color;
+    border-style: solid;
+    border-radius: 4px;
+}
+
+.list-row:selected:backdrop {
+   color: @backdrop_base_color;
 }
 
 /*******
