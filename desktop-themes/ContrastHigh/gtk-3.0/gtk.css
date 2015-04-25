@@ -64,6 +64,17 @@
 
 @define-color theme_cursor_color @theme_fg_color;
 
+/*colors for the backdrop state, derived from the main colors. */
+@define-color backdrop_base_color @base_color;
+@define-color backdrop_bg_color @bg_color;
+@define-color backdrop_fg_color @fg_color;
+@define-color backdrop_insensitive_color @insensitive_fg_color;
+@define-color backdrop_borders_color mix(@borders_color, @bg_color, 90%);
+
+/******
+ * WM *
+ ******/
+
 @define-color wm_border_color @theme_fg_color;
 @define-color wm_border_bakcdrop_color @theme_insensitive_border;
 @define-color wm_button_bg @theme_button_bg;
