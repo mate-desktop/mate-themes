@@ -53,9 +53,7 @@
      */
 	outline-color: alpha(@theme_text_color, 0.3);
 	outline-style: dashed;
-	outline-offset: -3px; /* 2px */
-	outline-width: 0px; /* disable ugly focus-line */
-	outline-radius: 2px;
+	outline-offset: 2px;
 }
 
 /***************
