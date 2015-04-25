@@ -167,7 +167,7 @@
  *********/
 .view,
 .view:insensitive { /* gdebi bug? */
-	background-color: shade(@theme_bg_color, 1.03);
+	background-color: shade(@theme_bg_color, 1.02);
 	color: @theme_text_color;
 	border-radius: 0px;
 	/*border-width: 3px;*/
@@ -556,7 +556,7 @@ GtkLevelBar.vertical {
 .notebook {
 	padding: 1px 0px 1px 1px;
 	background-clip: border-box;
-	background-color: shade(@theme_bg_color, 1.03);
+	background-color: shade(@theme_bg_color, 1.02);
 	border-color: @notebook_border;
 	color: @theme_fg_color; /* gdebi bug? */
 	border-style: solid;
@@ -575,7 +575,7 @@ GtkLevelBar.vertical {
 
 .notebook :hover {
 	-gtk-image-effect: highlight;
-	background-color: shade(@theme_bg_color, 1.03);
+	background-color: shade(@theme_bg_color, 1.02);
 	color: @theme_fg_color;
 }
 
@@ -603,8 +603,8 @@ GtkLevelBar.vertical {
 	-adwaita-selected-tab-color: transparent;
 	background-image: linear-gradient(to bottom,
 	                                  shade(@theme_bg_color, 0.9),
-	                                  shade(@theme_bg_color, 0.96) 40%,
-	                                  shade(@theme_bg_color, 0.98) 70%,
+	                                  shade(@theme_bg_color, 0.98) 40%,
+	                                  shade(@theme_bg_color, 1.02) 70%,
 	                                  @theme_bg_color);
 }
 
@@ -1058,7 +1058,6 @@ GtkTreeMenu .menuitem * {
 	-GtkRange-slider-width: 12;
 	-GtkRange-stepper-size: 16;
 	-GtkScrollbar-min-slider-length: 34; /* minimum size for the slider. sadly can't be in '.slider' where it belongs */
-
 	-GtkRange-stepper-spacing: 0;
 	-GtkRange-trough-under-steppers: 0;
 }
@@ -1176,8 +1175,8 @@ GtkTreeMenu .menuitem * {
 .scrollbar.button.horizontal:hover,
 .scrollbar.button.vertical:hover {
 	background-image: none;
-	background-color: @theme_main_color;
-	/*border-color: shade(@highlighted_border, 1.1);*/
+	background-color: shade(@theme_bg_color, 1.04);
+	border-color: shade(@highlighted_border, 1.1);
 	color: shade(@highlighted_border, 0.8);
 }
 
@@ -1186,7 +1185,7 @@ GtkTreeMenu .menuitem * {
 	background-image: linear-gradient(to top,
 	                                  shade(@theme_bg_color, 1.6),
 	                                  shade(@toolbar_gradient_base, 0.88));
-	/*border-color: shade(@highlighted_border, 1.1);*/
+	border-color: shade(@highlighted_border, 1.1);
 	border-image: none;
 	color: @theme_fg_color;
 	border-image: none;
@@ -2378,7 +2377,7 @@ GtkLabel {
 
 .sidebar,
 GtkPlacesSidebar.sidebar .view {
-	background-color: shade(@theme_bg_color, 1.03);
+	background-color: shade(@theme_bg_color, 1.02);
 }
 
 .sidebar.separator,
@@ -2521,7 +2520,7 @@ RBSource .cell.image {
 
 NemoView .view,
 NautilusView .view {
-	background-color: shade(@base_color, 1.06)
+	background-color: shade(@base_color, 1.04)
 }
 .nautilus-inactive-pane .view,
 .nemo-inactive-pane .view {
@@ -2631,23 +2630,13 @@ NemoWindow .notebook .rubberband {
 
 NautilusWindow .sidebar .view,
 NemoWindow .sidebar .view{
-	background-color: shade(@theme_bg_color, 1.03);
+	background-color: shade(@theme_bg_color, 1.02);
 	border-width: 0px;
 }
 
 NautilusWindow .sidebar .frame,
 NemoWindow .sidebar .frame {
 	border-width: 0px;
-}
-
-NautilusWindow .sidebar .scrollbar.button,
-NemoWindow .sidebar .scrollbar.button {
-	color: transparent;
-}
-
-NautilusWindow .sidebar .scrollbar.button:hover,
-NemoWindow .sidebar .scrollbar.button:hover {
-	color: @theme_fg_color;
 }
 
 NautilusPlacesSidebar .cell:selected,
