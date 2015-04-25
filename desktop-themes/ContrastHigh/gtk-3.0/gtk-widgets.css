@@ -254,9 +254,7 @@ GtkLevelBar.vertical {
     border-width: 2px;
     border-style: solid;
     border-color: @theme_button_fg;
-
     border-radius: 3px;
-
     background-color: @theme_button_bg;
     padding: 1px 4px;
     color: @theme_button_fg;
@@ -1257,6 +1255,20 @@ GtkSwitch.trough:active:insensitive {
     border-width: 1px;
     border-style: solid;
     border-color: @theme_border_color;
+}
+
+.frame.flat {
+    border-width: 1px;
+    border-style: none;
+    border-color: @theme_border_color;
+}
+
+.frame.action-bar {
+    border-width: 1px;
+    border-style: solid;
+    border-color: @theme_border_color;
+    padding: 6px;
+    border-width: 1px 0 0;
 }
 
 GtkScrolledWindow.frame {
