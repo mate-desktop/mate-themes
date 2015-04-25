@@ -68,8 +68,8 @@
 @define-color backdrop_base_color @base_color;
 @define-color backdrop_bg_color @bg_color;
 @define-color backdrop_fg_color @fg_color;
-@define-color backdrop_insensitive_color @insensitive_fg_color;
-@define-color backdrop_borders_color mix(@borders_color, @bg_color, 90%);
+@define-color backdrop_insensitive_color @theme_insensitive_color;
+@define-color backdrop_borders_color mix(@theme_border_color, @bg_color, 0.9);
 
 /******
  * WM *
