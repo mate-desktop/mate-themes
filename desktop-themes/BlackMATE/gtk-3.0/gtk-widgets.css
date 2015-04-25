@@ -237,7 +237,7 @@ GtkTextView {
 GtkCalendar.view,
 GtkIconView.view,
 GtkDialog .view {
-	background-color: @theme_bg_color;
+	background-color: @less_dark_color;
 	color: @theme_fg_color;
 }
 
@@ -2624,6 +2624,10 @@ GtkViewport,
 GtkIconView {
 	border-radius: 3px;
 	padding: 0px;
+}
+
+GtkViewport {
+	background-color: @less_dark_color;
 }
 
 GtkIconView.view.cell:selected,
