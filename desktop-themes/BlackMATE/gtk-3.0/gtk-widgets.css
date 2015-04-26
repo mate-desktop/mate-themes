@@ -161,9 +161,12 @@ GtkExpander {
 /***********
  * Sidebar *
  ***********/
+
 .sidebar,
+.sidebar .view,
 GtkPlacesSidebar.sidebar .view {
     -gtk-icon-style: regular;
+    background-color: shade (@theme_bg_color, 1.08);
 }
 
 /****************
@@ -3606,3 +3609,10 @@ NemoQueryEditor .toolbar .entry:focus {
 .nemo-desktop.nemo-canvas-item:selected {
 	text-shadow: none;
 }
+
+/* Gtk-file-chooser-dialog */
+
+GtkFileChooserDialog GtkTreeView.view {
+    background-color: shade (@theme_bg_color, 1.08);
+}
+
