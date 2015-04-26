@@ -43,7 +43,7 @@ PanelMenuBar.menubar .menu .menuitem {
 .mate-panel-menu-bar .menuitem:hover,
 MatePanelApplet > GtkMenuBar.menubar .menuitem:hover {
     color: @theme_fg_color;
-    background-color: @theme_active_color;
+    background-color: @theme_selected_bg_color;
 }
 
 .mate-panel-menu-bar .menuitem *:hover,
@@ -70,7 +70,7 @@ MatePanelApplet > GtkMenuBar.menubar .menu .menuitem {
 .mate-panel-menu-bar .menu .menuitem:hover,
 MatePanelApplet > GtkMenuBar.menubar .menu .menuitem:hover {
     color: @theme_fg_color;
-    background-color: @theme_active_color;
+    background-color: @theme_selected_bg_color;
 }
 
 /* application buttons */
@@ -109,7 +109,7 @@ MatePanelApplet .button.flat:checked {
     padding: 3px;
     border-image: none;
     background-image: none;
-    background-color: @theme_active_color;
+    background-color: @theme_selected_bg_color;
     border-width: 0;
     border-radius: 0;
     color: @theme_fg_color;
@@ -149,7 +149,7 @@ WnckTasklist .button.flat:checked {
     border-image: none;
     color: @theme_fg_color;
     background-image: none;
-    background-color: @theme_active_color;
+    background-color: @theme_selected_bg_color;
     border-width: 0;
     border-radius: 0;
 }
@@ -168,7 +168,7 @@ WnckTasklist .button.flat:hover {
 /* set WnckSelector selected menuitem */
 .mate-panel-window-menu-menu-bar .menu .menuitem:hover,
 MatePanelApplet > WnckSelector.menubar .menu .menuitem:hover {
-    background-color: @theme_active_color;
+    background-color: @theme_selected_bg_color;
     background-image: none;
     border-radius: 0px;
     text-shadow: none;
@@ -176,14 +176,14 @@ MatePanelApplet > WnckSelector.menubar .menu .menuitem:hover {
 }
 
 WnckPager {
-    background-color: lighter(@theme_active_color);
+    background-color: lighter(@theme_selected_bg_color);
 }
 
 /* prelight of WnckPager */
 WnckPager:hover {
     background-image: linear-gradient(to bottom,
-                                      shade (@theme_active_color, 2.86),
-                                      shade (@theme_active_color, 1.0));
+                                      shade (@theme_selected_bg_color, 2.86),
+                                      shade (@theme_selected_bg_color, 1.0));
     background-color: @theme_base_color;
     color: @theme_fg_active_color;
 }
@@ -237,7 +237,7 @@ ShellWindow .button.flat {
 ShellWindow GtkScrolledWindow .button.flat:hover {
     background-color: @theme_fg_color;
     border-color: @theme_fg_color;
-    color: @theme_base_color;
+    color: @theme_selected_fg_color;
     border-radius: 12px;
 }
 

@@ -49,8 +49,8 @@ GtkClutterOffscreen {
 }
 
 *:selected {
-    background-color: @theme_active_color;
-    color: @theme_base_color;
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
 }
 
 .gtkstyle-fallback {
@@ -60,12 +60,12 @@ GtkClutterOffscreen {
 
 .gtkstyle-fallback:prelight {
     background-color: @theme_fg_color;
-    color: @theme_base_color;
+    color: @theme_selected_fg_color;
 }
 
 .gtkstyle-fallback:active {
-    background-color: @theme_active_color;
-    color: @theme_base_color;
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
 }
 
 .gtkstyle-fallback:insensitive {
@@ -74,8 +74,8 @@ GtkClutterOffscreen {
 }
 
 .gtkstyle-fallback:selected {
-    background-color: @theme_active_color;
-    color: @theme_base_color;
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
 }
 
 /********
@@ -88,7 +88,7 @@ GtkCheckButton:selected:focus {
 }
 
 .image {
-    color: @theme_active_color;
+    color: @theme_selected_bg_color;
 }
 
 .image:hover {
@@ -179,8 +179,8 @@ GtkColorSwatch {
  * Colored states *
  ******************/
 .info {
-    background-color: @theme_active_color;
-    color: @theme_base_color;
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
 }
 
 .warning {
@@ -339,7 +339,7 @@ GtkLevelBar.vertical {
 
 .button:active {
     background-color: @theme_button_active_bg;
-    color: @theme_base_color;
+    color: @theme_selected_fg_color;
     border-color: @theme_button_active_border;
 }
 
@@ -364,7 +364,7 @@ GtkLevelBar.vertical {
 .button:hover {
     background-color: @theme_fg_color;
     border-color: @theme_fg_color;
-    color: @theme_base_color;
+    color: @theme_selected_fg_color;
 }
 
 .button:hover:active {
@@ -398,14 +398,14 @@ GtkComboBox *:insensitive {
 }
 
 .entry:selected {
-    background-color: @theme_active_color;
-    color: @theme_base_color;
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
 }
 
 /* needed for webkit/GtkStyle compatibility */
 .entry:active {
-    background-color: @theme_active_color;
-    color: @theme_base_color;
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
 }
 
 .entry:focus {
@@ -447,8 +447,8 @@ GtkComboBox .button {
 }
 
 .combobox-entry .button:active {
-    background-color: @theme_active_color;
-    color: @theme_base_color;
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
 }
 
 .combobox-entry .button:insensitive {
@@ -511,7 +511,7 @@ GtkComboBox .button {
  ***************/
 .spinbutton .button {
     padding: 2px 6px;
-    color: @theme_active_color;
+    color: @theme_selected_bg_color;
 
     border-width: 1px;
     border-radius: 0;
@@ -522,9 +522,9 @@ GtkComboBox .button {
 }
 
 .spinbutton .button:hover {
-    background-color: @theme_active_color;
+    background-color: @theme_selected_bg_color;
     color: @theme_insensitive_bg;
-    border-color: transparent @theme_active_color;
+    border-color: transparent @theme_selected_bg_color;
 }
 
 .spinbutton .button:insensitive {
@@ -584,12 +584,12 @@ GtkComboBox .button {
 
 .menubar .menuitem:hover {
     color: @theme_fg_color;
-    background-color: @theme_active_color;
+    background-color: @theme_selected_bg_color;
 }
 
 .menu .menuitem:hover {
     color: @theme_fg_color;
-    background-color: @theme_active_color;
+    background-color: @theme_selected_bg_color;
     border-style: solid;
     border-left-width: 1px;
     border-right-width: 1px;
@@ -679,7 +679,7 @@ GtkComboBox .button {
     border-color: @theme_button_insensitive_active_bg;
     background-color: @theme_button_insensitive_active_bg;
 
-    color: @theme_base_color;
+    color: @theme_selected_fg_color;
 }
 
 /*******************
@@ -705,13 +705,13 @@ GtkComboBox .button {
 }
 
 .inline-toolbar .button:hover {
-    color: @theme_base_color;
+    color: @theme_selected_fg_color;
     border-color: @theme_button_linked_border;
     box-shadow: none;
 }
 
 .inline-toolbar .button:active {
-    color: @theme_base_color;
+    color: @theme_selected_fg_color;
     border-color: @theme_button_linked_border;
 }
 
@@ -854,7 +854,7 @@ GtkScale.slider {
     background-color: @theme_button_bg;
 
     border-radius: 15px;
-    border-color: @theme_active_color;
+    border-color: @theme_selected_bg_color;
     border-style: solid;
     border-width: 1px;
 }
@@ -878,12 +878,10 @@ GtkSwitch {
 
 GtkSwitch.slider {
     padding: 2px;
-
     border-width: 1px;
     border-style: solid;
     border-radius: 3px;
     border-color: @theme_switch_slider_border;
-
     background-color: @theme_switch_slider_bg;
     background-clip: border-box;
 }
@@ -895,7 +893,7 @@ GtkSwitch.slider:insensitive {
 
 GtkSwitch.slider:active {
     border-color: @theme_switch_slider_active_bg;
-    background-color: @theme_switch_slider_active_bg;
+    background-color: @theme_button_active_bg;
 }
 
 GtkSwitch.slider:active:insensitive {
@@ -1090,7 +1088,7 @@ column-header.button {
 
 column-header .button:hover {
     background-color: @theme_fg_color;
-    color: @theme_base_color;
+    color: @theme_selected_fg_color;
     border-color: @theme_fg_color;
 }
 
@@ -1106,7 +1104,7 @@ column-header:first-child .button {
     border-width: 1px;
     border-style: solid;
     border-color: @theme_check_radio_border;
-    color: @theme_active_color;
+    color: @theme_selected_bg_color;
 
     background-color: @theme_check_radio_bg;
 }
@@ -1131,7 +1129,7 @@ column-header:first-child .button {
 .menuitem.check:active,
 .menuitem.radio:inconsistent,
 .menuitem.check:inconsistent {
-    color: @theme_active_color;
+    color: @theme_selected_bg_color;
 }
 
 .menuitem.radio:checked:hover,
@@ -1140,7 +1138,7 @@ column-header:first-child .button {
 .menuitem.check:active:hover,
 .menuitem.radio:inconsistent:hover,
 .menuitem.check:inconsistent:hover {
-    color: @theme_base_color;
+    color: @theme_selected_fg_color;
 }
 
 .menuitem.radio:checked:insensitive,
@@ -1152,11 +1150,215 @@ column-header:first-child .button {
     color: @theme_button_insensitive_fg;
 }
 
+/************
+ * GtkScale *
+ ************/
+.scale,
+.scale.scale-has-marks-above.scale-has-marks-below,
+.scale.vertical.scale-has-marks-above.scale-has-marks-below {
+    -GtkScale-slider-length: 20;
+    -GtkRange-slider-width: 20;
+    -GtkRange-trough-border: 2;
+    outline-offset: -9px;
+    outline-radius: 4px;
+    margin: 10px;
+}
+
+.scale.fine-tune,
+.scale.scale-has-marks-above.scale-has-marks-below.fine-tune,
+.scale.vertical.scale-has-marks-above.scale-has-marks-below.fine-tune {
+    margin: 8px;
+    outline-offset: -7px;
+    outline-radius: 6px;
+}
+
+.scale.fine-tune.trough,
+.scale.scale-has-marks-above.scale-has-marks-below.fine-tune.trough,
+.scale.vertical.scale-has-marks-above.scale-has-marks-below.fine-tune.trough {
+    border-radius: 4px;
+}
+
+.scale.slider,
+.scale.scale-has-marks-above.scale-has-marks-below.slider,
+.scale.vertical.scale-has-marks-above.scale-has-marks-below.slider {
+    /* FIXME: better gradient on the slider and hover state */
+    border-width: 2px;
+    border-style: solid;
+    background-color: @theme_button_bg;
+    padding: 1px 4px;
+    color: @theme_button_fg;
+    border-radius: 50%;
+    border-color: darker(@theme_border_color);
+    box-shadow: inset 0 1px white,
+                inset 0 -2px @bg_color,
+                inset 0 -1px mix(@bg_color,@theme_border_color, 0.5);
+}
+
+.scale.slider:hover,
+.scale.scale-has-marks-above.scale-has-marks-below.slider:hover,
+.scale.vertical.scale-has-marks-above.scale-has-marks-below.slider:hover {
+    border-width: 2px;
+    border-style: solid;
+    background-color: @theme_button_bg;
+    padding: 1px 4px;
+    color: @theme_button_fg;
+    border-color: darker(@theme_border_color);
+    border-radius: 50%; /* needed for double marks scales */
+    box-shadow: inset 0 1px white,
+                inset 0 -2px white,
+                inset 0 -1px mix(@bg_color,@theme_border_color, 0.5);
+}
+
+.scale.slider:insensitive,
+.scale.scale-has-marks-above.scale-has-marks-below.slider:insensitive,
+.scale.vertical.scale-has-marks-above.scale-has-marks-below.slider:insensitive {
+    border-style: solid; /* needed for double marks scales or they'll get overridden */
+    border-radius: 50%;
+    background-image: linear-gradient(to bottom, @theme_insensitive_bg);
+    box-shadow: none;
+}
+
+.scale.slider:backdrop,
+.scale.scale-has-marks-above.scale-has-marks-below.slider:backdrop,
+.scale.vertical.scale-has-marks-above.scale-has-marks-below.slider:backdrop {
+    border-style: solid; /* needed for double marks scales or they'll get overridden */
+    border-radius: 50%;
+    border-color: darker(@backdrop_borders_color);
+    background-image: linear-gradient(to bottom, @backdrop_bg_color);
+    box-shadow: none;
+}
+
+/* FIXME button backdrop-insensitive is missing
+.scale.slider:backdrop:insensitive,
+.scale.scale-has-marks-above.scale-has-marks-below.slider:backdrop:insensitive,
+.scale.vertical.scale-has-marks-above.scale-has-marks-below.slider:backdrop:insensitive {
+    @include button(backdrop-insensitive);
+}
+*/
+
+.scale.slider:active,
+.scale.scale-has-marks-above.scale-has-marks-below.slider:active,
+.scale.vertical.scale-has-marks-above.scale-has-marks-below.slider:active {
+      border: 1px solid darker(@selected_borders_color);
+}
+
+.scale.trough,
+.scale.scale-has-marks-above.scale-has-marks-below.trough,
+.scale.vertical.scale-has-marks-above.scale-has-marks-below.trough {
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    border-color: @theme_border_color;
+    background-color: shade(@theme_button_bg, 0.8);
+    box-shadow: inset 1px 1px transparentize(black, 0.9);
+}
+
+.scale.trough.vertical,
+.scale.scale-has-marks-above.scale-has-marks-below.trough.vertical,
+.scale.vertical.scale-has-marks-above.scale-has-marks-below.trough.vertical {
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    border-color: @theme_border_color;
+    background-color: shade(@theme_button_bg, 0.8);
+    box-shadow: inset 1px 1px transparentize(black, 0.9);
+}
+
+.scale.trough.highlight,
+.scale.scale-has-marks-above.scale-has-marks-below.trough.highlight,
+.scale.vertical.scale-has-marks-above.scale-has-marks-below.trough.highlight {
+      border-color: @selected_borders_color;
+      background-color: @theme_highlight_color;
+      box-shadow: none;
+}
+
+.scale.trough.highlight.vertical,
+.scale.trough.vertical.highlight,
+.scale.scale-has-marks-above.scale-has-marks-below.trough.highlight.vertical,
+.scale.vertical.scale-has-marks-above.scale-has-marks-below.trough.highlight.vertical,
+.scale.scale-has-marks-above.scale-has-marks-below.trough.vertical.highlight,
+.scale.vertical.scale-has-marks-above.scale-has-marks-below.trough.vertical.highlight {
+      border-color: @selected_borders_color;
+      background-color: @theme_highlight_color;
+      box-shadow: none;
+}
+
+.scale.trough.highlight:backdrop,
+.scale.scale-has-marks-above.scale-has-marks-below.trough.highlight:backdrop,
+.scale.vertical.scale-has-marks-above.scale-has-marks-below.trough.highlight:backdrop {
+         border-color: @selected_bg_color;
+         background-color: @selected_bg_color;
+         box-shadow: none;
+}
+
+.scale.trough:insensitive,
+.scale.trough.vertical:insensitive,
+.scale.scale-has-marks-above.scale-has-marks-below.trough:insensitive,
+.scale.vertical.scale-has-marks-above.scale-has-marks-below.trough:insensitive,
+.scale.trough .highlight:insensitive,
+.scale.trough.vertical .highlight:insensitive,
+.scale.scale-has-marks-above.scale-has-marks-below.trough .highlight:insensitive,
+.scale.vertical.scale-has-marks-above.scale-has-marks-below.trough .highlight:insensitive {
+      border-color: @theme_insensitive_border;
+      background-color: @theme_insensitive_bg;
+      box-shadow: none;
+}
+
+.scale.trough:backdrop,
+.scale.scale-has-marks-above.scale-has-marks-below.trough:backdrop,
+.scale.vertical.scale-has-marks-above.scale-has-marks-below.trough:backdrop {
+      border-color: @backdrop_borders_color;
+      background-color: mix(@backdrop_bg_color,@borders_color, 1.0);
+      box-shadow: none;
+}
+
+.scale.trough:backdrop:insensitive,
+.scale.trough .highlight:backdrop:insensitive,
+.scale.scale-has-marks-above.scale-has-marks-below.trough:backdrop:insensitive,
+.scale.scale-has-marks-above.scale-has-marks-below.trough .highlight:backdrop:insensitive,
+.scale.vertical.scale-has-marks-above.scale-has-marks-below.trough:backdrop:insensitive,
+.scale.vertical.scale-has-marks-above.scale-has-marks-below.trough .highlight:backdrop:insensitive {
+      border-color: @backdrop_insensitive_color;
+      background-color: @backdrop_bg_color;
+}
+
+.scale.scale-has-marks-above {
+   margin: 14px 10px 10px;
+}
+
+.scale.scale-has-marks-above.fine-tune {
+   margin: 12px 8px 8px;
+}
+.scale.scale-has-marks-below {
+   margin: 10px 10px 14px;
+}
+
+.scale.scale-has-marks-below.fine-tune {
+   margin: 8px 8px 12px;
+}
+
+.scale.vertical.scale-has-marks-above {
+   margin: 10px 10px 10px 14px;
+}
+
+.scale.vertical.scale-has-marks-above.fine-tune {
+   margin: 8px 8px 8px 12px;
+}
+
+.scale.vertical.scale-has-marks-below {
+   margin: 10px 14px 10px 10px;
+}
+
+.scale.vertical.scale-has-marks-below.fine-tune {
+   margin: 8px 12px 8px 8px;
+}
+
+
 /*********
  * Views *
  *********/
 .expander row:selected:focus {
-    color: @theme_base_color;
+    color: @theme_selected_fg_color;
 }
 
 GtkViewport {
@@ -1169,13 +1371,13 @@ GtkViewport {
 }
 
 .view:selected {
-    background-color: @theme_active_color;
-    color: @theme_base_color;
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
 }
 
 .view:selected:focus {
     background-color: @theme_fg_color;
-    color: @theme_base_color;
+    color: @theme_selected_fg_color;
 }
 
 GtkIconView,
@@ -1191,16 +1393,67 @@ GtkIconView.view.cell {
 /**************
  * List boxes *
  **************/
-.list-row:hover {
+
+.list,
+.list-row {
+    background-color: @base_color;
+    border-color: @borders_color;
+}
+
+.list:backdrop,
+.list-row:backdrop {
+    background-color: @backdrop_base_color;
+    border-color: @backdrop_borders_color;
+}
+
+.list-row,
+.grid-child {
+    padding: 2px;
+}
+
+.list-row.button {
+    background-color: @base_color;
+    border-style: none;
+    border-radius: 0px;
+    box-shadow: none;
+}
+
+.list-row.button:hover,
+.list-row.button:backdrop:hover,
+.list-row.button:selected:hover {
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+    border-radius: 4px;
+}
+
+.list-row.button:active {
+    box-shadow: inset 0 2px 2px -2px transparentize(black,0.8);
+}
+
+.list-row.button:selected,
+.list-row.button:selected:active {
+    color: @theme_fg_color;
+    box-shadow: inset 0 2px 3px -1px transparentize(black,0.5);
+    border-radius: 4px;
+}
+
+.list-row:selected {
     background-color: @theme_button_bg;
+    color: @theme_fg_color;
+    border-style: solid;
+    border-radius: 4px;
+}
+
+.list-row:selected:backdrop {
+   color: @backdrop_base_color;
 }
 
 /*******
  * OSD *
  *******/
 .osd {
-    color: @theme_base_color;
-    background-color: @theme_active_color;
+    color: @theme_selected_fg_color;
+    background-color: @theme_selected_bg_color;
 }
 
 .osd.toolbar {
@@ -1227,7 +1480,7 @@ GtkIconView.view.cell {
 }
 
 .osd .button:hover {
-    color: @theme_base_color;
+    color: @theme_selected_fg_color;
 }
 
 .osd .button:active {
@@ -1293,7 +1546,7 @@ GtkProgressBar.osd.progressbar {
 	border-width: 1px;
 	border-style: solid;
 	border-radius: 6px;
-	background-color: shade(@theme_active_color, 0.8);
+	background-color: shade(@theme_selected_bg_color, 0.8);
 	background-image: linear-gradient(to bottom,
 	                                  shade(@theme_base_color, 1.0),
 	                                  shade(@theme_base_color, 0.85));
@@ -1339,7 +1592,7 @@ GtkProgressBar.osd.progressbar {
 	background-color: alpha(shade(#3E403D, 0.85), 0.75);
 	border: 1px solid black;
 	box-shadow: none;
-	color: @theme_base_color;
+	color: @theme_selected_fg_color;
 }
 .popover.osd .toolbar {
 	background-image: none;
@@ -1356,7 +1609,7 @@ GtkProgressBar.osd.progressbar {
         box-shadow: none;
 }
 .popover.osd .button:insensitive {
-	color: alpha(@theme_base_color, 0.4);
+	color: alpha(@theme_selected_fg_color, 0.4);
 }
 
 .popover .list {
@@ -1391,9 +1644,9 @@ GtkModelButton.button:checked:hover,
 GtkModelButton.button:active:hover,
 GtkModelButton.button:hover,
 GtkModelButton.button:selected {
-	color: @theme_base_color;
+	color: @theme_selected_fg_color;
 	background-image: none;
-	background-color: @theme_active_color;
+	background-color: @theme_selected_bg_color;
 	text-shadow: none;
 	border-width: 0;
 	border-color: transparent;
@@ -1445,7 +1698,7 @@ GtkPopover .separator {
 
 .titlebar .titlebutton:active {
     background-color: @theme_button_active_bg;
-    color: @theme_base_color;
+    color: @theme_selected_fg_color;
 }
 
 
@@ -1504,7 +1757,7 @@ TerminalScreen {
 }
 
 .nautilus-cluebar-label {
-    color: @theme_base_color;
+    color: @theme_selected_fg_color;
     font: bold;
 }
 
@@ -1529,12 +1782,12 @@ NautilusWindow .pane-separator {
 }
 
 .nautilus-desktop.nautilus-canvas-item {
-    color: @theme_base_color;
+    color: @theme_selected_fg_color;
     text-shadow: 1px 1px white;
 }
 
 .nautilus-desktop.nautilus-canvas-item:selected {
-    color: @theme_base_color;
+    color: @theme_selected_fg_color;
 }
 
 .nautilus-desktop.nautilus-canvas-item:backdrop {
