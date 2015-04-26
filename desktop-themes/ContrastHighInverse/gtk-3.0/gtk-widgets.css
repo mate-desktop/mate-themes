@@ -770,6 +770,18 @@ GtkComboBox .button {
  * Linked buttons *
  ******************/
 
+.button,
+.button.menuitem.menubar,
+GtkColorButton.button,
+GtkComboBox.combobox-entry .button {
+	padding: 4px;
+}
+
+.button.image-button,
+.primary-toolbar.toolbar .button.image-button {
+	padding: 4px;
+}
+
 /* Middle button */
 .linked .entry,
 .linked > GtkComboBox > .button:last-child,
