@@ -1108,6 +1108,13 @@ row {
 	margin: 0 8px;
 }
 
+.scale.trough.highlight,
+.scale.trough.highlight.vertical {
+    background-image: none;
+	border-color: @progressbar_border;
+	background-color: @link_color;
+}
+
 .scale.trough:insensitive {
 	background-image: linear-gradient(to bottom,
 	                                  shade(@theme_bg_color, 0.85),
