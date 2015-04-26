@@ -1777,6 +1777,42 @@ GtkProgressBar.osd.progressbar {
     border-style: none;
 }
 
+/**************
+ * Calendar   *
+ **************/
+
+GtkCalendar {
+	padding: 2px;
+}
+
+GtkCalendar.view {
+    border-color: @theme_selected_bg_color;
+	border-radius: 0px;
+	border-style: solid;
+	border-width: 1px;
+	padding: 2px;
+}
+
+GtkCalendar.header {
+	border-radius: 0;
+	background-color: @theme_button_bg;
+	border-width: 0;
+}
+
+GtkCalendar.button,
+GtkCalendar.button:insensitive {
+	background-image: none;
+	background-color: transparent;
+}
+
+GtkCalendar.highlight {
+	background-color: @theme_selected_bg_color;
+	color: @theme_selected_fg_color;
+	border-radius: 0;
+	padding: 0;
+	border-width: 0;
+}
+
 /***************
  * Header bars *
  ***************/
