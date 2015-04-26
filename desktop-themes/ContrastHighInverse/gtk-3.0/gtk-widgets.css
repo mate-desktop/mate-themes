@@ -266,6 +266,12 @@ GtkLevelBar.vertical {
     padding: 5px;
 }
 
+.button.default {
+    text-shadow: none;
+    color: @theme_fg_color;
+    border-color: @theme_highlight_border;
+}
+
 /* ie. mate-control-center */
 .button.flat {
     padding: 0px;
@@ -283,10 +289,11 @@ GtkLevelBar.vertical {
     border-radius: 3px;
 }
 
-.button:active {
+.button:active,
+.button:checked {
     background-color: @theme_button_active_bg;
     color: @theme_selected_fg_color;
-    border-color: @theme_button_active_border;
+    border-color: @theme_button_fg;
 }
 
 .button:insensitive {
@@ -294,7 +301,8 @@ GtkLevelBar.vertical {
     border-color: @theme_button_insensitive_border;
 }
 
-.button:insensitive:active {
+.button:insensitive:active,
+.button:insensitive:checked {
     background-color: @theme_button_insensitive_active_bg;
     border-color: @theme_button_insensitive_active_border;
 }
@@ -313,7 +321,8 @@ GtkLevelBar.vertical {
     color: @theme_selected_fg_color;
 }
 
-.button:hover:active {
+.button:hover:active,
+.button:hover:checked {
     background-color: @theme_fg_color;
     border-color: @theme_fg_color;
 }
@@ -333,14 +342,12 @@ GtkComboBox *:insensitive {
  * Entries *
  ***********/
 .entry {
-    border-width: 1px;
+    border-width: 2px;
     border-style: solid;
-    border-color: @theme_fg_color;
-
+    border-color: @theme_button_fg;
     border-radius: 3px;
-
     background-color: @theme_entry_bg;
-    padding: 4px;
+    padding: 4px 4px 5px 4px;
 }
 
 .entry:selected {
@@ -377,22 +384,23 @@ GtkComboBox .separator {
 }
 
 GtkComboBox .button {
-    padding: 0 4px;
+    padding: 3px 4px;
 }
 
 .combobox-entry .button,
 .toolbar .combobox-entry .button {
     background-color: @theme_entry_bg;
     color: @theme_fg_color;
-    border-width: 1px;
-    border-color: @theme_fg_color;
+    border-width: 2px;
+    border-color: @theme_button_fg;
 }
 
 .combobox-entry .button:hover {
     background-color: @theme_fg_color;
 }
 
-.combobox-entry .button:active {
+.combobox-entry .button:active,
+.combobox-entry .button:checked {
     background-color: @theme_selected_bg_color;
     color: @theme_selected_fg_color;
 }
@@ -405,20 +413,20 @@ GtkComboBox .button {
 
 .combobox-entry .entry:first-child {
     border-right-width: 0px;
-    border-radius: 2px 0 0 2px;
+    border-radius: 3px 0px 0px 3px;
 }
 
 .combobox-entry .entry:last-child {
     border-left-width: 0px;
-    border-radius: 0 2px 2px 0;
+    border-radius: 0px 3px 3px 0px;
 }
 
 .combobox-entry .button:first-child {
-    border-radius: 2px 0 0 2px;
+    border-radius: 3px 0px 0px 3px;
 }
 
 .combobox-entry .button:last-child {
-    border-radius: 0 2px 2px 0;
+    border-radius: 0px 3px 3px 0px;
 }
 
 /***************************
@@ -709,41 +717,293 @@ GtkComboBox .button {
 /******************
  * Linked buttons *
  ******************/
+
+/* Middle button */
+.linked .entry,
+.linked > GtkComboBox > .button:last-child,
+.linked > GtkComboBox > .button:focus:last-child,
+.linked > GtkComboBox > .button:insensitive:last-child,
+.linked > GtkComboBox > .button:active:last-child,
+.linked > GtkComboBox > .button:focus:active:last-child,
+.linked > GtkComboBox > .button:checked:last-child,
+.linked > GtkComboBox > .button:focus:checked:last-child,
+.linked > GtkComboBox > .button:hover:last-child,
+.linked > GtkComboBox > .button:active:hover:last-child,
+.linked > GtkComboBox > .button:checked:hover:last-child,
 .osd .button,
-.linked .button {
-    border-left-width: 0;
-    border-radius: 0;
+.linked .button,
+.linked .button:hover, /* gtk-widget-factory middle page button */
+.linked .button:active,
+.linked .button:active:hover,
+.linked .button:checked,
+.linked .button:checked:checked, /* gtk-widget-factory middle page button */
+.linked .button:checked:hover,
+.linked .button:insensitive {
+	border-right-width: 0;
+	border-left-width: 0;
+	border-radius: 0;
 }
 
+/* Leftmost button */
+.linked .entry:first-child,
+.linked > GtkComboBox:first-child > .button:last-child,
+.linked > GtkComboBox:first-child > .button:focus:last-child,
+.linked > GtkComboBox:first-child > .button:insensitive:last-child,
+.linked > GtkComboBox:first-child > .button:active:last-child,
+.linked > GtkComboBox:first-child > .button:focus:active:last-child,
+.linked > GtkComboBox:first-child > .button:checked:first-child:last-child,
+.linked > GtkComboBox:first-child > .button:focus:checked:first-child:last-child,
+.linked > GtkComboBox:first-child > .button:hover:first-child:last-child,
+.linked > GtkComboBox:first-child > .button:active:hover:last-child,
+.linked > GtkComboBox:first-child > .button:checked:hover:last-child,
 .osd .button:first-child,
-.linked .button:first-child {
-    border-radius: 3px 0 0 3px;
-    border-left-width: 2px;
-}
-
-.osd .button:last-child,
-.linked .button:last-child {
-    border-radius: 0 3px 3px 0;
-}
-
-.osd .button:only-child,
-.linked .button:only-child {
+.linked .button:first-child,
+.linked .button:active:first-child,
+.linked .button:active:hover:first-child,
+.linked .button:checked:first-child,
+.linked .button:checked:hover:first-child,
+.linked .button:insensitive:first-child {
     border-radius: 3px;
-    border-width: 2px;
+	border-right-width: 0;
+	border-left-width: 2px;
+	border-bottom-right-radius: 0;
+	border-top-right-radius: 0;
 }
 
-.linked.vertical .button {
+/* Rightmost button */
+.linked .entry:last-child,
+.linked > GtkComboBox:last-child > .button,
+.linked > GtkComboBox:last-child > .button:last-child,
+.linked > GtkComboBox:last-child > .button:insensitive:last-child,
+.linked > GtkComboBox:last-child > .button:active:last-child,
+.linked > GtkComboBox:last-child > .button:focus:active:last-child,
+.linked > GtkComboBox:last-child > .button:checked:last-child,
+.linked > GtkComboBox:last-child > .button:focus:checked:last-child,
+.linked > GtkComboBox:last-child > .button:hover:last-child,
+.linked > GtkComboBox:last-child > .button:active:hover:last-child,
+.linked > GtkComboBox:last-child > .button:checked:hover:last-child,
+.osd .button:last-child,
+.linked .button:last-child,
+.linked .button:active:last-child,
+.linked .button:active:hover:last-child,
+.linked .button:checked:last-child,
+.linked .button:checked:hover:last-child,
+.linked .button:insensitive:last-child {
+    border-radius: 3px;
+	border-right-width: 2px;
+	border-left-width: 0;
+	border-bottom-left-radius: 0;
+	border-top-left-radius: 0;
+}
+
+/* Linked single button */
+.linked .entry:only-child,
+.linked > GtkComboBox:only-child > .button,
+.linked > GtkComboBox:only-child > .button:only-child,
+.linked > GtkComboBox:only-child > .button:insensitive:only-child,
+.linked > GtkComboBox:only-child > .button:hover:only-child,
+.linked > GtkComboBox:only-child > .button:active:only-child,
+.linked > GtkComboBox:only-child > .button:active:hover:only-child,
+.linked > GtkComboBox:only-child > .button:focus:active:only-child,
+.linked > GtkComboBox:only-child > .button:checked:only-child,
+.linked > GtkComboBox:only-child > .button:checked:hover:only-child,
+.linked > GtkComboBox:only-child > .button:focus:checked:only-child,
+.osd .button:only-child,
+.linked .button:only-child,
+.linked .button:active:only-child,
+.linked .button:active:hover:only-child,
+.linked .button:checked:only-child,
+.linked .button:checked:hover:only-child,
+.linked .button:insensitive:only-child {
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-radius: 3px;
+}
+
+/* Middle button (vertical) */
+.linked.vertical .entry,
+.linked.vertical .button,
+.linked.vertical .button:active,
+.linked.vertical .button:active:hover,
+.linked.vertical .button:checked,
+.linked.vertical .button:checked:hover,
+.linked.vertical .button:insensitive {
+	border-top-width: 0;
+	border-bottom-width: 0;
+	border-radius: 0;
+}
+
+/* Top button (vertical) */
+.linked.vertical .entry:first-child,
+.linked.vertical .button:first-child,
+.linked.vertical .button:active:first-child,
+.linked.vertical .button:active:hover:first-child,
+.linked.vertical .button:checked:first-child,
+.linked.vertical .button:checked:hover:first-child,
+.linked.vertical .button:insensitive:first-child {
+	border-bottom-width: 0;
+	border-radius: 3px 3px 0 0;
+}
+
+/* Bottom button (vertical) */
+.linked.vertical .entry:last-child,
+.linked.vertical .button:last-child,
+.linked.vertical .button:active:last-child,
+.linked.vertical .button:active:hover:last-child,
+.linked.vertical .button:checked:last-child,
+.linked.vertical .button:checked:hover:last-child,
+.linked.vertical .button:insensitive:last-child {
+	border-top-width: 0;
+	border-radius: 0 0 3px 3px;
+}
+
+/* Linked single button (vertical) */
+.linked.vertical .entry:only-child,
+.linked.vertical .button:only-child,
+.linked.vertical .button:active:only-child,
+.linked.vertical .button:active:hover:only-child,
+.linked.vertical .button:checked:only-child,
+.linked.vertical .button:checked:hover:only-child,
+.linked.vertical .button:insensitive:only-child {
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-radius: 3px;
+}
+
+/***************
+ * Dialog	  *
+ ***************/
+
+.prompt,
+GtkMessageDialog {
+	-GtkDialog-content-area-border: 0;
+	-GtkDialog-action-area-border: 12;
+	-GtkDialog-button-spacing: 1;
+	margin: 0;
+	padding: 0;
+}
+
+/* middle buttons */
+.dialog-action-area.linked .button,
+.dialog-action-area.linked .button:active,
+.dialog-action-area.linked .button:active:hover,
+.dialog-action-area.linked .button:checked,
+.dialog-action-area.linked .button:checked:hover,
+.dialog-action-area.linked .button:insensitive {
+	border-style: solid;
+    border-left-style: none;
+	border-radius: 0;
+    border-width: 2px;
+    border-right-width: 2px;
+    border-left-width:  0px;
+	border-color: @theme_button_fg;
+	border-image: none;
+}
+
+.dialog-action-area.linked .button.default,
+.dialog-action-area.linked .button.default:active,
+.dialog-action-area.linked .button.default:checked,
+.dialog-action-area.linked .button.default:insensitive,
+.dialog-action-area.linked .button:focus {
+	border-style: solid;
+    border-left-style: none;
+	border-radius: 0;
     border-width: 0 2px 2px;
-    border-radius: 0;
+    border-right-width: 2px;
+    border-left-width:  0px;
+	border-color: @theme_highlight_border;
+	-GtkWidget-focus-line-width: 0;
 }
 
-.linked.vertical .button:first-child {
-    border-radius: 3px 3px 0 0;
+/* left button */
+.dialog-action-area.linked .button:first-child,
+.dialog-action-area.linked .button:active:first-child,
+.dialog-action-area.linked .button:active:hover:first-child,
+.dialog-action-area.linked .button:checked:first-child,
+.dialog-action-area.linked .button:checked:hover:first-child,
+.dialog-action-area.linked .button:insensitive:first-child {
+	border-style: solid;
     border-width: 2px;
+	border-radius: 3px 0 0px 3px;
+	border-color: @theme_button_fg;
+	border-image: none;
 }
 
-.linked.vertical .button:last-child {
-    border-radius: 0 0 3px 3px;
+.dialog-action-area.linked .button.default:first-child,
+.dialog-action-area.linked .button.default:active:first-child,
+.dialog-action-area.linked .button.default:checked:first-child,
+.dialog-action-area.linked .button.default:insensitive:first-child,
+.dialog-action-area.linked .button:focus:first-child {
+	border-style: solid;
+    border-width: 2px;
+	border-radius: 3px 0 0px 3px;
+	border-color: @theme_highlight_border;
+	-GtkWidget-focus-line-width: 0;
+}
+
+/* right button */
+.dialog-action-area.linked .button:last-child,
+.dialog-action-area.linked .button:active:last-child,
+.dialog-action-area.linked .button:active:hover:last-child,
+.dialog-action-area.linked .button:checked:last-child,
+.dialog-action-area.linked .button:checked:hover:last-child,
+.dialog-action-area.linked .button:insensitive:last-child {
+	border-style: solid;
+    border-left-style: none;
+    border-width: 2px;
+    border-left-width: 0;
+	border-radius: 0 3px 3px 0;
+	border-color: @theme_button_fg;
+	border-image: none;
+}
+
+.dialog-action-area.linked .button.default:last-child,
+.dialog-action-area.linked .button.default:active:last-child,
+.dialog-action-area.linked .button.default:checked:last-child,
+.dialog-action-area.linked .button.default:insensitive:last-child,
+.dialog-action-area.linked .button:focus:last-child {
+	border-style: solid;
+    border-left-style: none;
+    border-width: 2px;
+    border-left-width: 0;
+	border-radius: 0 3px 3px 0;
+	border-color: @theme_highlight_border;
+	-GtkWidget-focus-line-width: 0;
+}
+
+/* single button */
+.dialog-action-area.linked .button:only-child,
+.dialog-action-area.linked .button:active:only-child,
+.dialog-action-area.linked .button:active:hover:only-child,
+.dialog-action-area.linked .button:checked:only-child,
+.dialog-action-area.linked .button:checked:hover:only-child,
+.dialog-action-area.linked .button:insensitive:only-child {
+    padding-left:  6px;
+    padding-right: 6px;
+    border-width: 2px;
+    border-radius: 3px;
+	border-color: @theme_button_fg;
+	border-image: none;
+}
+
+.dialog-action-area.linked .button.default:only-child,
+.dialog-action-area.linked .button.default:active:only-child,
+.dialog-action-area.linked .button.default:checked:only-child,
+.dialog-action-area.linked .button.default:insensitive:only-child,
+.dialog-action-area.linked .button:focus:only-child {
+    padding-left:  6px;
+    padding-right: 6px;
+    border-width: 2px;
+    border-radius: 3px;
+	border-color: @theme_highlight_border;
+	-GtkWidget-focus-line-width: 0;
+}
+
+.dialog-action-area.linked .button.suggested-action,
+.dialog-action-area.linked .button.suggested-action:active,
+.dialog-action-area.linked .button.suggested-action:checked,
+.dialog-action-area.linked .button.suggested-action:insensitive {
+	box-shadow: none;
 }
 
 /**********
