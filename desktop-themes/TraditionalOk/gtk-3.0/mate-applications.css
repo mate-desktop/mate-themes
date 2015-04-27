@@ -13,6 +13,12 @@ CajaWindow CajaInformationPanel .vertical {
 	color: @theme_fg_color;
 }
 
+/* ComboBox views */
+CajaWindow .toolbar.horizontal GtkComboBox .button,
+CajaWindow .primary-toolbar.toolbar.horizontal GtkComboBox .button {
+    padding: 4px 4px;
+}
+
 .caja-desktop.caja-canvas-item {
 	color: @theme_base_color;
 	text-shadow: 1px 1px alpha (@theme_fg_color, 0.8);
@@ -23,7 +29,6 @@ CajaWindow CajaInformationPanel .vertical {
 .caja-desktop.caja-canvas-item:selected {
 	text-shadow: none;
 }
-
 
 .caja-desktop .entry {
 	background-image: none;
