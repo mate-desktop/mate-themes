@@ -671,6 +671,13 @@ GtkScrolledWindow GtkViewport.frame {
 	padding: 5px 5px 6px; /* larger values makes the button arrow smaller*/
 }
 
+.toolbar.horizontal .button,
+.toolbar.horizontal .button:active,
+.primary-toolbar.toolbar.horizontal .button,
+.primary-toolbar.toolbar.horizontal .button:active {
+	padding: 2px 2px;
+}
+
 .button.default {
 	text-shadow: none;
 	color: @theme_fg_color;
@@ -1592,7 +1599,7 @@ GtkCheckButton:selected:focus {
 .toolbar {
 	border-style: none;
 	border-color: darker (@theme_bg_color);
-	padding: 4px;
+	padding: 3px;
 }
 
 .toolbar .button {
