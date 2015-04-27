@@ -360,7 +360,7 @@ GtkExpander {
  *********/
 .view,
 .view:insensitive { /* gdebi bug? */
-	background-color: shade(@base_color, 1.06);
+	background-color: shade(@base_color, 1.02);
 	color: @theme_text_color;
 	border-radius: 0px;
 	/*border-width: 3px;*/
@@ -795,7 +795,7 @@ GtkLevelBar.vertical {
 .notebook {
 	padding: 1px 0px 1px 1px;
 	background-clip: border-box;
-	background-color: shade(@base_color, 1.06);
+	background-color: shade(@base_color, 1.02);
 	border-color: @notebook_border;
 	color: @theme_fg_color; /* gdebi bug? */
 	border-style: solid;
@@ -838,8 +838,8 @@ GtkLevelBar.vertical {
 .notebook tab:active {
 	background-image: linear-gradient(to bottom,
 	                                  shade(@theme_bg_color, 0.9),
-	                                  shade(@theme_bg_color, 0.96) 40%,
-	                                  shade(@theme_bg_color, 0.98) 70%,
+	                                  shade(@theme_bg_color, 0.98) 40%,
+	                                  shade(@theme_bg_color, 1.02) 70%,
 	                                  @theme_bg_color);
 }
 
@@ -1608,8 +1608,8 @@ GtkTreeMenu .menuitem * {
 .scrollbar.button.horizontal:hover,
 .scrollbar.button.vertical:hover {
 	background-image: none;
-	background-color: shade(@theme_bg_color, 1.01);
-	color: shade(@highlighted_border, 0.8);
+	background-color: shade(@theme_bg_color, 0.95);
+	color: @theme_fg_color;
 }
 
 .scrollbar.button:hover:active,
@@ -2853,6 +2853,10 @@ GtkIconView {
 	padding: 0px;
 }
 
+GtkViewport {
+	background-color: shade(@theme_bg_color, 1.02);
+}
+
 GtkIconView.view.cell:selected,
 GtkIconView.view.cell:selected:focus {
 	background-color: transparent;
@@ -3299,11 +3303,11 @@ GtkInfoBar {
 .sidebar,
 GtkPlacesSidebar.sidebar .view {
     -gtk-icon-style: regular;
-	background-color: shade(@theme_bg_color, 1.03);
+	background-color: shade(@theme_bg_color, 1.02);
 }
 
 .sidebar:backdrop {
-    background-color: shade(@theme_bg_color, 1.03);
+    background-color: shade(@theme_bg_color, 1.02);
 }
 
 
@@ -3475,7 +3479,7 @@ RBSource .cell.image {
 
 NemoView .view,
 NautilusView .view {
-	background-color: shade(@base_color, 1.06)
+	background-color: shade(@base_color, 1.04)
 }
 
 .nautilus-inactive-pane .view,
@@ -3582,7 +3586,7 @@ NemoWindow .notebook .rubberband {
 
 NautilusWindow .sidebar .view,
 NemoWindow .sidebar .view{
-	background-color: shade(@theme_bg_color, 1.03);
+	background-color: shade(@theme_bg_color, 1.02);
 	border-width: 0px;
 }
 

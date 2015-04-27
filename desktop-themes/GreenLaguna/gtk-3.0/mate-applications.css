@@ -4,7 +4,7 @@
 
 /* background of all views */
 CajaWindow .view {
-    background-color: shade(@base_color, 1.06)
+    background-color: shade(@base_color, 1.04)
 }
 
 /* FIXME, doesn't work */
@@ -112,7 +112,7 @@ CajaWindow CajaPlacesSidebar .view,
 CajaWindow CajaHistorySidebar .view,
 CajaWindow CajaInformationPanel GtkVBox,
 CajaWindow CajaEmblemSidebar GtkViewport {
-    background-color: shade(@theme_bg_color, 1.03);
+    background-color: shade(@theme_bg_color, 1.02);
     border-width: 0px;
 }
 
