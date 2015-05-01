@@ -1482,7 +1482,7 @@ GtkPopover .separator {
 
 .window-frame.csd.popup {
     border-radius: 0;
-    box-shadow: 0 0px 0px @wm_shadow;
+    box-shadow: 0 1px 5px @wm_shadow;
 }
 
 .window-frame.csd.tooltip {
