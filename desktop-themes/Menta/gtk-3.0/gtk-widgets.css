@@ -150,15 +150,10 @@ GtkTextView {
 /*********************
  * Spinner Animation *
  *********************/
-/* This is CPU-intensive, no animation */
-/*
-@keyframes spin {
-	to { -gtk-icon-transform: rotate(1turn); }
-}
-*/
+/* This is could be CPU-intensive */
 
 @keyframes spin {
-	to { -gtk-icon-transform: rotate(0turn); }
+	to { -gtk-icon-transform: rotate(1turn); }
 }
 
 .spinner {
