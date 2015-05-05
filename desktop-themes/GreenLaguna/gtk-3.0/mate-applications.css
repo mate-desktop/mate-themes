@@ -3,8 +3,14 @@
  ************/
 
 /* background of all views */
-CajaWindow .view {
+CajaNavigationWindow .view {
     background-color: shade(@base_color, 1.04)
+}
+
+/* do not flash the desktop with a color during theme switching */
+CajaDesktopWindow FMDesktopIconView .view {
+    background-color: transparent;
+    background-image: none;
 }
 
 /* FIXME, doesn't work */
