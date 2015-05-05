@@ -1,3 +1,13 @@
+/************
+ * Caja *
+ ************/
+
+/* do not flash the desktop with a color during theme switching */
+CajaDesktopWindow FMDesktopIconView .view {
+    background-color: transparent;
+    background-image: none;
+}
+
 /**************
  * Mate-Panel *
  **************/
