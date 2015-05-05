@@ -1,6 +1,13 @@
 /*********************
  * CAJA File manager *
  *********************/
+
+/* do not flash the desktop with a color during theme switching */
+CajaDesktopWindow FMDesktopIconView .view {
+    background-color: transparent;
+    background-image: none;
+}
+
 /* for breadcrumbs path bar */
 
 .caja-pathbar-button,
