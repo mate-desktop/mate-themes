@@ -1,0 +1,57 @@
+/*the order of the widgets is important! */
+
+.button,
+.menu-button {
+   padding: 6px;
+}
+
+column-header {
+	padding: 1px 2px;
+}
+
+column-header.button,
+column-header .button {
+	border-image: none;
+	border-width: 0px 0px 1px 1px;
+	border-radius: 0;
+	border-style: solid;
+	border-color: @less_dark_color;
+    padding: 2px;
+}
+
+.view {
+    background-color: shade(@less_dark_color, 2.4);
+    color: @theme_main_color;
+}
+
+/* PackageView */
+GtkPaned.vertical GtkBox.horizontal .view {
+    background-color: shade(@less_dark_color, 2.8);
+}
+
+GtkPaned.vertical GtkBox.vertical {
+    background-image: linear-gradient(to top,
+                                      @toolbar_gradient_base,
+                                      @bg_color);
+    border-radius: 5px 5px 0px 5px;
+}
+
+/* group view */
+GtkPaned.horizontal .frame .view {
+    background-color: shade(@bg_color, 0.8);
+    color: @theme_fg_color;
+}
+
+GtkPaned.vertical .frame .view {
+    background-color: shade(@less_dark_color, 2.4);
+}
+
+/* infobar */
+GtkRevealer .frame {
+    background-color: shade(@less_dark_color, 0.4);
+}
+
+GtkRevealer .frame .horizontal {
+    background-color: shade(@less_dark_color, 0.6);
+    border-radius: 4px;
+}

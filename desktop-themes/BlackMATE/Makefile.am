@@ -12,7 +12,8 @@ SUBDIRS =		\
 	gtk-3.0		\
 	metacity-1	\
 	cinnamon    \
-	unity
+	unity       \
+	apps
 
 CLEANFILES = index.theme
 
