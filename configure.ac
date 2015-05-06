@@ -47,6 +47,7 @@ common/Makefile
 cursor-themes/Makefile
 desktop-themes/Makefile
 desktop-themes/BlackMATE/Makefile
+desktop-themes/BlackMATE/apps/Makefile
 desktop-themes/BlackMATE/gtk-2.0/Makefile
 desktop-themes/BlackMATE/gtk-2.0/assets/Makefile
 desktop-themes/BlackMATE/gtk-2.0/Styles/Makefile
