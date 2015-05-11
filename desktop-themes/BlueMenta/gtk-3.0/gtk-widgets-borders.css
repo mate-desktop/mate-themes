@@ -2,14 +2,16 @@
 
 /* generic element borders */
 .entry,
-GtkComboBox.combobox-entry .entry,
-GtkComboBox.combobox-entry .button,
 .button:active,
 .button:checked,
+GtkComboBox.combobox-entry .entry,
+GtkComboBox.combobox-entry .button,
 .spinbutton.vertical .button:active,
-.inline-toolbar.toolbar.vertical .button:active,
 .spinbutton.vertical .button:checked,
-.inline-toolbar.toolbar.vertical .button:checked {
+.inline-toolbar.toolbar.vertical .button:active,
+.inline-toolbar.toolbar.vertical .button:checked,
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton.vertical .button:active,
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton.vertical .button:checked {
 	border-image: url("borders/button-active.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
 	border-radius: 4px;
 	border-width: 2px;
@@ -24,12 +26,13 @@ GtkComboBox.combobox-entry .button,
 
 
 .entry:insensitive,
-GtkComboBox.combobox-entry .entry:insensitive,
-GtkComboBox.combobox-entry .button:insensitive,
 .button:active:insensitive,
 .spinbutton.vertical .button:insensitive,
+GtkComboBox.combobox-entry .entry:insensitive,
+GtkComboBox.combobox-entry .button:insensitive,
 .inline-toolbar.toolbar.vertical .button:insensitive,
-.inline-toolbar.toolbar.vertical .button.default:insensitive {
+.inline-toolbar.toolbar.vertical .button.default:insensitive,
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton.vertical .button:insensitive {
 	border-image: url("borders/button-active-ins.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
 	border-radius: 4px;
 	border-width: 2px;
@@ -40,10 +43,11 @@ GtkComboBox.combobox-entry .button:insensitive,
 .button:insensitive,
 .button.default:insensitive,
 .spinbutton.vertical .button:insensitive,
+.inline-toolbar.toolbar .button:insensitive,
+.inline-toolbar.toolbar .button.default:insensitive,
 .inline-toolbar.toolbar.vertical .button:insensitive,
 .inline-toolbar.toolbar.vertical .button.default:insensitive,
-.inline-toolbar.toolbar .button.default:insensitive,
-.inline-toolbar.toolbar .button:insensitive {
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton.vertical .button:insensitive {
 	border-image: url("borders/button-ins.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
 	border-radius: 4px;
 	border-width: 2px;
@@ -52,7 +56,7 @@ GtkComboBox.combobox-entry .button:insensitive,
 }
 
 .trough row {
-	border-image: url("borders/nohl-generic-border.png") 3 / 3px stretch; /* Zuki note: figure out what the heck it does */
+	border-image: url("borders/nohl-generic-border.png") 3 / 3px stretch;
 	border-radius: 4px;
 	border-width: 1px;
 	border-style: solid;
@@ -61,19 +65,21 @@ GtkComboBox.combobox-entry .button:insensitive,
 
 /* focused element borders */
 .entry:focus,
-GtkComboBox.combobox-entry .button:focus,
-.button.default:active,
-.inline-toolbar.toolbar.vertical .button.default:active,
-.button.default:checked,
-.inline-toolbar.toolbar.vertical .button.default:checked,
 .button:active:focus,
-.spinbutton.vertical .button:active:focus,
-.inline-toolbar.toolbar.vertical .button:active:focus
 .button:checked:focus,
+.button.default:active,
+.button.default:checked,
+GtkComboBox.combobox-entry .button:focus,
+.spinbutton.vertical .button:active:focus,
 .spinbutton.vertical .button:checked:focus,
 .inline-toolbar.toolbar.vertical .button:active:focus,
-.spinbutton.vertical .button:checked:focus,
-.inline-toolbar.toolbar.vertical .button:checked:focus { 
+.inline-toolbar.toolbar.vertical .button:checked:focus
+.inline-toolbar.toolbar.vertical .button.default:active,
+.inline-toolbar.toolbar.vertical .button.default:checked,
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:active,
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:checked,
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:active:focus,
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:checked:focus {
 	border-image: url("borders/button-active-focus.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
 	border-radius: 4px;
 	border-width: 2px;
@@ -82,9 +88,9 @@ GtkComboBox.combobox-entry .button:focus,
 }
 
 .titlebar .button:hover,
-.titlebar .button:checked:checked,
 .titlebar .titlebutton:hover,
-.titlebar .titlebutton:active {
+.titlebar .titlebutton:active,
+.titlebar .button:checked:checked {
 	border-image: url("borders/button-active-focus.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
 	border-radius: 4px;
 	border-width: 2px;
@@ -103,7 +109,8 @@ GtkComboBox.combobox-entry .button:focus,
 }
 
 .spinbutton.vertical .button,
-.inline-toolbar.toolbar.vertical .button {
+.inline-toolbar.toolbar.vertical .button,
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton.vertical .button {
 	border-image: url("borders/button.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
 	border-radius: 4px;
 	border-width: 2px;
