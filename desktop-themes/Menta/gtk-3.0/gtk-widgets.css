@@ -1109,6 +1109,13 @@ GtkToggleButton.button {
 	border-radius: 1px;
 }
 
+.button.image-button.circular-button {
+   border-image: none;
+   border-width: 1px;
+   border-style: solid;
+   border-color: @borders;
+}
+
 /* We may want a background for focused buttons, but in the meantime let's remove it too */
 .primary-toolbar .button,
 .primary-toolbar .button:insensitive,
@@ -1387,6 +1394,16 @@ GtkToggleButton.button {
 }
 
 /* Middle button (vertical) */
+.linked.vertical > GtkComboBox > .button:last-child,
+.linked.vertical > GtkComboBox > .button:focus:last-child,
+.linked.vertical > GtkComboBox > .button:insensitive:last-child,
+.linked.vertical > GtkComboBox > .button:active:last-child,
+.linked.vertical > GtkComboBox > .button:focus:active:last-child,
+.linked.vertical > GtkComboBox > .button:checked:last-child,
+.linked.vertical > GtkComboBox > .button:focus:checked:last-child,
+.linked.vertical > GtkComboBox > .button:hover:last-child,
+.linked.vertical > GtkComboBox > .button:active:hover:last-child,
+.linked.vertical > GtkComboBox > .button:checked:hover:last-child,
 .linked.vertical .entry,
 .linked.vertical .button,
 .linked.vertical .button:active,
@@ -1394,13 +1411,25 @@ GtkToggleButton.button {
 .linked.vertical .button:checked,
 .linked.vertical .button:checked:hover,
 .linked.vertical .button:insensitive {
-	border-top-width: 0;
-	border-bottom-width: 0;
+	border-top-width: 0px;
+	border-bottom-width: 0px;
+	border-right-width: 1px;
+	border-left-width: 1px;
 	border-image-width: 0 4px;
 	border-radius: 0;
 }
 
 /* Top button (vertical) */
+.linked.vertical > GtkComboBox:first-child > .button:last-child,
+.linked.vertical > GtkComboBox:first-child > .button:focus:last-child,
+.linked.vertical > GtkComboBox:first-child > .button:insensitive:last-child,
+.linked.vertical > GtkComboBox:first-child > .button:active:last-child,
+.linked.vertical > GtkComboBox:first-child > .button:focus:active:last-child,
+.linked.vertical > GtkComboBox:first-child > .button:checked:first-child:last-child,
+.linked.vertical > GtkComboBox:first-child > .button:focus:checked:first-child:last-child,
+.linked.vertical > GtkComboBox:first-child > .button:hover:first-child:last-child,
+.linked.vertical > GtkComboBox:first-child > .button:active:hover:last-child,
+.linked.vertical > GtkComboBox:first-child > .button:checked:hover:last-child,
 .linked.vertical .entry:first-child,
 .linked.vertical .button:first-child,
 .linked.vertical .button:active:first-child,
@@ -1408,12 +1437,25 @@ GtkToggleButton.button {
 .linked.vertical .button:checked:first-child,
 .linked.vertical .button:checked:hover:first-child,
 .linked.vertical .button:insensitive:first-child {
-	border-bottom-width: 0;
+	border-bottom-width: 0px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-left-width: 1px;
 	border-image-width: 3px 4px 0 4px;
 	border-radius: 4px 4px 0 0;
 }
 
 /* Bottom button (vertical) */
+.linked.vertical > GtkComboBox:last-child > .button,
+.linked.vertical > GtkComboBox:last-child > .button:last-child,
+.linked.vertical > GtkComboBox:last-child > .button:insensitive:last-child,
+.linked.vertical > GtkComboBox:last-child > .button:active:last-child,
+.linked.vertical > GtkComboBox:last-child > .button:focus:active:last-child,
+.linked.vertical > GtkComboBox:last-child > .button:checked:last-child,
+.linked.vertical > GtkComboBox:last-child > .button:focus:checked:last-child,
+.linked.vertical > GtkComboBox:last-child > .button:hover:last-child,
+.linked.vertical > GtkComboBox:last-child > .button:active:hover:last-child,
+.linked.vertical > GtkComboBox:last-child > .button:checked:hover:last-child,
 .linked.vertical .entry:last-child,
 .linked.vertical .button:last-child,
 .linked.vertical .button:active:last-child,
@@ -1421,12 +1463,25 @@ GtkToggleButton.button {
 .linked.vertical .button:checked:last-child,
 .linked.vertical .button:checked:hover:last-child,
 .linked.vertical .button:insensitive:last-child {
-	border-top-width: 0;
+	border-top-width: 0px;
+	border-bottom-width: 1px;
+	border-right-width: 1px;
+	border-left-width: 1px;
 	border-image-width: 0 4px 4px 4px;
 	border-radius: 0 0 4px 4px;
 }
 
 /* Linked single button (vertical) */
+.linked.vertical > GtkComboBox:only-child > .button,
+.linked.vertical > GtkComboBox:only-child > .button:only-child,
+.linked.vertical > GtkComboBox:only-child > .button:insensitive:only-child,
+.linked.vertical > GtkComboBox:only-child > .button:hover:only-child,
+.linked.vertical > GtkComboBox:only-child > .button:active:only-child,
+.linked.vertical > GtkComboBox:only-child > .button:active:hover:only-child,
+.linked.vertical > GtkComboBox:only-child > .button:focus:active:only-child,
+.linked.vertical > GtkComboBox:only-child > .button:checked:only-child,
+.linked.vertical > GtkComboBox:only-child > .button:checked:hover:only-child,
+.linked.vertical > GtkComboBox:only-child > .button:focus:checked:only-child,
 .linked.vertical .entry:only-child,
 .linked.vertical .button:only-child,
 .linked.vertical .button:active:only-child,
@@ -1434,8 +1489,7 @@ GtkToggleButton.button {
 .linked.vertical .button:checked:only-child,
 .linked.vertical .button:checked:hover:only-child,
 .linked.vertical .button:insensitive:only-child {
-	border-top-width: 1px;
-	border-bottom-width: 1px;
+	border-width: 1px;
 	border-image-width: 3px 4px 4px 4px;
 	border-radius: 4px;
 }
@@ -4619,6 +4673,11 @@ GtkModelButton.button.flat:selected {
 .window-frame.csd.message-dialog {
     border-radius: 7px;
     box-shadow: 0 1px 5px @wm_shadow;
+}
+
+/* print dialog */
+GtkPrintUnixDialog.background .vertical.view.dialog-vbox {
+    background-color: shade (@theme_bg_color, 1.1)
 }
 
 /* Various hacks and shit */
