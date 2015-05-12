@@ -142,7 +142,12 @@ GtkScale.scale-has-marks-above.slider.vertical:insensitive {
 }
 
 /* overrride for osd */
-.osd.toolbar .button:hover {
+.osd.toolbar .button:hover,
+.osd.toolbar .button:active,
+.osd.toolbar .button:hover:first-child,
+.osd.toolbar .button:active:first-child,
+.osd.toolbar .button:hover:last-child,
+.osd.toolbar .button:active:last-child {
 	border-image: none;
 }
 
