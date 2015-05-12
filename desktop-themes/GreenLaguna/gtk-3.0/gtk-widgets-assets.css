@@ -155,6 +155,23 @@ GtkSwitch.trough:active {
 	border-image: url("assets/switch-trough-border-active.svg") 3 / 3px stretch;
 }
 
+.popover.scale-popup .flat.button.image-button:insensitive {
+   background-image: none;
+   background-color: transparent;
+   border-image: none;
+   border-color: transparent;
+}
+
+.popover.scale-popup .flat.button.image-button {
+   background-image: none;
+   border-image: url("assets/button-border.svg") 3 / 3px stretch;
+}
+
+.popover.scale-popup .flat.button.image-button:hover {
+   border-image: url("assets/button-active-border.svg") 3 / 3px stretch;
+	-gtk-image-effect: highlight;
+}
+
 /*************************
  * Check and Radio items *
  *************************/
