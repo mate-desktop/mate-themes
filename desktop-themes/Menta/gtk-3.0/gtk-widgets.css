@@ -3189,6 +3189,14 @@ GtkOverlay.osd {
 		);
 }
 
+/* left/right button box */
+.osd.toolbar .horizontal.linked {
+    background-image: linear-gradient(to left,
+	                                  shade(@theme_selected_bg_color, 1.1),
+	                                  shade(@theme_selected_bg_color, 0.95));
+    border-radius: 5px;
+}
+
 /* button in osd-toolbar */
 .osd .linked .button:active:first-child {
 	border-left-width: 1px;
@@ -3196,6 +3204,10 @@ GtkOverlay.osd {
 
 .osd .linked .button:active:last-child {
 	border-right-width: 1px;
+}
+
+.osd.toolbar .flat.button.image-button {
+    box-shadow: none;
 }
 
 .osd GtkMenuButton.menu-button:active {
