@@ -2433,6 +2433,22 @@ GtkProgressBar.osd.progressbar {
 	color: alpha(@theme_selected_fg_color, 0.4);
 }
 
+/* volume +- buttons */
+.popover.scale-popup .button.flat.image-button {
+    padding: 0px;
+    border-style: none;
+    border-radius: 0px;
+    border-width: 0px;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+.popover.scale-popup .button.flat.image-button:hover {
+    background-image: linear-gradient(to left,
+	                                  shade(@theme_selected_bg_color, 1.1),
+	                                  shade(@theme_selected_bg_color, 0.95));
+}
+
 .popover .list {
 	background-color: @theme_base_color;
 }
