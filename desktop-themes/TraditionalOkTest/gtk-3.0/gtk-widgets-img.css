@@ -721,6 +721,121 @@ column-header:last-child .button:active:focus {
     padding: 1px 2px;
 }
 
+/* vertical */
+
+.vertical .horizontal .vertical .frame .horizontal .vertical .button.image-button,
+.vertical .horizontal .vertical .frame .horizontal .vertical .button.image-button:active,
+.vertical .horizontal .vertical .frame .horizontal .vertical .button.image-button:active:hover,
+.vertical .horizontal .vertical .frame .horizontal .vertical .button.image-button:checked,
+.vertical .horizontal .vertical .frame .horizontal .vertical .button.image-button:checked:hover,
+.vertical .horizontal .vertical .frame .horizontal .vertical .button.image-button:focus,
+.vertical .horizontal .vertical .frame .horizontal .vertical .button.image-button:focus:active,
+.vertical .horizontal .vertical .frame .horizontal .vertical .button.image-button:focus:checked,
+.vertical .horizontal .vertical .frame .horizontal .vertical .button.image-button:insensitive {
+    border-image: none;
+    border-radius: 3px 3px 3px 3px;
+    border-color: @border_color;
+    border-width: 1px 1px 1px 1px;
+    padding: 4px 5px;
+}
+
+.vertical .horizontal .vertical .frame .horizontal .vertical.toolbar .button.flat.image-button,
+.vertical .horizontal .vertical .frame .horizontal .vertical.toolbar .button.flat.image-button:focus {
+    background-image: none;
+    border-style: none;
+    border-radius: 3px;
+    border-width: 1px 1px 1px 1px;
+    border-color: @theme_bg_color;
+    border-image: none;
+    padding: 6px;
+    box-shadow: none;
+}
+
+.vertical .horizontal .vertical .frame .horizontal .vertical.toolbar .button.flat.image-button:hover,
+.vertical .horizontal .vertical .frame .horizontal .vertical.toolbar .button.flat.image-button:focus:hover {
+    background-image: linear-gradient(to bottom,
+                                      @button_hover_gradient_a 5%,
+                                      @button_hover_gradient_b 95%,
+                                      @button_hover_gradient_c);
+    border-image: none;
+    border-radius: 3px;
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+    border-color: @border_color;
+    padding: 5px;
+}
+
+/* Middle button */
+.linked.vertical .entry,
+.linked.vertical > GtkComboBox > .button:last-child,
+.linked.vertical > GtkComboBox > .button:active:last-child,
+.linked.vertical > GtkComboBox > .button:active:hover:last-child,
+.linked.vertical > GtkComboBox > .button:focus:last-child,
+.linked.vertical > GtkComboBox > .button:focus:active:last-child,
+.linked.vertical > GtkComboBox > .button:insensitive:last-child,
+.vertical .horizontal .vertical .frame .horizontal .vertical .linked.vertical .button.image-button,
+.vertical .horizontal .vertical .frame .horizontal .vertical .linked.vertical .button.image-button:active,
+.vertical .horizontal .vertical .frame .horizontal .vertical .linked.vertical .button.image-button:active:hover,
+.vertical .horizontal .vertical .frame .horizontal .vertical .linked.vertical .button.image-button:focus,
+.vertical .horizontal .vertical .frame .horizontal .vertical .linked.vertical .button.image-button:focus:active,
+.vertical .horizontal .vertical .frame .horizontal .vertical .linked.vertical .button.image-button:insensitive {
+    border-image: none;
+    border-radius: 0;
+    border-color: @border_color;
+    border-width: 0px 1px 0px 1px;
+    padding: 5px 5px;
+}
+
+/* top button */
+.linked.vertical .entry:first-child,
+.linked.vertical > GtkComboBox:first-child > .button:last-child,
+.linked.vertical > GtkComboBox:first-child > .button:active:last-child,
+.linked.vertical > GtkComboBox:first-child > .button:active:hover:last-child,
+.linked.vertical > GtkComboBox:first-child > .button:checked:last-child,
+.linked.vertical > GtkComboBox:first-child > .button:checked:hover:last-child,
+.linked.vertical > GtkComboBox:first-child > .button:focus:last-child,
+.linked.vertical > GtkComboBox:first-child > .button:focus:active:last-child,
+.linked.vertical > GtkComboBox:first-child > .button:focus:checked:last-child,
+.linked.vertical > GtkComboBox:first-child > .button:insensitive:last-child,
+.vertical .horizontal .vertical .frame .horizontal .vertical .linked.vertical .button.image-button:first-child,
+.vertical .horizontal .vertical .frame .horizontal .vertical .linked.vertical .button.image-button:active:first-child,
+.vertical .horizontal .vertical .frame .horizontal .vertical .linked.vertical .button.image-button:active:hover:first-child,
+.vertical .horizontal .vertical .frame .horizontal .vertical .linked.vertical .button.image-button:checked:first-child,
+.vertical .horizontal .vertical .frame .horizontal .vertical .linked.vertical .button.image-button:checked:hover:first-child,
+.vertical .horizontal .vertical .frame .horizontal .vertical .linked.vertical .button.image-button:focus:first-child,
+.vertical .horizontal .vertical .frame .horizontal .vertical .linked.vertical .button.image-button:focus:active:first-child,
+.vertical .horizontal .vertical .frame .horizontal .vertical .linked.vertical .button.image-button:focus:checked:first-child,
+.vertical .horizontal .vertical .frame .horizontal .vertical .linked.vertical .button.image-button:insensitive:first-child {
+    border-image: none;
+    border-radius: 3px 3px 0px 0px;
+    border-color: @border_color;
+    border-width: 1px 1px 0px 1px;
+    padding: 5px 5px;
+}
+
+/* bottom button */
+.vertical .linked.vertical .entry:last-child,
+.linked.vertical > GtkComboBox:last-child > .button,
+.linked.vertical > GtkComboBox:last-child > .button:last-child,
+.linked.vertical .button:last-child,
+.linked.vertical .button:active:last-child,
+.linked.vertical .button:active:hover:last-child,
+.linked.vertical .button:focus:last-child,
+.linked.vertical .button:focus:active:last-child,
+.linked.vertical .button:insensitive:last-child,
+.vertical .horizontal .vertical .frame .horizontal .vertical .linked.vertical .button.image-button:last-child,
+.vertical .horizontal .vertical .frame .horizontal .vertical .linked.vertical .button.image-button:active:last-child,
+.vertical .horizontal .vertical .frame .horizontal .vertical .linked.vertical .button.image-button:active:hover:last-child,
+.vertical .horizontal .vertical .frame .horizontal .vertical .linked.vertical .button.image-button:focus:last-child,
+.vertical .horizontal .vertical .frame .horizontal .vertical .linked.vertical .button.image-button:focus:active:last-child,
+.vertical .horizontal .vertical .frame .horizontal .vertical .linked.vertical .button.image-button:insensitive:last-child {
+    border-image: none;
+    border-radius: 0px 0px 3px 3px;
+    border-color: @border_color;
+    border-width: 0px 1px 1px 1px;
+    padding: 5px 5px;
+}
+
 /* Dialog Action Area */
 
 /* Leftmost button */
