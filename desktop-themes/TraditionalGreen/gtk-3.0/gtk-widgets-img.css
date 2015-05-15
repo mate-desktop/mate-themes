@@ -766,7 +766,7 @@ column-header:last-child .button:active:focus {
 }
 
 /* Middle button */
-.linked.vertical .entry,
+
 .linked.vertical > GtkComboBox > .button:last-child,
 .linked.vertical > GtkComboBox > .button:active:last-child,
 .linked.vertical > GtkComboBox > .button:active:hover:last-child,
@@ -787,7 +787,7 @@ column-header:last-child .button:active:focus {
 }
 
 /* top button */
-.linked.vertical .entry:first-child,
+
 .linked.vertical > GtkComboBox:first-child > .button:last-child,
 .linked.vertical > GtkComboBox:first-child > .button:active:last-child,
 .linked.vertical > GtkComboBox:first-child > .button:active:hover:last-child,
@@ -796,7 +796,14 @@ column-header:last-child .button:active:focus {
 .linked.vertical > GtkComboBox:first-child > .button:focus:last-child,
 .linked.vertical > GtkComboBox:first-child > .button:focus:active:last-child,
 .linked.vertical > GtkComboBox:first-child > .button:focus:checked:last-child,
-.linked.vertical > GtkComboBox:first-child > .button:insensitive:last-child,
+.linked.vertical > GtkComboBox:first-child > .button:insensitive:last-child {
+    border-image: none;
+    border-radius: 3px 3px 0px 0px;
+    border-color: @border_color;
+    border-width: 1px 1px 1px 1px;
+    padding: 5px 5px;
+}
+
 .vertical .horizontal .vertical .frame .horizontal .vertical .linked.vertical .button.image-button:first-child,
 .vertical .horizontal .vertical .frame .horizontal .vertical .linked.vertical .button.image-button:active:first-child,
 .vertical .horizontal .vertical .frame .horizontal .vertical .linked.vertical .button.image-button:active:hover:first-child,
@@ -814,7 +821,7 @@ column-header:last-child .button:active:focus {
 }
 
 /* bottom button */
-.vertical .linked.vertical .entry:last-child,
+
 .linked.vertical > GtkComboBox:last-child > .button,
 .linked.vertical > GtkComboBox:last-child > .button:last-child,
 .linked.vertical .button:last-child,
@@ -834,6 +841,42 @@ column-header:last-child .button:active:focus {
     border-color: @border_color;
     border-width: 0px 1px 1px 1px;
     padding: 5px 5px;
+}
+
+/* vertical linked spinbutton */
+
+.linked.vertical .horizontal.entry.spinbutton {
+    border-image: none;
+    border-color: @border_color;
+    border-radius: 0px;
+    border-width: 0px 1px 1px 1px;
+    padding: 4px 5px;
+    background-image: none;
+}
+
+.linked.vertical .horizontal.entry.spinbutton  .button,
+.linked.vertical .horizontal.entry.spinbutton  .button:hover,
+.linked.vertical .horizontal.entry.spinbutton  .button:focus,
+.linked.vertical .horizontal.entry.spinbutton  .button:active,
+.linked.vertical .horizontal.entry.spinbutton  .button:checked,
+.linked.vertical .horizontal.entry.spinbutton  .button:active:hover,
+.linked.vertical .horizontal.entry.spinbutton  .button:checked:hover,
+.linked.vertical .horizontal.entry.spinbutton  .button:insensitive {
+    border-image: none;
+    border-color: @border_color;
+    border-radius: 0px;
+    border-width: 0px 1px 0px 1px;
+}
+
+.linked.vertical .horizontal.entry.spinbutton  .button:last-child,
+.linked.vertical .horizontal.entry.spinbutton  .button:hover:last-child,
+.linked.vertical .horizontal.entry.spinbutton  .button:focus:last-child,
+.linked.vertical .horizontal.entry.spinbutton  .button:active:last-child,
+.linked.vertical .horizontal.entry.spinbutton  .button:checked:last-child,
+.linked.vertical .horizontal.entry.spinbutton  .button:active:hover:last-child,
+.linked.vertical .horizontal.entry.spinbutton  .button:checked:hover:last-child,
+.linked.vertical .horizontal.entry.spinbutton  .button:insensitive:last-child {
+    border-width: 0px 0px 0px 0px;
 }
 
 /* Dialog Action Area */
