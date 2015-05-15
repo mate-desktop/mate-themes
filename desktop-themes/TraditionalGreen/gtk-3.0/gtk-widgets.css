@@ -453,7 +453,7 @@ GtkScale.mark {
 	border-color: @border_color;
 	border-style: solid;
 	border-radius: 3px;
-	background-color: @theme_bg_color;
+	background-color: @notebook_bg_color;
 	padding: 0;
 }
 
@@ -697,8 +697,6 @@ GtkColorChooserWidget #add-color-button {
 	                  left top,
 	                  left bottom,
 	                  from (@button_gradient_a),
-	                  color-stop (0.50, @button_gradient_b),
-	                  color-stop (0.50, @button_gradient_c),
 	                  to (@button_gradient_d));
 	background-color: transparent;
 }
@@ -735,22 +733,19 @@ GtkColorChooserWidget #add-color-button {
 	background-color: transparent;
 }
 
-GtkListBoxRow.button.list-row:hover {
-	background-image: linear-gradient(to bottom,
-	                  shade(@button_active_gradient_a, 1.20),
-	                  shade(@button_active_gradient_b, 1.20) 3px,
-	                  shade(@button_active_gradient_c, 1.20) 4px,
-	                  shade(@button_active_gradient_d, 1.20) 50%,
-	                  shade(@button_active_gradient_e, 1.20) 50%,
-	                  shade(@button_active_gradient_f, 1.20));
-	background-color: transparent;
-}
-
 GtkListBoxRow.button.list-row {
 	color: @theme_text_color;
 	background-color: @theme_base_color;
 	border-radius: 0px;
 	border: none;
+}
+
+GtkListBoxRow.button.list-row:hover {
+	background-image: linear-gradient(to bottom,
+	                  @button_hover_gradient_a 5%,
+	                  @button_hover_gradient_b 95%,
+	                  @button_hover_gradient_c);
+	background-color: transparent;
 }
 
 GtkListBoxRow.button.list-row:selected {
