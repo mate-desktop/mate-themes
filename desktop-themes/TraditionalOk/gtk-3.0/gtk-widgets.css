@@ -823,6 +823,41 @@ GtkMenuToolButton *,
 	border-radius: 0 2px 2px 0;
 }
 
+/*vertical */
+
+.vertical.entry.spinbutton.entry {
+    border-image: none;
+    border-color: @border_color;
+    border-radius: 0px;
+    border-width: 0px 1px 0px 1px;
+    background-image: none;
+    padding: 4px;
+}
+
+.vertical.entry.spinbutton .button,
+.vertical.entry.spinbutton .button:hover,
+.vertical.entry.spinbutton .button:focus,
+.vertical.entry.spinbutton .button:active,
+.vertical.entry.spinbutton .button:checked,
+.vertical.entry.spinbutton .button:active:hover,
+.vertical.entry.spinbutton .button:checked:hover,
+.vertical.entry.spinbutton .button:insensitive {
+    border-radius: 3px 3px 0px 0px;
+    border-width: 1px;
+}
+
+.vertical.entry.spinbutton .button:last-child,
+.vertical.entry.spinbutton .button:hover:last-child,
+.vertical.entry.spinbutton .button:focus:last-child,
+.vertical.entry.spinbutton .button:active:last-child,
+.vertical.entry.spinbutton .button:checked:last-child,
+.vertical.entry.spinbutton .button:active:hover:last-child,
+.vertical.entry.spinbutton .button:checked:hover:last-child,
+.vertical.entry.spinbutton .button:insensitive:last-child {
+    border-width: 1px;
+    border-radius: 0px 0px 3px 3px;
+}
+
 /*********************
  * Button background *
  *********************/
