@@ -1653,10 +1653,12 @@ GtkTreeMenu .menuitem * {
  ************/
 .toolbar {
 	background-image: linear-gradient(to bottom,
-	                                  shade(@toolbar_gradient_base, 0.88),
-	                                  shade(@theme_bg_color, 1.5));
-	border-style: none;
+	                                  shade(@toolbar_gradient_base, 0.94),
+	                                  shade(@theme_bg_color, 1.0));
+	border-style: solid;
 	border-width: 0;
+	border-bottom-width: 1px;
+	border-color: shade(@toolbar_gradient_base, 0.98);
 	border-radius: 0px;
 	padding: 1px;
 
