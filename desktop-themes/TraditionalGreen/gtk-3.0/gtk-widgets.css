@@ -182,11 +182,20 @@ GtkGrid:insensitive {
 	border-radius: 2px;
 }
 
-GtkStatusbar {
-	padding: 5px;
+GtkStatusbar .label,
+GtkStatusbar .frame.flat {
 	color: @theme_fg_color;
 	-GtkStatusbar-shadow-type: none;
 	font-size: smaller;
+}
+
+GtkStatusbar .frame.flat {
+	padding: 2px 0px;
+	border-width: 0;
+}
+
+GtkStatusbar .frame.flat .button.flat {
+	padding: 2px 0px 0px 0px;
 }
 
 .dnd {
@@ -638,6 +647,10 @@ GtkScale.mark {
 	border-radius: 3px;
 	background-color: @notebook_bg_color;
 	padding: 0;
+}
+
+.frame.flat {
+   border-style:none;
 }
 
 GtkScrolledWindow.frame {
@@ -1721,7 +1734,6 @@ GtkCheckButton:selected:focus {
 .inline-toolbar.toolbar  {
 	background-color: transparent;
 	background-image: linear-gradient(to bottom,
-	                  @toolbar_inner_border_color 1px,
 	                  @toolbar_gradient_a 2px,
 	                  @toolbar_gradient_b 50%,
 	                  @toolbar_gradient_c 50%,
