@@ -191,16 +191,19 @@ GtkTextView {
 	background-color: alpha (@theme_selected_bg_color, 0.35);
 }
 
-GtkStatusbar {
-	padding: 5px;
+GtkStatusbar .label,
+GtkStatusbar .frame.flat {
 	color: @theme_fg_color;
 	-GtkStatusbar-shadow-type: none;
-	font-size: smaller;
 }
 
-GtkStatusbar .frame {
-	padding: 0px;
+GtkStatusbar .frame.flat {
+	padding: 1px;
 	border-width: 0;
+}
+
+GtkStatusbar .frame.flat .button.flat {
+    padding: 0px;
 }
 
 .dnd {
