@@ -503,9 +503,91 @@ PlumaWindow .notebook tab .button.flat:hover {
     border-image: none;
 }
 
+PlumaCloseButton.button.flat,
+PlumaCloseButton.button.flat:hover,
+PlumaCloseButton:prelight.button.flat,
+PlumaCloseButton:prelight.button.flat:hover {
+    padding: 0px;
+}
+
+/* close button tab text view */
+PlumaWindow .vertical .horizontal .vertical .notebook .horizontal PlumaCloseButton.button.flat,
+PlumaWindow .vertical .horizontal .vertical .notebook .horizontal PlumaCloseButton.button.flat:hover {
+    padding: 2px 0px;
+}
+
 /* pluma line numbers */
 PlumaView {
     background-color: @theme_bg_color;
+}
+
+/* Printpreview */
+PlumaPrintPreview.vertical .toolbar.horizontal {
+    padding: 0px;
+}
+
+PlumaPrintPreview.vertical .toolbar.horizontal GtkToolItem .horizontal .entry {
+    padding: 4px 6px;
+}
+
+PlumaPrintPreview.vertical .toolbar.horizontal .button.image-button,
+PlumaPrintPreview.vertical .toolbar.horizontal .button.flat.image-button {
+    padding: 0px;
+}
+
+PlumaPrintPreview.vertical .toolbar.horizontal .button.text-button,
+PlumaPrintPreview.vertical .toolbar.horizontal .button.flat.text-button {
+    padding: 0px 8px;
+    border-radius: 2px;
+}
+
+PlumaPrintPreview.vertical GtkLayout {
+    background-color: @theme_main_color;
+}
+
+/* sidebar file-browser */
+PlumaPanel.vertical {
+    border-radius: 3px 3px 3px 3px;
+    border-width: 1px 1px 0px 0px;
+    border-style: solid;
+    border-color: @borders;
+}
+
+PlumaPanel.vertical .notebook {
+    background-color: shade (@theme_bg_color, 1.04);
+    border-style: solid;
+    border-width: 0px 1px 1px 1px;
+    border-radius: 0px 0px 3px 3px;
+    border-color: @borders;
+}
+
+PlumaFileBrowserWidget.vertical .frame {
+    border-width: 1px 0px 1px 1px;
+    border-radius: 0px;
+}
+
+PlumaFileBrowserWidget.vertical .frame PlumaFileBrowserView{
+    background-color: shade(@theme_bg_color, 1.02);
+}
+
+PlumaPanel.vertical .horizontal .horizontal GtkImage {
+    padding: 0px;
+}
+
+PlumaFileBrowserWidget.vertical .toolbar.horizontal {
+    padding: 5px 0px;
+}
+
+PlumaFileBrowserWidget.vertical .toolbar.horizontal .button.flat,
+PlumaFileBrowserWidget.vertical .toolbar.horizontal .button.menu-button,
+PlumaFileBrowserWidget.vertical .toolbar.horizontal .button.image-button,
+PlumaFileBrowserWidget.vertical .toolbar.horizontal .button.flat.menu-button,
+PlumaFileBrowserWidget.vertical .toolbar.horizontal .button.flat.image-button {
+    padding: 3px;
+}
+
+PlumaFileBrowserWidget.vertical GtkExpander {
+    padding: 4px;
 }
 
 /***********************
