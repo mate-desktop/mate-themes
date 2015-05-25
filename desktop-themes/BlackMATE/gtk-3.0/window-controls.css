@@ -183,6 +183,18 @@ YelpWindow .titlebar .left .titlebutton:first-child:checked,
 YelpWindow .titlebar .right:dir(rtl) .titlebutton:first-child:backdrop,
 YelpWindow .titlebar .left .titlebutton:first-child:backdrop,
 YelpWindow .titlebar .right:dir(rtl) .titlebutton:first-child:backdrop:hover,
-YelpWindow .titlebar .left .titlebutton:first-child:backdrop:hover {
+YelpWindow .titlebar .left .titlebutton:first-child:backdrop:hover,
+MathWindow .titlebar .right:dir(rtl) .titlebutton:first-child,
+MathWindow .titlebar .left .titlebutton:first-child,
+MathWindow .titlebar .right:dir(rtl) .titlebutton:first-child:hover,
+MathWindow .titlebar .left .titlebutton:first-child:hover,
+MathWindow .titlebar .right:dir(rtl) .titlebutton:first-child:active,
+MathWindow .titlebar .left .titlebutton:first-child:active,
+MathWindow .titlebar .right:dir(rtl) .titlebutton:first-child:checked,
+MathWindow .titlebar .left .titlebutton:first-child:checked,
+MathWindow .titlebar .right:dir(rtl) .titlebutton:first-child:backdrop,
+MathWindow .titlebar .left .titlebutton:first-child:backdrop,
+MathWindow .titlebar .right:dir(rtl) .titlebutton:first-child:backdrop:hover,
+MathWindow .titlebar .left .titlebutton:first-child:backdrop:hover {
 	background-image: none;
 }
