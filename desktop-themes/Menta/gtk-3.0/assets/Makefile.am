@@ -22,6 +22,7 @@ theme_DATA = \
 	menuitem-radio-checked-selected.svg \
 	menuitem-radio-checked.svg \
 	null.png \
+	panel-grid.svg \
 	pane-separator-grip.svg \
 	pane-separator-grip-vertical.svg \
 	radio-active-ins.png \
