@@ -1,0 +1,153 @@
+/* nautilus */
+.nautilus-canvas-item {
+	border-radius: 5px;
+}
+
+.nautilus-desktop.nautilus-canvas-item {
+	color: @theme_selected_fg_color;
+	text-shadow: 1px 1px black;
+}
+
+.nautilus-desktop.nautilus-canvas-item:active {
+	color: @theme_text_color;
+}
+
+.nautilus-desktop.nautilus-canvas-item:selected {
+	color: @theme_selected_fg_color;
+}
+
+.nautilus-desktop.nautilus-canvas-item:active,
+.nautilus-desktop.nautilus-canvas-item:prelight,
+.nautilus-desktop.nautilus-canvas-item:selected {
+	text-shadow: none;
+}
+
+/* sidebar */
+NautilusWindow .sidebar,
+NautilusWindow .sidebar .view {
+	background-color: @theme_bg_color;
+
+	color: @theme_fg_color;
+	text-shadow: 0px 1px shade (shade (@theme_bg_color, 0.95), 1.04);  
+}
+
+NautilusWindow .sidebar row:selected {
+	color: @theme_selected_fg_color;
+	text-shadow: 0px -1px shade (@theme_selected_bg_color, 0.8); 
+}
+
+NautilusWindow .sidebar row:backdrop:selected {
+	color: @backdrop_selected_fg_color;
+	text-shadow: none; 
+}
+
+NautilusWindow .sidebar .frame {
+}
+
+NautilusWindow * {
+	-GtkPaned-handle-size: 1;
+}
+
+NautilusWindow > GtkGrid > .pane-separator,
+NautilusWindow > GtkGrid > .pane-separator:hover {
+	border-width: 1px 1px 0 0;
+	border-style: solid;
+	border-color: @borders;
+	background-color: @sidebar_bg;
+	color: shade (@theme_bg_color, 0.9);
+}
+
+NautilusView.frame,
+NautilusNotebook.notebook {
+	border-right-width: 0;
+	border-left-width: 0;
+	border-bottom-width: 0;
+}
+
+NautilusNotebook.notebook tab.top,
+NautilusNotebook.notebook tab.bottom {
+	border-right-width: 1px;
+	border-left-width: 1px;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+NautilusNotebook.notebook tab.top:active {
+	padding-top: 2px;
+}
+NautilusNotebook.notebook tab.bottom:active {
+	padding-bottom: 2px;
+}
+
+NautilusNotebook .frame {
+	border-width: 1px 0 0 0;
+}
+
+/* disable for black menu bar */
+/*
+NautilusToolbar .button {
+	icon-shadow: 0 1px @button_text_shadow;
+}
+*/
+
+NautilusToolbar .toolbar {
+	background-image: linear-gradient(to bottom,
+		@theme_bg_color,
+		shade (@theme_bg_color, 0.94));
+}
+
+NautilusToolbar .button *:active {
+	icon-shadow: 0 1px @button_active_text_shadow;
+}
+
+NautilusToolbar .button *:insensitive,
+NautilusToolbar .button *:active:insensitive {
+	text-shadow: none;
+}
+
+NautilusQueryEditor .primary-toolbar.toolbar {
+	border-bottom-width: 0;
+}
+
+NautilusQueryEditor .toolbar {
+	padding-top: 3px;
+	padding-bottom: 2px;
+
+	border-width: 1px 0 0 0;
+	border-style: solid;
+	border-color: @theme_bg_color;
+	
+	background-color: mix(@theme_bg_color, @theme_base_color, 0.5);
+}
+
+NautilusQueryEditor .toolbar:nth-child(2) {
+	border-color: @borders;
+}
+
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar {
+	border-top-width: 0;
+}
+
+NautilusNotebook.notebook NautilusQueryEditor .toolbar:last-child,
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar:only-child {
+	border-bottom-width: 1px;
+	border-bottom-color: @borders;
+}
+
+/* FIXME - Something I don't understand. Why this theme gets a gray bg without this, and Ambiance which it's based on does not. */
+NautilusWindow .view {
+	background-color: @theme_base_color;
+}
+
+NautilusWindow .view:selected {
+	background-color: @theme_selected_bg_color;
+}
+
+NautilusWindow .view:selected:backdrop {
+	background-color: @backdrop_selected_bg_color;
+}
+
+NautilusWindow .view.rubberband {
+	background-color: alpha (@theme_selected_bg_color, 0.35);
+}
+/* FIXME end */
