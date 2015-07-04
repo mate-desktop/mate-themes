@@ -1,5 +1,4 @@
 THEMES = \
-	BlackMenta \
 	Shiny
 
 THEME_DIR=$(datadir)/themes
