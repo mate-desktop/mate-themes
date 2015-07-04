@@ -2,11 +2,11 @@
 <!-- 	$Id: metacity-theme-1.xml,v 1.4 2003/12/10 13:57:58 jimmac Exp $	 -->
 <metacity_theme>
 <info>
-  <name>BlackMenta</name>
-  <author>Jakub Steiner</author>
-  <copyright>&#194; 2002 Ximian, Inc., 2004 Canonical Ltd., 2005 Daniel Borgmann, 2006-2009 Novell, Inc.</copyright>
-  <date>Feb, 2009</date>
-  <description>Dark theme based on its Gilouche legacy with a purpose to accompany the Sonar gtk+ theme.</description>
+  <name>Blue-Submarine</name>
+  <author>Wolfgang Ulbrich</author>
+  <copyright>&#194; 2013</copyright>
+  <date>Apil, 2013</date>
+  <description>Dark theme based on Gilouche legacy.</description>
   <!-- based on the Gilouche theme -->
 </info>
  
@@ -34,16 +34,16 @@
   <border name="button_border" left="1" right="1" top="2" bottom="2"/>
 </frame_geometry>
 
-<frame_geometry name="border" has_title="false">
-  <distance name="left_width" value="4"/>
-  <distance name="right_width" value="4"/>
-  <distance name="bottom_height" value="4"/>
+<frame_geometry name="border" has_title="false" rounded_top_left="true" rounded_top_right="true"  rounded_bottom_left="false" rounded_bottom_right="false">
+  <distance name="left_width" value="2"/>
+  <distance name="right_width" value="2"/>
+  <distance name="bottom_height" value="2"/>
   <distance name="left_titlebar_edge" value="0"/>
   <distance name="right_titlebar_edge" value="0"/>
   <distance name="button_width" value="0"/>
   <distance name="button_height" value="0"/>
-  <distance name="title_vertical_pad" value="4"/>
-  <border name="title_border" left="0" right="0" top="0" bottom="0"/>
+  <distance name="title_vertical_pad" value="0"/>
+  <border name="title_border" left="0" right="0" top="6" bottom="0"/>
   <border name="button_border" left="0" right="0" top="0" bottom="0"/>
 </frame_geometry>
 
@@ -124,7 +124,7 @@
 
 <draw_ops name="bevel_unfocused">
 
-  <rectangle color="#303030" filled="true"
+  <rectangle color="#1F2427" filled="true"
              x="0" y="0"
              width="width"
              height="height"/>
