@@ -1,11 +1,15 @@
 SUBDIRS = \
 	BlackMATE \
-	TraditionalGreen \
-	TraditionalOk \
-	TraditionalOkTest \
+	BlueMenta \
+	Blue-Submarine \
 	ContrastHigh \
 	ContrastHighInverse \
 	GreenLaguna \
+	Green-Submarine \
 	Menta \
-	BlueMenta
+	TraditionalGreen \
+	TraditionalOk \
+	TraditionalOkTest
+
+
 
