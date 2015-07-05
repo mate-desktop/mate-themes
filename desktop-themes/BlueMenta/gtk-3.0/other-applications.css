@@ -235,6 +235,51 @@ GraniteWidgetsPopOver .entry {
 	background-color: alpha (#000, 0.15);
 }
 
+/* Parole media player needs more testing!
+ hopefully do not set other stuff */
+
+GtkPaned.horizontal .vertical GtkOverlay GtkRevealer.bottom .background.horizontal.osd {
+    background-color: @theme_bg_color;
+    color: @theme_fg_color;
+}
+
+GtkPaned GtkOverlay GtkRevealer.bottom .button.flat,
+GtkPaned GtkOverlay GtkRevealer.bottom .button.flat:hover,
+GtkPaned GtkOverlay GtkRevealer.bottom .button.flat:active,
+GtkPaned GtkOverlay GtkRevealer.bottom .button.flat:checked,
+GtkPaned GtkOverlay GtkRevealer.bottom .button.flat:active:hover,
+GtkPaned GtkOverlay GtkRevealer.bottom .button.flat:checked:hover,
+GtkPaned GtkOverlay GtkRevealer.bottom .button.flat.image-button,
+GtkPaned GtkOverlay GtkRevealer.bottom .button.flat.image-button:hover ,
+GtkPaned GtkOverlay GtkRevealer.bottom .button.flat.image-button:active,
+GtkPaned GtkOverlay GtkRevealer.bottom .button.flat.image-button:checked,
+GtkPaned GtkOverlay GtkRevealer.bottom .button.flat.image-button:active:hover,
+GtkPaned GtkOverlay GtkRevealer.bottom .button.flat.image-button:checked:hover,
+GtkPaned GtkOverlay GtkRevealer.bottom .background.horizontal.osd .button.flat.image-button:checked,
+GtkPaned GtkOverlay GtkRevealer.bottom .background.horizontal.osd .button.flat.image-button:active:hover {
+    border-style: none;
+    border-radius: 4px;
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+    padding: 4px 7px;
+    color: @button_active_text;
+}
+
+GtkPaned GtkOverlay GtkRevealer.bottom .background.horizontal.osd .button.flat.image-button:checked,
+GtkPaned GtkOverlay GtkRevealer.bottom .background.horizontal.osd .button.flat.image-button:active:hover {
+	background-image: linear-gradient(to bottom,
+		@button_active_gradient_color_a,
+		@button_active_gradient_color_b);
+	box-shadow: inset 1px 0 @inset_dark_color,
+		inset -1px 0 @inset_dark_color,
+		inset 1px 2px alpha(@theme_selected_bg_color, 0.1),
+		inset 1px 1px alpha(@theme_selected_bg_color, 0.1),
+		inset -1px -1px alpha(@theme_selected_bg_color, 0.2);
+    padding: 4px 7px;
+    border-radius: 3px;
+}
+
 /*****************
  * Ubuntu styles *
  *****************/
