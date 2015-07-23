@@ -721,6 +721,12 @@ GtkScrolledWindow GtkViewport.frame {
    border-color: @border_color;
 }
 
+/* ie. rhythmbox */
+GtkVolumeButton.button.flat,
+GtkVolumeButton.button.flat:hover {
+	padding: 0px 6px;
+}
+
 GtkComboBox GtkToggleButton.button,
 GtkComboBoxText GtkToggleButton.button,
 .toolbar.horizontal GtkComboBox GtkToggleButton.button,
@@ -915,9 +921,13 @@ GtkColorChooserWidget #add-color-button {
 .toolbar .button:active,
 .toolbar .button:active:hover,
 .toolbar .button.raised:active,
+.toolbar .button.raised:checked,
 .toolbar .raised .button:active,
+.toolbar .raised .button:checked,
 .toolbar .button.raised:active:hover,
+.toolbar .button.raised:checked:hover,
 .toolbar .raised .button:active:hover,
+.toolbar .raised .button:checked:hover,
 .primary-toolbar .combobox-entry .button:active,
 .combobox-entry .button:active,
 .primary-toolbar .button:active,
