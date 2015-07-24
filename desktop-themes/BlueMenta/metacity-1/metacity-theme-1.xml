@@ -188,25 +188,25 @@
 <!-- Window Frames -->
 
 <draw_ops name="draw_frame">
-	<rectangle color="shade/gtk:bg[NORMAL]/0.5" x="0" y="0" width="width" height="height" filled="true"/>
+	<rectangle color="shade/#d4d4d4/0.5" x="0" y="0" width="width" height="height" filled="true"/>
 	<gradient type="vertical" x="0" y="0" width="width" height="60">
 		<color value="shade/#3c3c3c/1.2" />
-		<color value="shade/gtk:bg[NORMAL]/0.5" />
+		<color value="shade/#d4d4d4/0.5" />
 	</gradient>
 </draw_ops>
 
 <!-- bottom border -->
 <draw_ops name="bottom_edge">
-	<line color="shade/gtk:bg[NORMAL]/0.5" x1="0" x2="width" y1="height-1" y2="height-1"/>
+	<line color="shade/#d4d4d4/0.5" x1="0" x2="width" y1="height-1" y2="height-1"/>
 </draw_ops>
 
 <draw_ops name="border">
-	<line color="shade/gtk:bg[NORMAL]/0.88" x1="1" y1="height - 2" x2="width - 2" y2="height - 2"/>
-	<line color="shade/gtk:bg[NORMAL]/0.88" x1="width - 2" y1="1" x2="width - 2" y2="height - 2"/>
-	<line color="shade/gtk:bg[NORMAL]/1.4" x1="1" y1="1" x2="width - 2" y2="1"/>
-	<line color="shade/gtk:bg[NORMAL]/1.4" x1="1" y1="1" x2="1" y2="height - 2"/>
+	<line color="shade/#d4d4d4/0.88" x1="1" y1="height - 2" x2="width - 2" y2="height - 2"/>
+	<line color="shade/#d4d4d4/0.88" x1="width - 2" y1="1" x2="width - 2" y2="height - 2"/>
+	<line color="shade/#d4d4d4/1.4" x1="1" y1="1" x2="width - 2" y2="1"/>
+	<line color="shade/#d4d4d4/1.4" x1="1" y1="1" x2="1" y2="height - 2"/>
 	
-	<rectangle color="shade/gtk:bg[NORMAL]/0.25" filled="false"
+	<rectangle color="shade/#d4d4d4/0.25" filled="false"
 			   x="0" y="0"
 			   width="width - 1"
 			   height="height - 1"/>
