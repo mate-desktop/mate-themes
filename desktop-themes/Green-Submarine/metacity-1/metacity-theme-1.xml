@@ -53,19 +53,19 @@
 <draw_ops name="inner_window_border">
   <gradient type="vertical" x="left_width-1" y="top_height-1" width="1" height="height-bottom_height-top_height+2">
     <color value="#303030"/>
-    <color value="gtk:bg[NORMAL]"/>
-    <color value="gtk:bg[NORMAL]"/>
+    <color value="#CBD9D4"/>
+    <color value="#CBD9D4"/>
   </gradient>
   <gradient type="vertical" x="width-right_width" y="top_height-1" width="1" height="height-bottom_height-top_height+2">
     <color value="#303030"/>
-    <color value="gtk:bg[NORMAL]"/>
-    <color value="gtk:bg[NORMAL]"/>
+    <color value="#CBD9D4"/>
+    <color value="#CBD9D4"/>
   </gradient>
 
 	<line color="#303030" 
 	x1="left_width" y1="top_height-1" x2="width-right_width"
 	y2="top_height-1" />
-	<line color="gtk:bg[NORMAL]" 
+	<line color="#CBD9D4"
 	x1="left_width" y1="height-bottom_height" x2="width-right_width"
 	y2="height-bottom_height" />
 </draw_ops>
@@ -83,8 +83,8 @@
 <!-- horizontal gradient -->
   <gradient type="horizontal" x="1" y="1" width="width - 2" height="title_height + 10">
     <color value="#1C1B19"/>
-    <color value="blend/gtk:bg[SELECTED]/#343330/.2"/>
-    <color value="blend/gtk:bg[SELECTED]/#343330/.2"/>
+    <color value="blend/#72B49D/#343330/.2"/>
+    <color value="blend/#72B49D/#343330/.2"/>
     <color value="#1C1B19"/>
   </gradient>
 </draw_ops>
@@ -94,15 +94,15 @@
   <!-- horizontal gradient -->
   <gradient type="horizontal" x="0" y="0" width="width" height="title_height + 10">
     <color value="#1C1B19"/>
-    <color value="blend/gtk:bg[SELECTED]/#343330/.2"/>
-    <color value="blend/gtk:bg[SELECTED]/#343330/.2"/>
+    <color value="blend/#72B49D/#343330/.2"/>
+    <color value="blend/#72B49D/#343330/.2"/>
     <color value="#1C1B19"/>
   </gradient>
 
   <!-- top highlight -->  
     <gradient type="horizontal" x="10" y="0" width="width - 20" height="1">
       <color value="#1C1B19"/>
-      <color value="blend/gtk:bg[SELECTED]/#ffffff/.6"/>
+      <color value="blend/#72B49D/#ffffff/.6"/>
       <color value="#1C1B19"/>
     </gradient>
 
@@ -171,7 +171,7 @@
   <!-- top highlight -->  
     <gradient type="horizontal" x="10" y="1" width="width - 20" height="1">
       <color value="#1C1B19"/>
-      <color value="blend/gtk:bg[SELECTED]/#ffffff/.6"/>
+      <color value="blend/#72B49D/#ffffff/.6"/>
       <color value="#1C1B19"/>
     </gradient>
 
@@ -189,13 +189,13 @@
   <title color="#252525"
          x="(3 `max` (width-title_width)) / 2"
          y="(height - title_height) / 2 + 1"/>
-  <title color="gtk:fg[SELECTED]"
+  <title color="#ffffff"
          x="(3 `max` (width-title_width)) / 2"
          y="(height - title_height) / 2 + 1"/>
 </draw_ops>
 
 <draw_ops name="title_unfocused">
-  <title color="blend/gtk:fg[NORMAL]/gtk:bg[NORMAL]/0.5"
+  <title color="blend/#101010/#CBD9D4/0.5"
          x="(3 `max` (width-title_width)) / 2"
          y="(height - title_height) / 2 + 1"/>
 </draw_ops>
@@ -204,13 +204,13 @@
   <title color="#252525"
          x="(3 `max` (width-title_width)) / 2"
          y="(height - title_height) / 2 + 3"/>
-  <title color="gtk:fg[SELECTED]"
+  <title color="#ffffff"
          x="(3 `max` (width-title_width)) / 2"
          y="(height - title_height) / 2 + 1"/>
 </draw_ops>
 
 <draw_ops name="title_max_unfocused">
-  <title color="blend/gtk:fg[NORMAL]/gtk:bg[NORMAL]/0.5"
+  <title color="blend/#101010/#CBD9D4/0.5"
          x="(3 `max` (width-title_width)) / 2"
          y="(height - title_height) / 2 + 1"/>
 </draw_ops>
@@ -227,34 +227,34 @@
 
 <draw_ops name="button_bg">
 <!-- kinda looks better without
-	<line color="gtk:bg[SELECTED]" x1="1" y1="0" x2="width-3" y2="0" />
-	<line color="gtk:bg[SELECTED]" x1="0" y1="1" x2="0" y2="height-3" />
-	<line color="gtk:bg[SELECTED]" x1="1" y1="height-2" x2="width-3" y2="height-2" />
-	<line color="gtk:bg[SELECTED]" x1="width-2" y1="1" x2="width-2" y2="height-3" />
+	<line color="#72B49D" x1="1" y1="0" x2="width-3" y2="0" />
+	<line color="#72B49D" x1="0" y1="1" x2="0" y2="height-3" />
+	<line color="#72B49D" x1="1" y1="height-2" x2="width-3" y2="height-2" />
+	<line color="#72B49D" x1="width-2" y1="1" x2="width-2" y2="height-3" />
 -->
 </draw_ops>
 
 <draw_ops name="button_bg_prelight">
-	<line color="blend/gtk:bg[SELECTED]/#ffffff/.2" x1="1" y1="0" x2="width-3" y2="0" />
-	<line color="blend/gtk:bg[SELECTED]/#ffffff/.2" x1="0" y1="1" x2="0" y2="height-3" />
-	<line color="blend/gtk:bg[SELECTED]/#ffffff/.2" x1="1" y1="height-2" x2="width-3" y2="height-2" />
-	<line color="blend/gtk:bg[SELECTED]/#ffffff/.2" x1="width-2" y1="1" x2="width-2" y2="height-3" />
+	<line color="blend/#72B49D/#ffffff/.2" x1="1" y1="0" x2="width-3" y2="0" />
+	<line color="blend/#72B49D/#ffffff/.2" x1="0" y1="1" x2="0" y2="height-3" />
+	<line color="blend/#72B49D/#ffffff/.2" x1="1" y1="height-2" x2="width-3" y2="height-2" />
+	<line color="blend/#72B49D/#ffffff/.2" x1="width-2" y1="1" x2="width-2" y2="height-3" />
 
   <gradient type="vertical" x="1" y="1" width="width - 3" height="height - 3">
-		<color value="blend/gtk:bg[SELECTED]/#ffffff/.1"/>
-		<color value="blend/gtk:bg[SELECTED]/#000000/.1"/>
+		<color value="blend/#72B49D/#ffffff/.1"/>
+		<color value="blend/#72B49D/#000000/.1"/>
   </gradient>
 </draw_ops>
 
 <draw_ops name="button_bg_pressed">
-	<line color="blend/gtk:bg[SELECTED]/#ffffff/.1" x1="1" y1="0" x2="width-3" y2="0" />
-	<line color="blend/gtk:bg[SELECTED]/#ffffff/.1" x1="0" y1="1" x2="0" y2="height-3" />
-	<line color="blend/gtk:bg[SELECTED]/#ffffff/.1" x1="1" y1="height-2" x2="width-3" y2="height-2" />
-	<line color="blend/gtk:bg[SELECTED]/#ffffff/.1" x1="width-2" y1="1" x2="width-2" y2="height-3" />
+	<line color="blend/#72B49D/#ffffff/.1" x1="1" y1="0" x2="width-3" y2="0" />
+	<line color="blend/#72B49D/#ffffff/.1" x1="0" y1="1" x2="0" y2="height-3" />
+	<line color="blend/#72B49D/#ffffff/.1" x1="1" y1="height-2" x2="width-3" y2="height-2" />
+	<line color="blend/#72B49D/#ffffff/.1" x1="width-2" y1="1" x2="width-2" y2="height-3" />
 	
   <gradient type="vertical" x="1" y="1" width="width - 3" height="height - 3">
-		<color value="blend/gtk:bg[SELECTED]/#000000/.2"/>
-		<color value="blend/gtk:bg[SELECTED]/#ffffff/.2"/>
+		<color value="blend/#72B49D/#000000/.2"/>
+		<color value="blend/#72B49D/#ffffff/.2"/>
   </gradient>
 </draw_ops>
 
@@ -263,26 +263,26 @@
 </draw_ops>
 
 <draw_ops name="button_bg_unfocused_prelight">
-	<line color="blend/gtk:bg[NORMAL]/#000000/0.1" x1="1" y1="0" x2="width-3" y2="0" />
-	<line color="blend/gtk:bg[NORMAL]/#000000/0.1" x1="0" y1="1" x2="0" y2="height-3" />
-	<line color="blend/gtk:bg[NORMAL]/#000000/0.1" x1="1" y1="height-2" x2="width-3" y2="height-2" />
-	<line color="blend/gtk:bg[NORMAL]/#000000/0.1" x1="width-2" y1="1" x2="width-2" y2="height-3" />
+	<line color="blend/#CBD9D4/#000000/0.1" x1="1" y1="0" x2="width-3" y2="0" />
+	<line color="blend/#CBD9D4/#000000/0.1" x1="0" y1="1" x2="0" y2="height-3" />
+	<line color="blend/#CBD9D4/#000000/0.1" x1="1" y1="height-2" x2="width-3" y2="height-2" />
+	<line color="blend/#CBD9D4/#000000/0.1" x1="width-2" y1="1" x2="width-2" y2="height-3" />
 
   <gradient type="vertical" x="1" y="1" width="width - 3" height="height - 3">
-		<color value="blend/gtk:bg[NORMAL]/#ffffff/.5"/>
-		<color value="blend/gtk:bg[NORMAL]/#000000/0.1"/>
+		<color value="blend/#CBD9D4/#ffffff/.5"/>
+		<color value="blend/#CBD9D4/#000000/0.1"/>
   </gradient>
 </draw_ops>
 
 <draw_ops name="button_bg_unfocused_pressed">
-	<line color="blend/gtk:bg[NORMAL]/#000000/0.1" x1="1" y1="0" x2="width-3" y2="0" />
-	<line color="blend/gtk:bg[NORMAL]/#000000/0.1" x1="0" y1="1" x2="0" y2="height-3" />
-	<line color="blend/gtk:bg[NORMAL]/#000000/0.1" x1="1" y1="height-2" x2="width-3" y2="height-2" />
-	<line color="blend/gtk:bg[NORMAL]/#000000/0.1" x1="width-2" y1="1" x2="width-2" y2="height-3" />
+	<line color="blend/#CBD9D4/#000000/0.1" x1="1" y1="0" x2="width-3" y2="0" />
+	<line color="blend/#CBD9D4/#000000/0.1" x1="0" y1="1" x2="0" y2="height-3" />
+	<line color="blend/#CBD9D4/#000000/0.1" x1="1" y1="height-2" x2="width-3" y2="height-2" />
+	<line color="blend/#CBD9D4/#000000/0.1" x1="width-2" y1="1" x2="width-2" y2="height-3" />
 
   <gradient type="vertical" x="1" y="1" width="width - 3" height="height - 3">
-		<color value="blend/gtk:bg[NORMAL]/#000000/0.1"/>
-		<color value="blend/gtk:bg[NORMAL]/#ffffff/.5"/>
+		<color value="blend/#CBD9D4/#000000/0.1"/>
+		<color value="blend/#CBD9D4/#ffffff/.5"/>
   </gradient>
 </draw_ops>
 
@@ -302,7 +302,7 @@
 </draw_ops>
 
 <draw_ops name="close_button_icon_unfocused">
-	<image filename="icon_close_u.png" x="(width-10)/2" y="(height-10)/2" width="10" height="10" colorize="blend/gtk:fg[NORMAL]/gtk:bg[NORMAL]/0.5"/>
+	<image filename="icon_close_u.png" x="(width-10)/2" y="(height-10)/2" width="10" height="10" colorize="blend/#101010/#CBD9D4/0.5"/>
 </draw_ops>
 
 <draw_ops name="close_button_normal">
@@ -335,7 +335,7 @@
 </draw_ops>
 
 <draw_ops name="maximize_button_icon_unfocused">	
-	<image filename="icon_maximize_u.png" x="(width-10)/2" y="(height-10)/2" width="10" height="10" colorize="blend/gtk:fg[NORMAL]/gtk:bg[NORMAL]/0.5"/>
+	<image filename="icon_maximize_u.png" x="(width-10)/2" y="(height-10)/2" width="10" height="10" colorize="blend/#101010/#CBD9D4/0.5"/>
 </draw_ops>
 
 <draw_ops name="maximize_button_normal">
@@ -367,7 +367,7 @@
 </draw_ops>
 
 <draw_ops name="restore_button_icon_unfocused">
-	<image filename="icon_restore_u.png" x="(width-10)/2" y="(height-10)/2" width="10" height="10" colorize="blend/gtk:fg[NORMAL]/gtk:bg[NORMAL]/0.5"/>
+	<image filename="icon_restore_u.png" x="(width-10)/2" y="(height-10)/2" width="10" height="10" colorize="blend/#101010/#CBD9D4/0.5"/>
 </draw_ops>
 
 <draw_ops name="restore_button_normal">
@@ -399,7 +399,7 @@
 </draw_ops>
 
 <draw_ops name="minimize_button_icon_unfocused">
-	<image filename="icon_minimize_u.png" x="(width-10)/2" y="(height-10)/2" width="10" height="10" colorize="blend/gtk:fg[NORMAL]/gtk:bg[NORMAL]/0.5"/></draw_ops>
+	<image filename="icon_minimize_u.png" x="(width-10)/2" y="(height-10)/2" width="10" height="10" colorize="blend/#101010/#CBD9D4/0.5"/></draw_ops>
 
 <draw_ops name="minimize_button_normal">
   <include name="button_bg"/>
