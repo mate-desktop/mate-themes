@@ -8,6 +8,7 @@ theme_DATA = \
 	gtk-widgets.css \
 	gtk-widgets-img.css \
 	mate-applications.css \
+	other-applications.css \
 	settings.ini
 
 EXTRA_DIST = $(theme_DATA)
