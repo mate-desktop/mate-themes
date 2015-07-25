@@ -315,7 +315,8 @@ PlumaWindow .vertical .horizontal .vertical .notebook .horizontal PlumaCloseButt
 }
 
 /* Pluma status bar */
-PlumaWindow .button.flat {
+PlumaWindow .button.flat,
+PlumaWindow .button.flat:hover {
     border-style: none;
     border-image: none;
     padding: 2px 5px;
