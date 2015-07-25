@@ -388,3 +388,17 @@ PlumaFileBrowserWidget.vertical .toolbar.horizontal .button.flat.image-button {
     background-color: transparent;
 }
 
+/************
+ * Engrampa *
+ ************/
+
+FrWindow .horizontal.toolbar .button.flat.image-button:insensitive {
+    background-image: none;
+}
+
+/* close button sidebar */
+FrWindow GtkTable .horizontal .vertical .frame .horizontal .flat.button {
+    border-radius: 4px;
+    padding: 0px;
+}
+
