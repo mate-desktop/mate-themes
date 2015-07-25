@@ -298,6 +298,10 @@ CajaWindow .notebook tab.top {
     text-shadow: 0 1px shade (@cluebar_color, 1.06);
 }
 
+CajaSearchBar .horizontal .entry {
+    padding: 4px;
+}
+
 CajaTrashBar.info,
 CajaXContentBar.info,
 CajaSearchBar.info,
