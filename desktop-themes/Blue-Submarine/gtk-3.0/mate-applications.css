@@ -318,8 +318,8 @@ CajaSearchBar .entry.image {
 }
 
 CajaSearchBar GtkLabel {
-    color: @toolbar_fg_color;
-       text-shadow: 0 1px @toolbar_shadow_color;
+    color: @theme_fg_color;
+    text-shadow: none;
 }
 
 .info
@@ -424,7 +424,8 @@ CajaWindow .primary-toolbar.toolbar .button * {
     padding: 2px 4px;
 }
 
-CajaSearchBar .entry {
+CajaSearchBar .entry,
+CajaLocationBar .entry {
     padding: 4px 6px;
     border-style: none;
     box-shadow: inset  0px  1px shade (@theme_bg_color, 0.80),
