@@ -419,3 +419,27 @@ FrWindow GtkTable .horizontal .vertical .frame .horizontal .flat.button {
     padding: 0px;
 }
 
+/*********
+ * Atril *
+ *********/
+
+EvWindow .vertical.primary-toolbar .horizontal.toolbar {
+    padding: 1px 4px;
+}
+
+EvWindow .toolbar .button,
+EvWindow .toolbar .button.flat {
+    padding: 0px 4px;
+}
+
+EvWindow .vertical.primary-toolbar .horizontal.toolbar EphyZoomControl GtkToggleButton.button,
+EvWindow .vertical.primary-toolbar .horizontal.toolbar EphyZoomControl GtkToggleButton:prelight.button {
+    padding: 8px 4px;
+    border-radius: 4px;
+}
+
+EvSidebar .flat.button {
+    border-radius: 4px;
+    padding: 4px;
+}
+
