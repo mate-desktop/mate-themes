@@ -263,14 +263,6 @@ NaTrayApplet {
 	-NaTrayApplet-icon-size: 16;
 }
 
-/*********
- * Pluma *
- *********/
-
-PlumaFloatingSlider .entry.not-found:focus {
-	border-image: url("img/border-error.svg") 3 3 4 3 / 3px 3px 4px 3px repeat;
-}
-
 /******************
  * mate-terminal *
  ******************/
@@ -305,6 +297,10 @@ ShellWindow GtkScrolledWindow .button.flat:hover {
  * Pluma *
  ****************/
 
+PlumaFloatingSlider .entry.not-found:focus {
+	border-image: url("img/border-error.svg") 3 3 4 3 / 3px 3px 4px 3px repeat;
+}
+
 PlumaCloseButton.button.flat,
 PlumaCloseButton.button.flat:hover,
 PlumaCloseButton:prelight.button.flat,
@@ -316,6 +312,13 @@ PlumaCloseButton:prelight.button.flat:hover {
 PlumaWindow .vertical .horizontal .vertical .notebook .horizontal PlumaCloseButton.button.flat,
 PlumaWindow .vertical .horizontal .vertical .notebook .horizontal PlumaCloseButton.button.flat:hover {
     padding: 2px;
+}
+
+/* Pluma status bar */
+PlumaWindow .button.flat {
+    border-style: none;
+    border-image: none;
+    padding: 2px 5px;
 }
 
 /* Printpreview */
