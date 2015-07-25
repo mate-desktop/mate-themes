@@ -297,6 +297,13 @@ PlumaWindow .vertical .horizontal .vertical .notebook .horizontal PlumaCloseButt
     padding: 2px;
 }
 
+/* Pluma status bar */
+PlumaWindow .button.flat {
+    border-style: none;
+    border-image: none;
+    padding: 2px 5px;
+}
+
 /* Printpreview */
 PlumaPrintPreview.vertical .toolbar.horizontal {
 	background-color: transparent;
