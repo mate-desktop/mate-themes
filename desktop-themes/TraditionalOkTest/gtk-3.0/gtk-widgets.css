@@ -2186,3 +2186,129 @@ GtkPopover .separator {
 	icon-shadow: none;
 	border: 0;
 }
+
+/*********************
+ * App Notifications *
+ *********************/
+
+.app-notification,
+.app-notification.frame {
+    color: @theme_fg_color;
+    padding: 10px;
+    border: none;
+    border-radius: 0 0 4px 4px;
+    background-color: rgba(245, 121, 0, 0.7);
+    background-image: linear-gradient(to bottom,
+                                      rgba(0, 0, 0, 0.2),
+                                      transparent 2px);
+    background-clip: padding-box;
+}
+
+.app-notification:backdrop,
+.app-notification.frame:backdrop {
+    background-image: none;
+}
+
+.app-notification .button,
+.app-notification .header-bar .button.titlebutton,
+.header-bar .app-notification .button.titlebutton,
+.app-notification .titlebar .button.titlebutton,
+.titlebar .app-notification .button.titlebutton,
+.app-notification GtkCalendar.header .button.titlebutton,
+GtkCalendar.header .app-notification .button.titlebutton,
+.app-notification.frame .button {
+    color: @theme_fg_color;
+    border-color: rgba(75, 89, 112, 0.7);
+    background-image: linear-gradient(to bottom,
+                                      rgba(245, 121, 0, 0.7));
+    background-clip: padding-box;
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
+    text-shadow: none;
+    icon-shadow: 0 1px black;
+    outline-color: rgba(238, 238, 236, 0.3);
+    border-radius: 3px;
+    padding: 0 0px 2px 0px;
+}
+
+.app-notification .button.flat,
+.app-notification .header-bar .titlebutton.button,
+.header-bar .app-notification .titlebutton.button,
+.app-notification .titlebar .titlebutton.button,
+.titlebar .app-notification .titlebutton.button,
+.app-notification GtkCalendar.header .titlebutton.button,
+GtkCalendar.header .app-notification .titlebutton.button,
+.app-notification.frame .button.flat,
+.app-notification.frame .header-bar .titlebutton.button,
+.header-bar .app-notification.frame .titlebutton.button,
+.app-notification.frame .titlebar .titlebutton.button,
+.titlebar .app-notification.frame .titlebutton.button,
+.app-notification.frame GtkCalendar.header .titlebutton.button,
+GtkCalendar.header .app-notification.frame .titlebutton.button {
+    icon-shadow: 0 1px black;
+    text-shadow: 0 1px black;
+}
+
+.app-notification .button:hover,
+.app-notification.frame .button:hover {
+    color: white;
+    border-color: rgba(0, 0, 0, 0.7);
+    background-image: linear-gradient(to bottom,
+                                      rgba(62, 46, 30, 0.7));
+    background-clip: padding-box;
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
+    text-shadow: none;
+    icon-shadow: 0 1px black;
+    outline-color: rgba(238, 238, 236, 0.3);
+    border-radius: 3px;
+}
+
+.app-notification .button:active,
+.app-notification .button:checked,
+.app-notification .button:backdrop:active,
+.app-notification .button:backdrop:checked,
+.app-notification.frame .button:active,
+.app-notification.frame .button:checked,
+.app-notification.frame .button:backdrop:active,
+.app-notification.frame .button:backdrop:checked {
+    color: white;
+    border-color: rgba(0, 0, 0, 0.7);
+    background-image: linear-gradient(to bottom,
+                                      rgba(175, 120, 65, 0.7));
+    background-clip: padding-box;
+    box-shadow: none;
+    text-shadow: none;
+    icon-shadow: none;
+    outline-color: rgba(238, 238, 236, 0.3);
+    border-radius: 3px;
+}
+
+.app-notification .button:insensitive,
+.app-notification .button:backdrop:insensitive,
+.app-notification.frame .button:insensitive,
+.app-notification.frame .button:backdrop:insensitive {
+    color: #878989;
+    border-color: rgba(0, 0, 0, 0.7);
+    background-image: linear-gradient(to bottom,
+                                      rgba(52, 57, 57, 0.5));
+    background-clip: padding-box;
+    box-shadow: none;
+    text-shadow: none;
+    icon-shadow: none;
+    border-radius: 3px;
+    padding: 0px;
+}
+
+.app-notification .button:backdrop,
+.app-notification.frame .button:backdrop {
+    color: #eeeeec;
+    border-color: rgba(0, 0, 0, 0.7);
+    background-image: linear-gradient(to bottom,
+                                      rgba(245, 121, 0, 0.7));
+    background-clip: padding-box;
+    box-shadow: none;
+    text-shadow: none;
+    icon-shadow: none;
+    border-radius: 3px;
+    padding: 0px;
+}
+
