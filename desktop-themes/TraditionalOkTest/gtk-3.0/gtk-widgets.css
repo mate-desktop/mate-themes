@@ -1777,6 +1777,11 @@ GtkCheckButton:selected:focus {
 	border-color: @osd_border_color;
 }
 
+.osd.toolbar GtkVolumeButton.button.flat.image-button,
+.osd.toolbar GtkVolumeButton.button.flat.image-button:hover {
+	padding: 2px;
+}
+
 /****************
  * GtkAssistant *
  ****************/
