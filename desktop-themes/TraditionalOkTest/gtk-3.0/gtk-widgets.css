@@ -755,6 +755,7 @@ GtkColorChooserWidget #add-color-button {
 	background-color: transparent;
 }
 
+GtkListBoxRow.list-row,
 GtkListBoxRow.button.list-row {
 	color: @theme_text_color;
 	background-color: @theme_base_color;
@@ -762,6 +763,7 @@ GtkListBoxRow.button.list-row {
 	border: none;
 }
 
+GtkListBoxRow.list-row:hover,
 GtkListBoxRow.button.list-row:hover {
 	background-image: linear-gradient(to bottom,
 	                  @button_hover_gradient_a 5%,
@@ -770,6 +772,7 @@ GtkListBoxRow.button.list-row:hover {
 	background-color: transparent;
 }
 
+GtkListBoxRow.list-row:selected,
 GtkListBoxRow.button.list-row:selected {
 	color: @theme_selected_fg_color;
 	border-style: solid;
