@@ -317,11 +317,6 @@ CajaSearchBar .entry.image {
     color: shade(@nautilus_cluebar_color, 0.60);
 }
 
-CajaSearchBar GtkLabel {
-    color: @theme_fg_color;
-    text-shadow: none;
-}
-
 .info
 .caja-cluebar-label {
     font: bold;
