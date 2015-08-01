@@ -16,7 +16,7 @@ read NEXTLINE
 while [ ! -z "$NEXTLINE" ] ; do
 
 	# Skip lines beginning with '#'
-	if [ ! "${NEXTLINE:0:1}" == '#' ]; then
+	if ! echo "$NEXTLINE" | grep -q '^#'; then
 		#Extract first field, minus its trailing colon
 		ORIG_FILE=`echo $NEXTLINE | awk '/:/{print $1}' | sed -e 's/://'`
 
