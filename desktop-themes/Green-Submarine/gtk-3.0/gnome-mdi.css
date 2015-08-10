@@ -857,3 +857,34 @@ DConfDirView.view {
     background-color: shade (@theme_bg_color, 1.08);
 }
 
+/* yelp without headerbar, since gtk+-3.18 */
+
+YelpWindow .horizontal.toolbar.primary-toolbar {
+    padding: 3px;
+}
+
+YelpWindow .horizontal.toolbar.primary-toolbar .button.image-button {
+    padding: 6px;
+}
+
+YelpWindow .horizontal.toolbar.primary-toolbar .button.image-button:focus {
+    box-shadow: none;
+}
+
+YelpWindow .horizontal.toolbar.primary-toolbar .button.image-button:hover {
+    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
+                inset  1px  0px shade(@selected_bg_color, 0.97),
+                inset -1px  0px shade(@selected_bg_color, 0.93),
+                inset  0px -1px shade(@selected_bg_color, 0.93);
+}
+
+YelpWindow .horizontal.toolbar.primary-toolbar .button.image-button:first-child {
+    border-radius: 5px 0px 0px 5px;
+    border-right-width: 0px;
+}
+
+YelpWindow .horizontal.toolbar.primary-toolbar .button.image-button:last-child {
+    border-radius: 0px 5px 5px 0px;
+    border-left-width: 0px;
+}
+
