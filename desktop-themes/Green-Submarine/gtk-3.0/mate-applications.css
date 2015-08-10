@@ -94,6 +94,22 @@ CajaWindow CajaEmblemSidebar .scrollbar.trough.vertical {
     border-left-color: shade (@theme_bg_color, 0.96);
 }
 
+/* shadows and borders looks strange in list view */
+CajaWindow GtkTreeView row:nth-child(odd):hover,
+CajaWindow GtkTreeView row:nth-child(even):hover,
+CajaWindow GtkTreeView row:nth-child(odd):selected,
+CajaWindow GtkTreeView row:nth-child(even):selected,
+CajaWindow GtkTreeView row:nth-child(odd):selected:hover,
+CajaWindow GtkTreeView row:nth-child(even):selected:hover {
+    box-shadow:none;
+    border-radius: 0px;
+}
+
+/* moved eject button to left better for overlay scrollbars */
+CajaWindow CajaPlacesSidebar .view row {
+    padding: 0px 4px 0px 0px;
+}
+
 /* selected item in sidebar */
 CajaWindow FMTreeView .view row:selected,
 CajaWindow CajaPlacesSidebar .view row:selected,
@@ -134,17 +150,6 @@ CajaWindow CajaHistorySidebar .view row:hover {
     border-radius: 6px;
     text-shadow: none;
 /*    padding: 4px; */
-}
-
-/* shadows and borders looks strange in list view */
-CajaWindow GtkTreeView row:nth-child(odd):hover,
-CajaWindow GtkTreeView row:nth-child(even):hover,
-CajaWindow GtkTreeView row:nth-child(odd):selected,
-CajaWindow GtkTreeView row:nth-child(even):selected,
-CajaWindow GtkTreeView row:nth-child(odd):selected:hover,
-CajaWindow GtkTreeView row:nth-child(even):selected:hover {
-    box-shadow:none;
-    border-radius: 0px;
 }
 
 /* Caja places bar */
