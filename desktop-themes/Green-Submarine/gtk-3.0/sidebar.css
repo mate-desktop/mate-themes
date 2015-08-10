@@ -18,6 +18,26 @@
     background-color: @sidebar_background;
 }
 
+/* dialog open */
+.sidebar.list,
+.sidebar.list .button {
+    background-color: @sidebar_background;
+}
+
+.sidebar-revealer .sidebar-button.image-button.button {
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+}
+
+.sidebar.list .button {
+    padding: 5px 8px 5px 6px;
+}
+
+.sidebar.list .button .sidebar-label {
+    padding: 0px 8px;
+}
+
 .sidebar.view:selected,
 .sidebar.view *:selected,
 .sidebar .view:selected,
