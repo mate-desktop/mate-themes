@@ -1,7 +1,7 @@
 themedir = $(datadir)/themes/Green-Submarine/gtk-3.0
 
 theme_DATA = \
-	gnome-mdi.css \
+	gnome-applications.css \
 	gtk.css \
 	gtk-widgets-assets.css \
 	gtk-widgets.css \
