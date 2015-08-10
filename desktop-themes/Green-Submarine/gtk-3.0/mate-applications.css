@@ -1309,6 +1309,15 @@ EvSidebar .flat.button {
     padding: 4px;
 }
 
+/* atril and eom */
+EggToolbarEditor.vertical GtkScrolledWindow .frame {
+    background-color: shade (@base_color, 1.0);
+    border-color: @notebook_border;
+    border-width: 1px;
+    border-radius: 0px;
+    border-style: solid;
+}
+
 /**************
  * mate-media *
  **************/
