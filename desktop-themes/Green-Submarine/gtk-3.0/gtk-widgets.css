@@ -6085,6 +6085,14 @@ GtkPrintUnixDialog.background .vertical.view.dialog-vbox .notebook GtkToggleButt
     border-radius: 4px;
 }
 
+/******************
+ * GtkFileChooser *
+ ******************/
+
+GtkFileChooserWidget.vertical GtkPaned.horizontal {
+    -GtkPaned-handle-size: 4px;
+}
+
 /*****************
  * Miscellaneous *
  *****************/
