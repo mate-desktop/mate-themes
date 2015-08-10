@@ -10,6 +10,11 @@ CajaNavigationWindow .view {
     color: @theme_fg_color;
 }
 
+/* since gtk+-3.18 */
+CajaNavigationWindow FMListView .view {
+    background-color: shade (@base_color, 1.0);
+}
+
 /* do not flash the desktop with a color during theme switching */
 CajaWindow,
 CajaDesktopWindow FMDesktopIconView .view {
