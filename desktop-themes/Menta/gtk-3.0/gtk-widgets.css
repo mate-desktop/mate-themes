@@ -2209,7 +2209,8 @@ GtkFileChooserButton GtkImage:last-child {
 }
 
 GtkFileChooserWidget.vertical GtkPaned.horizontal {
-    -GtkPaned-handle-size: 4px;
+    -GtkPaned-handle-size: 3px;
+    border-color: transparent;
 }
 
 /**************
