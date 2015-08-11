@@ -1973,6 +1973,11 @@ GtkFileChooserButton GtkImage:last-child {
 	color: @internal_element_color;
 }
 
+GtkFileChooserWidget.vertical GtkPaned.horizontal {
+    -GtkPaned-handle-size: 3px;
+    border-color: transparent;
+}
+
 /**************
  * Scrollbars *
  **************/
