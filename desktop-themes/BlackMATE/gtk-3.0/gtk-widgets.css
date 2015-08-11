@@ -1267,6 +1267,13 @@ GtkComboBox .menu {
     border-radius: 3px;
 }
 
+.button.image-button.circular-button {
+   border-image: none;
+   border-width: 1px;
+   border-style: solid;
+   border-color: @button_border;
+}
+
 .button GtkImage,
 .button GtkImage:hover,
 .button GtkImage:checked,
