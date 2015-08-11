@@ -214,6 +214,11 @@ CajaWindow CajaPlacesSidebar .frame {
     border-bottom: none;
 }
 
+/* moved eject button to left better for overlay scrollbars */
+CajaWindow CajaPlacesSidebar .view row {
+    padding: 0px 4px 0px 0px;
+}
+
 CajaWindow CajaPlacesSidebar row:selected {
     color: @theme_selected_fg_color;
 }
@@ -225,6 +230,15 @@ CajaWindow CajaPlacesSidebar row:backdrop:selected {
 
 CajaWindow CajaPlacesSidebar row:hover {
     background-color: shade (@theme_bg_color, 0.97);
+}
+
+/* better for overlay scrollbars */
+CajaWindow FMTreeView .vertical.scrollbar.overlay-indicator,
+CajaWindow CajaNotesViewer .vertical.scrollbar.overlay-indicator,
+CajaWindow CajaPlacesSidebar .vertical.scrollbar.overlay-indicator,
+CajaWindow CajaEmblemSidebar .vertical.scrollbar.overlay-indicator,
+CajaWindow CajaHistorySidebar .vertical.scrollbar.overlay-indicator {
+	-GtkRange-slider-width: 11;
 }
 
 /* desktop mode */
