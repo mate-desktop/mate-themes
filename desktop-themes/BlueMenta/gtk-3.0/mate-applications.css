@@ -161,8 +161,11 @@ CajaLocationBar .entry {
     padding: 4px;
 }
 
-CajaWindow * {
-    -GtkPaned-handle-size: 0;
+/* the small line between sidebar and view */
+CajaWindow GtkPaned.horizontal {
+    -GtkPaned-handle-size: 3px;
+    border-color: transparent;
+    background-color: @theme_bg_color;
 }
 
 /* caja sidebar */
