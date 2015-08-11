@@ -164,6 +164,55 @@ GtkPlacesSidebar.sidebar .view {
     background-color: shade (@theme_bg_color, 1.08);
 }
 
+.sidebar .frame {
+    border-style: none;
+}
+
+.sidebar:backdrop {
+    background-color: shade (@theme_bg_color, 1.08);
+}
+
+/* dialog open */
+.sidebar.list,
+.sidebar.list .button {
+    background-color: shade (@theme_bg_color, 1.08);
+}
+
+.sidebar-revealer .sidebar-button.image-button.button {
+    background-color: transparent;
+    background-image: none;
+    border-image:none;
+    box-shadow: none;
+}
+
+.sidebar.list .button .sidebar-label {
+    padding: 0px 8px;
+}
+
+.sidebar.list .button {
+    background-image: none;
+    border-style: none;
+    border-image:none;
+    border-radius: 0px;
+    padding: 3px 8px 3px 6px;
+}
+
+.sidebar.list .button:hover {
+	background-color: alpha(@theme_selected_bg_color, 0.4);
+
+}
+
+.sidebar.list .button:selected {
+	background-image: linear-gradient(to bottom,
+	                                  shade(@theme_selected_bg_color, 1.5),
+	                                  shade(@theme_selected_bg_color, 0.7));
+}
+
+.sidebar.separator,
+.sidebar.separator:hover {
+	color: alpha(@frame_color, 0.6);
+}
+
 /****************
  * Floating Bar *
  ****************/
@@ -3114,15 +3163,17 @@ GtkLabel {
 	text-shadow: none;
 }
 
-.sidebar.separator,
-.sidebar.separator:hover {
-	color: alpha(@frame_color, 0.6);
-}
-
-/* Gtk-file-chooser-dialog */
+/***************************
+ * Gtk-file-chooser-dialog *
+ ***************************/
 
 GtkFileChooserDialog GtkTreeView.view {
-    background-color: shade (@theme_bg_color, 1.08);
+    background-color: @less_dark_color;
+}
+
+GtkFileChooserWidget.vertical GtkPaned.horizontal {
+    -GtkPaned-handle-size: 3px;
+    border-color: transparent;
 }
 
 /************************
