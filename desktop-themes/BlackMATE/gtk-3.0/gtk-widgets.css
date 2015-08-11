@@ -1239,8 +1239,13 @@ GtkComboBox .separator {
     -GtkWidget-vertical-separator: 0;
 }
 
+/* since gtk+-3.18, avoid flat text background */
+GtkComboBox .button GtkCellView {
+    background-color: transparent;
+}
+
 GtkComboBox .button {
-	padding: 3px;
+	padding: 0px 3px;
 	/* These buttons may be wide. */
 	background-image: linear-gradient(to bottom,
 	                                  @button_hover_gradient_color_a,
@@ -1248,7 +1253,6 @@ GtkComboBox .button {
 }
 
 GtkComboBox .button:hover {
-	padding: 3px;
 	/* These buttons may be wide. */
 	background-image: linear-gradient(to bottom,
 	                                  shade(@button_gradient_color_a, 1.5),
