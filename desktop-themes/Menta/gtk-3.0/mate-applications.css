@@ -628,3 +628,12 @@ ShellWindow .button.flat:hover {
     border-image: url("borders/button.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
 }
 
+/* atril and eom */
+EggToolbarEditor.vertical GtkScrolledWindow .frame {
+    background-color: shade (@theme_base_color, 1.0);
+    border-color: @borders;
+    border-width: 1px;
+    border-radius: 0px;
+    border-style: solid;
+}
+
