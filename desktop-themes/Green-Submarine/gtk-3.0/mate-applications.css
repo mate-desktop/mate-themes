@@ -34,8 +34,9 @@ CajaWindow CajaInformationPanel .vertical {
 }
 
 /* the small line between sidebar and view */
-CajaWindow * {
-    -GtkPaned-handle-size: 2px;
+CajaWindow GtkPaned.horizontal {
+    -GtkPaned-handle-size: 3px;
+    border-color: transparent;
 }
 
 /* disabled, looks uggly
