@@ -4591,6 +4591,22 @@ GtkModelButton.button.flat:selected {
     border-radius: 0 3px 3px 0;
 }
 
+.popover .button.default.suggested-action.text-button {
+    background-color: @menu_bg_color;
+    color: @theme_fg_color;
+    background-image: none;
+    text-shadow:none;
+    border-image: none;
+    border-style: none;
+    box-shadow: none;
+    border-radius: 2px;
+}
+
+.popover .button.default.suggested-action.text-button:hover {
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+}
+
 .entry.cursor-handle,
 .cursor-handle {
 	background-color: transparent;
@@ -4598,10 +4614,12 @@ GtkModelButton.button.flat:selected {
 	box-shadow: none;
 	border-style: none;
 }
+
 .entry.cursor-handle.top,
 .cursor-handle.top {
 	-gtk-icon-source: -gtk-icontheme("selection-start-symbolic");
 }
+
 .entry.cursor-handle.bottom,
 .cursor-handle.bottom {
 	-gtk-icon-source: -gtk-icontheme("selection-end-symbolic");
