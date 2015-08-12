@@ -2992,6 +2992,12 @@ GtkFlowBox .grid-child:selected {
 }
 
 /* hyperlinks */
+/* ie. yelp */
+*:link,
+*:visited {
+  color: @link_color;
+}
+
 GtkLinkButton,
 GtkLinkButton:hover,
 GtkLinkButton.button.flat,
@@ -3703,6 +3709,7 @@ GtkIconView.view.cell:selected:focus {
                                      color-stop (0.45, shade (@button_bg_active, 1.00)),
                                      color-stop (0.52, shade (@button_bg_active, 0.88)),
                                      to (shade (@button_bg_active, 0.90))); 
+
     border-width: 1px;
     border-style: solid;
     border-radius: 4px;
