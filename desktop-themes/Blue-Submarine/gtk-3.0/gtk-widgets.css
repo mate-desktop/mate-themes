@@ -3143,6 +3143,12 @@ GtkFlowBox .grid-child:selected {
 }
 
 /* hyperlinks */
+/* ie. yelp */
+*:link,
+*:visited {
+  color: @link_color;
+}
+
 GtkLinkButton,
 GtkLinkButton:hover,
 GtkLinkButton.button.flat,
