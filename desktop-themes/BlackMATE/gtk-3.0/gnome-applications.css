@@ -1,0 +1,428 @@
+/****************
+ * Applications *
+ ****************/
+
+ApDocView, /* Abiword */
+EogScrollView, /* Eog */
+CheeseThumbView /* Cheese */
+{
+	background-color: @chrome_bg_color;
+	-EogScrollView-shadow-type: none;
+}
+
+/* gnome-terminal */
+TerminalScreen {
+	background-color: @theme_main_color;
+	color: @theme_text_color;
+	-TerminalScreen-background-darkness: 0.80;
+}
+
+/* gcalctool */
+MathWindow .frame {
+	border-color: @theme_main_color;
+	padding: 0px;
+}
+
+MathWindow GtkScrolledWindow GtkViewport.frame {
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 3px;
+	border-color: @theme_main_color;
+}
+
+MathDisplay .view {
+	background-color: @theme_main_color;
+	color: @theme_text_color;
+}
+
+/* empathy and gnome-contacts */
+EmpathyRosterView,
+ContactsListPane.frame * {
+	background-color: @less_dark_color;
+}
+
+ContactsListPane.frame GtkLabel,
+ContactsListPane.frame GtkImage,
+ContactsListPane.frame GtkBox,
+ContactsListPane.frame GtkGrid {
+	background-color: transparent;
+}
+
+EmpathyRosterView:hover,
+ContactsView:hover,
+EmpathyRosterView GtkBin:hover,
+ContactsView GtkBin:hover {
+	background-color: shade(@less_dark_color, 1.1);
+}
+
+.contacts-suggestion {
+	background-color: @less_dark_color;
+}
+
+EmpathyRosterView:selected,
+ContactsView:selected,
+EmpathyRosterView GtkBin:selected,
+ContactsView GtkBin:selected {
+	box-shadow: inset 0 3px alpha(white, 0.04),
+	            inset 0 2px alpha(white, 0.07),
+	            inset 0 1px alpha(white, 0.15);
+	background-image: linear-gradient(to bottom,
+	                                  shade(@theme_selected_bg_color, 0.7),
+	                                  shade(@theme_selected_bg_color, 1.5));
+}
+
+ContactsWindow .toolbar {
+	background-image: none;
+}
+
+ContactsListPane.frame GtkToolbar,
+ContactsListPane GtkScrolledWindow {
+	border-radius: 0px;
+}
+
+ContactsListPane.frame GtkToolbar {
+	padding: 4px 4px 10px 4px;
+}
+
+/* the rest is in the Nautilus block */
+
+/* file-roller with folder view
+   is more beautiful this way */
+FrWindow GtkPaned {
+	background-color: @less_dark_color;
+}
+
+FrWindow .pane-separator,
+NautilusWindow > GtkGrid > .pane-separator,
+NemoWindow > GtkGrid > .pane-separator {
+	color: shade(@theme_selected_bg_color, 2.0);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url("assets/notebook-pane-separator-grip.svg");
+	background-color: @less_dark_color;
+}
+
+FrWindow .pane-separator:hover,
+FrWindow .pane-separator:selected,
+NautilusWindow > GtkGrid > .pane-separator:hover,
+NautilusWindow > GtkGrid > .pane-separator:selected,
+NemoWindow > GtkGrid > .pane-separator:hover,
+NemoWindow > GtkGrid > .pane-separator:selected {
+	background-image: url("assets/notebook-pane-separator-grip-hover.svg");
+}
+
+/* is this really needed? */
+FrWindow .pane-separator.vertical,
+NautilusWindow > GtkGrid > .pane-separator.vertical,
+NemoWindow > GtkGrid > .pane-separator.vertical {
+	background-image: url("assets/notebook-pane-separator-grip-vertical.svg");
+}
+
+FrWindow .pane-separator.vertical:hover,
+FrWindow .pane-separator.vertical:selected,
+NautilusWindow > GtkGrid > .pane-separator.vertical:hover,
+NautilusWindow > GtkGrid > .pane-separator.vertical:selected,
+NemoWindow > GtkGrid > .pane-separator.vertical:hover,
+NemoWindow > GtkGrid > .pane-separator.vertical:selected {
+	background-image: url("assets/notebook-pane-separator-grip-vertical-hover.svg");
+}
+
+/* the rest is in the Nautilus block */
+
+/* Epiphany */
+EphyToolbar.toolbar {
+	padding: 4px 0px;
+}
+
+EphyToolbar .entry {
+	background-image: linear-gradient(to bottom,
+					shade(@theme_bg_color, 0.2),
+					shade(@theme_bg_color, 0.5) 10%,
+					shade(@theme_bg_color, 1.2) 50%,
+					shade(@theme_bg_color, 1.7));
+	border-style: solid;
+	border-color: shade(@less_dark_color, 0.9);
+	box-shadow: inset 0 -3px alpha(@entry_shadow, 0.04),
+	            inset 0 -2px alpha(@entry_shadow, 0.09),
+	            inset 0 -1px alpha(@entry_shadow, 0.15);
+}
+
+EphyToolbar .entry:focus {
+	border-color: shade(@less_dark_color, 1.6);
+}
+
+/* gnome-documents and Totem's search */
+.documents-entry-tag {
+	background-color: transparent;
+	border-radius: 3px;
+	border-width: 0;
+	margin: 2px;
+	padding: 4px;
+}
+
+.documents-entry-tag:hover {
+	background-color: shade(@theme_selected_bg_color, 1.23);
+}
+
+/************
+ * Nautilus *
+ ************/
+
+/**** View ***/
+
+NautilusView .view {
+	background-color: shade (@theme_bg_color, 1.08);
+	color: @theme_fg_color;
+}
+
+.nautilus-inactive-pane .view {
+	background-color: shade(@less_dark_color, 1.3);
+}
+
+/* file renaming */
+NautilusView .view .entry,
+NautilusView .view .entry:focus {
+	background-image: none;
+	border-image: none;
+	border-style: solid;
+	border-radius: 1px;
+	border-color: @theme_selected_bg_color;
+	background-color: shade(@theme_selected_bg_color, 0.3);
+}
+
+/**** Window ***/
+
+NautilusWindow .view {
+	background-color: shade (@theme_bg_color, 1.08);
+	color: @theme_fg_color;
+}
+
+/* the small line between sidebar and view */
+NautilusWindow * {
+	-GtkPaned-handle-size: 2px;
+}
+
+NautilusWindow GtkPaned {
+	background-color: @less_dark_color;
+}
+
+NautilusWindow GtkScrolledWindow.frame {
+	border-style: none;
+}
+
+ContactsWindow .button {
+	border-image: url("assets/button-border-dark1.svg") 3 / 3px stretch;
+	background-image: linear-gradient(to bottom,
+	                                  shade(@less_dark_color, 1.3),
+	                                  shade(@less_dark_color, 0.4));
+}
+
+ContactsWindow .button:hover {
+	background-image: -gtk-gradient (radial,
+					0.5 -2.0, 2.0,
+					0.5 -2.0, 3.0,
+					from (shade(@button_gradient_color_a, 1.5)),
+					color-stop (0.42, shade(@button_gradient_color_a, 0.7)),
+					color-stop (0.43, @theme_bg_color),
+					to (shade(@less_dark_color, 0.4)));
+
+}
+
+ContactsWindow .button:checked,
+ContactsWindow .button:hover:checked,
+ContactsWindow .button:active,
+ContactsWindow .button:hover:active {
+	background-image: linear-gradient(to bottom,
+	                                  shade(@button_gradient_color_b, 0.7),
+	                                  @theme_bg_color 40%,
+	                                  shade(@less_dark_color, 1.6));
+	border-image: url("assets/button-active-border-dark1.svg") 3 / 3px stretch;
+}
+
+NautilusWindow column-header .button,
+NautilusWindow column-header .button:hover {
+	border-image: none;
+	border-width: 0px 0px 1px 1px;
+	border-radius: 0;
+	border-style: solid;
+	border-color: @less_dark_color;
+}
+
+NautilusWindow .toolbar {
+	background-image: linear-gradient(to bottom,
+	                                  shade(@less_dark_color, 0.4),
+	                                  shade(@less_dark_color, 1.36));
+}
+
+ContactsWindow .scrollbar.slider:prelight,
+ContactsWindow .scrollbar.slider:prelight:active,
+ContactsWindow .scrollbar.slider.vertical:prelight,
+ContactsWindow .scrollbar.slider.vertical:prelight:active,
+FrWindow .scrollbar.slider:prelight,
+FrWindow .scrollbar.slider:prelight:active,
+FrWindow .scrollbar.slider.vertical:prelight,
+FrWindow .scrollbar.slider.vertical:prelight:active,
+NautilusWindow .scrollbar.slider:prelight,
+NautilusWindow .scrollbar.slider:prelight:active,
+NautilusWindow .scrollbar.slider.vertical:prelight,
+NautilusWindow .scrollbar.slider.vertical:prelight:active {
+	border-color: shade(@scroll_slider_color, 1.1);
+}
+
+ContactsWindow .scrollbar.button,
+ContactsWindow .scrollbar.button.horizontal,
+ContactsWindow .scrollbar.button.vertical,
+ContactsWindow .scrollbar.button:insensitive,
+ContactsWindow .scrollbar.button.horizontal:insensitive,
+ContactsWindow .scrollbar.button.vertical:insensitive,
+FrWindow .scrollbar.button,
+FrWindow .scrollbar.button.horizontal,
+FrWindow .scrollbar.button.vertical,
+FrWindow .scrollbar.button:insensitive,
+FrWindow .scrollbar.button.horizontal:insensitive,
+FrWindow .scrollbar.button.vertical:insensitive,
+NautilusWindow .scrollbar.button,
+NautilusWindow .scrollbar.button.horizontal,
+NautilusWindow .scrollbar.button.vertical,
+NautilusWindow .scrollbar.button:insensitive,
+NautilusWindow .scrollbar.button.horizontal:insensitive,
+NautilusWindow .scrollbar.button.vertical:insensitive {
+	background-image: none;
+}
+
+NautilusWindow GtkStatusbar,
+NautilusWindow .floating-bar{
+	font: italic;
+}
+
+NautilusWindow .floating-bar.right,
+NautilusWindow .floating-bar.left {
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+/**** Notebook ***/
+
+.nautilus-inactive-pane .notebook {
+	border-color: @less_dark_color;
+}
+
+.nautilus-inactive-pane .notebook tab.top:active {
+	background-image: linear-gradient(to bottom,
+	                                  shade(@less_dark_color, 1.05),
+	                                  shade(@less_dark_color, 1.16) 40%,
+	                                  shade(@less_dark_color, 1.25) 70%,
+	                                  shade(@less_dark_color, 1.3));
+}
+
+NautilusWindow .notebook .view.rubberband,
+NautilusWindow .notebook .rubberband {
+	background-color: alpha(@theme_selected_bg_color, 0.35);
+}
+
+/**** Sidebar ***/
+
+NautilusWindow .sidebar .frame {
+	border-width: 0px;
+}
+
+NautilusWindow .sidebar .scrollbar.button {
+	color: @theme_fg_color;
+}
+
+NautilusWindow .sidebar .scrollbar.button:hover {
+	color: @theme_fg_color;
+}
+
+NautilusPlacesSidebar .cell,
+NautilusPlacesSidebar *.cell {
+	color: @theme_text_color;
+}
+
+NautilusPlacesSidebar .cell:hover,
+NautilusPlacesSidebar *.cell:hover {
+	color: @theme_text_color;
+}
+
+NautilusPlacesSidebar .cell:selected,
+NautilusPlacesSidebar *.cell:selected {
+	background-image: linear-gradient(to bottom,
+	                                  shade(@less_dark_color, 1.5),
+	                                  shade(@less_dark_color, 0.6));
+	color: @theme_text_color;
+	border-radius: 2px;
+}
+
+NautilusPlacesSidebar .cell:selected:focus,
+NautilusPlacesSidebar *.cell:selected:focus {
+	color: @theme_text_color;
+	background-image: linear-gradient(to top,
+					 shade(@less_dark_color, 1.5),
+					 shade(@less_dark_color, 0.6));
+}
+
+/**** Infos ***/
+
+NautilusWindow .question, /* why question for trash? */
+NautilusWindow .info,
+NautilusTrashBar.info,
+NautilusXContentBar.info,
+NautilusQueryEditor.info,
+NautilusSearchBar.info {
+	background-color: transparent;
+}
+
+NautilusWindow NautilusQueryEditor .toolbar,
+NautilusWindow .notebook NautilusQueryEditor .toolbar {
+	background-image: none;
+	background-color: transparent;
+	padding: 5px 7px;
+}
+
+ContactsWindow .entry,
+ContactsListPane.frame GtkToolbar .entry,
+NautilusSearchBar .entry,
+NautilusQueryEditor .toolbar .entry {
+	background-image: linear-gradient(to bottom,
+	                                  shade(@less_dark_color, 0.2),
+	                                  shade(@less_dark_color, 0.5) 10%,
+	                                  @less_dark_color 50%,
+	                                  shade(@less_dark_color, 1.5));
+	box-shadow: inset 0 -3px alpha(@entry_shadow, 0.03),
+	            inset 0 -2px alpha(@entry_shadow, 0.04),
+	            inset 0 -1px alpha(@entry_shadow, 0.06);
+}
+
+ContactsWindow .entry:focus,
+NautilusSearchBar .entry:focus,
+NautilusQueryEditor .toolbar .entry:focus {
+	border-color: shade(@less_dark_color, 1.4);
+	box-shadow: inset 0 -2px alpha(@entry_shadow, 0.04),
+	            inset 0 -1px alpha(@entry_shadow, 0.06);
+}
+
+.nautilus-canvas-item {
+	border-radius: 5px;
+}
+
+/**** Desktop Drawn ***/
+
+.nautilus-desktop.nautilus-canvas-item {
+	color: @theme_fg_color;
+	text-shadow: none;
+}
+
+.nautilus-desktop.nautilus-canvas-item:active {
+	color: @theme_text_color;
+}
+
+.nautilus-desktop.nautilus-canvas-item:selected {
+	color: @theme_selected_fg_color;
+}
+
+.nautilus-desktop.nautilus-canvas-item:active,
+.nautilus-desktop.nautilus-canvas-item:prelight,
+.nautilus-desktop.nautilus-canvas-item:selected {
+	text-shadow: none;
+}
+
