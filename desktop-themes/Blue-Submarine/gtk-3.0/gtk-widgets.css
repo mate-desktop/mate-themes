@@ -2470,6 +2470,21 @@ NemoWindow .primary-toolbar.toolbar .button:active:hover,
     icon-shadow: 1px 1px @theme_selected_shadow_color;
 }
 
+/* hyperlinks */
+/* ie. yelp */
+*:link,
+*:visited {
+  color: @link_color;
+}
+
+GtkLinkButton,
+GtkLinkButton:hover,
+GtkLinkButton.button.flat,
+GtkLinkButton.button.flat:hover {
+     padding: 4px;
+     border-color: transparent;
+}
+
 /*****************
  * Notebooks and *
  * tabs          *
