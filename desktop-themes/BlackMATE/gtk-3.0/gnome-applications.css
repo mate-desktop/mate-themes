@@ -93,8 +93,7 @@ FrWindow GtkPaned {
 }
 
 FrWindow .pane-separator,
-NautilusWindow > GtkGrid > .pane-separator,
-NemoWindow > GtkGrid > .pane-separator {
+NautilusWindow > GtkGrid > .pane-separator {
 	color: shade(@theme_selected_bg_color, 2.0);
 	background-repeat: no-repeat;
 	background-position: center;
@@ -105,25 +104,20 @@ NemoWindow > GtkGrid > .pane-separator {
 FrWindow .pane-separator:hover,
 FrWindow .pane-separator:selected,
 NautilusWindow > GtkGrid > .pane-separator:hover,
-NautilusWindow > GtkGrid > .pane-separator:selected,
-NemoWindow > GtkGrid > .pane-separator:hover,
-NemoWindow > GtkGrid > .pane-separator:selected {
+NautilusWindow > GtkGrid > .pane-separator:selected {
 	background-image: url("assets/notebook-pane-separator-grip-hover.svg");
 }
 
 /* is this really needed? */
 FrWindow .pane-separator.vertical,
-NautilusWindow > GtkGrid > .pane-separator.vertical,
-NemoWindow > GtkGrid > .pane-separator.vertical {
+NautilusWindow > GtkGrid > .pane-separator.vertical {
 	background-image: url("assets/notebook-pane-separator-grip-vertical.svg");
 }
 
 FrWindow .pane-separator.vertical:hover,
 FrWindow .pane-separator.vertical:selected,
 NautilusWindow > GtkGrid > .pane-separator.vertical:hover,
-NautilusWindow > GtkGrid > .pane-separator.vertical:selected,
-NemoWindow > GtkGrid > .pane-separator.vertical:hover,
-NemoWindow > GtkGrid > .pane-separator.vertical:selected {
+NautilusWindow > GtkGrid > .pane-separator.vertical:selected {
 	background-image: url("assets/notebook-pane-separator-grip-vertical-hover.svg");
 }
 

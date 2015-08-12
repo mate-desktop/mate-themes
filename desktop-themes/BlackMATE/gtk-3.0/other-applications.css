@@ -2,6 +2,29 @@
  * Nemo *
  ********/
 
+NemoWindow > GtkGrid > .pane-separator {
+	color: shade(@theme_selected_bg_color, 2.0);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url("assets/notebook-pane-separator-grip.svg");
+	background-color: @less_dark_color;
+}
+
+NemoWindow > GtkGrid > .pane-separator:hover,
+NemoWindow > GtkGrid > .pane-separator:selected {
+	background-image: url("assets/notebook-pane-separator-grip-hover.svg");
+}
+
+/* is this really needed? */
+NemoWindow > GtkGrid > .pane-separator.vertical {
+	background-image: url("assets/notebook-pane-separator-grip-vertical.svg");
+}
+
+NemoWindow > GtkGrid > .pane-separator.vertical:hover,
+NemoWindow > GtkGrid > .pane-separator.vertical:selected {
+	background-image: url("assets/notebook-pane-separator-grip-vertical-hover.svg");
+}
+
 /**** View ***/
 
 NemoView .view {
