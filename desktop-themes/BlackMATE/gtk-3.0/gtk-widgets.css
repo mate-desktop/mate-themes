@@ -172,7 +172,6 @@ GtkPlacesSidebar.sidebar .view {
 	border-width: 0px;
 	border-style: solid;
 	text-shadow: none;
-
 	color: @theme_fg_color;
 	background-image: linear-gradient(to bottom,
 	                                  shade(@button_gradient_color_a, 1.5),
@@ -535,7 +534,6 @@ GtkProgressBar.trough {
 	                                  shade(@theme_bg_color, 0.4),
 	                                  @theme_bg_color 50%,
 	                                  shade(@theme_bg_color, 1.8));
-
 	border-width: 0px;
 	border-style: solid;
 	border-radius: 12px;
@@ -1003,10 +1001,6 @@ GtkTreeView row:selected:focus {
 	                                  shade(@theme_selected_bg_color, 1.5));
 }
 
-/*GtkTreeView row:selected:insensitive {
-	color: @theme_selected_fg_color;
-}*/
-
 GtkTreeView row:nth-child(odd),
 GtkTreeView row:nth-child(odd):hover {
 	background-color: @less_dark_color;
@@ -1152,8 +1146,6 @@ row {
 	background-image: linear-gradient(to bottom,
 	                                  shade(@theme_bg_color, 1.4),
 	                                  shade(@theme_bg_color, 0.8));
-
-
 	border-radius: 3px;
 }
 
@@ -1174,7 +1166,6 @@ row {
 GtkComboBox {
 	/* align with side buttons */
 	padding: 0;
-
 	-GtkComboBox-arrow-scaling: 0.5;
 	-GtkComboBox-shadow-type: none;
 	color: @theme_fg_color;
@@ -1212,7 +1203,6 @@ GtkComboBox.combobox-entry .button {
 /* compensation for combo shadow */
 /*GtkTreeMenu .menuitem *,*/
 GtkComboBox .menu {
-	/*color: @theme_selected_fg_color;*/
 	text-shadow: none;
 }
 
@@ -1281,8 +1271,7 @@ GtkFileChooserButton .button {
 	background-color: transparent;
 }
 
-.button:hover/*,
-.toolbar.button:hover*/ {
+.button:hover {
 	border-image: none;
 	border-style: solid;
 	border-color: shade(@button_border, 1.1);
@@ -1377,7 +1366,6 @@ GtkFileChooserButton .button {
 	-GtkRange-slider-width: 12;
 	-GtkRange-stepper-size: 16;
 	-GtkScrollbar-min-slider-length: 34; /* minimum size for the slider. sadly can't be in '.slider' where it belongs */
-
 	-GtkRange-stepper-spacing: 0;
 	-GtkRange-trough-under-steppers: 0;
 }
@@ -1558,12 +1546,7 @@ GtkFileChooserButton .button {
     padding: 0px;
     color: @theme_text_color;
     -GtkWidget-window-dragging: true;
-    /*-GtkMenuBar-internal-padding: 0;*/
 }
-
-/*.menubar * {
-    background-color: transparent;
-}*/
 
 .menubar .menuitem {
     -gtk-icon-style: regular;
@@ -1612,10 +1595,6 @@ GtkFileChooserButton .button {
     padding: 1px;
 }
 
-/*.menu *{
-    background-color: transparent;
-}*/
-
 .menuitem,
 .menuitem * {
     -GtkMenuItem-arrow-scaling: 0.5;
@@ -1649,17 +1628,11 @@ GtkFileChooserButton .button {
     background-image: linear-gradient(to bottom,
                                       #999999,
                                       #404040);
-    /*color: @theme_main_color;*/
-    color: #000000;
+    color: @theme_fg_color;
     border-style: solid;
     border-width: 1px;
     border-radius: 3px;
     border-image: url("assets/menu-border-dark.svg") 2 / 2px stretch;
-}
-
-.menuitem *:hover,
-.menu .menuitem *:hover {
-    color: #000000;
 }
 
 .menu .menuitem:insensitive,
@@ -1701,13 +1674,11 @@ GtkMenuButton .menu {
 .toolbar {
 	background-image: linear-gradient(to bottom,
 	                                  @toolbar_gradient_base,
-	                                  @toolbar_gradient_bottom);/* shade(@theme_bg_color, 1.6) or
-	                                                                     shade(@theme_bg_color, 1.7) = #5F5F67 */
+	                                  @toolbar_gradient_bottom);
 	border-style: none;
 	border-width: 0;
 	border-radius: 0px;
 	padding: 1px;
-
 	-GtkWidget-window-dragging: true;
 	-GtkToolbar-button-relief: normal;
 }
@@ -1816,7 +1787,6 @@ GtkMenuButton .menu {
 .primary-toolbar.toolbar GtkComboBox .button:insensitive {
     border-image: none;
     border-style: solid;
-    /*border-radius: 3;*/
     border-color: @inactive_frame_color;
     background-image: linear-gradient(to bottom,
                                       @button_hover_gradient_color_a,
@@ -1918,9 +1888,6 @@ GtkCalendar.header .stack-switcher > .titlebutton.button {
     border-radius: 7px 7px 0 0;
     padding: 6px;
     background-color: @theme_bg_color;
-    /*background-image: linear-gradient(to bottom,
-                                        @toolbar_gradient_base,
-                                        shade(@theme_bg_color, 1.6));*/
     border-color: shade(@theme_bg_color, 0.8);
 }
 
@@ -2325,15 +2292,11 @@ GtkPopover .separator {
 .titlebar .titlebutton,
 .header-bar.frame.titlebar .button.image-button.titlebutton,
 .button.text-button.titlebutton {
-	/* Due to a bug somewhere in gtk or cairo,
-	   a padding of zero (or even one) doesn't work always!!! */
 	padding: 4px 4px 4px 4px;
-
 	border-radius: 3px;
 	border-width: 1px;
 	border-style: solid;
 	text-shadow: none;
-
 	color: #D9D9D9;
 	background-image: linear-gradient(to bottom,
 	                                  @button_hover_gradient_color_a,
@@ -2387,7 +2350,6 @@ GtkPopover .separator {
 .button.image-button.titlebutton:checked:hover,
 .button.text-button.titlebutton:checked,
 .button.text-button.titlebutton:checked:hover {
-	/* some apps need this */
 	color: @theme_fg_color;
 	border-style: solid;
 	background-image: linear-gradient(to bottom,
@@ -2397,19 +2359,15 @@ GtkPopover .separator {
 }
  
 .titlebar .right .titlebutton:first-child {
-/*    border-left: 1px solid @menu_separator;*/
 }
  
 .titlebar .right .titlebutton:last-child {
- 
 }
  
 .titlebar .left .titlebutton:last-child {
-/*    border-right: 1px solid @menu_separator;*/
 }
  
 .titlebar .left .titlebutton:first-child {
- 
 }
  
 .titlebar .titlebutton:backdrop,
@@ -2490,7 +2448,6 @@ GtkPopover .separator {
  ****************/
 GtkAssistant .sidebar .highlight {
 	color: @theme_fg_color;
-	/*font: bold;*/
 	background-image: linear-gradient(to bottom,
 	                                  shade(@less_dark_color, 0.8),
 	                                  shade(@less_dark_color, 1.2));
@@ -2500,14 +2457,12 @@ GtkAssistant .sidebar .highlight {
 	border-radius: 5px;
 	box-shadow: inset 0 2px 1px alpha(black, 0.25),
 	            inset 1px 1px 1px alpha(black, 0.2),
-
 	            inset 0 -2px 1px alpha(@entry_shadow, 0.1),
 	            inset -1px -1px 1px alpha(@entry_shadow, 0.2);
 }
 
 GtkAssistant .sidebar {
 	padding: 12px;
-
 	border-radius: 0px 3px 0px 0px;
 	border-style: solid;
 	border-width: 1px;
@@ -2544,7 +2499,6 @@ GtkSwitch.trough:backdrop:active {
 	color: @theme_main_color;
 	border-image: none;
 	border-color: shade(@frame_color, 1.22);
-
 	background-image: linear-gradient(to bottom,
 	                                  @active_switch_bg_color_a,
 	                                  @active_switch_bg_color_b);
@@ -2625,7 +2579,6 @@ GtkStatusbar {
 
 GtkStatusbar .frame {
 	background-image: none;
-	/* gtk-3.12 */
 	background-color: transparent;
 	padding: 0px;
 	border-width: 0;
@@ -2641,7 +2594,6 @@ GtkLabel:hover,
 GtkLabel:active,
 GtkLabel:hover:active,
 GtkLabel:insensitive,
-/* gtk-3.12 */
 GtkBox,
 GtkBox:insensitive,
 GtkGrid,
@@ -2668,10 +2620,6 @@ GtkIconView.view.cell:selected:focus {
 	border-radius: 12px;
 	border-color: shade(@theme_selected_bg_color, 1.5);
 	color: @theme_text_color;
-
-	/* FIXME: this probably needs to be better;
-	 * see https://bugzilla.gnome.org/show_bug.cgi?id=644157
-	 */
 	outline-color: @progressbar_border;
 	outline-style: solid;
 	outline-offset: 3px;
@@ -2715,11 +2663,6 @@ EShellWindow:insensitive { /* removes the "flash" when quitting */
 	background-color: @theme_bg_color;
 }
 
-/*EShellSidebar *.cell:insensitive {
-	background-color: @less_dark_color;
-	color: #ffffff;
-}*/
-
 /*****************
  * Color Chooser *
  *****************/
@@ -2727,21 +2670,18 @@ GtkColorSwatch,
 GtkColorSwatch:selected {
 	background-image: none;
 	background-color: transparent;
-
 }
 
 GtkColorSwatch.color-dark:hover {
 	background-image: linear-gradient(to bottom,
 	                                  alpha(white, 0) 40%,
 	                                  alpha(white, 0.3));
-
 }
 
 GtkColorSwatch.color-light:hover {
 	background-image: linear-gradient(to top,
 	                                  alpha(black, 0) 40%,
 	                                  alpha(black, 0.1));
-
 }
 
 GtkColorSwatch:selected {
@@ -2790,22 +2730,22 @@ GtkColorSwatch.color-dark:selected:hover {
  * GtkCheckButton *
  *****************/
 GtkCheckButton:hover {
-	background-color: alpha(@theme_main_color, 0.09); /*shade(@theme_bg_color, 0.9)*/
+	background-color: alpha(@theme_main_color, 0.09);
 }
 
 GtkCheckButton:selected:hover {
-	background-color: alpha(@theme_main_color, 0.15); /*shade(@theme_bg_color, 0.8)*/
+	background-color: alpha(@theme_main_color, 0.15);
 }
 
 /*****************
  * GtkRadioButton *
  *****************/
 GtkRadioButton:hover {
-	background-color: alpha(@theme_main_color, 0.09); /*shade(@theme_bg_color, 0.9)*/
+	background-color: alpha(@theme_main_color, 0.09);
 }
 
 GtkRadioButton:selected:hover {
-	background-color: alpha(@theme_main_color, 0.15); /*shade(@theme_bg_color, 0.8)*/
+	background-color: alpha(@theme_main_color, 0.15);
 }
 
 /*************
@@ -2817,7 +2757,6 @@ GtkRadioButton:selected:hover {
 	border-radius: 2px;
 	border-color: @internal_element_color;
 	color: @internal_element_color;
-
 	background-image: none;
 	background-color: transparent;
 }
@@ -3113,7 +3052,6 @@ GtkInfoBar {
 	color: @error_fg_color;
 }
 
-/* some apps need this */
 GtkLabel {
 	color: @theme_fg_color;
 }
@@ -3311,12 +3249,6 @@ EphyToolbar .entry:focus {
 	border-color: shade(@less_dark_color, 1.6);
 }
 
-/* no need to these with osd */
-/*EphyWindow GtkProgressBar.progressbar,
-EphyWindow GtkProgressBar.trough {
-	border-radius: 0px;
-}*/
-
 /* gnome-documents and Totem's search */
 .documents-entry-tag {
 	background-color: transparent;
@@ -3433,7 +3365,6 @@ NemoWindow column-header .button:hover {
 
 NautilusWindow .toolbar,
 NemoWindow .toolbar {
-	/*border-radius: 3px 0px 0px 3px;*/
 	background-image: linear-gradient(to bottom,
 	                                  shade(@less_dark_color, 0.4),
 	                                  shade(@less_dark_color, 1.36));
@@ -3506,11 +3437,6 @@ NemoWindow .floating-bar.left {
 
 /**** Notebook ***/
 
-/* give the notebook view the same color */
-/*NautilusWindow .notebook .view {
-	background-color: @less_dark_color;
-}*/
-
 .nautilus-inactive-pane .notebook,
 .nemo-inactive-pane .notebook {
 	border-color: @less_dark_color;
@@ -3530,7 +3456,6 @@ NautilusWindow .notebook .rubberband,
 NemoWindow .notebook .view.rubberband,
 NemoWindow .notebook .rubberband {
 	background-color: alpha(@theme_selected_bg_color, 0.35);
-	/*border-radius: 6;*/
 }
 
 /**** Sidebar ***/
@@ -3538,7 +3463,6 @@ NemoWindow .notebook .rubberband {
 NautilusWindow .sidebar .frame,
 NemoWindow .sidebar .frame {
 	border-width: 0px;
-	/*padding: 3px;*/
 }
 
 NautilusWindow .sidebar .scrollbar.button,
