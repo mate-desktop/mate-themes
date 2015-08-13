@@ -2625,26 +2625,6 @@ GtkLabel {
 	color: alpha(@frame_color, 0.6);
 }
 
-/****************
- * GtkActionBar *
- ****************/
-
-GtkActionBar .frame.action-bar {
-    padding: 2px;
-}
-
-GtkActionBar .frame.action-bar .button.image-button {
-    padding: 6px;
-}
-
-GtkActionBar .frame.action-bar .horizontal.stack-switcher.linked .button.image-button  {
-    padding: 4px 2px;
-}
-
-/****************
- * Applications *
- ****************/
-
 ApDocView, /* Abiword */
 EogScrollView, /* Eog */
 CheeseThumbView /* Cheese */
