@@ -826,13 +826,9 @@ GtkColorChooserWidget #add-color-button:hover {
 .button:insensitive,
 .toolbar GtkComboBox .button:insensitive,
 .combobox-entry .button:insensitive {
-	background-image: linear-gradient(to bottom,
-	                  @button_insensitive_inner_border_color 1px,
-	                  @button_insensitive_gradient_a 2px,
-	                  @button_insensitive_gradient_b 50%,
-	                  @button_insensitive_gradient_c 50%,
-	                  @button_insensitive_gradient_d);
-	background-color: @insensitive_bg_color;
+	background-image: none;
+	background-color: transparent;
+    color: @insensitive_fg_color;
 }
 
 /* Pushed + Insensitive button background */
