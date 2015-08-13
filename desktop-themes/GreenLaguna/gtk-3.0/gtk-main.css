@@ -64,8 +64,8 @@
 
 @define-color toolbar_gradient_base #D4DFD1;
 
-@define-color treeview_odd_row #F8FAF7;
-@define-color treeview_even_row @bg_color;
+@define-color treeview_odd_row @theme_main_color;
+@define-color treeview_even_row shade(@base_color, 1.02);
 
 @define-color expander_row_selected_color #DFF0D9; /*#acccee*/
 
