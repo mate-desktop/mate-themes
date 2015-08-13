@@ -2532,6 +2532,30 @@ GtkPopover .separator {
 	border: 0;
 }
 
+.popover .horizontal .label {
+    color: @theme_selected_fg_color;
+}
+
+.popover .button.default.suggested-action.text-button {
+    background-color: transparent;
+    background-image: none;
+    text-shadow:none;
+    border-style: none;
+    box-shadow: none;
+    border-radius: 2px;
+}
+
+.popover .button.default.suggested-action.text-button:hover {
+	color: @theme_selected_fg_color;
+	background-image:  linear-gradient(to bottom,
+	                                  shade(@theme_selected_bg_color, 1.6),
+	                                  shade(@theme_selected_bg_color, 0.6));
+	text-shadow: none;
+	border-width: 0;
+	border-color: transparent;
+	border-radius: 3px;
+}
+
 /*******
  * CSD *
  *******/
