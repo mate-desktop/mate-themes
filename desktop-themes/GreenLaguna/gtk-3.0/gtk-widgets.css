@@ -998,9 +998,7 @@ GtkTreeMenu .menuitem * {
  ***********/
 .button {
     -gtk-icon-style: regular;
-    /* Due to a bug somewhere in gtk or cairo,
-    a padding of zero (or even one) doesn't work always! */
-    padding: 2px;
+    padding: 0px;
     -GtkWidget-focus-line-width: 0;
     border-radius: 3px;
     border-width: 1px;
@@ -1035,9 +1033,10 @@ GtkTreeMenu .menuitem * {
     border-radius: 3px;
 }
 
-.button.image-button,
-.primary-toolbar.toolbar .button.image-button {
-	padding: 3px 4px 4px;
+.button.text-button,
+GtkFontButton.button,
+GtkFileChooserButton .button {
+    padding: 3px;
 }
 
 .button GtkImage,
