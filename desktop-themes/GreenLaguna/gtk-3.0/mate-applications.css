@@ -10,6 +10,7 @@ CajaNavigationWindow .view {
 /* borders of view and sidebar */
 CajaNavigationWindow CajaSidePane CajaPlacesSidebar.frame,
 CajaNavigationWindow CajaNotebook .vertical .vertical FMIconView.frame {
+    border-color: shade(@toolbar_gradient_base, 0.98);
     border-style: solid;
     border-width: 1px;
     border-radius: 2px;
