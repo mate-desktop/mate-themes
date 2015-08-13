@@ -4,7 +4,15 @@
 
 /* background of all views */
 CajaNavigationWindow .view {
-    background-color: shade(@base_color, 1.04)
+    background-color: shade(@base_color, 1.04);
+}
+
+/* borders of view and sidebar */
+CajaNavigationWindow CajaSidePane CajaPlacesSidebar.frame,
+CajaNavigationWindow CajaNotebook .vertical .vertical FMIconView.frame {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2px;
 }
 
 /* do not flash the desktop with a color during theme switching */
@@ -35,25 +43,11 @@ CajaDesktopWindow FMDesktopIconView .view {
 	border-radius: 0px;
 }
 
-/* file renaming */
-/*
-CajaView .view .entry,
-CajaView .view .entry:focus {
-	background-image: none;
-	border-image: none;
-	border-style: solid;
-	border-radius: 1px;
-	border-color: @theme_selected_bg_color;
-}
-*/
-
-/*CajaToolbar .toolbar {
-	border-radius: 0px;
-}*/
-
 /* the small line between sidebar and view */
-CajaWindow * {
-    -GtkPaned-handle-size: 2px;
+CajaWindow GtkPaned.horizontal {
+    -GtkPaned-handle-size: 3px;
+    border-color: transparent;
+    background-color: @theme_bg_color;
 }
 
 CajaWindow GtkScrolledWindow.frame {
@@ -98,17 +92,35 @@ CajaWindow .notebook .rubberband {
 	border-radius: 6px;
 }
 
+/* Caja pathbar */
+CajaNavigationWindow .horizontal .vertical .horizontal .vertical .horizontal CajaPathBar .button ,
+CajaNavigationWindow .horizontal .vertical .horizontal .vertical .horizontal .button.image-button {
+    padding: 4px;
+}
+
+/* View toogle button */
+CajaNavigationWindow .toolbar.horizontal.primary-toolbar .vertical .button {
+        padding: 6px;
+}
+
 /* Caja places bar */
-CajaWindow .button.flat {
+/* close button */
+CajaSidePane GtkButton.button.flat {
     border-style: solid;
     border-color: shade(@button_border, 1.1);
     border-radius: 3px;
-    padding: 2px 5px;
+    padding: 4px 2px;
 }
 
-CajaWindow .button.flat:hover {
+CajaSidePane GtkButton.button.flat:hover {
     border-radius: 3px;
-    padding: 2px 5px;
+    padding: 4px 2px;
+}
+
+/* places button */
+CajaSidePane GtkToggleButton.button.flat,
+CajaSidePane GtkToggleButton.button.flat:hover  {
+    padding: 4px 5px;
 }
 
 /* caja sidebar */
