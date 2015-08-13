@@ -1202,6 +1202,14 @@ GtkFileChooserButton .button {
     padding: 3px;
 }
 
+.button.image-button.circular-button {
+   border-image: none;
+   border-width: 1px;
+   border-style: solid;
+   border-color: @button_border;
+   padding: 2px;
+}
+
 .button GtkImage,
 .button GtkImage:hover,
 .button GtkImage:checked,
