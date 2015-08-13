@@ -1143,8 +1143,13 @@ GtkComboBox .separator {
     -GtkWidget-vertical-separator: 0;
 }
 
+/* since gtk+-3.18, avoid flat text background */
+    GtkComboBox .button GtkCellView {
+    background-color: transparent;
+}
+
 GtkComboBox .button {
-	padding: 3px;
+	padding: 0px;
 }
 
 GtkComboBox.combobox-entry .button {
