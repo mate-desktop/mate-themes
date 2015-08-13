@@ -2322,3 +2322,18 @@ GtkCalendar.header .app-notification.frame .titlebutton.button {
     padding: 0px;
 }
 
+/* hyperlinks */
+/* ie. yelp */
+*:link,
+*:visited {
+  color: @link_color;
+}
+
+GtkLinkButton.button,
+GtkLinkButton.button:hover,
+GtkLinkButton.button:active,
+GtkLinkButton.button:active:hover {
+    transition: all 400ms ease-in;
+    text-shadow: none;
+}
+
