@@ -518,3 +518,13 @@ ShellWindow GtkScrolledWindow .button.flat:hover {
 GtkDialog GtkScrolledWindow .view {
     background-color: shade(@base_color, 1.06)
 }
+
+/* atril and eom */
+EggToolbarEditor.vertical GtkScrolledWindow .frame {
+    background-color: shade(@base_color, 1.04);
+    border-color: @borders;
+    border-width: 1px;
+    border-radius: 0px;
+    border-style: solid;
+}
+
