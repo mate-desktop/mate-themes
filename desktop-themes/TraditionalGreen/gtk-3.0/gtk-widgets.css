@@ -951,7 +951,7 @@ GtkListBoxRow.button.list-row {
 	color: @theme_text_color;
 	background-color: @theme_base_color;
 	border-radius: 0px;
-	border: none;
+	border-style: none;
     padding: 2px;
 }
 
@@ -1761,6 +1761,58 @@ GtkCheckButton:selected:focus {
 .sidebar,
 .sidebar .view {
 	background-color: @sidebar_bg_color;
+}
+
+.sidebar .frame {
+    border-style: none;
+}
+
+/* dialog open */
+.sidebar.list,
+.sidebar.list .button {
+    background-color: @theme_base_color;
+}
+
+.sidebar-revealer .sidebar-button.image-button.button {
+    background-color: transparent;
+    background-image: none;
+    border-image:none;
+    box-shadow: none;
+}
+
+.sidebar.list .button .sidebar-label {
+    padding: 0px 8px;
+}
+
+.sidebar.list .button {
+    background-image: none;
+    border-style: none;
+    border-image:none;
+    border-radius: 0px;
+    padding: 3px 8px 3px 6px;
+}
+
+.sidebar.list .button:hover {
+	background-image: linear-gradient(to bottom,
+	                  shade(@button_active_gradient_a, 1.20),
+	                  shade(@button_active_gradient_b, 1.20) 3px,
+	                  shade(@button_active_gradient_c, 1.20) 4px,
+	                  shade(@button_active_gradient_d, 1.20) 50%,
+	                  shade(@button_active_gradient_e, 1.20) 50%,
+	                  shade(@button_active_gradient_f, 1.20));
+	background-color: transparent;
+}
+
+.sidebar.list .button:selected {
+    border-style: none;
+	color: @theme_selected_fg_color;
+	background-image: -gtk-gradient (linear,
+	                  left top,
+	                  left bottom,
+	                  from (@menubar_menuitem_hover_gradient_a),
+	                  color-stop (0.50, @menubar_menuitem_hover_gradient_b),
+	                  color-stop (0.50, @menubar_menuitem_hover_gradient_c),
+	                  to (@menubar_menuitem_hover_gradient_d));
 }
 
 .sidebar .radio,
