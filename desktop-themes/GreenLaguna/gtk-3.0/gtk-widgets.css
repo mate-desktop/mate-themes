@@ -475,6 +475,7 @@ GtkCalendar {
 }
 
 .frame {
+	background-color: shade(@base_color, 1.02);
 	color: lighter (@theme_fg_color);
 	border-style: solid;
 	border-width: 1px;
