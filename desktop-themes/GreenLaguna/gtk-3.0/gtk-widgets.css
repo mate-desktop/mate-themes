@@ -3466,6 +3466,17 @@ GtkPlacesSidebar.sidebar .view {
 	color: shade (@theme_selected_bg_color, 0.35);
 }
 
+GtkStackSidebar.sidebar GtkViewport.frame {
+	background-image: linear-gradient(to bottom,
+	                                  shade(@toolbar_gradient_base, 0.94),
+	                                  shade(@theme_bg_color, 1.0));
+	border-style: solid;
+	border-width: 0px 1px 0px 0px;
+	border-color: shade(@toolbar_gradient_base, 0.98);
+	border-radius: 2px 0px 0px 2px;
+	padding: 1px;
+}
+
 /****************
  * GtkActionBar *
  ****************/
