@@ -19,10 +19,38 @@ CajaWindow CajaInformationPanel .vertical {
 	color: @theme_fg_color;
 }
 
+/* moved eject button to left better for overlay scrollbars */
+CajaWindow CajaPlacesSidebar .view row {
+    padding: 0px 4px 0px 0px;
+}
+
+/* better for overlay scrollbars */
+CajaWindow FMTreeView .vertical.scrollbar.overlay-indicator,
+CajaWindow CajaNotesViewer .vertical.scrollbar.overlay-indicator,
+CajaWindow CajaPlacesSidebar .vertical.scrollbar.overlay-indicator,
+CajaWindow CajaEmblemSidebar .vertical.scrollbar.overlay-indicator,
+CajaWindow CajaHistorySidebar .vertical.scrollbar.overlay-indicator {
+	-GtkRange-slider-width: 13;
+}
+
 /* ComboBox views */
 CajaWindow .toolbar.horizontal GtkComboBox .button,
 CajaWindow .primary-toolbar.toolbar.horizontal GtkComboBox .button {
     padding: 4px 4px;
+}
+
+/* moved eject button to left better for overlay scrollbars */
+CajaWindow CajaPlacesSidebar .view row {
+    padding: 0px 4px 0px 0px;
+}
+
+/* better for overlay scrollbars */
+CajaWindow FMTreeView .vertical.scrollbar.overlay-indicator,
+CajaWindow CajaNotesViewer .vertical.scrollbar.overlay-indicator,
+CajaWindow CajaPlacesSidebar .vertical.scrollbar.overlay-indicator,
+CajaWindow CajaEmblemSidebar .vertical.scrollbar.overlay-indicator,
+CajaWindow CajaHistorySidebar .vertical.scrollbar.overlay-indicator {
+	-GtkRange-slider-width: 13;
 }
 
 .caja-desktop.caja-canvas-item {
