@@ -7,3 +7,175 @@ DConfDirView.view {
 DConfKeyView.view {
     background-color: shade(@base_color, 1.06)
 }
+
+/********
+ * Nemo *
+ ********/
+
+NemoView .view {
+	background-color: shade(@base_color, 1.04)
+}
+
+.nemo-inactive-pane .view {
+	background-color: shade(@theme_bg_color, 0.9);
+}
+
+.nemo-inactive-pane .notebook {
+	background-color: shade(@theme_bg_color, 0.9);
+}
+
+.nemo-inactive-pane .notebook tab.top:active {
+	background-image: linear-gradient(to bottom,
+	                                  shade(@theme_bg_color, 0.8),
+	                                  shade(@theme_bg_color, 0.86) 40%,
+	                                  shade(@theme_bg_color, 0.88) 70%,
+	                                  shade(@theme_bg_color, 0.9));
+}
+
+.nemo-inactive-pane .notebook .scrollbar.button:insensitive {
+	background-color: shade(@theme_bg_color, 0.9);
+	border-radius: 0px;
+}
+
+/* file renaming */
+NemoView .view .entry,
+NemoView .view .entry:focus {
+	background-image: none;
+	border-image: none;
+	border-style: solid;
+	border-radius: 1px;
+	border-color: @theme_selected_bg_color;
+}
+
+NemoWindow GtkScrolledWindow.frame {
+	border-style: none;
+}
+
+NemoView .expander column:sorted:selected,
+NemoView .expander column:sorted:selected:hover {
+	background-image: none;
+	background-color: transparent;
+}
+
+/* the small line between sidebar and view */
+NemoWindow GtkPaned.horizontal {
+    -GtkPaned-handle-size: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: shade(@toolbar_gradient_base, 0.98);
+    background-color: @theme_bg_color;
+}
+
+NemoWindow GtkStatusbar,
+NemoWindow .floating-bar {
+	font: italic;
+}
+
+NemoWindow NemoStatusBar.toolbar.horizontal {
+    border-style: solid;
+    border-width: 0 1px 0 0;
+    border-color: shade(@toolbar_gradient_base, 0.98);
+}
+
+NemoWindow .notebook {
+	/*border-color: shade(@notebook_border, 1.2);*/
+	border-radius: 0px 0px 5px 5px;
+}
+
+NemoWindow .notebook tab {
+	border-radius: 0px;
+}
+
+NemoWindow .notebook tab:active {
+	border-radius: 0px 0px 5px 5px;
+}
+
+NemoWindow .notebook tab.top {
+	/* top right-left bottom */
+	padding: 4px 8px 4px;
+}
+
+NemoWindow .notebook tab.top:active {
+	padding: 6px 8px 4px;
+}
+
+NemoWindow .notebook .view.rubberband,
+NemoWindow .notebook .rubberband {
+	background-color: alpha(@theme_selected_bg_color, 0.35);
+	border-radius: 6px;
+}
+
+NemoWindow .sidebar .view{
+	background-color: shade(@theme_bg_color, 1.02);
+	border-width: 0px;
+}
+
+NemoWindow .sidebar .frame {
+	border-width: 0px;
+}
+
+NemoPlacesSidebar .cell:selected,
+NemoPlacesSidebar *.cell:selected {
+	background-image:  linear-gradient(to bottom,
+	                                   shade(@theme_bg_color, 1.2),
+	                                   shade(@theme_bg_color, 0.63));
+	color: @theme_text_color;
+	border-radius: 2px;
+}
+
+NemoPlacesSidebar .cell:selected:focus,
+NemoPlacesSidebar *.cell:selected:focus {
+	color: @theme_text_color;
+	background-image:  linear-gradient(to top,
+	                                   shade(@theme_bg_color, 1.2),
+	                                   shade(@theme_bg_color, 0.63));
+}
+
+NemoPlacesSidebar .cell.image:selected,
+NemoPlacesSidebar .cell.image:selected:focus {
+	color: shade(@theme_selected_bg_color, 0.75);
+}
+
+NemoWindow .question,
+NemoWindow .info,
+NemoTrashBar.info,
+NemoXContentBar.info,
+NemoQueryEditor.info,
+NemoSearchBar.info {
+	background-color: @theme_bg_color;
+}
+
+NemoSearchBar.info {
+	border-radius: 0px;
+}
+
+NemoWindow NemoQueryEditor .toolbar,
+NemoWindow .notebook NemoQueryEditor .toolbar {
+	background-image: none;
+	background-color: transparent;
+	padding: 5px 7px;
+}
+
+.nemo-canvas-item {
+	border-radius: 5px;
+}
+
+.nemo-desktop.nemo-canvas-item {
+	color: @theme_bg_color;
+	text-shadow: 1px 1px black;
+}
+
+.nemo-desktop.nemo-canvas-item:active {
+	color: @theme_text_color;
+}
+
+.nemo-desktop.nemo-canvas-item:selected {
+	color: @theme_selected_fg_color;
+}
+
+.nemo-desktop.nemo-canvas-item:active,
+.nemo-desktop.nemo-canvas-item:prelight,
+.nemo-desktop.nemo-canvas-item:selected {
+	text-shadow: none;
+}
+
