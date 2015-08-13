@@ -241,7 +241,7 @@ GtkTreeView.separator,
     background-repeat: no-repeat;
     background-position: center top;
     background-color: transparent;
-    border: none;
+    border-style: none;
     box-shadow: none;
 }
 
@@ -255,7 +255,7 @@ GtkTreeView.separator,
     background-repeat: no-repeat;
     background-position: center top;
     background-color: transparent;
-    border: none;
+    border-style: none;
     box-shadow: none;
 }
 
@@ -274,7 +274,7 @@ GtkTreeView.separator,
     background-repeat: no-repeat;
     background-position: center bottom;
     background-color: transparent;
-    border: none;
+    border-style: none;
     box-shadow: none;
 }
 
@@ -288,7 +288,7 @@ GtkTreeView.separator,
     background-repeat: no-repeat;
     background-position: center bottom;
     background-color: transparent;
-    border: none;
+    border-style: none;
     box-shadow: none;
 }
 
@@ -307,7 +307,7 @@ GtkTreeView.separator,
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
-    border: none;
+    border-style: none;
     box-shadow: none;
 }
 
@@ -321,7 +321,7 @@ GtkTreeView.separator,
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
-    border: none;
+    border-style: none;
     box-shadow: none;
 }
 
@@ -340,7 +340,7 @@ GtkTreeView.separator,
     background-repeat: no-repeat;
     background-position: right center;
     background-color: transparent;
-    border: none;
+    border-style: none;
     box-shadow: none;
 }
 
@@ -354,7 +354,7 @@ GtkTreeView.separator,
     background-repeat: no-repeat;
     background-position: right center;
     background-color: transparent;
-    border: none;
+    border-style: none;
     box-shadow: none;
 }
 
@@ -2313,7 +2313,7 @@ GtkInfoBar:last-child,
  **************/
 
 .action-bar {
-	border: none;
+	border-style: none;
 	padding: 7px 7px 3px 7px;
 }
 
@@ -2387,7 +2387,7 @@ GtkHeaderBar .header-bar {
 .popover.osd .toolbar {
 	background-image: none;
 	background-color: transparent;
-	border: none;
+	border-style: none;
 	box-shadow: none;
 }
 .popover.osd .button {
@@ -2454,6 +2454,26 @@ GtkPopover .separator {
 	border: 0;
 }
 
+.popover .button.default.suggested-action.text-button {
+    background-color: transparent;
+    background-image: none;
+    text-shadow:none;
+    border-style: none;
+    border-image: none;
+    box-shadow: none;
+}
+
+.popover .button.default.suggested-action.text-button:hover {
+	color: @theme_selected_fg_color;
+	background-image:  linear-gradient(to bottom,
+	                                  shade(@theme_selected_bg_color, 1.1),
+	                                  shade(@theme_selected_bg_color, 0.8));
+	text-shadow: none;
+	border-color: @border_color;
+	border-width: 2px;
+	border-radius: 3px;
+}
+
 /************
  * GtkStack *
  ************/
@@ -2498,7 +2518,7 @@ GtkStack .linked.vertical .entry {
 .app-notification.frame {
     color: @theme_fg_color;
     padding: 10px;
-    border: none;
+    border-style: none;
     border-radius: 0 0 4px 4px;
     background-color: rgba(102, 153, 204, 0.7);
     background-image: linear-gradient(to bottom,
