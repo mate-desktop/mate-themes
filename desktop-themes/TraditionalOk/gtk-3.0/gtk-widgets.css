@@ -334,6 +334,10 @@ GtkColorEditor GtkColorSwatch.color-dark:hover {
  ****************/
 
 GtkProgressBar {
+	/* FIXME - Not working 3.14 */
+	-GtkProgressBar-min-horizontal-bar-height: 16;
+	-GtkProgressBar-min-vertical-bar-width: 16;
+	border-radius: 3px;
 	padding: 0 0 1px 0;
 }
 
