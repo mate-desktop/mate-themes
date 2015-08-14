@@ -166,11 +166,15 @@ CajaWindow .button.flat:hover {
 
 /**** Sidebar ***/
 
-/* FIXME has no effect*/
-/*CajaWindow .sidebar .view {
-	background-color: shade (@theme_bg_color, 1.08);
-	color: @theme_fg_color;
-}*/
+/* caja sidebar */
+CajaWindow FMTreeView .view,
+CajaWindow CajaNotesViewer .view,
+CajaWindow CajaPlacesSidebar .view,
+CajaWindow CajaHistorySidebar .view,
+CajaWindow CajaEmblemSidebar .frame,
+CajaWindow CajaInformationPanel .vertical {
+    background-color: shade (@theme_bg_color, 1.08);
+}
 
 CajaWindow .sidebar .frame {
 	border-width: 0px;
