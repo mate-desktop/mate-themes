@@ -1345,15 +1345,12 @@ GtkSwitch.trough:active:insensitive {
 
 /* horizontal tabs */
 
-.notebook tab.top,
-/* wtf, why this doesn't work? */
-.notebook tab.bottom {
-    padding: 6px 21px 4px;
+.notebook tab.top {
+    padding: 6px 3px 4px 12px;
 }
 
-/* workaround for wtf */
-.notebook tab.bottom:active {
-    padding: 3px 21px 7px 21px;
+.notebook tab.bottom {
+    padding: 4px 3px 6px 12px;
 }
 
 .notebook tab.top:active,
@@ -1404,7 +1401,7 @@ GtkSwitch.trough:active:insensitive {
 
 .notebook tab.left,
 .notebook tab.right {
-    padding: 5px 20px;
+    padding: 5px 3px 5px 12px;
 }
 
 .notebook tab.left:active,
