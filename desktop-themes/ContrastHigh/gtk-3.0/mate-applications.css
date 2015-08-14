@@ -9,7 +9,7 @@ CajaDesktopWindow FMDesktopIconView .view {
 }
 
 .caja-cluebar-label {
-    color: @theme_base_color;
+    color: @theme_selected_fg_color;
     font: bold;
 }
 
@@ -34,12 +34,12 @@ CajaWindow .pane-separator {
 }
 
 .caja-desktop.caja-canvas-item {
-    color: @theme_base_color;
+    color: @theme_selected_fg_color;
     text-shadow: 1px 1px black;
 }
 
 .caja-desktop.caja-canvas-item:selected {
-    color: @theme_base_color;
+    color: @theme_selected_fg_color;
 }
 
 .caja-desktop.caja-canvas-item:backdrop {
@@ -96,8 +96,8 @@ PanelMenuBar.menubar .menu .menuitem {
 
 .mate-panel-menu-bar .menuitem:hover,
 MatePanelApplet > GtkMenuBar.menubar .menuitem:hover {
-    color: @theme_base_color;
-    background-color: @theme_active_color;
+    color: @theme_selected_fg_color;
+    background-color: @theme_selected_bg_color;
 }
 
 .mate-panel-menu-bar .menuitem *:hover,
@@ -123,8 +123,8 @@ MatePanelApplet > GtkMenuBar.menubar .menu .menuitem {
 
 .mate-panel-menu-bar .menu .menuitem:hover,
 MatePanelApplet > GtkMenuBar.menubar .menu .menuitem:hover {
-    color: @theme_base_color;
-    background-color: @theme_active_color;
+    color: @theme_selected_fg_color;
+    background-color: @theme_selected_bg_color;
 }
 
 /* desktop-applet, clockapplet, drivemount, character-map,
@@ -146,7 +146,7 @@ MatePanelApplet .button:active:hover,
 MatePanelApplet .button:active {
     border-image: none;
     background-image: none;
-    background-color: @theme_active_color;
+    background-color: @theme_selected_bg_color;
     border-width: 0;
     border-radius: 0;
 }
@@ -156,20 +156,20 @@ MatePanelApplet .button:hover {
     background-image: none;
     background-color: @theme_fg_color;
     border-color: @theme_fg_color;
-    color: @theme_base_color;
+    color: @theme_selected_fg_color;
     border-width: 0;
     border-radius: 0;
 }
 
 MatePanelApplet *:hover {
-    color: @theme_base_color;
+    color: @theme_selected_fg_color;
 }
 
 MatePanelApplet *:checked,
 MatePanelApplet *:hover:checked,
 MatePanelApplet *:active,
 MatePanelApplet *:hover:active {
-    color: @theme_base_color;
+    color: @theme_selected_fg_color;
     text-shadow: none;
 }
 
@@ -191,7 +191,7 @@ WnckTasklist .button:active:hover,
 WnckTasklist .button:active {
     border-image: none;
     background-image: none;
-    background-color: @theme_active_color;
+    background-color: @theme_selected_bg_color;
     border-width: 0;
     border-radius: 0;
 }
@@ -201,7 +201,7 @@ WnckTasklist .button:hover {
     background-image: none;
     background-color: @theme_fg_color;
     border-color: @theme_fg_color;
-    color: @theme_base_color;
+    color: @theme_selected_fg_color;
     border-width: 0;
     border-radius: 0;
 }
@@ -222,8 +222,8 @@ WnckPager {
 /* prelight of WnckPager */
 WnckPager:hover {
     background-image: linear-gradient(to bottom,
-                                      shade (@theme_active_color, 2.86),
-                                      shade (@theme_active_color, 1.0));
+                                      shade (@theme_selected_bg_color, 2.86),
+                                      shade (@theme_selected_bg_color, 1.0));
     background-color: transparent;
 }
 
@@ -260,7 +260,7 @@ TerminalWindow .entry {
 /* pluma line numbers */
 PlumaView {
     background-color: @theme_slider_bg;
-    color: @theme_base_color;
+    color: @theme_selected_fg_color;
 }
 
 PlumaWindow GtkStatusbar .frame,
@@ -291,7 +291,7 @@ ShellWindow .button.flat {
 ShellWindow GtkScrolledWindow .button.flat:hover {
     background-color: @theme_fg_color;
     border-color: @theme_fg_color;
-    color: @theme_base_color;
+    color: @theme_selected_fg_color;
     border-radius: 12px;
 }
 

@@ -1,8 +1,11 @@
 @define-color theme_base_color #fff;
 @define-color theme_bg_color @theme_base_color;
 @define-color theme_fg_color #000;
-@define-color theme_active_color #555753;
-@define-color theme_border_color @theme_active_color;
+@define-color theme_selected_bg_color #555753;
+@define-color theme_selected_fg_color @theme_base_color;
+
+@define-color theme_border_color @theme_selected_bg_color;
+@define-color borders_edge #fff;
 
 @define-color theme_highlight_color #3465a4;
 @define-color theme_highlight_alt #204a87;
@@ -16,6 +19,7 @@
 @define-color theme_insensitive_border #babdb6;
 
 @define-color theme_slider_bg #6f706d;
+@define-color scale_progress_fill @theme_selected_bg_color;
 
 @define-color theme_button_bg #eeeeec;
 @define-color theme_button_fg #2e3436;
@@ -27,27 +31,27 @@
 @define-color theme_button_insensitive_active_bg #cccdcc;
 @define-color theme_button_insensitive_active_fg @theme_base_color;
 @define-color theme_button_insensitive_active_border @theme_button_insensitive_active_bg;
-@define-color theme_button_linked_border @theme_active_color;
+@define-color theme_button_linked_border @theme_selected_bg_color;
 @define-color theme_button_linked_insensitive_bg @theme_button_insensitive_bg;
 @define-color theme_button_linked_insensitive_fg @theme_button_insensitive_fg;
 
 @define-color theme_entry_bg @theme_base_color;
 
 @define-color theme_notebook_bg @theme_base_color;
-@define-color theme_notebook_border @theme_active_color;
+@define-color theme_notebook_border @theme_selected_bg_color;
 
-@define-color theme_scale_trough_bg @theme_active_color;
+@define-color theme_scale_trough_bg @theme_selected_bg_color;
 @define-color theme_scale_trough_insensitive_bg @theme_button_insensitive_active_bg;
 
-@define-color theme_switch_slider_bg @theme_active_color;
-@define-color theme_switch_slider_border @theme_active_color;
+@define-color theme_switch_slider_bg @theme_selected_bg_color;
+@define-color theme_switch_slider_border @theme_selected_bg_color;
 @define-color theme_switch_slider_active_bg @theme_base_color;
 @define-color theme_switch_slider_insensitive_bg @theme_trough_insensitive_fg;
 @define-color theme_switch_slider_insensitive_border @theme_trough_insensitive_fg;
 @define-color theme_switch_slider_active_insensitive_bg @theme_base_color;
 
 @define-color theme_trough_bg @theme_button_bg;
-@define-color theme_trough_fg @theme_active_color;
+@define-color theme_trough_fg @theme_selected_bg_color;
 @define-color theme_trough_insensitive_bg #fafaf9;
 @define-color theme_trough_insensitive_fg @theme_button_insensitive_active_bg;
 @define-color theme_trough_insensitive_border @theme_button_insensitive_active_bg;
@@ -63,6 +67,17 @@
 @define-color theme_view_bg @theme_base_color;
 
 @define-color theme_cursor_color @theme_fg_color;
+
+/*colors for the backdrop state, derived from the main colors. */
+@define-color backdrop_base_color @base_color;
+@define-color backdrop_bg_color @bg_color;
+@define-color backdrop_fg_color @fg_color;
+@define-color backdrop_insensitive_color @theme_insensitive_color;
+@define-color backdrop_borders_color mix(@theme_border_color, @bg_color, 0.9);
+
+/******
+ * WM *
+ ******/
 
 @define-color wm_border_color @theme_fg_color;
 @define-color wm_border_bakcdrop_color @theme_insensitive_border;
