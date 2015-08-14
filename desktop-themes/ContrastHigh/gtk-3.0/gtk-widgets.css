@@ -559,7 +559,7 @@ GtkProgressBar {
     border-style: solid;
     border-color: @theme_fg_color;
     border-width: 1px;
-
+    background-color: @theme_base_color;
     color: @theme_fg_color;
 }
 
