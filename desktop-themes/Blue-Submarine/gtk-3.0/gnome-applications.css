@@ -378,28 +378,8 @@ RBSource .toolbar .button *:active:hover {
 	text-shadow: 0 1px @theme_shadow_color;
 }
 
-NemoSearchBar.info {
-    background-image: -gtk-gradient (linear,
-                                     left top, left bottom,
-                                     from (shade(@toolbar_gradient_base, 0.89)),
-                                     color-stop (0.20, shade(@toolbar_gradient_base, 0.97)),
-                                     to   (shade(@toolbar_gradient_base, 1.01)));
-    border-radius: 0px;
-    border-width: 0px 0px 1px 0px;
-    border-style: solid;
-    border-color: alpha(#000, 0.00) @toolbar_gradient_base shade(@toolbar_gradient_base, 0.75);
-    box-shadow: inset  0px  1px alpha(#fff, 0.06),
-                inset  1px  0px alpha(#fff, 0.06),
-                inset -1px  0px alpha(#fff, 0.06),
-                inset  0px -1px alpha(#fff, 0.06);
-    color: @toolbar_fg_color;
-}
-
 .info,
 .question,
-NemoTrashBar.info,
-NemoXContentBar.info,
-NemoQueryEditor.info,
 NautilusFloatingBar,
 NautilusTrashBar.info,
 NautilusTrashBar,
@@ -420,44 +400,21 @@ NautilusQueryEditor.info {
                 inset  0px -1px alpha(#fff, 0.06);
 }
 
-NemoSearchBar .entry {
-    box-shadow: inset  0px  3px alpha(#000, 0.03),
-				inset  0px  2px alpha(#000, 0.05),
-                inset  2px  0px alpha(#000, 0.04),
-                inset -2px  0px alpha(#000, 0.04),
-                inset  0px -2px alpha(#000, 0.03),
-				inset  0px  1px shade(@toolbar_gradient_base, 0.70),
-                inset  1px  0px shade(@toolbar_gradient_base, 0.80),
-                inset -1px  0px shade(@toolbar_gradient_base, 0.80),
-                inset  0px -1px shade(@toolbar_gradient_base, 0.90);
-}
-
-NemoSearchBar .entry:focused {
-}
-
-NemoSearchBar .entry,
-NemoSearchBar .entry:focused,
 NautilusSearchBar .entry,
 NautilusSearchBar .entry:focused {
     -GtkEntry-inner-border: 1;
 }
 
-NemoSearchBar .entry.image,
 NautilusSearchBar .entry.image {
     color: shade(@nautilus_cluebar_color, 0.60);
 }
 
-NemoSearchBar GtkLabel {
-    color: @toolbar_fg_color;
-   	text-shadow: 0 1px @toolbar_shadow_color;
-}
 NautilusTrashBar GtkLabel {
     color: shade(@theme_fg_color, 1.00);
 	text-shadow: 0 1px @theme_shadow_color;
 }
 
 .info
-.nemo-cluebar-label,
 .nautilus-cluebar-label {
     font: bold;
     color: shade(@theme_fg_color, 1.00);
@@ -466,8 +423,6 @@ NautilusTrashBar GtkLabel {
 
 .question .button,
 .question .button:hover,
-NemoTrashBar .button,
-NemoTrashBar .button:hover,
 NautilusTrashBar .button,
 NautilusTrashBar .button:hover {
 	background-image: -gtk-gradient (linear,
@@ -490,8 +445,6 @@ NautilusTrashBar .button:hover {
 
 .question .button:active,
 .question .button:active:hover,
-NemoTrashBar .button:active,
-NemoTrashBar .button:active:hover,
 NautilusTrashBar .button:active,
 NautilusTrashBar .button:active:hover {
 /* .button:active:hover */
@@ -518,8 +471,6 @@ NautilusTrashBar .button:active:hover {
 
 .question .button *:active,
 .question .button *:active:hover,
-NemoTrashBar .button *:active,
-NemoTrashBar .button *:active:hover,
 NautilusTrashBar .button *:active,
 NautilusTrashBar .button *:active:hover {
     color: shade(@theme_text_color, 1.00);
@@ -527,7 +478,6 @@ NautilusTrashBar .button *:active:hover {
 }
 
 .question .button:insensitive,
-NemoTrashBar .button:insensitive,
 NautilusTrashBar .button:insensitive {
 /* .button:active:hover */
     background-image: -gtk-gradient (linear,
@@ -543,14 +493,12 @@ NautilusTrashBar .button:insensitive {
 }
 
 .question .button *:insensitive,
-NemoTrashBar .button *:insensitive,
 NautilusTrashBar .button *:insensitive {
 	color: mix(@nautilus_cluebar_color, @theme_fg_color, 0.50);
 	text-shadow: none;
 }
 
-NautilusWindow .sidebar .scrollbar,
-NemoWindow .sidebar .scrollbar {
+NautilusWindow .sidebar .scrollbar {
 	background-image: none;
 	border-style: solid;
     -GtkRange-stepper-size: 16;
@@ -568,9 +516,7 @@ NemoWindow .sidebar .scrollbar {
 }
 
 NautilusWindow .sidebar .scrollbar.trough,
-NautilusWindow .sidebar .scrollbar.trough.vertical,
-NemoWindow .sidebar .scrollbar.trough,
-NemoWindow .sidebar .scrollbar.trough.vertical {
+NautilusWindow .sidebar .scrollbar.trough.vertical {
 	background-image: -gtk-gradient (linear, left top, left bottom,
 		from (shade (@theme_bg_color, 0.98)),
 		to (shade (@theme_bg_color, 1.06)));
@@ -582,168 +528,15 @@ NemoWindow .sidebar .scrollbar.trough.vertical {
 }
 
 /* the small line between sidebar and view */
-NautilusWindow,
-NemoWindow * {
+NautilusWindow * {
 	-GtkPaned-handle-size: 0;
 }
 
-NautilusWindow .sidebar .frame,
-NemoWindow .sidebar .frame {
+NautilusWindow .sidebar .frame {
     border-width: 0px;
     border-style: none;
     border-top-width: 0;
     border-bottom-width: 0;	
-}
-
-/* disabled, looks uggly
-NautilusWindow > GtkTable > .pane-separator,
-NautilusWindow .pane-separator,
-NemoWindow > GtkTable > .pane-separator,
-NemoWindow .pane-separator {
-    background-color: @sidebar_background;
-    background-image: -gtk-gradient (linear,
-                                     left top, right top,
-                                     from (@sidebar_background),
-                                     color-stop(0.50, @sidebar_background),
-                                     to   (shade(@theme_bg_color, 0.60)));
-    border-style: solid;
-    border-width: 0px;
-    border-color: @sidebar_background;
-    border-image: none;
-}*/
-
-NemoSearchBar,
-NemoSearchBar *,
-NemoWindow .primary-toolbar.toolbar .button * {
-	padding: 0px;
-}
-
-NemoSearchBar .entry {
-	padding: 2px 8px;
-    border-width: 0px;
-    border-radius: 4px;
-}
-
-NemoWindow .primary-toolbar.toolbar .entry {
-    padding: 3px 8px;
-}
-
-NemoWindow .primary-toolbar.toolbar .button,
-NemoWindow .primary-toolbar.toolbar .button:active,
-NemoWindow .primary-toolbar.toolbar .button:hover,
-NemoWindow .primary-toolbar.toolbar .button:active:hover {
-    padding: 0px 4px;
-    border-image: none;
-    border-width: 1px;
-    border-radius: 5px;
-    border-color: transparent;
-}
-
-NemoWindow .primary-toolbar.toolbar NemoPathbarButton {
-	padding: 0px 0px 0px 3px;
-    border-image: 	none;
-	border-style: solid;
-    border-radius: 0px;
-    border-width: 0px;
-	border-color: transparent;
-
-}
-
-NemoWindow .primary-toolbar.toolbar NemoPathbarButton {
-    background-image: -gtk-gradient (linear,
-						left top, left bottom,
-						from (@button_raised_gradient_color_a),
-						to   (@button_raised_gradient_color_b));
-    border-width: 0px;
-  	border-color: shade(@theme_button_border_dark, 1.00); 
-	/* inset */
-    box-shadow: inset  0px  1px alpha(#fff, 0.09),
-                inset  1px  0px alpha(#fff, 0.06),
-                inset -1px  0px alpha(#fff, 0.06),
-                inset  0px -1px alpha(#fff, 0.06);
-	color: shade(@theme_fg_dark_color, 0.90);
-}
-
-NemoWindow .primary-toolbar.toolbar NemoPathbarButton * {
-	color: shade(@theme_text_dark_color, 1.00);
-	text-shadow: 0px 1px @theme_shadow_dark_color;
-}
-
-NemoWindow .primary-toolbar.toolbar NemoPathbarButton *:hover {
-	color: shade(@theme_text_dark_color, 1.00);
-}
-
-NemoWindow .primary-toolbar.toolbar NemoPathbarButton:active {
-    background-image: -gtk-gradient (linear,
-				     left top, left bottom,
-                     from (shade(@button_raised_gradient_color_b, 0.90)),
-                     to   (shade(@button_raised_gradient_color_a, 0.80)));
-	border-image: 			none;
-    border-color: 		shade(@theme_button_border_dark, 0.92);
-    box-shadow: inset  0px  3px alpha(#000, 0.01),
-				inset  0px  2px alpha(#000, 0.03),
-				inset  0px  1px alpha(#000, 0.04),
-                inset  2px  0px alpha(#000, 0.02),
-                inset  1px  0px alpha(#000, 0.04),
-                inset -2px  0px alpha(#000, 0.02),
-                inset -1px  0px alpha(#000, 0.04),
-                inset  0px -1px alpha(#000, 0.03);
-}
-
-NemoWindow .primary-toolbar.toolbar NemoPathbarButton *:active,
-NemoWindow .primary-toolbar.toolbar NemoPathbarButton *:active:hover {
-    font: bold;
-    color: shade(@theme_text_dark_color, 1.00);
-    text-shadow: 1px 1px @theme_shadow_dark_color;
-}
-
-NemoWindow .primary-toolbar .toolbar {
-    background-color: @theme_bg_color;
-}
-
-/* statusbar */
-NemoWindow .toolbar {
-    background-image: none;
-    background-color: @theme_bg_color;
-    border-top-width: 0;
-    border-bottom-width: 0;
-    box-shadow: none;
-}
-
-/* small buttons statusbar nemo */
-NemoWindow .toolbar .button GtkImage:active,
-NemoWindow .toolbar .button GtkImage:active:hover,
-NemoWindow .toolbar .button GtkImage:hover,
-NemoWindow .toolbar .button GtkImage {
-    color: @theme_fg_color;
-}
-
-NemoWindow .toolbar .button:hover,
-NemoWindow .toolbar .button:hover,
-NemoWindow .toolbar .button:active,
-NemoWindow .toolbar .button:active:hover {
-    background-image: -gtk-gradient (linear,
-                                     left top, left bottom,
-                                     from (shade(@button_gradient1, 1.03)),
-                                     color-stop (0.48, shade(@button_gradient2, 1.03)),
-                                     color-stop (0.52, shade(@button_gradient3, 1.03)),
-                                     to   (shade(@button_gradient4, 1.01)));
-    border-top-color: 		alpha(@focused_entry_outer, 0.65);
-    border-right-color: 	alpha(@focused_entry_outer, 0.75);
-    border-left-color: 		alpha(@focused_entry_outer, 0.75);
-    border-bottom-color: 	alpha(@focused_entry_outer, 0.80);
-    box-shadow: inset  0px  2px alpha(#fff, 0.11),
-                inset  2px  0px alpha(#fff, 0.09),
-                inset -2px  0px alpha(#fff, 0.09),
-                inset  0px -2px alpha(#fff, 0.07),
-				inset  0px  1px shade(@selected_bg_color, 1.0),
-                inset  1px  0px shade(@selected_bg_color, 1.0),
-                inset -1px  0px shade(@selected_bg_color, 1.0),
-                inset  0px -1px shade(@selected_bg_color, 1.0);
-}
-
-NemoWindow .primary-toolbar.toolbar .button GtkImage {
-    color: @theme_fg_dark_color;
 }
 
 /* frame icons nautilus view */
@@ -759,7 +552,6 @@ NautilusView.frame {
                                      to   (shade(@theme_base_color, 1.00)));
 }
 
-NemoWindow .notebook,
 NautilusWindow .notebook {
 	-GtkNotebook-initial-gap: 0;
     background-color: @theme_base_color;
@@ -779,7 +571,6 @@ NautilusWindow .notebook {
     box-shadow: none;
 }
 
-NemoWindow .notebook tab,
 NautilusWindow .notebook tab {
     border-width: 0px 1px;
     border-style: solid;
@@ -795,7 +586,6 @@ NautilusWindow .notebook tab {
                 inset  0px -1px shade(@notebook_border, 1.00);
 }
 
-NemoWindow .notebook tab:active,
 NautilusWindow .notebook tab:active {    
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
@@ -814,36 +604,25 @@ NautilusWindow .notebook tab.top {
     padding: 1px 6px;
 }
 
-NemoWindow .notebook tab.top {
-    padding: 0px 6px;
-	border-radius: 0px;
-}
-
 NautilusWindow .notebook tab:first-child,
-NautilusWindow .notebook tab:first-child:active,
-NemoWindow .notebook tab:first-child,
-NemoWindow .notebook tab:first-child:active {
+NautilusWindow .notebook tab:first-child:active {
 	border-width: 0px 1px 0px 0px;
 	border-radius: 0px;
 }
 
 NautilusWindow .notebook tab:last-child,
-NautilusWindow .notebook tab:last-child:active,
-NemoWindow .notebook tab:last-child,
-NemoWindow .notebook tab:last-child:active {
+NautilusWindow .notebook tab:last-child:active {
 	border-width: 0px 0px 0px 1px;
 	border-radius: 0px;
 }
 
-NautilusWindow .notebook tab GtkLabel,
-NemoWindow .notebook tab GtkLabel {
+NautilusWindow .notebook tab GtkLabel {
 	padding: 0px;
 	color: @theme_text_color; 
 	text-shadow: 0px 1px @theme_shadow_color;
 }
 
-NautilusWindow .notebook tab .button GtkImage ,
-NemoWindow .notebook tab .button GtkImage {
+NautilusWindow .notebook tab .button GtkImage {
     border-radius: 3px;
     color: mix(@theme_fg_color, @sidebar_background, 0.30);
     border-style: solid;
@@ -853,16 +632,13 @@ NemoWindow .notebook tab .button GtkImage {
     icon-shadow: 1px 1px @theme_shadow_color;
 }
 
-NautilusWindow .notebook tab .button GtkImage:hover,
-NemoWindow .notebook tab .button GtkImage:hover {
+NautilusWindow .notebook tab .button GtkImage:hover {
     color: @theme_fg_color; 
     border-color: alpha(black, 0.1); 
 }
 
 NautilusWindow .notebook tab  .button GtkImage:active,
-NautilusWindow .notebook tab  .button GtkImage:active:hover,
-NemoWindow .notebook tab .button GtkImage:active,
-NemoWindow .notebook tab .button GtkImage:active:hover {
+NautilusWindow .notebook tab  .button GtkImage:active:hover {
     background-color: alpha(black, 0.15); 
     color:  		  shade(@theme_fg_color, 1.00); 
     icon-shadow: 0px 1px @theme_shadow_color;
@@ -881,32 +657,25 @@ CheeseThumbView /* Cheese */
 }
 
 /* nautilus */
-.nemo-canvas-item, 
 .nautilus-canvas-item {
     border-radius: 3px;
 }
 
 /* desktop mode */
-.nemo-desktop.nemo-canvas-item,
 .nautilus-desktop.nautilus-canvas-item {
     color: white;
     text-shadow: 1px 1px black;
 }
 
-.nemo-desktop.nautilus-canvas-item:active,
-.nautilus-desktop.nemo-canvas-item:active {
+.nautilus-desktop.nautilus-canvas-item:active {
     background-image: none;
     color: @theme_text_color;
 }
 
-.nemo-desktop.nemo-canvas-item:selected,
 .nautilus-desktop.nautilus-canvas-item:selected {
     color: @theme_selected_fg_color;
 }
 
-.nemo-desktop.nemo-canvas-item:active,
-.nemo-desktop.nemo-canvas-item:prelight,
-.nemo-desktop.nemo-canvas-item:selected,
 .nautilus-desktop.nautilus-canvas-item:active,
 .nautilus-desktop.nautilus-canvas-item:prelight,
 .nautilus-desktop.nautilus-canvas-item:selected {

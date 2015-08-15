@@ -7,6 +7,7 @@ theme_DATA = \
 	gtk-widgets.css \
 	mate-applications.css \
 	menu.css \
+	other-applications.css \
 	scrollbar.css \
 	settings.ini \
 	sidebar.css \
