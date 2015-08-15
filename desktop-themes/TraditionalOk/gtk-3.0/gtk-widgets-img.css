@@ -582,6 +582,15 @@ GtkComboBox.combobox-entry .button:insensitive,
 	border-color: transparent;
 }
 
+.menuitem.button.flat,
+.button.flat,
+.button.flat:insensitive,
+GtkListBoxRow.button.list-row,
+GtkListBoxRow.button.list-row:hover {
+    border-image: none;
+    background-image: none;
+}
+
 /* focused element borders */
 .entry:focus,
 GtkComboBox.combobox-entry .entry:focus,
