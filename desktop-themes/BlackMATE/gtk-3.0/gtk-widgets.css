@@ -3438,3 +3438,24 @@ GtkActionBar .frame.action-bar .horizontal.stack-switcher.linked .button.image-b
     padding: 4px 2px;
 }
 
+/************
+ * GtkStack *
+ ************/
+
+GtkStackSidebar.sidebar GtkViewport.frame {
+    background-image: linear-gradient(to bottom,
+                                                             @toolbar_gradient_base,
+                                                             @toolbar_gradient_bottom);
+   border-width: 0px;
+   border-radius: 3px 0px 0px 3px;
+   padding: 0px;
+}
+
+.frame .horizontal GtkStack {
+    background-color: @less_dark_color;
+    border-radius: 0px 3px 3px 0px;
+    background-image: linear-gradient(to bottom,
+                                                             @toolbar_gradient_base,
+                                                             @toolbar_gradient_bottom);
+}
+
