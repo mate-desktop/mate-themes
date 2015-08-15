@@ -2787,6 +2787,26 @@ GtkMessageDialog {
 	padding: 0;
 }
 
+/* ie. mate-keyboard-properties option window */
+GtkDialog GtkScrolledWindow.frame {
+    border-color: @borders;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2px;
+}
+
+GtkDialog GtkScrolledWindow.frame GtkViewport .vertical {
+    background-color: shade (@theme_bg_color, 1.07);
+}
+
+GtkDialog GtkScrolledWindow.frame GtkViewport .vertical GtkExpander .vertical {
+    background-color: @theme_base_color;
+    border-radius: 3px;
+    border-color: @borders;
+    border-style: solid;
+    border-width: 1px;
+}
+
 /* middle buttons */
 .dialog-action-area.linked .button,
 .dialog-action-area.linked .button:active,

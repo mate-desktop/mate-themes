@@ -2574,3 +2574,27 @@ GtkLinkButton.button:active:hover {
     text-shadow: none;
 }
 
+/******************
+ * Dialog Windows *
+ ******************/
+
+/* ie. mate-keyboard-properties option window */
+GtkDialog GtkScrolledWindow.frame {
+    border-color: @border_color;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2px;
+}
+
+GtkDialog GtkScrolledWindow.frame GtkViewport .vertical {
+    background-color: shade (@theme_bg_color, 1.04);
+}
+
+GtkDialog GtkScrolledWindow.frame GtkViewport .vertical GtkExpander .vertical {
+    background-color: @theme_base_color;
+    border-radius: 3px;
+    border-color: @border_color;
+    border-style: solid;
+    border-width: 1px;
+}
+
