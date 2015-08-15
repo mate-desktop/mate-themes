@@ -2626,6 +2626,10 @@ GtkSwitch.slider:backdrop:insensitive > GtkLabel {
     border-color: shade(@button_border, 1.0);
 }
 
+.list-row.button:selected {
+    color:  @theme_fg_color;
+}
+
 GtkStatusbar {
 	padding: 5px;
 	color: @theme_fg_color;
