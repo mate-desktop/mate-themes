@@ -268,3 +268,8 @@ NemoQueryEditor .toolbar .entry:focus {
 	text-shadow: none;
 }
 
+/* redhat's abrt, hopefully this styles not anything else, damn python app! */
+.background .vertical GtkPaned.horizontal .vertical GtkNotebook GtkGrid.horizontal GtkGrid.horizontal {
+   background-color: @less_dark_color;
+   border-radius: 2px;
+}
