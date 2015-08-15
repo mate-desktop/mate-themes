@@ -2614,6 +2614,30 @@ GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:last
     padding: 6px 5px;
 }
 
+/******************
+ * Dialog Windows *
+ ******************/
+
+/* ie. mate-keyboard-properties option window */
+GtkDialog GtkScrolledWindow.frame GtkViewport .vertical {
+    background-color: @theme_view_bg;
+}
+
+GtkDialog GtkScrolledWindow.frame {
+    border-color: @theme_border_color;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 3px;
+}
+
+GtkDialog GtkScrolledWindow.frame GtkViewport .vertical GtkExpander .vertical {
+    background-color: shade (@theme_bg_color, 1.00);
+    border-radius: 5px;
+    border-color: @theme_border_color;
+    border-style: solid;
+    border-width: 2px;
+}
+
 /****************
  * App-specific *
  ****************/
