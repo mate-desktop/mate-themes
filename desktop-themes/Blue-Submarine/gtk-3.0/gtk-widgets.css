@@ -2214,10 +2214,9 @@ GtkHandleBox,
 .primary-toolbar .toolbar .button:hover,
 .primary-toolbar.toolbar .button:hover {
     background-image: -gtk-gradient (linear,
-                     left top, left bottom,
-                     from (alpha (shade (@theme_bg_dark_color, 1.00), 0.0)),
-                     color-stop (0.50, shade (@theme_bg_dark_color, 0.83) ),
-                     to (alpha (shade (@theme_bg_dark_color, 0.91), 0.0)));
+                                     left top, left bottom,
+                                     from (shade(@menu_bg_dark_color, 2.03)),
+                                     to   (shade(@menu_bg_dark_color, 1.17)));
     border-width: 1px;
     border-radius: 5px;
     border-style: solid;
@@ -2261,8 +2260,8 @@ GtkHandleBox,
 .primary-toolbar.toolbar .button:checked:checked {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
-                                     from (shade(@button_raised_gradient_color_b, 0.90)),
-                                     to   (shade(@button_raised_gradient_color_a, 0.80)));
+                                     from (shade(@menu_bg_dark_color, 2.03)),
+                                     to   (shade(@menu_bg_dark_color, 1.17)));
     border-image: none;
     border-color: transparent;
     border-width: 1px;
@@ -3420,8 +3419,8 @@ GtkCheckButton.text-button, GtkRadioButton.text-button {
     border-radius: 5px;
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
-                                     from (shade(@button_raised_gradient_color_b, 0.90)),
-                                     to (shade(@button_raised_gradient_color_a, 0.80)));
+                                     from (shade(@menu_bg_dark_color, 2.03)),
+                                     to   (shade(@menu_bg_dark_color, 1.17)));
     border-top-color: shade(@button_raised_gradient_color_a, 0.50);
     border-bottom-color: shade(@button_raised_gradient_color_a, 0.50);
     border-right-color: shade(@button_raised_gradient_color_a, 0.50);
@@ -4910,21 +4909,10 @@ GtkOverlay.osd {
 }
 
 .popover.scale-popup .flat.button.image-button {
-    background-image: none;
-    border-radius: 4px;
-    box-shadow: inset  0px  2px alpha(#fff, 0.11),
-                inset  2px  0px alpha(#fff, 0.09),
-                inset -2px  0px alpha(#fff, 0.09),
-                inset  0px -2px alpha(#fff, 0.07),
-                inset  0px  1px alpha(shade(@button_border, 1.00), 0.70),
-                inset  1px  0px alpha(shade(@button_border, 0.94), 0.80),
-                inset -1px  0px alpha(shade(@button_border, 0.94), 0.80),
-                inset  0px -1px alpha(shade(@button_border, 0.88), 0.90);
-}
-
-.popover.scale-popup .flat.button.image-button:hover {
-    -gtk-image-effect: highlight;
-    background-image: none;
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@menu_bg_dark_color, 2.03)),
+                                     to   (shade(@menu_bg_dark_color, 1.17)));
     border-radius: 4px;
     box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
                 inset  1px  0px shade (@theme_selected_bg_color, 1.3),
@@ -4932,8 +4920,33 @@ GtkOverlay.osd {
                 inset  0px -1px shade (@theme_selected_bg_color, 1.3);
 }
 
+.popover.scale-popup .flat.button.image-button:hover {
+    -gtk-image-effect: highlight;
+}
+
 .popover .list {
     background-color: @theme_base_color;
+}
+
+/* more/less volume button */
+.popover .image-button:hover {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@menu_bg_dark_color, 2.03)),
+                                     to   (shade(@menu_bg_dark_color, 1.17)));
+    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
+                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+}
+
+.popover .image-button:insensitive {
+    background-image: none;
+    background-color: transparent;
+    box-shadow: inset  0px  1px @insensitive_border_color,
+                inset  1px  0px @insensitive_border_color,
+                inset -1px  0px @insensitive_border_color,
+                inset  0px -1px @insensitive_border_color;
 }
 
 GtkModelButton.button,
@@ -5018,13 +5031,31 @@ GtkModelButton.button:selected,
 .linked GtkModelButton.button:hover:last-child,
 .linked GtkModelButton.button:active:hover:last-child,
 .linked GtkModelButton.button:checked:hover:last-child {
-    background-image: none;
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@menu_bg_dark_color, 2.03)),
+                                     to   (shade(@menu_bg_dark_color, 1.17)));
     background-color: shade (@theme_bg_dark_color, 1.2);
     color: shade (@theme_selected_bg_color, 1.6);
     text-shadow: none;
     border-width: 0;
     border-color: transparent;
     border-radius: 6px;
+    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
+                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+}
+
+.csd .popover .linked GtkModelButton.button:checked,
+.csd .popover .linked GtkModelButton.button:hover,
+.csd .popover .linked GtkModelButton.button:active:hover,
+.csd .popover .linked GtkModelButton.button:checked:hover {
+    color: @fg_dark_color;
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@menu_bg_dark_color, 2.03)),
+                                     to   (shade(@menu_bg_dark_color, 1.17)));
     box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
                 inset  1px  0px shade (@theme_selected_bg_color, 1.3),
                 inset -1px  0px shade (@theme_selected_bg_color, 1.3),
@@ -5150,9 +5181,9 @@ GtkModelButton.button:selected,
     border-image: none;
     border-radius: 5px;
     border-width: 1px;
-    border-color: @transparent;
+    border-color: transparent;
     background: none;
-    background-color: @transparent;
+    background-color: transparent;
 }
 
 .titlebar .button:hover,
@@ -5163,13 +5194,14 @@ GtkModelButton.button:selected,
 .titlebar .button:checked,
 .titlebar .button:checked:checked,
 .titlebar .titlebutton:checked:checked {
-    background-image: linear-gradient(to bottom,
-                                      @button_hover_gradient_color_a,
-                                      @button_hover_gradient_color_b);
-    background-color: @transparent;
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@menu_bg_dark_color, 2.03)),
+                                     to   (shade(@menu_bg_dark_color, 1.17)));
+    background-color: transparent;
     border-radius: 5px;
     border-width: 1px;
-    border-color: @transparent;
+    border-color: transparent;
     box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
                 inset  1px  0px shade (@theme_selected_bg_color, 1.3),
                 inset -1px  0px shade (@theme_selected_bg_color, 1.3),
@@ -5253,6 +5285,10 @@ GtkModelButton.button:selected,
 .titlebar .linked .button:checked:hover,
 .titlebar .button.raised.linked:checked:hover,
 .titlebar .raised.linked .button:checked:hover {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@menu_bg_dark_color, 2.03)),
+                                     to   (shade(@menu_bg_dark_color, 1.17)));
     padding: 5px 5px 6px 5px;
     box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
                 inset  1px  0px shade (@theme_selected_bg_color, 1.3),
@@ -5310,6 +5346,10 @@ GtkModelButton.button:selected,
 .titlebar .linked .button:checked:hover:first-child,
 .titlebar .button.raised.linked:checked:hover:first-child,
 .titlebar .raised.linked .button:checked:hover:first-child {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@menu_bg_dark_color, 2.03)),
+                                     to   (shade(@menu_bg_dark_color, 1.17)));
     padding: 5px 5px 6px 5px;
     box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
                 inset  1px  0px shade (@theme_selected_bg_color, 1.3),
@@ -5367,6 +5407,10 @@ GtkModelButton.button:selected,
 .titlebar .linked .button:checked:hover:last-child,
 .titlebar .button.raised.linked:checked:hover:last-child,
 .titlebar .raised.linked .button:checked:hover:last-child {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@menu_bg_dark_color, 2.03)),
+                                     to   (shade(@menu_bg_dark_color, 1.17)));
     padding: 5px 5px 6px 5px;
     box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
                 inset  1px  0px shade (@theme_selected_bg_color, 1.3),
@@ -5392,7 +5436,6 @@ GtkModelButton.button:selected,
 .titlebar .raised.linked .button:checked:only-child,
 .titlebar .raised.linked .button:checked:hover:only-child,
 .titlebar .linked .button:insensitive:only-child,
-
 .titlebar .button.raised.linked:insensitive:only-child,
 .titlebar .raised.linked .button:insensitive:only-child {
     background-image: -gtk-gradient (linear,
@@ -5421,6 +5464,10 @@ GtkModelButton.button:selected,
 .titlebar .linked .button:checked:hover:only-child,
 .titlebar .button.raised.linked:checked:hover:only-child,
 .titlebar .raised.linked .button:checked:hover:only-child {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@menu_bg_dark_color, 2.03)),
+                                     to   (shade(@menu_bg_dark_color, 1.17)));
     padding: 5px 5px 6px 5px;
     box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
                 inset  1px  0px shade (@theme_selected_bg_color, 1.3),

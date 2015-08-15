@@ -39,11 +39,6 @@ NemoSearchBar * {
     padding: 0px;
 }
 
-/* searchbar border */
-NemoWindow.background GtkGrid.vertical .horizontal {
-    border-color: @primay-toolbar-border;
-}
-
 NemoSearchBar .entry {
     padding: 2px 8px;
     border-width: 0px;
@@ -186,8 +181,11 @@ NemoWindow .sidebar .scrollbar.trough {
 }
 
 /* the small line between sidebar and view */
-NemoWindow * {
-    -GtkPaned-handle-size: 3px;
+NemoWindow GtkPaned.horizontal {
+    border-color: shade(@theme_bg_color, 0.80);
+    border-style: solid;
+    border-width: 0px 1px 0px 0px;
+    -GtkPaned-handle-size: 4px;
 }
 
 NemoWindow .sidebar .frame {
@@ -241,23 +239,9 @@ NemoWindow FMTreeView .view row:hover {
     padding: 4px;
 }
 
-/* disabled, looks uggly
-NemoWindow > GtkTable > .pane-separator,
-NemoWindow .pane-separator {
-    background-color: @sidebar_background;
-    background-image: -gtk-gradient (linear,
-                                     left top, right top,
-                                     from (@sidebar_background),
-                                     color-stop(0.50, @sidebar_background),
-                                     to   (shade(@theme_bg_color, 0.60)));
-    border-style: solid;
-    border-width: 0px;
-    border-color: @sidebar_background;
-    border-image: none;
-}*/
-
-NemoWindow .primary-toolbar.toolbar .button GtkImage {
-    color: @theme_fg_dark_color;
+/* to avoid unexpected light backgrounds */
+NemoToolbar.vertical {
+    background-color: @theme_bg_dark_color;
 }
 
 NemoToolbar .linked .button,
@@ -274,6 +258,10 @@ NemoToolbar .linked .button:focus,
 NemoToolbar .linked .button:focus:first-child,
 NemoToolbar .linked .button:focus:last-child {
     box-shadow: none;
+}
+
+NemoWindow .primary-toolbar.toolbar .button GtkImage {
+    color: @theme_fg_dark_color;
 }
 
 NemoWindow .primary-toolbar.toolbar .button,
@@ -396,7 +384,10 @@ NemoWindow .primary-toolbar.toolbar .button:checked,
 NemoWindow .primary-toolbar.toolbar .button:checked:hover {
     padding: 4px;
     background-color: transparent;
-    background-image: none;
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@menu_bg_dark_color, 2.03)),
+                                     to   (shade(@menu_bg_dark_color, 1.17)));
     border-width: 1px;
     border-style: solid;
     border-radius: 5px;
@@ -412,7 +403,10 @@ NemoWindow .primary-toolbar .toolbar .button:hover,
 NemoWindow .primary-toolbar.toolbar .button:hover {
     background-color: transparent;
     padding: 4px;
-    background-image: none;
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@menu_bg_dark_color, 2.03)),
+                                     to   (shade(@menu_bg_dark_color, 1.17)));
     border-width: 1px;
     border-radius: 5px;
     border-style: solid;
@@ -486,21 +480,6 @@ NemoWindow .notebook {
     border-right-color: @transparent;
     box-shadow: none;
 }
-
-/*
-NemoWindow .notebook {
-    -GtkNotebook-initial-gap: 0;
-    border-width: 1px 0px 0px 0px;
-    border-radius: 0px;
-    border-image: none;
-
-    border-top-color: shade(@sidebar_background, 0.75);
-    border-left-color: @transparent;
-    border-bottom-color: @transparent;
-    border-right-color: @transparent;
-
-}
-*/
 
 /* Nemo notebook */
 GtkDialog.background .vertical.dialog-vbox .notebook .frame {
@@ -616,5 +595,86 @@ NemoWindow .notebook tab .button GtkImage:active:hover {
 .nemo-desktop.nemo-canvas-item:selected,
 .nemo-desktop.nemo-canvas-item:checked {
     text-shadow: none;
+}
+
+/* stack-switcher ie. nemo preferences */
+.vertical.dialog-vbox .horizontal.primary-toolbar {
+    background-color: transparent;
+    border-color: @primay-toolbar-border;
+    border-width: 1px 0px;
+    padding: 1px 0px;
+}
+
+.vertical.dialog-vbox .horizontal.primary-toolbar .horizontal.linked.stack-switcher .button.text-button {
+    color: @menu_fg_dark_color;
+    text-shadow: none;
+    box-shadow: none;
+    padding: 5px 2px;
+}
+
+.vertical.dialog-vbox .horizontal.primary-toolbar .horizontal.linked.stack-switcher .button.text-button:hover,
+.vertical.dialog-vbox .horizontal.primary-toolbar .horizontal.linked.stack-switcher .button.text-button:checked,
+.vertical.dialog-vbox .horizontal.primary-toolbar .horizontal.linked.stack-switcher .button.text-button:checked:hover {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@menu_bg_dark_color, 2.03)),
+                                     to   (shade(@menu_bg_dark_color, 1.17)));
+    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
+                inset  1px  0px shade(@selected_bg_color, 0.97),
+                inset -1px  0px shade(@selected_bg_color, 0.93),
+                inset  0px -1px shade(@selected_bg_color, 0.93);
+}
+
+/* middle most button */
+.vertical.dialog-vbox .horizontal.primary-toolbar .horizontal.linked.stack-switcher .button.text-button,
+.vertical.dialog-vbox .horizontal.primary-toolbar .horizontal.linked.stack-switcher .button.text-button:focus,
+.vertical.dialog-vbox .horizontal.primary-toolbar .horizontal.linked.stack-switcher .button.text-button:hover,
+.vertical.dialog-vbox .horizontal.primary-toolbar .horizontal.linked.stack-switcher .button.text-button:checked {
+    border-right-width: 0px;
+    border-left-width:  0px;
+    border-radius: 0px;
+}
+
+/* left most button */
+.vertical.dialog-vbox .horizontal.primary-toolbar .horizontal.linked.stack-switcher .button.text-button:first-child,
+.vertical.dialog-vbox .horizontal.primary-toolbar .horizontal.linked.stack-switcher .button.text-button:focus:first-child,
+.vertical.dialog-vbox .horizontal.primary-toolbar .horizontal.linked.stack-switcher .button.text-button:hover:first-child,
+.vertical.dialog-vbox .horizontal.primary-toolbar .horizontal.linked.stack-switcher .button.text-button:checked:first-child {
+    border-radius: 6px 0 0 6px;
+    border-width: 1px;
+    border-right-width: 0px;
+}
+
+/* right most button */
+.vertical.dialog-vbox .horizontal.primary-toolbar .horizontal.linked.stack-switcher .button.text-button:last-child,
+.vertical.dialog-vbox .horizontal.primary-toolbar .horizontal.linked.stack-switcher .button.text-button:focus:last-child,
+.vertical.dialog-vbox .horizontal.primary-toolbar .horizontal.linked.stack-switcher .button.text-button:hover:last-child,
+.vertical.dialog-vbox .horizontal.primary-toolbar .horizontal.linked.stack-switcher .button.text-button:checked:last-child {
+    border-radius: 0 6px 6px 0;
+    border-width: 1px;
+    border-left-width: 0px;
+}
+
+.vertical.dialog-vbox .view.frame {
+    background-color: shade (@theme_bg_color, 1.1);
+    border-color: @borders;
+}
+
+.vertical.dialog-vbox .view.frame  GtkViewport.frame {
+    background-color: shade (@theme_bg_color, 1.1);
+}
+
+.vertical.dialog-vbox .view.frame  GtkViewport.frame .vertical GtkSeparator.separator.horizontal {
+    border-color: @borders;
+    border-width: 0 0 1px 0;
+}
+
+.vertical.dialog-vbox .view.frame  GtkViewport.frame .vertical .vertical .vertical .text-button {
+    background-color: transparent;
+}
+
+.vertical.dialog-vbox .view.frame  GtkViewport.frame .vertical .vertical .vertical .text-button:hover {
+    background-color: shade (@theme_bg_color, 1.05);
+    border-radius: 4px;
 }
 

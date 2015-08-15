@@ -481,8 +481,8 @@ CajaWindow .primary-toolbar .toolbar .button:checked:hover,
 CajaWindow .primary-toolbar.toolbar .button:checked:hover {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
-                                     from (shade(@button_raised_gradient_color_b, 0.90)),
-                                     to (shade(@button_raised_gradient_color_a, 0.80)));
+                                     from (shade(@menu_bg_dark_color, 2.03)),
+                                     to   (shade(@menu_bg_dark_color, 1.17)));
     border-width: 1px;
     border-style: solid; 
     border-radius: 5px;
@@ -504,9 +504,8 @@ CajaWindow .primary-toolbar .toolbar .button:hover,
 CajaWindow .primary-toolbar.toolbar .button:hover {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
-                                     from (alpha (shade (@theme_bg_dark_color, 1.00), 0.0)),
-                                     color-stop (0.50, shade (@theme_bg_dark_color, 0.83) ),
-                                     to (alpha (shade (@theme_bg_dark_color, 0.91), 0.0))); 
+                                     from (shade(@menu_bg_dark_color, 2.03)),
+                                     to   (shade(@menu_bg_dark_color, 1.17)));
     border-width: 1px;
     border-radius: 5px;
     border-style: solid;
@@ -738,7 +737,10 @@ PanelMenuBar.menubar .menuitem {
 PanelMenuBar.menubar .menuitem:hover {
     padding: 5px 5px;
     background-color: shade (@theme_bg_dark_color, 1.2);
-    background-image: none;
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@menu_bg_dark_color, 2.03)),
+                                     to   (shade(@menu_bg_dark_color, 1.17)));
     border-radius: 6px;
     text-shadow: none;
     color: shade (@theme_selected_bg_color, 1.6);
@@ -763,7 +765,10 @@ PanelMenuBar.menubar .menu .menuitem:active:hover,
 PanelMenuBar.menubar .menu .menuitem:hover {
     padding: 6px;
     background-color: shade (@theme_bg_dark_color, 1.2);
-    background-image: none;
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@menu_bg_dark_color, 2.03)),
+                                     to   (shade(@menu_bg_dark_color, 1.17)));
     border-radius: 6px;
     text-shadow: none;
     color: shade (@theme_selected_bg_color, 1.6);
