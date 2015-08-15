@@ -558,19 +558,19 @@ GtkProgressBar {
     background-color: @theme_entry_bg;
     background-clip: border-box;
 
-    border-color: transparent @theme_internal_border;
+    border-color: @theme_internal_border;
 }
 
 .spinbutton .button:hover {
     background-color: @theme_selected_bg_color;
     color: @theme_insensitive_bg;
-    border-color: transparent @theme_selected_bg_color;
+    border-color: @theme_selected_bg_color;
 }
 
 .spinbutton .button:insensitive {
     color: @theme_insensitive_color;
     background-color: @theme_insensitive_bg;
-    border-color: transparent @theme_insensitive_border;
+    border-color: @theme_insensitive_border;
 }
 
 .spinbutton .button:focus {
@@ -598,6 +598,48 @@ GtkProgressBar {
 
 .spinbutton .button:last-child {
     border-radius: 0 2px 2px 0;
+}
+
+/*vertical */
+
+.vertical.entry.spinbutton.entry {
+    border-image: none;
+    border-color: @theme_border_color;
+    border-radius: 0px;
+    border-width: 0px 2px 0px 2px;
+    background-image: none;
+    padding: 4px;
+}
+
+.vertical.entry.spinbutton .button:first-child,
+.vertical.entry.spinbutton .button:hover:first-child,
+.vertical.entry.spinbutton .button:focus:first-child,
+.vertical.entry.spinbutton .button:active:first-child,
+.vertical.entry.spinbutton .button:checked:first-child,
+.vertical.entry.spinbutton .button:active:hover:first-child,
+.vertical.entry.spinbutton .button:checked:hover:first-child {
+    border-color: @theme_border_color;
+    border-radius: 3px 3px 0px 0px;
+    border-width: 2px;
+}
+
+.vertical.entry.spinbutton .button:last-child,
+.vertical.entry.spinbutton .button:hover:last-child,
+.vertical.entry.spinbutton .button:focus:last-child,
+.vertical.entry.spinbutton .button:active:last-child,
+.vertical.entry.spinbutton .button:checked:last-child,
+.vertical.entry.spinbutton .button:active:hover:last-child,
+.vertical.entry.spinbutton .button:checked:hover:last-child {
+    border-color: @theme_border_color;
+    border-width: 2px;
+    border-radius: 0px 0px 3px 3px;
+}
+
+.vertical.entry.spinbutton.entry:insensitive,
+.vertical.entry.spinbutton .button:insensitive,
+.vertical.entry.spinbutton .button:insensitive:first-child
+.vertical.entry.spinbutton .button:insensitive:last-child {
+    border-color: @theme_insensitive_border;
 }
 
 /*********
