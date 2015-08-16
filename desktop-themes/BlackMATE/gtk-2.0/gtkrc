@@ -157,6 +157,7 @@ style "menuitem"
 		border_shades = {0.8, 0.3}
 		glow_shade = 2.0
 		gradient_shades = {1.0, 0.9, 0.6, 0.4}
+		textstyle = 0
 	}
 }
 
@@ -209,6 +210,7 @@ style "murrine-button"
 		lightborder_shade = 1.06
 		gradient_shades = {3.3, 1.0, 0.6, 0.5}
 		contrast = 0.8
+		textstyle = 0
 	}
 }
 
@@ -222,6 +224,7 @@ style "murrine-togglebutton"
 	engine "murrine"
 	{
 		gradient_shades = {3.0, 1.0, 0.6, 0.5}
+		textstyle = 0
 	}
 }
 
@@ -234,6 +237,7 @@ style "murrine-menubar"
 	engine "murrine"
 	{
 		#contrast = 0.5
+		textstyle = 0
 	}
 }
 
@@ -246,6 +250,7 @@ style "murrine-toolbar"
 	{
 		gradient_shades = {0.6, 1.0, 1.32, 1.73}
 		contrast = 0.0
+		textstyle = 0
 	}
 }
 
@@ -393,6 +398,7 @@ style "misc-panel"
 	{
 		rgba = FALSE
 		roundness=3
+		textstyle = 0
 	}
 
 	bg[NORMAL]   = shade (0.7, "#4D4D4D")  # for the (dark) Ambiance background
@@ -414,6 +420,10 @@ style "applet"
 	fg[ACTIVE]   = "#FFFFFF"
 	bg[PRELIGHT] = shade (0.68, "#666669") #for the (dark) Ambiance background
 	fg[PRELIGHT] = "#FFFFFF"
+	engine "murrine"
+	{
+		textstyle = 0
+	}
 }
 
 style "view"
@@ -473,6 +483,7 @@ style "combobox"
 		border_shades = {1.5, 1.2}
 		focus_color = shade (1.48, "#3b3b3e")
 		contrast = 0.8
+		textstyle = 0
 	}
 }
 
@@ -487,6 +498,7 @@ style "comboboxentry"
 		border_shades = {1.5, 1.2}
 		focus_color = shade (1.48, "#3b3b3e")
 		contrast = 0.8
+		textstyle = 0
 	}
 }
 
@@ -534,6 +546,7 @@ style "murrine-notebook"
 		#lightborder_shade = 1.5
 		# disable the ugly button look in tabs if focused
 		focusstyle = 0
+		textstyle = 0
 	}
 }
 
@@ -545,6 +558,7 @@ style "treeview-header"
 	engine "murrine"
 	{
 		#contrast = 0.8
+		textstyle = 0
 	}
 }
 
@@ -640,6 +654,15 @@ widget_class "*.<GtkCList>.<GtkButton>"		style "treeview-header"
 # Workarounds for Evolution (taken from Ambiance)
 widget_class "*.ETable.ECanvas"			style "treeview-header"
 widget_class "*.ETree.ECanvas"			style "treeview-header"
+
+# Various performance fixes if murrine textstyle is on by default in the theme.
+style "performance-fix" {engine "murrine" {textstyle = 0}}
+widget_class "*gtkmm__GtkWindow*"	style "performance-fix" # Inkscape
+widget_class "*GimpDisplayShell*"	style "performance-fix" # Gimp
+widget_class "*GimpToolbox*"		style "performance-fix"
+widget_class "*GimpMenuDock*"		style "performance-fix"
+widget "*OOoFixed*"			style "performance-fix" # Openoffice/Libreoffice
+widget_class "*MozContainer*"		style "performance-fix" # Firefox (Not sure if this one does anything though.)
 
 include "Styles/caja.rc"
 include "Styles/terminal.rc"
