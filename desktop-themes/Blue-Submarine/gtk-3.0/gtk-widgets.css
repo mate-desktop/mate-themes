@@ -133,8 +133,7 @@ GtkWindow {
  ******************/
 /* border and inner stroke */
 .button,
-.frame,
-.notebook {
+.frame {
 	border-style: solid;
 
 	-unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
@@ -142,16 +141,14 @@ GtkWindow {
 		to (shade (@theme_bg_color, 0.7)));
 }
 
-.frame,
-.notebook {
+.frame {
 	-unico-inner-stroke-color: alpha (shade (@theme_bg_color, 1.26), 0.2);
 	-unico-inner-stroke-gradient: none;
 	-unico-inner-stroke-width: 1px;
 }
 
 .button:insensitive,
-.frame:insensitive,
-.notebook:insensitive {
+.frame:insensitive {
 	-unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
 		from (shade (@theme_bg_color, 0.8)),
 		to (shade (@theme_bg_color, 0.8)));
@@ -174,25 +171,13 @@ GtkComboBox.combobox-entry .button,
 .button,
 .check:active,
 .frame,
-.notebook .button,
-.notebook,
 .radio:active {
 	-unico-outer-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
 		from (alpha (shade (@theme_bg_color, 0.05), 0.05)),
 		to (alpha (shade (@theme_bg_color, 0.05), 0.09)));
 	-unico-outer-stroke-width: 1px;
 }
-/*
-.button:hover,
-.notebook .button:hover {
-	-unico-outer-stroke-top-color: @transparent;
-	-unico-outer-stroke-right-color: @transparent;
-	-unico-outer-stroke-bottom-color: alpha (shade (@theme_bg_color, 0.05), 0.06);
-	-unico-outer-stroke-left-color: @transparent;
-	-unico-outer-stroke-gradient: none;
-	-unico-outer-stroke-width: 1px;
-}
-*/
+
 /*************
  * assistant *
  *************/
@@ -315,7 +300,6 @@ GtkComboBox,
 }
 
 GtkComboBox.combobox-entry .button,
-.notebook .button,
 .inline-toolbar.toolbar .button {
 	background-image: -gtk-gradient (linear, left top, left bottom,
 		from (shade (@button_bg_color, 1.1)),
@@ -335,7 +319,6 @@ GtkComboBox.combobox-entry .button,
 }
 
 GtkComboBox.combobox-entry .button:hover,
-.notebook .button:hover,
 .inline-toolbar.toolbar .button:hover {
 	background-image: -gtk-gradient (linear, left top, left bottom,
 		from (shade (@button_bg_color, 1.2)),
@@ -351,7 +334,6 @@ GtkComboBox.combobox-entry .button:hover,
 }
 
 GtkComboBox.combobox-entry .button:active,
-.notebook .button:active,
 .inline-toolbar.toolbar .button:active {
 	background-image: -gtk-gradient (linear, left top, left bottom,
 		from (shade (@theme_bg_color, 0.9)),
@@ -366,7 +348,6 @@ GtkComboBox.combobox-entry .button:active,
 }
 
 GtkComboBox.combobox-entry .button:active:hover,
-.notebook .button:active:hover,
 .inline-toolbar.toolbar .button:active:hover {
 	background-image: -gtk-gradient (linear, left top, left bottom,
 		from (shade (@theme_bg_color, 0.95)),
@@ -381,7 +362,6 @@ GtkComboBox.combobox-entry .button:active:hover,
 }
 
 GtkComboBox.combobox-entry .button:insensitive,
-.notebook .button:insensitive,
 .inline-toolbar.toolbar .button:insensitive {
 	background-image: -gtk-gradient (linear, left top, left bottom,
 		from (shade (@button_insensitive_bg_color, 1.04)),
@@ -738,9 +718,7 @@ row:selected:focused:backdrop {
  * column-header *
  *****************/
 column-header .button,
-column-header .button:active,
-.notebook column-header .button,
-.notebook column-header .button:active {
+column-header .button:active {
 	-GtkButton-inner-border: 0;
 	background-image: -gtk-gradient (linear, left top, left bottom,
 		from (shade (@theme_bg_color,1.1)),
@@ -757,8 +735,7 @@ column-header .button:active,
 	-unico-outer-stroke-width: 0;
 }
 
-column-header .button,
-.notebook column-header .button {
+column-header .button {
 	background-image: -gtk-gradient (linear, left top, left bottom,
 		from (shade (@theme_bg_color,1.1)),
 		to (shade (@theme_bg_color,1.0)));
@@ -776,8 +753,7 @@ column-header .button,
 	border-width: 0;
 }
 
-column-header .button:hover,
-.notebook column-header .button:hover {
+column-header .button:hover {
 	background-image: -gtk-gradient (linear, left top, left bottom,
 		from (shade (@theme_bg_color,1.2)),
 		to (shade (@theme_bg_color,1.1)));
@@ -1407,103 +1383,309 @@ DbusmenuGtkMenu .menuitem .accelerator:insensitive,
 	text-shadow: none;
 }
 
-/************
- * notebook *
- ************/
-.notebook {
-	background-color: shade (@theme_bg_color, 1.1);
-	background-image: none;
-	border-radius: 2px;
-	padding: 2px;
+/*****************
+ * Notebooks and *
+ * tabs          *
+ *****************/
 
-	-unico-inner-stroke-color: alpha (shade (@theme_bg_color, 1.26), 0.3);
-	-unico-inner-stroke-gradient: none;
+.notebook {
+    padding: 0;
+    background-clip: border-box;
+    background-color: shade (@theme_bg_color, 1.1);
+    border-style: solid;
+    border-color: @borders;
+    border-width: 1px;
+    -GtkNotebook-initial-gap: 0;
+    -GtkNotebook-arrow-spacing: 5;
+    -GtkNotebook-tab-curvature: 0;
+    -GtkNotebook-tab-overlap: 0;
+    -GtkNotebook-has-tab-gap: false;
+    -GtkWidget-focus-padding: 0;
+    -GtkWidget-focus-line-width: 0;
 }
 
 .notebook :hover {
-	-gtk-image-effect: highlight;
-	background-color: shade(@theme_bg_color, 1.13);
-	color: @theme_fg_color;
+    -gtk-image-effect: highlight;
+    color: @theme_fg_color;
+}
+
+.notebook.frame.top {
+    border-top: 0px;
+    border-radius: 0px 0px 4px 4px;
+}
+
+.notebook.frame.bottom {
+    border-bottom: 0px;
+    border-radius: 4px 4px 0px 0px;
+}
+
+.notebook.frame.left {
+    border-left: 0px;
+    border-radius: 0px 4px 4px 0px;
+}
+
+.notebook.frame.right {
+    border-right: 0px;
+    border-radius: 4px 0px 0px 4px;
+}
+
+.notebook.header {
+    background-image: linear-gradient(to bottom,
+                                      shade(@theme_bg_color, 0.86),
+                                      shade(@theme_bg_color, 1.05));
+    border-radius: 0px;
+}
+
+.notebook.header.top {
+    border-width: 0px 0px 1px 0px;
+}
+
+.notebook.header.bottom {
+    border-width: 1px 0px 0px 0px;
+}
+
+.notebook.header.left {
+    border-width: 1px 1px 0px 0px;
+}
+
+.notebook.header.right {
+    border-width: 0px 0px 0px 1px;
+}
+
+.notebook.header.frame.top {
+    border-radius: 4px 4px 0px 0px;
+}
+
+.notebook.header.frame.bottom {
+    border-radius: 0px 0px 4px 4px;
+}
+
+.notebook.header.frame.left {
+    border-radius: 4px 0px 0px 4px;
+}
+
+.notebook.header.frame.right {
+    border-radius: 0px 4px 4px 0px;
 }
 
 .notebook tab {
-	background-image: -gtk-gradient (linear, left top, left bottom,
-		from (shade (@theme_bg_color, 0.99)),
-		to (shade (@theme_bg_color, 0.92)));
-	padding: 2px 2px 0 2px;
-
-	-unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
-		from (shade (@theme_bg_color, 0.89)),
-		to (shade (@theme_bg_color, 0.80)));
-	-unico-inner-stroke-color: alpha (shade (@theme_bg_color, 1.15), 0.34);
-	-unico-inner-stroke-gradient: none;
-	-unico-inner-stroke-width: 1px;
-	-unico-outer-stroke-color: @transparent;
-	-unico-outer-stroke-gradient: none;
-	-unico-outer-stroke-width: 1px;
-}
-
-.notebook tab GtkLabel:active {
-	color: @theme_fg_color;
+    border-color: transparent;
+    border-width: 0px;
+    background-image: none;
+    background-color: transparent;
 }
 
 .notebook tab GtkLabel {
-	color: @theme_fg_color;
+    color: mix (@theme_fg_color, @theme_bg_color, 0.40);
+    font-weight: normal;
 }
 
-.notebook tab.top:active {
-	padding: 3px 7px 1px 7px;
+.notebook .prelight-page,
+.notebook .prelight-page GtkLabel {
+    color: mix (@theme_fg_color, @theme_bg_color, 0.15);
+}
+
+.notebook .active-page,
+.notebook tab .active-page GtkLabel {
+    color: @theme_fg_color;
+}
+
+/* horizontal tabs */
+
+.notebook tab.top,
+.notebook tab.bottom {
+    padding: 8px 20px 6px;
 }
 
 .notebook tab.top {
-	padding: 2px 5px 0 5px;
+    border-width: 1px 1px 0 1px;
 }
 
-.notebook tab.right:active {
-	padding: 4px 6px 4px 1px;
+.notebook tab.top:active,
+.notebook tab.top:active:hover {
+    background-image: linear-gradient(to bottom,
+                                      shade(@theme_bg_color, 1.18),
+                                      shade(@theme_bg_color, 1.1));
+    border-radius: 4px 4px 0 0;
+    border-width: 1px 1px 0 1px;
+    border-style: solid;
+    border-color: @borders;
+    box-shadow: none;
 }
 
+.notebook tab.top:hover {
+    background-image: linear-gradient(to bottom,
+                                      alpha(@theme_base_color, 0.0),
+                                      alpha(@theme_base_color, 0.3));
+    border-radius: 4px 4px 0 0;
+    border-width: 1px 1px 0 1px;
+    border-style: solid;
+    border-color: @borders;
+    box-shadow: none;
+}
+
+.notebook tab.top:active {
+    border-bottom-color: @notebook_active_tab_border;
+}
+
+.notebook tab.bottom:active,
+.notebook tab.bottom:active:hover {
+    background-image: linear-gradient(to top,
+                                      shade(@theme_bg_color, 1.18),
+                                      shade(@theme_bg_color, 1.1));
+    border-radius: 0 0 4px 4px;
+    border-style: solid;
+    border-width: 0px 1px 1px 1px;
+    border-color: @borders;
+    box-shadow: none;
+}
+
+.notebook tab.bottom:hover {
+    background-image: linear-gradient(to top,
+                                      alpha(@theme_base_color, 0.0),
+                                      alpha(@theme_base_color, 0.3));
+    border-radius: 0 0 4px 4px;
+    border-style: solid;
+    border-width: 0px 1px 1px 1px;
+    border-color: @borders;
+    box-shadow: none;
+}
+
+/* vertical tabs */
+
+.notebook tab.left,
 .notebook tab.right {
-	padding: 3px 4px 3px 0;
+    padding: 5px 20px;
 }
 
-.notebook tab.bottom:active {
-	padding: 1px 7px 4px 7px;
+.notebook tab.left:active,
+.notebook tab.left:active:hover {
+    background-image: linear-gradient(to right,
+                                      shade(@theme_bg_color, 1.18),
+                                      shade(@theme_bg_color, 1.1));
+    border-style: solid;
+    border-width: 1px 0px 1px 1px;
+    border-color: @borders;
+    border-right-color: @notebook_active_tab_border;
+    border-radius: 4px 0px 0px 4px;
 }
 
-.notebook tab.bottom {
-	padding: 0 5px 3px 5px;
+.notebook tab.left:hover {
+    background-image: linear-gradient(to right,
+                                      alpha(@theme_base_color, 0.0),
+                                      alpha(@theme_base_color, 0.3));
+    border-style: solid;
+    border-width: 1px 0px 1px 1px;
+    border-color: @borders;
+    border-radius: 4px 0px 0px 4px;
 }
 
-.notebook tab.left:active {
-	padding: 4px 1px 4px 6px;
+.notebook tab.right:active,
+.notebook tab.right:active:hover {
+    background-image: linear-gradient(to left,
+                                      shade(@theme_bg_color, 1.18),
+                                      shade(@theme_bg_color, 1.1));
+    border-style: solid;
+    border-width: 1px 1px 1px 0px;
+    border-color: @borders;
+    border-right-color: @notebook_active_tab_border;
+    border-radius: 0px 4px 4px 0px;
 }
 
-.notebook tab.left {
-	padding: 3px 0 3px 4px;
+.notebook tab.right:hover {
+    background-image: linear-gradient(to left,
+                                      alpha(@theme_base_color, 0.0),
+                                      alpha(@theme_base_color, 0.3));
+    border-style: solid;
+    border-width: 1px 1px 1px 0px;
+    border-color: @borders;
+    border-radius: 0px 4px 4px 0px;
 }
-.notebook tab:active {
-	background-image: -gtk-gradient (linear, left top, left bottom,
-		from (shade (@theme_bg_color, 1.12)),
-		to (shade (@theme_bg_color, 1.1)));
 
-	-unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
-		from (shade (@theme_bg_color, 0.7)),
-		to (shade (@theme_bg_color, 0.7)));
-	-unico-inner-stroke-color: alpha (shade (@theme_bg_color, 1.28), 0.34);
-	color: @theme_fg_color;
+.notebook tab.reorderable-page:hover {
+    background-image: linear-gradient(to bottom,
+                                      alpha(@theme_base_color, 0.0),
+                                      alpha(@theme_base_color, 0.3));
+    border-radius: 0;
+    box-shadow: inset 1px 0 alpha(@borders, 0.6), inset -1px 0 alpha(@borders, 0.6);
+    border-style: none;
 }
+
+.notebook tab.reorderable-page:active {
+    background-image: linear-gradient(to bottom,
+                                      shade(@theme_bg_color, 1.18),
+                                      shade(@theme_bg_color, 1.1));
+    border-radius: 4px 4px 0 0;
+    box-shadow: none;
+    border-style: solid;
+}
+
+/* close button styling */
 
 .notebook tab .button {
-	padding: 0;
+    color: mix (@theme_fg_color, @theme_bg_color, 0.85);
+    border-image: none;
+    background-image: none;
+    background-color: transparent;
+    border-radius: 3px;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 1px;
+    padding: 1px;
+    icon-shadow: none;
 }
 
-.notebook GtkDrawingArea {
-	background-color: shade (@theme_bg_color, 1.02);
+.notebook .prelight-page .button,
+.notebook tab.prelight-page .button,
+.notebook .active-page .button,
+.notebook tab.active-page .button {
+	color: mix(@theme_fg_color, @theme_base_color, 0.6);
+	icon-shadow: 0 1px @button_text_shadow;
 }
 
-.notebook .button {
-	padding: 3px;
+.notebook tab .button:hover {
+	color: @theme_fg_color;
+	border-color: alpha(black, 0.1);
+}
+
+
+.notebook tab .button:active,
+.notebook tab .button:active:hover {
+	color:  @button_active_text;
+	background-color: alpha(black, 0.08);
+	box-shadow: inset 0 1px alpha(black, 0.05);
+	icon-shadow: 0 1px @button_active_text_shadow;
+
+	border-color: alpha(black, 0.27)
+		alpha(black, 0.13)
+		alpha(black, 0.13)
+		alpha(black, 0.13);
+}
+
+.notebook.arrow {
+    /* FIXME, why this doesn't work? */
+	-GtkNotebook-arrow-scaling: 0.5;
+    color: shade(@theme_fg_color, 2.6);
+}
+
+.notebook.arrow:hover {
+    color: @theme_selected_bg_color;
+}
+
+.notebook.arrow:active {
+    color: @theme_fg_color;
+}
+
+.notebook.arrow:insensitive {
+    color: rgba(141, 144, 145, 0.3);
+}
+
+.notebook.arrow:backdrop {
+    color: rgba(84, 89, 90, 0.4);
+}
+
+.notebook.arrow:backdrop:insensitive {
+    color: #c7c7c7;
 }
 
 /******************
@@ -2082,27 +2264,11 @@ GtkScrolledWindow.frame {
 	-unico-inner-stroke-gradient: none;
 }
 
-.notebook .button .separator,
-.notebook .button.separator {
-	border-color: shade (@theme_bg_color, 0.9);
-
-	-unico-inner-stroke-color: alpha (shade (@theme_bg_color, 1.26), 0.6);
-	-unico-inner-stroke-gradient: none;
-}
-
 .button .separator:insensitive,
 .button.separator:insensitive {
 	border-color: shade (@button_insensitive_bg_color, 0.9);
 
 	-unico-inner-stroke-color: alpha (shade (@button_insensitive_bg_color, 1.26), 0.6);
-	-unico-inner-stroke-gradient: none;
-}
-
-.notebook .button .separator,
-.notebook .button.separator {
-	border-color: shade (@theme_bg_color, 0.84);
-
-	-unico-inner-stroke-color: alpha (shade (@theme_bg_color, 1.26), 0.5);
 	-unico-inner-stroke-gradient: none;
 }
 
@@ -2149,10 +2315,7 @@ DbusmenuGtkMenu .menuitem.separator,
  **************/
 .spinbutton.button:active,
 .spinbutton.button:insensitive,
-.notebook .spinbutton.button:active,
-.notebook .spinbutton.button:insensitive,
-.spinbutton.button,
-.notebook .spinbutton.button {
+.spinbutton.button {
 	border-radius: 0;
 	border-width: 1px 0 1px 1px;
 
@@ -2161,16 +2324,12 @@ DbusmenuGtkMenu .menuitem.separator,
 
 .spinbutton.button:active:nth-child(last),
 .spinbutton.button:insensitive:nth-child(last),
-.notebook .spinbutton.button:active:nth-child(last),
-.notebook .spinbutton.button:insensitive:nth-child(last),
-.spinbutton.button:nth-child(last),
-.notebook .spinbutton.button:nth-child(last) {
+.spinbutton.button:nth-child(last) {
 	border-radius: 0 2px 2px 0;
 	border-width: 1px;
 }
 
-.spinbutton.button,
-.notebook .spinbutton.button {
+.spinbutton.button {
 	background-image: -gtk-gradient (linear, left top, left bottom,
 		from (shade (@button_bg_color, 1.1)),
 		to (shade (@button_bg_color, 0.95)));
@@ -2180,24 +2339,20 @@ DbusmenuGtkMenu .menuitem.separator,
 		to (shade (@theme_bg_color, 0.7)));
 }
 
-.spinbutton.button:hover,
-.notebook .spinbutton.button:hover {
+.spinbutton.button:hover {
 	background-image: -gtk-gradient (linear, left top, left bottom,
 		from (shade (@button_bg_color, 1.2)),
 		to (shade (@button_bg_color, 1.04)));
 }
 
 .spinbutton.button:active,
-.notebook .spinbutton.button:active,
-.spinbutton.button:active:hover,
-.notebook .spinbutton.button:active:hover {
+.spinbutton.button:active:hover {
 	background-image: -gtk-gradient (linear, left top, left bottom,
 		from (shade (@theme_bg_color, 0.9)),
 		to (shade (@theme_bg_color, 0.85)));
 }
 
-.spinbutton.button:insensitive,
-.notebook .spinbutton.button:insensitive {
+.spinbutton.button:insensitive {
 	background-image: -gtk-gradient (linear, left top, left bottom,
 		from (shade (@theme_bg_color, 1.02)),
 		to (shade (@theme_bg_color, 0.98)));
