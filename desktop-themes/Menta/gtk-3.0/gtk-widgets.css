@@ -1921,7 +1921,6 @@ GtkTreeMenu.menu {
 
 GtkTreeMenu .menuitem {
 	padding: 2px;
-
 	border-style: none;
 }
 
@@ -1932,6 +1931,11 @@ GtkTreeMenu .menuitem * {
 GtkTreeMenu .menuitem,
 .button .menuitem,
 .toolbar .button .menuitem * {
+	text-shadow: none;
+}
+
+.context-menu {
+	font: initial;
 	text-shadow: none;
 }
 
@@ -1946,7 +1950,6 @@ GtkTreeMenu .menuitem,
 	background-image: none;
 	background-color: @theme_base_color;
 	color: @internal_element_color;
-
 	border-image: none;
 	border-style: none;
 }
@@ -1955,7 +1958,6 @@ GtkTreeMenu .menuitem,
 	background-image: none;
 	background-color: @theme_base_color;
 	color: @theme_text_color;
-
 	border-image: none;
 	border-style: none;
 }
@@ -1963,7 +1965,6 @@ GtkTreeMenu .menuitem,
 .menu.button:insensitive {
 	background-color: @theme_base_color;
 	color: lighter(@internal_element_color);
-
 	border-image: none;
 	border-style: none;
 }
@@ -1983,7 +1984,7 @@ GtkTreeMenu .menuitem,
 .menubar .menuitem {
 	transition: all 200ms ease-out;
 	border-style: none;
-	padding: 2px 6px;
+	padding: 4px 6px;
 	text-shadow: 0 1px @button_text_shadow;
 }
 
@@ -2017,17 +2018,14 @@ GtkTreeMenu .menuitem,
 }
 
 .menu .menuitem:insensitive {
-	background-color: @menu_bg_color;
+	background-color: transparent;
 }
 
 .menu .menuitem:active,
-.menu .menuitem *:active,
-.menu .menuitem:hover,
-.menu .menuitem *:hover {
+.menu .menuitem:hover {
 	color: @theme_selected_fg_color;
 }
 
-.menu .menuitem:insensitive,
 .menu .menuitem *:insensitive {
 	color: mix (@menu_fg_color, @menu_bg_color, 0.6);
 }
@@ -2045,13 +2043,16 @@ GtkTreeMenu .menuitem,
 	color: alpha (@theme_selected_fg_color, 0.7);
 }
 
+GtkModelMenuItem GtkBox GtkImage {
+	padding-right: 6px;
+}
+
 .menuitem.arrow {
 	color: @menu_controls_color;
 }
 
 .menuitem.separator {
 	color: @menu_separator;
-
 	-GtkMenuItem-horizontal-padding: 0px;
 }
 
@@ -2127,10 +2128,10 @@ GtkMenuButton.button:active,
 	color: @theme_text_color;*/
 }
 
-GtkMenuButton.button *:active,
-.linked GtkMenuButton.button *:active,
-.toolbar .linked.raised GtkMenuButton.button *:active,
-.toolbar GtkMenuButton.button.linked.raised *:active {
+GtkMenuButton.button:active,
+.linked GtkMenuButton.button:active,
+.toolbar .linked.raised GtkMenuButton.button:active,
+.toolbar GtkMenuButton.button.linked.raised:active {
 	text-shadow: none;
 	icon-shadow: none;
 }
@@ -2150,7 +2151,6 @@ GtkMenuButton.button *:active,
 .button.menuitem.menubar:active {
 	background-image: none;
 	background-color: @menu_bg_color;
-
 	border-radius: 4px 4px 0 0;
 	border-image: none;
 	border-width: 1px 1px 0 1px;
@@ -2158,9 +2158,9 @@ GtkMenuButton.button *:active,
 	border-style: solid;
 }
 
-.button.menuitem.menubar *:active,
-GtkMenuButton.button *:active,
-.toolbar GtkMenuButton.button *:active {
+.button.menuitem.menubar:active,
+GtkMenuButton.button:active,
+.toolbar GtkMenuButton.button:active {
 	color: @theme_text_color;
 }
 

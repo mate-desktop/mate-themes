@@ -1973,7 +1973,6 @@ GtkTreeMenu .menuitem,
 	background-image: none;
 	background-color: @theme_base_color;
 	color: @internal_element_color;
-
 	border-image: none;
 	border-style: none;
 }
@@ -1982,7 +1981,6 @@ GtkTreeMenu .menuitem,
 	background-image: none;
 	background-color: @theme_base_color;
 	color: @theme_text_color;
-
 	border-image: none;
 	border-style: none;
 }
@@ -1990,7 +1988,6 @@ GtkTreeMenu .menuitem,
 .menu.button:insensitive {
 	background-color: @theme_base_color;
 	color: lighter(@internal_element_color);
-
 	border-image: none;
 	border-style: none;
 }
@@ -2080,7 +2077,6 @@ GtkModelMenuItem GtkBox GtkImage {
 
 .menuitem.separator {
 	color: @menu_separator;
-
 	-GtkMenuItem-horizontal-padding: 0;
 }
 
@@ -2179,7 +2175,6 @@ GtkMenuButton.button:active,
 .button.menuitem.menubar:active {
 	background-image: none;
 	background-color: @menu_bg_color;
-
 	border-radius: 4px 4px 0 0;
 	border-image: none;
 	border-width: 1px 1px 0 1px;
@@ -2316,8 +2311,8 @@ GtkCheckButton:selected:focus {
 	-GtkWidget-window-dragging: true;
 	-GtkToolbar-button-relief: normal;
 	text-shadow: 0 1px @button_text_shadow;
-	padding-top: 3px;
-	padding-bottom: 3px;
+	padding-top: 1px;
+	padding-bottom: 1px;
 }
 
 .primary-toolbar .toolbar:insensitive,
