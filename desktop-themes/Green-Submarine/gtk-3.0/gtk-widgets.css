@@ -2029,13 +2029,6 @@ DbusmenuGtkMenu .menuitem.separator,
 	color: @theme_fg_color;
 }
 
-/* hyperlinks */
-/* ie. yelp */
-*:link,
-*:visited {
-  color: @link_color;
-}
-
 GtkLinkButton,
 GtkLinkButton:hover,
 GtkLinkButton.button.flat,
