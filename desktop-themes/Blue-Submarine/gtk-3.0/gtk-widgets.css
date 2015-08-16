@@ -2216,12 +2216,12 @@ DbusmenuGtkMenu .menuitem.separator,
 	color: @theme_fg_color;
 }
 
-GtkLinkButton,
-GtkLinkButton:hover,
-GtkLinkButton.button.flat,
-GtkLinkButton.button.flat:hover {
-     padding: 4px;
-     border-color: transparent;
+GtkLinkButton.button,
+GtkLinkButton.button:hover,
+GtkLinkButton.button:active,
+GtkLinkButton.button:active:hover {
+    transition: all 400ms ease-in;
+    text-shadow: none;
 }
 
 /***********
