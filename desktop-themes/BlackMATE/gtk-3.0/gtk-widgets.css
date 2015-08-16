@@ -1,6 +1,7 @@
 * {
 	engine: none;
 	padding: 1px;
+	text-shadow: none;
 	background-clip: padding-box;
 	/* Style properties */
 	-GtkButton-child-displacement-x: 1;
@@ -117,7 +118,7 @@
 	border-radius: 3px;
 	border-width: 0px;
 	border-style: solid;
-	text-shadow: 0 -1px black;
+	text-shadow: none;
 
 	color: @theme_fg_color;
 	background-image: linear-gradient(to bottom,
@@ -1081,7 +1082,7 @@ GtkComboBox {
 	-GtkComboBox-arrow-scaling: 0.5;
 	-GtkComboBox-shadow-type: none;
 	color: @theme_fg_color;
-	text-shadow: 0 -1px black;
+	text-shadow: none;
 }
 
 GtkComboBox .separator {
@@ -1130,7 +1131,7 @@ GtkComboBox .menu {
     border-radius: 3px;
     border-width: 1px;
     border-style: solid;
-    text-shadow: 0 -1px black;
+    text-shadow: none;
     color: @theme_fg_color;
     background-image: linear-gradient(to bottom,
                                       @button_hover_gradient_color_a,
@@ -1830,7 +1831,7 @@ GtkOverlay.osd {
 	                                  @osd_button_bg_b 68%,
 	                                  @osd_button_bg_c);
 	color: @osd_button_fg;
-	text-shadow: 0 -1px @osd_button_shadow;
+	text-shadow: none;
 	icon-shadow: 0 -1px @osd_button_shadow;
 }
 
@@ -1898,12 +1899,12 @@ GtkOverlay.osd {
 
 .osd GtkMenuButton.button *:active {
     color: @osd_button_fg_active;
-    text-shadow: 0 -1px @osd_button_shadow;
+    text-shadow: none;
 }
 
 .osd.toolbar {
 	color: @osd_fg;
-	text-shadow: 0 1px @osd_text_shadow;
+	text-shadow: none;
 
 	padding: 10px;
 	border-style: none;
@@ -2490,7 +2491,7 @@ GtkIconView.content-view.check:selected {
 	                                  @app_notification_c);
 
 	color: @theme_text_color;
-	text-shadow: 0 1px black;
+	text-shadow: none;
 }
 
 /*************
@@ -3200,7 +3201,7 @@ NemoQueryEditor .toolbar .entry:focus {
 .nautilus-desktop.nautilus-canvas-item,
 .nemo-desktop.nemo-canvas-item {
 	color: @theme_fg_color;
-	text-shadow: 1px 1px black;
+	text-shadow: none;
 }
 
 .nautilus-desktop.nautilus-canvas-item:active,
