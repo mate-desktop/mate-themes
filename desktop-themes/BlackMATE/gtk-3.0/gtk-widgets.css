@@ -38,10 +38,6 @@
 	-GtkWindow-resize-grip-width: 14;
 	-GtkWindow-resize-grip-height: 12; 
 
-	/* We use the outline properties to signal the focus properties
-	 * to the adwaita engine: using real CSS properties is faster,
-	 * and we don't use any outlines for now.
-	 */
 	outline-color: @focus_border;
 	outline-style: dashed;
 	outline-offset: 2px;
@@ -591,11 +587,14 @@ GtkNotebook {
 	color: @theme_fg_color; /* gdebi bug? */
 	border-color: @less_dark_color;
 	border-style: solid;
-	border-width: 1px;
+	border-width: 0px 1px 0px 1px;
 
-	-GtkNotebook-tab-overlap: 8;
-	-GtkNotebook-tab-curvature: 6;
+	-GtkNotebook-tab-overlap: 1;
+	-GtkNotebook-tab-curvature: 0;
 	-GtkNotebook-initial-gap: 0;
+	-GtkNotebook-has-tab-gap: false;
+	-GtkWidget-focus-padding: 2;
+	-GtkWidget-focus-line-width: 0;
 }
 
 .notebook.arrow:insensitive {
@@ -616,8 +615,6 @@ GtkNotebook {
 					    left top, left bottom,
 					    from (shade(@notebook_active_tab_border, 1.35)),
 					    to (@less_dark_color));
-
-	-adwaita-selected-tab-color: transparent; /*shade(@less_dark_color, 0.8);*/
 	background-image: linear-gradient(to bottom,
 	                                  shade(@less_dark_color, 0.75),
 	                                  shade(@less_dark_color, 0.86) 40%,
@@ -646,12 +643,14 @@ GtkNotebook {
 .notebook tab.left:active {
 	border-radius: 3px 0px 0px 3px;
 	padding: 2px 4px 2px;
+	border-width: 1px 0px 1px 1px;
 }
 
 .notebook tab.right,
 .notebook tab.right:active {
 	border-radius: 0px 3px 3px 0px;
 	padding: 2px 4px 2px;
+	border-width: 1px 1px 1px 0px;
 }
 
 .notebook tab.left:active,
