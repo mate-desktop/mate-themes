@@ -181,6 +181,10 @@
  **************/
 @define-color entry_tag_bg shade(@theme_selected_bg_color, 0.89);
 @define-color entry_tag_fg @theme_base_color;
+@define-color documents_emblem_bg #3465a4;
+@define-color documents_collection_bg #d3d7cf;
+@define-color gedit_not_found_bg rgb (237, 54, 54);
+@define-color gedit_not_found_fg white;
 
 /******
  * WM *
