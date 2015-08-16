@@ -51,7 +51,11 @@
 @define-color backdrop_selected_bg_color shade (@theme_selected_bg_color, 1.12);
 @define-color backdrop_selected_fg_color @theme_selected_fg_color;
 
-/* Zukitwo colors */
+@define-color scale_fill shade(@button_bg_active, 1.00);
+@define-color scale_border_a @internal_element_color;
+@define-color scale_border_b shade (@internal_element_color, 1.25);
+@define-color scale_progress_fill @theme_selected_bg_color;
+
 @define-color toolbar_gradient_base #CBD9D4;
 @define-color toolbar_gradient_final #C0CEC9;
 @define-color toolbar_border #BBC9C4;

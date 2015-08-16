@@ -315,8 +315,6 @@ GtkComboBox,
 }
 
 GtkComboBox.combobox-entry .button,
-GtkScale.slider,
-GtkScale.slider.vertical,
 .notebook .button,
 .inline-toolbar.toolbar .button {
 	background-image: -gtk-gradient (linear, left top, left bottom,
@@ -336,21 +334,7 @@ GtkScale.slider.vertical,
 	-unico-inner-stroke-color: shade (@theme_bg_color, 1.9);
 }
 
-GtkScale.slider,
-GtkScale.slider.vertical {
-	-unico-outer-stroke-width: 1px;
-	-unico-outer-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
-		from (alpha (shade (@theme_bg_color, 0.05), 0.05)),
-		to (alpha (shade (@theme_bg_color, 0.05), 0.09)));
-	-unico-inner-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
-		from (shade (@button_bg_color, 1.66)),
-		to (shade (@button_bg_color, 1.415)));
-	-unico-inner-stroke-width: 1px 1px 0 1px;
-}
-
 GtkComboBox.combobox-entry .button:hover,
-GtkScale.slider:hover,
-GtkScale.slider.vertical:hover,
 .notebook .button:hover,
 .inline-toolbar.toolbar .button:hover {
 	background-image: -gtk-gradient (linear, left top, left bottom,
@@ -1401,15 +1385,6 @@ DbusmenuGtkMenu .menuitem.radio:active,
 		to (shade (@theme_bg_color, 1.1)));;
 }
 
-.menubar .menuitem GtkScale.trough {
-	background-color: @theme_bg_color;
-	background-image: none;
-
-	-unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
-		from (shade (@theme_bg_color, 0.75)),
-		to (shade (@theme_bg_color, 1.15)));
-}
-
 Genericmenuitem .menuitem .accelerator,
 DbusmenuGtkMenu .menuitem .accelerator,
 .menubar .menuitem .accelerator,
@@ -1545,18 +1520,189 @@ DbusmenuGtkMenu .menuitem .accelerator:insensitive,
 	-unico-inner-stroke-width: 1px;
 }
 
-/*************************
- * progressbar and scale *
- *************************/
-GtkScale,
+/************
+ * GtkScale *
+ ************/
+
+.scale {
+    -GtkScale-slider-length: 14;
+    -GtkRange-slider-width: 14;
+    -GtkRange-trough-border: 1;
+    -GtkWidget-focus-line-width: 0;
+}
+
+.scale.slider,
+.scale.slider:hover,
+.scale.slider:insensitive {
+    border-width: 1px;
+    border-radius: 8px;
+    border-style: none;
+    color: alpha(@theme_base_color, 0.0);
+    background-color: alpha(@theme_base_color, 0.0);
+    /* background-image in -assets variant */
+}
+
+.scale.slider.fine-tune:active,
+.scale.slider.fine-tune:active:hover,
+.scale.slider.fine-tune.horizontal:active,
+.scale.slider.fine-tune.horizontal:active:hover {
+	background-size: 50%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.toolbar .scale.trough,
+.scale.trough {
+    margin: 7px 0;
+    background-image: -gtk-gradient (linear,
+                     left top,
+                     left bottom,
+                     from (alpha (#000, 0.20)),
+                     color-stop (0.20, alpha (#000, 0.16)),
+                     to (alpha (#000, 0.06)));
+    border-style: none;
+    border-width: 0px;
+    border-radius: 8px;
+    box-shadow: inset  1px  1px alpha(#000, 0.08),
+                inset -1px -1px alpha(#000, 0.08);
+}
+
+.scale.trough.vertical {
+    margin: 0 7px;
+}
+
+.scale.trough:insensitive {
+    background-image: -gtk-gradient (linear,
+                     left top,
+                     left bottom,
+                     from (alpha (#000, 0.03)),
+                     to   (alpha (#000, 0.03)));
+}
+
+.scale.progressbar {
+    background-color: @scale_progress_fill;
+    border-width: 1px;
+    border-radius: 3px;
+    border-style: none;
+}
+
+.scale:insensitive,
+.vertical.scale:insensitive {
+    background-color: transparent;
+}
+
+.scale.mark {
+    color: mix(@theme_bg_color, @theme_text_color, 0.56);
+}
+
+.menubar .menuitem .scale.highlight.left,
+.scale.highlight.left {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade (@scale_fill, 0.90)),
+                                     to (shade (@scale_fill, 1.31)));
+    border-style: none;
+    border-width: 0px;
+    border-radius: 8px;
+    box-shadow: inset  1px  1px alpha(#000, 0.08),
+                inset -1px -1px alpha(#000, 0.08);
+    color:       @theme_selected_fg_color;
+    text-shadow: none;
+}
+
+.menubar .menuitem .scale.highlight.bottom,
+.scale.highlight.bottom {
+    background-image: -gtk-gradient (linear,
+                                     left top, right top,
+                                     from (shade (@scale_fill, 0.90)),
+                                     to (shade (@scale_fill, 1.31)));
+    border-style: none;
+    border-width: 0px;
+    border-radius: 8px;
+    box-shadow: inset  1px  1px alpha(#000, 0.08),
+                inset -1px -1px alpha(#000, 0.08);
+    color:       @theme_selected_fg_color;
+    text-shadow: none;
+}
+
+.scale.highlight.left:insensitive {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@theme_bg_color, 0.85)),
+                                     to (shade (@theme_bg_color, 0.85)));
+    box-shadow: inset  1px  1px alpha(#000, 0.02),
+                inset -1px -1px alpha(#000, 0.02);
+}
+
+.scale.highlight.bottom:insensitive {
+    background-image: -gtk-gradient (linear,  left top, right top,
+                                     from (shade (@theme_bg_color, 0.85)),
+                                     to (shade (@theme_bg_color, 0.85)));
+    box-shadow: inset  1px  1px alpha(#000, 0.02),
+                inset -1px -1px alpha(#000, 0.02);
+}
+
+GtkScale.slider,
+GtkScale.slider.horizontal,
+GtkScale.slider.horizontal:hover {
+    background-image: url("assets/scale-slider-hor.svg");
+}
+
+GtkScale.slider:insensitive,
+GtkScale.slider.horizontal:insensitive {
+    background-image: url("assets/scale-slider-insensitive-hor.svg");
+}
+
+GtkScale.slider.vertical {
+    background-image: url("assets/scale-slider-ver.svg");
+}
+
+GtkScale.slider.vertical:insensitive {
+    background-image: url("assets/scale-slider-insensitive-ver.svg");
+}
+
+GtkScale.scale-has-marks-above.slider.horizontal,
+GtkScale.scale-has-marks-above.slider.horizontal:hover {
+    background-image: url("assets/scale-slider-marks-above-horizontal.svg");
+}
+
+GtkScale.scale-has-marks-above.slider.horizontal:insensitive {
+    background-image: url("assets/scale-slider-marks-above-horizontal-insensitive.svg");
+}
+
+GtkScale.scale-has-marks-above.slider.vertical {
+    background-image: url("assets/scale-slider-marks-above-vertical.svg");
+}
+
+GtkScale.scale-has-marks-above.slider.vertical:insensitive {
+    background-image: url("assets/scale-slider-marks-above-vertical-insensitive.svg");
+}
+
+GtkScale.scale-has-marks-below.slider.horizontal,
+GtkScale.scale-has-marks-below.slider.horizontal:hover {
+    background-image: url("assets/scale-slider-marks-below-horizontal.svg");
+}
+
+GtkScale.scale-has-marks-below.slider.horizontal:insensitive {
+    background-image: url("assets/scale-slider-marks-below-horizontal-insensitive.svg");
+}
+
+GtkScale.scale-has-marks-below.slider.vertical {
+    background-image: url("assets/scale-slider-marks-below-vertical.svg");
+}
+
+GtkScale.scale-has-marks-below.slider.vertical:insensitive {
+    background-image: url("assets/scale-slider-marks-below-vertical-insensitive.svg");
+}
+
+/***************
+ * progressbar *
+ ***************/
 GtkProgressBar {
 	border-radius: 0;
 	border-width: 1px;
 	padding: 0;
 }
 
-.menubar .menuitem .scale.highlight.left,
-.scale.highlight.left,
 .progressbar,
 .progressbar row,
 .progressbar row:hover,
@@ -1581,7 +1727,6 @@ GtkProgressBar {
 	-unico-outer-stroke-width: 0;
 }
 
-.scale.highlight.bottom,
 .progressbar.vertical {
 	background-image: -gtk-gradient (linear, left top, right top,
 		from (shade (@theme_selected_bg_color, 0.96)),
@@ -1598,32 +1743,6 @@ GtkProgressBar {
 		from (shade (@theme_selected_bg_color, 1.15)),
 		to (shade (@theme_selected_bg_color, 1.15)));
 	-unico-inner-stroke-width: 1px 0px 1px 1px;
-}
-
-.scale.highlight.left:insensitive {
-	background-image: -gtk-gradient (linear, left top, left bottom,
-		from (shade (@theme_bg_color, 0.95)),
-		to (shade (@theme_bg_color, 0.85)));
-
-	-unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
-		from (shade (@theme_bg_color, 0.75)),
-		to (shade (@theme_bg_color, 0.75)));
-	-unico-inner-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
-		from (shade (@theme_bg_color, 0.97)),
-		to (shade (@theme_bg_color, 0.865)));
-}
-
-.scale.highlight.bottom:insensitive {
-	background-image: -gtk-gradient (linear, left top, right top,
-		from (shade (@theme_bg_color, 0.95)),
-		to (shade (@theme_bg_color, 0.85)));
-
-	-unico-border-gradient: -gtk-gradient (linear, left top, right top,
-		from (shade (@theme_bg_color, 0.75)),
-		to (shade (@theme_bg_color, 0.75)));
-	-unico-inner-stroke-gradient: -gtk-gradient (linear, left top, right top,
-		from (shade (@theme_bg_color, 0.97)),
-		to (shade (@theme_bg_color, 0.865)));
 }
 
 .trough,
@@ -1658,70 +1777,6 @@ GtkProgressBar {
 		from (shade (@theme_bg_color, 0.74)),
 		to (shade (@theme_bg_color, 0.8)));
 	-unico-outer-stroke-width: 0;
-}
-
-.scale.trough.horizontal {
-	border-radius: 8px;
-	background-image: none;
-	background-color: shade (@theme_bg_color, 0.9);
-	border-width: 0;
-	-unico-outer-stroke-width: 0 0 1px 0;
-	-unico-outer-stroke-color: alpha (@theme_base_color, 0.6);
-	-unico-inner-stroke-width: 1px 0 0 0;
-
-	-unico-inner-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
-		from (shade (@theme_bg_color, 0.75)),
-		to (shade (@theme_bg_color, 0.75)));
-}
-
-.scale.trough.vertical {
-	border-radius: 8px;
-	background-image: none;
-	background-color: shade (@theme_bg_color, 0.9);
-	border-width: 0;
-	-unico-outer-stroke-width: 0 1px 0 0;
-	-unico-outer-stroke-color: alpha (@theme_base_color, 0.6);
-	-unico-inner-stroke-width: 0 0 0 1px;
-
-	-unico-inner-stroke-gradient: -gtk-gradient (linear, left top, right top,
-		from (shade (@theme_bg_color, 0.75)),
-		to (shade (@theme_bg_color, 0.75)));
-}
-
-.scale.trough.vertical.highlight.bottom,
-.scale.trough.horizontal.highlight.left {
-	background-color: alpha (@theme_selected_bg_color, 0.6);
-}
-
-GtkScale {
-	-GtkRange-slider-width: 14;
-	-GtkRange-trough-border: 1;
-	-GtkScale-slider-length: 14;
-
-	border-style: solid;
-	border-width: 1px;
-	border-radius: 8px;
-
-	-unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
-		from (shade (@theme_bg_color, 0.8)),
-		to (shade (@theme_bg_color, 0.8)));
-	-unico-glow-radius: 0;
-	-unico-inner-stroke-width: 1px;
-	-unico-inner-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
-		from (alpha (shade (@theme_bg_color, 0.6), 0.2)),
-		to (alpha (@theme_bg_color, 0.0)));
-}
-
-GtkScale.vertical {
-	-GtkScale-slider-length: 14;
-	-unico-inner-stroke-width: 1px;
-	-unico-inner-stroke-gradient: -gtk-gradient (linear, left top, right top,
-		from (alpha (shade (@theme_bg_color, 0.6), 0.2)),
-		to (alpha (@theme_bg_color, 0.0)));
-}
-
-GtkScale.mark {
-	border-color: shade (@theme_bg_color, 0.8);
 }
 
 /*************
