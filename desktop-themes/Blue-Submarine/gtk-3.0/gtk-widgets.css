@@ -1520,6 +1520,229 @@ DbusmenuGtkMenu .menuitem .accelerator:insensitive,
 	-unico-inner-stroke-width: 1px;
 }
 
+/****************
+ * Progress bar *
+ ****************/
+
+/* progress component */
+.progressbar,
+.toolbar .progressbar,
+.entry.progressbar,
+.progressbar row,
+.progressbar row:hover,
+.progressbar row:selected,
+.progressbar row:selected:focus {
+    background-image: linear-gradient(to right,
+                                      alpha (#000, 0.00),
+                                      alpha (#000, 0.00) 48%,
+                                      alpha (#004, 0.12) 48%,
+                                      alpha (#004, 0.12) 50%,
+                                      alpha (#000, 0.00) 50%,
+                                      alpha (#000, 0.00) 98%,
+                                      alpha (#004, 0.12) 98%,
+                                      alpha (#004, 0.12)),
+                      linear-gradient(to bottom,
+                                      alpha (#000, 0.20),
+                                      alpha (#000, 0.05) 50%,
+                                      alpha (#000, 0.00)),
+                      linear-gradient(to right,
+                                      @progressbar_fill_a,
+                                      @progressbar_fill_b);
+    background-size: 40px auto, auto, auto;
+    box-shadow: inset  0px  1px alpha(black, 0.03),
+                inset  1px  0px alpha(black, 0.03),
+                inset -1px  0px alpha(black, 0.03),
+                inset  0px -1px alpha(white, 0.10);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    border-top-color:    shade(@button_border_active, 0.80);
+    border-left-color:   shade(@button_border_active, 0.85);
+    border-right-color:  shade(@button_border_active, 0.85);
+    border-bottom-color: shade(@button_border_active, 1.00);
+/* Label font color of progressbar*/
+    color: @theme_fg_color;
+    text-shadow: none;
+}
+
+.progressbar.vertical {
+    background-image: linear-gradient(to top,
+                                      alpha (#000, 0.00),
+                                      alpha (#000, 0.00) 48%,
+                                      alpha (#004, 0.12) 48%,
+                                      alpha (#004, 0.12) 50%,
+                                      alpha (#000, 0.00) 50%,
+                                      alpha (#000, 0.00) 98%,
+                                      alpha (#004, 0.12) 98%,
+                                      alpha (#004, 0.12)),
+                      linear-gradient(to right,
+                                      alpha (#000, 0.20),
+                                      alpha (#000, 0.05) 50%,
+                                      alpha (#000, 0.00)),
+                      linear-gradient(to top,
+                                      @progressbar_fill_a,
+                                      @progressbar_fill_b);
+    background-size: auto 40px, auto, auto;
+    box-shadow: inset  0px  1px alpha(black, 0.03),
+                inset  1px  0px alpha(black, 0.03),
+                inset -1px  0px alpha(white, 0.10),
+                inset  0px -1px alpha(black, 0.03);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    border-top-color:    shade(@button_border_active, 0.85);
+    border-left-color:   shade(@button_border_active, 0.80);
+    border-right-color:  shade(@button_border_active, 1.00);
+    border-bottom-color: shade(@button_border_active, 0.85);
+/* Label font color of progressbar*/
+    color: @theme_fg_color;
+    text-shadow: none;
+}
+
+GtkProgressBar {
+    /* FIXME - Not working 3.14 */
+    -GtkProgressBar-min-horizontal-bar-height: 16;
+    -GtkProgressBar-min-vertical-bar-width: 16;
+    border-radius: 2px;
+    padding: 0 0 1px 0;
+    text-shadow: none;
+/*    -GtkProgressBar-xspacing: 22;
+    -GtkProgressBar-yspacing: 22; */
+}
+
+/* through component */
+.trough row {
+    padding: 0px;
+    text-shadow: none;
+    border-radius: 2px;
+    padding: 0 0 1px 0;
+}
+
+.trough,
+.toolbar .trough,
+.trough row,
+.trough row:hover {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (alpha (#000, 0.18)),
+                                     color-stop (0.20, alpha (#000, 0.14)),
+                                     to (alpha (#000, 0.04)));
+    border-style: none;
+    border-width: 0px;
+    border-radius: 2px;
+    padding: 0 0 1px 0;
+    box-shadow: inset  1px  1px alpha(#000, 0.15),
+                inset -1px -1px alpha(#000, 0.15);
+    text-shadow: none;
+}
+
+.trough.vertical {
+    background-image: -gtk-gradient (linear,
+                                     left top, right top,
+                                     from (alpha (#000, 0.18)),
+                                     color-stop (0.20, alpha (#000, 0.14)),
+                                     to (alpha (#000, 0.04)));
+    border-radius: 2px;
+    padding: 0 0 1px 0;
+    text-shadow: none;
+}
+
+.trough row:selected,
+.trough row:selected:focus {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (mix (@trough_bg_color_a, @theme_selected_bg_color, 0.25)),
+                                     to   (mix (@trough_bg_color_b, @theme_selected_bg_color, 0.25)));
+}
+
+/* level bars as used for password quality or remaining power */
+GtkLevelBar {
+    -GtkLevelBar-min-block-width: 34;
+    -GtkLevelBar-min-block-height: 3;
+}
+
+GtkLevelBar.vertical {
+    -GtkLevelBar-min-block-width: 3;
+    -GtkLevelBar-min-block-height: 34;
+}
+
+.level-bar.trough {
+    padding: 2px;
+}
+
+.level-bar.fill-block {
+    border-width: 1px;
+    border-style: solid;
+    border-color: @button_border_active;
+    background-image: -gtk-gradient (linear,
+                                     0.45 top, 0.55 bottom,
+                                     from (shade (@button_bg_active, 1.30)),
+                                     color-stop (0.40, shade (@button_bg_active, 1.04)),
+                                     color-stop (0.60, shade (@button_bg_active, 0.92)),
+                                     to (shade (@button_bg_active, 1.20)));
+}
+
+.level-bar.indicator-continuous.fill-block {
+    padding: 2px;
+    border-radius: 2px;
+}
+
+.level-bar.indicator-discrete.fill-block.horizontal {
+    margin: 0 1px;
+}
+
+.level-bar.indicator-discrete.fill-block.vertical {
+    margin: 1px 0;
+}
+
+/* discrete indicator border rounding,
+   uncomment when :nth-child will be working
+   on the widget
+
+.level-bar.indicator-discrete.fill-block.horizontal:first-child {
+    border-radius: 2px 0 0 2px;
+}
+
+.level-bar.indicator-discrete.fill-block.horizontal:last-child {
+    border-radius: 0 2px 2px 0;
+}
+
+.level-bar.indicator-discrete.fill-block.vertical:first-child {
+    border-radius: 2px 2px 0 0;
+}
+
+.level-bar.indicator-discrete.fill-block.vertical:last-child {
+    border-radius: 0 0 2px 2px;
+}
+*/
+
+.level-bar.fill-block.level-high {
+    border-color: shade(@success_color, 0.85);
+    background-image: linear-gradient(to bottom,
+                                      shade(@success_color, 1.2),
+                                      @success_color 75%,
+                                      shade(@success_color, 0.95));
+}
+
+.level-bar.fill-block.level-low {
+    border-color: shade(@warning_bg_color, 0.80);
+    background-image: linear-gradient(to bottom,
+                                      shade(@warning_bg_color, 1.3),
+                                      @warning_bg_color 75%,
+                                      shade(@warning_bg_color, 0.90));
+}
+
+.level-bar.fill-block.empty-fill-block {
+    background-color: transparent;
+    background-image: none;
+    border-color: alpha(@theme_fg_color, 0.1);
+}
+
+.level-bar.fill-block.empty-fill-block:backdrop {
+    border-color: transparent;
+    background-color: transparent;
+}
+
 /************
  * GtkScale *
  ************/
@@ -1692,91 +1915,6 @@ GtkScale.scale-has-marks-below.slider.vertical {
 
 GtkScale.scale-has-marks-below.slider.vertical:insensitive {
     background-image: url("assets/scale-slider-marks-below-vertical-insensitive.svg");
-}
-
-/***************
- * progressbar *
- ***************/
-GtkProgressBar {
-	border-radius: 0;
-	border-width: 1px;
-	padding: 0;
-}
-
-.progressbar,
-.progressbar row,
-.progressbar row:hover,
-.progressbar row:selected,
-.progressbar row:selected:focused {
-	background-image: -gtk-gradient (linear, left top, left bottom,
-		from (shade (@theme_selected_bg_color, 0.96)),
-		to (shade (@theme_selected_bg_color, 1.1)));
-	border-width: 1px;
-	border-style: solid;
-	border-color: shade (@theme_selected_bg_color, 0.8);
-	color: @theme_selected_fg_color;
-
-	-unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
-		from (shade (@theme_selected_bg_color, 0.8)),
-		to (shade (@theme_selected_bg_color, 0.8)));
-	-unico-inner-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
-		from (shade (@theme_selected_bg_color, 1.15)),
-		to (shade (@theme_selected_bg_color, 1.15)));
-	-unico-inner-stroke-width: 1px 1px 0px 1px;
-	-unico-outer-stroke-color: @transparent;
-	-unico-outer-stroke-width: 0;
-}
-
-.progressbar.vertical {
-	background-image: -gtk-gradient (linear, left top, right top,
-		from (shade (@theme_selected_bg_color, 0.96)),
-		to (shade (@theme_selected_bg_color, 1.1)));
-	border-width: 1px;
-	border-style: solid;
-	border-color: shade (@theme_selected_bg_color, 0.8);
-	color: @theme_selected_fg_color;
-
-	-unico-border-gradient: -gtk-gradient (linear, left top, right top,
-		from (shade (@theme_selected_bg_color, 0.8)),
-		to (shade (@theme_selected_bg_color, 0.8)));
-	-unico-inner-stroke-gradient: -gtk-gradient (linear, left top, right top,
-		from (shade (@theme_selected_bg_color, 1.15)),
-		to (shade (@theme_selected_bg_color, 1.15)));
-	-unico-inner-stroke-width: 1px 0px 1px 1px;
-}
-
-.trough,
-.trough row,
-.trough row:hover,
-.trough row:selected,
-.trough row:selected:focused {
-	background-image: -gtk-gradient (linear, left top, left bottom,
-		from (shade (@theme_bg_color, 0.9)),
-		to (shade (@theme_bg_color, 0.98)));
-
-	border-width: 1px;
-	border-style: solid;
-	border-radius: 0;
-	border-color: shade (@theme_bg_color, 0.8);
-	-unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
-		from (shade (@theme_bg_color, 0.74)),
-		to (shade (@theme_bg_color, 0.8)));
-	-unico-outer-stroke-width: 0;
-}
-
-.trough.vertical {
-	background-image: -gtk-gradient (linear, left top, right top,
-		from (shade (@theme_bg_color, 0.9)),
-		to (shade (@theme_bg_color, 0.98)));
-
-	border-width: 1px;
-	border-style: solid;
-	border-radius: 0;
-	border-color: shade (@theme_bg_color, 0.8);
-	-unico-border-gradient: -gtk-gradient (linear, left top, right top,
-		from (shade (@theme_bg_color, 0.74)),
-		to (shade (@theme_bg_color, 0.8)));
-	-unico-outer-stroke-width: 0;
 }
 
 /*************

@@ -29,6 +29,7 @@
 @define-color error_bg_color rgb (237, 54, 54);
 @define-color link_color #00CC85;
 @define-color error_color #cc0000;
+@define-color success_color #4E9A06;
 
 /* theme common colors */
 @define-color button_bg_color shade (@theme_bg_color, 1.06);
@@ -55,6 +56,11 @@
 @define-color scale_border_a @internal_element_color;
 @define-color scale_border_b shade (@internal_element_color, 1.25);
 @define-color scale_progress_fill @theme_selected_bg_color;
+@define-color progressbar_fill_a @button_bg_active;
+@define-color progressbar_fill_b shade(mix(@button_bg_active, green, 0.10), 1.10);
+
+@define-color trough_bg_color_a shade (@theme_bg_color, 0.88);
+@define-color trough_bg_color_b shade (@theme_bg_color, 0.95);
 
 @define-color toolbar_gradient_base #CBD9D4;
 @define-color toolbar_gradient_final #C0CEC9;
