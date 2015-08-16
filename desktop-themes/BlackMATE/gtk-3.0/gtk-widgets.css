@@ -1547,17 +1547,11 @@ GtkLinkButton.button:active:hover {
     background-image: linear-gradient(to bottom,
                                       #999999,
                                       #404040);
-    /*color: @theme_main_color;*/
-    color: #000000;
+    color: @theme_text_color;
     border-style: solid;
     border-width: 1px;
     border-radius: 3px;
     border-image: url("assets/menu-border-dark.svg") 2 / 2px stretch;
-}
-
-.menuitem *:hover,
-.menu .menuitem *:hover {
-    color: #000000;
 }
 
 .menu .menuitem:insensitive,
