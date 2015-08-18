@@ -6,22 +6,22 @@ style "theme-panel"
 # Disable for normal backgrounds and transparancy panel with dark DE backgrounds.
 #	bg_pixmap[NORMAL] = "/Panel/panel-bg.png" 
 
-	base[NORMAL]		= @bg_color
-	base[PRELIGHT]		= shade (1.06, @bg_color)
-	base[INSENSITIVE]	= @bg_color
-	bg[NORMAL]			= @bg_color_dark
-	bg[PRELIGHT]		= shade (2.60, @bg_color_dark)
-#	bg[SELECTED]		= shade (0.90, @selected_bg_color)
-	bg[INSENSITIVE]		= @bg_color
-#	bg[ACTIVE]			= shade (0.8, @bg_color_dark)
-	fg[NORMAL]			= "#f5f5f5"
-	fg[PRELIGHT]		= "#ffffff"
-	fg[INSENSITIVE]		= shade (0.75, @text_color_dark)
-	fg[ACTIVE]			= "#f5f5f5"
-	text[NORMAL]		= "#CFCFCF"
-	text[PRELIGHT]		= "#ffffff"
-	text[INSENSITIVE]	= shade (0.75, @text_color_dark)
-	text[ACTIVE]		= "#f5f5f5"
+	base[NORMAL]        = @bg_color
+	base[PRELIGHT]      = shade (1.06, @bg_color)
+	base[INSENSITIVE]   = @bg_color
+	bg[NORMAL]          = @bg_color_dark
+	bg[PRELIGHT]        = shade (2.60, @bg_color_dark)
+#	bg[SELECTED]        = shade (0.90, @selected_bg_color)
+	bg[INSENSITIVE]     = @bg_color
+#	bg[ACTIVE]          = shade (0.8, @bg_color_dark)
+	fg[NORMAL]          = "#f5f5f5"
+	fg[PRELIGHT]        = shade (1.20, @selected_bg_color)
+	fg[INSENSITIVE]     = shade (0.75, @text_color_dark)
+	fg[ACTIVE]          = "#f5f5f5"
+	text[NORMAL]        = "#CFCFCF"
+	text[PRELIGHT]      = shade (1.20, @selected_bg_color)
+	text[INSENSITIVE]   = shade (0.75, @text_color_dark)
+	text[ACTIVE]        = "#f5f5f5"
 
 	engine "murrine" {
 
@@ -88,28 +88,28 @@ style "theme-panel-buttons"
 
 style "theme-panel-text"
 {
-	bg[NORMAL]			= @menu_color
-	fg[NORMAL]			= "#f5f5f5"
-	fg[PRELIGHT]		= "#ffffff"
-	fg[INSENSITIVE]		= shade (0.75, @text_color_dark)
-	fg[ACTIVE]			= "#f5f5f5"
-	text[NORMAL]		= "#f5f5f5"
-	text[PRELIGHT]		= "#ffffff"
-	text[INSENSITIVE]	= shade (0.75, @text_color_dark)
-	text[ACTIVE]		= "#f5f5f5"
+	bg[NORMAL]          = @bg_color_dark
+	fg[NORMAL]          = "#f5f5f5"
+	fg[PRELIGHT]        = shade (1.20, @selected_bg_color)
+	fg[INSENSITIVE]     = shade (0.75, @text_color_dark)
+	fg[ACTIVE]          = "#f5f5f5"
+	text[NORMAL]        = "#f5f5f5"
+	text[PRELIGHT]      = "#ffffff"
+	text[INSENSITIVE]   = shade (0.75, @text_color_dark)
+	text[ACTIVE]        = "#f5f5f5"
 }
 
 style "theme-main-menu-text" = "theme-panel-text"
 {
-	bg[NORMAL]			= @menu_color
-	fg[NORMAL]			= "#f5f5f5"
-	fg[PRELIGHT]		= "#ffffff"
-	fg[INSENSITIVE]		= shade (0.75, @text_color_dark)
-	fg[ACTIVE]			= "#f5f5f5"
-	text[NORMAL]		= "#f5f5f5"
-	text[PRELIGHT]		= "#ffffff"
-	text[INSENSITIVE] 	= shade (0.75, @text_color_dark)
-	text[ACTIVE]		= "#f5f5f5"
+	bg[NORMAL]          = @bg_color_dark
+	fg[NORMAL]          = "#f5f5f5"
+	fg[PRELIGHT]        = "#ffffff"
+	fg[INSENSITIVE]     = shade (0.75, @text_color_dark)
+	fg[ACTIVE]          = "#f5f5f5"
+	text[NORMAL]        = "#f5f5f5"
+	text[PRELIGHT]      = "#ffffff"
+	text[INSENSITIVE]   = shade (0.75, @text_color_dark)
+	text[ACTIVE]        = "#f5f5f5"
 }
 
 style "theme-panel-handle" 

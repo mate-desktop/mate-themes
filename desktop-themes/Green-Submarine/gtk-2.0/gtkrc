@@ -9,7 +9,7 @@
 
 # NOTE: Uncommenting means to delete the "#" at the beginning of a line. Commenting means to add a "#" at the beginning of a line. The "#" tells the theme wether to ignore the specified line or not.
 
-# These are the defined colors for the theme, you can change them in MATE's appearance preferences.
+# These are the defined colors for the theme, you can change them in GNOME's appearance preferences.
 gtk_color_scheme = "bg_color:#CBD9D4\nselected_bg_color:#72B49D\nbase_color:#FFF" # Background, base.
 gtk_color_scheme = "fg_color:#101010\nselected_fg_color:#FFF\ntext_color:#1A1A1A" # Foreground, text.
 gtk_color_scheme = "tooltip_bg_color:#DBFFF3\ntooltip_fg_color:#000000" # Tooltips.
@@ -60,7 +60,7 @@ style "murrine-default" {
 	GtkScrollbar	::activate-slider			= 1
 
 	GtkScrolledWindow ::scrollbar-spacing		= 0
-	GtkScrolledWindow ::scrollbars-within-bevel	= 1
+	GtkScrolledWindow ::scrollbars-within-bevel	= 0
 
 	GtkPaned	::handle-size			= 2
 
@@ -491,34 +491,38 @@ style "murrine-menubar" = "murrine-wider-dark" {
 style "murrine-menu" = "murrine-wider-dark" {
 	GtkMenuItem::arrow-scaling	= 0.5
 
-	bg[NORMAL]			= shade (0.88, @bg_color_dark)
+	bg[NORMAL]		= shade(0.88, @bg_color_dark)
+    bg[PRELIGHT] 	= shade(0.91, @bg_color_dark)
+	bg[SELECTED] 	= shade(1.00, @bg_color_dark)
+	fg[PRELIGHT]    = shade (1.20, @selected_bg_color)		# menu item selected
 
 	engine "murrine" {
-		border_shades 	= { 1.2, 1.0 }
-		roundness		= 1 # 0 = squared
-		textstyle 		= 0
+        gradient_shades = {2.63,1.17,1.17,1.17}
+		border_shades   = { 6.60, 6.50 }
+		roundness       = 4 # 0 = squared
+		textstyle       = 0
 	}
 }
 
 style "murrine-menu-item" = "murrine-wider-dark" {
-	fg[NORMAL] 			= shade (0.95, @fg_color_dark)        # menu item normal
-    fg[INSENSITIVE] 	= mix(0.20, @fg_color_dark, @bg_color_dark) # menu item activated
-	fg[PRELIGHT]		= @selected_fg_color						# menu item selected
+	fg[NORMAL]          = shade (0.95, @fg_color_dark)      # menu item normal
+	fg[INSENSITIVE]     = mix(0.20, @fg_color_dark, @bg_color_dark) # menu item activated
+	fg[PRELIGHT]        = shade (1.20, @selected_bg_color)  # menu item selected
 
-	text[NORMAL]        = shade (0.94, @fg_color_dark)		# Color check/radio menu
-	text[INSENSITIVE] 	= mix(0.20, @text_color_dark, @bg_color_dark)	    
-	text[PRELIGHT]      = @selected_fg_color            			# Color check/radio menu
+	text[NORMAL]        = shade (0.94, @fg_color_dark)      # Color check/radio menu
+	text[INSENSITIVE]   = mix(0.20, @text_color_dark, @bg_color_dark)
+	text[PRELIGHT]      = @selected_fg_color                # Color check/radio menu
 
-    bg[PRELIGHT]      	= shade (1.00, @selected_bg_color)
-    bg[SELECTED]      	= shade (1.00, @selected_bg_color)
+	bg[PRELIGHT]        = shade (0.91, @bg_color_dark)
+	bg[SELECTED]        = shade (1.00, @bg_color_dark)
 
-	engine "murrine" {
-        gradient_shades		= {0.90, 0.95, 0.95, 1.00}
-		border_shades 		= {1.40, 1.0}
-        roundness           = 1
-        contrast            = 0.8           # contrast separators
-		#textstyle           = 1
-		#text_shade			= 0.7
+    engine "murrine" {
+        gradient_shades = {2.63,1.17,1.17,1.17}
+        border_shades   = { 6.60, 6.50 }
+        roundness       = 4
+        contrast        = 0.8           # contrast separators
+        textstyle       = 0
+        #text_shade     = 0.7
 	}
 }
 
@@ -598,17 +602,19 @@ style "murrine-progressbar" = "murrine-thin" {
 }
 
 style "murrine-statusbar" = "murrine-wide" {
-	xthickness = 2
-
-	engine "pixmap" {
-		image
-		{
-		function        = RESIZE_GRIP
-		recolorable     = TRUE
-		state           = NORMAL
-		detail          = "statusbar"
-		file            = "assets/resize-grip.png"
-		}
+	xthickness = 0
+	engine "pixmap"
+	{
+	    image
+	    {
+		function		= RESIZE_GRIP
+		recolorable		= TRUE
+		state			= NORMAL
+		detail			= "statusbar"
+		overlay_file	= "assets/resize-grip.png"
+		overlay_border	= {0,0,0,0 }
+		overlay_stretch	= FALSE
+	    }
 	}
 }
 
@@ -680,25 +686,31 @@ style "murrine-toolbar-button" {
     ythickness	= 2
 
 	bg[NORMAL]		= shade(0.80, @bg_color_dark)
-    bg[PRELIGHT] 	= shade(1.50, @bg_color_dark)
-    bg[ACTIVE] 		= shade(1.10, @bg_color_dark)
+    bg[PRELIGHT] 	= shade(0.91, @bg_color_dark)
+    bg[ACTIVE] 		= shade(0.76, @bg_color_dark)
 	bg[SELECTED] 	= shade(0.80, @selected_bg_color)
 	bg[INSENSITIVE] = shade(0.83, @bg_color_dark)
 
     fg[NORMAL]          = @fg_color_dark
-	fg[PRELIGHT]	    = @selected_fg_color
-	fg[ACTIVE]	        = @fg_color_dark
-	fg[SELECTED]	    = @fg_color_dark
+	fg[PRELIGHT]	    = shade (1.20, @selected_bg_color)
+	fg[ACTIVE]	        = shade (1.20, @selected_bg_color)
+	fg[SELECTED]	    = shade (1.20, @selected_bg_color)
+
+    text[NORMAL]        = @fg_color_dark
+	text[PRELIGHT]	    = shade (1.20, @selected_bg_color)
+	text[ACTIVE]	    = shade (1.20, @selected_bg_color)
+	text[SELECTED]	    = shade (1.20, @selected_bg_color)
 
 	engine "murrine" {
-		gradient_shades     	= {1.00,0.96,0.96,0.90}
-		border_shades           = {4.10, 4.00}
-		contrast                = 0.80
-		lightborderstyle		= 1
-		lightborder_shade       = 1.1
-        glow_shade              = 1.0
-		textstyle               = 1
-		text_shade			    = 1.15
+		gradient_shades    = {2.63,1.17,1.17,1.17}
+		border_shades      = {5.10, 5.00}
+		contrast           = 0.80
+		roundness          = 5 # 0 = squared
+		lightborderstyle   = 1
+		lightborder_shade  = 1.1
+		glow_shade         = 1.0
+		textstyle          = 1
+		text_shade         = 1.15
 	}
 }
 

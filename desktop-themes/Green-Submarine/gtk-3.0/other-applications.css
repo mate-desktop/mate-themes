@@ -1,0 +1,353 @@
+/* nemo */
+
+NemoTrashBar.info,
+NemoXContentBar.info,
+NemoQueryEditor.info {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@nautilus_cluebar_color, 1.00)),
+                                     to   (shade(@nautilus_cluebar_color, 1.00)));
+    border-radius: 0px;
+    border-width: 0px 0px 1px 0px;
+    border-style: solid;
+    border-color: alpha(#000, 0.00) @toolbar_gradient_base shade(@toolbar_gradient_base, 0.75);
+    box-shadow: inset  0px  1px alpha(#fff, 0.06),
+                inset  1px  0px alpha(#fff, 0.06),
+                inset -1px  0px alpha(#fff, 0.06),
+                inset  0px -1px alpha(#fff, 0.06);
+}
+
+NemoSearchBar {
+    padding: 0px;
+}
+
+NemoSearchBar .entry {
+    padding: 2px 8px;
+    border-width: 0px;
+    border-radius: 4px;
+    box-shadow: inset  0px  3px alpha(#000, 0.03),
+                inset  0px  2px alpha(#000, 0.05),
+                inset  2px  0px alpha(#000, 0.04),
+                inset -2px  0px alpha(#000, 0.04),
+                inset  0px -2px alpha(#000, 0.03),
+                inset  0px  1px shade(@toolbar_gradient_base, 0.70),
+                inset  1px  0px shade(@toolbar_gradient_base, 0.80),
+                inset -1px  0px shade(@toolbar_gradient_base, 0.80),
+                inset  0px -1px shade(@toolbar_gradient_base, 0.90);
+}
+
+NemoSearchBar .entry,
+NemoSearchBar .entry:focus {
+    -GtkEntry-inner-border: 1;
+}
+
+NemoSearchBar .entry.image {
+    color: shade(@nautilus_cluebar_color, 0.60);
+}
+
+.nemo-cluebar-label {
+    font: bold;
+    text-shadow: 0 1px @theme_shadow_color;
+}
+
+NemoWindow .sidebar .scrollbar {
+    background-image: none;
+    border-style: solid;
+    -GtkRange-stepper-size: 16;
+    -GtkRange-stepper-spacing: 0;
+    -GtkRange-trough-border: 1;
+    -GtkRange-arrow-scaling: 0.666;
+    -GtkRange-slider-width: 13;
+    -GtkRange-trough-under-steppers: 1;
+    -GtkScrollbar-has-backward-stepper: true;
+    -GtkScrollbar-has-forward-stepper: true;
+    -GtkScrollbar-activate-slider: 1;
+    -GtkScrollbar-min-slider-length: 31;
+    -GtkScrollbar-slider-width: 11;
+    -GtkScrolledWindow-scrollbar-spacing: 0;
+    -GtkScrolledWindow-scrollbars-within-bevel: 1;
+}
+
+NemoWindow .sidebar .scrollbar.trough.vertical {
+    border-radius: 0;
+    border-width: 0 0px 0 1px;
+    border-style: solid;
+    border-color: shade (@theme_bg_color, 0.96);
+}
+
+NemoWindow .sidebar .scrollbar.trough {
+    border-radius: 0;
+    border-width: 1px 0 0px 0;
+    border-style: solid;
+    border-color: shade (@theme_bg_color, 0.96);
+}
+
+/* the small line between sidebar and view */
+NemoWindow GtkPaned.horizontal {
+    border-color: shade(@theme_bg_color, 0.80);
+    border-style: solid;
+    border-width: 0px 1px 0px 0px;
+    -GtkPaned-handle-size: 4px;
+}
+
+NemoWindow .sidebar .frame {
+    border-width: 0px;
+    border-style: none;
+    border-top-width: 0;
+    border-bottom-width: 0;
+}
+
+/* disable shadow and radius for nemo, looks strange */
+NemoWindow .sidebar .view row:hover,
+NemoWindow .sidebar .view row:selected,
+NemoWindow .sidebar .view row:selected:hover {
+    border-radius: 0px;
+    box-shadow: none;
+}
+
+/* to avoid unexpected light backgrounds */
+NemoToolbar.vertical {
+    background-color: @theme_bg_dark_color;
+}
+
+NemoToolbar .linked .button,
+NemoToolbar .linked .button:first-child,
+NemoToolbar .linked .button:last-child,
+NemoToolbar .toolbar .raised .button,
+NemoToolbar .toolbar .raised .button:first-child,
+NemoToolbar .toolbar .raised .button:last-child,
+NemoToolbar .toolbar .raised .button:only-child {
+    padding: 4px;
+}
+
+/* Nemo statusbar */
+NemoWindow .toolbar {
+    background-image: none;
+    background-color: @theme_bg_color;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    box-shadow: none;
+}
+
+NemoStatusBar.toolbar .button {
+    padding: 4px;
+}
+
+/* small buttons statusbar nemo */
+NemoWindow .toolbar .button GtkImage,
+NemoWindow .toolbar .button GtkImage:active,
+NemoWindow .toolbar .button GtkImage:active:hover,
+NemoWindow .toolbar .button GtkImage:hover {
+    color: @theme_fg_color;
+}
+
+NemoWindow .toolbar .button:hover,
+NemoWindow .toolbar .button:active,
+NemoWindow .toolbar .button:active:hover {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@button_gradient1, 1.03)),
+                                     color-stop (0.48, shade(@button_gradient2, 1.03)),
+                                     color-stop (0.52, shade(@button_gradient3, 1.03)),
+                                     to   (shade(@button_gradient4, 1.01)));
+    border-color: transparent;
+    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
+                inset  1px  0px shade(@selected_bg_color, 0.97),
+                inset  0px -1px shade(@selected_bg_color, 0.93),
+                inset -1px  0px shade(@selected_bg_color, 0.93);
+}
+
+NemoWindow .primary-toolbar.toolbar .button GtkImage {
+    color: @theme_fg_dark_color;
+}
+
+NemoWindow .primary-toolbar.toolbar .entry {
+    padding: 3px 8px;
+}
+
+NemoWindow .primary-toolbar.toolbar .button,
+NemoWindow .primary-toolbar.toolbar .button:hover,
+NemoWindow .primary-toolbar.toolbar .button:active,
+NemoWindow .primary-toolbar.toolbar .button:active:hover {
+    border-width: 1px;
+    border-style: solid; 
+    border-radius: 5px;
+    border-image: none;
+    border-color: transparent;
+    color: @theme_fg_dark_color;
+    padding: 4px;
+}
+
+NemoWindow .primary-toolbar.toolbar .button:active,
+NemoWindow .primary-toolbar.toolbar .button:active:hover {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@menu_bg_dark_color, 2.03)),
+                                     to   (shade(@menu_bg_dark_color, 1.17)));
+    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
+                inset  1px  0px shade(@selected_bg_color, 0.97),
+                inset  0px -1px shade(@selected_bg_color, 0.93),
+                inset -1px  0px shade(@selected_bg_color, 0.93);
+}
+
+NemoWindow .primary-toolbar.toolbar NemoPathbarButton,
+NemoWindow .primary-toolbar.toolbar NemoPathbarButton:first-child,
+NemoWindow .primary-toolbar.toolbar NemoPathbarButton:last-child {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (@button_raised_gradient_color_a),
+                                     to (@button_raised_gradient_color_b));
+    background-color: transparent;
+    border-image: none;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: transparent;
+    color: @theme_fg_dark_color;
+    text-shadow: 0px 1px @theme_shadow_dark_color;
+    -GtkArrow-arrow-scaling: 0.7;
+    transition: all 400ms ease-out;
+    padding: 4px;
+}
+
+NemoWindow .primary-toolbar.toolbar NemoPathbarButton:hover,
+NemoWindow .primary-toolbar.toolbar NemoPathbarButton:active,
+NemoWindow .primary-toolbar.toolbar NemoPathbarButton:active:hover {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@menu_bg_dark_color, 2.03)),
+                                     to   (shade(@menu_bg_dark_color, 1.17)));
+    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
+                inset  1px  0px shade(@selected_bg_color, 0.97),
+                inset  0px -1px shade(@selected_bg_color, 0.93),
+                inset -1px  0px shade(@selected_bg_color, 0.93);
+}
+
+NemoWindow .notebook {
+    -GtkNotebook-initial-gap: 0;
+    background-color: @theme_base_color;
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@theme_base_color, 1.00)),
+                                     to   (shade(@theme_base_color, 1.00)));
+    border-width: 0px;
+    border-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-radius: 0px;
+    border-top-color: shade(@notebook_border, 1.00);
+    border-left-color: @transparent;
+    border-bottom-color: @transparent;
+    border-right-color: @transparent;
+    box-shadow: none;
+}
+
+/* Nemo notebook */
+GtkDialog.background .vertical.dialog-vbox .notebook .frame {
+    background-color: shade (@theme_bg_color, 1.1);
+}
+
+NemoWindow .notebook tab {
+    border-width: 0px 1px;
+    border-style: solid;
+    border-color:       shade(@notebook_border, 1.00);
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@sidebar_background, 0.90)),
+                                     color-stop (0.15, shade(@sidebar_background, 1.00)),
+                                     to   (shade(@sidebar_background, 1.00)));
+    box-shadow: inset  0px  1px alpha(#000, 0.08),
+                inset  1px  0px alpha(#000, 0.04),
+                inset -1px  0px alpha(#000, 0.04),
+                inset  0px -1px shade(@notebook_border, 1.00);
+}
+
+NemoWindow .notebook tab:active {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@theme_base_color, 0.90)),
+                                     color-stop (0.15, shade(@theme_base_color, 1.00)),
+                                     to   (shade(@theme_base_color, 1.00)));
+    border-image: none;
+    border-left-color: shade(@notebook_border, 1.00);
+    border-right-color: shade(@notebook_border, 1.00);
+    box-shadow: inset  0px  1px alpha(#000, 0.08),
+                inset  1px  0px alpha(#fff, 0.04),
+                inset -1px  0px alpha(#fff, 0.04);
+}
+
+NemoWindow .notebook tab.top {
+    padding: 0px 6px;
+    border-radius: 0px;
+}
+
+NemoWindow .notebook tab:first-child,
+NemoWindow .notebook tab:first-child:active {
+    border-width: 0px 1px 0px 0px;
+    border-radius: 0px;
+}
+
+NemoWindow .notebook tab:last-child,
+NemoWindow .notebook tab:last-child:active {
+    border-width: 0px 0px 0px 1px;
+    border-radius: 0px;
+}
+
+NemoWindow .notebook tab GtkLabel {
+    padding: 0px;
+    color: @theme_text_color;
+    text-shadow: 0px 1px @theme_shadow_color;
+}
+
+NemoWindow .notebook tab .button GtkImage {
+    border-radius: 3px;
+    color: mix(@theme_fg_color, @sidebar_background, 0.30);
+    border-style: solid;
+    border-color: transparent;
+    border-width: 1px;
+    padding: 0;
+    icon-shadow: 1px 1px @theme_shadow_color;
+}
+
+NemoWindow .notebook tab .button GtkImage:hover {
+    color: @theme_fg_color; 
+    border-color: alpha(black, 0.1); 
+}
+
+NemoWindow .notebook tab .button GtkImage:active,
+NemoWindow .notebook tab .button GtkImage:active:hover,
+NemoWindow .notebook tab .button GtkImage:active:hover {
+    background-color: alpha(black, 0.15); 
+    color: shade(@theme_fg_color, 1.00);
+    icon-shadow: 0px 1px @theme_shadow_color;
+    border-color: alpha(black, 0.27) 
+                  alpha(black, 0.13) 
+                  alpha(black, 0.13) 
+                  alpha(black, 0.13); 
+}
+
+.nemo-canvas-item {
+    border-radius: 3px;
+}
+
+/* desktop mode */
+.nemo-desktop.nemo-canvas-item {
+    color: white;
+    text-shadow: 1px 1px black;
+}
+
+.nemo-desktop.nemo-canvas-item:active {
+    background-image: none;
+    color: @theme_text_color;
+}
+
+.nemo-desktop.nemo-canvas-item:selected {
+    color: @theme_selected_fg_color;
+}
+
+.nemo-desktop.nemo-canvas-item:active,
+.nemo-desktop.nemo-canvas-item:prelight,
+.nemo-desktop.nemo-canvas-item:selected {
+    text-shadow: none;
+}
+
