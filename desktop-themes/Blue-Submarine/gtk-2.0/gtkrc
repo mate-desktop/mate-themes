@@ -34,31 +34,33 @@ style "murrine-default" {
 	GtkIMHtmlr	::hyperlink-color		= @link_color
 	GtkIMHtml	::hyperlink-color		= @link_color
 	GtkWidget	::link-color			= @link_color
-	GtkWidget	::visited-link-color		= @text_color
+	GtkWidget	::visited-link-color	= @text_color
 
 	GtkButton	::child-displacement-x		= 1
 	GtkButton	::child-displacement-y		= 1
-	GtkButton	::default-border		= { 0, 0, 0, 0 }
+	GtkButton	::default-border			= { 0, 0, 0, 0 }
 	GtkButtonBox	::child-min-height		= 26
 	GtkCheckButton	::indicator-size		= 15
 
 	GtkWidget	::new-tooltip-style		= 1
 	GtkWidget	::focus-line-width		= 1
-	GtkWidget	::focus-padding			= 0 # Keeping this at 0 prevents the Firefox tabs from jumping a few pixels when you create a new tab. Set the value locally if needed.
+	GtkWidget	::focus-padding			= 0 # Keeping this at 0 prevents the Firefox tabs
+											# from jumping a few pixels when you create a new tab.
+											# Set the value locally if needed.
 
 	GtkImage	::x-ayatana-indicator-dynamic	= 1
 
-	GtkScale	::trough-side-details		= 1
+	GtkScale	::trough-side-details			= 1
 
 #	GtkScrollbar	::has-backward-stepper		= 0
 #	GtkScrollbar	::has-forward-stepper		= 0
-	GtkScrollbar	::min-slider-length		= 15
-	GtkScrollbar	::slider-width			= 13
-	GtkScrollbar	::trough-border			= 1
-	GtkScrollbar	::activate-slider		= 1
+	GtkScrollbar	::min-slider-length			= 15
+	GtkScrollbar	::slider-width				= 13
+	GtkScrollbar	::trough-border				= 1
+	GtkScrollbar	::activate-slider			= 1
 
 	GtkScrolledWindow ::scrollbar-spacing		= 0
-	GtkScrolledWindow ::scrollbars-within-bevel	= 1
+	GtkScrolledWindow ::scrollbars-within-bevel	= 0
 
 	GtkPaned	::handle-size			= 2
 
@@ -89,7 +91,7 @@ style "murrine-default" {
 	GtkMenuItem	::horizontal-padding	= 0
 	GtkSeparatorMenuItem	::horizontal-padding	= 7
 
-	WnckTasklist	::fade-overlay-rect		= 0
+	WnckTasklist	::fade-overlay-rect	= 0
 	# The following line hints to gecko (and possibly other appliations)
 	# that the entry should be drawn transparently on the canvas.
 	# Without this, gecko will fill in the background of the entry.
@@ -109,16 +111,16 @@ style "murrine-default" {
 
 	### Color Definitions ###
 
-	bg[NORMAL]		= @bg_color
+	bg[NORMAL]			= @bg_color
 	bg[PRELIGHT]		= shade (1.02, @bg_color)
 	bg[SELECTED]		= @selected_bg_color
 	bg[INSENSITIVE]		= @bg_color
-	bg[ACTIVE]		= shade (1.04, @bg_color)
+	bg[ACTIVE]			= shade (1.04, @bg_color)
 
-	fg[NORMAL]		= @fg_color
+	fg[NORMAL]			= @fg_color
 	fg[PRELIGHT]		= @fg_color
 	fg[SELECTED]		= @selected_fg_color
-	fg[ACTIVE]		= @fg_color
+	fg[ACTIVE]			= @fg_color
 	fg[INSENSITIVE]		= darker (@bg_color)
 
 	text[NORMAL]		= @text_color
@@ -136,65 +138,70 @@ style "murrine-default" {
 	### Murrine Settings ###
 
 	engine "murrine" {
-		animation           = FALSE
-		arrowstyle          = 1          # 0 = normal arrows, 1 = filled arrows
-		border_shades       = {1.0, 0.7} # gradient to draw on border
-		colorize_scrollbar  = FALSE
-		comboboxstyle       = 0          # 0 = normal combobox, 1 = colorized combobox below arrow
-		contrast            = 0.4        # 0.8 for less contrast, more than 1.0 for more contrast on borders
-		default_button_color = shade (2.75, @selected_bg_color)
-		focus_color         = @selected_bg_color
-		focusstyle          = 3
-		glazestyle          = 1          # 0 = flat highlight, 1 = curved highlight, 2 = concave style, 3 = top curved highlight, 4 = beryl highlight
-		gradient_shades     = {1.1,1.1,0.95,0.95} # Sets the gradients on the widgets.
-		glowstyle           = 4          # 0,1,2,3,4
-		glow_shade          = 1.1
-		highlight_shade     = 1.0        # set highlight amount for buttons or widgets
-		lightborder_shade   = 1.1        # sets lightborder amount for buttons or widgets
-		lightborderstyle    = 0          # 0 = lightborder on top side, 1 = lightborder on all sides
-		listviewheaderstyle = 1          # 0 = flat, 1 = glassy, 2 = raised
-		listviewstyle       = 1          # 0 = nothing, 1 = dotted
-		menubaritemstyle    = 0          # 0 = menuitem look, 1 = button look
-		menubarstyle        = 2          # 0 = flat, 1 = glassy, 2 = gradient, 3 = striped
-		menuitemstyle       = 0          # 0 = flat, 1 = glassy, 2 = striped
-		menustyle           = 0          # 0 = no vertical menu stripe, 1 = display vertical menu stripe
-		prelight_shade      = .95        # shade level for scrollbar's slider, comboboxstyle(1), and prelight state with gradient_colors
-		reliefstyle         = 2          # 0 = flat, 1 = inset, 2 = shadow, 3 = shadow with gradient, 4 = stronger shadow with gradient
-		rgba                = FALSE      # FALSE = disabled, TRUE = enabled
-		roundness           = 2          # 0 = squared, 1 = old default, more will increase roundness
-		scrollbarstyle      = 0          # 0 = nothing, 1 = circles, 2 = handles, 3 = diagonal stripes, 4 = diagonal stripes and handles, 5 = horizontal stripes, 6 = horizontal stripes and handles
-		separatorstyle      = 1          # 0 = Hard seperators 1 = Smooth seperators
-		sliderstyle         = 0          # 0 = nothing added, 1 = handles
-		stepperstyle        = 1          # 0 = standard, 1 = integrated stepper handles, 2 = unknown
-		progressbarstyle    = 0          # 0 = nothing, 1 = stripes, 2 = lines
-		shadow_shades       = {0.5, 0.0} # gradient for shadows.
-		textstyle           = 0          # 0 = normal text, 1 = inset
-		toolbarstyle        = 2          # 0 = flat, 1 = glassy, 2 = gradient
-		trough_shades       = {0.98, 1.06} # draw gradient on trough of GtkScrollbar and GtkProgressbar
+		animation			= FALSE
+		arrowstyle			= 1			# 0 = normal arrows, 1 = filled arrows
+		border_shades		= {1.0, 0.7} # gradient to draw on border
+		colorize_scrollbar	= FALSE
+		comboboxstyle		= 0			# 0 = normal combobox, 1 = colorized combobox below arrow
+		contrast			= 0.4 		# 0.8 for less contrast, more than 1.0 for more contrast on borders
+		default_button_color	= shade (2.75, @selected_bg_color)
+		focus_color			= @selected_bg_color
+		focusstyle			= 3
+		glazestyle			= 1			# 0 = flat highlight, 1 = curved highlight, 2 = concave style,
+										# 3 = top curved highlight, 4 = beryl highlight
+		gradient_shades		= {1.1,1.1,0.95,0.95}	# Sets the gradients on the widgets.
+		glowstyle			= 4			# 0,1,2,3,4
+		glow_shade			= 1.1
+		highlight_shade		= 1.0		# set highlight amount for buttons or widgets
+		lightborder_shade	= 1.1		# sets lightborder amount for buttons or widgets
+		lightborderstyle	= 0			# 0 = lightborder on top side, 1 = lightborder on all sides
+		listviewheaderstyle	= 1			# 0 = flat, 1 = glassy, 2 = raised
+		listviewstyle		= 1			# 0 = nothing, 1 = dotted
+		menubaritemstyle	= 0			# 0 = menuitem look, 1 = button look
+		menubarstyle		= 2			# 0 = flat, 1 = glassy, 2 = gradient, 3 = striped
+		menuitemstyle		= 0			# 0 = flat, 1 = glassy, 2 = striped
+		menustyle			= 0			# 0 = no vertical menu stripe, 1 = display vertical menu stripe
+		prelight_shade		= .95		# shade level for scrollbar's slider, comboboxstyle(1),
+										# and prelight state with gradient_colors
+		reliefstyle			= 2			# 0 = flat, 1 = inset, 2 = shadow, 3 = shadow with gradient,
+										# 4 = stronger shadow with gradient
+		rgba				= FALSE		# FALSE = disabled, TRUE = enabled
+		roundness			= 2			# 0 = squared, 1 = old default, more will increase roundness
+		scrollbarstyle		= 0			# 0 = nothing, 1 = circles, 2 = handles, 3 = diagonal stripes,
+										# 4 = diagonal stripes and handles, 5 = horizontal stripes,
+										# 6 = horizontal stripes and handles
+		separatorstyle		= 1			# 0 = Hard seperators 1 = Smooth seperators
+		sliderstyle			= 0			# 0 = nothing added, 1 = handles
+		stepperstyle		= 1			# 0 = standard, 1 = integrated stepper handles, 2 = unknown
+		progressbarstyle	= 0			# 0 = nothing, 1 = stripes, 2 = lines
+		shadow_shades		= {0.5, 0.0} # gradient for shadows.
+		textstyle			= 0			# 0 = normal text, 1 = inset
+		toolbarstyle		= 2			# 0 = flat, 1 = glassy, 2 = gradient
+		trough_shades		= {0.98, 1.06} # draw gradient on trough of GtkScrollbar and GtkProgressbar
 	}
 }
 
 ### THEME MODULES ###
 
 style "murrine-dark" {
-	base[NORMAL]      = @bg_color_dark
-	base[PRELIGHT]    = shade (0.95, @bg_color_dark)
-	base[INSENSITIVE] = @bg_color_dark
-	bg[NORMAL]        = @bg_color_dark
-	bg[PRELIGHT]      = shade (0.90, @selected_bg_color)
-	bg[SELECTED]      = shade (0.90, @selected_bg_color)
-	bg[INSENSITIVE]   = @bg_color_dark
-	bg[ACTIVE]        = shade (1.04, @bg_color_dark)
-	fg[NORMAL]        = @fg_color_dark
-	fg[PRELIGHT]      = @selected_fg_color
-	fg[SELECTED]      = @selected_fg_color
-	fg[ACTIVE]        = @fg_color_dark
-	fg[INSENSITIVE]   = shade (0.75, @fg_color_dark)
-	text[NORMAL]      = @fg_color_dark
-	text[PRELIGHT]    = @selected_fg_color
-	text[ACTIVE]      = @fg_color_dark
-	text[SELECTED]    = @selected_fg_color
-	text[INSENSITIVE] = shade (0.75, @fg_color_dark)
+	base[NORMAL]		= @bg_color_dark
+	base[PRELIGHT]		= shade (0.95, @bg_color_dark)
+	base[INSENSITIVE]	= @bg_color_dark
+	bg[NORMAL]			= @bg_color_dark
+	bg[PRELIGHT]		= shade (0.90, @selected_bg_color)
+	bg[SELECTED]		= shade (0.90, @selected_bg_color)
+	bg[INSENSITIVE]		= @bg_color_dark
+	bg[ACTIVE]			= shade (1.04, @bg_color_dark)
+	fg[NORMAL]			= @fg_color_dark
+	fg[PRELIGHT]		= @selected_fg_color
+	fg[SELECTED]		= @selected_fg_color
+	fg[ACTIVE]			= @fg_color_dark
+	fg[INSENSITIVE]		= shade (0.75, @fg_color_dark)
+	text[NORMAL]		= @fg_color_dark
+	text[PRELIGHT]		= @selected_fg_color
+	text[ACTIVE]		= @fg_color_dark
+	text[SELECTED]		= @selected_fg_color
+	text[INSENSITIVE]	= shade (0.75, @fg_color_dark)
 }
 
 style "murrine-thin"		= "murrine-default"	{ xthickness = 0 ythickness = 0 }
@@ -211,44 +218,45 @@ style "murrine-widest-dark"	= "murrine-dark"	{ xthickness = 4 ythickness = 4 }
 ###################
 
 style "murrine-button" = "murrine-wider" {
-	bg[NORMAL]      = shade (0.95, @bg_color)
-	bg[PRELIGHT]    = shade (2.75, @selected_bg_color)
-	bg[ACTIVE]      = shade (0.85, @bg_color)
-	bg[SELECTED]    = shade (1.0, @selected_bg_color)
-	bg[INSENSITIVE] = shade (0.95, @bg_color)
+	bg[NORMAL]		= shade (0.95, @bg_color)
+	bg[PRELIGHT]	= shade (2.75, @selected_bg_color)
+	bg[ACTIVE]		= shade (0.85, @bg_color)
+	bg[SELECTED]	= shade (1.0, @selected_bg_color)
+	bg[INSENSITIVE]	= shade (0.95, @bg_color)
 
 	fg[NORMAL]      = shade (0.95, @fg_color)
-	fg[PRELIGHT]    = shade (0.95, @selected_fg_color)
+    fg[PRELIGHT]    = shade (0.95, @selected_fg_color)
 
 	engine "murrine" {
-		contrast          = 0.85
-		gradient_shades   = {1.15,1.07,1.08,1.05}
-		border_shades     = {1.10, 0.95}
-		lightborderstyle  = 1 # 0 = top side, 1 = all sides
-		lightborder_shade = 1.1
-        highlight_shade   = 1.03
-		roundness         = 2
-		focusstyle        = 0
-		glowstyle         = 0 # 0 = top, 1 = bottom, 2 = top and bottom, 3 = horizontal, 4 = centered glow
-        glow_shade        = 1.25
-        reliefstyle       = 3
-		textstyle         = 1
-		text_shade        = 1.15
+		contrast                = 0.85
+		gradient_shades         = {1.15,1.07,1.08,1.05}
+		border_shades			= {1.10, 0.95}
+		lightborderstyle		= 1 # 0 = top side, 1 = all sides
+		lightborder_shade       = 1.1
+        highlight_shade			= 1.03
+		roundness				= 2
+		focusstyle				= 0 # 0 = top, 1 = bottom, 2 = top and bottom,
+									# 3 = horizontal, 4 = centered glow
+		glowstyle				= 0
+        glow_shade              = 1.25
+        reliefstyle             = 3
+		textstyle               = 1
+		text_shade				= 1.15
 	}
 }
 
 style "murrine-button-label" {
-	#fg[ACTIVE]     = "#fff"
-	#fg[SELECTED]   = "#fff"
-	#text[ACTIVE]   = "#fff"
-	#text[SELECTED] = "#fff"
+	#fg[ACTIVE]			= "#fff"
+	#fg[SELECTED]		= "#fff"
+	#text[ACTIVE]		= "#fff"
+	#text[SELECTED]		= "#fff"
 }
 
 style "murrine-checkradio-label" {
 	fg[ACTIVE]		= @text_color	# Forcing radiobutton-colored text in eclipse
 }
 
-style "checkbutton" {
+style "murrine-checkbutton" {
 	engine "pixmap" {
 		image {
 			function = CHECK
@@ -332,7 +340,7 @@ style "checkbutton" {
 	}
 }
 
-style "radiobutton" {
+style "murrine-radiobutton" {
 	engine "pixmap" {
 		image {
 			function = OPTION
@@ -419,13 +427,13 @@ style "radiobutton" {
 
 style "murrine-entry" = "murrine-wider" {
     # ------- another entry -------------
-	 GtkWidget	::focus-line-width = 2
-	 GtkWidget	::focus-padding    = 1
-	# bg[ACTIVE]                   = shade (0.78, @bg_color)
-	# bg[NORMAL]                   = shade (2.20, @bg_color)
-	# bg[PRELIGHT]				   = shade (1.18, @selected_bg_color)
-	# bg[SELECTED]				   = shade (0.9, @selected_bg_color)
-	# bg[INSENSITIVE]              = shade (0.98, @bg_color)
+	 GtkWidget	::focus-line-width	= 2
+	 GtkWidget	::focus-padding		= 1
+	# bg[ACTIVE]				        = shade (0.78, @bg_color)
+	# bg[NORMAL]				        = shade (2.20, @bg_color)
+	# bg[PRELIGHT]				    = shade (1.18, @selected_bg_color)
+	# bg[SELECTED]				    = shade (0.9, @selected_bg_color)
+	# bg[INSENSITIVE]				    = shade (0.98, @bg_color)
     # ------- end another entry ----------
 
 	bg[SELECTED]	= mix (0.4, @selected_bg_color, @base_color)
@@ -433,30 +441,30 @@ style "murrine-entry" = "murrine-wider" {
 	text[ACTIVE]	= @fg_color_dark
 
 	engine "murrine" {
-		contrast      = 0.6
-		roundness     = 2
-		border_shades = {1.2, 1.0}
-		focusstyle    = 3
+		contrast			= 0.6
+		roundness			= 2
+		border_shades		= {1.2, 1.0}
+		focusstyle  		= 3
 	}
 }
 
 style "murrine-toolbar-entry" = "entry" { # text
-	base[NORMAL] = shade(0.93, @base_color)
+	base[NORMAL]			= shade(0.93, @base_color)
 	engine "murrine" {
-		contrast      = 0.6
-		border_shades = {1.2, 1.0}
-		focus_color   = shade (1.0, @selected_bg_color)
+		contrast			= 0.6
+		border_shades		= {1.2, 1.0}
+		focus_color 		= shade (1.0, @selected_bg_color)
 	}
 }
 
 style "murrine-expander" {
-	bg[NORMAL]   = "#FFF"
-	fg[NORMAL]   = shade (2.0, @text_color)
-	fg[PRELIGHT] = shade (2.0, @text_color)
+	bg[NORMAL]			= "#FFF"
+	fg[NORMAL]			= shade (2.0, @text_color)
+	fg[PRELIGHT]		= shade (2.0, @text_color)
 
 	engine "murrine" {
-		contrast        = 1.2
-		gradient_shades = {1.0, 1.0, 1.0, 1.0}
+		contrast		= 1.2
+		gradient_shades	= {1.0, 1.0, 1.0, 1.0}
 	}
 }
 
@@ -483,34 +491,38 @@ style "murrine-menubar" = "murrine-wider-dark" {
 style "murrine-menu" = "murrine-wider-dark" {
 	GtkMenuItem::arrow-scaling	= 0.5
 
-	bg[NORMAL]			= shade (0.88, @bg_color_dark)
+	bg[NORMAL]          = shade (0.88, @bg_color_dark)
+	bg[PRELIGHT]        = shade (1.00, @bg_color_dark)
+	bg[SELECTED]        = shade (1.00, @bg_color_dark)
+	fg[PRELIGHT]        = shade (1.60, @selected_bg_color)		# menu item selected
 
 	engine "murrine" {
-		border_shades 	= { 1.2, 1.0 }
-		roundness		= 1 # 0 = squared
-		textstyle 		= 0
+		gradient_shades = {2.63,1.17,1.17,1.17}
+		border_shades   = { 5.10, 5.00 }
+		roundness       = 4 # 0 = squared
+		textstyle       = 0
 	}
 }
 
 style "murrine-menu-item" = "murrine-wider-dark" {
-	fg[NORMAL] 			= shade (0.95, @fg_color_dark)        # menu item normal
-    fg[INSENSITIVE] 	= mix(0.20, @fg_color_dark, @bg_color_dark) # menu item activated
-	fg[PRELIGHT]		= @selected_fg_color						# menu item selected
+	fg[NORMAL]          = shade (0.95, @fg_color_dark)      # menu item normal
+	fg[INSENSITIVE]     = mix(0.20, @fg_color_dark, @bg_color_dark) # menu item activated
+	fg[PRELIGHT]        = shade (1.60, @selected_bg_color)	# menu item selected
 
 	text[NORMAL]        = shade (0.94, @fg_color_dark)		# Color check/radio menu
-	text[INSENSITIVE] 	= mix(0.20, @text_color_dark, @bg_color_dark)
-	text[PRELIGHT]      = @selected_fg_color            			# Color check/radio menu
+	text[INSENSITIVE]   = mix(0.20, @text_color_dark, @bg_color_dark)
+	text[PRELIGHT]      = shade (1.60, @selected_bg_color)  # Color check/radio menu
 
-    bg[PRELIGHT]      	= shade (1.00, @selected_bg_color)
-    bg[SELECTED]      	= shade (1.00, @selected_bg_color)
+	bg[PRELIGHT]        = shade (1.00, @bg_color_dark)
+	bg[SELECTED]        = shade (1.00, @bg_color_dark)
 
 	engine "murrine" {
-        gradient_shades		= {0.90, 0.95, 0.95, 1.00}
-		border_shades 		= {1.40, 1.0}
-        roundness           = 1
-        contrast            = 0.8           # contrast separators
-		#textstyle           = 1
-		#text_shade			= 0.7
+		gradient_shades = {2.63,1.17,1.17,1.17}
+        border_shades   = {5.10, 5.00}
+        roundness       = 4
+        contrast        = 0.8           # contrast separators
+        textstyle       = 0
+        #text_shade     = 0.7
 	}
 }
 
@@ -532,15 +544,16 @@ style "murrine-notebook" = "murrine-notebook-bg" {
 	ythickness = 0 # Height of tabs and notebook borders.
 
 	engine "murrine" {
-		#gradient_shades   = {1.10,0.98,0.92,0.85}
-        gradient_shades   = {1.16,1.10,1.00,0.95}
-		lightborderstyle  = 0
-		lightborder_shade = 1.1
-		contrast          = 0.5
-        highlight_shade   = 1.03
-		roundness         = 2
-		prelight_shade    = 1.5
-		focusstyle        = 0
+		#gradient_shades		= {1.10,0.98,0.92,0.85}
+        gradient_shades		= {1.16,1.10,1.00,0.95}
+		lightborderstyle	= 0
+		lightborder_shade	= 1.1
+		contrast 			= 0.5
+        highlight_shade		= 1.03
+		roundness 			= 2
+		prelight_shade		= 1.5
+		# disable the ugly button look in tabs if focused
+		focusstyle = 0
 	}
 }
 
@@ -552,7 +565,7 @@ style "murrine-notebook-button" = "murrine-notebook-bg" {
 	bg[INSENSITIVE]	= shade (0.95, @bg_color)
 
 	fg[NORMAL]      = shade (0.95, @fg_color)
-	fg[PRELIGHT]    = shade (0.95, @fg_color)
+    fg[PRELIGHT]    = shade (0.95, @fg_color)
 
 	engine "murrine" {
 		contrast            = 0.85
@@ -560,13 +573,13 @@ style "murrine-notebook-button" = "murrine-notebook-bg" {
 		border_shades		= {1.10, 0.95}
 		lightborderstyle	= 1 # 0 = top side, 1 = all sides
 		lightborder_shade   = 1.1
-		highlight_shade		= 1.03
+        highlight_shade		= 1.03
 		roundness			= 2
 		focusstyle			= 0
 		glowstyle			= 0 # 0 = top, 1 = bottom, 2 = top and bottom,
 								# 3 = horizontal, 4 = centered glow
-		glow_shade          = 1.25
-		reliefstyle         = 3
+        glow_shade          = 1.25
+        reliefstyle         = 3
 		textstyle           = 1
 		text_shade			= 1.15
 	}
@@ -582,23 +595,26 @@ style "murrine-progressbar" = "murrine-thin" {
 		gradient_shades		= {0.90, 1.10, 1.10, 1.15}
         border_shades		= {0.8, 1.4}
 		roundness			= 2
-		glowstyle				= 1 # 0 = top, 1 = bottom, 2 = top and bottom, 3 = horizontal, 4 = centered glow
-        glow_shade              = 1.20
+		glowstyle			= 1 # 0 = top, 1 = bottom, 2 = top and bottom,
+								# 3 = horizontal, 4 = centered glow
+        glow_shade          = 1.20
 	}
 }
 
 style "murrine-statusbar" = "murrine-wide" {
-	xthickness = 2
-
-	engine "pixmap" {
-		image
-		{
-		function        = RESIZE_GRIP
-		recolorable     = TRUE
-		state           = NORMAL
-		detail          = "statusbar"
-		file            = "assets/resize-grip.png"
-		}
+	xthickness = 0
+	engine "pixmap"
+	{
+	    image
+	    {
+		function		= RESIZE_GRIP
+		recolorable		= TRUE
+		state			= NORMAL
+		detail			= "statusbar"
+		overlay_file	= "assets/resize-grip.png"
+		overlay_border	= {0,0,0,0 }
+		overlay_stretch	= FALSE
+	    }
 	}
 }
 
@@ -632,9 +648,9 @@ style "murrine-scrollbar" {
 
 style "murrine-overlay-scrollbar"
 {
-	bg[SELECTED] 				= shade (1.0, @selected_bg_color)
-	bg[INSENSITIVE] 			= shade (0.85, @bg_color)
-	bg[ACTIVE] 					= shade (0.6, @bg_color)
+	bg[SELECTED] 		= shade (1.0, @selected_bg_color)
+	bg[INSENSITIVE] 	= shade (0.85, @bg_color)
+	bg[ACTIVE] 			= shade (0.6, @bg_color)
 }
 
 style "murrine-spinbutton" {
@@ -642,14 +658,14 @@ style "murrine-spinbutton" {
     fg[ACTIVE]      = @text_color        # Color for pressed-spinbuttons
 
 	engine "murrine" {
-		contrast		= 1.0
-        border_shades           = {1.2, 1.0}
-        #lightborder_shade		= 1.00
+		contrast			= 1.0
+        border_shades       = {1.2, 1.0}
+        #lightborder_shade	= 1.00
 	}
 }
 
 style "murrine-toolbar" = "murrine-wider" {
-    bg[NORMAL]		= shade (0.88, @bg_color_dark)
+    bg[NORMAL]			= shade (0.88, @bg_color_dark)
 
     fg[NORMAL]          = @fg_color_dark
 	fg[PRELIGHT]	    = @selected_fg_color
@@ -681,12 +697,13 @@ style "murrine-toolbar-button" {
 	fg[SELECTED]	    = @fg_color_dark
 
 	engine "murrine" {
-		gradient_shades     	= {1.00,0.96,0.96,0.90}
-		border_shades           = {4.10, 4.00}
+		gradient_shades     	= {2.63,1.17,1.17,1.17}
+		border_shades           = {5.10, 5.00}
 		contrast                = 0.80
-		lightborderstyle		= 1
+		roundness               = 5 # 0 = squared
+		lightborderstyle        = 1
 		lightborder_shade       = 1.1
-        glow_shade              = 1.0
+		glow_shade              = 1.0
 		textstyle               = 1
 		text_shade			    = 1.15
 	}
@@ -862,9 +879,10 @@ widget_class "*<GtkToolbar>.*.<GtkButton>*" style "murrine-toolbar-button"
 widget_class "*<GtkToolbar>.*.<GtkEntry>*"  style "murrine-toolbar-entry"
 class "GtkSeparatorToolItem"		        style "murrine-toolbar-separator"
 
-# This is not perfect, it could be done better (That is modify *every* widget in the notebook, and change those back that we really don't want changed)
+# This is not perfect, it could be done better (That is modify *every* widget
+# in the notebook, and change those back that we really don't want changed)
 widget_class "*<GtkNotebook>*<GtkEventBox>"		style "murrine-notebook-bg"
-widget_class "*<GtkNotebook>*<GtkDrawingArea>"		style "murrine-notebook-bg"
+widget_class "*<GtkNotebook>*<GtkDrawingArea>"	style "murrine-notebook-bg"
 widget_class "*<GtkNotebook>*<GtkLayout>"		style "murrine-notebook-bg"
 widget_class "*<GtkNotebook>*<GtkViewport>"		style "murrine-notebook-bg"
 widget_class "*<GtkNotebook>*<GtkScrolledWindow>"	style "murrine-notebook-bg"
@@ -873,12 +891,12 @@ widget_class "*<GtkNotebook>*<GtkButton>" style "murrine-notebook-button"
 widget_class "*<GtkNotebook>*<GtkButton>*<GtkLabel>" style "murrine-notebook-button"
 
 widget_class "*.<GtkFrame>.<GtkLabel>"		style "murrine-frame-title"
-widget_class "*.<GtkTreeView>*"			style "murrine-treeview"
+widget_class "*.<GtkTreeView>*"				style "murrine-treeview"
 
-class "*GtkExpander*"  							style "murrine-expander"
+class "*GtkExpander*"  						style "murrine-expander"
 
-widget_class "*<GtkProgress>"			style "murrine-progressbar"
-widget_class "*<GtkProgressBar>"		style "murrine-progressbar"
+widget_class "*<GtkProgress>"				style "murrine-progressbar"
+widget_class "*<GtkProgressBar>"			style "murrine-progressbar"
 
 # Treeview header
 widget_class "*.<GtkTreeView>.<GtkButton>"	style "murrine-treeview-header"
@@ -894,16 +912,16 @@ widget "gtk-tooltip*" style "murrine-tooltips"
 ##########################################################################
 # Radiobutton and Checkbox
 ##########################################################################
-widget_class "*<GtkCheckButton>*" 					style		  "checkbutton"
+widget_class "*<GtkCheckButton>*" 					style		  "murrine-checkbutton"
 widget_class "*<GtkCheckButton>*<GtkLabel>"			style:highest "murrine-checkradio-label"
 
 widget_class "*<GtkRadioButton>*"					style 		  "murrine-checkradio"
-widget_class "*<GtkDialog>*<GtkRadioButton>*"		style:highest "radiobutton"
-widget_class "*<GtkFrame>*<GtkRadioButton>*" 		style:highest "radiobutton"
-widget_class "*<GtkNotebook>*<GtkRadioButton>*" 	style:highest "radiobutton"
+widget_class "*<GtkDialog>*<GtkRadioButton>*"		style:highest "murrine-radiobutton"
+widget_class "*<GtkFrame>*<GtkRadioButton>*" 		style:highest "murrine-radiobutton"
+widget_class "*<GtkNotebook>*<GtkRadioButton>*" 	style:highest "murrine-radiobutton"
 widget_class "*<GtkRadioButton>*<GtkLabel>"			style:highest "murrine-checkradio-label"
 
-widget_class "*<GtkStatusbar>*"	style "murrine-statusbar"
+widget_class "*<GtkStatusbar>*"						style "murrine-statusbar"
 
 # for file-manager pane
 class "GtkPaned"	style "murrine-handle"
@@ -917,8 +935,8 @@ style "FireFox-MenuBar" = "menubar" {
 	GtkMenuBar::shadow-type = GTK_SHADOW_NONE
 }
 widget "MozillaGtkWidget*GtkMenuBar" 			style "FireFox-MenuBar"
-widget "MozillaGtkWidget*GtkCheck*"				style:highest "checkbutton"
-widget "MozillaGtkWidget*GtkRadio*"				style:highest "radiobutton"
+widget "MozillaGtkWidget*GtkCheck*"				style:highest "murrine-checkbutton"
+widget "MozillaGtkWidget*GtkRadio*"				style:highest "murrine-radiobutton"
 
 
 # For Google Chrome/Chromium integration.
@@ -950,11 +968,11 @@ style "text_is_fg_color_workaround" {
 
 # Workaround style for menus where the text color is used instead of the fg color.
 style "menuitem_text_is_fg_color_workaround" {
-	text[NORMAL] = @text_color_dark
-	text[PRELIGHT] = @selected_fg_color
-	text[SELECTED] = @selected_fg_color
-	text[ACTIVE] = @text_color_dark
-	text[INSENSITIVE] = shade (0.75, @text_color_dark)
+	text[NORMAL] 		= @text_color_dark
+	text[PRELIGHT] 		= @selected_fg_color
+	text[SELECTED] 		= @selected_fg_color
+	text[ACTIVE]		= @text_color_dark
+	text[INSENSITIVE]	= shade (0.75, @text_color_dark)
 }
 
 # Workaround style for places where the fg color is used instead of the text color.
@@ -1017,9 +1035,9 @@ style "xfce-panel" {
     bg[ACTIVE]          = shade (0.50, @bg_color_dark)
     bg[SELECTED]        = shade (1.20, @selected_bg_color)
     engine "murrine" {
-        gradient_shades         = {0.80, 0.85, 0.95, 1.00}
-        roundness           = 2
-        contrast            = 0.2
+        gradient_shades = {0.80, 0.85, 0.95, 1.00}
+        roundness       = 2
+        contrast        = 0.2
     }
     xthickness = 3
     ythickness = 3
@@ -1044,9 +1062,9 @@ style "xfdesktop-icon-view" {
     XfdesktopIconView::cell-padding = 0
     XfdesktopIconView::cell-text-width-proportion = 2
 
-    base[NORMAL]   = @selected_bg_color
-    base[SELECTED] = @selected_bg_color
-    base[ACTIVE]   = @selected_bg_color
+    base[NORMAL]   	= @selected_bg_color
+    base[SELECTED] 	= @selected_bg_color
+    base[ACTIVE]   	= @selected_bg_color
 
     fg[NORMAL]      = @selected_fg_color
     fg[SELECTED]    = @selected_fg_color
@@ -1069,7 +1087,7 @@ widget_class "*gtkmm__GtkWindow*"	style "performance-fix" # Inkscape
 widget_class "*GimpDisplayShell*"	style "performance-fix" # Gimp
 widget_class "*GimpToolbox*"		style "performance-fix"
 widget_class "*GimpMenuDock*"		style "performance-fix"
-widget "*OOoFixed*"			style "performance-fix" # Openoffice/Libreoffice
+widget "*OOoFixed*"					style "performance-fix" # Openoffice/Libreoffice
 widget_class "*MozContainer*"		style "performance-fix" # Firefox (Not sure if this one does anything though.)
 
 ### EXTERNAL FILES ###
