@@ -30,7 +30,7 @@
 .check:checked:insensitive,
 .check row:selected:active:insensitive,
 .check row:selected:checked:insensitive,
-.check row:selected:focus:active:insensitive
+.check row:selected:focus:active:insensitive,
 .check row:selected:focus:checked:insensitive {
     -gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked-insensitive.png"));
     background-color: transparent;
@@ -69,7 +69,7 @@
 .view.cell.radio:checked,
 .radio row:selected:active,
 .radio row:selected:checked,
-.radio row:selected:focus:active
+.radio row:selected:focus:active,
 .radio row:selected:focus:checked {
     -gtk-icon-source: -gtk-scaled(url("assets/radio-selected.png"));
 }
@@ -78,7 +78,7 @@
 .radio:checked:insensitive,
 .radio row:selected:active:insensitive,
 .radio row:selected:checked:insensitive,
-.radio row:selected:focus:active:insensitive
+.radio row:selected:focus:active:insensitive,
 .radio row:selected:focus:checked:insensitive {
     -gtk-icon-source: -gtk-scaled(url("assets/radio-selected-insensitive.png"));
 }
