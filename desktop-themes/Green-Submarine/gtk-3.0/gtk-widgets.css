@@ -53,13 +53,11 @@
     -GtkTreeView-vertical-separator: 4;
     -GtkWidget-focus-padding: 2;
     -GtkWidget-focus-line-width: 0;
-    -GtkWidget-link-color: @link_color;
     -GtkWindow-resize-grip-default: true;
     -GtkWindow-resize-grip-width: 13;
     -GtkWindow-resize-grip-height: 13;
     -GtkWidget-separator-width: 2px;
     -GtkWidget-separator-height: 2px;
-    -GtkWidget-visited-link-color: @link_color;
     -GtkWidget-wide-separators: true;
     -WnckTasklist-fade-overlay-rect: 0;
     /* Highlight drag-drop destination */
@@ -4633,6 +4631,7 @@ GtkDialog GtkScrolledWindow.frame GtkViewport .vertical GtkExpander .vertical {
 .dialog-action-area.linked .button:only-child,
 .dialog-action-area.linked .button:active:only-child,
 .dialog-action-area.linked .button:active:hover:only-child,
+
 .dialog-action-area.linked .button:checked:only-child,
 .dialog-action-area.linked .button:checked:hover:only-child,
 .dialog-action-area.linked .button:insensitive:only-child {
@@ -5428,6 +5427,7 @@ GtkModelButton.button:selected,
 }
 
 .titlebar .right .titlebutton:last-child {
+
 }
 
 .titlebar .left .titlebutton:last-child {
