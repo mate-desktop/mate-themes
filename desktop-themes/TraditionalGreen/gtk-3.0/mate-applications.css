@@ -434,3 +434,30 @@ EggToolbarEditor.vertical GtkScrolledWindow .frame {
     border-style: solid;
 }
 
+/*******
+ * Eom *
+ *******/
+
+EomThumbNav .button.flat:first-child {
+    border-radius: 3px 0px 0px 3px;
+    border-width: 1px 0px 1px 1px;
+}
+
+EomThumbNav .button.flat:last-child {
+    border-radius: 0px 3px 3px 0px;
+    border-width: 1px 1px 1px 0px;
+}
+
+EomThumbNav .button.flat {
+    border-image: none;
+    border-color: @border_color;
+}
+
+EomThumbNav .button.flat:hover {
+    border-color: @focus_border_color;
+}
+
+EomThumbNav .button.flat:insensitive {
+    border-color: @insensitive_border_color;
+}
+

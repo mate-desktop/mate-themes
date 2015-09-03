@@ -668,3 +668,35 @@ GtkScrolledWindow .button.flat:hover {
     border-radius: 8px;
 }
 
+/*******
+ * Eom *
+ *******/
+
+EomThumbNav .button.flat:first-child {
+    border-radius: 4px 0px 0px 4px;
+    border-width: 1px 0px 1px 1px;
+}
+
+EomThumbNav .button.flat:last-child {
+    border-radius: 0px 4px 4px 0px;
+    border-width: 1px 1px 1px 0px;
+}
+
+EomThumbNav .button.flat:hover:first-child {
+    background-image: linear-gradient(to right,
+                                      shade(@button_gradient_color_b, 0.7),
+                                      @theme_bg_color 50%,
+                                      shade(@button_gradient_color_a, 0.8));
+}
+
+EomThumbNav .button.flat:hover:last-child {
+    background-image: linear-gradient(to left,
+                                      shade(@button_gradient_color_b, 0.7),
+                                      @theme_bg_color 50%,
+                                      shade(@button_gradient_color_a, 0.8));
+}
+
+EomThumbNav .button.flat:insensitive {
+    background-image: none;
+}
+
