@@ -1338,3 +1338,38 @@ GvcMixerDialog .vertical.dialog-vbox .notebook .frame.flat GtkScrolledWindow.fra
     border-style: solid;
 }
 
+/*******
+ * Eom *
+ *******/
+
+EomWindow .vertical.primary-toolbar .horizontal.toolbar {
+    border-bottom-color: @theme_bg_dark_color;
+}
+
+EomThumbNav .button.flat {
+    border-width: 1px;
+    border-color: @button_border;
+    border-image: none;
+}
+
+EomThumbNav .button.flat:first-child {
+    border-radius: 5px 0px 0px 5px;
+    border-right-width: 0px;
+}
+
+EomThumbNav .button.flat:last-child {
+    border-radius: 0px 5px 5px 0px;
+    border-left-width: 0px;
+}
+
+EomThumbNav .button.flat:hover {
+    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
+                inset  1px  0px shade(@selected_bg_color, 0.97),
+                inset -1px  0px shade(@selected_bg_color, 0.93),
+                inset  0px -1px shade(@selected_bg_color, 0.93);
+}
+
+EomThumbNav .button.flat:insensitive {
+    border-color: transparent;
+}
+
