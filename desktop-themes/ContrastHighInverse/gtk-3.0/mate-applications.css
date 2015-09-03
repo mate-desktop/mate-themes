@@ -251,3 +251,29 @@ ShellWindow GtkScrolledWindow .button.flat:hover {
     border-radius: 12px;
 }
 
+/*******
+ * Eom *
+ *******/
+
+EomThumbNav .button.flat:first-child {
+    border-radius: 4px 0px 0px 4px;
+    border-width: 2px 0px 2px 2px;
+}
+
+EomThumbNav .button.flat:last-child {
+    border-radius: 0px 4px 4px 0px;
+    border-width: 2px 2px 2px 0px;
+}
+
+EomThumbNav .button.flat {
+    border-color: @theme_border_color;
+}
+
+EomThumbNav .button.flat:insensitive {
+    border-color: @theme_insensitive_border;
+}
+
+EomThumbNav .frame {
+    border-width: 2px;
+}
+
