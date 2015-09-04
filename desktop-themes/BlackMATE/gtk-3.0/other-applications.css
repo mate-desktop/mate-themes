@@ -273,3 +273,27 @@ NemoQueryEditor .toolbar .entry:focus {
    background-color: @less_dark_color;
    border-radius: 2px;
 }
+
+/****************
+ * Dconf-editor *
+ ****************/
+
+DConfWindow GtkTreeView.view {
+    background-color: shade (@theme_bg_color, 1.08);
+}
+
+DConfWindow GtkTreeView.view row:hover {
+    background-color: alpha(@theme_selected_bg_color, 0.2);
+}
+
+DConfWindow DConfKeyView.view {
+    background-color: @less_dark_color;
+}
+
+/* the small line between sidebar and view */
+DConfWindow GtkPaned.horizontal {
+    -GtkPaned-handle-size: 3px;
+    border-color: transparent;
+    background-color: @theme_bg_color;
+}
+

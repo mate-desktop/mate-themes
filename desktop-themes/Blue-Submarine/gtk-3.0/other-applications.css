@@ -690,3 +690,64 @@ GtkPaned GtkOverlay GtkRevealer.bottom .button.flat.image-button:hover {
                 inset  0px -1px shade (@theme_selected_bg_color, 1.3);
 }
 
+/****************
+ * Dconf-editor *
+ ****************/
+
+DConfWindow GtkTreeView.view {
+    background-color: shade (@theme_bg_color, 1.08);
+    color: @theme_fg_color;
+}
+
+DConfWindow GtkTreeView.view row:selected,
+DConfWindow GtkTreeView.view row:selected:hover  {
+    background-image: -gtk-gradient (linear,
+                                     left top,
+                                     left bottom,
+                                     from (shade(@sidebar_selected_bg, 0.90)),
+                                     color-stop (0.40, shade (@sidebar_selected_bg, 0.98)),
+                                     to (shade(@sidebar_selected_bg, 1.05)));
+    color:  @theme_selected_fg_color;
+    border-radius: 6px;
+    border-style: solid;
+    border-width: 1px 0px 0px 0px;
+    border-color: shade (@sidebar_selected_bg, 0.90) #bbb shade (@sidebar_selected_bg, 1.05);
+    text-shadow: none;
+}
+
+DConfWindow GtkTreeView.view row:hover {
+    background-image: -gtk-gradient (linear,
+                                     left top,
+                                     left bottom,
+                                     from (shade(@theme_bg_color, 1.05)),
+                                     color-stop (0.40, shade (@theme_bg_color, 1.13)),
+                                     to (shade(@theme_bg_color, 1.10)));
+    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
+                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+    color: shade (@theme_fg_color, 0.90);
+    border-radius: 6px;
+    text-shadow: none;
+}
+
+DConfWindow DConfKeyView.view {
+    background-color: @theme_base_color;
+    color: @theme_fg_color;
+}
+
+DConfWindow GtkBox.vertical  DConfKeyView.view row,
+DConfWindow GtkBox.vertical  DConfKeyView.view row:hover,
+DConfWindow GtkBox.vertical  DConfKeyView row:selected ,
+DConfWindow GtkBox.vertical  DConfKeyView row:selected:hover {
+    border-radius: 0px;
+    box-shadow: none;
+}
+
+/* the small line between sidebar and view */
+DConfWindow GtkPaned.horizontal {
+    -GtkPaned-handle-size: 3px;
+    border-color: transparent;
+    background-color: @theme_bg_color;
+}
+

@@ -280,6 +280,42 @@ GraniteWidgetsPopOver .entry {
 	background-color: alpha (#000, 0.15);
 }
 
+/****************
+ * Dconf-editor *
+ ****************/
+
+DConfWindow GtkTreeView.view {
+    background-color: @sidebar_bg;
+    color: @theme_text_color;
+}
+
+DConfWindow GtkTreeView.view row:selected,
+DConfWindow GtkTreeView.view row:selected:hover  {
+    color: @theme_selected_fg_color;
+}
+
+DConfWindow GtkTreeView.view row:hover {
+    background-color: shade (@theme_selected_bg_color, 1.15);
+    color: shade (@theme_selected_bg_color, 0.35);
+}
+
+DConfWindow DConfKeyView.view {
+    background-color: @theme_base_color;
+    color: @theme_text_color;
+}
+
+DConfWindow DConfKeyView.view row:hover {
+    background-color: shade (@theme_selected_bg_color, 1.30);
+    color: shade (@theme_selected_bg_color, 0.35);
+}
+
+/* the small line between sidebar and view */
+DConfWindow GtkPaned.horizontal {
+    -GtkPaned-handle-size: 3px;
+    border-color: transparent;
+    background-color: @theme_bg_color;
+}
+
 /*****************
  * Ubuntu styles *
  *****************/
