@@ -3029,29 +3029,34 @@ GtkPlacesSidebar.sidebar .view {
 }
 
 /* dialog open */
-.sidebar.list,
-.sidebar.list .button {
+GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame GtkListBox.sidebar.list,
+GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row {
     background-color: @sidebar_bg;
 }
 
-.sidebar-revealer .sidebar-button.image-button.button {
+GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row:hover {
+    background-color: shade (@theme_selected_bg_color, 1.15);
+    color: shade (@theme_selected_bg_color, 0.35);
+}
+
+GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row:selected:hover {
+    color: shade (@theme_selected_fg_color, 1.00);
+}
+
+GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row .sidebar-revealer .sidebar-icon {
+    padding: 4px 8px 4px 6px;
+}
+
+GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row .sidebar-revealer .sidebar-label {
+    padding: 4px 0px 4px 1px;
+}
+
+GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row .sidebar-revealer .sidebar-button.image-button.button {
     background-color: transparent;
     background-image: none;
     border-image:none;
     box-shadow: none;
-}
-
-.sidebar.list .button {
-    padding: 4px 8px 4px 6px;
-}
-
-.sidebar.list .button:hover {
-	background-color: shade (@theme_selected_bg_color, 1.15);
-
-}
-
-.sidebar.list .button .sidebar-label {
-    padding: 0px 8px;
+    padding: 4px 12px 4px 0px;
 }
 
 .sidebar row:hover {
@@ -3800,34 +3805,45 @@ GtkSwitch.slider:hover {
 /************
  * Pathbars *
  ************/
-.path-bar .button, .path-bar .header-bar .button.titlebutton, .header-bar .path-bar .button.titlebutton,
+.path-bar .button,
+.path-bar .header-bar .button.titlebutton,
+.header-bar .path-bar .button.titlebutton,
 .path-bar .titlebar .button.titlebutton,
 .titlebar .path-bar .button.titlebutton,
 .path-bar GtkCalendar.header .button.titlebutton,
 GtkCalendar.header .path-bar .button.titlebutton {
 	padding: 5px 6px 6px;
 }
+
 .path-bar .button:first-child {
 	padding-left: 8px;
 }
+
 .path-bar .button:last-child {
 	padding-right: 8px;
 }
+
 .path-bar .button:only-child {
 	padding-left: 12px;
 	padding-right: 12px;
 }
+
 .path-bar .button .label:last-child {
 	padding-left: 2px;
 }
+
 .path-bar .button .label:first-child {
 	padding-right: 2px;
 }
+
 .path-bar .button .label:only-child {
 	padding-right: 0;
 	padding-left: 0;
 }
-.path-bar .button GtkImage, .path-bar .header-bar .button.titlebutton GtkImage, .header-bar .path-bar .button.titlebutton GtkImage,
+
+.path-bar .button GtkImage,
+.path-bar .header-bar .button.titlebutton GtkImage,
+.header-bar .path-bar .button.titlebutton GtkImage,
 .path-bar .titlebar .button.titlebutton GtkImage,
 .titlebar .path-bar .button.titlebutton GtkImage,
 .path-bar GtkCalendar.header .button.titlebutton GtkImage,

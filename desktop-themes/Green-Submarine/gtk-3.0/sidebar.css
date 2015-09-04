@@ -19,23 +19,29 @@
 }
 
 /* dialog open */
-.sidebar.list,
-.sidebar.list .button {
+GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame GtkListBox.sidebar.list,
+GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row {
     background-color: @sidebar_background;
 }
 
-.sidebar-revealer .sidebar-button.image-button.button {
+GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row:selected {
+    border-radius: 6px;
+}
+
+GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row .sidebar-revealer .sidebar-icon {
+    padding: 4px 8px 4px 6px;
+}
+
+GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row .sidebar-revealer .sidebar-label {
+    padding: 4px 0px 4px 1px;
+}
+
+GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row .sidebar-revealer .sidebar-button.image-button.button {
     background-color: transparent;
     background-image: none;
+    border-image:none;
     box-shadow: none;
-}
-
-.sidebar.list .button {
-    padding: 5px 8px 5px 6px;
-}
-
-.sidebar.list .button .sidebar-label {
-    padding: 0px 8px;
+    padding: 4px 12px 4px 0px;
 }
 
 .sidebar.view:selected,

@@ -1770,31 +1770,25 @@ GtkCheckButton:selected:focus {
 }
 
 /* dialog open */
-.sidebar.list,
-.sidebar.list .button {
+GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame GtkListBox.sidebar.list,
+GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row {
     background-color: @theme_base_color;
 }
 
-.sidebar-revealer .sidebar-button.image-button.button {
-    background-color: transparent;
-    background-image: none;
-    border-image:none;
-    box-shadow: none;
-}
-
-.sidebar.list .button .sidebar-label {
-    padding: 0px 8px;
-}
-
-.sidebar.list .button {
-    background-image: none;
+GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row:selected,
+GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row:selected:hover {
     border-style: none;
-    border-image:none;
-    border-radius: 0px;
-    padding: 3px 8px 3px 6px;
+    color: @theme_selected_fg_color;
+    background-image: -gtk-gradient (linear,
+                      left top,
+                      left bottom,
+                      from (@menubar_menuitem_hover_gradient_a),
+                      color-stop (0.50, @menubar_menuitem_hover_gradient_b),
+                      color-stop (0.50, @menubar_menuitem_hover_gradient_c),
+                      to (@menubar_menuitem_hover_gradient_d));
 }
 
-.sidebar.list .button:hover {
+GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row:hover {
 	background-image: linear-gradient(to bottom,
 	                  shade(@button_active_gradient_a, 1.20),
 	                  shade(@button_active_gradient_b, 1.20) 3px,
@@ -1805,16 +1799,21 @@ GtkCheckButton:selected:focus {
 	background-color: transparent;
 }
 
-.sidebar.list .button:selected {
-    border-style: none;
-	color: @theme_selected_fg_color;
-	background-image: -gtk-gradient (linear,
-	                  left top,
-	                  left bottom,
-	                  from (@menubar_menuitem_hover_gradient_a),
-	                  color-stop (0.50, @menubar_menuitem_hover_gradient_b),
-	                  color-stop (0.50, @menubar_menuitem_hover_gradient_c),
-	                  to (@menubar_menuitem_hover_gradient_d));
+GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row .sidebar-revealer .sidebar-icon {
+    padding: 4px 8px 4px 6px;
+}
+
+GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row .sidebar-revealer .sidebar-label {
+    padding: 4px 0px 4px 1px;
+}
+
+GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row .sidebar-revealer .sidebar-button.image-button.button {
+    background-color: transparent;
+    background-image: none;
+    border-image:none;
+    box-shadow: none;
+    border-width: 0px;
+    padding: 4px 12px 4px 0px;
 }
 
 .sidebar .radio,
