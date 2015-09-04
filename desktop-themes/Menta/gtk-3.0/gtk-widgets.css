@@ -27,6 +27,8 @@
 	-GtkWindow-resize-grip-width: 13;
 	-GtkWindow-resize-grip-height: 13;
 	-GtkStatusbar-shadow-type: none;
+	-GtkIMHtml-hyperlink-color: @link_color;
+	-GtkHTML-link-color: @link_color;
 	-WnckTasklist-fade-overlay-rect: 0;
 	outline-color: alpha(@theme_text_color, 0.3);
 	outline-style: dashed;
@@ -4456,19 +4458,6 @@ GtkModelButton.button.flat:selected {
 /* Various hacks and shit */
 /* FIXME - BELOW: Some stuff that can probably be done better or in another way */
 
-/* gedit */
-.gedit-headerbar-paned:backdrop {
-	background-image: url("assets/null.png");
-}
-
-.gedit-search-slider * {
-	color: @theme_fg_color;
-}
-
-.gedit-document-panel {
-	background-color: @theme_bg_color;
-}
-
 /* Floating Bar */
 .floating-bar {
 	background-image: linear-gradient(to bottom, 
@@ -4527,33 +4516,5 @@ GtkModelButton.button.flat:selected {
 
 	-GtkButton-image-spacing: 0;
 	-GtkButton-inner-border: 0;
-}
-
-/* Nautilus desktop */
-.nautilus-canvas-item {
-	border-radius: 5px;
-}
-
-.nautilus-desktop.nautilus-canvas-item {
-	color: @theme_selected_fg_color;
-	text-shadow: 1px 1px black;
-}
-
-.nautilus-desktop.nautilus-canvas-item:active {
-	color: @theme_text_color;
-}
-
-.nautilus-desktop.nautilus-canvas-item:selected {
-	color: @theme_selected_fg_color;
-}
-
-.nautilus-desktop.nautilus-canvas-item:active,
-.nautilus-desktop.nautilus-canvas-item:prelight,
-.nautilus-desktop.nautilus-canvas-item:selected {
-	text-shadow: none;
-}
-
-.nautilus-desktop.nautilus-canvas-item:selected:backdrop {
-	color: @theme_unfocused_selected_fg_color;
 }
 
