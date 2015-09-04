@@ -171,39 +171,38 @@ GtkPlacesSidebar.sidebar .view {
 }
 
 /* dialog open */
-.sidebar.list,
-.sidebar.list .button {
+GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame GtkListBox.sidebar.list,
+GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row {
     background-color: shade (@theme_bg_color, 1.08);
 }
 
-.sidebar-revealer .sidebar-button.image-button.button {
+GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row:selected {
+	background-image: linear-gradient(to bottom,
+	                                  shade(@less_dark_color, 1.5),
+	                                  shade(@less_dark_color, 0.6));
+	color: @theme_text_color;
+	border-radius: 2px;
+}
+
+GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row:hover {
+	background-color: alpha(@theme_selected_bg_color, 0.4);
+}
+
+GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row .sidebar-revealer .sidebar-icon {
+    padding: 4px 8px 4px 6px;
+}
+
+GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row .sidebar-revealer .sidebar-label {
+    padding: 4px 0px 4px 1px;
+}
+
+GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row .sidebar-revealer .sidebar-button.image-button.button {
     background-color: transparent;
     background-image: none;
     border-image:none;
+    border-width: 0px;
     box-shadow: none;
-}
-
-.sidebar.list .button .sidebar-label {
-    padding: 0px 8px;
-}
-
-.sidebar.list .button {
-    background-image: none;
-    border-style: none;
-    border-image:none;
-    border-radius: 0px;
-    padding: 3px 8px 3px 6px;
-}
-
-.sidebar.list .button:hover {
-	background-color: alpha(@theme_selected_bg_color, 0.4);
-
-}
-
-.sidebar.list .button:selected {
-	background-image: linear-gradient(to bottom,
-	                                  shade(@theme_selected_bg_color, 1.5),
-	                                  shade(@theme_selected_bg_color, 0.7));
+    padding: 4px 12px 4px 0px;
 }
 
 .sidebar.separator,
@@ -1039,16 +1038,11 @@ GtkTreeView row:hover,
 	background-color: alpha(@theme_selected_bg_color, 0.2);
 }
 
-GtkTreeView row:selected {
-	background-image: linear-gradient(to bottom,
-	                                  shade(@theme_selected_bg_color, 1.5),
-	                                  shade(@theme_selected_bg_color, 0.7));
-}
-
+GtkTreeView row:selected,
 GtkTreeView row:selected:focus {
-	background-image: linear-gradient(to bottom,
-	                                  shade(@theme_selected_bg_color, 0.7),
-	                                  shade(@theme_selected_bg_color, 1.5));
+    background-image: linear-gradient(to bottom,
+	                                  shade(@less_dark_color, 1.5),
+	                                  shade(@less_dark_color, 0.6));
 }
 
 GtkTreeView row:nth-child(odd),
