@@ -1,11 +1,29 @@
-/* dconf editor */
+/****************
+ * Dconf-editor *
+ ****************/
+
 /* sidebar */
 DConfDirView.view {
 	background-color: shade(@theme_bg_color, 1.03);
 }
 
+DConfDirView.view row:selected,
+DConfDirView.view row:selected:focus {
+    background-image:  linear-gradient(to bottom,
+                                       shade(@theme_bg_color, 1.3),
+                                       shade(@theme_bg_color, 0.73));
+    color: @theme_fg_color;
+}
+
 DConfKeyView.view {
     background-color: shade(@base_color, 1.06)
+}
+
+/* the small line between sidebar and view */
+GtkApplicationWindow  GtkPaned.horizontal {
+    -GtkPaned-handle-size: 3px;
+    border-color: transparent;
+    background-color: @theme_bg_color;
 }
 
 /********
