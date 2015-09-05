@@ -46,7 +46,8 @@ DConfWindow GtkPaned.horizontal {
  * Nemo *
  ********/
 
-NemoView .view {
+NemoView .view,
+NemoView .view row {
 	background-color: shade(@base_color, 1.04)
 }
 
