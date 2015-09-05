@@ -2,31 +2,22 @@
     -GtkRange-stepper-size: 2;
     -GtkScale-slider-length: 28;
     -GtkRange-slider-width: 28;
-
-    -GtkTreeView-expander-size: 16;
-
+    -GtkTreeView-expander-size: 12; /* arrow size in list/tree views */
     -GtkWidget-cursor-color: @theme_cursor_color;
     -GtkWidget-cursor-aspect-ratio: 0.08;
-
     -GtkWidget-focus-padding: 1;
     /* disable focusline on active notebook tabs if focused*/
     -GtkWidget-focus-line-width: 0;
     -GtkWidget-focus-line-pattern: "\002\002";
-
     -GtkMenu-horizontal-padding: 0;
     -GtkMenu-vertical-padding: 0;
-
     -GtkScrolledWindow-scrollbar-spacing: 0;
     -GtkScrolledWindow-scrollbars-within-bevel: 1;
-
     -GtkComboBox-arrow-scaling: 0.9;
     -GtkButton-default-border: 0;
-
     -GtkWindow-resize-grip-width: 15;
     -GtkWindow-resize-grip-height: 15;
-
     -GtkStatusbar-shadow-type: none;
-
     background-clip: padding-box;
     outline-width: 0px; /* disable ugly focus-line */
     -gtk-icon-style: regular; /* disable symbolic icons */
