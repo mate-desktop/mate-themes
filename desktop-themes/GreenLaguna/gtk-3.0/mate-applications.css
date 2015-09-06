@@ -468,13 +468,17 @@ WnckPager:hover {
     -PanelMenuBar-icon-visible: true;
 }
 
+/* no background for icon-padding area */
+GtkTrayIcon.background {
+    background-color: transparent;
+}
+
 NaTrayApplet {
     background-image: none;
-    background-color: @theme_bg_color;
+    background-color: transparent;
     padding: 0;
-    color: @theme_fg_color;
     text-shadow: none;
-    -NaTrayApplet-icon-padding: 12;
+    -NaTrayApplet-icon-padding: 3px;
     -NaTrayApplet-icon-size: 16;
 }
 
