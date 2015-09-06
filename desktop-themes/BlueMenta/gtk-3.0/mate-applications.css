@@ -577,18 +577,25 @@ WnckSelector.menubar .menu .menuitem:hover {
     -GtkMenuItem-horizontal-padding: 0;
 }
 
+/* WnckPager */
 WnckPager {
     background-image: none;
-    border-color: transparent;
     background-color: transparent;
+    text-shadow: none;
+}
+
+/* selected WnckPager */
+WnckPager:selected {
+    background-image: linear-gradient(to bottom,
+                                      @theme_selected_bg_color,
+                                      shade (@theme_selected_bg_color, 0.36));
 }
 
 /* prelight of WnckPager */
 MatePanelApplet:hover {
     background-image: linear-gradient(to bottom,
-                                      @theme_bg_color,
-                                      shade (@theme_selected_bg_color, 0.86));
-    background-color: @theme_base_color;
+                                      shade (@theme_selected_bg_color, 0.56),
+                                      @theme_selected_bg_color);
 }
 
 ClockBox,
@@ -597,8 +604,13 @@ MatePanelApplet > GtkMenuBar.menubar {
     font: normal;
 }
 
+/* no background for icon-padding area */
+GtkTrayIcon.background {
+    background-color: transparent;
+}
+
 NaTrayApplet {
-    -NaTrayApplet-icon-padding: 12px;
+    -NaTrayApplet-icon-padding: 3px;
     -NaTrayApplet-icon-size: 16;
 }
 
