@@ -38,6 +38,7 @@ theme_DATA = \
 	pane-separator-grip.svg \
 	pane-separator-grip-vertical-hover.svg \
 	pane-separator-grip-vertical.svg \
+	panel-grid.svg \
 	primary-toolbar-button-active-border-dark.svg \
 	primary-toolbar-raised-button-border-dark.svg \
 	progressbar-border-dark.svg \

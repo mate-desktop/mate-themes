@@ -292,10 +292,10 @@ CajaQueryEditor .toolbar .entry:focus {
 
 /* the panel bar itself */
 .mate-panel-menu-bar {
-	background-color: @theme_bg_color;
+    background-color: @theme_bg_color;
     background-image: none;
     /* normal panel */
-	color: @theme_fg_color;
+    color: @theme_fg_color;
     /* transparent panel light desktop background*/
 /*    color: @theme_selected_fg_color; */
     text-shadow: none;
@@ -338,20 +338,17 @@ PanelToplevel.background.mate-custom-panel-background .button {
 }
 
 PanelToplevel.background.mate-custom-panel-background .button:hover {
-    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
-                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+    border-image: url("assets/button-active-border-dark.svg") 3 / 3px stretch;
 }
 
 MatePanelAppletFrameDBus PanelSeparator,
 PanelSeparator {
-	border-width: 0;
-	background-image: -gtk-gradient (linear, left top, left bottom,
-		from (shade (@theme_bg_color, 0.96)),
-		to (shade (@theme_bg_color, 1.05)));
-	color: shade (@theme_fg_color, 0.45);
-	text-shadow: none;
+    border-width: 0;
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@theme_bg_color, 0.96)),
+                                     to (shade (@theme_bg_color, 1.05)));
+    color: shade (@theme_fg_color, 0.45);
+    text-shadow: none;
 }
 
 /* dictionary applet */
@@ -453,19 +450,6 @@ MatePanelApplet .button.flat:hover {
                       to (shade(@button_gradient_color_b, 0.7)));
 }
 
-/* drivemount */
-DriveList .button,
-DriveList .button.flat,
-DriveList .button:hover,
-DriveList .button.flat:hover,
-DriveList .button:active,
-DriveList .button.flat:active {
-    padding: 4px;
-    border-radius: 5px;
-    border-color: transparent;
-    box-shadow: none;
-}
-
 /*Wncklist */
 WnckTasklist .button {
     transition: all 400ms ease-out;
@@ -488,25 +472,25 @@ WnckTasklist .button:checked:hover,
 WnckTasklist .button:checked,
 WnckTasklist .button:active:hover,
 WnckTasklist .button:active {
-	border-radius: 3px;
-	color: @theme_fg_color;
-	border-style: solid;
-	background-image: linear-gradient(to bottom,
-	                                  shade(@button_gradient_color_b, 0.7),
-	                                  @theme_bg_color 50%,
-	                                  shade(@button_gradient_color_a, 1.5));
+    border-radius: 3px;
+    color: @theme_fg_color;
+    border-style: solid;
+    background-image: linear-gradient(to bottom,
+                                      shade(@button_gradient_color_b, 0.7),
+                                      @theme_bg_color 50%,
+                                      shade(@button_gradient_color_a, 1.5));
 }
 
 WnckTasklist .button:hover {
-	border-radius: 3px;
-	border-image: none;
-	border-style: solid;
-	border-color: shade(@button_border, 1.1);
-	background-image: linear-gradient(to bottom,
-	                                  shade(@button_gradient_color_a, 1.5),
-	                                  shade(@button_gradient_color_a, 0.7) 39%,
-	                                  @theme_bg_color 40%,
-	                                  shade(@less_dark_color, 0.4));
+    border-radius: 3px;
+    border-image: none;
+    border-style: solid;
+    border-color: shade(@button_border, 1.1);
+    background-image: linear-gradient(to bottom,
+                                      shade(@button_gradient_color_a, 1.5),
+                                      shade(@button_gradient_color_a, 0.7) 39%,
+                                      @theme_bg_color 40%,
+                                      shade(@less_dark_color, 0.4));
 }
 
 /* set normal button WnckSelector */
@@ -519,12 +503,12 @@ WnckSelector.menubar .menuitem {
 
 /* set selected button WnckSelector */
 WnckSelector.menubar .menuitem:hover {
-	color: @theme_fg_color;
-	border-style: solid;
-	background-image: linear-gradient(to bottom,
-	                                  shade(@button_gradient_color_b, 0.7),
-	                                  @theme_bg_color 50%,
-	                                  shade(@button_gradient_color_a, 1.5));
+    color: @theme_fg_color;
+    border-style: solid;
+    background-image: linear-gradient(to bottom,
+                                      shade(@button_gradient_color_b, 0.7),
+                                      @theme_bg_color 50%,
+                                      shade(@button_gradient_color_a, 1.5));
 }
 
 /* set WnckSelector menuitem */
@@ -538,24 +522,24 @@ WnckSelector.menubar .menu .menuitem {
 
 /* set WnckSelector selected menuitem */
 WnckSelector.menubar .menu .menuitem:hover {
-	border-image: none;
-	color: @theme_fg_color;
-	background-image: linear-gradient(to bottom,
-	                                  shade(@theme_selected_bg_color, 1.3),
-	                                  shade(@theme_selected_bg_color, 0.5));
+    border-image: none;
+    color: @theme_fg_color;
+    background-image: linear-gradient(to bottom,
+                                      shade(@theme_selected_bg_color, 1.3),
+                                      shade(@theme_selected_bg_color, 0.5));
 }
 
 ClockBox,
 .mate-panel-menu-bar.menubar,
 MatePanelApplet > GtkMenuBar.menubar {
-	font: normal;
+    font: normal;
 }
 
 WnckPager {
-	background-image: none;
-	border-color: transparent;
-	background-color: transparent;
-	text-shadow: none;
+    background-image: none;
+    border-color: transparent;
+    background-color: transparent;
+    text-shadow: none;
     box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
                 inset  1px  0px shade (@theme_selected_bg_color, 1.3),
                 inset -1px  0px shade (@theme_selected_bg_color, 1.3),
@@ -564,20 +548,48 @@ WnckPager {
 
 /* selected WnckPager */
 WnckPager:selected {
-	background-image: linear-gradient(to bottom,
-		@theme_selected_bg_color,
-		shade (@theme_selected_bg_color, 0.36));
+    background-image: linear-gradient(to bottom,
+                                      @theme_selected_bg_color,
+                                      shade (@theme_selected_bg_color, 0.36));
 }
 
 /* prelight of WnckPager */
 WnckPager:hover {
-	background-image: linear-gradient(to bottom,
-		@theme_bg_color,
-		shade (@theme_selected_bg_color, 0.86));
+    background-image: linear-gradient(to bottom,
+                                      @theme_bg_color,
+                                      shade (@theme_selected_bg_color, 0.86));
+}
+
+/* drivemount */
+DriveList .button,
+DriveList .button.flat,
+DriveList .button:hover,
+DriveList .button.flat:hover,
+DriveList .button:active,
+DriveList .button.flat:active {
+    padding: 4px;
+    border-radius: 3px;
+    border-color: transparent;
+    box-shadow: none;
+}
+
+/* system-monitor-applet */
+MatePanelApplet .horizontal .vertical .frame {
+    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
+                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+    border-style: none;
+    border-radius: 5px;
+}
+
+/* no background for icon-padding area */
+GtkTrayIcon.background {
+    background-color: transparent;
 }
 
 NaTrayApplet {
-    -NaTrayApplet-icon-padding: 12px;
+    -NaTrayApplet-icon-padding: 3px;
     -NaTrayApplet-icon-size: 16;
 }
 
