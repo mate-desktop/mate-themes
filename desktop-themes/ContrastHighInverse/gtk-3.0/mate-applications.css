@@ -204,8 +204,13 @@ MatePanelApplet > GtkMenuBar.menubar {
     font: bold;
 }
 
+/* no background for icon-padding area */
+GtkTrayIcon.background {
+    background-color: transparent;
+}
+
 NaTrayApplet {
-    -NaTrayApplet-icon-padding: 12;
+    -NaTrayApplet-icon-padding: 4;
     -NaTrayApplet-icon-size: 16;
 }
 
