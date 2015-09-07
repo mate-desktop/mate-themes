@@ -368,6 +368,37 @@ PanelSeparator {
     text-shadow: none;
 }
 
+/* panel grip */
+PanelToplevel.background.mate-custom-panel-background {
+    background-color: transparent;
+    border-radius: 2px;
+/* enable for making borders visible */
+/*    box-shadow: inset  0px  1px shade (@theme_bg_color, 1.0),
+                inset  1px  0px shade (@theme_bg_color, 1.0),
+                inset -1px  0px shade (@theme_bg_color, 1.0),
+                inset  0px -1px shade (@theme_bg_color, 1.0); */
+}
+
+/* hide buttons */
+PanelToplevel.background.mate-custom-panel-background .button {
+    background: transparent;
+    border-image: none;
+    border-radius: 2px;
+    border-width: 0px;
+    padding: 0px 4px;
+    box-shadow: inset  0px  1px shade (@theme_bg_color, 1.0),
+                inset  1px  0px shade (@theme_bg_color, 1.0),
+                inset -1px  0px shade (@theme_bg_color, 1.0),
+                inset  0px -1px shade (@theme_bg_color, 1.0);
+}
+
+PanelToplevel.background.mate-custom-panel-background .button:hover {
+    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.0),
+                inset  1px  0px shade (@theme_selected_bg_color, 1.0),
+                inset -1px  0px shade (@theme_selected_bg_color, 1.0),
+                inset  0px -1px shade (@theme_selected_bg_color, 1.0);
+}
+
 /* the grid left from wnckpager and wncktasklist */
 MatePanelAppletFrameDBus {
     background-image: -gtk-scaled(url("assets/panel-grid.svg"));
