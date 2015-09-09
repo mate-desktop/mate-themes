@@ -75,18 +75,18 @@ CajaWindow .button.flat {
 
 CajaWindow .button.flat:first-child {
     transition: all 400ms ease-out;
-    border-radius: 6px 0 0 6px;
+    border-radius: 3px 0 0 3px;
     border-right-width: 0;
-/* remove left border */
-    border-image: url("borders/button.png") 3 3 4 3 / 3px 0px 4px 3px stretch;
+/* remove right border */
+    border-image: url("borders/button.png") 3 4 4 3 / 3px 0px 4px 3px stretch;
 }
 
 CajaWindow .button.flat:last-child {
     transition: all 400ms ease-out;
-    border-radius: 0 6px 6px 0;
+    border-radius: 0 3px 3px 0;
     border-left-width: 0;
-/* remove right border */
-    border-image: url("borders/button.png") 3 3 4 3 / 3px 3px 4px 0px stretch;
+/* remove left border */
+    border-image: url("borders/button.png") 3 3 4 4 / 3px 3px 4px 0px stretch;
 }
 
 CajaWindow .button.flat:hover {
