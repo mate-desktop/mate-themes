@@ -3125,7 +3125,7 @@ GtkOverlay.osd {
 }
 
 .osd .button {
-	border-color: @osd_button_border;
+	border-color: shade (@theme_selected_bg_color, 0.5);
 }
 
 .osd .button:insensitive {
@@ -3140,15 +3140,12 @@ GtkOverlay.osd {
 .osd.button,
 .osd .button {
 	padding: 4px;
-
 	background-image: linear-gradient(to bottom,
 		@osd_button_bg_a,
 		@osd_button_bg_b 68%,
 		@osd_button_bg_c
 		);
-
 	color: @osd_button_fg;
-
 	text-shadow: 0 -1px @osd_button_shadow;
 	icon-shadow: 0 -1px @osd_button_shadow;
 }
@@ -3279,11 +3276,13 @@ GtkOverlay.osd {
 	color: @osd_fg;
 	text-shadow: 0 1px @osd_text_shadow;
 	padding: 10px;
-	border-style: none;
+	border-style: solid;
+	border-width: 1px;
+	border-color: shade (@theme_selected_bg_color, 0.5);
 	border-radius: 7px;
 	background-image: linear-gradient(to left,
-	                                  shade(@theme_selected_bg_color, 1.1),
-	                                  shade(@theme_selected_bg_color, 0.65));
+	                                  alpha(shade(@theme_selected_bg_color, 1.0), 0.6),
+	                                  alpha(shade(@theme_selected_bg_color, 0.65), 0.6));
 	background-color: transparent;
 	-GtkToolbar-button-relief: normal;
 }
@@ -3349,6 +3348,32 @@ GtkOverlay.osd {
 .osd .scale.trough.highlight:insensitive {
 	background-image: none;
 	background-color: transparent;
+}
+
+.osd .scale-popup.popover.background {
+	color: @osd_fg;
+	border-style: solid;
+	border-width: 1px;
+	border-color: shade (@theme_selected_bg_color, 0.5);
+	border-radius: 4px;
+	background-image: linear-gradient(to bottom,
+	                                  alpha(shade(@theme_selected_bg_color, 1.0), 0.6),
+	                                  alpha(shade(@theme_selected_bg_color, 0.65), 0.6));
+	background-color: transparent;
+}
+
+.osd .scale-popup.popover.background .button.flat.image-button {
+    background-image: linear-gradient(to bottom,
+	                                  alpha(shade(@theme_selected_bg_color, 0.90), 0.6),
+	                                  alpha(shade(@theme_selected_bg_color, 0.75), 0.6));
+	border-radius: 5px;
+	border-width: 1px;
+	padding: 2px;
+}
+
+.osd .scale-popup.popover.background .button.flat.image-button:insensitive {
+    background-color: alpha (@osd_button_bg_insensitive, 0.5);
+    background-image: none;
 }
 
 .osd GtkProgressBar,
