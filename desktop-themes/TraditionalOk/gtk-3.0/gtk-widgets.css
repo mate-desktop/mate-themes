@@ -723,12 +723,6 @@ GtkScrolledWindow GtkViewport.frame {
    border-color: @border_color;
 }
 
-/* ie. rhythmbox */
-GtkVolumeButton.button.flat,
-GtkVolumeButton.button.flat:hover {
-	padding: 0px 6px;
-}
-
 GtkComboBox GtkToggleButton.button,
 GtkComboBoxText GtkToggleButton.button,
 .toolbar.horizontal GtkComboBox GtkToggleButton.button,
