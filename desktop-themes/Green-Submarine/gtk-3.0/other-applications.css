@@ -181,8 +181,11 @@ NemoWindow .sidebar .scrollbar.trough {
 }
 
 /* the small line between sidebar and view */
-NemoWindow * {
-    -GtkPaned-handle-size: 3px;
+NemoWindow GtkPaned.horizontal {
+    border-color: shade(@theme_bg_color, 0.80);
+    border-style: solid;
+    border-width: 0px 1px 0px 0px;
+    -GtkPaned-handle-size: 4px;
 }
 
 NemoWindow .sidebar .frame {
@@ -235,21 +238,6 @@ NemoWindow FMTreeView .view row:hover {
     text-shadow: none;
     padding: 4px;
 }
-
-/* disabled, looks uggly
-NemoWindow > GtkTable > .pane-separator,
-NemoWindow .pane-separator {
-    background-color: @sidebar_background;
-    background-image: -gtk-gradient (linear,
-                                     left top, right top,
-                                     from (@sidebar_background),
-                                     color-stop(0.50, @sidebar_background),
-                                     to   (shade(@theme_bg_color, 0.60)));
-    border-style: solid;
-    border-width: 0px;
-    border-color: @sidebar_background;
-    border-image: none;
-}*/
 
 /* to avoid unexpected light backgrounds */
 NemoToolbar.vertical {
@@ -490,21 +478,6 @@ NemoWindow .notebook {
     box-shadow: none;
 }
 
-/*
-NemoWindow .notebook {
-    -GtkNotebook-initial-gap: 0;
-    border-width: 1px 0px 0px 0px;
-    border-radius: 0px;
-    border-image: none;
-
-    border-top-color: shade(@sidebar_background, 0.75);
-    border-left-color: @transparent;
-    border-bottom-color: @transparent;
-    border-right-color: @transparent;
-
-}
-*/
-
 /* Nemo notebook */
 GtkDialog.background .vertical.dialog-vbox .notebook .frame {
     background-color: shade (@theme_bg_color, 1.1);
@@ -706,7 +679,12 @@ NemoWindow .notebook tab .button GtkImage:active:hover {
  * Dconf-editor *
  ****************/
 
-DConfWindow GtkTreeView.view {
+DConfDirView {
+    -GtkTreeView-expander-size: 12; /* arrow size in list/tree views */
+}
+
+DConfWindow GtkTreeView.view,
+DConfWindow GtkTreeView.view row {
     background-color: shade (@theme_bg_color, 1.08);
     color: @theme_fg_color;
 }
