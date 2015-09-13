@@ -203,21 +203,6 @@ NemoWindow .sidebar .view row:selected:hover {
     box-shadow: none;
 }
 
-/* disabled, looks uggly
-NemoWindow > GtkTable > .pane-separator,
-NemoWindow .pane-separator {
-    background-color: @sidebar_background;
-    background-image: -gtk-gradient (linear,
-                                     left top, right top,
-                                     from (@sidebar_background),
-                                     color-stop(0.50, @sidebar_background),
-                                     to   (shade(@theme_bg_color, 0.60)));
-    border-style: solid;
-    border-width: 0px;
-    border-color: @sidebar_background;
-    border-image: none;
-}*/
-
 /* to avoid unexpected light backgrounds */
 NemoToolbar.vertical {
     background-color: @theme_bg_dark_color;
@@ -457,21 +442,6 @@ NemoWindow .notebook {
     box-shadow: none;
 }
 
-/*
-NemoWindow .notebook {
-    -GtkNotebook-initial-gap: 0;
-    border-width: 1px 0px 0px 0px;
-    border-radius: 0px;
-    border-image: none;
-
-    border-top-color: shade(@sidebar_background, 0.75);
-    border-left-color: @transparent;
-    border-bottom-color: @transparent;
-    border-right-color: @transparent;
-
-}
-*/
-
 /* Nemo notebook */
 GtkDialog.background .vertical.dialog-vbox .notebook .frame {
     background-color: shade (@theme_bg_color, 1.1);
@@ -693,6 +663,16 @@ GtkPaned GtkOverlay GtkRevealer.bottom .button.flat.image-button:hover {
 /****************
  * Dconf-editor *
  ****************/
+
+DConfDirView {
+    -GtkTreeView-expander-size: 12; /* arrow size in list/tree views */
+}
+
+/* dconf editor sidebar */
+DConfDirView.view,
+DConfDirView.view row {
+    background-color: shade (@theme_bg_color, 1.08);
+}
 
 DConfDirView.view row:selected,
 DConfDirView.view row:selected:hover  {
