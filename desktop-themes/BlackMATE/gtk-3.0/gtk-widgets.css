@@ -1072,6 +1072,27 @@ row {
 	border-width: 0px;
 }
 
+.list-row.button {
+    background-image: none;
+    border-image: none;
+    border-color: transparent
+}
+
+.list-row.button:selected,
+.list-row.button:selected:hover {
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      @button_gradient_color_a,
+                                      @button_gradient_color_b);
+}
+
+.list-row.button:hover {
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+	                                  @button_hover_gradient_color_a,
+	                                  @button_hover_gradient_color_b);
+}
+
 .cell {
 	padding: 2px;
 	border-width: 0px;
