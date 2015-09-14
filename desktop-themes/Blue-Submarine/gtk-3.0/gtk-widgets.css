@@ -2560,8 +2560,8 @@ GtkHandleBox,
 .toolbar .raised.button:checked {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
-                                     from (shade(@button_raised_gradient_color_b, 0.90)),
-                                     to   (shade(@button_raised_gradient_color_a, 0.80)));
+                                     from (shade(@menu_bg_dark_color, 2.03)),
+                                     to   (shade(@menu_bg_dark_color, 1.17)));
     border-style: solid; 
     border-radius: 5px;
     border-image: none;
