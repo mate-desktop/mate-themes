@@ -69,7 +69,10 @@ GtkScale.scale-has-marks-above.slider.vertical:insensitive {
 .button:checked,
 .button:hover:checked,
 .button:active,
-.button:hover:active {
+.button:hover:active
+.list-row.button:hover,
+.list-row.button:selected,
+.list-row.button:selected:hover {
 	border-image: url("assets/button-active-border.svg") 3 / 3px stretch;
 }
 
