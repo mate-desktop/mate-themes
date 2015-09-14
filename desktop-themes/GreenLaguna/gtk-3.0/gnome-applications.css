@@ -132,7 +132,16 @@ FrWindow GtkTreeView.view {
 	background-color: shade(@theme_selected_bg_color, 1.23);
 }
 
-/* Rhythmbox */
+/*************
+ * rhythmbox *
+ *************/
+
+.primary-toolbar.toolbar.horizontal RBHeader.horizontal GtkVolumeButton.button.flat,
+.primary-toolbar.toolbar.horizontal RBHeader.horizontal GtkVolumeButton.button.flat:active,
+.primary-toolbar.toolbar.horizontal RBHeader.horizontal GtkVolumeButton.button.flat:hover {
+	padding: 0px 6px;
+}
+
 RBSource .cell.image {
 	color: black;
 }
