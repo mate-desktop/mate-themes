@@ -3408,7 +3408,7 @@ GtkActionBar .frame.action-bar .horizontal.stack-switcher.linked .button.image-b
  * GtkStack *
  ************/
 
-GtkStackSidebar.sidebar GtkViewport.frame {
+GtkStackSidebar.sidebar GtkScrolledWindow {
     background-image: linear-gradient(to bottom,
                                                              @toolbar_gradient_base,
                                                              @toolbar_gradient_bottom);
@@ -3423,5 +3423,13 @@ GtkStackSidebar.sidebar GtkViewport.frame {
     background-image: linear-gradient(to bottom,
                                                              @toolbar_gradient_base,
                                                              @toolbar_gradient_bottom);
+}
+
+GtkStackSidebar.sidebar GtkViewport.frame {
+ background-color:transparent;
+}
+
+GtkStackSidebar.sidebar GtkViewport.frame .list-row.button {
+    transition: none;
 }
 
