@@ -43,3 +43,13 @@
 	background-color: @theme_bg_color;
 }
 
+/*************
+ * rhythmbox *
+ *************/
+
+.primary-toolbar.toolbar.horizontal RBHeader.horizontal GtkVolumeButton.button.flat,
+.primary-toolbar.toolbar.horizontal RBHeader.horizontal GtkVolumeButton.button.flat:active,
+.primary-toolbar.toolbar.horizontal RBHeader.horizontal GtkVolumeButton.button.flat:hover {
+	padding: 0px 6px;
+}
+
