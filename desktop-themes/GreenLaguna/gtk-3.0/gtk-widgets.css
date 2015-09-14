@@ -17,7 +17,7 @@
 	-GtkScrolledWindow-scrollbars-within-bevel: 0;
 	-GtkToolItemGroup-expander-size: 12;
 	-GtkExpander-expander-size: 12;
-	-GtkTreeView-expander-size: 8; /* arrow size in list/tree views */
+	-GtkTreeView-expander-size: 12; /* arrow size in list/tree views */
 	-GtkTreeView-horizontal-separator: 4;
 	-GtkMenuBar-shadow-type: none;
 	-GtkMenu-horizontal-padding: 0;
@@ -151,10 +151,6 @@
 	border-style: solid;
 	border-width: 1px;
 	border-radius: 2px;
-}
-
-GtkExpander {
-    -gtk-icon-style: regular;
 }
 
 /************************
@@ -3016,6 +3012,41 @@ GtkRadioButton:selected:focus {
 /*************
  * Expanders *
  *************/
+
+GtkTreeView.view.expander {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+    color: @theme_fg_color;
+}
+GtkTreeView.view.expander:dir(rtl) {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
+}
+GtkTreeView.view.expander:hover {
+    color: @theme_fg_color;
+}
+GtkTreeView.view.expander:selected {
+    color: @theme_selected_fg_color;
+}
+GtkTreeView.view.expander:selected:hover {
+    color: @theme_selected_fg_color;
+}
+GtkTreeView.view.expander:checked {
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
+GtkExpander {
+    -gtk-icon-style: regular;
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+GtkExpander:dir(rtl) {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
+}
+GtkExpander:hover {
+    color: @internal_element_color;
+}
+GtkExpander:checked {
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
 .expander {
 	border-style: solid;
 	border-width: 1px;
