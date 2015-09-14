@@ -1590,8 +1590,11 @@ GtkLinkButton.button:active:hover {
 }
 
 .menu .menuitem {
-    transition: all 300ms ease-out;
     padding: 3px 4px;
+}
+
+.menubar .menu .menuitem {
+    transition: none;
 }
 
 .menubar .menuitem,
