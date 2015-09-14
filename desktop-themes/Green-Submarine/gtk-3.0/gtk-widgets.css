@@ -277,11 +277,12 @@ GtkStatusbar .frame {
  * Text Entries *
  ****************/
 
-.entry {
+.entry,
+.combobox-entry .entry {
 /* Look out !
 This is the background color of mate-control-center 'too' */
     background-color: @theme_base_color;
-    padding: 3px 4px;
+    padding: 5px 4px;
     -GtkEntry-inner-border: 0;
     -GtkEntry-progress-border: 0;
     color: @entry_text_color;
@@ -851,6 +852,20 @@ GtkScrolledWindow.frame {
 .button *:insensitive {
     color: @insensitive_fg_color;
     text-shadow: none;
+}
+
+.button.text-button,
+GtkFileChooserButton .button {
+    padding: 5px 4px;
+}
+
+GtkComboBox GtkToggleButton.button {
+    padding: 4px;
+}
+
+GtkFontButton.button,
+GtkColorButton.button {
+    padding: 6px 4px;
 }
 
 .path-bar .button,
