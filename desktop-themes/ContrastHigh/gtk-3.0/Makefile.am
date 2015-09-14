@@ -4,6 +4,7 @@ theme_DATA = \
 	gtk.css \
 	gtk-widgets.css \
 	mate-applications.css \
+	other-applications.css \
 	resize-grip.svg \
 	settings.ini
 
