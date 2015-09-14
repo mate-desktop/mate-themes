@@ -1395,6 +1395,11 @@ GtkFileChooserButton .button {
 	color: @insensitive_fg_color;
 }
 
+GtkFontButton.button,
+GtkColorButton.button {
+    padding: 4px 3px;
+}
+
 /******************
  * Linked Buttons *
  ******************/
