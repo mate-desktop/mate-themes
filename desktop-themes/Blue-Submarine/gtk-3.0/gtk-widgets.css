@@ -869,6 +869,10 @@ GtkScrolledWindow.frame {
     text-shadow: none;
 }
 
+.toolbar.vertical .image-button.flat.button {
+    padding: 5px;
+}
+
 .button.text-button,
 GtkFileChooserButton .button {
     padding: 5px 4px;
@@ -2242,6 +2246,7 @@ GtkHandleBox,
 
 .toolbar.vertical {
     border-radius: 4px 0 0 4px;
+    padding: 2px;
 }
 
 /********************

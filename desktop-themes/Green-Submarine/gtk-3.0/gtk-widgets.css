@@ -872,6 +872,10 @@ GtkScrolledWindow.frame {
     text-shadow: none;
 }
 
+.toolbar.vertical .image-button.flat.button {
+    padding: 5px;
+}
+
 .button.text-button,
 GtkFileChooserButton .button {
     padding: 5px 4px;
@@ -2224,6 +2228,7 @@ GtkHandleBox,
 
 .toolbar.vertical {
     border-radius: 4px 0 0 4px;
+    padding: 2px;
 }
 
 /********************
@@ -4643,7 +4648,6 @@ GtkDialog GtkScrolledWindow.frame GtkViewport .vertical GtkExpander .vertical {
 .dialog-action-area.linked .button:only-child,
 .dialog-action-area.linked .button:active:only-child,
 .dialog-action-area.linked .button:active:hover:only-child,
-
 .dialog-action-area.linked .button:checked:only-child,
 .dialog-action-area.linked .button:checked:hover:only-child,
 .dialog-action-area.linked .button:insensitive:only-child {
