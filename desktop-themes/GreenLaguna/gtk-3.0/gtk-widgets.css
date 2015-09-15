@@ -1029,21 +1029,26 @@ row {
 	border-width: 0px;
 }
 
-.list-row.button {
+.list-row {
+    transition: all 400ms ease-out;
+}
+
+.list-row.activatable {
     background-image: none;
     border-image: none;
     border-color: transparent
 }
 
-.list-row.button:selected,
-.list-row.button:selected:hover {
+.list-row.activatable:selected,
+.list-row.activatable:selected:hover {
+	color: @theme_fg_color;
     background-color: transparent;
     background-image: linear-gradient(to bottom,
                                       @button_gradient_color_a,
                                       @button_gradient_color_b);
 }
 
-.list-row.button:hover {
+.list-row.activatable:hover {
     background-color: transparent;
     background-image: linear-gradient(to bottom,
 	                                  @button_hover_gradient_color_a,
