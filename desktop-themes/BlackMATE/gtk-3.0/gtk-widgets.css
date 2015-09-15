@@ -1034,8 +1034,7 @@ GtkTreeView.view.separator:hover {
 
 GtkTreeView row:hover,
 .notebook GtkContainer GtkTreeView row:hover {
-	/*color: @theme_main_color;*/
-	background-color: alpha(@theme_selected_bg_color, 0.2);
+	background-color: alpha(@theme_selected_bg_color, 0.4);
 }
 
 GtkTreeView row:selected,
@@ -1045,6 +1044,7 @@ GtkTreeView row:selected:focus {
 	                                  shade(@less_dark_color, 0.6));
 }
 
+/* this breaks GtkTreeView row:hover with gtk3.18 !
 GtkTreeView row:nth-child(odd),
 GtkTreeView row:nth-child(odd):hover {
 	background-color: @less_dark_color;
@@ -1054,6 +1054,7 @@ GtkTreeView row:nth-child(even),
 GtkTreeView row:nth-child(even):hover {
 	background-color: shade(@less_dark_color, 1.05);
 }
+*/
 
 GtkTreeView row:nth-child(odd):insensitive,
 GtkTreeView row:nth-child(even):insensitive {
@@ -1113,21 +1114,25 @@ row {
 	border-width: 0px;
 }
 
-.list-row.button {
+.list-row {
+    transition: all 400ms ease-out;
+}
+
+.list-row.activatable {
     background-image: none;
     border-image: none;
     border-color: transparent
 }
 
-.list-row.button:selected,
-.list-row.button:selected:hover {
+.list-row.activatable:selected,
+.list-row.activatable:selected:hover {
     background-color: transparent;
     background-image: linear-gradient(to bottom,
                                       @button_gradient_color_a,
                                       @button_gradient_color_b);
 }
 
-.list-row.button:hover {
+.list-row.activatable:hover {
     background-color: transparent;
     background-image: linear-gradient(to bottom,
 	                                  @button_hover_gradient_color_a,
