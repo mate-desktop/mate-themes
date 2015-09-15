@@ -3174,6 +3174,10 @@ GtkInfoBar {
 	text-shadow: none;
 }
 
+.sidebar {
+    -gtk-icon-style: regular;
+}
+
 .sidebar,
 GtkPlacesSidebar.sidebar .view {
 	background-color: shade(@theme_bg_color, 1.02);
