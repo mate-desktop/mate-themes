@@ -1,4 +1,33 @@
-1.10.3
+1.10.5 (GTK 3.18)
+- more adjustments for gtk+-3.18
+  * list-rows
+  * osd-scale popup
+- all gtk3
+  * fix padding-area of icons in na-tray
+  * full transparent panel for BlackMate and GreenLaguna
+  * improvements for all themes
+  * details see git log
+
+1.10.4 (GTK 3.18)
+- first adjustments for gtk+-3.18
+  * adjust sidebar in GtkFileChooser dialog
+  * style popover suggested-action button
+- all gtk3
+  * adjust link_color and add styling for hyperlinks
+  * all themes: style bg of toolbar editor
+  * style dialog windows
+  * add new style classes settings for ContrastHigh themes
+  * restore progressbars for traditional themes
+  * improvements for traditional themes
+  * BlackMATE: re-work caja styling a bit
+  * improvements for BlackMATE theme
+  * improvements for Greenlaguna theme
+  * submarine themes: don't use dark colors for math calculators
+  * improvements for submarine themes
+  * improvements for menta themes
+- for more details see git log!
+
+1.10.3 (GTK 3.16)
   * fix some metacity themes
   * improve traditional themes (gk3)
 
