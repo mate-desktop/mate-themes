@@ -1332,6 +1332,8 @@ GtkFileChooserButton .button {
    border-width: 1px;
    border-style: solid;
    border-color: @button_border;
+   border-radius: 10px;
+   padding: 2px
 }
 
 .button GtkImage,
