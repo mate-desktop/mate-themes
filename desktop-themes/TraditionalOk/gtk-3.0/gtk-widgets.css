@@ -1966,8 +1966,9 @@ GtkOverlay.osd {
     border-color: shade (@theme_bg_color, 0.4);
     border-style: solid;
     border-image: none;
+    border-width: 1px;
     padding: 8px;
-    border-radius: 0px;
+    border-radius: 3px;
 }
 
 .osd.toolbar .button:active,
