@@ -947,6 +947,10 @@ GtkTreeView {
 	-GtkWidget-focus-padding: 1;
 }
 
+GtkTreeView row {
+	background-color: transparent;
+}
+
 GtkTreeView row:selected {
 	background-image: linear-gradient(to bottom,
 	                                  shade(@theme_selected_bg_color, 1.45),
@@ -963,6 +967,7 @@ GtkTreeView row:selected:focus {
 	color: @theme_selected_fg_color;
 }*/
 
+/* prob with normal row color
 GtkTreeView row:nth-child(odd),
 GtkTreeView row:nth-child(odd):hover {
 	background-color: @treeview_odd_row;
@@ -972,6 +977,7 @@ GtkTreeView row:nth-child(even),
 GtkTreeView row:nth-child(even):hover {
 	background-color: @treeview_even_row;
 }
+*/
 
 GtkTreeView row:nth-child(odd):insensitive,
 GtkTreeView row:nth-child(even):insensitive {
