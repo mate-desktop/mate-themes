@@ -1328,19 +1328,22 @@ GtkFileChooserButton .button {
 /*****************
  * GtkSpinButton *
  *****************/
+
+.spinbutton,
+.spinbutton.vertical {
+	padding: 5px 4px;
+}
+
 .spinbutton .button {
 	color: @internal_element_color;
 	padding: 2px 6px;
+	background-color: transparent;
+	background-image: none;
 	border-width: 0;
 	border-radius: 0;
 	border-style: none;
 	border-image: none;
 	box-shadow: inset 1px 0 @inset_dark_color;
-}
-
-.spinbutton .button {
-	background-color: transparent;
-	background-image: none;
 }
 
 .spinbutton .button:insensitive {
@@ -1372,7 +1375,6 @@ GtkFileChooserButton .button {
 .spinbutton .button:active:focus,
 .spinbutton .button:checked,
 .spinbutton .button:checked:focus {
-	padding: 2px 4px;
 	box-shadow: inset 1px 0 @inset_dark_color,
 		inset 0 1px alpha(@theme_selected_bg_color, 0.2),
 		inset 0 -1px alpha(@theme_selected_bg_color, 0.2);
@@ -1382,7 +1384,6 @@ GtkFileChooserButton .button {
 .spinbutton .button:first-child:active:focus,
 .spinbutton .button:first-child:active,
 .spinbutton .button:first-child:active:focus {
-	padding: 2px 4px;
 	box-shadow: inset 1px 1px alpha(@theme_selected_bg_color, 0.2),
 		inset 0 -1px alpha(@theme_selected_bg_color, 0.2);
 }
@@ -1391,7 +1392,6 @@ GtkFileChooserButton .button {
 .spinbutton .button:last-child:active:focus,
 .spinbutton .button:last-child:checked,
 .spinbutton .button:last-child:checked:focus {
-	padding: 2px 4px;
 	box-shadow: inset 1px 0 @inset_dark_color,
 		inset 0 1px alpha(@theme_selected_bg_color, 0.2),
 		inset -1px -1px alpha(@theme_selected_bg_color, 0.2);
