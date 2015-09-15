@@ -4707,13 +4707,6 @@ GtkDialog GtkScrolledWindow.frame GtkViewport .vertical GtkExpander .vertical {
     box-shadow: none;
 }
 
-.dialog-action-area.linked .button.suggested-action,
-.dialog-action-area.linked .button.suggested-action:active,
-.dialog-action-area.linked .button.suggested-action:checked,
-.dialog-action-area.linked .button.suggested-action:insensitive {
-    box-shadow: none;
-}
-
 /**************
  * Dim labels *
  **************/
@@ -5354,6 +5347,7 @@ GtkModelButton.button:selected,
     border-width: 0;
     border-color: transparent;
     border-radius: 5px;
+    padding: 5px 4px;
 }
 
 .popover .button.default.text-button.suggested-action:hover {
