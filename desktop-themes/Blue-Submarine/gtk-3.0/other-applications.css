@@ -664,7 +664,8 @@ GtkPaned GtkOverlay GtkRevealer.bottom .button.flat.image-button:hover {
  * Dconf-editor *
  ****************/
 
-DConfDirView {
+/* sidebar */
+DConfWindow GtkTreeView.view {
     -GtkTreeView-expander-size: 12; /* arrow size in list/tree views */
 }
 
@@ -706,15 +707,21 @@ DConfWindow GtkTreeView.view row:hover {
     text-shadow: none;
 }
 
-DConfWindow DConfKeyView.view {
+/* view */
+DConfWindow DConfKeyView.view,
+DConfWindow DConfKeyView.view row {
     background-color: @theme_base_color;
     color: @theme_fg_color;
 }
 
-DConfWindow GtkBox.vertical  DConfKeyView.view row,
-DConfWindow GtkBox.vertical  DConfKeyView.view row:hover,
-DConfWindow GtkBox.vertical  DConfKeyView row:selected ,
-DConfWindow GtkBox.vertical  DConfKeyView row:selected:hover {
+DConfWindow DConfKeyView.view row:selected {
+    color: @theme_selected_fg_color;
+}
+
+DConfWindow DConfKeyView.view row,
+DConfWindow DConfKeyView.view row:hover,
+DConfWindow DConfKeyView.view row:selected,
+DConfWindow DConfKeyView.view row:selected:hover {
     border-radius: 0px;
     box-shadow: none;
 }
