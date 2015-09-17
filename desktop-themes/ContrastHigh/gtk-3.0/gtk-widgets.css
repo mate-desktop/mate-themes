@@ -1930,31 +1930,27 @@ GtkIconView.view.cell {
     padding: 2px;
 }
 
-.list-row.button {
+.list-row.activatable {
     background-color: @base_color;
     border-style: none;
     border-radius: 0px;
     box-shadow: none;
 }
 
-.list-row.button:hover,
-.list-row.button:backdrop:hover,
-.list-row.button:selected:hover {
-    background-color: @theme_button_bg;
-    color: @theme_fg_color;
+.list-row.activatable:hover,
+.list-row.activatable:backdrop:hover,
+.list-row.activatable:selected:hover {
+    background-color: @theme_fg_color;
+    border-color: @theme_fg_color;
+    color: @theme_selected_fg_color;
     border-radius: 4px;
-    box-shadow: inset  0px  1px shade (@theme_fg_color, 1.3),
-                inset  1px  0px shade (@theme_fg_color, 1.3),
-                inset -1px  0px shade (@theme_fg_color, 1.3),
-                inset  0px -1px shade (@theme_fg_color, 1.3);
 }
 
-.list-row.button:active {
+.list-row.activatable:active {
     box-shadow: inset 0 2px 2px -2px transparentize(black,0.8);
 }
 
-.list-row.button:selected,
-.list-row.button:selected:active {
+.list-row.activatable:selected {
     background-color: @theme_selected_bg_color;
     color: @theme_selected_fg_color;
     box-shadow: inset 0 2px 3px -1px transparentize(black,0.5);
