@@ -2260,44 +2260,6 @@ GtkOverlay.osd {
     margin: 2px;
 }
 
-.osd .scale-popup.popover.background {
-    color: @osd_fg;
-    border-style: solid;
-    border-width: 1px;
-    border-color: shade (@theme_fg_color, 1.0);
-    border-radius: 2px;
-    background-image: linear-gradient(to bottom,
-                                      @osd_toolbar_bg_a,
-                                      @osd_toolbar_bg_b 63%,
-                                      @osd_toolbar_bg_c);
-    background-color: transparent;
-    padding: 2px 0px;
-}
-
-.osd .scale-popup.popover.background .button.flat.image-button {
-    background-image: linear-gradient(to bottom,
-                                      @osd_button_bg_a,
-                                      @osd_button_bg_b 68%,
-                                      @osd_button_bg_c);
-    border-radius: 3px;
-    border-width: 1px;
-    padding: 6px;
-}
-
-.osd .scale-popup.popover.background .button.flat.image-button:hover {
-    background-image: linear-gradient(to bottom,
-                                      @osd_button_bg_hover_a,
-                                      @osd_button_bg_hover_b 78%,
-                                      @osd_button_bg_hover_c);
-    box-shadow: none;
-}
-
-.osd .scale-popup.popover.background .button.flat.image-button:insensitive {
-    border-color: alpha (shade(@theme_bg_color, 0.4), 0.0);
-    background-image: none;
-    background-color: transparent;
-}
-
 .osd GtkProgressBar,
 GtkProgressBar.osd {
     padding: 0;
