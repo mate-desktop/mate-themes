@@ -1841,59 +1841,397 @@ GtkIconView.view.cell {
 /*******
  * OSD *
  *******/
-.osd {
-    color: @theme_selected_fg_color;
-    background-color: @theme_selected_bg_color;
+
+.background.osd {
+    color: @osd_fg;
+    background-color: @osd_bg;
 }
 
-.osd.toolbar {
-    padding: 20px;
+GtkOverlay.osd {
+    background-color: transparent;
+}
 
+.osd.frame {
+    background-clip: border-box;
+    background-origin: border-box;
+}
+
+.osd.button,
+.osd.button:active,
+.osd.button:checked,
+.osd .button,
+.osd .button:active,
+.osd .button:checked {
+    border-width: 1px;
     border-style: solid;
-    border-color: @theme_internal_bg;
-    border-width: 2px;
-
-    -GtkToolbar-button-relief: normal;
+    border-image: none;
+    border-radius: 5px;
 }
 
 .osd .button {
-    padding: 4px;
-    color: @theme_fg_color;
-    background-color: @theme_internal_bg;
+    border-color: shade (@theme_bg_color, 0.4);
+}
+.osd .button:insensitive {
+    border-color: alpha(@osd_button_border,0.5);
 }
 
-.osd GtkToolButton .button,
-.osd .button:only-child {
-    border-width: 2px;
+.osd .button:hover,
+.osd .button:active,
+.osd .button:checked {
+    border-color: shade (@theme_selected_bg_color, 0.5);
+}
+
+.osd.button,
+.osd .button {
+    padding: 6px;
+    background-image: linear-gradient(to bottom,
+                                      @osd_button_bg_a,
+                                      @osd_button_bg_b 68%,
+                                      @osd_button_bg_c);
+    color: @osd_button_fg;
+    text-shadow: 0 -1px @osd_button_shadow;
+    icon-shadow: 0 -1px @osd_button_shadow;
+}
+
+.osd.button {
+    padding: 8px;
+}
+
+.osd.button,
+.osd.button:active,
+.osd.button:checked {
+    border-color: transparent;
+}
+
+.osd.button,
+.osd.button:prelight,
+.osd.button:active,
+.osd.button:checked {
+    background-color: shade(@osd_bg, 1.10);
+}
+
+.osd .button,
+.osd .button:prelight,
+.osd .button:active,
+.osd .button:checked {
+    background-color: transparent;
+}
+
+.osd.button:insensitive,
+.osd .button:insensitive {
+    background-image: none;
+    background-color: @osd_button_bg_insensitive;
+}
+
+.osd.button:active:insensitive,
+.osd .button:active:insensitive,
+.osd.button:checked:insensitive,
+.osd .button:checked:insensitive {
+    background-image: none;
+    background-color: @osd_button_bg_insensitive_active;
+}
+
+.osd.button:hover,
+.osd .button:hover {
+    color: @osd_button_fg_hover;
+}
+
+.osd.button:active,
+.osd.button:hover:active,
+.osd .button:active,
+.osd .button:hover:active,
+.osd.button:checked,
+.osd.button:hover:checked,
+.osd .button:checked,
+.osd .button:hover:checked {
+    color: @osd_button_fg_active;
+}
+
+.osd.button:insensitive,
+.osd.button:active *:insensitive,
+.osd.button:checked *:insensitive,
+.osd .button:insensitive,
+.osd .button:active *:insensitive,
+.osd .button:checked *:insensitive {
+    color: @osd_button_fg_insensitive;
+    text-shadow: none;
+    icon-shadow: none;
+}
+
+.osd.button:hover,
+.osd .button:hover {
+    background-image: linear-gradient(to bottom,
+                                      @osd_button_bg_hover_a,
+                                      @osd_button_bg_hover_b 68%,
+                                      @osd_button_bg_hover_c);
+}
+
+.osd.button:active,
+.osd.button:active:hover,
+.osd .button:active,
+.osd .button:active:hover,
+.osd GtkMenuButton.menu-button:active,
+.osd.button:checked,
+.osd.button:checked:hover,
+.osd .button:checked,
+.osd .button:checked:hover,
+.osd GtkMenuButton.menu-button:checked {
+    background-image: linear-gradient(to bottom,
+                                      @osd_button_bg_active_a,
+                                      @osd_button_bg_active_b 20%,
+                                      @osd_button_bg_active_c);
+}
+
+.osd .linked .button:active:first-child {
+    border-left-width: 1px;
+}
+
+.osd .linked .button:active:last-child {
+    border-right-width: 1px;
+}
+
+.osd GtkMenuButton.menu-button:active {
+    background-color: transparent;
+    border-color: @osd_button_border;
+}
+
+.osd GtkMenuButton.menu-button:active {
+    color: @osd_button_fg_active;
+    text-shadow: 0 -1px @osd_button_shadow;
+}
+
+
+.osd.toolbar {
+    color: @osd_fg;
+    text-shadow: 0 1px @osd_text_shadow;
+    padding: 12px 8px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: shade (@theme_fg_color, 1.0);
+    border-radius: 2px;
+    background-image: linear-gradient(to bottom,
+                                      @osd_toolbar_bg_a,
+                                      @osd_toolbar_bg_b 63%,
+                                      @osd_toolbar_bg_c);
+    background-color: transparent;
+    -GtkToolbar-button-relief: normal;
+}
+
+.osd.toolbar .flat.button.image-button {
+    box-shadow: none;
+}
+
+.osd.toolbar .button,
+.osd.toolbar .button:hover,
+.osd.toolbar .button:active,
+.osd.toolbar .button:checked,
+.osd.toolbar .button:active:hover,
+.osd.toolbar .button:insensitive,
+.osd.toolbar .linked .button,
+.osd.toolbar .linked .button:hover,
+.osd.toolbar .linked .button:active,
+.osd.toolbar .linked .button:checked,
+.osd.toolbar .linked .button:active:hover,
+.osd.toolbar .linked .button:insensitive {
+    border-color: shade (@theme_fg_color, 1.0);
+    border-style: solid;
+    border-image: none;
+    padding: 12px;
+    border-radius: 0px;
+}
+
+.osd.toolbar .button:active,
+.osd.toolbar .button:active:hover {
+    background-image: linear-gradient(to bottom,
+                                      @osd_button_bg_active_a,
+                                      @osd_button_bg_active_b 20%,
+                                      @osd_button_bg_active_c);
+}
+
+.osd.toolbar .button:hover {
+    background-image: linear-gradient(to bottom,
+                                      @osd_button_bg_hover_a,
+                                      @osd_button_bg_hover_b 68%,
+                                      @osd_button_bg_hover_c);
+}
+
+.osd.toolbar .button:first-child,
+.osd.toolbar .button:hover:first-child,
+.osd.toolbar .button:active:first-child,
+.osd.toolbar .button:active:hover:first-child {
+    border-radius: 3px 0 0 3px;
+    border-width: 1px 0 1px 1px;
+    box-shadow: inset -1px 0 @osd_button_inset;
+}
+
+.osd.toolbar .button:last-child,
+.osd.toolbar .button:hover:last-child,
+.osd.toolbar .button:active:last-child,
+.osd.toolbar .button:active:hover:last-child {
+    box-shadow: none;
+    border-radius: 0 3px 3px 0;
+    border-width: 1px 1px 1px 0;
+}
+
+.osd.toolbar .button:only-child,
+.osd.toolbar .button:hover:only-child,
+.osd.toolbar .button:active:only-child,
+.osd.toolbar .button:active:hover:only-child,
+.osd.toolbar GtkToolButton .button,
+.osd.toolbar GtkToolButton:only-child .button,
+.osd.toolbar GtkToolButton:last-child .button,
+.osd.toolbar GtkToolButton:first-child .button {
+    border-width: 1px;
     border-radius: 3px;
     border-style: solid;
+    box-shadow: none;
 }
 
-.osd .button:hover {
-    color: @theme_selected_fg_color;
+.osd.toolbar .separator {
+    color: shade(@osd_lowlight, 0.80);
 }
 
-.osd .button:active {
-    color: @theme_fg_color;
-    background-color: @theme_base_color;
+/* used by gnome-settings-daemon's media-keys OSD */
+.osd.trough {
+    background-color: @osd_trough_bg;
+    border-width: 0;
 }
 
+.osd.progressbar {
+    background-color: @osd_fg;
+}
+
+.osd .scale.trough {
+    border-color: shade (@theme_fg_color, 1.0);
+    border-image: none;
+    /* this defines the bg color of the played segment */
+    background-color: @osd_scale_trough_bg_color;
+}
+
+.osd .scale.trough.highlight {
+    background-image: none;
+    background-color: @theme_highlight_color;
+}
+
+.osd .scale.trough:insensitive,
+.osd .scale.trough.highlight:insensitive {
+    background-image: none;
+    background-color: transparent;
+}
+
+.osd .scale.slider {
+    margin: 0px;
+}
+
+.osd .scale.fine-tune.slider {
+    margin: 2px;
+}
+
+.osd .scale-popup.popover.background {
+    color: @osd_fg;
+    border-style: solid;
+    border-width: 1px;
+    border-color: shade (@theme_fg_color, 1.0);
+    border-radius: 2px;
+    background-image: linear-gradient(to bottom,
+                                      @osd_toolbar_bg_a,
+                                      @osd_toolbar_bg_b 63%,
+                                      @osd_toolbar_bg_c);
+    background-color: transparent;
+    padding: 2px 0px;
+}
+
+.osd .scale-popup.popover.background .button.flat.image-button {
+    background-image: linear-gradient(to bottom,
+                                      @osd_button_bg_a,
+                                      @osd_button_bg_b 68%,
+                                      @osd_button_bg_c);
+    border-radius: 3px;
+    border-width: 1px;
+    padding: 6px;
+}
+
+.osd .scale-popup.popover.background .button.flat.image-button:hover {
+    background-image: linear-gradient(to bottom,
+                                      @osd_button_bg_hover_a,
+                                      @osd_button_bg_hover_b 78%,
+                                      @osd_button_bg_hover_c);
+    box-shadow: none;
+}
+
+.osd .scale-popup.popover.background .button.flat.image-button:insensitive {
+    border-color: alpha (shade(@theme_bg_color, 0.4), 0.0);
+    background-image: none;
+    background-color: transparent;
+}
+
+.osd GtkProgressBar,
 GtkProgressBar.osd {
-    -GtkProgressBar-min-horizontal-bar-height: 12px;
+    padding: 0;
+    -GtkProgressBar-xspacing: 0;
+    -GtkProgressBar-yspacing: 3px;
+    -GtkProgressBar-min-horizontal-bar-height: 3px;
 }
 
+.osd GtkProgressBar.trough,
 GtkProgressBar.osd.trough {
     padding: 0;
-    border-radius: 0;
-    background-color: transparent;
+    border-image: none;
     border-style: none;
+    border-width: 0;
+    background-image: none;
+    background-color: transparent;
+    border-radius: 0;
 }
 
+.osd GtkProgressBar.progressbar,
 GtkProgressBar.osd.progressbar {
-    background-color: @theme_highlight_color;
-    border-radius: 0;
     border-style: none;
+    background-color: @theme_selected_bg_color;
+    background-image: none;
+    border-radius: 0;
 }
+
+.osd .view,
+.osd.view {
+    background-color: @osd_view_bg;
+}
+
+.osd .scrollbar.trough {
+    background-color: @osd_scrollbar_trough;
+}
+
+.osd .scrollbar.slider {
+    background-color: @osd_scrollbar_slider;
+}
+
+.osd .scrollbar.slider:hover {
+    background-color: @osd_scrollbar_slider_prelight;
+}
+
+.osd .scrollbar.slider:active {
+    background-color: @osd_scrollbar_slider_active;
+}
+
+.osd GtkIconView.cell:selected,
+.osd GtkIconView.cell:selected:focus {
+    background-color: transparent;
+    border-style: solid;
+    border-radius: 15px;
+    border-width: 3px;
+    border-color: @osd_button_fg;
+    outline-color: transparent;
+}
+
+/* used by Documents */
+.osd .page-thumbnail {
+    border-style: solid;
+    border-width: 1px;
+    border-color: @osd_lowlight;
+    /* when there's no pixbuf yet */
+    background-color: @osd_bg;
+}
+
 
 /**************
  * Calendar   *
