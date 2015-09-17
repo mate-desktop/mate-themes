@@ -476,8 +476,8 @@ GtkComboBox .button {
 
 GtkProgressBar {
 	/* FIXME - Not working 3.14 */
-	-GtkProgressBar-min-horizontal-bar-height: 16;
-	-GtkProgressBar-min-vertical-bar-width: 16;
+	-GtkProgressBar-min-horizontal-bar-height: 20;
+	-GtkProgressBar-min-vertical-bar-width: 20;
 	border-radius: 6px;
 }
 
@@ -1086,89 +1086,142 @@ GtkMessageDialog {
 	box-shadow: none;
 }
 
-/**********
- * Scales *
- **********/
-GtkScale.trough {
-    background-image: linear-gradient(to bottom,
-                                      transparent,
-                                      transparent 14px,
-                                      @theme_scale_trough_bg 14px,
-                                      @theme_scale_trough_bg 16px,
-                                      transparent 16px,
-                                      transparent);
+/************
+ * GtkScale *
+ ************/
 
-    background-color:transparent;
-    border-style: none;
+.scale,
+.scale.scale-has-marks-above.scale-has-marks-below {
+    -GtkScale-slider-length: 28;
+    -GtkRange-slider-width: 28;
+    -GtkRange-trough-border: 2;
 }
 
-GtkScale.trough:insensitive {
-    background-image: linear-gradient(to bottom,
-                                      transparent,
-                                      transparent 14px,
-                                      @theme_scale_trough_insensitive_bg 14px,
-                                      @theme_scale_trough_insensitive_bg 16px,
-                                      transparent 16px,
-                                      transparent);
-    background-color: transparent;
+.scale.fine-tune.trough,
+.scale.scale-has-marks-above.scale-has-marks-below.fine-tune.trough {
+    border-radius: 4px;
 }
 
-GtkScale.trough.vertical {
-    background-image: linear-gradient(to right,
-                                      transparent,
-                                      transparent 14px,
-                                      @theme_scale_trough_bg 14px,
-                                      @theme_scale_trough_bg 16px,
-                                      transparent 16px,
-                                      transparent);
-    background-color:transparent;
-    border-style: none;
-}
-
-GtkScale.trough.vertical:insensitive {
-    background-image: linear-gradient(to right,
-                                      transparent,
-                                      transparent 14px,
-                                      @theme_scale_trough_insensitive_bg 14px,
-                                      @theme_scale_trough_insensitive_bg 16px,
-                                      transparent 16px,
-                                      transparent);
-}
-
-GtkScale.slider {
-    background-clip: border-box;
-    background-color: @theme_button_bg;
-
-    border-radius: 15px;
-    border-color: @theme_selected_bg_color;
+.scale.slider,
+.scale.scale-has-marks-above.scale-has-marks-below.slider {
+    border-width: 2px;
     border-style: solid;
+    background-color: @theme_button_bg;
+    padding: 1px 4px;
+    color: @theme_button_fg;
+    border-radius: 50%;
+    border-color: darker(@theme_border_color);
+    box-shadow: inset 0 1px white,
+                inset 0 -2px @theme_bg_color,
+                inset 0 -1px mix(@theme_bg_color,@theme_border_color, 0.5);
+}
+
+.scale.slider:hover,
+.scale.scale-has-marks-above.scale-has-marks-below.slider:hover {
+    border-width: 2px;
+    border-style: solid;
+    background-color: @theme_selected_bg_color;
+    padding: 1px 4px;
+    color: @theme_button_fg;
+    border-color: darker(@theme_border_color);
+    border-radius: 50%;
+    box-shadow: inset 0 1px white,
+                inset 0 -2px white,
+                inset 0 -1px mix(@theme_bg_color,@theme_border_color, 0.5);
+}
+
+.scale.slider:insensitive,
+.scale.scale-has-marks-above.scale-has-marks-below.slider:insensitive {
+    border-style: solid; /* needed for double marks scales or they'll get overridden */
+    border-color: @theme_button_insensitive_border;
+    border-radius: 50%;
+    background-image: linear-gradient(to bottom, @theme_insensitive_bg);
+    box-shadow: none;
+}
+
+.scale.slider:active,
+.scale.scale-has-marks-above.scale-has-marks-below.slider:active {
+      border: 1px solid darker(@theme_selected_borders_color);
+}
+
+.scale.trough,
+.scale.scale-has-marks-above.scale-has-marks-below.trough.vertical {
     border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    border-color: @theme_border_color;
+    background-color: shade(@theme_button_bg, 0.8);
+    box-shadow: inset 1px 1px transparentize(black, 0.9);
+    margin: 12px 0px 12px 0px;
 }
 
-GtkScale.slider:hover {
-    background-color: @theme_fg_color;
-    border-color: @theme_fg_color;
+.scale.trough.vertical,
+.scale.scale-has-marks-above.scale-has-marks-below.trough.vertical {
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    border-color: @theme_border_color;
+    background-color: shade(@theme_button_bg, 0.8);
+    box-shadow: inset 1px 1px transparentize(black, 0.9);
+    margin:  0 12px 0 12px;
 }
 
-GtkScale.slider:insensitive {
-    background-color: @theme_button_insensitive_bg;
-    border-color: @theme_button_insensitive_active_bg;
+.scale.trough.highlight,
+.scale.scale-has-marks-above.scale-has-marks-below.trough.highlight,
+.scale.vertical.scale-has-marks-above.scale-has-marks-below.trough.highlight {
+      border-color: @theme_selected_borders_color;
+      background-color: @theme_highlight_color;
 }
 
-GtkScale.slider.fine-tune,
-GtkScale.slider.fine-tune:active,
-GtkScale.slider.fine-tune:active:hover,
-GtkScale.slider.fine-tune.horizontal:active,
-GtkScale.slider.fine-tune.horizontal:active:hover {
-  background-color: transparent;
-  background-image: -gtk-gradient(radial, 
-                                                              center center, 0, 
-                                                              center center, 1, 
-                                                              from(@theme_fg_color),
-                                                              color-stop(0.3, @theme_fg_color),
-                                                              color-stop(0.31, transparent),
-                                                              to(transparent));
-  border-width: 0;
+.scale.trough.highlight.vertical,
+.scale.trough.vertical.highlight,
+.scale.scale-has-marks-above.scale-has-marks-below.trough.highlight.vertical,
+.scale.vertical.scale-has-marks-above.scale-has-marks-below.trough.highlight.vertical,
+.scale.scale-has-marks-above.scale-has-marks-below.trough.vertical.highlight,
+.scale.vertical.scale-has-marks-above.scale-has-marks-below.trough.vertical.highlight {
+      border-color: @theme_selected_borders_color;
+      background-color: @theme_highlight_color;
+}
+
+.scale.trough:insensitive,
+.scale.trough.vertical:insensitive,
+.scale.scale-has-marks-above.scale-has-marks-below.trough:insensitive,
+.scale.vertical.scale-has-marks-above.scale-has-marks-below.trough:insensitive,
+.scale.trough .highlight:insensitive,
+.scale.trough.vertical .highlight:insensitive,
+.scale.scale-has-marks-above.scale-has-marks-below.trough .highlight:insensitive,
+.scale.vertical.scale-has-marks-above.scale-has-marks-below.trough .highlight:insensitive {
+      border-color: @theme_insensitive_border;
+      background-color: @theme_insensitive_bg;
+      box-shadow: none;
+}
+
+.scale.trough:insensitive {
+    margin: 12px 2px 12px 2px;
+}
+
+.scale.trough.vertical:insensitive {
+    margin: 2px 12px 2px 12px ;
+}
+
+.scale.scale-has-marks-below.trough {
+   margin: 12px 1px 12px 1px;
+}
+
+.scale.slider ,
+.scale.vertical.slider,
+.scale.horizontal.slider,
+.scale.vertical.slider:insensitive,
+.scale.horizontal.slider:insensitive,
+.scale.scale-has-marks-below.slider,
+.scale.scale-has-marks-below.slider {
+   margin: 0px;
+}
+
+.scale.fine-tune.slider ,
+.scale.fine-tune.vertical.slider,
+.scale.fine-tune.horizontal.slider {
+   margin: 4px;
 }
 
 /**********
@@ -1754,209 +1807,6 @@ GtkCheckButton:insensitive {
 GtkCheckButton.text-button, GtkRadioButton.text-button {
   padding: 1px;
   outline-offset: 0;
-}
-
-/************
- * GtkScale *
- ************/
-.scale,
-.scale.scale-has-marks-above.scale-has-marks-below,
-.scale.vertical.scale-has-marks-above.scale-has-marks-below {
-    -GtkScale-slider-length: 20;
-    -GtkRange-slider-width: 20;
-    -GtkRange-trough-border: 2;
-    outline-offset: -9px;
-    outline-radius: 4px;
-    margin: 10px;
-}
-
-.scale.fine-tune,
-.scale.scale-has-marks-above.scale-has-marks-below.fine-tune,
-.scale.vertical.scale-has-marks-above.scale-has-marks-below.fine-tune {
-    margin: 8px;
-    outline-offset: -7px;
-    outline-radius: 6px;
-}
-
-.scale.fine-tune.trough,
-.scale.scale-has-marks-above.scale-has-marks-below.fine-tune.trough,
-.scale.vertical.scale-has-marks-above.scale-has-marks-below.fine-tune.trough {
-    border-radius: 4px;
-}
-
-.scale.slider,
-.scale.scale-has-marks-above.scale-has-marks-below.slider,
-.scale.vertical.scale-has-marks-above.scale-has-marks-below.slider {
-    /* FIXME: better gradient on the slider and hover state */
-    border-width: 2px;
-    border-style: solid;
-    background-color: @theme_button_bg;
-    padding: 1px 4px;
-    color: @theme_button_fg;
-    border-radius: 50%;
-    border-color: darker(@theme_border_color);
-    box-shadow: inset 0 1px white,
-                inset 0 -2px @bg_color,
-                inset 0 -1px mix(@bg_color,@theme_border_color, 0.5);
-}
-
-.scale.slider:hover,
-.scale.scale-has-marks-above.scale-has-marks-below.slider:hover,
-.scale.vertical.scale-has-marks-above.scale-has-marks-below.slider:hover {
-    border-width: 2px;
-    border-style: solid;
-    background-color: @theme_button_bg;
-    padding: 1px 4px;
-    color: @theme_button_fg;
-    border-color: darker(@theme_border_color);
-    border-radius: 50%; /* needed for double marks scales */
-    box-shadow: inset 0 1px white,
-                inset 0 -2px white,
-                inset 0 -1px mix(@bg_color,@theme_border_color, 0.5);
-}
-
-.scale.slider:insensitive,
-.scale.scale-has-marks-above.scale-has-marks-below.slider:insensitive,
-.scale.vertical.scale-has-marks-above.scale-has-marks-below.slider:insensitive {
-    border-style: solid; /* needed for double marks scales or they'll get overridden */
-    border-radius: 50%;
-    background-image: linear-gradient(to bottom, @theme_insensitive_bg);
-    box-shadow: none;
-}
-
-.scale.slider:backdrop,
-.scale.scale-has-marks-above.scale-has-marks-below.slider:backdrop,
-.scale.vertical.scale-has-marks-above.scale-has-marks-below.slider:backdrop {
-    border-style: solid; /* needed for double marks scales or they'll get overridden */
-    border-radius: 50%;
-    border-color: darker(@backdrop_borders_color);
-    background-image: linear-gradient(to bottom, @backdrop_bg_color);
-    box-shadow: none;
-}
-
-/* FIXME button backdrop-insensitive is missing
-.scale.slider:backdrop:insensitive,
-.scale.scale-has-marks-above.scale-has-marks-below.slider:backdrop:insensitive,
-.scale.vertical.scale-has-marks-above.scale-has-marks-below.slider:backdrop:insensitive {
-    @include button(backdrop-insensitive);
-}
-*/
-
-.scale.slider:active,
-.scale.scale-has-marks-above.scale-has-marks-below.slider:active,
-.scale.vertical.scale-has-marks-above.scale-has-marks-below.slider:active {
-      border: 1px solid darker(@selected_borders_color);
-}
-
-.scale.trough,
-.scale.scale-has-marks-above.scale-has-marks-below.trough,
-.scale.vertical.scale-has-marks-above.scale-has-marks-below.trough {
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 3px;
-    border-color: @theme_border_color;
-    background-color: shade(@theme_button_bg, 0.8);
-    box-shadow: inset 1px 1px transparentize(black, 0.9);
-}
-
-.scale.trough.vertical,
-.scale.scale-has-marks-above.scale-has-marks-below.trough.vertical,
-.scale.vertical.scale-has-marks-above.scale-has-marks-below.trough.vertical {
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 3px;
-    border-color: @theme_border_color;
-    background-color: shade(@theme_button_bg, 0.8);
-    box-shadow: inset 1px 1px transparentize(black, 0.9);
-}
-
-.scale.trough.highlight,
-.scale.scale-has-marks-above.scale-has-marks-below.trough.highlight,
-.scale.vertical.scale-has-marks-above.scale-has-marks-below.trough.highlight {
-      border-color: @selected_borders_color;
-      background-color: @theme_highlight_color;
-      box-shadow: none;
-}
-
-.scale.trough.highlight.vertical,
-.scale.trough.vertical.highlight,
-.scale.scale-has-marks-above.scale-has-marks-below.trough.highlight.vertical,
-.scale.vertical.scale-has-marks-above.scale-has-marks-below.trough.highlight.vertical,
-.scale.scale-has-marks-above.scale-has-marks-below.trough.vertical.highlight,
-.scale.vertical.scale-has-marks-above.scale-has-marks-below.trough.vertical.highlight {
-      border-color: @selected_borders_color;
-      background-color: @theme_highlight_color;
-      box-shadow: none;
-}
-
-.scale.trough.highlight:backdrop,
-.scale.scale-has-marks-above.scale-has-marks-below.trough.highlight:backdrop,
-.scale.vertical.scale-has-marks-above.scale-has-marks-below.trough.highlight:backdrop {
-         border-color: @selected_bg_color;
-         background-color: @selected_bg_color;
-         box-shadow: none;
-}
-
-.scale.trough:insensitive,
-.scale.trough.vertical:insensitive,
-.scale.scale-has-marks-above.scale-has-marks-below.trough:insensitive,
-.scale.vertical.scale-has-marks-above.scale-has-marks-below.trough:insensitive,
-.scale.trough .highlight:insensitive,
-.scale.trough.vertical .highlight:insensitive,
-.scale.scale-has-marks-above.scale-has-marks-below.trough .highlight:insensitive,
-.scale.vertical.scale-has-marks-above.scale-has-marks-below.trough .highlight:insensitive {
-      border-color: @theme_insensitive_border;
-      background-color: @theme_insensitive_bg;
-      box-shadow: none;
-}
-
-.scale.trough:backdrop,
-.scale.scale-has-marks-above.scale-has-marks-below.trough:backdrop,
-.scale.vertical.scale-has-marks-above.scale-has-marks-below.trough:backdrop {
-      border-color: @backdrop_borders_color;
-      background-color: mix(@backdrop_bg_color,@borders_color, 1.0);
-      box-shadow: none;
-}
-
-.scale.trough:backdrop:insensitive,
-.scale.trough .highlight:backdrop:insensitive,
-.scale.scale-has-marks-above.scale-has-marks-below.trough:backdrop:insensitive,
-.scale.scale-has-marks-above.scale-has-marks-below.trough .highlight:backdrop:insensitive,
-.scale.vertical.scale-has-marks-above.scale-has-marks-below.trough:backdrop:insensitive,
-.scale.vertical.scale-has-marks-above.scale-has-marks-below.trough .highlight:backdrop:insensitive {
-      border-color: @backdrop_insensitive_color;
-      background-color: @backdrop_bg_color;
-}
-
-.scale.scale-has-marks-above {
-   margin: 14px 10px 10px;
-}
-
-.scale.scale-has-marks-above.fine-tune {
-   margin: 12px 8px 8px;
-}
-.scale.scale-has-marks-below {
-   margin: 10px 10px 14px;
-}
-
-.scale.scale-has-marks-below.fine-tune {
-   margin: 8px 8px 12px;
-}
-
-.scale.vertical.scale-has-marks-above {
-   margin: 10px 10px 10px 14px;
-}
-
-.scale.vertical.scale-has-marks-above.fine-tune {
-   margin: 8px 8px 8px 12px;
-}
-
-.scale.vertical.scale-has-marks-below {
-   margin: 10px 14px 10px 10px;
-}
-
-.scale.vertical.scale-has-marks-below.fine-tune {
-   margin: 8px 12px 8px 8px;
 }
 
 /*********
