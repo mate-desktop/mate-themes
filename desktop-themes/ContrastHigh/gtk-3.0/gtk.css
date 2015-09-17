@@ -5,6 +5,7 @@
 @define-color theme_selected_fg_color @theme_base_color;
 
 @define-color theme_border_color @theme_selected_bg_color;
+@define-color theme_selected_borders_color @theme_bg_color;
 @define-color borders_edge #fff;
 
 @define-color theme_highlight_color #3465a4;
@@ -70,10 +71,10 @@
 
 /*colors for the backdrop state, derived from the main colors. */
 @define-color backdrop_base_color @base_color;
-@define-color backdrop_bg_color @bg_color;
-@define-color backdrop_fg_color @fg_color;
+@define-color backdrop_bg_color @theme_bg_color;
+@define-color backdrop_fg_color @theme_fg_color;
 @define-color backdrop_insensitive_color @theme_insensitive_color;
-@define-color backdrop_borders_color mix(@theme_border_color, @bg_color, 0.9);
+@define-color backdrop_borders_color mix(@theme_border_color, @theme_bg_color, 0.9);
 
 /******
  * WM *
