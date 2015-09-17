@@ -8,3 +8,18 @@
 	padding: 0px 4px;
 }
 
+/****************
+ * Dconf-editor *
+ ****************/
+
+DConfWindow .menubar {
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+}
+
+DConfWindow GtkPaned.horizontal {
+    -GtkPaned-handle-size: 8px;
+    border-style: solid;
+    border-width: 0px 1px 0 1px;
+}
+
