@@ -613,6 +613,11 @@ CajaPathBar .button:checked:hover {
     border-color: transparent;
 }
 
+/* properties-dialog emblem page */
+FMPropertiesWindow .vertical.dialog-vbox .notebook GtkViewport {
+    background-color: @theme_notebook_color;
+}
+
 .caja-canvas-item {
     border-radius: 3px;
 }
