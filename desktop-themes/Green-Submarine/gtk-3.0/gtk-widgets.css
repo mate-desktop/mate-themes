@@ -1920,6 +1920,7 @@ GtkColorButton.button {
 .inline-toolbar.toolbar GtkToolButton:first-child > .button:active,
 .inline-toolbar.toolbar .button:checked:first-child,
 .inline-toolbar.toolbar GtkToolButton:first-child > .button:checked {
+
     background-color: transparent;
     box-shadow: inset  0px  1px alpha(#000, 0.05),
                 inset  1px  0px alpha(#000, 0.03),
@@ -5756,7 +5757,12 @@ GtkModelButton.button:selected,
                 inset  0px -1px shade(@selected_bg_color, 0.93);
 }
 
-.window-frame {
+/* workaround to avoid unwanted black frames if switching compositor on/off */
+.background .window-frame  {
+    box-shadow: none;
+}
+
+.background.csd .window-frame {
     border-color: darker(@theme_bg_dark_color);
     border-radius: 7px 7px 0 0;
     border-width: 1px;
@@ -5766,10 +5772,12 @@ GtkModelButton.button:selected,
     /* this is used for the resize cursor area */
     margin: 10px;
 }
- 
+
+/* workaround to avoid unwanted black frames if switching compositor on/off */
 .window-frame:backdrop {
     background-color: @theme_bg_dark_color;
-    box-shadow: 0 0 0 1px shade(@wm_border,1.1), 0 2px 5px 1px @wm_shadow;
+/*    box-shadow: 0 0 0 1px shade(@wm_border,1.1), 0 2px 5px 1px @wm_shadow;*/
+    box-shadow: none;
 }
 
 .window-frame.tiled {
@@ -5791,7 +5799,7 @@ GtkModelButton.button:selected,
 
 .window-frame.csd.popup {
     border-radius: 0;
-    box-shadow: 0 1px 5px @theme_shadow_color;
+    box-shadow: none;
 }
 
 .window-frame.csd.tooltip {
@@ -6227,6 +6235,7 @@ GtkFileChooserWidget.vertical GtkPaned.horizontal {
 
 .floating-bar {
     background-image: linear-gradient(to bottom, 
+
                                       @theme_bg_color 20%, 
                                       shade(@theme_bg_color, 0.95));
     background-color: @theme_bg_color;
