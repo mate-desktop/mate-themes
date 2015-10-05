@@ -2561,7 +2561,12 @@ GtkPopover .separator {
     color: @theme_selected_fg_color;
 }
 
-.window-frame {
+/* workaround to avoid unwanted black frames if switching compositor on/off */
+.background .window-frame  {
+    box-shadow: none;
+}
+
+.background.csd  .window-frame {
     border-color: darker(@theme_bg_color);
     border-radius: 7px 7px 0 0;
     border-width: 1px;
@@ -2569,7 +2574,6 @@ GtkPopover .separator {
     box-shadow: 0 2px 8px 3px alpha(black, 0.7);
     /* this is used for the resize cursor area */
     margin: 10px;
-    padding: 6px 6px 5px 6px;
 }
 
 .window-frame.tiled {
@@ -2577,10 +2581,10 @@ GtkPopover .separator {
 	background-color: @theme_bg_color;
 }
 
+/* workaround to avoid unwanted black frames if switching compositor on/off */
 .window-frame:backdrop {
-    box-shadow: 0 0 0 @wm_shadow;
-    box-shadow: 0 2px 5px 1px alpha(black, 0.7);
-    padding: 6px 6px 5px 6px;
+/*    box-shadow: 0 2px 5px 1px alpha(black, 0.7);*/
+    box-shadow: none;
 }
 
 .window-frame.ssd {
@@ -2597,7 +2601,7 @@ GtkPopover .separator {
 
 .window-frame.csd.popup {
     border-radius: 0;
-    box-shadow: 0 1px 5px @wm_shadow;
+    box-shadow: none;
 }
 
 .window-frame.csd.tooltip {

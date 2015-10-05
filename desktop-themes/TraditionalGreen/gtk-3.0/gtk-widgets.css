@@ -2535,7 +2535,12 @@ GtkInfoBar:last-child,
 	border-image: none;
 }
 
-.window-frame {
+/* workaround to avoid unwanted black frames if switching compositor on/off */
+.background .window-frame  {
+    box-shadow: none;
+}
+
+.background.csd .window-frame {
 	border-width: 0px;
 	border-radius: 7px 7px 0 0;
 	border-style: solid;
@@ -2543,8 +2548,10 @@ GtkInfoBar:last-child,
 	margin: 10px;
 }
 
+/* workaround to avoid unwanted black frames if switching compositor on/off */
 .window-frame:backdrop {
-	box-shadow: 0 0 0 1px shade(@wm_border,1.1), 0 2px 5px 1px
+/*	box-shadow: 0 0 0 1px shade(@wm_border,1.1), 0 2px 5px 1px*/
+    box-shadow: none;
 }
 
 .window-frame.tiled {
@@ -2566,7 +2573,7 @@ GtkInfoBar:last-child,
 
 .window-frame.csd.popup {
     border-radius: 0;
-    box-shadow: 0 1px 5px @wm_shadow;
+    box-shadow: none;
 }
 
 .window-frame.csd.tooltip {
