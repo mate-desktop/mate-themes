@@ -301,6 +301,11 @@ CajaQueryEditor .toolbar .entry:focus {
     text-shadow: none;
 }
 
+/* workaround to avoid unwanted black frames if switching compositor on/off */
+.mate-panel-menu-bar .window-frame.csd.popup {
+    box-shadow: none;
+}
+
 /* first make all transparent */
 WnckSelector.menubar,
 PanelMenuBar.menubar,
