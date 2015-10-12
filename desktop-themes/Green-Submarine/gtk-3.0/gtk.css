@@ -114,6 +114,7 @@
 @define-color scale_fill shade(@button_bg_active, 1.00);
 @define-color scale_border_a @internal_element_color;
 @define-color scale_border_b shade (@internal_element_color, 1.25);
+@define-color scale_highlight_border shade (@scale_border_b, 1.25);
 
 @define-color progressbar_fill_a @button_bg_active;
 @define-color progressbar_fill_b shade(mix(@button_bg_active, green, 0.10), 1.10);
