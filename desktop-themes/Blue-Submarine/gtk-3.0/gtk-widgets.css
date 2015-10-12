@@ -606,29 +606,42 @@ GtkLevelBar.vertical {
 .scale.slider.fine-tune:active:hover,
 .scale.slider.fine-tune.horizontal:active,
 .scale.slider.fine-tune.horizontal:active:hover {
-    background-size: 80%;
+    background-size: 98%;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .toolbar .scale.trough,
 .scale.trough {
-    margin: 7px 0;
-    background-image: -gtk-gradient (linear,
-                     left top,
-                     left bottom,
-                     from (alpha (#000, 0.20)),
-                     color-stop (0.20, alpha (#000, 0.16)),
-                     to (alpha (#000, 0.06)));
-    border-style: none;
-    border-width: 0px;
     border-radius: 8px;
+    border-style: solid;
+    border-width: 1px;
+    background-image: -gtk-gradient (linear,
+                                     left top,
+                                     left bottom,
+                                     from (alpha (#000, 0.20)),
+                                     color-stop (0.20, alpha (#000, 0.16)),
+                                     to (alpha (#000, 0.06)));
     box-shadow: inset  1px  1px alpha(#000, 0.08),
                 inset -1px -1px alpha(#000, 0.08);
 }
 
+.scale.trough {
+    margin: 6px 0;
+}
+
 .scale.trough.vertical {
-    margin: 0 7px;
+    margin: 0 6px;
+}
+
+.scale.trough,
+.scale.trough.vertical {
+    border-color: @scale_border_b;
+}
+
+.scale.trough.highlight,
+.scale.trough.highlight.vertical {
+    border-style: none;
 }
 
 .scale.trough,
@@ -643,10 +656,11 @@ GtkLevelBar.vertical {
 
 .scale.trough:insensitive {
     background-image: -gtk-gradient (linear,
-                     left top,
-                     left bottom,
-                     from (alpha (#000, 0.03)),
-                     to   (alpha (#000, 0.03)));
+                                     left top,
+                                     left bottom,
+                                     from (alpha (#000, 0.03)),
+                                     to   (alpha (#000, 0.03)));
+    border-style: none;
 }
 
 .scale.progressbar {
@@ -5344,6 +5358,7 @@ GtkModelButton.button:selected,
 .linked GtkModelButton.button:hover:first-child,
 .linked GtkModelButton.button:active:hover:first-child,
 .linked GtkModelButton.button:checked:hover:first-child {
+
     border-right-width: 0px;
     border-radius: 6px 0 0 6px;
 }
