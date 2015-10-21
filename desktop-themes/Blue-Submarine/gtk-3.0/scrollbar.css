@@ -108,8 +108,8 @@
 }
 
 .scrollbar.button,
-.scrollbar.button:active,
-.scrollbar.button:active:hover,
+.scrollbar.button:hover,
+.scrollbar.button:hover:active,
 .scrollbar.button:insensitive {
     box-shadow: none;
     border-style: none;
@@ -119,10 +119,9 @@
     background-color: transparent;
 }
 
-.scrollbar.button:active,
-.scrollbar.button:active:hover {
+.scrollbar.button:hover,
+.scrollbar.button:hover:active {
     background-color: alpha(shade(@scrollbar_trough, 0.8), 0.5);
-    -gtk-image-effect: highlight;
 }
 
 .scrollbar.button.top:hover {
@@ -155,10 +154,6 @@
 
 .scrollbar.button:insensitive {
     color: @insensitive_fg_color;
-}
-
-.scrollbar.button:active {
-    color: @theme_fg_color;
 }
 
 .scrollbar.slider.fine-tune:prelight:active {
