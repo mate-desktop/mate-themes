@@ -5889,22 +5889,20 @@ GtkModelButton.button:selected,
  * GtkStack *
  ************/
 
-GtkStackSidebar.sidebar .separator.horizontal {
-    -GtkWidget-separator-height: 0px;
+GtkStack .horizontal .vertical .frame {
+    background-color: shade (@theme_bg_color, 1.1);
+    border-width: 1px;
+    border-color: @notebook_border;
 }
 
-GtkStackSidebar.sidebar GtkViewport.frame {
-   border-color: @notebook_border;
-   border-style: solid;
-   border-width: 1px;
-   /* FIXME radius > 0 doesn't work */
-   border-radius: 0px 0px 0px 0px;
+GtkStackSidebar.sidebar .separator.horizontal {
+    -GtkWidget-separator-height: 0px;
 }
 
 GtkStack .linked.vertical .entry {
     border-radius: 5px;
     border-style: solid;
-    border-width: 1px 1px 1px 1px;
+    border-width: 1px 1px 0px 1px;
     box-shadow: inset  0px  2px alpha(#fff, 0.11),
                 inset  2px  0px alpha(#fff, 0.09),
                 inset -2px  0px alpha(#fff, 0.09),
@@ -5919,20 +5917,33 @@ GtkStack .linked.vertical .entry {
 GtkStack .vertical.linked > GtkComboBox > GtkToggleButton.button:last-child,
 GtkStack .vertical.linked > GtkComboBox > GtkToggleButton.button:hover:last-child,
 GtkStack .vertical.linked > GtkComboBox > GtkToggleButton.button:focus:last-child,
-GtkStack .vertical.linked > GtkComboBox > GtkToggleButton.button:active:last-child,
+GtkStack .vertical.linked > GtkComboBox > GtkToggleButton.button:focus:hover:last-child,
 GtkStack .vertical.linked > GtkComboBox > GtkToggleButton.button:checked:last-child,
 GtkStack .vertical.linked > GtkComboBox > GtkToggleButton.button:insensitive:last-child,
 GtkStack .linked.vertical GtkToggleButton.button,
 GtkStack .linked.vertical GtkToggleButton.button:hover,
 GtkStack .linked.vertical GtkToggleButton.button:focus,
-GtkStack .linked.vertical GtkToggleButton.button:active,
+GtkStack .linked.vertical GtkToggleButton.button:focus:hover,
 GtkStack .linked.vertical GtkToggleButton.button:checked,
 GtkStack .linked.vertical GtkToggleButton.button:insensitive {
     border-radius: 5px 5px 0 0;
     border-width: 1px;
-    border-bottom-width: 0;
+    border-bottom-width: 1px;
     border-style: solid;
-    padding: 3px 4px;
+    padding: 3px 5px;
+}
+
+GtkStack .linked.vertical .button:last-child,
+GtkStack .linked.vertical .button:hover:last-child,
+GtkStack .linked.vertical .button:focus:last-child,
+GtkStack .linked.vertical .button:focus:hover:last-child,
+GtkStack .linked.vertical .button:checked:last-child,
+GtkStack .linked.vertical .button:insensitive:last-child {
+    border-radius: 0 0 5px 5px;
+    border-width: 1px;
+    border-top-width: 0;
+    border-style: solid;
+    padding: 5px 5px;
 }
 
 GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton,
@@ -5947,54 +5958,59 @@ GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton:insensitive 
     padding: 6px 5px;
 }
 
+/* all to zero */
 GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button,
-GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:first-child,
 GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:last-child,
 GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:hover,
-GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:first-child:hover,
-GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:last-child:hover,
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:hover:last-child,
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:hover:active,
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:hover:active:last-child,
 GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:focus,
-GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:first-child:focus,
-GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:last-child:focus,
-GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:active,
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:focus:last-child,
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:focus:hover,
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:focus:hover:last-child,
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:focus:hover:active,
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:focus:hover:active:last-child,
 GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:checked,
-GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:first-child:active,
-GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:last-child:active,
-GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:first-child:checked,
-GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:last-child:checked,
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:checked:last-child,
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:checked:hover,
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:checked:hover:last-child,
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:checked:focus:hover:active,
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:checked:focus:hover:active:last-child,
 GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:insensitive,
-GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:first-child:insensitive,
-GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:last-child:insensitive {
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:first-child:insensitive {
     border-radius: 0px;
     border-width: 0px;
     border-style: none;
     padding: 6px 5px;
+    background-color: transparent;
+    background-image: none;
+    border-image: none;
+    box-shadow: none;
 }
 
 GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button,
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:hover,
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:focus:hover,
 GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:focus,
-GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:active,
 GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:checked {
-    border-radius: 0px;
-    border-width: 0px;
-    border-style: none;
-    box-shadow: none;
-    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
-                inset  1px  0px shade(@selected_bg_color, 0.97),
-                inset  0px -1px shade(@selected_bg_color, 0.93);
+    border-width: 0 1px 0 1px;
+    border-style: solid;
+    border-color: shade(@notebook_border, 1.0);
 }
 
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:last-child,
 GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:hover:last-child,
-GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:active:last-child,
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:focus:hover:last-child,
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:focus:last-child,
 GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:checked:last-child {
-    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
-                inset  1px  0px shade(@selected_bg_color, 0.97),
-                inset -1px  0px shade(@selected_bg_color, 0.93),
-                inset  0px -1px shade(@selected_bg_color, 0.93);
+    border-width: 0px;
 }
 
-GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:hover {
-    border-radius: 0px 0px 0px 0px;
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:hover,
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:focus:hover,
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:hover:last-child,
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:focus:hover:last-child {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (shade(@button_gradient1, 1.03)),
@@ -6004,14 +6020,29 @@ GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:hove
 }
 
 GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:active,
-GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:checked {
-    border-radius: 0px 0px 0px 0px;
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:active:last-child {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (shade (@theme_bg_color, 1.20)),
                                      color-stop (0.50, shade (@theme_bg_color, 1.00)),
                                      color-stop (0.50, shade (@theme_bg_color, 0.95)),
                                      to (shade (@theme_bg_color, 0.80)));
+}
+
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:active,
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:hover,
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:focus:hover {
+    border-width: 1px;
+    border-style: solid;
+    border-color: shade(@button_border_active, 1.0);
+}
+
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:active:last-child,
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:hover:last-child,
+GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:focus:hover:last-child {
+    border-width: 1px;
+    border-style: solid;
+    border-width: 1px 1px 1px 0;
 }
 
 /****************
