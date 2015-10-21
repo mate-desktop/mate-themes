@@ -691,3 +691,34 @@ YelpWindow .horizontal.toolbar.primary-toolbar .button.image-button:last-child {
     border-left-width: 0px;
 }
 
+/* gnome-weather */
+Gjs_WeatherWidget.frame.flat GtkStack GtkScrolledWindow .frame {
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      alpha(shade(@theme_selected_bg_color, 1.2), 0.1),
+                                      alpha(shade(@theme_selected_bg_color, 0.95), 0.1));
+    border-color: @osd_button_border;
+}
+
+Gjs_WeatherWidget.frame.flat .frame.flat.weather-clear .linked.stack-switcher.osd .button:hover,
+Gjs_WeatherWidget.frame.flat .frame.flat.weather-clear .linked.stack-switcher.osd .button:checked,
+Gjs_WeatherWidget.frame.flat .frame.flat.weather-fog .linked.stack-switcher.osd .button:checked,
+Gjs_WeatherWidget.frame.flat .frame.flat.weather-few-clouds .linked.stack-switcher.osd .button:checked,
+Gjs_WeatherWidget.frame.flat .frame.flat.weather-clear GtkStack GtkScrolledWindow .frame {
+    color: @theme_fg_color;
+    text-shadow: none;
+}
+
+Gjs_WeatherWidget.frame.flat .frame.flat.weather-clear .linked.stack-switcher.osd .button:hover {
+    color: @osd_button_fg_hover;
+}
+
+Gjs_WeatherWidget.frame.flat .frame.flat.weather-clear-night .linked.stack-switcher.osd .button:hover,
+Gjs_WeatherWidget.frame.flat .frame.flat.weather-clear-night GtkStack GtkScrolledWindow .frame,
+Gjs_WeatherWidget.frame.flat .frame.flat.weather-storm GtkStack GtkScrolledWindow .frame,
+Gjs_WeatherWidget.frame.flat .frame.flat.weather-showers GtkStack GtkScrolledWindow .frame,
+Gjs_WeatherWidget.frame.flat .frame.flat.weather-few-clouds-night GtkStack GtkScrolledWindow .frame,
+Gjs_WeatherWidget.frame.flat .frame.flat.weather-overcast GtkStack GtkScrolledWindow .frame {
+    color: @osd_button_fg_active;
+}
+
