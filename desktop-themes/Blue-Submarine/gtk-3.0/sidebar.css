@@ -19,24 +19,24 @@
 }
 
 /* dialog open */
-GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame GtkListBox.sidebar.list,
-GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row {
-    background-color: @sidebar_background;
+GtkPlacesSidebar.sidebar.frame .frame GtkListBox.sidebar.list,
+GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row {
+     background-color: @sidebar_background;
 }
 
-GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row:selected {
-    border-radius: 6px;
+GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row:selected {
+     border-radius: 6px;
 }
 
-GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row .sidebar-revealer .sidebar-icon {
-    padding: 4px 8px 4px 6px;
+GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row .sidebar-revealer .sidebar-icon {
+     padding: 4px 8px 4px 6px;
 }
 
-GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row .sidebar-revealer .sidebar-label {
-    padding: 4px 0px 4px 1px;
+GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row .sidebar-revealer .sidebar-label {
+     padding: 4px 0px 4px 1px;
 }
 
-GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row .sidebar-revealer .sidebar-button.image-button.button {
+GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row .sidebar-revealer .sidebar-button.image-button.button {
     background-color: transparent;
     background-image: none;
     border-image:none;
@@ -118,21 +118,3 @@ VarkaWidgetsHCollapsiblePaned.pane-separator:selected {
                                     to   (#a9a9a9));
 }
 
-/*
-VarkaWidgetsHCollapsiblePaned {
-    border-width: 0px;
-    -GtkPaned-handle-size: 1px;
-}
-
-VarkaWidgetsHCollapsiblePaned.pane-separator,
-VarkaWidgetsHCollapsiblePaned.pane-separator:prelight,
-VarkaWidgetsHCollapsiblePaned.pane-separator:selected {
-    background-image: -gtk-gradient (linear,
-         left top,
-         right top,
-         from (shade (@bg_color, 1.30)),
-         to (shade (@bg_color, 0.55)));
-    background-color: alpha(#fff, 0.0);
-}
-
-*/
