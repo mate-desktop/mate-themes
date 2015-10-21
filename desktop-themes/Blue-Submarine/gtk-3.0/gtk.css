@@ -164,7 +164,7 @@
  *******/
 @define-color osd_highlight #ffffff;
 @define-color osd_lowlight #515152;
-@define-color osd_base #212526;
+@define-color osd_base @theme_selected_bg_color;
 
 @define-color osd_fg #ededed;
 @define-color osd_bg alpha(@osd_base, 0.80);
@@ -200,12 +200,12 @@
 @define-color osd_button_fg_backdrop shade(@osd_fg, 0.70);
 @define-color osd_button_fg_backdrop_active shade(@osd_fg, 0.95);
 
-@define-color osd_button_fg shade(@osd_fg, 0.80);
+@define-color osd_button_fg shade(@osd_fg, 0.85);
 @define-color osd_button_fg_hover shade(@osd_fg, 0.96);
 @define-color osd_button_fg_active shade(@osd_fg, 1.10);
 @define-color osd_button_fg_insensitive shade(@osd_fg, 0.70);
 
-@define-color osd_button_border alpha(@osd_highlight, 0.40);
+@define-color osd_button_border shade (@theme_selected_bg_color, 0.8);
 @define-color osd_button_inset shade(@osd_fg, 0.67);
 @define-color osd_button_shadow alpha(black, 0.35);
 
