@@ -162,16 +162,32 @@ GtkTreeMenu .menuitem {
     border-width: 0px;
 }
 
-/* Workaround for lp:949368 */
-.toolbar GtkComboBox .menuitem *, 
-GtkComboBox .menuitem * {
-    transition: all 300ms ease-out;
+.toolbar GtkComboBox .menuitem,
+GtkComboBox .menuitem {
+    transition: all 500ms ease-out;
     color: @menu_fg_dark_color;
     text-shadow: 0px 1px @menu_shadow_dark_color;
 }
 
-GtkComboBox .menuitem:hover * {
-    background-color: shade (@theme_bg_dark_color, 1.2);
+/* needed for .menuitem with gtk+-3.18 */
+GtkTreeMenu.menu .menuitem GtkCellView {
+    background-image: none;
+    background-color: transparent;
+    color: @menu_fg_dark_color;
+    text-shadow: 0px 1px @menu_shadow_dark_color;
+}
+
+GtkTreeMenu.menu .menuitem:hover,
+GtkComboBox .menuitem:hover {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@menu_bg_dark_color, 2.03)),
+                                     to   (shade(@menu_bg_dark_color, 1.17)));
+    color: shade (@theme_selected_bg_color, 1.6);
+    text-shadow: 0px 1px @theme_selected_shadow_color;
+}
+
+GtkTreeMenu.menu .menuitem:hover GtkCellView {
     color: shade (@theme_selected_bg_color, 1.6);
     text-shadow: 0px 1px @theme_selected_shadow_color;
 }
