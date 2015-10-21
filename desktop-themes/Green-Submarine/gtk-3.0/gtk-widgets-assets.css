@@ -16,9 +16,7 @@
     background-color: transparent;
 }
 
-.check:active,
 .check:checked,
-.view.cell.check:active,
 .view.cell.check:checked,
 .check row:selected:checked,
 .check row:selected:focus:checked {
@@ -26,11 +24,8 @@
 
 }
 
-.check:active:insensitive,
 .check:checked:insensitive,
-.check row:selected:active:insensitive,
 .check row:selected:checked:insensitive,
-.check row:selected:focus:active:insensitive,
 .check row:selected:focus:checked:insensitive {
     -gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked-insensitive.png"));
     background-color: transparent;
@@ -63,22 +58,15 @@
     -gtk-icon-source: -gtk-scaled(url("assets/radio-unselected-insensitive.png"));
 }
 
-.radio:active,
 .radio:checked,
-.view.cell.radio:active,
 .view.cell.radio:checked,
-.radio row:selected:active,
 .radio row:selected:checked,
-.radio row:selected:focus:active,
 .radio row:selected:focus:checked {
     -gtk-icon-source: -gtk-scaled(url("assets/radio-selected.png"));
 }
 
-.radio:active:insensitive,
 .radio:checked:insensitive,
-.radio row:selected:active:insensitive,
 .radio row:selected:checked:insensitive,
-.radio row:selected:focus:active:insensitive,
 .radio row:selected:focus:checked:insensitive {
     -gtk-icon-source: -gtk-scaled(url("assets/radio-selected-insensitive.png"));
 }
@@ -97,9 +85,6 @@
     background-color: transparent;
 }
 
-.sidebar .view.radio:active,
-.sidebar .view.radio:active:focus,
-.sidebar .view.radio:active:hover,
 .sidebar .view.radio:checked,
 .sidebar .view.radio:checked:focus,
 .sidebar .view.radio:checked:hover {
@@ -110,10 +95,8 @@
     -gtk-icon-source: -gtk-scaled(url("assets/sidebar-radio-prelight.svg"));
 }
 
-.sidebar .view.radio:active:selected,
-.sidebar .view.radio:active:selected:focus,
-.sidebar .view.radio:checked:selected,
-.sidebar .view.radio:checked:selected:focus {
+.sidebar .view.radio:selected:checked,
+.sidebar .view.radio:selected:checked:focus {
     -gtk-icon-source: -gtk-scaled(url("assets/sidebar-radio-selected.svg"));
 }
 
@@ -121,6 +104,7 @@
 .sidebar .view.radio:selected:focus {
     -gtk-icon-source: -gtk-scaled(url("assets/sidebar-radio-selected-prelight.svg"));
 }
+
 
 /* Now draw menu check and radio items */
 
@@ -188,55 +172,6 @@
 
 .menuitem.check:inconsistent:insensitive {
     -gtk-icon-source: -gtk-scaled(url("assets/checkbox-menuitem-mixed-insensitive.svg"));
-}
-
-.primary-toolbar GtkComboBox.combobox-entry .button,
-GtkComboBox.combobox-entry .button,
-.primary-toolbar GtkComboBox.combobox-entry .button:nth-child(last),
-GtkComboBox.combobox-entry .button:nth-child(last) {
-
-}
-
-.primary-toolbar GtkComboBox.combobox-entry .button:active,
-.primary-toolbar GtkComboBox.combobox-entry .button:hover:active,
-GtkComboBox.combobox-entry .button:active,
-GtkComboBox.combobox-entry .button:hover:active,
-.primary-toolbar GtkComboBox.combobox-entry .button:active:nth-child(last),
-.primary-toolbar GtkComboBox.combobox-entry .button:hover:active:nth-child(last),
-GtkComboBox.combobox-entry .button:active:nth-child(last),
-GtkComboBox.combobox-entry .button:hover:active:nth-child(last) {
-   
-}
-
-/* for RTL languages */
-.primary-toolbar GtkComboBox.combobox-entry .button:nth-child(first),
-GtkComboBox.combobox-entry .button:nth-child(first) {
-
-}
-
-.primary-toolbar GtkComboBox.combobox-entry .button:active:nth-child(first),
-.primary-toolbar GtkComboBox.combobox-entry .button:hover:active:nth-child(first),
-GtkComboBox.combobox-entry .button:active:nth-child(first),
-GtkComboBox.combobox-entry .button:hover:active:nth-child(first) {
-
-}
-
-GtkScale.trough,
-GtkScale.trough.horizontal {
-
-}
-
-GtkScale.trough.vertical {
-
-}
-
-
-GtkScale.progressbar.horizontal {
-    
-}
-
-GtkScale.progressbar.vertical {
-    
 }
 
 GtkScale.slider,
