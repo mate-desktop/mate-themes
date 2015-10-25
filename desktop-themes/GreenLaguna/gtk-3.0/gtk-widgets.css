@@ -3243,6 +3243,14 @@ GtkIconView.content-view.check:selected {
 	background-color: transparent;
 }
 
+/******************
+ * GtkAboutDialog *
+ ******************/
+
+GtkAboutDialog.background .vertical.dialog-vbox  GtkGrid.vertical {
+    background: transparent;
+}
+
 /*********************
  * App Notifications *
  *********************/

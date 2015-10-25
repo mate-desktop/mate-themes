@@ -3038,3 +3038,11 @@ GtkDialog GtkScrolledWindow.frame GtkViewport .vertical GtkExpander .vertical {
     border-width: 1px;
 }
 
+/******************
+ * GtkAboutDialog *
+ ******************/
+
+GtkAboutDialog.background .vertical.dialog-vbox  GtkGrid.vertical {
+    background: transparent;
+}
+

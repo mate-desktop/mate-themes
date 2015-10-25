@@ -4399,6 +4399,14 @@ GtkCalendar.highlight {
 	border-width: 0;
 }
 
+/******************
+ * GtkAboutDialog *
+ ******************/
+
+GtkAboutDialog.background .vertical.dialog-vbox  GtkGrid.vertical {
+    background: transparent;
+}
+
 /**************
  * GtkInfoBar *
  **************/
