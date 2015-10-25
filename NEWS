@@ -1,15 +1,20 @@
+1.11.1 (GTK 3.18)
+- GTK+-3.18 most themes: fix bg of GtkGrid in GtkAboutDialog
+- Gtk+-3.18 all themes: fix sidebar list-rows in GtkFileChooserWidget
+- Gtk+-3.18 green-submarine theme: fix some typos
+
 1.11.0 (GTK 3.18)
 - more adjustments for gtk+-3.18
 - GTK3 submarine themes: add styling for gnome-weather
 - GTK3 Submarine themes: adjust osd toolbar
 - GTK3 Submarine themes: adjust popover scales
-- GTK3 Submarine themes: style background of emblem page in properties-…
-
-…dialog
+- GTK3 Submarine themes: style background of emblem page in properties-dialog
+- GTK3 Submarine themes: re-work cleanup button state logic
+- Gtk+-3.18 submarine themes: adjust osd
 - Gtk3 Contrast High themes: support real OSD
 - GTK3 ContrastHigh themes: adjust GtkScale and GtkProgressbar
 - GTK3: ContrastHigh themes: style dconf-editor
-- 
+
 1.10.5 (GTK 3.18)
 - more adjustments for gtk+-3.18
   * list-rows
