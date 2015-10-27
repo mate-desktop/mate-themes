@@ -3903,7 +3903,8 @@ GtkIconView.view.cell:hover:focus {
     border-radius: 4px;
 }
 
-.view {
+.view,
+.view.horizontal {
     background-color: @theme_base_color;
     color: @theme_fg_color;
     text-shadow: 0px 1px @theme_shadow_color;
