@@ -2251,6 +2251,17 @@ GtkProgressBar.osd.progressbar {
 	background-color: @theme_base_color;
 }
 
+.popover.scale-popup.background {
+    border-color: shade(@theme_bg_color, 0.8);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 6px;
+    margin: 12px;
+    padding: 0px;
+    border-style: none;
+    box-shadow: 0 1px 5px @wm_shadow;
+}
+
 GtkModelButton.button {
 	color: @theme_selected_fg_color;
 	border-radius: 3px;
