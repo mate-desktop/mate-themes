@@ -59,6 +59,7 @@ desktop-themes/BlackMATE/cinnamon/Makefile
 desktop-themes/BlackMATE/unity/Makefile
 desktop-themes/BlueMenta/Makefile
 desktop-themes/BlueMenta/cinnamon/Makefile
+desktop-themes/BlueMenta/emerald/Makefile
 desktop-themes/BlueMenta/gtk-2.0/Makefile
 desktop-themes/BlueMenta/gtk-2.0/apps/Makefile
 desktop-themes/BlueMenta/gtk-2.0/apps/Caja/Makefile
@@ -119,6 +120,7 @@ desktop-themes/Green-Submarine/gtk-3.0/assets/Makefile
 desktop-themes/Green-Submarine/metacity-1/Makefile
 desktop-themes/Menta/Makefile
 desktop-themes/Menta/cinnamon/Makefile
+desktop-themes/Menta/emerald/Makefile
 desktop-themes/Menta/gtk-2.0/Makefile
 desktop-themes/Menta/gtk-2.0/apps/Makefile
 desktop-themes/Menta/gtk-2.0/apps/Caja/Makefile
