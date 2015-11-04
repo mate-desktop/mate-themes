@@ -518,6 +518,35 @@ MatePanelApplet .horizontal .vertical .frame {
     -PanelMenuBar-icon-visible: true;
 }
 
+/* volume applet, brightness applet */
+.mate-panel-applet-slider .frame {
+    background-color: @theme_bg_color;
+    border-image: none;
+    border-style: solid;
+    border-radius:3px;
+    padding: 1px;
+    margin: 0px;
+}
+
+.mate-panel-applet-slider .frame .frame{
+    background-color:transparent;
+    border-style: none;
+    box-shadow: none;
+}
+
+.mate-panel-applet-slider .frame .button {
+    padding: 4px 0px;
+    margin: 0px;
+}
+
+.mate-panel-applet-slider .frame .button:insensitive {
+    color: @insensitive_fg_color;
+    background-image: none;
+    border-image: none;
+    border-color: @theme_bg_color;
+
+}
+
 /****************
  * Mate-Terminal *
  ****************/

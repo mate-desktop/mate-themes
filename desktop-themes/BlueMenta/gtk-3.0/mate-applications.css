@@ -650,6 +650,26 @@ NaTrayApplet {
     -PanelMenuBar-icon-visible: true;
 }
 
+/* volume applet, brightness applet */
+.mate-panel-applet-slider .frame {
+    background-color: @theme_bg_color;
+    border-image: none;
+    border-style: solid;
+    border-radius:3px;
+    padding: 2px;
+    margin: 0px;
+}
+
+.mate-panel-applet-slider .frame .frame{
+    background-color:transparent;
+    border-style: none;
+    box-shadow: none;
+}
+
+.mate-panel-applet-slider .frame .button {
+    color: @theme_fg_color;
+}
+
 /****************
  * Mate-Terminal *
  ****************/
