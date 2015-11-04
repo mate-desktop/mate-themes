@@ -251,6 +251,27 @@ NaTrayApplet {
     -NaTrayApplet-icon-size: 16;
 }
 
+/* volume applet, brightness applet */
+.mate-panel-applet-slider .frame {
+    background-color: @theme_bg_color;
+    border-image: none;
+    border-style: solid;
+    border-radius:3px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.mate-panel-applet-slider .frame .frame{
+    background-color:transparent;
+    border-style: none;
+    box-shadow: none;
+}
+
+.mate-panel-applet-slider .frame .button {
+    padding: 4px 0px;
+    margin: 0px;
+}
+
 /****************
  * Mate-Terminal *
  ****************/
