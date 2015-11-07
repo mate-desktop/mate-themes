@@ -80,6 +80,7 @@ desktop-themes/BlueMenta/unity/Makefile
 desktop-themes/BlueMenta/xfwm4/Makefile
 desktop-themes/Blue-Submarine/Makefile
 desktop-themes/Blue-Submarine/cinnamon/Makefile
+desktop-themes/Blue-Submarine/emerald/Makefile
 desktop-themes/Blue-Submarine/gtk-2.0/Makefile
 desktop-themes/Blue-Submarine/gtk-2.0/apps/Makefile
 desktop-themes/Blue-Submarine/gtk-2.0/apps/Handles/Makefile
