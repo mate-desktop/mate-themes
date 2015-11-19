@@ -988,6 +988,10 @@ MatePanelApplet .horizontal .vertical .frame {
 }
 
 /* volume applet */
+.mate-panel-applet-slider {
+    background: transparent;
+}
+
 .mate-panel-applet-slider .frame {
     background-color: rgba(0,0,0,0.5);
     border-image: none;

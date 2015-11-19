@@ -265,6 +265,10 @@ NaTrayApplet {
 }
 
 /* volume applet, brightness applet */
+.mate-panel-applet-slider {
+    background: transparent;
+}
+
 .mate-panel-applet-slider .frame {
     background-color: @theme_bg_color;
     border-image: none;
