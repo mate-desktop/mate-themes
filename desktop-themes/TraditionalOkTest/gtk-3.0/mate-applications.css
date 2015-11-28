@@ -507,14 +507,3 @@ EomThumbNav .button.flat:insensitive {
     border-color: @insensitive_border_color;
 }
 
-/***********************
- * Mate-system-monitor *
- ***********************/
-
-/* workaround for crash if reducing the size of device column to zero,
-   horizontal padding needs to set to 0, any other value crashes m-s-m */
-
-.notebook .vertical GtkScrolledWindow GtkTreeView .cell {
-    padding: 2px 0px;
-}
-
