@@ -650,7 +650,28 @@ FMPropertiesWindow .vertical.dialog-vbox .notebook GtkViewport {
  * Mate-Panel *
  ****************/
 
+/* first make all transparent */
+PanelToplevel.background.horizontal {
+    background-color: transparent;
+}
+
+WnckSelector.menubar,
+PanelMenuBar.menubar,
+WnckSelector GtkMenuItem,
+PanelMenuBar GtkMenuItem,
+MatePanelApplet GtkToggleButton.button {
+    border-image: none;
+    background-image: none;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/* let's started */
 /* the panel bar itself */
+PanelToplevel.background.horizontal {
+    background-color: @theme_bg_dark_color;
+}
+
 .mate-panel-menu-bar {
     background-color: @theme_bg_dark_color;
     background-image: none;
@@ -661,16 +682,41 @@ FMPropertiesWindow .vertical.dialog-vbox .notebook GtkViewport {
     text-shadow: none;
 }
 
-/* first make all transparent */
-WnckSelector.menubar,
-PanelMenuBar.menubar,
-WnckSelector GtkMenuItem,
-PanelMenuBar GtkMenuItem,
-MatePanelApplet GtkToggleButton.button {
-    border-image: none;
-    background-image: none;
-    background-color: transparent;
+/* workaround to avoid unwanted black frames if switching compositor on/off */
+.mate-panel-menu-bar .window-frame.csd.popup {
     box-shadow: none;
+}
+
+/* panel grip *//*
+PanelToplevel.background.mate-custom-panel-background {
+    background-color: transparent;
+    border-radius: 3px;
+/* enable for making borders visible */
+/*    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
+                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset  0px -1px shade (@theme_selected_bg_color, 1.3); *//*
+}*/
+
+/* hide buttons */
+PanelToplevel.background .button {
+    background-image: none;
+    background: transparent;
+    border-style: none;
+    border-radius: 3px;
+    padding: 0px;
+    box-shadow: none;
+}
+
+PanelToplevel.background .button:hover,
+PanelToplevel.background .button:hover:active {
+    background-image: none;
+    color: @menu_selected_fg_dark_color;
+    border-radius: 3px;
+    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
+                inset  1px  0px shade(@selected_bg_color, 0.97),
+                inset -1px  0px shade(@selected_bg_color, 0.93),
+                inset  0px -1px shade(@selected_bg_color, 0.93);
 }
 
 /* dictionary applet */
@@ -687,32 +733,6 @@ GdictApplet .entry {
 
 MatePanelApplet {
     border-width: 0;
-}
-
-/* panel grip */
-PanelToplevel.background.mate-custom-panel-background {
-    background-color: transparent;
-    border-radius: 3px;
-/* enable for making borders visible */
-/*    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
-                inset  1px  0px shade(@selected_bg_color, 0.97),
-                inset -1px  0px shade(@selected_bg_color, 0.93),
-                inset  0px -1px shade(@selected_bg_color, 0.93); */
-}
-
-/* hide buttons */
-PanelToplevel.background.mate-custom-panel-background .button {
-    background: transparent;
-    border-radius: 4px;
-    padding: 0px;
-    box-shadow: none;
-}
-
-PanelToplevel.background.mate-custom-panel-background .button:hover {
-    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
-                inset  1px  0px shade(@selected_bg_color, 0.97),
-                inset -1px  0px shade(@selected_bg_color, 0.93),
-                inset  0px -1px shade(@selected_bg_color, 0.93);
 }
 
 MatePanelAppletFrameDBus PanelSeparator,
