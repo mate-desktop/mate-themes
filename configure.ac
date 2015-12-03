@@ -111,7 +111,7 @@ desktop-themes/GreenLaguna/metacity-1/Makefile
 desktop-themes/GreenLaguna/unity/Makefile
 desktop-themes/Green-Submarine/Makefile
 desktop-themes/Green-Submarine/cinnamon/Makefile
-desktop-themes/Blue-Submarine/emerald/Makefile
+desktop-themes/Green-Submarine/emerald/Makefile
 desktop-themes/Green-Submarine/gtk-2.0/Makefile
 desktop-themes/Green-Submarine/gtk-2.0/apps/Makefile
 desktop-themes/Green-Submarine/gtk-2.0/apps/Handles/Makefile
