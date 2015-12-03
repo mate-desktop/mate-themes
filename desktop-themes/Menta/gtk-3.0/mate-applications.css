@@ -328,7 +328,28 @@ CajaQueryEditor .button {
  * Mate-Panel *
  ****************/
 
+/* first make all transparent */
+PanelToplevel.background.horizontal {
+    background-color: transparent;
+}
+
+WnckSelector.menubar,
+PanelMenuBar.menubar,
+WnckSelector GtkMenuItem,
+PanelMenuBar GtkMenuItem,
+MatePanelApplet GtkToggleButton.button {
+    border-image: none;
+    background-image: none;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/* let's started */
 /* the panel bar itself */
+PanelToplevel.background.horizontal {
+    background-color: @theme_bg_color;
+}
+
 .mate-panel-menu-bar {
     background-color: @theme_bg_color;
     background-image: none;
@@ -339,32 +360,13 @@ CajaQueryEditor .button {
     text-shadow: none;
 }
 
-/* first make all transparent */
-WnckSelector.menubar,
-MatePanelApplet GtkToggleButton.button {
-    border-image: none;
-    background-image: none;
-}
-
-/* dictionary applet */
-GdictApplet .entry {
-    /* normal panel */
-    color: @theme_fg_color;
-    /* transparent panel */
-/*    color: @theme_selected_fg_color; */
-    background-image: none;
-    background-color: transparent;
-    border-width: 1px;
-    padding: 3px 4px;
-}
-
-MatePanelApplet {
-    border-width: 0;
+/* workaround to avoid unwanted black frames if switching compositor on/off */
+.mate-panel-menu-bar .window-frame.csd.popup {
+    box-shadow: none;
 }
 
 /* panel grip */
-PanelToplevel.background.mate-custom-panel-background {
-    background-color: transparent;
+PanelToplevel.background {
     border-radius: 2px;
 /* enable for making borders visible */
 /*    box-shadow: inset  0px  1px shade (@theme_bg_color, 1.0),
@@ -374,23 +376,28 @@ PanelToplevel.background.mate-custom-panel-background {
 }
 
 /* hide buttons */
-PanelToplevel.background.mate-custom-panel-background .button {
+PanelToplevel.background .button {
     background: transparent;
     border-image: none;
     border-radius: 2px;
     border-width: 0px;
-    padding: 0px 4px;
-    box-shadow: inset  0px  1px shade (@theme_bg_color, 1.0),
-                inset  1px  0px shade (@theme_bg_color, 1.0),
-                inset -1px  0px shade (@theme_bg_color, 1.0),
-                inset  0px -1px shade (@theme_bg_color, 1.0);
+    padding: 0px;
+    box-shadow: none;
 }
 
-PanelToplevel.background.mate-custom-panel-background .button:hover {
-    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.0),
-                inset  1px  0px shade (@theme_selected_bg_color, 1.0),
-                inset -1px  0px shade (@theme_selected_bg_color, 1.0),
-                inset  0px -1px shade (@theme_selected_bg_color, 1.0);
+PanelToplevel.background .button:hover,
+PanelToplevel.background .button:hover:active {
+    background-image: linear-gradient(to bottom,
+                                      shade (@theme_selected_bg_color, 0.86),
+                                      shade (@theme_selected_bg_color, 0.26));
+    color: shade (@theme_selected_fg_color, 1.00);
+    text-shadow: none;
+    border-style: solid;
+    border-width: 0px;
+}
+
+MatePanelApplet {
+    border-width: 0;
 }
 
 MatePanelAppletFrameDBus PanelSeparator,
