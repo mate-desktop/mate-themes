@@ -23,6 +23,7 @@ theme_DATA = \
 	grid-selection-checked.svg \
 	grid-selection-unchecked.svg \
 	menu-border.svg \
+	panel-grid.svg \
 	pane-separator-grip-hover.svg \
 	pane-separator-grip.svg \
 	pane-separator-grip-vertical-hover.svg \
