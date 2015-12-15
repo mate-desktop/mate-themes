@@ -417,7 +417,7 @@ MatePanelApplet {
 MatePanelAppletFrameDBus PanelSeparator,
 PanelSeparator {
     border-width: 0;
-    background-color: @theme_fg_color;
+    background-color: @theme_bg_color;
     color: shade (@theme_fg_color, 4.30);
     text-shadow: none;
 }
