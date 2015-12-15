@@ -288,6 +288,10 @@ NautilusWindow .notebook NautilusQueryEditor .toolbar {
 	border-radius: 5px;
 }
 
+NautilusDesktopWindow GtkPaned.horizontal {
+	background-color: transparent;
+}
+
 .nautilus-desktop.nautilus-canvas-item {
 	color: @theme_bg_color;
 	text-shadow: 1px 1px black;

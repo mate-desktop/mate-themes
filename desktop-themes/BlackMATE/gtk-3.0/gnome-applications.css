@@ -401,6 +401,10 @@ NautilusQueryEditor .toolbar .entry:focus {
 
 /**** Desktop Drawn ***/
 
+NautilusDesktopWindow GtkPaned {
+	background-color: transparent;
+}
+
 .nautilus-desktop.nautilus-canvas-item {
 	color: @theme_fg_color;
 	text-shadow: none;
