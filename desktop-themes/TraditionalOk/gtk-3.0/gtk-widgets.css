@@ -1818,6 +1818,15 @@ GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-r
     padding: 4px 12px 4px 0px;
 }
 
+/* workaround for broken first/last-child logic with linked buttons
+   in pathbar with gtk+-3.18 */
+.path-bar.linked .button.text-button {
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-radius: 2px;
+    padding: 4px;
+}
+
 .sidebar .radio,
 .sidebar .radio:focus,
 .sidebar .radio:selected {
