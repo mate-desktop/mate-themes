@@ -176,6 +176,10 @@ NemoWindow .toolbar .button {
 	border-image: none;
 }
 
+NemoToolbar .primary-toolbar {
+    padding: 0px 2px;
+}
+
 /* Misc */
 NemoView.frame,
 NemoNotebook.notebook {
