@@ -1274,6 +1274,13 @@ GtkFileChooserButton .button {
     border-radius: 3px;
 }
 
+/* ie. controls gnome-mplayer, virtual-manager */
+.button.flat.image-button,
+.button.flat.image-button:hover,
+GtkVolumeButton.button.flat {
+	padding: 4px;
+}
+
 .button GtkImage,
 .button GtkImage:hover,
 .button GtkImage:checked,
