@@ -137,8 +137,12 @@ NemoWindow .sidebar row:hover {
 }
 
 /* Toolbar */
-NemoToolbar .primary-toolbar {
-    padding: 0px 2px;
+NemoToolbar .toolbar.primary-toolbar .button.image-button {
+    padding: 0px 8px;
+}
+
+NemoToolbar .toolbar.primary-toolbar .button.text-button {
+    padding: 0px 10px;
 }
 
 /* Misc */
