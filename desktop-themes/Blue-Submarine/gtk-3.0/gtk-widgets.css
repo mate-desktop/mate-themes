@@ -815,10 +815,11 @@ GtkScrolledWindow.frame {
     border-image: none;
 }
 
-/* ie. controls gnome-mplayer */
+/* ie. controls gnome-mplayer, virtual-manager */
 .button.flat.image-button,
+.button.flat.image-button:hover,
 GtkVolumeButton.button.flat {
-	padding: 8px;
+	padding: 4px;
 }
 
 .button:hover {
@@ -4738,7 +4739,6 @@ GtkOverlay.osd {
     border-width: 1px;
 }
 
-
 /* ie. parole media-player */
 /* previous/play/next */
 .osd .horizontal .horizontal .button {
@@ -4763,7 +4763,8 @@ GtkOverlay.osd {
 }
 
 /* ie. volume button */
-.osd .horizontal .button {
+.osd .horizontal .button,
+.osd .horizontal .button:hover {
     padding: 5px 8px;
 }
 
