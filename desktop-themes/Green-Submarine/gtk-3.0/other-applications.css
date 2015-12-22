@@ -384,7 +384,10 @@ NemoWindow .primary-toolbar.toolbar .button:checked,
 NemoWindow .primary-toolbar.toolbar .button:checked:hover {
     padding: 4px;
     background-color: transparent;
-    background-image: none;
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@menu_bg_dark_color, 2.03)),
+                                     to   (shade(@menu_bg_dark_color, 1.17)));
     border-width: 1px;
     border-style: solid;
     border-radius: 5px;
