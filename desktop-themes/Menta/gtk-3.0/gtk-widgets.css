@@ -3069,6 +3069,8 @@ GtkFileChooserWidget GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-r
 
 /* workaround for broken first/last-child logic with linked buttons
    in pathbar with gtk+-3.18 */
+.path-bar.linked .button.image-button,
+.path-bar.linked .button.image-button:checked:hover,
 .path-bar.linked .button.text-button {
 	border-right-width: 1px;
 	border-left-width: 1px;
