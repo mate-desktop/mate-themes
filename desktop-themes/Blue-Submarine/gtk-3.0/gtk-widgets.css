@@ -891,7 +891,8 @@ GtkFileChooserButton .button {
     padding: 5px 4px;
 }
 
-GtkComboBox GtkToggleButton.button {
+GtkComboBox GtkToggleButton.button,
+GtkComboBox GtkToggleButton.button:hover {
     padding: 4px;
 }
 
