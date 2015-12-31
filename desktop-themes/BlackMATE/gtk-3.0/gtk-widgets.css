@@ -1,5 +1,4 @@
 * {
-	padding: 1px;
 	background-clip: padding-box;
 	/* Style properties */
 	-GtkButton-child-displacement-x: 1;
@@ -1218,7 +1217,7 @@ GtkComboBox .button:hover {
 }
 
 GtkComboBox.combobox-entry .button {
-	padding: 0px;
+	padding: 4px;
 }
 
 /* compensation for combo shadow */
@@ -1233,7 +1232,7 @@ GtkComboBox .menu {
 .button {
     -gtk-icon-style: regular;
     -GtkWidget-focus-line-width: 0;
-    padding: 0px;
+    padding: 4px;
     border-radius: 3px;
     border-width: 1px;
     border-style: solid;
@@ -1248,7 +1247,7 @@ GtkComboBox .menu {
 .button.text-button,
 GtkFontButton.button,
 GtkFileChooserButton .button {
-    padding: 3px;
+    padding: 4px;
 }
 
 .button.default {
@@ -1260,7 +1259,6 @@ GtkFileChooserButton .button {
 /* ie. mate-control-center */
 .button.flat {
     transition: all 400ms ease-out;
-    padding: 0px;
     border-color: transparent;
     background-color: transparent;
     background-image: none;
@@ -1942,7 +1940,7 @@ GtkCalendar.header .stack-switcher > .titlebutton.button {
 }
 
 .header-bar .button.text-button {
-    padding: 2px 16px;
+    padding: 4px 16px;
 }
 
 .header-bar .button.image-button {
@@ -2965,6 +2963,7 @@ GtkCalendar.header .app-notification.frame .titlebutton.button {
     icon-shadow: 0 1px black;
     outline-color: rgba(238, 238, 236, 0.3);
     border-radius: 3px;
+    padding: 0 0px 2px 0px;
 }
 
 .app-notification .button:active,
