@@ -408,9 +408,23 @@ GtkScale {
 GtkScale.slider,
 GtkScale.slider:hover,
 GtkScale.slider:insensitive {
-	border-radius: 0;
-	border-style: none;
+	border-radius: 2px;
+	border-style: solid;
+	border-width: 1px;
 	background-color: transparent;
+	background-position: center;
+}
+
+GtkScale.slider {
+	border-color: @border_color;
+}
+
+GtkScale.slider:hover {
+	border-color: @focus_border_color;
+}
+
+GtkScale.slider:insensitive {
+	border-color: @insensitive_border_color;
 }
 
 GtkScale.trough,
