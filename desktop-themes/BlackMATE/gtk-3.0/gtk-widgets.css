@@ -1089,6 +1089,12 @@ row {
 	                                  @button_hover_gradient_color_b);
 }
 
+/* avoid annoying padding with GtkSwitch on/off */
+GtkListBoxRow.list-row.button {
+    padding: 0px;
+    border-width: 0px;
+}
+
 .cell {
 	padding: 2px;
 	border-width: 0px;
