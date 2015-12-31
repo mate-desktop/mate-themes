@@ -1,5 +1,4 @@
 * {
-	padding: 1px;
 	background-clip: padding-box;
 	/* Style properties */
 	-GtkButton-child-displacement-x: 1;
@@ -318,7 +317,7 @@ GtkTreeView .separator,
 	border-width: 1px;
 	border-style: none;
 	border-radius: 3px;
-	padding: 4px;
+	padding: 5px;
 	color: @theme_text_color;
 }
 
@@ -678,7 +677,7 @@ GtkLevelBar.vertical {
 }
 
 .notebook tab {
-	padding: 3px 8px 0px;
+	padding: 4px 8px 0px;
 	border-style: solid;
 	border-width: 1px 1px 0px 1px;
 	border-color: @notebook_border;
@@ -697,7 +696,7 @@ GtkLevelBar.vertical {
 
 .notebook tab.top {
 	/* top right-left bottom */
-	padding: 3px 8px 0px;
+	padding: 4px 8px 0px;
 }
 
 .notebook tab.top:active {
@@ -710,7 +709,7 @@ GtkLevelBar.vertical {
 }
 
 .notebook tab.bottom {
-	padding: 0px 8px 3px;
+	padding: 0px 8px 4px;
 }
 
 .notebook tab.bottom:active {
@@ -731,14 +730,14 @@ GtkLevelBar.vertical {
 .notebook tab.left,
 .notebook tab.left:active {
 	border-radius: 3px 0px 0px 3px;
-	padding: 2px 4px 2px;
+	padding: 3px 4px 2px;
 	border-width: 1px 0px 1px 1px;
 }
 
 .notebook tab.right,
 .notebook tab.right:active {
 	border-radius: 0px 3px 3px 0px;
-	padding: 2px 4px 2px;
+	padding: 3px 4px 2px;
 	border-width: 1px 1px 1px 0px;
 }
 
@@ -889,6 +888,12 @@ row {
 	                                  @button_hover_gradient_color_b);
 }
 
+/* avoid annoying padding with GtkSwitch on/off */
+GtkListBoxRow.list-row.button {
+    padding: 0px;
+    border-width: 0px;
+}
+
 .cell {
 	padding: 2px;
 	border-width: 0px;
@@ -1003,7 +1008,7 @@ GtkComboBox .button {
 }
 
 GtkComboBox.combobox-entry .button {
-    padding: 0px;
+    padding: 4px;
 }
 
 /*GtkComboBox .menu *,*/
@@ -1016,7 +1021,7 @@ GtkTreeMenu .menuitem * {
  ***********/
 .button {
     -gtk-icon-style: regular;
-    padding: 0px;
+    padding: 4px;
     -GtkWidget-focus-line-width: 0;
     border-radius: 3px;
     border-width: 1px;
@@ -1061,7 +1066,7 @@ GtkVolumeButton.button.flat {
 .button.text-button,
 GtkFontButton.button,
 GtkFileChooserButton .button {
-    padding: 3px;
+    padding: 4px;
 }
 
 .button GtkImage,
@@ -1888,7 +1893,7 @@ GtkCalendar.header .stack-switcher > .titlebutton.button {
 }
 
 .header-bar .button.text-button {
-    padding: 2px 6px;
+    padding: 4px 6px;
 }
 
 .header-bar .button.image-button {
