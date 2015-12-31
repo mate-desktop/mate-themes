@@ -656,10 +656,10 @@ NaTrayApplet {
  *********/
 
 /* text view */
-/* remove general frame color to avoid double edges */
+/* remove general frame color to avoid double edges *//*
 PlumaWindow.background .vertical .horizontal .vertical .notebook .vertical .frame {
     background-color: #D9D9D9;
-}
+} writes the bg color of the scrollbar with gtk+-3.14 !*/
 
 /* override for previous setting */
 PlumaDocumentsPanel.vertical .frame,
