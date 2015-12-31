@@ -75,29 +75,30 @@ style "caja-toolbar-button"
     xthickness	= 3
     ythickness	= 2
 
-    bg[PRELIGHT] 	= shade(0.91, @bg_color_dark)
-    bg[ACTIVE] 		= shade(1.76, @bg_color_dark)
-# not needed, called by gtkrc
-#	bg[SELECTED] 	= shade(0.80, @selected_bg_color)
-#	bg[INSENSITIVE] = shade(0.83, @bg_color_dark)
+	bg[NORMAL]      = shade(0.80, @bg_color_dark)
+	bg[PRELIGHT]    = shade(0.91, @bg_color_dark)
+	bg[ACTIVE]      = shade(0.76, @bg_color_dark)
+	bg[SELECTED]    = shade(0.80, @selected_bg_color)
+	bg[INSENSITIVE] = shade(0.83, @bg_color_dark)
 
-#   fg[NORMAL]          = @fg_color_dark
-#	fg[PRELIGHT]	    = @selected_fg_color
-#	fg[ACTIVE]	        = @fg_color_dark
-#	fg[SELECTED]	    = @fg_color_dark
+	fg[NORMAL]      = @fg_color_dark
+	fg[PRELIGHT]    = @selected_fg_color
+	fg[ACTIVE]      = @fg_color_dark
+	fg[SELECTED]    = @fg_color_dark
 
-    text[NORMAL]        = @fg_color_dark
-	text[PRELIGHT]	    = @selected_fg_color
-	text[ACTIVE]	    = @fg_color_dark
-	text[SELECTED]	    = @fg_color_dark
+	text[NORMAL]    = @fg_color_dark
+	text[PRELIGHT]  = @selected_fg_color
+	text[ACTIVE]    = @fg_color_dark
+	text[SELECTED]  = @fg_color_dark
 
 	engine "murrine" {
-		gradient_shades     	= {1.00,0.96,0.96,0.90}
-		border_shades           = {4.10, 4.00}
+		gradient_shades     	= {2.63,1.17,1.17,1.17}
+		border_shades           = {5.10, 5.00}
 		contrast                = 0.80
-		lightborderstyle		= 1
+		roundness               = 5 # 0 = squared
 		lightborder_shade       = 1.1
-        glow_shade              = 1.0
+		lightborderstyle        = 1
+		glow_shade              = 1.0
 		textstyle               = 1
 		text_shade			    = 1.15
 	}

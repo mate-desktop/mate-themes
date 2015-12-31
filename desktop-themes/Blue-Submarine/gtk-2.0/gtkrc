@@ -497,6 +497,7 @@ style "murrine-menu" = "murrine-wider-dark" {
 	fg[PRELIGHT]        = shade (1.60, @selected_bg_color)		# menu item selected
 
 	engine "murrine" {
+		gradient_shades = {2.63,1.17,1.17,1.17}
 		border_shades   = { 5.10, 5.00 }
 		roundness       = 4 # 0 = squared
 		textstyle       = 0
@@ -516,7 +517,7 @@ style "murrine-menu-item" = "murrine-wider-dark" {
 	bg[SELECTED]        = shade (1.00, @bg_color_dark)
 
 	engine "murrine" {
-        gradient_shades = {0.90, 0.95, 0.95, 1.00}
+        gradient_shades = {2.63,1.17,1.17,1.17}
         border_shades   = {5.10, 5.00}
         roundness       = 4
         contrast        = 0.8           # contrast separators
@@ -696,7 +697,7 @@ style "murrine-toolbar-button" {
 	fg[SELECTED]	    = @fg_color_dark
 
 	engine "murrine" {
-		gradient_shades     	= {1.00,0.96,0.96,0.90}
+		gradient_shades     	= {2.63,1.17,1.17,1.17}
 		border_shades           = {5.10, 5.00}
 		contrast                = 0.80
 		roundness               = 5 # 0 = squared
