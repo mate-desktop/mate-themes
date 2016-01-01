@@ -3053,7 +3053,7 @@ GtkLinkButton.button.flat:hover {
     background-clip: border-box;
     background-color: shade (@theme_bg_color, 1.1);
     border-style: solid;
-    border-color: @borders;
+    border-color: @notebook_border;
     border-width: 1px;
     -GtkNotebook-initial-gap: 0;
     -GtkNotebook-arrow-spacing: 5;
@@ -3169,7 +3169,7 @@ GtkLinkButton.button.flat:hover {
     border-radius: 4px 4px 0 0;
     border-width: 1px 1px 0 1px;
     border-style: solid;
-    border-color: @borders;
+    border-color: @notebook_border;
     box-shadow: none;
 }
 
@@ -3180,7 +3180,7 @@ GtkLinkButton.button.flat:hover {
     border-radius: 4px 4px 0 0;
     border-width: 1px 1px 0 1px;
     border-style: solid;
-    border-color: @borders;
+    border-color: @notebook_border;
     box-shadow: none;
 }
 
@@ -3196,7 +3196,7 @@ GtkLinkButton.button.flat:hover {
     border-radius: 0 0 4px 4px;
     border-style: solid;
     border-width: 0px 1px 1px 1px;
-    border-color: @borders;
+    border-color: @notebook_border;
     box-shadow: none;
 }
 
@@ -3207,7 +3207,7 @@ GtkLinkButton.button.flat:hover {
     border-radius: 0 0 4px 4px;
     border-style: solid;
     border-width: 0px 1px 1px 1px;
-    border-color: @borders;
+    border-color: @notebook_border;
     box-shadow: none;
 }
 
@@ -3225,7 +3225,7 @@ GtkLinkButton.button.flat:hover {
                                       shade(@theme_bg_color, 1.1));
     border-style: solid;
     border-width: 1px 0px 1px 1px;
-    border-color: @borders;
+    border-color: @notebook_border;
     border-right-color: @notebook_active_tab_border;
     border-radius: 4px 0px 0px 4px;
 }
@@ -3236,7 +3236,7 @@ GtkLinkButton.button.flat:hover {
                                       alpha(@theme_base_color, 0.3));
     border-style: solid;
     border-width: 1px 0px 1px 1px;
-    border-color: @borders;
+    border-color: @notebook_border;
     border-radius: 4px 0px 0px 4px;
 }
 
@@ -3247,7 +3247,7 @@ GtkLinkButton.button.flat:hover {
                                       shade(@theme_bg_color, 1.1));
     border-style: solid;
     border-width: 1px 1px 1px 0px;
-    border-color: @borders;
+    border-color: @notebook_border;
     border-right-color: @notebook_active_tab_border;
     border-radius: 0px 4px 4px 0px;
 }
@@ -3258,7 +3258,7 @@ GtkLinkButton.button.flat:hover {
                                       alpha(@theme_base_color, 0.3));
     border-style: solid;
     border-width: 1px 1px 1px 0px;
-    border-color: @borders;
+    border-color: @notebook_border;
     border-radius: 0px 4px 4px 0px;
 }
 
