@@ -3163,6 +3163,11 @@ GtkLinkButton.button.flat:hover {
     border-width: 0px 0px 0px 1px;
 }
 
+/* tabs in view areas, ie. pluma-, caja-tabs */
+GtkPaned.horizontal .notebook.header.top {
+    border-width: 0px;
+}
+
 .notebook.header.frame.top {
     border-radius: 4px 4px 0px 0px;
 }
@@ -3205,7 +3210,11 @@ GtkLinkButton.button.flat:hover {
 
 .notebook tab.top,
 .notebook tab.bottom {
-    padding: 8px 20px 6px;
+    padding: 5px 20px 6px;
+}
+
+GtkPaned.horizontal .notebook tab.top {
+    padding: 5px 4px;
 }
 
 .notebook tab.top {
@@ -3277,7 +3286,6 @@ GtkLinkButton.button.flat:hover {
     border-style: solid;
     border-width: 1px 0px 1px 1px;
     border-color: @notebook_border;
-    border-right-color: @notebook_active_tab_border;
     border-radius: 4px 0px 0px 4px;
 }
 
@@ -3299,7 +3307,6 @@ GtkLinkButton.button.flat:hover {
     border-style: solid;
     border-width: 1px 1px 1px 0px;
     border-color: @notebook_border;
-    border-right-color: @notebook_active_tab_border;
     border-radius: 0px 4px 4px 0px;
 }
 
@@ -3338,7 +3345,7 @@ GtkLinkButton.button.flat:hover {
     border-image: none;
     background-image: none;
     background-color: transparent;
-    border-radius: 3px;
+    border-radius: 4px;
     border-style: solid;
     border-color: transparent;
     border-width: 1px;
