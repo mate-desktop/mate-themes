@@ -666,6 +666,10 @@ GtkLevelBar.vertical {
 	-GtkWidget-focus-line-width: 0;
 }
 
+GtkPaned.horizontal .notebook .frame {
+    border-style: none;
+}
+
 .notebook :hover {
 	-gtk-image-effect: highlight;
 	background-color: shade(@theme_bg_color, 1.02);
@@ -696,11 +700,11 @@ GtkLevelBar.vertical {
 
 .notebook tab.top {
 	/* top right-left bottom */
-	padding: 4px 8px 0px;
+	padding: 3px 8px 0px;
 }
 
 .notebook tab.top:active {
-	padding: 4px 8px 0px;
+	padding: 3px 8px 0px;
 }
 
 .notebook tab.top,
@@ -709,7 +713,7 @@ GtkLevelBar.vertical {
 }
 
 .notebook tab.bottom {
-	padding: 0px 8px 4px;
+	padding: 0px 8px 3px;
 }
 
 .notebook tab.bottom:active {
@@ -760,6 +764,13 @@ GtkLevelBar.vertical {
 
 	-GtkWidget-focus-line-width: 0;
 	-GtkWidget-focus-padding: 0;
+}
+
+.notebook tab .button.flat {
+    padding: 1px;
+    border-radius: 4px;
+    border-image: none;
+    border-style: none;
 }
 
 .notebook .pane-separator {
