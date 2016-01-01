@@ -698,18 +698,10 @@ GtkNotebook {
 	                                  @less_dark_color);
 }
 
-.notebook tab.top {
+.notebook tab.top
+.notebook tab.top:active {
 	/* top right-left bottom */
 	padding: 3px 8px 0px;
-}
-
-.notebook tab.top:active {
-	padding: 4px 8px 0px;
-}
-
-.notebook tab.top,
-.notebook tab.top:active {
-	border-radius: 3px 3px 0px 0px;
 }
 
 .notebook tab.bottom {
@@ -717,7 +709,7 @@ GtkNotebook {
 }
 
 .notebook tab.bottom:active {
-   padding: 0px 8px 4px;
+   padding: 0px 8px 3px;
 	background-image: linear-gradient(to top,
 	                                  shade(@less_dark_color, 1.25),
 	                                  shade(@less_dark_color, 1.14) 40%,

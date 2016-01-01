@@ -150,6 +150,14 @@ CajaWindow .notebook .rubberband {
 	background-color: alpha(@theme_selected_bg_color, 0.35);
 }
 
+CajaNavigationWindow GtkPaned.horizontal GtkPaned.horizontal .vertical .notebook tab {
+	padding: 3px 0px;
+}
+
+CajaNavigationWindow GtkPaned.horizontal GtkPaned.horizontal .vertical .notebook tab .button.flat {
+    border-image: none;
+}
+
 /* Caja places bar */
 CajaWindow .button.flat {
     border-style: none;
