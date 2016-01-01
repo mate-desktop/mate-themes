@@ -65,26 +65,12 @@ CajaWindow .floating-bar {
 	font: italic;
 }
 
-CajaWindow .notebook {
-	/*border-color: shade(@notebook_border, 1.2);*/
-	border-radius: 0px 0px 5px 5px;
+CajaNavigationWindow GtkPaned.horizontal GtkPaned.horizontal .vertical .notebook .frame {
+    border-style: none;
 }
 
-CajaWindow .notebook tab {
-	border-radius: 0px;
-}
-
-CajaWindow .notebook tab:active {
-	border-radius: 0px 0px 5px 5px;
-}
-
-CajaWindow .notebook tab.top {
-	/* top right-left bottom */
-	padding: 4px 8px 4px;
-}
-
-CajaWindow .notebook tab.top:active {
-	padding: 6px 8px 4px;
+CajaNavigationWindow GtkPaned.horizontal GtkPaned.horizontal .vertical .notebook tab {
+	padding: 3px 3px 0px;
 }
 
 CajaWindow .notebook .view.rubberband,
