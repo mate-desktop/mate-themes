@@ -551,10 +551,11 @@ CajaNavigationWindow CajaNotebook.notebook {
     -GtkNotebook-tab-overlap: 1;
 }
 
-CajaNavigationWindow CajaNotebook.notebook tab.top:active,
-CajaNavigationWindow CajaNotebook.notebook tab.top:active:hover,
-CajaNavigationWindow CajaNotebook.notebook tab.reorderable-page,
-CajaNavigationWindow CajaNotebook.notebook tab.reorderable-page:hover {
+CajaNavigationWindow GtkPaned.horizontal GtkPaned.horizontal .vertical tab.top,
+CajaNavigationWindow GtkPaned.horizontal GtkPaned.horizontal .vertical tab.top:active,
+CajaNavigationWindow GtkPaned.horizontal GtkPaned.horizontal .vertical tab.top:active:hover,
+CajaNavigationWindow GtkPaned.horizontal GtkPaned.horizontal .vertical tab.reorderable-page,
+CajaNavigationWindow GtkPaned.horizontal GtkPaned.horizontal .vertical tab.reorderable-page:hover {
     border-radius: 4px 4px 0px 0px;
     border-width: 1px 1px 0px 1px;
     border-color: @notebook_border;
