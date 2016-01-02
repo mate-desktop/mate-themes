@@ -2288,6 +2288,10 @@ GtkOverlay.osd {
     box-shadow: inset -1px 0 @osd_button_inset;
 }
 
+.osd.toolbar .button:hover {
+    padding: 6px;
+}
+
 .osd.toolbar .button:first-child {
 	border-radius: 5px 0 0 5px;
 	border-width: 1px 0 1px 1px;
