@@ -23,6 +23,22 @@ DConfWindow GtkPaned.horizontal {
     border-width: 0px 1px 0 1px;
 }
 
+DConfKeyView.view .spinbutton .button {
+    border-image: none;
+    border-style: solid;
+    border-width: 0px 0px 0px 3px;
+    border-color: @theme_selected_bg_color;
+    border-radius: 0px;
+    box-shadow: none;
+}
+
+DConfKeyView.view .spinbutton .button:last-child {
+    border-radius: 0 2px 2px 0;
+    border-style: solid;
+    border-width: 0px 0px 0px 3px;
+    border-color: @theme_selected_bg_color;
+}
+
 /********
  * Nemo *
  ********/
