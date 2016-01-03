@@ -789,3 +789,30 @@ DConfWindow GtkPaned.horizontal {
     background-color: @theme_bg_color;
 }
 
+DConfKeyView.view row:selected,
+DConfKeyView.view row:selected:hover  {
+    background-image: -gtk-gradient (linear,
+                                     left top,
+                                     left bottom,
+                                     from (shade(@sidebar_selected_bg, 0.90)),
+                                     color-stop (0.40, shade (@sidebar_selected_bg, 0.98)),
+                                     to (shade(@sidebar_selected_bg, 1.05)));
+    color:  @theme_selected_fg_color;
+}
+
+DConfKeyView.view .entry.spinbutton {
+    padding: 2px 0px 2px 4px;
+    box-shadow: none;
+    border-style: none;
+}
+
+DConfKeyView.view .spinbutton .button,
+DConfKeyView.view .spinbutton .button:hover {
+    border-style: none;
+}
+
+DConfKeyView.view .spinbutton .button:last-child,
+DConfKeyView.view .spinbutton .button:hover:last-child {
+    border-radius: 0 5px 5px 0;
+}
+

@@ -42,6 +42,13 @@ DConfWindow GtkPaned.horizontal {
     background-color: @theme_bg_color;
 }
 
+DConfKeyView.view .spinbutton .button {
+    border-image: none;
+    border-style: solid;
+    border-width:  1px;
+    border-radius: 0px;
+}
+
 /********
  * Nemo *
  ********/
