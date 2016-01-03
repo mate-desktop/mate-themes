@@ -239,6 +239,54 @@ GraniteWidgetsPopOver .entry {
 	background-color: alpha (#000, 0.15);
 }
 
+/****************
+ * Dconf-editor *
+ ****************/
+
+DConfDirView.view {
+    background-color: @sidebar_bg;
+    color: @theme_text_color;
+}
+
+DConfDirView.view row:selected,
+DConfDirView.view row:selected:hover  {
+    color: @theme_selected_fg_color;
+}
+
+DConfDirView.view row:hover {
+    background-color: shade (@theme_selected_bg_color, 1.15);
+    color: shade (@theme_selected_bg_color, 0.35);
+}
+
+/* the small line between sidebar and view */
+GtkApplicationWindow GtkPaned.horizontal {
+    -GtkPaned-handle-size: 3px;
+    border-color: transparent;
+    background-color: @theme_bg_color;
+}
+
+DConfKeyView.view row:selected,
+DConfKeyView.view row:selected:hover  {
+    color:  @theme_selected_fg_color;
+}
+
+DConfKeyView.view .entry.spinbutton {
+    padding: 1px 0px 1px 4px;
+}
+
+DConfKeyView.view .spinbutton .button {
+    border-image: none;
+    border-style: solid;
+    border-width: 0px 0px 0px 1px;
+    border-color: @theme_selected_bg_color;
+    border-radius: 0px;
+    box-shadow: none;
+}
+
+DConfKeyView.view .spinbutton .button:last-child {
+    border-radius: 0 2px 2px 0;
+}
+
 /*****************
  * Ubuntu styles *
  *****************/

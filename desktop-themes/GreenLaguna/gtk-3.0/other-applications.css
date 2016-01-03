@@ -8,6 +8,20 @@ DConfKeyView.view {
     background-color: shade(@base_color, 1.06)
 }
 
+/* the small line between sidebar and view */
+GtkApplicationWindow  GtkPaned.horizontal {
+    -GtkPaned-handle-size: 3px;
+    border-color: transparent;
+    background-color: @theme_bg_color;
+}
+
+DConfKeyView.view .spinbutton .button {
+    border-image: none;
+    border-style: solid;
+    border-width:  1px;
+    border-radius: 0px;
+}
+
 /********
  * Nemo *
  ********/
