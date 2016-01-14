@@ -2,12 +2,6 @@
  * Caja *
  ************/
 
-/* do not flash the desktop with a color during theme switching */
-CajaDesktopWindow FMDesktopIconView .view {
-    background-color: transparent;
-    background-image: none;
-}
-
 .caja-cluebar-label {
     color: @theme_selected_fg_color;
     font: bold;
@@ -33,22 +27,32 @@ CajaWindow .pane-separator {
     border-color: @theme_border_color;
 }
 
-.caja-desktop.caja-canvas-item {
+.caja-canvas-item,
+EelEditableLabel.entry {
+	border-radius: 3px;
+}
+
+EelEditableLabel.entry {
+    text-shadow: none;
+    color: @theme_fg_color;
+}
+
+CajaDesktopWindow.background .caja-canvas-item {
     color: @theme_selected_fg_color;
     text-shadow: 1px 1px black;
 }
 
-.caja-desktop.caja-canvas-item:selected {
+CajaDesktopWindow.background .caja-canvas-item:selected {
     color: @theme_selected_fg_color;
 }
 
-.caja-desktop.caja-canvas-item:backdrop {
+CajaDesktopWindow.background .caja-canvas-item:backdrop {
     background-color: @theme_fg_color;
 }
 
-.caja-desktop.caja-canvas-item:active,
-.caja-desktop.caja-canvas-item:prelight,
-.caja-desktop.caja-canvas-item:selected {
+CajaDesktopWindow.background .caja-canvas-item:active,
+CajaDesktopWindow.background .caja-canvas-item:prelight,
+CajaDesktopWindow.background .caja-canvas-item:selected {
     text-shadow: none;
 }
 

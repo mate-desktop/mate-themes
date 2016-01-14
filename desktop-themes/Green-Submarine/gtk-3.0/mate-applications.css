@@ -2,14 +2,6 @@
  * CAJA File manager *
  *********************/
 
-/**** Desktop View ***/
-
-/* do not flash the desktop with a color during theme switching */
-CajaDesktopWindow FMDesktopIconView .view {
-    background-color: transparent;
-    background-image: none;
-}
-
 /**** Window ***/
 
 /* background of all views */
@@ -573,32 +565,33 @@ CajaNavigationWindow CajaNotebook.notebook tab .button.flat {
     padding: 0px;
     border-radius: 4px;
 }
-/*
+
+EelEditableLabel.entry,
+EelEditableLabel.entry:focused {
+   border-image: none;
+   border-width: 1px;
+   border-color: @theme_fg_color;
+   box-shadow: none;
+   border-radius: 3px;
+   text-shadow: none;
+}
+
 .caja-canvas-item {
-    border-radius: 3px;
+    border-radius: 4px;
 }
 
-*//* desktop mode *//*
-.caja-desktop.caja-canvas-item {
+/* desktop mode */
+CajaDesktopWindow.background .caja-canvas-item {
     color: white;
-    text-shadow: 1px 1px black;
+    text-shadow: 1px 1px alpha (#000000, 0.8);
 }
 
-.caja-desktop.caja-canvas-item:checked {
-    background-image: none;
-    color: @theme_text_color;
-}
-
-.caja-desktop.caja-canvas-item:selected {
-    color: @theme_selected_fg_color;
-}
-
-.caja-desktop.caja-canvas-item:checked,
-.caja-desktop.caja-canvas-item:prelight,
-.caja-desktop.caja-canvas-item:selected {
+CajaDesktopWindow.background .caja-canvas-item:active,
+CajaDesktopWindow.background .caja-canvas-item:prelight,
+CajaDesktopWindow.background .caja-canvas-item:selected {
     text-shadow: none;
 }
-*/
+
 /****************
  * Mate-Panel *
  ****************/
