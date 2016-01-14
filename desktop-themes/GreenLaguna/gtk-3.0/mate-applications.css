@@ -16,12 +16,6 @@ CajaNavigationWindow CajaNotebook .vertical .vertical FMIconView.frame {
     border-radius: 2px;
 }
 
-/* do not flash the desktop with a color during theme switching */
-CajaDesktopWindow FMDesktopIconView .view {
-    background-color: transparent;
-    background-image: none;
-}
-
 /* FIXME, doesn't work */
 .caja-inactive-pane .view {
 	background-color: shade(@theme_bg_color, 0.9);
@@ -200,26 +194,44 @@ CajaWindow .notebook NautilusQueryEditor .toolbar {
 	padding: 5px 7px;
 }
 
-.caja-canvas-item {
-	border-radius: 5px;
+.caja-canvas-item,
+EelEditableLabel.entry {
+	border-radius: 4px;
 }
 
-.caja-desktop.nautilus-canvas-item {
-	color: @theme_bg_color;
-	text-shadow: 1px 1px black;
+/* view */
+CajaNavigationWindow.background .view.caja-canvas-item {
+    color: @theme_fg_color;
+	text-shadow: none;
 }
 
-.caja-desktop.nautilus-canvas-item:active {
+CajaNavigationWindow.background .view.caja-canvas-item:active,
+CajaNavigationWindow.background .view.caja-canvas-item:selected {
+    color: @theme_selected_fg_color;
+}
+
+/**** Desktop Drawn ***/
+CajaDesktopWindow.background FMIconContainer.view EelEditableLabel.entry {
+   border-image: none;
+   text-shadow: none;
+}
+
+CajaDesktopWindow.background .caja-canvas-item {
+	color: @theme_selected_fg_color;
+    text-shadow: 1px 1px alpha (#000000, 0.8);
+}
+
+CajaDesktopWindow.background .caja-canvas-item:active {
 	color: @theme_text_color;
 }
 
-.caja-desktop.nautilus-canvas-item:selected {
+CajaDesktopWindow.background .caja-canvas-item:selected {
 	color: @theme_selected_fg_color;
 }
 
-.caja-desktop.nautilus-canvas-item:active,
-.caja-desktop.nautilus-canvas-item:prelight,
-.caja-desktop.nautilus-canvas-item:selected {
+CajaDesktopWindow.background .caja-canvas-item:active,
+CajaDesktopWindow.background .caja-canvas-item:prelight,
+CajaDesktopWindow.background .caja-canvas-item:selected {
 	text-shadow: none;
 }
 
