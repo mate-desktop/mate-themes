@@ -193,7 +193,6 @@ NautilusWindow .view {
 
 /* the small line between sidebar and view */
 NautilusWindow * {
-	-GtkPaned-handle-size: 2px;
 }
 
 NautilusWindow GtkPaned {
