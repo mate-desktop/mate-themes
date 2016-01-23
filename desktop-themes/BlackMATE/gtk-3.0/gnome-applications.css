@@ -248,39 +248,39 @@ NautilusWindow .toolbar {
 	                                  shade(@less_dark_color, 1.36));
 }
 
-ContactsWindow .scrollbar.slider:prelight,
-ContactsWindow .scrollbar.slider:prelight:active,
-ContactsWindow .scrollbar.slider.vertical:prelight,
-ContactsWindow .scrollbar.slider.vertical:prelight:active,
-FrWindow .scrollbar.slider:prelight,
-FrWindow .scrollbar.slider:prelight:active,
-FrWindow .scrollbar.slider.vertical:prelight,
-FrWindow .scrollbar.slider.vertical:prelight:active,
-NautilusWindow .scrollbar.slider:prelight,
-NautilusWindow .scrollbar.slider:prelight:active,
-NautilusWindow .scrollbar.slider.vertical:prelight,
-NautilusWindow .scrollbar.slider.vertical:prelight:active {
+ContactsWindow .scrollbar.slider:hover,
+ContactsWindow .scrollbar.slider:hover:active,
+ContactsWindow .scrollbar.slider.vertical:hover,
+ContactsWindow .scrollbar.slider.vertical:hover:active,
+FrWindow .scrollbar.slider:hover,
+FrWindow .scrollbar.slider:hover:active,
+FrWindow .scrollbar.slider.vertical:hover,
+FrWindow .scrollbar.slider.vertical:hover:active,
+NautilusWindow .scrollbar.slider:hover,
+NautilusWindow .scrollbar.slider:hover:active,
+NautilusWindow .scrollbar.slider.vertical:hover,
+NautilusWindow .scrollbar.slider.vertical:hover:active {
 	border-color: shade(@scroll_slider_color, 1.1);
 }
 
 ContactsWindow .scrollbar.button,
 ContactsWindow .scrollbar.button.horizontal,
 ContactsWindow .scrollbar.button.vertical,
-ContactsWindow .scrollbar.button:insensitive,
-ContactsWindow .scrollbar.button.horizontal:insensitive,
-ContactsWindow .scrollbar.button.vertical:insensitive,
+ContactsWindow .scrollbar.button:disabled,
+ContactsWindow .scrollbar.button.horizontal:disabled,
+ContactsWindow .scrollbar.button.vertical:disabled,
 FrWindow .scrollbar.button,
 FrWindow .scrollbar.button.horizontal,
 FrWindow .scrollbar.button.vertical,
-FrWindow .scrollbar.button:insensitive,
-FrWindow .scrollbar.button.horizontal:insensitive,
-FrWindow .scrollbar.button.vertical:insensitive,
+FrWindow .scrollbar.button:disabled,
+FrWindow .scrollbar.button.horizontal:disabled,
+FrWindow .scrollbar.button.vertical:disabled,
 NautilusWindow .scrollbar.button,
 NautilusWindow .scrollbar.button.horizontal,
 NautilusWindow .scrollbar.button.vertical,
-NautilusWindow .scrollbar.button:insensitive,
-NautilusWindow .scrollbar.button.horizontal:insensitive,
-NautilusWindow .scrollbar.button.vertical:insensitive {
+NautilusWindow .scrollbar.button:disabled,
+NautilusWindow .scrollbar.button.horizontal:disabled,
+NautilusWindow .scrollbar.button.vertical:disabled {
 	background-image: none;
 }
 
@@ -419,7 +419,7 @@ NautilusDesktopWindow GtkPaned {
 }
 
 .nautilus-desktop.nautilus-canvas-item:active,
-.nautilus-desktop.nautilus-canvas-item:prelight,
+.nautilus-desktop.nautilus-canvas-item:hover,
 .nautilus-desktop.nautilus-canvas-item:selected {
 	text-shadow: none;
 }
@@ -433,4 +433,3 @@ NautilusDesktopWindow GtkPaned {
 .primary-toolbar.toolbar.horizontal RBHeader.horizontal GtkVolumeButton.button.flat:hover {
 	padding: 0px 6px;
 }
-
