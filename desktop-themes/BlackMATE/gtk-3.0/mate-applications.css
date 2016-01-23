@@ -27,7 +27,6 @@ CajaNavigationWindow .toolbar.horizontal.primary-toolbar .vertical {
 /* the small line between sidebar and view */
 /* another unsupported selector and with too short a "widget chain" not to match others
 CajaWindow paned.horizontal {
-    -GtkPaned-handle-size: 3px;
     border-color: transparent;
     background-color: @theme_bg_color;
 }
