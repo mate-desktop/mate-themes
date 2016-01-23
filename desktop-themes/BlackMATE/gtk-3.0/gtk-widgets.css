@@ -997,6 +997,11 @@ treeview .view {
 	color: @theme_fg_color;
 }
 
+/*force separators to appear, stop jumping */
+treeview.view.separator {
+    min-height: 2px; 
+}
+
 /* row as a separator */
 treeview.view.separator,
 treeview.view.separator:hover {
