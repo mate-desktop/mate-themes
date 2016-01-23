@@ -51,11 +51,6 @@ window>*>box>box>box>scrolledwindow>.view .entry:focus {
 }
 
 
-/* the small line between sidebar and view */
-NemoWindow * {
-	-GtkPaned-handle-size: 2px;
-}
-
 NemoWindow GtkPaned {
 	background-color: @less_dark_color;
 }
@@ -294,7 +289,6 @@ DConfWindow DConfKeyView.view {
 
 /* the small line between sidebar and view */
 DConfWindow GtkPaned.horizontal {
-    -GtkPaned-handle-size: 3px;
     border-color: transparent;
     background-color: @theme_bg_color;
 }
