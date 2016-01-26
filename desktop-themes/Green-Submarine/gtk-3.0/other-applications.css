@@ -1,5 +1,21 @@
 /* nemo */
 
+
+/* background of all views */
+/*Caja icon views-these are widgets w/o css nodes or valid names, .view is applied only to */
+
+window.background>grid>paned>box>paned>box>notebook>stack>box>*>scrolledwindow{
+    background-color: shade (@base_color, 1.0);
+    color: @theme_fg_color;
+}
+
+/**** NemoSidebar ***/
+
+window.background>grid>paned>box>scrolledwindow>viewport.frame,
+window.background>grid>paned>box>scrolledwindow>viewport treeview.view{
+	background-color: shade(@theme_bg_color, 1.08);
+}
+
 NemoSearchBar.info {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
@@ -129,7 +145,7 @@ NemoTrashBar .button *:checked:hover {
     text-shadow: 0px 1px @theme_shadow_color;
 }
 
-NemoTrashBar .button:insensitive {
+NemoTrashBar .button:disabled {
 /* .button:active:hover */
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
@@ -143,7 +159,7 @@ NemoTrashBar .button:insensitive {
                 inset  0px -1px shade(@nautilus_cluebar_color, 0.78);
 }
 
-NemoTrashBar .button *:insensitive {
+NemoTrashBar .button *:disabled {
     color: mix(@nautilus_cluebar_color, @theme_fg_color, 0.50);
     text-shadow: none;
 }
@@ -495,7 +511,7 @@ NemoWindow .toolbar .button:checked:hover {
 }
 
 NemoWindow .notebook {
-    -GtkNotebook-initial-gap: 0;
+    /*-GtkNotebook-initial-gap: 0; deprecated */
     background-color: @theme_base_color;
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
@@ -580,7 +596,7 @@ NemoWindow .notebook tab .button GtkImage {
     border-color: transparent;
     border-width: 1px;
     padding: 0;
-    icon-shadow: 1px 1px @theme_shadow_color;
+    -gtk-icon-shadow: 1px 1px @theme_shadow_color;
 }
 
 NemoWindow .notebook tab .button GtkImage:hover {
@@ -594,7 +610,7 @@ NemoWindow .notebook tab .button GtkImage:checked,
 NemoWindow .notebook tab .button GtkImage:active:hover {
     background-color: alpha(black, 0.15); 
     color: shade(@theme_fg_color, 1.00);
-    icon-shadow: 0px 1px @theme_shadow_color;
+    -gtk-icon-shadow: 0px 1px @theme_shadow_color;
     border-color: alpha(black, 0.27) 
                   alpha(black, 0.13) 
                   alpha(black, 0.13) 
@@ -606,7 +622,7 @@ NemoWindow .notebook tab .button GtkImage:active:hover {
 }
 
 /* desktop mode */
-.nemo-desktop.nemo-canvas-item {
+window>*>box>box>box>scrolledwindow>.view .nemo-canvas-item {
     color: white;
     text-shadow: 1px 1px black;
 }
@@ -623,7 +639,7 @@ NemoWindow .notebook tab .button GtkImage:active:hover {
 
 .nemo-desktop.nemo-canvas-item:active,
 .nemo-desktop.nemo-canvas-item:checked,
-.nemo-desktop.nemo-canvas-item:prelight,
+.nemo-desktop.nemo-canvas-item:hover,
 .nemo-desktop.nemo-canvas-item:selected,
 .nemo-desktop.nemo-canvas-item:checked {
     text-shadow: none;
@@ -815,4 +831,3 @@ DConfKeyView.view .spinbutton .button:last-child,
 DConfKeyView.view .spinbutton .button:hover:last-child {
     border-radius: 0 5px 5px 0;
 }
-
