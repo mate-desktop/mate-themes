@@ -7,8 +7,8 @@
 * {
     padding: 0;
     background-clip: padding-box;
-    -GtkButton-default-border: 0;
-/*    -GtkButton-child-displacement-x: 1;
+    /*-GtkButton-default-border: 0;
+    -GtkButton-child-displacement-x: 1;
     -GtkButton-child-displacement-y: 1;*/
     -GtkButton-image-spacing: 0;
     -GtkButton-interior-focus: true;
@@ -767,7 +767,7 @@ button {
     transition: all 400ms ease-out;
     -GtkButton-image-spacing: 4;
     -GtkButton-interior-focus: true;
-    -GtkButton-default-border: 0;
+   /* -GtkButton-default-border: 0;*/
     -GtkButton-inner-border: 3;
     -GtkArrow-arrow-scaling: 0.5;
     background-image: -gtk-gradient (linear,
