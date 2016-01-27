@@ -2,12 +2,6 @@
  * Caja *
  ************/
 
-/* do not flash the desktop with a color during theme switching */
-CajaDesktopWindow FMDesktopIconView .view {
-    background-color: transparent;
-    background-image: none;
-}
-
 /* caja sidebar */
 CajaWindow FMTreeView .view,
 CajaWindow CajaNotesViewer .view,
@@ -39,21 +33,41 @@ CajaWindow .primary-toolbar.toolbar.horizontal GtkComboBox .button {
     padding: 4px 4px;
 }
 
-.caja-desktop.caja-canvas-item {
+.caja-canvas-item,
+EelEditableLabel.entry {
+	border-radius: 3px;
+}
+
+EelEditableLabel.entry,
+EelEditableLabel.entry:focus {
+   border-image: none;
+   border-width: 1px;
+   border-color: @theme_fg_color;
+   box-shadow: none;
+   border-radius: 3px;
+   text-shadow: none;
+}
+
+/* desktop */
+CajaDesktopWindow.background .caja-canvas-item {
 	color: @theme_base_color;
 	text-shadow: 1px 1px alpha (@theme_fg_color, 0.8);
 }
 
-.caja-desktop.caja-canvas-item:active,
-.caja-desktop.caja-canvas-item:prelight,
-.caja-desktop.caja-canvas-item:selected {
+CajaDesktopWindow.background .caja-canvas-item:active,
+CajaDesktopWindow.background .caja-canvas-item:prelight,
+CajaDesktopWindow.background .caja-canvas-item:selected {
 	text-shadow: none;
+    color: @theme_fg_color;
 }
 
+/* view */
+CajaNavigationWindow.background .view.caja-canvas-item {
+    color: @theme_fg_color;
+}
 
-.caja-desktop .entry {
-	background-image: none;
-	border-image: none;
+CajaNavigationWindow.background .view.caja-canvas-item:selected {
+    color: @theme_fg_color;
 }
 
 /***************

@@ -76,7 +76,7 @@ UnityPanelWidget,
 .unity-panel.menuitem,
 .unity-panel .menuitem {
     border-width: 1px 1px 0 1px;
-    icon-shadow: 0 -1px #000000;
+    -gtk-icon-shadow: 0 -1px #000000;
 }
 
 .unity-panel.menubar:backdrop,

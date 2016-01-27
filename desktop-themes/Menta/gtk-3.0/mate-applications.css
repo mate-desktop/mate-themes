@@ -2,12 +2,6 @@
  * CAJA File manager *
  *********************/
 
-/* do not flash the desktop with a color during theme switching */
-CajaDesktopWindow FMDesktopIconView .view {
-    background-color: transparent;
-    background-image: none;
-}
-
 /* for breadcrumbs path bar */
 
 .caja-pathbar-button,
@@ -241,27 +235,40 @@ CajaWindow CajaHistorySidebar .vertical.scrollbar.overlay-indicator {
 	-GtkRange-slider-width: 11;
 }
 
-/* desktop mode */
-.caja-desktop.caja-canvas-item {
-    color: @theme_bg_color;
-    text-shadow: 1px 1px alpha (#000000, 0.8);
+.caja-canvas-item {
+    border-radius: 3px;
 }
 
-.caja-desktop.caja-canvas-item:active {
-    background-image: none;
-    background-color: alpha (@theme_bg_color, 0.84);
+/* view */
+CajaNavigationWindow.background .view.caja-canvas-item {
     color: @theme_fg_color;
 }
 
-.caja-desktop.caja-canvas-item:selected {
-    background-image: none;
-    background-color: alpha (@theme_selected_bg_color, 0.84);
+CajaNavigationWindow.background .view.caja-canvas-item:active,
+CajaNavigationWindow.background .view.caja-canvas-item:selected {
     color: @theme_selected_fg_color;
 }
 
-.caja-desktop.caja-canvas-item:active,
-.caja-desktop.caja-canvas-item:prelight,
-.caja-desktop.caja-canvas-item:selected {
+/* desktop mode */
+CajaDesktopWindow.background FMIconContainer.view EelEditableLabel.entry {
+   border-image: none;
+   border-width: 1px;
+   text-shadow: none;
+}
+
+CajaDesktopWindow.background .caja-canvas-item {
+    color: @theme_selected_fg_color;
+    text-shadow: 1px 1px alpha (#000000, 0.8);
+}
+
+CajaDesktopWindow.background .caja-canvas-item:selected {
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+}
+
+CajaDesktopWindow.background .caja-canvas-item:active,
+CajaDesktopWindow.background .caja-canvas-item:prelight,
+CajaDesktopWindow.background .caja-canvas-item:selected {
     text-shadow: none;
 }
 
