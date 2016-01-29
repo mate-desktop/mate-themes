@@ -2,30 +2,22 @@
  * CAJA File manager *
  *********************/
 
-/**** View ***/
 
-/* background of all views */
-CajaNavigationWindow .view {
-    background-color: @less_dark_color;
+/**** Caja Navigation Window ***/
+
+window.background>*>paned>box>paned>box>notebook>stack>box>box>scrolledwindow.frame{ 							
+	background-color: @less_dark_color;
 	color: @theme_fg_color;
     border-color: transparent;
+	border-style: none;
 }
 
-/* do not flash the desktop with a color during theme switching */
-CajaDesktopWindow FMDesktopIconView .view {
-    background-color: transparent;
-    background-image: none;
-}
-
+/* selector not supported, not sure how to fix this */
+/*
 .caja-inactive-pane .view {
 	background-color: shade(@less_dark_color, 1.3);
 }
-
-/**** Window ***/
-
-CajaNavigationWindow .horizontal .vertical {
-    background-color: @theme_bg_color;
-}
+*/
 
 /* don't override gtktooglebutton */
 CajaNavigationWindow .toolbar.horizontal.primary-toolbar .vertical {
@@ -33,35 +25,21 @@ CajaNavigationWindow .toolbar.horizontal.primary-toolbar .vertical {
 }
 
 /* the small line between sidebar and view */
-CajaWindow GtkPaned.horizontal {
-    -GtkPaned-handle-size: 3px;
+/* another unsupported selector and with too short a "widget chain" not to match others
+CajaWindow paned.horizontal {
     border-color: transparent;
     background-color: @theme_bg_color;
 }
+*/
 
-CajaWindow GtkScrolledWindow.frame {
-	border-style: none;
-}
-
-/* Caja pathbar */
-CajaNavigationWindow .horizontal .vertical .horizontal .vertical .horizontal CajaPathBar .button ,
-CajaNavigationWindow .horizontal .vertical .horizontal .vertical .horizontal .button.image-button {
-    padding: 5px;
-}
-
-/* View toogle button */
-CajaNavigationWindow .toolbar.horizontal.primary-toolbar .vertical .button {
-        padding: 6px;
-}
-
-CajaWindow .button {
+window.background>*>paned>box>box>button {
 	border-image: url("assets/button-border-dark1.svg") 3 / 3px stretch;
 	background-image: linear-gradient(to bottom,
 	                                  shade(@less_dark_color, 1.3),
 	                                  shade(@less_dark_color, 0.4));
 }
 
-CajaWindow .button:hover {
+window.background>*>paned>box>box>button:hover {
 	background-image: -gtk-gradient (radial,
 					0.5 -2.0, 2.0,
 					0.5 -2.0, 3.0,
@@ -72,10 +50,10 @@ CajaWindow .button:hover {
 
 }
 
-CajaWindow .button:checked,
-CajaWindow .button:hover:checked,
-CajaWindow .button:active,
-CajaWindow .button:hover:active {
+window.background>*>paned>box>box>button:checked,
+window.background>*>paned>box>box>button:hover:checked,
+window.background>*>paned>box>box>button:active,
+window.background>*>paned>box>box>button:hover:active {
 	background-image: linear-gradient(to bottom,
 	                                  shade(@button_gradient_color_b, 0.7),
 	                                  @theme_bg_color 40%,
@@ -83,8 +61,8 @@ CajaWindow .button:hover:active {
 	border-image: url("assets/button-active-border-dark1.svg") 3 / 3px stretch;
 }
 
-CajaWindow column-header .button,
-CajaWindow column-header .button:hover {
+window.background>*>paned>box>paned>box>notebook>stack>box>box>scrolledwindow>*>treeview.view header button,
+window.background>*>paned>box>paned>box>notebook>stack>box>box>scrolledwindow>*>treeview.view header button:hover {
 	border-image: none;
 	border-width: 0px 0px 1px 1px;
 	border-radius: 0;
@@ -92,52 +70,53 @@ CajaWindow column-header .button:hover {
 	border-color: @less_dark_color;
 }
 
-CajaWindow .toolbar {
-	/*border-radius: 3px 0px 0px 3px;*/
+/* Disable this is it as the defaults seem to march it and the widget chain is too short not to match something else */
+/*
+window.background>*>toolbar {
 	background-image: linear-gradient(to bottom,
 	                                  shade(@less_dark_color, 0.4),
 	                                  shade(@less_dark_color, 1.36));
 }
 
-CajaToolbar .toolbar {
+window.background>*>toolbar {
 	border-radius: 0px;
 }
-
-CajaWindow .scrollbar.slider:prelight,
-CajaWindow .scrollbar.slider:prelight:active,
-CajaWindow .scrollbar.slider.vertical:prelight,
-CajaWindow .scrollbar.slider.vertical:prelight:active {
+*/
+CajaWindow .scrollbar.slider:hover,
+CajaWindow .scrollbar.slider:hover:active,
+CajaWindow .scrollbar.slider.vertical:hover,
+CajaWindow .scrollbar.slider.vertical:hover:active {
 	border-color: shade(@scroll_slider_color, 1.1);
 }
 
 CajaWindow .scrollbar.button,
 CajaWindow .scrollbar.button.horizontal,
 CajaWindow .scrollbar.button.vertical,
-CajaWindow .scrollbar.button:insensitive,
-CajaWindow .scrollbar.button.horizontal:insensitive,
-CajaWindow .scrollbar.button.vertical:insensitive {
+CajaWindow .scrollbar.button:disabled,
+CajaWindow .scrollbar.button.horizontal:disabled,
+CajaWindow .scrollbar.button.vertical:disabled {
 	background-image: none;
 }
 
-CajaWindow GtkStatusbar,
-CajaWindow .floating-bar {
+window.background>*>paned>box>statusbar>frame>box>label/*,
+CajaWindow .floating-bar*/ {
 	font: italic;
 }
-
+/*
 CajaWindow .floating-bar.right,
 CajaWindow .floating-bar.left {
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
 }
-
+*/
 /**** Notebook ***/
 
-.caja-inactive-pane .notebook {
+.caja-inactive-pane notebook {
 	background-color: shade(@less_dark_color, 1.3);
 	border-color: @less_dark_color;
 }
 
-.caja-inactive-pane .notebook tab.top:active {
+.caja-inactive-pane notebook header.top tab:active {
 	background-image: linear-gradient(to bottom,
 	                                  shade(@less_dark_color, 1.05),
 	                                  shade(@less_dark_color, 1.16) 40%,
@@ -145,88 +124,55 @@ CajaWindow .floating-bar.left {
 	                                  shade(@less_dark_color, 1.3));
 }
 
-CajaWindow .notebook .view.rubberband,
-CajaWindow .notebook .rubberband {
-	background-color: alpha(@theme_selected_bg_color, 0.35);
-}
 
-CajaNavigationWindow GtkPaned.horizontal GtkPaned.horizontal .vertical .notebook tab {
+window.background>*>paned>box>paned.horizontal .vertical notebook tab {
 	padding: 3px 0px;
 }
 
-CajaNavigationWindow GtkPaned.horizontal GtkPaned.horizontal .vertical .notebook tab .button.flat {
+window.background>*>paned>box>paned.horizontal .vertical .notebook tab .button.flat {
     border-image: none;
 }
 
 /* Caja places bar */
-CajaWindow .button.flat {
+/* Disable this as it does not seem to change the default and the widget chain is dangerously short 
+window.background>*>paned>box>paned>box>box>button.flat {
     border-style: none;
     border-image: url("assets/primary-toolbar-button-active-border-dark.svg") 3 / 3px stretch;
     border-radius: 3px;
     padding: 2px 5px;
 }
 
-CajaWindow .button.flat:hover {
+window.background>*>paned>box>paned>box>box>button.flat:hover {
     border-image: none;
     border-radius: 3px;
     padding: 2px 5px;
 }
-
+*/
 /**** Sidebar ***/
 
 /* caja sidebar */
-CajaWindow FMTreeView .view,
-CajaWindow CajaNotesViewer .view,
-CajaWindow CajaPlacesSidebar .view,
-CajaWindow CajaHistorySidebar .view,
-CajaWindow CajaEmblemSidebar .frame,
-CajaWindow CajaInformationPanel .vertical {
-    background-color: shade (@theme_bg_color, 1.08);
+window.background*>paned>box>notebook>stack>scrolledwindow.frame treeview.view {
+    background-color: shade(@theme_bg_color, 1.08);
 }
 
-CajaWindow .sidebar .frame {
-	border-width: 0px;
+window.background*>paned>box>notebook>stack>scrolledwindow{
+		border-width: 0px;
 }
 
 /* moved eject button to left better for overlay scrollbars */
-CajaWindow CajaPlacesSidebar .view row {
+window.background*>paned>box>notebook>stack>scrolledwindow.frame treeview.view {
     padding: 0px 4px 0px 0px;
+	border-width: 0px;
 }
 
-CajaWindow .sidebar .scrollbar.button {
+window.background*>paned>box>notebook>stack>scrolledwindow scrollbar button {
 	color: transparent;
 }
 
-CajaWindow .sidebar .scrollbar.button:hover {
+window.background*>paned>box>notebook>stack>scrolledwindow scrollbar button:hover {
 	color: @theme_fg_color;
 }
 
-CajaPlacesSidebar .cell,
-CajaPlacesSidebar *.cell {
-	color: @theme_text_color;
-}
-
-CajaPlacesSidebar .cell:hover,
-CajaPlacesSidebar *.cell:hover {
-	color: @theme_text_color;
-}
-
-CajaPlacesSidebar .cell:selected,
-CajaPlacesSidebar *.cell:selected {
-	background-image: linear-gradient(to bottom,
-	                                  shade(@less_dark_color, 1.5),
-	                                  shade(@less_dark_color, 0.6));
-	color: @theme_text_color;
-	border-radius: 2px;
-}
-
-CajaPlacesSidebar .cell:selected:focus,
-CajaPlacesSidebar *.cell:selected:focus {
-	color: @theme_text_color;
-	background-image: linear-gradient(to top,
-					 shade(@less_dark_color, 1.5),
-					 shade(@less_dark_color, 0.6));
-}
 
 /**** Infos ***/
 
@@ -269,57 +215,50 @@ CajaQueryEditor .toolbar .entry:focus {
 	            inset 0 -1px alpha(@entry_shadow, 0.06);
 }
 
-.caja-canvas-item {
-	border-radius: 5px;
+.caja-canvas-item,
+EelEditableLabel.entry {
+	border-radius: 4px;
+}
+
+/* view */
+window.background>*>paned>box>paned>box>notebook>stack>box>box>scrolledwindow.frame .view .caja-canvas-item {
+    color: @theme_fg_color;
+}
+
+window.background>*>paned>box>paned>box>notebook>stack>box>box>scrolledwindow.frame .view .caja-canvas-item:active,
+window.background>*>paned>box>paned>box>notebook>stack>box>box>scrolledwindow.frame.view .caja-canvas-item:selected {
+    color: @theme_selected_fg_color;
 }
 
 /**** Desktop Drawn ***/
 
-.caja-desktop.caja-canvas-item {
+window>*>box>box>box>scrolledwindow>.view .caja-canvas-item {
 	color: @theme_fg_color;
-	text-shadow: none;
+    text-shadow: 1px 1px alpha (#000000, 0.8);
 }
 
-.caja-desktop.caja-canvas-item:active {
+window>*>box>box>box>scrolledwindow>.view .caja-canvas-item:active {
 	color: @theme_text_color;
 }
 
-.caja-desktop.caja-canvas-item:selected {
+window>*>box>box>box>scrolledwindow>.view .caja-canvas-item:selected {
 	color: @theme_selected_fg_color;
 }
 
-.caja-desktop.caja-canvas-item:active,
-.caja-desktop.caja-canvas-item:prelight,
-.caja-desktop.caja-canvas-item:selected {
+window>*>box>box>box>scrolledwindow>.view .caja-canvas-item:active,
+window>*>box>box>box>scrolledwindow>.view .caja-canvas-item:hover,
+window>*>box>box>box>scrolledwindow>.view .caja-canvas-item:selected {
 	text-shadow: none;
 }
+
 
 /****************
  * Mate-Panel   *
  ****************/
 
-/* first make all transparent */
-PanelToplevel.background.horizontal {
-    background-color: transparent;
-}
-
-WnckSelector.menubar,
-PanelMenuBar.menubar,
-WnckSelector GtkMenuItem,
-PanelMenuBar GtkMenuItem,
-MatePanelApplet GtkToggleButton.button {
-    border-image: none;
-    border-color: transparent;
-    background-image: none;
-    background-color: transparent;
-    box-shadow: none;
-}
 
 /* let's started */
 /* the panel bar itself */
-PanelToplevel.background.horizontal {
-    background-color: @theme_bg_color;
-}
 
 .mate-panel-menu-bar {
     background-color: @theme_bg_color;
@@ -336,8 +275,19 @@ PanelToplevel.background.horizontal {
     box-shadow: none;
 }
 
+
+.mate-panel-menu-bar menubar,
+.mate-panel-menu-bar menubar menuitem,
+.mate-panel-menu-bar togglebutton {
+    border-image: none;
+    border-color: transparent;
+    background-image: none;
+    background-color: transparent;
+    box-shadow: none;
+}
+
 /* panel grip */
-PanelToplevel.background {
+.mate-panel-menu-bar.background {
     border-radius: 3px;
 /* enable for making borders visible */
 /*    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
@@ -347,7 +297,7 @@ PanelToplevel.background {
 }
 
 /* hide buttons */
-PanelToplevel.background .button {
+.mate-panel-menu-bar button {
     background: transparent;
     border-image: none;
     border-radius: 3px;
@@ -356,7 +306,7 @@ PanelToplevel.background .button {
     box-shadow: none;
 }
 
-PanelToplevel.background .button:hover {
+.mate-panel-menu-bar button:hover {
     border-style: solid;
     border-width: 0px;
     border-color: shade(@button_border, 1.1);
@@ -367,7 +317,7 @@ PanelToplevel.background .button:hover {
                                       shade(@less_dark_color, 0.4));
 }
 
-PanelToplevel.background .button:hover:active {
+.mate-panel-menu-bar button:hover:active {
     border-style: solid;
     border-width: 0px;
     background-image: linear-gradient(to bottom,
@@ -376,6 +326,13 @@ PanelToplevel.background .button:hover:active {
                                       shade(@button_gradient_color_a, 1.5));
 }
 
+/*sliders now need a background*/
+
+.mate-panel-applet-slider frame{
+	background-color:@theme_bg_color;
+}
+
+/*
 MatePanelApplet {
     border-width: 0;
 }
@@ -389,7 +346,7 @@ PanelSeparator {
     color: shade (@theme_fg_color, 0.45);
     text-shadow: none;
 }
-
+*/
 /* dictionary applet */
 GdictApplet .entry,
 GdictApplet .entry:focus {
@@ -410,43 +367,33 @@ MatePanelAppletFrameDBus {
 }
 
 /* set normal menubar button */
-PanelMenuBar.menubar .menuitem {
+.mate-panel-menu-bar menuitem {
     transition: all 300ms ease-out;
 }
 
 /* set selected menubar button */
-PanelMenuBar.menubar .menuitem:hover {
-}
-
-/* set normal menubar menuitem */
-PanelMenuBar.menubar .menu .menuitem {
-    padding: 6px;
+.mate-panel-menu-bar menuitem:hover {
 }
 
 /* set selected menubar menuitem */
-PanelMenuBar.menubar .menu .menuitem:checked:hover,
-PanelMenuBar.menubar .menu .menuitem:active:hover,
-PanelMenuBar.menubar .menu .menuitem:hover {
+.mate-panel-menu-bar menu menuitem:checked:hover,
+.mate-panel-menu-bar menu menuitem:active:hover,
+.mate-panel-menu-bar menu menuitem:hover {
 }
 
 /* Mate menu button normal */
 /* makes the arrow visible, nothing more works */
-PanelMenuButton.button {
+.mate-panel-menu-bar menu menuitem button {
     background-image: none;
     background-color: transparent;
     color: shade (@menu_fg_color, 1.00);
 }
 
-/* Mate menu menuitem */
-PanelMenuButton .menu .menuitem,
-PanelMenuButton .menu .menuitem:hover {
-    padding: 6px;
-}
 
 /* desktop-applet, clockapplet, drivemount, character-map,
 dictionary */
-MatePanelApplet .button,
-MatePanelApplet .button.flat {
+.mate-panel-menu-bar .button,
+.mate-panel-menu-bar .button.flat {
     transition: all 400ms ease-out;
     border-radius: 1px;
     padding: 2px;
@@ -461,10 +408,10 @@ MatePanelApplet .button.flat {
     background-image: none;
 }
 
-MatePanelApplet .button:checked:hover,
-MatePanelApplet .button:checked,
-MatePanelApplet .button:active:hover,
-MatePanelApplet .button:active {
+.mate-panel-menu-bar .button:checked:hover,
+.mate-panel-menu-bar .button:checked,
+.mate-panel-menu-bar .button:active:hover,
+.mate-panel-menu-bar .button:active {
     border-radius: 3px;
     color: @theme_fg_color;
     border-style: solid;
@@ -474,8 +421,8 @@ MatePanelApplet .button:active {
                                       shade(@button_gradient_color_a, 1.5));
 }
 
-MatePanelApplet .button:hover,
-MatePanelApplet .button.flat:hover {
+.mate-panel-menu-bar .button:hover,
+.mate-panel-menu-bar .button.flat:hover {
     border-radius: 3px;
     border-image: none;
     border-style: solid;
@@ -490,12 +437,13 @@ MatePanelApplet .button.flat:hover {
 }
 
 /*Wncklist */
-WnckTasklist .button {
+.mate-panel-menu-bar button {
     transition: all 400ms ease-out;
     padding: 2px;
     border-radius: 3px;
     border-width: 1px;
     border-style: solid;
+	border-color:transparent;
     text-shadow: none;
     color: @theme_fg_color;
     background-image: -gtk-gradient (radial,
@@ -507,10 +455,10 @@ WnckTasklist .button {
                       to (shade(@button_gradient_color_b, 0.7)));
 }
 
-WnckTasklist .button:checked:hover,
-WnckTasklist .button:checked,
-WnckTasklist .button:active:hover,
-WnckTasklist .button:active {
+.mate-panel-menu-bar button:checked:hover,
+.mate-panel-menu-bar button:checked,
+.mate-panel-menu-bar button:active:hover,
+.mate-panel-menu-bar button:active {
     border-radius: 3px;
     color: @theme_fg_color;
     border-style: solid;
@@ -520,7 +468,7 @@ WnckTasklist .button:active {
                                       shade(@button_gradient_color_a, 1.5));
 }
 
-WnckTasklist .button:hover {
+.mate-panel-menu-bar button .button:hover {
     border-radius: 3px;
     border-image: none;
     border-style: solid;
@@ -533,7 +481,7 @@ WnckTasklist .button:hover {
 }
 
 /* set normal button WnckSelector */
-WnckSelector.menubar .menuitem {
+.mate-panel-menu-bar button menubar menuitem {
     border-radius: 3px;
     color: @theme_fg_color;
     border-style: solid;
@@ -541,7 +489,7 @@ WnckSelector.menubar .menuitem {
 }
 
 /* set selected button WnckSelector */
-WnckSelector.menubar .menuitem:hover {
+.mate-panel-menu-bar button menubar menuitem:hover {
     color: @theme_fg_color;
     border-style: solid;
     background-image: linear-gradient(to bottom,
@@ -551,7 +499,7 @@ WnckSelector.menubar .menuitem:hover {
 }
 
 /* set WnckSelector menuitem */
-WnckSelector.menubar .menu .menuitem {
+.mate-panel-menu-bar button menubar menuitem {
     background-image:  none;
     color: @theme_text_color;
     border-style: none;
@@ -560,7 +508,7 @@ WnckSelector.menubar .menu .menuitem {
 }
 
 /* set WnckSelector selected menuitem */
-WnckSelector.menubar .menu .menuitem:hover {
+.mate-panel-menu-bar button menubar menuitem:hover {
     border-image: none;
     color: @theme_fg_color;
     background-image: linear-gradient(to bottom,
@@ -568,13 +516,13 @@ WnckSelector.menubar .menu .menuitem:hover {
                                       shade(@theme_selected_bg_color, 0.5));
 }
 
-ClockBox,
+#clock-applet-button,
 .mate-panel-menu-bar.menubar,
 MatePanelApplet > GtkMenuBar.menubar {
     font: normal;
 }
-
-WnckPager {
+/*WnckPager is unnamed in GTK inspector so try this*/
+#PanelPlug>#PanelApplet * {
     background-image: none;
     border-color: transparent;
     background-color: transparent;
@@ -582,14 +530,14 @@ WnckPager {
 }
 
 /* selected WnckPager */
-WnckPager:selected {
+#PanelPlug>#PanelApplet *:selected {
     background-image: linear-gradient(to bottom,
                                       @theme_selected_bg_color,
                                       shade (@theme_selected_bg_color, 0.36));
 }
 
 /* prelight of WnckPager */
-WnckPager:hover {
+#PanelPlug>#PanelApplet *:hover {
     background-image: linear-gradient(to bottom,
                                       @theme_bg_color,
                                       shade (@theme_selected_bg_color, 0.86));
@@ -617,7 +565,7 @@ MatePanelApplet .horizontal .vertical .frame {
     border-style: none;
     border-radius: 5px;
 }
-
+/*These seem to work, tray did not come up in GtkInspector so don't know why*/
 /* no background for icon-padding area */
 GtkTrayIcon.background {
     background-color: transparent;
@@ -663,6 +611,11 @@ NaTrayApplet {
  * Pluma *
  *********/
 
+#pluma-status-combo-button * {
+	padding : 0px;
+}
+
+
 /* text view */
 /* remove general frame color to avoid double edges */
 PlumaWindow.background .vertical .horizontal .vertical .notebook .vertical .frame {
@@ -698,14 +651,14 @@ PlumaWindow .notebook tab .button.flat:hover {
     background-image: none;
     box-shadow: inset 0 1px rgba(255,255,255,0), 0 1px rgba(255,255,255,0);
     text-shadow: none;
-    icon-shadow: none;
+    -gtk-icon-shadow: none;
     border-image: none;
 }
 
 PlumaCloseButton.button.flat,
 PlumaCloseButton.button.flat:hover,
-PlumaCloseButton:prelight.button.flat,
-PlumaCloseButton:prelight.button.flat:hover {
+PlumaCloseButton:hover.button.flat,
+PlumaCloseButton:hover.button.flat:hover {
     padding: 0px;
 }
 
@@ -840,7 +793,6 @@ EomThumbNav .button.flat:hover:last-child {
                                       shade(@button_gradient_color_a, 0.8));
 }
 
-EomThumbNav .button.flat:insensitive {
+EomThumbNav .button.flat:disabled {
     background-image: none;
 }
-
