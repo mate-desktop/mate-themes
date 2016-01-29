@@ -409,8 +409,8 @@ NautilusTrashBar .button *:hover:checked {
     text-shadow: 0px 1px @theme_shadow_color;
 }
 
-.question .button:insensitive,
-NautilusTrashBar .button:insensitive {
+.question .button:disabled,
+NautilusTrashBar .button:disabled {
 /* .button:hover:active */
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
@@ -424,8 +424,8 @@ NautilusTrashBar .button:insensitive {
                 inset  0px -1px shade(@nautilus_cluebar_color, 0.78);
 }
 
-.question .button *:insensitive,
-NautilusTrashBar .button *:insensitive {
+.question .button *:disabled,
+NautilusTrashBar .button *:disabled {
     color: mix(@nautilus_cluebar_color, @theme_fg_color, 0.50);
     text-shadow: none;
 }
@@ -482,7 +482,7 @@ NautilusView.frame {
 }
 
 NautilusWindow .notebook {
-    -GtkNotebook-initial-gap: 0;
+    /*-GtkNotebook-initial-gap: 0;    deprecated*/
     background-color: @theme_base_color;
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
@@ -561,7 +561,7 @@ NautilusWindow .notebook tab .button GtkImage {
     border-color: transparent;
     border-width: 1px;
     padding: 0;
-    icon-shadow: 1px 1px @theme_shadow_color;
+    -gtk-icon-shadow: 1px 1px @theme_shadow_color;
 }
 
 NautilusWindow .notebook tab .button GtkImage:hover {
@@ -575,7 +575,7 @@ NautilusWindow .notebook tab  .button GtkImage:checked,
 NautilusWindow .notebook tab  .button GtkImage:checked:hover {
     background-color: alpha(black, 0.15); 
     color: shade(@theme_fg_color, 1.00);
-    icon-shadow: 0px 1px @theme_shadow_color;
+    -gtk-icon-shadow: 0px 1px @theme_shadow_color;
     border-color: alpha(black, 0.27) 
                   alpha(black, 0.13) 
                   alpha(black, 0.13) 
@@ -603,7 +603,7 @@ NautilusWindow .notebook tab  .button GtkImage:checked:hover {
 }
 
 .nautilus-desktop.nautilus-canvas-item:active,
-.nautilus-desktop.nautilus-canvas-item:prelight,
+.nautilus-desktop.nautilus-canvas-item:hover,
 .nautilus-desktop.nautilus-canvas-item:selected {
     text-shadow: none;
 }
@@ -712,4 +712,3 @@ Gjs_WeatherWidget.frame.flat .frame.flat.weather-few-clouds-night GtkStack GtkSc
 Gjs_WeatherWidget.frame.flat .frame.flat.weather-overcast GtkStack GtkScrolledWindow .frame {
     color: @osd_button_fg_active;
 }
-
