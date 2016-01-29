@@ -74,6 +74,16 @@ NemoPathBar:dir(ltr).raised.linked .button.text-button:checked:hover:active:only
 	border-radius: 4px;
 }
 
+/* New */
+toolbar.primary-toolbar.horizontal NemoPathBar.raised.linked button:first-child GtkArrow {
+      -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+}
+
+toolbar.primary-toolbar.horizontal NemoPathBar.raised.linked button:last-child GtkArrow {
+      -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+
+
 /* For Places Sidebar diskfull indicators */
 
 NemoPlacesTreeView {
@@ -395,8 +405,8 @@ OsScrollbar:active {
 	background-color: shade (@theme_bg_color, 0.6);
 }
 
-OsThumb:insensitive,
-OsScrollbar:insensitive {
+OsThumb:disabled,
+OsScrollbar:disabled {
 	background-color: shade (@theme_bg_color, 0.85);
 }
 
