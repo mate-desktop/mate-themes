@@ -68,11 +68,11 @@
 
 /* Apply effects to insensitive and prelit images */
 *:disabled {
-	-gtk-image-effect: dim;
+	-gtk-icon-effect: dim;
 }
 
 *:hover {
-	-gtk-image-effect: highlight;
+	-gtk-icon-effect: highlight;
 }
 
 .gtkstyle-fallback {
@@ -2386,7 +2386,7 @@ notebook,
     border-width: 0px;
     background-color: shade (@theme_bg_color, 1.1);
 /*    -GtkNotebook-initial-gap: 0; */
-/*    -GtkNotebook-arrow-spacing: 5; *//* deprecated, but ignored */
+/*    -GtkNotebook-arrow-spacing: 5; deprecated */
 /*    -GtkNotebook-tab-curvature: 0;
     -GtkNotebook-tab-overlap: 0;
     -GtkNotebook-has-tab-gap: false;
@@ -2396,7 +2396,7 @@ notebook,
 
 notebook :hover,
 .notebook :hover {
-    -gtk-image-effect: highlight; /* deprecated, but ignored */
+    -gtk-icon-effect: highlight; /* deprecated, but ignored */
     color: @theme_fg_color;
 }
 
@@ -2759,7 +2759,7 @@ GtkComboBox:disabled {
 combobox separator,
 GtkComboBox .separator {
 	/* always disable separators */
-	-GtkWidget-wide-separators: true; /* deprecated, but ignored */
+/*	-GtkWidget-wide-separators: true; deprecated */
 	-GtkWidget-horizontal-separator: 0;
 	-GtkWidget-vertical-separator: 0;
 }
@@ -2882,7 +2882,7 @@ GtkFontButton .separator,
 GtkFileChooserButton .separator,
 GtkFileChooserWidget horizontal.separator {
 	/* always disable separators */
-	-GtkWidget-wide-separators: true; /* deprecated, but ignored */
+/*	-GtkWidget-wide-separators: true; deprecated */
 	-GtkWidget-horizontal-separator: 0;
 	-GtkWidget-vertical-separator: 0;
 }
@@ -3205,7 +3205,7 @@ menubar menuitem:hover,
 menu menuitem,
 .menu .menuitem {
     background-color: transparent;
-    -GtkMenuItem-arrow-scaling: 0.6; /* deprecated, but ignored */
+/*    -GtkMenuItem-arrow-scaling: 0.6; deprecated */
     transition: all 150ms ease-out;
     padding: 6px 5px;
 }
@@ -3273,8 +3273,7 @@ menuitem arrow,
 menuitem separator,
 .menuitem.separator {
 	color: @menu_separator;
-
-	-GtkMenuItem-horizontal-padding: 0; /* deprecated, but ignored */
+/*	-GtkMenuItem-horizontal-padding: 0; deprecated */
 }
 
 menuitem check,

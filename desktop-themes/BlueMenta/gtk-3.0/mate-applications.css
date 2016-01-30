@@ -265,7 +265,7 @@ CajaDesktopWindow.background .caja-canvas-item:selected {
 }
 
 CajaDesktopWindow.background .caja-canvas-item:active,
-CajaDesktopWindow.background .caja-canvas-item:prelight,
+CajaDesktopWindow.background .caja-canvas-item:hover,
 CajaDesktopWindow.background .caja-canvas-item:selected {
     text-shadow: none;
 }
@@ -307,7 +307,7 @@ CajaWindow .notebook tab .button.flat:hover {
     background-color: transparent;
     background-image: none;
     text-shadow: none;
-    icon-shadow: none;
+    -gtk-icon-shadow: none;
     border-image: none;
 }
 
@@ -457,7 +457,7 @@ PanelMenuBar.menubar .menuitem:hover {
 /* set menubar menuitem separator */
 PanelMenuBar.menubar .menu .menuitem.separator {
     color: @menu_separator;
-    -GtkMenuItem-horizontal-padding: 0;
+/*    -GtkMenuItem-horizontal-padding: 0; deprecated */
 }
 
 /* set normal menubar menuitem */
@@ -495,7 +495,7 @@ PanelMenuButton .menu .menuitem {
 /* Mate menu menuitem separator */
 PanelMenuButton .menu .menuitem.separator {
     color: @menu_separator;
-    -GtkMenuItem-horizontal-padding: 0;
+/*    -GtkMenuItem-horizontal-padding: 0; deprecated */
 }
 
 /* desktop-applet, clockapplet, drivemount, character-map,
@@ -633,7 +633,7 @@ WnckSelector.menubar .menu .menuitem:hover {
 
 /* set WnckSelector menuitem separator */WnckSelector.menubar .menu .menuitem.separator {
     color: @menu_separator;
-    -GtkMenuItem-horizontal-padding: 0;
+/*    -GtkMenuItem-horizontal-padding: 0; */
 }
 
 /* WnckPager */
@@ -751,8 +751,8 @@ PlumaWindow .button.flat:hover {
 
 PlumaCloseButton.button.flat,
 PlumaCloseButton.button.flat:hover,
-PlumaCloseButton:prelight.button.flat,
-PlumaCloseButton:prelight.button.flat:hover {
+PlumaCloseButton:hover.button.flat,
+PlumaCloseButton:hover.button.flat:hover {
     padding: 1px;
 }
 
@@ -764,7 +764,7 @@ PlumaWindow .notebook tab .button.flat:hover {
     background-image: none;
     box-shadow: inset 0 1px rgba(255,255,255,0), 0 1px rgba(255,255,255,0);
     text-shadow: none;
-    icon-shadow: none;
+    -gtk-icon-shadow: none;
     border-image: none;
     padding: 1px;
 }
@@ -926,7 +926,7 @@ EomThumbNav .button.flat:hover {
     border-color: @menu_combobox_border;
 }
 
-EomThumbNav .button.flat:insensitive {
+EomThumbNav .button.flat:disabled {
     border-color: transparent;
 }
 
