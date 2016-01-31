@@ -2,63 +2,6 @@
  * CAJA File manager *
  *********************/
 
-/* for breadcrumbs path bar */
-
-.caja-pathbar-button,
-CajaPathbarButton {
-    background-image: -gtk-gradient(linear, left top, left bottom,
-                                    color-stop (0, shade(alpha(@theme_bg_color, 0.8), 1.1)),
-                                    color-stop (.3, shade(alpha(@theme_bg_color, 0.8), 1.1)),
-                                    color-stop (.7, shade(alpha(@theme_bg_color, 0.8), 0.98)),
-                                    color-stop (1, shade(alpha(@theme_bg_color, 0.8), 0.90)));
-    border-color: #979797;
-    color: @theme_fg_color;
-    -CajaPathbarButton-border-radius: 3px;
-}
-
-CajaPathbarButton:active {
-    background-image: -gtk-gradient(linear, left top, left bottom,
-                                    color-stop (0, shade(alpha(@theme_bg_color, 0.8), .8)),
-                                    color-stop (.3, shade(alpha(@theme_bg_color, 0.8), .9)),
-                                    color-stop (1, shade(alpha(@theme_bg_color, 0.8), 1.0)));
-}
-
-CajaPathbarButton:hover {
-    background-image: -gtk-gradient(linear, left top, left bottom,
-                                    color-stop (0, shade(alpha(@theme_selected_bg_color, 0.8), 1.25)),
-                                    color-stop (.3, shade(alpha(@theme_selected_bg_color, 0.8), 1.25)),
-                                    color-stop (.7, shade(alpha(@theme_selected_bg_color, 0.8), 0.95)),
-                                    color-stop (1, shade(alpha(@theme_selected_bg_color, 0.8), 0.85)));
-}
-
-CajaPathbarButton:active:hover {
-    background-image: -gtk-gradient(linear, left top, left bottom,
-                                    color-stop (0, shade(alpha(@theme_selected_bg_color, 0.8), .80)),
-                                    color-stop (.3, shade(alpha(@theme_selected_bg_color, 0.8), .95)),
-                                    color-stop (1, shade(alpha(@theme_selected_bg_color, 0.8), 1.25)));
-}
-
-/* For Places Sidebar diskfull indicators */
-CajaPlacesTreeView {
-    -CajaPlacesTreeView-disk-full-bg-color: shade(@theme_bg_color, .65);
-    -CajaPlacesTreeView-disk-full-fg-color: shade(@theme_selected_bg_color, 1.0);
-    -CajaPlacesTreeView-disk-full-bar-width: 2px;
-    -CajaPlacesTreeView-disk-full-bar-radius: 1px;
-    -CajaPlacesTreeView-disk-full-bottom-padding: 1px;
-    -CajaPlacesTreeView-disk-full-max-length: 70px;
-}
-
-CajaPlacesTreeView:selected {
-    -CajaPlacesTreeView-disk-full-bg-color: shade(@theme_bg_color, 2.0);
-    -CajaPlacesTreeView-disk-full-fg-color: shade(@theme_fg_color, 2.0);
-}
-
-CajaPlacesTreeView:hover {
-}
-
-CajaPlacesTreeView:selected:hover {
-}
-
 /* Caja places combobox */
 CajaWindow .button.flat {
     background-color: transparent;
@@ -162,13 +105,19 @@ CajaWindow GtkPaned.horizontal {
     background-color: @theme_bg_color;
 }
 
-/* caja sidebar */
+/* caja sidebar *//*
 CajaWindow FMTreeView .view,
 CajaWindow CajaNotesViewer .view,
 CajaWindow CajaPlacesSidebar .view,
 CajaWindow CajaHistorySidebar .view,
 CajaWindow CajaInformationPanel GtkVBox,
 CajaWindow CajaEmblemSidebar GtkViewport {
+    background-color: shade (@theme_bg_color, 1.08);
+    color: @theme_fg_color;
+}*/
+/* 3.20 emblem and notes are broken */
+/* places, treeview, history. information */
+GtkTable paned.horizontal box.vertical notebook scrolledwindow.frame treeview.view {
     background-color: shade (@theme_bg_color, 1.08);
     color: @theme_fg_color;
 }
@@ -233,11 +182,37 @@ CajaWindow CajaHistorySidebar .vertical.scrollbar.overlay-indicator {
 	-GtkRange-slider-width: 11;
 }
 
-.caja-canvas-item {
-    border-radius: 3px;
+/* view */
+
+/* list view 3.20 */
+GtkTable paned.horizontal box.vertical paned.horizontal box.vertical notebook box.vertical box.vertical scrolledwindow.frame treeview.view,
+/* view and compact 3.20 */
+GtkTable paned.horizontal box.vertical paned.horizontal box.vertical notebook box.vertical box.vertical scrolledwindow.frame {
+    background-color: @theme_base_color;
 }
 
-/* view */
+/* rows in listview */
+GtkTable paned.horizontal box.vertical paned.horizontal box.vertical notebook box.vertical box.vertical scrolledwindow.frame treeview.view:selected,
+GtkTable paned.horizontal box.vertical paned.horizontal box.vertical notebook box.vertical box.vertical scrolledwindow.frame treeview.view:selected:hover {
+    background-color: @theme_selected_bg_color;
+}
+
+GtkTable paned.horizontal box.vertical paned.horizontal box.vertical notebook box.vertical box.vertical scrolledwindow.frame treeview.view:hover {
+    background-color: shade (@theme_selected_bg_color, 1.55);
+    color: shade (@theme_selected_bg_color, 0.35);
+}
+
+.caja-canvas-item {
+    border-radius: 3px;
+    color: @theme_fg_color;
+}
+
+.caja-canvas-item:active,
+.caja-canvas-item:selected {
+    color: @theme_selected_fg_color;
+}
+
+/*
 CajaNavigationWindow.background .view.caja-canvas-item {
     color: @theme_fg_color;
 }
@@ -246,8 +221,33 @@ CajaNavigationWindow.background .view.caja-canvas-item:active,
 CajaNavigationWindow.background .view.caja-canvas-item:selected {
     color: @theme_selected_fg_color;
 }
-
+*/
 /* desktop mode */
+/* 3.20 */
+/* desktop */
+.caja-desktop.caja-canvas-item {
+    color: @theme_selected_fg_color;
+    text-shadow: 1px 1px alpha (#000000, 0.8);
+}
+
+.caja-desktop.caja-canvas-item:selected {
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+    text-shadow: none;
+}
+
+.caja-desktop.caja-canvas-item:active,
+.caja-desktop.caja-canvas-item:hover {
+    text-shadow: none;
+}
+
+.caja-desktop EelEditableLabel.entry {
+   border-image: none;
+   border-width: 1px;
+   text-shadow: none;
+}
+
+/*
 CajaDesktopWindow.background FMIconContainer.view EelEditableLabel.entry {
    border-image: none;
    border-width: 1px;
@@ -269,7 +269,7 @@ CajaDesktopWindow.background .caja-canvas-item:hover,
 CajaDesktopWindow.background .caja-canvas-item:selected {
     text-shadow: none;
 }
-
+*/
 /* inactive pane */
 
 .caja-inactive-pane .view {
