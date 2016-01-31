@@ -588,172 +588,118 @@ view image:selected:hover,
  * GtkSpinButton *
  *****************/
 
+spinbutton,
+spinbutton:focus {
+    background-image: linear-gradient(to bottom,
+                                      @entry_background_a,
+                                      @entry_background_b);
+    border-color: @borders;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    /* weird padding is needed for entry, no style class with 3.20 */
+    padding: 5px 5px 5px 2px;
+}
+
+spinbutton:disabled {
+    background-color: @insensitive_bg_color;
+    background-image: none;
+    border-color: @borders;
+}
+
 spinbutton button,
-.spinbutton .button {
-	background-color: transparent;
-	background-image: none;
-	color: @internal_element_color;
-	padding: 2px 6px;
-	border-width: 0;
-	border-radius: 0;
-	border-style: none;
-	border-image: none;
-	box-shadow: inset 1px 0 @inset_dark_color;
+spinbutton button:focus,
+spinbutton button:active,
+spinbutton button:focus:active,
+spinbutton button:disabled {
+    border-style: none;
+    border-image: none;
+    padding: 5px;
+    border-radius: 0px;
+    box-shadow: inset 1px 0 @inset_dark_color;
 }
 
-spinbutton button:disabled,
-.spinbutton .button:disabled {
-	color: @internal_element_insensitive;
+spinbutton button,
+spinbutton button:focus {
+    background-image: linear-gradient(to bottom,
+                                      @button_gradient_color_a,
+                                      @button_gradient_color_b);
+    background-color: transparent;
+    color: @internal_element_color;
+}
+
+spinbutton button:hover {
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      @button_hover_gradient_color_a,
+                                      @button_hover_gradient_color_b);
+    color: @internal_element_prelight;
 }
 
 spinbutton button:active,
-spinbutton button:hover,
-.spinbutton .button:active,
-.spinbutton .button:hover {
-	color: @internal_element_prelight;
+spinbutton button:active:hover {
+    background-image: linear-gradient(to bottom,
+                                      @button_active_gradient_color_a,
+                                      @button_active_gradient_color_b);
+    background-color: transparent;
+    color: @internal_element_prelight;
 }
 
-spinbutton button:first-child,
-.spinbutton .button:first-child {
-	border-radius: 3px 0 0 3px;
-	box-shadow: none;
+spinbutton button:disabled {
+    color: @internal_element_insensitive;
 }
 
-spinbutton button:last-child,
-.spinbutton .button:last-child {
-	border-radius: 0 3px 3px 0;
+spinbutton button:first-child {
+    border-radius: 0px;
 }
 
-spinbutton button:dir(rtl),
-.spinbutton .button:dir(rtl) {
-	box-shadow: inset -1px 0 @inset_dark_color;
+spinbutton button:last-child {
+    border-radius: 0 3px 3px 0;
 }
 
-/* Add back the glowy effect from the entry covered by the pushed button background*/
-spinbutton button:active,
-spinbutton button:active:focus,
-.spinbutton .button:active,
-.spinbutton .button:active:focus {
-	padding: 2px 4px;
-	box-shadow: inset 1px 0 @inset_dark_color,
-		inset 0 1px alpha(@theme_selected_bg_color, 0.2),
-		inset 0 -1px alpha(@theme_selected_bg_color, 0.2);
-}
-
-spinbutton button:first-child:active,
-spinbutton button:first-child:active:focus,
-.spinbutton .button:first-child:active,
-.spinbutton .button:first-child:active:focus {
-	padding: 2px 4px;
-	box-shadow: inset 1px 1px alpha(@theme_selected_bg_color, 0.2),
-		inset 0 -1px alpha(@theme_selected_bg_color, 0.2);
-}
-
-spinbutton button:last-child:active,
-spinbutton button:last-child:active:focus,
-.spinbutton .button:last-child:active,
-.spinbutton .button:last-child:active:focus {
-	padding: 2px 4px;
-	box-shadow: inset 1px 0 @inset_dark_color,
-		inset 0 1px alpha(@theme_selected_bg_color, 0.2),
-		inset -1px -1px alpha(@theme_selected_bg_color, 0.2);
+spinbutton button:dir(rtl) {
+    box-shadow: inset -1px 0 @inset_dark_color;
 }
 
 spinbutton.vertical button,
-.spinbutton.vertical .button {
-	padding: 4px;
-	-gtk-icon-shadow: 0 1px @button_text_shadow;
+spinbutton.vertical button:focus {
+    border-color: @borders;
+    border-width: 1px;
+    border-style: solid;
+    padding: 5px;
+    color: @theme_fg_color;
 }
 
-spinbutton.vertical button,
-spinbutton.vertical button:hover,
-.spinbutton.vertical .button,
-.spinbutton.vertical .button:hover {
-	padding: 4px;
-	color: @theme_fg_color;
-}
-
-spinbutton.vertical button:disabled,
-.spinbutton.vertical .button:disabled {
-	color: @insensitive_fg_color;
+spinbutton.vertical button:disabled {
+    color: @insensitive_fg_color;
+    -gtk-icon-shadow: none;
 }
 
 spinbutton.vertical button:active,
-.spinbutton.vertical .button:active {
-	color: @button_active_text;
-	-gtk-icon-shadow: 0 1px @button_active_text_shadow;
-}
-
-/* :disabled:disabled to override the dark overriden style for
-   normal spinbutton buttons, yeah we lack !important */
-spinbutton.vertical button:disabled:disabled,
-.spinbutton.vertical .button:disabled:disabled {
-	-gtk-icon-shadow: none;
-}
-
-spinbutton.vertical button,
-spinbutton.vertical button:active:active,
-.spinbutton.vertical .button,
-/* :active:active to override the dark overriden style for
-   normal spinbutton buttons, yeah we lack !important */
-.spinbutton.vertical .button:active:active {
-	box-shadow: none;
+spinbutton.vertical button:hover:active {
+    color: @button_active_text;
+    -gtk-icon-shadow: 0 1px @button_active_text_shadow;
 }
 
 spinbutton.vertical button:first-child,
-spinbutton.vertical button:active:first-child,
-.spinbutton.vertical .button:first-child,
-.spinbutton.vertical .button:active:first-child {
-	border-image-width: 3px 3px 0 3px;
-	border-width: 2px 1px 0 1px;
-	border-bottom-left-radius: 0; 
-	border-bottom-right-radius: 0;
-	padding: 4px;
+spinbutton.vertical button:active:first-child {
+    border-radius: 3px 3px 0 0;
 }
 
 spinbutton.vertical button:last-child,
-spinbutton.vertical button:active:last-child,
-.spinbutton.vertical .button:last-child,
-.spinbutton.vertical .button:active:last-child {
-	border-image-width: 0 3px 4px 3px;
-	border-width: 0 1px 2px 1px;
-	border-top-left-radius: 0; 
-	border-top-right-radius: 0;
-	padding: 4px;
+spinbutton.vertical button:active:last-child {
+    border-radius: 0 0 3px 3px;
 }
 
-spinbutton.vertical entry,
-.spinbutton.vertical.entry {
-	border-image: none;
-	border-color: alpha(@borders, 0.1);
-	border-width: 0 1px 0 1px;
-	border-style: solid;
-	border-radius: 0;
-	box-shadow: inset 1px 0 0 0 @borders, 
-		inset -1px 0 0 0 @borders,
-		inset 0 1px 0 0 @borders,
-		inset 0 -1px 0 0 @borders;
-
-	/* I'm using box-shadow as borders, so I need to compensate
-	   with padding. Those two values need to be entry padding +1 */
-	padding-top: 5px;
-	padding-bottom: 5px;
+stack box.vertical.linked spinbutton.horizontal {
+    border-radius: 0px;
 }
 
-spinbutton.vertical entry:disabled,
-.spinbutton.vertical.entry:disabled {
-	border-color: alpha(@borders, 0.1);
-	box-shadow: inset 0 1px alpha(@borders, 0.4),
-		inset 0 -1px alpha(@borders, 0.4);
-}
-
-spinbutton.vertical entry:focus,
-.spinbutton.vertical.entry:focus {
-	border-color: alpha(@borders, 0.1);
-	box-shadow: inset 1px 0 0 0 @theme_selected_bg_color, 
-		inset -1px 0 0 0 @theme_selected_bg_color,
-		inset 0 1px 0 0 @theme_selected_bg_color,
-		inset 0 -1px 0 0 @theme_selected_bg_color;
+stack box.vertical.linked spinbutton.horizontal button {
+    border-radius: 0px;
+    border-style: none;
+    padding: 5px;
+    box-shadow: inset 1px 0 @inset_dark_color;
 }
 
 /*****************

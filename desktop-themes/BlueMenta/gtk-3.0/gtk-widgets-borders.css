@@ -6,23 +6,15 @@ button:active,
 button:checked,
 combobox entry entry,
 combobox entry button,
-spinbutton.vertical button:active,
-spinbutton.vertical button:checked,
 toolbar.inline-toolbar.vertical button:active,
 toolbar.inline-toolbar.vertical button:checked,
-stack box.linked.verticalspinbutton.horizontal.entry.spinbutton.vertical button:active,
-stack box.linked.verticalspinbutton.horizontal.entry.spinbutton.vertical button:checked,
 .entry,
 .button:active,
 .button:checked,
 GtkComboBox.combobox-entry .entry,
 GtkComboBox.combobox-entry .button,
-.spinbutton.vertical .button:active,
-.spinbutton.vertical .button:checked,
 .inline-toolbar.toolbar.vertical .button:active,
-.inline-toolbar.toolbar.vertical .button:checked,
-GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton.vertical .button:active,
-GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton.vertical .button:checked {
+.inline-toolbar.toolbar.vertical .button:checked {
 	border-image: url("borders/button-active.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
 	border-radius: 4px;
 	border-width: 2px;
@@ -39,20 +31,16 @@ trough highlight,
 
 entry:disabled,
 button:active:disabled,
-spinbutton.vertical button:disabled,
 combobox entry entry:disabled,
 combobox entry button:disabled,
 toolbar.inline-toolbar.vertical button:disabled,
 toolbar.inline-toolbar.vertical button.default:disabled,
-stack box.linked.vertical spinbutton.horizontal.entry.spinbutton.vertical button:disabled,
 .entry:disabled,
 .button:active:disabled,
-.spinbutton.vertical .button:disabled,
 GtkComboBox.combobox-entry .entry:disabled,
 GtkComboBox.combobox-entry .button:disabled,
 .inline-toolbar.toolbar.vertical .button:disabled,
-.inline-toolbar.toolbar.vertical .button.default:disabled,
-GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton.vertical .button:disabled {
+.inline-toolbar.toolbar.vertical .button.default:disabled {
 	border-image: url("borders/button-active-ins.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
 	border-radius: 4px;
 	border-width: 2px;
@@ -62,20 +50,16 @@ GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton.vertical .bu
 
 button:disabled,
 button.default:disabled,
-spinbutton.vertical button:disabled,
 toolbar.inline-toolbar button:disabled,
 toolbar.inline-toolbar button.default:disabled,
 toolbar.inline-toolbar.vertical button:disabled,
 toolbar.inline-toolbar.vertical button.default:disabled,
-stack box.linked.vertical spinbutton.horizontal.entry.spinbutton.vertical button:disabled,
 .button:disabled,
 .button.default:disabled,
-.spinbutton.vertical .button:disabled,
 .inline-toolbar.toolbar .button:disabled,
 .inline-toolbar.toolbar .button.default:disabled,
 .inline-toolbar.toolbar.vertical .button:disabled,
-.inline-toolbar.toolbar.vertical .button.default:disabled,
-GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton.vertical .button:disabled {
+.inline-toolbar.toolbar.vertical .button.default:disabled {
 	border-image: url("borders/button-ins.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
 	border-radius: 4px;
 	border-width: 2px;
@@ -99,32 +83,20 @@ button:checked:focus,
 button.default:active,
 button.default:checked,
 combobox entry button:focus,
-spinbutton.vertical button:active:focus,
-spinbutton.vertical button:checked:focus,
 toolbar.inline-toolbar.vertical button:active:focus,
 toolbar.inline-toolbar.vertical button:checked:focus
 toolbar.inline-toolbar.vertical button.default:active,
 toolbar.inline-toolbar.vertical button.default:checked,
-stack box.linked.vertical spinbutton.horizontal.entry.spinbutton button:active,
-stack box.linked.vertical spinbutton.horizontal.entry.spinbutton button:checked,
-stack box.linked.vertical spinbutton.horizontal.entry.spinbutton button:active:focus,
-stack box.linked.vertical spinbutton.horizontal.entry.spinbutton button:checked:focus,
 .entry:focus,
 .button:active:focus,
 .button:checked:focus,
 .button.default:active,
 .button.default:checked,
 GtkComboBox.combobox-entry .button:focus,
-.spinbutton.vertical .button:active:focus,
-.spinbutton.vertical .button:checked:focus,
 .inline-toolbar.toolbar.vertical .button:active:focus,
 .inline-toolbar.toolbar.vertical .button:checked:focus
 .inline-toolbar.toolbar.vertical .button.default:active,
-.inline-toolbar.toolbar.vertical .button.default:checked,
-GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:active,
-GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:checked,
-GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:active:focus,
-GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:checked:focus {
+.inline-toolbar.toolbar.vertical .button.default:checked {
 	border-image: url("borders/button-active-focus.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
 	border-radius: 4px;
 	border-width: 2px;
@@ -149,8 +121,7 @@ GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton .button:chec
 
 button,
 .button
-/*.spinbutton.vertical .button,
-.inline-toolbar.toolbar.vertical .button*/ {
+/*.inline-toolbar.toolbar.vertical .button*/ {
 	border-image: url("borders/button.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
 	border-radius: 4px;
 	border-width: 2px;
@@ -158,12 +129,8 @@ button,
 	border-color: transparent;
 }
 
-spinbutton.vertical button,
 toolbar.inline-toolbar.vertical button,
-stack box.linked.vertical spinbutton.horizontal.entry.spinbutton.vertical .button,
-.spinbutton.vertical .button,
-.inline-toolbar.toolbar.vertical .button,
-GtkStack .linked.vertical GtkSpinButton.horizontal.entry.spinbutton.vertical .button {
+.inline-toolbar.toolbar.vertical .button {
 	border-image: url("borders/button.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
 	border-radius: 4px;
 	border-width: 2px;
