@@ -335,11 +335,11 @@ scale.vertical progressbar,
 
 /* Progressbar backgrounds */
 
-progressbar,
-row progressbar,
-row progressbar:hover,
-row progressbar:selected,
-row progressbar:selected:focus,
+progressbar progress,
+row progressbar progress,
+row:hover progressbar progress,
+row:selected progressbar progress,
+row:selected:focus progressbar progress,
 .progressbar,
 .progressbar row,
 .progressbar row:hover,
@@ -361,7 +361,7 @@ row progressbar:selected:focus,
 	box-shadow: inset 1px 1px alpha(white, 0.2), inset -1px -1px alpha(white, 0.1);
 }
 
-progressbar.vertical,
+progressbar.vertical progress,
 .progressbar.vertical {
 	background-image: linear-gradient(to right top,
 		alpha (@progressbar_pattern, 0.25),

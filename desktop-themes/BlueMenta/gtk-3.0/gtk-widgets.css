@@ -864,25 +864,22 @@ progressbar progress.bottom {
 }
 
 progressbar progress,
-progressbar row,
-progressbar row:hover,
-progressbar row:selected,
-progressbar row:selected:focus,
+row progressbar,
+row:hover progressbar,
+row:selected progressbar,
+row:selected:focus progressbar,
 .progressbar,
 .progressbar row,
 .progressbar row:hover,
 .progressbar row:selected,
 .progressbar row:selected:focus {
-/*	border-radius: 16px; */
 	border-width: 1px;
-/*	min-height: 16px;
-	min-width: 16px; */
 	border-style: solid;
 	border-color: @progressbar_border;
 }
 
-progressbar row:selected,
-progressbar row:selected:focus,
+row:selected progressbar,
+row:selected:focus progressbar,
 .progressbar row:selected,
 .progressbar row:selected:focus {
 	border-color: shade(@progressbar_border, 0.85);
