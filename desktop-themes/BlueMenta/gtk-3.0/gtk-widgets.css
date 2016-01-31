@@ -2315,6 +2315,46 @@ stackswitcher > button.needs-attention:checked > image,
 	background-image: none; 
 }
 
+stackswitcher  > button:dir(ltr).text-button.radio,
+stackswitcher  > button:dir(ltr).text-button.radio:hover,
+stackswitcher  > button:dir(ltr).text-button.radio:hover:active,
+stackswitcher  > button:dir(ltr).text-button.radio:active,
+stackswitcher  > button:dir(ltr).text-button.radio:checked,
+stackswitcher  > button:dir(ltr).text-button.radio:checked:hover,
+stackswitcher  > button:dir(ltr).text-button.radio:checked:hover:active  {
+    padding: 5px 10px 6px;
+    border-width: 0px;
+    border-image-width: 3px 0px 4px 0;
+    border-style: none;
+    border-radius: 0px;
+}
+
+stackswitcher  > button:dir(ltr).text-button.radio:first-child,
+stackswitcher  > button:dir(ltr).text-button.radio:hover:first-child,
+stackswitcher  > button:dir(ltr).text-button.radio:hover:active:first-child,
+stackswitcher  > button:dir(ltr).text-button.radio:active:first-child,
+stackswitcher  > button:dir(ltr).text-button.radio:checked:first-child,
+stackswitcher  > button:dir(ltr).text-button.radio:checked:hover:first-child,
+stackswitcher  > button:dir(ltr).text-button.radio:checked:hover:active:first-child {
+    border-width: 0px;
+    border-image-width: 3px 0 4px 3px;
+    border-style: none;
+    border-radius: 3px 0px 0px 3px;
+}
+
+stackswitcher  > button:dir(ltr).text-button.radio:last-child,
+stackswitcher  > button:dir(ltr).text-button.radio:hover:last-child,
+stackswitcher  > button:dir(ltr).text-button.radio:hover:active:last-child,
+stackswitcher  > button:dir(ltr).text-button.radio:active:last-child,
+stackswitcher  > button:dir(ltr).text-button.radio:checked:last-child,
+stackswitcher  > button:dir(ltr).text-button.radio:checked:hover:last-child,
+stackswitcher  > button:dir(ltr).text-button.radio:checked:hover:active:last-child {
+    border-width: 0px;
+    border-image-width: 3px 3px 4px 0;
+    border-style: none;
+    border-radius: 0px 3px 3px 0px;
+}
+
 /*****************
  * Notebooks and *
  * tabs          *
