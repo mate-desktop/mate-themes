@@ -2691,7 +2691,7 @@ notebook header tabs arrow:disabled,
 combobox,
 GtkComboBox {
 	padding: 0;
-	-GtkComboBox-arrow-scaling: 0.5; /* deprecated, but ignored */
+/*	-GtkComboBox-arrow-scaling: 0.5; deprecated */
 	-GtkComboBox-shadow-type: none;
 	text-shadow: 0 1px @button_text_shadow;
 }
@@ -2809,6 +2809,15 @@ GtkComboBox.combobox-entry .button:active:hover {
 combobox button,
 GtkComboBox .button {
     color: @theme_fg_color;
+}
+
+combobox.linked button.combo,
+combobox.linked button.combo:checked {
+	border-right-width: 2px;
+	border-left-width: 0;
+	border-image-width: 3px 4px 4px 0;
+	border-bottom-left-radius: 0;
+	border-top-left-radius: 0;
 }
 
 combobox arrow {
