@@ -2470,10 +2470,18 @@ notebook header tab .active-page label,
     color: @theme_fg_color;
 }
 
+/* tabs in caja and pluma */
+notebook header tab {
+    padding: 4px;
+    border-style: solid;
+    border-width: 0px 1px 0px 1px;
+    border-color: transparent;
+}
+
 /* horizontal tabs */
 
-notebook header.top tab,
-notebook header.bottom tab,
+notebook.frame header.top tab,
+notebook.frame header.bottom tab,
 .notebook tab.top,
 /* wtf, why this doesn't work? */
 .notebook tab.bottom {
@@ -2540,8 +2548,8 @@ notebook header.bottom tab:hover,
 
 /* vertical tabs */
 
-notebook header.left tab,
-notebook header.right tab,
+notebook.frame header.left tab,
+notebook.frame header.right tab,
 .notebook tab.left,
 .notebook tab.right {
     padding: 5px 20px;
@@ -2622,6 +2630,7 @@ notebook tab.reorderable-page:active,
 }
 
 /* close button styling */
+notebook button.flat,
 notebook button.flat.small-button,
 .notebook tab .button {
     color: mix (@theme_fg_color, @theme_bg_color, 0.85);
@@ -2646,6 +2655,7 @@ notebook .active-page button.flat.small-button,
     -gtk-icon-shadow: 0 1px @button_text_shadow;
 }
 
+notebook button.flat:hover,
 notebook button.flat.small-button:hover,
 .notebook tab .button:hover {
     color: @theme_fg_color;
@@ -2655,6 +2665,8 @@ notebook button.flat.small-button:hover,
     background-color: transparent;
 }
 
+notebook button.flat:active,
+notebook button.flat:active:hover,
 notebook button.flat.small-button:active,
 notebook button.flat.small-button:active:hover,
 .notebook tab .button:active,
