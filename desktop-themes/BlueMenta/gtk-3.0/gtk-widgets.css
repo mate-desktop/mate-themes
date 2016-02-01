@@ -136,22 +136,28 @@ GtkTextView {
 /************
  * Tooltips *
  ************/
-.tooltip,
-.tooltip.background {
+tooltip {
 	padding: 4px;
 	border-style: solid;
 	border-width: 1px;
 	border-color: shade(@theme_tooltip_bg_color, 0.50);
-	border-radius: 0px;
+	border-radius: 2px;
+}
 
+tooltip.background {
 	background-color: @theme_tooltip_bg_color;
 	color: @theme_tooltip_fg_color;
-
 	text-shadow: none;
 }
 
-.tooltip * {
+tooltip decoration {
+    background-color: transparent;
+}
+
+tooltip * {
 	background-color: transparent;
+	color: @theme_tooltip_fg_color;
+	padding: 4px;
 }
 
 /*********************
