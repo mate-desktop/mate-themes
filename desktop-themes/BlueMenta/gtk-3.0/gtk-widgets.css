@@ -1026,7 +1026,7 @@ scale.vertical trough,
 }
 
 scale trough,
-scale trough.highlight,
+scale trough highlight,
 .scale.trough,
 .scale.trough.highlight {
 	border-color: alpha(@theme_base_color, 0.0);
@@ -1037,7 +1037,7 @@ scale trough.highlight,
 }
 
 scale.vertical trough,
-scale.vertical trough.highlight,
+scale.vertical trough highlight,
 .scale.trough.vertical,
 .scale.trough.highlight.vertical {
 	border-color: alpha(@theme_base_color, 0.0);
@@ -1054,29 +1054,35 @@ scale.vertical trough,
 	border-color: @borders;
 }
 
-scale trough.highlight,
-scale.vertical trough.highlight,
+scale trough highlight,
+scale.vertical trough highlight,
 .scale.trough.highlight,
 .scale.trough.highlight.vertical {
 	border-color: @scale_highlight_border;
 }
 
 scale trough:disabled,
-scale trough.highlight:disabled,
 scale.vertical trough:disabled,
-scale.vertical trough.highlight:disabled,
 .scale.trough:disabled,
-.scale.trough.highlight:disabled,
-.scale.trough.vertical:disabled,
-.scale.trough.highlight.vertical:disabled {
+.scale.trough.vertical:disabled {
 	background-color: shade(@insensitive_bg_color, 0.96);
 	border-color: shade(@insensitive_scale_borders, 1.0);
 	box-shadow: none;
 	background-image: none;
 }
 
-scale trough.highlight,
-scale.vertical trough.highlight,
+scale trough highlight:disabled,
+scale.vertical trough highlight:disabled,
+.scale.trough.highlight:disabled,
+.scale.trough.highlight.vertical:disabled {
+	background-color: shade(@scale_highlight_bg, 1.16);
+	border-color: shade(@insensitive_scale_borders, 1.0);
+	box-shadow: none;
+	background-image: none;
+}
+
+scale trough highlight,
+scale.vertical trough highlight,
 .scale.trough.highlight,
 .scale.trough.vertical.highlight {
 	background-image: none;
@@ -1106,13 +1112,13 @@ scale.vertical trough,
 		inset -1px 0 alpha(@theme_base_color, 0.4);
 }
 
-scale trough.highlight,
+scale trough highlight,
 .scale.trough.highlight {
 	box-shadow: inset 0 1px alpha(@theme_base_color, 0.2),
 		inset 0 -1px shade(@theme_selected_bg_color, 0.7);
 }
 
-scale.vertical trough.highlight,
+scale.vertical trough highlight,
 .scale.trough.vertical.highlight {
 	box-shadow: inset 1px 0 alpha(@theme_base_color, 0.2),
 		inset -1px 0 shade(@theme_selected_bg_color, 0.7);
