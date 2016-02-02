@@ -83,7 +83,7 @@
                                       @button_gradient_color_a,
                                       @button_gradient_color_b);
     border-image: url("borders/button.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
-    padding: 4px 4px;
+    padding: 6px 4px;
 }
 
 .caja-navigation-window toolbar.primary-toolbar combobox button.combo:hover {
@@ -91,7 +91,7 @@
                                       @button_hover_gradient_color_a,
                                       @button_hover_gradient_color_b);
     border-image: url("borders/button-active-focus.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
-    padding: 4px 4px;
+    padding: 6px 4px;
 }
 
 /* the small line between sidebar and view */
@@ -163,26 +163,11 @@ CajaWindow CajaHistorySidebar .vertical.scrollbar.overlay-indicator {
 	-GtkRange-slider-width: 11;
 }
 
-/* view */
-
-/* list view 3.20 */
-.caja-navigation-window GtkTable paned.horizontal box.vertical paned.horizontal box.vertical notebook box.vertical box.vertical scrolledwindow.frame treeview.view,
-/* view and compact 3.20 */
-.caja-navigation-window GtkTable paned.horizontal box.vertical paned.horizontal box.vertical notebook box.vertical box.vertical scrolledwindow.frame {
-    background-color: @theme_base_color;
+.caja-side-pane notebook {
+    border-style: none;
 }
 
-/* rows in listview */
-.caja-navigation-window GtkTable paned.horizontal box.vertical paned.horizontal box.vertical notebook box.vertical box.vertical scrolledwindow.frame treeview.view:selected,
-.caja-navigation-window GtkTable paned.horizontal box.vertical paned.horizontal box.vertical notebook box.vertical box.vertical scrolledwindow.frame treeview.view:selected:hover {
-    background-color: @theme_selected_bg_color;
-}
-
-.caja-navigation-window GtkTable paned.horizontal box.vertical paned.horizontal box.vertical notebook box.vertical box.vertical scrolledwindow.frame treeview.view:hover {
-    background-color: shade (@theme_selected_bg_color, 1.55);
-    color: shade (@theme_selected_bg_color, 0.35);
-}
-
+/* view and desktop mode */
 .caja-canvas-item {
     border-radius: 3px;
     color: @theme_fg_color;
@@ -193,16 +178,46 @@ CajaWindow CajaHistorySidebar .vertical.scrollbar.overlay-indicator {
     color: @theme_selected_fg_color;
 }
 
-/*
+/* view mode */
+
+/* list view 3.20 */
+.caja-notebook treeview.view,
+/* view and compact 3.20 */
+.caja-notebook scrolledwindow.frame {
+    background-color: @theme_base_color;
+}
+
+/* rows in listview */
+.caja-notebook treeview.view:selected,
+.caja-notebook treeview.view:selected:hover {
+    background-color: @theme_selected_bg_color;
+}
+
+.caja-notebook treeview.view:hover {
+    background-color: shade (@theme_selected_bg_color, 1.55);
+    color: shade (@theme_selected_bg_color, 0.35);
+}
+
+.caja-notebook .caja-canvas-item,
 CajaNavigationWindow.background .view.caja-canvas-item {
     color: @theme_fg_color;
 }
 
+.caja-notebook .caja-canvas-item:active,
+.caja-notebook .caja-canvas-item:selected,
 CajaNavigationWindow.background .view.caja-canvas-item:active,
 CajaNavigationWindow.background .view.caja-canvas-item:selected {
     color: @theme_selected_fg_color;
 }
-*/
+
+.caja-notebook {
+    border-style: none;
+}
+
+.caja-notebook frame {
+    border-width: 1px 1px 0 1px;
+}
+
 /* desktop mode */
 /* 3.20 */
 /* desktop */
@@ -303,6 +318,7 @@ CajaWindow .notebook tab.top {
     padding: 4px 3px 4px 0px;
 }
 
+/* do we have this style class? */
 .caja-cluebar-label {
     font: normal;
     text-shadow: 0 1px shade (@cluebar_color, 1.06);
@@ -316,6 +332,22 @@ CajaLocationBar .entry {
     padding: 4px;
 }
 
+.caja-navigation-window statusbar frame {
+    border-style: none;
+}
+
+#caja-extra-view-widget {
+    background-color: shade (@theme_bg_color, 1.04);
+    background-color: @cluebar_color;
+    border-bottom-color: shade (@cluebar_color, 0.92);
+    border-radius: 0px;
+    border-style: solid;
+    border-width: 0px;
+    border-color: @borders;
+    color: @theme_fg_color;
+}
+
+/*
 CajaTrashBar.info,
 CajaXContentBar.info,
 CajaSearchBar.info,
@@ -334,6 +366,7 @@ CajaSearchBar .button,
 CajaQueryEditor .button {
     border-radius: 0;
 }
+*/
 
 /****************
  * Mate-Panel *
