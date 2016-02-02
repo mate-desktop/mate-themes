@@ -3,14 +3,14 @@
  *********************/
 
 /* Caja places combobox */
-CajaWindow .button.flat {
+.caja-navigation-window .caja-side-pane button.flat {
     background-color: transparent;
     background-image: linear-gradient(to bottom,
                                       @button_gradient_color_a,
                                       @button_gradient_color_b);
 }
 
-CajaWindow .button.flat:first-child {
+.caja-navigation-window .caja-side-pane button.flat:first-child {
     transition: all 400ms ease-out;
     border-radius: 3px 0 0 3px;
     border-right-width: 0;
@@ -18,7 +18,7 @@ CajaWindow .button.flat:first-child {
     border-image: url("borders/button.png") 3 4 4 3 / 3px 0px 4px 3px stretch;
 }
 
-CajaWindow .button.flat:last-child {
+.caja-navigation-window .caja-side-pane button.flat:last-child {
     transition: all 400ms ease-out;
     border-radius: 0 3px 3px 0;
     border-left-width: 0;
@@ -26,14 +26,14 @@ CajaWindow .button.flat:last-child {
     border-image: url("borders/button.png") 3 3 4 4 / 3px 3px 4px 0px stretch;
 }
 
-CajaWindow .button.flat:hover {
+.caja-navigation-window .caja-side-pane button.flat:hover {
     background-color: transparent;
     background-image: linear-gradient(to bottom,
                                       @button_hover_gradient_color_a,
                                       @button_hover_gradient_color_b);
 }
 
-CajaWindow .button.flat:hover:first-child {
+.caja-navigation-window .caja-side-pane button.flat:hover:first-child {
     border-radius: 6px 0 0 6px;
     border-right-width: 0;
     background-color: transparent;
@@ -43,7 +43,7 @@ CajaWindow .button.flat:hover:first-child {
     border-image: url("borders/button.png") 3 3 4 3 / 3px 0px 4px 3px stretch;
 }
 
-CajaWindow .button.flat:hover:last-child  {
+.caja-navigation-window .caja-side-pane button.flat:hover:last-child  {
     border-radius: 0 6px 6px 0;
     border-left-width: 0;
     background-color: transparent;
@@ -55,9 +55,9 @@ CajaWindow .button.flat:hover:last-child  {
 
 /* some overrides for button.flat */
 /* zoom button */
-CajaWindow .primary-toolbar .button.flat,
-CajaWindow .primary-toolbar .button.flat:first-child,
-CajaWindow .primary-toolbar .button.flat:last-child {
+.caja-navigation-window toolbar.primary-toolbar button.flat,
+.caja-navigation-window toolbar.primary-toolbar button.flat:first-child,
+.caja-navigation-window toolbar.primary-toolbar button.flat:last-child {
     transition: all 400ms ease-out;
     border-width: 3px;
     background-color: transparent;
@@ -68,7 +68,7 @@ CajaWindow .primary-toolbar .button.flat:last-child {
 }
 
 /* zoom button */
-CajaWindow .primary-toolbar .button.flat:hover {
+.caja-navigation-window toolbar.primary-toolbar button.flat:hover {
     border-width: 3px;
     background-color: transparent;
     background-image: linear-gradient(to bottom,
@@ -78,14 +78,7 @@ CajaWindow .primary-toolbar .button.flat:hover {
 }
 
 /* ComboBox views */
-CajaWindow .toolbar GtkComboBox .button {
-    background-image: linear-gradient(to bottom,
-                                      shade (@theme_bg_color, 1.0),
-                                      shade (@theme_bg_color, 0.96));
-    padding: 4px 4px;
-}
-
-CajaWindow .toolbar GtkComboBox .button:hover {
+.caja-navigation-window toolbar.primary-toolbar combobox button.combo {
     background-image: linear-gradient(to bottom,
                                       @button_gradient_color_a,
                                       @button_gradient_color_b);
@@ -93,13 +86,16 @@ CajaWindow .toolbar GtkComboBox .button:hover {
     padding: 4px 4px;
 }
 
-/* to avoid padding when executing toogle button */
-CajaLocationBar .entry {
-    padding: 4px;
+.caja-navigation-window toolbar.primary-toolbar combobox button.combo:hover {
+    background-image: linear-gradient(to bottom,
+                                      @button_hover_gradient_color_a,
+                                      @button_hover_gradient_color_b);
+    border-image: url("borders/button-active-focus.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
+    padding: 4px 4px;
 }
 
 /* the small line between sidebar and view */
-CajaWindow GtkPaned.horizontal {
+.caja-navigation-window paned.horizontal {
     -GtkPaned-handle-size: 3px;
     border-color: transparent;
     background-color: @theme_bg_color;
@@ -115,13 +111,15 @@ CajaWindow CajaEmblemSidebar GtkViewport {
     background-color: shade (@theme_bg_color, 1.08);
     color: @theme_fg_color;
 }*/
-/* 3.20 emblem and notes are broken */
-/* places, treeview, history. information */
-GtkTable paned.horizontal box.vertical notebook scrolledwindow.frame treeview.view {
+/* 3.20 emblems are broken */
+/* places, treeview, history, information and notes */
+.caja-side-pane treeview.view,
+.caja-side-pane textview.view text {
     background-color: shade (@theme_bg_color, 1.08);
     color: @theme_fg_color;
 }
 
+.caja-side-pane treeview.view:selected:hover,
 CajaWindow CajaPlacesSidebar .view row:active:hover,
 CajaWindow CajaPlacesSidebar .view row:checked:hover,
 CajaWindow CajaPlacesSidebar .view row:selected:hover,
@@ -134,46 +132,29 @@ CajaWindow FMTreeView .view row:selected:hover {
     color: shade (@theme_selected_fg_color, 1.00);
 }
 
+.caja-side-pane treeview.view:hover,
 CajaWindow CajaPlacesSidebar .view row:hover,
 CajaWindow FMTreeView .view row:hover,
 CajaWindow CajaHistorySidebar .view row:hover {
     background-color: shade (@theme_selected_bg_color, 1.15);
-    color: shade (@theme_selected_bg_color, 0.35);
+    color: shade (@theme_selected_fg_color, 1.00);
 }
 
+/* What is that? */
 CajaWindow .rubberband,
 CajaWindow .view.rubberband {
     background-color: alpha (@theme_selected_bg_color, 0.35);
 }
 
-CajaWindow CajaPlacesSidebar .frame {
-    border-right-width: 1px;
-    border-style: solid;
-    border-color: shade (@theme_bg_color, 0.90);
-    border-left: none;
-    border-top: none;
-    border-bottom: none;
-}
-
 /* moved eject button to left better for overlay scrollbars */
+.caja-side-pane treeview.view,
 CajaWindow CajaPlacesSidebar .view row {
-    padding: 0px 4px 0px 0px;
-}
-
-CajaWindow CajaPlacesSidebar row:selected {
-    color: @theme_selected_fg_color;
-}
-
-CajaWindow CajaPlacesSidebar row:backdrop:selected {
-    color: @theme_fg_color;
-    text-shadow: none; 
-}
-
-CajaWindow CajaPlacesSidebar row:hover {
-    background-color: shade (@theme_bg_color, 0.97);
+    padding: 1px 4px 1px 0px;
 }
 
 /* better for overlay scrollbars */
+.caja-side-pane treeview.view .vertical.scrollbar.overlay-indicator,
+.caja-side-pane textview.view text .vertical.scrollbar.overlay-indicator,
 CajaWindow FMTreeView .vertical.scrollbar.overlay-indicator,
 CajaWindow CajaNotesViewer .vertical.scrollbar.overlay-indicator,
 CajaWindow CajaPlacesSidebar .vertical.scrollbar.overlay-indicator,
@@ -185,19 +166,19 @@ CajaWindow CajaHistorySidebar .vertical.scrollbar.overlay-indicator {
 /* view */
 
 /* list view 3.20 */
-GtkTable paned.horizontal box.vertical paned.horizontal box.vertical notebook box.vertical box.vertical scrolledwindow.frame treeview.view,
+.caja-navigation-window GtkTable paned.horizontal box.vertical paned.horizontal box.vertical notebook box.vertical box.vertical scrolledwindow.frame treeview.view,
 /* view and compact 3.20 */
-GtkTable paned.horizontal box.vertical paned.horizontal box.vertical notebook box.vertical box.vertical scrolledwindow.frame {
+.caja-navigation-window GtkTable paned.horizontal box.vertical paned.horizontal box.vertical notebook box.vertical box.vertical scrolledwindow.frame {
     background-color: @theme_base_color;
 }
 
 /* rows in listview */
-GtkTable paned.horizontal box.vertical paned.horizontal box.vertical notebook box.vertical box.vertical scrolledwindow.frame treeview.view:selected,
-GtkTable paned.horizontal box.vertical paned.horizontal box.vertical notebook box.vertical box.vertical scrolledwindow.frame treeview.view:selected:hover {
+.caja-navigation-window GtkTable paned.horizontal box.vertical paned.horizontal box.vertical notebook box.vertical box.vertical scrolledwindow.frame treeview.view:selected,
+.caja-navigation-window GtkTable paned.horizontal box.vertical paned.horizontal box.vertical notebook box.vertical box.vertical scrolledwindow.frame treeview.view:selected:hover {
     background-color: @theme_selected_bg_color;
 }
 
-GtkTable paned.horizontal box.vertical paned.horizontal box.vertical notebook box.vertical box.vertical scrolledwindow.frame treeview.view:hover {
+.caja-navigation-window GtkTable paned.horizontal box.vertical paned.horizontal box.vertical notebook box.vertical box.vertical scrolledwindow.frame treeview.view:hover {
     background-color: shade (@theme_selected_bg_color, 1.55);
     color: shade (@theme_selected_bg_color, 0.35);
 }
@@ -271,17 +252,19 @@ CajaDesktopWindow.background .caja-canvas-item:selected {
 }
 */
 /* inactive pane */
-
+/* not implemented yet *//*
 .caja-inactive-pane .view {
     background-color: shade(@theme_base_color, 0.9);
 }
+*/
 
 /* Toolbar */
-CajaWindow .toolbar .button {
+.caja-navigation-window toolbar button {
     border-image: none;
 }
 
 /* Misc */
+.caja-navigation-window notebook,
 CajaView.frame,
 CajaNotebook.notebook {
     border-right-width: 0;
@@ -289,18 +272,22 @@ CajaNotebook.notebook {
     border-bottom-width: 0;
 }
 
+.caja-navigation-window notebook tab,
 CajaNotebook.notebook tab.top,
 CajaNotebook.notebook tab.bottom {
     border-right-width: 1px;
     border-left-width: 1px;
 }
 
+.caja-navigation-window notebook,
 CajaNotebook .frame {
     border-width: 1px 0 0 0;
 }
 
 /* close button styling */
 /* surpress styling of close button */
+.caja-navigation-window notebook tab button.flat,
+.caja-navigation-window notebook tab button.flat:hover,
 CajaWindow .notebook tab .button.flat,
 CajaWindow .notebook tab .button.flat:hover {
     border-color: transparent;
@@ -311,8 +298,9 @@ CajaWindow .notebook tab .button.flat:hover {
     border-image: none;
 }
 
+.caja-navigation-window notebook tab,
 CajaWindow .notebook tab.top {
-    padding: 6px 3px 6px 0px;
+    padding: 4px 3px 4px 0px;
 }
 
 .caja-cluebar-label {
@@ -320,7 +308,11 @@ CajaWindow .notebook tab.top {
     text-shadow: 0 1px shade (@cluebar_color, 1.06);
 }
 
-CajaSearchBar .horizontal .entry {
+/* to avoid padding when executing toogle button */
+.caja-search-bar entry,
+.caja-location-entry,
+CajaSearchBar .horizontal .entry,
+CajaLocationBar .entry {
     padding: 4px;
 }
 
