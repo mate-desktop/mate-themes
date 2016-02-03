@@ -365,13 +365,15 @@ column-header .button.dnd {
 
 /* ie. yumex-dnf */
 stack treeview header button,
+stack treeview header button:focus,
 GtkStack column-header .button {
     border-width: 0px 1px 1px 0px;
-	border-color: transparent;
+    border-color: transparent;
     border-style: solid;
-	border-image: linear-gradient(to bottom,
-		alpha(@borders, 0.0),
-		shade(@borders, 1.0)) 0 1 1 0;
+    border-radius: 0px;
+    border-image: linear-gradient(to bottom,
+                                  alpha(@borders, 0.0),
+                                  shade(@borders, 1.0)) 0 1 1 0;
 }
 
 treeview header button:disabled,
