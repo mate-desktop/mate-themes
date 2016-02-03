@@ -1153,7 +1153,7 @@ frame action-bar,
 	border-width: 1px 0 0; 
 }
 
-scrolledwindow,
+scrolledwindow.frame,
 GtkScrolledWindow.frame {
     -gtk-icon-style: regular;
 	border-style: solid;
@@ -1164,10 +1164,15 @@ GtkScrolledWindow.frame {
 }
 
 /* avoid double borders when a viewport is 
- * packed into a GtkScrolledWindow */
-scrolledwindow viewport,
+ * packed into a GtkScrolledWindow, + avoid double borders in general */
+scrolledwindow viewport.frame,
+frame box stack scrolledwindow,
 GtkScrolledWindow viewport.frame {
 	border-style: none;
+}
+
+frame box.vertical scrolledwindow.frame {
+    border-width: 1px 0px 1px 0px;
 }
 
 /***********
@@ -2893,7 +2898,7 @@ combobox arrow {
 
 button.font separator,
 GtkFileChooserButton separator,
-GtkFileChooserWidget horizontal.separator,
+filechooser horizontal.separator,
 GtkFontButton .separator,
 GtkFileChooserButton .separator,
 GtkFileChooserWidget horizontal.separator {
@@ -2913,6 +2918,7 @@ GtkFileChooserButton GtkImage:last-child {
 	color: @internal_element_color;
 }
 
+filechooser.vertical paned.horizontal,
 GtkFileChooserWidget.vertical GtkPaned.horizontal {
     -GtkPaned-handle-size: 3px;
     border-color: transparent;
@@ -6206,8 +6212,31 @@ messagedialog.csd decoration,
 }
 
 /* print dialog */
+printdialog.background .vertical.view.dialog-vbox,
 GtkPrintUnixDialog.background .vertical.view.dialog-vbox {
     background-color: shade (@theme_bg_color, 1.1)
+}
+
+/* filechooser dialog */
+filechooser revealer .vertical.view {
+    background-color: @theme_bg_color;
+    border-style: solid;
+    border-width: 1px 1px 0px 1px;
+    border-color: @borders;
+}
+
+filechooser placessidebar.sidebar.frame {
+    border-style: solid;
+}
+
+/* calendar */
+/* this makes no sense for gtk+-3.20 :) */
+calendar.button {
+  background-image: none;
+}
+
+calendar {
+  border-color: @borders;
 }
 
 /* Various hacks and shit */
