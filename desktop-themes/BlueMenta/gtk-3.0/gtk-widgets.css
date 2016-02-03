@@ -3312,6 +3312,9 @@ menuitem radio:disabled,
 .menuitem.radio:disabled {
 	background-image: none;
 	background-color: transparent;
+	min-height: 16px;
+	min-width: 16px;
+	background-position: center center;
 }
 
 menuitem check:checked,
