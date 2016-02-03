@@ -208,18 +208,21 @@ rubberband {
 	border-radius: 0px;
 }
 
-GtkStatusbar label,
+statusbar label,
+statusbar frame.flat,
 GtkStatusbar .label,
 GtkStatusbar .frame.flat {
 	color: @theme_fg_color;
 	-GtkStatusbar-shadow-type: none;
 }
 
+statusbar frame.flat,
 GtkStatusbar .frame.flat {
 	padding: 1px;
 	border-width: 0;
 }
 
+statusbar frame.flat button.flat,
 GtkStatusbar .frame.flat .button.flat {
     padding: 0px;
 }
