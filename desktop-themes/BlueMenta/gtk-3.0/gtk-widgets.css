@@ -1269,6 +1269,17 @@ button.image-button.circular-button,
    border-color: @borders;
 }
 
+/* arrows */
+#gtk-toolbar-arrow,
+button.toggle.popup image {
+    color: @menu_controls_color;
+}
+
+#gtk-toolbar-arrow:disabled,
+button.toggle.popup image:disabled {
+    color: @insensitive_fg_color;
+}
+
 /* We may want a background for focused buttons, but in the meantime let's remove it too */
 toolbar.primary-toolbar button,
 toolbar.primary-toolbar button:disabled,
@@ -2444,31 +2455,38 @@ notebook header,
                                       shade(@theme_bg_color, 0.96),
                                       shade(@theme_bg_color, 1.0));
     border-width: 0px;
-    box-shadow: inset 0 1px 0 0 alpha(@borders, 0.4), inset 0 -1px 0 0 alpha(@borders, 1.0);
 }
 
 notebook header.top,
 .notebook.header.top {
     border-width: 1px;
-    border-radius: 4px 4px 0px 0px;
+    border-radius: 0px;
+    box-shadow: inset  0px  1px 0 0 alpha(@borders, 0.4),
+                inset  0px -1px 0 0 alpha(@borders, 0.4);
 }
 
 notebook header.bottom,
 .notebook.header.bottom {
     border-width: 1px;
-    border-radius: 0px 0px 4px 4px;
+    border-radius: 0px;
+    box-shadow: inset  0px  1px 0 0 alpha(@borders, 0.4),
+                inset  0px -1px 0 0 alpha(@borders, 0.4);
 }
 
 notebook header.left,
 .notebook.header.left {
     border-width: 1px;
-    border-radius: 4px 0px 0px 4px;
+    border-radius: 0px;
+    box-shadow: inset  1px  0px alpha(@borders, 0.4),
+                inset -1px  0px alpha(@borders, 0.4);
 }
 
 notebook header.right,
 .notebook.header.right {
     border-width: 1px;
-    border-radius: 0px 4px 4px 0px;
+    border-radius: 0px;
+    box-shadow: inset  1px  0px alpha(@borders, 0.4),
+                inset -1px  0px alpha(@borders, 0.4);
 }
 
 notebook viewport,
@@ -2718,22 +2736,26 @@ notebook button.flat.small-button:active:hover,
 
 notebook header.top tabs arrow.up,
 notebook header.bottom tabs arrow.up {
-      -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+    color: @menu_controls_color;
 }
 
 notebook header.top tabs arrow.down,
 notebook header.bottom tabs arrow.down {
-      -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+    -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+    color: @menu_controls_color;
 }
 
 notebook header.left tabs arrow.up,
 notebook header.right tabs arrow.up {
-      -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+    color: @menu_controls_color;
 }
 
 notebook header.left tabs arrow.down,
 notebook header.right tabs arrow.down {
-      -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
+    -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
+    color: @menu_controls_color;
 }
 
 notebook header tabs arrow,
@@ -2905,9 +2927,10 @@ combobox.linked button.combo:checked {
 }
 
 combobox arrow {
-  -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
-  min-height: 16px;
-  min-width: 16px;
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+    color: @menu_controls_color;
+    min-height: 16px;
+    min-width: 16px;
 }
 
 /********************
@@ -3307,7 +3330,26 @@ GtkModelMenuItem GtkBox GtkImage {
 
 menuitem arrow,
 .menuitem.arrow {
-	color: @menu_controls_color;
+    min-height: 16px;
+    min-width: 16px;
+    margin-left: 10px;
+    color: @menu_controls_color;
+}
+
+menu menuitem arrow:dir(ltr) {
+	-gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+
+menu menuitem arrow:dir(rtl) {
+        -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
+}
+
+menu arrow.top {
+      -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
+}
+
+menu arrow.bottom {
+      -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
 }
 
 menuitem separator,
@@ -6091,6 +6133,7 @@ cursor-handle.top,
 .entry.cursor-handle.top,
 .cursor-handle.top {
 	-gtk-icon-source: -gtk-icontheme("selection-start-symbolic");
+    color: @menu_controls_color;
 }
 
 entry cursor-handle.bottom,
@@ -6098,6 +6141,7 @@ cursor-handle.bottom,
 .entry.cursor-handle.bottom,
 .cursor-handle.bottom {
 	-gtk-icon-source: -gtk-icontheme("selection-end-symbolic");
+    color: @menu_controls_color;
 }
 
 /*******
