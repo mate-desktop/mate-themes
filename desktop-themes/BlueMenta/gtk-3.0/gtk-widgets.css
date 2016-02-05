@@ -234,7 +234,8 @@ GtkStatusbar .frame.flat .button.flat {
 	border-radius: 0;
 }
 
-treeview view separator,
+treeview.view separator,
+treeview.view .separator, /* why ?*/
 treeview separator,
 separator,
 separator:hover,
@@ -243,7 +244,12 @@ GtkTreeView.separator,
 .separator,
 .separator:hover {
 	color: @view_separators;
-	background-color: transparent;
+	background-color: @view_separators;
+}
+
+/*Keep treeviews from jumping, separators drawn at 0 by default until hovered*/
+treeview.view.separator {
+    min-height: 2px;
 }
 
 .toolbar separator,
