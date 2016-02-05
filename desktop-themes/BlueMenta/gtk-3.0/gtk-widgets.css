@@ -565,40 +565,6 @@ entry:active,
 	/* background-image in assets */
 }
 
-/*******************
- * Symbolic images *
- *******************/
-image,
-.image {
-	color: @internal_element_color;
-}
-
-image:hover,
-.image:hover {
-	color: @internal_element_prelight;
-}
-
-image:selected,
-image:selected:hover,
-.image:selected,
-.image:selected:hover {
-	color: @theme_selected_fg_color;
-}
-
-view image,
-view image:hover,
-.view.image,
-.view.image:hover {
-	color: @view_symbolic_color;
-}
-
-view image:selected,
-view image:selected:hover,
-.view.image:selected,
-.view.image:selected:hover {
-	color: @theme_selected_fg_color;
-}
-
 /*****************
  * GtkSpinButton *
  *****************/
