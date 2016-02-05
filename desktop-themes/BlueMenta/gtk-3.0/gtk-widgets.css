@@ -606,8 +606,7 @@ spinbutton:focus {
     border-width: 1px;
     border-style: solid;
     border-radius: 3px;
-    /* weird padding is needed for entry, no style class with 3.20 */
-    padding: 5px 5px 5px 2px;
+    padding: 0px;
 }
 
 spinbutton:disabled {
@@ -670,6 +669,23 @@ spinbutton button:dir(rtl) {
     box-shadow: inset -1px 0 @inset_dark_color;
 }
 
+spinbutton.horizontal entry,
+spinbutton.horizontal entry:focus,
+stack box.vertical.linked spinbutton.horizontal entry,
+stack box.vertical.linked spinbutton.horizontal entry:focus {
+    padding: 0px 10px 0px 2px;
+    border-image:none;
+    border-style: none;
+    box-shadow: inset 1px 0 @inset_dark_color;
+}
+
+spinbutton.horizontal button,
+spinbutton.horizontal button:focus,
+stack box.vertical.linked spinbutton.horizontal button,
+stack box.vertical.linked spinbutton.horizontal button:focus {
+    padding: 0px 6px 0px 6px;
+}
+
 spinbutton.vertical button,
 spinbutton.vertical button:focus {
     border-color: @borders;
@@ -707,7 +723,6 @@ stack box.vertical.linked spinbutton.horizontal {
 stack box.vertical.linked spinbutton.horizontal button {
     border-radius: 0px;
     border-style: none;
-    padding: 5px;
     box-shadow: inset 1px 0 @inset_dark_color;
 }
 
