@@ -431,7 +431,7 @@ PanelSeparator {
     text-shadow: none;
 }
 
-/* the grid left from wnckpager and wncktasklist */
+/* the grid left from na-tray and wncktasklist */
 MatePanelAppletFrameDBus {
     background-image: -gtk-scaled(url("assets/panel-grid.svg"));
     background-color: transparent;
@@ -583,8 +583,8 @@ GtkTrayIcon.background {
     background-color: transparent;
 }
 
-/* FIXME, seems that thoise selectors don't work anymore */
-NaTrayApplet {
+/* na-tray-applet */
+.mate-panel-menu-bar #PanelApplet {
     -NaTrayApplet-icon-padding: 3px;
     -NaTrayApplet-icon-size: 16;
 }
