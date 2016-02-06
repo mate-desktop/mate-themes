@@ -2,19 +2,19 @@
 /*	engine: none; */
 	padding: 0;
 	background-clip: padding-box;
-	-GtkButton-child-displacement-x: 1;
-	-GtkButton-child-displacement-y: 1;
-	-GtkButtonBox-child-min-height: 26;
-	-GtkCheckButton-indicator-size: 16;
-	-GtkCheckMenuItem-indicator-size: 12;
+/*	-GtkButton-child-displacement-x: 1; deprecated */
+/*	-GtkButton-child-displacement-y: 1; deprecated */
+/*	-GtkButtonBox-child-min-height: 26; deprecated */
+/*	-GtkCheckButton-indicator-size: 16; deprecated */
+/*	-GtkCheckMenuItem-indicator-size: 12; deprecated */
 	-GtkDialog-button-spacing: 4;
 	-GtkDialog-action-area-border: 10; /* buttons mate-appearance-properties */
-	-GtkExpander-expander-size: 11;
+/*	-GtkExpander-expander-size: 11; deprecated */
 /*	-GtkMenu-horizontal-padding: 0; */
 /*	-GtkMenu-vertical-padding: 0; */
 /*	-GtkPaned-handle-size: 1; deprecated */
 	-GtkScrolledWindow-scrollbar-spacing: 0;
-	-GtkScrolledWindow-scrollbars-within-bevel: 1;
+/*	-GtkScrolledWindow-scrollbars-within-bevel: 1; deprecated */
 	-GtkTextView-error-underline-color: @error_color;
 	-GtkToolButton-icon-spacing: 4;
 	-GtkToolItemGroup-expander-size: 11;
@@ -22,7 +22,7 @@
 	-GtkTreeView-horizontal-separator: 4;
 /*	-GtkWidget-focus-padding: 2;  deprecated */
 /*	-GtkWidget-focus-line-width: 0; */
-	-GtkStatusbar-shadow-type: none;
+/*	-GtkStatusbar-shadow-type: none;  deprecated */
 	-GtkIMHtml-hyperlink-color: @link_color;
 	-GtkHTML-link-color: @link_color;
 	-WnckTasklist-fade-overlay-rect: 0;
@@ -209,20 +209,20 @@ rubberband {
 }
 
 statusbar label,
-statusbar frame.flat,
+statusbar frame,
 GtkStatusbar .label,
 GtkStatusbar .frame.flat {
 	color: @theme_fg_color;
-	-GtkStatusbar-shadow-type: none;
+/*	-GtkStatusbar-shadow-type: none;  deprecated */
 }
 
-statusbar frame.flat,
+statusbar frame,
 GtkStatusbar .frame.flat {
 	padding: 1px;
-	border-width: 0;
+    border-style: none;
 }
 
-statusbar frame.flat button.flat,
+statusbar frame button.flat,
 GtkStatusbar .frame.flat .button.flat {
     padding: 0px;
 }
@@ -889,14 +889,16 @@ row trough,
 
 levelbar,
 GtkLevelBar {
-	-GtkLevelBar-min-block-width: 34;
-	-GtkLevelBar-min-block-height: 3;
+/*   -GtkLevelBar-min-block-width: 34;
+    -GtkLevelBar-min-block-height: 3; deprecated */
+    min-width: 34px;
+    min-height: 3px;
 }
 
 levelbar.vertical,
 GtkLevelBar.vertical {
-	-GtkLevelBar-min-block-width: 3;
-	-GtkLevelBar-min-block-height: 34;
+    min-width: 3px;
+    min-height: 34px;
 }
 
 levelbar trough,
@@ -1183,15 +1185,15 @@ toolbar.primary-toolbar button.image-button,
 button,
 .button {
 	transition: all 400ms ease-out;
-	-GtkButton-image-spacing: 4;
-	-GtkButton-interior-focus: true;
-	-GtkButton-default-border: 0;
-	-GtkButton-inner-border: 3;
-	-GtkArrow-arrow-scaling: 0.5; /* deprecated, but ignored */
-
+    min-height: 16px;
+    min-width: 16px;
+/*	-GtkButton-image-spacing: 4; deprecated, but ignored */
+/*	-GtkButton-interior-focus: true; deprecated, but ignored */
+/*	-GtkButton-default-border: 0; deprecated, but ignored */
+/*	-GtkButton-inner-border: 3; deprecated, but ignored */
+/*	-GtkArrow-arrow-scaling: 0.5; deprecated, but ignored */
 	border-style: solid;
 	border-color: transparent;
-
 	text-shadow: 0 1px @button_text_shadow;
 }
 
@@ -2758,7 +2760,7 @@ combobox,
 GtkComboBox {
 	padding: 0;
 /*	-GtkComboBox-arrow-scaling: 0.5; deprecated */
-	-GtkComboBox-shadow-type: none;
+/*	-GtkComboBox-shadow-type: none; deprecated */
 	text-shadow: 0 1px @button_text_shadow;
 }
 
@@ -3936,6 +3938,7 @@ toolbar.inline-toolbar.vertical:last-child,
 /***********
  * Sidebar *
  ***********/
+.sidebar .view,
 placessidebar .view,
 .sidebar,
 GtkPlacesSidebar.sidebar .view {
@@ -4382,9 +4385,15 @@ progressbar .osd,
 .osd GtkProgressBar,
 GtkProgressBar.osd {
 	padding: 0;
-	-GtkProgressBar-xspacing: 0;
-	-GtkProgressBar-yspacing: 3px;
-	-GtkProgressBar-min-horizontal-bar-height: 3px;
+/*	-GtkProgressBar-xspacing: 0; deprecated */
+/*	-GtkProgressBar-yspacing: 3px; deprecated */
+/*	-GtkProgressBar-min-horizontal-bar-height: 3px; deprecated */
+	min-height: 3px;
+}
+
+.osd progressbar.horizontal,
+progressbar.horizontal .osd {
+	min-height: 3px;
 }
 
 .osd progressbar trough,
@@ -5488,6 +5497,8 @@ GtkTreeView.view.expander:checked {
 
 expander arrow,
 GtkExpander {
+    min-width: 16px;
+    min-height: 16px;
     -gtk-icon-style: regular;
 	-gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
 }
@@ -6346,11 +6357,9 @@ paned > separator.wide:backdrop {
 .floating-bar .button {
 	background-color: alpha (@theme_base_color, 0.0);
 	background-image: none;
-
 	border-style: none;
 	border-image: none;
-
-	-GtkButton-image-spacing: 0;
-	-GtkButton-inner-border: 0;
+/*	-GtkButton-image-spacing: 0;
+	-GtkButton-inner-border: 0; deprecated */
 }
 
