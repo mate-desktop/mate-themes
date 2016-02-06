@@ -171,26 +171,20 @@ tooltip * {
 
 spinner,
 .spinner {
-	background-image: none;
-	background-color: blue;
+	background: none;
 	opacity: 0;
 	-gtk-icon-source: -gtk-icontheme("process-working-symbolic");
 }
 
-spinner:active,
-.spinner:active {
+spinner:checked,
+.spinner:checked {
 	opacity: 1;
 	animation: spin 1s linear infinite;
 }
 
-spinner:active:disabled,
-.spinner:active:disabled {
+spinner:checked:disabled,
+.spinner:checked:disabled {
 	opacity: 0.5;
-}
-
-button spinner:active,
-.button .spinner:active {
-	color: @theme_fg_color;
 }
 
 /*****************
