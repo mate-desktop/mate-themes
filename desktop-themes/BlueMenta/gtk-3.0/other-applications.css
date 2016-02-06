@@ -2,72 +2,36 @@
  * NEMO File manager *
  *********************/
 
-/* for breadcrumbs path bar */
-
-.nemo-pathbar-button,
-NemoPathbarButton {
-	background-image: -gtk-gradient(linear, left top, left bottom,
-		color-stop (0, shade(alpha(@theme_bg_color, 0.8), 1.1)),
-		color-stop (.3, shade(alpha(@theme_bg_color, 0.8), 1.1)),
-		color-stop (.7, shade(alpha(@theme_bg_color, 0.8), 0.98)),
-		color-stop (1, shade(alpha(@theme_bg_color, 0.8), 0.90)));
-	border-color: #979797;
-	color: @theme_fg_color;
-	-NemoPathbarButton-border-radius: 3px;
-}
-
-NemoPathbarButton:active {
-	background-image: -gtk-gradient(linear, left top, left bottom,
-		color-stop (0, shade(alpha(@theme_bg_color, 0.8), .8)),
-		color-stop (.3, shade(alpha(@theme_bg_color, 0.8), .9)),
-		color-stop (1, shade(alpha(@theme_bg_color, 0.8), 1.0)));
-}
-
-NemoPathbarButton:hover {
-	background-image: -gtk-gradient(linear, left top, left bottom,
-		color-stop (0, shade(alpha(@theme_selected_bg_color, 0.8), 1.25)),
-		color-stop (.3, shade(alpha(@theme_selected_bg_color, 0.8), 1.25)),
-		color-stop (.7, shade(alpha(@theme_selected_bg_color, 0.8), 0.95)),
-		color-stop (1, shade(alpha(@theme_selected_bg_color, 0.8), 0.85)));
-}
-
-NemoPathbarButton:active:hover {
-	background-image: -gtk-gradient(linear, left top, left bottom,
-		color-stop (0, shade(alpha(@theme_selected_bg_color, 0.8), .80)),
-		color-stop (.3, shade(alpha(@theme_selected_bg_color, 0.8), .95)),
-		color-stop (1, shade(alpha(@theme_selected_bg_color, 0.8), 1.25)));
-}
-
 /* workaround for broken first/last-child logic with linked buttons
    in pathbar with gtk+-3.18 */
-NemoPathBar:dir(ltr).raised.linked .button.text-button,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:hover,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:hover:active,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:active,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:checked,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:checked:hover,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:checked:hover:active,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:first-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:hover:first-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:hover:active:first-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:active:first-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:checked:first-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:checked:hover:first-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:checked:hover:active:first-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:last-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:hover:last-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:hover:active:last-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:active:last-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:checked:last-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:checked:hover:last-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:checked:hover:active:last-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:only-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:hover:only-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:hover:active:only-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:active:only-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:checked:only-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:checked:hover:only-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:checked:hover:active:only-child {
+NemoPathBar:dir(ltr).raised.linked button.text-button,
+NemoPathBar:dir(ltr).raised.linked button.text-button:hover,
+NemoPathBar:dir(ltr).raised.linked button.text-button:hover:active,
+NemoPathBar:dir(ltr).raised.linked button.text-button:active,
+NemoPathBar:dir(ltr).raised.linked button.text-button:checked,
+NemoPathBar:dir(ltr).raised.linked button.text-button:checked:hover,
+NemoPathBar:dir(ltr).raised.linked button.text-button:checked:hover:active,
+NemoPathBar:dir(ltr).raised.linked button.text-button:first-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:hover:first-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:hover:active:first-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:active:first-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:checked:first-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:checked:hover:first-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:checked:hover:active:first-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:last-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:hover:last-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:hover:active:last-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:active:last-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:checked:last-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:checked:hover:last-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:checked:hover:active:last-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:only-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:hover:only-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:hover:active:only-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:active:only-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:checked:only-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:checked:hover:only-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:checked:hover:active:only-child {
 	border-right-width: 1px;
 	border-left-width: 1px;
 	border-image-width: 3px 3px 4px 3px;
@@ -85,7 +49,7 @@ toolbar.primary-toolbar.horizontal NemoPathBar.raised.linked button:last-child G
 
 
 /* For Places Sidebar diskfull indicators */
-
+.vertical.sidebar>scrolledwindow.frame>viewport.frame>box.vertical>treeview.view,
 NemoPlacesTreeView {
 	-NemoPlacesTreeView-disk-full-bg-color: shade(@theme_bg_color, .65);
 	-NemoPlacesTreeView-disk-full-fg-color: shade(@theme_selected_bg_color, 1.0);
@@ -95,19 +59,23 @@ NemoPlacesTreeView {
 	-NemoPlacesTreeView-disk-full-max-length: 70px;
 }
 
+.vertical.sidebar>scrolledwindow.frame>viewport.frame>box.vertical>treeview.view:selected,
 NemoPlacesTreeView:selected {
 	-NemoPlacesTreeView-disk-full-bg-color: shade(@theme_bg_color, 2.0);
 	-NemoPlacesTreeView-disk-full-fg-color: shade(@theme_fg_color, 2.0);
 }
 
+.vertical.sidebar>scrolledwindow.frame>viewport.frame>box.vertical>treeview.view:hover,
 NemoPlacesTreeView:hover {
 }
 
+.vertical.sidebar>scrolledwindow.frame>viewport.frame>box.vertical>treeview.view:selected:hover,
 NemoPlacesTreeView:selected:hover {
 }
 
 @define-color cluebar_color shade (@theme_base_color, 0.9);
 
+window.background>grid.vertical>paned.horizontal>box.vertical>paned.horizontal>box.vertical>notebook box.vertical>GtkOverlay>scrolledwindow,
 NemoWindow .view {
 	background-color: @theme_base_color;
 }
