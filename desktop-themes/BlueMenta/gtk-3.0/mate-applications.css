@@ -640,56 +640,29 @@ TerminalWindow GtkNotebook.notebook tab.top,
  ****************/
 
 /* pluma line numbers */
+.pluma-window textview,
 PlumaView {
     background-color: shade (@theme_bg_color, 1.07);
 }
 
-/*FIXME normaly this isn't the right entry for adjusting
-the sidebar entry hover color*/
-PlumaWindow .view row:hover {
-    background-color: shade (@theme_selected_bg_color, 1.15);
-    color: shade (@theme_selected_bg_color, 0.35);
+/* Pluma status bar */
+.pluma-window statusbar.horizontal frame {
+    border-style: none;
 }
 
-/* Pluma status bar */
+.pluma-window statusbar.horizontal frame button.flat.toggle,
 PlumaStatusbar.horizontal.statusbar .frame.flat .flat.button {
     border-image: url("borders/button.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
+    padding: 0px;
 }
 
-PlumaWindow .button.flat:hover {
-    background-color: transparent;
-    background-image: linear-gradient(to bottom,
-                                      @button_gradient_color_a,
-                                      @button_gradient_color_b);
-    border-image: url("borders/button.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
-    padding: 2px 5px;
-}
-
-PlumaCloseButton.button.flat,
-PlumaCloseButton.button.flat:hover,
-PlumaCloseButton:hover.button.flat,
-PlumaCloseButton:hover.button.flat:hover {
-    padding: 1px;
-}
-
-/* surpress styling of close button */
-PlumaWindow .notebook tab .button.flat,
-PlumaWindow .notebook tab .button.flat:hover {
-    border-color: transparent;
-    background-color: transparent;
-    background-image: none;
-    box-shadow: inset 0 1px rgba(255,255,255,0), 0 1px rgba(255,255,255,0);
-    text-shadow: none;
-    -gtk-icon-shadow: none;
-    border-image: none;
-    padding: 1px;
-}
-
-PlumaWindow .notebook tab.top {
-    padding: 6px 0px 6px 6px;
+.pluma-window statusbar.horizontal frame button.flat.toggle GtkArrow {
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+    -GtkArrow-arrow-scaling: 1.0; /* deprecated, but ignored */
 }
 
 /* Printpreview */
+.pluma-print-preview toolbar.horizontal,
 PlumaPrintPreview.vertical .toolbar.horizontal {
     background-image: linear-gradient(to bottom,
                                       shade (@theme_bg_color, 1.0),
@@ -703,25 +676,52 @@ PlumaPrintPreview.vertical .toolbar.horizontal {
     padding: 0px;
 }
 
+.pluma-print-preview toolbar.horizontal entry,
 PlumaPrintPreview.vertical .toolbar.horizontal GtkToolItem .horizontal .entry {
     padding: 4px 6px;
 }
 
+.pluma-print-preview toolbar.horizontal button.flat.image-button,
 PlumaPrintPreview.vertical .toolbar.horizontal .button.flat.image-button {
     padding: 0px;
 }
 
+.pluma-print-preview toolbar.horizontal button.flat.text-button,
 PlumaPrintPreview.vertical .toolbar.horizontal .button.flat.text-button {
     padding: 0px 16px;
     border-radius: 2px;
 }
 
+.pluma-print-preview toolbar.horizontal toolbutton button.flat.text-button {
+    color: @theme_fg_color;
+    border-image: url("borders/button.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
+    background-image: linear-gradient(to bottom,
+                                      @button_gradient_color_a,
+                                      @button_gradient_color_b);
+}
+
+.pluma-print-preview toolbar.horizontal toolbutton button.flat.text-button:hover {
+    color: @internal_element_prelight;
+    background-image: linear-gradient(to bottom,
+                                      @button_hover_gradient_color_a,
+                                      @button_hover_gradient_color_b);
+}
+
+.pluma-print-preview scrolledwindow,
 PlumaPrintPreview.vertical GtkLayout {
     background-color: @theme_base_color;
 }
 
+.pluma-window paned.horizontal {
+    -GtkPaned-handle-size: 3px;
+    border-color: transparent;
+    background-color: @theme_bg_color;
+    background-image: none;
+    border-image: none;
+}
+
 /* sidebar file-browser */
-PlumaPanel.vertical {
+.pluma-window paned.horizontal box.vertical {
     border-radius: 4px 4px 0px 0px;
     border-width: 1px 0px 0px 0px;
     border-style: solid;
@@ -729,10 +729,16 @@ PlumaPanel.vertical {
     box-shadow: none;
 }
 
+.pluma-window paned.horizontal box.vertical notebook.frame box.vertical,
 PlumaFileBrowserWidget.vertical {
     background-color: @theme_bg_color;
 }
 
+.pluma-window paned.horizontal box.vertical box.horizontal button.flat {
+    padding: 0px ;
+}
+
+.pluma-window paned.horizontal box.vertical notebook.frame box.vertical toolbar.horizontal,
 PlumaFileBrowserWidget.vertical .toolbar.horizontal {
     background-image: linear-gradient(to bottom,
                                       shade (@theme_bg_color, 1.0),
@@ -746,16 +752,20 @@ PlumaFileBrowserWidget.vertical .toolbar.horizontal {
     padding: 4px 0px;
 }
 
+.pluma-window paned.horizontal box.vertical notebook.frame box.vertical toolbar.horizontal button.flat,
+.pluma-window paned.horizontal box.vertical notebook.frame box.vertical toolbar.horizontal button.flat.menu-button,
 PlumaFileBrowserWidget.vertical .toolbar.horizontal .button.flat,
 PlumaFileBrowserWidget.vertical .toolbar.horizontal .button.flat.menu-button {
     padding: 4px 2px ;
 }
 
+.pluma-window paned.horizontal box.vertical notebook.frame box.vertical toolbar.horizontal button.flat.image-button,
 PlumaFileBrowserWidget.vertical .toolbar.horizontal .button.flat.image-button {
     padding: 4px 3px ;
 }
 
 /* color of of expander arrow */
+.pluma-window paned.horizontal box.vertical notebook.frame box.vertical expander:hover,
 PlumaFileBrowserWidget.vertical GtkExpander:hover {
     color: @theme_fg_color;
 }
