@@ -770,56 +770,37 @@ PlumaFileBrowserWidget.vertical GtkExpander:hover {
     color: @theme_fg_color;
 }
 
-/***********************
- * Mate-Control-Center *
- ***********************/
-
-/* background */
-ShellWindow AppResizer .view {
-    background-color: @theme_base_color;
-}
-
-/* button of sidebar */
-ShellWindow .button.flat {
-    border-image: none;
-    padding: 4px 1px;
-}
-
-ShellWindow .button.flat:hover {
-    padding: 4px 1px;
-
-}
-
-/* button of applications */
-ShellWindow GtkScrolledWindow .button.flat {
-    padding: 4px 0px;
-    border-image: none;
-}
-
-ShellWindow GtkScrolledWindow .button.flat:hover {
-    background-color: transparent;
-    background-image: linear-gradient(to bottom,
-                                      @button_hover_gradient_color_a,
-                                      @button_hover_gradient_color_b);
-    border-image: url("borders/button.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
-    padding: 4px 0px;
-}
-
 /*********
  * Atril *
  *********/
 
 /* size of page entry */
+.atril-window .primary-toolbar toolbar toolitem box.horizontal entry,
 EvPageActionWidget .entry {
     padding: 2px;
 }
 
+.atril-window paned.horizontal {
+    -GtkPaned-handle-size: 3px;
+    border-color: transparent;
+    background-color: @theme_bg_color;
+    background-image: none;
+    border-image: none;
+}
+
+.atril-window .primary-toolbar toolbar button,
+.atril-window .primary-toolbar toolbar button.flat,
 EvWindow .toolbar .button,
 EvWindow .toolbar .button.flat {
-    padding: 0px 4px;
+    padding: 5px;
+}
+
+.atril-window .primary-toolbar toolbar button.combo {
+    padding: 6px;
 }
 
 /* atril and eom */
+dialog.background>box.vertical.dialog-vbox>box.vertical>scrolledwindow>viewport.frame,
 EggToolbarEditor.vertical GtkScrolledWindow .frame {
     background-color: shade (@theme_base_color, 1.0);
     border-color: @borders;
