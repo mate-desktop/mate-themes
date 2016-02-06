@@ -12,7 +12,7 @@
 	-GtkExpander-expander-size: 11;
 /*	-GtkMenu-horizontal-padding: 0; */
 /*	-GtkMenu-vertical-padding: 0; */
-	-GtkPaned-handle-size: 1;
+/*	-GtkPaned-handle-size: 1; deprecated */
 	-GtkScrolledWindow-scrollbar-spacing: 0;
 	-GtkScrolledWindow-scrollbars-within-bevel: 1;
 	-GtkTextView-error-underline-color: @error_color;
@@ -256,28 +256,6 @@ treeview.view.separator {
 .toolbar .separator {
 	/*color: @toolbar_separator;*/
 	color: transparent;
-}
-
-.pane-separator {
-	-GtkPaned-handle-size: 1;
-	border-width: 0 1px 1px 1px;
-	border-style: solid;
-	border-color: @borders;
-	background-color: @sidebar_bg;
-	background-image: url("assets/null.png");
-	color: @borders;
-}
-
-.pane-separator:hover,
-.pane-separator:selected {
-	color: @theme_text_color;
-}
-
-notebook .pane-separator,
-notebook .pane-separator:hover,
-.notebook .pane-separator,
-.notebook .pane-separator:hover {
-	background-color: @theme_base_color;
 }
 
 /************************
@@ -2941,12 +2919,6 @@ GtkFileChooserButton GtkImage:last-child {
 	color: @internal_element_color;
 }
 
-filechooser.vertical paned.horizontal,
-GtkFileChooserWidget.vertical GtkPaned.horizontal {
-    -GtkPaned-handle-size: 3px;
-    border-color: transparent;
-}
-
 /**************
  * Scrollbars *
  **************/
@@ -3354,8 +3326,8 @@ menuitem radio:disabled,
 .menuitem.radio:disabled {
 	background-image: none;
 	background-color: transparent;
-	min-height: 16px;
-	min-width: 16px;
+	min-height: 12px;
+	min-width: 12px;
 	background-position: center center;
 }
 
@@ -6284,6 +6256,39 @@ calendar.button {
 
 calendar {
   border-color: @borders;
+}
+
+/*********
+ * Paned *
+ *********/
+
+/* the small line between sidebar and view */
+paned > separator {
+    min-width: 3px;
+    min-height: 3px;
+    -gtk-icon-source: none;
+    border-style: none;
+    background-color: @theme_bg_color;
+    background-size: 1px 1px;
+ }
+
+paned > separator:hover,
+paned > separator:selected {
+    background-color: transparent;
+}
+
+paned > separator:backdrop {
+}
+
+paned > separator.wide {
+    margin: 0;
+    padding: 0;
+    min-width: 5px;
+    min-height: 5px;
+    background-size: 1px 1px, 1px 1px;
+}
+
+paned > separator.wide:backdrop {
 }
 
 /* Various hacks and shit */
