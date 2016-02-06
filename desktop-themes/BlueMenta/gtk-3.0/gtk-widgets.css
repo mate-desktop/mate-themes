@@ -3487,6 +3487,11 @@ radio:disabled,
 	border-style: none;
 }
 
+check,
+radio {
+	padding: 0px 6px 0px 0px;
+}
+
 checkbutton:hover,
 checkbutton:active:hover,
 checkbutton:selected,
