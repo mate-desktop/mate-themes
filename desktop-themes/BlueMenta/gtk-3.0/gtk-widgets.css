@@ -2730,13 +2730,13 @@ notebook header.bottom tabs arrow.down {
 
 notebook header.left tabs arrow.up,
 notebook header.right tabs arrow.up {
-    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+    -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
     color: @menu_controls_color;
 }
 
 notebook header.left tabs arrow.down,
 notebook header.right tabs arrow.down {
-    -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
     color: @menu_controls_color;
 }
 
