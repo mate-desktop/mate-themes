@@ -94,14 +94,14 @@
     padding: 6px 4px;
 }
 
-/* the small line between sidebar and view */
+/* the small line between sidebar and view , now in gtk-widgets 'paned'*//*
 .caja-navigation-window paned.horizontal {
     -GtkPaned-handle-size: 3px;
     border-color: transparent;
     background-color: @theme_bg_color;
 }
 
-/* caja sidebar *//*
+*//* caja sidebar *//*
 CajaWindow FMTreeView .view,
 CajaWindow CajaNotesViewer .view,
 CajaWindow CajaPlacesSidebar .view,
@@ -712,14 +712,6 @@ PlumaPrintPreview.vertical GtkLayout {
     background-color: @theme_base_color;
 }
 
-.pluma-window paned.horizontal {
-    -GtkPaned-handle-size: 3px;
-    border-color: transparent;
-    background-color: @theme_bg_color;
-    background-image: none;
-    border-image: none;
-}
-
 /* sidebar file-browser */
 .pluma-window paned.horizontal box.vertical {
     border-radius: 4px 4px 0px 0px;
@@ -778,14 +770,6 @@ PlumaFileBrowserWidget.vertical GtkExpander:hover {
 .atril-window .primary-toolbar toolbar toolitem box.horizontal entry,
 EvPageActionWidget .entry {
     padding: 2px;
-}
-
-.atril-window paned.horizontal {
-    -GtkPaned-handle-size: 3px;
-    border-color: transparent;
-    background-color: @theme_bg_color;
-    background-image: none;
-    border-image: none;
 }
 
 .atril-window .primary-toolbar toolbar button,

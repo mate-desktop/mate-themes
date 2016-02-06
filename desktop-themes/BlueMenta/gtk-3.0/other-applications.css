@@ -108,10 +108,6 @@ NemoPlacesTreeView:selected:hover {
 
 @define-color cluebar_color shade (@theme_base_color, 0.9);
 
-NemoWindow * {
-	-GtkPaned-handle-size: 0;
-}
-
 NemoWindow .view {
 	background-color: @theme_base_color;
 }
@@ -356,13 +352,6 @@ DConfWindow DConfKeyView.view {
 DConfWindow DConfKeyView.view row:hover {
     background-color: shade (@theme_selected_bg_color, 1.55);
     color: shade (@theme_selected_bg_color, 0.35);
-}
-
-/* the small line between sidebar and view */
-DConfWindow GtkPaned.horizontal {
-    -GtkPaned-handle-size: 3px;
-    border-color: transparent;
-    background-color: @theme_bg_color;
 }
 
 DConfKeyView.view row:selected,
