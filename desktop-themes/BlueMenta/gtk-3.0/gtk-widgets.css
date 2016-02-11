@@ -683,6 +683,8 @@ stack box.vertical.linked spinbutton.horizontal button {
 /*****************
  * Color Chooser *
  *****************/
+colorswatch,
+colorswatch:selected,
 GtkColorSwatch,
 GtkColorSwatch:selected {
 	border-width: 1px;
@@ -696,57 +698,57 @@ GtkColorSwatch:selected {
 	background-clip: border-box;
 }
 
-GtkColorSwatch:hover,
-GtkColorSwatch:selected:hover {
+colorswatch:hover,
+colorswatch:selected:hover {
 	border-color: alpha(black, 0.45);
 }
 
-GtkColorSwatch.color-dark:hover {
+colorswatch.color-dark:hover {
 	background-image: linear-gradient(to bottom,
 		alpha(white, 0) 40%,
 		alpha(white, 0.3)
 		);
 }
 
-GtkColorSwatch.color-light:hover {
+colorswatch.color-light:hover {
 	background-image: linear-gradient(to top,
 		alpha(black, 0) 40%,
 		alpha(black, 0.1)
 		);
 }
 
-GtkColorSwatch.color-light:selected:hover,
-GtkColorSwatch.color-dark:selected:hover {
+colorswatch.color-light:selected:hover,
+colorswatch.color-dark:selected:hover {
 	background-image: none;
 }
 
-GtkColorSwatch.left,
-GtkColorSwatch:first-child {
+colorswatch.left,
+colorswatch:first-child {
 	border-top-left-radius: 6px;
 	border-bottom-left-radius: 6px;
 }
 
-GtkColorSwatch.right,
-GtkColorSwatch:last-child {
+colorswatch.right,
+colorswatch:last-child {
 	border-top-right-radius: 6px;
 	border-bottom-right-radius: 6px;
 }
 
-GtkColorSwatch:only-child {
+colorswatch:only-child {
 	border-radius: 6px;
 }
 
-GtkColorSwatch.top {
+colorswatch.top {
 	border-top-left-radius: 6px;
 	border-top-right-radius: 6px;
 }
 
-GtkColorSwatch.bottom {
+colorswatch.bottom {
 	border-bottom-left-radius: 6px;
 	border-bottom-right-radius: 6px;
 }
 
-GtkColorChooserWidget #add-color-button {
+colorchooser #add-color-button {
 	background-clip: padding-box;
 	border-color: mix(@borders, @theme_bg_color, 0.3);
 	background-color: mix(@borders, @theme_bg_color, 0.3);
@@ -754,7 +756,7 @@ GtkColorChooserWidget #add-color-button {
 	box-shadow: none;
 }
 
-GtkColorChooserWidget #add-color-button:hover {
+colorchooser #add-color-button:hover {
 	border-color: @borders;
 	background-color: @borders;
 	color: @theme_base_color;
@@ -779,12 +781,13 @@ GtkColorChooserWidget #add-color-button:hover {
 	color: #cccccc;
 }
 
-GtkColorEditor GtkColorSwatch {
+box.horizontal colorswatch,
+GtkColorEditor colorswatch {
 	border-radius: 6px;
 }
 
-GtkColorEditor GtkColorSwatch.color-dark:hover,
-GtkColorEditor GtkColorSwatch.color-light:hover {
+GtkColorEditor colorswatch.color-dark:hover,
+GtkColorEditor colorswatch.color-light:hover {
 	background-image: none;
 	border-color: alpha(black, 0.3);
 }
