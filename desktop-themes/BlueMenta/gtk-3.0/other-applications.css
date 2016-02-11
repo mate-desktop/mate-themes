@@ -344,6 +344,33 @@ DConfKeyView.view .spinbutton .button:last-child {
     border-radius: 0 2px 2px 0;
 }
 
+/***********
+ * Lightdm *
+ ***********/
+
+#login_window.background.lightdm-gtk-greeter {
+	border-radius: 10px;
+}
+
+#login_window.background.lightdm-gtk-greeter,
+#login_window.background.lightdm-gtk-greeter box.vertical {
+	border-radius: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+}
+
+#login_window.background.lightdm-gtk-greeter frame {
+	border-style: none;
+}
+
+#login_window.background.lightdm-gtk-greeter #prompt_entry,
+#login_window.background.lightdm-gtk-greeter button.combo,
+#login_window.background.lightdm-gtk-greeter button.text-button,
+#login_window.background.lightdm-gtk-greeter button.text-button.default {
+	padding: 8px 4px;
+}
+
 /*****************
  * Ubuntu styles *
  *****************/
