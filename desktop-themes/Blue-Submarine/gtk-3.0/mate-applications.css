@@ -5,18 +5,19 @@
 /**** Window ***/
 
 /* background of all views */
-CajaNavigationWindow .view {
+/*Caja icon views-these are widgets w/o css nodes or valid names, .view is applied only to */
+window.background>*>paned>box>paned>box>notebook>stack>box>box>scrolledwindow.frame {
     background-color: shade (@base_color, 1.0);
     color: @theme_fg_color;
 }
 
-/* since gtk+-3.18 */
-CajaNavigationWindow FMListView .view {
+/* Caja list view */
+window.background>*>paned>box>paned>box>notebook>stack>box>box>scrolledwindow>*>treeview.view{
     background-color: shade (@base_color, 1.0);
 }
 
 /* caja sidebar */
-CajaWindow FMTreeView .view,
+window.background*>paned>box>notebook>stack>scrolledwindow.frame treeview.view,
 CajaWindow CajaNotesViewer .view,
 CajaWindow CajaPlacesSidebar .view,
 CajaWindow CajaHistorySidebar .view,
@@ -26,8 +27,8 @@ CajaWindow CajaInformationPanel .vertical {
 }
 
 /* the small line between sidebar and view */
-CajaWindow GtkPaned.horizontal {
-    -GtkPaned-handle-size: 3px;
+CajaWindow paned.horizontal {
+    -paned-handle-size: 3px;
     border-color: transparent;
 }
 
@@ -78,19 +79,19 @@ CajaWindow CajaEmblemSidebar .scrollbar {
     -GtkScrolledWindow-scrollbars-within-bevel: 1;
 }
 
-CajaWindow FMTreeView .scrollbar.trough,
-CajaWindow CajaNotesViewer .scrollbar.trough,
-CajaWindow CajaPlacesSidebar .scrollbar.trough,
-CajaWindow CajaHistorySidebar .scrollbar.trough,
-CajaWindow CajaEmblemSidebar .scrollbar.trough,
-CajaWindow FMTreeView .scrollbar.trough.vertical,
-CajaWindow CajaNotesViewer .scrollbar.trough.vertical,
-CajaWindow CajaPlacesSidebar .scrollbar.trough.vertical,
-CajaWindow CajaHistorySidebar .scrollbar.trough.vertical,
-CajaWindow CajaEmblemSidebar .scrollbar.trough.vertical {
+CajaWindow FMTreeView scrollbar trough,
+CajaWindow CajaNotesViewer  scrollbar trough,
+CajaWindow CajaPlacesSidebar  scrollbar trough,
+CajaWindow CajaHistorySidebar  scrollbar trough,
+CajaWindow CajaEmblemSidebar  scrollbar trough,
+CajaWindow FMTreeView  scrollbar trough.vertical,
+CajaWindow CajaNotesViewer  scrollbar trough.vertical,
+CajaWindow CajaPlacesSidebar  scrollbar trough.vertical,
+CajaWindow CajaHistorySidebar  scrollbar trough.vertical,
+CajaWindow CajaEmblemSidebar  scrollbar trough.vertical {
     background-image: -gtk-gradient (linear, left top, left bottom,
-                                     from (shade (@theme_bg_color, 0.98)),
-                                     to (shade (@theme_bg_color, 1.06)));
+                                    from (shade (@theme_bg_color, 0.98)),
+                                    to (shade (@theme_bg_color, 1.06)));
     border-radius: 0;
     border-width: 0 0 0 0;
     border-style: solid;
@@ -129,10 +130,10 @@ CajaWindow CajaHistorySidebar .view row:hover {
                                      from (shade(@theme_bg_color, 1.05)),
                                      color-stop (0.40, shade (@theme_bg_color, 1.13)),
                                      to (shade(@theme_bg_color, 1.10)));
-    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
-                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.0),
+                inset  1px  0px shade (@theme_selected_bg_color, 1.0),
+                inset -1px  0px shade (@theme_selected_bg_color, 1.0),
+                inset  0px -1px shade (@theme_selected_bg_color, 1.0);
     color: shade (@theme_fg_color, 0.90);
     border-radius: 6px;
     text-shadow: none;
@@ -208,18 +209,18 @@ CajaNavigationWindow CajaSidePane .button.flat:checked:checked:last-child {
 
 CajaNavigationWindow CajaSidePane .button.flat:hover:first-child,
 CajaNavigationWindow CajaSidePane .button.flat:checked:checked:first-child {
-    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
-                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
+    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
+                inset  1px  0px shade(@selected_bg_color, 0.97),
                 inset -1px  0px rgba(255,255,255,0), 0 1px rgba(255,255,255,0),
-                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+                inset  0px -1px shade(@selected_bg_color, 0.93);
 }
 
 CajaNavigationWindow CajaSidePane .button.flat:hover:last-child,
 CajaNavigationWindow CajaSidePane .button.flat:checked:checked:last-child {
-    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
-                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
+                inset  1px  0px shade(@selected_bg_color, 0.97),
+                inset -1px  0px shade(@selected_bg_color, 0.93),
+                inset  0px -1px shade(@selected_bg_color, 0.93);
 }
 
 /* pathpar toggle button */
@@ -281,13 +282,13 @@ CajaLocationBar .entry {
 
 CajaSearchBar .entry:focus,
 CajaLocationBar .entry:focus {
-    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
-                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
+                inset  1px  0px shade(@selected_bg_color, 0.97),
+                inset -1px  0px shade(@selected_bg_color, 0.93),
+                inset  0px -1px shade(@selected_bg_color, 0.93);
 }
 
-/* eventbars, ie. search results */
+/* eventbars, ie. searchbar */
 CajaNotebook .frame GtkEventBox {
     background-color: shade (@theme_bg_color, 1.05);
     border-color: @notebook_border;
@@ -377,10 +378,10 @@ CajaTrashBar .button:checked:hover {
                                      color-stop (0.52, shade(@nautilus_cluebar_color, 0.91)),
                                      to   (shade(@nautilus_cluebar_color, 0.87)));
    *//* outer *//*
-    border-top-color:       alpha(@focused_entry_border, 0.20);
-    border-right-color:     alpha(@focused_entry_border, 0.25);
-    border-left-color:      alpha(@focused_entry_border, 0.25);
-    border-bottom-color:    alpha(#fff, 0.10);
+    border-top-color: alpha(@focused_entry_border, 0.20);
+    border-right-color: alpha(@focused_entry_border, 0.25);
+    border-left-color: alpha(@focused_entry_border, 0.25);
+    border-bottom-color: alpha(#fff, 0.10);
     box-shadow: inset  0px  2px alpha(#fff, 0.09),
                 inset  2px  0px alpha(#fff, 0.07),
                 inset -2px  0px alpha(#fff, 0.07),
@@ -403,8 +404,8 @@ CajaTrashBar .button *:checked:hover {
     text-shadow: 0px 1px @theme_shadow_color;
 }
 
-.question .button:insensitive,
-CajaTrashBar .button:insensitive {
+.question .button:disabled,
+CajaTrashBar .button:disabled {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (shade(@nautilus_cluebar_color, 0.95)),
@@ -417,8 +418,8 @@ CajaTrashBar .button:insensitive {
                 inset  0px -1px shade(@nautilus_cluebar_color, 0.78);
 }
 
-.question .button *:insensitive,
-CajaTrashBar .button *:insensitive {
+.question .button *:disabled,
+CajaTrashBar .button *:disabled {
     color: mix(@nautilus_cluebar_color, @theme_fg_color, 0.50);
     text-shadow: none;
 }
@@ -462,10 +463,10 @@ CajaWindow .primary-toolbar.toolbar .button.image-button:checked:hover {
                                      left top, left bottom,
                                      from (shade(@menu_bg_dark_color, 2.03)),
                                      to   (shade(@menu_bg_dark_color, 1.17)));
-    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
-                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
+                inset  1px  0px shade(@selected_bg_color, 0.97),
+                inset -1px  0px shade(@selected_bg_color, 0.93),
+                inset  0px -1px shade(@selected_bg_color, 0.93);
 }
 
 /* some overrides for button.flat */
@@ -482,10 +483,10 @@ CajaWindow .primary-toolbar.toolbar CajaZoomControl .button.flat:hover {
                                      left top, left bottom,
                                      from (shade(@menu_bg_dark_color, 2.03)),
                                      to   (shade(@menu_bg_dark_color, 1.17)));
-    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
-                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
+                inset  1px  0px shade(@selected_bg_color, 0.97),
+                inset -1px  0px shade(@selected_bg_color, 0.93),
+                inset  0px -1px shade(@selected_bg_color, 0.93);
 }
 
 CajaWindow .primary-toolbar.toolbar CajaZoomControl .button.flat,
@@ -525,7 +526,7 @@ CajaWindow .primary-toolbar.toolbar GtkComboBox .button:checked:hover {
     padding: 7px 0px 7px 3px;
 }
 
-/* fix for menu transition */
+/* fix for menu transition */ 
 CajaWindow .primary-toolbar.toolbar GtkComboBox .menuitem {
     background: transparent;
 }
@@ -562,10 +563,10 @@ CajaWindow .primary-toolbar.toolbar .button.menu-button .menuitem:hover {
                                      left top, left bottom,
                                      from (shade(@menu_bg_dark_color, 2.03)),
                                      to   (shade(@menu_bg_dark_color, 1.17)));
-    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
-                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
+                inset  1px  0px shade(@selected_bg_color, 0.97),
+                inset -1px  0px shade(@selected_bg_color, 0.93),
+                inset  0px -1px shade(@selected_bg_color, 0.93);
 }
 
 /* properties-dialog emblem page */
@@ -576,14 +577,14 @@ FMPropertiesWindow .vertical.dialog-vbox .notebook GtkViewport {
 /* tab styling */
 CajaNavigationWindow CajaNotebook.notebook {
     border-style: none;
-    -GtkNotebook-tab-overlap: 1;
+    /*-GtkNotebook-tab-overlap: 1; */
 }
 
-CajaNavigationWindow GtkPaned.horizontal GtkPaned.horizontal .vertical tab.top,
-CajaNavigationWindow GtkPaned.horizontal GtkPaned.horizontal .vertical tab.top:active,
-CajaNavigationWindow GtkPaned.horizontal GtkPaned.horizontal .vertical tab.top:active:hover,
-CajaNavigationWindow GtkPaned.horizontal GtkPaned.horizontal .vertical tab.reorderable-page,
-CajaNavigationWindow GtkPaned.horizontal GtkPaned.horizontal .vertical tab.reorderable-page:hover {
+CajaNavigationWindow paned.horizontal paned.horizontal .vertical tab.top,
+CajaNavigationWindow paned.horizontal paned.horizontal .vertical tab.top:active,
+CajaNavigationWindow paned.horizontal paned.horizontal .vertical tab.top:active:hover,
+CajaNavigationWindow paned.horizontal paned.horizontal .vertical tab.reorderable-page,
+CajaNavigationWindow paned.horizontal paned.horizontal .vertical tab.reorderable-page:hover {
     border-radius: 4px 4px 0px 0px;
     border-width: 1px 1px 0px 1px;
     border-color: @notebook_border;
@@ -603,7 +604,7 @@ CajaNavigationWindow CajaNotebook.notebook tab .button.flat {
 }
 
 EelEditableLabel.entry,
-EelEditableLabel.entry:focused {
+EelEditableLabel.entry:focus {
    border-image: none;
    border-width: 1px;
    border-color: @theme_fg_color;
@@ -617,14 +618,14 @@ EelEditableLabel.entry:focused {
 }
 
 /* desktop mode */
-CajaDesktopWindow.background .caja-canvas-item {
+window>*>box>box>box>scrolledwindow>.view .caja-canvas-item {
     color: white;
     text-shadow: 1px 1px alpha (#000000, 0.8);
 }
 
-CajaDesktopWindow.background .caja-canvas-item:active,
-CajaDesktopWindow.background .caja-canvas-item:prelight,
-CajaDesktopWindow.background .caja-canvas-item:selected {
+window>*>box>box>box>scrolledwindow>.view .caja-canvas-item:active,
+window>*>box>box>box>scrolledwindow>.view .caja-canvas-item:hover,
+window>*>box>box>box>scrolledwindow>.view .caja-canvas-item:selected {
     text-shadow: none;
 }
 
@@ -633,15 +634,17 @@ CajaDesktopWindow.background .caja-canvas-item:selected {
  ****************/
 
 /* first make all transparent */
+.mate-panel-menu-bar,
 PanelToplevel.background.horizontal {
     background-color: transparent;
 }
 
+.mate-panel-menu-bar .menubar,
 WnckSelector.menubar,
 PanelMenuBar.menubar,
-WnckSelector GtkMenuItem,
-PanelMenuBar GtkMenuItem,
-MatePanelApplet GtkToggleButton.button {
+WnckSelector menuitem,
+PanelMenuBar menuitem,
+#PanelApplet togglebutton.button {
     border-image: none;
     background-image: none;
     background-color: transparent;
@@ -695,10 +698,10 @@ PanelToplevel.background .button:hover:active {
     background-image: none;
     color: @menu_selected_fg_dark_color;
     border-radius: 3px;
-    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
-                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
+                inset  1px  0px shade(@selected_bg_color, 0.97),
+                inset -1px  0px shade(@selected_bg_color, 0.93),
+                inset  0px -1px shade(@selected_bg_color, 0.93);
 }
 
 /* dictionary applet */
@@ -713,11 +716,11 @@ GdictApplet .entry {
     padding: 3px 4px;
 }
 
-MatePanelApplet {
+#PanelApplet {
     border-width: 0;
 }
 
-MatePanelAppletFrameDBus PanelSeparator,
+#PanelAppletFrameDBus PanelSeparator,
 PanelSeparator {
     border-width: 0;
     background-image: -gtk-gradient (linear, left top, left bottom,
@@ -728,7 +731,7 @@ PanelSeparator {
 }
 
 /* the grid left from wnckpager and wncktasklist */
-MatePanelAppletFrameDBus {
+#PanelAppletFrameDBus {
     background-image: -gtk-scaled(url("assets/panel-grid.svg"));
     background-color: transparent;
     background-repeat: no-repeat;
@@ -749,13 +752,13 @@ PanelMenuBar.menubar .menuitem:hover {
                                      left top, left bottom,
                                      from (shade(@menu_bg_dark_color, 2.03)),
                                      to   (shade(@menu_bg_dark_color, 1.17)));
-    border-radius: 6px;
+    border-radius: 5px;
     text-shadow: none;
     color: shade (@theme_selected_bg_color, 1.6);
-    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
-                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
+                inset  1px  0px shade(@selected_bg_color, 0.97),
+                inset -1px  0px shade(@selected_bg_color, 0.93),
+                inset  0px -1px shade(@selected_bg_color, 0.93);
     text-shadow: none;
     border-style: none;
     border-width: 0px;
@@ -763,7 +766,7 @@ PanelMenuBar.menubar .menuitem:hover {
 
 /* set normal menubar menuitem */
 PanelMenuBar.menubar .menu .menuitem {
-    padding: 6px;
+    padding: 6px 6px;
     transition: all 300ms ease-out;
 }
 
@@ -777,13 +780,13 @@ PanelMenuBar.menubar .menu .menuitem:hover {
                                      left top, left bottom,
                                      from (shade(@menu_bg_dark_color, 2.03)),
                                      to   (shade(@menu_bg_dark_color, 1.17)));
-    border-radius: 6px;
+    border-radius: 5px;
     text-shadow: none;
     color: shade (@theme_selected_bg_color, 1.6);
-    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
-                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
+                inset  1px  0px shade(@selected_bg_color, 0.97),
+                inset -1px  0px shade(@selected_bg_color, 0.93),
+                inset  0px -1px shade(@selected_bg_color, 0.93);
     text-shadow: none;
     border-style: none;
     border-width: 0px;
@@ -805,10 +808,13 @@ PanelMenuButton .menu .menuitem:hover {
 
 /* desktop-applet, clockapplet, drivemount, character-map,
 dictionary */
-MatePanelApplet .button,
-MatePanelApplet .button.flat {
+
+.mate-panel-menu-bar button,
+#PanelApplet .button,
+#PanelApplet .button.flat {
     background-image: none;
     background-color: transparent;
+/*    border-color: shade (@theme_selected_bg_color, 1.30); */
     border-radius: 5px;
     border-width: 0px;
     /* normal panel */
@@ -819,15 +825,15 @@ MatePanelApplet .button.flat {
     padding: 6px;
 }
 
-MatePanelApplet .button:hover:active,
-MatePanelApplet .button:checked,
-MatePanelApplet .button:checked:hover,
-MatePanelApplet .button.flat:hover:active,
-MatePanelApplet .button.flat:checked,
-MatePanelApplet .button.flat:checked:hover {
+#PanelApplet button:hover:active,
+#PanelApplet button:checked,
+#PanelApplet button:checked:hover,
+#PanelApplet button.flat:hover:active,
+#PanelApplet button.flat:checked,
+#PanelApplet button.flat:checked:hover {
     background-image: none;
     border-color: @selected_bg_color;
-    background-color: shade (@selected_bg_color, 0.90);
+    background-color: shade (@selected_bg_color, 0.70);
     border-radius: 5px;
     border-width: 0px;
     color: shade (@theme_text_dark_color, 0.90);
@@ -835,8 +841,8 @@ MatePanelApplet .button.flat:checked:hover {
     padding: 6px;
 }
 
-MatePanelApplet .button:hover,
-MatePanelApplet .button.flat:hover {
+#PanelApplet button:hover,
+#PanelApplet button.flat:hover {
     background-image: none;
     border-color: @selected_bg_color;
     background-color: shade (@selected_bg_color, 1.10);
@@ -848,12 +854,12 @@ MatePanelApplet .button.flat:hover {
 }
 
 /* drivemount */
-DriveList .button,
-DriveList .button.flat,
-DriveList .button:hover,
-DriveList .button.flat:hover,
-DriveList .button:checked,
-DriveList .button.flat:checked {
+DriveList button,
+DriveList button.flat,
+DriveList button:hover,
+DriveList button.flat:hover,
+DriveList button:checked,
+DriveList button.flat:checked {
     padding: 4px;
     border-radius: 5px;
     border-color: transparent;
@@ -861,8 +867,8 @@ DriveList .button.flat:checked {
 }
 
 /*Wncklist */
-WnckTasklist .button,
-WnckTasklist .button.flat {
+.mate-panel-menu-bar #PanelPlug #PanelApple button,
+.mate-panel-menu-bar #PanelPlug #PanelApplet button.flat {
     background-image: none;
     background-color: transparent;
     border-radius: 5px;
@@ -872,15 +878,16 @@ WnckTasklist .button.flat {
     padding: 2px;
 }
 
-WnckTasklist .button:hover:active,
-WnckTasklist .button:checked,
-WnckTasklist .button:checked:hover,
-WnckTasklist .button.flat:hover:active,
-WnckTasklist .button.flat:checked:hover,
-WnckTasklist .button.flat:checked {
+.mate-panel-menu-bar #PanelPlug #PanelApplet button:hover:active,
+.mate-panel-menu-bar #PanelPlug #PanelApplet button:checked,
+.mate-panel-menu-bar #PanelPlug #PanelApplet button:checked:hover,
+.mate-panel-menu-bar #PanelPlug #PanelApplet button.flat:hover:active,
+.mate-panel-menu-bar #PanelPlug #PanelApplet button.flat:checked:hover,
+.mate-panel-menu-bar #PanelPlug #PanelApplet button.flat:checked {
     background-image: none;
-    border-color: @selected_bg_color;
-    background-color: shade (@selected_bg_color, 0.90);
+    /*border-color: @selected_bg_color;*/
+	border-color:transparent;          /*can't match gtk3.18 perfect, the drawing is different*/
+    background-color: shade (@selected_bg_color, 0.70);
     border-radius: 5px;
     border-width: 1px;
     color: shade (@theme_text_dark_color, 0.90);
@@ -888,20 +895,21 @@ WnckTasklist .button.flat:checked {
     padding: 2px;
 }
 
-WnckTasklist .button:hover,
-WnckTasklist .button.flat:hover {
+
+.mate-panel-menu-bar #PanelPlug #PanelApplet button:hover,
+.mate-panel-menu-bar #PanelPlug #PanelApplet button.flat:hover {
     background-image: none;
     border-color: @selected_bg_color;
     background-color: shade (@selected_bg_color, 1.10);
     border-radius: 5px;
     border-width: 1px;
-    color: @selected_fg_color;
+    color: @theme_fg_color;
     text-shadow: none;
     padding: 2px;
 }
 
 /* set normal button WnckSelector */
-WnckSelector.menubar .menuitem {
+.mate-panel-menu-bar menubar menuitem {
     background-image: none;
     background-color: transparent;
     border-style: none;
@@ -910,10 +918,10 @@ WnckSelector.menubar .menuitem {
 }
 
 /* set selected button WnckSelector */
-WnckSelector.menubar .menuitem:hover {
+.mate-panel-menu-bar menubar menuitem:hover {
     background-image: none;
     border-color: @selected_bg_color;
-    background-color: shade (@selected_bg_color, 0.90);
+    background-color: shade (@selected_bg_color, 0.70);
     border-radius: 5px;
     border-width: 1px;
     color: shade (@theme_text_dark_color, 0.90);
@@ -921,37 +929,37 @@ WnckSelector.menubar .menuitem:hover {
 }
 
 /* set WnckSelector selected menuitem */
-WnckSelector.menubar .menu .menuitem:hover {
+.mate-panel-menu-bar menubar menuitem:hover {
     background-color: shade (@theme_bg_dark_color, 1.2);
+    color: shade (@theme_selected_bg_color, 1.3);
     background-image: none;
     border-radius: 6px;
     text-shadow: none;
-    color: shade (@theme_selected_bg_color, 1.6);
-    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
-                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
+                inset  1px  0px shade(@selected_bg_color, 0.97),
+                inset -1px  0px shade(@selected_bg_color, 0.93),
+                inset  0px -1px shade(@selected_bg_color, 0.93);
 }
 
 ClockBox,
 .mate-panel-menu-bar.menubar,
-MatePanelApplet > GtkMenuBar.menubar {
+#PanelApplet > GtkMenuBar.menubar {
     font: normal;
 }
 
 /* WnckPager */
 WnckPager {
-    background-image: none;
-    border-color: transparent;
-    background-color: transparent;
-    text-shadow: none;
+	background-image: none;
+	border-color: transparent;
+	background-color: transparent;
+	text-shadow: none;
 }
 
 /* selected WnckPager */
 WnckPager:selected {
-    background-image: linear-gradient(to bottom,
-                                      @theme_selected_bg_color,
-                                      shade (@theme_selected_bg_color, 0.36));
+	background-image: linear-gradient(to bottom,
+		@theme_selected_bg_color,
+		shade (@theme_selected_bg_color, 0.36));
 }
 
 /* prelight of WnckPager */
@@ -972,7 +980,7 @@ NaTrayApplet {
 }
 
 /* system-monitor-applet */
-MatePanelApplet .horizontal .vertical .frame {
+#PanelApplet .horizontal .vertical .frame {
     box-shadow: inset  0px  1px shade (@menu_bg_dark_color, 1.3),
                 inset  1px  0px shade (@menu_bg_dark_color, 1.3),
                 inset -1px  0px shade (@menu_bg_dark_color, 1.3),
@@ -998,10 +1006,10 @@ MatePanelApplet .horizontal .vertical .frame {
     border-radius:4px;
     padding: 1px;
     margin: 0px;
-    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
-                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
+                inset  1px  0px shade(@selected_bg_color, 0.97),
+                inset -1px  0px shade(@selected_bg_color, 0.93),
+                inset  0px -1px shade(@selected_bg_color, 0.93);
 }
 
 .mate-panel-applet-slider .frame .frame{
@@ -1020,7 +1028,7 @@ MatePanelApplet .horizontal .vertical .frame {
     margin: 0px;
 }
 
-.mate-panel-applet-slider .frame .button:insensitive {
+.mate-panel-applet-slider .frame .button:disabled {
     box-shadow: none;
 }
 
@@ -1088,10 +1096,10 @@ PlumaWindow .button.flat:hover {
                                      color-stop (0.45, shade(@nautilus_cluebar_color, 1.02)),
                                      color-stop (0.52, shade(@nautilus_cluebar_color, 0.96)),
                                      to   (shade(@nautilus_cluebar_color, 0.92)));
-    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
-                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
+                inset  1px  0px shade(@selected_bg_color, 0.97),
+                inset -1px  0px shade(@selected_bg_color, 0.93),
+                inset  0px -1px shade(@selected_bg_color, 0.93);
     color: shade(@theme_fg_color, 1.00);
     text-shadow: 0px 1px @theme_shadow_color;
     border-radius: 4px;
@@ -1101,7 +1109,7 @@ PlumaWindow .button.flat:hover {
 /* notebook text area */
 PlumaWindow .notebook {
     border-style: none;
-    -GtkNotebook-tab-overlap: 1;
+   /* -GtkNotebook-tab-overlap: 1;*/
 }
 
 PlumaWindow .notebook tab.top {
@@ -1125,10 +1133,10 @@ PlumaWindow .notebook tab .button.flat {
 }
 
 PlumaWindow .notebook tab .button.flat:hover {
-    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
-                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
+                inset  1px  0px shade(@selected_bg_color, 0.97),
+                inset -1px  0px shade(@selected_bg_color, 0.93),
+                inset  0px -1px shade(@selected_bg_color, 0.93);
 }
 
 /* Printpreview */
@@ -1155,10 +1163,10 @@ PlumaPrintPreview.vertical .toolbar.horizontal .button {
 }
 
 PlumaPrintPreview.vertical .toolbar.horizontal .button:hover {
-    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
-                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
+                inset  1px  0px shade(@selected_bg_color, 0.97),
+                inset -1px  0px shade(@selected_bg_color, 0.93),
+                inset  0px -1px shade(@selected_bg_color, 0.93);
 }
 
 PlumaPrintPreview.vertical .toolbar.horizontal .button.text-button {
@@ -1199,18 +1207,18 @@ PlumaPanel.vertical PlumaCloseButton.button.flat {
 PlumaPanel.vertical PlumaCloseButton.button.flat:hover {
     border-radius: 4px;
     border-style: none;
-    -gtk-image-effect: highlight;
-    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
-                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+    /*-gtk-image-effect: highlight;*/
+    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
+                inset  1px  0px shade(@selected_bg_color, 0.97),
+                inset -1px  0px shade(@selected_bg_color, 0.93),
+                inset  0px -1px shade(@selected_bg_color, 0.93);
 }
 
 PlumaPanel.vertical .notebook {
     border-radius: 0px;
 }
 
-PlumaFileBrowserWidget.vertical GtkToggleButton.button {
+PlumaFileBrowserWidget.vertical togglebutton.button {
     padding: 4px ;
 }
 
@@ -1301,16 +1309,17 @@ ShellWindow GtkScrolledWindow .button.flat:hover {
                                      color-stop (0.48, shade(@button_gradient2, 1.03)),
                                      color-stop (0.52, shade(@button_gradient3, 1.03)),
                                      to   (shade(@button_gradient4, 1.01)));
-    border-top-color:    alpha(@focused_entry_outer, 0.65);
-    border-right-color:  alpha(@focused_entry_outer, 0.75);
-    border-left-color:   alpha(@focused_entry_outer, 0.75);
+    border-top-color: alpha(@focused_entry_outer, 0.65);
+    border-right-color: alpha(@focused_entry_outer, 0.75);
+    border-left-color: alpha(@focused_entry_outer, 0.75);
     border-bottom-color: alpha(@focused_entry_outer, 0.80);
-    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
-                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
+                inset  1px  0px shade(@selected_bg_color, 0.97),
+                inset -1px  0px shade(@selected_bg_color, 0.93),
+                inset  0px -1px shade(@selected_bg_color, 0.93);
 }
 
+/* logout dialog */
 GsmLogoutDialog * {
     -GtkDialog-button-spacing: 0;
 }
@@ -1342,7 +1351,7 @@ EvWindow .toolbar .button.flat {
     padding: 0px 4px;
 }
 
-EvWindow .vertical.primary-toolbar .horizontal.toolbar EphyZoomControl GtkToggleButton:prelight.button {
+EvWindow .vertical.primary-toolbar .horizontal.toolbar EphyZoomControl togglebutton:hover.button {
     padding: 4px;
     border-radius: 4px;
 }
@@ -1405,13 +1414,12 @@ EomThumbNav .button.flat:last-child {
 }
 
 EomThumbNav .button.flat:hover {
-    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
-                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
+                inset  1px  0px shade(@selected_bg_color, 0.97),
+                inset -1px  0px shade(@selected_bg_color, 0.93),
+                inset  0px -1px shade(@selected_bg_color, 0.93);
 }
 
-EomThumbNav .button.flat:insensitive {
+EomThumbNav .button.flat:disabled {
     border-color: transparent;
 }
-

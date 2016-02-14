@@ -2,41 +2,60 @@
  * Sidebar *
  ***********/
 
+sidebar,
 .sidebar {
     -GtkTreeView-horizontal-separator: 6px;
     -GtkTreeView-vertical-separator: 1px;
 }
 
+
 .sidebar,
 .sidebar.view,
 .sidebar .view,
-.sidebar.view:prelight,
-.sidebar .view:prelight {
+.sidebar.view:hover,
+.sidebar .view:hover {
     border-radius: 0px;
     color: @sidebar_fg_color;
     text-shadow: 0px 1px @theme_shadow_color;
     background-color: @sidebar_background;
 }
 
+.sidebar-button{
+	background-color: transparent;
+	background-image: none;
+	border-style:none;
+	border-image:none;
+	border-width: 0px;	
+	border-color: transparent;
+	box-shadow: none;
+}  
+
 /* dialog open */
-GtkPlacesSidebar.sidebar.frame .frame GtkListBox.sidebar.list,
-GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row {
+
+filechooser stack.view,
+filechooser box.vertical.view {
+	background-color:transparent; /*still more spurious matches to .view */
+}
+
+placessidebar.sidebar.frame  list{
      background-color: @sidebar_background;
 }
 
-GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row:selected {
+placessidebar.sidebar.frame  list row.activatable.sidebar-row:active,
+placessidebar.sidebar.frame  list row.activatable.sidebar-row:selected {
      border-radius: 6px;
 }
 
-GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row .sidebar-revealer .sidebar-icon {
+placessidebar.sidebar.frame  list row.activatable.sidebar-row,
+placessidebar.sidebar.frame .frame .sidebar list list-row.activatable .sidebar-row .sidebar-revealer .sidebar-icon {
      padding: 4px 8px 4px 6px;
 }
 
-GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row .sidebar-revealer .sidebar-label {
+placessidebar  .sidebar-label {
      padding: 4px 0px 4px 1px;
 }
 
-GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row .sidebar-revealer .sidebar-button.image-button.button {
+placessidebar.sidebar.frame .frame .sidebar list  list-row.activatable.sidebar-row .sidebar-revealer .sidebar-button.image-button.button {
     background-color: transparent;
     background-image: none;
     border-image:none;
@@ -44,11 +63,11 @@ GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sideba
     padding: 4px 12px 4px 0px;
 }
 
-.sidebar.view:selected,
-.sidebar.view *:selected,
-.sidebar .view:selected,
-.sidebar .view *:selected,
-.sidebar .view:selected:prelight {
+.sidebar. row:selected,
+.sidebar row *:selected,
+.sidebar row:selected,
+.sidebar row *:selected,
+.sidebar row:selected:hover {
     border-style: solid;
     border-width: 1px 0px 0px 0px;
     border-color: shade (@sidebar_selected_bg, 0.90) #bbb shade (@sidebar_selected_bg, 1.05);
@@ -58,32 +77,33 @@ GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sideba
                                      left bottom,
                                      from (shade(@sidebar_selected_bg, 0.90)),
                                      color-stop (0.40, shade (@sidebar_selected_bg, 0.98)),
-                                     to (shade(@sidebar_selected_bg, 1.05)));
-    color: @theme_selected_fg_color;
+                                     to   (shade(@sidebar_selected_bg, 1.05)));
+    color:  @theme_selected_fg_color;    
     text-shadow: 0px 1px @theme_selected_shadow_color;
 }
 
 .sidebar row:hover,
 .sidebar .view row:hover,
-.sidebar GtkTreeView row:hover {
+.sidebar treeview row:hover
+ {
     background-image: -gtk-gradient (linear,
                                      left top,
                                      left bottom,
                                      from (shade(@theme_bg_color, 1.05)),
                                      color-stop (0.40, shade (@theme_bg_color, 1.13)),
                                      to (shade(@theme_bg_color, 1.10)));
-    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
-                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.0),
+                inset  1px  0px shade (@theme_selected_bg_color, 1.0),
+                inset -1px  0px shade (@theme_selected_bg_color, 1.0),
+                inset  0px -1px shade (@theme_selected_bg_color, 1.0);
     color: shade (@theme_fg_color, 0.90);
     border-radius: 6px;
     text-shadow: none;
 }
 
-.sidebar .radio,
-.sidebar .radio:focus,
-.sidebar .radio:selected {
+.sidebar radio,
+.sidebar radio:focus,
+.sidebar radio:selected {
     background-image: none;
     background-color: alpha(@theme_base_color, 0.0);
 }
@@ -95,7 +115,7 @@ SourceList.pane-separator {
 }
 
 GtkHCollapsablePaned .pane-separator,
-GtkHCollapsablePaned .pane-separator:prelight,
+GtkHCollapsablePaned .pane-separator:hover,
 GtkHCollapsablePaned .pane-separator:selected {
     background-image: none;
     background-color: @sidebar_background;
@@ -107,7 +127,7 @@ GtkHCollapsablePaned .pane-separator:selected {
 /* Marlin sidebar separator */
 VarkaWidgetsHCollapsiblePaned,
 VarkaWidgetsHCollapsiblePaned.pane-separator,
-VarkaWidgetsHCollapsiblePaned.pane-separator:prelight,
+VarkaWidgetsHCollapsiblePaned.pane-separator:hover,
 VarkaWidgetsHCollapsiblePaned.pane-separator:selected {
     border-width: 0px;
     border-color: shade(@sidebar_background, 0.80);
@@ -117,4 +137,3 @@ VarkaWidgetsHCollapsiblePaned.pane-separator:selected {
                                     color-stop(0.50, @sidebar_background),
                                     to   (#a9a9a9));
 }
-
