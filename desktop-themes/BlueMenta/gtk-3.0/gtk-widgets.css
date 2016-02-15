@@ -811,6 +811,14 @@ GtkProgressBar {
 	font-size: smaller;
 }
 
+progressbar.horizontal {
+    min-height: 16px;
+}
+
+progressbar.vertical {
+    min-width: 16px;
+}
+
 /* progress component */
 progressbar.horizontal trough,
 progressbar.horizontal progress {
