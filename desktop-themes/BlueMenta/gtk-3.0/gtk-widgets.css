@@ -257,7 +257,7 @@ treeview.view.separator {
  ************************/
 
 /* displays at end of mouse scrolling */
-.overshoot.top {
+overshoot.top {
     background-image: -gtk-gradient(radial,
                                     center top, 0,
                                     center top, 0.5,
@@ -276,7 +276,7 @@ treeview.view.separator {
     box-shadow: none;
 }
 
-.overshoot.top:backdrop {
+overshoot.top:backdrop {
     background-image: -gtk-gradient(radial,
                                     center top, 0,
                                     center top, 0.5,
@@ -290,7 +290,7 @@ treeview.view.separator {
     box-shadow: none;
 }
 
-.overshoot.bottom {
+overshoot.bottom {
     background-image: -gtk-gradient(radial,
                                     center bottom, 0,
                                     center bottom, 0.5,
@@ -309,7 +309,7 @@ treeview.view.separator {
     box-shadow: none;
 }
 
-.overshoot.bottom:backdrop {
+overshoot.bottom:backdrop {
     background-image: -gtk-gradient(radial,
                                     center bottom, 0,
                                     center bottom, 0.5,
@@ -323,7 +323,7 @@ treeview.view.separator {
     box-shadow: none;
 }
 
-.overshoot.left {
+overshoot.left {
     background-image: -gtk-gradient(radial,
                                     left center, 0,
                                     left center, 0.5,
@@ -342,7 +342,7 @@ treeview.view.separator {
     box-shadow: none;
 }
 
-.overshoot.left:backdrop {
+overshoot.left:backdrop {
     background-image: -gtk-gradient(radial,
                                     left center, 0,
                                     left center, 0.5,
@@ -356,7 +356,7 @@ treeview.view.separator {
     box-shadow: none;
 }
 
-.overshoot.right {
+overshoot.right {
     background-image: -gtk-gradient(radial,
                                     right center, 0,
                                     right center, 0.5,
@@ -375,7 +375,7 @@ treeview.view.separator {
     box-shadow: none;
 }
 
-.overshoot.right:backdrop {
+overshoot.right:backdrop {
     background-image: -gtk-gradient(radial,
                                     right center, 0,
                                     right center, 0.5,
@@ -390,7 +390,7 @@ treeview.view.separator {
 }
 
 /* result is disable undershoot */
-.undershoot.top {
+undershoot.top {
     background-color: transparent;
     background-image: linear-gradient(to left,
                                       rgba(255, 255, 255, 0.2) 50%,
@@ -401,7 +401,7 @@ treeview.view.separator {
     background-position: center top;
 }
 
-.undershoot.bottom {
+undershoot.bottom {
     background-color: transparent;
     background-image: linear-gradient(to left,
                                       rgba(255, 255, 255, 0.2) 50%,
@@ -412,7 +412,7 @@ treeview.view.separator {
     background-position: center bottom;
 }
 
-.undershoot.left {
+undershoot.left {
     background-color: transparent;
     background-image: linear-gradient(to top,
                                       rgba(255, 255, 255, 0.2) 50%,
@@ -423,7 +423,7 @@ treeview.view.separator {
     background-position: left center;
 }
 
-.undershoot.right {
+undershoot.right {
     background-color: transparent;
     background-image: linear-gradient(to top,
                                       rgba(255, 255, 255, 0.2) 50%,
