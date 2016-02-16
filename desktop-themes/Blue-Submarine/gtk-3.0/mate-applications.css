@@ -403,8 +403,8 @@ CajaTrashBar .button *:checked:hover {
     text-shadow: 0px 1px @theme_shadow_color;
 }
 
-.question .button:insensitive,
-CajaTrashBar .button:insensitive {
+.question .button:disabled,
+CajaTrashBar .button:disabled {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (shade(@nautilus_cluebar_color, 0.95)),
@@ -417,8 +417,8 @@ CajaTrashBar .button:insensitive {
                 inset  0px -1px shade(@nautilus_cluebar_color, 0.78);
 }
 
-.question .button *:insensitive,
-CajaTrashBar .button *:insensitive {
+.question .button *:disabled,
+CajaTrashBar .button *:disabled {
     color: mix(@nautilus_cluebar_color, @theme_fg_color, 0.50);
     text-shadow: none;
 }
@@ -576,7 +576,7 @@ FMPropertiesWindow .vertical.dialog-vbox .notebook GtkViewport {
 /* tab styling */
 CajaNavigationWindow CajaNotebook.notebook {
     border-style: none;
-    -GtkNotebook-tab-overlap: 1;
+/*    -GtkNotebook-tab-overlap: 1; */
 }
 
 CajaNavigationWindow GtkPaned.horizontal GtkPaned.horizontal .vertical tab.top,
@@ -603,7 +603,7 @@ CajaNavigationWindow CajaNotebook.notebook tab .button.flat {
 }
 
 EelEditableLabel.entry,
-EelEditableLabel.entry:focused {
+EelEditableLabel.entry:focus {
    border-image: none;
    border-width: 1px;
    border-color: @theme_fg_color;
@@ -623,7 +623,7 @@ CajaDesktopWindow.background .caja-canvas-item {
 }
 
 CajaDesktopWindow.background .caja-canvas-item:active,
-CajaDesktopWindow.background .caja-canvas-item:prelight,
+CajaDesktopWindow.background .caja-canvas-item:hover,
 CajaDesktopWindow.background .caja-canvas-item:selected {
     text-shadow: none;
 }
@@ -954,7 +954,7 @@ WnckPager:selected {
                                       shade (@theme_selected_bg_color, 0.36));
 }
 
-/* prelight of WnckPager */
+/* hover of WnckPager */
 WnckPager:hover {
     background-image: linear-gradient(to bottom,
                                       shade (@theme_selected_bg_color, 0.56),
@@ -1020,7 +1020,7 @@ MatePanelApplet .horizontal .vertical .frame {
     margin: 0px;
 }
 
-.mate-panel-applet-slider .frame .button:insensitive {
+.mate-panel-applet-slider .frame .button:disabled {
     box-shadow: none;
 }
 
@@ -1101,7 +1101,7 @@ PlumaWindow .button.flat:hover {
 /* notebook text area */
 PlumaWindow .notebook {
     border-style: none;
-    -GtkNotebook-tab-overlap: 1;
+/*    -GtkNotebook-tab-overlap: 1; */
 }
 
 PlumaWindow .notebook tab.top {
@@ -1199,7 +1199,7 @@ PlumaPanel.vertical PlumaCloseButton.button.flat {
 PlumaPanel.vertical PlumaCloseButton.button.flat:hover {
     border-radius: 4px;
     border-style: none;
-    -gtk-image-effect: highlight;
+/*    -gtk-image-effect: highlight; */
     box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
                 inset  1px  0px shade (@theme_selected_bg_color, 1.3),
                 inset -1px  0px shade (@theme_selected_bg_color, 1.3),
@@ -1342,7 +1342,7 @@ EvWindow .toolbar .button.flat {
     padding: 0px 4px;
 }
 
-EvWindow .vertical.primary-toolbar .horizontal.toolbar EphyZoomControl GtkToggleButton:prelight.button {
+EvWindow .vertical.primary-toolbar .horizontal.toolbar EphyZoomControl GtkToggleButton:hover.button {
     padding: 4px;
     border-radius: 4px;
 }
@@ -1411,7 +1411,7 @@ EomThumbNav .button.flat:hover {
                 inset  0px -1px shade (@theme_selected_bg_color, 1.3);
 }
 
-EomThumbNav .button.flat:insensitive {
+EomThumbNav .button.flat:disabled {
     border-color: transparent;
 }
 
