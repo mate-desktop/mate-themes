@@ -129,7 +129,7 @@ NemoTrashBar .button *:checked:hover {
     text-shadow: 0px 1px @theme_shadow_color;
 }
 
-NemoTrashBar .button:insensitive {
+NemoTrashBar .button:disabled {
 /* .button:active:hover */
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
@@ -143,12 +143,12 @@ NemoTrashBar .button:insensitive {
                 inset  0px -1px shade(@nautilus_cluebar_color, 0.78);
 }
 
-NemoTrashBar .button *:insensitive {
+NemoTrashBar .button *:disabled {
     color: mix(@nautilus_cluebar_color, @theme_fg_color, 0.50);
     text-shadow: none;
 }
 
-NemoWindow .sidebar .scrollbar {
+.nemo-window .sidebar scrollbar {
     background-image: none;
     border-style: solid;
     -GtkRange-stepper-size: 16;
@@ -166,26 +166,18 @@ NemoWindow .sidebar .scrollbar {
     -GtkScrolledWindow-scrollbars-within-bevel: 1;
 }
 
-NemoWindow .sidebar .scrollbar.trough.vertical {
+.nemo-window .sidebar scrollbar.vertical.left trough {
     border-radius: 0;
     border-width: 0 0px 0 1px;
     border-style: solid;
     border-color: shade (@theme_bg_color, 0.96);
 }
 
-NemoWindow .sidebar .scrollbar.trough {
+.nemo-window .sidebar scrollbar trough {
     border-radius: 0;
     border-width: 1px 0 0px 0;
     border-style: solid;
     border-color: shade (@theme_bg_color, 0.96);
-}
-
-/* the small line between sidebar and view */
-NemoWindow GtkPaned.horizontal {
-    border-color: shade(@theme_bg_color, 0.80);
-    border-style: solid;
-    border-width: 0px 1px 0px 0px;
-    -GtkPaned-handle-size: 4px;
 }
 
 NemoWindow .sidebar .frame {
@@ -196,9 +188,9 @@ NemoWindow .sidebar .frame {
 }
 
 /* disable shadow and radius for nemo, looks strange */
-NemoWindow .sidebar .view row:hover,
-NemoWindow .sidebar .view row:selected,
-NemoWindow .sidebar .view row:selected:hover {
+.nemo-window .sidebar .view row:hover,
+.nemo-window .sidebar .view row:selected,
+.nemo-window .sidebar .view row:selected:hover {
     border-radius: 0px;
     box-shadow: none;
 }
@@ -224,16 +216,16 @@ NemoToolbar .linked .button:focus:last-child {
     box-shadow: none;
 }
 
-NemoWindow .primary-toolbar.toolbar .button GtkImage {
+.nemo-window toolbar.primary-toolbar button image {
     color: @theme_fg_dark_color;
 }
 
-NemoWindow .primary-toolbar.toolbar .button,
-NemoWindow .primary-toolbar.toolbar .button:hover {
+.nemo-window toolbar.primary-toolbar button,
+.nemo-window toolbar.primary-toolbar button:hover {
     padding: 4px;
 }
 
-NemoWindow .primary-toolbar.toolbar .entry {
+.nemo-window toolbar.primary-toolbar entry {
     padding: 3px 8px;
 }
 /*
@@ -270,7 +262,7 @@ NemoWindow .primary-toolbar.toolbar .button:checked:hover {
     border-color: transparent;
 }
 */
-NemoWindow .primary-toolbar.toolbar NemoPathbarButton {
+.nemo-window toolbar.primary-toolbar NemoPathbarButton {
     padding: 4px;
     border-image: none;
     border-style: solid;
@@ -279,7 +271,7 @@ NemoWindow .primary-toolbar.toolbar NemoPathbarButton {
     border-color: transparent;
 }
 
-NemoWindow .primary-toolbar.toolbar NemoPathbarButton {
+.nemo-window toolbar.primary-toolbar NemoPathbarButton {
     background-color: transparent;
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
@@ -290,39 +282,39 @@ NemoWindow .primary-toolbar.toolbar NemoPathbarButton {
     color: shade(@theme_fg_dark_color, 0.90);
 }
 
-NemoWindow .primary-toolbar.toolbar NemoPathbarButton * {
+.nemo-window toolbar.primary-toolbar NemoPathbarButton * {
     color: shade(@theme_text_dark_color, 1.00);
     text-shadow: 0px 1px @theme_shadow_dark_color;
     border-color: transparent;
 }
 
-NemoWindow .primary-toolbar.toolbar NemoPathbarButton *:hover {
+.nemo-window toolbar.primary-toolbar NemoPathbarButton *:hover {
     color: shade(@theme_text_dark_color, 1.00);
 }
-NemoWindow .primary-toolbar.toolbar NemoPathbarButton * {
+.nemo-window toolbar.primary-toolbar NemoPathbarButton * {
     -GtkArrow-arrow-scaling: 0.7;
 }
 
-NemoWindow .primary-toolbar.toolbar NemoPathbarButton,
-NemoWindow .primary-toolbar.toolbar NemoPathbarButton:first-child,
-NemoWindow .primary-toolbar.toolbar NemoPathbarButton:last-child,
-NemoWindow .primary-toolbar.toolbar NemoPathbarButton:only-child {
+.nemo-window toolbar.primary-toolbar NemoPathbarButton,
+.nemo-window toolbar.primary-toolbar NemoPathbarButton:first-child,
+.nemo-window toolbar.primary-toolbar NemoPathbarButton:last-child,
+.nemo-window toolbar.primary-toolbar NemoPathbarButton:only-child {
     transition: all 400ms ease-out;
 }
 
-NemoWindow .primary-toolbar.toolbar NemoPathbarButton,
-NemoWindow .primary-toolbar.toolbar NemoPathbarButton:first-child,
-NemoWindow .primary-toolbar.toolbar NemoPathbarButton:last-child,
-NemoWindow .primary-toolbar.toolbar NemoPathbarButton:only-child,
-NemoWindow .primary-toolbar.toolbar NemoPathbarButton:hover,
-NemoWindow .primary-toolbar.toolbar NemoPathbarButton:first-child:hover,
-NemoWindow .primary-toolbar.toolbar NemoPathbarButton:last-child:hover,
-NemoWindow .primary-toolbar.toolbar NemoPathbarButton:only-child:hover {
+.nemo-window toolbar.primary-toolbar NemoPathbarButton,
+.nemo-window toolbar.primary-toolbar NemoPathbarButton:first-child,
+.nemo-window toolbar.primary-toolbar NemoPathbarButton:last-child,
+.nemo-window toolbar.primary-toolbar NemoPathbarButton:only-child,
+.nemo-window toolbar.primary-toolbar NemoPathbarButton:hover,
+.nemo-window toolbar.primary-toolbar NemoPathbarButton:first-child:hover,
+.nemo-window toolbar.primary-toolbar NemoPathbarButton:last-child:hover,
+.nemo-window toolbar.primary-toolbar NemoPathbarButton:only-child:hover {
     padding: 4px;
 }
 
-NemoWindow .primary-toolbar.toolbar NemoPathbarButton:active,
-NemoWindow .primary-toolbar.toolbar NemoPathbarButton:checked {
+.nemo-window toolbar.primary-toolbar NemoPathbarButton:active,
+.nemo-window toolbar.primary-toolbar NemoPathbarButton:checked {
     background-color: transparent;
     background-image: none;
     border-image: none;
@@ -333,10 +325,10 @@ NemoWindow .primary-toolbar.toolbar NemoPathbarButton:checked {
                 inset  0px -1px shade (@theme_selected_bg_color, 1.3);
 }
 
-NemoWindow .primary-toolbar.toolbar NemoPathbarButton *:active,
-NemoWindow .primary-toolbar.toolbar NemoPathbarButton *:active:hover,
-NemoWindow .primary-toolbar.toolbar NemoPathbarButton *:checked,
-NemoWindow .primary-toolbar.toolbar NemoPathbarButton *:checked:hover {
+.nemo-window toolbar.primary-toolbar NemoPathbarButton *:active,
+.nemo-window toolbar.primary-toolbar NemoPathbarButton *:active:hover,
+.nemo-window toolbar.primary-toolbar NemoPathbarButton *:checked,
+.nemo-window toolbar.primary-toolbar NemoPathbarButton *:checked:hover {
     font: bold;
     color: shade(@theme_text_dark_color, 1.00);
     text-shadow: 1px 1px @theme_shadow_dark_color;
@@ -378,7 +370,7 @@ NemoWindow .primary-toolbar.toolbar .button:hover {
                 inset  0px -1px shade (@theme_selected_bg_color, 1.3);
 }
 */
-NemoWindow .primary-toolbar .toolbar {
+.nemo-window toolbar.primary-toolbar {
     background-color: @theme_bg_color;
 }
 
@@ -418,33 +410,34 @@ NemoPathBar:dir(ltr).raised.linked .button.text-button:checked:hover:active:only
 }
 
 /* Nemo statusbar */
-NemoWindow .toolbar {
+.nemo-window box.toolbar.horizontal {
     background-image: none;
     background-color: @theme_bg_color;
     border-top-width: 0;
     border-bottom-width: 0;
     box-shadow: none;
+    padding: 0px;
 }
 
-NemoStatusBar.toolbar .button {
+.nemo-window box.toolbar.horizontal button {
     padding: 6px;
 }
 
 /* small buttons statusbar nemo */
-NemoWindow .toolbar .button GtkImage,
-NemoWindow .toolbar .button GtkImage:active,
-NemoWindow .toolbar .button GtkImage:active:hover,
-NemoWindow .toolbar .button GtkImage:checked,
-NemoWindow .toolbar .button GtkImage:checked:hover,
-NemoWindow .toolbar .button GtkImage:hover {
+.nemo-window box.toolbar.horizontal button image,
+.nemo-window box.toolbar.horizontal button image:active,
+.nemo-window box.toolbar.horizontal button image:active:hover,
+.nemo-window box.toolbar.horizontal button image:checked,
+.nemo-window box.toolbar.horizontal button image:checked:hover,
+.nemo-window box.toolbar.horizontal button image:hover {
     color: @theme_fg_color;
 }
 
-NemoWindow .toolbar .button:hover,
-NemoWindow .toolbar .button:active,
-NemoWindow .toolbar .button:active:hover,
-NemoWindow .toolbar .button:checked,
-NemoWindow .toolbar .button:checked:hover {
+.nemo-window box.toolbar.horizontal button:hover,
+.nemo-window box.toolbar.horizontal button:active,
+.nemo-window box.toolbar.horizontal button:active:hover,
+.nemo-window box.toolbar.horizontal button:checked,
+.nemo-window box.toolbar.horizontal button:checked:hover {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (shade(@button_gradient1, 1.03)),
@@ -458,8 +451,8 @@ NemoWindow .toolbar .button:checked:hover {
                 inset  0px -1px shade (@theme_selected_bg_color, 1.3);
 }
 
-NemoWindow .notebook {
-    -GtkNotebook-initial-gap: 0;
+.nemo-window-pane notebook {
+/*    -GtkNotebook-initial-gap: 0; */
     background-color: @theme_base_color;
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
@@ -477,12 +470,8 @@ NemoWindow .notebook {
     box-shadow: none;
 }
 
-/* Nemo notebook */
-GtkDialog.background .vertical.dialog-vbox .notebook .frame {
-    background-color: shade (@theme_bg_color, 1.1);
-}
 
-NemoWindow .notebook tab {
+.nemo-window-pane notebook tab {
     border-width: 0px 1px;
     border-style: solid;
     border-color:       shade(@notebook_border, 1.00);
@@ -497,8 +486,7 @@ NemoWindow .notebook tab {
                 inset  0px -1px shade(@notebook_border, 1.00);
 }
 
-NemoWindow .notebook tab:active,
-NemoWindow .notebook tab:checked {
+.nemo-window-pane notebook tab:active {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (shade(@theme_base_color, 0.90)),
@@ -512,53 +500,51 @@ NemoWindow .notebook tab:checked {
                 inset -1px  0px alpha(#fff, 0.04);
 }
 
-NemoWindow .notebook tab.top {
+.nemo-window-pane notebook tab.top {
     padding: 0px 6px;
     border-radius: 0px;
 }
 
-NemoWindow .notebook tab:first-child,
-NemoWindow .notebook tab:first-child:active,
-NemoWindow .notebook tab:first-child:checked {
+.nemo-window-pane notebook tab:first-child,
+.nemo-window-pane notebook tab:first-child:active,
+.nemo-window-pane notebook tab:first-child:checked {
     border-width: 0px 1px 0px 0px;
     border-radius: 0px;
 }
 
-NemoWindow .notebook tab:last-child,
-NemoWindow .notebook tab:last-child:active,
-NemoWindow .notebook tab:last-child:checked {
+.nemo-window-pane notebook tab:last-child,
+.nemo-window-pane notebook tab:last-child:active,
+.nemo-window-pane notebook tab:last-child:checked {
     border-width: 0px 0px 0px 1px;
     border-radius: 0px;
 }
 
-NemoWindow .notebook tab GtkLabel {
+.nemo-window-pane notebook tab label {
     padding: 0px;
     color: @theme_text_color;
     text-shadow: 0px 1px @theme_shadow_color;
 }
 
-NemoWindow .notebook tab .button GtkImage {
+.nemo-window-pane notebook tab button image {
     border-radius: 3px;
     color: mix(@theme_fg_color, @sidebar_background, 0.30);
     border-style: solid;
     border-color: transparent;
     border-width: 1px;
     padding: 0;
-    icon-shadow: 1px 1px @theme_shadow_color;
+    -gtk-icon-shadow: 1px 1px @theme_shadow_color;
 }
 
-NemoWindow .notebook tab .button GtkImage:hover {
+.nemo-window-pane notebook tab button image:hover {
     color: @theme_fg_color; 
     border-color: alpha(black, 0.1); 
 }
 
-NemoWindow .notebook tab .button GtkImage:active,
-NemoWindow .notebook tab .button GtkImage:active:hover,
-NemoWindow .notebook tab .button GtkImage:checked,
-NemoWindow .notebook tab .button GtkImage:active:hover {
+.nemo-window-pane notebook tab button image:checked,
+.nemo-window-pane notebook tab button image:active:hover {
     background-color: alpha(black, 0.15); 
     color: shade(@theme_fg_color, 1.00);
-    icon-shadow: 0px 1px @theme_shadow_color;
+    -gtk-icon-shadow: 0px 1px @theme_shadow_color;
     border-color: alpha(black, 0.27) 
                   alpha(black, 0.13) 
                   alpha(black, 0.13) 
@@ -587,30 +573,30 @@ NemoWindow .notebook tab .button GtkImage:active:hover {
 
 .nemo-desktop.nemo-canvas-item:active,
 .nemo-desktop.nemo-canvas-item:checked,
-.nemo-desktop.nemo-canvas-item:prelight,
+.nemo-desktop.nemo-canvas-item:hover,
 .nemo-desktop.nemo-canvas-item:selected,
 .nemo-desktop.nemo-canvas-item:checked {
     text-shadow: none;
 }
 
 /* stack-switcher ie. nemo preferences */
-.vertical.dialog-vbox .horizontal.primary-toolbar {
+dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar {
     background-color: transparent;
     border-color: @primay-toolbar-border;
     border-width: 1px 0px;
     padding: 1px 0px;
 }
 
-.vertical.dialog-vbox .horizontal.primary-toolbar .horizontal.linked.stack-switcher .button.text-button {
+dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio {
     color: @menu_fg_dark_color;
     text-shadow: none;
     box-shadow: none;
     padding: 5px 2px;
 }
 
-.vertical.dialog-vbox .horizontal.primary-toolbar .horizontal.linked.stack-switcher .button.text-button:hover,
-.vertical.dialog-vbox .horizontal.primary-toolbar .horizontal.linked.stack-switcher .button.text-button:checked,
-.vertical.dialog-vbox .horizontal.primary-toolbar .horizontal.linked.stack-switcher .button.text-button:checked:hover {
+dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:hover,
+dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:checked,
+dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:checked:hover {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (shade(@menu_bg_dark_color, 2.03)),
@@ -622,161 +608,55 @@ NemoWindow .notebook tab .button GtkImage:active:hover {
 }
 
 /* middle most button */
-.vertical.dialog-vbox .horizontal.primary-toolbar .horizontal.linked.stack-switcher .button.text-button,
-.vertical.dialog-vbox .horizontal.primary-toolbar .horizontal.linked.stack-switcher .button.text-button:focus,
-.vertical.dialog-vbox .horizontal.primary-toolbar .horizontal.linked.stack-switcher .button.text-button:hover,
-.vertical.dialog-vbox .horizontal.primary-toolbar .horizontal.linked.stack-switcher .button.text-button:checked {
+dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio,
+dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:focus,
+dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:hover,
+dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:checked {
     border-right-width: 0px;
     border-left-width:  0px;
     border-radius: 0px;
 }
 
 /* left most button */
-.vertical.dialog-vbox .horizontal.primary-toolbar .horizontal.linked.stack-switcher .button.text-button:first-child,
-.vertical.dialog-vbox .horizontal.primary-toolbar .horizontal.linked.stack-switcher .button.text-button:focus:first-child,
-.vertical.dialog-vbox .horizontal.primary-toolbar .horizontal.linked.stack-switcher .button.text-button:hover:first-child,
-.vertical.dialog-vbox .horizontal.primary-toolbar .horizontal.linked.stack-switcher .button.text-button:checked:first-child {
+dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:first-child,
+dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:focus:first-child,
+dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:hover:first-child,
+dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:checked:first-child {
     border-radius: 6px 0 0 6px;
     border-width: 1px;
     border-right-width: 0px;
 }
 
 /* right most button */
-.vertical.dialog-vbox .horizontal.primary-toolbar .horizontal.linked.stack-switcher .button.text-button:last-child,
-.vertical.dialog-vbox .horizontal.primary-toolbar .horizontal.linked.stack-switcher .button.text-button:focus:last-child,
-.vertical.dialog-vbox .horizontal.primary-toolbar .horizontal.linked.stack-switcher .button.text-button:hover:last-child,
-.vertical.dialog-vbox .horizontal.primary-toolbar .horizontal.linked.stack-switcher .button.text-button:checked:last-child {
+dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:last-child,
+dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:focus:last-child,
+dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:hover:last-child,
+dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:checked:last-child {
     border-radius: 0 6px 6px 0;
     border-width: 1px;
     border-left-width: 0px;
 }
 
-.vertical.dialog-vbox .view.frame {
+dialog.background.solid-csd box.vertical.dialog-vbox frame.view {
     background-color: shade (@theme_bg_color, 1.1);
     border-color: @borders;
 }
 
-.vertical.dialog-vbox .view.frame  GtkViewport.frame {
+dialog.background.solid-csd box.vertical.dialog-vbox frame.view  GtkViewport.frame {
     background-color: shade (@theme_bg_color, 1.1);
 }
 
-.vertical.dialog-vbox .view.frame  GtkViewport.frame .vertical GtkSeparator.separator.horizontal {
+dialog.background.solid-csd box.vertical.dialog-vbox frame.view stack  viewport.frame .vertical separator.horizontal {
     border-color: @borders;
     border-width: 0 0 1px 0;
 }
 
-.vertical.dialog-vbox .view.frame  GtkViewport.frame .vertical .vertical .vertical .text-button {
+dialog.background.solid-csd box.vertical.dialog-vbox frame.view stack  viewport.frame .vertical .vertical .vertical checkbutton.text-button {
     background-color: transparent;
 }
 
-.vertical.dialog-vbox .view.frame  GtkViewport.frame .vertical .vertical .vertical .text-button:hover {
+dialog.background.solid-csd box.vertical.dialog-vbox frame.view stack  viewport.frame .vertical .vertical .vertical checkbutton.text-button:hover {
     background-color: shade (@theme_bg_color, 1.05);
     border-radius: 4px;
-}
-
-/* Parole media player needs more testing! */
-
-ParoleMediaList .toolbar.inline-toolbar .button {
-    padding: 11px;
-}
-
-/****************
- * Dconf-editor *
- ****************/
-
-DConfWindow GtkTreeView.view {
-    -GtkTreeView-expander-size: 12; /* arrow size in list/tree views */
-}
-
-/* sidebar */
-DConfWindow GtkTreeView.view,
-DConfWindow GtkTreeView.view row {
-    background-color: shade (@theme_bg_color, 1.08);
-    color: @theme_fg_color;
-}
-
-DConfWindow GtkTreeView.view row:selected,
-DConfWindow GtkTreeView.view row:selected:hover  {
-    background-image: -gtk-gradient (linear,
-                                     left top,
-                                     left bottom,
-                                     from (shade(@sidebar_selected_bg, 0.90)),
-                                     color-stop (0.40, shade (@sidebar_selected_bg, 0.98)),
-                                     to (shade(@sidebar_selected_bg, 1.05)));
-    color:  @theme_selected_fg_color;
-    border-radius: 6px;
-    border-style: solid;
-    border-width: 1px 0px 0px 0px;
-    border-color: shade (@sidebar_selected_bg, 0.90) #bbb shade (@sidebar_selected_bg, 1.05);
-    text-shadow: none;
-}
-
-DConfWindow GtkTreeView.view row:hover {
-    background-image: -gtk-gradient (linear,
-                                     left top,
-                                     left bottom,
-                                     from (shade(@theme_bg_color, 1.05)),
-                                     color-stop (0.40, shade (@theme_bg_color, 1.13)),
-                                     to (shade(@theme_bg_color, 1.10)));
-    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
-                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
-    color: shade (@theme_fg_color, 0.90);
-    border-radius: 6px;
-    text-shadow: none;
-}
-
-/* view */
-DConfWindow DConfKeyView.view,
-DConfWindow DConfKeyView.view row {
-    background-color: @theme_base_color;
-    color: @theme_fg_color;
-}
-
-DConfWindow DConfKeyView.view row:selected {
-    color: @theme_selected_fg_color;
-}
-
-DConfWindow DConfKeyView.view row,
-DConfWindow DConfKeyView.view row:hover,
-DConfWindow DConfKeyView.view row:selected,
-DConfWindow DConfKeyView.view row:selected:hover {
-    border-radius: 0px;
-    box-shadow: none;
-}
-
-/* the small line between sidebar and view */
-DConfWindow GtkPaned.horizontal {
-    -GtkPaned-handle-size: 3px;
-    border-color: transparent;
-    background-color: @theme_bg_color;
-}
-
-DConfKeyView.view row:selected,
-DConfKeyView.view row:selected:hover  {
-    background-image: -gtk-gradient (linear,
-                                     left top,
-                                     left bottom,
-                                     from (shade(@sidebar_selected_bg, 0.90)),
-                                     color-stop (0.40, shade (@sidebar_selected_bg, 0.98)),
-                                     to (shade(@sidebar_selected_bg, 1.05)));
-    color:  @theme_selected_fg_color;
-}
-
-DConfKeyView.view .entry.spinbutton {
-    padding: 2px 0px 2px 4px;
-    box-shadow: none;
-    border-style: none;
-}
-
-DConfKeyView.view .spinbutton .button,
-DConfKeyView.view .spinbutton .button:hover {
-    border-style: none;
-}
-
-DConfKeyView.view .spinbutton .button:last-child,
-DConfKeyView.view .spinbutton .button:hover:last-child {
-    border-radius: 0 5px 5px 0;
 }
 
