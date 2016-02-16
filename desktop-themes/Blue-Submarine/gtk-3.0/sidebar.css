@@ -8,35 +8,43 @@
 }
 
 .sidebar,
-.sidebar.view,
 .sidebar .view,
-.sidebar.view:prelight,
-.sidebar .view:prelight {
+.sidebar .view:hover {
     border-radius: 0px;
     color: @sidebar_fg_color;
     text-shadow: 0px 1px @theme_shadow_color;
     background-color: @sidebar_background;
 }
 
+.sidebar-button {
+    background-color: transparent;
+    background-image: none;
+    border-style: none;
+    border-image: none;
+    border-width: 0px;
+    border-color: transparent;
+    box-shadow: none;
+}
+
 /* dialog open */
-GtkPlacesSidebar.sidebar.frame .frame GtkListBox.sidebar.list,
-GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row {
+placessidebar.sidebar.frame viewport.frame list,
+placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row {
      background-color: @sidebar_background;
 }
 
-GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row:selected {
+placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row:selected {
      border-radius: 6px;
 }
 
-GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row .sidebar-revealer .sidebar-icon {
+placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row revealer.sidebar-revealer image.sidebar-icon {
      padding: 4px 8px 4px 6px;
 }
 
-GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row .sidebar-revealer .sidebar-label {
+placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row revealer.sidebar-revealer label.sidebar-label {
      padding: 4px 0px 4px 1px;
 }
 
-GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row .sidebar-revealer .sidebar-button.image-button.button {
+placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row revealer.sidebar-revealer button.sidebar-button.image-button {
     background-color: transparent;
     background-image: none;
     border-image:none;
@@ -44,11 +52,8 @@ GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sideba
     padding: 4px 12px 4px 0px;
 }
 
-.sidebar.view:selected,
-.sidebar.view *:selected,
 .sidebar .view:selected,
-.sidebar .view *:selected,
-.sidebar .view:selected:prelight {
+.sidebar .view:selected:hover {
     border-style: solid;
     border-width: 1px 0px 0px 0px;
     border-color: shade (@sidebar_selected_bg, 0.90) #bbb shade (@sidebar_selected_bg, 1.05);
@@ -65,7 +70,7 @@ GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sideba
 
 .sidebar row:hover,
 .sidebar .view row:hover,
-.sidebar GtkTreeView row:hover {
+.sidebar treeview row:hover {
     background-image: -gtk-gradient (linear,
                                      left top,
                                      left bottom,
@@ -81,40 +86,10 @@ GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sideba
     text-shadow: none;
 }
 
-.sidebar .radio,
-.sidebar .radio:focus,
-.sidebar .radio:selected {
+.sidebar radio,
+.sidebar radio:focus,
+.sidebar radio:selected {
     background-image: none;
     background-color: alpha(@theme_base_color, 0.0);
-}
-
-GtkHCollapsablePaned,
-SourceList.pane-separator {
-    border-width: 0px;
-    -GtkPaned-handle-size: 2px;
-}
-
-GtkHCollapsablePaned .pane-separator,
-GtkHCollapsablePaned .pane-separator:prelight,
-GtkHCollapsablePaned .pane-separator:selected {
-    background-image: none;
-    background-color: @sidebar_background;
-    border-width: 0px 1px 0px 0px;
-    border-style: solid;
-    border-color: shade (@button_border, 0.90);
-}
-
-/* Marlin sidebar separator */
-VarkaWidgetsHCollapsiblePaned,
-VarkaWidgetsHCollapsiblePaned.pane-separator,
-VarkaWidgetsHCollapsiblePaned.pane-separator:prelight,
-VarkaWidgetsHCollapsiblePaned.pane-separator:selected {
-    border-width: 0px;
-    border-color: shade(@sidebar_background, 0.80);
-    background-image: -gtk-gradient(linear,
-                                    left top, right top,
-                                    from (@sidebar_background),
-                                    color-stop(0.50, @sidebar_background),
-                                    to   (#a9a9a9));
 }
 
