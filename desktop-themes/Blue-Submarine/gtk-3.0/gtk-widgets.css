@@ -7,29 +7,10 @@
 * {
     padding: 0;
     background-clip: padding-box;
-/*	-GtkButton-child-displacement-x: 1; deprecated */
-/*	-GtkButton-child-displacement-y: 1; deprecated */
-    -GtkButton-default-border: 0;
-    -GtkButton-image-spacing: 0;
-    -GtkButton-interior-focus: true;
-    -GtkButton-inner-border: 3;
-/*	-GtkButtonBox-child-min-height: 26; deprecated */
-/*	-GtkCheckButton-indicator-size: 16; deprecated */
-/*	-GtkCheckMenuItem-indicator-size: 12; deprecated */
-    -GtkComboBox-arrow-scaling: 0.75;
     -GtkDialog-button-spacing: 4; /* ie. logout dialog */
     -GtkDialog-action-area-border: 10; /* ie. logout dialog */
-/*	-GtkExpander-expander-size: 14; deprecated */
     -GtkHTML-link-color: @link_color;
     -GtkIMHtml-hyperlink-color: @link_color;
-/*	-GtkMenu-horizontal-padding: 0; */
-/*	-GtkMenu-vertical-padding: 0; */
-    -GtkMenuBar-internal-padding: 0;
-/*    -GtkMenuItem-arrow-scaling: 0.7; */
-/*    -GtkNotebook-tab-overlap: 1; */
-    -GtkPaned-handle-size: 1;
-/*    -GtkProgressBar-min-horizontal-bar-height: 16;
-    -GtkProgressBar-min-vertical-bar-width: 16; */
     -GtkRange-trough-border: 1;
     -GtkRange-slider-width: 11;
     -GtkRange-stepper-size: 13;
@@ -41,24 +22,14 @@
     -GtkScrollbar-slider-width: 11;
     -GtkScrollbar-min-slider-length: 31;
     -GtkScrolledWindow-scrollbar-spacing: 0;
-    -GtkScrolledWindow-scrollbars-within-bevel: 1;
-    -GtkSeparatorMenuItem-horizontal-padding: 0;
-    -GtkStatusbar-shadow-type: none;
     -GtkTextView-error-underline-color: @error_color;
     -GtkToolButton-icon-spacing: 4;
     -GtkToolItemGroup-expander-size: 6;
-    -GtkToolbar-internal-padding: 0;
     -GtkTreeView-expander-size: 12; /* arrow size in list/tree views */
     -GtkTreeView-horizontal-separator: 4;
     -GtkTreeView-vertical-separator: 4;
-/*	-GtkWidget-focus-padding: 2;  deprecated */
-/*	-GtkWidget-focus-line-width: 0; */
-/*    -GtkWidget-separator-width: 2px;
-    -GtkWidget-separator-height: 2px; */
-/*    -GtkWidget-wide-separators: true; */
     -WnckTasklist-fade-overlay-rect: 0;
     /* Highlight drag-drop destination */
-/*    engine: none; */
     outline-color: alpha(@theme_selected_bg_color, 0.3);
     outline-style: dashed;
     outline-offset: -3px; /* 2px */
@@ -241,7 +212,6 @@ statusbar {
     padding: 0px;
     margin: -2px 0 -2px 0;
     color: @theme_fg_color;
-    -GtkStatusbar-shadow-type: none;
     font-size: smaller;
 }
 
@@ -299,8 +269,6 @@ entry.combo {
 This is the background color of mate-control-center 'too' */
     background-color: shade (@bg_color, 1.1);
     padding: 5px 4px;
-    -GtkEntry-inner-border: 0;
-    -GtkEntry-progress-border: 0;
     color: @entry_text_color;
     background-image: -gtk-gradient(linear,
                                     left top, left bottom,
@@ -785,10 +753,6 @@ button {
 
 button {
     transition: all 400ms ease-out;
-    -GtkButton-image-spacing: 4;
-    -GtkButton-interior-focus: true;
-    -GtkButton-default-border: 0;
-    -GtkButton-inner-border: 3;
     -GtkArrow-arrow-scaling: 0.5;
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
@@ -1533,9 +1497,7 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
                 inset  1px  0px alpha(shade(@button_border, 0.94), 0.80),
                 inset -1px  0px rgba(255,255,255,0), 0 1px rgba(255,255,255,0),
                 inset  0px -1px alpha(shade(@button_border, 0.88), 0.90);
-    border-width: 1px;
-    border-right-width: 0px;
-    border-left-width: 0px;
+    border-width: 1px 0px 1px 0px;
     border-radius: 0;
 }
 
@@ -1550,9 +1512,8 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
                  inset  1px  0px shade(@selected_bg_color, 1.3),
                  inset -1px  0px rgba(255,255,255,0), 0 1px rgba(255,255,255,0),
                  inset  0px -1px shade(@selected_bg_color, 1.3);
-     border-right-width: 0px;
-     border-left-width: 0px;
-     border-radius: 0;
+    border-width: 1px 0px 1px 0px;
+    border-radius: 0;
 }
 
 /* Middle button disabled */
@@ -1561,8 +1522,7 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
                 inset  1px  0px @insensitive_border_color,
                 inset -1px  0px rgba(255,255,255,0), 0 1px rgba(255,255,255,0),
                 inset  0px -1px @insensitive_border_color;
-    border-right-width: 0px;
-    border-left-width: 0px;
+    border-width: 1px 0px 1px 0px;
     border-radius: 0;
 }
 
@@ -1575,8 +1535,7 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
                 inset -1px  0px rgba(255,255,255,0), 0 1px rgba(255,255,255,0),
                 inset  0px -1px alpha(shade(@button_border, 0.88), 0.90);
     border-radius: 6px 0 0 6px;
-    border-width: 1px;
-    border-right-width: 0;
+    border-width: 1px 0px 1px 1px;
 }
 
 /* Leftmost button active/hover */
@@ -1591,7 +1550,7 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
                 inset -1px  0px rgba(255,255,255,0), 0 1px rgba(255,255,255,0),
                 inset  0px -1px shade(@selected_bg_color, 1.3);
     border-radius: 6px 0 0 6px;
-    border-right-width: 0;
+    border-width: 1px 0px 1px 1px;
 }
 
 /* Leftmost button disabled */
@@ -1601,11 +1560,11 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
                 inset -1px  0px rgba(255,255,255,0), 0 1px rgba(255,255,255,0),
                 inset  0px -1px @insensitive_border_color;
     border-radius: 6px 0 0 6px;
-    border-right-width: 0;
+    border-width: 1px 0px 1px 1px;
 }
 
 /* Rightmost button */
-.linked .entry:last-child,
+.linked entry:last-child,
 .linked button:last-child,
 .linked button:focus:last-child {
      box-shadow: inset  0px  1px alpha(shade(@button_border, 1.00), 0.70),
@@ -1628,7 +1587,7 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
                 inset -1px  0px shade(@selected_bg_color, 1.3),
                 inset  0px -1px shade(@selected_bg_color, 1.3);
     border-radius: 0 6px 6px 0;
-    border-left-width: 0;
+    border-width: 1px 1px 1px 0px;
 }
 
 /* Rightmost button disabled */
@@ -1638,7 +1597,7 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
                 inset -1px  0px @insensitive_border_color,
                 inset  0px -1px @insensitive_border_color;
     border-radius: 0 6px 6px 0;
-    border-left-width: 0;
+    border-width: 1px 1px 1px 0px;
 }
 
 /* Linked single button.combo */
@@ -1673,8 +1632,6 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
 
 /* vertical */
 /* Middle button */
-.vertical.linked > combobox > button.combo:last-child,
-.vertical.linked > combobox > button.combo:focus:last-child,
 .vertical.linked button,
 .vertical.linked button:focus {
     box-shadow: inset  0px  1px alpha(shade(@button_border, 1.00), 0.90),
@@ -1685,9 +1642,6 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
     border-width: 0px 1px 1px 1px;
 }
 
-.vertical.linked > combobox > button.combo:hover:last-child,
-.vertical.linked > combobox > button.combo:focus:hover:last-child,
-.vertical.linked > combobox > button.combo:checked:last-child,
 .vertical.linked button:hover,
 .vertical.linked button:checked,
 .vertical.linked button:focus:hover,
@@ -1703,7 +1657,6 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
     border-width: 0px 1px 1px 1px;
 }
 
-.vertical.linked > combobox > button.combo:disabled:last-child,
 .vertical.linked button:disabled {
     box-shadow: inset  0px  1px @insensitive_border_color,
                 inset  1px  0px @insensitive_border_color,
@@ -1715,8 +1668,6 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
 
 /* Top button */
 
-.vertical.linked > combobox:first-child > button.combo:last-child,
-.vertical.linked > combobox:first-child > button.combo:focus:last-child,
 .vertical.linked button:first-child,
 .vertical.linked button:focus:first-child {
     box-shadow: inset  0px  1px alpha(shade(@button_border, 1.00), 0.70),
@@ -1726,9 +1677,6 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
     border-width: 1px 1px 1px 1px;
 }
 
-.vertical.linked > combobox:first-child > button.combo:hover:last-child,
-.vertical.linked > combobox:first-child > button.combo:focus:hover:last-child,
-.vertical.linked > combobox:first-child > button.combo:checked:last-child,
 .vertical.linked button:hover:first-child,
 .vertical.linked button:checked:first-child,
 .vertical.linked button:focus:hover:first-child,
@@ -1743,7 +1691,6 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
     border-width: 1px 1px 1px 1px;
 }
 
-.vertical.linked > combobox:first-child > button.combo:disabled:last-child,
 .vertical.linked button:disabled:first-child {
     box-shadow: inset  0px  1px @insensitive_border_color,
                 inset  1px  0px @insensitive_border_color,
@@ -1754,8 +1701,6 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
 
 /* Bottom button */
 
-.vertical.linked > combobox:last-child > button.combo:last-child,
-.vertical.linked > combobox:last-child > button.combo:focus:last-child,
 .vertical.linked button:last-child,
 .vertical.linked button:focus:last-child {
      box-shadow: inset  1px  0px alpha(shade(@button_border, 0.94), 0.90),
@@ -1765,9 +1710,6 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
     border-width: 0px 1px 1px 1px;
 }
 
-.vertical.linked > combobox:last-child > button.combo:hover:last-child,
-.vertical.linked > combobox:last-child > button.combo:focus:hover:last-child,
-.vertical.linked > combobox:last-child > button.combo:checked:last-child,
 .vertical.linked button:hover:last-child,
 .vertical.linked button:checked:last-child,
 .vertical.linked button:focus:hover:last-child,
@@ -1782,7 +1724,6 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
     border-width: 0px 1px 1px 1px;
 }
 
-.vertical.linked > combobox:last-child > button.combo:disabled:last-child,
 .vertical.linked button:disabled:last-child {
     box-shadow: inset  1px  0px @insensitive_border_color,
                 inset -1px  0px @insensitive_border_color,
@@ -1793,8 +1734,6 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
 
 /* Single button */
 
-.vertical.linked > combobox:only-child > button.combo:last-child,
-.vertical.linked > combobox:only-child > button.combo:focus:last-child,
 .vertical.linked button:only-child,
 .vertical.linked button:focus:only-child {
     box-shadow: inset  0px  1px alpha(shade(@button_border, 0.94), 0.90),
@@ -1805,9 +1744,6 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
     border-width: 1px;
 }
 
-.vertical.linked > combobox:only-child > button.combo:hover:last-child,
-.vertical.linked > combobox:only-child > button.combo:focus:hover:last-child,
-.vertical.linked > combobox:only-child > button.combo:checked:last-child,
 .vertical.linked button:hover:only-child,
 .vertical.linked button:checked:only-child,
 .vertical.linked button:focus:hover:only-child,
@@ -1823,7 +1759,6 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
     border-width: 1px;
 }
 
-.vertical.linked > combobox:only-child > button.combo:disabled:last-child,
 .vertical.linked button:disabled:only-child {
     box-shadow: inset  0px  1px @insensitive_border_color,
                 inset  1px  0px @insensitive_border_color,
@@ -1982,10 +1917,6 @@ toolbar.inline-toolbar GtkToolButton:only-child > button:disabled {
 
 combobox {
     padding: 0px;
-/*    -GtkWidget-focus-padding: 0; */
-/*    -GtkWidget-focus-line-width: 0; */
-    -GtkComboBox-arrow-scaling: 0.5;
-    -GtkComboBox-shadow-type: none;
 }
 
 combobox .cell {
@@ -1996,7 +1927,6 @@ combobox .cell {
 
 combobox separator {
     /* always disable separators */
-/*    -GtkWidget-wide-separators: true; */
     -GtkWidget-horizontal-separator: 0;
     -GtkWidget-vertical-separator: 0;
 }
@@ -2015,7 +1945,6 @@ combobox entry:nth-child(first) {
                 inset  1px  0px shade(@button_border, 0.99),
                 inset  0px -1px shade(@button_border, 1.10);
 }
-
 
 combobox entry:focus {
     border-width: 2px 0px 2px 2px; /* remove right-outer */
@@ -2042,7 +1971,7 @@ combobox button {
     padding: 2px 3px 2px 6px;
 }
 
-combobox button *:hover {
+combobox button:hover {
     color: @theme_text_color;
 }
 
@@ -2157,8 +2086,8 @@ combobox.linked button.combo:checked {
 }
 
 /* Middle button */
-.linked combobox button.combo,
-.linked combobox button.combo:focus {
+.linked.horizontal combobox button.combo,
+.linked.horizontal combobox button.combo:focus {
     box-shadow: inset  0px  1px alpha(shade(@button_border, 1.00), 0.70),
                 inset  1px  0px alpha(shade(@button_border, 0.94), 0.80),
                 inset -1px  0px rgba(255,255,255,0), 0 1px rgba(255,255,255,0),
@@ -2169,12 +2098,12 @@ combobox.linked button.combo:checked {
 }
 
  /* Middle Button active/hover */
-.linked combobox button.combo:hover,
-.linked combobox button.combo:focus:hover,
-.linked combobox button.combo:hover:active,
-.linked combobox button.combo:checked,
-.linked combobox button.combo:checked:hover,
-.linked combobox button.combo:checked:hover:active {
+.linked.horizontal combobox button.combo:hover,
+.linked.horizontal combobox button.combo:focus:hover,
+.linked.horizontal combobox button.combo:hover:active,
+.linked.horizontal combobox button.combo:checked,
+.linked.horizontal combobox button.combo:checked:hover,
+.linked.horizontal combobox button.combo:checked:hover:active {
      box-shadow: inset  0px  1px shade(@selected_bg_color, 1.3),
                  inset  1px  0px shade(@selected_bg_color, 1.3),
                  inset -1px  0px rgba(255,255,255,0), 0 1px rgba(255,255,255,0),
@@ -2185,7 +2114,7 @@ combobox.linked button.combo:checked {
 }
 
 /* Middle button disabled */
-.linked combobox button.combo:disabled {
+.linked.horizontal combobox button.combo:disabled {
     box-shadow: inset  0px  1px @insensitive_border_color,
                 inset  1px  0px @insensitive_border_color,
                 inset -1px  0px rgba(255,255,255,0), 0 1px rgba(255,255,255,0),
@@ -2196,8 +2125,8 @@ combobox.linked button.combo:checked {
 }
 
 /* Leftmost button */
-.linked combobox:first-child button.combo:first-child,
-.linked combobox:first-child button.combo:focus:first-child {
+.linked.horizontal combobox:first-child button.combo:first-child,
+.linked.horizontal combobox:first-child button.combo:focus:first-child {
     box-shadow: inset  0px  1px alpha(shade(@button_border, 1.00), 0.70),
                 inset  1px  0px alpha(shade(@button_border, 0.94), 0.80),
                 inset -1px  0px rgba(255,255,255,0), 0 1px rgba(255,255,255,0),
@@ -2207,12 +2136,12 @@ combobox.linked button.combo:checked {
 }
 
 /* Leftmost button active/active */
-.linked combobox:first-child button.combo:hover:first-child,
-.linked combobox:first-child button.combo:focus:hover:first-child,
-.linked combobox:first-child button.combo:hover:active:first-child,
-.linked combobox:first-child button.combo:checked:first-child,
-.linked combobox:first-child button.combo:checked:hover:first-child,
-.linked combobox:first-child button.combo:checked:hover:active:first-child {
+.linked.horizontal combobox:first-child button.combo:hover:first-child,
+.linked.horizontal combobox:first-child button.combo:focus:hover:first-child,
+.linked.horizontal combobox:first-child button.combo:hover:active:first-child,
+.linked.horizontal combobox:first-child button.combo:checked:first-child,
+.linked.horizontal combobox:first-child button.combo:checked:hover:first-child,
+.linked.horizontal combobox:first-child button.combo:checked:hover:active:first-child {
     box-shadow: inset  0px  1px shade(@selected_bg_color, 1.3),
                 inset  1px  0px shade(@selected_bg_color, 1.3),
                 inset -1px  0px rgba(255,255,255,0), 0 1px rgba(255,255,255,0),
@@ -2222,7 +2151,7 @@ combobox.linked button.combo:checked {
 }
 
 /* Leftmost button disabled */
-.linked combobox:first-child button.combo:disabled:first-child {
+.linked.horizontal combobox:first-child button.combo:disabled:first-child {
     box-shadow: inset  0px  1px @insensitive_border_color,
                 inset  1px  0px @insensitive_border_color,
                 inset -1px  0px rgba(255,255,255,0), 0 1px rgba(255,255,255,0),
@@ -2232,8 +2161,8 @@ combobox.linked button.combo:checked {
 }
 
 /* Rightmost button */
-.linked combobox:last-child button.combo:last-child,
-.linked combobox:last-child button.combo:focus:last-child {
+.linked.horizontal combobox:last-child button.combo:last-child,
+.linked.horizontal combobox:last-child button.combo:focus:last-child {
      box-shadow: inset  0px  1px alpha(shade(@button_border, 1.00), 0.70),
                  inset  1px  0px alpha(shade(@button_border, 0.94), 0.80),
                  inset -1px  0px alpha(shade(@button_border, 0.94), 0.80),
@@ -2243,12 +2172,12 @@ combobox.linked button.combo:checked {
 }
 
 /* Rightmost button active */
-.linked combobox:last-child button.combo:hover:last-child,
-.linked combobox:last-child button.combo:focus:hover:last-child,
-.linked combobox:last-child button.combo:hover:active:last-child,
-.linked combobox:last-child button.combo:checked:last-child,
-.linked combobox:last-child button.combo:checked:hover:last-child,
-.linked combobox:last-child button.combo:checked:hover:active:last-child {
+.linked.horizontal combobox:last-child button.combo:hover:last-child,
+.linked.horizontal combobox:last-child button.combo:focus:hover:last-child,
+.linked.horizontal combobox:last-child button.combo:hover:active:last-child,
+.linked.horizontal combobox:last-child button.combo:checked:last-child,
+.linked.horizontal combobox:last-child button.combo:checked:hover:last-child,
+.linked.horizontal combobox:last-child button.combo:checked:hover:active:last-child {
     box-shadow: inset  0px  1px shade(@selected_bg_color, 1.3),
                 inset  1px  0px shade(@selected_bg_color, 1.3),
                 inset -1px  0px shade(@selected_bg_color, 1.3),
@@ -2258,7 +2187,7 @@ combobox.linked button.combo:checked {
 }
 
 /* Rightmost button disabled */
-.linked combobox:last-child button.combo:last-child {
+.linked.horizontal combobox:last-child button.combo:last-child {
     box-shadow: inset  0px  1px @insensitive_border_color,
                 inset  1px  0px @insensitive_border_color,
                 inset -1px  0px @insensitive_border_color,
@@ -2267,13 +2196,132 @@ combobox.linked button.combo:checked {
     border-left-width: 0;
 }
 
-combobox button.combo *:checked,
-combobox button.combo *:hover {
+/* vertical */
+/* Middle button */
+.vertical.linked > combobox > button.combo,
+.vertical.linked > combobox > button.combo:focus {
+    box-shadow: inset  0px  1px alpha(shade(@button_border, 1.00), 0.90),
+                inset  1px  0px alpha(shade(@button_border, 0.94), 0.90),
+                inset -1px  0px alpha(shade(@button_border, 0.88), 0.90),
+                inset  0px -1px alpha(shade(@button_border, 0.88), 0.90);
+    border-radius: 0px;
+    border-width: 0px 1px 1px 1px;
+}
+
+.vertical.linked > combobox > button.combo:hover,
+.vertical.linked > combobox > button.combo:focus:hover,
+.vertical.linked > combobox > button.combo:checked {
+    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.3),
+                inset  1px  0px shade(@selected_bg_color, 1.3),
+                inset -1px  0px shade(@selected_bg_color, 1.3),
+                inset  0px -1px shade(@selected_bg_color, 1.3);
+    border-radius: 0px;
+    border-width: 0px 1px 1px 1px;
+}
+
+.vertical.linked > combobox > button.combo:disabled {
+    box-shadow: inset  0px  1px @insensitive_border_color,
+                inset  1px  0px @insensitive_border_color,
+                inset -1px  0px @insensitive_border_color,
+                inset  0px -1px @insensitive_border_color;
+    border-radius: 0px;
+    border-width: 0px 1px 1px 1px;
+}
+
+/* Top button */
+.vertical.linked > combobox:first-child > button.combo:first-child,
+.vertical.linked > combobox:first-child > button.combo:focus:first-child {
+    box-shadow: inset  0px  1px alpha(shade(@button_border, 1.00), 0.70),
+                inset  1px  0px alpha(shade(@button_border, 0.94), 0.90),
+                inset  -1px 0px alpha(shade(@button_border, 0.88), 0.90);
+    border-radius: 6px 6px 0 0;
+    border-width: 1px 1px 1px 1px;
+}
+
+.vertical.linked > combobox:first-child > button.combo:hover:first-child,
+.vertical.linked > combobox:first-child > button.combo:focus:hover:first-child,
+.vertical.linked > combobox:first-child > button.combo:checked:first-child {
+    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.3),
+                inset  1px  0px shade(@selected_bg_color, 1.3),
+                inset  -1px 0px shade(@selected_bg_color, 1.3);
+    border-radius: 6px 6px 0 0;
+    border-width: 1px 1px 1px 1px;
+}
+
+.vertical.linked > combobox:first-child > button.combo:disabled:first-child {
+    box-shadow: inset  0px  1px @insensitive_border_color,
+                inset  1px  0px @insensitive_border_color,
+                inset -1px  0px @insensitive_border_color;
+    border-radius: 6px 6px 0 0;
+    border-width: 1px 1px 1px 1px;
+}
+
+/* Bottom button */
+.vertical.linked > combobox:last-child > button.combo:last-child,
+.vertical.linked > combobox:last-child > button.combo:focus:last-child {
+     box-shadow: inset  1px  0px alpha(shade(@button_border, 0.94), 0.90),
+                 inset -1px  0px alpha(shade(@button_border, 0.94), 0.90),
+                 inset  0px -1px alpha(shade(@button_border, 0.88), 0.70);
+    border-radius: 0 0 6px 6px;
+    border-width: 0px 1px 1px 1px;
+}
+
+.vertical.linked > combobox:last-child > button.combo:hover:last-child,
+.vertical.linked > combobox:last-child > button.combo:focus:hover:last-child,
+.vertical.linked > combobox:last-child > button.combo:checked:last-child {
+    box-shadow: inset  1px  0px shade(@selected_bg_color, 1.3),
+                inset -1px  0px shade(@selected_bg_color, 1.3),
+                inset  0px -1px shade(@selected_bg_color, 1.3);
+    border-radius: 0 0 6px 6px;
+    border-width: 0px 1px 1px 1px;
+}
+
+.vertical.linked > combobox:last-child > button.combo:disabled:last-child {
+    box-shadow: inset  1px  0px @insensitive_border_color,
+                inset -1px  0px @insensitive_border_color,
+                inset  0px -1px @insensitive_border_color;
+    border-radius: 0 0 6px 6px;
+    border-width: 0px 1px 1px 1px;
+}
+
+/* Single button */
+.vertical.linked > combobox:only-child > button.combo:only-child,
+.vertical.linked > combobox:only-child > button.combo:focus:only-child {
+    box-shadow: inset  0px  1px alpha(shade(@button_border, 0.94), 0.90),
+                inset  1px  0px alpha(shade(@button_border, 0.94), 0.90),
+                inset -1px  0px alpha(shade(@button_border, 0.94), 0.90),
+                inset  0px -1px alpha(shade(@button_border, 0.94), 0.90);
+    border-radius: 6px;
+    border-width: 1px;
+}
+
+.vertical.linked > combobox:only-child > button.combo:hover:only-child,
+.vertical.linked > combobox:only-child > button.combo:focus:hover:only-child,
+.vertical.linked > combobox:only-child > button.combo:checked:only-child {
+    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.3),
+                inset  1px  0px shade(@selected_bg_color, 1.3),
+                inset -1px  0px shade(@selected_bg_color, 1.3),
+                inset  0px -1px shade(@selected_bg_color, 1.3);
+    border-radius: 6px;
+    border-width: 1px;
+}
+
+.vertical.linked > combobox:only-child > button.combo:disabled:only-child {
+    box-shadow: inset  0px  1px @insensitive_border_color,
+                inset  1px  0px @insensitive_border_color,
+                inset -1px  0px @insensitive_border_color,
+                inset  0px -1px @insensitive_border_color;
+    border-radius: 6px;
+    border-width: 1px;
+}
+
+combobox button.combo:checked,
+combobox button.combo:hover {
     color: @internal_element_prelight;
 }
 
-toolbar combobox button.combo *:checked,
-toolbar combobox button.combo *:hover,
+toolbar combobox button.combo:checked,
+toolbar combobox button.combo:hover,
 toolbar.primary-toolbar combobox button.combo *:checked,
 toolbar.primary-toolbar combobox button.combo *:hover {
     color: @theme_text_dark_color;
@@ -2871,7 +2919,7 @@ calendar.header stackswitcher > button.titlebutton > image {
 }
 
 stackswitcher > button.text-button.radio,
-stackswitcher > button.image-button,
+stackswitcher > button.image-button.radio,
 headerbar stackswitcher > button.titlebutton,
 headerbar.titlebar stackswitcher > button.titlebutton,
 calendar.header stackswitcher > button.titlebutton {
@@ -2907,11 +2955,19 @@ stackswitcher > button.needs-attention:checked > image {
  * GtkActionBar *
  ****************/
 
-actionbar.frame .horizontal.linked stackswitcher button.image-button {
+actionbar revealer .horizontal.linked.stack-switcher button.image-button.radio {
     padding: 4px 2px;
 }
 
-actionbar.frame button.image-button {
+actionbar revealer .horizontal.linked.stack-switcher button.image-button.radio:first-child  {
+    border-width: 1px 0px 1px 1px;
+}
+
+actionbar revealer .horizontal.linked.stack-switcher button.image-button.radio:last-child  {
+    border-width: 1px 1px 1px 0px;
+}
+
+actionbar revealer .horizontal button.image-button.popup.toggle {
     padding: 8px;
 }
 
@@ -3610,7 +3666,7 @@ headerbar stackswitcher.linked.stack-switcher button.text-button.radio:last-chil
     border-width: 1px;
     border-left-width: 0px;
 }
- 
+
 headerbar title {
     font: Bold 11;
     color: @theme_text_dark_color;
@@ -4234,7 +4290,6 @@ expander arrow:checked {
 expander arrow {
     min-width: 16px;
     min-height: 16px;
-    -GtkExpander-expander-size: 14;
     padding: 0px 4px 0px 0px;
 }
 
@@ -4573,7 +4628,7 @@ dialog scrolledwindow.frame viewport .vertical expander .vertical {
     border-left-width:  0px;
     border-width: 1px 0;
     border-radius: 0;
-    padding: 6px 4px;
+    padding: 6px 2px;
 }
 
 /* left button */
@@ -4589,7 +4644,7 @@ dialog scrolledwindow.frame viewport .vertical expander .vertical {
     border-radius: 6px 0 0 6px;
     border-width: 1px;
     border-right-width: 0;
-    padding: 6px 4px;
+    padding: 6px 2px;
 }
 
 /* right button */
@@ -4605,7 +4660,7 @@ dialog scrolledwindow.frame viewport .vertical expander .vertical {
     border-width: 1px;
     border-radius: 0 6px 6px 0;
     border-left-width: 0;
-    padding: 6px 4px;
+    padding: 6px 2px;
 }
 
 /* single button */
@@ -4618,8 +4673,7 @@ dialog scrolledwindow.frame viewport .vertical expander .vertical {
 .dialog-action-area.linked button:checked:hover:only-child,
 .dialog-action-area.linked button:checked:hover:active:only-child,
 .dialog-action-area.linked button:disabled:last-child {
-    padding-left:  6px;
-    padding-right: 6px;
+    padding: 6px 2px;
     border-width: 1px;
     border-radius: 6px;
 }
@@ -4976,9 +5030,11 @@ toolbar.osd separator {
 .osd progressbar,
 progressbar .osd {
     padding: 0;
-    -GtkProgressBar-xspacing: 0;
-    -GtkProgressBar-yspacing: 3px;
-    -GtkProgressBar-min-horizontal-bar-height: 3px;
+}
+
+.osd progressbar.horizontal,
+progressbar.horizontal .osd {
+    min-height: 3px;
 }
 
 .osd progressbar trough,
@@ -5963,23 +6019,21 @@ stack .linked.vertical entry {
 }
 
 
-stack .vertical.linked > combobox > button.combo:last-child,
-stack .vertical.linked > combobox > button.combo:hover:last-child,
-stack .vertical.linked > combobox > button.combo:focus:last-child,
-stack .vertical.linked > combobox > button.combo:focus:hover:last-child,
-stack .vertical.linked > combobox > button.combo:checked:last-child,
-stack .vertical.linked > combobox > button.combo:disabled:last-child,
-stack .linked.vertical button.combo,
-stack .linked.vertical button.combo:hover,
-stack .linked.vertical button.combo:focus,
-stack .linked.vertical button.combo:focus:hover,
-stack .linked.vertical button.combo:checked,
-stack .linked.vertical button.combo:disabled {
+stack .vertical.linked > combobox:first-child > button.combo:first-child,
+stack .vertical.linked > combobox:first-child > button.combo:hover:first-child,
+stack .vertical.linked > combobox:first-child > button.combo:focus:first-child,
+stack .vertical.linked > combobox:first-child > button.combo:focus:hover:first-child,
+stack .vertical.linked > combobox:first-child > button.combo:checked:first-child,
+stack .vertical.linked > combobox:first-child > button.combo:disabled:first-child {
     border-radius: 5px 5px 0 0;
     border-width: 1px;
     border-style: solid;
     border-color: shade(@notebook_border, 1.0);
     padding: 3px 5px;
+}
+
+stack .vertical.linked > combobox:first-child > button.combo:first-child,
+stack .vertical.linked > combobox:first-child > button.combo:focus:first-child {
     box-shadow: none;
 }
 
@@ -5997,6 +6051,10 @@ stack .linked.vertical button:disabled:last-child {
     box-shadow: none;
 }
 
+stack .linked.vertical spinbutton.horizontal {
+    border-style: none;
+}
+
 stack .linked.vertical spinbutton.horizontal entry,
 stack .linked.vertical spinbutton.horizontal entry:hover,
 stack .linked.vertical spinbutton.horizontal entry:focus,
@@ -6008,6 +6066,11 @@ stack .linked.vertical spinbutton.horizontal entry:disabled {
     border-style: solid;
     border-color: shade(@notebook_border, 1.0);
     padding: 0px 5px;
+}
+
+stack .linked.vertical spinbutton.horizontal entry,
+stack .linked.vertical spinbutton.horizontal entry:focus,
+stack .linked.vertical spinbutton.horizontal entry:active {
     box-shadow: none;
 }
 
@@ -6097,6 +6160,18 @@ stack .linked.vertical spinbutton.horizontal button:focus:hover:last-child {
     border-width: 1px 1px 1px 0px;
     border-style: solid;
     border-color: shade(@button_border_active, 1.0);
+}
+
+stack .linked.vertical spinbutton.horizontal button:hover,
+stack .linked.vertical spinbutton.horizontal button:focus:hover,
+stack .linked.vertical spinbutton.horizontal button:active,
+stack .linked.vertical spinbutton.horizontal button:hover:last-child,
+stack .linked.vertical spinbutton.horizontal button:focus:hover:last-child,
+stack .linked.vertical spinbutton.horizontal button:active:last-child {
+    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
+                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
 }
 
 /****************
