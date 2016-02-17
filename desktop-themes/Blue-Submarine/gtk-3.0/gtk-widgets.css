@@ -588,6 +588,7 @@ scale slider:disabled {
     color: alpha(@theme_base_color, 0.0);
     background-color: alpha(@theme_base_color, 0.0);
     /* background-image in -assets variant */
+    background-repeat: no-repeat;
     background-position: center;
 }
 
@@ -3489,8 +3490,14 @@ radio:disabled {
 
 /* move label to the right */
 check,
-radio {
+radio,
+window.background.popup menuitem check,
+window.background.popup menuitem radio,
+window.background.popup menu menuitem check,
+window.background.popup menu menuitem radio {
 	padding: 0px 6px 0px 0px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 checkbutton,
