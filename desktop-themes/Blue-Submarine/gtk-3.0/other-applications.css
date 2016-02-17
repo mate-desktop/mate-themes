@@ -54,11 +54,6 @@ NemoSearchBar .entry {
                 inset  0px -1px shade(@toolbar_gradient_base, 0.90);
 }
 
-NemoSearchBar .entry,
-NemoSearchBar .entry:focus {
-    -GtkEntry-inner-border: 1;
-}
-
 NemoSearchBar .entry.image {
     color: shade(@nautilus_cluebar_color, 0.60);
 }
@@ -163,7 +158,6 @@ NemoTrashBar .button *:disabled {
     -GtkScrollbar-min-slider-length: 31;
     -GtkScrollbar-slider-width: 11;
     -GtkScrolledWindow-scrollbar-spacing: 0;
-    -GtkScrolledWindow-scrollbars-within-bevel: 1;
 }
 
 .nemo-window .sidebar scrollbar.vertical.left trough {
@@ -580,23 +574,25 @@ NemoPathBar:dir(ltr).raised.linked .button.text-button:checked:hover:active:only
 }
 
 /* stack-switcher ie. nemo preferences */
-dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar {
+.nemo-properties-dialog box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar {
     background-color: transparent;
     border-color: @primay-toolbar-border;
     border-width: 1px 0px;
     padding: 1px 0px;
 }
 
-dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio {
+.nemo-properties-dialog box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio,
+.nemo-properties-dialog box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:focus {
     color: @menu_fg_dark_color;
     text-shadow: none;
     box-shadow: none;
     padding: 5px 2px;
+    background-image: none;
 }
 
-dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:hover,
-dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:checked,
-dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:checked:hover {
+.nemo-properties-dialog box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:hover,
+.nemo-properties-dialog box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:checked,
+.nemo-properties-dialog box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:checked:hover {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (shade(@menu_bg_dark_color, 2.03)),
@@ -608,54 +604,54 @@ dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-
 }
 
 /* middle most button */
-dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio,
-dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:focus,
-dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:hover,
-dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:checked {
+.nemo-properties-dialog box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio,
+.nemo-properties-dialog box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:focus,
+.nemo-properties-dialog box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:hover,
+.nemo-properties-dialog box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:checked {
     border-right-width: 0px;
     border-left-width:  0px;
     border-radius: 0px;
 }
 
 /* left most button */
-dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:first-child,
-dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:focus:first-child,
-dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:hover:first-child,
-dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:checked:first-child {
+.nemo-properties-dialog box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:first-child,
+.nemo-properties-dialog box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:focus:first-child,
+.nemo-properties-dialog box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:hover:first-child,
+.nemo-properties-dialog box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:checked:first-child {
     border-radius: 6px 0 0 6px;
     border-width: 1px;
     border-right-width: 0px;
 }
 
 /* right most button */
-dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:last-child,
-dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:focus:last-child,
-dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:hover:last-child,
-dialog.background.solid-csd box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:checked:last-child {
+.nemo-properties-dialog box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:last-child,
+.nemo-properties-dialog box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:focus:last-child,
+.nemo-properties-dialog box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:hover:last-child,
+.nemo-properties-dialog box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:checked:last-child {
     border-radius: 0 6px 6px 0;
     border-width: 1px;
     border-left-width: 0px;
 }
 
-dialog.background.solid-csd box.vertical.dialog-vbox frame.view {
+.nemo-properties-dialog box.vertical.dialog-vbox frame.view {
     background-color: shade (@theme_bg_color, 1.1);
     border-color: @borders;
 }
 
-dialog.background.solid-csd box.vertical.dialog-vbox frame.view  GtkViewport.frame {
+.nemo-properties-dialog box.vertical.dialog-vbox frame.view  GtkViewport.frame {
     background-color: shade (@theme_bg_color, 1.1);
 }
 
-dialog.background.solid-csd box.vertical.dialog-vbox frame.view stack  viewport.frame .vertical separator.horizontal {
+.nemo-properties-dialog box.vertical.dialog-vbox frame.view stack  viewport.frame .vertical separator.horizontal {
     border-color: @borders;
     border-width: 0 0 1px 0;
 }
 
-dialog.background.solid-csd box.vertical.dialog-vbox frame.view stack  viewport.frame .vertical .vertical .vertical checkbutton.text-button {
+.nemo-properties-dialog box.vertical.dialog-vbox frame.view stack  viewport.frame .vertical .vertical .vertical checkbutton.text-button {
     background-color: transparent;
 }
 
-dialog.background.solid-csd box.vertical.dialog-vbox frame.view stack  viewport.frame .vertical .vertical .vertical checkbutton.text-button:hover {
+.nemo-properties-dialog box.vertical.dialog-vbox frame.view stack  viewport.frame .vertical .vertical .vertical checkbutton.text-button:hover {
     background-color: shade (@theme_bg_color, 1.05);
     border-radius: 4px;
 }

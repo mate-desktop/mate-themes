@@ -25,12 +25,6 @@ CajaWindow CajaInformationPanel .vertical {
     background-color: shade (@theme_bg_color, 1.08);
 }
 
-/* the small line between sidebar and view */
-CajaWindow GtkPaned.horizontal {
-    -GtkPaned-handle-size: 3px;
-    border-color: transparent;
-}
-
 CajaWindow FMTreeView.frame,
 CajaWindow CajaPlacesSidebar.frame,
 CajaWindow CajaHistorySidebar.frame,
@@ -75,7 +69,6 @@ CajaWindow CajaEmblemSidebar .scrollbar {
     -GtkScrollbar-activate-slider: 1;
     -GtkScrollbar-min-slider-length: 31;
     -GtkScrolledWindow-scrollbar-spacing: 0;
-    -GtkScrolledWindow-scrollbars-within-bevel: 1;
 }
 
 CajaWindow FMTreeView .scrollbar.trough,
@@ -243,13 +236,6 @@ CajaPathBar .button:checked {
 CajaSearchBar .entry,
 CajaLocationBar .entry {
     padding: 7px 4px;
-}
-
-CajaSearchBar .entry,
-CajaSearchBar .entry:focus,
-CajaLocationBar .entry,
-CajaLocationBar .entry:focus {
-    -GtkEntry-inner-border: 1;
 }
 
 CajaSearchBar .entry {
