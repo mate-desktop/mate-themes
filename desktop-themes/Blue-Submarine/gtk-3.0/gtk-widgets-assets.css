@@ -188,53 +188,53 @@ menuitem check:indeterminate:disabled {
 scale slider,
 scale.horizontal slider,
 scale.horizontal slider:hover {
-    background-image: url("assets/scale-slider-hor.svg");
+    background-image: -gtk-scaled(url("assets/scale-slider-hor.svg"));
 }
 
 scale slider:disabled,
 scale.horizontal slider:disabled {
-    background-image: url("assets/scale-slider-insensitive-hor.svg");
+    background-image: -gtk-scaled(url("assets/scale-slider-insensitive-hor.svg"));
 }
 
 scale.vertical slider {
-    background-image: url("assets/scale-slider-ver.svg");
+    background-image: -gtk-scaled(url("assets/scale-slider-ver.svg"));
 }
 
 scale.vertical slider:disabled {
-    background-image: url("assets/scale-slider-insensitive-ver.svg");
+    background-image: -gtk-scaled(url("assets/scale-slider-insensitive-ver.svg"));
 }
 
 scale.horizontal.scale-has-marks-above slider,
 scale.horizontal.scale-has-marks-above slider:hover {
-    background-image: url("assets/scale-slider-marks-above-horizontal.svg");
+    background-image: -gtk-scaled(url("assets/scale-slider-marks-above-horizontal.svg"));
 }
 
 scale.horizontal.scale-has-marks-above slider:disabled {
-    background-image: url("assets/scale-slider-marks-above-horizontal-insensitive.svg");
+    background-image: -gtk-scaled(url("assets/scale-slider-marks-above-horizontal-insensitive.svg"));
 }
 
 scale.vertical.scale-has-marks-above slider {
-    background-image: url("assets/scale-slider-marks-above-vertical.svg");
+    background-image: -gtk-scaled(url("assets/scale-slider-marks-above-vertical.svg"));
 }
 
 scale.vertical.scale-has-marks-above slider:disabled {
-    background-image: url("assets/scale-slider-marks-above-vertical-insensitive.svg");
+    background-image: -gtk-scaled(url("assets/scale-slider-marks-above-vertical-insensitive.svg"));
 }
 
 scale.horizontal.scale-has-marks-below slider,
 scale.horizontal.scale-has-marks-below slider:hover {
-    background-image: url("assets/scale-slider-marks-below-horizontal.svg");
+    background-image: -gtk-scaled(url("assets/scale-slider-marks-below-horizontal.svg"));
 }
 
 scale.horizontal.scale-has-marks-below slider:disabled {
-    background-image: url("assets/scale-slider-marks-below-horizontal-insensitive.svg");
+    background-image: -gtk-scaled(url("assets/scale-slider-marks-below-horizontal-insensitive.svg"));
 }
 
 scale.vertical.scale-has-marks-below slider {
-    background-image: url("assets/scale-slider-marks-below-vertical.svg");
+    background-image: -gtk-scaled(url("assets/scale-slider-marks-below-vertical.svg"));
 }
 
 scale.vertical.scale-has-marks-below slider:disabled {
-    background-image: url("assets/scale-slider-marks-below-vertical-insensitive.svg");
+    background-image: -gtk-scaled(url("assets/scale-slider-marks-below-vertical-insensitive.svg"));
 }
 
