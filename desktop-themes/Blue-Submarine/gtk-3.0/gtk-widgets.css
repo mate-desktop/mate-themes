@@ -179,15 +179,19 @@ separator {
     border-right-color:  alpha (shade (@theme_bg_color, 1.26), 0.15);
 }
 
+separator:hover {
+    color: shade (@theme_bg_color, 0.92);
+    border-color: mix(@theme_fg_color, @theme_bg_color, 0.95);
+    border-image: none;
+}
+
 treeview.view.separator,
 treeview.separator,
 treeview.view.separator:hover,
-treeview.separator:hover,
-separator,
-separator:hover {
-    color: shade (@theme_bg_color, 0.92);
-    border-color:  mix(@theme_fg_color, @theme_bg_color, 0.95);
-    border-image: none;
+treeview.separator:hover {
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+    border-color: @notebook_border;
 }
 
 separator.horizontal {
@@ -242,7 +246,7 @@ paned > separator {
 
 paned > separator:hover,
 paned > separator:selected {
-    background-color: transparent;
+    background-color: @theme_bg_color;
 }
 
 paned > separator:backdrop {
@@ -268,7 +272,7 @@ entry.combo {
 /* Look out !
 This is the background color of mate-control-center 'too' */
     background-color: shade (@bg_color, 1.1);
-    padding: 5px 4px;
+    padding: 6px 4px;
     color: @entry_text_color;
     background-image: -gtk-gradient(linear,
                                     left top, left bottom,
@@ -747,9 +751,14 @@ button menuitem menubar {
 }
 
 button {
-    padding: 4px;
-    min-height: 16px;
-    min-width: 16px;
+    padding: 6px;
+    min-height: 20px;
+    min-width: 20px;
+}
+
+/* needed with new button padding */
+button label {
+    padding: 2px 0px;
 }
 
 button {
@@ -800,6 +809,11 @@ button.flat {
     text-shadow: none;
     -gtk-icon-shadow: none;
     border-image: none;
+}
+
+/* ie. caja location drop down button */
+button.flat.toggle {
+    padding: 6px;
 }
 
 /* ie. controls gnome-mplayer, virtual-manager */
@@ -2040,12 +2054,9 @@ toolbar.primary-toolbar combobox button.combo:hover,
 toolbar.primary-toolbar combobox button.combo:checked,
 toolbar.primary-toolbar combobox button.combo:disabled,
 toolbar.primary-toolbar combobox button.combo:nth-child(last) {
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
+    border-radius: 6px;
     border-width: 1px 1px 1px 1px;
-    padding: 2px 3px;
+    padding: 8px 6px;
 }
 
 combobox button.combo,
@@ -2084,6 +2095,10 @@ combobox.linked button.combo:checked {
                 inset  1px  0px shade(@selected_bg_color, 1.3),
                 inset -1px  0px shade(@selected_bg_color, 1.3),
                 inset  0px -1px shade(@selected_bg_color, 1.3);
+}
+
+combobox button.combo arrow {
+    padding: 0px 2px;
 }
 
 /* Middle button */
@@ -4735,6 +4750,10 @@ dialog scrolledwindow.frame viewport .vertical expander .vertical {
     box-shadow: none;
 }
 
+.dialog-action-area.linked button label {
+     padding: 2px 0px 0px 0px;
+}
+
 /**************
  * Dim labels *
  **************/
@@ -6007,8 +6026,9 @@ stack .horizontal .vertical frame {
     border-color: @notebook_border;
 }
 
-stacksidebar.sidebar separator.horizontal {
-/*    -GtkWidget-separator-height: 0px; */
+stacksidebar.sidebar list row.activatable:hover {
+    border-radius: 3px;
+    border-style: none;
 }
 
 stack .linked.vertical entry {
