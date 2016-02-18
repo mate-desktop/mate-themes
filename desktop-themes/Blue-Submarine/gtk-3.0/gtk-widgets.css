@@ -3197,6 +3197,7 @@ notebook header.top {
     background-image: linear-gradient(to bottom,
                                       shade(@theme_bg_color, 0.86),
                                       shade(@theme_bg_color, 1.05));
+    box-shadow: inset  0px -1px alpha(shade(@button_border, 1.00), 0.90);
 }
 
 notebook header.bottom {
@@ -3204,6 +3205,7 @@ notebook header.bottom {
     background-image: linear-gradient(to top,
                                       shade(@theme_bg_color, 0.86),
                                       shade(@theme_bg_color, 1.05));
+    box-shadow: inset  0px  1px alpha(shade(@button_border, 1.00), 0.90);
 }
 
 notebook header.left {
@@ -3211,6 +3213,7 @@ notebook header.left {
     background-image: linear-gradient(to right,
                                       shade(@theme_bg_color, 0.86),
                                       shade(@theme_bg_color, 1.05));
+    box-shadow: inset -1px  0px alpha(shade(@button_border, 1.00), 0.90);
 }
 
 notebook header.right {
@@ -3218,6 +3221,7 @@ notebook header.right {
     background-image: linear-gradient(to left,
                                       shade(@theme_bg_color, 0.86),
                                       shade(@theme_bg_color, 1.05));
+    box-shadow: inset  1px  0px alpha(shade(@button_border, 1.00), 0.90);
 }
 
 notebook header tab {
@@ -3244,12 +3248,13 @@ notebook header tab .active-page label {
 
 /* tabs in view areas, ie. pluma-, caja-tabs */
 paned.horizontal notebook header tab {
-    padding: 4px;
+    padding: 2px 4px;
 }
 
 paned.horizontal notebook header.top {
     border-radius: 0px;
     border-width: 0px;
+    box-shadow: none;
 }
 
 paned.horizontal notebook header.top tab:active,
