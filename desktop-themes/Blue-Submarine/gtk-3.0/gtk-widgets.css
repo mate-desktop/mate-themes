@@ -845,7 +845,7 @@ button:checked:hover:active {
                                      left top, left bottom,
                                      from (shade (@theme_bg_color, 1.20)),
                                      color-stop (0.50, shade (@theme_bg_color, 1.00)),
-                                     color-stop (0.50, shade (@theme_bg_color, 0.95)),
+                                     color-stop (0.50, shade (@theme_bg_color, 0.99)),
                                      to (shade (@theme_bg_color, 0.80)));
     border-radius: 6px;
     box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
