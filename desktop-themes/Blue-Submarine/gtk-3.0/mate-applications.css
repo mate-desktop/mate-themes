@@ -697,19 +697,15 @@ MatePanelApplet .horizontal .vertical .frame {
  * Mate-terminal *
  ****************/
 
+.mate-terminal notebook {
+    border-color: @menu_bg_dark_color;
+}
+
 /* Background mate-terminal, this isn't the normal way to style that! */
-TerminalWindow .entry {
+.mate-terminal .vte {
     -TerminalWindow-background-darkness: 0.95;
     background-color: @terminal_background_color;
     color: @selected_fg_color;
-}
-
-TerminalWindow .grip {
-    background-color: shade (@theme_bg_color, 1.0);
-    background-image: url("assets/resize-grip.svg");
-    -GtkWindow-resize-grip-default: true;
-    -GtkWindow-resize-grip-width: 13;
-    -GtkWindow-resize-grip-height: 13;
 }
 
 /****************
