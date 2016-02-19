@@ -702,7 +702,7 @@ MatePanelApplet .horizontal .vertical .frame {
 }
 
 /* Background mate-terminal, this isn't the normal way to style that! */
-.mate-terminal .vte {
+.mate-terminal vte {
     -TerminalWindow-background-darkness: 0.95;
     background-color: @terminal_background_color;
     color: @selected_fg_color;
