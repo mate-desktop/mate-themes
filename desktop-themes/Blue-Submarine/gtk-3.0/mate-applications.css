@@ -294,28 +294,7 @@
  * Mate-Panel *
  ****************/
 
-/* first make all transparent */
-PanelToplevel.background.horizontal {
-    background-color: transparent;
-}
-
-WnckSelector.menubar,
-PanelMenuBar.menubar,
-WnckSelector GtkMenuItem,
-PanelMenuBar GtkMenuItem,
-MatePanelApplet GtkToggleButton.button {
-    border-image: none;
-    background-image: none;
-    background-color: transparent;
-    box-shadow: none;
-}
-
-/* let's started */
 /* the panel bar itself */
-PanelToplevel.background.horizontal {
-    background-color: @theme_bg_dark_color;
-}
-
 .mate-panel-menu-bar {
     background-color: @theme_bg_dark_color;
     background-image: none;
@@ -327,59 +306,48 @@ PanelToplevel.background.horizontal {
 }
 
 /* workaround to avoid unwanted black frames if switching compositor on/off */
-.mate-panel-menu-bar .window-frame.csd.popup {
+.mate-panel-menu-bar .csd.popup decoration {
     box-shadow: none;
 }
 
-/* panel grip *//*
-PanelToplevel.background.mate-custom-panel-background {
-    background-color: transparent;
-    border-radius: 3px;*/
-/* enable for making borders visible */
-/*    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
-                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset  0px -1px shade (@theme_selected_bg_color, 1.3); *//*
-}*/
-
 /* hide buttons */
-PanelToplevel.background .button {
+PanelToplevel > widget > button {
     background-image: none;
     background: transparent;
     border-style: none;
     border-radius: 3px;
     padding: 0px;
-    box-shadow: none;
+    box-shadow: inset  0px  2px alpha(#fff, 0.11),
+                inset  2px  0px alpha(#fff, 0.09),
+                inset -2px  0px alpha(#fff, 0.09),
+                inset  0px -2px alpha(#fff, 0.07),
+                inset  0px  1px alpha(shade(@button_border, 1.00), 0.70),
+                inset  1px  0px alpha(shade(@button_border, 0.94), 0.80),
+                inset -1px  0px alpha(shade(@button_border, 0.94), 0.80),
+                inset  0px -1px alpha(shade(@button_border, 0.88), 0.90);
 }
 
-PanelToplevel.background .button:hover,
-PanelToplevel.background .button:hover:active {
-    background-image: none;
-    color: @menu_selected_fg_dark_color;
-    border-radius: 3px;
+PanelToplevel > widget > button:hover,
+PanelToplevel > widget > button:hover:active {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@menu_bg_dark_color, 2.03)),
+                                     to   (shade(@menu_bg_dark_color, 1.17)));
+    text-shadow: none;
+    color: shade (@theme_selected_bg_color, 1.6);
     box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
                 inset  1px  0px shade (@theme_selected_bg_color, 1.3),
                 inset -1px  0px shade (@theme_selected_bg_color, 1.3),
                 inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+    border-style: none;
 }
 
 /* dictionary applet */
-GdictApplet .entry {
-    /* normal panel */
-    color: @menu_fg_dark_color;
-    /* transparent panel light desktop background */
-/*    color: @theme_fg_color; */
-    background-image: none;
-    background-color: transparent;
+#PanelApplet entry {
     border-width: 1px;
-    padding: 3px 4px;
+    margin: 3px 0px;
 }
 
-MatePanelApplet {
-    border-width: 0;
-}
-
-MatePanelAppletFrameDBus PanelSeparator,
 PanelSeparator {
     border-width: 0;
     background-image: -gtk-gradient (linear, left top, left bottom,
@@ -397,212 +365,101 @@ MatePanelAppletFrameDBus {
     background-position: left;
 }
 
-/* set normal menubar button */
-PanelMenuBar.menubar .menuitem {
-    padding: 5px 5px;
-    transition: all 200ms ease-out;
+PanelToplevel menubar menuitem,
+PanelToplevel menubar menuitem:hover {
+    min-height: 16px;
 }
 
-/* set selected menubar button */
-PanelMenuBar.menubar .menuitem:hover {
-    padding: 5px 5px;
-    background-color: shade (@theme_bg_dark_color, 1.2);
-    background-image: -gtk-gradient (linear,
-                                     left top, left bottom,
-                                     from (shade(@menu_bg_dark_color, 2.03)),
-                                     to   (shade(@menu_bg_dark_color, 1.17)));
-    border-radius: 6px;
-    text-shadow: none;
-    color: shade (@theme_selected_bg_color, 1.6);
-    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
-                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
-    text-shadow: none;
-    border-style: none;
-    border-width: 0px;
-}
-
-/* set normal menubar menuitem */
-PanelMenuBar.menubar .menu .menuitem {
-    padding: 6px;
-    transition: all 300ms ease-out;
-}
-
-/* set selected menubar menuitem */
-PanelMenuBar.menubar .menu .menuitem:checked:hover,
-PanelMenuBar.menubar .menu .menuitem:hover:active,
-PanelMenuBar.menubar .menu .menuitem:hover {
-    padding: 6px;
-    background-color: shade (@theme_bg_dark_color, 1.2);
-    background-image: -gtk-gradient (linear,
-                                     left top, left bottom,
-                                     from (shade(@menu_bg_dark_color, 2.03)),
-                                     to   (shade(@menu_bg_dark_color, 1.17)));
-    border-radius: 6px;
-    text-shadow: none;
-    color: shade (@theme_selected_bg_color, 1.6);
-    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
-                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
-    text-shadow: none;
-    border-style: none;
-    border-width: 0px;
-}
-
-/* Mate menu button normal */
-/* makes the arrow visible, nothing more works */
-PanelMenuButton.button {
+/* most applets */
+#PanelApplet button,
+#PanelApplet button.flat,
+#PanelApplet button.toggle
+#PanelApplet button.flat.toggle {
     background-image: none;
     background-color: transparent;
-    color: shade (@menu_fg_color, 1.00);
-}
-
-/* Mate menu menuitem */
-PanelMenuButton .menu .menuitem,
-PanelMenuButton .menu .menuitem:hover {
-    padding: 6px;
-}
-
-/* desktop-applet, clockapplet, drivemount, character-map,
-dictionary */
-MatePanelApplet .button,
-MatePanelApplet .button.flat {
-    background-image: none;
-    background-color: transparent;
+    border-color: transparent;
+    border-style: solid;
     border-radius: 5px;
-    border-width: 0px;
+    border-width: 1px;
     /* normal panel */
     color: @menu_fg_dark_color;
     /* transparent panel light desktop background*/
 /*    color: @theme_fg_color; */
     text-shadow: none;
-    padding: 6px;
-}
-
-MatePanelApplet .button:hover:active,
-MatePanelApplet .button:checked,
-MatePanelApplet .button:checked:hover,
-MatePanelApplet .button.flat:hover:active,
-MatePanelApplet .button.flat:checked,
-MatePanelApplet .button.flat:checked:hover {
-    background-image: none;
-    border-color: @selected_bg_color;
-    background-color: shade (@selected_bg_color, 0.90);
-    border-radius: 5px;
-    border-width: 0px;
-    color: shade (@theme_text_dark_color, 0.90);
-    text-shadow: none;
-    padding: 6px;
-}
-
-MatePanelApplet .button:hover,
-MatePanelApplet .button.flat:hover {
-    background-image: none;
-    border-color: @selected_bg_color;
-    background-color: shade (@selected_bg_color, 1.10);
-    border-radius: 5px;
-    border-width: 0px;
-    color: @selected_fg_color;
-    text-shadow: none;
-    padding: 6px;
-}
-
-/* drivemount */
-DriveList .button,
-DriveList .button.flat,
-DriveList .button:hover,
-DriveList .button.flat:hover,
-DriveList .button:checked,
-DriveList .button.flat:checked {
-    padding: 4px;
-    border-radius: 5px;
-    border-color: transparent;
     box-shadow: none;
+    padding: 4px;
 }
 
-/*Wncklist */
-WnckTasklist .button,
-WnckTasklist .button.flat {
+#PanelApplet button:hover:active,
+#PanelApplet button:checked,
+#PanelApplet button:checked:hover,
+#PanelApplet button.flat:hover:active,
+#PanelApplet button.flat:checked,
+#PanelApplet button.flat:checked:hover,
+#PanelApplet button.toggle:hover:active,
+#PanelApplet button.toggle:checked,
+#PanelApplet button.toggle:checked:hover,
+#PanelApplet button.flat.toggle:hover:active,
+#PanelApplet button.flat.toggle:checked,
+#PanelApplet button.flat.toggle:checked:hover{
     background-image: none;
-    background-color: transparent;
-    border-radius: 5px;
-    border-width: 1px;
-    color: shade (@theme_text_dark_color, 0.65);
-    text-shadow: none;
-    padding: 2px;
-}
-
-WnckTasklist .button:hover:active,
-WnckTasklist .button:checked,
-WnckTasklist .button:checked:hover,
-WnckTasklist .button.flat:hover:active,
-WnckTasklist .button.flat:checked:hover,
-WnckTasklist .button.flat:checked {
-    background-image: none;
-    border-color: @selected_bg_color;
-    background-color: shade (@selected_bg_color, 0.90);
+    border-color: shade (@theme_selected_bg_color, 1.30);
+    background-color: shade (@theme_selected_bg_color, 0.90);
     border-radius: 5px;
     border-width: 1px;
     color: shade (@theme_text_dark_color, 0.90);
     text-shadow: none;
-    padding: 2px;
+    padding: 4px;
 }
 
-WnckTasklist .button:hover,
-WnckTasklist .button.flat:hover {
+#PanelApplet button:hover,
+#PanelApplet button.flat:hover,
+#PanelApplet button.toggle:hover
+#PanelApplet button.flat.toggle:hover {
     background-image: none;
-    border-color: @selected_bg_color;
-    background-color: shade (@selected_bg_color, 1.10);
+    border-color: shade (@theme_selected_bg_color, 1.50);
+    background-color: shade (@theme_selected_bg_color, 1.10);
     border-radius: 5px;
     border-width: 1px;
     color: @selected_fg_color;
     text-shadow: none;
-    padding: 2px;
+    padding: 4px;
 }
 
-/* set normal button WnckSelector */
-WnckSelector.menubar .menuitem {
-    background-image: none;
-    background-color: transparent;
-    border-style: none;
-    border-width: 1px;
-    border-radius: 5px;
+#showdesktop-button.toggle,
+#showdesktop-button.toggle:hover,
+#showdesktop-button.toggle:checked,
+#showdesktop-button.toggle:checked:hover {
+    padding: 4px 2px;
 }
 
-/* set selected button WnckSelector */
-WnckSelector.menubar .menuitem:hover {
-    background-image: none;
-    border-color: @selected_bg_color;
-    background-color: shade (@selected_bg_color, 0.90);
-    border-radius: 5px;
-    border-width: 1px;
-    color: shade (@theme_text_dark_color, 0.90);
-    text-shadow: none;
-}
-
-/* set WnckSelector selected menuitem */
-WnckSelector.menubar .menu .menuitem:hover {
-    background-color: shade (@theme_bg_dark_color, 1.2);
-    background-image: none;
-    border-radius: 6px;
-    text-shadow: none;
-    color: shade (@theme_selected_bg_color, 1.6);
-    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
-                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
-}
-
-ClockBox,
-.mate-panel-menu-bar.menubar,
-MatePanelApplet > GtkMenuBar.menubar {
+#clock-applet-button.flat.toggle > box.horizontal > label {
     font: normal;
 }
 
+/* drivebutton */
+#PanelApplet > grid > button,
+#PanelApplet > grid > button:hover {
+    padding: 4px;
+}
+
+/* window-menu applet, hover is checked !! */
+#window-menu-applet-button menubar menuitem {
+    padding: 4px 8px;
+}
+
+#window-menu-applet-button > menubar > menuitem:hover  {
+    background-image: none;
+    border-color: shade (@theme_selected_bg_color, 1.30);
+    background-color: shade (@theme_selected_bg_color, 0.90);
+    border-radius: 5px;
+    border-width: 1px;
+    color: shade (@theme_text_dark_color, 0.90);
+    text-shadow: none;
+}
+
 /* WnckPager */
-WnckPager {
+#PanelApplet.wnck-pager widget {
     background-image: none;
     border-color: transparent;
     background-color: transparent;
@@ -610,35 +467,42 @@ WnckPager {
 }
 
 /* selected WnckPager */
-WnckPager:selected {
+#PanelApplet.wnck-pager widget:selected {
     background-image: linear-gradient(to bottom,
                                       @theme_selected_bg_color,
                                       shade (@theme_selected_bg_color, 0.36));
 }
 
 /* hover of WnckPager */
-WnckPager:hover {
+#PanelApplet.wnck-pager widget:hover {
     background-image: linear-gradient(to bottom,
                                       shade (@theme_selected_bg_color, 0.56),
                                       @theme_selected_bg_color);
 }
 
-/* no background for icon-padding area */
+/* no background for icon-padding area *//*
 GtkTrayIcon.background {
     background-color: transparent;
 }
+*/
 
-NaTrayApplet {
+na-tray-applet {
     -NaTrayApplet-icon-padding: 3px;
     -NaTrayApplet-icon-size: 16;
 }
 
+/* -NaTrayApplet-icon-size does not work */
+na-tray-applet widget box.horizontal {
+    padding: 3px 0px 3px 0px;
+    margin: 0px;
+}
+
 /* system-monitor-applet */
-MatePanelApplet .horizontal .vertical .frame {
-    box-shadow: inset  0px  1px shade (@menu_bg_dark_color, 1.3),
-                inset  1px  0px shade (@menu_bg_dark_color, 1.3),
-                inset -1px  0px shade (@menu_bg_dark_color, 1.3),
-                inset  0px -1px shade (@menu_bg_dark_color, 1.3);
+#PanelApplet > box.horizontal > box.vertical > frame {
+    box-shadow: inset  0px  1px shade (@menu_bg_dark_color, 1.5),
+                inset  1px  0px shade (@menu_bg_dark_color, 1.5),
+                inset -1px  0px shade (@menu_bg_dark_color, 1.5),
+                inset  0px -1px shade (@menu_bg_dark_color, 1.5);
     border-style: none;
     border-radius: 6px;
 }
@@ -653,7 +517,7 @@ MatePanelApplet .horizontal .vertical .frame {
     background: transparent;
 }
 
-.mate-panel-applet-slider .frame {
+.mate-panel-applet-slider frame {
     background-color: rgba(0,0,0,0.5);
     border-image: none;
     border-style: none;
@@ -666,13 +530,13 @@ MatePanelApplet .horizontal .vertical .frame {
                 inset  0px -1px shade (@theme_selected_bg_color, 1.3);
 }
 
-.mate-panel-applet-slider .frame .frame{
+.mate-panel-applet-slider frame frame {
     background-color:transparent;
     box-shadow: none;
 }
 
 /* brightness applet */
-.mate-panel-applet-slider .frame .button {
+.mate-panel-applet-slider frame button {
     padding: 4px 0px;
     background-image: none;
     background-color: transparent;
@@ -682,11 +546,12 @@ MatePanelApplet .horizontal .vertical .frame {
     margin: 0px;
 }
 
-.mate-panel-applet-slider .frame .button:disabled {
+.mate-panel-applet-slider frame button:disabled {
     box-shadow: none;
 }
 
-.mate-panel-applet-slider .frame .button:hover {
+.mate-panel-applet-slider frame button:hover {
+    padding: 4px 0px;
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (alpha(shade(@theme_selected_bg_color, 1.43) ,0.6)),
