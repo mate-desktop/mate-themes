@@ -84,16 +84,15 @@ menubar {
 /***************
  * menubaritem *
  ***************/
-menubar menuitem  {
+menubar > menuitem  {
     padding: 5px 5px;
     transition: all 300ms ease-out;
     border-radius: 0px;
     border-width: 0px;
-    min-height: 20px;
+    min-height: 16px;
 }
 
-menubar menuitem:hover {
-    padding: 5px 5px;
+menubar > menuitem:hover {
     background-color: shade (@theme_bg_dark_color, 1.2);
     border-radius: 6px;
     color: shade (@theme_selected_bg_color, 1.6);
