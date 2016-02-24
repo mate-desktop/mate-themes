@@ -778,11 +778,7 @@ button {
     border-left-color:   alpha (#000, 0.01);
     border-right-color:  alpha (#000, 0.01);
     border-bottom-color: alpha (#000, 0.03);
-    box-shadow: inset  0px  2px alpha(#fff, 0.11),
-                inset  2px  0px alpha(#fff, 0.09),
-                inset -2px  0px alpha(#fff, 0.09),
-                inset  0px -2px alpha(#fff, 0.07),
-                inset  0px  1px alpha(shade(@button_border, 1.00), 0.70),
+    box-shadow: inset  0px  1px alpha(shade(@button_border, 1.00), 0.70),
                 inset  1px  0px alpha(shade(@button_border, 0.94), 0.80),
                 inset -1px  0px alpha(shade(@button_border, 0.94), 0.80),
                 inset  0px -1px alpha(shade(@button_border, 0.88), 0.90);
@@ -864,11 +860,10 @@ button.default {
                 inset  0px -1px shade (@theme_selected_bg_color, 1.3);
 }
 
-button *:hover:active,
-button *:checked,
-button *:checked:hover,
-button *:checked:hover:active {
-    color: @theme_selected_fg_color;
+button:hover:active,
+button:checked,
+button:checked:hover,
+button:checked:hover:active {
     text-shadow: 1px 1px @theme_selected_shadow_color;
 }
 
@@ -884,23 +879,24 @@ button:disabled {
                 inset  0px -1px @insensitive_border_color;
 }
 
-button *:disabled {
+button:disabled {
     color: @insensitive_fg_color;
     text-shadow: none;
 }
 
-toolbar.vertical button.image-button.flat {
+toolbar.vertical > button.image-button.flat {
     padding: 5px;
 }
 
 button.text-button,
+button.text-button:focus,
 button.text-button:hover,
 button.file {
     padding: 6px;
 }
 
-combobox button.combo,
-combobox button.combo:hover {
+combobox > button.combo,
+combobox > button.combo:hover {
     padding: 4px;
 }
 
@@ -909,60 +905,69 @@ button.color {
     padding: 6px 4px;
 }
 
-.path-bar button,
-.path-bar button image,
-.path-bar button label {
-    padding: 2px;
+.path-bar > button,
+.linked.path-bar > button,
+.linked.path-bar > button:hover,
+.linked.path-bar > button:hover:active,
+.linked.path-bar > button:checked,
+.linked.path-bar > button:checked:hover,
+.linked.path-bar > button:checked:hover:active {
+    padding: 7px;
 }
 
-.path-bar button {
+/* slider (left/right arrow) button */
+.linked.path-bar > button.image-button {
     border-width: 1px 0px 1px 1px;
+    box-shadow: none;
 }
 
-.path-bar button:hover:checked {
-    border-left-width: 1px;
-}
-
-/* linked path-bar buttons */
-
-.linked.path-bar button:dir(ltr),
-.linked.path-bar button:dir(ltr):hover,
-.linked.path-bar button:dir(ltr):hover:active,
-.linked.path-bar button:dir(ltr):checked,
-.linked.path-bar button:dir(ltr):checked:hover,
-.linked.path-bar button:dir(ltr):checked:hover:active {
-    border-radius: 0px;
-    border-width: 1px 0px 1px 0px;
-}
-
-.linked.path-bar button:dir(ltr):first-child,
-.linked.path-bar button:dir(ltr):hover:first-child,
-.linked.path-bar button:dir(ltr):hover:active:first-child,
-.linked.path-bar button:dir(ltr):checked:first-child,
-.linked.path-bar button:dir(ltr):checked:hover:first-child,
-.linked.path-bar button:dir(ltr):checked:hover:active:first-child {
-    border-radius: 6px 0px 0px 6px;
+.linked.path-bar > button.image-button:first-child {
     border-width: 1px 0px 1px 1px;
+    box-shadow: inset  0px  1px 0 0 alpha(shade(@button_border, 1.00), 0.70),
+                inset  1px  0px 0 0 alpha(shade(@button_border, 0.94), 0.80),
+                inset -1px  0px 0 0 alpha(shade(@button_border, 0.94), 0.80),
+                inset  0px -1px 0 0 alpha(shade(@button_border, 0.88), 0.90);
 }
 
-.linked.path-bar button:dir(ltr):last-child,
-.linked.path-bar button:dir(ltr):hover:last-child,
-.linked.path-bar button:dir(ltr):hover:active:last-child,
-.linked.path-bar button:dir(ltr):checked:last-child,
-.linked.path-bar button:dir(ltr):checked:hover:last-child,
-.linked.path-bar button:dir(ltr):checked:hover:active:last-child {
-    border-radius: 0px 6px 6px 0px;
+.linked.path-bar > button.image-button:first-child:hover {
+    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
+                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+}
+
+.linked.path-bar > button.image-button:last-child {
     border-width: 1px 1px 1px 0px;
+    box-shadow: inset  0px  1px 0 0 alpha(shade(@button_border, 1.00), 0.70),
+                inset -1px  0px 0 0 alpha(shade(@button_border, 0.94), 0.80),
+                inset  0px -1px 0 0 alpha(shade(@button_border, 0.88), 0.90);
 }
 
-.linked.path-bar button:dir(ltr):only-child,
-.linked.path-bar button:dir(ltr):hover:only-child,
-.linked.path-bar button:dir(ltr):hover:active:only-child,
-.linked.path-bar button:dir(ltr):checked:only-child,
-.linked.path-bar button:dir(ltr):checked:hover:only-child,
-.linked.path-bar button:dir(ltr):checked:hover:active:only-child {
-    border-radius: 6px;
-    border-width: 1px;
+.linked.path-bar > button.image-button:last-child:hover {
+    border-width: 1px 1px 1px 0px;
+    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
+                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+}
+
+.linked.path-bar > button.toggle,
+.linked.path-bar > button.toogle.button-image {
+    border-width: 1px 0px 1px 0px;
+    border-radius: 0px;
+    box-shadow: inset  0px  1px 0 0 alpha(shade(@button_border, 1.00), 0.70),
+                inset -1px  0px 0 0 alpha(shade(@button_border, 0.94), 0.80),
+                inset  0px -1px 0 0 alpha(shade(@button_border, 0.88), 0.90);
+}
+
+.linked.path-bar > button.toggle:hover,
+.linked.path-bar > button.toogle.button-image:hover,
+.linked.path-bar > button.toggle:checked,
+.linked.path-bar > button.toogle.button-image:checked {
+    border-width: 1px 0px 1px 0px;
+    border-radius: 0px;
+    box-shadow: inset  0px  1px 0 0 shade (@theme_selected_bg_color, 1.3),
+                inset -1px  0px 0 0 shade (@theme_selected_bg_color, 1.3),
+                inset  0px -1px 0 0 shade (@theme_selected_bg_color, 1.3);
 }
 
 /***************************/
@@ -3682,36 +3687,36 @@ headerbar button:disabled:first-child {
     -gtk-icon-shadow: none;
 }
 
-headerbar button *:disabled {
+headerbar > button:disabled {
     background-color: transparent;
     text-shadow: none;
     -gtk-icon-shadow: none;
 }
 
-headerbar button.text-button,
-headerbar button.text-button.radio,
-headerbar .linked button.text-button,
-headerbar .linked button.text-button.radio {
+headerbar > button.text-button,
+headerbar > button.text-button.radio,
+headerbar > .linked > button.text-button,
+headerbar > .linked > button.text-button.radio {
     padding: 4px 6px;
 }
  
-headerbar button.image-button {
+headerbar > button.image-button {
     padding: 5px 5px 6px 5px;
 }
 
-headerbar stackswitcher.linked.stack-switcher button.text-button.radio {
+headerbar > stackswitcher.linked.stack-switcher > button.text-button.radio {
     border-right-width: 0px;
     border-left-width:  0px;
     border-radius: 0px;
 }
 
-headerbar stackswitcher.linked.stack-switcher button.text-button.radio:first-child {
+headerbar > stackswitcher.linked.stack-switcher > button.text-button.radio:first-child {
     border-radius: 6px 0 0 6px;
     border-width: 1px;
     border-right-width: 0px;
 }
 
-headerbar stackswitcher.linked.stack-switcher button.text-button.radio:last-child {
+headerbar > stackswitcher.linked.stack-switcher > button.text-button.radio:last-child {
     border-radius: 0 6px 6px 0;
     border-width: 1px;
     border-left-width: 0px;
@@ -4736,11 +4741,7 @@ dialog scrolledwindow.frame viewport .vertical expander .vertical {
                                      color-stop (0.48, @button_gradient2),
                                      color-stop (0.52, @button_gradient3),
                                      to   (@button_gradient4));
-    box-shadow: inset  0px  2px alpha(#fff, 0.11),
-                inset  2px  0px alpha(#fff, 0.09),
-                inset -2px  0px alpha(#fff, 0.09),
-                inset  0px -2px alpha(#fff, 0.07),
-                inset  0px  1px alpha(shade(@button_border, 1.00), 0.70),
+    box-shadow: inset  0px  1px alpha(shade(@button_border, 1.00), 0.70),
                 inset  1px  0px alpha(shade(@button_border, 0.94), 0.80),
                 inset -1px  0px alpha(shade(@button_border, 0.94), 0.80),
                 inset  0px -1px alpha(shade(@button_border, 0.88), 0.90);
@@ -6307,24 +6308,27 @@ filechooser.vertical paned > separator {
     border-color: transparent;
 }
 
-.linked.path-bar button  {
-    box-shadow: inset  0px  2px alpha(#fff, 0.11),
-                inset  2px  0px alpha(#fff, 0.09),
-                inset -2px  0px alpha(#fff, 0.09),
-                inset  0px -2px alpha(#fff, 0.07),
-                inset  0px  1px alpha(shade(@button_border, 1.00), 0.70),
-                inset  1px  0px alpha(shade(@button_border, 0.94), 0.80),
-                inset -1px  0px alpha(shade(@button_border, 0.94), 0.80),
-                inset  0px -1px alpha(shade(@button_border, 0.88), 0.90);
+filechooser paned.horizontal box.vertical {
+    border-color: @notebook_border;
+    border-style: solid;
+    border-width: 1px;
 }
 
-.linked.path-bar button:hover,
-.linked.path-bar button:checked,
-.linked.path-bar button:checked:active {
-    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
-                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+filechooser #pathbarbox {
+    background-color: shade(@theme_bg_color, 1.07);
+    border-width: 0px 0px 1px 0px;
+}
+
+/* bg color srollbar junction */
+filechooser paned.horizontal box.vertical box.horizontal .view box.vertical {
+    background-color: shade(@theme_bg_color, 1.07);
+    border-style: none;
+}
+
+filechooser placessidebar.sidebar {
+    border-color: @notebook_border;
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
 }
 
 /*****************
