@@ -762,7 +762,7 @@ button label {
 }
 
 button {
-    transition: all 400ms ease-out;
+    transition: all 150ms ease-out;
     -GtkArrow-arrow-scaling: 0.5;
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
@@ -793,7 +793,7 @@ button {
 }
 
 button.default {
-    transition: all 400ms ease-out;
+    transition: all 150ms ease-out;
     text-shadow: none;
     color: @theme_fg_color;
 }
@@ -896,7 +896,7 @@ toolbar.vertical button.image-button.flat {
 button.text-button,
 button.text-button:hover,
 button.file {
-    padding: 5px 4px;
+    padding: 6px;
 }
 
 combobox button.combo,
@@ -3148,7 +3148,7 @@ spinbutton.vertical entry:focus {
 /* volume button */
 GtkGrid button,
 GtkGrid button.flat {
-    transition: all 600ms ease-out;
+    transition: all 400ms ease-out;
 }
 
 GtkGrid button,
@@ -4392,7 +4392,7 @@ list .separator.horizontal {
 list row,
 list row.activatable {
     padding: 2px;
-    transition: all 200ms ease-in;
+    transition: all 400ms ease-in;
     background-image: none;
     background-color: @theme_base_color;
 }
