@@ -294,8 +294,23 @@
  * Mate-Panel *
  ****************/
 
+/* first make all transparent */
+.mate-panel-menu-bar,
+.mate-panel-menu-bar menubar,
+.mate-panel-menu-bar menuitem,
+#PanelApplet button,
+PanelToplevel.background.horizontal {
+    background-color: transparent;
+    background-image: none;
+    border-color: transparent;
+    box-shadow: none;
+    padding: 0px;
+}
+
+/* let's started */
 /* the panel bar itself */
-.mate-panel-menu-bar {
+.mate-panel-menu-bar,
+PanelToplevel.background.horizontal {
     background-color: @theme_bg_dark_color;
     background-image: none;
     /* normal panel */
@@ -310,8 +325,14 @@
     box-shadow: none;
 }
 
+/* panel grip */
+PanelToplevel.background {
+    border-radius: 3px;
+}
+
 /* hide buttons */
 PanelToplevel > widget > button {
+    color: @menu_fg_dark_color;
     background-image: none;
     background: transparent;
     border-style: none;
@@ -363,11 +384,6 @@ MatePanelAppletFrameDBus {
     background-color: transparent;
     background-repeat: no-repeat;
     background-position: left;
-}
-
-PanelToplevel menubar menuitem,
-PanelToplevel menubar menuitem:hover {
-    min-height: 16px;
 }
 
 /* most applets */
@@ -433,6 +449,11 @@ PanelToplevel menubar menuitem:hover {
     padding: 4px 2px;
 }
 
+.mate-panel-menu-bar > menubar > menuitem {
+    padding: 5px 5px;
+    transition: all 400ms ease-out;
+}
+
 #clock-applet-button.flat.toggle > box.horizontal > label {
     font: normal;
 }
@@ -480,21 +501,9 @@ PanelToplevel menubar menuitem:hover {
                                       @theme_selected_bg_color);
 }
 
-/* no background for icon-padding area *//*
-GtkTrayIcon.background {
-    background-color: transparent;
-}
-*/
-
 na-tray-applet {
     -NaTrayApplet-icon-padding: 3px;
     -NaTrayApplet-icon-size: 16;
-}
-
-/* -NaTrayApplet-icon-size does not work */
-na-tray-applet widget box.horizontal {
-    padding: 3px 0px 3px 0px;
-    margin: 0px;
 }
 
 /* system-monitor-applet */
@@ -505,11 +514,6 @@ na-tray-applet widget box.horizontal {
                 inset  0px -1px shade (@menu_bg_dark_color, 1.5);
     border-style: none;
     border-radius: 6px;
-}
-
-/* Classic icon style */
-.mate-panel-menu-bar {
-    -PanelMenuBar-icon-visible: true;
 }
 
 /* volume applet */
