@@ -430,7 +430,7 @@ MatePanelAppletFrameDBus {
 
 #PanelApplet button:hover,
 #PanelApplet button.flat:hover,
-#PanelApplet button.toggle:hover
+#PanelApplet button.toggle:hover,
 #PanelApplet button.flat.toggle:hover {
     background-image: none;
     border-color: shade (@theme_selected_bg_color, 1.50);
@@ -442,10 +442,12 @@ MatePanelAppletFrameDBus {
     padding: 4px;
 }
 
-#showdesktop-button.toggle,
-#showdesktop-button.toggle:hover,
-#showdesktop-button.toggle:checked,
-#showdesktop-button.toggle:checked:hover {
+#PanelApplet  #showdesktop-button.toggle,
+#PanelApplet  #showdesktop-button.toggle:hover,
+#PanelApplet  #showdesktop-button.toggle:hover:active,
+#PanelApplet  #showdesktop-button.toggle:checked,
+#PanelApplet  #showdesktop-button.toggle:checked:hover,
+#PanelApplet  #showdesktop-button.toggle:checked:hover:active {
     padding: 4px 2px;
 }
 
