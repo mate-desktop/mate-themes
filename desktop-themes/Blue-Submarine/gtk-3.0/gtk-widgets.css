@@ -3024,30 +3024,30 @@ spinbutton.vertical:focus {
     padding: 0px;
 }
 
-spinbutton.horizontal entry {
+spinbutton.horizontal > entry {
     padding: 0px 10px 0px 3px;
     box-shadow: none;
     border-radius: 3px 0px 0px 3px;
     border-style: none;
 }
 
-spinbutton button:disabled,
-spinbutton button:disabled:last-child,
-spinbutton.vertical button:disabled,
-spinbutton.vertical button:disabled:last-child {
+spinbutton > button:disabled,
+spinbutton > button:disabled:last-child,
+spinbutton.vertical > button:disabled,
+spinbutton.vertical > button:disabled:last-child {
     color: @internal_element_insensitive;
     border-color: @insensitive_border_color;
 }
 
-spinbutton button,
-spinbutton button:hover,
-spinbutton button:focus,
-spinbutton button:active {
+spinbutton > button,
+spinbutton > button:hover,
+spinbutton > button:focus,
+spinbutton > button:active {
     -gtk-icon-shadow: 0 1px @button_text_shadow;
     color: @internal_element_prelight;
 }
 
-spinbutton button:hover {
+spinbutton > button:hover {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (shade(@button_gradient1, 1.03)),
@@ -3056,7 +3056,7 @@ spinbutton button:hover {
                                      to   (shade(@button_gradient4, 1.01)));
 }
 
-spinbutton button:active {
+spinbutton > button:active {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (shade (@theme_bg_color, 1.20)),
@@ -3065,11 +3065,13 @@ spinbutton button:active {
                                      to (shade (@theme_bg_color, 0.80)));
 }
 
-spinbutton button,
-spinbutton button:focus,
-spinbutton button:hover,
-spinbutton button:active,
-spinbutton button:disabled {
+spinbutton > button,
+spinbutton > button:focus,
+spinbutton > button:hover,
+spinbutton > button:active,
+spinbutton > button:disabled {
+    min-height: 10px;
+    min-width: 10px;
     border-radius: 0px;
     padding: 0px 5px;
     box-shadow: none;
@@ -3078,66 +3080,65 @@ spinbutton button:disabled {
     border-width: 0px 1px 0px 1px;
 }
 
-spinbutton button:last-child,
-spinbutton button:hover:last-child,
-spinbutton button:active:last-child,
-spinbutton button:disabled:last-child {
+spinbutton > button:last-child,
+spinbutton > button:hover:last-child,
+spinbutton > button:active:last-child,
+spinbutton > button:disabled:last-child {
     border-radius: 0 3px 3px 0;
     border-width: 0px;
 }
 
-spinbutton.horizontal button:hover,
-spinbutton.horizontal button:active {
+spinbutton.horizontal > button:hover,
+spinbutton.horizontal > button:active {
     box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
                 inset -1px  0px shade (@theme_selected_bg_color, 1.3),
                 inset  0px -1px shade (@theme_selected_bg_color, 1.3);
 }
 
-spinbutton button:hover:last-child,
-spinbutton button:active:last-child {
+spinbutton > button:hover:last-child,
+spinbutton > button:active:last-child {
     box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
                 inset  1px  0px shade (@theme_selected_bg_color, 1.3),
                 inset -1px  0px shade (@theme_selected_bg_color, 1.3),
                 inset  0px -1px shade (@theme_selected_bg_color, 1.3);
 }
 
-spinbutton.vertical entry {
+spinbutton.vertical > entry {
     border-style: none;
     border-radius: 0;
     padding: 5px 1px;
     box-shadow: none;
 }
 
-spinbutton.vertical button,
-spinbutton.vertical button:focus,
-spinbutton.vertical button:active  {
+spinbutton.vertical > button,
+spinbutton.vertical > button:focus {
     border-style: solid;
     border-width: 0px 0px 1px 0px;
-    border-radius: 4px 4px 0px 0px;
+    border-radius: 3px 3px 0px 0px;
     padding: 6px 0px;
 }
 
-spinbutton.vertical button:last-child {
+spinbutton.vertical > button:last-child {
     border-width: 1px 0px 0px 0px;
-    border-radius: 0px 0px 4px 4px;
+    border-radius: 0px 0px 3px 3px;
 }
 
-spinbutton.vertical button:hover,
-spinbutton.vertical button:active {
+spinbutton.vertical > button:hover,
+spinbutton.vertical > button:active {
     box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
                 inset  1px  0px shade (@theme_selected_bg_color, 1.3),
                 inset -1px  0px shade (@theme_selected_bg_color, 1.3);
 }
 
-spinbutton.vertical button:hover:last-child,
-spinbutton.vertical button:active:last-child {
+spinbutton.vertical > button:hover:last-child,
+spinbutton.vertical > button:active:last-child {
     box-shadow: inset  1px  0px shade (@theme_selected_bg_color, 1.3),
                 inset -1px  0px shade (@theme_selected_bg_color, 1.3),
                 inset  0px -1px shade (@theme_selected_bg_color, 1.3);
 }
 
-spinbutton.horizontal entry:focus,
-spinbutton.vertical entry:focus {
+spinbutton.horizontal > entry:focus,
+spinbutton.vertical > entry:focus {
     border-color: alpha(@borders, 0.1);
     box-shadow: inset  0px  1px 0 0 shade (@theme_selected_bg_color, 1.3),
                 inset  1px  0px 0 0 shade (@theme_selected_bg_color, 1.3),
