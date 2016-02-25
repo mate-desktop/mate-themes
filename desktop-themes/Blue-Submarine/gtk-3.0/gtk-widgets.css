@@ -4974,12 +4974,6 @@ GtkOverlay.osd {
     border-radius: 5px;
 }
 
-/* ie. volume button */
-.osd .horizontal button,
-.osd .horizontal button:hover {
-    padding: 5px 8px;
-}
-
 toolbar.osd {
     color: @osd_fg;
     text-shadow: 0 1px @osd_text_shadow;
@@ -4997,21 +4991,35 @@ toolbar.osd {
 
 toolbar.osd button,
 toolbar.osd button:hover,
-toolbar.osd .linked button {
-    padding: 6px;
+toolbar.osd button:focus,
+toolbar.osd button:focus:hover,
+toolbar.osd button:focus:hover:active,
+toolbar.osd button:hover:active,
+toolbar.osd .linked button
+toolbar.osd .linked button:hover,
+toolbar.osd .linked button:hover:active,
+toolbar.osd .linked button:focus,
+toolbar.osd .linked button:focus:hover,
+toolbar.osd .linked button:focus:hover:active,
+toolbar.osd button.scale.flat.image-button {
+    padding: 8px;
     border-width: 1px;
     border-radius: 5px;
 }
 
 toolbar.osd button:first-child,
-toolbar.osd .linked button:first-child {
+toolbar.osd .linked button:first-child,
+toolbar.osd .linked button:focus:hover:first-child,
+toolbar.osd .linked button:focus:hover:active:first-child {
     border-radius: 5px 0 0 5px;
     border-width: 1px 0 1px 1px;
     box-shadow: inset -1px 0 @osd_button_inset;
 }
 
 toolbar.osd button:last-child,
-toolbar.osd .linked button:last-child {
+toolbar.osd .linked button:last-child,
+toolbar.osd .linked button:focus:hover:last-child,
+toolbar.osd .linked button:focus:hover:active:last-child {
     box-shadow: none;
     border-radius: 0 5px 5px 0;
     border-width: 1px 1px 1px 0;
