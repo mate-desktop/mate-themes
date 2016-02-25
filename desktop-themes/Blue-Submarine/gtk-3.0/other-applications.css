@@ -656,3 +656,46 @@ NemoPathBar:dir(ltr).raised.linked .button.text-button:checked:hover:active:only
     border-radius: 4px;
 }
 
+/* CompizConfigManager */
+
+.ccsm-window notebook.frame scrolledwindow viewport widget.notebook {
+    background-color: shade (@theme_bg_color, 1.1);
+}
+
+.ccsm-window notebook.frame scrolledwindow viewport widget.notebook box.vertical frame {
+    background-color: shade (@theme_bg_color, 1.14);
+}
+
+.ccsm-window notebook.frame scrolledwindow viewport widget.notebook box.vertical frame frame {
+    background-color: shade (@theme_bg_color, 1.17);
+}
+
+.ccsm-window notebook.frame scrolledwindow viewport widget.notebook box.vertical frame expander scrolledwindow {
+    border-color: @notebook_border;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/* treeview header */
+.ccsm-window notebook.frame scrolledwindow viewport widget.notebook box.vertical frame expander scrolledwindow treeview.view button {
+    border-color: @notebook_border;
+    border-style: solid;
+    border-width: 0px 1px 1px 0px;
+}
+
+.ccsm-window notebook.frame scrolledwindow viewport widget.notebook box.vertical frame expander scrolledwindow treeview.view button:first-child {
+    border-width: 0px 1px 1px 0px;
+}
+
+.ccsm-window notebook.frame scrolledwindow viewport widget.notebook box.vertical frame expander scrolledwindow treeview.view button:last-child {
+    border-width: 0px 0px 1px 0px;;
+}
+
+.ccsm-window notebook.frame scrolledwindow viewport widget.notebook  spinbutton.horizontal > entry {
+   padding: 0px 2px 0px 3px;
+}
+
+.ccsm-window notebook.frame scrolledwindow viewport widget.notebook  spinbutton.horizontal > button {
+    padding: 0px 8px;
+}
+
