@@ -157,8 +157,11 @@ tooltip * {
     background-image: url("assets/resize-grip.svg");
 }
 
+/* ie. selection mouse retancle in caja */
 view.rubberband,
-rubberband {
+rubberband,
+.view.rubberband,
+.rubberband {
     background-color: alpha (@theme_selected_bg_color, 0.35);
     border-color: @theme_selected_bg_color;
     border-style: solid;
@@ -2960,7 +2963,9 @@ calendar.header stackswitcher > button.titlebutton > image {
     padding-bottom: 3px;
 }
 
+stackswitcher.linked.stack-switcher > button.text-button.radio,
 stackswitcher > button.text-button.radio,
+stackswitcher > .linked.stackswitcher > button.text-button.radio,
 stackswitcher > button.image-button.radio,
 headerbar stackswitcher > button.titlebutton,
 headerbar.titlebar stackswitcher > button.titlebutton,
@@ -4010,6 +4015,11 @@ view text selection:focus,
     color: @theme_selected_fg_color;
     text-shadow: 0px 1px @theme_selected_shadow_color;
     text-shadow: none;
+}
+
+/* ie. coloe of selected icons if unfocused */
+.view:active {
+    background-color: shade(@theme_bg_color, 0.8);
 }
 
 .view text selection:focus,
