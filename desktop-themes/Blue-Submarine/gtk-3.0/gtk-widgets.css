@@ -762,7 +762,7 @@ button label {
 }
 
 button {
-    transition: all 150ms ease-out;
+    transition: all 400ms ease-out;
     -GtkArrow-arrow-scaling: 0.5;
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
@@ -789,7 +789,6 @@ button {
 }
 
 button.default {
-    transition: all 150ms ease-out;
     text-shadow: none;
     color: @theme_fg_color;
 }
