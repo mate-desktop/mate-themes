@@ -5163,8 +5163,9 @@ progressbar .osd {
  * Popovers *
  *************/
 
-popover {
+popover.background {
     background-clip: initial;
+    color: @theme_fg_dark_color;
     margin: 10px;
     padding: 2px;
     border-color: @borders;
@@ -5319,45 +5320,54 @@ popover button.image-button:disabled {
                 inset  0px -1px @insensitive_border_color;
 }
 
-modelbutton button,
-modelbutton button:first-child,
-modelbutton button:last-child,
-modelbutton button:only-child {
-    background-image: none;
-    color: @theme_fg_dark_color;
-    border-radius: 3px;
+modelbutton.flat,
+.linked button.image-button.model {
+  min-height: 24px;
 }
 
-modelbutton button:checked,
-modelbutton button:disabled,
-modelbutton button:checked:disabled,
-modelbutton button,
-modelbutton button:focus,
-modelbutton button:checked:focus,
-modelbutton button:checked:first-child,
-modelbutton button:disabled:first-child,
-modelbutton button:checked:disabled:first-child,
-modelbutton button:first-child,
-modelbutton button:focus:first-child,
-modelbutton button:checked:focus:first-child,
-modelbutton button:checked:last-child,
-modelbutton button:disabled:last-child,
-modelbutton button:checked:disabled:last-child,
-modelbutton button:last-child,
-modelbutton button:focus:last-child,
-modelbutton button:checked:focus:last-child,
-modelbutton button:checked:only-child,
-modelbutton button:disabled:only-child,
-modelbutton button:checked:disabled:only-child,
-modelbutton button:only-child,
-modelbutton button:focus:only-child,
-modelbutton button:checked:focus:only-child,
-.linked modelbutton button,
-.linked modelbutton button:focus,
-.linked modelbutton button:first-child,
-.linked modelbutton button:focus:first-child,
-.linked modelbutton button:last-child,
-.linked modelbutton button:focus:last-child {
+modelbutton.flat arrow.left {
+    -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+}
+
+modelbutton.flat arrow.right {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+
+modelbutton.flat,
+modelbutton.flat:first-child,
+modelbutton.flat:last-child,
+modelbutton.flat:only-child {
+    background-image: none;
+    color: @theme_fg_dark_color;
+    border-radius: 4px;
+    padding: 6px 0px 6px 6px;
+}
+
+modelbutton.flat:checked,
+modelbutton.flat:disabled,
+modelbutton.flat:checked:disabled,
+modelbutton.flat,
+modelbutton.flat:focus,
+modelbutton.flat:checked:focus,
+modelbutton.flat:checked:first-child,
+modelbutton.flat:disabled:first-child,
+modelbutton.flat:checked:disabled:first-child,
+modelbutton.flat:first-child,
+modelbutton.flat:focus:first-child,
+modelbutton.flat:checked:focus:first-child,
+modelbutton.flat:checked:last-child,
+modelbutton.flat:disabled:last-child,
+modelbutton.flat:checked:disabled:last-child,
+modelbutton.flat:last-child,
+modelbutton.flat:focus:last-child,
+modelbutton.flat:checked:focus:last-child,
+modelbutton.flat:checked:only-child,
+modelbutton.flat:disabled:only-child,
+modelbutton.flat:checked:disabled:only-child,
+modelbutton.flat:only-child,
+modelbutton.flat:focus:only-child,
+modelbutton.flat:checked:focus:only-child,
+.linked button.image-button.model {
     background-color: shade (@theme_bg_dark_color, 1.0);
     background-image: none;
     border-color: transparent;
@@ -5367,42 +5377,30 @@ modelbutton button:checked:focus:only-child,
     border-radius: 3px;
 }
 
-modelbutton button:checked:hover:only-child,
-modelbutton button:checked:hover:active:only-child,
-modelbutton button:focus:hover:active:only-child,
-modelbutton button:hover:active:only-child,
-modelbutton button:hover:only-child,
-modelbutton button:selected:only-child,
-modelbutton button:checked:hover:first-child,
-modelbutton button:checked:hover:active:first-child,
-modelbutton button:focus:hover:active:first-child,
-modelbutton button:hover:active:first-child,
-modelbutton button:hover:first-child,
-modelbutton button:selected:first-child,
-modelbutton button:checked:hover:last-child,
-modelbutton button:checked:hover:active:last-child,
-modelbutton button:focus:hover:active:last-child,
-modelbutton button:hover:active:last-child,
-modelbutton button:hover:last-child,
-modelbutton button:selected:last-child,
-modelbutton button:checked:hover,
-modelbutton button:checked:hover:active,
-modelbutton button:focus:hover:active,
-modelbutton button:hover:active,
-modelbutton button:hover,
-modelbutton button:selected,
-.linked modelbutton button:hover,
-.linked modelbutton button:hover:active,
-.linked modelbutton button:checked:hover,
-.linked modelbutton button:checked:hover:active,
-.linked modelbutton button:hover:first-child,
-.linked modelbutton button:hover:active:first-child,
-.linked modelbutton button:checked:hover:first-child,
-.linked modelbutton button:checked:hover:active:first-child,
-.linked modelbutton button:hover:last-child,
-.linked modelbutton button:hover:active:last-child,
-.linked modelbutton button:checked:hover:last-child,
-.linked modelbutton button:checked:hover:active:last-child {
+modelbutton.flat:checked:hover:only-child,
+modelbutton.flat:checked:hover:active:only-child,
+modelbutton.flat:focus:hover:active:only-child,
+modelbutton.flat:hover:active:only-child,
+modelbutton.flat:hover:only-child,
+modelbutton.flat:selected:only-child,
+modelbutton.flat:checked:hover:first-child,
+modelbutton.flat:checked:hover:active:first-child,
+modelbutton.flat:focus:hover:active:first-child,
+modelbutton.flat:hover:active:first-child,
+modelbutton.flat:hover:first-child,
+modelbutton.flat:selected:first-child,
+modelbutton.flat:checked:hover:last-child,
+modelbutton.flat:checked:hover:active:last-child,
+modelbutton.flat:focus:hover:active:last-child,
+modelbutton.flat:hover:active:last-child,
+modelbutton.flat:hover:last-child,
+modelbutton.flat:selected:last-child,
+modelbutton.flat:checked:hover,
+modelbutton.flat:checked:hover:active,
+modelbutton.flat:focus:hover:active,
+modelbutton.flat:hover:active,
+modelbutton.flat:hover,
+modelbutton.flat:selected {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (shade(@menu_bg_dark_color, 2.03)),
@@ -5419,11 +5417,26 @@ modelbutton button:selected,
                 inset  0px -1px shade (@theme_selected_bg_color, 1.3);
 }
 
-.csd .popover .linked modelbutton button:checked,
-.csd .popover .linked modelbutton button:hover,
-.csd .popover .linked modelbutton button:hover:active,
-.csd .popover .linked modelbutton button:checked:hover,
-.csd .popover .linked modelbutton button:checked:hover:active {
+.linked button.image-button.model,
+.linked button.image-button.model:focus,
+.linked button.image-button.model:first-child,
+.linked button.image-button.model:focus:first-child,
+.linked button.image-button.model:last-child,
+.linked button.image-button.model:focus:last-child {
+    background-color: shade (@theme_bg_dark_color, 1.0);
+    background-image: none;
+    border-color: transparent;
+    border-image: none;
+    border-style: none;
+    box-shadow: none;
+    border-radius: 3px;
+}
+
+.linked button.image-button.model:checked,
+.linked button.image-button.model:hover,
+.linked button.image-button.model:hover:active,
+.linked button.image-button.model:checked:hover,
+.linked button.image-button.model:checked:hover:active {
     color: @fg_dark_color;
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
@@ -5436,29 +5449,29 @@ modelbutton button:selected,
 }
 
 /* middle button*/
-.linked modelbutton button:hover,
-.linked modelbutton button:hover:active,
-.linked modelbutton button:checked:hover,
-.linked modelbutton button:checked:hover:active {
+.linked button.image-button.model:hover,
+.linked button.image-button.model:hover:active,
+.linked button.image-button.model:checked:hover,
+.linked button.image-button.model:checked:hover:active {
     border-right-width: 0px;
     border-left-width:  0px;
     border-radius: 0;
 }
 
 /* left button*/
-.linked modelbutton button:hover:first-child,
-.linked modelbutton button:hover:active:first-child,
-.linked modelbutton button:checked:hover:first-child,
-.linked modelbutton button:checked:hover:active:first-child {
+.linked button.image-button.model:hover:first-child,
+.linked button.image-button.model:hover:active:first-child,
+.linked button.image-button.model:checked:hover:first-child,
+.linked button.image-button.model:checked:hover:active:first-child {
     border-right-width: 0px;
     border-radius: 6px 0 0 6px;
 }
 
 /* right button*/
-.linked modelbutton button:hover:last-child,
-.linked modelbutton button:hover:active:last-child,
-.linked modelbutton button:checked:hover:last-child,
-.linked modelbutton button:checked:hover:active:last-child {
+.linked button.image-button.model:hover:last-child,
+.linked button.image-button.model:hover:active:last-child,
+.linked button.image-button.model:checked:hover:last-child,
+.linked button.image-button.model:checked:hover:active:last-child {
     border-left-width:  0px;
     border-radius: 0 6px 6px 0;
 }
@@ -5471,6 +5484,14 @@ popover button.default.text-button.suggested-action {
     border-color: transparent;
     border-radius: 5px;
     padding: 5px 4px;
+}
+
+/* override theme_bg color */
+popover button.default.text-button.suggested-action:disabled {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@menu_bg_dark_color, 1.0)),
+                                     to   (shade(@menu_bg_dark_color, 1.0)));
 }
 
 popover button.default.text-button.suggested-action:hover {
