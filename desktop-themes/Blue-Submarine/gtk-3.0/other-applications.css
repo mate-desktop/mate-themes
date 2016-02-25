@@ -699,3 +699,8 @@ NemoPathBar:dir(ltr).raised.linked .button.text-button:checked:hover:active:only
     padding: 0px 8px;
 }
 
+/* virtual-manager detail view, hopefully only */
+window.background box.vertical notebook box.horizontal box.vertical notebook {
+    border-style: none;
+}
+
