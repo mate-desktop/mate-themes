@@ -719,6 +719,19 @@ na-tray-applet {
     border-style: none;
 }
 
+#caja-tab-close-button.flat,
+.pluma-window notebook button.flat {
+    border-image: none;
+    background-image: none;
+    background-color: transparent;
+    border-radius: 4px;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 1px;
+    padding: 1px;
+    -gtk-icon-shadow: none;
+}
+
 /***********************
  * Mate-Control-Center *
  ***********************/
