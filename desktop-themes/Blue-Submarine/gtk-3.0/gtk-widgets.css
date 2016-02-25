@@ -2362,11 +2362,6 @@ combobox arrow {
  * Toolbars *
  ************/
 
-toolbar * {
-    background-image: none;
-    background-color: alpha (@theme_base_color, 0.0);
-}
-
 GtkHandleBox,
 toolbar  {
     padding: 2px 4px;
@@ -2392,11 +2387,18 @@ toolbar button.flat.image-button label {
 }
 
 toolbar toolitem combobox button.combo,
+toolbar toolbutton button.flat.toggle.popup:focus,
+toolbar toolbutton button.flat.toggle.popup:disabled,
 toolbar toolbutton button.flat.image-button:disabled {
     box-shadow: none;
     background-image: none;
 }
 
+toolbar toolbutton button.flat.toggle.popup:focus {
+
+}
+
+toolbar toolbutton button.flat.toggle.popup:focus:hover,
 toolbar toolitem combobox button.combo:hover {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
@@ -2463,8 +2465,9 @@ toolbar.primary-toolbar:disabled {
 
 /* primary toolbar buttons */
 toolbar button,
-toolbar.primary-toolbar button {
-/*    -GtkWidget-focus-line-width: 0; */
+toolbar.primary-toolbar button,
+toolbar.primary-toolbar .linked button,
+toolbar.primary-toolbar button:focus {
     border-image: none;
     border-style: solid;
     border-color: transparent;
@@ -2514,7 +2517,6 @@ toolbar.primary-toolbar button:disabled {
     background-image: none;
     background-color: alpha (@theme_base_color, 0.0);
     border-color: transparent;
-    /* -GtkWidget-focus-line-width: 0; */
 }
 
 toolbar button *:disabled {
@@ -3442,9 +3444,7 @@ notebook tab.reorderable-page:active {
 
 /* close button styling */
 
-notebook button.flat,
 notebook button.flat.small-button {
-    color: mix (@theme_fg_color, @theme_bg_color, 0.85);
     border-image: none;
     background-image: none;
     background-color: transparent;
