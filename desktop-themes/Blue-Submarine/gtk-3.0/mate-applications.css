@@ -763,21 +763,41 @@ EggToolbarEditor.vertical scrolledwindow viewport.frame {
 }
 
 /**************
- * mate-media FIXME*
+ * mate-media *
  **************/
 
-GvcMixerDialog .frame.flat {
+GvcMixerDialog box.horizontal {
+    margin: 0px -3px 0px -3px;
+}
+
+GvcMixerDialog box.horizontal box.horizontal frame {
+    background-color: shade (@theme_bg_color, 1.1);
+    border-color: @notebook_border;
+}
+
+GvcMixerDialog box.horizontal box.horizontal frame label {
+    padding: 0px 0px 0px 10px;
+}
+
+GvcMixerDialog notebook.frame:nth-child(even) {
+    border-radius: 3px 3px 0px 0px;
+}
+
+GvcMixerDialog notebook.frame frame {
     border-style: none;
 }
 
-GvcMixerDialog .vertical.dialog-vbox .notebook GtkScrolledWindow.frame {
+/* fix weird borders in application page */
+GvcMixerDialog notebook.frame scrolledwindow.frame {
     border-style: none;
-    border-radius: 0px 0px 4px 4px;
 }
 
-GvcMixerDialog .vertical.dialog-vbox .notebook .frame.flat GtkScrolledWindow.frame {
-    border-width: 1px;
-    border-radius: 0px;
+GvcMixerDialog notebook.frame scrolledwindow.frame viewport.frame {
+    background-color: shade (@theme_bg_color, 1.1);
+}
+ /* needed because of 'border-style: none' for application page */
+GvcMixerDialog notebook.frame box.vertical frame scrolledwindow.frame {
+    border-color: @notebook_border;
     border-style: solid;
 }
 
