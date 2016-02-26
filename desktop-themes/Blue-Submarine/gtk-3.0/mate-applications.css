@@ -776,7 +776,7 @@ GvcMixerDialog box.horizontal box.horizontal frame {
 }
 
 GvcMixerDialog box.horizontal box.horizontal frame label {
-    padding: 0px 0px 0px 10px;
+    padding: 0px 0px 0px 14px;
 }
 
 GvcMixerDialog notebook.frame:nth-child(even) {
@@ -801,6 +801,17 @@ GvcMixerDialog notebook.frame box.vertical frame scrolledwindow.frame {
     border-style: solid;
 }
 
+GvcMixerDialog notebook.frame box.vertical box.horizontal frame label {
+    padding: 0px 0px 0px 6px;
+}
+
+GvcMixerDialog notebook.frame box.vertical box.horizontal box.horizontal label {
+    padding: 0px 0px 0px 6px;
+}
+
+GvcMixerDialog notebook.frame box.vertical box.horizontal box.horizontal frame box.horizontal box.horizontal label {
+    padding: 0px 0px 0px 10px;
+}
 /*******
  * Eom *
  *******/
