@@ -750,13 +750,16 @@ na-tray-applet {
     border-style: none;
 }
 
-/* atril and eom FIXME */
-EggToolbarEditor.vertical GtkScrolledWindow .frame {
-    background-color: shade (@base_color, 1.0);
+/* atril and eom */
+EggToolbarEditor.vertical scrolledwindow {
     border-color: @notebook_border;
     border-width: 1px;
     border-radius: 0px;
     border-style: solid;
+}
+
+EggToolbarEditor.vertical scrolledwindow viewport.frame {
+    background-color: shade (@base_color, 1.0);
 }
 
 /**************
