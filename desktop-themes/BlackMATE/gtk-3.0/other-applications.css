@@ -2,7 +2,7 @@
  * Nemo *
  ********/
 
-NemoWindow > GtkGrid > .pane-separator {
+.nemo-window > grid> .pane-separator {
 	color: shade(@theme_selected_bg_color, 2.0);
 	background-repeat: no-repeat;
 	background-position: center;
@@ -10,24 +10,24 @@ NemoWindow > GtkGrid > .pane-separator {
 	background-color: @less_dark_color;
 }
 
-NemoWindow > GtkGrid > .pane-separator:hover,
-NemoWindow > GtkGrid > .pane-separator:selected {
+.nemo-window > grid> .pane-separator:hover,
+.nemo-window > grid> .pane-separator:selected {
 	background-image: url("assets/notebook-pane-separator-grip-hover.svg");
 }
 
 /* is this really needed? */
-NemoWindow > GtkGrid > .pane-separator.vertical {
+.nemo-window > grid> .pane-separator.vertical {
 	background-image: url("assets/notebook-pane-separator-grip-vertical.svg");
 }
 
-NemoWindow > GtkGrid > .pane-separator.vertical:hover,
-NemoWindow > GtkGrid > .pane-separator.vertical:selected {
+.nemo-window > grid> .pane-separator.vertical:hover,
+.nemo-window > grid> .pane-separator.vertical:selected {
 	background-image: url("assets/notebook-pane-separator-grip-vertical-hover.svg");
 }
 
 /**** View ***/
 
-window.background>grid>paned>box>paned>box>notebook>stack>box>*>scrolledwindow {
+.nemo-window>grid>paned>box>paned>box>notebook>stack>box>*>scrolledwindow {
 	background-color: @less_dark_color;
 	color: @theme_fg_color;
     border-color: transparent;
@@ -40,33 +40,37 @@ window.background>grid>paned>box>paned>box>notebook>stack>box>*>scrolledwindow {
 }
 */
 /* file renaming */
-window>*>box>box>box>scrolledwindow>.view .entry,
-window>*>box>box>box>scrolledwindow>.view .entry:focus {
-	background-image: none;
+.nemo-window  .entry,
+.nemo-window .entry:focus {
+	background-image: linear-gradient(to bottom,
+	                                  shade(@less_dark_color, 0.2),
+	                                  shade(@less_dark_color, 0.5) 10%,
+	                                  @less_dark_color 50%,
+	                                  shade(@less_dark_color, 1.5));
 	border-image: none;
 	border-style: solid;
-	border-radius: 1px;
+	border-radius: 4px;
 	border-color: @theme_selected_bg_color;
 	background-color: shade(@theme_selected_bg_color, 0.3);
 }
 
 
-NemoWindow GtkPaned {
+.nemo-window paned {
 	background-color: @less_dark_color;
 }
 
-NemoWindow GtkScrolledWindow.frame {
+.nemo-window scrolledwindow.frame {
 	border-style: none;
 }
 
-NemoWindow .button {
+.nemo-window .button {
 	border-image: url("assets/button-border-dark1.svg") 3 / 3px stretch;
 	background-image: linear-gradient(to bottom,
 	                                  shade(@less_dark_color, 1.3),
 	                                  shade(@less_dark_color, 0.4));
 }
 
-NemoWindow .button:hover {
+.nemo-window .button:hover {
 	background-image: -gtk-gradient (radial,
 					0.5 -2.0, 2.0,
 					0.5 -2.0, 3.0,
@@ -77,10 +81,10 @@ NemoWindow .button:hover {
 
 }
 
-NemoWindow .button:checked,
-NemoWindow .button:hover:checked,
-NemoWindow .button:active,
-NemoWindow .button:hover:active {
+.nemo-window .button:checked,
+.nemo-window .button:hover:checked,
+.nemo-window .button:active,
+.nemo-window .button:hover:active {
 	background-image: linear-gradient(to bottom,
 	                                  shade(@button_gradient_color_b, 0.7),
 	                                  @theme_bg_color 40%,
@@ -88,8 +92,8 @@ NemoWindow .button:hover:active {
 	border-image: url("assets/button-active-border-dark1.svg") 3 / 3px stretch;
 }
 
-NemoWindow column-header .button,
-NemoWindow column-header .button:hover {
+.nemo-window column-header .button,
+.nemo-window column-header .button:hover {
 	border-image: none;
 	border-width: 0px 0px 1px 1px;
 	border-radius: 0;
@@ -97,39 +101,39 @@ NemoWindow column-header .button:hover {
 	border-color: @less_dark_color;
 }
 
-NemoWindow .toolbar {
+.nemo-window .toolbar {
 	background-image: linear-gradient(to bottom,
 	                                  shade(@less_dark_color, 0.4),
 	                                  shade(@less_dark_color, 1.36));
 }
 
-NemoToolbar .toolbar {
+.nemo-window .toolbar {
 	border-radius: 0px;
 }
 
-NemoWindow .scrollbar.slider:hover,
-NemoWindow .scrollbar.slider:hover:active,
-NemoWindow .scrollbar.slider.vertical:hover,
-NemoWindow .scrollbar.slider.vertical:hover:active {
+.nemo-window .scrollbar.slider:hover,
+.nemo-window .scrollbar.slider:hover:active,
+.nemo-window .scrollbar.slider.vertical:hover,
+.nemo-window .scrollbar.slider.vertical:hover:active {
 	border-color: shade(@scroll_slider_color, 1.1);
 }
 
-NemoWindow .scrollbar.button,
-NemoWindow .scrollbar.button.horizontal,
-NemoWindow .scrollbar.button.vertical,
-NemoWindow .scrollbar.button:disabled,
-NemoWindow .scrollbar.button.horizontal:disabled,
-NemoWindow .scrollbar.button.vertical:disabled {
+.nemo-window .scrollbar.button,
+.nemo-window .scrollbar.button.horizontal,
+.nemo-window .scrollbar.button.vertical,
+.nemo-window .scrollbar.button:disabled,
+.nemo-window .scrollbar.button.horizontal:disabled,
+.nemo-window .scrollbar.button.vertical:disabled {
 	background-image: none;
 }
 
-NemoWindow GtkStatusbar,
-NemoWindow .floating-bar {
+.nemo-window GtkStatusbar,
+.nemo-window .floating-bar {
 	font: italic;
 }
 
-NemoWindow .floating-bar.right,
-NemoWindow .floating-bar.left {
+.nemo-window .floating-bar.right,
+.nemo-window .floating-bar.left {
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
 }
@@ -148,42 +152,42 @@ NemoWindow .floating-bar.left {
 	                                  shade(@less_dark_color, 1.3));
 }
 
-NemoWindow .notebook .view.rubberband,
-NemoWindow .notebook .rubberband {
+.nemo-window .notebook .view.rubberband,
+.nemo-window .notebook .rubberband {
 	background-color: alpha(@theme_selected_bg_color, 0.35);
 }
 
 /**** NemoSidebar ***/
 
-window.background>grid>paned>box>scrolledwindow>viewport.frame,
-window.background>grid>paned>box>scrolledwindow>viewport treeview.view{
+.nemo-window>grid>paned>box>scrolledwindow>viewport.frame,
+.nemo-window>grid>paned>box>scrolledwindow>viewport treeview.view{
 	background-color: shade(@theme_bg_color, 1.08);
 }
 
-NemoWindow sidebar frame {
+.nemo-window .sidebar frame {
 	border-width: 0px;
 }
 
-NemoWindow sidebar scrollbar button {
+.nemo-window .sidebar scrollbar button {
 	color: @theme_fg_color;
 }
 
-NemoWindow sidebar scrollbar button:hover {
+.nemo-window .sidebar scrollbar button:hover {
 	color: @theme_fg_color;
 }
 
-NemoPlacesSidebar .cell,
-NemoPlacesSidebar *.cell {
+.nemo-window .sidebar .cell,
+.nemo-window .sidebar *.cell {
 	color: @theme_text_color;
 }
 
-NemoPlacesSidebar .cell:hover,
-NemoPlacesSidebar *.cell:hover {
+.nemo-window .sidebar .cell:hover,
+.nemo-window .sidebar *.cell:hover {
 	color: @theme_text_color;
 }
 
-NemoPlacesSidebar .cell:selected,
-NemoPlacesSidebar *.cell:selected {
+.nemo-window .sidebar .cell:selected,
+.nemo-window .sidebar *.cell:selected {
 	background-image: linear-gradient(to bottom,
 	                                  shade(@less_dark_color, 1.5),
 	                                  shade(@less_dark_color, 0.6));
@@ -191,8 +195,8 @@ NemoPlacesSidebar *.cell:selected {
 	border-radius: 2px;
 }
 
-NemoPlacesSidebar .cell:selected:focus,
-NemoPlacesSidebar *.cell:selected:focus {
+.nemo-window .sidebar .cell:selected:focus,
+.nemo-window .sidebar *.cell:selected:focus {
 	color: @theme_text_color;
 	background-image: linear-gradient(to top,
 					 shade(@less_dark_color, 1.5),
@@ -201,8 +205,8 @@ NemoPlacesSidebar *.cell:selected:focus {
 
 /**** Infos ***/
 
-NemoWindow .question,
-NemoWindow .info,
+.nemo-window .question,
+.nemo-window .info,
 NemoTrashBar.info,
 NemoXContentBar.info,
 NemoQueryEditor.info {
@@ -214,8 +218,8 @@ NemoSearchBar.info {
 	background-color: @less_dark_color;
 }
 
-NemoWindow NemoQueryEditor .toolbar,
-NemoWindow .notebook NemoQueryEditor .toolbar {
+.nemo-window NemoQueryEditor .toolbar,
+.nemo-window .notebook NemoQueryEditor .toolbar {
 	background-image: none;
 	background-color: transparent;
 	padding: 5px 7px;
@@ -241,7 +245,7 @@ NemoQueryEditor .toolbar .entry:focus {
 }
 
 .nemo-canvas-item {
-	border-radius: 5px;
+	border-radius: 4px;
 }
 
 /**** Desktop Drawn ***/
