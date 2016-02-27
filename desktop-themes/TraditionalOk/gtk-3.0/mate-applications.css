@@ -55,7 +55,7 @@ CajaDesktopWindow.background .caja-canvas-item {
 }
 
 CajaDesktopWindow.background .caja-canvas-item:active,
-CajaDesktopWindow.background .caja-canvas-item:prelight,
+CajaDesktopWindow.background .caja-canvas-item:hover,
 CajaDesktopWindow.background .caja-canvas-item:selected {
 	text-shadow: none;
 }
@@ -270,7 +270,7 @@ WnckPager {
 	text-shadow: none;
 }
 
-/* prelight of WnckPager */
+/* hover of WnckPager */
 WnckPager:hover {
 	background-image: linear-gradient(to bottom,
 		shade (@theme_selected_bg_color, 1.86),
@@ -347,8 +347,8 @@ ShellWindow GtkScrolledWindow .button.flat:hover {
 
 PlumaCloseButton.button.flat,
 PlumaCloseButton.button.flat:hover,
-PlumaCloseButton:prelight.button.flat,
-PlumaCloseButton:prelight.button.flat:hover {
+PlumaCloseButton:hover.button.flat,
+PlumaCloseButton:hover.button.flat:hover {
     padding: 0px;
 }
 
@@ -453,7 +453,7 @@ PlumaFileBrowserWidget.vertical .toolbar.horizontal .button.flat.image-button {
  * Engrampa *
  ************/
 
-FrWindow .horizontal.toolbar .button.flat.image-button:insensitive {
+FrWindow .horizontal.toolbar .button.flat.image-button:disabled {
     background-image: none;
 }
 
@@ -477,7 +477,7 @@ EvWindow .toolbar .button.flat {
 }
 
 EvWindow .vertical.primary-toolbar .horizontal.toolbar EphyZoomControl GtkToggleButton.button,
-EvWindow .vertical.primary-toolbar .horizontal.toolbar EphyZoomControl GtkToggleButton:prelight.button {
+EvWindow .vertical.primary-toolbar .horizontal.toolbar EphyZoomControl GtkToggleButton:hover.button {
     padding: 8px 4px;
     border-radius: 4px;
 }
@@ -519,7 +519,7 @@ EomThumbNav .button.flat:hover {
     border-color: @focus_border_color;
 }
 
-EomThumbNav .button.flat:insensitive {
+EomThumbNav .button.flat:disabled {
     border-color: @insensitive_border_color;
 }
 
