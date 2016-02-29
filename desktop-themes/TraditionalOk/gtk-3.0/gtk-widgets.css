@@ -1710,115 +1710,116 @@ scrollbar slider:hover {
 
 /* combobox menus */
 treemenu menu {
-	background-color: @menu_bg_color;
+    background-color: @menu_bg_color;
 }
 
 treemenu menuitem {
-	padding: 2px;
+    padding: 2px;
 }
 
 menu {
-	font: normal;
-	background-color: @menu_bg_color;
-	color: @menu_fg_color;
-	padding: 1px;
-	border-style: solid;
-	border-width: 1px;
-	border-color: @menu_border_color;
+    font: normal;
+    background-color: @menu_bg_color;
+    color: @menu_fg_color;
+    padding: 1px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: @menu_border_color;
 }
 
 menu button {
-	background-image: none;
-	background-color: @menu_bg_color;
-	color: @internal_element_color;
-
-	border-image: none;
-	border-style: none;
+    background-image: none;
+    background-color: @menu_bg_color;
+    color: @internal_element_color;
+    border-image: none;
+    border-style: none;
 }
 
 menu button:hover {
-	background-image: none;
-	background-color: @theme_base_color;
-	color: @theme_text_color;
-
-	border-image: none;
-	border-style: none;
+    background-image: none;
+    background-color: @theme_base_color;
+    color: @theme_text_color;
+    border-image: none;
+    border-style: none;
 }
 
 menu button:disabled {
-	background-color: @theme_base_color;
-	color: lighter(@internal_element_color);
-
-	border-image: none;
-	border-style: none;
+    background-color: @theme_base_color;
+    color: lighter(@internal_element_color);
+    border-image: none;
+    border-style: none;
 }
 
 /* this controls the general appearance of the menubar */
 menubar {
-	border-style: none;
-	padding: 1px;
-	-GtkWidget-window-dragging: true;
-	background-image: -gtk-gradient (linear,
-	                  left top,
-	                  left bottom,
-	                  from (@menubar_gradient_a),
-	                  color-stop (0.50, @menubar_gradient_b),
-	                  to (@menubar_gradient_c));
+    border-style: none;
+    padding: 1px;
+    -GtkWidget-window-dragging: true;
+    background-image: -gtk-gradient (linear,
+                      left top,
+                      left bottom,
+                      from (@menubar_gradient_a),
+                      color-stop (0.50, @menubar_gradient_b),
+                      to (@menubar_gradient_c));
 }
 
 menubar menuitem {
-	border-style: none;
-	padding: 3px 5px;
-	background-color: transparent;
+    border-style: none;
+    padding: 3px 5px;
+    background-color: transparent;
 }
 
 menubar menuitem:hover,
 menuitem button.flat:hover,
 menuitem button.flat:active {
-	background-color: @menu_bg_color;
-	border-style: solid;
-	border-width: 1px 1px 0px;
-	border-color: @menubar_menuitem_hover_border_color;
-	border-radius: 3px 3px 0 0;
-	color: @menubar_menuitem_hover_color;
-	background-image: -gtk-gradient (linear,
-	                  left top,
-	                  left bottom,
-	                  from (@menubar_menuitem_hover_gradient_a),
-	                  color-stop (0.50, @menubar_menuitem_hover_gradient_b),
-	                  color-stop (0.50, @menubar_menuitem_hover_gradient_c),
-	                  to (@menubar_menuitem_hover_gradient_d));
+    background-color: @menu_bg_color;
+    border-style: solid;
+    border-width: 1px 1px 0px;
+    border-color: @menubar_menuitem_hover_border_color;
+    border-radius: 3px 3px 0 0;
+    color: @menubar_menuitem_hover_color;
+    background-image: -gtk-gradient (linear,
+                      left top,
+                      left bottom,
+                      from (@menubar_menuitem_hover_gradient_a),
+                      color-stop (0.50, @menubar_menuitem_hover_gradient_b),
+                      color-stop (0.50, @menubar_menuitem_hover_gradient_c),
+                      to (@menubar_menuitem_hover_gradient_d));
 }
 
-menuitem.button.flat:hover {
-	border-width: 1px;
-	border-radius: 3px;
+menuitem button.flat:hover {
+    border-width: 1px;
+    border-radius: 3px;
 }
 
 menuitem button.flat:focus {
-	color: @theme_text_color;
+    color: @theme_text_color;
 }
 
 menubar menuitem:hover {
-	border-width: 1px;
-	color: @menubar_menuitem_hover_color;
+    border-width: 1px;
+    color: @menubar_menuitem_hover_color;
 }
 
-menu menuitem {
-	padding: 4px;
-	background-color: @menu_bg_color;
+menu menuitem,
+menu menuitem:disabled {
+    border-width: 1px 0px;
+    border-style: solid;
+    border-color: transparent;
+    padding: 4px;
+    background-color: @menu_bg_color;
 }
 
 menu menuitem:hover {
-	border-radius: 0;
+    border-radius: 0;
 }
 
 treemenu menuitem:hover,
 menu menuitem:active,
 menu menuitem:hover {
-	border-style: solid;
-	border-width: 1px;
-	border-color: @menubar_menuitem_hover_border_color;
+    border-style: solid;
+    border-width: 1px 0px;
+    border-color: @menubar_menuitem_hover_border_color;
 }
 
 treemenu menuitem:hover,
@@ -1827,40 +1828,71 @@ menu menuitem:active,
 menu menuitem:active,
 menu menuitem:hover,
 menu menuitem:hover {
-	color: @theme_selected_fg_color;
-	background-image: -gtk-gradient (linear,
-	                  left top,
-	                  left bottom,
-	                  from (@menubar_menuitem_hover_gradient_a),
-	                  color-stop (0.50, @menubar_menuitem_hover_gradient_b),
-	                  color-stop (0.50, @menubar_menuitem_hover_gradient_c),
-	                  to (@menubar_menuitem_hover_gradient_d));
+    color: @theme_selected_fg_color;
+    background-image: -gtk-gradient (linear,
+                      left top,
+                      left bottom,
+                      from (@menubar_menuitem_hover_gradient_a),
+                      color-stop (0.50, @menubar_menuitem_hover_gradient_b),
+                      color-stop (0.50, @menubar_menuitem_hover_gradient_c),
+                      to (@menubar_menuitem_hover_gradient_d));
 }
 
 menu menuitem:disabled {
-	color: mix (@menu_fg_color, @menu_bg_color, 0.6);
+    color: mix (@menu_fg_color, @menu_bg_color, 0.6);
 }
 
 menu menuitem accelerator:disabled {
-	color: mix (@menu_fg_color, @menu_bg_color, 0.7);
+    color: mix (@menu_fg_color, @menu_bg_color, 0.7);
 }
 
 menuitem accelerator {
-	color: alpha (@menu_fg_color, 0.4);
+    color: alpha (@menu_fg_color, 0.4);
 }
 
 menuitem accelerator:hover,
 menuitem accelerator:active {
-	color: alpha (@menu_fg_color, 0.3);
+    color: alpha (@menu_fg_color, 0.3);
 }
 
 menuitem arrow {
-	color: @menu_controls_color;
+    min-height: 16px;
+    min-width: 16px;
+    margin-left: 10px;
+    color: @menu_controls_color;
 }
 
+menu menuitem arrow:dir(ltr) {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+
+menu menuitem arrow:dir(rtl) {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
+}
+
+menu arrow.top {
+    -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
+}
+
+menu arrow.bottom {
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
+menu arrow:hover {
+    border-color: @theme_selected_fg_color;
+    color: shade (@theme_selected_bg_color, 1.6);
+}
+
+menu separator,
 menuitem separator {
-	color: @menu_separator_color;
-	padding: 3px 1px 3px 1px;
+    color: @menu_separator_color;
+    min-height: 1px;
+    border-image: -gtk-gradient (linear,
+                                 left top, right top,
+                                 from (alpha (#000, 0.00)),
+                                 color-stop (0.25, alpha (#000, 0.03)),
+                                 color-stop (0.85, alpha (#000, 0.03)),
+                                 to (alpha (#000, 0.00))) 1;
 }
 
 menuitem check,
@@ -1869,30 +1901,30 @@ menuitem check:hover,
 menuitem radio:hover,
 menuitem check:disabled,
 menuitem radio:disabled {
-	background-image: none;
-	background-color: transparent;
-	min-height: 12px;
-	min-width: 12px;
+    background-image: none;
+    background-color: transparent;
+    min-height: 12px;
+    min-width: 12px;
 }
 
 menuitem check:active,
 menuitem radio:active {
-	background-color: transparent;
+    background-color: transparent;
 }
 
 /***************
  * Menu Button *
  ***************/
 
-.menuitem.button.flat:active {
-	color: @theme_text_color;
-	background-image: none;
-	background-color: @menu_bg_color;
-	border-radius: 5px 5px 0 0;
-	border-image: none;
-	border-width: 1px 1px 0 1px;
-	border-color: shade(@border_color, 1.30);
-	border-style: solid;
+menuitem button.flat:active {
+    color: @theme_text_color;
+    background-image: none;
+    background-color: @menu_bg_color;
+    border-radius: 5px 5px 0 0;
+    border-image: none;
+    border-width: 1px 1px 0 1px;
+    border-color: shade(@border_color, 1.30);
+    border-style: solid;
 }
 
 /****************
@@ -1903,20 +1935,31 @@ check,
 radio,
 check:disabled,
 radio:disabled {
-	background-color: transparent;
-	border-style: none;
+    background-color: transparent;
+    border-style: none;
+}
+
+check,
+radio,
+menuitem check,
+menuitem radio,
+menu menuitem check,
+menu menuitem radio {
+    padding: 0px 6px 0px 0px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 check row:selected:disabled,
 check row:selected:focus:disabled {
-	background-color: transparent;
+    background-color: transparent;
 }
 
 checkbutton:hover,
 checkbutton:active:hover,
 checkbutton:selected,
 checkbutton:selected:focus {
-	background-color: transparent;
+    background-color: transparent;
 }
 
 /************
