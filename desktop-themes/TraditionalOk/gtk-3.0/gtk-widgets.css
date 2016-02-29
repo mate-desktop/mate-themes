@@ -1076,157 +1076,168 @@ toolbar.primary-toolbar button:focus:hover {
  *****************/
 
 notebook {
-	padding: 0;
-	background-clip: border-box;
-	background-color: @notebook_bg_color;
+    padding: 0;
+    background-clip: border-box;
+    background-color: @notebook_bg_color;
+    border-color: @border_color;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px 3px 0px 0px;
 }
 
-.notebook.header.frame {
-	border-width: 0;
+/* view areas, ie. pluma-, caja-tabs */
+paned.horizontal notebook {
+    border-style: none;
 }
 
-notebook viewport {
-	background-color: @theme_bg_color;
+paned.horizontal notebook header {
+    box-shadow: none;
 }
 
-.notebook tab {
-	padding: 3px;
-	border-radius: 3px;
-	border-color: @border_color;
-	border-style: solid;
-	border-width: 1px;
-	background-color: transparent;
-	background-color: transparent;
+notebook header.top {
+    border-width: 0px 0px 1px 0px;
+    box-shadow: inset  0px -1px 0 0 @border_color;
 }
 
-.notebook tab.top {
-	padding: 4px 2px 0 2px;
-	border-width: 1px 1px 0px;
-	background-image: linear-gradient(to bottom,
-	                  @notebook_tab_inner_border_color 1px,
-	                  @notebook_tab_gradient_a 2px,
-	                  @notebook_tab_gradient_b 50%,
-	                  @notebook_tab_gradient_c 50%,
-	                  @notebook_tab_gradient_d);
+
+notebook header.bottom {
+    border-width: 1px 1px 0px 0px;
+    box-shadow: inset  0px  1px 0 0 @border_color;
 }
 
-.notebook tab.right {
-	padding: 2px 4px 2px 0;
-	border-width: 1px 1px 1px 0;
-	background-image: linear-gradient(to left,
-	                  @notebook_tab_inner_border_color 1px,
-	                  @notebook_tab_gradient_a 2px,
-	                  @notebook_tab_gradient_b 50%,
-	                  @notebook_tab_gradient_c 50%,
-	                  @notebook_tab_gradient_d);
+notebook header.left {
+    border-width: 0px 1px 0px 0px;
+    box-shadow: inset -1px  0px 0 0 @border_color;
 }
 
-.notebook tab.bottom {
-	padding: 0 2px 4px;
-	border-width: 0px 1px 1px;
-	background-image: linear-gradient(to top,
-	                  @notebook_tab_inner_border_color 1px,
-	                  @notebook_tab_gradient_a 2px,
-	                  @notebook_tab_gradient_b 50%,
-	                  @notebook_tab_gradient_c 50%,
-	                  @notebook_tab_gradient_d);
+notebook header.right {
+    border-width: 0px 0px 0px 1px;
+    box-shadow: inset  1px  0px 0 0 @border_color;
 }
 
-.notebook tab.left {
-	padding: 2px 0 2px 4px;
-	border-width: 1px 0 1px 1px;
-	background-image: linear-gradient(to right,
-	                  @notebook_tab_inner_border_color 1px,
-	                  @notebook_tab_gradient_a 2px,
-	                  @notebook_tab_gradient_b 50%,
-	                  @notebook_tab_gradient_c 50%,
-	                  @notebook_tab_gradient_d);
+/* tabs in view areas, ie. pluma-, caja-tabs */
+paned.horizontal notebook header tab {
+    padding: 4px 2px;
 }
 
-.notebook tab.top:active {
-	padding-top: 7px;
-	border-top-color: @notebook_active_tab_border;
-	background-image: linear-gradient(to bottom,
-	                  @notebook_active_tab_strip_gradient_a,
-	                  @notebook_active_tab_strip_gradient_b 3px,
-	                  @notebook_active_tab_strip_border_bottom_color 4px,
-	                  @notebook_active_tab_gradient_a 4px,
-	                  @notebook_active_tab_gradient_b);
+notebook header tab {
+    padding: 3px;
+    border-color: @border_color;
+    border-style: solid;
+    border-width: 1px;
+    background-color: transparent;
 }
 
-.notebook tab.right:active {
-	padding-right: 7px;
-	border-right-color: @notebook_active_tab_border;
-	background-image: linear-gradient(to left,
-	                  @notebook_active_tab_strip_gradient_a,
-	                  @notebook_active_tab_strip_gradient_b 3px,
-	                  @notebook_active_tab_strip_border_bottom_color 4px,
-	                  @notebook_active_tab_gradient_a 4px,
-	                  @notebook_active_tab_gradient_b);
+notebook header.top tab {
+    padding: 7px 2px 0 2px;
+    border-width: 0px 1px 1px 1px;
+    border-radius: 3px 3px 0px 0px;;
+    background-image: linear-gradient(to bottom,
+                      @notebook_tab_gradient_a,
+                      @notebook_tab_gradient_b 50%,
+                      @notebook_tab_gradient_c 50%,
+                      @notebook_tab_gradient_d);
 }
 
-.notebook tab.bottom:active {
-	padding-bottom: 7px;
-	border-bottom-color: @notebook_active_tab_border;
-	background-image: linear-gradient(to top,
-	                  @notebook_active_tab_strip_gradient_a,
-	                  @notebook_active_tab_strip_gradient_b 3px,
-	                  @notebook_active_tab_strip_border_bottom_color 4px,
-	                  @notebook_active_tab_gradient_a 4px,
-	                  @notebook_active_tab_gradient_b);
+notebook header.right tab {
+    padding: 2px 7px 2px 0;
+    border-width: 1px 0px 1px 1px;
+    border-radius: 0px 3px 3px 0px;;
+    background-image: linear-gradient(to left,
+                      @notebook_tab_gradient_a,
+                      @notebook_tab_gradient_b 50%,
+                      @notebook_tab_gradient_c 50%,
+                      @notebook_tab_gradient_d);
 }
 
-.notebook tab.left:active {
-	padding-left: 7px;
-	border-left-color: @notebook_active_tab_border;
-	background-image: linear-gradient(to right,
-	                  @notebook_active_tab_strip_gradient_a,
-	                  @notebook_active_tab_strip_gradient_b 3px,
-	                  @notebook_active_tab_strip_border_bottom_color 4px,
-	                  @notebook_active_tab_gradient_a 4px,
-	                  @notebook_active_tab_gradient_b);
+notebook header.bottom tab {
+    padding: 0px 2px 7px 2px;
+    border-width: 1px 1px 0px 1px;
+    border-radius: 0px 0px 3px 3px;;
+    background-image: linear-gradient(to top,
+                      @notebook_tab_gradient_a,
+                      @notebook_tab_gradient_b 50%,
+                      @notebook_tab_gradient_c 50%,
+                      @notebook_tab_gradient_d);
+}
+
+notebook header.left tab {
+    padding: 2px 0 2px 7px;
+    border-width: 1px 1px 1px 0px;
+    border-radius: 3px 0px 0px 3px;;
+    background-image: linear-gradient(to right,
+                      @notebook_tab_gradient_a,
+                      @notebook_tab_gradient_b 50%,
+                      @notebook_tab_gradient_c 50%,
+                      @notebook_tab_gradient_d);
+}
+
+notebook header.top tab:active {
+    border-width: 0px 1px 0px 1px;
+    border-top-color: @notebook_active_tab_border;
+    background-image: linear-gradient(to bottom,
+                      @notebook_active_tab_strip_gradient_a,
+                      @notebook_active_tab_strip_gradient_b 3px,
+                      @notebook_active_tab_strip_border_bottom_color 4px,
+                      @notebook_active_tab_gradient_a 4px,
+                      @notebook_active_tab_gradient_b);
+}
+
+notebook header.right tab:active {
+    border-width: 1px 0px 1px 0px;
+    border-right-color: @notebook_active_tab_border;
+    background-image: linear-gradient(to left,
+                      @notebook_active_tab_strip_gradient_a,
+                      @notebook_active_tab_strip_gradient_b 3px,
+                      @notebook_active_tab_strip_border_bottom_color 4px,
+                      @notebook_active_tab_gradient_a 4px,
+                      @notebook_active_tab_gradient_b);
+}
+
+notebook header.bottom tab:active {
+    border-width: 0px 1px 0px 1px;
+    border-bottom-color: @notebook_active_tab_border;
+    background-image: linear-gradient(to top,
+                      @notebook_active_tab_strip_gradient_a,
+                      @notebook_active_tab_strip_gradient_b 3px,
+                      @notebook_active_tab_strip_border_bottom_color 4px,
+                      @notebook_active_tab_gradient_a 4px,
+                      @notebook_active_tab_gradient_b);
+}
+
+notebook header.left tab:active {
+    border-width: 1px 0px 1px 0px;
+    border-left-color: @notebook_active_tab_border;
+    background-image: linear-gradient(to right,
+                      @notebook_active_tab_strip_gradient_a,
+                      @notebook_active_tab_strip_gradient_b 3px,
+                      @notebook_active_tab_strip_border_bottom_color 4px,
+                      @notebook_active_tab_gradient_a 4px,
+                      @notebook_active_tab_gradient_b);
 }
 
 .notebook tab * {
-	background-color: transparent;
-}
-
-.notebook tab * {
-	background-color: transparent;
+    background-color: transparent;
 }
 
 /* close button styling */
-.notebook tab button,
-.notebook tab button:active,
-.notebook tab button:hover {
-	border-image: none;
-	border-style: none;
-	background-image: none;
-	background-color: transparent;
+paned.horizontal notebook button.flat,
+notebook button.flat.small-button {
+    border-image: none;
+    border-radius: 3px;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 1px;
+    background-image: none;
+    background-color: transparent;
+    color: mix(@theme_fg_color, @theme_base_color, 0.6);
+    padding: 0;
 }
 
-.notebook tab button GtkImage {
-	border-radius: 3px;
-	color: mix(@theme_fg_color, @theme_base_color, 0.6);
-	border-style: solid;
-	border-color: transparent;
-	border-width: 1px;
-	padding: 0;
-}
-
-.notebook tab button GtkImage:hover {
-	color: @theme_fg_color;
-	border-color: alpha(black, 0.1);
-}
-
-.notebook tab button GtkImage:active,
-.notebook tab button GtkImage:active:hover {
-	background-color: alpha(black, 0.08);
-	color:  @theme_base_color;
-	border-color: alpha(black, 0.27)
-	              alpha(black, 0.13)
-	              alpha(black, 0.13)
-	              alpha(black, 0.13);
+paned.horizontal notebook button.flat:hover,
+notebook button.flat.small-button:hover{
+    color: @theme_fg_color;
+    border-color: alpha(black, 0.1);
 }
 
 /**************
