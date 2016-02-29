@@ -829,77 +829,328 @@ button .separator {
 	color: shade(@internal_element_color, 1.30);
 }
 
+/* linked buttons and entries */
+
+/* Middle button */
+.linked entry,
+.linked > combobox > button.combo,
+.linked > combobox > button.combo:hover,
+.linked > combobox > button.combo:focus,
+.linked > combobox > button.combo:focus:hover,
+.linked > combobox > button.combo:checked,
+.linked > combobox > button.combo:disabled,
+.linked button,
+.linked button:hover,
+.linked button:focus,
+.linked button:focus:hover,
+.linked button:focus:hover:active,
+.linked button:checked,
+.linked button:checked:hover,
+.linked button:checked:hover:active,
+.linked button:disabled {
+    border-image: none;
+    border-radius: 0;
+    border-color: @border_color;
+    border-width: 1px;
+    padding: 4px 2px;
+}
+
+/* Leftmost button */
+.linked entry:first-child,
+.linked > combobox:first-child > button.combo:first-child,
+.linked > combobox:first-child > button.combo:hover:first-child,
+.linked > combobox:first-child > button.combo:focus:first-child,
+.linked > combobox:first-child > button.combo:focus:hover:first-child,
+.linked > combobox:first-child > button.combo:checked:first-child,
+.linked > combobox:first-child > button.combo:disabled:first-child,
+.linked button:first-child,
+.linked button:hover:first-child,
+.linked button:focus:first-child,
+.linked button:focus:hover:first-child,
+.linked button:focus:hover:active:first-child,
+.linked button:checked:first-child,
+.linked button:checked:hover:first-child,
+.linked button:checked:hover:active:first-child,
+.linked button:disabled:first-child {
+    border-image: none;
+    border-radius: 3px 0 0 3px;
+    border-color: @border_color;
+    border-width: 1px 0px 1px 1px;
+    padding: 4px 2px;
+}
+
+.linked entry:first-child {
+    padding: 6px;
+    border-width: 1px;
+}
+
+/* Rightmost button */
+.linked entry:last-child,
+.linked > combobox:last-child > button.combo:last-child,
+.linked > combobox:last-child > button.combo:hover:last-child,
+.linked > combobox:last-child > button.combo:focus:last-child,
+.linked > combobox:last-child > button.combo:focus:hover:last-child,
+.linked > combobox:last-child > button.combo:checked:last-child,
+.linked > combobox:last-child > button.combo:disabled:last-child,
+.linked button:last-child,
+.linked button:hover:last-child,
+.linked button:focus:last-child,
+.linked button:focus:hover:last-child,
+.linked button:focus:hover:active:last-child,
+.linked button:checked:last-child,
+.linked button:checked:hover:last-child,
+.linked button:checked:hover:active:last-child,
+.linked button:disabled:last-child {
+    border-image: none;
+    border-radius: 0 3px 3px 0;
+    border-color: @border_color;
+    border-width: 1px 1px 1px 0px;
+    padding: 4px 2px;
+}
+
+.linked entry:last-child {
+    padding: 6px;
+}
+
+/* vertical */
+
+/* Middle button */
+.linked.vertical > combobox > button.combo,
+.linked.vertical > combobox > button.combo:hover,
+.linked.vertical > combobox > button.combo:focus,
+.linked.vertical > combobox > button.combo:focus:hover,
+.linked.vertical > combobox > button.combo:checked,
+.linked.vertical > combobox > button.combo:disabled,
+.linked.vertical button.image-button,
+.linked.vertical button.image-button:hover,
+.linked.vertical button.image-button:focus,
+.linked.vertical button.image-button:focus:hover,
+.linked.vertical button.image-button:focus:hover:active,
+.linked.vertical button.image-button:checked,
+.linked.vertical button.image-button:checked:hover,
+.linked.vertical button.image-button:checked:hover:active,
+.linked.vertical button.image-button:disabled {
+    border-image: none;
+    border-radius: 0;
+    border-color: @border_color;
+    border-width: 0px 1px 0px 1px;
+    padding: 5px 5px;
+}
+
+/* top button */
+.linked.vertical > combobox:first-child > button.combo:first-child,
+.linked.vertical > combobox:first-child > button.combo:hover:first-child,
+.linked.vertical > combobox:first-child > button.combo:focus:first-child,
+.linked.vertical > combobox:first-child > button.combo:focus:hover:first-child,
+.linked.vertical > combobox:first-child > button.combo:checked:first-child,
+.linked.vertical > combobox:first-child > button.combo:disabled:first-child {
+    border-image: none;
+    border-radius: 3px 3px 0px 0px;
+    border-color: @border_color;
+    border-width: 1px 1px 1px 1px;
+    padding: 5px 5px;
+}
+
+.linked.vertical button.image-button:first-child,
+.linked.vertical button.image-button:hover:first-child,
+.linked.vertical button.image-button:focus:first-child,
+.linked.vertical button.image-button:focus:hover:first-child,
+.linked.vertical button.image-button:focus:hover:active:first-child,
+.linked.vertical button.image-button:checked:first-child,
+.linked.vertical button.image-button:checked:hover:first-child,
+.linked.vertical button.image-button:checked:hover:active:first-child,
+.linked.vertical button.image-button:disabled:first-child {
+    border-image: none;
+    border-radius: 3px 3px 0px 0px;
+    border-color: @border_color;
+    border-width: 1px 1px 0px 1px;
+    padding: 5px 5px;
+}
+
+/* bottom button */
+.linked.vertical > combobox:last-child > button.combo:last-child,
+.linked.vertical > combobox:last-child > button.combo:hover:last-child,
+.linked.vertical > combobox:last-child > button.combo:focus:last-child,
+.linked.vertical > combobox:last-child > button:focus:hover:last-child,
+.linked.vertical > combobox:last-child > button.combo:checked:last-child,
+.linked.vertical > combobox:last-child > button.combo:disabled:last-child,
+.linked.vertical button:last-child,
+.linked.vertical button:hover:last-child,
+.linked.vertical button:focus:last-child,
+.linked.vertical button:focus:hover:last-child,
+.linked.vertical button:focus:hover:active:last-child,
+.linked.vertical button:checked:last-child,
+.linked.vertical button:checked:hover:last-child,
+.linked.vertical button:checked:hover:active:last-child,
+.linked.vertical button:disabled:last-child {
+    border-image: none;
+    border-radius: 0px 0px 3px 3px;
+    border-color: @border_color;
+    border-width: 0px 1px 1px 1px;
+    padding: 5px 5px;
+}
+
+/* Dialog Action Area */
+
+/* Middle button */
+.dialog-action-area.linked button,
+.dialog-action-area.linked button:hover,
+.dialog-action-area.linked button:focus,
+.dialog-action-area.linked button:focus:hover,
+.dialog-action-area.linked button:focus:hover:active,
+.dialog-action-area.linked button:checked,
+.dialog-action-area.linked button:checked:hover,
+.dialog-action-area.linked button:checked:hover:active,
+.dialog-action-area.linked button:disabled {
+    padding: 4px 6px;
+    border-width: 1px 1px 1px 0px;
+}
+
+/* Leftmost button */
+.dialog-action-area.linked button:first-child,
+.dialog-action-area.linked button:hover:first-child,
+.dialog-action-area.linked button:focus:first-child,
+.dialog-action-area.linked button:focus:hover:first-child,
+.dialog-action-area.linked button:focus:hover:active:first-child,
+.dialog-action-area.linked button:checked:first-child,
+.dialog-action-area.linked button:checked:hover:first-child,
+.dialog-action-area.linked button:checked:hover:active:first-child,
+.dialog-action-area.linked button:disabled:first-child {
+    padding: 4px 6px;
+    border-width: 1px 1px 1px 1px;
+}
+
+/* Rightmost button */
+.dialog-action-area.linked button:last-child,
+.dialog-action-area.linked button:hover:last-child,
+.dialog-action-area.linked button:focus:last-child,
+.dialog-action-area.linked button:focus:hover:last-child,
+.dialog-action-area.linked button:focus:hover:active:last-child,
+.dialog-action-area.linked button:checked:last-child,
+.dialog-action-area.linked button:checked:hover:last-child,
+.dialog-action-area.linked button:checked:hover:active:last-child,
+.dialog-action-area.linked button:disabled:last-child {
+    padding: 4px 6px;
+    border-width: 1px 1px 1px 0px;
+}
+
 /*****************
  * GtkSpinButton *
  *****************/
 
-spinbutton button,
-spinbutton button:focus {
-	color: @internal_element_color;
-	padding: 2px 6px;
-	border-width: 0 0 0 1px;
-	border-radius: 0;
-	border-style: solid;
-	border-color: @spinbutton_border_color;
-	border-image: none;
+spinbutton,
+spinbutton:focus {
+    background-color: transparent;
+    padding: 0px;
+    border-width: 1px;
+    border-radius: 3px;
+    border-style: solid;
+    border-color: @spinbutton_border_color;
 }
 
-spinbutton button {
-	background-color: transparent;
+spinbutton.horizontal > entry,
+spinbutton.horizontal > entry:focus {
+    padding: 0px 10px 0px 3px;
+    box-shadow: none;
+    border-radius: 3px 0px 0px 3px;
+    border-style: none;
+    border-image: none;
 }
 
-spinbutton button:disabled {
-	color: @internal_element_insensitive_color;
+spinbutton > button,
+spinbutton > button:focus,
+spinbutton > button:focus:active {
+    background-color: transparent;
+    color: @internal_element_color;
+    padding: 2px 6px;
+    border-radius: 0;
+    border-width: 0 0 0 1px;
+    border-style: solid;
+    border-color: @spinbutton_border_color;
+    border-image: none;
 }
 
-spinbutton button:active,
-spinbutton button:active:focus,
-spinbutton button:hover {
-	color: @internal_element_hover_color;
+spinbutton > button:disabled {
+    color: @internal_element_insensitive_color;
+    border-color: @insensitive_border_color;
+    border-image: none;
+    border-radius: 0;
 }
 
-spinbutton button:first-child {
-	border-radius: 2px 0 0 2px;
+spinbutton > button:checked,
+spinbutton > button:focus:checked,
+spinbutton > button:hover {
+    color: @internal_element_hover_color;
 }
 
-spinbutton button:last-child {
-	border-radius: 0 2px 2px 0;
+spinbutton.horizontal > button {
+    border-width: 0 0 0 1px;
+}
+
+spinbutton.horizontal > button:last-child {
+	border-radius: 0 3px 3px 0;
 }
 
 /*vertical */
-
-.vertical.entry.spinbutton.entry {
+spinbutton.vertical > entry,
+spinbutton.vertical > entry:focus {
     border-image: none;
-    border-color: @border_color;
+    border-color: @spinbutton_border_color;
     border-radius: 0px;
-    border-width: 0px 1px 0px 1px;
-    background-image: none;
-    padding: 4px;
+    border-width: 1px 0px 1px 0px;
+    padding: 6px 2px;
 }
 
-.vertical.entry.spinbutton button,
-.vertical.entry.spinbutton button:hover,
-.vertical.entry.spinbutton button:focus,
-.vertical.entry.spinbutton button:active,
-.vertical.entry.spinbutton button:checked,
-.vertical.entry.spinbutton button:active:hover,
-.vertical.entry.spinbutton button:checked:hover,
-.vertical.entry.spinbutton button:disabled {
+spinbutton.vertical > button,
+spinbutton.vertical > button:focus,
+spinbutton.vertical > button:focus:active,
+spinbutton.vertical > button:last-child,
+spinbutton.vertical > button:focus:last-child,
+spinbutton.vertical > button:focus:active:last-child {
+    padding: 6px 2px;
+    border-width: 0px;
+}
+
+spinbutton.vertical > button,
+spinbutton.vertical > button:focus,
+spinbutton.vertical > button:focus:active {
     border-radius: 3px 3px 0px 0px;
-    border-width: 1px;
 }
 
-.vertical.entry.spinbutton button:last-child,
-.vertical.entry.spinbutton button:hover:last-child,
-.vertical.entry.spinbutton button:focus:last-child,
-.vertical.entry.spinbutton button:active:last-child,
-.vertical.entry.spinbutton button:checked:last-child,
-.vertical.entry.spinbutton button:active:hover:last-child,
-.vertical.entry.spinbutton button:checked:hover:last-child,
-.vertical.entry.spinbutton button:disabled:last-child {
-    border-width: 1px;
+spinbutton.vertical > button:last-child,
+spinbutton.vertical > button:focus:last-child,
+spinbutton.vertical > button:focus:active:last-child {
     border-radius: 0px 0px 3px 3px;
 }
+
+/* linked */
+.linked.vertical > spinbutton.horizontal {
+    padding: 0px;
+    border-radius: 0px ;
+    border-width: 0px 1px 1px 1px;
+}
+
+.linked.vertical > spinbutton.horizontal > entry,
+.linked.vertical > spinbutton.horizontal > entry:focus {
+    padding: 0px 10px 0px 3px;
+    border-radius: 0px ;
+    border-style: none;
+    border-image: none;
+    box-shadow: none;
+}
+
+.linked.vertical > spinbutton.horizontal > button,
+.linked.vertical > spinbutton.horizontal > button:focus,
+.linked.vertical > spinbutton.horizontal > button:hover,
+.linked.vertical > spinbutton.horizontal > button:focus:active,
+.linked.vertical > spinbutton.horizontal > button:focus:hover {
+    border-radius: 0px;
+    border-width: 0 0 0 1px;
+    border-image: none;
+    border-color: @spinbutton_border_color;
+    padding: 4px 6px;
+}
+
 
 /*********************
  * Button background *
@@ -931,7 +1182,7 @@ button:checked,
 button:checked:hover,
 button:active,
 button:active:hover,
-.menuitem.button:hover,
+menuitem button:hover,
 spinbutton button:active,
 spinbutton button:active:hover,
 toolbar button:active,
@@ -3018,7 +3269,6 @@ button.flat.link.text-button,
 button.flat.link.text-button:hover,
 button.flat.link.text-button:active,
 button.flat.link.text-button:active:hover {
-    transition: all 400ms ease-in;
     text-shadow: none;
 }
 
