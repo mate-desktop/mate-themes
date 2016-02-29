@@ -9,8 +9,8 @@ CajaWindow CajaPlacesSidebar .view,
 CajaWindow CajaHistorySidebar .view,
 CajaWindow CajaEmblemSidebar .frame,
 CajaWindow CajaInformationPanel .vertical {
-	background-color: shade (@theme_base_color, 1.00);
-	color: @theme_fg_color;
+    background-color: shade (@theme_base_color, 1.00);
+    color: @theme_fg_color;
 }
 
 /* moved eject button to left better for overlay scrollbars */
@@ -24,7 +24,7 @@ CajaWindow CajaNotesViewer .vertical.scrollbar.overlay-indicator,
 CajaWindow CajaPlacesSidebar .vertical.scrollbar.overlay-indicator,
 CajaWindow CajaEmblemSidebar .vertical.scrollbar.overlay-indicator,
 CajaWindow CajaHistorySidebar .vertical.scrollbar.overlay-indicator {
-	-GtkRange-slider-width: 13;
+    -GtkRange-slider-width: 13;
 }
 
 /* ComboBox views */
@@ -35,7 +35,7 @@ CajaWindow .primary-toolbar.toolbar.horizontal GtkComboBox .button {
 
 .caja-canvas-item,
 EelEditableLabel.entry {
-	border-radius: 3px;
+    border-radius: 3px;
 }
 
 EelEditableLabel.entry,
@@ -50,14 +50,14 @@ EelEditableLabel.entry:focus {
 
 /* desktop */
 CajaDesktopWindow.background .caja-canvas-item {
-	color: @theme_base_color;
-	text-shadow: 1px 1px alpha (@theme_fg_color, 0.8);
+    color: @theme_base_color;
+    text-shadow: 1px 1px alpha (@theme_fg_color, 0.8);
 }
 
 CajaDesktopWindow.background .caja-canvas-item:active,
 CajaDesktopWindow.background .caja-canvas-item:hover,
 CajaDesktopWindow.background .caja-canvas-item:selected {
-	text-shadow: none;
+    text-shadow: none;
 }
 
 /* view */
@@ -82,16 +82,16 @@ PanelAppletFrame,
 MatePanelAppletFrameDBus,
 MatePanelAppletContainer,
 MatePanelApplet {
-	background-image: -gtk-gradient (linear,
-	                  left top,
-	                  left bottom,
-	                  from (@menubar_gradient_a),
-	                  color-stop (0.50, @menubar_gradient_b),
-	                  to (@menubar_gradient_c));
-	background-color: @theme_bg_color;
-	padding: 0px;
-	color: @theme_fg_color;
-	text-shadow: none;
+    background-image: -gtk-gradient (linear,
+                      left top,
+                      left bottom,
+                      from (@menubar_gradient_a),
+                      color-stop (0.50, @menubar_gradient_b),
+                      to (@menubar_gradient_c));
+    background-color: @theme_bg_color;
+    padding: 0px;
+    color: @theme_fg_color;
+    text-shadow: none;
 }
 
 /* workaround to avoid unwanted black frames if switching compositor on/off */
@@ -101,186 +101,186 @@ MatePanelApplet {
 
 /* set selected menubar button */
 PanelMenuBar.menubar .menuitem:hover {
-	background-image: none;
-	background-color: shade(@theme_selected_bg_color, 1.1);
-	border-style: none;
-	border-image: none;
-	/* join menuitem to menu */
-	border-radius: 3px 3px 0px 0px;
-	border-width: 0px;
-	text-shadow: none;
-	padding: 3px 5px;
+    background-image: none;
+    background-color: shade(@theme_selected_bg_color, 1.1);
+    border-style: none;
+    border-image: none;
+    /* join menuitem to menu */
+    border-radius: 3px 3px 0px 0px;
+    border-width: 0px;
+    text-shadow: none;
+    padding: 3px 5px;
 }
 
 /* set menubar menuitem */
 PanelMenuBar.menubar .menu .menuitem {
-	background-image: none;
-	color: @theme_text_color;
-	border-style: solid;
-	border-width: 1px;
-	border-radius: 3px;
-	border-color: alpha(@theme_bg_color, 0.1);
-	padding: 6px 5px;
+    background-image: none;
+    color: @theme_text_color;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    border-color: alpha(@theme_bg_color, 0.1);
+    padding: 6px 5px;
 }
 
 /* set selected menubar menuitem */
 PanelMenuBar.menubar .menu .menuitem:checked:hover,
 PanelMenuBar.menubar .menu .menuitem:active:hover,
 PanelMenuBar.menubar .menu .menuitem:hover {
-	background-image: none;
-	color: @theme_text_color;
-	border-style: solid;
-	border-width: 1px;
-	border-radius: 3px;
-	border-color: alpha(@theme_selected_bg_color, 0.1);
-	padding: 6px 5px;
+    background-image: none;
+    color: @theme_text_color;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    border-color: alpha(@theme_selected_bg_color, 0.1);
+    padding: 6px 5px;
 }
 
 MatePanelApplet {
-	border-width: 0;
+    border-width: 0;
 }
 
 PanelSeparator {
-	border-width: 0;
-	background-image: none;
-	color: shade (@theme_bg_color, 0.75);
-	text-shadow: none;
+    border-width: 0;
+    background-image: none;
+    color: shade (@theme_bg_color, 0.75);
+    text-shadow: none;
 }
 
 /* desktop-applet, clockapplet, drivemount, character-map,
 dictionary */
 MatePanelApplet .button {
-	/* Due to a bug somewhere in gtk or cairo,
-	   a padding of zero (or even one) doesn't work always!!! */
-	padding: 0px;
-	border-radius: 3px;
-	border-width: 1px;
-	border-style: solid;
-	text-shadow: none;
-	color: @theme_fg_color;
-	background-image: -gtk-gradient (linear,
-	                  left top,
-	                  left bottom,
-	                  from (@button_gradient_a),
-	                  color-stop (0.50, @button_gradient_b),
-	                  color-stop (0.50, @button_gradient_c),
-	                  to (@button_gradient_d));
+    /* Due to a bug somewhere in gtk or cairo,
+       a padding of zero (or even one) doesn't work always!!! */
+    padding: 0px;
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: solid;
+    text-shadow: none;
+    color: @theme_fg_color;
+    background-image: -gtk-gradient (linear,
+                      left top,
+                      left bottom,
+                      from (@button_gradient_a),
+                      color-stop (0.50, @button_gradient_b),
+                      color-stop (0.50, @button_gradient_c),
+                      to (@button_gradient_d));
 }
 
 MatePanelApplet .button:checked:hover,
 MatePanelApplet .button:checked,
 MatePanelApplet .button:active:hover,
 MatePanelApplet .button:active {
-	border-style: solid;
-	background-image: linear-gradient(to bottom,
-	                  @button_active_gradient_a,
-	                  @button_active_gradient_b 3px,
-	                  @button_active_gradient_c 4px,
-	                  @button_active_gradient_d 50%,
-	                  @button_active_gradient_e 50%,
-	                  @button_active_gradient_f);
+    border-style: solid;
+    background-image: linear-gradient(to bottom,
+                      @button_active_gradient_a,
+                      @button_active_gradient_b 3px,
+                      @button_active_gradient_c 4px,
+                      @button_active_gradient_d 50%,
+                      @button_active_gradient_e 50%,
+                      @button_active_gradient_f);
 }
 
 MatePanelApplet .button:hover {
-	border-style: solid;
-	background-image: linear-gradient(to bottom,
-	                                  @button_gradient_color_b,
-	                                  @button_gradient_color_a);
+    border-style: solid;
+    background-image: linear-gradient(to bottom,
+                                      @button_gradient_color_b,
+                                      @button_gradient_color_a);
 }
 
 /*Wncklist */
 WnckTasklist .button {
-	padding: 0px;
-	border-radius: 3px;
-	border-width: 1px;
-	border-style: solid;
-	text-shadow: none;
-	color: @theme_fg_color;
-	background-color: transparent;
-	background-image: -gtk-gradient (linear,
-	                  left top,
-	                  left bottom,
-	                  from (@button_gradient_a),
-	                  color-stop (0.50, @button_gradient_b),
-	                  color-stop (0.50, @button_gradient_c),
-	                  to (@button_gradient_d));
+    padding: 0px;
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: solid;
+    text-shadow: none;
+    color: @theme_fg_color;
+    background-color: transparent;
+    background-image: -gtk-gradient (linear,
+                      left top,
+                      left bottom,
+                      from (@button_gradient_a),
+                      color-stop (0.50, @button_gradient_b),
+                      color-stop (0.50, @button_gradient_c),
+                      to (@button_gradient_d));
 }
 
 WnckTasklist .button:checked:hover,
 WnckTasklist .button:checked,
 WnckTasklist .button:active:hover,
 WnckTasklist .button:active {
-	padding: 0px;
-	border-style: solid;
-	background-color: transparent;
-	background-image: linear-gradient(to bottom,
-	                  @button_active_gradient_a,
-	                  @button_active_gradient_b 3px,
-	                  @button_active_gradient_c 4px,
-	                  @button_active_gradient_d 50%,
-	                  @button_active_gradient_e 50%,
-	                  @button_active_gradient_f);
+    padding: 0px;
+    border-style: solid;
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                      @button_active_gradient_a,
+                      @button_active_gradient_b 3px,
+                      @button_active_gradient_c 4px,
+                      @button_active_gradient_d 50%,
+                      @button_active_gradient_e 50%,
+                      @button_active_gradient_f);
 }
 
 WnckTasklist .button:hover {
-	padding: 0px;
-	border-style: solid;
-	background-color: transparent;
-	background-image: linear-gradient(to bottom,
-	                  @button_hover_gradient_c);
+    padding: 0px;
+    border-style: solid;
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                      @button_hover_gradient_c);
 }
 
 /* set selected button WnckSelector */
 .mate-panel-window-menu-menu-bar .menuitem:hover,
 MatePanelApplet > WnckSelector.menubar .menuitem:hover {
-	color: @theme_fg_color;
-	border-style: solid;
-	background-image: linear-gradient(to bottom,
-	                  @button_active_gradient_a,
-	                  @button_active_gradient_b 3px,
-	                  @button_active_gradient_c 4px,
-	                  @button_active_gradient_d 50%,
-	                  @button_active_gradient_e 50%,
-	                  @button_active_gradient_f);
+    color: @theme_fg_color;
+    border-style: solid;
+    background-image: linear-gradient(to bottom,
+                      @button_active_gradient_a,
+                      @button_active_gradient_b 3px,
+                      @button_active_gradient_c 4px,
+                      @button_active_gradient_d 50%,
+                      @button_active_gradient_e 50%,
+                      @button_active_gradient_f);
 }
 
 /* set WnckSelector selected menuitem */
 .mate-panel-window-menu-menu-bar .menu .menuitem:hover,
 MatePanelApplet > WnckSelector.menubar .menu .menuitem:hover {
-	background-image: none;
-	background-color: shade(@theme_selected_bg_color, 1.1);
-	color: @theme_text_color;
-	border-style: solid;
-	border-width: 1px;
-	border-radius: 3px;
-	border-image: url("assets/menu-border.svg") 2 / 2px stretch;
-	/*border-color: alpha(@theme_selected_bg_color, 0.1);*/
+    background-image: none;
+    background-color: shade(@theme_selected_bg_color, 1.1);
+    color: @theme_text_color;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    border-image: url("assets/menu-border.svg") 2 / 2px stretch;
+    /*border-color: alpha(@theme_selected_bg_color, 0.1);*/
 }
 
 ClockBox,
 .mate-panel-menu-bar.menubar,
 MatePanelApplet > GtkMenuBar.menubar {
-	font: normal;
+    font: normal;
 }
 
 WnckPager {
-	background-image: none;
-	border-color: transparent;
-	background-color: shade(@theme_bg_color, 0.9);
-	text-shadow: none;
+    background-image: none;
+    border-color: transparent;
+    background-color: shade(@theme_bg_color, 0.9);
+    text-shadow: none;
 }
 
 /* hover of WnckPager */
 WnckPager:hover {
-	background-image: linear-gradient(to bottom,
-		shade (@theme_selected_bg_color, 1.86),
-		shade (@theme_selected_bg_color, 1.0));
-	background-color: @theme_base_color;
+    background-image: linear-gradient(to bottom,
+        shade (@theme_selected_bg_color, 1.86),
+        shade (@theme_selected_bg_color, 1.0));
+    background-color: @theme_base_color;
 }
 
 /* Classic icon style */
 .mate-panel-menu-bar {
-	-PanelMenuBar-icon-visible: true;
+    -PanelMenuBar-icon-visible: true;
 }
 
 /* no background for icon-padding area */
@@ -289,12 +289,12 @@ GtkTrayIcon.background {
 }
 
 NaTrayApplet {
-	background-image: none;
-	background-color: transparent;
-	padding: 0;
-	text-shadow: none;
-	-NaTrayApplet-icon-padding: 3;
-	-NaTrayApplet-icon-size: 16;
+    background-image: none;
+    background-color: transparent;
+    padding: 0;
+    text-shadow: none;
+    -NaTrayApplet-icon-padding: 3;
+    -NaTrayApplet-icon-size: 16;
 }
 
 /* volume applet, brightness applet */
@@ -368,17 +368,17 @@ PlumaWindow .button.flat:hover {
 
 /* Printpreview */
 PlumaPrintPreview.vertical .toolbar.horizontal {
-	background-color: transparent;
-	background-image: linear-gradient(to bottom,
-	                  @toolbar_gradient_a 2px,
-	                  @toolbar_gradient_b 50%,
-	                  @toolbar_gradient_c 50%,
-	                  @toolbar_gradient_d);
-	border-width: 1px 0 1px 1px;
-	border-radius: 0;
-	border-style: solid;
-	border-top-color: @toolbar_border_top_color;
-	border-bottom-color: @toolbar_border_bottom_color;
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                      @toolbar_gradient_a 2px,
+                      @toolbar_gradient_b 50%,
+                      @toolbar_gradient_c 50%,
+                      @toolbar_gradient_d);
+    border-width: 1px 0 1px 1px;
+    border-radius: 0;
+    border-style: solid;
+    border-top-color: @toolbar_border_top_color;
+    border-bottom-color: @toolbar_border_bottom_color;
     padding: 0px;
 }
 
@@ -409,16 +409,16 @@ PlumaPanel.vertical .horizontal .horizontal GtkImage {
 }
 
 PlumaPanel.vertical .notebook {
-	border-width: 0px;
-	border-radius: 0px;
-	border-style: none;
+    border-width: 0px;
+    border-radius: 0px;
+    border-style: none;
 }
 
 PlumaPanel.vertical .notebook.header.frame {
-	border-width: 0px 1px 1px 0px;
-	border-color: @border_color;
-	border-radius: 0px;
-	border-style: solid;
+    border-width: 0px 1px 1px 0px;
+    border-color: @border_color;
+    border-radius: 0px;
+    border-style: solid;
 }
 
 PlumaFileBrowserWidget.vertical GtkExpander .vertical .entry {
@@ -426,17 +426,17 @@ PlumaFileBrowserWidget.vertical GtkExpander .vertical .entry {
 }
 
 PlumaFileBrowserWidget.vertical .toolbar.horizontal {
-	background-color: transparent;
-	background-image: linear-gradient(to bottom,
-	                  @toolbar_gradient_a 2px,
-	                  @toolbar_gradient_b 50%,
-	                  @toolbar_gradient_c 50%,
-	                  @toolbar_gradient_d);
-	border-width: 1px 1px 1px 1px;
-	border-radius: 1px;
-	border-style: solid;
-	border-top-color: @toolbar_border_top_color;
-	border-bottom-color: @toolbar_border_bottom_color;
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                      @toolbar_gradient_a 2px,
+                      @toolbar_gradient_b 50%,
+                      @toolbar_gradient_c 50%,
+                      @toolbar_gradient_d);
+    border-width: 1px 1px 1px 1px;
+    border-radius: 1px;
+    border-style: solid;
+    border-top-color: @toolbar_border_top_color;
+    border-bottom-color: @toolbar_border_bottom_color;
     padding: 5px;
 }
 
