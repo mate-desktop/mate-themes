@@ -1556,6 +1556,13 @@ combobox button *:hover {
     color: @theme_text_color;
 }
 
+combobox arrow {
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+    color: @theme_fg_color;
+    min-height: 16px;
+    min-width: 16px;
+}
+
 /**************
  * Scrollbars *
  **************/
