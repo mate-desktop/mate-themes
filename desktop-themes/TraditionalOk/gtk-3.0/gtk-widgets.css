@@ -1622,19 +1622,19 @@ scrollbar {
     -GtkRange-trough-under-steppers: 0;
 }
 
-scrollbars-junction {
+scrolledwindow junction {
     background-image: none;
     background-color: @scrollbars_junction_bg_color;
 }
 
-scrollbars-junction,
-.scrollbar.trough {
+scrollbar trough {
+    background-image: none;
     border-color: @scrollbar_trough_border_color;
     border-radius: 0;
     border-image: none;
 }
 
-scrollbar trough.horizontal {
+scrollbar.horizontal trough {
     border-width: 1px 0px;
     background-image: -gtk-gradient (linear,
                       left top,
@@ -1643,8 +1643,19 @@ scrollbar trough.horizontal {
                       color-stop (0.5, @scrollbar_trough_gradient_b));
 }
 
-scrollbar trough.vertical {
-    border-width: 0px 1px;
+scrollbar.horizontal.top trough {
+    border-width: 0px 0px 1px 0px;
+}
+
+scrollbar.horizontal.bottom trough {
+    border-width: 1px 0px 0px 0px;
+}
+
+scrollbar.vertical.right trough {
+    border-width: 0px 1px 0px 0px;
+}
+
+scrollbar.vertical trough {
     background-image: -gtk-gradient (linear,
                       left top,
                       right top,
@@ -1652,29 +1663,51 @@ scrollbar trough.vertical {
                       color-stop (0.5, @scrollbar_trough_gradient_b));
 }
 
+scrollbar.vertical.left trough {
+    border-width: 0px 0px 0px 1px;
+}
+
+scrollbar.vertical.right trough {
+    border-width: 0px 1px 0px 0px;
+}
+
 scrollbar button {
     border-width: 1px;
     border-image: none;
     border-color: @scrollbar_button_border_color;
+    border-radius: 0px;
     background-image: none;
     background-color: transparent;
     color: @scrollbar_button_color;
 }
 
-scrollbar button.top {
-    border-radius: 3px 3px 0px 0px;
+scrollbar button:disabled {
+    color: @scrollbar_button_insensitive_color;
+    border-color: @scrollbar_button_border_color;
+    border-radius: 0px;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
 }
 
-scrollbar button.bottom {
-    border-radius: 0px 0px 3px 3px;
+scrollbar.vertical button:first-child,
+scrollbar.vertical button:disabled:first-child {
+    border-width: 0px 0px 1px 1px;
 }
 
-scrollbar button.left {
-    border-radius: 3px 0px 0px 3px;
+scrollbar.vertical button:last-child,
+scrollbar.vertical button:disabled:last-child {
+    border-width: 1px 0px 0px 1px;
 }
 
-scrollbar button.right {
-    border-radius: 0px 3px 3px 0px;
+scrollbar.horizontal button:first-child,
+scrollbar.horizontal button:disabled:first-child {
+    border-width: 1px 1px 0px 0px;
+}
+
+scrollbar.horizontal button:last-child,
+scrollbar.horizontal button:disabled:last-child {
+    border-width: 1px 0px 0px 1px;
 }
 
 scrollbar.horizontal button {
@@ -1682,52 +1715,42 @@ scrollbar.horizontal button {
                       left top,
                       left bottom,
                       from (@scrollbar_button_gradient_a),
-                      color-stop (0.50, @scrollbar_button_gradient_b),
-                      color-stop (0.50, @scrollbar_button_gradient_c),
-                      to (@scrollbar_button_gradient_d));
-}
-
-scrollbar.vertical button {
-    background-image: -gtk-gradient (linear,
-                      left top,
-                      right top,
-                      from (@scrollbar_button_gradient_a),
-                      color-stop (0.50, @scrollbar_button_gradient_b),
-                      color-stop (0.50, @scrollbar_button_gradient_c),
                       to (@scrollbar_button_gradient_d));
 }
 
 scrollbar.horizontal button:hover {
     background-image: -gtk-gradient (linear,
+                      left bottom,
+                      left top,
+                      from (@scrollbar_button_hover_gradient_a),
+                      to (@scrollbar_button_hover_gradient_d));
+}
+
+scrollbar.horizontal button:hover:active {
+    background-image: -gtk-gradient (linear,
                       left top,
                       left bottom,
-                      from (@scrollbar_button_hover_gradient_a),
-                      color-stop (0.50, @scrollbar_button_hover_gradient_b),
-                      color-stop (0.50, @scrollbar_button_hover_gradient_c),
-                      to (@scrollbar_button_hover_gradient_d));
+                      from (@scrollbar_button_active_gradient_a),
+                      to (@scrollbar_button_active_gradient_d));
+}
+
+scrollbar.vertical button {
+    background-image: -gtk-gradient (linear,
+                      left top,
+                      left bottom,
+                      from (@scrollbar_button_gradient_a),
+                      to (@scrollbar_button_gradient_d));
 }
 
 scrollbar.vertical button:hover {
     background-image: -gtk-gradient (linear,
                       left top,
-                      right top,
-                      from (@scrollbar_button_hover_gradient_a),
-                      color-stop (0.50, @scrollbar_button_hover_gradient_b),
-                      color-stop (0.50, @scrollbar_button_hover_gradient_c),
-                      to (@scrollbar_button_hover_gradient_d));
-}
-
-scrollbar.horizontal button:active {
-    background-image: -gtk-gradient (linear,
-                      left top,
                       left bottom,
-                      from (@scrollbar_button_active_gradient_a),
-                      color-stop (0.50, @scrollbar_button_active_gradient_b),
-                      color-stop (0.50, @scrollbar_button_active_gradient_c),
-                      to (@scrollbar_button_active_gradient_d));
+                      from (@scrollbar_button_hover_gradient_d),
+                      to (@scrollbar_button_hover_gradient_a));
 }
 
-scrollbar.vertical button:active {
+scrollbar.vertical button:hover:active {
     background-image: -gtk-gradient (linear,
                       left top,
                       right top,
@@ -1735,10 +1758,6 @@ scrollbar.vertical button:active {
                       color-stop (0.50, @scrollbar_button_active_gradient_b),
                       color-stop (0.50, @scrollbar_button_active_gradient_c),
                       to (@scrollbar_button_active_gradient_d));
-}
-
-scrollbar button:disabled {
-    color: @scrollbar_button_insensitive_color;
 }
 
 scrollbar slider {
