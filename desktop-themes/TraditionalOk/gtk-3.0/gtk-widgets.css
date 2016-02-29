@@ -1834,7 +1834,9 @@ menubar {
 }
 
 menubar menuitem {
-    border-style: none;
+    border-style: solid;
+    border-width: 1px 1px 0px;
+    border-color: transparent;
     padding: 3px 5px;
     background-color: transparent;
 }
@@ -1867,7 +1869,7 @@ menuitem button.flat:focus {
 }
 
 menubar menuitem:hover {
-    border-width: 1px;
+    border-width: 1px 1px 0px;
     color: @menubar_menuitem_hover_color;
 }
 
