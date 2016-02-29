@@ -2817,28 +2817,59 @@ row:hover:focus,
     color: @theme_selected_fg_color;
 }
 
+/* expander */
 expander {
     border-style: solid;
     border-width: 1px;
     border-radius: 2px;
-    border-color: shade (@internal_element_color, 1.40);
-    color: @theme_base_color;
-    background-color: @theme_base_color;
+    border-color: @border_color;
+    color: @theme_fg_color;
+    background-color: @theme_bg_color;
 }
 
-expander:active {
-    border-style: solid;
-    border-width: 1px;
-    border-color: shade (@internal_element_color, 1.40);
-    background-color: @theme_base_color;
+treeview.view.expander {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+    color: @theme_fg_color;
 }
 
-expander:hover {
-    border-style: solid;
-    border-width: 1px;
+treeview.view.expander:dir(rtl) {
+     -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
+}
+
+treeview.view.expander:checked {
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+ }
+
+treeview.view.expander:hover {
+    color: @theme_selected_bg_color;
+}
+
+treeview.view.expander:selected,
+treeview.view.expander:selected:hover {
+    color: @theme_selected_fg_color;
+}
+
+expander arrow {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+
+expander arrow:dir(rtl) {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
+}
+
+expander arrow:hover {
     color: @internal_element_color;
-    border-color: shade (@internal_element_color, 1.40);
-    background-color: shade (@theme_bg_color, 1.02);
+}
+
+expander arrow:checked {
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
+/* why this weird padding, possible issue with gtk+-3.18 ? */
+expander arrow {
+    min-width: 16px;
+    min-height: 16px;
+    padding: 0px 4px 0px 0px;
 }
 
 expander row {
@@ -2852,6 +2883,16 @@ expander row:selected:focus {
     border-color: @expander_row_selected_border_color;
     color: @expander_row_selected_color;
     background-color: @theme_selected_bg_color;
+}
+
+expander scrolledwindow.frame {
+    border-radius: 0px;
+    border-width: 1px 0px;
+}
+
+expander toolbar.inline-toolbar {
+    border-width: 0px;
+    border-style: none;
 }
 
 /* Calendars */
