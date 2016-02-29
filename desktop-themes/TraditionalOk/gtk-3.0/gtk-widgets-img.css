@@ -622,26 +622,3 @@ switch:active {
     border-color: transparent;
 }
 
-/* column-headers borders */
-treeview header button,
-treeview header button:focus,
-treeview header button:active,
-treeview header button:active:hover,
-treeview header button:active:focus {
-    border-image: none;
-    border-width: 1px;
-    border-radius: 0;
-    border-style: solid;
-    border-color: @column_header_border_top_color @column_header_border_right_color
-                  @column_header_border_bottom_color @column_header_border_left_color;
-
-}
-
-treeview header button:last-child,
-treeview header button:last-child:focus,
-treeview header button:last-child:active,
-treeview header button:last-child:active:hover,
-treeview header button:last-child:active:focus{
-    border-right: none;
-}
-
