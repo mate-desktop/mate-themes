@@ -2826,7 +2826,7 @@ expander {
     border-radius: 2px;
     border-color: @border_color;
     color: @theme_fg_color;
-    background-color: @theme_bg_color;
+    background-color: shade(@theme_bg_color, 1.02);
 }
 
 treeview.view.expander {
