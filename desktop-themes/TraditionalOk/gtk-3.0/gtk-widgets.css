@@ -539,18 +539,56 @@ GtkColorEditor colorswatch.color-dark:hover {
  ****************/
 
 progressbar {
-    min-height: 16px;
-    min-width: 16px;
     border-radius: 3px;
-    padding: 0 0 1px 0;
+    padding: 0;
+}
+
+progressbar.horizontal {
+    min-height: 16px;
+}
+
+progressbar.vertical {
+    min-width: 16px;
 }
 
 /* progress component */
-progressbar,
-progressbar row,
-progressbar row:hover,
-progressbar row:selected,
-progressbar row:selected:focus {
+progressbar.horizontal trough,
+progressbar.horizontal progress {
+    min-height: 16px;
+    border-radius: 3px;
+}
+
+progressbar.vertical trough,
+progressbar.vertical progress {
+    min-width: 16px;
+    border-radius: 3px;
+}
+
+progressbar progress.left {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+progressbar progress.right {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+progressbar progress.top {
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+progressbar progress.bottom {
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+progressbar.horizontal progress,
+row progressbar progress,
+row:hover progressbar progress,
+row:selected progressbar progress,
+row:selected:focus progressbar progress {
     background-color: @progressbar_bg_color;
     background-image: linear-gradient(to bottom,
                           alpha (@progressbar_gradient_a, 0.7),
@@ -568,12 +606,12 @@ progressbar row:selected:focus {
     border-color: @progressbar_border_color;
 }
 
-progressbar row:selected,
-progressbar row:selected:focus {
+row:selected progressbar trough,
+row:selected:focus progressbar trough {
     border-color: shade(@progressbar_border_color, 0.85);
 }
 
-progressbar.vertical {
+progressbar.vertical progress {
     background-image: linear-gradient(to right,
                           alpha (@progressbar_gradient_a, 0.7),
                           alpha (@progressbar_gradient_b, 0.7) 50%,
@@ -584,6 +622,10 @@ progressbar.vertical {
                           alpha (@progressbar_pattern_color, 0.0) 12px,
                           alpha (@progressbar_pattern_color, 0.5) 12px,
                           alpha (@progressbar_pattern_color, 0.5) 24px);
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: @progressbar_border_color;
 }
 
 /* for progressbars in cell renderers */
@@ -591,8 +633,8 @@ row trough {
     padding: 0;
 }
 
-row trough:selected,
-row trough:selected:focus {
+row:selected progressbar trough,
+row:selected:focus progressbar trough {
     background-image: -gtk-gradient (linear,
                       left top, left bottom,
                       from (mix (@trough_gradient_a, @theme_selected_bg_color, 0.25)),
