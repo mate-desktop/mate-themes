@@ -949,7 +949,8 @@ notebook scale.horizontal trough {
                                       @less_dark_color);
 	border-width: 0px;
 	border-radius: 2px;
-	margin: 8px 0;
+	margin-left: 8px;
+	margin-right: 8px;
 }
 
 notebook scale.vertical trough {
@@ -960,10 +961,12 @@ notebook scale.vertical trough {
 	                                  shade(@less_dark_color, 1.7)65%,
                                       @less_dark_color 65%,
                                       @less_dark_color);
-	margin: 0 8px;
+	border-width: 0px;
+	margin-top: 8px;
+	margin-bottom: 8px;
 }
 
-notebook scale.horizontal trough {
+notebook.horizontal scale trough:disabled {
 	background-image: linear-gradient(to bottom,
                                       @less_dark_color,
                                       @less_dark_color 35%,
@@ -971,10 +974,10 @@ notebook scale.horizontal trough {
 	                                  shade(@less_dark_color, 1.4)65%,
                                       @less_dark_color 65%,
                                       @less_dark_color);
-	border-width: 0px;
+
 }
 
-notebook scale trough.vertical:disabled {
+notebook.vertical scale trough:disabled {
 		background-image: linear-gradient(to right,
                                       @less_dark_color,
                                       @less_dark_color 35%,
@@ -984,7 +987,7 @@ notebook scale trough.vertical:disabled {
                                       @less_dark_color);
 }
 
-notebook progressbar.trough {
+notebook progressbar trough {
 	background-image: linear-gradient(to bottom,
 	                                  shade(@less_dark_color, 0.4),
 	                                  @less_dark_color 50%,
@@ -1296,12 +1299,12 @@ scale.vertical mark indicator {
 scale highlight,
 scale:hover highlight{
 	background-image: linear-gradient(to bottom,
-                                      @theme_bg_color,
-                                      @theme_bg_color 35%,
+                                      transparent,
+                                      transparent 35%,
 	                                  @link_color 35%,
 	                                  @link_color 65%,
-                                      @theme_bg_color 65%,
-                                      @theme_bg_color);
+                                      transparent 65%,
+                                      transparent);
 	border-color: @progressbar_border;
 	background-color: transparent;
 }
@@ -1309,12 +1312,12 @@ scale:hover highlight{
 scale.vertical highlight,
 scale.vertical:hover highlight{
 	background-image: linear-gradient(to right,
-                                      @theme_bg_color,
-                                      @theme_bg_color 35%,
+                                      transparent,
+                                      transparent 35%,
 	                                  @link_color 35%,
 	                                  @link_color 65%,
-                                      @theme_bg_color 65%,
-                                      @theme_bg_color);
+                                      transparent 65%,
+                                      transparent);
 	border-color: @progressbar_border;
 	background-color: transparent;
 }
