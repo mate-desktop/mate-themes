@@ -3024,36 +3024,44 @@ EShellWindow:disabled { /* removes the "flash" when quitting */
 /*****************
  * Color Chooser *
  *****************/
-colorswatch,
-colorswatch:selected {
+
+colorswatch{
+	background-image: none;
+	background-color: transparent;
+	border-style: solid;
+	border-color:transparent;
+	border-width: 2px;
+}
+
+colorswatch overlay,
+colorswatch overlay:hover,
+colorswatch overlay:selected{
 	background-image: none;
 	background-color: transparent;
 }
 
-colorswatch.color-dark:hover {
+colorswatch.dark:hover {
 	background-image: linear-gradient(to bottom,
 	                                  alpha(white, 0) 40%,
 	                                  alpha(white, 0.3));
 }
 
-colorswatch.color-light:hover {
+colorswatch.light:hover {
 	background-image: linear-gradient(to top,
 	                                  alpha(black, 0) 40%,
 	                                  alpha(black, 0.1));
 }
 
 colorswatch:selected {
-	border-style: solid;
 	border-color: alpha(black, 0.2);
-	border-width: 1px;
 }
 
 colorswatch:selected:hover {
 	border-color: alpha(black, 0.5);
 }
 
-colorswatch.color-light:selected:hover,
-colorswatch.color-dark:selected:hover {
+colorswatch.light:selected:hover,
+colorswatch.dark:selected:hover {
 	background-image: none;
 }
 
