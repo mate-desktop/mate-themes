@@ -486,7 +486,7 @@ progressbar {
 	/*border-color: @progressbar_border;*/
 }
 
-progressbar progress{   /*must define borders FIRST to stop drawing failures in Synaptic*/
+progressbar progress{   
 	min-height: 19px;
 	border-width: 1px; 
 	border-style:solid;
@@ -607,64 +607,103 @@ scrolledwindow viewport.frame {
 	border-style: none;
 }
 
-/***************
- * levelbar *
- ***************/
+/* level bars as used for password quality or remaining power */
 levelbar {
-	-levelbar-min-block-width: 34;
-	-levelbar-min-block-height: 3;
-
-	background-color: transparent;
+    min-width: 34px;
+    min-height: 3px;
 }
 
 levelbar.vertical {
-	-levelbar-min-block-width: 3;
-	-levelbar-min-block-height: 34;
+    min-width: 3px;
+    min-height: 34px;
 }
 
-level-bar.trough {
-	padding: 2px;
-}
-
-level-bar.fill-block {
-	border-width: 1px;
-	border-style: solid;
-	border-color: @progressbar_border;
-	background-image: linear-gradient(to bottom,
-	                                  shade(@link_color, 1.2),
-	                                  shade(@link_color, 0.6));
-}
-
-level-bar.indicator-continuous.fill-block {
+levelbar trough {
 	padding: 2px;
 	border-radius: 2px;
-}
-
-level-bar.indicator-discrete.fill-block.horizontal {
-	margin: 0 1px;
-}
-
-level-bar.indicator-discrete.fill-block.vertical {
-	margin: 1px 0;
-}
-
-level-bar.fill-block.level-high {
 	background-image: linear-gradient(to bottom,
-	                                  shade(@link_color, 1.2),
-	                                  shade(@link_color, 0.7));
-}
-
-level-bar.fill-block.level-low {
-	background-image: linear-gradient(to bottom,
-	                                  shade(@warning_bg_color, 1.2),
-	                                  shade(@warning_bg_color, 0.7));
-}
-
-level-bar.fill-block.empty-fill-block {
+		@trough_bg_color_a,
+		@trough_bg_color_b);
 	background-color: transparent;
+    box-shadow: inset  1px  1px alpha(#000, 0.15),
+                inset -1px -1px alpha(#000, 0.15);
+}
+
+levelbar block.filled {
+    border-width: 2px;
+    border-style: solid;
+    border-color: @button_border_active;
+    background-image: -gtk-gradient (linear,
+                                     0.45 top, 0.55 bottom,
+                                     from (shade (@button_bg_active, 1.30)),
+                                     color-stop (0.40, shade (@button_bg_active, 1.04)),
+                                     color-stop (0.60, shade (@button_bg_active, 0.92)),
+                                     to (shade (@button_bg_active, 1.20)));
+}
+
+levelbar.continuous block.filled {
+    padding: 1px;
+    border-radius: 2px;
+}
+
+levelbar.discrete.horizontal block.filled {
+    margin: 0 1px;
+}
+
+levelbar.discrete.vertical block.filled {
+    margin: 1px 0;
+}
+
+.level-bar.indicator-discrete.fill-block.horizontal:first-child {
+    border-radius: 2px 0 0 2px;
+}
+
+.level-bar.indicator-discrete.fill-block.horizontal:last-child {
+    border-radius: 0 2px 2px 0;
+}
+
+.level-bar.indicator-discrete.fill-block.vertical:first-child {
+    border-radius: 2px 2px 0 0;
+}
+
+.level-bar.indicator-discrete.fill-block.vertical:last-child {
+    border-radius: 0 0 2px 2px;
+}
+
+levelbar block.low {
+	border-color: shade(@warning_color, 0.80);
 	background-image: linear-gradient(to bottom,
-					shade(@less_dark_color, 0.5),
-					shade(@less_dark_color, 1.7));
+                                      shade(@warning_color, 1.3),
+                                      @warning_color 75%,
+                                      shade(@warning_color, 0.90));
+}
+
+levelbar block.high {
+    border-color: shade(@link_color, 0.85);
+    background-image: linear-gradient(to bottom,
+                                      shade(@link_color, 1.2),
+                                      @link_color 75%,
+                                      shade(@link_color, 0.95));
+}
+
+levelbar block.full {
+    border-color: shade(@link_color, 0.95);
+    background-image: linear-gradient(to bottom,
+                                      shade(@link_color, 1.2),
+                                      @link_color 75%,
+                                      shade(@link_color, 0.95));
+}
+
+levelbar block.empty {
+    border: 1px solid #2a76c6;
+    border-radius: 1px;
+    background-color: transparent;
+    border-color: rgba(46, 52, 54, 0.2);
+    box-shadow: none;
+}
+
+levelbar block.empty:backdrop {
+    border-color: rgba(139, 142, 143, 0.15); 
 }
 
 /*************
@@ -900,29 +939,49 @@ notebook column-header  button:hover {
 	border-color: @less_dark_color;
 }
 
-notebook GtkScale.trough {
+notebook scale.horizontal trough {
 	background-image: linear-gradient(to bottom,
-					shade(@less_dark_color, 0.5),
-					shade(@less_dark_color, 1.7));
+                                      @less_dark_color,
+                                      @less_dark_color 35%,
+	                                  shade(@less_dark_color, 0.5)35%,
+	                                  shade(@less_dark_color, 1.7)65%,
+                                      @less_dark_color 65%,
+                                      @less_dark_color);
+	border-width: 0px;
+	border-radius: 2px;
+	margin: 8px 0;
+}
+
+notebook scale.vertical trough {
+	background-image: linear-gradient(to right,
+                                      @less_dark_color,
+                                      @less_dark_color 35%,
+	                                  shade(@less_dark_color, 0.5)35%,
+	                                  shade(@less_dark_color, 1.7)65%,
+                                      @less_dark_color 65%,
+                                      @less_dark_color);
+	margin: 0 8px;
+}
+
+notebook scale.horizontal trough {
+	background-image: linear-gradient(to bottom,
+                                      @less_dark_color,
+                                      @less_dark_color 35%,
+	                                  shade(@less_dark_color, 0.85)35%,
+	                                  shade(@less_dark_color, 1.4)65%,
+                                      @less_dark_color 65%,
+                                      @less_dark_color);
 	border-width: 0px;
 }
 
-notebook GtkScale.trough.vertical {
-	background-image: linear-gradient(to right,
-	                                  shade(@less_dark_color, 0.5),
-	                                  shade(@less_dark_color, 1.7));
-}
-
-notebook GtkScale.trough:disabled {
-	background-image: linear-gradient(to bottom,
-	                                  shade(@less_dark_color, 0.85),
-	                                  shade(@less_dark_color, 1.4));
-}
-
-notebook GtkScale.trough.vertical:disabled {
-	background-image: linear-gradient(to right,
-	                                  shade(@less_dark_color, 0.85),
-	                                  shade(@less_dark_color, 1.4));
+notebook scale trough.vertical:disabled {
+		background-image: linear-gradient(to right,
+                                      @less_dark_color,
+                                      @less_dark_color 35%,
+	                                  shade(@less_dark_color, 0.85)35%,
+	                                  shade(@less_dark_color, 1.4)65%,
+                                      @less_dark_color 65%,
+                                      @less_dark_color);
 }
 
 notebook progressbar.trough {
@@ -1099,17 +1158,55 @@ row {
 	border-width: 0px;
 }
 
+.view .progressbar {
+ 	background-image: linear-gradient(-45deg,
+	                                  alpha(@progressbar_pattern, 0.09),
+	                                  alpha(@progressbar_pattern, 0.09) 25%,
+	                                  transparent 25%,
+	                                  transparent 50%,
+	                                  alpha(@progressbar_pattern, 0.09) 50%,
+	                                  alpha(@progressbar_pattern, 0.09) 75%,
+	                                  transparent 75%,
+	                                  transparent),
+	                  linear-gradient(to bottom,
+	                                  @progressbar_background_a,
+	                                  shade(@progressbar_background_b, 1.1) 25%,
+	                                  @progressbar_background_b 43%,
+	                                  shade(@progressbar_background_b, 1.08) 44%,
+	                                  shade(@progressbar_background_a, 0.91));
+	border-style:solid;
+	border-width: 0px;
+	margin: 0px;
+}
+
+.view .trough{
+	border-style:solid;
+	border-width: 2px;
+	border-radius: 2px;
+	border-color:@theme_bg_color;
+	background-image: linear-gradient(to bottom,
+	                                  shade(@theme_bg_color, 0.4),
+	                                  @theme_bg_color 50%,
+	                                  shade(@theme_bg_color, 1.8));
+}
+
 /************
  * GtkScale *
  ************/
- scale {
+
+scale,
+scale:hover, 
+scale:disabled {
+	/* deprecated
 	-GtkScale-slider-length: 16;
 	-GtkRange-slider-width: 20;
-	-GtkRange-trough-border: 0;
+	-GtkRange-trough-border: 0;*/
+	background-color:transparent;
+	
 }
 
- scale slider,
- scale slider:hover {
+scale slider,
+scale slider:hover {
 	border-width: 0px;
 	border-radius: 0px;
 	border-style: none;
@@ -1133,57 +1230,112 @@ scale slider.fine-tune.horizontal:active:hover {
 	background-position: center;
 }
 
-scale trough {
+scale.horizontal trough {
 	background-image: linear-gradient(to bottom,
-	                                  shade(@theme_bg_color, 0.5),
-	                                  shade(@theme_bg_color, 1.7));
+                                      @theme_bg_color,
+                                      @theme_bg_color 35%,
+	                                  shade(@theme_bg_color, 0.5)35%,
+	                                  shade(@theme_bg_color, 1.7)65%,
+                                      @theme_bg_color 65%,
+                                      @theme_bg_color);
 	border-width: 0px;
 	border-radius: 2px;
-	margin: 8px 0;
+	margin-left: 8px;
+	margin-right: 8px;
 }
 
 scale.vertical trough {
 	background-image: linear-gradient(to right,
-	                                  shade(@theme_bg_color, 0.5),
-	                                  shade(@theme_bg_color, 1.7));
-	margin: 0 8px;
+                                      @theme_bg_color,
+                                      @theme_bg_color 35%,
+	                                  shade(@theme_bg_color, 0.5)35%,
+	                                  shade(@theme_bg_color, 1.7)65%,
+                                      @theme_bg_color 65%,
+                                      @theme_bg_color);
+	border-width: 0px;
+	border-radius: 2px;
+	margin-top: 8px;
+	margin-bottom: 8px;
 }
 
-scale.highlight trough
-scale.highlight.vertical trough {
-    background-image: none;
-	border-color: @progressbar_border;
-	background-color: @link_color;
-}
-
- scale:disabled trough {
+scale:disabled trough {
 	background-image: linear-gradient(to bottom,
-	                                  shade(@theme_bg_color, 0.85),
-	                                  shade(@theme_bg_color, 1.4));
+                                      @theme_bg_color,
+                                      @theme_bg_color 35%,
+	                                  shade(@theme_bg_color, 0.85)35%,
+	                                  shade(@theme_bg_color, 1.4)65%,
+                                      @theme_bg_color 65%,
+                                      @theme_bg_color);
+	border-width: 0px;
+	border-radius: 2px;
+	margin-left: 8px;
+	margin-right: 8px;
 }
-
- scale.vertical:disabled trough {
+scale.vertical:disabled trough {
 	background-image: linear-gradient(to right,
-	                                  shade(@theme_bg_color, 0.85),
-	                                  shade(@theme_bg_color, 1.4));
+                                      @theme_bg_color,
+                                      @theme_bg_color 35%,
+	                                  shade(@theme_bg_color, 0.5)35%,
+	                                  shade(@theme_bg_color, 1.7)65%,
+                                      @theme_bg_color 65%,
+                                      @theme_bg_color);
+	margin-top: 8px;
+	margin-bottom: 8px;
 }
 
- scale progressbar {
+scale.horizontal mark indicator {
+	background-color: shade(@theme_bg_color, 0.56);
+    min-height: 8px;
+    min-width: 1px; 
+}
+scale.vertical mark indicator {
+	background-color: shade(@theme_bg_color, 0.56);
+    min-height: 1px;
+    min-width: 8px; 
+}
+scale highlight,
+scale:hover highlight{
+	background-image: linear-gradient(to bottom,
+                                      @theme_bg_color,
+                                      @theme_bg_color 35%,
+	                                  @link_color 35%,
+	                                  @link_color 65%,
+                                      @theme_bg_color 65%,
+                                      @theme_bg_color);
+	border-color: @progressbar_border;
+	background-color: transparent;
+}
+
+scale.vertical highlight,
+scale.vertical:hover highlight{
+	background-image: linear-gradient(to right,
+                                      @theme_bg_color,
+                                      @theme_bg_color 35%,
+	                                  @link_color 35%,
+	                                  @link_color 65%,
+                                      @theme_bg_color 65%,
+                                      @theme_bg_color);
+	border-color: @progressbar_border;
+	background-color: transparent;
+}
+scale:disabled highlight {
+	background-color:transparent;
+}
+
+
+scale progress{
 	background-image: linear-gradient(to bottom,
 	                                  shade(@theme_bg_color, 1.4),
 	                                  shade(@theme_bg_color, 0.8));
 	border-radius: 3px;
 }
 
- scale.vertical progressbar {
+scale.vertical progress {
 	background-image: linear-gradient(to right,
 	                                  shade(@theme_bg_color, 1.4),
 	                                  shade(@theme_bg_color, 0.8));
 }
 
- scale mark {
-	background-color: shade(@theme_bg_color, 0.56);
-}
 
 /**************
  * ComboBoxes *
@@ -1233,6 +1385,17 @@ GtkComboBox.combobox-entry  button {
 /*GtkTreeMenu  menuitem *,*/
 combobox menu {
 	text-shadow: none;
+}
+
+combobox button cellview:hover {
+	background-color:transparent;
+}
+
+combobox arrow {
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+    color: @menu_controls_color;
+    min-height: 16px;
+    min-width: 16px;
 }
 
 /***********
@@ -1425,14 +1588,15 @@ linkbutton button:active:hover {
 scrollbar {
 	background-image: none;
 	border-style: solid;
-	-GtkRange-trough-border: 0;
+	/*-GtkRange-trough-border: 0;
 	-GtkScrollbar-has-backward-stepper: true;
 	-GtkScrollbar-has-forward-stepper: true;
 	-GtkRange-stepper-size: 16;
-	-GtkRange-slider-width: 13;
-	-GtkScrollbar-min-slider-length: 42; /* minimum size for the slider. sadly can't be in ' slider' where it belongs */
+	-GtkRange-slider-width: 13;    
+	-GtkScrollbar-min-slider-length: 42; 
 	-GtkRange-stepper-spacing: 0;
 	-GtkRange-trough-under-steppers: 1;
+ deprecated*/
 }
 
 scrollbars-junction { /* the small square between scrollbars!!! */
@@ -1468,7 +1632,7 @@ scrollbar.horizontal trough {
 }
 
 scrollbar button,
-scrollbar.horizontal buttonl,
+scrollbar.horizontal button,
 scrollbar.vertical button {
 	color: @theme_fg_color; /*@internal_element_color*/
 	border-image: none;
@@ -1476,6 +1640,8 @@ scrollbar.vertical button {
 	border-width: 0px;
 	background-image: none;
 	background-color: @less_dark_color;
+	min-width: 10px;
+	min-height: 10px;
 }
 
 scrollbar button:hover,
@@ -1488,6 +1654,8 @@ scrollbar button.vertical:hover {
 	border-image: none;
 	border-style: none;
 	border-width: 0px;
+	min-width: 10px;
+	min-height: 10px;
 }
 
 scrollbar button:hover:active,
@@ -1532,6 +1700,8 @@ scrollbar.vertical slider {
 	                                  shade(@scroll_slider_color, 0.6),
 	                                  shade(@scroll_slider_color, 1.6) 50%,
 	                                  shade(@scroll_slider_color, 2.0));
+	min-width: 13px;
+	min-height: 42px;
 }
 
 scrollbar.horizontal slider {
@@ -1540,6 +1710,8 @@ scrollbar.horizontal slider {
 	                                  shade(@scroll_slider_color, 0.6),
 	                                  shade(@scroll_slider_color, 1.6) 50%,
 	                                  shade(@scroll_slider_color, 2.0));
+	min-height: 13px;
+	min-width: 42px;
 }
 
 scrollbar slider:hover {
