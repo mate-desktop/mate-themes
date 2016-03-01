@@ -709,7 +709,7 @@ notebook tab {
 	                                  shade(@less_dark_color, 0.5));
 }
 
-notebook tab:active {
+notebook tab:checked {
 	background-image: linear-gradient(to bottom,
 	                                  shade(@less_dark_color, 0.75),
 	                                  shade(@less_dark_color, 0.86) 40%,
@@ -732,7 +732,7 @@ notebook header.bottom tab label{
 	padding: 0px 8px 3px;
 }
 
-notebook header.bottom tab:active {
+notebook header.bottom tab:checked {
    padding: 0px 8px 3px;
 	background-image: linear-gradient(to top,
 	                                  shade(@less_dark_color, 1.25),
@@ -758,15 +758,15 @@ notebook header.right tab label{
 	border-width: 1px 1px 1px 0px;
 }
 
-notebook header.left tab:active,
-notebook header.right tab:active {
+notebook header.left tab:checked,
+notebook header.right tab:checked {
 	background-image: none;
 	background-color: @less_dark_color;
 }
 
 notebook tab  button,
 notebook tab  button:hover,
-notebook tab  button:hover:active {
+notebook tab  button:hover:checked {
 	border-style: none;
 	border-image: none;
 	border-radius: 5px;
