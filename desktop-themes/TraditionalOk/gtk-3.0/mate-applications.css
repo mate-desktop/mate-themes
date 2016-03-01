@@ -266,53 +266,17 @@ na-tray-applet {
     color: @theme_fg_color;
 }
 
-/***********************
- * Mate-Control-Center *
- ***********************/
-
-/* background */
-ShellWindow AppResizer .view {
-    background-color: @theme_base_color;
-}
-
-ShellWindow .button.flat {
-    border-image: none;
-    padding: 3px;
-}
-
-/* button hover of applications */
-ShellWindow GtkScrolledWindow .button.flat:hover {
-    background-color: transparent;
-    padding: 3px;
-}
-
 /****************
  * Pluma *
  ****************/
 
-PlumaCloseButton.button.flat,
-PlumaCloseButton.button.flat:hover,
-PlumaCloseButton:hover.button.flat,
-PlumaCloseButton:hover.button.flat:hover {
-    padding: 0px;
-}
-
-/* close button tab text view */
-PlumaWindow .vertical .horizontal .vertical .notebook .horizontal PlumaCloseButton.button.flat,
-PlumaWindow .vertical .horizontal .vertical .notebook .horizontal PlumaCloseButton.button.flat:hover {
-    padding: 2px;
-}
-
-/* Pluma status bar */
-PlumaWindow .button.flat,
-PlumaWindow .button.flat:hover {
-    border-style: none;
-    border-image: none;
-    padding: 2px 5px;
+/* pluma line numbers */
+.pluma-window textview {
+    background-color: shade (@bg_color, 1.07);
 }
 
 /* Printpreview */
-PlumaPrintPreview.vertical .toolbar.horizontal {
+.pluma-print-preview toolbar.horizontal {
     background-color: transparent;
     background-image: linear-gradient(to bottom,
                       @toolbar_gradient_a 2px,
@@ -327,144 +291,81 @@ PlumaPrintPreview.vertical .toolbar.horizontal {
     padding: 0px;
 }
 
-PlumaPrintPreview.vertical GtkLayout {
-    background-color: @theme_base_color;
-}
-
-PlumaPrintPreview.vertical .toolbar.horizontal GtkToolItem .horizontal .entry {
+.pluma-print-preview toolbar.horizontal toolitem entry {
     padding: 2px 6px;
 }
 
-PlumaPrintPreview.vertical .toolbar.horizontal .button.image-button,
-PlumaPrintPreview.vertical .toolbar.horizontal .button.flat.image-button {
+.pluma-print-preview toolbar.horizontal button.image-button,
+.pluma-print-preview toolbar.horizontal button.flat.image-button {
     background-color: transparent;
     padding: 0px;
 }
 
-PlumaPrintPreview.vertical .toolbar.horizontal .button.text-button,
-PlumaPrintPreview.vertical .toolbar.horizontal .button.flat.text-button {
+.pluma-print-preview toolbar.horizontal toolbutton button.text-button,
+.pluma-print-preview toolbar.horizontal toolbutton button.flat.text-button {
     background-color: transparent;
     padding: 0px 8px;
     border-radius: 2px;
 }
 
 /* sidebar file-browser */
-PlumaPanel.vertical .horizontal .horizontal GtkImage {
+.pluma-window paned.horizontal box.horizontal button.flat {
     padding: 0px;
 }
 
-PlumaPanel.vertical .notebook {
-    border-width: 0px;
-    border-radius: 0px;
-    border-style: none;
-}
-
-PlumaPanel.vertical .notebook.header.frame {
-    border-width: 0px 1px 1px 0px;
+.pluma-window paned.horizontal box.vertical notebook.frame {
+    border-width: 1px 0px 0px 0px;
+    border-style: solid;
     border-color: @border_color;
     border-radius: 0px;
-    border-style: solid;
 }
 
-PlumaFileBrowserWidget.vertical GtkExpander .vertical .entry {
-    padding: 3px;
+/* sidebar close button */
+.pluma-window paned.horizontal box.vertical notebook.frame toolbar button {
+  padding: 4px;
 }
 
-PlumaFileBrowserWidget.vertical .toolbar.horizontal {
+.pluma-window paned.horizontal box.vertical notebook.frame #ToolBar toolbutton button {
+    border-width: 1px 1px 2px 1px;
+}
+
+.pluma-window paned.horizontal box.vertical notebook.frame #ToolBar toolbutton button:hover {
     background-color: transparent;
     background-image: linear-gradient(to bottom,
-                      @toolbar_gradient_a 2px,
-                      @toolbar_gradient_b 50%,
-                      @toolbar_gradient_c 50%,
-                      @toolbar_gradient_d);
-    border-width: 1px 1px 1px 1px;
-    border-radius: 1px;
+                      @button_hover_gradient_a 5%,
+                      @button_hover_gradient_b 95%,
+                      @button_hover_gradient_c);
+    border-image: url("img/border.svg") 3 3 4 3 / 3px 3px 4px 3px repeat;
+    border-radius: 3px;
+    border-width: 1px 1px 2px 1px;
     border-style: solid;
-    border-top-color: @toolbar_border_top_color;
-    border-bottom-color: @toolbar_border_bottom_color;
-    padding: 5px;
 }
 
-PlumaFileBrowserWidget.vertical .toolbar.horizontal .button.flat,
-PlumaFileBrowserWidget.vertical .toolbar.horizontal .button.menu-button,
-PlumaFileBrowserWidget.vertical .toolbar.horizontal .button.image-button,
-PlumaFileBrowserWidget.vertical .toolbar.horizontal .button.flat.menu-button,
-PlumaFileBrowserWidget.vertical .toolbar.horizontal .button.flat.image-button {
-    padding: 3px;
+.pluma-window paned.horizontal box.vertical notebook.frame #ToolBar toolbutton button:checked {
+    background-image: linear-gradient(to bottom,
+                      @button_active_gradient_a,
+                      @button_active_gradient_b 3px,
+                      @button_active_gradient_c 4px,
+                      @button_active_gradient_d 50%,
+                      @button_active_gradient_e 50%,
+                      @button_active_gradient_f);
     background-color: transparent;
-}
-
-/************
- * Engrampa *
- ************/
-
-FrWindow .horizontal.toolbar .button.flat.image-button:disabled {
-    background-image: none;
-}
-
-/* close button sidebar */
-FrWindow GtkTable .horizontal .vertical .frame .horizontal .flat.button {
-    border-radius: 4px;
-    padding: 0px;
+    border-image: url("img/border.svg") 3 3 4 3 / 3px 3px 4px 3px repeat;
+    border-radius: 3px;
+    border-width: 1px 1px 2px 1px;
+    border-style: solid;
 }
 
 /*********
  * Atril *
  *********/
 
-EvWindow .vertical.primary-toolbar .horizontal.toolbar {
-    padding: 1px 4px;
-}
-
-EvWindow .toolbar .button,
-EvWindow .toolbar .button.flat {
-    padding: 0px 4px;
-}
-
-EvWindow .vertical.primary-toolbar .horizontal.toolbar EphyZoomControl GtkToggleButton.button,
-EvWindow .vertical.primary-toolbar .horizontal.toolbar EphyZoomControl GtkToggleButton:hover.button {
-    padding: 8px 4px;
-    border-radius: 4px;
-}
-
-EvSidebar .flat.button {
-    border-radius: 4px;
-    padding: 4px;
-}
-
 /* atril and eom */
-EggToolbarEditor.vertical GtkScrolledWindow .frame {
+EggToolbarEditor.vertical scrolledwindow {
     background-color: shade (@theme_base_color, 1.0);
     border-color: @border_color;
     border-width: 1px;
     border-radius: 0px;
     border-style: solid;
-}
-
-/*******
- * Eom *
- *******/
-
-EomThumbNav .button.flat:first-child {
-    border-radius: 3px 0px 0px 3px;
-    border-width: 1px 0px 1px 1px;
-}
-
-EomThumbNav .button.flat:last-child {
-    border-radius: 0px 3px 3px 0px;
-    border-width: 1px 1px 1px 0px;
-}
-
-EomThumbNav .button.flat {
-    border-image: none;
-    border-color: @border_color;
-}
-
-EomThumbNav .button.flat:hover {
-    border-color: @focus_border_color;
-}
-
-EomThumbNav .button.flat:disabled {
-    border-color: @insensitive_border_color;
 }
 
