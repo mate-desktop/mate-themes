@@ -905,27 +905,46 @@ notebook GtkScale.trough {
 					shade(@less_dark_color, 0.5),
 					shade(@less_dark_color, 1.7));
 	border-width: 0px;
+	border-radius: 2px;
+	margin-left: 8px;
+	margin-right: 8px;
 }
 
 notebook GtkScale.trough.vertical {
 	background-image: linear-gradient(to right,
-	                                  shade(@less_dark_color, 0.5),
-	                                  shade(@less_dark_color, 1.7));
+                                      @less_dark_color,
+                                      @less_dark_color 35%,
+	                                  shade(@less_dark_color, 0.5)35%,
+	                                  shade(@less_dark_color, 1.7)65%,
+                                      @less_dark_color 65%,
+                                      @less_dark_color);
+	border-width: 0px;
+	margin-top: 8px;
+	margin-bottom: 8px;
 }
 
-notebook GtkScale.trough:disabled {
+notebook.horizontal scale trough:disabled {
 	background-image: linear-gradient(to bottom,
-	                                  shade(@less_dark_color, 0.85),
-	                                  shade(@less_dark_color, 1.4));
+                                      @less_dark_color,
+                                      @less_dark_color 35%,
+	                                  shade(@less_dark_color, 0.85)35%,
+	                                  shade(@less_dark_color, 1.4)65%,
+                                      @less_dark_color 65%,
+                                      @less_dark_color);
+
 }
 
-notebook GtkScale.trough.vertical:disabled {
-	background-image: linear-gradient(to right,
-	                                  shade(@less_dark_color, 0.85),
-	                                  shade(@less_dark_color, 1.4));
+notebook.vertical scale trough:disabled {
+		background-image: linear-gradient(to right,
+                                      @less_dark_color,
+                                      @less_dark_color 35%,
+	                                  shade(@less_dark_color, 0.85)35%,
+	                                  shade(@less_dark_color, 1.4)65%,
+                                      @less_dark_color 65%,
+                                      @less_dark_color);
 }
 
-notebook progressbar.trough {
+notebook progressbar trough {
 	background-image: linear-gradient(to bottom,
 	                                  shade(@less_dark_color, 0.4),
 	                                  @less_dark_color 50%,
@@ -1158,14 +1177,29 @@ scale.highlight.vertical trough {
 
  scale:disabled trough {
 	background-image: linear-gradient(to bottom,
-	                                  shade(@theme_bg_color, 0.85),
-	                                  shade(@theme_bg_color, 1.4));
+                                      transparent,
+                                      transparent 35%,
+	                                  @link_color 35%,
+	                                  @link_color 65%,
+                                      transparent 65%,
+                                      transparent);
+	border-color: @progressbar_border;
+	background-color: transparent;
 }
 
  scale.vertical:disabled trough {
 	background-image: linear-gradient(to right,
-	                                  shade(@theme_bg_color, 0.85),
-	                                  shade(@theme_bg_color, 1.4));
+                                      transparent,
+                                      transparent 35%,
+	                                  @link_color 35%,
+	                                  @link_color 65%,
+                                      transparent 65%,
+                                      transparent);
+	border-color: @progressbar_border;
+	background-color: transparent;
+}
+scale:disabled highlight {
+	background-color:transparent;
 }
 
  scale progressbar {
