@@ -801,28 +801,36 @@ toolbar.horizontal button.text-button.toggle {
 }
 
 .path-bar button,
+.linked.path-bar button,
 .path-bar button image,
 .path-bar button label {
-    padding: 2px;
+    padding: 4px 2px;
 }
 
 .path-bar button {
     border-width: 1px 0px 1px 1px;
 }
 
-.path-bar button:hover:active {
-    border-left-width: 1px;
+.linked.path-bar button.toggle,
+.linked.path-bar button.toggle:checked:hover, /* this is really weird */
+.linked.path-bar button.image-button,
+.linked.path-bar button.toggle.image-button,
+.linked.path-bar button.toggle.text-button {
+    border-width: 1px 1px 1px 0px;
 }
 
-.path-bar button:first-child,
-.path-bar button:first-child:hover:active {
-    border-right-width: 0px;
+.linked.path-bar button.toggle:first-child,
+.linked.path-bar button.image-button:first-child,
+.linked.path-bar button.toggle.image-button:first-child,
+.linked.path-bar button.toggle.text-button:first-child {
+    border-width: 1px 1px 1px 1px;
 }
 
-.path-bar button:only-child,
-.path-bar button:only-child:hover:active {
-    border-radius: 3px;
-    border-right-width: 1px;
+.linked.path-bar button.toggle:last-child,
+.linked.path-bar button.image-button:last-child,
+.linked.path-bar button.toggle.image-button:last-child,
+.linked.path-bar button.toggle.text-button:last-child {
+    border-width: 1px 1px 1px 0px;
 }
 
 .linked.raised button:first-child,
@@ -1424,9 +1432,9 @@ notebook header tab {
 }
 
 notebook header.top tab {
-    padding: 7px 2px 0 2px;
-    border-width: 0px 1px 1px 1px;
-    border-radius: 3px 3px 0px 0px;;
+    padding: 7px 28px 0 28px;
+    border-width: 0px 0px 1px 0px;
+    border-radius: 0px;
     background-image: linear-gradient(to bottom,
                       @notebook_tab_gradient_a,
                       @notebook_tab_gradient_b 50%,
@@ -1434,40 +1442,8 @@ notebook header.top tab {
                       @notebook_tab_gradient_d);
 }
 
-notebook header.right tab {
-    padding: 2px 7px 2px 0;
-    border-width: 1px 0px 1px 1px;
-    border-radius: 0px 3px 3px 0px;;
-    background-image: linear-gradient(to left,
-                      @notebook_tab_gradient_a,
-                      @notebook_tab_gradient_b 50%,
-                      @notebook_tab_gradient_c 50%,
-                      @notebook_tab_gradient_d);
-}
-
-notebook header.bottom tab {
-    padding: 0px 2px 7px 2px;
-    border-width: 1px 1px 0px 1px;
-    border-radius: 0px 0px 3px 3px;;
-    background-image: linear-gradient(to top,
-                      @notebook_tab_gradient_a,
-                      @notebook_tab_gradient_b 50%,
-                      @notebook_tab_gradient_c 50%,
-                      @notebook_tab_gradient_d);
-}
-
-notebook header.left tab {
-    padding: 2px 0 2px 7px;
-    border-width: 1px 1px 1px 0px;
-    border-radius: 3px 0px 0px 3px;;
-    background-image: linear-gradient(to right,
-                      @notebook_tab_gradient_a,
-                      @notebook_tab_gradient_b 50%,
-                      @notebook_tab_gradient_c 50%,
-                      @notebook_tab_gradient_d);
-}
-
 notebook header.top tab:active {
+    border-radius: 3px 3px 0px 0px;
     border-width: 0px 1px 0px 1px;
     border-top-color: @notebook_active_tab_border;
     background-image: linear-gradient(to bottom,
@@ -1476,6 +1452,25 @@ notebook header.top tab:active {
                       @notebook_active_tab_strip_border_bottom_color 4px,
                       @notebook_active_tab_gradient_a 4px,
                       @notebook_active_tab_gradient_b);
+}
+
+notebook header.top tab:active:first-child {
+    border-width: 0px 1px 0px 0px;
+}
+
+notebook header.top tab:active:last-child {
+    border-width: 0px 0px 0px 1px;
+}
+
+notebook header.right tab {
+    padding: 2px 7px 2px 0;
+    border-width: 0px 0px 0px 1px;
+    border-radius: 0px;
+    background-image: linear-gradient(to left,
+                      @notebook_tab_gradient_a,
+                      @notebook_tab_gradient_b 50%,
+                      @notebook_tab_gradient_c 50%,
+                      @notebook_tab_gradient_d);
 }
 
 notebook header.right tab:active {
@@ -1489,6 +1484,25 @@ notebook header.right tab:active {
                       @notebook_active_tab_gradient_b);
 }
 
+notebook header.right tab:active:first-child {
+    border-width: 0px 0px 1px 0px;
+}
+
+notebook header.right tab:active:last-child {
+    border-width: 1px 0px 0px 0px;
+}
+
+notebook header.bottom tab {
+    padding: 0px 28px 7px 28px;
+    border-width: 1px 0px 0px 0px;
+    border-radius: 0px;
+    background-image: linear-gradient(to top,
+                      @notebook_tab_gradient_a,
+                      @notebook_tab_gradient_b 50%,
+                      @notebook_tab_gradient_c 50%,
+                      @notebook_tab_gradient_d);
+}
+
 notebook header.bottom tab:active {
     border-width: 0px 1px 0px 1px;
     border-bottom-color: @notebook_active_tab_border;
@@ -1500,6 +1514,25 @@ notebook header.bottom tab:active {
                       @notebook_active_tab_gradient_b);
 }
 
+notebook header.bottom tab:active:first-child {
+    border-width: 0px 1px 0px 0px;
+}
+
+notebook header.bottom tab:active:last-child {
+    border-width: 0px 0px 0px 1px;
+}
+
+notebook header.left tab {
+    padding: 2px 0 2px 7px;
+    border-width: 0px 1px 0px 0px;
+    border-radius: 0px;
+    background-image: linear-gradient(to right,
+                      @notebook_tab_gradient_a,
+                      @notebook_tab_gradient_b 50%,
+                      @notebook_tab_gradient_c 50%,
+                      @notebook_tab_gradient_d);
+}
+
 notebook header.left tab:active {
     border-width: 1px 0px 1px 0px;
     border-left-color: @notebook_active_tab_border;
@@ -1509,6 +1542,14 @@ notebook header.left tab:active {
                       @notebook_active_tab_strip_border_bottom_color 4px,
                       @notebook_active_tab_gradient_a 4px,
                       @notebook_active_tab_gradient_b);
+}
+
+notebook header.left tab:active:first-child {
+    border-width: 0px 0px 1px 0px;
+}
+
+notebook header.left tab:active:last-child {
+    border-width: 1px 0px 0px 0px;
 }
 
 .notebook tab * {
@@ -1533,6 +1574,51 @@ paned.horizontal notebook button.flat:hover,
 notebook button.flat.small-button:hover{
     color: @theme_fg_color;
     border-color: alpha(black, 0.1);
+}
+
+notebook header.top tabs arrow.up,
+notebook header.bottom tabs arrow.up {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+    color: @theme_fg_color;
+}
+
+notebook header.top tabs arrow.down,
+notebook header.bottom tabs arrow.down {
+    -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+    color: @theme_fg_color;
+}
+
+notebook header.left tabs arrow.up,
+notebook header.right tabs arrow.up {
+    -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
+    color: @theme_fg_color;
+}
+
+notebook header.left tabs arrow.down,
+notebook header.right tabs arrow.down {
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+    color: @theme_fg_color;
+}
+
+notebook header tabs arrow {
+    color: @theme_fg_color;
+}
+
+notebook header tabs arrow:hover,
+notebook header tabs arrow:active {
+    color: @theme_selected_bg_color;
+}
+
+notebook header tabs arrow:disabled {
+    color: rgba(141, 144, 145, 0.3);
+}
+
+notebook header tabs arrow:backdrop {
+    color: rgba(84, 89, 90, 0.4);
+}
+
+notebook header tabs arrow:backdrop:disabled {
+    color: #c7c7c7;
 }
 
 /**************
@@ -2900,12 +2986,14 @@ expander toolbar.inline-toolbar {
 /* Calendars */
 calendar {
     padding: 2px;
+    border-style:none;
 }
 
 calendar.view {
     border-radius: 3px;
     border-style: solid;
     border-width: 1px;
+    border-color: rgb(162,158,155);
     padding: 2px;
 }
 
@@ -3119,7 +3207,9 @@ messagedialog.csd decoration {
  **************/
 
 actionbar {
-    border-style: none;
+    border-width: 1px 0px 0px 0px;
+    border-style:solid;
+    border-color: rgb(162,158,155);
     padding: 7px 7px 3px 7px;
 }
 
@@ -3234,6 +3324,19 @@ modelbutton.flat {
     border-radius: 3px;
 }
 
+modelbutton.flat,
+.linked button.image-button.model {
+  min-height: 24px;
+}
+
+modelbutton.flat arrow.left {
+    -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+}
+
+modelbutton.flat arrow.right {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+
 modelbutton.flat:checked,
 modelbutton.flat:active,
 modelbutton.flat:disabled,
@@ -3248,7 +3351,8 @@ modelbutton.flat:checked:focus {
     background-image: none;
     border-color: transparent;
     border-image: none;
-    border-style: none;
+    border-style: solid;
+    border-width: 1px;
     box-shadow: none;
     border-radius: 3px;
 }
@@ -3262,9 +3366,10 @@ modelbutton.flat:selected {
                                       shade(@theme_selected_bg_color, 1.1),
                                       shade(@theme_selected_bg_color, 0.8));
     text-shadow: none;
-    border-color: @border_color;
-    border-width: 2px;
+    border-color: @button_active_gradient_a;
+    border-width: 1px;
     border-radius: 3px;
+    border-style: solid;
 }
 
 popover separator {
