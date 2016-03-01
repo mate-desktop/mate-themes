@@ -3312,6 +3312,19 @@ modelbutton.flat {
     border-radius: 3px;
 }
 
+modelbutton.flat,
+.linked button.image-button.model {
+  min-height: 24px;
+}
+
+modelbutton.flat arrow.left {
+    -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+}
+
+modelbutton.flat arrow.right {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+
 modelbutton.flat:checked,
 modelbutton.flat:active,
 modelbutton.flat:disabled,
@@ -3326,7 +3339,8 @@ modelbutton.flat:checked:focus {
     background-image: none;
     border-color: transparent;
     border-image: none;
-    border-style: none;
+    border-style: solid;
+    border-width: 1px;
     box-shadow: none;
     border-radius: 3px;
 }
@@ -3340,9 +3354,10 @@ modelbutton.flat:selected {
                                       shade(@theme_selected_bg_color, 1.1),
                                       shade(@theme_selected_bg_color, 0.8));
     text-shadow: none;
-    border-color: @border_color;
-    border-width: 2px;
+    border-color: @button_active_gradient_a;
+    border-width: 1px;
     border-radius: 3px;
+    border-style: solid;
 }
 
 popover separator {
