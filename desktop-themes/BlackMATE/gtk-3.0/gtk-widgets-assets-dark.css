@@ -415,19 +415,19 @@ treeview row:selected:focus {
  * Notebook and Tabs *
  *********************/
 
-notebook tab:active {
+notebook tab:checked {
 	border-image: url("assets/tab-active-border.svg") 3 3 0 3 / 3px 3px 0px 3px stretch;
 }
 
-notebook tab.bottom:active {
+notebook tab.bottom:checked {
 	border-image: url("assets/tab-bottom-active-border.svg") 0 3 3 3 / 0px 3px 3px 3px stretch;
 }
 
-notebook tab.left:active {
+notebook tab.left:checked {
 	border-image: url("assets/tab-left-active-border.svg") 3 0 3 3 / 3px 0px 3px 3px stretch;
 }
 
-notebook tab.right:active {
+notebook tab.right:checked {
 	border-image: url("assets/tab-right-active-border.svg") 3 3 3 0 / 3px 3px 3px 0px stretch;
 }
 
