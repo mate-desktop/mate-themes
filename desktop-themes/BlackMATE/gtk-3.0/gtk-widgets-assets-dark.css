@@ -432,7 +432,7 @@ notebook tab.right:active {
  *********************/
 
 /* cannot add these yet to the GIT repo, but they are needed to fix wrong arrow orientation
-   caused by BUG in gtk3.19 */
+   caused by BUG in gtk3.19
 
 scrollbar.vertical button:first-child {
 	-gtk-icon-source: -gtk-scaled(url("assets/scrollbar-arrow-up.svg"));
@@ -449,4 +449,5 @@ scrollbar.horizontal button:first-child {
 scrollbar.horizontal button:last-child  {
 	-gtk-icon-source: -gtk-scaled(url("assets/scrollbar-arrow-right.svg"));
 }
+*/
 
