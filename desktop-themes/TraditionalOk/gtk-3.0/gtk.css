@@ -198,7 +198,7 @@
  * menu *
  ********/
 
-@define-color menu_bg_color @theme_base_color;
+@define-color menu_bg_color shade(@theme_bg_color, 1.04);
 @define-color menu_fg_color @theme_fg_color;
 
 /* Example: submenu arrow. */
