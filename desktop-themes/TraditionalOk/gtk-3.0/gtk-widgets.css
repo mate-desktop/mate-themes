@@ -459,11 +459,6 @@ entry {
                       @entry_bg_color 2px);
 }
 
-/* Focused entry background */
-entry:focus {
-    background-image: none;
-}
-
 /* disabled entry background */
 entry:disabled {
     background-image: linear-gradient(to bottom,
@@ -1212,6 +1207,7 @@ spinbutton.vertical > button:focus:active:last-child {
 button,
 spinbutton button,
 toolbar button.raised,
+toolbar button,
 toolbar .raised button,
 toolbar button.raised:focus,
 toolbar .raised button:focus,
@@ -1232,29 +1228,27 @@ GtkColorChooserWidget #add-color-button {
 /* Pushed button background */
 button:checked,
 button:checked:hover,
-button:active,
-button:active:hover,
+button:hover:active,
 menuitem button:hover,
 spinbutton button:active,
 spinbutton button:active:hover,
-toolbar button:active,
-toolbar button:active:hover,
-toolbar button.raised:active,
+toolbar button:checked,
+toolbar button:checked:hover,
+toolbar button:hover:active,
 toolbar button.raised:checked,
-toolbar .raised button:active,
 toolbar .raised button:checked,
-toolbar button.raised:active:hover,
+toolbar button.raised:hover:active,
 toolbar button.raised:checked:hover,
-toolbar .raised button:active:hover,
+toolbar .raised button:hover:active,
 toolbar .raised button:checked:hover,
 toolbar.primary-toolbar combobox entry button:active,
 combobox entry button:active,
-toolbar.primary-toolbar button:active,
-toolbar.primary-toolbar button:active:hover,
+toolbar.primary-toolbar button:checked,
+toolbar.primary-toolbar button:hover:active,
 toolbar.primary-toolbar button:focus:active,
-toolbar.primary-toolbar button:focus:active:hover,
-toolbar.inline-toolbar button:active,
-toolbar.inline-toolbar button:active:hover {
+toolbar.primary-toolbar button:focus:hover:active,
+toolbar.inline-toolbar button:checked,
+toolbar.inline-toolbar button:hover:active {
     background-image: linear-gradient(to bottom,
                       @button_active_gradient_a,
                       @button_active_gradient_b 3px,
@@ -1263,39 +1257,6 @@ toolbar.inline-toolbar button:active:hover {
                       @button_active_gradient_e 50%,
                       @button_active_gradient_f);
     background-color: transparent;
-}
-
-GtkListBoxRow.list-row,
-GtkListBoxRow.button.list-row {
-    color: @theme_text_color;
-    background-color: @theme_base_color;
-    border-radius: 0px;
-    border-style: none;
-    padding: 2px;
-}
-
-GtkListBoxRow.list-row:hover,
-GtkListBoxRow.button.list-row:hover {
-    background-image: linear-gradient(to bottom,
-                      @button_hover_gradient_a 5%,
-                      @button_hover_gradient_b 95%,
-                      @button_hover_gradient_c);
-    background-color: transparent;
-}
-
-GtkListBoxRow.list-row:selected,
-GtkListBoxRow.button.list-row:selected {
-    color: @theme_selected_fg_color;
-    border-style: solid;
-    border-width: 1px;
-    border-color: @menubar_menuitem_hover_border_color;
-    background-image: -gtk-gradient (linear,
-                      left top,
-                      left bottom,
-                      from (@menubar_menuitem_hover_gradient_a),
-                      color-stop (0.50, @menubar_menuitem_hover_gradient_b),
-                      color-stop (0.50, @menubar_menuitem_hover_gradient_c),
-                      to (@menubar_menuitem_hover_gradient_d));
 }
 
 trough,
