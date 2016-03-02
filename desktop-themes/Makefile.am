@@ -8,8 +8,7 @@ SUBDIRS = \
 	Green-Submarine \
 	Menta \
 	TraditionalGreen \
-	TraditionalOk \
-	TraditionalOkTest
+	TraditionalOk
 
 
 
