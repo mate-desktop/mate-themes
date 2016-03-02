@@ -256,9 +256,9 @@
 
 /* EelEditableLabel (icon labels) */
 .caja-navigation-window .view .entry,
-.caja-navigation-window .view .entry:focus
-.caja-desktop .entry,
-.caja-desktop .entry:focus {
+.caja-navigation-window .view .entry:focus,
+.caja-desktop.view .entry,
+.caja-desktop.view .entry:focus {
    border-image: none;
    border-style: solid;
    border-width: 1px;
