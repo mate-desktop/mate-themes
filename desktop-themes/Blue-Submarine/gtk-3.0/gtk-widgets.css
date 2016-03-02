@@ -719,6 +719,33 @@ scale highlight.bottom:disabled {
                 inset -1px -1px alpha(#000, 0.02);
 }
 
+scale.vertical.scale-has-marks-below slider,
+scale.horizontal.scale-has-marks-below slider,
+scale.vertical.scale-has-marks-above slider,
+scale.horizontal.scale-has-marks-above slider {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+scale.vertical.scale-has-marks-below slider:hover,
+scale.horizontal.scale-has-marks-below slider:hover,
+scale.vertical.scale-has-marks-above slider:hover,
+scale.horizontal.scale-has-marks-above slider:hover {
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+scale.vertical.fine-tune.scale-has-marks-below slider,
+scale.horizontal.fine-tune.scale-has-marks-below slider,
+scale.vertical.fine-tune.scale-has-marks-above slider,
+scale.horizontal.fine-tune.scale-has-marks-above slider {
+    background-size: 75%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 /**********
  * Frames *
  **********/
@@ -3632,6 +3659,7 @@ headerbar:backdrop button {
 headerbar button:hover,
 headerbar button:checked,
 headerbar button:hover:active,
+headerbar button.text-button:hover:active,
 headerbar button:checked:hover,
 headerbar button:checked:hover:active,
 headerbar button:hover:first-child,
@@ -3704,6 +3732,8 @@ headerbar > button:disabled {
     -gtk-icon-shadow: none;
 }
 
+headerbar > button.text-button:hover,
+headerbar > button.text-button:focus,
 headerbar > button.text-button,
 headerbar > button.text-button.radio,
 headerbar > .linked > button.text-button,
@@ -3711,7 +3741,8 @@ headerbar > .linked > button.text-button.radio {
     padding: 4px 6px;
 }
  
-headerbar > button.image-button {
+headerbar > button.image-button,
+headerbar > button.image-button:focus {
     padding: 5px 5px 6px 5px;
 }
 
@@ -3731,6 +3762,16 @@ headerbar > stackswitcher.linked.stack-switcher > button.text-button.radio:last-
     border-radius: 0 6px 6px 0;
     border-width: 1px;
     border-left-width: 0px;
+}
+
+headerbar.titlebar > stackswitcher.linked.stack-switcher > button.text-button.radio.needs-attention >  label {
+    background-color: transparent;
+    color: @theme_dark_fg_color;
+    border-radius: 3px;
+    box-shadow: inset  0px  1px shade (@info_fg_color, 1.3),
+                inset  1px  0px shade (@info_fg_color, 1.3),
+                inset -1px  0px shade (@info_fg_color, 1.3),
+                inset  0px -1px shade (@info_fg_color, 1.3);
 }
 
 headerbar title {
@@ -4686,71 +4727,71 @@ dialog scrolledwindow.frame viewport .vertical expander .vertical {
 }
 
 /* middle buttons */
-.dialog-action-area.linked button,
-.dialog-action-area.linked button:focus,
-.dialog-action-area.linked button:hover,
-.dialog-action-area.linked button:focus:hover,
-.dialog-action-area.linked button:focus:hover:active,
-.dialog-action-area.linked button:checked,
-.dialog-action-area.linked button:checked:hover,
-.dialog-action-area.linked button:checked:hover:active,
-.dialog-action-area.linked button:disabled {
-    border-right-width: 0px;
-    border-left-width:  0px;
-    border-width: 1px 0;
+.dialog-action-area.linked > button.text-button,
+.dialog-action-area.linked > button.text-button:focus,
+.dialog-action-area.linked > button.text-button:hover,
+.dialog-action-area.linked > button.text-button:hover:active,
+.dialog-action-area.linked > button.text-button:focus:hover,
+.dialog-action-area.linked > button.text-button:focus:hover:active,
+.dialog-action-area.linked > button.text-button:checked,
+.dialog-action-area.linked > button.text-button:checked:hover,
+.dialog-action-area.linked > button.text-button:checked:hover:active,
+.dialog-action-area.linked > button.text-button:disabled {
+    border-width: 1px 1px 1px 0px;
     border-radius: 0;
-    padding: 6px 2px;
+    padding:  8px 6px;
+    margin: 0px 0px 0px -2px;
+    min-height: 16px;
+    min-width: 16px;
 }
 
 /* left button */
-.dialog-action-area.linked button:first-child,
-.dialog-action-area.linked button:focus:first-child,
-.dialog-action-area.linked button:hover:first-child,
-.dialog-action-area.linked button:focus:hover:first-child,
-.dialog-action-area.linked button:focus:hover:active:first-child,
-.dialog-action-area.linked button:checked:first-child,
-.dialog-action-area.linked button:checked:hover:first-child,
-.dialog-action-area.linked button:checked:hover:active:first-child,
-.dialog-action-area.linked button:disabled:first-child {
+.dialog-action-area.linked > button.text-button:first-child,
+.dialog-action-area.linked > button.text-button:focus:first-child,
+.dialog-action-area.linked > button.text-button:hover:first-child,
+.dialog-action-area.linked > button.text-button:hover:active:first-child,
+.dialog-action-area.linked > button.text-button:focus:hover:first-child,
+.dialog-action-area.linked > button.text-button:focus:hover:active:first-child,
+.dialog-action-area.linked > button.text-button:checked:first-child,
+.dialog-action-area.linked > button.text-button:checked:hover:first-child,
+.dialog-action-area.linked > button.text-button:checked:hover:active:first-child,
+.dialog-action-area.linked > button.text-button:disabled:first-child {
     border-radius: 6px 0 0 6px;
-    border-width: 1px;
-    border-right-width: 0;
-    padding: 6px 2px;
+    border-width: 1px 1px 1px 1px;
 }
 
 /* right button */
-.dialog-action-area.linked button:last-child,
-.dialog-action-area.linked button:focus:last-child,
-.dialog-action-area.linked button:hover:last-child,
-.dialog-action-area.linked button:focus:hover:last-child,
-.dialog-action-area.linked button:focus:hover:active:last-child,
-.dialog-action-area.linked button:checked:last-child,
-.dialog-action-area.linked button:checked:hover:last-child,
-.dialog-action-area.linked button:checked:hover:active:last-child,
-.dialog-action-area.linked button:disabled:last-child {
-    border-width: 1px;
+.dialog-action-area.linked > button.text-button:last-child,
+.dialog-action-area.linked > button.text-button:focus:last-child,
+.dialog-action-area.linked > button.text-button:hover:last-child,
+.dialog-action-area.linked > button.text-button:hover:active:last-child,
+.dialog-action-area.linked > button.text-button:focus:hover:last-child,
+.dialog-action-area.linked > button.text-button:focus:hover:active:last-child,
+.dialog-action-area.linked > button.text-button:checked:last-child,
+.dialog-action-area.linked > button.text-button:checked:hover:last-child,
+.dialog-action-area.linked > button.text-button:checked:hover:active:last-child,
+.dialog-action-area.linked > button.text-button:disabled:last-child {
+    margin: 0px 0px 0px -2px;
+    border-width: 1px 1px 1px 0px;
     border-radius: 0 6px 6px 0;
-    border-left-width: 0;
-    padding: 6px 2px;
 }
 
 /* single button */
-.dialog-action-area.linked button:only-child,
-.dialog-action-area.linked button:focus:only-child,
-.dialog-action-area.linked button:hover:only-child,
-.dialog-action-area.linked button:focus:hover:only-child,
-.dialog-action-area.linked button:focus:hover:active:only-child,
-.dialog-action-area.linked button:checked:only-child,
-.dialog-action-area.linked button:checked:hover:only-child,
-.dialog-action-area.linked button:checked:hover:active:only-child,
-.dialog-action-area.linked button:disabled:last-child {
-    padding: 6px 2px;
+.dialog-action-area.linked > button.text-button:only-child,
+.dialog-action-area.linked > button.text-button:focus:only-child,
+.dialog-action-area.linked > button.text-button:hover:only-child,
+.dialog-action-area.linked > button.text-button:hover:active:only-child,
+.dialog-action-area.linked > button.text-button:focus:hover:only-child,
+.dialog-action-area.linked > button.text-button:focus:hover:active:only-child,
+.dialog-action-area.linked > button.text-button:checked:only-child,
+.dialog-action-area.linked > button.text-button:checked:hover:only-child,
+.dialog-action-area.linked > button.text-button:checked:hover:active:only-child,
+.dialog-action-area.linked > button.text-button:disabled:last-child {
     border-width: 1px;
-    border-radius: 6px;
+    border-image-width: 1px;
 }
 
-.dialog-action-area.linked button:only-child {
-    border-width: 0px;
+.dialog-action-area.linked > button.text-button {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (@button_gradient1),
@@ -4763,29 +4804,37 @@ dialog scrolledwindow.frame viewport .vertical expander .vertical {
                 inset  0px -1px alpha(shade(@button_border, 0.88), 0.90);
 }
 
-.dialog-action-area.linked button:focus:only-child {
+.dialog-action-area.linked > button.text-button:focus {
     box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
                 inset  1px  0px shade (@theme_selected_bg_color, 1.3),
                 inset -1px  0px shade (@theme_selected_bg_color, 1.3),
                 inset  0px -1px shade (@theme_selected_bg_color, 1.3);
 }
 
-.dialog-action-area.linked button:hover:only-child {
+.dialog-action-area.linked > button.text-button:hover {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (shade(@button_gradient1, 1.03)),
                                      color-stop (0.48, shade(@button_gradient2, 1.03)),
                                      color-stop (0.52, shade(@button_gradient3, 1.03)),
                                      to   (shade(@button_gradient4, 1.01)));
+    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
+                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
 }
 
-.dialog-action-area.linked button:active:only-child {
+.dialog-action-area.linked > button.text-button:hover:active {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (shade (@theme_bg_color, 1.20)),
                                      color-stop (0.50, shade (@theme_bg_color, 1.00)),
                                      color-stop (0.50, shade (@theme_bg_color, 0.95)),
                                      to (shade (@theme_bg_color, 0.80)));
+    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
+                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
 }
 
 .dialog-action-area.linked button.suggested-action,
@@ -4795,7 +4844,7 @@ dialog scrolledwindow.frame viewport .vertical expander .vertical {
     box-shadow: none;
 }
 
-.dialog-action-area.linked button label {
+.dialog-action-area.linked > button.text-button label {
      padding: 2px 0px 0px 0px;
 }
 

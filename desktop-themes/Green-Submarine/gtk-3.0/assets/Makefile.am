@@ -44,6 +44,14 @@ theme_DATA = \
 	scale-slider-hor.svg \
 	scale-slider-insensitive-hor.svg \
 	scale-slider-insensitive-ver.svg \
+	scale-slider-marks-above-horizontal-insensitive.png \
+	scale-slider-marks-above-horizontal.png \
+	scale-slider-marks-above-vertical-insensitive.png \
+	scale-slider-marks-above-vertical.png \
+	scale-slider-marks-below-horizontal-insensitive.png \
+	scale-slider-marks-below-horizontal.png \
+	scale-slider-marks-below-vertical-insensitive.png \
+	scale-slider-marks-below-vertical.png \
 	scale-slider-marks-above-horizontal-insensitive.svg \
 	scale-slider-marks-above-horizontal.svg \
 	scale-slider-marks-above-vertical-insensitive.svg \
