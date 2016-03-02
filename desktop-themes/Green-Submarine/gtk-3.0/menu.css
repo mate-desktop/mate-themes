@@ -15,7 +15,7 @@ menu {
     border-width: 1px;
     border-radius: 0px;
     border-color: shade(@menu_bg_dark_color, 0.97);
-    border-image: none;
+    border-image:     none;
 }
 
 menu:selected {
@@ -27,16 +27,16 @@ menuitem:disabled {
     background-color: @menu_bg_dark_color;
 }
 
-menubar  menu button:hover,
-menubar  menu button:active,
-menubar  menu button:active:disabled,
-menubar  menu button:disabled,
-menubar  menu button,
-primary-toolbar  menu button:hover,
-primary-toolbar  menu button:active,
-primary-toolbar  menu button:active:disabled,
-primary-toolbar  menu button:disabled,
-primary-toolbar  menu button {
+menubar menu button:hover,
+menubar menu button:active,
+menubar menu button:active:disabled,
+menubar menu button:disabled,
+menubar menu button,
+toolbar.primary-toolbar menu button:hover,
+toolbar.primary-toolbar menu button:active,
+toolbar.primary-toolbar menu button:active:disabled,
+toolbar.primary-toolbar menu button:disabled,
+toolbar.primary-toolbar menu button {
     background-color: shade (@menu_bg_dark_color, 1.07);
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
@@ -62,11 +62,6 @@ menu button arrow {
     color: @menu_fg_dark_color;
 }
 
-menuitem check, menuitem radio {
-  min-height: 16px;
-  min-width: 16px;
-}
-
 
 /***********
  * menubar *
@@ -83,75 +78,74 @@ menubar {
     border-bottom-color:  shade(@theme_bg_dark_color, 1.60);
     background-color: shade (@theme_bg_dark_color, 1.00);
     color: @menu_fg_dark_color;
+    min-height: 20px;
 }
 
 /***************
  * menubaritem *
  ***************/
-menubar menuitem  {
+menubar > menuitem  {
     padding: 5px 5px;
     transition: all 300ms ease-out;
     border-radius: 0px;
     border-width: 0px;
+    min-height: 16px;
 }
 
-menubar menuitem:hover,
-menubar  menuitem:hover {
-    padding: 5px 5px;
+menubar > menuitem:hover {
     background-color: shade (@theme_bg_dark_color, 1.2);
-    border-radius: 5px;
-    color: shade (@theme_selected_bg_color, 1.3);
+    border-radius: 6px;
+    color: shade (@theme_selected_bg_color, 1.6);
     text-shadow: 0px 1px @theme_selected_shadow_color;
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@menu_bg_dark_color, 2.03)),
+                                     to   (shade(@menu_bg_dark_color, 1.17)));
+    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
+                inset  1px  0px shade(@selected_bg_color, 0.97),
+                inset -1px  0px shade(@selected_bg_color, 0.93),
+                inset  0px -1px shade(@selected_bg_color, 0.93);
 }
 
 /************
  * menuitem *
  ************/
-menubar  menuitem {
-    padding: 5px 5px;
-    transition: all 300ms ease-out;
-    color: @theme_fg_dark_color;
-    text-shadow: 1px 1px @theme_shadow_dark_color;
-}
 
-/*Genericmenuitem  menuitem *,
-DbusmenuGtkMenu  menuitem *, */
-toolbar .raised  button  menuitem *,
-toolbar menubar  button  menuitem *,
-toolbar  menuitem *,
-primary-toolbar  menuitem *,
-primary-toolbar  button  menuitem *,
-menu  menuitem *, 
-menuitem {
+toolbar .raised button menuitem,
+toolbar menubar button menuitem,
+toolbar menuitem,
+toolbar.primary-toolbar menuitem,
+toolbar.primary-toolbar button menuitem,
+window.background.popup menu menuitem,
+window.background.popup menuitem {
 /* Fix height change in nautilus menu item view options */
     padding: 0px;
     border-width: 0px;
 }
-/*
-Genericmenuitem  menuitem,
-DbusmenuGtkMenu  menuitem,*/
-toolbar .raised  button  menuitem,
-toolbar menubar  button  menuitem,
-toolbar menubar .linked  button  menuitem,
-toolbar  menuitem,
-primary-toolbar  menuitem,
-primary-toolbar  button  menuitem,
-menu  menuitem, 
-menuitem {
+
+toolbar .raised button menuitem,
+toolbar menubar button menuitem,
+toolbar menubar .linked button menuitem,
+toolbar menuitem,
+toolbar.primary-toolbar menuitem,
+toolbar.primary-toolbar button menuitem,
+window.background.popup menu menuitem,
+window.background.popup menuitem {
+/*    transition: all 300ms ease-out; FIXME this caused items jumpings*/
+/*    -GtkMenuItem-arrow-scaling: 0.7; */
     transition: all 300ms ease-out;
-    -menuitem-arrow-scaling: 0.7;
-    padding: 2px 4px;
     border-radius: 0px;
     color: @menu_fg_dark_color;
     text-shadow: 1px 1px @menu_shadow_dark_color;
     padding: 5px 5px;
+    min-height: 22px;
 }
 
-toolbar  menuitem GtkLabel,
-primary-toolbar  menuitem GtkLabel,
-toolbar .raised  button  menuitem GtkLabel,
-toolbar menubar  button  menuitem GtkLabel,
-primary-toolbar  button  menuitem GtkLabel {
+toolbar menuitem label,
+toolbar.primary-toolbar menuitem label,
+toolbar .raised button menuitem label,
+toolbar menubar button menuitem label,
+toolbar.primary-toolbar button menuitem label {
     color: @menu_fg_dark_color;
     text-shadow: 1px 1px @menu_shadow_dark_color;
 }
@@ -160,28 +154,34 @@ treemenu menu {
     background-color: @menu_bg_dark_color;
 }
 
-treemenu  menuitem {
+treemenu menuitem {
     border-style: none;
     border-width: 0px;
 }
 
-toolbar combobox  menuitem,
-combobox  menuitem {
-    transition: all 500ms ease-out;
+toolbar combobox menuitem,
+combobox menuitem {
+    transition: all 300ms ease-out;
     color: @menu_fg_dark_color;
     text-shadow: 0px 1px @menu_shadow_dark_color;
 }
 
-/* needed for  menuitem with gtk+-3.18 */
-treemenu menu  menuitem cellview {
+/* needed for .menuitem with gtk+-3.20 !!! */
+combobox menuitem .cell {
+    color: @menu_fg_dark_color;
+    text-shadow: 0px 1px @menu_shadow_dark_color;
+}
+
+/* needed for .menuitem with gtk+-3.18 */
+treemenu menu menuitem .cell {
     background-image: none;
     background-color: transparent;
     color: @menu_fg_dark_color;
     text-shadow: 0px 1px @menu_shadow_dark_color;
 }
 
-treemenu menu  menuitem:hover,
-combobox  menuitem:hover {
+treemenu menu menuitem:hover,
+combobox menuitem:hover {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (shade(@menu_bg_dark_color, 2.03)),
@@ -190,89 +190,91 @@ combobox  menuitem:hover {
     text-shadow: 0px 1px @theme_selected_shadow_color;
 }
 
-treemenu menu  menuitem:hover cellview {
-    color: shade (@theme_selected_bg_color, 1.3);
-       text-shadow: 0px 1px @theme_selected_shadow_color;
+treemenu menu menuitem:hover .cell,
+combobox menuitem:hover .cell {
+    color: shade (@theme_selected_bg_color, 1.6);
+    text-shadow: 0px 1px @theme_selected_shadow_color;
 }
 
-menuitem:hover,
-menu  menuitem:hover {
+window.background.popup menuitem:hover,
+window.background.popup menu menuitem:hover {
     /* contextual menu item-selected */
     background-color: shade (@theme_bg_dark_color, 1.2);
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (shade(@menu_bg_dark_color, 2.03)),
                                      to   (shade(@menu_bg_dark_color, 1.17)));
-    color: shade (@theme_selected_bg_color, 1.3);
+    color: shade (@theme_selected_bg_color, 1.6);
     text-shadow: 0px 1px @theme_selected_shadow_color;
-    border-radius: 5px;
+    border-radius: 6px;
     border-width: 1px;
     border-image: none;
     padding: 5px 5px;
-    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
-                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
+                inset  1px  0px shade(@selected_bg_color, 0.97),
+                inset -1px  0px shade(@selected_bg_color, 0.93),
+                inset  0px -1px shade(@selected_bg_color, 0.93);
 }
 
-toolbar  menuitem *:hover,
-primary-toolbar  toolbar  button  menuitem *:hover,
-primary-toolbar toolbar  button  menuitem *:hover,
-toolbar .raised  button  menuitem *:hover, /* menuitem opciones visualizacion nautilus  */
-toolbar menubar  button  menuitem *:hover, 
-combobox  menuitem *:hover, 
-treemenu  menuitem *:active,
-treemenu  menuitem *:hover,
-menuitem *:active,
- menuitem *:hover,
- menuitem *:hover, 
- menuitem:hover,
- menu  menuitem:hover {
-    color: shade (@theme_selected_bg_color, 1.3);
+toolbar menuitem *:hover,
+toolbar.primary-toolbar button menuitem *:hover,
+toolbar .raised button menuitem *:hover, /* menuitem opciones visualizacion nautilus  */
+toolbar menubar button menuitem *:hover, 
+combobox menuitem *:hover, 
+treemenu menuitem *:active,
+treemenu menuitem *:hover,
+window.background.popup menuitem *:active,
+window.background.popup menuitem *:hover, 
+window.background.popup menuitem:hover,
+window.background.popup menu menuitem:hover {
+    color: shade (@theme_selected_bg_color, 1.6);
     text-shadow: 0px 1px @theme_selected_shadow_color;
 }
 
-primary-toolbar  menuitem *:disabled,
-toolbar .raised  button  menuitem *:disabled,
-toolbar menubar  button  menuitem *:disabled,
-primary-toolbar  button  menuitem *:disabled,
-toolbar  menuitem *:disabled,
-menuitem:disabled,
-menuitem *:disabled {
-    /* contextual menu insensitive */
+toolbar.primary-toolbar menuitem *:disabled,
+toolbar .raised button menuitem *:disabled,
+toolbar.menubar button menuitem *:disabled,
+toolbar.primary-toolbar button menuitem *:disabled,
+toolbar menuitem *:disabled,
+window.background.popup menuitem:disabled,
+window.background.popup menuitem *:disabled {
+    /* contextual menu disabled */
     color: mix (@menu_fg_dark_color, @menu_bg_dark_color, 0.4);
     text-shadow: none;
 }
 
-menuitem check,
-menuitem radio,
-menuitem check:hover,
-menuitem radio:hover,
-menuitem check:disabled,
-menuitem radio:disabled,
-menuitem check:active:disabled,
-menuitem radio:active:disabled,
-menuitem check:checked:disabled,
-menuitem radio:checked:disabled,
-menuitem check:indeterminate:disabled,
-menuitem radio:indeterminate:disabled {
+window.background.popup menuitem check,
+window.background.popup menuitem radio,
+window.background.popup menuitem check:hover,
+window.background.popup menuitem radio:hover,
+window.background.popup menuitem check:disabled,
+window.background.popup menuitem radio:disabled,
+window.background.popup menuitem check:active:disabled,
+window.background.popup menuitem radio:active:disabled,
+window.background.popup menuitem check:checked:disabled,
+window.background.popup menuitem radio:checked:disabled,
+window.background.popup menuitem check:indeterminate:disabled,
+window.background.popup menuitem radio:indeterminate:disabled {
     border-width: 0px;
     border-style: none;
     background-image: none;
+	min-height: 12px;
+	min-width: 12px;
+	background-position: center center;
 }
 
-toolbar .raised  button  menuitem check:indeterminate,
-toolbar .raised  button  menuitem radio:indeterminate,
-menuitem check:indeterminate,
-menuitem radio:indeterminate,
-toolbar .raised  button  menuitem check:active,
-toolbar .raised  button  menuitem radio:active,
-menuitem check:active,
-menuitem radio:active,
-toolbar .raised  button  menuitem check:checked,
-toolbar .raised  button  menuitem radio:checked,
-menuitem check:checked,
-menuitem radio:checked {
+toolbar .raised button menuitem check:indeterminate,
+toolbar .raised button menuitem radio:indeterminate,
+window.background.popup menuitem check:indeterminate,
+window.background.popup menuitem radio:indeterminate,
+toolbar .raised button menuitem check:active,
+toolbar .raised button menuitem radio:active,
+window.background.popup menuitem check:active,
+window.background.popup menuitem radio:active,
+toolbar .raised button menuitem check:checked,
+toolbar .raised button menuitem radio:checked,
+window.background.popup menuitem check:checked,
+window.background.popup menuitem radio:checked {
     border-width: 0px;
     border-style: none;
     background-image: none;
@@ -281,47 +283,70 @@ menuitem radio:checked {
     color: @menu_fg_dark_color;
 }
 
-toolbar .raised  button  menuitem check:indeterminate:hover,
-toolbar .raised  button  menuitem radio:indeterminate:hover,
-menuitem check:indeterminate:hover,
-menuitem radio:indeterminate:hover,
-toolbar .raised  button  menuitem check:active:hover,
-toolbar .raised  button  menuitem radio:active:hover,
-menuitem check:active:hover,
-menuitem radio:active:hover,
-toolbar .raised  button  menuitem check:checked:hover,
-toolbar .raised  button  menuitem radio:checked:hover,
-menuitem check:checked:hover,
-menuitem radio:checked:hover {
+toolbar .raised button menuitem check:indeterminate:hover,
+toolbar .raised button menuitem radio:indeterminate:hover,
+window.background.popup menuitem check:indeterminate:hover,
+window.background.popup menuitem radio:indeterminate:hover,
+toolbar .raised button menuitem check:active:hover,
+toolbar .raised button menuitem radio:active:hover,
+window.background.popup menuitem check:active:hover,
+window.background.popup menuitem radio:active:hover,
+toolbar .raised button menuitem check:checked:hover,
+toolbar .raised button menuitem radio:checked:hover,
+window.background.popup menuitem check:checked:hover,
+window.background.popup menuitem radio:checked:hover {
     border-color: @theme_selected_fg_color;
     color: @theme_selected_fg_color;
 }
 
-menuitem.arrow:hover {
+window.background.popup menuitem arrow {
+    min-height: 16px;
+    min-width: 16px;
+    margin-left: 10px;
+    color: @menu_fg_color;
+}
+
+window.background.popup menu menuitem arrow:dir(ltr) {
+	-gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+
+window.background.popup menu menuitem arrow:dir(rtl) {
+        -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
+}
+
+window.background.popup menu arrow.top {
+      -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
+}
+
+window.background.popup menu arrow.bottom {
+      -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
+window.background.popup menu arrow:hover {
     border-color: @theme_selected_fg_color;
     color: shade (@theme_selected_bg_color, 1.6);
 }
 
-menuitem check:disabled,
-menuitem radio:disabled,
-menuitem check:active:disabled,
-menuitem radio:active:disabled,
-menuitem check:checked:disabled,
-menuitem radio:checked:disabled,
-menuitem check:indeterminate:disabled,
-menuitem radio:indeterminate:disabled {
+window.background.popup menuitem check:disabled,
+window.background.popup menuitem radio:disabled,
+window.background.popup menuitem check:active:disabled,
+window.background.popup menuitem radio:active:disabled,
+window.background.popup menuitem check:checked:disabled,
+window.background.popup menuitem radio:checked:disabled,
+window.background.popup menuitem check:indeterminate:disabled,
+window.background.popup menuitem radio:indeterminate:disabled {
     color: mix (@menu_fg_dark_color, @menu_bg_dark_color, 0.6);
     text-shadow: none;
 }
 
-menubar  menuitem calendar,
-menubar  menuitem calendar button,
-menubar  menuitem calendar.header,
-menubar  menuitem calendar.view,
-primary-toolbar  menuitem calendar,
-primary-toolbar  menuitem calendar button,
-primary-toolbar  menuitem calendar.header,
-primary-toolbar  menuitem calendar.view {
+menubar menuitem calendar,
+menubar menuitem calendar.button,
+menubar menuitem calendar.header,
+menubar menuitem calendar.view,
+toolbar.primary-toolbar menuitem calendar,
+toolbar.primary-toolbar menuitem calendar.button,
+toolbar.primary-toolbar menuitem calendar.header,
+toolbar.primary-toolbar menuitem calendar.view {
     background-color: @menu_bg_dark_color;
     background-image: none;
     border-radius: 0;
@@ -331,13 +356,13 @@ primary-toolbar  menuitem calendar.view {
     color: @menu_fg_dark_color;
 }
 
-menubar  menuitem calendar,
-primary-toolbar  menuitem calendar {
+menubar menuitem calendar,
+toolbar.primary-toolbar menuitem calendar {
     background-color: shade (@menu_bg_dark_color, 1.3);
     background-image: none;
 }
 
-menubar  menuitem GtkScale.trough {
+menubar menuitem scale trough {
     background-image: -gtk-gradient (linear,
                                      left top,
                                      left bottom,
@@ -351,45 +376,38 @@ menubar  menuitem GtkScale.trough {
                 inset -1px -1px alpha(#000, 0.08);
 }
 
-/*
-Genericmenuitem  menuitem .accelerator,
-DbusmenuGtkMenu  menuitem .accelerator,*/
-menubar  menuitem .accelerator,
-primary-toolbar  menuitem .accelerator {
+menubar menuitem accelerator,
+toolbar.primary-toolbar menuitem accelerator {
     color: alpha (@menu_fg_dark_color, 0.8);
 }
-/*
-Genericmenuitem  menuitem .accelerator:hover,
-DbusmenuGtkMenu  menuitem .accelerator:hover,*/
-menubar  menuitem .accelerator:hover,
-primary-toolbar  menuitem .accelerator:hover {
+
+menubar menuitem accelerator:hover,
+toolbar.primary-toolbar menuitem accelerator:hover {
     color: alpha (@theme_selected_fg_color, 0.8);
 }
-/*
-Genericmenuitem  menuitem .accelerator:disabled,
-DbusmenuGtkMenu  menuitem .accelerator:disabled,*/
-menubar  menuitem .accelerator:disabled,
-primary-toolbar  menuitem .accelerator:disabled {
+
+menubar menuitem accelerator:disabled,
+toolbar.primary-toolbar menuitem accelerator:disabled {
     color: alpha (mix (@menu_fg_dark_color, @menu_bg_dark_color, 0.4), 0.8);
     text-shadow: none;
 }
 
-menuitem.separator {
-    -menuitem-horizontal-padding: 0;
+window.background.popup menu separator {
+/*	-GtkMenuItem-horizontal-padding: 0; deprecated */
+/*    -GtkWidget-separator-height: 1; */
     min-height: 1px;
-    /* border-color: shade (@menu_bg_dark_color, 0.90);
-    -unico-inner-stroke-color: alpha (shade (@menu_bg_dark_color, 1.18), 0.6); */
     border-image: -gtk-gradient (linear,
-                            left top, right top,
-                            from (alpha (#000, 0.00)),
-                            color-stop (0.25, alpha (#000, 0.03)),
-                            color-stop (0.85, alpha (#000, 0.03)),
-                            to (alpha (#000, 0.00))) 1;
+                                 left top, right top,
+                                 from (alpha (#000, 0.00)),
+                                 color-stop (0.25, alpha (#000, 0.03)),
+                                 color-stop (0.85, alpha (#000, 0.03)),
+                                 to (alpha (#000, 0.00))) 1;
 }
 
 /***************
  * Menu Button *
  ***************/
+
 button menuitem menubar:active,
 button menuitem menubar *:active {
     color: @menu_fg_dark_color;
