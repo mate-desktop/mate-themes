@@ -201,6 +201,11 @@ statusbar frame button.flat {
     border-radius: 0;
 }
 
+/*Keep treeviews from jumping, separators drawn at 0 by default until hovered*/
+treeview.view.separator {
+    min-height: 2px;
+}
+
 treeview.view separator,
 treeview.view .separator, /* why ?*/
 treeview separator,
