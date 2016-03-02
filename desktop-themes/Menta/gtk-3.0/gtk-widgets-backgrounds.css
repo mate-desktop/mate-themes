@@ -1,9 +1,14 @@
 /* Button background */
+button,
+toolbar button.raised,
+toolbar .raised button,
+toolbar combobox button,
+toolbar.primary-toolbar .linked button,
+toolbar.primary-toolbar .raised button,
 .button,
 .toolbar .button.raised,
 .toolbar .raised .button,
-.toolbar GtkComboBox .button,
-.spinbutton.vertical .button {
+.toolbar GtkComboBox .button {
 	background-image: linear-gradient(to bottom, 
 		@button_gradient_color_a,
 		@button_gradient_color_b);
@@ -11,13 +16,24 @@
 }
 
 /* Pushed button and progressbar through background */
+button:checked,
+button:active,
+button:active:hover,
+toolbar button:active,
+toolbar button:active:hover,
+toolbar button.raised:active,
+toolbar .raised button:active,
+toolbar button.raised:active:hover,
+toolbar .raised button:active:hover,
+toolbar button:checked,
+toolbar button:checked:hover,
+toolbar button.raised:checked,
+toolbar .raised button:checked,
+toolbar button.raised:checked:hover,
+toolbar .raised button:checked:hover,
 .button:checked,
 .button:active,
 .button:active:hover,
-.spinbutton.vertical .button:checked,
-.spinbutton.vertical .button:checked:hover,
-.spinbutton.vertical .button:active,
-.spinbutton.vertical .button:active:hover,
 .toolbar .button:active,
 .toolbar .button:active:hover,
 .toolbar .button.raised:active,
@@ -36,6 +52,9 @@
 	background-color: transparent; 
 }
 
+trough,
+trough highlight,
+row trough,
 .trough,
 .trough.highlight,
 .trough row {
@@ -45,9 +64,17 @@
 	background-color: transparent; 
 }
 
+button:checked:hover,
+button:active:hover,
+toolbar button:active:hover,
+toolbar button.raised:active:hover,
+toolbar .raised button:active:hover,
+toolbar button:checked:hover,
+toolbar button.raised:checked:hover,
+toolbar .raised button:checked:hover,
+row trough:hover,
 .button:checked:hover,
 .button:active:hover,
-.spinbutton.vertical .button:active:hover,
 .toolbar .button:active:hover,
 .toolbar .button.raised:active:hover,
 .toolbar .raised .button:active:hover,
@@ -62,6 +89,10 @@
 }
 
 /* Primary and inline toolbars pushed button background */
+toolbar.primary-toolbar button:checked,
+toolbar.inline-toolbar button:checked,
+toolbar.primary-toolbar button:active,
+toolbar.inline-toolbar button:active,
 .primary-toolbar .button:checked,
 .inline-toolbar .button:checked,
 .primary-toolbar .button:active,
@@ -72,6 +103,10 @@
 	background-color: transparent;
 }
 
+toolbar.primary-toolbar button:checked:hover,
+toolbar.inline-toolbar button:checked:hover,
+toolbar.primary-toolbar button:active:hover,
+toolbar.inline-toolbar button:active:hover,
 .primary-toolbar .button:checked:hover,
 .inline-toolbar .button:checked:hover,
 .primary-toolbar .button:active:hover,
@@ -83,12 +118,16 @@
 }
 
 /* Prelit button background */
+button:hover,
+toolbar button:hover,
+toolbar button.raised:hover,
+toolbar .raised button:hover,
+toolbar combobox button:hover,
 .button:hover,
 .toolbar .button:hover,
 .toolbar .button.raised:hover,
 .toolbar .raised .button:hover,
-.toolbar GtkComboBox .button:hover,
-.spinbutton.vertical .button:hover {
+.toolbar GtkComboBox .button:hover {
 	background-color: transparent;
 	background-image: linear-gradient(to bottom,
 		@button_hover_gradient_color_a,
@@ -96,6 +135,7 @@
 }
 
 /* Prelit button on primary toolbar background */
+toolbar.primary-toolbar button:hover,
 .primary-toolbar .button:hover {
 	background-color: transparent;
 	background-image: linear-gradient(to bottom,
@@ -104,22 +144,31 @@
 }
 
 /* Insensitive button background */
-.button:insensitive,
-.spinbutton.vertical .button:insensitive,
-.toolbar GtkComboBox .button:insensitive,
-.toolbar .button.raised:insensitive,
-.toolbar .raised .button:insensitive {
+button:disabled,
+toolbar combobox button:disabled,
+toolbar button.raised:disabled,
+toolbar .raised button:disabled,
+.button:disabled,
+.toolbar GtkComboBox button:disabled,
+.toolbar .button.raised:disabled,
+.toolbar .raised .button:disabled {
 	background-image: none;
 	background-color: @insensitive_bg_color;
 }
 
 /* Pushed + Insensitive button background */
-.button:active:insensitive,
-.button:checked:insensitive,
-.toolbar .button:active:insensitive,
-.toolbar .button:checked:insensitive,
-.toolbar GtkComboBox .button:active:insensitive,
-.toolbar GtkComboBox .button:checked:insensitive {
+button:active:disabled,
+button:checked:disabled,
+toolbar button:active:disabled,
+toolbar button:checked:disabled,
+toolbar combobox button:active:disabled,
+toolbar combobox button:checked:disabled,
+.button:active:disabled,
+.button:checked:disabled,
+.toolbar .button:active:disabled,
+.toolbar .button:checked:disabled,
+.toolbar GtkComboBox .button:active:disabled,
+.toolbar GtkComboBox .button:checked:disabled {
 	background-image: linear-gradient(to bottom,
 		shade(@insensitive_bg_color, 0.95),
 		@insensitive_bg_color 40%,
@@ -128,6 +177,12 @@
 }
 
 /* Entry background */
+entry,
+combobox entry button,
+combobox entry button:hover,
+toolbar.primary-toolbar combobox entry button,
+toolbar.primary-toolbar combobox entry button:hover,
+levelbar trough,
 .entry,
 GtkComboBox.combobox-entry .button,
 GtkComboBox.combobox-entry .button:hover,
@@ -142,15 +197,15 @@ GtkComboBox.combobox-entry .button:hover,
 }
 
 /* Entry pushed button background */
+toolbar.primary-toolbar combobox entry button:active,
+toolbar.primary-toolbar combobox entry button:checked,
+combobox entry button:active,
+combobox entry button:checked,
 .primary-toolbar GtkComboBox.combobox-entry .button:active,
 .primary-toolbar GtkComboBox.combobox-entry .button:checked,
 /* .primary-toolbar GtkComboBox.combobox-entry .button:hover:active,*/
 GtkComboBox.combobox-entry .button:active,
-.spinbutton .button:active,
-.spinbutton .button:active:hover,
-GtkComboBox.combobox-entry .button:checked,
-.spinbutton .button:checked,
-.spinbutton .button:checked:hover {
+GtkComboBox.combobox-entry .button:checked {
 	background-image: linear-gradient(to bottom,
 		shade(@entry_background_a, 0.9),
 		@entry_background_b);
@@ -159,6 +214,7 @@ GtkComboBox.combobox-entry .button:checked,
 		inset 0 2px alpha(@entry_inset, 0.4);
 }
 
+treeview header button,
 column-header.button,
 column-header .button {
 	background-image: linear-gradient(to bottom,
@@ -168,12 +224,14 @@ column-header .button {
 }
 
 /* ie. yumex-dnf */
+stack treeview header button,
 GtkStack column-header .button {
     background-image: linear-gradient(to bottom,
                                       shade(@theme_bg_color, 1.18),
                                       shade(@theme_bg_color, 1.1));
 }
 
+treeview header button:hover,
 column-header.button:hover,
 column-header .button:hover {
 	background-image: linear-gradient(to bottom,
@@ -182,6 +240,11 @@ column-header .button:hover {
 	box-shadow: inset 0 2px 0 0 alpha(@theme_selected_bg_color, 0.7);
 }
 
+treeview header button:focus,
+treeview header button:checked,
+treeview header button:checked:hover,
+treeview header button:active,
+treeview header button:active:hover,
 column-header.button:focus,
 column-header .button:focus,
 column-header.button:checked,
@@ -201,15 +264,21 @@ column-header .button:active:hover {
 }
 
 /* Insensitive entry background */
-.entry:insensitive,
-GtkComboBox.combobox-entry .button:insensitive,
-.level-bar.trough:insensitive {
+entry:disabled,
+combobox entry button:disabled,
+levelbar trough:disabled,
+.entry:disabled,
+GtkComboBox.combobox-entry .button:disabled,
+.level-bar.trough:disabled {
 	background-color: @insensitive_bg_color;
 	background-image: none;
 	box-shadow: none;
 }
 
 /* Primary and inline toolbars background */
+toolbar.primary-toolbar,
+toolbar.primary-toolbar,
+toolbar.inline-toolbar,
 .primary-toolbar .toolbar,
 .primary-toolbar.toolbar,
 .inline-toolbar.toolbar  {
@@ -219,6 +288,9 @@ GtkComboBox.combobox-entry .button:insensitive,
 	background-color: transparent;
 }
 
+toolbar.primary-toolbar.vertical,
+toolbar.primary-toolbar.vertical,
+toolbar.inline-toolbar.vertical,
 .primary-toolbar .toolbar.vertical,
 .primary-toolbar.toolbar.vertical,
 .inline-toolbar.toolbar.vertical {
@@ -228,12 +300,14 @@ GtkComboBox.combobox-entry .button:insensitive,
 	background-color: transparent;
 }
 
+scale trough,
 .scale.trough {
 	background-image: linear-gradient(to bottom,
 		@scale_trough_bg_a,
 		@scale_trough_bg_b);
 }
 
+scale.vertical trough,
 .scale.trough.vertical {
 	background-image: linear-gradient(to right,
 		@scale_trough_bg_a,
@@ -241,6 +315,8 @@ GtkComboBox.combobox-entry .button:insensitive,
 }
 
 /* Active switch background*/
+switch trough:active,
+scale progressbar,
 GtkSwitch.trough:active,
 .scale.progressbar {
 	background-image: linear-gradient(to bottom,
@@ -249,6 +325,7 @@ GtkSwitch.trough:active,
 	background-color: transparent;
 }
 
+scale.vertical progressbar,
 .scale.progressbar.vertical {
 	background-image: linear-gradient(to right,
 		@switch_trough_active_bg_a,
@@ -258,6 +335,11 @@ GtkSwitch.trough:active,
 
 /* Progressbar backgrounds */
 
+progressbar progress,
+row progressbar progress,
+row:hover progressbar progress,
+row:selected progressbar progress,
+row:selected:focus progressbar progress,
 .progressbar,
 .progressbar row,
 .progressbar row:hover,
@@ -279,6 +361,7 @@ GtkSwitch.trough:active,
 	box-shadow: inset 1px 1px alpha(white, 0.2), inset -1px -1px alpha(white, 0.1);
 }
 
+progressbar.vertical progress,
 .progressbar.vertical {
 	background-image: linear-gradient(to right top,
 		alpha (@progressbar_pattern, 0.25),
