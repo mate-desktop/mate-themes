@@ -1,12 +1,3 @@
-/***************
- * Resize grip *
- ***************/
-
-.grip {
-	background-color: transparent;
-	background-image: url("assets/resize-grip.svg");
-}
-
 /*******************
  * Pane separators *
  *******************/
@@ -32,9 +23,10 @@
  * Header bar separator  *
  *************************/
 
+headerbar > box > separator.vertical,
 .header-bar > GtkBox > .separator.vertical {
-	-GtkWidget-wide-separators: 1;
-	-GtkWidget-separator-width: 2px;
+/*	-GtkWidget-wide-separators: 1;  deprecated */
+/*	-GtkWidget-separator-width: 2px;  deprecated */
 	background: transparent;
 	border-width: 0 1px 0 1px;
 	border-style: solid;
@@ -48,6 +40,8 @@
 
 /* draw regular check and radio items using our SVG assets */
 
+check,
+.view.cell check,
 .check,
 .view.cell.check {
 	-gtk-icon-source: -gtk-scaled(url("assets/check-normal.png"));
@@ -55,14 +49,20 @@
 	background-position: center;
 }
 
-.check:insensitive {
+check:disabled,
+.check:disabled {
 	-gtk-icon-source: -gtk-scaled(url("assets/check-normal-ins.png"));
 }
 
-.check row:insensitive {
+check row:disabled,
+.check row:disabled {
 	background-color: transparent;
 }
 
+check:active,
+check:checked,
+.view.cell check:active,
+.view.cell check:checked,
 .check:active,
 .check:checked,
 .view.cell.check:active,
@@ -70,19 +70,25 @@
 	-gtk-icon-source: -gtk-scaled(url("assets/check-active.png"));
 }
 
-.check:active:insensitive,
-.check:checked:insensitive {
+check:active:disabled,
+check:checked:disabled,
+.check:active:disabled,
+.check:checked:disabled {
 	-gtk-icon-source: -gtk-scaled(url("assets/check-active-ins.png"));
 }
 
-.check:inconsistent {
+check:indeterminate,
+.check:indeterminate {
 	-gtk-icon-source: -gtk-scaled(url("assets/check-mixed-active.png"));
 }
 
-.check:inconsistent:insensitive {
+check:indeterminate:disabled,
+.check:indeterminate:disabled {
 	-gtk-icon-source: -gtk-scaled(url("assets/check-mixed-active-ins.png"));
 }
 
+radio,
+.view.cell radio,
 .radio,
 .view.cell.radio {
 	-gtk-icon-source: -gtk-scaled(url("assets/radio-normal.png"));
@@ -90,14 +96,20 @@
 	background-position: center;
 }
 
-.radio:insensitive {
+radio:disabled,
+.radio:disabled {
 	-gtk-icon-source: -gtk-scaled(url("assets/radio-normal-ins.png"));
 }
 
-.radio row:insensitive {
+radio row:disabled,
+.radio row:disabled {
 	background-color: transparent;
 }
 
+radio:active,
+.view.cell radio:active,
+radio:checked,
+.view.cell radio:checked,
 .radio:active,
 .view.cell.radio:active,
 .radio:checked,
@@ -105,16 +117,20 @@
 	-gtk-icon-source: -gtk-scaled(url("assets/radio-active.png"));
 }
 
-.radio:active:insensitive,
-.radio:checked:insensitive {
+radio:active:disabled,
+radio:checked:disabled,
+.radio:active:disabled,
+.radio:checked:disabled {
 	-gtk-icon-source: -gtk-scaled(url("assets/radio-active-ins.png"));
 }
 
-.radio:inconsistent {
+radio:indeterminate,
+.radio:indeterminate {
 	-gtk-icon-source: -gtk-scaled(url("assets/radio-mixed-active.png"));
 }
 
-.radio:inconsistent:insensitive {
+.radio:indeterminate:disabled,
+.radio:indeterminate:disabled {
 	-gtk-icon-source: -gtk-scaled(url("assets/radio-mixed-active-ins.png"));
 }
 
@@ -146,136 +162,170 @@
 /*************
  * GtkSwitch *
  *************/
+
+switch,
 GtkSwitch.trough {
  	background-image: url("assets/switch-off.png");
+    background-repeat: no-repeat;
 }
 
+switch:active,
 GtkSwitch.trough:active {
 	background-image: url("assets/switch-on.png");
+    background-repeat: no-repeat;
 }
 
-GtkSwitch.trough:insensitive {
+switch:disabled,
+GtkSwitch.trough:disabled {
 	background-image: url("assets/switch-off-ins.png");
+    background-repeat: no-repeat;
 }
 
-GtkSwitch.trough:active:insensitive {
+switch:active:disabled,
+GtkSwitch.trough:active:disabled {
 	background-image: url("assets/switch-on-ins.png");
+    background-repeat: no-repeat;
 }
 
 /*********************
  * GtkScale's slider *
  *********************/
+scale slider,
 .scale.slider,
 .scale.slider.horizontal {
 	background-image: url("assets/slider.png");
+    background-repeat: no-repeat;
 }
 
+scale slider:hover,
 .scale.slider:hover,
 .scale.slider.horizontal:hover {
 	background-image: url("assets/slider-hover.png");
+    background-repeat: no-repeat;
 }
-
+/*
 .scale.slider:active,
 .scale.slider:active:hover,
 .scale.slider.horizontal:active,
 .scale.slider.horizontal:active:hover {
 	background-image: url("assets/slider-hover.png");
 }
-
-.scale.slider:insensitive,
-.scale.slider:insensitive:hover,
-.scale.slider.horizontal:insensitive,
-.scale.slider.horizontal:insensitive:hover {
+*/
+scale slider:disabled,
+scale slider:disabled:hover,
+.scale.slider.horizontal:disabled,
+.scale.slider.horizontal:disabled:hover {
 	background-image: url("assets/slider-ins.png");
+    background-repeat: no-repeat;
 }
-
+/*
 .scale.scale-has-marks-above.slider.horizontal {
 	background-image: url("assets/slider.png");
+    background-repeat: no-repeat;
 }
 
 .scale.scale-has-marks-above.slider.horizontal:hover {
 	background-image: url("assets/slider-hover.png");
+    background-repeat: no-repeat;
 }
 
-.scale.scale-has-marks-above.slider.horizontal:active,
 .scale.scale-has-marks-above.slider.horizontal:active:hover {
 	background-image: url("assets/slider-hover.png");
+    background-repeat: no-repeat;
 }
 
-.scale.scale-has-marks-above.slider.horizontal:insensitive,
-.scale.scale-has-marks-above.slider.horizontal:insensitive:hover {
+.scale.scale-has-marks-above.slider.horizontal:disabled:hover {
 	background-image: url("assets/slider-ins.png");
+    background-repeat: no-repeat;
 }
 
 .scale.scale-has-marks-above.slider.vertical {
 	background-image: url("assets/slider.png");
+    background-repeat: no-repeat;
 }
 
 .scale.scale-has-marks-above.slider.vertical:hover {
 	background-image: url("assets/slider-hover.png");
+    background-repeat: no-repeat;
 }
 
 .scale.scale-has-marks-above.slider.vertical:active,
 .scale.scale-has-marks-above.slider.vertical:active:hover {
 	background-image: url("assets/slider-hover.png");
+    background-repeat: no-repeat;
 }
 
-.scale.scale-has-marks-above.slider.vertical:insensitive,
-.scale.scale-has-marks-above.slider.vertical:insensitive:hover {
+.scale.scale-has-marks-above.slider.vertical:disabled,
+.scale.scale-has-marks-above.slider.vertical:disabled:hover {
 	background-image: url("assets/slider-ins.png");
+    background-repeat: no-repeat;
 }
 
 .scale.scale-has-marks-below.slider.horizontal {
 	background-image: url("assets/slider.png");
+    background-repeat: no-repeat;
 }
 
 .scale.scale-has-marks-below.slider.horizontal:hover {
 	background-image: url("assets/slider-hover.png");
+    background-repeat: no-repeat;
 }
 
 .scale.scale-has-marks-below.slider.horizontal:active,
 .scale.scale-has-marks-below.slider.horizontal:active:hover {
 	background-image: url("assets/slider-hover.png");
+    background-repeat: no-repeat;
 }
 
-.scale.scale-has-marks-below.slider.horizontal:insensitive,
-.scale.scale-has-marks-below.slider.horizontal:insensitive:hover {
+.scale.scale-has-marks-below.slider.horizontal:disabled:hover {
 	background-image: url("assets/slider-ins.png");
+    background-repeat: no-repeat;
 }
 
 .scale.scale-has-marks-below.slider.vertical {
 	background-image: url("assets/slider.png");
+    background-repeat: no-repeat;
 }
 
 .scale.scale-has-marks-below.slider.vertical:hover {
 	background-image: url("assets/slider-hover.png");
+    background-repeat: no-repeat;
 }
 
 .scale.scale-has-marks-below.slider.vertical:active,
 .scale.scale-has-marks-below.slider.vertical:active:hover {
 	background-image: url("assets/slider-hover.png");
+    background-repeat: no-repeat;
 }
 
-.scale.scale-has-marks-below.slider.vertical:insensitive,
-.scale.scale-has-marks-below.slider.vertical:insensitive:hover {
+.scale.scale-has-marks-below.slider.vertical:disabled,
+.scale.scale-has-marks-below.slider.vertical:disabled:hover {
 	background-image: url("assets/slider-ins.png");
+    background-repeat: no-repeat;
 }
-
+*/
 /********************************
  * Touch text selection handles *
  ********************************/
+cursor-handle.bottom,
 .cursor-handle.bottom {
 	background-image: url("assets/slider.png");
 }
 
+cursor-handle.top,
 .cursor-handle.top {
 	background-image: url("assets/slider.png");
 }
 
+entry cursor-handle.top,
+cursor-handle.top,
 .entry.cursor-handle.top,
 .cursor-handle.top {
 	-gtk-icon-source: -gtk-icontheme("selection-start-symbolic");
 }
+
+entry cursor-handle.bottom,
+cursor-handle.bottom,
 .entry.cursor-handle.bottom,
 .cursor-handle.bottom {
 	-gtk-icon-source: -gtk-icontheme("selection-end-symbolic");
@@ -284,6 +334,7 @@ GtkSwitch.trough:active:insensitive {
 /****************
  * Content view *
  ****************/
+.view.content-view,
 .content-view.view {
 	/*background-image: url("assets/noise-texture-light.png");*/
 }
