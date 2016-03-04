@@ -6,8 +6,6 @@ scrollbar {
     background-image: none;
     border-style: solid;
     border-color: shade(@button_border, 1.13);
-    -GtkRange-stepper-size: 16;
-    -GtkRange-stepper-spacing: 0;
     -GtkScrollbar-has-backward-stepper: true;
     -GtkScrollbar-has-forward-stepper: true;
     -GtkScrollbar-activate-slider: 1;
