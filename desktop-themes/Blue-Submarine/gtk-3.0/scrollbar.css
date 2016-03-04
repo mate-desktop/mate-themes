@@ -5,105 +5,105 @@
 scrollbar {
     background-image: none;
     border-style: solid;
+    border-color: shade(@button_border, 1.13);
     -GtkRange-stepper-size: 16;
     -GtkRange-stepper-spacing: 0;
-    -GtkRange-trough-border: 0;
-    -GtkRange-arrow-scaling: 0.666;
-    -GtkRange-slider-width: 13;
-    -GtkRange-trough-under-steppers: 1;
     -GtkScrollbar-has-backward-stepper: true;
     -GtkScrollbar-has-forward-stepper: true;
     -GtkScrollbar-activate-slider: 1;
-    -GtkScrollbar-min-slider-length: 31;
     -GtkScrolledWindow-scrollbar-spacing: 0;
 }
 
- /* the small square between scrollbars!!!
-     no borders with background-image */
-scrolledwindow junction {
-    background-image: linear-gradient(to bottom,
-                                      shade(@theme_bg_color, 1.05),
-                                      shade(@theme_bg_color, 1.05));
-    border-image: linear-gradient(to bottom,
-                                      shade(@theme_bg_color, 1.05),
-                                      shade(@theme_bg_color, 1.05));
-    background-color: transparent;
-    border-style: none;
-    border-width: 0;
-    box-shadow: none;
+scrollbar.vertical {
+    border-width: 0px 0px 0px 1px;
+    min-width: 10px;
 }
 
-scrollbar trough,
+scrollbar.horizontal {
+    border-width: 1px 0px 0px 0px;
+    min-height: 10px;
+}
+
 scrollbar.vertical trough {
+    min-width: 13px;
     background-image: -gtk-gradient (linear, left top, left bottom,
                                      from (shade (@theme_bg_color, 0.98)),
                                      to (shade (@theme_bg_color, 1.06)));
-    border-left-width: 1px;
-    border-right-width: 0px;
-    border-top-width: 0px;
-    border-bottom-width: 0px;
     border-radius: 0;
-    border-color: shade(@button_border, 1.13);
-    border-style: solid;
+    border-style: none;
     box-shadow: none;
 }
 
 scrollbar.horizontal trough {
+    min-height: 13px;
     background-image: -gtk-gradient (linear, left top, right top,
                                      from (shade (@theme_bg_color, 0.98)),
                                      to (shade (@theme_bg_color, 1.06)));
-    border-left-width: 0px;
-    border-right-width: 0px;
-    border-top-width: 1px;
-    border-bottom-width: 0px;
     border-radius: 0;
-    border-style: solid;
+    border-style: none;
     box-shadow: none;
 }
 
-/* Sliders and buttons */
+scrollbar trough:disabled {
+    background-color: shade (@theme_bg_color, 1.06);
+}
+
+/* Sliders */
 scrollbar.vertical slider {
+    min-width: 11px;
+    min-height: 31px;
     background-image: -gtk-gradient (linear, left top, left bottom,
                                      from (shade (@theme_bg_color, 0.95)),
                                      to (shade (@theme_bg_color, 0.8)));
-    border-color: shade (@theme_bg_color, 0.65);
+    border-color: shade(@button_border, 1.13);
     border-radius: 10px;
     border-width: 1px;
+    border-style: solid;
 }
 
 scrollbar.vertical slider:hover,
 scrollbar.vertical slider:hover:active {
     background-image: -gtk-gradient (linear, left top, left bottom,
-                                     from (shade (@theme_bg_color, 0.85)),
-                                     to (shade (@theme_bg_color, 0.7)));
+                                     from (shade (@theme_bg_color, 0.7)),
+                                     to (shade (@theme_bg_color, 0.85)));
     border-color: shade (@theme_bg_color, 0.85);
-    border-width: 0 0 0 0;
 }
 
 scrollbar.horizontal slider {
+    min-width: 31px;
+    min-height: 13px;
     background-image: -gtk-gradient (linear, left top, right top,
                                      from (shade (@theme_bg_color, 0.95)),
                                      to (shade (@theme_bg_color, 0.8)));
-    border-color: shade (@theme_bg_color, 0.65);
+    border-color: shade(@button_border, 1.13);
     border-radius: 10px;
     border-width: 1px;
+    border-style: solid;
 }
 
 scrollbar.horizontal slider:hover,
 scrollbar.horizontal slider:hover:active {
     background-image: -gtk-gradient (linear, left top, right top,
-                                     from (shade (@theme_bg_color, 0.85)),
-                                     to (shade (@theme_bg_color, 0.7)));
+                                     from (shade (@theme_bg_color, 0.7)),
+                                     to (shade (@theme_bg_color, 0.85)));
     border-color: shade (@theme_bg_color, 0.85);
-    border-width: 0 0 0 0;
 }
 
 scrollbar slider:disabled {
     background-color: shade (@theme_bg_color, 0.9);
 }
 
-scrollbar trough:disabled {
-    background-color: shade (@theme_bg_color, 1.06);
+/* Buttons */
+scrollbar.vertical button {
+    min-width:13px;
+    min-height: 16px;
+    padding: 0px;
+}
+
+scrollbar.horizontal button {
+    min-width:16px;
+    min-height: 13px;
+    padding: 0px;
 }
 
 scrollbar button,
@@ -114,7 +114,6 @@ scrollbar button:disabled {
     border-style: none;
     border-image: none;
     border-radius: 0;
-    background-image: none;
     background-color: transparent;
 }
 
@@ -123,35 +122,37 @@ scrollbar button:hover:active {
     background-color: alpha(shade(@scrollbar_trough, 0.8), 0.5);
 }
 
-scrollbar button.top:hover {
-    box-shadow: none;
-/*    -gtk-image-effect: highlight; invalid property name in GTK 3.20 */
+scrollbar.vertical button.up {
+    -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
+    -gtk-icon-effect: highlight;
 }
 
-scrollbar button.bottom:hover {
-    box-shadow: none;
-/*    -gtk-image-effect: highlight; invalid property name in GTK 3.20 */
+scrollbar.vertical button.down {
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+    -gtk-icon-effect: highlight;
 }
 
-scrollbar button.right:hover {
-    box-shadow: none;
-/*    -gtk-image-effect: highlight; invalid property name in GTK 3.20 */
+scrollbar.horizontal button.up {
+    -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+    -gtk-icon-effect: highlight;
 }
 
-scrollbar button.left:hover {
-    box-shadow: none;
-/*    -gtk-image-effect: highlight; invalid property name in GTK 3.20 */
+scrollbar.horizontal button.down {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+    -gtk-icon-effect: highlight;
 }
 
 scrollbar button {
     color: @theme_fg_color;
 }
 
-scrollbar button:hover {
-    color: @theme_fg_color;
+scrollbar button:hover,
+scrollbar button:hover:active {
+    color: @theme_selected_bg_color;
 }
 
 scrollbar button:disabled {
+    background-color: @insensitive_bg_color;
     color: @insensitive_fg_color;
 }
 
@@ -214,3 +215,19 @@ scrolledwindow.frame {
     border-radius: 0;
     border-style: solid;
 }
+
+ /* the small square between scrollbars!!!
+     no borders with background-image */
+scrolledwindow junction {
+    background-image: linear-gradient(to bottom,
+                                      shade(@theme_bg_color, 1.00),
+                                      shade(@theme_bg_color, 1.00));
+    border-image: linear-gradient(to bottom,
+                                      shade(@theme_bg_color, 1.00),
+                                      shade(@theme_bg_color, 1.00));
+    background-color: transparent;
+    border-style: none;
+    border-width: 0;
+    box-shadow: none;
+}
+

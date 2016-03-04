@@ -20,9 +20,12 @@
     background-color: shade (@theme_bg_color, 1.08);
 }
 
-.caja-side-pane scrolledwindow scrollbar.vertical.left trough,
-.caja-side-pane scrolledwindow scrollbar.horizontal.bottom trough {
-    border-style: none;
+/* to avoid overlap with eject buttons */
+.caja-side-pane scrolledwindow scrollbar.vertical.left.overlay-indicator,
+.caja-side-pane scrolledwindow scrollbar.vertical.left.overlay-indicator trough,
+.caja-side-pane scrolledwindow scrollbar.vertical.left.overlay-indicator slider,
+.caja-side-pane scrolledwindow scrollbar.vertical.left.overlay-indicator button {
+    min-width: 8px;
 }
 
 /* selected item in sidebar */
