@@ -278,6 +278,8 @@ combobox.combobox-entry  button {
 scale slider,
 scale slider.horizontal {
 	background-image: url("assets/scale-slider-horizontal-dark.svg");
+	min-width: 16px;
+	min-height: 16px;
 }
 
 scale slider:disabled,
@@ -287,6 +289,8 @@ scale slider.horizontal:disabled {
 
 scale slider.vertical {
 	background-image: url("assets/scale-slider-vertical-dark.svg");
+	min-width: 16px;
+	min-height: 16px;
 }
 
 scale slider.vertical:disabled {
@@ -430,24 +434,22 @@ notebook tab.right:checked {
 /*********************
  * Scrollbar buttons *
  *********************/
-
-/* cannot add these yet to the GIT repo, but they are needed to fix wrong arrow orientation
-   caused by BUG in gtk3.19
-
-scrollbar.vertical button:first-child {
-	-gtk-icon-source: -gtk-scaled(url("assets/scrollbar-arrow-up.svg"));
+scrollbar.vertical button.up {
+    -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
+    -gtk-icon-effect: highlight;
 }
 
-scrollbar.vertical button:last-child {
-	-gtk-icon-source: -gtk-scaled(url("assets/scrollbar-arrow-down.svg"));
+scrollbar.vertical button.down {
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+    -gtk-icon-effect: highlight;
 }
 
-scrollbar.horizontal button:first-child {
-	-gtk-icon-source: -gtk-scaled(url("assets/scrollbar-arrow-left.svg"));
+scrollbar.horizontal button.up {
+    -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+    -gtk-icon-effect: highlight;
 }
 
-scrollbar.horizontal button:last-child  {
-	-gtk-icon-source: -gtk-scaled(url("assets/scrollbar-arrow-right.svg"));
+scrollbar.horizontal button.down {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+    -gtk-icon-effect: highlight;
 }
-*/
-
