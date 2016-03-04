@@ -3066,7 +3066,7 @@ spinbutton.vertical:focus {
 }
 
 spinbutton.horizontal > entry {
-    padding: 0px 10px 0px 3px;
+    padding: 6px 10px 6px 3px;
     box-shadow: none;
     border-radius: 3px 0px 0px 3px;
     border-style: none;
@@ -6196,7 +6196,7 @@ stack .linked.vertical spinbutton.horizontal entry:disabled {
     border-width: 0px 0px 1px 1px;
     border-style: solid;
     border-color: shade(@notebook_border, 1.0);
-    padding: 0px 5px;
+    padding: 6px;
 }
 
 stack .linked.vertical spinbutton.horizontal entry,
