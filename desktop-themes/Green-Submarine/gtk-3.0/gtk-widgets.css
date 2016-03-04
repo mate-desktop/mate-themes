@@ -11,16 +11,13 @@
     -GtkDialog-action-area-border: 10; /* ie. logout dialog */
     -GtkHTML-link-color: @link_color;
     -GtkIMHtml-hyperlink-color: @link_color;
-    -GtkRange-trough-border: 1;
+/*    -GtkRange-trough-border: 1;
     -GtkRange-slider-width: 11;
     -GtkRange-stepper-size: 13;
     -GtkRange-trough-under-steppers: 1;
     -GtkRange-stepper-spacing: 0;
-    -GtkScale-trough-border: 0;
+    -GtkScale-trough-border: 0; */
     -GtkScrollbar-activate-slider: 1;
-    -GtkScrollbar-trough-border: 0;
-    -GtkScrollbar-slider-width: 11;
-    -GtkScrollbar-min-slider-length: 31;
     -GtkScrolledWindow-scrollbar-spacing: 0;
     -GtkTextView-error-underline-color: @error_color;
     -GtkToolButton-icon-spacing: 4;
@@ -581,9 +578,9 @@ levelbar block.empty:backdrop {
  ************/
 
 scale {
-    -GtkScale-slider-length: 16;
+/*    -GtkScale-slider-length: 16;
     -GtkRange-slider-width: 16;
-    -GtkRange-trough-border: 0;
+    -GtkRange-trough-border: 0; */
 }
 
 scale slider,
