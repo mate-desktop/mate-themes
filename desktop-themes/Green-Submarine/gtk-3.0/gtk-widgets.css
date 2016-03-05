@@ -577,38 +577,22 @@ levelbar block.empty:backdrop {
  * GtkScale *
  ************/
 
-scale {
-/*    -GtkScale-slider-length: 16;
-    -GtkRange-slider-width: 16;
-    -GtkRange-trough-border: 0; */
+scale.vertical {
+    min-width: 10px;
+    padding: 0px 4px;
 }
 
-scale slider,
-scale slider:hover,
-scale slider:disabled {
-    border-width: 1px;
-    border-radius: 8px;
-    border-style: none;
-    color: alpha(@theme_base_color, 0.0);
-    background-color: alpha(@theme_base_color, 0.0);
-    /* background-image in -assets variant */
-    background-repeat: no-repeat;
-    background-position: center;
+scale.horizontal {
+    min-height: 10px;
+    padding: 6px 0px;
 }
 
-scale.horizontal.fine-tune slider:active,
-scale.horizontal.fine-tune slider:hover:active {
-    background-size: 80%;
-    background-repeat: no-repeat;
-    background-position: center;
+scale.horizontal trough {
+   min-height: 4px;
 }
 
-/* Why different values ? */
-scale.vertical.fine-tune slider:active,
-scale.vertical.fine-tune slider:hover:active {
-    background-size: 98%;
-    background-repeat: no-repeat;
-    background-position: center;
+scale.vertical trough {
+   min-width: 4px;
 }
 
 scale trough {
@@ -625,15 +609,8 @@ scale trough {
                 inset -1px -1px alpha(#000, 0.08);
 }
 
-scale trough {
-    margin: 6px 0;
-}
-
-scale.vertical trough {
-    margin: 0 6px;
-}
-
-scale trough,
+scale  trough,
+scale.horizontal  trough,
 scale.vertical trough {
     border-color: @scale_border_b;
 }
@@ -659,17 +636,9 @@ scale.horizontal trough highlight {
 }
 
 scale trough highlight:disabled,
-scale.vertical trough highlight:disabled {
+scale.vertical trough highlight:disabled,
+scale.horizontal trough highlight:disabled {
     background-color: transparent;
-}
-
-scale:disabled,
-scale.vertical:disabled {
-    background-color: transparent;
-}
-
-scale marks {
-    color: mix(@theme_bg_color, @theme_text_color, 0.56);
 }
 
 scale highlight.left {
@@ -716,31 +685,133 @@ scale highlight.bottom:disabled {
                 inset -1px -1px alpha(#000, 0.02);
 }
 
-scale.vertical.scale-has-marks-below slider,
-scale.horizontal.scale-has-marks-below slider,
-scale.vertical.scale-has-marks-above slider,
-scale.horizontal.scale-has-marks-above slider {
+scale marks {
+    color: mix(@theme_bg_color, @theme_text_color, 0.56);
+    background-color: transparent;
+}
+
+scale marks.top,
+scale.fine-tune marks.top {
+    margin-bottom: 6px;
+}
+
+scale marks.bottom,
+scale.fine-tune marks.bottom  {
+    margin-top: 6px;
+}
+
+/* this makes marks visible */
+scale.horizontal indicator,
+scale.horizontal.fine-tune indicator {
+    min-height: 8px;
+    min-width: 1px;
+}
+
+scale.vertical indicator,
+scale.vertical.fine-tune indicator {
+    min-height: 1px;
+    min-width: 8px;
+}
+
+scale slider,
+scale slider:hover,
+scale slider:disabled {
+    border-radius: 8px;
+    border-style: none;
+}
+
+scale.horizontal slider {
+    /* background-image in -assets variant */
+    background-color: transparent;
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
+    min-height: 18px;
+    min-width: 18px;
+    margin: -9px 0px -9px 0px;
 }
 
-scale.vertical.scale-has-marks-below slider:hover,
-scale.horizontal.scale-has-marks-below slider:hover,
-scale.vertical.scale-has-marks-above slider:hover,
-scale.horizontal.scale-has-marks-above slider:hover {
+scale.horizontal.fine-tune slider:active,
+scale.horizontal.fine-tune slider:hover:active {
     background-size: 90%;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-scale.vertical.fine-tune.scale-has-marks-below slider,
-scale.horizontal.fine-tune.scale-has-marks-below slider,
-scale.vertical.fine-tune.scale-has-marks-above slider,
-scale.horizontal.fine-tune.scale-has-marks-above slider {
-    background-size: 75%;
+/* Why different values ? */
+scale.vertical slider {
+    /* background-image in -assets variant */
+    background-size: 130%;
     background-repeat: no-repeat;
     background-position: center;
+    min-height: 18px;
+    min-width: 18px;
+    margin: 0px -9px 0px -9px;
+}
+
+scale.vertical.fine-tune slider:active,
+scale.vertical.fine-tune slider:hover:active {
+    background-size: 115%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+scale.horizontal.scale-has-marks-above.color {
+    min-height: 10px;
+    margin: 0px 0px 5px 0px;
+    padding: 0px;
+}
+
+scale.horizontal.scale-has-marks-above.color trough {
+    min-height: 0px;
+    margin: -9px 0px 0px 0px;
+    padding: 5px;
+}
+
+scale.horizontal.scale-has-marks-above.color slider {
+    min-height: 10px;
+    min-width: 20px;
+    margin: 0px 0px -10px 0px;
+    padding: 10px 0px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+scale.horizontal.scale-has-marks-above.color slider:hover {
+    background-size: 105%;
+}
+
+scale.horizontal.fine-tune.scale-has-marks-above.color slider {
+    background-size: 90%;
+}
+
+scale.vertical.scale-has-marks-below.color {
+    min-width: 0px;
+    margin: 0px 0px 0px 5px;
+    padding: 0px;
+}
+
+scale.vertical.scale-has-marks-below.color trough {
+    min-width: 0px;
+    padding: 10px;
+}
+
+scale.vertical.scale-has-marks-below.color slider {
+    min-height: 20px;
+    min-width: 22px;
+    padding: 0px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+scale.vertical.scale-has-marks-below.color slider:hover {
+    background-size: 105%;
+}
+
+scale.vertical.fine-tune.scale-has-marks-below.color slider {
+    background-size: 90%;
 }
 
 /**********
@@ -5193,6 +5264,27 @@ progressbar .osd {
     border-width: 3px;
     border-color: @osd_button_fg;
     outline-color: transparent;
+}
+
+/* ie. colorchooser */
+.osd.popover spinbutton entry,
+.osd.popover spinbutton entry:focus,
+.osd.popover spinbutton button,
+.osd.popover spinbutton button:focus {
+    min-width: 16px;
+    min-height: 16px;
+    border-width: 1px;
+    border-style: none;
+    border-radius: 0px;
+    box-shadow: none;
+    padding: 8px;
+}
+
+.osd.popover spinbutton button:hover {
+    background-image: linear-gradient(to bottom,
+                                      alpha(shade(@theme_selected_bg_color, 1.2), 0.4),
+                                      alpha(shade(@theme_selected_bg_color, 0.95), 0.4));
+    background-color: alpha(shade(@theme_selected_bg_color, 1.0), 0.4);
 }
 
 /* used by Documents */
