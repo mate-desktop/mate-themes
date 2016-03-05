@@ -2886,24 +2886,19 @@ scrollbar,
 .scrollbar {
 	background-image: none;
 	border-style: solid;
-	-GtkRange-trough-border: 0;
+	border-color: shade (@theme_bg_color, 0.94);
 	-GtkScrollbar-has-backward-stepper: true;
 	-GtkScrollbar-has-forward-stepper: true;
-	-GtkRange-stepper-size: 16;
-	-GtkRange-slider-width: 13;
-	-GtkScrollbar-min-slider-length: 42;
-	-GtkRange-stepper-spacing: 0;
-	-GtkRange-trough-under-steppers: 1;
 }
 
-scrollbars-junction,
-.scrollbars-junction { /* the small square between scrollbars!!! */
-	background-image: none;
-	background-color: @theme_bg_color;
-	border-width: 0;
-	border-radius: 0;
-	border-image: none;
-	box-shadow: none;
+scrollbar.vertical {
+    border-width: 0px 0px 0px 1px;
+    min-width: 10px;
+}
+
+scrollbar.horizontal {
+    border-width: 1px 0px 0px 0px;
+    min-height: 10px;
 }
 
 scrollbar trough,
@@ -2911,17 +2906,12 @@ scrollbar trough.vertical,
 .sidebar scrollbar trough,
 .sidebar scrollbar trough.vertical,
 placessidebar scrollbar.trough,
-placessidebar scrollbar.trough.vertical,
-.scrollbar.trough,
-.scrollbar.trough.vertical,
-.sidebar.scrollbar.trough,
-.sidebar.scrollbar.trough.vertical,
-GtkPlacesSidebar .scrollbar.trough,
-GtkPlacesSidebar .scrollbar.trough.vertical {
+placessidebar scrollbar.trough.vertical {
+    min-width: 13px;
 	background-image: linear-gradient(to right,
 		@scrollbar_trough,
 		shade (@scrollbar_trough, 1.08));
-	border-left-width: 1px;
+	border-width: 1px 0px 1px 0px;
 	border-style: solid;
 	border-color: shade (@theme_bg_color, 0.94);
 	border-radius: 0;
@@ -2930,84 +2920,104 @@ GtkPlacesSidebar .scrollbar.trough.vertical {
 
 scrollbar trough.horizontal,
 .sidebar scrollbar trough.horizontal,
-placessidebar scrollbar trough.horizontal,
-.scrollbar.trough.horizontal,
-.sidebar.scrollbar.trough.horizontal,
-GtkPlacesSidebar .scrollbar.trough.horizontal {
+placessidebar scrollbar trough.horizontal {
+    min-width: 13px;
 	background-image: linear-gradient(to bottom,
 		@scrollbar_trough,
 		shade (@scrollbar_trough, 1.08));
-	border-top-width: 1px;
+	border-width: 0px 1px 0px 1px;
 	border-style: solid;
 	border-color: shade (@theme_bg_color, 0.94);
 	border-radius: 0;
 	border-image: none;
 }
 
+/* Buttons */
+scrollbar.vertical button {
+    min-width:13px;
+    min-height: 16px;
+    padding: 1px 0px;
+}
+
+scrollbar.horizontal button {
+    min-width:16px;
+    min-height: 13px;
+    padding: 0px 1px;
+}
+
+scrollbar.vertical button.up {
+    -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
+}
+
+scrollbar.vertical button.down {
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
+scrollbar.horizontal button.up {
+    -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+}
+
+scrollbar.horizontal button.down {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+
 scrollbar button,
-scrollbar button:active,
-scrollbar button:active:hover,
-scrollbar button:disabled,
-.scrollbar.button,
-.scrollbar.button:active,
-.scrollbar.button:active:hover,
-.scrollbar.button:disabled {
+scrollbar button:checked,
+scrollbar button:hover:active,
+scrollbar button:disabled {
 	border-style: none;
 	border-image: none;
 	border-radius: 0;
-	background-image: none;
-	background-color: transparent;
 }
 
-scrollbar button:active,
-scrollbar button:active:hover,
-.scrollbar.button:active,
-.scrollbar.button:active:hover {
+scrollbar button:checked,
+scrollbar button:hover:active {
 	background-color: alpha(shade(@scrollbar_trough, 0.8), 0.5);
 }
 
-scrollbar button.top:hover,
-.scrollbar.button.top:hover {
+scrollbar button.top:hover {
 	box-shadow: inset 0 -1px mix(@scrollbar_slider, @scrollbar_trough, 0.8);
 }
 
-scrollbar button.bottom:hover,
-.scrollbar.button.bottom:hover {
+scrollbar button.bottom:hover {
 	box-shadow: inset 0 1px mix(@scrollbar_slider, @scrollbar_trough, 0.8);
 }
 
-scrollbar button.right:hover,
-.scrollbar.button.right:hover {
+scrollbar button.right:hover {
 	box-shadow: inset 1px 0 mix(@scrollbar_slider, @scrollbar_trough, 0.8);
 }
 
-scrollbar button.left:hover,
-.scrollbar.button.left:hover {
+scrollbar button.left:hover {
 	box-shadow: inset -1px 0 mix(@scrollbar_slider, @scrollbar_trough, 0.8);
 }
 
-scrollbar button,
-.scrollbar.button {
-	color: @theme_fg_color;
+scrollbar button {
+	background-image: linear-gradient(to bottom,
+		shade (@button_active_gradient_color_a, 1.12),
+		shade (@button_active_gradient_color_b, 1.12));
+	background-color: transparent;
 }
 
-scrollbar button:hover,
-.scrollbar.button:hover {
-	color: @theme_fg_color;
+scrollbar button:hover {
+	background-color: transparent;
+	background-image: linear-gradient(to bottom,
+		shade (@button_active_gradient_color_a, 1.20),
+		shade (@button_active_gradient_color_b, 1.15));
+    color: @theme_selected_bg_color;
 }
 
-scrollbar button:disabled,
-.scrollbar.button:disabled {
+scrollbar button:disabled {
 	color: @insensitive_fg_color;
 }
 
-scrollbar button:active,
-.scrollbar.button:active {
+scrollbar button:checked {
 	color: @theme_fg_color;
 }
 
-scrollbar.vertical slider,
-.scrollbar.slider.vertical {
+scrollbar.vertical slider {
+    min-width: 12px;
+    min-height: 42px;
+    margin: 0px -1px 0px -1px;
 	background-image: linear-gradient(to right,
 		shade(@scrollbar_slider, 0.95),
 		shade(@scrollbar_slider, 0.8));
@@ -3019,9 +3029,7 @@ scrollbar.vertical slider,
 }
 
 scrollbar.vertical slider:hover,
-scrollbar.vertical slider:hover:active,
-.scrollbar.slider.vertical:hover,
-.scrollbar.slider.vertical:hover:active {
+scrollbar.vertical slider:hover:active {
 	background-image: linear-gradient(to right,
 		shade(@scrollbar_slider, 0.85),
 		shade(@scrollbar_slider, 0.7));
@@ -3033,6 +3041,9 @@ scrollbar.vertical slider:hover:active,
 
 scrollbar.horizontal slider,
 .scrollbar.slider.horizontal {
+    min-width: 42px;
+    min-height: 12px;
+    margin: -1px 0px -1px 0px;
 	background-image: linear-gradient(to bottom,
 		shade(@scrollbar_slider, 0.95),
 		shade(@scrollbar_slider, 0.8));
@@ -3068,12 +3079,22 @@ scrollbar slider:disabled,
 scrollbar.fine-tune slider:hover:active,
 .scrollbar.slider.fine-tune:hover:active {
 	background-image: linear-gradient(to right,
-		shade(@scrollbar_slider, 0.85),
+		shade(@scrollbar_slider, 0.95),
 		shade(@scrollbar_slider, 0.7));
 	border-style: solid;
 	border-image: none;
-	border-color: shade(@scrollbar_slider, 0.65);
-	border-width: 1px;
+	border-color: shade(@scrollbar_slider, 0.75);
+
+}
+
+scrolledwindow junction,
+.scrollbars-junction { /* the small square between scrollbars!!! */
+	background-image: none;
+	background-color: @theme_bg_color;
+	border-width: 0;
+	border-radius: 0;
+	border-image: none;
+	box-shadow: none;
 }
 
 /*********

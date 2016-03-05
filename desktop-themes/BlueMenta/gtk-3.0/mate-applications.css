@@ -152,15 +152,12 @@ CajaWindow CajaPlacesSidebar .view row {
     padding: 1px 4px 1px 0px;
 }
 
-/* better for overlay scrollbars */
-.caja-side-pane treeview.view .vertical.scrollbar.overlay-indicator,
-.caja-side-pane textview.view text .vertical.scrollbar.overlay-indicator,
-CajaWindow FMTreeView .vertical.scrollbar.overlay-indicator,
-CajaWindow CajaNotesViewer .vertical.scrollbar.overlay-indicator,
-CajaWindow CajaPlacesSidebar .vertical.scrollbar.overlay-indicator,
-CajaWindow CajaEmblemSidebar .vertical.scrollbar.overlay-indicator,
-CajaWindow CajaHistorySidebar .vertical.scrollbar.overlay-indicator {
-	-GtkRange-slider-width: 11;
+/* to avoid overlap with eject buttons */
+.caja-side-pane scrolledwindow scrollbar.vertical.left.overlay-indicator,
+.caja-side-pane scrolledwindow scrollbar.vertical.left.overlay-indicator trough,
+.caja-side-pane scrolledwindow scrollbar.vertical.left.overlay-indicator slider,
+.caja-side-pane scrolledwindow scrollbar.vertical.left.overlay-indicator button {
+    min-width: 8px;
 }
 
 .caja-side-pane notebook {
