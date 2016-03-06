@@ -580,6 +580,12 @@ GtkTrayIcon.background {
  * Mate-Terminal *
  ****************/
 
+/* workaround for broken size with gtk+-3.20 */
+window.background.mate-terminal box.vertical {
+    min-width: 640px;
+    min-height: 380px;
+}
+
 TerminalWindow GtkNotebook.notebook tab {
     padding: 2px;
     border-color: transparent;
