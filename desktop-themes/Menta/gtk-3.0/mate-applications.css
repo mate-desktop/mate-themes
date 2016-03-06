@@ -742,8 +742,7 @@ EvWindow .toolbar .button.flat {
 }
 
 /* atril and eom */
-dialog.background>box.vertical.dialog-vbox>box.vertical>scrolledwindow>viewport.frame,
-EggToolbarEditor.vertical GtkScrolledWindow .frame {
+EggToolbarEditor.vertical scrolledwindow viewport.frame {
     background-color: shade (@theme_base_color, 1.0);
     border-color: @borders;
     border-width: 1px;

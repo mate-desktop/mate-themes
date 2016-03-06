@@ -1,15 +1,16 @@
-headerbar.titlebar .right .titlebutton:nth-last-child(3),
-headerbar.titlebar .right:dir(rtl) .titlebutton:nth-child(3),
-headerbar.titlebar .left .titlebutton:nth-child(3),
-headerbar.titlebar .left:dir(rtl) .titlebutton:nth-last-child(3),
-headerbar.titlebar .right .titlebutton:nth-last-child(2),
-headerbar.titlebar .right:dir(rtl) .titlebutton:nth-child(2),
-headerbar.titlebar .left .titlebutton:nth-child(2),
-headerbar.titlebar .left:dir(rtl) .titlebutton:nth-last-child(2),
-headerbar.titlebar .right .titlebutton:last-child,
-headerbar.titlebar .right:dir(rtl) .titlebutton:first-child,
-headerbar.titlebar .left .titlebutton:first-child,
-headerbar.titlebar .left:dir(rtl) .titlebutton:last-child {
+
+headerbar.titlebar .right button.minimize.titlebutton,
+headerbar.titlebar .right:dir(rtl) button.minimize.titlebutton,
+headerbar.titlebar .left button.minimize.titlebutton,
+headerbar.titlebar .left:dir(rtl) button.minimize.titlebutton,
+headerbar.titlebar .right button.maximize.titlebutton,
+headerbar.titlebar .right:dir(rtl) button.maximize.titlebutton,
+headerbar.titlebar .left button.maximize.titlebutton,
+headerbar.titlebar .left:dir(rtl) button.maximize.titlebutton,
+headerbar.titlebar .right button.close.titlebutton,
+headerbar.titlebar .right:dir(rtl) button.close.titlebutton,
+headerbar.titlebar .left button.close.titlebutton,
+headerbar.titlebar .left:dir(rtl) button.close.titlebutton {
 	color: transparent;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -24,128 +25,133 @@ headerbar.titlebar .left:dir(rtl) .titlebutton:last-child {
 
 /* minimize */
 
-headerbar.titlebar .right .titlebutton:nth-last-child(3),
-headerbar.titlebar .right:dir(rtl) .titlebutton:nth-child(3),
-headerbar.titlebar .left .titlebutton:nth-child(3),
-headerbar.titlebar .left:dir(rtl) .titlebutton:nth-last-child(3) {
+headerbar.titlebar .right button.minimize.titlebutton,
+headerbar.titlebar .right:dir(rtl) button.minimize.titlebutton,
+headerbar.titlebar .left button.minimize.titlebutton,
+headerbar.titlebar .left:dir(rtl) button.minimize.titlebutton {
 	background-image: url('window-controls/minimize_focused_normal.png');
 }
 
-headerbar.titlebar .right .titlebutton:nth-last-child(3):hover,
-headerbar.titlebar .right:dir(rtl) .titlebutton:nth-child(3):hover,
-headerbar.titlebar .left .titlebutton:nth-child(3):hover,
-headerbar.titlebar .left:dir(rtl) .titlebutton:nth-last-child(3):hover {
+headerbar.titlebar .right button.minimize.titlebutton:hover,
+headerbar.titlebar .right:dir(rtl) button.minimize.titlebutton:hover,
+headerbar.titlebar .left button.minimize.titlebutton:hover,
+headerbar.titlebar .left:dir(rtl) button.minimize.titlebutton:hover {
 	background-image: url('window-controls/minimize_focused_prelight.png');
 }
 
-headerbar.titlebar .right .titlebutton:nth-last-child(3):active,
-headerbar.titlebar .right:dir(rtl) .titlebutton:nth-child(3):active,
-headerbar.titlebar .left .titlebutton:nth-child(3):active,
-headerbar.titlebar .left:dir(rtl) .titlebutton:nth-last-child(3):active,
-headerbar.titlebar .right .titlebutton:nth-last-child(3):checked,
-headerbar.titlebar .right:dir(rtl) .titlebutton:nth-child(3):checked,
-headerbar.titlebar .left .titlebutton:nth-child(3):checked,
-headerbar.titlebar .left:dir(rtl) .titlebutton:nth-last-child(3):checked {
+headerbar.titlebar .right button.minimize.titlebutton:active,
+headerbar.titlebar .right:dir(rtl) button.minimize.titlebutton:active,
+headerbar.titlebar .left button.minimize.titlebutton:active,
+headerbar.titlebar .left:dir(rtl) button.minimize.titlebutton:active,
+headerbar.titlebar .right button.minimize.titlebutton:checked,
+headerbar.titlebar .right:dir(rtl) button.minimize.titlebutton:checked,
+headerbar.titlebar .left button.minimize.titlebutton:checked,
+headerbar.titlebar .left:dir(rtl) button.minimize.titlebutton:checked {
 	background-image: url('window-controls/minimize_focused_pressed.png');
 }
 
-headerbar.titlebar .right .titlebutton:nth-last-child(3):backdrop,
-headerbar.titlebar .right:dir(rtl) .titlebutton:nth-child(3):backdrop,
-headerbar.titlebar .left .titlebutton:nth-child(3):backdrop,
-headerbar.titlebar .left:dir(rtl) .titlebutton:nth-last-child(3):backdrop {
+headerbar.titlebar .right button.minimize.titlebutton:backdrop,
+headerbar.titlebar .right:dir(rtl) button.minimize.titlebutton:backdrop,
+headerbar.titlebar .left button.minimize.titlebutton:backdrop,
+headerbar.titlebar .left:dir(rtl) button.minimize.titlebutton:backdrop {
 	background-image: url('window-controls/minimize_unfocused.png');
 }
 
-headerbar.titlebar .right .titlebutton:nth-last-child(3):backdrop:hover,
-headerbar.titlebar .right:dir(rtl) .titlebutton:nth-child(3):backdrop:hover,
-headerbar.titlebar .left .titlebutton:nth-child(3):backdrop:hover,
-headerbar.titlebar .left:dir(rtl) .titlebutton:nth-last-child(3):backdrop:hover {
+headerbar.titlebar .right button.minimize.titlebutton:backdrop:hover,
+headerbar.titlebar .right:dir(rtl) button.minimize.titlebutton:backdrop:hover,
+headerbar.titlebar .left button.minimize.titlebutton:backdrop:hover,
+headerbar.titlebar .left:dir(rtl) button.minimize.titlebutton:backdrop:hover {
 	background-image: url('window-controls/minimize_unfocused_prelight.png');
 }
 
 /* maximize */
-headerbar.titlebar .right .titlebutton:nth-last-child(2),
-headerbar.titlebar .right:dir(rtl) .titlebutton:nth-child(2),
-headerbar.titlebar .left .titlebutton:nth-child(2),
-headerbar.titlebar .left:dir(rtl) .titlebutton:nth-last-child(2) {
+headerbar.titlebar .right button.maximize.titlebutton,
+headerbar.titlebar .right:dir(rtl) button.maximize.titlebutton,
+headerbar.titlebar .left button.maximize.titlebutton,
+headerbar.titlebar .left:dir(rtl) button.maximize.titlebutton {
 	background-image: url('window-controls/maximize_focused_normal.png');
 }
 
-headerbar.titlebar .right .titlebutton:nth-last-child(2):hover,
-headerbar.titlebar .right:dir(rtl) .titlebutton:nth-child(2):hover,
-headerbar.titlebar .left .titlebutton:nth-child(2):hover,
-headerbar.titlebar .left:dir(rtl) .titlebutton:nth-last-child(2):hover {
+headerbar.titlebar .right button.maximize.titlebutton:hover,
+headerbar.titlebar .right:dir(rtl) button.maximize.titlebutton:hover,
+headerbar.titlebar .left button.maximize.titlebutton:hover,
+headerbar.titlebar .left:dir(rtl) button.maximize.titlebutton:hover {
 	background-image: url('window-controls/maximize_focused_prelight.png');
 }
 
-headerbar.titlebar .right .titlebutton:nth-last-child(2):active,
-headerbar.titlebar .right:dir(rtl) .titlebutton:nth-child(2):active,
-headerbar.titlebar .left .titlebutton:nth-child(2):active,
-headerbar.titlebar .left:dir(rtl) .titlebutton:nth-last-child(2):active,
-headerbar.titlebar .right .titlebutton:nth-last-child(2):checked,
-headerbar.titlebar .right:dir(rtl) .titlebutton:nth-child(2):checked,
-headerbar.titlebar .left .titlebutton:nth-child(2):checked,
-headerbar.titlebar .left:dir(rtl) .titlebutton:nth-last-child(2):checked {
+headerbar.titlebar .right button.maximize.titlebutton:active,
+headerbar.titlebar .right:dir(rtl) button.maximize.titlebutton:active,
+headerbar.titlebar .left button.maximize.titlebutton:active,
+headerbar.titlebar .left:dir(rtl) button.maximize.titlebutton:active,
+headerbar.titlebar .right button.maximize.titlebutton:checked,
+headerbar.titlebar .right:dir(rtl) button.maximize.titlebutton:checked,
+headerbar.titlebar .left button.maximize.titlebutton:checked,
+headerbar.titlebar .left:dir(rtl) button.maximize.titlebutton:checked {
 	background-image: url('window-controls/maximize_focused_pressed.png');
 }
 
-headerbar.titlebar .right .titlebutton:nth-last-child(2):backdrop,
-headerbar.titlebar .right:dir(rtl) .titlebutton:nth-child(2):backdrop,
-headerbar.titlebar .left .titlebutton:nth-child(2):backdrop,
-headerbar.titlebar .left:dir(rtl) .titlebutton:nth-last-child(2):backdrop {
+headerbar.titlebar .right button.maximize.titlebutton:backdrop,
+headerbar.titlebar .right:dir(rtl) button.maximize.titlebutton:backdrop,
+headerbar.titlebar .left button.maximize.titlebutton:backdrop,
+headerbar.titlebar .left:dir(rtl) button.maximize.titlebutton:backdrop {
 	background-image: url('window-controls/maximize_unfocused.png');
 }
 
-headerbar.titlebar .right .titlebutton:nth-last-child(2):backdrop:hover,
-headerbar.titlebar .right:dir(rtl) .titlebutton:nth-child(2):backdrop:hover,
-headerbar.titlebar .left .titlebutton:nth-child(2):backdrop:hover,
-headerbar.titlebar .left:dir(rtl) .titlebutton:nth-last-child(2):backdrop:hover {
+headerbar.titlebar .right button.maximize.titlebutton:backdrop:hover,
+headerbar.titlebar .right:dir(rtl) button.maximize.titlebutton:backdrop:hover,
+headerbar.titlebar .left button.maximize.titlebutton:backdrop:hover,
+headerbar.titlebar .left:dir(rtl) button.maximize.titlebutton:backdrop:hover {
 	background-image: url('window-controls/maximize_unfocused_prelight.png');
 }
 
 /* close */
-headerbar.titlebar .right .titlebutton:last-child,
-headerbar.titlebar .right:dir(rtl) .titlebutton:first-child,
-headerbar.titlebar .left .titlebutton:first-child,
-headerbar.titlebar .left:dir(rtl) .titlebutton:last-child {
+headerbar.titlebar .right button.close.titlebutton,
+headerbar.titlebar .right:dir(rtl) button.close.titlebutton,
+headerbar.titlebar .left button.close.titlebutton,
+headerbar.titlebar .left:dir(rtl) button.close.titlebutton {
 	background-image: url('window-controls/close_focused_normal.png');
 	/*padding: 2px 6px 3px 3px;*/ /* FIXME: Uncomment this shit when using the Faenza icon theme and maybe some other icon themes */
 }
 
-headerbar.titlebar .right .titlebutton:last-child:hover,
-headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:hover,
-headerbar.titlebar .left .titlebutton:first-child:hover,
-headerbar.titlebar .left:dir(rtl) .titlebutton:last-child:hover {
+headerbar.titlebar .right button.close.titlebutton:hover,
+headerbar.titlebar .right:dir(rtl) button.close.titlebutton:hover,
+headerbar.titlebar .left button.close.titlebutton:hover,
+headerbar.titlebar .left:dir(rtl) button.close.titlebutton:hover {
 	background-image: url('window-controls/close_focused_prelight.png');
 }
 
-headerbar.titlebar .right .titlebutton:last-child:active,
-headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:active,
-headerbar.titlebar .left .titlebutton:first-child:active,
-headerbar.titlebar .left:dir(rtl) .titlebutton:last-child:active,
-headerbar.titlebar .right .titlebutton:last-child:checked,
-headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:checked,
-headerbar.titlebar .left .titlebutton:first-child:checked,
-headerbar.titlebar .left:dir(rtl) .titlebutton:last-child:checked {
+headerbar.titlebar .right button.close.titlebutton:active,
+headerbar.titlebar .right:dir(rtl) button.close.titlebutton:active,
+headerbar.titlebar .left button.close.titlebutton:active,
+headerbar.titlebar .left:dir(rtl) button.close.titlebutton:active,
+headerbar.titlebar .right button.close.titlebutton:checked,
+headerbar.titlebar .right:dir(rtl) button.close.titlebutton:checked,
+headerbar.titlebar .left button.close.titlebutton:checked,
+headerbar.titlebar .left:dir(rtl) button.close.titlebutton:checked {
 	background-image: url('window-controls/close_focused_pressed.png');
 }
 
-headerbar.titlebar .right .titlebutton:last-child:backdrop,
-headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:backdrop,
-headerbar.titlebar .left .titlebutton:first-child:backdrop,
-headerbar.titlebar .left:dir(rtl) .titlebutton:last-child:backdrop {
+headerbar.titlebar .right button.close.titlebutton:backdrop,
+headerbar.titlebar .right:dir(rtl) button.close.titlebutton:backdrop,
+headerbar.titlebar .left button.close.titlebutton:backdrop,
+headerbar.titlebar .left:dir(rtl) button.close.titlebutton:backdrop {
 	background-image: url('window-controls/close_unfocused.png');
 }
 
-headerbar.titlebar .right .titlebutton:last-child:backdrop:hover,
-headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:backdrop:hover,
-headerbar.titlebar .left .titlebutton:first-child:backdrop:hover,
-headerbar.titlebar .left:dir(rtl) .titlebutton:last-child:backdrop:hover {
+headerbar.titlebar .right button.close.titlebutton:backdrop:hover,
+headerbar.titlebar .right:dir(rtl) button.close.titlebutton:backdrop:hover,
+headerbar.titlebar .left button.close.titlebutton:backdrop:hover,
+headerbar.titlebar .left:dir(rtl) button.close.titlebutton:backdrop:hover {
 	background-image: url('window-controls/close_unfocused_prelight.png');
 }
 
-/* Menu button when fallback kicks in (XFCE, Cinnamon etc.) */
+.titlebar button.close.titlebutton {
+    /* fake request     to avoid usage of regular window-close button*/
+    -gtk-icon-style: requested;
+}
 
+/* Menu button when fallback kicks in (XFCE, Cinnamon etc.) */
+/*
 headerbar.titlebar .button.menu-button.titlebutton {
 	background-image: url('window-controls/menu.png');
 }
@@ -157,126 +163,19 @@ headerbar.titlebar .button.menu-button.titlebutton:hover {
 headerbar.titlebar .button.menu-button.titlebutton:active {
 	background-image: url('window-controls/menu.png');
 }
+*/
 
-/* application adjustments *//*
-NautilusWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child,
-NautilusWindow headerbar.titlebar .left .titlebutton:first-child,
-NautilusWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:hover,
-NautilusWindow headerbar.titlebar .left .titlebutton:first-child:hover,
-NautilusWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:active,
-NautilusWindow headerbar.titlebar .left .titlebutton:first-child:active,
-NautilusWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:checked,
-NautilusWindow headerbar.titlebar .left .titlebutton:first-child:checked,
-NautilusWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:backdrop,
-NautilusWindow headerbar.titlebar .left .titlebutton:first-child:backdrop,
-NautilusWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:backdrop:hover,
-NautilusWindow headerbar.titlebar .left .titlebutton:first-child:backdrop:hover,
-YelpWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child,
-YelpWindow headerbar.titlebar .left .titlebutton:first-child,
-YelpWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:hover,
-YelpWindow headerbar.titlebar .left .titlebutton:first-child:hover,
-YelpWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:active,
-YelpWindow headerbar.titlebar .left .titlebutton:first-child:active,
-YelpWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:checked,
-YelpWindow headerbar.titlebar .left .titlebutton:first-child:checked,
-YelpWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:backdrop,
-YelpWindow headerbar.titlebar .left .titlebutton:first-child:backdrop,
-YelpWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:backdrop:hover,
-YelpWindow headerbar.titlebar .left .titlebutton:first-child:backdrop:hover,
-MathWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child,
-MathWindow headerbar.titlebar .left .titlebutton:first-child,
-MathWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:hover,
-MathWindow headerbar.titlebar .left .titlebutton:first-child:hover,
-MathWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:active,
-MathWindow headerbar.titlebar .left .titlebutton:first-child:active,
-MathWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:checked,
-MathWindow headerbar.titlebar .left .titlebutton:first-child:checked,
-MathWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:backdrop,
-MathWindow headerbar.titlebar .left .titlebutton:first-child:backdrop,
-MathWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:backdrop:hover,
-MathWindow headerbar.titlebar .left .titlebutton:first-child:backdrop:hover,
-EogWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child,
-EogWindow headerbar.titlebar .left .titlebutton:first-child,
-EogWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:hover,
-EogWindow headerbar.titlebar .left .titlebutton:first-child:hover,
-EogWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:active,
-EogWindow headerbar.titlebar .left .titlebutton:first-child:active,
-EogWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:checked,
-EogWindow headerbar.titlebar .left .titlebutton:first-child:checked,
-EogWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:backdrop,
-EogWindow headerbar.titlebar .left .titlebutton:first-child:backdrop,
-EogWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:backdrop:hover,
-EogWindow headerbar.titlebar .left .titlebutton:first-child:backdrop:hover,
-EvWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child,
-EvWindow headerbar.titlebar .left .titlebutton:first-child,
-EvWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:hover,
-EvWindow headerbar.titlebar .left .titlebutton:first-child:hover,
-EvWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:active,
-EvWindow headerbar.titlebar .left .titlebutton:first-child:active,
-EvWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:checked,
-EvWindow headerbar.titlebar .left .titlebutton:first-child:checked,
-EvWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:backdrop,
-EvWindow headerbar.titlebar .left .titlebutton:first-child:backdrop,
-EvWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:backdrop:hover,
-EvWindow headerbar.titlebar .left .titlebutton:first-child:backdrop:hover,
-BaobabWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child,
-BaobabWindow headerbar.titlebar .left .titlebutton:first-child,
-BaobabWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:hover,
-BaobabWindow headerbar.titlebar .left .titlebutton:first-child:hover,
-BaobabWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:active,
-BaobabWindow headerbar.titlebar .left .titlebutton:first-child:active,
-BaobabWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:checked,
-BaobabWindow headerbar.titlebar .left .titlebutton:first-child:checked,
-BaobabWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:backdrop,
-BaobabWindow headerbar.titlebar .left .titlebutton:first-child:backdrop,
-BaobabWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:backdrop:hover,
-BaobabWindow headerbar.titlebar .left .titlebutton:first-child:backdrop:hover,
-BjbWindowBase headerbar.titlebar .right:dir(rtl) .titlebutton:first-child,
-BjbWindowBase headerbar.titlebar .left .titlebutton:first-child,
-BjbWindowBase headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:hover,
-BjbWindowBase headerbar.titlebar .left .titlebutton:first-child:hover,
-BjbWindowBase headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:active,
-BjbWindowBase headerbar.titlebar .left .titlebutton:first-child:active,
-BjbWindowBase headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:checked,
-BjbWindowBase headerbar.titlebar .left .titlebutton:first-child:checked,
-BjbWindowBase headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:backdrop,
-BjbWindowBase headerbar.titlebar .left .titlebutton:first-child:backdrop,
-BjbWindowBase headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:backdrop:hover,
-BjbWindowBase headerbar.titlebar .left .titlebutton:first-child:backdrop:hover,
-BoxesAppWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child,
-BoxesAppWindow headerbar.titlebar .left .titlebutton:first-child,
-BoxesAppWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:hover,
-BoxesAppWindow headerbar.titlebar .left .titlebutton:first-child:hover,
-BoxesAppWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:active,
-BoxesAppWindow headerbar.titlebar .left .titlebutton:first-child:active,
-BoxesAppWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:checked,
-BoxesAppWindow headerbar.titlebar .left .titlebutton:first-child:checked,
-BoxesAppWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:backdrop,
-BoxesAppWindow headerbar.titlebar .left .titlebutton:first-child:backdrop,
-BoxesAppWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:backdrop:hover,
-BoxesAppWindow headerbar.titlebar .left .titlebutton:first-child:backdrop:hover,
-ContactsWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child,
-ContactsWindow headerbar.titlebar .left .titlebutton:first-child,
-ContactsWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:hover,
-ContactsWindow headerbar.titlebar .left .titlebutton:first-child:hover,
-ContactsWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:active,
-ContactsWindow headerbar.titlebar .left .titlebutton:first-child:active,
-ContactsWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:checked,
-ContactsWindow headerbar.titlebar .left .titlebutton:first-child:checked,
-ContactsWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:backdrop,
-ContactsWindow headerbar.titlebar .left .titlebutton:first-child:backdrop,
-ContactsWindow headerbar.titlebar .right:dir(rtl) .titlebutton:first-child:backdrop:hover,
-ContactsWindow headerbar.titlebar .left .titlebutton:first-child:backdrop:hover {
+/* application adjustments gtk+-3.20 *//*
+headerbar.titlebar button.titlebutton.toggle.popup,
+headerbar.titlebar button.titlebutton.toggle.popup:hover,
+headerbar.titlebar button.titlebutton.toggle.popup:checked {
 	background-image: none;
 }
 */
-/* application adjustments gtk+-3.20 */
-headerbar.titlebar button.titlebutton.toggle.popup {
-	background-image: none;
-}
-
 /* gtk+-3.20 */
-headerbar.titlebar button image {
+.titlebar button.close.titlebutton image,
+.titlebar button.minimize.titlebutton image,
+.titlebar button.maximize.titlebutton image {
         color: transparent;
 }
 

@@ -1,8 +1,7 @@
 /* Button background */
 button,
-toolbar button.raised,
 toolbar .raised button,
-toolbar combobox button,
+toolbar combobox button.combo,
 toolbar.primary-toolbar .linked button,
 toolbar.primary-toolbar .raised button,
 .button,
@@ -15,22 +14,13 @@ toolbar.primary-toolbar .raised button,
 	background-color: transparent;
 }
 
-/* Pushed button and progressbar through background */
+/* Pushed button and progressbar through background (checked) */
 button:checked,
-button:active,
-button:active:hover,
-toolbar button:active,
-toolbar button:active:hover,
-toolbar button.raised:active,
-toolbar .raised button:active,
-toolbar button.raised:active:hover,
-toolbar .raised button:active:hover,
+button:focus:checked,
 toolbar button:checked,
-toolbar button:checked:hover,
-toolbar button.raised:checked,
+toolbar button:focus:checked,
 toolbar .raised button:checked,
-toolbar button.raised:checked:hover,
-toolbar .raised button:checked:hover,
+toolbar .raised button:focus:checked,
 .button:checked,
 .button:active,
 .button:active:hover,
@@ -64,14 +54,16 @@ row trough,
 	background-color: transparent; 
 }
 
+/* checked hover */
 button:checked:hover,
-button:active:hover,
-toolbar button:active:hover,
-toolbar button.raised:active:hover,
-toolbar .raised button:active:hover,
+button:checked:focus:hover,
+button:checked:focus:hover:active,
 toolbar button:checked:hover,
-toolbar button.raised:checked:hover,
 toolbar .raised button:checked:hover,
+toolbar button:checked:focus:hover,
+toolbar .raised button:checked:focus:hover,
+toolbar button:checked:focus:hover:active,
+toolbar .raised button:checked:focus:hover:active,
 row trough:hover,
 .button:checked:hover,
 .button:active:hover,
@@ -91,8 +83,6 @@ row trough:hover,
 /* Primary and inline toolbars pushed button background */
 toolbar.primary-toolbar button:checked,
 toolbar.inline-toolbar button:checked,
-toolbar.primary-toolbar button:active,
-toolbar.inline-toolbar button:active,
 .primary-toolbar .button:checked,
 .inline-toolbar .button:checked,
 .primary-toolbar .button:active,
@@ -105,8 +95,6 @@ toolbar.inline-toolbar button:active,
 
 toolbar.primary-toolbar button:checked:hover,
 toolbar.inline-toolbar button:checked:hover,
-toolbar.primary-toolbar button:active:hover,
-toolbar.inline-toolbar button:active:hover,
 .primary-toolbar .button:checked:hover,
 .inline-toolbar .button:checked:hover,
 .primary-toolbar .button:active:hover,
@@ -117,12 +105,11 @@ toolbar.inline-toolbar button:active:hover,
 	background-color: transparent;
 }
 
-/* Prelit button background */
+/* Hover button background */
 button:hover,
 toolbar button:hover,
-toolbar button.raised:hover,
 toolbar .raised button:hover,
-toolbar combobox button:hover,
+toolbar combobox button.combo:hover,
 .button:hover,
 .toolbar .button:hover,
 .toolbar .button.raised:hover,
@@ -145,8 +132,7 @@ toolbar.primary-toolbar button:hover,
 
 /* Insensitive button background */
 button:disabled,
-toolbar combobox button:disabled,
-toolbar button.raised:disabled,
+toolbar combobox button.combo:disabled,
 toolbar .raised button:disabled,
 .button:disabled,
 .toolbar GtkComboBox button:disabled,
@@ -157,12 +143,9 @@ toolbar .raised button:disabled,
 }
 
 /* Pushed + Insensitive button background */
-button:active:disabled,
 button:checked:disabled,
-toolbar button:active:disabled,
 toolbar button:checked:disabled,
-toolbar combobox button:active:disabled,
-toolbar combobox button:checked:disabled,
+toolbar combobox button.combo:checked:disabled,
 .button:active:disabled,
 .button:checked:disabled,
 .toolbar .button:active:disabled,
@@ -197,9 +180,7 @@ GtkComboBox.combobox-entry .button:hover,
 }
 
 /* Entry pushed button background */
-toolbar.primary-toolbar combobox entry button:active,
 toolbar.primary-toolbar combobox entry button:checked,
-combobox entry button:active,
 combobox entry button:checked,
 .primary-toolbar GtkComboBox.combobox-entry .button:active,
 .primary-toolbar GtkComboBox.combobox-entry .button:checked,
@@ -243,8 +224,7 @@ column-header .button:hover {
 treeview header button:focus,
 treeview header button:checked,
 treeview header button:checked:hover,
-treeview header button:active,
-treeview header button:active:hover,
+treeview header button:hover:active,
 column-header.button:focus,
 column-header .button:focus,
 column-header.button:checked,
@@ -277,7 +257,6 @@ GtkComboBox.combobox-entry .button:disabled,
 
 /* Primary and inline toolbars background */
 toolbar.primary-toolbar,
-toolbar.primary-toolbar,
 toolbar.inline-toolbar,
 .primary-toolbar .toolbar,
 .primary-toolbar.toolbar,
@@ -288,7 +267,6 @@ toolbar.inline-toolbar,
 	background-color: transparent;
 }
 
-toolbar.primary-toolbar.vertical,
 toolbar.primary-toolbar.vertical,
 toolbar.inline-toolbar.vertical,
 .primary-toolbar .toolbar.vertical,

@@ -1,12 +1,10 @@
 /* Borders */
 
-/* generic element borders */
+/* generic element borders (checked)*/
 entry,
-button:active,
 button:checked,
 combobox entry entry,
 combobox entry button,
-toolbar.inline-toolbar.vertical button:active,
 toolbar.inline-toolbar.vertical button:checked,
 .entry,
 .button:active,
@@ -30,7 +28,7 @@ trough highlight,
 }
 
 entry:disabled,
-button:active:disabled,
+button:checked:disabled,
 combobox entry entry:disabled,
 combobox entry button:disabled,
 toolbar.inline-toolbar.vertical button:disabled,
@@ -78,14 +76,10 @@ row trough,
 
 /* focused element borders */
 entry:focus,
-button:active:focus,
 button:checked:focus,
-button.default:active,
 button.default:checked,
 combobox entry button:focus,
-toolbar.inline-toolbar.vertical button:active:focus,
-toolbar.inline-toolbar.vertical button:checked:focus
-toolbar.inline-toolbar.vertical button.default:active,
+toolbar.inline-toolbar.vertical button:focus:checked,
 toolbar.inline-toolbar.vertical button.default:checked,
 .entry:focus,
 .button:active:focus,
@@ -105,9 +99,9 @@ GtkComboBox.combobox-entry .button:focus,
 }
 
 .titlebar button:hover,
+.titlebar button:hover:active,
 .titlebar button.titlebutton:hover,
-.titlebar button.titlebutton:active,
-.titlebar button:checked:checked,
+.titlebar button.titlebutton:hover:active,
 .titlebar .button:hover,
 .titlebar .titlebutton:hover,
 .titlebar .titlebutton:active,
@@ -120,8 +114,7 @@ GtkComboBox.combobox-entry .button:focus,
 }
 
 button,
-.button
-/*.inline-toolbar.toolbar.vertical .button*/ {
+.button {
 	border-image: url("borders/button.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
 	border-radius: 4px;
 	border-width: 2px;
@@ -168,7 +161,6 @@ toolbar.primary-toolbar button:hover,
 	background-color: transparent;
 }
 
-toolbar.primary-toolbar button:active,
 toolbar.primary-toolbar button:checked,
 .primary-toolbar .button:active,
 .primary-toolbar .button:checked {
@@ -202,21 +194,14 @@ tooltip entry:focus,
 	border-color: transparent;
 }
 
-/* primary toolbar - generic element borders */
+/* primary toolbar - generic element borders (checked)*/
 toolbar.primary-toolbar entry,
-toolbar.primary-toolbar combobox entry .entry,
-toolbar.primary-toolbar combobox entry .button,
-toolbar.primary-toolbar button:active,
-toolbar.primary-toolbar button.raised:active,
-toolbar.primary-toolbar raised button:active,
-toolbar.inline-toolbar button:active,
+toolbar.primary-toolbar combobox entry.combo,
+toolbar.primary-toolbar combobox button.combo:checked,
 toolbar.primary-toolbar button:checked,
-toolbar.primary-toolbar button.raised:checked,
 toolbar.primary-toolbar .raised button:checked,
 toolbar.inline-toolbar .button:checked,
-toolbar.primary-toolbar switch.trough,
-toolbar.primary-toolbar combobox button:checked,
-toolbar.primary-toolbar combobox button:active,
+toolbar.primary-toolbar switch trough,
 .primary-toolbar .entry,
 .primary-toolbar GtkComboBox.combobox-entry .entry,
 .primary-toolbar GtkComboBox.combobox-entry .button,
@@ -238,12 +223,10 @@ toolbar.primary-toolbar combobox button:active,
 	border-color: transparent;
 }
 
-toolbar.primary-toolbar button.raised:disabled,
-toolbar.primary-toolbar raised .button:disabled,
-toolbar.primary-toolbar button.raised.default:disabled,
-toolbar.primary-toolbar raised .button.default:disabled,
-toolbar.primary-toolbar switch.trough:disabled,
-toolbar.primary-toolbar switch.trough:active:disabled,
+toolbar.primary-toolbar .raised button:disabled,
+toolbar.primary-toolbar .raised button.default:disabled,
+toolbar.primary-toolbar switch trough:disabled,
+toolbar.primary-toolbar switch trough:checked:disabled,
 toolbar.primary-toolbar combobox button:disabled,
 .primary-toolbar .button.raised:disabled,
 .primary-toolbar .raised .button:disabled,
@@ -260,15 +243,11 @@ toolbar.primary-toolbar combobox button:disabled,
 }
 
 /* primary toolbar - focused element borders */
-toolbar.primary-toolbar button:active:focus,
+toolbar.primary-toolbar button:focus:checked,
 toolbar.primary-toolbar entry:focus,
-toolbar.primary-toolbar combobox entry entry:focus,
-toolbar.primary-toolbar button.raised.default:checked,
+toolbar.primary-toolbar combobox entry.combo:focus,
 toolbar.primary-toolbar .raised button.default:checked,
 toolbar.inline-toolbar button.default:checked,
-toolbar.primary-toolbar button.raised.default:active,
-toolbar.primary-toolbar raised button.default:active,
-toolbar.inline-toolbar button.default:active,
 .primary-toolbar .button:active:focus,
 .primary-toolbar .entry:focus,
 .primary-toolbar GtkComboBox.combobox-entry .entry:focus,
@@ -286,11 +265,10 @@ toolbar.inline-toolbar button.default:active,
 	border-color: transparent;
 }
 
-/* primary toolbar - generic button borders */
-toolbar.primary-toolbar button.raised,
+/* primary toolbar - generic button borders (normal state)*/
 toolbar.primary-toolbar .raised button,
 toolbar.inline-toolbar button,
-toolbar.primary-toolbar combobox button,
+toolbar.primary-toolbar combobox button.combo,
 .primary-toolbar .button.raised,
 .primary-toolbar .raised .button,
 .inline-toolbar.toolbar .button,
@@ -303,7 +281,6 @@ toolbar.primary-toolbar combobox button,
 }
 
 /* primary toolbar - focused button borders */
-toolbar.primary-toolbar button.raised.default,
 toolbar.primary-toolbar .raised button.default,
 toolbar.inline-toolbar button.default,
 .primary-toolbar .button.raised.default,
@@ -319,7 +296,7 @@ toolbar.inline-toolbar button.default,
 /* column-headers borders */
 treeview header button,
 treeview header button:active,
-treeview header button:active:hover,
+treeview header button:hover:active,
 treeview header button:checked,
 treeview header button:checked:hover,
 treeview header button:disabled,
@@ -343,7 +320,7 @@ column-header .button:disabled {
 
 treeview header button,
 treeview header button:active,
-treeview header button:active:hover,
+treeview header button:hover:active,
 treeview header button:checked,
 treeview header button:checked:hover,
 treeview header button.dnd,
@@ -386,7 +363,7 @@ column-header .button:disabled {
 
 treeview header button:last-child,
 treeview header button:active:last-child,
-treeview header button:active:hover:last-child,
+treeview header button:hover:active:last-child,
 treeview header button:checked:last-child,
 treeview header button:checked:hover:last-child,
 column-header.button:last-child,
@@ -449,46 +426,6 @@ button.destructive-action:active,
 .destructive-action.button:active {
     border-image: url("borders/button-focus.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
     border-radius: 3px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: transparent;
-}
-
-button.image-button.radio:dir(ltr) {
-    border-image: url("borders/button.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
-    border-radius: 4px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: transparent;
-    border-radius: 3px;
-}
-
-button.image-button.radio.default:dir(ltr),
-button.image-button.radio:dir(ltr):focus {
-    border-image: url("borders/button-focus.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
-    border-radius: 4px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: transparent;
-}
-
-button.image-button.radio:dir(ltr):checked {
-    border-image: url("borders/button-active.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
-    border-radius: 4px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: transparent;
-}
-
-button.image-button.radio:dir(ltr):hover,
-button.image-button.radio:dir(ltr):checked:focus,
-button.image-button.radio:dir(ltr):checked:hover,
-button.image-button.radio:dir(ltr):checked:focus:hover,
-button.image-button.radio:dir(ltr):focus:hover:active,
-button.image-button.radio:dir(ltr):checked:focus:hover:active,
-button.image-button.radio.default:dir(ltr):checked {
-    border-image: url("borders/button-active-focus.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
-    border-radius: 4px;
     border-width: 2px;
     border-style: solid;
     border-color: transparent;

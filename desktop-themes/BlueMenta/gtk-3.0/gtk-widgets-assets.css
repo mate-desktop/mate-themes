@@ -41,121 +41,97 @@ headerbar > box > separator.vertical,
 /* draw regular check and radio items using our SVG assets */
 
 check,
-.view.cell check,
-.check,
-.view.cell.check {
+check .view.cell {
 	-gtk-icon-source: -gtk-scaled(url("assets/check-normal.png"));
 	background-repeat: no-repeat;
 	background-position: center;
 }
 
-check:disabled,
-.check:disabled {
+check:disabled {
 	-gtk-icon-source: -gtk-scaled(url("assets/check-normal-ins.png"));
 }
 
-check row:disabled,
-.check row:disabled {
+check row:disabled {
 	background-color: transparent;
 }
 
 check:active,
 check:checked,
 .view.cell check:active,
-.view.cell check:checked,
-.check:active,
-.check:checked,
-.view.cell.check:active,
-.view.cell.check:checked {
+.view.cell check:checked {
 	-gtk-icon-source: -gtk-scaled(url("assets/check-active.png"));
 }
 
 check:active:disabled,
-check:checked:disabled,
-.check:active:disabled,
-.check:checked:disabled {
+check:checked:disabled {
 	-gtk-icon-source: -gtk-scaled(url("assets/check-active-ins.png"));
 }
 
-check:indeterminate,
-.check:indeterminate {
+check:indeterminate {
 	-gtk-icon-source: -gtk-scaled(url("assets/check-mixed-active.png"));
 }
 
-check:indeterminate:disabled,
-.check:indeterminate:disabled {
+check:indeterminate:disabled {
 	-gtk-icon-source: -gtk-scaled(url("assets/check-mixed-active-ins.png"));
 }
 
 radio,
-.view.cell radio,
-.radio,
-.view.cell.radio {
+.view.cell radio {
 	-gtk-icon-source: -gtk-scaled(url("assets/radio-normal.png"));
 	background-repeat: no-repeat;
 	background-position: center;
 }
 
-radio:disabled,
-.radio:disabled {
+radio:disabled {
 	-gtk-icon-source: -gtk-scaled(url("assets/radio-normal-ins.png"));
 }
 
-radio row:disabled,
-.radio row:disabled {
+radio row:disabled {
 	background-color: transparent;
 }
 
 radio:active,
 .view.cell radio:active,
 radio:checked,
-.view.cell radio:checked,
-.radio:active,
-.view.cell.radio:active,
-.radio:checked,
-.view.cell.radio:checked {
+.view.cell radio:checked {
 	-gtk-icon-source: -gtk-scaled(url("assets/radio-active.png"));
 }
 
 radio:active:disabled,
-radio:checked:disabled,
-.radio:active:disabled,
-.radio:checked:disabled {
+radio:checked:disabled {
 	-gtk-icon-source: -gtk-scaled(url("assets/radio-active-ins.png"));
 }
 
-radio:indeterminate,
-.radio:indeterminate {
+radio:indeterminate {
 	-gtk-icon-source: -gtk-scaled(url("assets/radio-mixed-active.png"));
 }
 
-.radio:indeterminate:disabled,
-.radio:indeterminate:disabled {
+radio:indeterminate:disabled {
 	-gtk-icon-source: -gtk-scaled(url("assets/radio-mixed-active-ins.png"));
 }
 
-.sidebar .view.radio:active,
-.sidebar .view.radio:active:focus,
-.sidebar .view.radio:active:hover,
-.sidebar .view.radio:checked,
-.sidebar .view.radio:checked:focus,
-.sidebar .view.radio:checked:hover {
+.sidebar view radio:active,
+.sidebar view radio:active:focus,
+.sidebar view radio:active:hover,
+.sidebar view radio:checked,
+.sidebar view radio:checked:focus,
+.sidebar view radio:checked:hover {
 	-gtk-icon-source: -gtk-scaled(url("assets/sidebar-radio-checked.svg"));
 }
 
-.sidebar .view.radio:hover {
+.sidebar view radio:hover {
 	-gtk-icon-source: -gtk-scaled(url("assets/sidebar-radio-prelight.svg"));
 }
 
-.sidebar .view.radio:active:selected,
-.sidebar .view.radio:active:selected:focus,
-.sidebar .view.radio:checked:selected,
-.sidebar .view.radio:checked:selected:focus {
+.sidebar view radio:active:selected,
+.sidebar view radio:active:selected:focus,
+.sidebar view radio:checked:selected,
+.sidebar view radio:checked:selected:focus {
 	-gtk-icon-source: -gtk-scaled(url("assets/sidebar-radio-selected.svg"));
 }
 
-.sidebar .view.radio:selected:hover,
-.sidebar .view.radio:selected:focus {
+.sidebar view radio:selected:hover,
+.sidebar view radio:selected:focus {
 	-gtk-icon-source: -gtk-scaled(url("assets/sidebar-radio-selected-prelight.svg"));	
 }
 
