@@ -570,6 +570,12 @@ na-tray-applet {
  * Mate-terminal *
  ****************/
 
+/* workaround for broken size with gtk+-3.20 */
+window.background.mate-terminal box.vertical {
+    min-width: 640px;
+    min-height: 380px;
+}
+
 .mate-terminal notebook {
     border-color: @menu_bg_dark_color;
 }

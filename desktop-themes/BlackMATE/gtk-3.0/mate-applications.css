@@ -835,3 +835,14 @@ EomThumbNav .button.flat:hover:last-child {
 EomThumbNav .button.flat:disabled {
     background-image: none;
 }
+
+/****************
+ * Mate-terminal *
+ ****************/
+
+/* workaround for broken size with gtk+-3.20 */
+window.background.mate-terminal box.vertical {
+    min-width: 640px;
+    min-height: 380px;
+}
+
