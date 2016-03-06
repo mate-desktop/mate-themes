@@ -1710,7 +1710,7 @@ toolbar.inline-toolbar toolbutton > button:first-child:checked,
 .linked.vertical > combobox:first-child > button.combo:focus:active:first-child,
 .linked.vertical > combobox:first-child > button.combo:checked:first-child,
 .linked.vertical > combobox:first-child > button.combo:focus:checked:first-child,
-.linked.vertical > combobox:first-child > button.combo:hover:first-child:first-child,
+.linked.vertical > combobox:first-child > button.combo:hover:first-child,
 .linked.vertical > combobox:first-child > button.combo:hover:active:first-child,
 .linked.vertical > combobox:first-child > button.combo:checked:hover:first-child,
 .linked.vertical entry:first-child,
@@ -2316,18 +2316,18 @@ stack > box.linked.vertical > combobox:first-child > button.combo:focus:hover:fi
     border-image: none;
     border-style: solid;
     border-color: @borders;
-    border-width: 1px;
 }
 
-stack > box.linked.vertical > button.text-button:last-child {
+stack > box.linked.vertical > button.text-button:last-child,
+stack > box.linked.vertical > button.text-button:last-child:hover {
     border-image: none;
     border-style: solid;
     border-color: @borders;
-    border-width: 0px 1px 1px 1px;
+    border-width: 1px 1px 1px 1px;
 }
 
 stack box.vertical.linked spinbutton.horizontal {
-    border-width: 0px 1px 1px 1px;
+    border-width: 1px 1px 0px 1px;
 }
 
 /*****************
