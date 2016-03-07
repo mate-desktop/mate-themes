@@ -3813,8 +3813,7 @@ toolbar.inline-toolbar.vertical:last-child,
  ***********/
 .sidebar .view,
 placessidebar .view,
-.sidebar,
-GtkPlacesSidebar.sidebar .view {
+.sidebar {
     -gtk-icon-style: regular;
 	background-color: @sidebar_bg;
 }
@@ -3828,44 +3827,30 @@ GtkPlacesSidebar.sidebar .view {
     background-color: @sidebar_bg;
 }
 
-/* dialog open */
-dialog filechooser placessidebar.sidebar.frame viewport.frame list,
-dialog filechooser placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row,
-GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame GtkListBox.sidebar.list,
-GtkFileChooserWidget GtkPlacesSidebar.sidebar.frame .frame GtkListBox.sidebar.list,
-GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row,
-GtkFileChooserWidget GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row {
+/* dialog open, nautilus, etc. */
+placessidebar.sidebar.frame viewport.frame list,
+placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row {
     background-color: @sidebar_bg;
 }
 
-dialog filechooser placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row:hover,
-GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row:hover,
-GtkFileChooserWidget GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row:hover {
+placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row:hover {
     background-color: shade (@theme_selected_bg_color, 1.15);
     color: shade (@theme_selected_bg_color, 0.35);
 }
 
-dialog filechooser placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row:selected:hover,
-GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row:selected:hover,
-GtkFileChooserWidget GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row:selected:hover {
+placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row:selected:hover {
     color: shade (@theme_selected_fg_color, 1.00);
 }
 
-dialog filechooser placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row revealer.sidebar-revealer image.sidebar-icon,
-GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row .sidebar-revealer .sidebar-icon,
-GtkFileChooserWidget GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row .sidebar-revealer .sidebar-icon {
+placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row revealer.sidebar-revealer image.sidebar-icon {
     padding: 4px 8px 4px 6px;
 }
 
-dialog filechooser placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row revealer.sidebar-revealer label.sidebar-label,
-GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row .sidebar-revealer .sidebar-label,
-GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row .sidebar-revealer .sidebar-label {
+placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row revealer.sidebar-revealer label.sidebar-label {
     padding: 4px 0px 4px 1px;
 }
 
-dialog filechooser placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row revealer.sidebar-revealer button.image-button.sidebar-button,
-GtkFileChooserDialog GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row .sidebar-revealer .sidebar-button.image-button.button,
-GtkFileChooserWidget GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-row.activatable.sidebar-row .sidebar-revealer .sidebar-button.image-button.button {
+placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row revealer.sidebar-revealer button.image-button.sidebar-button {
     background-color: transparent;
     background-image: none;
     border-image:none;
@@ -3880,10 +3865,7 @@ GtkFileChooserWidget GtkPlacesSidebar.sidebar.frame .frame .sidebar.list .list-r
 
 .sidebar radio,
 .sidebar radio:focus,
-.sidebar radio:selected,
-.sidebar .radio,
-.sidebar .radio:focus,
-.sidebar .radio:selected {
+.sidebar radio:selected {
 	background-image: none;
 	background-color: transparent;
 }
@@ -5688,15 +5670,14 @@ popover > .location-bar popover.osd > .location-bar,
 	background-color: transparent;
 }
 
-popover separator,
-.popover .separator {
-	font-size: 80%;
+/* header label */
+popover.background.menu label.separator {
 	font-weight: bold;
-	color: alpha(@theme_fg_color,0.1);
+	color: alpha(@theme_fg_color,0.5);
 	text-shadow: none;
 	background-color: transparent;
 	-gtk-icon-shadow: none;
-	border: 0;
+	border: 0px;
 }
 
 popover.osd,
@@ -5738,9 +5719,29 @@ popover list,
 	background-color: @theme_base_color;
 }
 
-GtkModelButton.button {
+modelbutton {
 	color: @theme_fg_color;
-	border-radius: 0;
+}
+
+modelbutton.flat,
+.linked button.image-button.model {
+  min-height: 28px;
+    padding: 0px 4px 0px 4px;
+}
+
+modelbutton.flat arrow.left {
+    -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+}
+
+modelbutton.flat arrow.right {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+
+modelbutton.flat check,
+.linked button.image-button.model check,
+modelbutton.flat radio,
+.linked button.image-button.model radio {
+    padding: 0px 0px 0px 6px;
 }
 
 modelbutton:checked,
