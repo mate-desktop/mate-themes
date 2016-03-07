@@ -32,6 +32,18 @@ theme_DATA = \
 	radio-normal-ins.png \
 	radio-normal.png \
 	resize-grip.svg \
+	scale-slider-marks-above-horizontal-active.png \
+	scale-slider-marks-above-horizontal-insensitive.png \
+	scale-slider-marks-above-horizontal.png \
+	scale-slider-marks-above-vertical-active.png \
+	scale-slider-marks-above-vertical-insensitive.png \
+	scale-slider-marks-above-vertical.png \
+	scale-slider-marks-below-horizontal-active.png \
+	scale-slider-marks-below-horizontal-insensitive.png \
+	scale-slider-marks-below-horizontal.png \
+	scale-slider-marks-below-vertical-active.png \
+	scale-slider-marks-below-vertical-insensitive.png \
+	scale-slider-marks-below-vertical.png \
 	sidebar-radio-checked.svg \
 	sidebar-radio-prelight.svg \
 	sidebar-radio-selected-prelight.svg \
