@@ -1070,14 +1070,26 @@ scale.horizontal.scale-has-marks-above.color trough {
 }
 
 scale.horizontal.scale-has-marks-above.color slider {
-    min-height: 10px;
-     margin: 0px 0px -5px 0px;
+    min-height: 18px;
+    min-width: 24px;
+    margin: 0px 0px -5px 0px;
     padding: 9px 0px;
 }
 
 scale.vertical.scale-has-marks-below.color trough {
     min-width: 0px;
     padding: 3px;
+}
+
+scale.vertical.scale-has-marks-below.color slider {
+    min-width: 22px;
+    padding: 3px;
+}
+
+scale.horizontal contents:first-child:not(:only-child) slider {
+    background-repeat: no-repeat;
+    min-height: 22px;
+    background-size: 100%;
 }
 
 scale.vertical.scale-has-marks-below.color slider:hover,
