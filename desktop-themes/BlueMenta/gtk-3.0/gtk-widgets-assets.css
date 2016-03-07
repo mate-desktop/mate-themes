@@ -187,6 +187,7 @@ scale slider:hover,
 	background-image: url("assets/slider-hover.png");
 }
 */
+
 scale slider:disabled,
 scale slider:disabled:hover,
 .scale.slider.horizontal:disabled,
@@ -194,92 +195,92 @@ scale slider:disabled:hover,
 	background-image: url("assets/slider-ins.png");
     background-repeat: no-repeat;
 }
-/*
-.scale.scale-has-marks-above.slider.horizontal {
+
+scale.horizontal.scale-has-marks-above slider {
 	background-image: url("assets/slider.png");
     background-repeat: no-repeat;
 }
 
-.scale.scale-has-marks-above.slider.horizontal:hover {
+scale.horizontal.scale-has-marks-above slider:hover {
 	background-image: url("assets/slider-hover.png");
     background-repeat: no-repeat;
 }
 
-.scale.scale-has-marks-above.slider.horizontal:active:hover {
+scale.horizontal.scale-has-marks-above slider:active:hover {
 	background-image: url("assets/slider-hover.png");
     background-repeat: no-repeat;
 }
 
-.scale.scale-has-marks-above.slider.horizontal:disabled:hover {
+scale.horizontal.scale-has-marks-above slider:disabled:hover {
 	background-image: url("assets/slider-ins.png");
     background-repeat: no-repeat;
 }
 
-.scale.scale-has-marks-above.slider.vertical {
+scale.vertical.scale-has-marks-above slider {
 	background-image: url("assets/slider.png");
     background-repeat: no-repeat;
 }
 
-.scale.scale-has-marks-above.slider.vertical:hover {
+scale.vertical.scale-has-marks-above slider:hover {
 	background-image: url("assets/slider-hover.png");
     background-repeat: no-repeat;
 }
 
-.scale.scale-has-marks-above.slider.vertical:active,
-.scale.scale-has-marks-above.slider.vertical:active:hover {
+scale.vertical.scale-has-marks-above slider:active,
+scale.vertical.scale-has-marks-above slider:active:hover {
 	background-image: url("assets/slider-hover.png");
     background-repeat: no-repeat;
 }
 
-.scale.scale-has-marks-above.slider.vertical:disabled,
-.scale.scale-has-marks-above.slider.vertical:disabled:hover {
+scale.vertical.scale-has-marks-above slider:disabled,
+scale.vertical.scale-has-marks-above slider:disabled:hover {
 	background-image: url("assets/slider-ins.png");
     background-repeat: no-repeat;
 }
 
-.scale.scale-has-marks-below.slider.horizontal {
+scale.horizontal.scale-has-marks-below slider {
 	background-image: url("assets/slider.png");
     background-repeat: no-repeat;
 }
 
-.scale.scale-has-marks-below.slider.horizontal:hover {
+scale.horizontal.scale-has-marks-below slider:hover {
 	background-image: url("assets/slider-hover.png");
     background-repeat: no-repeat;
 }
 
-.scale.scale-has-marks-below.slider.horizontal:active,
-.scale.scale-has-marks-below.slider.horizontal:active:hover {
+scale.horizontal.scale-has-marks-below slider:active,
+scale.horizontal.scale-has-marks-below slider:active:hover {
 	background-image: url("assets/slider-hover.png");
     background-repeat: no-repeat;
 }
 
-.scale.scale-has-marks-below.slider.horizontal:disabled:hover {
+scale.horizontal.scale-has-marks-below slider:disabled:hover {
 	background-image: url("assets/slider-ins.png");
     background-repeat: no-repeat;
 }
 
-.scale.scale-has-marks-below.slider.vertical {
+scale.vertical.scale-has-marks-below slider {
 	background-image: url("assets/slider.png");
     background-repeat: no-repeat;
 }
 
-.scale.scale-has-marks-below.slider.vertical:hover {
+scale.vertical.scale-has-marks-below slider:hover {
 	background-image: url("assets/slider-hover.png");
     background-repeat: no-repeat;
 }
 
-.scale.scale-has-marks-below.slider.vertical:active,
-.scale.scale-has-marks-below.slider.vertical:active:hover {
+scale.vertical.scale-has-marks-below slider:active,
+scale.vertical.scale-has-marks-below slider:active:hover {
 	background-image: url("assets/slider-hover.png");
     background-repeat: no-repeat;
 }
 
-.scale.scale-has-marks-below.slider.vertical:disabled,
-.scale.scale-has-marks-below.slider.vertical:disabled:hover {
+scale.vertical.scale-has-marks-below slider:disabled,
+scale.vertical.scale-has-marks-below slider:disabled:hover {
 	background-image: url("assets/slider-ins.png");
     background-repeat: no-repeat;
 }
-*/
+
 /********************************
  * Touch text selection handles *
  ********************************/
