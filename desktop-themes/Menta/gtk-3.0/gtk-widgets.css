@@ -5680,16 +5680,17 @@ popover.background.menu label.separator {
 	border: 0px;
 }
 
-popover.osd,
+/* ie. colorchooser */
 .popover.osd {
 	background-image: none;
-	background-color: alpha(shade(#3D3E40, 0.85), 0.75);
+	background-color: alpha(shade(#3D3E40, 0.85), 0.35);
 	border: 1px solid black;
+    border-radius: 2px;
 	box-shadow: none;
 	color: @theme_selected_fg_color;
 }
 
-popover.osd toolbar,
+.popover.osd toolbar,
 .popover.osd .toolbar {
 	background-image: none;
 	background-color: transparent;
@@ -5697,13 +5698,13 @@ popover.osd toolbar,
 	box-shadow: none;
 }
 
-popover.osd button,
+.popover.osd button,
 .popover.osd .button {
 	text-shadow: 0 -1px @osd_text_shadow;
 	-gtk-icon-shadow: 0 -1px @osd_text_shadow;
 }
 
-popover button:checked,
+.popover.osd button:checked,
 .popover.osd .button:active,
 .popover.osd .button:checked {
         box-shadow: none;
@@ -5714,11 +5715,40 @@ popover.osd button:disabled,
 	color: alpha(@theme_selected_fg_color, 0.4);
 }
 
-popover list,
+.popover list,
 .popover .list {
 	background-color: @theme_base_color;
 }
 
+.popover.osd spinbutton,
+.popover.osd spinbutton entry {
+    background: transparent;
+}
+
+.popover.osd spinbutton button,
+.popover.osd spinbutton button:focus,
+.popover.osd spinbutton button:last-child,
+.popover.osd spinbutton button:focus:last-child {
+	background-image: linear-gradient(to bottom,
+	                                  alpha(shade(@theme_selected_bg_color, 1.0), 0.7),
+	                                  alpha(shade(@theme_selected_bg_color, 0.8), 0.7));
+    box-shadow: inset  0px  1px alpha(shade (@theme_selected_bg_color, 1.1), 0.7),
+                inset  1px  0px alpha(shade (@theme_selected_bg_color, 1.1), 0.7),
+                inset -1px  0px alpha(shade (@theme_selected_bg_color, 1.1), 0.7),
+                inset  0px -1px alpha(shade (@theme_selected_bg_color, 1.1), 0.7);
+    border-radius: 0px;
+    border-width: 0px;
+}
+
+.popover.osd spinbutton button:last-child {
+    border-radius: 0px 3px 3px 0px;
+}
+
+.popover.osd spinbutton button:hover {
+	background-image: linear-gradient(to bottom,
+	                                  alpha(shade(@theme_selected_bg_color, 1.1), 0.8),
+	                                  alpha(shade(@theme_selected_bg_color, 0.95), 0.8));
+}
 modelbutton {
 	color: @theme_fg_color;
 }
