@@ -952,146 +952,142 @@ levelbar block.empty,
  * GtkScale *
  ************/
 
-scale,
-.scale {
-/*	-GtkScale-slider-length: 16;
-	-GtkRange-slider-width: 16;
-	-GtkRange-trough-border: 0;*/
+scale.vertical {
+    min-width: 10px;
+}
+
+scale.horizontal {
+    min-height: 10px;
+}
+
+scale.horizontal trough {
+   min-height: 5px;
+    margin: 8px 0;
+    border-radius: 6px;
+}
+
+scale trough,
+scale.vertical trough {
+    min-width: 5px;
+    margin: 0 6px;
+    border-radius: 6px;
+}
+
+scale trough,
+scale.horizontal trough,
+scale.vertical trough {
+    border-color: @borders;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: none;
+}
+
+scale  trough highlight,
+scale.horizontal  trough highlight,
+scale.vertical trough highlightl {
+    border-color: @scale_highlight_border;
+    border-style: solid;
+    border-width: 1px;
+    background-image: none;
+    box-shadow: none;
+    background-color: @scale_highlight_bg;
+}
+
+scale trough:disabled,
+scale.horizontal trough:disabled,
+scale.vertical trough:disabled {
+	background-color: shade(@insensitive_bg_color, 0.96);
+	border-color: shade(@insensitive_scale_borders, 0.75);
+	box-shadow: none;
+	background-image: none;
+}
+
+scale.horizontal trough highlight:disabled,
+scale.vertical trough highlight:disabled {
+	background-color: shade(@scale_highlight_bg, 1.16);
+	border-color: shade(@insensitive_scale_borders, 0.75);
+	box-shadow: none;
+	background-image: none;
+}
+
+/* defines the color of the actuall marks on the scale */
+scale marks indicator {
+	color: alpha(@theme_fg_color, 0.3);
+}
+
+/* this makes marks visible */
+scale.horizontal indicator,
+scale.horizontal.fine-tune indicator {
+    min-height: 8px;
+    min-width: 1px;
+}
+
+scale.vertical indicator,
+scale.vertical.fine-tune indicator {
+    min-height: 1px;
+    min-width: 8px;
 }
 
 scale slider,
 scale slider:hover,
-scale slider:disabled,
-.scale.slider,
-.scale.slider:hover,
-.scale.slider:disabled {
-	border-radius: 0;
+scale slider:disabled {
+	border-radius: 8px;
 	border-style: none;
 	background-color: transparent;
 	/* background-image in -assets variant */
 }
 
-scale.fine-tune slider:active,
-scale.fine-tune slider:active:hover,
+scale.vertical slider,
+scale.horizontal slider {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-width: 18px;
+    margin: -9px 0px -9px 0px;
+}
+
+scale.horizontal slider {
+    min-width: 18px;
+    margin: -9px 0px -9px 0px;
+}
+
+scale.vertical slider {
+    min-height: 18px;
+    margin: 0px -9px 0px -9px;
+}
+
+scale.vertical.fine-tune slider:active,
+scale.vertical.fine-tune slider:active:hover,
 scale.horizontal.fine-tune slider:active,
-scale.horizontal.fine-tune slider:active:hover,
-.scale.slider.fine-tune:active,
-.scale.slider.fine-tune:active:hover,
-.scale.slider.fine-tune.horizontal:active,
-.scale.slider.fine-tune.horizontal:active:hover {
+scale.horizontal.fine-tune slider:hover:active {
 	background-size: 80%;
-	background-repeat: no-repeat;
-	background-position: center;
 }
 
-scale trough,
-.scale.trough {
-	margin: 6px 0;
-	border-radius: 6px;
+scale.horizontal.scale-has-marks-above.color trough {
+    min-height: 10px;
+    margin: -5px 0px 0px 0px;
+    padding: 1px;
 }
 
-scale.vertical trough,
-.scale.trough.vertical {
-	margin: 0 6px;
+scale.horizontal.scale-has-marks-above.color slider {
+    min-height: 10px;
+     margin: 0px 0px -5px 0px;
+    padding: 9px 0px;
 }
 
-scale trough,
-scale trough highlight,
-.scale.trough,
-.scale.trough.highlight {
-	border-color: alpha(@theme_base_color, 0.0);
-	border-top: 0;
-	border-left: 0;
-	border-right: 0;
-	border-bottom: 1px;
+scale.vertical.scale-has-marks-below.color trough {
+    min-width: 0px;
+    padding: 3px;
 }
 
-scale.vertical trough,
-scale.vertical trough highlight,
-.scale.trough.vertical,
-.scale.trough.highlight.vertical {
-	border-color: alpha(@theme_base_color, 0.0);
-	border-top: 0;
-	border-left: 0;
-	border-right: 1px;
-	border-bottom: 0;
+scale.vertical.scale-has-marks-below.color slider:hover,
+scale.horizontal.scale-has-marks-above.color slider:hover {
+    background-size: 105%;
 }
 
-scale trough,
-scale.vertical trough,
-.scale.trough,
-.scale.trough.vertical {
-	border-color: @borders;
-}
-
-scale trough highlight,
-scale.vertical trough highlight,
-.scale.trough.highlight,
-.scale.trough.highlight.vertical {
-	border-color: @scale_highlight_border;
-}
-
-scale trough:disabled,
-scale.vertical trough:disabled,
-.scale.trough:disabled,
-.scale.trough.vertical:disabled {
-	background-color: shade(@insensitive_bg_color, 0.96);
-	border-color: shade(@insensitive_scale_borders, 1.0);
-	box-shadow: none;
-	background-image: none;
-}
-
-scale trough highlight:disabled,
-scale.vertical trough highlight:disabled,
-.scale.trough.highlight:disabled,
-.scale.trough.highlight.vertical:disabled {
-	background-color: shade(@scale_highlight_bg, 1.16);
-	border-color: shade(@insensitive_scale_borders, 1.0);
-	box-shadow: none;
-	background-image: none;
-}
-
-scale trough highlight,
-scale.vertical trough highlight,
-.scale.trough.highlight,
-.scale.trough.vertical.highlight {
-	background-image: none;
-	background-color: @scale_highlight_bg;
-}
-
-scale progressbar,
-.scale.progressbar {
-	background-color: @scale_progress_fill;
-}
-
-.scale marks separator,
-.scale.mark.separator {
-	/* defines the color of the actuall marks on the scale */
-	color: alpha(@theme_fg_color, 0.3);
-}
-
-scale trough,
-.scale.trough {
-	box-shadow: inset 0 1px shade(@theme_bg_color, 0.85),
-		inset 0 -1px alpha(@theme_base_color, 0.4);
-}
-
-scale.vertical trough,
-.scale.trough.vertical {
-	box-shadow: inset 1px 0 shade(@theme_bg_color, 0.85),
-		inset -1px 0 alpha(@theme_base_color, 0.4);
-}
-
-scale trough highlight,
-.scale.trough.highlight {
-	box-shadow: inset 0 1px alpha(@theme_base_color, 0.2),
-		inset 0 -1px shade(@theme_selected_bg_color, 0.7);
-}
-
-scale.vertical trough highlight,
-.scale.trough.vertical.highlight {
-	box-shadow: inset 1px 0 alpha(@theme_base_color, 0.2),
-		inset -1px 0 shade(@theme_selected_bg_color, 0.7);
+scale.vertical.fine-tune.scale-has-marks-below.color slider,
+scale.horizontal.fine-tune.scale-has-marks-above.color slider {
+    background-size: 90%;
 }
 
 /**********
