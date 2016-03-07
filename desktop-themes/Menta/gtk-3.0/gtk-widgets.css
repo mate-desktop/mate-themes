@@ -2291,18 +2291,18 @@ stack > box.linked.vertical > combobox:first-child > button.combo:focus:hover:fi
     border-image: none;
     border-style: solid;
     border-color: @borders;
-    border-width: 1px;
 }
 
-stack > box.linked.vertical > button.text-button:last-child {
+stack > box.linked.vertical > button.text-button:last-child,
+stack > box.linked.vertical > button.text-button:last-child:hover {
     border-image: none;
     border-style: solid;
     border-color: @borders;
-    border-width: 0px 1px 1px 1px;
+    border-width: 1px 1px 1px 1px;
 }
 
 stack box.vertical.linked spinbutton.horizontal {
-    border-width: 0px 1px 1px 1px;
+    border-width: 1px 1px 0px 1px;
 }
 
 /*****************
@@ -5369,7 +5369,7 @@ list row.activatable:hover,
 .list-row:hover {
     padding: 2px;
     background-image: none;
-    background-color: shade (@theme_selected_bg_color, 1.55);
+	background-color: shade (@theme_selected_bg_color, 1.30);
     color: shade (@theme_selected_bg_color, 0.35);
 }
 
