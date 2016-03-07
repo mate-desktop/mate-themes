@@ -4094,7 +4094,12 @@ toolbar.osd,
 	-GtkToolbar-button-relief: normal;
 }
 
-toolbar.osd button,
+toolbar.osd button {
+    min-width: 24px;
+    min-height: 24px;
+}
+
+toolbar.osd toolitem .linked button,
 .osd.toolbar .button {
 	padding: 4px;
 	border-width: 1px;
@@ -4102,14 +4107,14 @@ toolbar.osd button,
 	box-shadow: inset @osd_button_inset;
 }
 
-toolbar.osd button:first-child
+toolbar.osd toolitem .linked button:first-child,
 .osd.toolbar .button:first-child {
 	border-radius: 5px 0 0 5px;
 	border-width: 1px 0 1px 1px;
 	box-shadow: inset -1px 0 @osd_button_inset;
 }
 
-toolbar.osd button:last-child,
+toolbar.osd toolitem .linked button:last-child,
 .osd.toolbar .button:last-child {
 	box-shadow: none;
 	border-radius: 0 5px 5px 0;
@@ -5620,7 +5625,7 @@ popover,
 	background-clip: initial;
 	margin: 10px;
 	padding: 2px;
-	border-color: @borders;
+	border-color: shade(@borders, 0.8);
 	border-width: 1px;
 	border-style: solid;
 	border-radius: 3px;
@@ -5749,6 +5754,18 @@ popover.osd button:disabled,
 	                                  alpha(shade(@theme_selected_bg_color, 1.1), 0.8),
 	                                  alpha(shade(@theme_selected_bg_color, 0.95), 0.8));
 }
+
+popover.background.scale-popup {
+	background-clip: initial;
+	margin: 10px;
+	padding: 0px;
+	border-color: shade(@borders, 0.8);
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 4px;
+	background-color: @menu_bg_color;
+}
+
 modelbutton {
 	color: @theme_fg_color;
 }
