@@ -646,9 +646,9 @@ row:selected:focus progressbar trough {
  ************/
 
 scale {
-    -GtkScale-slider-length: 21;
+/*    -GtkScale-slider-length: 21;
     -GtkRange-slider-width: 13;
-    -GtkRange-trough-border: 4;
+    -GtkRange-trough-border: 4; */
 }
 
 scale slider,
@@ -1664,14 +1664,26 @@ combobox arrow {
 scrollbar {
     background-image: none;
     border-style: solid;
-    -GtkRange-trough-border: 0;
+    border-color: @scrollbar_trough_border_color;
     -GtkScrollbar-has-backward-stepper: true;
     -GtkScrollbar-has-forward-stepper: true;
-    -GtkRange-slider-width: 15;
-    -GtkRange-stepper-size: 15px;
-    -GtkScrollbar-min-slider-length: 30;
-    -GtkRange-stepper-spacing: 0;
-    -GtkRange-trough-under-steppers: 0;
+    box-shadow: none;
+    border-image: none;
+}
+
+scrollbar.vertical {
+    border-width: 0px 0px 0px 1px;
+    min-width: 15px;
+}
+
+scrollbar.horizontal {
+    border-width: 1px 0px 0px 0px;
+    min-height: 15px;
+}
+
+scrollbar trough {
+    border-style: solid;
+    border-color: @scrollbar_trough_border_color;
 }
 
 scrolledwindow junction {
@@ -1679,15 +1691,11 @@ scrolledwindow junction {
     background-color: @scrollbars_junction_bg_color;
 }
 
-scrollbar trough {
-    background-image: none;
-    border-color: @scrollbar_trough_border_color;
-    border-radius: 0;
-    border-image: none;
-}
-
 scrollbar.horizontal trough {
-    border-width: 1px 0px;
+    min-height: 15px;
+    border-radius: 0px;
+    border-width: 0px 1px 0px 1px;
+    border-image: none;
     background-image: -gtk-gradient (linear,
                       left top,
                       left bottom,
@@ -1695,19 +1703,11 @@ scrollbar.horizontal trough {
                       color-stop (0.5, @scrollbar_trough_gradient_b));
 }
 
-scrollbar.horizontal.top trough {
-    border-width: 0px 0px 1px 0px;
-}
-
-scrollbar.horizontal.bottom trough {
-    border-width: 1px 0px 0px 0px;
-}
-
-scrollbar.vertical.right trough {
-    border-width: 0px 1px 0px 0px;
-}
-
 scrollbar.vertical trough {
+    min-width: 15px;
+    border-radius: 0px;
+    border-width: 1px 0px 1px 0px;
+    border-image: none;
     background-image: -gtk-gradient (linear,
                       left top,
                       right top,
@@ -1715,51 +1715,57 @@ scrollbar.vertical trough {
                       color-stop (0.5, @scrollbar_trough_gradient_b));
 }
 
-scrollbar.vertical.left trough {
-    border-width: 0px 0px 0px 1px;
+/* Buttons */
+scrollbar.vertical button {
+    min-width: 15px;
+    min-height: 17px;
+    padding: 1px 0px;
 }
 
-scrollbar.vertical.right trough {
-    border-width: 0px 1px 0px 0px;
+scrollbar.horizontal button {
+    min-width: 17px;
+    min-height: 15px;
+    padding: 0px 1px;
+}
+
+scrollbar.vertical button.up {
+    -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
+}
+
+scrollbar.vertical button.down {
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
+scrollbar.horizontal button.up {
+    -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+}
+
+scrollbar.horizontal button.down {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
 }
 
 scrollbar button {
-    border-width: 1px;
     border-image: none;
-    border-color: @scrollbar_button_border_color;
+    border-style: none;
+    border-width: 0px;
     border-radius: 0px;
     background-image: none;
     background-color: transparent;
-    color: @scrollbar_button_color;
+}
+
+scrollbar button:hover {
+    border-image: none;
+    border-style: none;
+    border-width: 0px;
+    border-radius: 0px;
 }
 
 scrollbar button:disabled {
     color: @scrollbar_button_insensitive_color;
-    border-color: @scrollbar_button_border_color;
-    border-radius: 0px;
     border-image: none;
-    border-style: solid;
-    border-width: 1px;
-}
-
-scrollbar.vertical button:first-child,
-scrollbar.vertical button:disabled:first-child {
-    border-width: 0px 0px 1px 1px;
-}
-
-scrollbar.vertical button:last-child,
-scrollbar.vertical button:disabled:last-child {
-    border-width: 1px 0px 0px 1px;
-}
-
-scrollbar.horizontal button:first-child,
-scrollbar.horizontal button:disabled:first-child {
-    border-width: 1px 1px 0px 0px;
-}
-
-scrollbar.horizontal button:last-child,
-scrollbar.horizontal button:disabled:last-child {
-    border-width: 1px 0px 0px 1px;
+    border-style: none;
+    border-width: 0px;
+    border-radius: 0px;
 }
 
 scrollbar.horizontal button {
@@ -1810,6 +1816,18 @@ scrollbar.vertical button:hover:active {
                       color-stop (0.50, @scrollbar_button_active_gradient_b),
                       color-stop (0.50, @scrollbar_button_active_gradient_c),
                       to (@scrollbar_button_active_gradient_d));
+}
+
+scrollbar.vertical slider {
+    min-width: 15px;
+    min-height: 42px;
+    margin: 0px -1px 0px -1px;
+}
+
+scrollbar.horizontal slider {
+    min-width: 42px;
+    min-height: 15px;
+    margin: -1px 0px -1px 0px;
 }
 
 scrollbar slider {
