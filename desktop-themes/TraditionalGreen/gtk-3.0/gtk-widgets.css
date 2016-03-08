@@ -2543,12 +2543,18 @@ toolbar.osd .flat.button.image-button {
 
 toolbar.osd button,
 toolbar.osd button:hover,
+toolbar.osd button:focus,
+toolbar.osd button:focus.hover,
+toolbar.osd button:focus.hover:active,
 toolbar.osd button:active,
 toolbar.osd button:checked,
 toolbar.osd button:active:hover,
 toolbar.osd button:disabled,
 toolbar.osd .linked button,
 toolbar.osd .linked button:hover,
+toolbar.osd .linked button:focus,
+toolbar.osd .linked button:focus:hover,
+toolbar.osd .linked button:focus:hover:active,
 toolbar.osd .linked button:active,
 toolbar.osd .linked button:checked,
 toolbar.osd .linked button:active:hover,
@@ -2577,8 +2583,9 @@ toolbar.osd button:hover {
 
 toolbar.osd button:first-child,
 toolbar.osd button:hover:first-child,
-toolbar.osd button:active:first-child,
-toolbar.osd button:active:hover:first-child {
+toolbar.osd button:checked:first-child,
+toolbar.osd button:hover:active:first-child,
+toolbar.osd button:focus:hover:active:first-child {
     border-radius: 3px 0 0 3px;
     border-width: 1px 0 1px 1px;
     box-shadow: inset -1px 0 @osd_button_inset;
@@ -2586,8 +2593,9 @@ toolbar.osd button:active:hover:first-child {
 
 toolbar.osd button:last-child,
 toolbar.osd button:hover:last-child,
-toolbar.osd button:active:last-child,
-toolbar.osd button:active:hover:last-child {
+toolbar.osd button:checked:last-child,
+toolbar.osd button:hover:active:last-child,
+toolbar.osd button:focus:hover:active:last-child {
     box-shadow: none;
     border-radius: 0 3px 3px 0;
     border-width: 1px 1px 1px 0;
@@ -2595,8 +2603,9 @@ toolbar.osd button:active:hover:last-child {
 
 toolbar.osd button:only-child,
 toolbar.osd button:hover:only-child,
-toolbar.osd button:active:only-child,
-toolbar.osd button:active:hover:only-child,
+toolbar.osd button:checked:only-child,
+toolbar.osd button:hover:active:only-child,
+toolbar.osd button:focus:hover:active:only-child,
 toolbar.osd GtkToolButton button,
 toolbar.osd GtkToolButton:only-child button,
 toolbar.osd GtkToolButton:last-child button,
