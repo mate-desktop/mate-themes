@@ -2937,6 +2937,11 @@ treeview header button:last-child:active:focus{
     border-right: none;
 }
 
+row,
+row:focus {
+   min-height: 22px;
+}
+
 row:hover,
 row:disabled,
 row:selected,
