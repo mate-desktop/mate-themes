@@ -1113,7 +1113,7 @@ spinbutton > button:focus,
 spinbutton > button:focus:active {
     background-color: transparent;
     color: @internal_element_color;
-    padding: 2px 6px;
+    padding: 6px;
     border-radius: 0;
     border-width: 0 0 0 1px;
     border-style: solid;
@@ -1199,7 +1199,7 @@ spinbutton.vertical > button:focus:active:last-child {
     border-width: 0 0 0 1px;
     border-image: none;
     border-color: @spinbutton_border_color;
-    padding: 4px 6px;
+    padding: 6px;
 }
 
 
