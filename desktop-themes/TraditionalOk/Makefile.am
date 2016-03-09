@@ -2,17 +2,17 @@ THEME_NAME=TraditionalOk
  
 themedir = $(datadir)/themes/$(THEME_NAME)
 
-theme_DATA = index.theme
+theme_DATA = \
+	COPYING \
+	index.theme
 
-EXTRA_DIST = $(theme_DATA) index.theme.in COPYING
+EXTRA_DIST = $(theme_DATA) index.theme.in
 
 SUBDIRS =		\
-	doc			\
 	gtk-2.0		\
 	gtk-3.0		\
 	metacity-1	\
 	openbox-3	\
-	wallpapers	\
 	xfwm4
 
 CLEANFILES = index.theme

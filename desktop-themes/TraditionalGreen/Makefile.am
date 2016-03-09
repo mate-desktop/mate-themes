@@ -2,9 +2,11 @@ THEME_NAME=TraditionalGreen
  
 themedir = $(datadir)/themes/$(THEME_NAME)
 
-theme_DATA = index.theme
+theme_DATA = \
+	COPYING \
+	index.theme
 
-EXTRA_DIST = $(theme_DATA) index.theme.in COPYING
+EXTRA_DIST = $(theme_DATA) index.theme.in
 
 SUBDIRS =		\
 	gtk-2.0		\
