@@ -284,12 +284,6 @@ NaTrayApplet {
  * Mate-Terminal *
  ****************/
 
-/* workaround for broken size with gtk+-3.20 */
-window.background.mate-terminal box.vertical {
-    min-width: 640px;
-    min-height: 380px;
-}
-
 /* Background mate-terminal, this isn't the normal way to style that! */
 TerminalWindow .entry {
     -TerminalWindow-background-darkness: 0.95;
