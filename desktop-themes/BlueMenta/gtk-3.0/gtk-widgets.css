@@ -4918,6 +4918,150 @@ GtkCalendar.header .path-bar .button.titlebutton GtkImage {
 	padding-top: 1px;
 }
 
+.linked.path-bar > button,
+.linked.path-bar > button:hover,
+.linked.path-bar > button:hover:active,
+.linked.path-bar > button:focus,
+.linked.path-bar > button:focus:hover,
+.linked.path-bar > button:focus:hover:active,
+.linked.path-bar > button:checked,
+.linked.path-bar > button:checked:hover,
+.linked.path-bar > button:checked:hover:active,
+.linked.path-bar > button:focus:checked,
+.linked.path-bar > button:focus:checked:hover,
+.linked.path-bar > button:focus:checked:hover:active,
+.linked.path-bar > button:disabled,
+.linked.path-bar > button:focus:disabled,
+.linked.path-bar > button.text-button.toggle,
+.linked.path-bar > button.text-button.toggle:hover,
+.linked.path-bar > button.text-button.toggle:hover:active,
+.linked.path-bar > button.text-button.toggle:focus,
+.linked.path-bar > button.text-button.toggle:focus:hover,
+.linked.path-bar > button.text-button.toggle:focus:hover:active,
+.linked.path-bar > button.text-button.toggle:checked,
+.linked.path-bar > button.text-button.toggle:checked:hover,
+.linked.path-bar > button.text-button.toggle:checked:hover:active,
+.linked.path-bar > button.text-button.toggle:focus:checked,
+.linked.path-bar > button.text-button.toggle:focus:checked:hover,
+.linked.path-bar > button.text-button.toggle:focus:checked:hover:active,
+.linked.path-bar > button.text-button.toggle:disabled,
+.linked.path-bar > button.text-button.toggle:focus:disabled {
+    border-width: 1px 0px 1px 0px;
+    border-radius: 0px;
+    border-style: solid;
+    border-color: @borders;
+    border-image: none;
+    padding: 4px;
+}
+
+.linked.path-bar > button:first-child,
+.linked.path-bar > button:hover:first-child,
+.linked.path-bar > button:hover:active:first-child,
+.linked.path-bar > button:focus:first-child,
+.linked.path-bar > button:focus:hover:first-child,
+.linked.path-bar > button:focus:hover:active:first-child,
+.linked.path-bar > button:checked:first-child,
+.linked.path-bar > button:checked:hover:first-child,
+.linked.path-bar > button:checked:hover:active:first-child,
+.linked.path-bar > button:focus:checked:first-child,
+.linked.path-bar > button:focus:checked:hover:first-child,
+.linked.path-bar > button:focus:checked:hover:active:first-child,
+.linked.path-bar > button:disabled:first-child,
+.linked.path-bar > button:focus:disabled:first-child,
+.linked.path-bar > button.text-button.toggle:first-child,
+.linked.path-bar > button.text-button.toggle:hover:first-child,
+.linked.path-bar > button.text-button.toggle:hover:active:first-child,
+.linked.path-bar > button.text-button.toggle:focus:first-child,
+.linked.path-bar > button.text-button.toggle:focus:hover:first-child,
+.linked.path-bar > button.text-button.toggle:focus:hover:active:first-child,
+.linked.path-bar > button.text-button.toggle:checked:first-child,
+.linked.path-bar > button.text-button.toggle:checked:hover:first-child,
+.linked.path-bar > button.text-button.toggle:checked:hover:active:first-child,
+.linked.path-bar > button.text-button.toggle:focus:checked:first-child,
+.linked.path-bar > button.text-button.toggle:focus:checked:hover:first-child,
+.linked.path-bar > button.text-button.toggle:focus:checked:hover:active:first-child,
+.linked.path-bar > button.text-button.toggle:disabled:first-child,
+.linked.path-bar > button.text-button.toggle:focus:disabled:first-child  {
+    border-width: 1px 0px 1px 1px;
+    border-radius: 3px 0px 0px 3px;
+    border-style: solid;
+    border-color: @borders;
+    border-image: none;
+    padding: 4px;
+}
+
+.linked.path-bar > button:last-child,
+.linked.path-bar > button:hover:last-child,
+.linked.path-bar > button:hover:active:last-child,
+.linked.path-bar > button:focus:last-child,
+.linked.path-bar > button:focus:hover:last-child,
+.linked.path-bar > button:focus:hover:active:last-child,
+.linked.path-bar > button:checked:last-child,
+.linked.path-bar > button:checked:hover:last-child,
+.linked.path-bar > button:checked:hover:active:last-child,
+.linked.path-bar > button:focus:checked:last-child,
+.linked.path-bar > button:focus:checked:hover:last-child,
+.linked.path-bar > button:focus:checked:hover:active:last-child,
+.linked.path-bar > button:disabled:last-child,
+.linked.path-bar > button:focus:disabled:last-child,
+.linked.path-bar > button.text-button.toggle:last-child,
+.linked.path-bar > button.text-button.toggle:hover:last-child,
+.linked.path-bar > button.text-button.toggle:hover:active:last-child,
+.linked.path-bar > button.text-button.toggle:focus:last-child,
+.linked.path-bar > button.text-button.toggle:focus:hover:last-child,
+.linked.path-bar > button.text-button.toggle:focus:hover:active:last-child,
+.linked.path-bar > button.text-button.toggle:checked:last-child,
+.linked.path-bar > button.text-button.toggle:checked:hover:last-child,
+.linked.path-bar > button.text-button.toggle:checked:hover:active:last-child,
+.linked.path-bar > button.text-button.toggle:focus:checked:last-child,
+.linked.path-bar > button.text-button.toggle:focus:checked:hover:last-child,
+.linked.path-bar > button.text-button.toggle:focus:checked:hover:active:last-child,
+.linked.path-bar > button.text-button.toggle:disabled:last-child,
+.linked.path-bar > button.text-button.toggle:focus:disabled:last-child  {
+    border-width: 1px 1px 1px 0px;
+    border-radius: 0px 3px 3px 0px;
+    border-style: solid;
+    border-color: @borders;
+    border-image: none;
+    padding: 4px;
+}
+
+.linked.path-bar > button:only-child,
+.linked.path-bar > button:hover:only-child,
+.linked.path-bar > button:hover:active:only-child,
+.linked.path-bar > button:focus:only-child,
+.linked.path-bar > button:focus:hover:only-child,
+.linked.path-bar > button:focus:hover:active:only-child,
+.linked.path-bar > button:checked:only-child,
+.linked.path-bar > button:checked:hover:only-child,
+.linked.path-bar > button:checked:hover:active:only-child,
+.linked.path-bar > button:focus:checked:only-child,
+.linked.path-bar > button:focus:checked:hover:only-child,
+.linked.path-bar > button:focus:checked:hover:active:only-child,
+.linked.path-bar > button:disabled:only-child,
+.linked.path-bar > button:focus:disabled:only-child,
+.linked.path-bar > button.text-button.toggle:only-child,
+.linked.path-bar > button.text-button.toggle:hover:only-child,
+.linked.path-bar > button.text-button.toggle:hover:active:only-child,
+.linked.path-bar > button.text-button.toggle:focus:only-child,
+.linked.path-bar > button.text-button.toggle:focus:hover:only-child,
+.linked.path-bar > button.text-button.toggle:focus:hover:active:only-child,
+.linked.path-bar > button.text-button.toggle:checked:only-child,
+.linked.path-bar > button.text-button.toggle:checked:hover:only-child,
+.linked.path-bar > button.text-button.toggle:checked:hover:active:only-child,
+.linked.path-bar > button.text-button.toggle:focus:checked:only-child,
+.linked.path-bar > button.text-button.toggle:focus:checked:hover:only-child,
+.linked.path-bar > button.text-button.toggle:focus:checked:hover:active:only-child,
+.linked.path-bar > button.text-button.toggle:disabled:only-child,
+.linked.path-bar > button.text-button.toggle:focus:disabled:only-child  {
+    border-width: 1px;
+    border-radius: 3px;
+    border-style: solid;
+    border-color: @borders;
+    border-image: none;
+    padding: 4px;
+}
+
 /***********************
  * Tree and Icon views *
  ***********************/
