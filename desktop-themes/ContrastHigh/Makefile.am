@@ -1,10 +1,11 @@
 THEME_NAME=ContrastHigh
+THEME_IN_FILES=index.theme.in
+
+@INTLTOOL_THEME_RULE@
  
 themedir = $(datadir)/themes/$(THEME_NAME)
 
 theme_DATA = index.theme
-
-EXTRA_DIST = $(theme_DATA) index.theme.in
 
 SUBDIRS = \
    gtk-3.0 \
@@ -12,10 +13,6 @@ SUBDIRS = \
    metacity-1 \
    pixmaps
 
-CLEANFILES = index.theme
-
-index.theme: index.theme.in
-	$(AM_V_GEN)sed \
-		-e s!\@BACKGROUND_DIR\@!$(datadir)/backgrounds/mate/abstract! \
-		< $< > $@
+DISTCLEANFILES = index.theme
+EXTRA_DIST = index.theme.in
 
