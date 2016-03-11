@@ -3,66 +3,37 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Arangel Angov <arangel@linux.net.mk>, 2007.
-# Arangel Angov <ufo@linux.net.mk>, 2004, 2006.
-# Darko Nikolovski <darkon@macedonia.homelinux.org>, 2003.
-# Igor Petreski <dierektor@pcinfo.com.mk>, 2002.
-# Ivan Stojmirov <stojmir@linux.net.mk>, 2003.
-# Jovan Naumovski <jovan@lugola.net>, 2006.
-# Арангел Ангов <ufo@linux.net.mk>, 2005.
+# Arangel Angov <arangel@linux.net.mk>, 2007
+# Arangel Angov <ufo@linux.net.mk>, 2004, 2006
+# Darko Nikolovski <darkon@macedonia.homelinux.org>, 2003
+# Igor Petreski <dierektor@pcinfo.com.mk>, 2002
+# Ivan Stojmirov <stojmir@linux.net.mk>, 2003
+# Jovan Naumovski <jovan@lugola.net>, 2006
+# Арангел Ангов <ufo@linux.net.mk>, 2005
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
-"Report-Msgid-Bugs-To: https://github.com/mate-desktop/\n"
-"POT-Creation-Date: 2012-04-04 17:44+0200\n"
-"PO-Revision-Date: 2012-04-04 15:48+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-11 10:41+0100\n"
+"PO-Revision-Date: 2016-03-11 09:44+0000\n"
+"Last-Translator: Wolfgang Ulbrich <chat-to-me@raveit.de>\n"
+"Language-Team: Macedonian (http://www.transifex.com/mate/MATE/language/mk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: mk\n"
-"Plural-Forms: nplurals=2; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : 1\n"
+"Plural-Forms: nplurals=2; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : 1;\n"
 
-#: ../desktop-themes/TraditionalOk/index.theme.in.h:1
-msgid "TraditionalOk"
+#: ../desktop-themes/BlackMATE/index.theme.in.h:1
+msgid "A clean dark theme"
 msgstr ""
 
-#: ../desktop-themes/TraditionalOk/index.theme.in.h:2
-msgid "Attractive Usability"
-msgstr "Привлечна употребливост"
-
-#: ../desktop-themes/TraditionalOkTest/index.theme.in.h:1
-msgid "TraditionalOk Test Theme"
+#: ../desktop-themes/BlueMenta/index.theme.in.h:1
+msgid "A clean light theme with blue elements"
 msgstr ""
 
-#: ../desktop-themes/TraditionalOkTest/index.theme.in.h:2
-msgid "Theme with a different colorscheme to find problems in applications."
-msgstr ""
-
-#: ../desktop-themes/Quid/index.theme.in.h:1
-#: ../icon-themes/Quid/index.theme.in.h:1
-msgid "Quid"
-msgstr ""
-
-#: ../desktop-themes/Quid/index.theme.in.h:2
-msgid "Smooth gradients with purple highlights"
-msgstr "Фини градиенти со пурпурни површини"
-
-#: ../desktop-themes/AlaDelta/index.theme.in.h:1
-msgid "AlaDelta"
-msgstr ""
-
-#: ../desktop-themes/AlaDelta/index.theme.in.h:2
-msgid "Simple, smooth and aesthetically pleasing"
-msgstr "Едноставна и мазна тема"
-
-#: ../desktop-themes/Shiny/index.theme.in.h:1
-msgid "Shiny"
-msgstr ""
-
-#: ../desktop-themes/Shiny/index.theme.in.h:2
-msgid "A Shiny looking theme"
+#: ../desktop-themes/Blue-Submarine/index.theme.in.h:1
+msgid "A medium blue theme with dark menus and panel"
 msgstr ""
 
 #: ../desktop-themes/ContrastHigh/index.theme.in.h:1
@@ -81,69 +52,22 @@ msgstr "Висок контраст инверзно"
 msgid "White-on-black text and icons"
 msgstr "Бело-на-црно текст и икони"
 
-#: ../desktop-themes/ContrastHighLargePrint/index.theme.in.in.h:1
-#: ../icon-themes/ContrastHighLargePrint/index.theme.in.h:1
-msgid "High Contrast Large Print"
-msgstr "Јак контраст големи букви"
-
-#: ../desktop-themes/ContrastHighLargePrint/index.theme.in.in.h:2
-msgid "Large black-on-white text and icons"
-msgstr "Големи црно-на-бело текст и икони"
-
-#: ../desktop-themes/ContrastHighLargePrintInverse/index.theme.in.in.h:1
-#: ../icon-themes/ContrastHighLargePrintInverse/index.theme.in.h:1
-msgid "High Contrast Large Print Inverse"
-msgstr "Јак контраст, големи букви инверзно"
-
-#: ../desktop-themes/ContrastHighLargePrintInverse/index.theme.in.in.h:2
-msgid "Large white-on-black text and icons"
-msgstr "Големи црно-бели текст и икони"
-
-#: ../desktop-themes/LargePrint/index.theme.in.in.h:1
-msgid "Large Print"
-msgstr "Големи букви"
-
-#: ../desktop-themes/LargePrint/index.theme.in.in.h:2
-msgid "Large text and icons"
-msgstr "Големи икони и текст"
-
-#: ../desktop-themes/ContrastLow/index.theme.in.h:1
-msgid "Low Contrast"
-msgstr "Низок контраст"
-
-#: ../desktop-themes/ContrastLow/index.theme.in.h:2
-msgid "Muted text and icons"
-msgstr "Заматени икони и текст"
-
-#: ../desktop-themes/ContrastLowLargePrint/index.theme.in.in.h:1
-msgid "Low Contrast Large Print"
-msgstr "Мал контраст, големи букви"
-
-#: ../desktop-themes/ContrastLowLargePrint/index.theme.in.in.h:2
-msgid "Large muted text and icons"
-msgstr "Големи заматени икони и текст"
-
-#: ../desktop-themes/Fog/index.theme.in.h:1
-#: ../icon-themes/Fog/index.theme.in.h:1
-msgid "Fog"
+#: ../desktop-themes/GreenLaguna/index.theme.in.h:1
+msgid "A clean light green theme"
 msgstr ""
 
-#: ../desktop-themes/Fog/index.theme.in.h:2
-msgid "A minimalistic appearance"
-msgstr "Минималистички изглед"
-
-#: ../icon-themes/ContrastHigh-SVG/index.theme.in.h:1
-msgid "ContrastHigh-SVG"
+#: ../desktop-themes/Green-Submarine/index.theme.in.h:1
+msgid "A medium green theme with dark menus and panel"
 msgstr ""
 
-#: ../icon-themes/ContrastHigh-SVG/index.theme.in.h:2
-msgid "High contrast scalable icons with black borders"
-msgstr "Висок контраст, скалабилни икони со црна граница"
-
-#: ../icon-themes/ContrastHighLargePrint/index.theme.in.h:2
-msgid "Large High Contrast Icon Theme"
+#: ../desktop-themes/Menta/index.theme.in.h:1
+msgid "A clean light theme with green elements"
 msgstr ""
 
-#: ../icon-themes/ContrastHighLargePrintInverse/index.theme.in.h:2
-msgid "Large Inverse High Contrast Icon Theme"
+#: ../desktop-themes/TraditionalGreen/index.theme.in.h:1
+msgid "Green port of Clearlooks-Phenix"
+msgstr ""
+
+#: ../desktop-themes/TraditionalOk/index.theme.in.h:1
+msgid "Port of Clearlooks-Phenix"
 msgstr ""

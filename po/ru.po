@@ -10,56 +10,27 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-04 17:44+0200\n"
-"PO-Revision-Date: 2013-03-11 20:10+0000\n"
-"Last-Translator: Alexei Sorokin <sor.alexei@meowr.ru>\n"
-"Language-Team: Russian (http://www.transifex.com/projects/p/MATE/language/ru/)\n"
+"POT-Creation-Date: 2016-03-11 10:41+0100\n"
+"PO-Revision-Date: 2016-03-11 09:44+0000\n"
+"Last-Translator: Wolfgang Ulbrich <chat-to-me@raveit.de>\n"
+"Language-Team: Russian (http://www.transifex.com/mate/MATE/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ru\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: ../desktop-themes/TraditionalOk/index.theme.in.h:1
-msgid "TraditionalOk"
-msgstr "TraditionalOk"
+#: ../desktop-themes/BlackMATE/index.theme.in.h:1
+msgid "A clean dark theme"
+msgstr ""
 
-#: ../desktop-themes/TraditionalOk/index.theme.in.h:2
-msgid "Attractive Usability"
-msgstr "Привлекательное удобство"
+#: ../desktop-themes/BlueMenta/index.theme.in.h:1
+msgid "A clean light theme with blue elements"
+msgstr ""
 
-#: ../desktop-themes/TraditionalOkTest/index.theme.in.h:1
-msgid "TraditionalOk Test Theme"
-msgstr "Тестовая тема TraditionalOk"
-
-#: ../desktop-themes/TraditionalOkTest/index.theme.in.h:2
-msgid "Theme with a different colorscheme to find problems in applications."
-msgstr "Тема с другой цветовой схемой, помогающая находить проблемы в приложениях"
-
-#: ../desktop-themes/Quid/index.theme.in.h:1
-#: ../icon-themes/Quid/index.theme.in.h:1
-msgid "Quid"
-msgstr "Quid"
-
-#: ../desktop-themes/Quid/index.theme.in.h:2
-msgid "Smooth gradients with purple highlights"
-msgstr "Гладкие переходы c пурпурной подсветкой"
-
-#: ../desktop-themes/AlaDelta/index.theme.in.h:1
-msgid "AlaDelta"
-msgstr "Дельтаплан"
-
-#: ../desktop-themes/AlaDelta/index.theme.in.h:2
-msgid "Simple, smooth and aesthetically pleasing"
-msgstr "Простая, плавная и приятная эстетически"
-
-#: ../desktop-themes/Shiny/index.theme.in.h:1
-msgid "Shiny"
-msgstr "Блестящая"
-
-#: ../desktop-themes/Shiny/index.theme.in.h:2
-msgid "A Shiny looking theme"
-msgstr "Блестяще выглядящая тема"
+#: ../desktop-themes/Blue-Submarine/index.theme.in.h:1
+msgid "A medium blue theme with dark menus and panel"
+msgstr ""
 
 #: ../desktop-themes/ContrastHigh/index.theme.in.h:1
 msgid "High Contrast"
@@ -77,69 +48,22 @@ msgstr "Высококонтрастная негативная"
 msgid "White-on-black text and icons"
 msgstr "Текст и значки белые на чёрном"
 
-#: ../desktop-themes/ContrastHighLargePrint/index.theme.in.in.h:1
-#: ../icon-themes/ContrastHighLargePrint/index.theme.in.h:1
-msgid "High Contrast Large Print"
-msgstr "Высококонтрастная крупная для печати"
+#: ../desktop-themes/GreenLaguna/index.theme.in.h:1
+msgid "A clean light green theme"
+msgstr ""
 
-#: ../desktop-themes/ContrastHighLargePrint/index.theme.in.in.h:2
-msgid "Large black-on-white text and icons"
-msgstr "Крупные текст и значки чёрные на белом"
+#: ../desktop-themes/Green-Submarine/index.theme.in.h:1
+msgid "A medium green theme with dark menus and panel"
+msgstr ""
 
-#: ../desktop-themes/ContrastHighLargePrintInverse/index.theme.in.in.h:1
-#: ../icon-themes/ContrastHighLargePrintInverse/index.theme.in.h:1
-msgid "High Contrast Large Print Inverse"
-msgstr "Высококонтрастная негативная для печати"
+#: ../desktop-themes/Menta/index.theme.in.h:1
+msgid "A clean light theme with green elements"
+msgstr ""
 
-#: ../desktop-themes/ContrastHighLargePrintInverse/index.theme.in.in.h:2
-msgid "Large white-on-black text and icons"
-msgstr "Крупные текст и значки белые на чёрном"
+#: ../desktop-themes/TraditionalGreen/index.theme.in.h:1
+msgid "Green port of Clearlooks-Phenix"
+msgstr ""
 
-#: ../desktop-themes/LargePrint/index.theme.in.in.h:1
-msgid "Large Print"
-msgstr "Крупная для печати"
-
-#: ../desktop-themes/LargePrint/index.theme.in.in.h:2
-msgid "Large text and icons"
-msgstr "Крупные текст и значки"
-
-#: ../desktop-themes/ContrastLow/index.theme.in.h:1
-msgid "Low Contrast"
-msgstr "Низкоконтрастная"
-
-#: ../desktop-themes/ContrastLow/index.theme.in.h:2
-msgid "Muted text and icons"
-msgstr "«Приглушённые» текст и значки"
-
-#: ../desktop-themes/ContrastLowLargePrint/index.theme.in.in.h:1
-msgid "Low Contrast Large Print"
-msgstr "Низкоконтрастная крупная для печати"
-
-#: ../desktop-themes/ContrastLowLargePrint/index.theme.in.in.h:2
-msgid "Large muted text and icons"
-msgstr "Крупные «приглушённые» текст и значки"
-
-#: ../desktop-themes/Fog/index.theme.in.h:1
-#: ../icon-themes/Fog/index.theme.in.h:1
-msgid "Fog"
-msgstr "Туман"
-
-#: ../desktop-themes/Fog/index.theme.in.h:2
-msgid "A minimalistic appearance"
-msgstr "Минималистcкий вид"
-
-#: ../icon-themes/ContrastHigh-SVG/index.theme.in.h:1
-msgid "ContrastHigh-SVG"
-msgstr "ContrastHigh-SVG"
-
-#: ../icon-themes/ContrastHigh-SVG/index.theme.in.h:2
-msgid "High contrast scalable icons with black borders"
-msgstr "Высококонтрастные масштабируемые значки с чёрными рамками"
-
-#: ../icon-themes/ContrastHighLargePrint/index.theme.in.h:2
-msgid "Large High Contrast Icon Theme"
-msgstr "Высококонтрастная крупная тема значков"
-
-#: ../icon-themes/ContrastHighLargePrintInverse/index.theme.in.h:2
-msgid "Large Inverse High Contrast Icon Theme"
-msgstr "Высококонтрастная негативная крупная тема значков"
+#: ../desktop-themes/TraditionalOk/index.theme.in.h:1
+msgid "Port of Clearlooks-Phenix"
+msgstr ""
