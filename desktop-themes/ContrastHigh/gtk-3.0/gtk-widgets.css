@@ -1795,8 +1795,8 @@ checkbutton check {
 scale,
 scale.scale-has-marks-above.scale-has-marks-below,
 scale.vertical.scale-has-marks-above.scale-has-marks-below {
-  -GtkScale-slider-length: 20;
-  -GtkRange-slider-width: 20;
+/*  -GtkScale-slider-length: 20;
+  -GtkRange-slider-width: 20;*/
   outline-offset: -9px;
   -gtk-outline-radius: 4px; }
   scale.fine-tune,

@@ -8,37 +8,6 @@
 	padding: 0px 4px;
 }
 
-/****************
- * Dconf-editor *
- ****************/
-
-DConfWindow .menubar {
-    border-style: solid;
-    border-width: 0px 0px 1px 0px;
-}
-
-DConfWindow GtkPaned.horizontal {
-    -GtkPaned-handle-size: 8px;
-    border-style: solid;
-    border-width: 0px 1px 0 1px;
-}
-
-DConfKeyView.view .spinbutton .button {
-    border-image: none;
-    border-style: solid;
-    border-width: 0px 0px 0px 3px;
-    border-color: @theme_selected_bg_color;
-    border-radius: 0px;
-    box-shadow: none;
-}
-
-DConfKeyView.view .spinbutton .button:last-child {
-    border-radius: 0 2px 2px 0;
-    border-style: solid;
-    border-width: 0px 0px 0px 3px;
-    border-color: @theme_selected_bg_color;
-}
-
 /********
  * Nemo *
  ********/
@@ -46,33 +15,33 @@ DConfKeyView.view .spinbutton .button:last-child {
 /* workaround for broken first/last-child logic with linked buttons
    in pathbar with gtk+-3.18 */
 NemoPathBar:dir(ltr).raised.linked .button.text-button,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:hover,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:hover:active,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:active,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:checked,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:checked:hover,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:checked:hover:active,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:first-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:hover:first-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:hover:active:first-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:active:first-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:checked:first-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:checked:hover:first-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:checked:hover:active:first-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:last-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:hover:last-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:hover:active:last-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:active:last-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:checked:last-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:checked:hover:last-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:checked:hover:active:last-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:only-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:hover:only-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:hover:active:only-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:active:only-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:checked:only-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:checked:hover:only-child,
-NemoPathBar:dir(ltr).raised.linked .button.text-button:checked:hover:active:only-child {
+NemoPathBar:dir(ltr).raised.linked button.text-button:hover,
+NemoPathBar:dir(ltr).raised.linked button.text-button:hover:active,
+NemoPathBar:dir(ltr).raised.linked button.text-button:active,
+NemoPathBar:dir(ltr).raised.linked button.text-button:checked,
+NemoPathBar:dir(ltr).raised.linked button.text-button:checked:hover,
+NemoPathBar:dir(ltr).raised.linked button.text-button:checked:hover:active,
+NemoPathBar:dir(ltr).raised.linked button.text-button:first-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:hover:first-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:hover:active:first-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:active:first-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:checked:first-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:checked:hover:first-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:checked:hover:active:first-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:last-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:hover:last-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:hover:active:last-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:active:last-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:checked:last-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:checked:hover:last-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:checked:hover:active:last-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:only-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:hover:only-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:hover:active:only-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:active:only-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:checked:only-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:checked:hover:only-child,
+NemoPathBar:dir(ltr).raised.linked button.text-button:checked:hover:active:only-child {
 	border-right-width: 2px;
 	border-left-width: 2px;
 	border-radius: 4px;
