@@ -4,8 +4,8 @@ theme_DATA = \
 	gtk.css \
 	gtk-widgets.css \
 	mate-applications.css \
+	panel-grid.svg \
 	other-applications.css \
-	resize-grip.svg \
 	settings.ini
 
 EXTRA_DIST = $(theme_DATA)
