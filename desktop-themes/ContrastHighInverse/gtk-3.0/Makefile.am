@@ -3,7 +3,7 @@ THEME_NAME=ContrastHighInverse
 themedir = $(datadir)/themes/$(THEME_NAME)/gtk-3.0
 
 theme_DATA = \
-	resize-grip.svg \
+	panel-grid.svg \
 	gtk.css \
 	gtk-widgets.css \
 	mate-applications.css \
