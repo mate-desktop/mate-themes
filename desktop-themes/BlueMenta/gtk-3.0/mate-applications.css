@@ -642,6 +642,12 @@ PlumaView {
     background-color: shade (@theme_bg_color, 1.07);
 }
 
+/* notebook in view */
+.pluma-window paned.horizontal notebook box.vertical {
+    border-radius: 0px;
+    border-width: 0px
+}
+
 /* Pluma status bar */
 .pluma-window statusbar.horizontal frame {
     border-style: none;

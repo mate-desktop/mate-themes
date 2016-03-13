@@ -2334,8 +2334,7 @@ stack box.vertical.linked spinbutton.horizontal {
  * tabs          *
  *****************/
 
-notebook,
-.notebook {
+notebook {
     padding: 0;
     background-clip: border-box;
     border-style: none;
@@ -2349,8 +2348,7 @@ notebook.frame {
     border-radius: 4px 4px 0px 0px;
 }
 
-notebook :hover,
-.notebook :hover {
+notebook :hover {
     -gtk-icon-effect: highlight;
     color: @theme_fg_color;
 }
@@ -2418,22 +2416,28 @@ notebook header tab label {
 
 /* notebooks, view, header and tabs in caja and pluma view */
 paned.horizontal notebook {
-    border-style: solid;
+    border-style: none;
     border-color: @borders;
-    border-width: 1px;
+    border-width: 0px;
     border-radius: 4px 4px 0px 0px;
+}
+
+paned.horizontal notebook box.vertical {
+    border-radius: 0px;
+    border-width: 0px
+    border-style: none;
 }
 
 paned.horizontal notebook header.top {
     border-radius: 4px 4px 0px 0px;
     border-style: solid;
     border-color: @borders;
-    border-width: 0px 0px 1px 0px;
-    box-shadow: inset  0px  1px 0 0 alpha(@borders, 0.4);
+    border-width: 1px 1px 1px 1px;
+    box-shadow: none;
 }
 
 paned.horizontal notebook scrolledwindow.frame {
-    border-width: 0px;
+    border-width: 0px 1px 1px 1px;
 }
 
 paned.horizontal notebook header.top tab {
@@ -2453,7 +2457,16 @@ notebook.frame header.bottom tab {
     margin: 0px 0px 0px -1px;
     border-style: solid;
     border-width: 0px 1px 0px 1px;
-    border-color: transparent;
+    border-radius: 4px 4px 0px 0px;
+    border-color: @borders;
+}
+
+notebook.frame header.top tab {
+    border-radius: 4px 4px 0px 0px;
+}
+
+notebook.frame header.bottom tab {
+    border-radius: 0px 0px 4px 4px;
 }
 
 notebook header.top tab:checked,
@@ -2471,10 +2484,11 @@ notebook header.top tab:hover {
     background-image: linear-gradient(to bottom,
                                       alpha(@theme_base_color, 0.0),
                                       alpha(@theme_base_color, 0.3));
-    border-radius: 0px;
+    border-radius: 4px 4px 0px 0px;
     border-width: 0px 1px 0px 1px;
     border-style: solid;
     border-color: @borders;
+    box-shadow: none;
 }
 
 notebook header.bottom tab:checked,
@@ -2505,8 +2519,16 @@ notebook.frame header.right tab {
     padding: 5px 20px;
     margin: -1px 0px 0px 0px;
     border-style: solid;
-    border-color: transparent;
+    border-color: @borders;
     border-width: 1px 0px 1px 0px;
+}
+
+notebook.frame header.left tab {
+    border-radius: 4px 0px 0px 4px;
+}
+
+notebook.frame header.right tab {
+    border-radius:  0px 4px 4px 0px;
 }
 
 notebook header.left tab:checked,
@@ -2634,35 +2656,27 @@ notebook header.right tabs arrow.down {
     color: @menu_controls_color;
 }
 
-notebook header tabs arrow,
-.notebook.arrow {
-    /* FIXME, why this doesn't work? */
-/*    -GtkNotebook-arrow-scaling: 0.5; */
+notebook header tabs arrow {
     color: shade(@theme_fg_color, 2.6);
 }
 
-notebook header tabs arrow:hover,
-.notebook.arrow:hover {
+notebook header tabs arrow:hover {
     color: @theme_selected_bg_color;
 }
 
-notebook header tabs arrow:active,
-.notebook.arrow:active {
+notebook header tabs arrow:active {
     color: @theme_fg_color;
 }
 
-notebook header tabs arrow:disabled,
-.notebook.arrow:disabled {
+notebook header tabs arrow:disabled {
     color: rgba(141, 144, 145, 0.3);
 }
 
-notebook header tabs arrow:backdrop,
-.notebook.arrow:backdrop {
+notebook header tabs arrow:backdrop {
     color: rgba(84, 89, 90, 0.4);
 }
 
-notebook header tabs arrow:disabled,
-.notebook.arrow:backdrop:disabled {
+notebook header tabs arrow:disabled {
     color: #c7c7c7;
 }
 
