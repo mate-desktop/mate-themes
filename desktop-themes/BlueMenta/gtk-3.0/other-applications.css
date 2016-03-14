@@ -4,44 +4,48 @@
 
 /* workaround for broken first/last-child logic with linked buttons
    in pathbar since gtk+-3.18 */
-.nemo-window NemoPathBar.raised.linked button.text-button,
-.nemo-window NemoPathBar.raised.linked button.text-button:hover,
-.nemo-window NemoPathBar.raised.linked button.text-button:hover:active,
-.nemo-window NemoPathBar.raised.linked button.text-button:active,
-.nemo-window NemoPathBar.raised.linked button.text-button:checked,
-.nemo-window NemoPathBar.raised.linked button.text-button:checked:hover,
-.nemo-window NemoPathBar.raised.linked button.text-button:checked:hover:active,
-.nemo-window NemoPathBar.raised.linked button.text-button:first-child,
-.nemo-window NemoPathBar.raised.linked button.text-button:hover:first-child,
-.nemo-window NemoPathBar.raised.linked button.text-button:hover:active:first-child,
-.nemo-window NemoPathBar.raised.linked button.text-button:active:first-child,
-.nemo-window NemoPathBar.raised.linked button.text-button:checked:first-child,
-.nemo-window NemoPathBar.raised.linked button.text-button:checked:hover:first-child,
-.nemo-window NemoPathBar.raised.linked button.text-button:checked:hover:active:first-child,
-.nemo-window NemoPathBar.raised.linked button.text-button:last-child,
-.nemo-window NemoPathBar.raised.linked button.text-button:hover:last-child,
-.nemo-window NemoPathBar.raised.linked button.text-button:hover:active:last-child,
-.nemo-window NemoPathBar.raised.linked button.text-button:active:last-child,
-.nemo-window NemoPathBar.raised.linked button.text-button:checked:last-child,
-.nemo-window NemoPathBar.raised.linked button.text-button:checked:hover:last-child,
-.nemo-window NemoPathBar.raised.linked button.text-button:checked:hover:active:last-child,
-.nemo-window NemoPathBar.raised.linked button.text-button:only-child,
-.nemo-window NemoPathBar.raised.linked button.text-button:hover:only-child,
-.nemo-window NemoPathBar.raised.linked button.text-button:hover:active:only-child,
-.nemo-window NemoPathBar.raised.linked button.text-button:active:only-child,
-.nemo-window NemoPathBar.raised.linked button.text-button:checked:only-child,
-.nemo-window NemoPathBar.raised.linked button.text-button:checked:hover:only-child,
-.nemo-window NemoPathBar.raised.linked button.text-button:checked:hover:active:only-child {
-    border-right-width: 1px;
-    border-left-width: 1px;
+
+.nemo-window widget.raised.linked > button:nth-child(first) widget {
+    -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+}
+
+.nemo-window widget.raised.linked > button:nth-child(last) widget {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+
+.nemo-window widget.raised.linked > button:nth-child(first) {
+   margin: 0px -5px 0px -1px;
+   padding: 0px;
+}
+
+.nemo-window widget.raised.linked > button:nth-child(last) {
+   margin: 0px -1px 0px -5px;
+   padding: 0px;
+}
+
+.nemo-window widget.raised.linked > button.text-button.toggle {
+    border-width: 1px;
     border-image-width: 3px 3px 4px 3px;
     border-radius: 4px;
     border-style: solid;
+    margin: 0px -8px 0px 0px;
+}
+
+.nemo-window widget.raised.linked > button.text-button.toggle:nth-child(first) {
+    margin: 0px -1px 0px 0px;
+}
+
+.nemo-window widget.raised.linked > button.text-button.toggle:nth-child(last) {
+    margin: 0px 0px 0px -1px;
+}
+
+.nemo-window widget.raised.linked > button.text-button.toggle label,
+.nemo-window widget.raised.linked > button.text-button.toggle image {
+   padding: 0px 4px;
 }
 
 /* For Places Sidebar diskfull indicators */
-.nemo-window .vertical.sidebar>scrolledwindow.frame>viewport.frame>box.vertical>treeview.view,
-NemoPlacesTreeView {
+.nemo-window .vertical.sidebar>scrolledwindow.frame>viewport.frame>box.vertical>treeview.view {
 	-NemoPlacesTreeView-disk-full-bg-color: shade(@theme_bg_color, .65);
 	-NemoPlacesTreeView-disk-full-fg-color: shade(@theme_selected_bg_color, 1.0);
 	-NemoPlacesTreeView-disk-full-bar-width: 2px;
@@ -50,21 +54,16 @@ NemoPlacesTreeView {
 	-NemoPlacesTreeView-disk-full-max-length: 70px;
 }
 
-.nemo-window .vertical.sidebar>scrolledwindow.frame>viewport.frame>box.vertical>treeview.view:selected,
-NemoPlacesTreeView:selected {
+.nemo-window .vertical.sidebar>scrolledwindow.frame>viewport.frame>box.vertical>treeview.view:selected {
 	-NemoPlacesTreeView-disk-full-bg-color: shade(@theme_bg_color, 2.0);
 	-NemoPlacesTreeView-disk-full-fg-color: shade(@theme_fg_color, 2.0);
 }
 
-.nemo-window .vertical.sidebar>scrolledwindow.frame>viewport.frame>box.vertical>treeview.view:hover,
-NemoPlacesTreeView:hover {
+.nemo-window .vertical.sidebar>scrolledwindow.frame>viewport.frame>box.vertical>treeview.view:hover {
 }
 
-.nemo-window .vertical.sidebar>scrolledwindow.frame>viewport.frame>box.vertical>treeview.view:selected:hover,
-NemoPlacesTreeView:selected:hover {
+.nemo-window .vertical.sidebar>scrolledwindow.frame>viewport.frame>box.vertical>treeview.view:selected:hover {
 }
-
-@define-color cluebar_color shade (@theme_base_color, 0.9);
 
 /* view */
 .nemo-window-pane notebook scrolledwindow {
@@ -175,80 +174,28 @@ NemoPlacesTreeView:selected:hover {
     border-style: solid;
 }
 
-/****************
- * PopOver menu *
- ****************/
-GraniteWidgetsPopOver {
-	-GraniteWidgetsPopOver-arrow-width: 24;
-	-GraniteWidgetsPopOver-arrow-height: 12;
-	-GraniteWidgetsPopOver-border-radius: 6;
-	-GraniteWidgetsPopOver-border-width: 1;
-	-GraniteWidgetsPopOver-shadow-size: 18;
-	
-	border-style: solid;
-	border-color: shade (@theme_bg_color, 0.50);
-	background-color: @theme_bg_color;
-	margin: 0;
-}
-
-GraniteWidgetsPopOver * {
-	background-color: @theme_bg_color;
-}
-
-GraniteWidgetsPopOver .sidebar.view {
-	background-color: @theme_bg_color;
-}
-
-GraniteWidgetsPopOver .button {
-	background-image: none;
-	background-color: alpha (#fff, 0.0);
-}
-
-GraniteWidgetsPopOver .button:active,
-GraniteWidgetsPopOver .button:hover:active {
-	background-image: none;
-	background-color: alpha (#000, 0.05);
-}
-
-GraniteWidgetsPopOver .entry {
-	background-image: linear-gradient(to bottom,
-		shade (@theme_base_color, 0.88),
-		shade (@theme_base_color, 0.94) 20px,
-		shade (@theme_base_color, 0.96));
-}
-
-.button.app {
-	border-width: 0;
-	border-radius: 5px;
-}
-
-.app:hover,
-.app:focus {
-	background-color: alpha (#000, 0.15);
-}
-
 /* Parole media player needs more testing!
  hopefully do not set other stuff */
 
-GtkPaned.horizontal .vertical GtkOverlay GtkRevealer.bottom .background.horizontal.osd {
+paned.horizontal .vertical overlay revealer.bottom .background.horizontal.osd {
     background-color: @theme_bg_color;
     color: @theme_fg_color;
 }
 
-GtkPaned GtkOverlay GtkRevealer.bottom .button.flat,
-GtkPaned GtkOverlay GtkRevealer.bottom .button.flat:hover,
-GtkPaned GtkOverlay GtkRevealer.bottom .button.flat:active,
-GtkPaned GtkOverlay GtkRevealer.bottom .button.flat:checked,
-GtkPaned GtkOverlay GtkRevealer.bottom .button.flat:active:hover,
-GtkPaned GtkOverlay GtkRevealer.bottom .button.flat:checked:hover,
-GtkPaned GtkOverlay GtkRevealer.bottom .button.flat.image-button,
-GtkPaned GtkOverlay GtkRevealer.bottom .button.flat.image-button:hover ,
-GtkPaned GtkOverlay GtkRevealer.bottom .button.flat.image-button:active,
-GtkPaned GtkOverlay GtkRevealer.bottom .button.flat.image-button:checked,
-GtkPaned GtkOverlay GtkRevealer.bottom .button.flat.image-button:active:hover,
-GtkPaned GtkOverlay GtkRevealer.bottom .button.flat.image-button:checked:hover,
-GtkPaned GtkOverlay GtkRevealer.bottom .background.horizontal.osd .button.flat.image-button:checked,
-GtkPaned GtkOverlay GtkRevealer.bottom .background.horizontal.osd .button.flat.image-button:active:hover {
+paned overlay revealer.bottom button.flat,
+paned overlay revealer.bottom button.flat:hover,
+paned overlay revealer.bottom button.flat:active,
+paned overlay revealer.bottom button.flat:checked,
+paned overlay revealer.bottom button.flat:active:hover,
+paned overlay revealer.bottom button.flat:checked:hover,
+paned overlay revealer.bottom button.flat.image-button,
+paned overlay revealer.bottom button.flat.image-button:hover ,
+paned overlay revealer.bottom button.flat.image-button:active,
+paned overlay revealer.bottom button.flat.image-button:checked,
+paned overlay revealer.bottom button.flat.image-button:active:hover,
+paned overlay revealer.bottom button.flat.image-button:checked:hover,
+paned overlay revealer.bottom .background.horizontal.osd button.flat.image-button:checked,
+paned overlay revealer.bottom .background.horizontal.osd button.flat.image-button:active:hover {
     border-style: none;
     border-radius: 4px;
     background-color: transparent;
@@ -258,8 +205,8 @@ GtkPaned GtkOverlay GtkRevealer.bottom .background.horizontal.osd .button.flat.i
     color: @button_active_text;
 }
 
-GtkPaned GtkOverlay GtkRevealer.bottom .background.horizontal.osd .button.flat.image-button:checked,
-GtkPaned GtkOverlay GtkRevealer.bottom .background.horizontal.osd .button.flat.image-button:active:hover {
+paned overlay revealer.bottom .background.horizontal.osd button.flat.image-button:checked,
+paned overlay revealer.bottom .background.horizontal.osd button.flat.image-button:active:hover {
 	background-image: linear-gradient(to bottom,
 		@button_active_gradient_color_a,
 		@button_active_gradient_color_b);
@@ -270,57 +217,6 @@ GtkPaned GtkOverlay GtkRevealer.bottom .background.horizontal.osd .button.flat.i
 		inset -1px -1px alpha(@theme_selected_bg_color, 0.2);
     padding: 4px 7px;
     border-radius: 3px;
-}
-
-/****************
- * Dconf-editor *
- ****************/
-
-DConfWindow GtkTreeView.view {
-    background-color: @sidebar_bg;
-    color: @theme_text_color;
-}
-
-DConfWindow GtkTreeView.view row:selected,
-DConfWindow GtkTreeView.view row:selected:hover  {
-    color: @theme_selected_fg_color;
-}
-
-DConfWindow GtkTreeView.view row:hover {
-    background-color: shade (@theme_selected_bg_color, 1.15);
-    color: shade (@theme_selected_bg_color, 0.35);
-}
-
-DConfWindow DConfKeyView.view {
-    background-color: @theme_base_color;
-    color: @theme_text_color;
-}
-
-DConfWindow DConfKeyView.view row:hover {
-    background-color: shade (@theme_selected_bg_color, 1.55);
-    color: shade (@theme_selected_bg_color, 0.35);
-}
-
-DConfKeyView.view row:selected,
-DConfKeyView.view row:selected:hover  {
-    color:  @theme_selected_fg_color;
-}
-
-DConfKeyView.view .entry.spinbutton {
-    padding: 1px 0px 1px 4px;
-}
-
-DConfKeyView.view .spinbutton .button {
-    border-image: none;
-    border-style: solid;
-    border-width: 0px 0px 0px 1px;
-    border-color: @theme_selected_bg_color;
-    border-radius: 0px;
-    box-shadow: none;
-}
-
-DConfKeyView.view .spinbutton .button:last-child {
-    border-radius: 0 2px 2px 0;
 }
 
 /***********
@@ -385,3 +281,4 @@ OsScrollbar:disabled {
 .ubuntu-online-accounts.frame {
 	border-top-width: 0;
 }
+
