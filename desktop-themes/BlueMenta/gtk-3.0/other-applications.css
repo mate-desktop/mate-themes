@@ -70,6 +70,10 @@
 	background-color: @theme_base_color;
 }
 
+.nemo-window-pane treeview.view {
+    padding: 0px;
+}
+
 .nemo-window .rubberband,
 .nemo-window .view.rubberband {
 	background-color: alpha (@theme_selected_bg_color, 0.35);

@@ -8,7 +8,7 @@
 	-GtkToolButton-icon-spacing: 4;
 	-GtkToolItemGroup-expander-size: 11;
 	-GtkTreeView-expander-size: 11;
-	-GtkTreeView-horizontal-separator: 4;
+	-GtkTreeView-horizontal-separator: 0;
 	-GtkIMHtml-hyperlink-color: @link_color;
 	-GtkHTML-link-color: @link_color;
 	-WnckTasklist-fade-overlay-rect: 0;
@@ -41,8 +41,6 @@
 }
 
 *:selected:backdrop {
-	/* I would like to remove colors from the backdrop state, next release*/
-	background-color: @theme_unfocused_selected_bg_color;
 	color: @theme_unfocused_selected_fg_color;
 }
 
@@ -215,7 +213,7 @@ GtkStatusbar .frame.flat .button.flat {
 }
 
 treeview.view separator,
-treeview.view .separator, /* why ?*/
+treeview.view.separator,
 treeview separator,
 separator,
 separator:hover,
@@ -230,6 +228,10 @@ GtkTreeView.separator,
 /*Keep treeviews from jumping, separators drawn at 0 by default until hovered*/
 treeview.view.separator {
     min-height: 2px;
+}
+
+.sidebar treeview.view.separator {
+    min-height: 0px;
 }
 
 .toolbar separator,
@@ -4624,44 +4626,40 @@ GtkCalendar.header .path-bar .button.titlebutton GtkImage {
  * Tree and Icon views *
  ***********************/
 
-GtkTreeView,
-treeview {
+treeview.view {
 	-GtkTreeView-vertical-separator: 0;
 	outline-color: alpha(@theme_text_color, 0.6);
 }
 
-treeview,
-treeview.view {
+treeview {
     padding: 3px 0px;
 }
 
-.sidebar treeview.view {
-    padding: 8px 0px;
+treeview.view {
+    padding: 1px 0px 0px 0px;
 }
 
-GtkTreeView.dnd,
-treeview dnd {
+.sidebar treeview.view {
+    padding: 4px 0px 4px 0px;
+}
+
+treeview.view.dnd {
 	border-color: @internal_element_color;
 	border-radius: 2px;
 	border-width: 1px;
 	border-style: solid;
 }
 
-GtkTreeView:selected:focus,
-treeview:selected:focus {
+treeview.view:selected:focus {
 	outline-color: mix(@theme_selected_fg_color, @theme_selected_bg_color, 0.30);
 }
 
-GtkIconView,
-GtkViewport,
 iconview,
 viewport {
     /* avoid resizing theme thumbnails in mate-appearance-properties */
     padding: 0px;
 }
 
-GtkIconView.cell:selected,
-GtkIconView.cell:selected:focus,
 iconview .cell:selected,
 iconview .cell:selected:focus {
 	border-radius: 4px;
@@ -4670,12 +4668,11 @@ iconview .cell:selected:focus {
 	outline-offset: 3px;
 }
 
-GtkIconView.cell:hover,
-GtkIconView.cell:hover:focus,
 iconview .cell:hover,
 iconview .cell:hover:focus {
 	border-radius: 4px;
 }
+
 
 .view text,
 textview,
@@ -4715,7 +4712,6 @@ textview,
 }
 
 .cell {
-	/*color: @theme_text_color;*/ /* Don't use, seems to change hover effect on combobox menuitems */
 	padding: 2px;
 	text-shadow: none;
 }
@@ -4728,7 +4724,6 @@ textview,
 
 .cell:selected:backdrop,
 .cell:selected:focus:backdrop {
-	background-color: shade(@theme_unfocused_bg_color, 0.94);
 	color: @theme_fg_color;
 }
 
@@ -4749,83 +4744,28 @@ row:selected:focus {
 
 row:selected:backdrop,
 row:selected:focus:backdrop {
-	border-width: 1px 0 1px 0;
-	border-style: solid;
-	border-color: shade (@theme_bg_color, 0.85);
-	background-image: linear-gradient(to bottom,
-		shade (@theme_bg_color, 1.0),
-		shade (@theme_bg_color, 0.85));
 	color: @theme_fg_color;
-	text-shadow: none;
-	box-shadow: none;
 }
 
-treeview row:nth-child(even),
-treeview row:nth-child(odd),
-GtkTreeView row:nth-child(even),
-GtkTreeView row:nth-child(odd) {
-	background-color: shade (@theme_base_color, 1.0);
-/* since gtk+-3.18, better no shadow */
-/*	box-shadow: inset 0 -1px 0 0 alpha (@theme_bg_color, 0.4); */
-	box-shadow: none;
-}
-
-treeview row:nth-child(odd):hover,
-treeview row:nth-child(even):hover,
-GtkTreeView row:nth-child(odd):hover,
-GtkTreeView row:nth-child(even):hover {
-	background-color: shade (@theme_selected_bg_color, 1.30);
-}
-
-treeview row:nth-child(odd):backdrop:hover,
-treeview row:nth-child(even):backdrop:hover,
-GtkTreeView row:nth-child(odd):backdrop:hover,
-GtkTreeView row:nth-child(even):backdrop:hover {
-	background-color: shade (@theme_base_color, 0.96);
-}
-
-.sidebar treeview row:backdrop:selected,
-.sidebar GtkTreeView row:backdrop:selected {
-	background-color: @theme_selected_bg_color;
-	border-style: solid;
-	border-width: 1px 0 1px 0;
-	border-top-color: @borders;
-	border-bottom-color: shade (@theme_base_color, 0.96);
-	box-shadow: inset 0 1px 0 alpha (@borders, 0.3), inset 0 -1px 0 @borders;
-}
-
-/* ie. filechooser dialog */
-.sidebar treeview row:hover,
-.sidebar GtkTreeView row:hover {
+.sidebar treeview.view:hover {
 	background-color: shade (@theme_selected_bg_color, 1.15);
 	color: shade (@theme_selected_bg_color, 0.35);
 }
 
-.sidebar treeview row:hover:active,
-.sidebar treeview row:checked:hover,
-.sidebar treeview row:selected:hover,
-.sidebar GtkTreeView row:hover:active,
-.sidebar GtkTreeView row:checked:hover,
-.sidebar GtkTreeView row:selected:hover {
+.sidebar treeview.view:hover:active,
+.sidebar treeview.view:checked:hover,
+.sidebar treeview.view:selected:hover {
 	color: shade (@theme_selected_fg_color, 1.00);
 }
 
-treeview header button,
-column-header.button,
-column-header .button {
+treeview header button {
 	color: @theme_fg_color;
     border-image: none;
 }
 
 treeview header button,
 treeview header button:disabled,
-treeview header button:hover,
-column-header.button,
-column-header .button,
-column-header.button:disabled,
-column-header .button:disabled,
-column-header.button:hover,
-column-header .button:hover {
+treeview header button:hover {
 	padding: 0 4px;
 	text-shadow: none;
 	-gtk-icon-shadow: none;
@@ -4833,34 +4773,21 @@ column-header .button:hover {
 }
 
 treeview header button:disabled,
-treeview header button:disabled,
-column-header.button:disabled,
-column-header .button:disabled {
+treeview header button:disabled {
 	background-color: @insensitive_bg_color;
 }
 
 treeview header button:hover,
 treeview header button:hover:active,
 treeview header button:checked,
-treeview header button:checked:hover,
-column-header.button:hover,
-column-header .button:hover,
-column-header.button:active,
-column-header .button:active,
-column-header.button:active:hover,
-column-header .button:active:hover,
-column-header.button:checked,
-column-header .button:checked,
-column-header.button:checked:hover,
-column-header .button:checked:hover {
+treeview header button:checked:hover {
 	color: @theme_fg_color;
 	text-shadow: none;
 	-gtk-icon-shadow: none;
 	border-radius: 0;
 }
 
-treeview header button.dnd,
-column-header .button.dnd {
+treeview header.button.dnd {
 	background-color: transparent;
 	background-image: linear-gradient(to bottom,
 		shade(@theme_base_color, 0.97),
