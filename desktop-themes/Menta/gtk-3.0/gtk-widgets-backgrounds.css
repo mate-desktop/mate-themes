@@ -1,13 +1,11 @@
 /* Button background */
 button,
+combobox button.combo,
+combobox button.combo:backdrop,
 toolbar .raised button,
 toolbar combobox button.combo,
 toolbar.primary-toolbar .linked button,
-toolbar.primary-toolbar .raised button,
-.button,
-.toolbar .button.raised,
-.toolbar .raised .button,
-.toolbar GtkComboBox .button {
+toolbar.primary-toolbar .raised button {
 	background-image: linear-gradient(to bottom, 
 		@button_gradient_color_a,
 		@button_gradient_color_b);
@@ -20,22 +18,7 @@ button:focus:checked,
 toolbar button:checked,
 toolbar button:focus:checked,
 toolbar .raised button:checked,
-toolbar .raised button:focus:checked,
-.button:checked,
-.button:active,
-.button:active:hover,
-.toolbar .button:active,
-.toolbar .button:active:hover,
-.toolbar .button.raised:active,
-.toolbar .raised .button:active,
-.toolbar .button.raised:active:hover,
-.toolbar .raised .button:active:hover,
-.toolbar .button:checked,
-.toolbar .button:checked:hover,
-.toolbar .button.raised:checked,
-.toolbar .raised .button:checked,
-.toolbar .button.raised:checked:hover,
-.toolbar .raised .button:checked:hover {
+toolbar .raised button:focus:checked {
 	background-image: linear-gradient(to bottom,
 		@button_active_gradient_color_a,
 		@button_active_gradient_color_b);
@@ -44,10 +27,7 @@ toolbar .raised button:focus:checked,
 
 trough,
 trough highlight,
-row trough,
-.trough,
-.trough.highlight,
-.trough row {
+row trough {
 	background-image: linear-gradient(to bottom,
 		@trough_bg_color_a,
 		@trough_bg_color_b);
@@ -64,16 +44,7 @@ toolbar button:checked:focus:hover,
 toolbar .raised button:checked:focus:hover,
 toolbar button:checked:focus:hover:active,
 toolbar .raised button:checked:focus:hover:active,
-row trough:hover,
-.button:checked:hover,
-.button:active:hover,
-.toolbar .button:active:hover,
-.toolbar .button.raised:active:hover,
-.toolbar .raised .button:active:hover,
-.toolbar .button:checked:hover,
-.toolbar .button.raised:checked:hover,
-.toolbar .raised .button:checked:hover,
-.trough row:hover {
+row trough:hover {
 	background-image: linear-gradient(to bottom,
 		shade (@button_active_gradient_color_a, 1.05),
 		shade (@button_active_gradient_color_b, 1.05));
@@ -82,11 +53,7 @@ row trough:hover,
 
 /* Primary and inline toolbars pushed button background */
 toolbar.primary-toolbar button:checked,
-toolbar.inline-toolbar button:checked,
-.primary-toolbar .button:checked,
-.inline-toolbar .button:checked,
-.primary-toolbar .button:active,
-.inline-toolbar .button:active {
+toolbar.inline-toolbar button:checked {
 	background-image: linear-gradient(to bottom,
 		@button_active_gradient_color_a,
 		@button_active_gradient_color_b);
@@ -94,11 +61,7 @@ toolbar.inline-toolbar button:checked,
 }
 
 toolbar.primary-toolbar button:checked:hover,
-toolbar.inline-toolbar button:checked:hover,
-.primary-toolbar .button:checked:hover,
-.inline-toolbar .button:checked:hover,
-.primary-toolbar .button:active:hover,
-.inline-toolbar .button:active:hover {
+toolbar.inline-toolbar button:checked:hover {
 	background-image: linear-gradient(to bottom,
 		shade (@button_active_gradient_color_a, 1.05),
 		shade (@button_active_gradient_color_b, 1.05));
@@ -109,12 +72,7 @@ toolbar.inline-toolbar button:checked:hover,
 button:hover,
 toolbar button:hover,
 toolbar .raised button:hover,
-toolbar combobox button.combo:hover,
-.button:hover,
-.toolbar .button:hover,
-.toolbar .button.raised:hover,
-.toolbar .raised .button:hover,
-.toolbar GtkComboBox .button:hover {
+toolbar combobox button.combo:hover {
 	background-color: transparent;
 	background-image: linear-gradient(to bottom,
 		@button_hover_gradient_color_a,
@@ -122,8 +80,7 @@ toolbar combobox button.combo:hover,
 }
 
 /* Prelit button on primary toolbar background */
-toolbar.primary-toolbar button:hover,
-.primary-toolbar .button:hover {
+toolbar.primary-toolbar button:hover {
 	background-color: transparent;
 	background-image: linear-gradient(to bottom,
 		@button_gradient_color_a,
@@ -133,11 +90,7 @@ toolbar.primary-toolbar button:hover,
 /* Insensitive button background */
 button:disabled,
 toolbar combobox button.combo:disabled,
-toolbar .raised button:disabled,
-.button:disabled,
-.toolbar GtkComboBox button:disabled,
-.toolbar .button.raised:disabled,
-.toolbar .raised .button:disabled {
+toolbar .raised button:disabled {
 	background-image: none;
 	background-color: @insensitive_bg_color;
 }
@@ -145,13 +98,7 @@ toolbar .raised button:disabled,
 /* Pushed + Insensitive button background */
 button:checked:disabled,
 toolbar button:checked:disabled,
-toolbar combobox button.combo:checked:disabled,
-.button:active:disabled,
-.button:checked:disabled,
-.toolbar .button:active:disabled,
-.toolbar .button:checked:disabled,
-.toolbar GtkComboBox .button:active:disabled,
-.toolbar GtkComboBox .button:checked:disabled {
+toolbar combobox button.combo:checked:disabled {
 	background-image: linear-gradient(to bottom,
 		shade(@insensitive_bg_color, 0.95),
 		@insensitive_bg_color 40%,
@@ -161,17 +108,10 @@ toolbar combobox button.combo:checked:disabled,
 
 /* Entry background */
 entry,
-combobox entry button,
-combobox entry button:hover,
-toolbar.primary-toolbar combobox entry button,
-toolbar.primary-toolbar combobox entry button:hover,
-levelbar trough,
-.entry,
-GtkComboBox.combobox-entry .button,
-GtkComboBox.combobox-entry .button:hover,
-.primary-toolbar GtkComboBox.combobox-entry .button,
-.primary-toolbar GtkComboBox.combobox-entry .button:hover,
-.level-bar.trough {
+combobox button.combo:hover,
+toolbar.primary-toolbar combobox entry.combo,
+toolbar.primary-toolbar combobox button.combo:hover,
+levelbar trough {
 	background-image: linear-gradient(to bottom,
 		@entry_background_a,
 		@entry_background_b);
@@ -180,13 +120,8 @@ GtkComboBox.combobox-entry .button:hover,
 }
 
 /* Entry pushed button background */
-toolbar.primary-toolbar combobox entry button:checked,
-combobox entry button:checked,
-.primary-toolbar GtkComboBox.combobox-entry .button:active,
-.primary-toolbar GtkComboBox.combobox-entry .button:checked,
-/* .primary-toolbar GtkComboBox.combobox-entry .button:hover:active,*/
-GtkComboBox.combobox-entry .button:active,
-GtkComboBox.combobox-entry .button:checked {
+toolbar.primary-toolbar combobox button.combo:checked,
+combobox button.combo:checked {
 	background-image: linear-gradient(to bottom,
 		shade(@entry_background_a, 0.9),
 		@entry_background_b);
@@ -205,16 +140,13 @@ column-header .button {
 }
 
 /* ie. yumex-dnf */
-stack treeview header button,
-GtkStack column-header .button {
+stack treeview header button {
     background-image: linear-gradient(to bottom,
                                       shade(@theme_bg_color, 1.18),
                                       shade(@theme_bg_color, 1.1));
 }
 
-treeview header button:hover,
-column-header.button:hover,
-column-header .button:hover {
+treeview header button:hover {
 	background-image: linear-gradient(to bottom,
 		shade(@entry_background_a, 0.96),
 		@entry_background_b);
@@ -224,17 +156,7 @@ column-header .button:hover {
 treeview header button:focus,
 treeview header button:checked,
 treeview header button:checked:hover,
-treeview header button:hover:active,
-column-header.button:focus,
-column-header .button:focus,
-column-header.button:checked,
-column-header .button:checked,
-column-header.button:checked:hover,
-column-header .button:checked:hover,
-column-header.button:active,
-column-header .button:active,
-column-header.button:active:hover,
-column-header .button:active:hover {
+treeview header button:hover:active {
 	background-image: linear-gradient(to bottom,
 		shade(@entry_background_a, 0.92),
 		@entry_background_b);
@@ -245,11 +167,8 @@ column-header .button:active:hover {
 
 /* Insensitive entry background */
 entry:disabled,
-combobox entry button:disabled,
-levelbar trough:disabled,
-.entry:disabled,
-GtkComboBox.combobox-entry .button:disabled,
-.level-bar.trough:disabled {
+combobox button.combo:disabled,
+levelbar trough:disabled {
 	background-color: @insensitive_bg_color;
 	background-image: none;
 	box-shadow: none;
@@ -257,10 +176,7 @@ GtkComboBox.combobox-entry .button:disabled,
 
 /* Primary and inline toolbars background */
 toolbar.primary-toolbar,
-toolbar.inline-toolbar,
-.primary-toolbar .toolbar,
-.primary-toolbar.toolbar,
-.inline-toolbar.toolbar  {
+toolbar.inline-toolbar  {
 	background-image: linear-gradient(to bottom,
 		shade (@theme_bg_color, 1.0),
 		shade (@theme_bg_color, 0.96));
@@ -268,25 +184,20 @@ toolbar.inline-toolbar,
 }
 
 toolbar.primary-toolbar.vertical,
-toolbar.inline-toolbar.vertical,
-.primary-toolbar .toolbar.vertical,
-.primary-toolbar.toolbar.vertical,
-.inline-toolbar.toolbar.vertical {
+toolbar.inline-toolbar.vertical {
 	background-image: linear-gradient(to right,
 		shade (@theme_bg_color, 1.0),
 		shade (@theme_bg_color, 0.96));
 	background-color: transparent;
 }
 
-scale trough,
-.scale.trough {
+scale trough {
 	background-image: linear-gradient(to bottom,
 		@scale_trough_bg_a,
 		@scale_trough_bg_b);
 }
 
-scale.vertical trough,
-.scale.trough.vertical {
+scale.vertical trough {
 	background-image: linear-gradient(to right,
 		@scale_trough_bg_a,
 		@scale_trough_bg_b);
@@ -294,17 +205,14 @@ scale.vertical trough,
 
 /* Active switch background*/
 switch trough:active,
-scale progressbar,
-GtkSwitch.trough:active,
-.scale.progressbar {
+scale progressbar {
 	background-image: linear-gradient(to bottom,
 		@switch_trough_active_bg_a,
 		@switch_trough_active_bg_b);
 	background-color: transparent;
 }
 
-scale.vertical progressbar,
-.scale.progressbar.vertical {
+scale.vertical progressbar {
 	background-image: linear-gradient(to right,
 		@switch_trough_active_bg_a,
 		@switch_trough_active_bg_b);
@@ -317,12 +225,7 @@ progressbar progress,
 row progressbar progress,
 row:hover progressbar progress,
 row:selected progressbar progress,
-row:selected:focus progressbar progress,
-.progressbar,
-.progressbar row,
-.progressbar row:hover,
-.progressbar row:selected,
-.progressbar row:selected:focus {
+row:selected:focus progressbar progress {
 	background-image: linear-gradient(to left top,
 		alpha (@progressbar_pattern, 0.25),
 		alpha (@progressbar_pattern, 0.25) 25%,
@@ -339,8 +242,7 @@ row:selected:focus progressbar progress,
 	box-shadow: inset 1px 1px alpha(white, 0.2), inset -1px -1px alpha(white, 0.1);
 }
 
-progressbar.vertical progress,
-.progressbar.vertical {
+progressbar.vertical progress {
 	background-image: linear-gradient(to right top,
 		alpha (@progressbar_pattern, 0.25),
 		alpha (@progressbar_pattern, 0.25) 25%,
