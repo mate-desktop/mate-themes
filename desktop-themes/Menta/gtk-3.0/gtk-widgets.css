@@ -137,7 +137,8 @@ tooltip.background {
 }
 
 tooltip decoration {
-    background-color: transparent;
+    background-color: alpha(shade(@theme_selected_bg_color, 1.0), 0.4);
+    border-radius: 4px;
 }
 
 tooltip * {
@@ -548,7 +549,12 @@ spinbutton button,
 spinbutton button:focus,
 spinbutton button:active,
 spinbutton button:focus:active,
-spinbutton button:disabled {
+spinbutton button:disabled,
+row.activatable spinbutton button,
+row.activatable spinbutton button:focus,
+row.activatable spinbutton button:active,
+row.activatable spinbutton button:focus:active,
+row.activatable spinbutton button:disabled {
     border-style: none;
     border-image: none;
     padding: 5px;
@@ -557,7 +563,9 @@ spinbutton button:disabled {
 }
 
 spinbutton button,
-spinbutton button:focus {
+spinbutton button:focus,
+row.activatable spinbutton button,
+row.activatable spinbutton button:focus {
     background-image: linear-gradient(to bottom,
                                       @button_gradient_color_a,
                                       @button_gradient_color_b);
@@ -565,7 +573,8 @@ spinbutton button:focus {
     color: @internal_element_color;
 }
 
-spinbutton button:hover {
+spinbutton button:hover,
+row.activatable spinbutton button:hover {
     background-color: transparent;
     background-image: linear-gradient(to bottom,
                                       @button_hover_gradient_color_a,
@@ -573,8 +582,9 @@ spinbutton button:hover {
     color: @internal_element_prelight;
 }
 
-spinbutton button:active,
-spinbutton button:hover:active {
+spinbutton button:checked,
+spinbutton button:hover:active,
+row.activatable spinbutton button:checked {
     background-image: linear-gradient(to bottom,
                                       @button_active_gradient_color_a,
                                       @button_active_gradient_color_b);
@@ -586,11 +596,13 @@ spinbutton button:disabled {
     color: @internal_element_insensitive;
 }
 
-spinbutton button:first-child {
+spinbutton button:first-child,
+row.activatable spinbutton button {
     border-radius: 0px;
 }
 
-spinbutton button:last-child {
+spinbutton button:last-child,
+row.activatable spinbutton button {
     border-radius: 0 3px 3px 0;
 }
 
@@ -600,6 +612,8 @@ spinbutton button:dir(rtl) {
 
 spinbutton.horizontal entry,
 spinbutton.horizontal entry:focus,
+row.activatable spinbutton.horizontal entry,
+row.activatable spinbutton.horizontal entry:focus,
 stack box.vertical.linked spinbutton.horizontal entry,
 stack box.vertical.linked spinbutton.horizontal entry:focus {
     padding: 5px 10px 5px 4px;
@@ -610,6 +624,8 @@ stack box.vertical.linked spinbutton.horizontal entry:focus {
 
 spinbutton.horizontal button,
 spinbutton.horizontal button:focus,
+row.activatable spinbutton.horizontal button,
+row.activatable spinbutton.horizontal button:focus,
 stack box.vertical.linked spinbutton.horizontal button,
 stack box.vertical.linked spinbutton.horizontal button:focus {
     padding: 0px 6px 0px 6px;
@@ -1166,11 +1182,7 @@ button.file,
 button.toggle.popup,
 button.link,
 combobox,
-combobox button.combo,
-.button,
-.button.menuitem.menubar,
-GtkColorButton.button,
-GtkComboBox.combobox-entry .button {
+combobox button.combo {
     -gtk-icon-style: regular;
 	padding: 4px;
     min-height: 20px;
@@ -1181,39 +1193,28 @@ button.image-button.toggle.popup {
 	padding: 6px;
 }
 
-button.text-button.toggle,
-GtkToggleButton.button {
+button.text-button.toggle {
 	padding: 5px 4px;
 }
 
 button.image-button,
-toolbar.primary-toolbar button.image-button,
-.button.image-button,
-.primary-toolbar.toolbar .button.image-button {
+toolbar.primary-toolbar button.image-button {
 	padding: 4px;
 }
 
-button,
-.button {
+button {
 	transition: all 400ms ease-out;
-/*	-GtkButton-image-spacing: 4; deprecated, but ignored */
-/*	-GtkButton-interior-focus: true; deprecated, but ignored */
-/*	-GtkButton-default-border: 0; deprecated, but ignored */
-/*	-GtkButton-inner-border: 3; deprecated, but ignored */
-/*	-GtkArrow-arrow-scaling: 0.5; deprecated, but ignored */
 	border-style: solid;
 	border-color: transparent;
 	text-shadow: 0 1px @button_text_shadow;
 }
 
-button.default,
-.button.default {
+button.default {
 	text-shadow: none;
 	color: @theme_fg_color;
 }
 
-button.flat,
-.button.flat {
+button.flat {
 	border-color: transparent;
 	background-color: transparent;
 	background-image: none;
@@ -1223,8 +1224,7 @@ button.flat,
 	border-image: none; 
 }
 
-button.flat:hover,
-.button.flat:hover {
+button.flat:hover {
     background-color: transparent;
     background-image: linear-gradient(to bottom,
                                       @button_gradient_color_a,
@@ -1232,8 +1232,7 @@ button.flat:hover,
 	border-radius: 1px;
 }
 
-button.image-button.circular-button,
-.button.image-button.circular-button {
+button.image-button.circular-button {
     border-image: none;
     border-width: 1px;
     border-style: solid;
@@ -1256,17 +1255,13 @@ button.toggle.popup image:disabled {
 
 /* We may want a background for focused buttons, but in the meantime let's remove it too */
 toolbar.primary-toolbar button,
-toolbar.primary-toolbar button:disabled,
-.primary-toolbar .button,
-.primary-toolbar .button:disabled,
-.primary-toolbar .button *:disabled {
+toolbar.primary-toolbar button:disabled {
 	background-image: none;
 	background-color: transparent;
 }
 
 /* Remove borders from primary toolbar buttons*/
-toolbar.primary-toolbar button,
-.primary-toolbar .button {
+toolbar.primary-toolbar button {
 	border-image: none;
 
 	/* setting border-style: none; here would override the border-width values 
@@ -1280,52 +1275,31 @@ toolbar.primary-toolbar button,
 
 toolbar.primary-toolbar button:checked,
 toolbar.inline-toolbar button:checked,
-button:checked,
-.primary-toolbar .button:active,
-.inline-toolbar .button:active,
-.button:active,
-.primary-toolbar .button:checked,
-.inline-toolbar .button:checked,
-.button:checked {
+button:checked {
 	color: @button_active_text;
 	text-shadow: 0 1px @button_active_text_shadow;
 }
 
 button:disabled,
-button:checked:disabled,
-.button:disabled,
-.button:active *:disabled,
-.button:checked *:disabled {
+button:checked:disabled {
 	color: @insensitive_fg_color;
 	text-shadow: none;
 }
 
 toolbar .raised button,
-toolbar.inline-toolbar button,
-.toolbar .button.raised,
-.toolbar .raised .button,
-.inline-toolbar .button {
+toolbar.inline-toolbar button {
 	-gtk-icon-shadow: 0 1px @button_text_shadow;
 	text-shadow: 0 1px @button_text_shadow;
 }
 
 toolbar .raised button:checked,
-toolbar.inline-toolbar button:checked,
-.toolbar .button.raised:active,
-.toolbar .raised .button:active,
-.inline-toolbar .button:active
-.toolbar .button.raised:checked,
-.toolbar .raised .button:checked,
-.inline-toolbar .button:checked {
+toolbar.inline-toolbar button:checked {
 	-gtk-icon-shadow: 0 1px @button_active_text_shadow;
 	text-shadow: 0 1px @button_active_text_shadow;
 }
 
 toolbar .raised button:disabled,
-toolbar.inline-toolbar button:disabled,
-.toolbar .button.raised:disabled,
-.toolbar .raised .button:disabled,
-.inline-toolbar .button:disabled {
+toolbar.inline-toolbar button:disabled {
 	-gtk-icon-shadow: none;
 	text-shadow: none;
 }
@@ -1334,12 +1308,11 @@ toolbar.inline-toolbar button:disabled,
 
 /* Set up shadows and hilights for button visual separation */
 .linked entry,
-.linked .entry {
+.linked entry:backdrop {
 	box-shadow: inset -1px 0 @inset_dark_color;
 }
 
-.linked entry:focus,
-.linked .entry:focus {
+.linked entry:focus {
 	box-shadow: inset 1px 0 @inset_dark_color,
 		inset -1px 0 @inset_dark_color,
 		inset 1px 2px alpha(@theme_selected_bg_color, 0.1),
@@ -1348,8 +1321,7 @@ toolbar.inline-toolbar button:disabled,
 
 }
 
-.linked entry:focus:first-child,
-.linked .entry:focus:first-child {
+.linked entry:focus:first-child {
 	box-shadow: inset -1px 0 @inset_dark_color,
 		inset 1px 2px alpha(@theme_selected_bg_color, 0.1),
 		inset 1px 1px alpha(@theme_selected_bg_color, 0.1),
@@ -1357,8 +1329,7 @@ toolbar.inline-toolbar button:disabled,
 
 }
 
-.linked entry:focus:last-child,
-.linked .entry:focus:last-child {
+.linked entry:focus:last-child {
 	box-shadow: inset 1px 0 @inset_dark_color,
 		inset 1px 2px alpha(@theme_selected_bg_color, 0.1),
 		inset 1px 1px alpha(@theme_selected_bg_color, 0.1),
@@ -1371,12 +1342,7 @@ toolbar.inline-toolbar button:disabled,
 .linked combobox button.combo,
 toolbar .raised.linked button,
 toolbar.inline-toolbar button,
-toolbar.inline-toolbar toolbutton > button,
-.linked .button,
-.toolbar .button.raised.linked,
-.toolbar .raised.linked .button,
-.inline-toolbar.toolbar .button,
-.inline-toolbar.toolbar GtkToolButton > .button {
+toolbar.inline-toolbar toolbutton > button {
 	box-shadow: inset 1px 0 @inset_light_color, inset -1px 0 @inset_dark_color;
 }
 
@@ -1384,12 +1350,7 @@ toolbar.inline-toolbar toolbutton > button,
 .linked combobox:first-child button.combo:first-child,
 toolbar .raised.linked button:first-child,
 toolbar.inline-toolbar button:first-child,
-toolbar.inline-toolbar toolbutton > button:first-child,
-.linked .button:first-child,
-.toolbar .button.raised.linked:first-child,
-.toolbar .raised.linked .button:first-child,
-.inline-toolbar.toolbar .button:first-child,
-.inline-toolbar.toolbar GtkToolButton:first-child > .button {
+toolbar.inline-toolbar toolbutton > button:first-child {
 	box-shadow: inset -1px 0 @inset_dark_color;
 }
 
@@ -1397,12 +1358,7 @@ toolbar.inline-toolbar toolbutton > button:first-child,
 .linked combobox:last-child button.combo:last-child,
 toolbar .raised.linked button:last-child,
 toolbar.inline-toolbar button:last-child,
-toolbar.inline-toolbar toolbutton > button:last-child,
-.linked .button:last-child,
-.toolbar .button.raised.linked:last-child,
-.toolbar .raised.linked .button:last-child,
-.inline-toolbar.toolbar .button:last-child,
-.inline-toolbar.toolbar GtkToolButton:last-child > .button {
+toolbar.inline-toolbar toolbutton > button:last-child {
 	box-shadow: inset 1px 0 @inset_light_color;
 }
 
@@ -1410,17 +1366,7 @@ toolbar.inline-toolbar toolbutton > button:last-child,
 .linked combobox button.combo:checked,
 toolbar .raised.linked button:checked,
 toolbar.inline-toolbar button:checked,
-toolbar.inline-toolbar toolbutton > button:checked,
-.linked .button:active,
-.toolbar .button.raised.linked:active,
-.toolbar .raised.linked .button:active,
-.inline-toolbar.toolbar .button:active,
-.inline-toolbar.toolbar GtkToolButton > .button:active,
-.linked .button:checked,
-.toolbar .button.raised.linked:checked,
-.toolbar .raised.linked .button:checked,
-.inline-toolbar.toolbar .button:checked,
-.inline-toolbar.toolbar GtkToolButton > .button:checked {
+toolbar.inline-toolbar toolbutton > button:checked {
 	box-shadow: inset 1px 0 @inset_dark_color;
 }
 
@@ -1428,12 +1374,7 @@ toolbar.inline-toolbar toolbutton > button:checked,
 .linked combobox button.combo:disabled,
 toolbar .raised.linked button:disabled,
 toolbar.inline-toolbar button:disabled,
-toolbar.inline-toolbar toolbutton > button:disabled,
-.linked .button:disabled,
-.toolbar .button.raised.linked:disabled,
-.toolbar .raised.linked .button:disabled,
-.inline-toolbar.toolbar .button:disabled,
-.inline-toolbar.toolbar GtkToolButton > .button:disabled {
+toolbar.inline-toolbar toolbutton > button:disabled {
 	box-shadow: inset -1px 0 @inset_dark_color;
 }
 
@@ -1444,15 +1385,7 @@ toolbar .raised.linked button:disabled:last-child,
 toolbar.inline-toolbar button:disabled:last-child,
 toolbar.inline-toolbar button:only-child,
 toolbar.inline-toolbar toolbutton > button:disabled:last-child,
-toolbar.inline-toolbar toolbutton > button:only-child,
-.linked .button:disabled:last-child,
-.linked .button:only-child,
-.toolbar .button.raised.linked:disabled:last-child,
-.toolbar .raised.linked .button:disabled:last-child,
-.inline-toolbar.toolbar .button:disabled:last-child,
-.inline-toolbar.toolbar .button:only-child,
-.inline-toolbar.toolbar GtkToolButton:last-child > .button:disabled,
-.inline-toolbar.toolbar GtkToolButton:only-child > .button {
+toolbar.inline-toolbar toolbutton > button:only-child {
 	box-shadow: none; 
 }
 
@@ -1464,35 +1397,17 @@ toolbar.inline-toolbar toolbutton > button:only-child:checked,
 .linked button:first-child:checked,
 toolbar .raised.linked button:first-child:checked,
 toolbar.inline-toolbar button:first-child:checked,
-toolbar.inline-toolbar toolbutton > button:first-child:checked,
-.linked .button:only-child:active,
-.toolbar .button.raised.linked:only-child:active,
-.toolbar .raised.linked .button:only-child:active,
-.inline-toolbar.toolbar .button:only-child:active,
-.inline-toolbar.toolbar GtkToolButton > .button:only-child:active,
-.linked .button:first-child:active,
-.toolbar .button.raised.linked:first-child:active,
-.toolbar .raised.linked .button:first-child:active,
-.inline-toolbar.toolbar .button:first-child:active,
-.inline-toolbar.toolbar GtkToolButton > .button:first-child:active,
-.linked .button:only-child:checked,
-.toolbar .button.raised.linked:only-child:checked,
-.toolbar .raised.linked .button:only-child:checked,
-.inline-toolbar.toolbar .button:only-child:checked,
-.inline-toolbar.toolbar GtkToolButton > .button:only-child:checked,
-.linked .button:first-child:checked,
-.toolbar .button.raised.linked:first-child:checked,
-.toolbar .raised.linked .button:first-child:checked,
-.inline-toolbar.toolbar .button:first-child:checked,
-.inline-toolbar.toolbar GtkToolButton > .button:first-child:checked {
+toolbar.inline-toolbar toolbutton > button:first-child:checked {
 	box-shadow: inset 0 1px 1px alpha(black, 0.1);
 }
 
 /* Middle button */
 .linked entry,
+.linked entry:backdrop,
 .linked > combobox > button.combo,
 .linked > combobox > button.combo:focus,
 .linked > combobox > button.combo:disabled,
+.linked > combobox > button.combo:backdrop,
 .linked > combobox > button.combo:focus:active,
 .linked > combobox > button.combo:checked,
 .linked > combobox > button.combo:focus:active,
@@ -1505,26 +1420,7 @@ toolbar.inline-toolbar toolbutton > button:first-child:checked,
 .linked button:checked,
 .linked button:checked:active,
 .linked button:checked:hover,
-.linked button:disabled,
-.linked .entry,
-.linked > GtkComboBox > .button:last-child,
-.linked > GtkComboBox > .button:focus:last-child,
-.linked > GtkComboBox > .button:disabled:last-child,
-.linked > GtkComboBox > .button:active:last-child,
-.linked > GtkComboBox > .button:focus:active:last-child,
-.linked > GtkComboBox > .button:checked:last-child,
-.linked > GtkComboBox > .button:focus:checked:last-child,
-.linked > GtkComboBox > .button:hover:last-child,
-.linked > GtkComboBox > .button:active:hover:last-child,
-.linked > GtkComboBox > .button:checked:hover:last-child,
-.linked .button,
-.linked .button:hover, /* gtk-widget-factory middle page button */
-.linked .button:active,
-.linked .button:active:hover,
-.linked .button:checked,
-.linked .button:checked:checked, /* gtk-widget-factory middle page button */
-.linked .button:checked:hover,
-.linked .button:disabled {
+.linked button:disabled {
 	border-right-width: 0;
 	border-left-width: 0;
 	border-image-width: 3px 0 4px 0;
@@ -1533,9 +1429,11 @@ toolbar.inline-toolbar toolbutton > button:first-child:checked,
 
 /* Leftmost button */
 .linked entry:first-child,
+.linked entry:backdrop:first-child,
 .linked > combobox:first-child > button.combo:first-child,
 .linked > combobox:first-child > button.combo:focus:first-child,
 .linked > combobox:first-child > button.combo:disabled:first-child,
+.linked > combobox:first-child > button.combo:backdrop:first-child,
 .linked > combobox:first-child > button.combo:focus:active:first-child,
 .linked > combobox:first-child > button.combo:checked:first-child,
 .linked > combobox:first-child > button.combo:focus:checked:first-child,
@@ -1546,24 +1444,7 @@ toolbar.inline-toolbar toolbutton > button:first-child:checked,
 .linked button:hover:active:first-child,
 .linked button:checked:first-child,
 .linked button:checked:hover:first-child,
-.linked button:disabled:first-child,
-.linked .entry:first-child,
-.linked > GtkComboBox:first-child > .button:last-child,
-.linked > GtkComboBox:first-child > .button:focus:last-child,
-.linked > GtkComboBox:first-child > .button:disabled:last-child,
-.linked > GtkComboBox:first-child > .button:active:last-child,
-.linked > GtkComboBox:first-child > .button:focus:active:last-child,
-.linked > GtkComboBox:first-child > .button:checked:first-child:last-child,
-.linked > GtkComboBox:first-child > .button:focus:checked:first-child:last-child,
-.linked > GtkComboBox:first-child > .button:hover:first-child:last-child,
-.linked > GtkComboBox:first-child > .button:active:hover:last-child,
-.linked > GtkComboBox:first-child > .button:checked:hover:last-child,
-.linked .button:first-child,
-.linked .button:active:first-child,
-.linked .button:active:hover:first-child,
-.linked .button:checked:first-child,
-.linked .button:checked:hover:first-child,
-.linked .button:disabled:first-child {
+.linked button:disabled:first-child {
 	border-right-width: 0;
 	border-left-width: 2px;
 	border-image-width: 3px 0 4px 4px;
@@ -1573,9 +1454,11 @@ toolbar.inline-toolbar toolbutton > button:first-child:checked,
 
 /* Rightmost button */
 .linked entry:last-child,
-.linked > combobox:last-child > button.combo,
+.linked entry:backdrop:last-child,
 .linked > combobox:last-child > button.combo:last-child,
+.linked > combobox:last-child > button.combo:focus:last-child,
 .linked > combobox:last-child > button.combo:disabled:last-child,
+.linked > combobox:last-child > button.combo:backdrop:last-child,
 .linked > combobox:last-child > button.combo:focus:active:last-child,
 .linked > combobox:last-child > button.combo:checked:last-child,
 .linked > combobox:last-child > button.combo:focus:checked:last-child,
@@ -1586,24 +1469,7 @@ toolbar.inline-toolbar toolbutton > button:first-child:checked,
 .linked button:hover:active:last-child,
 .linked button:checked:last-child,
 .linked button:checked:hover:last-child,
-.linked button:disabled:last-child,
-.linked .entry:last-child,
-.linked > GtkComboBox:last-child > .button,
-.linked > GtkComboBox:last-child > .button:last-child,
-.linked > GtkComboBox:last-child > .button:disabled:last-child,
-.linked > GtkComboBox:last-child > .button:active:last-child,
-.linked > GtkComboBox:last-child > .button:focus:active:last-child,
-.linked > GtkComboBox:last-child > .button:checked:last-child,
-.linked > GtkComboBox:last-child > .button:focus:checked:last-child,
-.linked > GtkComboBox:last-child > .button:hover:last-child,
-.linked > GtkComboBox:last-child > .button:active:hover:last-child,
-.linked > GtkComboBox:last-child > .button:checked:hover:last-child,
-.linked .button:last-child,
-.linked .button:active:last-child,
-.linked .button:active:hover:last-child,
-.linked .button:checked:last-child,
-.linked .button:checked:hover:last-child,
-.linked .button:disabled:last-child {
+.linked button:disabled:last-child {
 	border-right-width: 2px;
 	border-left-width: 0;
 	border-image-width: 3px 4px 4px 0;
@@ -1613,9 +1479,11 @@ toolbar.inline-toolbar toolbutton > button:first-child:checked,
 
 /* Linked single button */
 .linked entry:only-child,
-.linked > combobox:only-child > button.combo,
+.linked entry:backdrop:only-child,
 .linked > combobox:only-child > button.combo:only-child,
+.linked > combobox:only-child > button.combo:focus:only-child,
 .linked > combobox:only-child > button.combo:disabled:only-child,
+.linked > combobox:only-child > button.combo:backdrop:only-child,
 .linked > combobox:only-child > button.combo:hover:only-child,
 .linked > combobox:only-child > button.combo:hover:active:only-child,
 .linked > combobox:only-child > button.combo:focus:active:only-child,
@@ -1626,24 +1494,7 @@ toolbar.inline-toolbar toolbutton > button:first-child:checked,
 .linked button:hover:active:only-child,
 .linked button:checked:only-child,
 .linked button:checked:hover:only-child,
-.linked button:disabled:only-child,
-.linked .entry:only-child,
-.linked > GtkComboBox:only-child > .button,
-.linked > GtkComboBox:only-child > .button:only-child,
-.linked > GtkComboBox:only-child > .button:disabled:only-child,
-.linked > GtkComboBox:only-child > .button:hover:only-child,
-.linked > GtkComboBox:only-child > .button:active:only-child,
-.linked > GtkComboBox:only-child > .button:active:hover:only-child,
-.linked > GtkComboBox:only-child > .button:focus:active:only-child,
-.linked > GtkComboBox:only-child > .button:checked:only-child,
-.linked > GtkComboBox:only-child > .button:checked:hover:only-child,
-.linked > GtkComboBox:only-child > .button:focus:checked:only-child,
-.linked .button:only-child,
-.linked .button:active:only-child,
-.linked .button:active:hover:only-child,
-.linked .button:checked:only-child,
-.linked .button:checked:hover:only-child,
-.linked .button:disabled:only-child {
+.linked button:disabled:only-child {
 	border-right-width: 1px;
 	border-left-width: 1px;
 	border-image-width: 3px 4px 4px 4px;
@@ -1654,6 +1505,7 @@ toolbar.inline-toolbar toolbutton > button:first-child:checked,
 .linked.vertical > combobox > button.combo,
 .linked.vertical > combobox > button.combo:focus,
 .linked.vertical > combobox > button.combo:disabled,
+.linked.vertical > combobox > button.combo:backdrop,
 .linked.vertical > combobox > button.combo:focus:active,
 .linked.vertical > combobox > button.combo:checked,
 .linked.vertical > combobox > button.combo:focus:checked,
@@ -1661,28 +1513,12 @@ toolbar.inline-toolbar toolbutton > button:first-child:checked,
 .linked.vertical > combobox > button.combo:hover:active,
 .linked.vertical > combobox > button.combo:checked:hover,
 .linked.vertical entry,
+.linked.vertical entry:backdrop,
 .linked.vertical button,
 .linked.vertical button:hover:active,
 .linked.vertical button:checked,
 .linked.vertical button:checked:hover,
-.linked.vertical button:disabled,
-.linked.vertical > GtkComboBox > .button:last-child,
-.linked.vertical > GtkComboBox > .button:focus:last-child,
-.linked.vertical > GtkComboBox > .button:disabled:last-child,
-.linked.vertical > GtkComboBox > .button:active:last-child,
-.linked.vertical > GtkComboBox > .button:focus:active:last-child,
-.linked.vertical > GtkComboBox > .button:checked:last-child,
-.linked.vertical > GtkComboBox > .button:focus:checked:last-child,
-.linked.vertical > GtkComboBox > .button:hover:last-child,
-.linked.vertical > GtkComboBox > .button:active:hover:last-child,
-.linked.vertical > GtkComboBox > .button:checked:hover:last-child,
-.linked.vertical .entry,
-.linked.vertical .button,
-.linked.vertical .button:active,
-.linked.vertical .button:active:hover,
-.linked.vertical .button:checked,
-.linked.vertical .button:checked:hover,
-.linked.vertical .button:disabled {
+.linked.vertical button:disabled {
 	border-top-width: 0px;
 	border-bottom-width: 0px;
 	border-right-width: 1px;
@@ -1695,35 +1531,20 @@ toolbar.inline-toolbar toolbutton > button:first-child:checked,
 .linked.vertical > combobox:first-child > button.combo:first-child,
 .linked.vertical > combobox:first-child > button.combo:focus:first-child,
 .linked.vertical > combobox:first-child > button.combo:disabled:first-child,
+.linked.vertical > combobox:first-child > button.combo:backdrop:first-child,
 .linked.vertical > combobox:first-child > button.combo:focus:active:first-child,
 .linked.vertical > combobox:first-child > button.combo:checked:first-child,
 .linked.vertical > combobox:first-child > button.combo:focus:checked:first-child,
-.linked.vertical > combobox:first-child > button.combo:hover:first-child:first-child,
+.linked.vertical > combobox:first-child > button.combo:hover:first-child,
 .linked.vertical > combobox:first-child > button.combo:hover:active:first-child,
 .linked.vertical > combobox:first-child > button.combo:checked:hover:first-child,
 .linked.vertical entry:first-child,
+.linked.vertical entry:backdrop:first-child,
 .linked.vertical button:first-child,
 .linked.vertical button:hover:active:first-child,
 .linked.vertical button:checked:first-child,
 .linked.vertical button:checked:hover:first-child,
-.linked.vertical button:disabled:first-child,
-.linked.vertical > GtkComboBox:first-child > .button:last-child,
-.linked.vertical > GtkComboBox:first-child > .button:focus:last-child,
-.linked.vertical > GtkComboBox:first-child > .button:disabled:last-child,
-.linked.vertical > GtkComboBox:first-child > .button:active:last-child,
-.linked.vertical > GtkComboBox:first-child > .button:focus:active:last-child,
-.linked.vertical > GtkComboBox:first-child > .button:checked:first-child:last-child,
-.linked.vertical > GtkComboBox:first-child > .button:focus:checked:first-child:last-child,
-.linked.vertical > GtkComboBox:first-child > .button:hover:first-child:last-child,
-.linked.vertical > GtkComboBox:first-child > .button:active:hover:last-child,
-.linked.vertical > GtkComboBox:first-child > .button:checked:hover:last-child,
-.linked.vertical .entry:first-child,
-.linked.vertical .button:first-child,
-.linked.vertical .button:active:first-child,
-.linked.vertical .button:active:hover:first-child,
-.linked.vertical .button:checked:first-child,
-.linked.vertical .button:checked:hover:first-child,
-.linked.vertical .button:disabled:first-child {
+.linked.vertical button:disabled:first-child {
 	border-bottom-width: 0px;
 	border-top-width: 1px;
 	border-right-width: 1px;
@@ -1733,9 +1554,10 @@ toolbar.inline-toolbar toolbutton > button:first-child:checked,
 }
 
 /* Bottom button (vertical) */
-.linked.vertical > combobox:last-child > button.combo,
 .linked.vertical > combobox:last-child > button.combo:last-child,
+.linked.vertical > combobox:last-child > button.combo:focus:last-child,
 .linked.vertical > combobox:last-child > button.combo:disabled:last-child,
+.linked.vertical > combobox:last-child > button.combo:backdrop:last-child,
 .linked.vertical > combobox:last-child > button.combo:focus:active:last-child,
 .linked.vertical > combobox:last-child > button.combo:checked:last-child,
 .linked.vertical > combobox:last-child > button.combo:focus:checked:last-child,
@@ -1743,28 +1565,12 @@ toolbar.inline-toolbar toolbutton > button:first-child:checked,
 .linked.vertical > combobox:last-child > button.combo:hover:active:last-child,
 .linked.vertical > combobox:last-child > button.combo:checked:hover:last-child,
 .linked.vertical entry:last-child,
+.linked.vertical entry:backdrop:last-child,
 .linked.vertical button:last-child,
 .linked.vertical button:hover:active:last-child,
 .linked.vertical button:checked:last-child,
 .linked.vertical button:checked:hover:last-child,
-.linked.vertical button:disabled:last-child,
-.linked.vertical > GtkComboBox:last-child > .button,
-.linked.vertical > GtkComboBox:last-child > .button:last-child,
-.linked.vertical > GtkComboBox:last-child > .button:disabled:last-child,
-.linked.vertical > GtkComboBox:last-child > .button:active:last-child,
-.linked.vertical > GtkComboBox:last-child > .button:focus:active:last-child,
-.linked.vertical > GtkComboBox:last-child > .button:checked:last-child,
-.linked.vertical > GtkComboBox:last-child > .button:focus:checked:last-child,
-.linked.vertical > GtkComboBox:last-child > .button:hover:last-child,
-.linked.vertical > GtkComboBox:last-child > .button:active:hover:last-child,
-.linked.vertical > GtkComboBox:last-child > .button:checked:hover:last-child,
-.linked.vertical .entry:last-child,
-.linked.vertical .button:last-child,
-.linked.vertical .button:active:last-child,
-.linked.vertical .button:active:hover:last-child,
-.linked.vertical .button:checked:last-child,
-.linked.vertical .button:checked:hover:last-child,
-.linked.vertical .button:disabled:last-child {
+.linked.vertical button:disabled:last-child {
 	border-top-width: 0px;
 	border-bottom-width: 1px;
 	border-right-width: 1px;
@@ -1774,9 +1580,10 @@ toolbar.inline-toolbar toolbutton > button:first-child:checked,
 }
 
 /* Linked single button (vertical) */
-.linked.vertical > combobox:only-child > button.combo,
 .linked.vertical > combobox:only-child > button.combo:only-child,
+.linked.vertical > combobox:only-child > button.combo:focus:only-child,
 .linked.vertical > combobox:only-child > button.combo:disabled:only-child,
+.linked.vertical > combobox:only-child > button.combo:backdrop:only-child,
 .linked.vertical > combobox:only-child > button.combo:hover:only-child,
 .linked.vertical > combobox:only-child > button.combo:hover:active:only-child,
 .linked.vertical > combobox:only-child > button.combo:focus:active:only-child,
@@ -1784,28 +1591,12 @@ toolbar.inline-toolbar toolbutton > button:first-child:checked,
 .linked.vertical > combobox:only-child > button.combo:checked:hover:only-child,
 .linked.vertical > combobox:only-child > button.combo:focus:checked:only-child,
 .linked.vertical entry:only-child,
+.linked.vertical entry:backdrop:only-child,
 .linked.vertical button:only-child,
 .linked.vertical button:hover:active:only-child,
 .linked.vertical button:checked:only-child,
 .linked.vertical button:checked:hover:only-child,
-.linked.vertical button:disabled:only-child,
-.linked.vertical > GtkComboBox:only-child > .button,
-.linked.vertical > GtkComboBox:only-child > .button:only-child,
-.linked.vertical > GtkComboBox:only-child > .button:disabled:only-child,
-.linked.vertical > GtkComboBox:only-child > .button:hover:only-child,
-.linked.vertical > GtkComboBox:only-child > .button:active:only-child,
-.linked.vertical > GtkComboBox:only-child > .button:active:hover:only-child,
-.linked.vertical > GtkComboBox:only-child > .button:focus:active:only-child,
-.linked.vertical > GtkComboBox:only-child > .button:checked:only-child,
-.linked.vertical > GtkComboBox:only-child > .button:checked:hover:only-child,
-.linked.vertical > GtkComboBox:only-child > .button:focus:checked:only-child,
-.linked.vertical .entry:only-child,
-.linked.vertical .button:only-child,
-.linked.vertical .button:active:only-child,
-.linked.vertical .button:active:hover:only-child,
-.linked.vertical .button:checked:only-child,
-.linked.vertical .button:checked:hover:only-child,
-.linked.vertical .button:disabled:only-child {
+.linked.vertical button:disabled:only-child {
 	border-width: 1px;
 	border-image-width: 3px 4px 4px 4px;
 	border-radius: 4px;
@@ -2673,126 +2464,74 @@ notebook header tabs arrow:disabled {
  * ComboBoxes *
  **************/
 
-combobox,
-GtkComboBox {
+combobox {
 	padding: 0;
-/*	-GtkComboBox-arrow-scaling: 0.5; deprecated */
-/*	-GtkComboBox-shadow-type: none; deprecated */
 	text-shadow: 0 1px @button_text_shadow;
 }
 
-combobox:disabled,
-GtkComboBox:disabled {
+combobox:disabled {
 	text-shadow: none;
 	color: @insensitive_fg_color;
 }
 
-combobox separator,
-GtkComboBox .separator {
-	/* always disable separators */
-/*	-GtkWidget-wide-separators: true; deprecated */
+combobox separator {
 	-GtkWidget-horizontal-separator: 0;
 	-GtkWidget-vertical-separator: 0;
 }
 
-combobox entry entry:first-child,
-combobox entry button:first-child,
-GtkComboBox.combobox-entry .entry:first-child,
-GtkComboBox.combobox-entry .button:first-child {
-	border-image-width: 3px 0 4px 3px;
-	border-radius: 3px 0 0 3px;
-	border-right-width: 0;
+combobox > entry.combo,
+combobox > button.combo,
+combobox > entry.combo:backdrop,
+combobox > button.combo:backdrop {
+	border-image-width: 3px 3px 4px 3px;
+	border-radius: 3px;
+	border-width: 2px;
 }
 
-combobox entry entry:last-child,
-combobox entry button:last-child,
-GtkComboBox.combobox-entry .entry:last-child,
-GtkComboBox.combobox-entry .button:last-child {
-	border-image-width: 3px 3px 4px 0;
-	border-radius: 0 3px 3px 0;
-	border-left-width: 0;
-}
-
-toolbar.primary-toolbar combobox entry entry:first-child,
-toolbar.primary-toolbar combobox entry button:first-child,
-.primary-toolbar GtkComboBox.combobox-entry .entry:first-child,
-.primary-toolbar GtkComboBox.combobox-entry .button:first-child {
+toolbar.primary-toolbar combobox entry.combo:first-child,
+toolbar.primary-toolbar combobox button.combo:first-child {
 	border-image-width: 4px 0 4px 4px;
 	border-radius: 3px 0 0 3px;
 	border-right-width: 0;
 }
 
-toolbar.primary-toolbar combobox entry entry:last-child,
-toolbar.primary-toolbar combobox entry button:last-child,
-.primary-toolbar GtkComboBox.combobox-entry .entry:last-child,
-.primary-toolbar GtkComboBox.combobox-entry .button:last-child {
+toolbar.primary-toolbar combobox entry.combo:last-child,
+toolbar.primary-toolbar combobox button.combo:last-child {
 	border-image-width: 4px 4px 4px 0;
 	border-radius: 0 3px 3px 0;
 	border-left-width: 0;
 }
 
-combobox entry entry:focus:first-child,
-GtkComboBox.combobox-entry .entry:focus:first-child {
+combobox entry.combo:focus {
+	box-shadow: inset 1px 2px alpha(@theme_selected_bg_color, 0.1);
+}
+
+combobox entry.combo:focus:first-child {
 	box-shadow: inset 1px 2px alpha(@theme_selected_bg_color, 0.1),
 		inset 1px 1px alpha(@theme_selected_bg_color, 0.1),
 		inset 0 -1px alpha(@theme_selected_bg_color, 0.2);
 }
 
-combobox entry entry:focus:last-child,
-GtkComboBox.combobox-entry .entry:focus:last-child {
+combobox entry.combo:focus:last-child {
 	box-shadow: inset -1px 2px alpha(@theme_selected_bg_color, 0.1),
 		inset -1px 1px alpha(@theme_selected_bg_color, 0.1),
 		inset 0 -1px alpha(@theme_selected_bg_color, 0.2);
 }
 
-combobox entry button:last-child,
-combobox entry button:hover:last-child,
-combobox entry button:checked:last-child,
-combobox entry button:hover:active:last-child,
-GtkComboBox.combobox-entry .button:last-child,
-GtkComboBox.combobox-entry .button:hover:last-child,
-GtkComboBox.combobox-entry .button:active:last-child,
-GtkComboBox.combobox-entry .button:hover:active:last-child {
-	box-shadow: inset 1px 0 @inset_dark_color, 
-		inset 0 1px @entry_inset,
-		inset 0 2px alpha(@entry_inset, 0.4);
+combobox entry.combo:focus:only-child {
+	box-shadow: inset 1px 2px alpha(@theme_selected_bg_color, 0.1),
+		inset 1px 1px alpha(@theme_selected_bg_color, 0.1),
+		inset -1px -1px alpha(@theme_selected_bg_color, 0.2);
 }
 
-combobox entry button:first-child,
-combobox entry button:hover:first-child,
-combobox entry button:checked:first-child,
-combobox entry button:hover:active:first-child,
-GtkComboBox.combobox-entry .button:first-child,
-GtkComboBox.combobox-entry .button:hover:first-child,
-GtkComboBox.combobox-entry .button:active:first-child,
-GtkComboBox.combobox-entry .button:hover:active:first-child {
-	box-shadow: inset -1px 0 @inset_dark_color, 
-		inset 0 1px @entry_inset,
-		inset 0 2px alpha(@entry_inset, 0.4);
-}
-
-combobox entry button:disabled:first-child,
-GtkComboBox.combobox-entry .button:disabled:first-child {
-	box-shadow: inset -1px 0 @inset_dark_color;
-}
-
-combobox entry button:disabled:last-child,
-GtkComboBox.combobox-entry .button:disabled:last-child {
-	box-shadow: inset 1px 0 @inset_dark_color;
-}
-
-combobox entry button:hover,
-combobox entry button:checked,
-combobox entry button:hover:active,
-GtkComboBox.combobox-entry .button:hover,
-GtkComboBox.combobox-entry .button:active,
-GtkComboBox.combobox-entry .button:active:hover {
+combobox button.combo:hover,
+combobox button.combo:checked,
+combobox button.combo:hover:active {
     color: shade (@theme_selected_bg_color, 0.80);
     transition: all 200ms ease-in;
 }
 
-combobox button.combo,
-GtkComboBox .button {
+combobox button.combo {
     color: @theme_fg_color;
 }
 
@@ -5389,14 +5128,12 @@ expander row:selected:focus:hover,
  * List boxes *
  **************/
 
-list,
-.list {
+list {
 	background-color: @list_box_bg;
 }
 
 list row,
-list row.activatable,
-.list-row {
+list row.activatable {
     padding: 2px;
     transition: all 200ms ease-in;
     background-image: none;
@@ -5404,8 +5141,7 @@ list row.activatable,
 }
 
 list row:hover,
-list row.activatable:hover,
-.list-row:hover {
+list row.activatable:hover {
     padding: 2px;
     background-image: none;
 	background-color: shade (@theme_selected_bg_color, 1.30);
@@ -5415,9 +5151,7 @@ list row.activatable:hover,
 list row:selected,
 list row:selected:hover,
 list row.activatable:selected,
-list row.activatable:selected:hover,
-.list-row:selected,
-.list-row:selected:hover {
+list row.activatable:selected:hover {
     padding: 2px;
     border-width: 0;
     border-style: solid;
@@ -5433,9 +5167,7 @@ list row.activatable:selected:hover,
 list row:selected:backdrop,
 list row:selected:backdrop:hover,
 list row.activatable:selected:backdrop,
-list row.activatable:selected:backdrop:hover,
-.list-row:selected:backdrop,
-.list-row:selected:backdrop:hover {
+list row.activatable:selected:backdrop:hover {
     padding: 2px;
     border-width: 0;
     border-style: solid;
@@ -5448,8 +5180,7 @@ list row.activatable:selected:backdrop:hover,
     box-shadow: none;
 }
 
-list row button,
-.list-row.button {
+list > row > button {
 	border-color: transparent;
 	background-color: @theme_base_color;
 	background-image: none;
@@ -5461,17 +5192,11 @@ list row button,
 	border: none;
 }
 
-list row button:selected,
-list row button:selected:hover,
-list row button:checked,
-list row button:hover:active,
-list row button:checked:hover,
-.list-row.button:selected,
-.list-row.button:selected:hover,
-.list-row.button:active,
-.list-row.button:checked,
-.list-row.button:active:hover,
-.list-row.button:checked:hover {
+list > row > button:selected,
+list > row > button:selected:hover,
+list > row > button:checked,
+list > row > button:hover:active,
+list > row > button:checked:hover {
 	background-color: @theme_selected_bg_color;
 	background-image: linear-gradient(to bottom,
 		shade (@theme_selected_bg_color, 1.0),
@@ -5485,8 +5210,7 @@ list row button:checked:hover,
     border-width: 0px;
 }
 
-list row button:hover,
-.list-row.button:hover {
+list > row > button:hover {
 	background-image: none;
 	background-color: shade (@theme_selected_bg_color, 1.55);
 	color: shade (@theme_selected_bg_color, 0.35);

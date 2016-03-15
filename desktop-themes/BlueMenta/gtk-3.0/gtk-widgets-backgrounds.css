@@ -1,5 +1,7 @@
 /* Button background */
 button,
+combobox button.combo,
+combobox button.combo:backdrop,
 toolbar .raised button,
 toolbar combobox button.combo,
 toolbar.primary-toolbar .linked button,
@@ -161,10 +163,9 @@ toolbar combobox button.combo:checked:disabled,
 
 /* Entry background */
 entry,
-combobox entry button,
-combobox entry button:hover,
-toolbar.primary-toolbar combobox entry button,
-toolbar.primary-toolbar combobox entry button:hover,
+combobox button.combo:hover,
+toolbar.primary-toolbar combobox entry.combo,
+toolbar.primary-toolbar combobox button.combo:hover,
 levelbar trough,
 .entry,
 GtkComboBox.combobox-entry .button,
@@ -180,8 +181,8 @@ GtkComboBox.combobox-entry .button:hover,
 }
 
 /* Entry pushed button background */
-toolbar.primary-toolbar combobox entry button:checked,
-combobox entry button:checked,
+toolbar.primary-toolbar combobox button.combo:checked,
+combobox button.combo:checked,
 .primary-toolbar GtkComboBox.combobox-entry .button:active,
 .primary-toolbar GtkComboBox.combobox-entry .button:checked,
 /* .primary-toolbar GtkComboBox.combobox-entry .button:hover:active,*/
@@ -245,7 +246,7 @@ column-header .button:active:hover {
 
 /* Insensitive entry background */
 entry:disabled,
-combobox entry button:disabled,
+combobox button.combo:disabled,
 levelbar trough:disabled,
 .entry:disabled,
 GtkComboBox.combobox-entry .button:disabled,
