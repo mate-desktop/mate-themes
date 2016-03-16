@@ -177,7 +177,9 @@ spinner:checked:disabled,
  *****************/
 .view.rubberband,
 .rubberband,
-view rubberband,
+flowbox rubberband,
+treeview.view rubberband,
+.content-view rubberband,
 rubberband {
 	background-color: alpha (@theme_selected_bg_color, 0.35);
 
@@ -2484,61 +2486,20 @@ combobox separator {
 combobox > entry.combo,
 combobox > button.combo,
 combobox > entry.combo:backdrop,
-combobox > button.combo:backdrop {
+combobox > button.combo:backdrop,
+toolbar.primary-toolbar combobox entry.combo,
+toolbar.primary-toolbar combobox button.combo {
 	border-image-width: 3px 3px 4px 3px;
 	border-radius: 3px;
 	border-width: 2px;
 }
 
-toolbar.primary-toolbar combobox entry.combo:first-child,
-toolbar.primary-toolbar combobox button.combo:first-child {
-	border-image-width: 4px 0 4px 4px;
-	border-radius: 3px 0 0 3px;
-	border-right-width: 0;
-}
-
-toolbar.primary-toolbar combobox entry.combo:last-child,
-toolbar.primary-toolbar combobox button.combo:last-child {
-	border-image-width: 4px 4px 4px 0;
-	border-radius: 0 3px 3px 0;
-	border-left-width: 0;
-}
-
-combobox entry.combo:focus {
+combobox > entry.combo:focus {
 	box-shadow: inset 1px 2px alpha(@theme_selected_bg_color, 0.1);
 }
 
-combobox entry.combo:focus:first-child {
-	box-shadow: inset 1px 2px alpha(@theme_selected_bg_color, 0.1),
-		inset 1px 1px alpha(@theme_selected_bg_color, 0.1),
-		inset 0 -1px alpha(@theme_selected_bg_color, 0.2);
-}
-
-combobox entry.combo:focus:last-child {
-	box-shadow: inset -1px 2px alpha(@theme_selected_bg_color, 0.1),
-		inset -1px 1px alpha(@theme_selected_bg_color, 0.1),
-		inset 0 -1px alpha(@theme_selected_bg_color, 0.2);
-}
-
-combobox entry.combo:focus:only-child {
-	box-shadow: inset 1px 2px alpha(@theme_selected_bg_color, 0.1),
-		inset 1px 1px alpha(@theme_selected_bg_color, 0.1),
-		inset -1px -1px alpha(@theme_selected_bg_color, 0.2);
-}
-
-combobox button.combo:hover,
-combobox button.combo:checked,
-combobox button.combo:hover:active {
-    color: shade (@theme_selected_bg_color, 0.80);
-    transition: all 200ms ease-in;
-}
-
-combobox button.combo {
-    color: @theme_fg_color;
-}
-
-combobox.linked button.combo,
-combobox.linked button.combo:checked {
+combobox.linked > button.combo,
+combobox.linked > button.combo:checked {
 	border-right-width: 2px;
 	border-left-width: 0;
 	border-image-width: 3px 4px 4px 0;
@@ -2787,8 +2748,9 @@ scrollbar.fine-tune slider:hover:active,
 
 }
 
+ /* the small square between scrollbars!!! */
 scrolledwindow junction,
-.scrollbars-junction { /* the small square between scrollbars!!! */
+.scrollbars-junction {
 	background-image: none;
 	background-color: @theme_bg_color;
 	border-width: 0;

@@ -10,22 +10,6 @@
                                       @button_gradient_color_b);
 }
 
-.caja-navigation-window .caja-side-pane button.flat:first-child {
-    transition: all 400ms ease-out;
-    border-radius: 3px 0 0 3px;
-    border-right-width: 0;
-/* remove right border */
-    border-image: url("borders/button.png") 3 4 4 3 / 3px 0px 4px 3px stretch;
-}
-
-.caja-navigation-window .caja-side-pane button.flat:last-child {
-    transition: all 400ms ease-out;
-    border-radius: 0 3px 3px 0;
-    border-left-width: 0;
-/* remove left border */
-    border-image: url("borders/button.png") 3 3 4 4 / 3px 3px 4px 0px stretch;
-}
-
 .caja-navigation-window .caja-side-pane button.flat:hover {
     background-color: transparent;
     background-image: linear-gradient(to bottom,
@@ -33,67 +17,38 @@
                                       @button_hover_gradient_color_b);
 }
 
+.caja-navigation-window .caja-side-pane button.flat:first-child {
+    border-radius: 3px 0 0 3px;
+    border-right-width: 0;
+/* remove right border */
+    border-image: url("borders/button.png") 3 4 4 3 / 3px 0px 4px 3px stretch;
+}
+
+.caja-navigation-window .caja-side-pane button.flat:last-child {
+    border-radius: 0 3px 3px 0;
+    border-left-width: 0;
+/* remove left border */
+    border-image: url("borders/button.png") 3 3 4 4 / 3px 3px 4px 0px stretch;
+}
+
 .caja-navigation-window .caja-side-pane button.flat:hover:first-child {
     border-radius: 6px 0 0 6px;
     border-right-width: 0;
-    background-color: transparent;
-    background-image: linear-gradient(to bottom,
-                                      @button_hover_gradient_color_a,
-                                      @button_hover_gradient_color_b);
     border-image: url("borders/button.png") 3 3 4 3 / 3px 0px 4px 3px stretch;
 }
 
 .caja-navigation-window .caja-side-pane button.flat:hover:last-child  {
     border-radius: 0 6px 6px 0;
     border-left-width: 0;
-    background-color: transparent;
-    background-image: linear-gradient(to bottom,
-                                      @button_hover_gradient_color_a,
-                                      @button_hover_gradient_color_b);
     border-image: url("borders/button.png") 3 3 4 3 / 3px 3px 4px 0px stretch;
 }
 
-/* some overrides for button.flat */
-/* zoom button */
-.caja-navigation-window toolbar.primary-toolbar button.flat,
-.caja-navigation-window toolbar.primary-toolbar button.flat:first-child,
-.caja-navigation-window toolbar.primary-toolbar button.flat:last-child {
-    transition: all 400ms ease-out;
-    border-width: 3px;
-    background-color: transparent;
-    background-image: linear-gradient(to bottom,
-                                      shade (@theme_bg_color, 1.0),
-                                      shade (@theme_bg_color, 0.96));
-    border-image: none;
-}
-
-/* zoom button */
-.caja-navigation-window toolbar.primary-toolbar button.flat:hover {
-    border-width: 3px;
-    background-color: transparent;
-    background-image: linear-gradient(to bottom,
-                                      @button_gradient_color_a,
-                                      @button_gradient_color_b);
-    border-image: url("borders/button.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
-}
-
 /* ComboBox views */
-.caja-navigation-window toolbar.primary-toolbar combobox button.combo {
-    background-image: linear-gradient(to bottom,
-                                      @button_gradient_color_a,
-                                      @button_gradient_color_b);
-    border-image: url("borders/button.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
+.caja-navigation-window toolbar.primary-toolbar combobox > button.combo {
     padding: 6px 4px;
 }
 
-.caja-navigation-window toolbar.primary-toolbar combobox button.combo:hover {
-    background-image: linear-gradient(to bottom,
-                                      @button_hover_gradient_color_a,
-                                      @button_hover_gradient_color_b);
-    border-image: url("borders/button-active-focus.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
-    padding: 6px 4px;
-}
-
+/* pathbar */
 /* arrow button */
 .caja-pathbar button:nth-child(odd) widget {
     -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
@@ -135,7 +90,9 @@
     color: @theme_fg_color;
 }
 
+.caja-side-pane treeview.view:selected,
 .caja-side-pane treeview.view:selected:hover {
+    background-color: shade (@theme_selected_bg_color, 1.00);
     color: shade (@theme_selected_fg_color, 1.00);
 }
 
@@ -158,30 +115,33 @@
 }
 
 .caja-side-pane notebook {
-    border-style: none;
+    border-color: @borders;
+    border-style: solid;
+    border-radius: 0px;
+    border-width: 1px 0px 0px 0px;
 }
 
-/* view and desktop mode */
-.caja-canvas-item {
-    border-radius: 3px;
-    color: @theme_fg_color;
+/* views */
+/* scrolledwindow junction and top border for list view */
+.caja-navigation-window .caja-notebook scrolledwindow.frame {
+	background-color: @theme_bg_color;
 }
 
-.caja-canvas-item:active,
-.caja-canvas-item:selected {
-    color: @theme_selected_fg_color;
-}
-
-/* view mode */
-
-/* list view 3.20 */
-.caja-notebook treeview.view,
-/* view and compact 3.20 */
-.caja-notebook scrolledwindow.frame {
+/* icon and compat mode */
+.caja-navigation-window .caja-notebook scrolledwindow.view.frame  {
     background-color: @theme_base_color;
 }
 
-/* rows in listview */
+/* listview mode */
+.caja-navigation-window .caja-notebook .view {
+    background-color: @theme_base_color;
+}
+
+/* rows and header in listview */
+.caja-notebook treeview.view header button {
+    border-width: 1px 1px 1px 0px;
+}
+
 .caja-notebook treeview.view:selected,
 .caja-notebook treeview.view:selected:hover {
     background-color: @theme_selected_bg_color;
@@ -192,36 +152,36 @@
     color: shade (@theme_selected_bg_color, 0.35);
 }
 
-.caja-notebook .caja-canvas-item {
+/* window and desktop mode */
+.caja-canvas-item {
+    border-radius: 3px;
     color: @theme_fg_color;
 }
 
-.caja-notebook .caja-canvas-item:active,
-.caja-notebook .caja-canvas-item:selected {
+.caja-desktop.caja-canvas-item:selected,
+.caja-desktop.caja-canvas-item:active,
+.caja-navigation-window .caja-canvas-item:active,
+.caja-navigation-window .caja-canvas-item:selected {
     color: @theme_selected_fg_color;
+    background-color: @theme_selected_bg_color;
 }
 
-.caja-notebook {
-    border-style: none;
-}
-
-.caja-notebook frame {
-    border-width: 1px 1px 0 1px;
+/* window mode, for some reason this needs to be set again here */
+.caja-navigation-window .caja-notebook scrolledwindow.view.frame .rubberband {
+	background-color: alpha (@theme_selected_bg_color, 0.35);
+	border-color: @theme_selected_bg_color;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 0px;
 }
 
 /* desktop mode */
-/* 3.20 */
 .caja-desktop.caja-canvas-item {
     color: @theme_selected_fg_color;
     text-shadow: 1px 1px alpha (#000000, 0.8);
 }
 
-.caja-desktop.caja-canvas-item:selected {
-    background-color: @theme_selected_bg_color;
-    color: @theme_selected_fg_color;
-    text-shadow: none;
-}
-
+.caja-desktop.caja-canvas-item:selected,
 .caja-desktop.caja-canvas-item:active,
 .caja-desktop.caja-canvas-item:hover {
     text-shadow: none;
@@ -233,56 +193,12 @@
    text-shadow: none;
 }
 
-/* Toolbar */
-.caja-navigation-window toolbar button {
-    border-image: none;
-}
-
-/* Misc */
-.caja-navigation-window notebook {
-    border-right-width: 0;
-    border-left-width: 0;
-    border-bottom-width: 0;
-}
-
-.caja-navigation-window notebook tab {
-    border-right-width: 1px;
-    border-left-width: 1px;
-    padding: 4px 3px 4px 0px;
-}
-
-.caja-navigation-window notebook {
-    border-width: 1px 0 0 0;
-}
-
-/* close button styling */
-/* surpress styling of close button */
-.caja-navigation-window notebook tab button.flat,
-.caja-navigation-window notebook tab button.flat:hover {
-    border-color: transparent;
-    background-color: transparent;
-    background-image: none;
-    text-shadow: none;
-    -gtk-icon-shadow: none;
-    border-image: none;
-}
-
-/* do we have this style class? */
-.caja-cluebar-label {
-    font: normal;
-    text-shadow: 0 1px shade (@cluebar_color, 1.06);
-}
-
-/* to avoid padding when executing toogle button */
-.caja-search-bar entry,
-.caja-location-entry {
-    padding: 4px;
-}
-
+/* statusbar */
 .caja-navigation-window statusbar frame {
     border-style: none;
 }
 
+/* search, etc */
 #caja-extra-view-widget {
     background-color: shade (@theme_bg_color, 1.04);
     background-color: @cluebar_color;
@@ -292,6 +208,13 @@
     border-width: 0px;
     border-color: @borders;
     color: @theme_fg_color;
+}
+
+/* misc */
+/* do we have this style class? */
+.caja-cluebar-label {
+    font: normal;
+    text-shadow: 0 1px shade (@cluebar_color, 1.06);
 }
 
 /****************
