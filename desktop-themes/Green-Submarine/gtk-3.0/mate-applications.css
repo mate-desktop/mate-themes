@@ -6,18 +6,33 @@
 
 /* icon and list view */
 .caja-notebook .view,
-.caja-notebook scrolledwindow.frame,
-.caja-side-pane scrolledwindow.frame,
-.caja-side-pane CajaInformationPanel .vertical {
+.caja-notebook scrolledwindow.frame {
     border-style: none;
 }
 
+/* to avoid white pixels from base color */
+.caja-notebook {
+    background-color: @theme_bg_color;
+}
+
 /* caja sidebar */
-.caja-side-pane treeview.view,
-.caja-side-pane textview.view text,
-.caja-side-pane viewport.frame,
-.caja-side-pane CajaInformationPanel .vertical {
+.caja-side-pane notebook treeview.view,
+.caja-side-pane notebook textview.view text,
+.caja-side-pane notebook viewport.frame,
+.caja-side-pane notebook widget .vertical {
     background-color: shade (@theme_bg_color, 1.08);
+}
+
+.caja-side-pane > notebook {
+   border-style: solid;
+   border-width: 1px;
+   border-color: @notebook_border;
+}
+
+/* .caja-side-pane alone does not work here to override settings in notebook */
+paned.horizontal > box.vertical.caja-side-pane > notebook scrolledwindow.frame {
+   border-style: none;
+   border-width: 0px;
 }
 
 /* to avoid overlap with eject buttons */
@@ -80,7 +95,7 @@
 }
 
 .caja-side-pane button.flat {
-    padding: 7px 5px
+    padding: 3px;
 }
 
 .caja-side-pane button.flat.toggle:first-child {
@@ -147,7 +162,7 @@
 
 /* pathpar toggle button */
 .caja-navigation-window button.toggle.image-button {
-    padding: 5px 6px;
+    padding: 3px;
 }
 
 /* pathbar buttons */
@@ -155,16 +170,50 @@
 .caja-pathbar button:hover,
 .caja-pathbar button:checked {
     border-image: none;
-    padding: 5px 6px;
+    padding: 3px;
     border-width: 1px;
-    border-left-width: 0;
-    border-right-width: 0;
-    border-radius: 5px;
+    border-radius: 3px;
     border-color: transparent;
+}
+
+/* arrow button */
+.caja-pathbar button:nth-child(odd) widget {
+    -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+}
+
+.caja-pathbar button:nth-child(odd) {
+   margin: 0px -7px 0px 0px;
+   padding: 0px;
+    border-radius: 5px 3px 3px 5px;
+}
+
+.caja-pathbar button:nth-child(even) widget {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+
+.caja-pathbar button:nth-child(even) {
+   margin: 0px 0px 0px -7px;
+  padding: 0px;
+    border-radius: 3px 5px 5px 3px;
+}
+
+/* folder buttons */
+.caja-pathbar button.toggle {
+   margin: 0px -6px 0px 0px;
+    border-radius: 3px;
+}
+
+.caja-pathbar button.toggle image {
+   padding: 0px 4px 0px 5px;
+}
+
+.caja-pathbar button.toggle label {
+   padding: 0px 6px 0px 5px;
 }
 
 .caja-search-bar entry,
 .caja-location-entry {
+    padding: 3px;
     border-style: none;
     box-shadow: inset  0px  1px shade (@theme_bg_color, 0.80),
                 inset  1px  0px shade (@theme_bg_color, 0.80),
@@ -588,6 +637,11 @@ na-tray-applet {
 /* pluma line numbers */
 .pluma-window textview {
     background-color: shade (@bg_color, 1.07);
+}
+
+/* notebook in view, avoids white pixels from base color */
+.pluma-window paned.horizontal > paned.vertical > notebook > header.top {
+    border-radius: 0px;
 }
 
 /* Pluma status bar */
