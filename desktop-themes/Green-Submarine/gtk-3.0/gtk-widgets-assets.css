@@ -221,11 +221,14 @@ scale.vertical.scale-has-marks-above slider:disabled {
     background-image: -gtk-scaled(url("assets/scale-slider-marks-above-vertical-insensitive.png"));
 }
 
+scale.horizontal contents:first-child:not(:only-child) slider,
+scale.horizontal contents:first-child:not(:only-child) slider:hover,
 scale.horizontal.scale-has-marks-below slider,
 scale.horizontal.scale-has-marks-below slider:hover {
     background-image: -gtk-scaled(url("assets/scale-slider-marks-below-horizontal.png"));
 }
 
+scale.horizontal contents:first-child:not(:only-child) slider:disabled,
 scale.horizontal.scale-has-marks-below slider:disabled {
     background-image: -gtk-scaled(url("assets/scale-slider-marks-below-horizontal-insensitive.png"));
 }
