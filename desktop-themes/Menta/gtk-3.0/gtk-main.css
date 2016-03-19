@@ -4,7 +4,7 @@
 @define-color theme_selected_bg_color #accd8a;
 @define-color theme_text_color #2c2c2c;
 @define-color theme_fg_color @theme_text_color;
-@define-color theme_selected_fg_color #ffffff;
+@define-color theme_selected_fg_color #3E473E;
 
 @define-color placeholder_text_color shade(@text_color, 3.5);
 
@@ -97,6 +97,7 @@
 @define-color scale_trough_bg_b shade(@theme_bg_color, 0.76);
 @define-color scale_shadow alpha(white, 0.50);
 @define-color scale_progress_fill @theme_selected_bg_color;
+@define-color scale_trough_border shade(@borders, 0.83);
 @define-color scale_highlight_border @theme_selected_bg_color;
 @define-color scale_highlight_bg @theme_selected_bg_color;
 @define-color scale_highlight_shadow alpha(white, 0.50);

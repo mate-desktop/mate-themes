@@ -987,14 +987,14 @@ scale.horizontal {
 }
 
 scale.horizontal trough {
-   min-height: 5px;
+    min-height: 3px;
     margin: 8px 0;
     border-radius: 6px;
 }
 
 scale trough,
 scale.vertical trough {
-    min-width: 5px;
+    min-width: 3px;
     margin: 0 6px;
     border-radius: 6px;
 }
@@ -1002,7 +1002,7 @@ scale.vertical trough {
 scale trough,
 scale.horizontal trough,
 scale.vertical trough {
-    border-color: @borders;
+    border-color: @scale_trough_border;
     border-style: solid;
     border-width: 1px;
     box-shadow: none;
@@ -1082,50 +1082,51 @@ scale.vertical slider {
     margin: 0px -9px 0px -9px;
 }
 
+scale.horizontal.scale-has-marks-above.color,
+scale.vertical.scale-has-marks-below.color {
+    margin: 0px 0px 0px 0px;
+    padding: 0px;
+}
+
+scale.scale-has-marks-above.color trough,
+scale.scale-has-marks-below.color trough {
+      border-color: @scale_highlight_border;
+      border-radius: 3px;
+      background-repeat: no-repeat;
+}
+
+scale.vertical.scale-has-marks-below.color slider {
+    min-height: 20px;
+    min-width: 22px;
+    padding: 0px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0px 0px 0px 0px;
+}
+
+scale.horizontal.scale-has-marks-above.color slider {
+    min-height: 14px;
+    min-width: 20px;
+    margin: 0px 0px 0px 0px;
+    padding: 5px 0px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+scale.horizontal.scale-has-marks-above.color slider:hover,
+scale.vertical.scale-has-marks-below.color slider:hover {
+    background-size: 105%;
+}
+
+scale.horizontal.scale-has-marks-above.color.fine-tune slider,
+scale.vertical.scale-has-marks-below.color.fine-tune slider,
 scale.vertical.fine-tune slider:active,
 scale.vertical.fine-tune slider:active:hover,
 scale.horizontal.fine-tune slider:active,
 scale.horizontal.fine-tune slider:hover:active {
 	background-size: 80%;
-}
-
-scale.horizontal.scale-has-marks-above.color trough {
-    min-height: 10px;
-    margin: -5px 0px 0px 0px;
-    padding: 1px;
-}
-
-scale.horizontal.scale-has-marks-above.color slider {
-    min-height: 18px;
-    min-width: 24px;
-    margin: 0px 0px -5px 0px;
-    padding: 9px 0px;
-}
-
-scale.vertical.scale-has-marks-below.color trough {
-    min-width: 0px;
-    padding: 3px;
-}
-
-scale.vertical.scale-has-marks-below.color slider {
-    min-width: 22px;
-    padding: 3px;
-}
-
-scale.horizontal contents:first-child:not(:only-child) slider {
-    background-repeat: no-repeat;
-    min-height: 22px;
-    background-size: 100%;
-}
-
-scale.vertical.scale-has-marks-below.color slider:hover,
-scale.horizontal.scale-has-marks-above.color slider:hover {
-    background-size: 105%;
-}
-
-scale.vertical.fine-tune.scale-has-marks-below.color slider,
-scale.horizontal.fine-tune.scale-has-marks-above.color slider {
-    background-size: 90%;
 }
 
 /**********
@@ -5462,12 +5463,12 @@ popover.background.menu label.separator,
 
 /* ie. colorchooser */
 .popover.osd {
-	background-image: none;
-	background-color: alpha(shade(#3D3E40, 0.85), 0.35);
-	border: 1px solid black;
+    background-image: none;
+    background-color: alpha(shade(#3D3E40, 0.85), 0.35);
+    border: 1px solid black;
     border-radius: 2px;
-	box-shadow: none;
-	color: @theme_selected_fg_color;
+    box-shadow: none;
+    color: @theme_base_color;
 }
 
 .popover.osd toolbar,
