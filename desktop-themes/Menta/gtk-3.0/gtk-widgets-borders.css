@@ -2,6 +2,8 @@
 
 /* generic element borders (checked)*/
 entry,
+combobox entry.combo,
+combobox button.combo:checked,
 button:checked,
 toolbar.inline-toolbar.vertical button:checked {
 	border-image: url("borders/button-active.png") 3 4 5 4 / 3px 4px 5px 4px stretch;
@@ -54,6 +56,7 @@ row trough {
 entry:focus,
 button:checked:focus,
 button.default:checked,
+combobox entry.combo:focus,
 combobox button.combo:focus,
 toolbar.inline-toolbar.vertical button:focus:checked,
 toolbar.inline-toolbar.vertical button.default:checked {
@@ -76,7 +79,6 @@ toolbar.inline-toolbar.vertical button.default:checked {
 }
 
 button,
-combobox entry.combo,
 combobox button.combo {
 	border-image: url("borders/button.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
 	border-radius: 4px;
