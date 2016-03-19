@@ -387,28 +387,22 @@ MatePanelAppletFrameDBus {
     padding: 4px 4px 4px 4px;
 }
 
-/* set WnckSelector menuitem separator seperators are broken */
-.mate-panel-menu-bar menubar menu menuitem separator {
-    color: @menu_separator;
-/*    -GtkMenuItem-horizontal-padding: 0; */
-}
-
 /* WnckPager */
-WnckPager {
+#PanelApplet.wnck-pager widget {
     background-image: none;
     background-color: transparent;
     text-shadow: none;
 }
 
 /* selected WnckPager */
-WnckPager:selected {
+#PanelApplet.wnck-pager widget:selected {
     background-image: linear-gradient(to bottom,
                                       @theme_selected_bg_color,
                                       shade (@theme_selected_bg_color, 0.36));
 }
 
 /* prelight of WnckPager */
-WnckPager:hover {
+#PanelApplet.wnck-pager widget:hover {
     background-image: linear-gradient(to bottom,
                                       shade (@theme_selected_bg_color, 0.56),
                                       @theme_selected_bg_color);
