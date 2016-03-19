@@ -584,11 +584,11 @@ scale.horizontal {
 }
 
 scale.horizontal trough {
-   min-height: 4px;
+   min-height: 3px;
 }
 
 scale.vertical trough {
-   min-width: 4px;
+   min-width: 3px;
 }
 
 scale trough {
@@ -605,8 +605,8 @@ scale trough {
                 inset -1px -1px alpha(#000, 0.08);
 }
 
-scale  trough,
-scale.horizontal  trough,
+scale trough,
+scale.horizontal trough,
 scale.vertical trough {
     border-color: @scale_border_b;
 }
@@ -727,6 +727,11 @@ scale.horizontal slider {
     margin: -9px 0px -9px 0px;
 }
 
+/* scale.horizontal.scale-has-marks-below */
+scale.horizontal contents:first-child:not(:only-child) slider{
+    min-height: 22px
+}
+
 scale.horizontal.fine-tune slider:active,
 scale.horizontal.fine-tune slider:hover:active {
     background-size: 90%;
@@ -752,45 +757,17 @@ scale.vertical.fine-tune slider:hover:active {
     background-position: center;
 }
 
-scale.horizontal.scale-has-marks-above.color {
-    min-height: 10px;
-    margin: 0px 0px 5px 0px;
-    padding: 0px;
-}
-
-scale.horizontal.scale-has-marks-above.color trough {
-    min-height: 0px;
-    margin: -9px 0px 0px 0px;
-    padding: 5px;
-}
-
-scale.horizontal.scale-has-marks-above.color slider {
-    min-height: 10px;
-    min-width: 20px;
-    margin: 0px 0px -10px 0px;
-    padding: 10px 0px;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-scale.horizontal.scale-has-marks-above.color slider:hover {
-    background-size: 105%;
-}
-
-scale.horizontal.fine-tune.scale-has-marks-above.color slider {
-    background-size: 90%;
-}
-
+scale.horizontal.scale-has-marks-above.color,
 scale.vertical.scale-has-marks-below.color {
-    min-width: 0px;
-    margin: 0px 0px 0px 5px;
+    margin: 0px 0px 0px 0px;
     padding: 0px;
 }
 
-scale.vertical.scale-has-marks-below.color trough {
-    min-width: 0px;
-    padding: 10px;
+scale.scale-has-marks-above.color trough,
+scale.scale-has-marks-below.color trough {
+      border-color: @notebook_border;
+      border-radius: 5px;
+      background-repeat: no-repeat;
 }
 
 scale.vertical.scale-has-marks-below.color slider {
@@ -800,14 +777,22 @@ scale.vertical.scale-has-marks-below.color slider {
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
+    margin: 0px 0px 0px 0px;
 }
 
+scale.horizontal.scale-has-marks-above.color slider {
+    min-height: 14px;
+    min-width: 20px;
+    margin: 0px 0px 0px 0px;
+    padding: 5px 0px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+scale.horizontal.scale-has-marks-above.color slider:hover,
 scale.vertical.scale-has-marks-below.color slider:hover {
     background-size: 105%;
-}
-
-scale.vertical.fine-tune.scale-has-marks-below.color slider {
-    background-size: 90%;
 }
 
 /**********
