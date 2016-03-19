@@ -10,6 +10,11 @@
     border-style: none;
 }
 
+/* list view */
+.caja-notebook treeview.view {
+    padding: 0px;
+}
+
 /* to avoid white pixels from base color */
 .caja-notebook {
     background-color: @theme_bg_color;
@@ -162,7 +167,7 @@ paned.horizontal > box.vertical.caja-side-pane > notebook scrolledwindow.frame {
 
 /* pathpar toggle button */
 .caja-navigation-window button.toggle.image-button {
-    padding: 3px;
+    padding: 4px;
 }
 
 /* pathbar buttons */
@@ -182,8 +187,8 @@ paned.horizontal > box.vertical.caja-side-pane > notebook scrolledwindow.frame {
 }
 
 .caja-pathbar button:nth-child(odd) {
-   margin: 0px -7px 0px 0px;
-   padding: 0px;
+    margin: 0px -7px 0px 0px;
+    padding: 0px;
     border-radius: 5px 3px 3px 5px;
 }
 
@@ -192,23 +197,23 @@ paned.horizontal > box.vertical.caja-side-pane > notebook scrolledwindow.frame {
 }
 
 .caja-pathbar button:nth-child(even) {
-   margin: 0px 0px 0px -7px;
-  padding: 0px;
+    margin: 0px 0px 0px -7px;
+    padding: 0px;
     border-radius: 3px 5px 5px 3px;
 }
 
 /* folder buttons */
 .caja-pathbar button.toggle {
-   margin: 0px -6px 0px 0px;
+    margin: 0px -6px 0px 0px;
     border-radius: 3px;
 }
 
 .caja-pathbar button.toggle image {
-   padding: 0px 4px 0px 5px;
+    padding: 0px 4px 0px 5px;
 }
 
 .caja-pathbar button.toggle label {
-   padding: 0px 6px 0px 5px;
+    padding: 0px 6px 0px 5px;
 }
 
 .caja-search-bar entry,
@@ -273,19 +278,21 @@ paned.horizontal > box.vertical.caja-side-pane > notebook scrolledwindow.frame {
 }
 
 /* ComboBox views */
-/* kill a unwanted background with transition effect*/
-.caja-navigation-window toolbar combobox button.combo {
-    background-image: none;
+.caja-navigation-window toolbar.primary-toolbar combobox > .linked > button.combo,
+.caja-navigation-window toolbar.primary-toolbar combobox > .linked > button.combo:hover,
+.caja-navigation-window toolbar.primary-toolbar combobox > .linked > button.combo:hover:checked {
+    padding: 7px 2px 7px 5px;
 }
 
-.caja-navigation-window toolbar.primary-toolbar combobox button.combo:hover {
+.caja-navigation-window toolbar.primary-toolbar combobox > .linked > button.combo:hover,
+.caja-navigation-window toolbar.primary-toolbar combobox > .linked > button.combo:checked {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (shade(@menu_bg_dark_color, 2.03)),
                                      to   (shade(@menu_bg_dark_color, 1.17)));
 }
 
-.caja-navigation-window toolbar.primary-toolbar combobox button.combo arrow {
+.caja-navigation-window toolbar.primary-toolbar combobox > .linked > button.combo arrow {
     color: @theme_selected_fg_color
 }
 

@@ -11,12 +11,6 @@
     -GtkDialog-action-area-border: 10; /* ie. logout dialog */
     -GtkHTML-link-color: @link_color;
     -GtkIMHtml-hyperlink-color: @link_color;
-/*    -GtkRange-trough-border: 1;
-    -GtkRange-slider-width: 11;
-    -GtkRange-stepper-size: 13;
-    -GtkRange-trough-under-steppers: 1;
-    -GtkRange-stepper-spacing: 0;
-    -GtkScale-trough-border: 0; */
     -GtkScrollbar-activate-slider: 1;
     -GtkScrolledWindow-scrollbar-spacing: 0;
     -GtkTextView-error-underline-color: @error_color;
@@ -267,10 +261,12 @@ paned > separator.wide:backdrop {
  * Text Entries *
  ****************/
 
+entry {
+    min-height: 17px;
+}
+
 entry,
 entry.combo {
-/* Look out !
-This is the background color of mate-control-center 'too' */
     background-color: shade (@bg_color, 1.1);
     padding: 6px 4px;
     color: @entry_text_color;
@@ -283,7 +279,7 @@ This is the background color of mate-control-center 'too' */
     /* outer */
     border-width: 2px;
     border-style: solid;
-    border-radius: 5px;
+    border-radius: 6px;
     border-top-color:         transparent;
     border-right-color:     alpha(#fff, 0.02);
     border-left-color:         alpha(#fff, 0.02);
@@ -851,6 +847,11 @@ button menuitem menubar {
 button {
     padding: 6px;
     min-height: 20px;
+    min-width: 20px;
+}
+
+button.combo {
+    min-height: 22px;
     min-width: 20px;
 }
 
@@ -1715,14 +1716,15 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
                 inset  1px  0px @insensitive_border_color,
                 inset -1px  0px @insensitive_border_color,
                 inset  0px -1px @insensitive_border_color;
-    border-radius: 0 6px 6px 0;
-    border-width: 1px 1px 1px 0px;
 }
 
-/* Linked single button.combo */
+/* Linked single button */
 .linked entry:only-child,
 .linked button:only-child,
-.linked button:focus:only-child {
+.linked button:hover:only-child,
+.linked button:checked:only-child,
+.linked button:focus:only-child,
+.linked button:focus:hover:only-child {
     border-radius: 6px;
     border-width: 1px;
 }
@@ -2050,10 +2052,10 @@ combobox separator {
     -GtkWidget-vertical-separator: 0;
 }
 
-combobox entry,
-combobox entry:nth-child(first) {
-    border-width: 2px 0px 2px 2px; /* remove right-outer */
-    border-radius: 4px 0px 0px 4px;
+combobox entry.combo,
+combobox entry.combo:nth-child(first) {
+    border-width: 1px 0px 1px 1px; /* remove right-outer */
+    border-radius: 6px 0px 0px 6px;
     /* remove right-border */
     box-shadow: inset  0px  3px alpha(#000, 0.03),
                 inset  0px  2px alpha(#000, 0.05),
@@ -2065,9 +2067,7 @@ combobox entry:nth-child(first) {
                 inset  0px -1px shade(@button_border, 1.10);
 }
 
-combobox entry:focus {
-    border-width: 2px 0px 2px 2px; /* remove right-outer */
-    /* border */
+
     box-shadow: inset  0px  3px alpha(#000, 0.03),
                 inset  0px  2px alpha(#000, 0.05),
                 inset  2px  0px alpha(#000, 0.04),
@@ -2079,18 +2079,16 @@ combobox entry:focus {
 }
 
 /* for RTL languages */
-combobox entry:nth-child(last) {
-    border-width: 2px 2px 2px 0px;
-    border-radius: 0px 5px 5px 0px;
-    border-image-width: 2px 2px 2px 0px;
+combobox entry.combo:nth-child(last) {
+    border-width: 1px 1px 1px 0px;
+    border-radius: 0px 6px 6px 0px;
 }
 
-combobox button {
+combobox button.combo {
     color: @internal_element_color;
-    padding: 2px 3px 2px 6px;
 }
 
-combobox button:hover {
+combobox button.combo:hover {
     color: @theme_text_color;
 }
 
@@ -2163,163 +2161,155 @@ toolbar.primary-toolbar combobox button.combo:nth-child(last) {
     padding: 8px 6px;
 }
 
-combobox button.combo,
-combobox button.combo:focus,
-combobox button.combo:focus:hover,
-combobox button.combo:hover,
-combobox button.combo:hover:active,
-combobox button.combo:checked,
-combobox button.combo:checked:hover,
-combobox button.combo:checked:hover:active,
-combobox button.combo:disabled {
+combobox > button.combo,
+combobox > button.combo:focus,
+combobox > button.combo:focus:hover,
+combobox > button.combo:hover,
+combobox > button.combo:hover:active,
+combobox > button.combo:checked,
+combobox > button.combo:checked:hover,
+combobox > button.combo:checked:hover:active,
+combobox > button.combo:disabled {
     border-width: 1px;
     border-radius: 6px;
     border-width: 1px;
-    padding: 5px 6px;
+    padding: 5px 4px;
 }
 
-/* button left from entry */
-combobox.linked button.combo,
-combobox.linked button.combo:focus,
-combobox.linked button.combo:focus:hover,
-combobox.linked button.combo:hover,
-combobox.linked button.combo:hover:active,
-combobox.linked button.combo:checked,
-combobox.linked button.combo:checked:hover,
-combobox.linked button.combo:checked:hover:active,
-combobox.linked button:disabled
-combobox.linked button.combo {
-    padding: 5px 4px;
+combobox > horizontal.linked button.combo,
+combobox > horizontal.linked entry.combo,
+.linked.horizontal > combobox > .linked.horizontal > button.combo,
+.linked.horizontal > combobox > .linked.horizontal > button.combo:focus {
+    padding: 4px;
+    border-radius: 0px;
+    border-width: 1px 0px 1px 0px;
+}
+
+combobox > horizontal.linked button.combo:first-child,
+combobox > horizontal.linked entry.combo:first-child,
+.linked.horizontal > combobox:first-child > .linked.horizontal > button.combo:first-child,
+.linked.horizontal > combobox:first-child > .linked.horizontal > button.combo:focus:first-child {
+    border-radius: 6px 0px 0px 6px;
+    border-width: 1px 0px 1px 1px;
+}
+
+combobox > horizontal.linked button.combo:last-child,
+combobox > horizontal.linked entry.combo:last-child,
+.linked.horizontal > combobox:last-child > .linked.horizontal > button.combo:last-child,
+.linked.horizontal > combobox:last-child > .linked.horizontal > button.combo:focus:last-child {
     border-radius: 0px 6px 6px 0px;
     border-width: 1px 1px 1px 0px;
 }
 
-combobox.linked button.combo:checked {
+combobox > horizontal.linked button.combo:only-child,
+combobox > horizontal.linked entry.combo:only-child,
+.linked.horizontal > combobox:only-child > .linked.horizontal > button.combo:only-child,
+.linked.horizontal > combobox:only-child > .linked.horizontal > button.combo:focus:only-child {
+    border-radius: 6px;
+    border-width: 1px;
+}
+
+combobox > .linked button.combo:checked {
     box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
                 inset  1px  0px shade(@selected_bg_color, 0.97),
                 inset -1px  0px shade(@selected_bg_color, 0.93),
                 inset  0px -1px shade(@selected_bg_color, 0.93);
 }
 
-combobox button.combo arrow {
-    padding: 0px 2px;
-}
-
 /* Middle button */
-.linked.horizontal combobox button.combo,
-.linked.horizontal combobox button.combo:focus {
+.linked.horizontal > combobox > .linked.horizontal > button.combo,
+.linked.horizontal > combobox > .linked.horizontal > button.combo:focus {
     box-shadow: inset  0px  1px alpha(shade(@button_border, 1.00), 0.70),
                 inset  1px  0px alpha(shade(@button_border, 0.94), 0.80),
                 inset -1px  0px rgba(255,255,255,0), 0 1px rgba(255,255,255,0),
                 inset  0px -1px alpha(shade(@button_border, 0.88), 0.90);
-    border-right-width: 0px;
-    border-left-width: 0px;
-    border-radius: 0;
 }
 
  /* Middle Button active/hover */
-.linked.horizontal combobox button.combo:hover,
-.linked.horizontal combobox button.combo:focus:hover,
-.linked.horizontal combobox button.combo:hover:active,
-.linked.horizontal combobox button.combo:checked,
-.linked.horizontal combobox button.combo:checked:hover,
-.linked.horizontal combobox button.combo:checked:hover:active {
+.linked.horizontal > combobox > .linked.horizontal > button.combo:hover,
+.linked.horizontal > combobox > .linked.horizontal > button.combo:focus:hover,
+.linked.horizontal > combobox > .linked.horizontal > button.combo:hover:active,
+.linked.horizontal > combobox > .linked.horizontal > button.combo:checked,
+.linked.horizontal > combobox > .linked.horizontal > button.combo:checked:hover,
+.linked.horizontal > combobox > .linked.horizontal > button.combo:checked:hover:active {
     box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
                 inset  1px  0px shade(@selected_bg_color, 0.97),
                 inset -1px  0px rgba(255,255,255,0), 0 1px rgba(255,255,255,0),
                 inset  0px -1px shade(@selected_bg_color, 0.93);
-    border-right-width: 0px;
-    border-left-width: 0px;
-    border-radius: 0;
 }
 
 /* Middle button disabled */
-.linked.horizontal combobox button.combo:disabled {
+.linked.horizontal > combobox > .linked.horizontal > button.combo:disabled {
     box-shadow: inset  0px  1px @insensitive_border_color,
                 inset  1px  0px @insensitive_border_color,
                 inset -1px  0px rgba(255,255,255,0), 0 1px rgba(255,255,255,0),
                 inset  0px -1px @insensitive_border_color;
-    border-right-width: 0px;
-    border-left-width: 0px;
-    border-radius: 0;
 }
 
 /* Leftmost button */
-.linked.horizontal combobox:first-child button.combo:first-child,
-.linked.horizontal combobox:first-child button.combo:focus:first-child {
+.linked.horizontal > combobox:first-child > .linked.horizontal > button.combo:first-child,
+.linked.horizontal > combobox:first-child > .linked.horizontal > button.combo:focus:first-child {
     box-shadow: inset  0px  1px alpha(shade(@button_border, 1.00), 0.70),
                 inset  1px  0px alpha(shade(@button_border, 0.94), 0.80),
                 inset -1px  0px rgba(255,255,255,0), 0 1px rgba(255,255,255,0),
                 inset  0px -1px alpha(shade(@button_border, 0.88), 0.90);
-    border-radius: 6px 0 0 6px;
-    border-right-width: 0;
 }
 
 /* Leftmost button active/active */
-.linked.horizontal combobox:first-child button.combo:hover:first-child,
-.linked.horizontal combobox:first-child button.combo:focus:hover:first-child,
-.linked.horizontal combobox:first-child button.combo:hover:active:first-child,
-.linked.horizontal combobox:first-child button.combo:checked:first-child,
-.linked.horizontal combobox:first-child button.combo:checked:hover:first-child,
-.linked.horizontal combobox:first-child button.combo:checked:hover:active:first-child {
+.linked.horizontal > combobox:first-child > .linked.horizontal > button.combo:hover:first-child,
+.linked.horizontal > combobox:first-child > .linked.horizontal > button.combo:focus:hover:first-child,
+.linked.horizontal > combobox:first-child > .linked.horizontal > button.combo:hover:active:first-child,
+.linked.horizontal > combobox:first-child > .linked.horizontal > button.combo:checked:first-child,
+.linked.horizontal > combobox:first-child > .linked.horizontal > button.combo:checked:hover:first-child,
+.linked.horizontal > combobox:first-child > .linked.horizontal > button.combo:checked:hover:active:first-child {
     box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
                 inset  1px  0px shade(@selected_bg_color, 0.97),
                 inset -1px  0px rgba(255,255,255,0), 0 1px rgba(255,255,255,0),
                 inset  0px -1px shade(@selected_bg_color, 0.93);
-    border-radius: 6px 0 0 6px;
-    border-right-width: 0;
 }
 
 /* Leftmost button disabled */
-.linked.horizontal combobox:first-child button.combo:disabled:first-child {
+.linked.horizontal > combobox:first-child > .linked.horizontal > button.combo:disabled:first-child {
     box-shadow: inset  0px  1px @insensitive_border_color,
                 inset  1px  0px @insensitive_border_color,
                 inset -1px  0px rgba(255,255,255,0), 0 1px rgba(255,255,255,0),
                 inset  0px -1px @insensitive_border_color;
-    border-radius: 6px 0 0 6px;
-    border-right-width: 0;
 }
 
 /* Rightmost button */
-.linked.horizontal combobox:last-child button.combo:last-child,
-.linked.horizontal combobox:last-child button.combo:focus:last-child {
+.linked.horizontal > combobox:last-child > .linked.horizontal > button.combo:last-child,
+.linked.horizontal > combobox:last-child > .linked.horizontal > button.combo:focus:last-child {
      box-shadow: inset  0px  1px alpha(shade(@button_border, 1.00), 0.70),
                  inset  1px  0px alpha(shade(@button_border, 0.94), 0.80),
                  inset -1px  0px alpha(shade(@button_border, 0.94), 0.80),
                  inset  0px -1px alpha(shade(@button_border, 0.88), 0.90);
-    border-radius: 0 6px 6px 0;
-    border-left-width: 0;
 }
 
 /* Rightmost button active */
-.linked.horizontal combobox:last-child button.combo:hover:last-child,
-.linked.horizontal combobox:last-child button.combo:focus:hover:last-child,
-.linked.horizontal combobox:last-child button.combo:hover:active:last-child,
-.linked.horizontal combobox:last-child button.combo:checked:last-child,
-.linked.horizontal combobox:last-child button.combo:checked:hover:last-child,
-.linked.horizontal combobox:last-child button.combo:checked:hover:active:last-child {
+.linked.horizontal > combobox:last-child > .linked.horizontal > button.combo:hover:last-child,
+.linked.horizontal > combobox:last-child > .linked.horizontal > button.combo:focus:hover:last-child,
+.linked.horizontal > combobox:last-child > .linked.horizontal > button.combo:hover:active:last-child,
+.linked.horizontal > combobox:last-child > .linked.horizontal > button.combo:checked:last-child,
+.linked.horizontal > combobox:last-child > .linked.horizontal > button.combo:checked:hover:last-child,
+.linked.horizontal > combobox:last-child > .linked.horizontal > button.combo:checked:hover:active:last-child {
     box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
                 inset  1px  0px shade(@selected_bg_color, 0.97),
                 inset -1px  0px shade(@selected_bg_color, 0.93),
                 inset  0px -1px shade(@selected_bg_color, 0.93);
-    border-radius: 0 6px 6px 0;
-    border-left-width: 0;
 }
 
 /* Rightmost button disabled */
-.linked.horizontal combobox:last-child button.combo:last-child {
+.linked.horizontal > combobox:last-child > .linked.horizontal > button.combo:last-child {
     box-shadow: inset  0px  1px @insensitive_border_color,
                 inset  1px  0px @insensitive_border_color,
                 inset -1px  0px @insensitive_border_color,
                 inset  0px -1px @insensitive_border_color;
-    border-radius: 0 6px 6px 0;
-    border-left-width: 0;
 }
 
 /* vertical */
 /* Middle button */
-.vertical.linked > combobox > button.combo,
-.vertical.linked > combobox > button.combo:focus {
+.vertical.linked > combobox > .linked.horizontal > button.combo,
+.vertical.linked > combobox > .linked.horizontal > button.combo:focus {
     box-shadow: inset  0px  1px alpha(shade(@button_border, 1.00), 0.90),
                 inset  1px  0px alpha(shade(@button_border, 0.94), 0.90),
                 inset -1px  0px alpha(shade(@button_border, 0.88), 0.90),
@@ -2328,29 +2318,25 @@ combobox button.combo arrow {
     border-width: 0px 1px 1px 1px;
 }
 
-.vertical.linked > combobox > button.combo:hover,
-.vertical.linked > combobox > button.combo:focus:hover,
-.vertical.linked > combobox > button.combo:checked {
+.vertical.linked > combobox > .linked.horizontal > button.combo:hover,
+.vertical.linked > combobox > .linked.horizontal > button.combo:focus:hover,
+.vertical.linked > combobox > .linked.horizontal > button.combo:checked {
     box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
                 inset  1px  0px shade(@selected_bg_color, 0.97),
                 inset -1px  0px shade(@selected_bg_color, 0.93),
                 inset  0px -1px shade(@selected_bg_color, 0.93);
-    border-radius: 0px;
-    border-width: 0px 1px 1px 1px;
 }
 
-.vertical.linked > combobox > button.combo:disabled {
+.vertical.linked > combobox > .linked.horizontal > button.combo:disabled {
     box-shadow: inset  0px  1px @insensitive_border_color,
                 inset  1px  0px @insensitive_border_color,
                 inset -1px  0px @insensitive_border_color,
                 inset  0px -1px @insensitive_border_color;
-    border-radius: 0px;
-    border-width: 0px 1px 1px 1px;
 }
 
 /* Top button */
-.vertical.linked > combobox:first-child > button.combo:first-child,
-.vertical.linked > combobox:first-child > button.combo:focus:first-child {
+.vertical.linked > combobox:first-child > .linked.horizontal > button.combo:first-child,
+.vertical.linked > combobox:first-child > .linked.horizontal > button.combo:focus:first-child {
     box-shadow: inset  0px  1px alpha(shade(@button_border, 1.00), 0.70),
                 inset  1px  0px alpha(shade(@button_border, 0.94), 0.90),
                 inset  -1px 0px alpha(shade(@button_border, 0.88), 0.90);
@@ -2358,27 +2344,23 @@ combobox button.combo arrow {
     border-width: 1px 1px 1px 1px;
 }
 
-.vertical.linked > combobox:first-child > button.combo:hover:first-child,
-.vertical.linked > combobox:first-child > button.combo:focus:hover:first-child,
-.vertical.linked > combobox:first-child > button.combo:checked:first-child {
+.vertical.linked > combobox:first-child > .linked.horizontal > button.combo:hover:first-child,
+.vertical.linked > combobox:first-child > .linked.horizontal > button.combo:focus:hover:first-child,
+.vertical.linked > combobox:first-child > .linked.horizontal > button.combo:checked:first-child {
     box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
                 inset  1px  0px shade(@selected_bg_color, 0.97),
                 inset -1px  0px shade(@selected_bg_color, 0.93);
-    border-radius: 6px 6px 0 0;
-    border-width: 1px 1px 1px 1px;
 }
 
-.vertical.linked > combobox:first-child > button.combo:disabled:first-child {
+.vertical.linked > combobox:first-child > .linked.horizontal > button.combo:disabled:first-child {
     box-shadow: inset  0px  1px @insensitive_border_color,
                 inset  1px  0px @insensitive_border_color,
                 inset -1px  0px @insensitive_border_color;
-    border-radius: 6px 6px 0 0;
-    border-width: 1px 1px 1px 1px;
 }
 
 /* Bottom button */
-.vertical.linked > combobox:last-child > button.combo:last-child,
-.vertical.linked > combobox:last-child > button.combo:focus:last-child {
+.vertical.linked > combobox:last-child > .linked.horizontal > button.combo:last-child,
+.vertical.linked > combobox:last-child > .linked.horizontal > button.combo:focus:last-child {
      box-shadow: inset  1px  0px alpha(shade(@button_border, 0.94), 0.90),
                  inset -1px  0px alpha(shade(@button_border, 0.94), 0.90),
                  inset  0px -1px alpha(shade(@button_border, 0.88), 0.70);
@@ -2386,27 +2368,23 @@ combobox button.combo arrow {
     border-width: 0px 1px 1px 1px;
 }
 
-.vertical.linked > combobox:last-child > button.combo:hover:last-child,
-.vertical.linked > combobox:last-child > button.combo:focus:hover:last-child,
-.vertical.linked > combobox:last-child > button.combo:checked:last-child {
+.vertical.linked > combobox:last-child > .linked.horizontal > button.combo:hover:last-child,
+.vertical.linked > combobox:last-child > .linked.horizontal > button.combo:focus:hover:last-child,
+.vertical.linked > combobox:last-child > .linked.horizontal > button.combo:checked:last-child {
     box-shadow: inset  1px  0px shade(@selected_bg_color, 0.97),
                 inset -1px  0px shade(@selected_bg_color, 0.93),
                 inset  0px -1px shade(@selected_bg_color, 0.93);
-    border-radius: 0 0 6px 6px;
-    border-width: 0px 1px 1px 1px;
 }
 
-.vertical.linked > combobox:last-child > button.combo:disabled:last-child {
+.vertical.linked > combobox:last-child > .linked.horizontal > button.combo:disabled:last-child {
     box-shadow: inset  1px  0px @insensitive_border_color,
                 inset -1px  0px @insensitive_border_color,
                 inset  0px -1px @insensitive_border_color;
-    border-radius: 0 0 6px 6px;
-    border-width: 0px 1px 1px 1px;
 }
 
 /* Single button */
-.vertical.linked > combobox:only-child > button.combo:only-child,
-.vertical.linked > combobox:only-child > button.combo:focus:only-child {
+.vertical.linked > combobox:last-child > .linked.horizontal > button.combo:only-child,
+.vertical.linked > combobox:last-child > .linked.horizontal > button.combo:focus:only-child {
     box-shadow: inset  0px  1px alpha(shade(@button_border, 0.94), 0.90),
                 inset  1px  0px alpha(shade(@button_border, 0.94), 0.90),
                 inset -1px  0px alpha(shade(@button_border, 0.94), 0.90),
@@ -2415,24 +2393,20 @@ combobox button.combo arrow {
     border-width: 1px;
 }
 
-.vertical.linked > combobox:only-child > button.combo:hover:only-child,
-.vertical.linked > combobox:only-child > button.combo:focus:hover:only-child,
-.vertical.linked > combobox:only-child > button.combo:checked:only-child {
+.vertical.linked > combobox:last-child > .linked.horizontal > button.combo:hover:only-child,
+.vertical.linked > combobox:last-child > .linked.horizontal > button.combo:focus:hover:only-child,
+.vertical.linked > combobox:last-child > .linked.horizontal > button.combo:checked:only-child {
     box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
                 inset  1px  0px shade(@selected_bg_color, 0.97),
                 inset -1px  0px shade(@selected_bg_color, 0.93),
                 inset  0px -1px shade(@selected_bg_color, 0.93);
-    border-radius: 6px;
-    border-width: 1px;
 }
 
-.vertical.linked > combobox:only-child > button.combo:disabled:only-child {
+.vertical.linked > combobox:last-child > .linked.horizontal > button.combo:disabled:only-child {
     box-shadow: inset  0px  1px @insensitive_border_color,
                 inset  1px  0px @insensitive_border_color,
                 inset -1px  0px @insensitive_border_color,
                 inset  0px -1px @insensitive_border_color;
-    border-radius: 6px;
-    border-width: 1px;
 }
 
 combobox button.combo:checked,
@@ -2452,6 +2426,7 @@ combobox arrow {
     color: @theme_fg_color;
     min-height: 16px;
     min-width: 16px;
+    padding: 0px 2px;
 }
 
 /************
@@ -2582,7 +2557,7 @@ toolbar button {
     text-shadow: 0px 1px @toolbar_shadow_color;
 }
 
-toolbar combobox button {
+toolbar combobox button.combo {
     /* color combobox read-only */
     color: shade(@toolbar_fg_color, 1.00);
     text-shadow: 0px 1px @toolbar_shadow_color;
@@ -2600,7 +2575,7 @@ toolbar combobox button {
                 inset  0px -1px alpha(shade(@button_border, 0.88), 0.90);
 }
 
-toolbar combobox button:hover {
+toolbar combobox button.combo:hover {
     border-radius: 5px
 }
 
@@ -2965,9 +2940,9 @@ toolbar.inline-toolbar {
                                      color-stop (0.48, shade(@button_base, 0.96)),
                                      color-stop (0.52, shade(@button_base, 0.93)),
                                      to (shade(@button_base, 0.94))); 
-    border-width: 0 1px 1px 1px;
+    border-width: 0 1px 1px 0px;
     border-style: solid;
-    border-radius: 3px;
+    border-radius: 0px;
     border-top-color:    shade(@button_border, 1.00);
     border-right-color:  shade(@button_border, 1.00);
     border-left-color:   shade(@button_border, 1.00);
@@ -4025,27 +4000,6 @@ switch slider:backdrop:disabled > label {
     color: inherit;
 }
 
-list-row switch,
-list-row switch:backdrop,
-list-row:selected switch,
-list-row:selected switch:backdrop {
-    box-shadow: none;
-    border-color: shade(@theme_selected_bg_color, 0.4);
-}
-
-list-row:selected switch.slider:dir(rtl) {
-    border-left-color: @borders;
-}
-
-list-row:selected switch.slider:dir(ltr) {
-    border-right-color: @borders;
-}
-
-list-row:selected switch.slider,
-list-row:selected switch.slider:active {
-    border-color: shade(@theme_selected_bg_color, 0.4);
-}
-
 /*********
  * image *
  *********/
@@ -4176,9 +4130,9 @@ view text selection:focus,
     text-shadow: 0px 1px @theme_selected_shadow_color;
 }
 
-treeview {
-/*    -GtkWidget-focus-line-width: 0;
-    -GtkWidget-focus-padding: 1;*/
+treeview,
+treeview.view {
+    padding: 4px
 }
 
 treeview.dnd {
@@ -4302,6 +4256,10 @@ treeview header button arrow {
 
 treeview header:nth-child(last) button {
     border-width: 0px 0px 1px 0px;
+}
+
+row {
+    min-height: 22px;
 }
 
 row:disabled {
@@ -6290,22 +6248,17 @@ stack .linked.vertical entry {
                 inset  0px -1px alpha(shade(@button_border, 0.88), 0.90);
 }
 
-
-stack .vertical.linked > combobox:first-child > button.combo:first-child,
-stack .vertical.linked > combobox:first-child > button.combo:hover:first-child,
-stack .vertical.linked > combobox:first-child > button.combo:focus:first-child,
-stack .vertical.linked > combobox:first-child > button.combo:focus:hover:first-child,
-stack .vertical.linked > combobox:first-child > button.combo:checked:first-child,
-stack .vertical.linked > combobox:first-child > button.combo:disabled:first-child {
+stack .vertical.linked > combobox:first-child > .horizontal.linked > button.combo:first-child,
+stack .vertical.linked > combobox:first-child > .horizontal.linked > button.combo:hover:first-child,
+stack .vertical.linked > combobox:first-child > .horizontal.linked > button.combo:focus:first-child,
+stack .vertical.linked > combobox:first-child > .horizontal.linked > button.combo:focus:hover:first-child,
+stack .vertical.linked > combobox:first-child > .horizontal.linked > button.combo:checked:first-child,
+stack .vertical.linked > combobox:first-child > .horizontal.linked > button.combo:disabled:first-child {
     border-radius: 5px 5px 0 0;
     border-width: 1px;
     border-style: solid;
     border-color: shade(@notebook_border, 1.0);
     padding: 3px 5px;
-}
-
-stack .vertical.linked > combobox:first-child > button.combo:first-child,
-stack .vertical.linked > combobox:first-child > button.combo:focus:first-child {
     box-shadow: none;
 }
 
@@ -6358,14 +6311,10 @@ stack .linked.vertical spinbutton.horizontal button:focus:hover,
 stack .linked.vertical spinbutton.horizontal button:focus:hover:last-child,
 stack .linked.vertical spinbutton.horizontal button:focus:hover:active,
 stack .linked.vertical spinbutton.horizontal button:focus:hover:active:last-child,
-stack .linked.vertical spinbutton.horizontal button:checked,
-stack .linked.vertical spinbutton.horizontal button:checked:last-child,
-stack .linked.vertical spinbutton.horizontal button:checked:hover,
-stack .linked.vertical spinbutton.horizontal button:checked:hover:last-child,
-stack .linked.vertical spinbutton.horizontal button:checked:focus:hover:active,
-stack .linked.vertical spinbutton.horizontal button:checked:focus:hover:active:last-child,
+stack .linked.vertical spinbutton.horizontal button:active,
+stack .linked.vertical spinbutton.horizontal button:active:last-child,
 stack .linked.vertical spinbutton.horizontal button:disabled,
-stack .linked.vertical spinbutton.horizontal button:first-child:disabled {
+stack .linked.vertical spinbutton.horizontal button:disabled:last-child {
     border-radius: 0px;
     border-width: 0px;
     border-style: none;
@@ -6374,26 +6323,7 @@ stack .linked.vertical spinbutton.horizontal button:first-child:disabled {
     background-image: none;
     border-image: none;
     box-shadow: none;
-}
-
-stack .linked.vertical spinbutton.horizontal button,
-stack .linked.vertical spinbutton.horizontal button:hover,
-stack .linked.vertical spinbutton.horizontal button:focus:hover,
-stack .linked.vertical spinbutton.horizontal button:focus,
-stack .linked.vertical spinbutton.horizontal button:checked {
-    border-width: 0px 1px 1px 1px;
-    border-style: solid;
-    border-color: shade(@notebook_border, 1.0);
-}
-
-stack .linked.vertical spinbutton.horizontal button:last-child,
-stack .linked.vertical spinbutton.horizontal button:hover:last-child,
-stack .linked.vertical spinbutton.horizontal button:focus:hover:last-child,
-stack .linked.vertical spinbutton.horizontal button:focus:last-child,
-stack .linked.vertical spinbutton.horizontal button:checked:last-child {
-    border-width: 0px 1px 1px 0px;
-    border-style: solid;
-    border-color: shade(@notebook_border, 1.0);
+    padding: 4px 6px;
 }
 
 stack .linked.vertical spinbutton.horizontal button:hover,
@@ -6418,10 +6348,26 @@ stack .linked.vertical spinbutton.horizontal button:active:last-child {
                                      to (shade (@theme_bg_color, 0.80)));
 }
 
+stack .linked.vertical spinbutton.horizontal button,
+stack .linked.vertical spinbutton.horizontal button:focus,
+stack .linked.vertical spinbutton.horizontal button:disabled {
+    border-width: 0px 1px 1px 1px;
+    border-style: solid;
+    border-color: shade(@notebook_border, 1.0);
+}
+
+stack .linked.vertical spinbutton.horizontal button:last-child,
+stack .linked.vertical spinbutton.horizontal button:focus:last-child,
+stack .linked.vertical spinbutton.horizontal button:disabled:last-child {
+    border-width: 0px 1px 1px 0px;
+    border-style: solid;
+    border-color: shade(@notebook_border, 1.0);
+}
+
 stack .linked.vertical spinbutton.horizontal button:active,
 stack .linked.vertical spinbutton.horizontal button:hover,
 stack .linked.vertical spinbutton.horizontal button:focus:hover {
-    border-width: 1px;
+    border-width: 0px 1px 1px 1px;
     border-style: solid;
     border-color: shade(@button_border_active, 1.0);
 }
@@ -6429,7 +6375,7 @@ stack .linked.vertical spinbutton.horizontal button:focus:hover {
 stack .linked.vertical spinbutton.horizontal button:active:last-child,
 stack .linked.vertical spinbutton.horizontal button:hover:last-child,
 stack .linked.vertical spinbutton.horizontal button:focus:hover:last-child {
-    border-width: 1px 1px 1px 0px;
+    border-width: 0px 1px 1px 0px;
     border-style: solid;
     border-color: shade(@button_border_active, 1.0);
 }
