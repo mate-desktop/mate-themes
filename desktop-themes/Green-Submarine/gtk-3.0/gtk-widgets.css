@@ -2161,8 +2161,8 @@ combobox > button.combo:disabled {
     padding: 5px 4px;
 }
 
-combobox > horizontal.linked button.combo,
-combobox > horizontal.linked entry.combo,
+combobox > .horizontal.linked button.combo,
+combobox > .horizontal.linked entry.combo,
 .linked.horizontal > combobox > .linked.horizontal > button.combo,
 .linked.horizontal > combobox > .linked.horizontal > button.combo:focus {
     padding: 4px;
@@ -2170,24 +2170,24 @@ combobox > horizontal.linked entry.combo,
     border-width: 1px 0px 1px 0px;
 }
 
-combobox > horizontal.linked button.combo:first-child,
-combobox > horizontal.linked entry.combo:first-child,
+combobox > .horizontal.linked button.combo:first-child,
+combobox > .horizontal.linked entry.combo:first-child,
 .linked.horizontal > combobox:first-child > .linked.horizontal > button.combo:first-child,
 .linked.horizontal > combobox:first-child > .linked.horizontal > button.combo:focus:first-child {
     border-radius: 6px 0px 0px 6px;
     border-width: 1px 0px 1px 1px;
 }
 
-combobox > horizontal.linked button.combo:last-child,
-combobox > horizontal.linked entry.combo:last-child,
+combobox > .horizontal.linked button.combo:last-child,
+combobox > .horizontal.linked entry.combo:last-child,
 .linked.horizontal > combobox:last-child > .linked.horizontal > button.combo:last-child,
 .linked.horizontal > combobox:last-child > .linked.horizontal > button.combo:focus:last-child {
     border-radius: 0px 6px 6px 0px;
     border-width: 1px 1px 1px 0px;
 }
 
-combobox > horizontal.linked button.combo:only-child,
-combobox > horizontal.linked entry.combo:only-child,
+combobox > .horizontal.linked button.combo:only-child,
+combobox > .horizontal.linked entry.combo:only-child,
 .linked.horizontal > combobox:only-child > .linked.horizontal > button.combo:only-child,
 .linked.horizontal > combobox:only-child > .linked.horizontal > button.combo:focus:only-child {
     border-radius: 6px;
