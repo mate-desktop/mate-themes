@@ -829,7 +829,8 @@ button menuitem menubar {
     padding: 4px 8px;
 }
 
-button {
+button,
+button.raised {
     padding: 6px;
     min-height: 20px;
     min-width: 20px;
@@ -2693,9 +2694,10 @@ toolbar separator:disabled {
     primary toolbar raised buttons
 *************************************/
 
+/* ie. cimnnamon-settings (button.raised) */
 toolbar .raised button,
 toolbar button.raised {
-    padding: 2px;
+    padding: 6px;
 }
 
 toolbar menubar button {
@@ -3028,6 +3030,7 @@ calendar.header stackswitcher > button.titlebutton > image {
     padding-bottom: 3px;
 }
 
+toolbar .raised stackswitcher.linked.stack-switcher > button.text-button.radio,
 stackswitcher.linked.stack-switcher > button.text-button.radio,
 stackswitcher > button.text-button.radio,
 stackswitcher > .linked.stackswitcher > button.text-button.radio,
