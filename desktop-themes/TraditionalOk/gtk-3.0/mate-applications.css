@@ -12,16 +12,23 @@
     color: @theme_fg_color;
 }
 
-/* moved eject button to left better for overlay scrollbars */
-.caja-side-pane treeview {
- /*   padding: 0px 4px 0px 0px; sigh, broken*/
+/* move whole the frame, to free eject button for overlay scrollbars */
+.caja-side-pane scrolledwindow.frame {
+    padding: 0px;
+    margin: 0px 0px 0px -8px;
+}
+
+.caja-side-pane scrolledwindow.frame treeview.view {
     padding: 3px 0px 3px 0px;
 }
 
 /* better for overlay scrollbars */
-.caja-side-pane treeview.view .vertical.scrollbar.overlay-indicator,
-.caja-side-pane textview.view text .vertical.scrollbar.overlay-indicator {
-/*    -GtkRange-slider-width: 13; */
+/* to avoid overlap with eject buttons */
+.caja-side-pane scrolledwindow scrollbar.vertical.right.overlay-indicator,
+.caja-side-pane scrolledwindow scrollbar.vertical.right.overlay-indicator trough,
+.caja-side-pane scrolledwindow scrollbar.vertical.right.overlay-indicator slider,
+.caja-side-pane scrolledwindow scrollbar.vertical.right.overlay-indicator button {
+    min-width: 13px;
 }
 
 /* ComboBox views */
