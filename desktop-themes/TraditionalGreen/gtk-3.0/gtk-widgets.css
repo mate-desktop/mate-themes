@@ -653,13 +653,17 @@ scale.horizontal {
 }
 
 scale.horizontal trough {
-   min-height: 4px;
+   min-height: 3px;
     margin: 8px 0;
+}
+
+scale.horizontal contents:first-child:not(:only-child) trough {
+    min-height: 3px;
 }
 
 scale trough,
 scale.vertical trough {
-    min-width: 4px;
+    min-width: 3px;
     margin: 0 6px;
 }
 
@@ -719,13 +723,6 @@ scale slider:disabled {
     background-color: transparent;
 }
 
-scale.vertical slider,
-scale.horizontal slider {
-    background-size: 80%;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
 scale.horizontal slider {
     min-width: 28px;
     margin: -9px 0px -9px 0px;
@@ -736,59 +733,63 @@ scale.vertical slider {
     margin: 0px -9px 0px -9px;
 }
 
-scale.vertical.fine-tune slider:active,
-scale.vertical.fine-tune slider:active:hover,
-scale.horizontal.fine-tune slider:active,
-scale.horizontal.fine-tune slider:hover:active {
-	background-size: 70%;
-}
-
-scale.horizontal.scale-has-marks-above.color trough {
-    min-height: 10px;
-    margin: -5px 0px 0px 0px;
-    padding: 1px;
-}
-
-scale.horizontal.scale-has-marks-above.color slider {
-    min-height: 30px;
-    min-width: 30px;
-    margin: -5px 0px -5px 0px;
-    padding: 5px 0px;
-	background-size: 105%;
-}
-
-scale.vertical.scale-has-marks-below.color trough {
-    min-width: 0px;
-    padding: 5px;
-}
-
-scale.vertical.scale-has-marks-below.color slider {
-    min-width: 18px;
-    padding: 3px;
-}
-
 scale.horizontal contents:first-child:not(:only-child) slider {
     background-repeat: no-repeat;
     min-height: 22px;
-    background-size: 80%;
+    background-size: 90%;
 }
 
-scale.vertical.scale-has-marks-below.color slider:hover {
-    background-size: 85%;
+scale.vertical slider,
+scale.horizontal slider {
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-scale.vertical.fine-tune.scale-has-marks-below.color slider {
-    background-size: 75%;
-}
-
-scale.horizontal.scale-has-marks-above.color slider:hover {
-    background-size: 110%;
-}
-
-scale.horizontal.fine-tune.scale-has-marks-above.color slider {
+scale.vertical slider:hover,
+scale.horizontal slider:hover,
+scale.horizontal contents:first-child:not(:only-child) slider:hover {
     background-size: 95%;
 }
 
+scale.vertical.fine-tune slider,
+scale.horizontal.fine-tune slider,
+scale.horizontal.fine-tune contents:first-child:not(:only-child) slider {
+	background-size: 80%;
+}
+
+scale.horizontal.scale-has-marks-above.color trough {
+    min-height: 28px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px;
+    border-radius: 3px;
+}
+
+scale.horizontal.scale-has-marks-above.color slider {
+    min-height: 20px;
+    min-width: 30px;
+    background-size: 90%;
+}
+
+scale.horizontal.scale-has-marks-above.color slider:hover,
+scale.vertical.scale-has-marks-below.color slider:hover {
+    background-size: 95%;
+}
+
+scale.horizontal.fine-tune.scale-has-marks-above.color slider,
+scale.vertical.fine-tune.scale-has-marks-below.color slider {
+    background-size: 80%;
+}
+
+scale.vertical.scale-has-marks-below.color trough {
+    min-width: 28px;
+    padding: 0px;
+    border-radius: 3px;
+}
+
+scale.vertical.scale-has-marks-below.color slider {
+    background-size: 90%;
+}
 
 scale progressbar {
     background-color: @scale_progressbar_bg_color;
