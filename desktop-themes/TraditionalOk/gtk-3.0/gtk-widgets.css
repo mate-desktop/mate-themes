@@ -841,7 +841,7 @@ button {
 
 button,
 button.menuitem.menubar,
-combobox entry button,
+button.combo,
 toolbar.inline-toolbar button,
 toolbar.primary-toolbar.horizontal button,
 toolbar.primary-toolbar.horizontal button:active,
@@ -885,10 +885,8 @@ button.image-button.circular-button {
    border-color: @border_color;
 }
 
-combobox button.toggle,
-combobox button.text-button.toggle,
-toolbar.horizontal combobox button.toggle,
-toolbar.horizontal button.text-button.toggle {
+combobox button.combo,
+toolbar.horizontal combobox button.combo {
     padding: 4px;
 }
 
@@ -977,12 +975,6 @@ button .separator {
 
 /* Middle button */
 .linked entry,
-.linked > combobox > button.combo,
-.linked > combobox > button.combo:hover,
-.linked > combobox > button.combo:focus,
-.linked > combobox > button.combo:focus:hover,
-.linked > combobox > button.combo:checked,
-.linked > combobox > button.combo:disabled,
 .linked button,
 .linked button:hover,
 .linked button:focus,
@@ -1001,12 +993,6 @@ button .separator {
 
 /* Leftmost button */
 .linked entry:first-child,
-.linked > combobox:first-child > button.combo:first-child,
-.linked > combobox:first-child > button.combo:hover:first-child,
-.linked > combobox:first-child > button.combo:focus:first-child,
-.linked > combobox:first-child > button.combo:focus:hover:first-child,
-.linked > combobox:first-child > button.combo:checked:first-child,
-.linked > combobox:first-child > button.combo:disabled:first-child,
 .linked button:first-child,
 .linked button:hover:first-child,
 .linked button:focus:first-child,
@@ -1030,12 +1016,6 @@ button .separator {
 
 /* Rightmost button */
 .linked entry:last-child,
-.linked > combobox:last-child > button.combo:last-child,
-.linked > combobox:last-child > button.combo:hover:last-child,
-.linked > combobox:last-child > button.combo:focus:last-child,
-.linked > combobox:last-child > button.combo:focus:hover:last-child,
-.linked > combobox:last-child > button.combo:checked:last-child,
-.linked > combobox:last-child > button.combo:disabled:last-child,
 .linked button:last-child,
 .linked button:hover:last-child,
 .linked button:focus:last-child,
@@ -1059,12 +1039,6 @@ button .separator {
 /* vertical */
 
 /* Middle button */
-.linked.vertical > combobox > button.combo,
-.linked.vertical > combobox > button.combo:hover,
-.linked.vertical > combobox > button.combo:focus,
-.linked.vertical > combobox > button.combo:focus:hover,
-.linked.vertical > combobox > button.combo:checked,
-.linked.vertical > combobox > button.combo:disabled,
 .linked.vertical button.image-button,
 .linked.vertical button.image-button:hover,
 .linked.vertical button.image-button:focus,
@@ -1082,19 +1056,6 @@ button .separator {
 }
 
 /* top button */
-.linked.vertical > combobox:first-child > button.combo:first-child,
-.linked.vertical > combobox:first-child > button.combo:hover:first-child,
-.linked.vertical > combobox:first-child > button.combo:focus:first-child,
-.linked.vertical > combobox:first-child > button.combo:focus:hover:first-child,
-.linked.vertical > combobox:first-child > button.combo:checked:first-child,
-.linked.vertical > combobox:first-child > button.combo:disabled:first-child {
-    border-image: none;
-    border-radius: 3px 3px 0px 0px;
-    border-color: @border_color;
-    border-width: 1px 1px 1px 1px;
-    padding: 5px 5px;
-}
-
 .linked.vertical button.image-button:first-child,
 .linked.vertical button.image-button:hover:first-child,
 .linked.vertical button.image-button:focus:first-child,
@@ -1112,12 +1073,6 @@ button .separator {
 }
 
 /* bottom button */
-.linked.vertical > combobox:last-child > button.combo:last-child,
-.linked.vertical > combobox:last-child > button.combo:hover:last-child,
-.linked.vertical > combobox:last-child > button.combo:focus:last-child,
-.linked.vertical > combobox:last-child > button:focus:hover:last-child,
-.linked.vertical > combobox:last-child > button.combo:checked:last-child,
-.linked.vertical > combobox:last-child > button.combo:disabled:last-child,
 .linked.vertical button:last-child,
 .linked.vertical button:hover:last-child,
 .linked.vertical button:focus:last-child,
@@ -1303,17 +1258,17 @@ spinbutton.vertical > button:focus:active:last-child {
 /* Button background */
 button,
 spinbutton button,
+combobox button.combo,
 toolbar button.raised,
 toolbar button,
 toolbar .raised button,
 toolbar button.raised:focus,
 toolbar .raised button:focus,
-toolbar combobox button,
-toolbar combobox button:focus,
-combobox entry button,
-toolbar.primary-toolbar combobox entry button,
+toolbar combobox button.combo,
+toolbar combobox button.combo:focus,
+toolbar.primary-toolbar combobox button.combo,
 .titlebar .titlebutton:hover,
-GtkColorChooserWidget #add-color-button {
+colorchooser #add-color-button {
     background-image: -gtk-gradient (linear,
                       left top,
                       left bottom,
@@ -1329,6 +1284,7 @@ button:hover:active,
 menuitem button:hover,
 spinbutton button:active,
 spinbutton button:active:hover,
+combobox button.combo:checked,
 toolbar button:checked,
 toolbar button:checked:hover,
 toolbar button:hover:active,
@@ -1338,8 +1294,7 @@ toolbar button.raised:hover:active,
 toolbar button.raised:checked:hover,
 toolbar .raised button:hover:active,
 toolbar .raised button:checked:hover,
-toolbar.primary-toolbar combobox entry button:active,
-combobox entry button:active,
+toolbar.primary-toolbar combobox button.combo:checked,
 toolbar.primary-toolbar button:checked,
 toolbar.primary-toolbar button:hover:active,
 toolbar.primary-toolbar button:focus:active,
@@ -1375,13 +1330,13 @@ trough.vertical {
 /* Prelight button background */
 button:hover,
 spinbutton button:hover,
+combobox button.combo:hover,
 toolbar button:hover,
 toolbar button.raised:hover,
 toolbar .raised button:hover,
-toolbar combobox button:hover,
+toolbar combobox button.combo:hover,
 toolbar.primary-toolbar button:hover,
-combobox entry button:hover,
-toolbar.primary-toolbar combobox entry button:hover,
+toolbar.primary-toolbar combobox button.combo:hover,
 colorchooser #add-color-button:hover {
     background-color: transparent;
     background-image: linear-gradient(to bottom,
@@ -1392,17 +1347,17 @@ colorchooser #add-color-button:hover {
 
 /* disabled button background */
 button:disabled,
-toolbar combobox button:disabled,
-combobox entry button:disabled {
+combobox button.combo:disabled,
+toolbar combobox button.combo:disabled {
     background-image: none;
     background-color: transparent;
     color: @insensitive_fg_color;
 }
 
 /* Pushed + disabled button background */
-button:active:disabled,
-toolbar button:active:disabled,
-toolbar combobox button:active:disabled {
+button:checked:disabled,
+toolbar button:checked:disabled,
+toolbar combobox button.combo:checked:disabled {
     background-image: linear-gradient(to bottom,
                       @button_active_insensitive_gradient_a,
                       @button_active_insensitive_gradient_b 3px,
@@ -1682,7 +1637,20 @@ combobox {
     padding: 0;
 }
 
-combobox *:disabled {
+combobox arrow {
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+    color: @theme_fg_color;
+    min-height: 16px;
+    min-width: 16px;
+}
+
+combobox entry.combo,
+combobox button.combo {
+    color: @internal_element_color;
+}
+
+combobox entry.combo:disabled,
+combobox button.combo:disabled {
     color: @insensitive_fg_color;
 }
 
@@ -1692,56 +1660,149 @@ combobox separator {
     -GtkWidget-vertical-separator: 0;
 }
 
-combobox entry .entry:first-child,
-combobox entry button:first-child {
+combobox > .linked > entry.combo,
+combobox > .linked > button.combo,
+combobox > .linked > button.combo:focus,
+combobox > .linked > button.combo:hover,
+combobox > .linked > button.combo:checked,
+combobox > .linked > button.combo:focus:hover,
+combobox > .linked > button.combo:disabled {
+    border-image-width: 3px 3px 4px 3px;
+    border-radius: 0px;
+    border-width: 1px 0px 1px 0px;
+}
+
+combobox > .linked > entry.combo:first-child,
+combobox > .linked > button.combo:first-child,
+combobox > .linked > button.combo:focus:first-child,
+combobox > .linked > button.combo:hover:first-child,
+combobox > .linked > button.combo:checked:first-child,
+combobox > .linked > button.combo:focus:hover:first-child,
+combobox > .linked > button.combo:disabled:first-child {
     border-image-width: 3px 0 4px 3px;
     border-radius: 3px 0 0 3px;
-    border-right-width: 0;
+    border-width: 1px 0px 1px 1px;
 }
 
-combobox entry .entry:last-child,
-combobox entry button:last-child {
-    border-image-width: 3px 3px 4px 0;
+combobox > .linked > entry.combo:last-child,
+combobox > .linked > button.combo:last-child,
+combobox > .linked > button.combo:focus:last-child,
+combobox > .linked > button.combo:hover:last-child,
+combobox > .linked > button.combo:checked:last-child,
+combobox > .linked > button.combo:focus:hover:last-child,
+combobox > .linked > button.combo:disabled:last-child {
+    border-image-width: 3px 3px 4px 3px;
     border-radius: 0 3px 3px 0;
-    border-left-width: 0;
+    border-width: 1px 1px 1px 1px;
 }
 
-combobox entry button:last-child {
-    border-image-width: 3px 3px 4px 2px;
+combobox > .linked > entry.combo:only-child,
+combobox > .linked > button.combo:only-child,
+combobox > .linked > button.combo:focus:only-child,
+combobox > .linked > button.combo:hover:only-child,
+combobox > .linked > button.combo:checked:only-child,
+combobox > .linked > button.combo:focus:hover:only-child,
+combobox > .linked > button.combo:disabled:only-child {
+    border-image-width: 3px 3px 4px 3px;
+    border-radius: 3px;
+    border-width: 1px;
 }
 
-toolbar.primary-toolbar combobox entry .entry:first-child,
-toolbar.primary-toolbar combobox entry button:first-child {
+toolbar.primary-toolbar combobox > .linked > entry.combo,
+toolbar.primary-toolbar combobox > .linked > button.combo {
+    border-image-width: 4px 0px 4px 0px;
+}
+
+toolbar.primary-toolbar combobox > .linked > entry.combo:first-child,
+toolbar.primary-toolbar combobox > .linked > button.combo:first-child {
     border-image-width: 4px 0 4px 4px;
-    border-radius: 3px 0 0 3px;
-    border-right-width: 0;
 }
 
-toolbar.primary-toolbar combobox entry .entry:last-child,
-toolbar.primary-toolbar combobox entry button:last-child {
+toolbar.primary-toolbar combobox > .linked > entry.combo:last-child,
+toolbar.primary-toolbar combobox > .linked > button.combo:last-child {
     border-image-width: 4px 4px 4px 0;
+}
+
+toolbar.primary-toolbar combobox > .linked > entry.combo:only-child,
+toolbar.primary-toolbar combobox > .linked > button.combo:only-child {
+    border-image-width: 4px 4px 4px 4px;
+}
+
+/* linked combobox */
+
+/* Middle button */
+.linked > combobox > .linked > button.combo,
+.linked > combobox > .linked > button.combo:hover,
+.linked > combobox > .linked > button.combo:focus,
+.linked > combobox > .linked > button.combo:focus:hover,
+.linked > combobox > .linked > button.combo:checked,
+.linked > combobox > .linked > button.combo:disabled {
+    border-image: none;
+    border-radius: 0;
+    border-color: @border_color;
+    border-width: 1px 0px 1px 0px;
+    border-width: 1px;
+    padding: 4px 2px;
+}
+
+/* Leftmost button */
+.linked > combobox:first-child > .linked > button.combo:first-child,
+.linked > combobox:first-child > .linked > button.combo:hover:first-child,
+.linked > combobox:first-child > .linked > button.combo:focus:first-child,
+.linked > combobox:first-child > .linked > button.combo:focus:hover:first-child,
+.linked > combobox:first-child > .linked > button.combo:checked:first-child,
+.linked > combobox:first-child > .linked > button.combo:disabled:first-child {
+    border-radius: 3px 0 0 3px;
+    border-width: 1px 0px 1px 1px;
+}
+
+/* Rightmost button */
+.linked > combobox:last-child > .linked > button.combo:last-child,
+.linked > combobox:last-child > .linked > button.combo:hover:last-child,
+.linked > combobox:last-child > .linked > button.combo:focus:last-child,
+.linked > combobox:last-child > .linked > button.combo:focus:hover:last-child,
+.linked > combobox:last-child > .linked > button.combo:checked:last-child,
+.linked > combobox:last-child > .linked > button.combo:disabled:last-child {
     border-radius: 0 3px 3px 0;
-    border-left-width: 0;
+    border-width: 1px 1px 1px 0px;
 }
 
-combobox entry button *:active,
-combobox entry button *:active:hover {
-    color: @theme_text_color;
+/* vertical */
+
+/* Middle button */
+.linked.vertical > combobox > .linked > button.combo,
+.linked.vertical > combobox > .linked > button.combo:hover,
+.linked.vertical > combobox > .linked > button.combo:focus,
+.linked.vertical > combobox > .linked > button.combo:focus:hover,
+.linked.vertical > combobox > .linked > button.combo:checked,
+.linked.vertical > combobox > .linked > button.combo:disabled {
+    border-image: none;
+    border-radius: 0;
+    border-color: @border_color;
+    border-width: 0px 1px 0px 1px;
+    padding: 5px 5px;
 }
 
-combobox button {
-    color: @internal_element_color;
+/* top button */
+.linked.vertical > combobox:first-child > .linked > button.combo:first-child,
+.linked.vertical > combobox:first-child > .linked > button.combo:hover:first-child,
+.linked.vertical > combobox:first-child > .linked > button.combo:focus:first-child,
+.linked.vertical > combobox:first-child > .linked > button.combo:focus:hover:first-child,
+.linked.vertical > combobox:first-child > .linked > button.combo:checked:first-child,
+.linked.vertical > combobox:first-child > .linked > button.combo:disabled:first-child {
+    border-radius: 3px 3px 0px 0px;
+    border-width: 1px 1px 1px 1px;
 }
 
-combobox button *:hover {
-    color: @theme_text_color;
-}
-
-combobox arrow {
-    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
-    color: @theme_fg_color;
-    min-height: 16px;
-    min-width: 16px;
+/* bottom button */
+.linked.vertical > combobox:last-child > .linked > button.combo:last-child,
+.linked.vertical > combobox:last-child > .linked > button.combo:hover:last-child,
+.linked.vertical > combobox:last-child > .linked > button.combo:focus:last-child,
+.linked.vertical > combobox:last-child > .linked > button.combo:focus:hover:last-child,
+.linked.vertical > combobox:last-child > .linked > button.combo:checked:last-child,
+.linked.vertical > combobox:last-child > .linked > button.combo:disabled:last-child {
+    border-radius: 0px 0px 3px 3px;
+    border-width: 0px 1px 1px 1px;
 }
 
 /**************
