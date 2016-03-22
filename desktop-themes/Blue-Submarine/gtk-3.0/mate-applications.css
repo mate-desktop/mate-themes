@@ -357,6 +357,7 @@ paned.horizontal > box.vertical.caja-side-pane > notebook scrolledwindow.frame {
 .mate-panel-menu-bar,
 .mate-panel-menu-bar menubar,
 .mate-panel-menu-bar menuitem,
+#PanelPlug,
 #PanelApplet button,
 PanelToplevel.background {
     background-color: transparent;
@@ -368,6 +369,7 @@ PanelToplevel.background {
 
 /* let's started */
 /* the panel bar itself */
+#PanelPlug,
 .mate-panel-menu-bar,
 PanelToplevel.background {
     background-color: @theme_bg_dark_color;
@@ -510,7 +512,7 @@ MatePanelAppletFrameDBus {
     padding: 4px 2px;
 }
 
-.mate-panel-menu-bar > menubar > menuitem {
+.mate-panel-menu-bar menubar > menuitem {
     padding: 5px 5px;
 }
 
@@ -529,7 +531,7 @@ MatePanelAppletFrameDBus {
     padding: 4px 8px;
 }
 
-#window-menu-applet-button > menubar > menuitem:hover  {
+#window-menu-applet-button menubar menuitem:hover  {
     background-image: none;
     border-color: shade (@theme_selected_bg_color, 1.30);
     background-color: shade (@theme_selected_bg_color, 0.90);
