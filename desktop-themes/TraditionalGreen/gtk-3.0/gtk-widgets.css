@@ -841,22 +841,19 @@ button {
 
 button,
 button.menuitem.menubar,
-button.combo,
 toolbar.inline-toolbar button,
-toolbar.primary-toolbar.horizontal button,
-toolbar.primary-toolbar.horizontal button:active,
-toolbar.horizontal button,
-toolbar.horizontal button:active,
 .titlebar .linked.raised button,
-.titlebar .linked.raised button:active {
+.titlebar .linked.raised button:checked {
     padding: 5px 5px 6px; /* larger values makes the button arrow smaller*/
 }
 
 toolbar.horizontal button,
-toolbar.horizontal button:active,
+toolbar.horizontal button:checked,
 toolbar.primary-toolbar.horizontal button,
-toolbar.primary-toolbar.horizontal button:active {
-    padding: 2px 2px;
+toolbar.primary-toolbar.horizontal button:checked {
+    padding: 4px 3px;
+    min-height: 16px;
+    min-width: 26px;
 }
 
 button.default {
@@ -988,7 +985,11 @@ button .separator {
     border-radius: 0;
     border-color: @border_color;
     border-width: 1px;
-    padding: 4px 2px;
+    padding: 4px 3px;
+}
+
+.linked entry {
+    padding: 4px;
 }
 
 /* Leftmost button */
@@ -1006,11 +1007,11 @@ button .separator {
     border-radius: 3px 0 0 3px;
     border-color: @border_color;
     border-width: 1px 0px 1px 1px;
-    padding: 4px 2px;
+    padding: 4px 3px;
 }
 
 .linked entry:first-child {
-    padding: 6px;
+    padding: 4px;
     border-width: 1px;
 }
 
@@ -1029,11 +1030,11 @@ button .separator {
     border-radius: 0 3px 3px 0;
     border-color: @border_color;
     border-width: 1px 1px 1px 0px;
-    padding: 4px 2px;
+    padding: 4px 3px;
 }
 
 .linked entry:last-child {
-    padding: 6px;
+    padding: 4px;
 }
 
 /* vertical */
@@ -1647,6 +1648,7 @@ combobox arrow {
 combobox entry.combo,
 combobox button.combo {
     color: @internal_element_color;
+    padding: 4px
 }
 
 combobox entry.combo:disabled,
@@ -2263,7 +2265,7 @@ toolbar {
 }
 
 toolbar button {
-    padding: 1px;
+    padding: 2px 5px;
 }
 
 toolbar:disabled {
@@ -2443,7 +2445,6 @@ GtkOverlay.osd {
 }
 
 .osd button,
-.osd button:active,
 .osd button:checked {
     border-width: 1px;
     border-style: solid;
@@ -2459,7 +2460,6 @@ GtkOverlay.osd {
 }
 
 .osd button:hover,
-.osd button:active,
 .osd button:checked {
     border-color: shade (@theme_selected_bg_color, 0.5);
 }
@@ -2487,14 +2487,12 @@ GtkOverlay.osd {
 
 .osd.button,
 .osd.button:hover,
-.osd.button:active,
 .osd.button:checked {
     background-color: shade(@osd_bg, 1.10);
 }
 
 .osd button,
 .osd button:hover,
-.osd button:active,
 .osd button:checked {
     background-color: transparent;
 }
@@ -2505,8 +2503,6 @@ GtkOverlay.osd {
     background-color: @osd_button_bg_insensitive;
 }
 
-.osd.button:active:disabled,
-.osd button:active:disabled,
 .osd.button:checked:disabled,
 .osd button:checked:disabled {
     background-image: none;
@@ -2518,23 +2514,19 @@ GtkOverlay.osd {
     color: @osd_button_fg_hover;
 }
 
-.osd.button:active,
 .osd.button:hover:active,
-.osd button:active,
 .osd button:hover:active,
 .osd.button:checked,
-.osd.button:hover:checked,
+.osd.button:checked:hover,
 .osd button:checked,
-.osd button:hover:checked {
+.osd button:checked:hover {
     color: @osd_button_fg_active;
 }
 
 .osd.button:disabled,
-.osd.button:active *:disabled,
-.osd.button:checked *:disabled,
+.osd.button:checked:disabled,
 .osd button:disabled,
-.osd button:active *:disabled,
-.osd button:checked *:disabled {
+.osd button:checked:disabled {
     color: @osd_button_fg_insensitive;
     text-shadow: none;
     -gtk-icon-shadow: none;
@@ -2548,11 +2540,6 @@ GtkOverlay.osd {
                                       @osd_button_bg_hover_c);
 }
 
-.osd.button:active,
-.osd.button:active:hover,
-.osd button:active,
-.osd button:active:hover,
-.osd GtkMenuButton.menu-button:active,
 .osd.button:checked,
 .osd.button:checked:hover,
 .osd button:checked,
@@ -2564,24 +2551,20 @@ GtkOverlay.osd {
                                       @osd_button_bg_active_c);
 }
 
-.osd .linked button:active:first-child {
+.osd .linked button:checked:first-child {
     border-left-width: 1px;
 }
 
-.osd .linked button:active:last-child {
+.osd .linked button:checked:last-child {
     border-right-width: 1px;
 }
 
-.osd GtkMenuButton.menu-button:active {
+.osd GtkMenuButton.menu-button:checked {
     background-color: transparent;
     border-color: @osd_button_border;
-}
-
-.osd GtkMenuButton.menu-button:active {
     color: @osd_button_fg_active;
     text-shadow: 0 -1px @osd_button_shadow;
 }
-
 
 toolbar.osd {
     color: @osd_fg;
@@ -2608,18 +2591,16 @@ toolbar.osd button:hover,
 toolbar.osd button:focus,
 toolbar.osd button:focus.hover,
 toolbar.osd button:focus.hover:active,
-toolbar.osd button:active,
 toolbar.osd button:checked,
-toolbar.osd button:active:hover,
+toolbar.osd button:hover:active,
 toolbar.osd button:disabled,
 toolbar.osd .linked button,
 toolbar.osd .linked button:hover,
 toolbar.osd .linked button:focus,
 toolbar.osd .linked button:focus:hover,
 toolbar.osd .linked button:focus:hover:active,
-toolbar.osd .linked button:active,
 toolbar.osd .linked button:checked,
-toolbar.osd .linked button:active:hover,
+toolbar.osd .linked button:hover:active,
 toolbar.osd .linked button:disabled {
     border-color: shade (@theme_bg_color, 0.4);
     border-style: solid;
@@ -2628,8 +2609,8 @@ toolbar.osd .linked button:disabled {
     border-radius: 0px;
 }
 
-toolbar.osd button:active,
-toolbar.osd button:active:hover {
+toolbar.osd button:checked,
+toolbar.osd button:checked:hover {
     background-image: linear-gradient(to bottom,
                                       @osd_button_bg_active_a,
                                       @osd_button_bg_active_b 20%,
@@ -2970,27 +2951,25 @@ treeview header button:disabled {
 
 treeview header button:hover,
 treeview header button:focus:hover,
-treeview header button:active:focus:hover,
-treeview header button:active:focus,
-treeview header button:active:hover,
+treeview header button:focus:hover:active,
+treeview header button:hover:active,
 treeview header button:checked,
-treeview header button:active:hover {
+treeview header button:checked:hover {
     color: @internal_element_hover_color;
 }
 
 treeview header button:checked,
-treeview header button:active:hover,
-treeview header button:active:hover:focus,
-treeview header button:active:focus {
+treeview header button:checked:hover,
+treeview header button:checked:hover:focus {
     background-color: @entry_bg_color;
     background-image: none;
 }
 
 treeview header button,
 treeview header button:focus,
-treeview header button:active,
-treeview header button:active:hover,
-treeview header button:active:focus {
+treeview header button:checked,
+treeview header button:checked:hover,
+treeview header button:focus:checked {
     border-image: none;
     border-width: 1px;
     border-radius: 0;
@@ -3175,37 +3154,37 @@ infobar entry,
 infobar entry:focus,
 infobar button,
 infobar button:disabled,
-infobar button:active,
+infobar button:checked,
 infobar button:focus,
-infobar button:active:focus,
+infobar button:focus:checked,
 entry.info,
 entry.info:focus,
 .info button,
 .info button:disabled,
-.info button:active,
+.info button:checked,
 .info button:focus,
-.info button:active:focus,
+.info button:focus:checked,
 entry.warning,
 entry.warning:focus,
 .warning button,
 .warning button:disabled,
-.warning button:active,
+.warning button:checked,
 .warning button:focus,
-.warning button:active:focus,
+.warning button:focus:checked,
 entry.question,
 entry.question:focus,
 .question button,
 .question button:disabled,
-.question button:active,
+.question button:checked,
 .question button:focus,
-.question button:active:focus,
+.question button:focus:checked,
 entry.error,
 entry.error:focus,
 .error button,
 .error button:disabled,
-.error button:active,
+.error button:checked,
 .error button:focus,
-.error button:active:focus {
+.error button:focus:checked {
     border-image: none;
     border-color: shade(@border_color, 0.9);
     border-style: solid;
@@ -3662,13 +3641,9 @@ calendar.header .app-notification.frame button.titlebutton {
     border-radius: 3px;
 }
 
-.app-notification button:active,
 .app-notification button:checked,
-.app-notification button:backdrop:active,
 .app-notification button:backdrop:checked,
-.app-notification.frame button:active,
 .app-notification.frame button:checked,
-.app-notification.frame button:backdrop:active,
 .app-notification.frame button:backdrop:checked {
     color: white;
     border-color: rgba(0, 0, 0, 0.7);
@@ -3721,8 +3696,8 @@ calendar.header .app-notification.frame button.titlebutton {
 
 button.flat.link.text-button,
 button.flat.link.text-button:hover,
-button.flat.link.text-button:active,
-button.flat.link.text-button:active:hover {
+button.flat.link.text-button:checked,
+button.flat.link.text-button:hover:active {
     text-shadow: none;
 }
 

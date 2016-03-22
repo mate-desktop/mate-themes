@@ -7,35 +7,17 @@ GtkPaned.horizontal .vertical GtkOverlay GtkRevealer.bottom .background.horizont
     color: @theme_fg_color;
 }
 
-/* buttons control panel */
-GtkPaned GtkOverlay GtkRevealer.bottom .button.flat,
-GtkPaned GtkOverlay GtkRevealer.bottom .button.flat:hover,
-GtkPaned GtkOverlay GtkRevealer.bottom .button.flat:active,
-GtkPaned GtkOverlay GtkRevealer.bottom .button.flat:checked,
-GtkPaned GtkOverlay GtkRevealer.bottom .button.flat:active:hover,
-GtkPaned GtkOverlay GtkRevealer.bottom .button.flat:checked:hover,
-GtkPaned GtkOverlay GtkRevealer.bottom .button.flat.image-button,
-GtkPaned GtkOverlay GtkRevealer.bottom .button.flat.image-button:hover ,
-GtkPaned GtkOverlay GtkRevealer.bottom .button.flat.image-button:active,
-GtkPaned GtkOverlay GtkRevealer.bottom .button.flat.image-button:checked,
-GtkPaned GtkOverlay GtkRevealer.bottom .button.flat.image-button:active:hover,
-GtkPaned GtkOverlay GtkRevealer.bottom .button.flat.image-button:checked:hover,
-GtkPaned GtkOverlay GtkRevealer.bottom .background.horizontal.osd .button.flat.image-button:checked,
-GtkPaned GtkOverlay GtkRevealer.bottom .background.horizontal.osd .button.flat.image-button:active:hover {
-    border-style: none;
-    border-radius: 4px;
-    background-color: transparent;
-    background-image: none;
-    box-shadow: none;
-    padding: 4px 7px;
-    color: @theme_fg_color;
-}
-
 /* rhythmbox */
 
 .primary-toolbar.toolbar.horizontal RBHeader.horizontal GtkVolumeButton.button.flat,
-.primary-toolbar.toolbar.horizontal RBHeader.horizontal GtkVolumeButton.button.flat:active,
+.primary-toolbar.toolbar.horizontal RBHeader.horizontal GtkVolumeButton.button.flat:checked,
 .primary-toolbar.toolbar.horizontal RBHeader.horizontal GtkVolumeButton.button.flat:hover {
     padding: 0px 6px;
 }
 
+/* nemo */
+
+/* icon and list view */
+.nemo-window-pane scrolledwindow {
+    background-color: @theme_base_color;
+}
