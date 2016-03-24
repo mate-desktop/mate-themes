@@ -74,15 +74,24 @@ CajaNavigationWindow.background .view.caja-canvas-item:selected {
  * mate-panel *
  ***************/
 
-.mate-panel-menu-bar,
-MatePanelApplet > GtkMenuBar.menubar,
-PanelToplevel,
-PanelWidget,
-PanelFrame,
-PanelAppletFrame,
-MatePanelAppletFrameDBus,
-MatePanelAppletContainer,
-MatePanelApplet {
+/* first make all transparent */
+WnckSelector.menubar,
+PanelMenuBar.menubar,
+WnckSelector GtkMenuItem,
+PanelMenuBar GtkMenuItem,
+#clock-applet-button.button,
+MatePanelApplet GtkToggleButton.button,
+PanelToplevel.background,
+.mate-panel-menu-bar {
+    background-color: transparent;
+    background: transparent;
+    border-image: none;
+    background-image: none;
+    box-shadow: none;
+}
+
+PanelToplevel.background.horizontal,
+.mate-panel-menu-bar {
 	background-image: -gtk-gradient (linear,
 	                  left top,
 	                  left bottom,
@@ -125,8 +134,6 @@ PanelMenuBar.menubar .menu .menuitem {
 }
 
 /* set selected menubar menuitem */
-PanelMenuBar.menubar .menu .menuitem:checked:hover,
-PanelMenuBar.menubar .menu .menuitem:active:hover,
 PanelMenuBar.menubar .menu .menuitem:hover {
 	background-image: none;
 	color: @theme_text_color;
@@ -151,8 +158,6 @@ PanelSeparator {
 /* desktop-applet, clockapplet, drivemount, character-map,
 dictionary */
 MatePanelApplet .button {
-	/* Due to a bug somewhere in gtk or cairo,
-	   a padding of zero (or even one) doesn't work always!!! */
 	padding: 0px;
 	border-radius: 3px;
 	border-width: 1px;
@@ -168,11 +173,13 @@ MatePanelApplet .button {
 	                  to (@button_gradient_d));
 }
 
+#clock-applet-button.button.flat:checked:hover,
+#clock-applet-button.button.flat:checked,
 MatePanelApplet .button:checked:hover,
-MatePanelApplet .button:checked,
-MatePanelApplet .button:active:hover,
-MatePanelApplet .button:active {
+MatePanelApplet .button:checked {
 	border-style: solid;
+	border-width: 1px;
+    border-color: @border_color;
 	background-image: linear-gradient(to bottom,
 	                  @button_active_gradient_a,
 	                  @button_active_gradient_b 3px,
@@ -182,36 +189,42 @@ MatePanelApplet .button:active {
 	                  @button_active_gradient_f);
 }
 
+#clock-applet-button.button.flat:hover,
 MatePanelApplet .button:hover {
 	border-style: solid;
+	border-width: 1px;
+    border-color: @border_color;
 	background-image: linear-gradient(to bottom,
 	                                  @button_gradient_color_b,
 	                                  @button_gradient_color_a);
 }
 
+#clock-applet-button.button.flat {
+    border-style: solid;
+    border-color: transparent;
+	border-width: 1px;
+}
+
 /*Wncklist */
-WnckTasklist .button {
-	padding: 0px;
+WnckTasklist .button.flat {
+	padding: 4px 2px;
 	border-radius: 3px;
 	border-width: 1px;
 	border-style: solid;
+    border-color: transparent;
 	text-shadow: none;
 	color: @theme_fg_color;
 	background-color: transparent;
-	background-image: -gtk-gradient (linear,
-	                  left top,
-	                  left bottom,
-	                  from (@button_gradient_a),
-	                  color-stop (0.50, @button_gradient_b),
-	                  color-stop (0.50, @button_gradient_c),
-	                  to (@button_gradient_d));
+	background-image: none;
 }
 
-WnckTasklist .button:checked:hover,
-WnckTasklist .button:checked,
-WnckTasklist .button:active:hover,
-WnckTasklist .button:active {
+WnckTasklist .button.flat:checked:hover,
+WnckTasklist .button.flat:checked {
+	padding: 4px 2px;
 	border-style: solid;
+	border-width: 1px;
+	border-radius: 3px;
+    border-color: @border_color;
 	background-color: transparent;
 	background-image: linear-gradient(to bottom,
 	                  @button_active_gradient_a,
@@ -222,11 +235,28 @@ WnckTasklist .button:active {
 	                  @button_active_gradient_f);
 }
 
-WnckTasklist .button:hover {
+WnckTasklist .button.flat:hover {
+	padding: 4px 2px;
 	border-style: solid;
+	border-width: 1px;
+	border-radius: 3px;
 	background-color: transparent;
 	background-image: linear-gradient(to bottom,
 	                  @button_hover_gradient_c);
+}
+
+/* set selected button WnckSelector */
+.mate-panel-window-menu-menu-bar .menuitem:hover,
+MatePanelApplet > WnckSelector.menubar .menuitem:hover {
+	color: @theme_fg_color;
+	border-style: solid;
+	background-image: linear-gradient(to bottom,
+	                  @button_active_gradient_a,
+	                  @button_active_gradient_b 3px,
+	                  @button_active_gradient_c 4px,
+	                  @button_active_gradient_d 50%,
+	                  @button_active_gradient_e 50%,
+	                  @button_active_gradient_f);
 }
 
 /* set selected button WnckSelector */
@@ -273,7 +303,7 @@ WnckPager {
 WnckPager:hover {
 	background-image: linear-gradient(to bottom,
 		shade (@theme_selected_bg_color, 1.86),
-		shade (@theme_selected_bg_color, 0.8));
+		shade (@theme_selected_bg_color, 1.0));
 	background-color: @theme_base_color;
 }
 
@@ -310,7 +340,7 @@ NaTrayApplet {
     margin: 0px;
 }
 
-.mate-panel-applet-slider .frame .frame{
+.mate-panel-applet-slider .frame .frame {
     background-color:transparent;
     border-style: none;
     box-shadow: none;
