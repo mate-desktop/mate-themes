@@ -41,6 +41,18 @@ AC_SUBST_FILE(media_stock_icons_rc)
 AC_SUBST_FILE(capplet_stock_icons_rc)
 AC_SUBST_FILE(marco_stock_icons_rc)
 
+dnl ***************************************************************************
+dnl *** Greenlaguna checks                                                  ***
+dnl ***************************************************************************
+AC_ARG_ENABLE(GreenLaguna,
+  [  --enable-GreenLaguna   Install the GreenLaguna desktop theme.],
+  [enable_greenlaguna=$enableval], [enable_greenlaguna=no])
+
+AM_CONDITIONAL(BUILD_GREENLAGUNA, test "x$enable_greenlaguna" = "xyes")
+if test "$enable_greenlaguna" = yes; then
+  AC_DEFINE(BUILD_GREENLAGUNA, 1, [Install the GreenLaguna desktop theme.])
+fi
+
 AC_CONFIG_FILES([
 Makefile
 common/Makefile
@@ -247,5 +259,9 @@ echo "
 mate-themes-$VERSION:
 
 	Installation prefix:	${prefix}
+
+	Building extra themes:  ${enable_greenlaguna}
+
+	configuration successfully :)  now type make
 
 "
