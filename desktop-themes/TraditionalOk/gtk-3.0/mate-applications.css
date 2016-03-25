@@ -214,7 +214,7 @@ PanelSeparator {
     font: normal;
 }
 
-#PanelApplet.wnck-pager widget {
+PanelApplet.wnck-applet .wnck-pager {
     background-image: none;
     border-color: transparent;
     background-color: transparent;
@@ -222,14 +222,14 @@ PanelSeparator {
 }
 
 /* selected WnckPager */
-#PanelApplet.wnck-pager widget:selected {
+PanelApplet.wnck-applet .wnck-pager:selected {
     background-image: linear-gradient(to bottom,
         shade (@theme_selected_bg_color, 0.8),
         shade (@theme_selected_bg_color, 1.06));
 }
 
 /* hover of WnckPager */
-#PanelApplet.wnck-pager widget:hover {
+PanelApplet.wnck-applet .wnck-pager:hover {
     background-image: linear-gradient(to bottom,
         shade (@theme_selected_bg_color, 1.86),
         shade (@theme_selected_bg_color, 1.0));

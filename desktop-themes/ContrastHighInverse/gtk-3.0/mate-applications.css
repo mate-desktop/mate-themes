@@ -189,7 +189,7 @@ MatePanelAppletFrameDBus {
     padding: 4px;
 }
 
-#PanelApplet.wnck-pager  {
+PanelApplet.wnck-applet .wnck-pager  {
     background-image: none;
     border-color: transparent;
     background-color: shade(@theme_base_color, 0.9);
@@ -197,19 +197,19 @@ MatePanelAppletFrameDBus {
 }
 
 /* selected WnckPager */
-#PanelApplet.wnck-pager widget:selected {
+PanelApplet.wnck-applet .wnck-pager:selected {
     background-image: linear-gradient(to bottom,
-                                      shade (@theme_bg_color, 0.46),
-                                      shade (@theme_bg_color, 0.3));
+                                      shade (@theme_fg_color, 0.46),
+                                      shade (@theme_fg_color, 0.3));
     background-color: transparent;
     color: @theme_selected_fg_color;
 }
 
 /* hover of WnckPager */
-#PanelApplet.wnck-pager widget:hover {
+PanelApplet.wnck-applet .wnck-pager:hover {
     background-image: linear-gradient(to bottom,
-                                      shade (@theme_bg_color, 0.5),
-                                      shade (@theme_bg_color, 0.66));
+                                      shade (@theme_fg_color, 0.5),
+                                      shade (@theme_fg_color, 0.66));
 }
 
 /* Classic icon style */

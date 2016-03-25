@@ -396,21 +396,21 @@ MatePanelAppletFrameDBus {
 }
 
 /* WnckPager */
-#PanelApplet.wnck-pager widget {
+PanelApplet.wnck-applet .wnck-pager {
     background-image: none;
     background-color: transparent;
     text-shadow: none;
 }
 
 /* selected WnckPager */
-#PanelApplet.wnck-pager widget:selected {
+PanelApplet.wnck-applet .wnck-pager:selected {
     background-image: linear-gradient(to bottom,
                                       @theme_selected_bg_color,
                                       shade (@theme_selected_bg_color, 0.36));
 }
 
 /* prelight of WnckPager */
-#PanelApplet.wnck-pager widget:hover {
+PanelApplet.wnck-applet .wnck-pager:hover {
     background-image: linear-gradient(to bottom,
                                       shade (@theme_selected_bg_color, 0.56),
                                       @theme_selected_bg_color);
