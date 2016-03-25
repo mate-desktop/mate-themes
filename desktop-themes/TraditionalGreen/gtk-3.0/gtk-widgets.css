@@ -2970,7 +2970,8 @@ treeview header button,
 treeview header button:focus,
 treeview header button:checked,
 treeview header button:checked:hover,
-treeview header button:focus:checked {
+treeview header button:focus:checked,
+treeview header button:focus:hover:active {
     border-image: none;
     border-width: 1px;
     border-radius: 0;
