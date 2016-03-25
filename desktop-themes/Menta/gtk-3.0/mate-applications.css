@@ -177,7 +177,7 @@
 
 /* desktop mode */
 .caja-desktop.caja-canvas-item {
-    color: @theme_selected_fg_color;
+    color: @theme_base_color;
     text-shadow: 1px 1px alpha (#000000, 0.8);
 }
 
