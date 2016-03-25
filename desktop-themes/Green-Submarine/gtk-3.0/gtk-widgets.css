@@ -4761,7 +4761,8 @@ dialog scrolledwindow.frame {
     border-radius: 2px;
 }
 
-dialog scrolledwindow.frame viewport .vertical {
+/* credits in GtkAbout windows */
+dialog .dialog-vbox scrolledwindow.frame > viewport.view.frame {
     background-color: shade (@theme_bg_color, 1.10);
 }
 

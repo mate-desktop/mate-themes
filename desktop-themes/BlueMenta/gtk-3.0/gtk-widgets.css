@@ -3369,9 +3369,9 @@ GtkDialog GtkScrolledWindow.frame {
     border-radius: 2px;
 }
 
-dialog scrolledwindow viewport .vertical,
-GtkDialog GtkScrolledWindow.frame GtkViewport .vertical {
-    background-color: shade (@theme_bg_color, 1.07);
+/* credits in GtkAbout windows */
+dialog .dialog-vbox scrolledwindow.frame > viewport.view.frame {
+    background-color: shade (@theme_bg_color, 1.14);
 }
 
 dialog scrolledwindow viewport .vertical expander .vertical.
