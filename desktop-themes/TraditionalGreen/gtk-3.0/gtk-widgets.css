@@ -375,7 +375,7 @@ overshoot.right:backdrop {
                                     right center, 0.5,
                                     to(@overshoot_backdrop_bg_color),
                                     to(rgba(137, 145, 131, 0)));
-    background-size: 5% 100%;
+    background-size: 20% 100%;
     background-repeat: no-repeat;
     background-position: right center;
     background-color: transparent;
@@ -888,35 +888,37 @@ toolbar.horizontal combobox button.combo {
 }
 
 .path-bar button,
-.linked.path-bar button,
+.linked.path-bar > button,
 .path-bar button image,
 .path-bar button label {
-    padding: 4px 2px;
+    padding: 4px 3px;
 }
 
 .path-bar button {
-    border-width: 1px 0px 1px 1px;
+    border-width: 1px;
 }
 
-.linked.path-bar button.toggle,
-.linked.path-bar button.toggle:checked:hover, /* this is really weird */
-.linked.path-bar button.image-button,
-.linked.path-bar button.toggle.image-button,
-.linked.path-bar button.toggle.text-button {
+.linked.path-bar > button.toggle,
+.linked.path-bar > button.toggle:checked:hover, /* this is really weird */
+.linked.path-bar > button.image-button,
+.linked.path-bar > button.toggle.image-button,
+.linked.path-bar > button.toggle.text-button {
     border-width: 1px 1px 1px 0px;
 }
 
-.linked.path-bar button.toggle:first-child,
-.linked.path-bar button.image-button:first-child,
-.linked.path-bar button.toggle.image-button:first-child,
-.linked.path-bar button.toggle.text-button:first-child {
-    border-width: 1px 1px 1px 1px;
+.linked.path-bar > button.toggle:first-child,
+.linked.path-bar > button.image-button:first-child,
+.linked.path-bar > button.toggle.image-button:first-child,
+.linked.path-bar > button.toggle.text-button:first-child,
+.linked.path-bar > button.slider-button:first-child {
+    border-width: 1px;
 }
 
-.linked.path-bar button.toggle:last-child,
-.linked.path-bar button.image-button:last-child,
-.linked.path-bar button.toggle.image-button:last-child,
-.linked.path-bar button.toggle.text-button:last-child {
+.linked.path-bar > button.toggle:last-child,
+.linked.path-bar > button.image-button:last-child,
+.linked.path-bar > button.toggle.image-button:last-child,
+.linked.path-bar > button.toggle.text-button:last-child,
+.linked.path-bar > button.slider-button:last-child {
     border-width: 1px 1px 1px 0px;
 }
 
@@ -2480,7 +2482,6 @@ GtkOverlay.osd {
 }
 
 .osd.button,
-.osd.button:active,
 .osd.button:checked {
     border-color: transparent;
 }
@@ -2981,9 +2982,9 @@ treeview header button:focus:checked {
 
 treeview header button:last-child,
 treeview header button:last-child:focus,
-treeview header button:last-child:active,
-treeview header button:last-child:active:hover,
-treeview header button:last-child:active:focus{
+treeview header button:last-child:checked,
+treeview header button:last-child:hover:active,
+treeview header button:last-child:active:focus {
     border-right: none;
 }
 
