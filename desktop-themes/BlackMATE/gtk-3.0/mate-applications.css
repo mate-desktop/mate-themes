@@ -522,7 +522,7 @@ MatePanelApplet > GtkMenuBar.menubar {
     font: normal;
 }
 /*WnckPager is unnamed in GTK inspector so try this*/
-#PanelPlug>#PanelApplet * {
+PanelApplet.wnck-applet .wnck-pager {
     background-image: none;
     border-color: transparent;
     background-color: transparent;
@@ -530,14 +530,14 @@ MatePanelApplet > GtkMenuBar.menubar {
 }
 
 /* selected WnckPager */
-#PanelPlug>#PanelApplet *:selected {
+PanelApplet.wnck-applet .wnck-pager:selected {
     background-image: linear-gradient(to bottom,
                                       @theme_selected_bg_color,
                                       shade (@theme_selected_bg_color, 0.36));
 }
 
 /* prelight of WnckPager */
-#PanelPlug>#PanelApplet *:hover {
+PanelApplet.wnck-applet .wnck-pager:hover {
     background-image: linear-gradient(to bottom,
                                       @theme_bg_color,
                                       shade (@theme_selected_bg_color, 0.86));
