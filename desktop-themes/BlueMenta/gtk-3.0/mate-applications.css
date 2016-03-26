@@ -659,3 +659,56 @@ EggToolbarEditor.vertical scrolledwindow viewport.frame {
     border-style: none;
 }
 
+/**************
+ * mate-media *
+ **************/
+
+GvcMixerDialog box.horizontal {
+    margin: 0px -3px 0px -3px;
+}
+
+GvcMixerDialog box.horizontal box.horizontal frame {
+    background-color: shade (@theme_bg_color, 1.1);
+    border-color: @borders;
+    padding: 4px 0px;
+}
+
+GvcMixerDialog box.horizontal box.horizontal frame label {
+    padding: 0px 0px 0px 14px;
+}
+
+GvcMixerDialog notebook.frame frame {
+    border-style: none;
+}
+
+GvcMixerDialog > box.dialog-vbox > notebook.frame > header.top > tabs:nth-child(last) {
+    margin: 0px -1px 0px 0px;
+}
+
+/* fix weird borders in application page */
+GvcMixerDialog notebook.frame scrolledwindow.frame {
+    border-style: none;
+}
+
+GvcMixerDialog notebook.frame scrolledwindow.frame viewport.frame {
+    background-color: shade (@theme_bg_color, 1.1);
+}
+
+ /* needed because of 'border-style: none' for application page */
+GvcMixerDialog notebook.frame box.vertical frame scrolledwindow.frame {
+    border-color: @borders;
+    border-style: solid;
+}
+
+GvcMixerDialog notebook.frame box.vertical box.horizontal frame label {
+    padding: 0px 0px 0px 6px;
+}
+
+GvcMixerDialog notebook.frame box.vertical box.horizontal box.horizontal label {
+    padding: 0px 0px 0px 6px;
+}
+
+GvcMixerDialog notebook.frame box.vertical box.horizontal box.horizontal frame box.horizontal box.horizontal label {
+    padding: 0px 0px 0px 10px;
+}
+
