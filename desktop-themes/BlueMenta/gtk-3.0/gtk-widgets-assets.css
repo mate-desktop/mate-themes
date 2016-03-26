@@ -23,10 +23,7 @@
  * Header bar separator  *
  *************************/
 
-headerbar > box > separator.vertical,
-.header-bar > GtkBox > .separator.vertical {
-/*	-GtkWidget-wide-separators: 1;  deprecated */
-/*	-GtkWidget-separator-width: 2px;  deprecated */
+headerbar > box > separator.vertical {
 	background: transparent;
 	border-width: 0 1px 0 1px;
 	border-style: solid;
@@ -139,26 +136,22 @@ radio:indeterminate:disabled {
  * GtkSwitch *
  *************/
 
-switch,
-GtkSwitch.trough {
+switch {
  	background-image: url("assets/switch-off.png");
     background-repeat: no-repeat;
 }
 
-switch:active,
-GtkSwitch.trough:active {
+switch:active {
 	background-image: url("assets/switch-on.png");
     background-repeat: no-repeat;
 }
 
-switch:disabled,
-GtkSwitch.trough:disabled {
+switch:disabled {
 	background-image: url("assets/switch-off-ins.png");
     background-repeat: no-repeat;
 }
 
-switch:active:disabled,
-GtkSwitch.trough:active:disabled {
+switch:active:disabled {
 	background-image: url("assets/switch-on-ins.png");
     background-repeat: no-repeat;
 }
@@ -167,27 +160,15 @@ GtkSwitch.trough:active:disabled {
  * GtkScale's slider *
  *********************/
 scale.horizontal contents:only-child > trough > slider,
-scale slider,
-.scale.slider,
-.scale.slider.horizontal {
+scale slider {
 	background-image: url("assets/slider.png");
     background-repeat: no-repeat;
 }
 
-scale slider:hover,
-.scale.slider:hover,
-.scale.slider.horizontal:hover {
+scale slider:hover {
 	background-image: url("assets/slider-hover.png");
     background-repeat: no-repeat;
 }
-/*
-.scale.slider:active,
-.scale.slider:active:hover,
-.scale.slider.horizontal:active,
-.scale.slider.horizontal:active:hover {
-	background-image: url("assets/slider-hover.png");
-}
-*/
 
 scale slider:disabled,
 scale slider:disabled:hover {
@@ -294,27 +275,22 @@ scale.vertical.scale-has-marks-below slider:disabled:hover {
 /********************************
  * Touch text selection handles *
  ********************************/
-cursor-handle.bottom,
-.cursor-handle.bottom {
+
+cursor-handle.bottom {
 	background-image: url("assets/slider.png");
 }
 
-cursor-handle.top,
-.cursor-handle.top {
+cursor-handle.top {
 	background-image: url("assets/slider.png");
 }
 
 entry cursor-handle.top,
-cursor-handle.top,
-.entry.cursor-handle.top,
-.cursor-handle.top {
+cursor-handle.top {
 	-gtk-icon-source: -gtk-icontheme("selection-start-symbolic");
 }
 
 entry cursor-handle.bottom,
-cursor-handle.bottom,
-.entry.cursor-handle.bottom,
-.cursor-handle.bottom {
+cursor-handle.bottom {
 	-gtk-icon-source: -gtk-icontheme("selection-end-symbolic");
 }
 

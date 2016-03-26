@@ -92,26 +92,13 @@
    padding: 0px 8px 0px 4px;
 }
 
-/* gedit */
-.gedit-headerbar-paned:backdrop {
-	background-image: url("assets/null.png");
-}
-
-.gedit-search-slider * {
-	color: @theme_fg_color;
-}
-
-.gedit-document-panel {
-	background-color: @theme_bg_color;
-}
-
 /*************
  * rhythmbox *
  *************/
 
-.primary-toolbar.toolbar.horizontal RBHeader.horizontal GtkVolumeButton.button.flat,
-.primary-toolbar.toolbar.horizontal RBHeader.horizontal GtkVolumeButton.button.flat:active,
-.primary-toolbar.toolbar.horizontal RBHeader.horizontal GtkVolumeButton.button.flat:hover {
-	padding: 0px 6px;
+toolbar.primary-toolbar.horizontal > toolitem > grid.horizontal > button.scale.flat,
+toolbar.primary-toolbar.horizontal > toolitem > grid.horizontal > button.scale.flat:hover,
+toolbar.primary-toolbar.horizontal > toolitem > grid.horizontal > button.scale.flat:hover:active {
+	padding: 0px 8px;
 }
 

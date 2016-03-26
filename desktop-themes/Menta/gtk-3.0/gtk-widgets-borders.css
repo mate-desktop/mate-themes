@@ -1,8 +1,7 @@
 /* Borders */
 
 /* generic element borders (checked)*/
-entry,
-combobox entry.combo,
+entry,combobox entry.combo,
 combobox button.combo:checked,
 button:checked,
 toolbar.inline-toolbar.vertical button:checked {
@@ -115,13 +114,24 @@ toolbar.osd button:hover {
 }
 
 /* primary toolbar button borders */
-toolbar.primary-toolbar button:hover {
-	border-image: url("borders/button.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
+/* ie. rhythmbox */
+toolbar.primary-toolbar.horizontal > toolitem > .linked > button.raised.image-button {
+	border-image: url("borders/button.png") 3 4 4 4 / 3px 3px 4px 3px stretch;
+	border-style: solid;
+	border-color: transparent;
+}
+
+toolbar.primary-toolbar button:hover,
+toolbar.primary-toolbar.horizontal > toolitem > .linked > button.raised.image-button:hover {
+	border-image: url("borders/button.png") 3 4 4 4 / 3px 3px 4px 3px stretch;
 	background-color: transparent;
 }
 
-toolbar.primary-toolbar button:checked {
-	border-image: url("borders/button-active.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
+toolbar.primary-toolbar button:checked,
+toolbar.primary-toolbar.horizontal > toolitem > .linked > button.raised.image-button:checked,
+toolbar.primary-toolbar.horizontal > toolitem > .linked > button.raised.image-button:checked:hover,
+toolbar.primary-toolbar.horizontal > toolitem > .linked > button.raised.image-button:focus:hover:active {
+	border-image: url("borders/button-active.png") 3 4 4 4 / 3px 3px 4px 3px stretch;
 	background-color: transparent;
 }
 
