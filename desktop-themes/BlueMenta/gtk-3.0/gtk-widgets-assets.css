@@ -141,7 +141,7 @@ switch {
     background-repeat: no-repeat;
 }
 
-switch:active {
+switch:checked {
 	background-image: url("assets/switch-on.png");
     background-repeat: no-repeat;
 }
@@ -151,7 +151,7 @@ switch:disabled {
     background-repeat: no-repeat;
 }
 
-switch:active:disabled {
+switch:checked:disabled {
 	background-image: url("assets/switch-on-ins.png");
     background-repeat: no-repeat;
 }
