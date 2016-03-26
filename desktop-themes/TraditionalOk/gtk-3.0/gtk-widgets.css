@@ -2825,12 +2825,12 @@ switch {
 }
 
 scale progressbar,
-switch:active {
+switch:checked {
     color: @switch_trough_active_color;
 }
 
-switch:active,
-switch:backdrop:active {
+switch:checked,
+switch:backdrop:checked {
     background-image: -gtk-gradient (linear,
                       left top, left bottom,
                       from (@switch_trough_active_gradient_a),

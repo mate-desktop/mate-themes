@@ -3910,8 +3910,8 @@ switch:backdrop {
     text-shadow: 0 1px rgba(0, 0, 0, 0.1);
 }
 
-switch:active,
-switch:backdrop:active {
+switch:checked,
+switch:backdrop:checked {
     background-image: linear-gradient(to bottom,
                                       @theme_selected_bg_color 2px,
                                       shade(@theme_selected_bg_color, 1.2));
@@ -3957,8 +3957,8 @@ switch slider:backdrop {
     margin: -3px 0px -3px -3px;
 }
 
-switch:active slider,
-switch:active slider:backdrop {
+switch:checked slider,
+switch:checked slider:backdrop {
     border-color: transparent;
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
