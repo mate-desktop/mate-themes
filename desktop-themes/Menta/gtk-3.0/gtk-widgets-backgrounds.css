@@ -44,6 +44,8 @@ toolbar button:checked:focus:hover,
 toolbar .raised button:checked:focus:hover,
 toolbar button:checked:focus:hover:active,
 toolbar .raised button:checked:focus:hover:active,
+toolbar.primary-toolbar.horizontal > toolitem > .linked > button.raised.image-button:checked:hover,
+toolbar.primary-toolbar.horizontal > toolitem > .linked > button.raised.image-button:focus:hover:active,
 row trough:hover {
 	background-image: linear-gradient(to bottom,
 		shade (@button_active_gradient_color_a, 1.05),
@@ -72,7 +74,8 @@ toolbar.inline-toolbar button:checked:hover {
 button:hover,
 toolbar button:hover,
 toolbar .raised button:hover,
-toolbar combobox button.combo:hover {
+toolbar combobox button.combo:hover,
+toolbar.primary-toolbar.horizontal > toolitem > .linked > button.raised.image-button:hover {
 	background-color: transparent;
 	background-image: linear-gradient(to bottom,
 		@button_hover_gradient_color_a,
@@ -130,9 +133,7 @@ combobox button.combo:checked {
 		inset 0 2px alpha(@entry_inset, 0.4);
 }
 
-treeview header button,
-column-header.button,
-column-header .button {
+treeview header button {
 	background-image: linear-gradient(to bottom,
 		shade(@entry_background_a, 1.0),
 		@entry_background_b);
