@@ -1,5 +1,6 @@
 THEMES = \
-	Shiny
+	Shiny \
+	HighContrast
 
 THEME_DIR=$(datadir)/themes
 THEME_SUBDIR=metacity-1
