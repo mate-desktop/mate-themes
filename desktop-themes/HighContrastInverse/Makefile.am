@@ -1,4 +1,4 @@
-THEME_NAME=ContrastHighInverse
+THEME_NAME=HighContrastInverse
 THEME_IN_FILES=index.theme.in
 
 @INTLTOOL_THEME_RULE@ 

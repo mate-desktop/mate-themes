@@ -1,4 +1,4 @@
-THEME_NAME=ContrastHighInverse
+THEME_NAME=HighContrastInverse
 
 themedir = $(datadir)/themes/$(THEME_NAME)/gtk-3.0
 
