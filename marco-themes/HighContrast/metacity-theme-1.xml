@@ -84,7 +84,7 @@
 </draw_ops>
 
 <draw_ops name="minimize_button">
-  <line color="gtk:bg[NORMAL]"
+  <line color="gtk:fg[NORMAL]"
         x1="ButtonIPad"
         y1="height - ButtonIPad - ThickLineWidth + 1"
         x2="width - ButtonIPad"
@@ -97,9 +97,9 @@
 </draw_ops>
 
 <draw_ops name="maximize_button">
-  <rectangle color="gtk:bg[NORMAL]" filled="false"
+  <rectangle color="gtk:fg[NORMAL]" filled="false"
              x="ButtonIPad" y="ButtonIPad" width="width-ButtonIPad*2-1" height="height-ButtonIPad*2-1"/>
-  <line color="gtk:bg[NORMAL]" width="3"
+  <line color="gtk:fg[NORMAL]" width="3"
         x1="ButtonIPad" y1="ButtonIPad+1" x2="width-ButtonIPad" y2="ButtonIPad+1"/>
 </draw_ops>
 
@@ -132,11 +132,11 @@
 </draw_ops>
 
 <draw_ops name="close_button">
-  <line color="gtk:bg[NORMAL]"
+  <line color="gtk:fg[NORMAL]"
         x1="ButtonIPad" y1="ButtonIPad"
         x2="width - ButtonIPad - 1" y2="height - ButtonIPad - 1"
         width="1"/>
-  <line color="gtk:bg[NORMAL]"
+  <line color="gtk:fg[NORMAL]"
         x1="ButtonIPad" y1="height - ButtonIPad - 1"
         x2="width - ButtonIPad - 1" y2="ButtonIPad"
 	width="1"/>
