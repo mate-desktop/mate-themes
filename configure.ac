@@ -101,12 +101,6 @@ desktop-themes/Blue-Submarine/gtk-2.0/assets/Makefile
 desktop-themes/Blue-Submarine/gtk-3.0/Makefile
 desktop-themes/Blue-Submarine/gtk-3.0/assets/Makefile
 desktop-themes/Blue-Submarine/metacity-1/Makefile
-desktop-themes/ContrastHigh/Makefile
-desktop-themes/ContrastHigh/gtk-2.0/Makefile
-desktop-themes/ContrastHigh/gtk-2.0/gtkrc
-desktop-themes/ContrastHigh/gtk-3.0/Makefile
-desktop-themes/ContrastHigh/metacity-1/Makefile
-desktop-themes/ContrastHigh/pixmaps/Makefile
 desktop-themes/GreenLaguna/Makefile
 desktop-themes/GreenLaguna/gtk-2.0/Makefile
 desktop-themes/GreenLaguna/gtk-2.0/Styles/Makefile
