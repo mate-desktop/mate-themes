@@ -337,6 +337,14 @@ PanelToplevel.background.horizontal {
     text-shadow: none;
 }
 
+/*stop panel from being spaced above bottom of screen,
+  stop failure of cpufreq-appet to show all labels*/
+
+.mate-panel-menu-bar,
+.mate-panel-menu-bar * {
+	padding: 0px;
+}
+
 /* workaround to avoid unwanted black frames if switching compositor on/off */
 .mate-panel-menu-bar .window-frame.csd.popup {
     box-shadow: none;
