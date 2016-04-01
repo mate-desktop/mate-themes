@@ -5,7 +5,7 @@
 
 /**** Caja Navigation Window ***/
 
-window.background>*>paned>box>paned>box>notebook>stack>box>box>scrolledwindow.frame{ 							
+.caja-navigation-window scrolledwindow.view{ 							
 	background-color: @less_dark_color;
 	color: @theme_fg_color;
     border-color: transparent;
@@ -20,26 +20,26 @@ window.background>*>paned>box>paned>box>notebook>stack>box>box>scrolledwindow.fr
 */
 
 /* don't override gtktooglebutton */
-CajaNavigationWindow .toolbar.horizontal.primary-toolbar .vertical {
+.caja-navigation-window  .toolbar.horizontal.primary-toolbar .vertical {
     background-color: transparent;
 }
 
-/* the small line between sidebar and view */
-/* another unsupported selector and with too short a "widget chain" not to match others
-CajaWindow paned.horizontal {
+
+
+.caja-navigation-window paned.horizontal {
     border-color: transparent;
     background-color: @theme_bg_color;
 }
-*/
 
-window.background>*>paned>box>box>button {
+
+.caja-navigation-window paned>box>box>button {
 	border-image: url("assets/button-border-dark1.svg") 3 / 3px stretch;
 	background-image: linear-gradient(to bottom,
 	                                  shade(@less_dark_color, 1.3),
 	                                  shade(@less_dark_color, 0.4));
 }
 
-window.background>*>paned>box>box>button:hover {
+.caja-navigation-window paned>box>box>button:hover {
 	background-image: -gtk-gradient (radial,
 					0.5 -2.0, 2.0,
 					0.5 -2.0, 3.0,
@@ -50,10 +50,9 @@ window.background>*>paned>box>box>button:hover {
 
 }
 
-window.background>*>paned>box>box>button:checked,
-window.background>*>paned>box>box>button:hover:checked,
-window.background>*>paned>box>box>button:active,
-window.background>*>paned>box>box>button:hover:active {
+.caja-navigation-window paned>box>box>button:hover:checked,
+.caja-navigation-window paned>box>box>button:active,
+.caja-navigation-window paned>box>box>button:hover:active {
 	background-image: linear-gradient(to bottom,
 	                                  shade(@button_gradient_color_b, 0.7),
 	                                  @theme_bg_color 40%,
@@ -61,8 +60,8 @@ window.background>*>paned>box>box>button:hover:active {
 	border-image: url("assets/button-active-border-dark1.svg") 3 / 3px stretch;
 }
 
-window.background>*>paned>box>paned>box>notebook>stack>box>box>scrolledwindow>*>treeview.view header button,
-window.background>*>paned>box>paned>box>notebook>stack>box>box>scrolledwindow>*>treeview.view header button:hover {
+.caja-notebook treeview.view header button,
+.caja-notebook treeview.view header button:hover {
 	border-image: none;
 	border-width: 0px 0px 1px 1px;
 	border-radius: 0;
@@ -70,45 +69,42 @@ window.background>*>paned>box>paned>box>notebook>stack>box>box>scrolledwindow>*>
 	border-color: @less_dark_color;
 }
 
-/* Disable this is it as the defaults seem to march it and the widget chain is too short not to match something else */
-/*
-window.background>*>toolbar {
+
+.caja-navigation-window  toolbar {
 	background-image: linear-gradient(to bottom,
 	                                  shade(@less_dark_color, 0.4),
 	                                  shade(@less_dark_color, 1.36));
 }
 
-window.background>*>toolbar {
+.caja-navigation-window  toolbar {
 	border-radius: 0px;
 }
-*/
-CajaWindow .scrollbar.slider:hover,
-CajaWindow .scrollbar.slider:hover:active,
-CajaWindow .scrollbar.slider.vertical:hover,
-CajaWindow .scrollbar.slider.vertical:hover:active {
+.caja-navigation-window  .scrollbar.slider:hover,
+.caja-navigation-window  .scrollbar.slider:hover:active,
+.caja-navigation-window  .scrollbar.slider.vertical:hover,
+.caja-navigation-window  .scrollbar.slider.vertical:hover:active {
 	border-color: shade(@scroll_slider_color, 1.1);
 }
 
-CajaWindow .scrollbar.button,
-CajaWindow .scrollbar.button.horizontal,
-CajaWindow .scrollbar.button.vertical,
-CajaWindow .scrollbar.button:disabled,
-CajaWindow .scrollbar.button.horizontal:disabled,
-CajaWindow .scrollbar.button.vertical:disabled {
+.caja-navigation-window  .scrollbar.button,
+.caja-navigation-window  .scrollbar.button.horizontal,
+.caja-navigation-window  .scrollbar.button.vertical,
+.caja-navigation-window  .scrollbar.button:disabled,
+.caja-navigation-window  .scrollbar.button.horizontal:disabled,
+.caja-navigation-window  .scrollbar.button.vertical:disabled {
 	background-image: none;
 }
 
-window.background>*>paned>box>statusbar>frame>box>label/*,
-CajaWindow .floating-bar*/ {
+.caja-navigation-window statusbar>frame>box>label,
+.caja-navigation-window  .floating-bar{
 	font: italic;
 }
-/*
-CajaWindow .floating-bar.right,
-CajaWindow .floating-bar.left {
+
+.caja-navigation-window  .floating-bar.right,
+.caja-navigation-window  .floating-bar.left {
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
 }
-*/
 /**** Notebook ***/
 
 .caja-inactive-pane notebook {
@@ -125,72 +121,104 @@ CajaWindow .floating-bar.left {
 }
 
 
-window.background>*>paned>box>paned.horizontal .vertical notebook tab {
+.caja-navigation-window notebook tab {
 	padding: 3px 0px;
 }
 
-window.background>*>paned>box>paned.horizontal .vertical .notebook tab .button.flat {
+.caja-navigation-window .notebook tab .button.flat {
     border-image: none;
 }
 
 /* Caja places bar */
-/* Disable this as it does not seem to change the default and the widget chain is dangerously short 
-window.background>*>paned>box>paned>box>box>button.flat {
+ 
+.caja-pathbar button.flat {
     border-style: none;
     border-image: url("assets/primary-toolbar-button-active-border-dark.svg") 3 / 3px stretch;
     border-radius: 3px;
     padding: 2px 5px;
 }
 
-window.background>*>paned>box>paned>box>box>button.flat:hover {
+.caja-pathbar button.flat:hover {
     border-image: none;
     border-radius: 3px;
     padding: 2px 5px;
 }
-*/
 /**** Sidebar ***/
 
 /* caja sidebar */
-window.background*>paned>box>notebook>stack>scrolledwindow.frame treeview.view {
+
+.caja-side-pane treeview {
+	padding:10px;
+}
+
+.caja-side-pane .cell,
+.caja-side-pane *.cell {
+	color: @theme_text_color;
+}
+
+.caja-side-pane .cell:hover,
+.caja-side-pane *.cell:hover {
+	color: @theme_text_color;
+}
+
+.caja-side-pane .cell:selected,
+.caja-side-pane *.cell:selected {
+	background-image: linear-gradient(to bottom,
+	                                  shade(@less_dark_color, 1.5),
+	                                  shade(@less_dark_color, 0.6));
+	color: @theme_text_color;
+	border-radius: 2px;
+}
+
+.caja-side-pane .cell:selected:focus,
+.caja-side-pane *.cell:selected:focus {
+	color: @theme_text_color;
+	background-image: linear-gradient(to top,
+					 shade(@less_dark_color, 1.5),
+					 shade(@less_dark_color, 0.6));
+}
+.caja-side-pane treeview.view {
     background-color: shade(@theme_bg_color, 1.08);
 }
 
-window.background*>paned>box>notebook>stack>scrolledwindow{
+.caja-side-pane  scrolledwindow{
 		border-width: 0px;
 }
 
 /* moved eject button to left better for overlay scrollbars */
-window.background*>paned>box>notebook>stack>scrolledwindow.frame treeview.view {
+.caja-side-pane treeview.view {
     padding: 0px 4px 0px 0px;
 	border-width: 0px;
 }
 
-window.background*>paned>box>notebook>stack>scrolledwindow scrollbar button {
+.caja-side-pane  scrollbar button {
 	color: transparent;
 }
 
-window.background*>paned>box>notebook>stack>scrolledwindow scrollbar button:hover {
+.caja-side-pane  scrollbar button:hover {
 	color: @theme_fg_color;
 }
 
 
+
 /**** Infos ***/
 
-CajaWindow .question,
-CajaWindow .info,
-CajaTrashBar.info,
+.caja-navigation-window  .question,
+.caja-navigation-window  .info
+/*CajaTrashBar.info,
 CajaXContentBar.info,
-CajaQueryEditor.info {
+CajaQueryEditor.info*/ {
 	background-color: transparent;
 }
 
+/*
 CajaSearchBar.info {
 	border-radius: 0px;
 	background-color: @less_dark_color;
 }
 
-CajaWindow CajaQueryEditor .toolbar,
-CajaWindow .notebook CajaQueryEditor .toolbar {
+.caja-navigation-window  CajaQueryEditor .toolbar,
+.caja-navigation-window  .notebook CajaQueryEditor .toolbar {
 	background-image: none;
 	background-color: transparent;
 	padding: 5px 7px;
@@ -214,41 +242,52 @@ CajaQueryEditor .toolbar .entry:focus {
 	box-shadow: inset 0 -2px alpha(@entry_shadow, 0.04),
 	            inset 0 -1px alpha(@entry_shadow, 0.06);
 }
+*/
 
-.caja-canvas-item,
-EelEditableLabel.entry {
+
+/* view */
+.caja-navigation-window  .caja-canvas-item {
+    color: @theme_fg_color;
 	border-radius: 4px;
 }
 
-/* view */
-window.background>*>paned>box>paned>box>notebook>stack>box>box>scrolledwindow.frame .view .caja-canvas-item {
-    color: @theme_fg_color;
-}
-
-window.background>*>paned>box>paned>box>notebook>stack>box>box>scrolledwindow.frame .view .caja-canvas-item:active,
-window.background>*>paned>box>paned>box>notebook>stack>box>box>scrolledwindow.frame.view .caja-canvas-item:selected {
+.caja-navigation-window  .caja-canvas-item:active,
+.caja-navigation-window  .caja-canvas-item:selected {
     color: @theme_selected_fg_color;
 }
 
 /**** Desktop Drawn ***/
 
-window>*>box>box>box>scrolledwindow>.view .caja-canvas-item {
+.caja-desktop .caja-canvas-item {
 	color: @theme_fg_color;
     text-shadow: 1px 1px alpha (#000000, 0.8);
+	border-radius: 4px;
 }
 
-window>*>box>box>box>scrolledwindow>.view .caja-canvas-item:active {
+.caja-desktop .caja-canvas-item:active {
 	color: @theme_text_color;
 }
 
-window>*>box>box>box>scrolledwindow>.view .caja-canvas-item:selected {
+.caja-desktop .caja-canvas-item:selected {
 	color: @theme_selected_fg_color;
 }
 
-window>*>box>box>box>scrolledwindow>.view .caja-canvas-item:active,
-window>*>box>box>box>scrolledwindow>.view .caja-canvas-item:hover,
-window>*>box>box>box>scrolledwindow>.view .caja-canvas-item:selected {
+.caja-desktop .caja-canvas-item:active,
+.caja-desktop .caja-canvas-item:hover,
+.caja-desktop .caja-canvas-item:selected {
 	text-shadow: none;
+}
+
+/*caja file renaming  (eel-editable-label)*/
+
+.caja-desktop .entry,
+.caja-navigation-window .view .entry{
+	border-radius: 4px;	
+	background-image: linear-gradient(to bottom,
+	                                  shade(@less_dark_color, 0.2),
+	                                  shade(@less_dark_color, 0.5) 10%,
+	                                  @less_dark_color 50%,
+	                                  shade(@less_dark_color, 1.5));
 }
 
 
