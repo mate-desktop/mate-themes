@@ -118,7 +118,7 @@ PanelMenuBar.menubar .menu .menuitem {
 	color: @theme_text_color;
 	border-style: solid;
 	border-width: 1px;
-	border-radius: 3px;
+	border-radius: 0px;
 	border-color: alpha(@theme_bg_color, 0.1);
 	padding: 6px 5px;
 }
@@ -131,7 +131,7 @@ PanelMenuBar.menubar .menu .menuitem:hover {
 	color: @theme_text_color;
 	border-style: solid;
 	border-width: 1px;
-	border-radius: 3px;
+	border-radius: 0px;
 	border-color: alpha(@theme_selected_bg_color, 0.1);
 	padding: 6px 5px;
 }
