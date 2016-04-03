@@ -998,61 +998,30 @@ button.color {
 .linked.path-bar > button:checked:hover,
 .linked.path-bar > button:checked:hover:active {
     padding: 7px;
+    border-color: transparent;
 }
 
 /* slider (left/right arrow) button */
-.linked.path-bar > button.image-button {
+.linked.path-bar > button.slider-button:first-child {
     border-width: 1px 0px 1px 1px;
+    border-radius: 4px 0px 0px 4px;
+    padding: 7px 1px;
+}
+
+.linked.path-bar > button.slider-button:last-child {
+    border-width: 1px 1px 1px 0px;
+    border-radius: 0px 4px 4px 0px;
+    padding: 7px 1px;
+}
+
+.titlebar .path-bar > button.slider-button:disabled {
     box-shadow: none;
 }
 
-.linked.path-bar > button.image-button:first-child {
-    border-width: 1px 0px 1px 1px;
-    box-shadow: inset  0px  1px 0 0 alpha(shade(@button_border, 1.00), 0.70),
-                inset  1px  0px 0 0 alpha(shade(@button_border, 0.94), 0.80),
-                inset -1px  0px 0 0 alpha(shade(@button_border, 0.94), 0.80),
-                inset  0px -1px 0 0 alpha(shade(@button_border, 0.88), 0.90);
-}
-
-.linked.path-bar > button.image-button:first-child:hover {
-    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
-                inset  1px  0px shade(@selected_bg_color, 0.97),
-                inset -1px  0px shade(@selected_bg_color, 0.93),
-                inset  0px -1px shade(@selected_bg_color, 0.93);
-}
-
-.linked.path-bar > button.image-button:last-child {
-    border-width: 1px 1px 1px 0px;
-    box-shadow: inset  0px  1px 0 0 alpha(shade(@button_border, 1.00), 0.70),
-                inset -1px  0px 0 0 alpha(shade(@button_border, 0.94), 0.80),
-                inset  0px -1px 0 0 alpha(shade(@button_border, 0.88), 0.90);
-}
-
-.linked.path-bar > button.image-button:last-child:hover {
-    border-width: 1px 1px 1px 0px;
-    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
-                inset -1px  0px shade(@selected_bg_color, 0.93),
-                inset  0px -1px shade(@selected_bg_color, 0.93);
-}
-
-.linked.path-bar > button.toggle,
-.linked.path-bar > button.toogle.button-image {
-    border-width: 1px 0px 1px 0px;
+.titlebar .path-bar > button.toggle,
+.titlebar .path-bar > button.toggle:hover {
     border-radius: 0px;
-    box-shadow: inset  0px  1px 0 0 alpha(shade(@button_border, 1.00), 0.70),
-                inset -1px  0px 0 0 alpha(shade(@button_border, 0.94), 0.80),
-                inset  0px -1px 0 0 alpha(shade(@button_border, 0.88), 0.90);
-}
-
-.linked.path-bar > button.toggle:hover,
-.linked.path-bar > button.toogle.button-image:hover,
-.linked.path-bar > button.toggle:checked,
-.linked.path-bar > button.toogle.button-image:checked {
-    border-width: 1px 0px 1px 0px;
-    border-radius: 0px;
-    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
-                inset -1px  0px shade(@selected_bg_color, 0.93),
-                inset  0px -1px shade(@selected_bg_color, 0.93);
+    border-width: 1px 0px;
 }
 
 /***************************/
