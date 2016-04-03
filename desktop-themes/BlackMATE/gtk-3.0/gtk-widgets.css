@@ -1349,7 +1349,7 @@ scale.vertical progress {
 combobox{
 	/* align with side buttons */
 	padding: 0;
-	-GtkComboBox-shadow-type: none;
+/*	-GtkComboBox-shadow-type: none; */
 	color: @theme_fg_color;
 	text-shadow: none;
 }
@@ -2745,7 +2745,7 @@ header-bar.frame titlebar  button.image-button.titlebutton:hover:backdrop {
 }
 
 
-decoration{
+.background.csd decoration {
     border-radius: 7px 7px 0px 0px;
     border-width: 0px;
     box-shadow: 0 0 0 2px @wm_csd_border_color, 0 2px 8px 3px @wm_shadow;
@@ -2753,18 +2753,31 @@ decoration{
    margin: 10px;
 }
 
+.background.csd decoration:backdrop {
+    background: @theme_bg_color;
+    border-style: solid;
+    border-radius: 7px 7px 0px 0px;
+    border-width: 1px;
+    border-color: #595959;
+    padding: 0px;
+}
+
 .background.ssd decoration {
     box-shadow: 0 0 0 2px @wm_csd_border_color, 0 2px 8px 3px @wm_shadow;
     /* this is used for the resize cursor area */
-  margin: 1px;
+  margin: 2px;
 }
+
 /*fix for CSD apps w/o compositing */
 .solid-csd decoration {
-    box-shadow: none;
+    border-style: solid;
+    border-radius: 0px;
 	border-width: 1px;
-	border-image: none;
-	border-color: @theme_bg_color;
-	margin: 1px;
+	border-color: #595959;
+    box-shadow: none;
+	background: @theme_bg_color;
+	margin: 2px;
+	padding: 0px;
 }
 
 .csd.popup decoration {
@@ -2779,7 +2792,13 @@ decoration{
 
 tooltip.csd decoration {
     border-radius: 0px;
-    box-shadow: none; }
+    box-shadow: none;
+}
+
+messagedialog.csd decoration {
+    border-radius: 7px;
+    box-shadow: none;
+}
 
 /****************************
  * Suggested action buttons *
