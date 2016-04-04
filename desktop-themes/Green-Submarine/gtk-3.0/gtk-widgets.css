@@ -4686,6 +4686,7 @@ GtkOverlay.osd {
 .osd.button:hover,
 .osd .button:hover,
 .osd .linked .button:hover {
+    padding: 4px;
     background-image: linear-gradient(to bottom,
                                       @osd_button_bg_hover_a,
                                       @osd_button_bg_hover_b 68%,

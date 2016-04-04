@@ -683,6 +683,16 @@ YelpWindow .horizontal.toolbar.primary-toolbar .button.image-button:last-child {
 }
 
 /* gnome-weather */
+#weather-page.frame.flat {
+    padding: 0px;
+    border-radius: 0px;
+}
+
+#weather-page.frame.flat > .frame.flat {
+    border-radius: 0px;
+    border-color: transparent;
+}
+
 Gjs_WeatherWidget.frame.flat GtkStack GtkScrolledWindow .frame {
     background-color: transparent;
     background-image: linear-gradient(to bottom,
