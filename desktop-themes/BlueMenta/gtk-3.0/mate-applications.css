@@ -310,7 +310,6 @@ MatePanelAppletFrameDBus {
 /* set menubar menuitem separator , does not work */
 .mate-panel-menu-bar menubar menu menuitem separator {
     color: @menu_separator;
-/*    -GtkMenuItem-horizontal-padding: 0; deprecated */
 }
 
 /* set normal menubar menuitem */
@@ -371,7 +370,7 @@ MatePanelAppletFrameDBus {
     border-image: none;
     border-style: solid;
     border-width: 0px;
-    border-radius: 5px;
+    border-radius: 3px;
     text-shadow: none;
     -GtkWidget-window-dragging: true;
     padding: 4px 4px 4px 4px;
@@ -389,7 +388,7 @@ MatePanelAppletFrameDBus {
     border-image: none;
     border-style: solid;
     border-width: 0px;
-    border-radius: 5px;
+    border-radius: 3px;
     text-shadow: none;
     -GtkWidget-window-dragging: true;
     padding: 4px 4px 4px 4px;
