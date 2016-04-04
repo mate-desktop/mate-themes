@@ -2873,7 +2873,7 @@ toolbar.primary-toolbar entry.progressbar {
 /****************************
  * Inline toolbars          *
  ****************************
- * Buttons + dialog open *
+ * Buttons + dialog open    *
  ****************************/
 
 toolbar.inline-toolbar {
@@ -2921,6 +2921,7 @@ toolbar.inline-toolbar button:hover:active,
 toolbar.inline-toolbar button:checked,
 toolbar.inline-toolbar button:checked:hover,
 toolbar.inline-toolbar button:checked:hover:active {
+    border-radius: 0px;
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (shade(@button_base, 0.50)),
@@ -2935,6 +2936,7 @@ toolbar.inline-toolbar button:checked:hover:active {
 }
 
 toolbar.inline-toolbar button:hover {
+    padding: 2px 6px;
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (shade(@button_base, 1.03)),
@@ -2956,20 +2958,22 @@ toolbar.inline-toolbar button *:disabled {
     -gtk-icon-shadow: none;
 }
 
-toolbar.inline-toolbar button *:hover {
+toolbar.inline-toolbar button:hover {
     color: @theme_text_color;
     text-shadow: 0 1px @theme_shadow_color;
     -gtk-icon-shadow: 1px 1px @theme_shadow_color;
 }
 
-toolbar.inline-toolbar button *:active,
-toolbar.inline-toolbar button *:checked {
+toolbar.inline-toolbar button:checked {
     color: @theme_selected_fg_color;
     text-shadow: 0 1px @theme_selected_shadow_color;
     -gtk-icon-shadow: 1px 1px @theme_selected_shadow_color;
 }
 
-/* Stack switcher */
+/******************
+ * Stack switcher *
+ ******************/
+
 stackswitcher > button > label,
 headerbar stackswitcher > button.titlebutton > label,
 headerbar.titlebar stackswitcher > button.titlebutton > label,
