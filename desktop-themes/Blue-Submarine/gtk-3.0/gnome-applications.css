@@ -13,359 +13,29 @@
      border-radius: 0px 4px 4px 0px;
 }
 
-EphyWindow {
-    background-image: -gtk-gradient (linear,
-                                     left top, left bottom,
-                                     from (shade(@theme_bg_dark_color, 0.95)),
-                                     to   (shade(@theme_bg_dark_color, 0.92)));
-}
-
-/* gedit line numbers */
-GeditView {
-    background-color: shade (@bg_color, 1.07);
-}
-
-GeditViewFrame .gedit-search-slider {
-    background-image: none;
-    background-color: @theme_bg_color;
-    padding: 6px;
-    border-color: shade (@theme_bg_color, 0.72);
-    border-radius: 0 0 3px 3px;
-    border-width: 0 1px 1px 1px;
-    border-style: solid;
-}
-
-GeditViewFrame .gedit-search-slider .not-found {
-    color: @error_fg_color;
-    background-image: none;
-    background-color: @error_bg_color;
-}
-
-TerminalWindow .menubar,
-EphyToolbar.toolbar.menubar,
-GeditWindow .primary-toolbar.toolbar {
-    /* line 3D  (dark) */
-    box-shadow: none;
-    /* linea 3D (clear) */
-    border-bottom-width:  0px;
-}
-
-EphyToolbar.toolbar .raised .button *:hover,
-EphyToolbar.toolbar .raised.button *:hover,
-EphyToolbar.toolbar .raised .button *:active,
-EphyToolbar.toolbar .raised.button *:active,
-EphyToolbar.toolbar .raised .button *:active:hover,
-EphyToolbar.toolbar .raised.button *:active:hover,
-EphyToolbar.toolbar .raised .button *:checked,
-EphyToolbar.toolbar .raised.button *:checked,
-EphyToolbar.toolbar .raised .button *:checked:hover,
-EphyToolbar.toolbar .raised.button *:checked:hover {
-    color: @theme_text_dark_color;
-    text-shadow: 0px 1px @theme_shadow_dark_color;
-}
-
-TerminalWindow,
-TerminalWindow .notebook {
-    background-image: -gtk-gradient (linear,
-                                     left top, left bottom,
-                                     from (shade(@theme_bg_dark_color, 0.95)),
-                                     to   (shade(@theme_bg_dark_color, 0.95)));
-}
-
-TerminalWindow .notebook,
-GeditWindow .notebook,
-EphyNotebook.notebook {
-    border-style: solid;
-    border-width: 1px 0px 0px 0px;
-    border-radius: 0px;
-    border-top-color: @theme_mdi_border_color;
-    border-image: none;
-    background-color: shade(@theme_bg_color, 0.97);
-    background-image: none;
-}
-
-GeditWindow .notebook tab,
-EphyNotebook.notebook tab {
-    background-image: -gtk-gradient (linear,
-                                     left top, left bottom,
-                                     from (shade(@theme_bg_dark_color, 0.95)),
-                                     to   (shade(@theme_bg_dark_color, 0.93)));
-    border-top-color: @theme_mdi_border_color;
-}
-
-TerminalWindow .notebook tab {
-    background-image: -gtk-gradient (linear,
-                                     left top, left bottom,
-                                     from (shade(@theme_bg_dark_color, 1.00)),
-                                     to   (shade(@theme_bg_dark_color, 0.97)));
-    border-top-color: shade(@theme_mdi_border_color, 1.05);
-}
-
-TerminalWindow .notebook tab,
-GeditWindow .notebook tab,
-EphyNotebook.notebook tab {
-    padding: 2px 4px;
-    border-width: 1px 1px 0px 1px;
-    border-style: solid;
-    border-left-color:   @theme_mdi_border_color;
-    border-bottom-color: @theme_mdi_border_color;
-    border-right-color:  @theme_mdi_border_color;
-    border-image: none;
-    box-shadow: inset  0px  1px @theme_highlight_color,
-                inset  1px  0px @theme_highlight_color,
-                inset -1px  0px @theme_highlight_color;
-}
-
-GeditWindow.notebook tab.top.
-EphyNotebook.notebook tab.top {
-    padding: 3px 4px;
-}
-
-TerminalWindow .notebook tab:active,
-GeditWindow .notebook tab:active,
-EphyNotebook.notebook tab:active,
-TerminalWindow .notebook tab:checked,
-GeditWindow .notebook tab:checked,
-EphyNotebook.notebook tab:checked {
-    background-image: -gtk-gradient (linear,
-                                     left top, left bottom,
-                                     from (shade(@theme_mdi_bg_color, 0.90)),
-                                     color-stop (0.66, shade(@theme_mdi_bg_color, 0.95)),
-                                     to (shade(@theme_mdi_bg_color, 1.03)));
-    border-width: 1px 1px 0px 1px;
-    border-style: solid; 
-    /* border-radius: 4px; */
-    border-top-color:   shade(@theme_mdi_border_color, 0.85);
-    border-left-color:  shade(@theme_mdi_border_color, 0.88);
-    border-right-color: shade(@theme_mdi_border_color, 0.88);
-    border-image: none;
-    box-shadow: inset  0px  4px alpha(#000, 0.01),
-                inset  0px  3px alpha(#000, 0.02),
-                inset  0px  2px alpha(#000, 0.03),
-                inset  0px  1px alpha(#000, 0.04),
-                inset  4px  0px alpha(#000, 0.01),
-                inset  3px  0px alpha(#000, 0.02),
-                inset  2px  0px alpha(#000, 0.03),
-                inset  1px  0px alpha(#000, 0.04),
-                inset -4px  0px alpha(#000, 0.01),
-                inset -3px  0px alpha(#000, 0.02),
-                inset -2px  0px alpha(#000, 0.03),
-                inset -1px  0px alpha(#000, 0.04);
-}
-
-GeditWindow .notebook tab:first-child,
-EphyNotebook.notebook tab:first-child,
-GeditWindow .notebook tab:first-child:active,
-EphyNotebook.notebook tab:first-child:active,
-TerminalWindow .notebook tab:first-child,
-TerminalWindow .notebook tab:first-child:active,
-GeditWindow .notebook tab:first-child:checked,
-EphyNotebook.notebook tab:first-child:checked,
-TerminalWindow .notebook tab:first-child:checked {
-    border-left-width: 0px;
-    border-radius: 0px;
-}
-
-TerminalWindow .notebook tab:last-child,
-TerminalWindow .notebook tab:last-child:active {
-    border-right-width: 0px;
-    border-radius: 0px;
-}
-
-/* to compensate for the use of tabs-themed-dark.css */
-GeditWindow .notebook tab:first-child,
-EphyNotebook.notebook tab:first-child,
-TerminalWindow .notebook tab:first-child,
-GeditWindow .notebook tab:last-child,
-EphyNotebook.notebook tab:last-child,
-TerminalWindow .notebook tab:last-child {
-    border-left-color: @theme_mdi_border_color;
-    border-right-color: @theme_mdi_border_color;
-}
-
-GeditWindow .notebook tab:first-child:active,
-EphyNotebook.notebook tab:first-child:active,
-TerminalWindow .notebook tab:first-child:active,
-GeditWindow .notebook tab:last-child:active,
-EphyNotebook.notebook tab:last-child:active,
-TerminalWindow .notebook tab:last-child:active,
-GeditWindow .notebook tab:first-child:checked,
-EphyNotebook.notebook tab:first-child:checked,
-TerminalWindow .notebook tab:first-child:checked,
-GeditWindow .notebook tab:last-child:checked,
-EphyNotebook.notebook tab:last-child:checked,
-TerminalWindow .notebook tab:last-child:checked {
-    border-left-color: shade(@theme_mdi_border_color, 0.88);
-    border-right-color: shade(@theme_mdi_border_color, 0.88);
-}
-
-GeditWindow .notebook tab:first-child,
-EphyNotebook.notebook tab:first-child,
-GeditWindow .notebook tab:first-child:hover,
-EphyNotebook.notebook tab:first-child:hover,
-GeditWindow .notebook tab:first-child:active,
-EphyNotebook.notebook tab:first-child:active,
-GeditWindow .notebook tab:first-child:checked,
-EphyNotebook.notebook tab:first-child:checked {
-    border-radius: 0px;
-}
-
-GeditWindow .notebook tab:last-child,
-EphyNotebook.notebook tab:last-child,
-GeditWindow .notebook tab:last-child:hover,
-EphyNotebook.notebook tab:last-child:hover,
-GeditWindow .notebook tab:last-child:active,
-EphyNotebook.notebook tab:last-child:active,
-GeditWindow .notebook tab:last-child:checked,
-EphyNotebook.notebook tab:last-child:checked {
-    border-radius: 0px;
-}
-
-TerminalWindow .notebook tab:only-child {
-    border-radius: 0px;
-}
-
-GeditWindow .notebook tab:only-child,
-GeditWindow .notebook tab:only-child:active,
-GeditWindow .notebook tab:only-child:hover,
-GeditWindow .notebook tab:only-child:checked,
-EphyNotebook.notebook tab:only-child {
-    border-radius: 0px;
-}
-
-TerminalWindow .notebook tab GtkLabel,
-EphyNotebook.notebook tab GtkLabel,
-GeditWindow .notebook tab GtkLabel,
-GeditWindow.notebook tab GtkLabel {
-    padding: 1px 4px;
-    color: @theme_fg_dark_color;
-    text-shadow: 0px 1px @theme_shadow_dark_color;
-}
-
-/* gnome-terminal */
-TerminalScreen {
-    -TerminalScreen-background-darkness: 0.95;
-    background-color: @terminal_background_color;
-    color: @selected_fg_color;
-}
-
 /*************
  * rhythmbox *
  *************/
 
-.primary-toolbar.toolbar.horizontal RBHeader.horizontal GtkVolumeButton.button.flat,
-.primary-toolbar.toolbar.horizontal RBHeader.horizontal GtkVolumeButton.button.flat:active,
-.primary-toolbar.toolbar.horizontal RBHeader.horizontal GtkVolumeButton.button.flat:hover {
+toolbar.primary-toolbar.horizontal > toolitem > grid.horizontal > button.scale.flat,
+toolbar.primary-toolbar.horizontal > toolitem > grid.horizontal > button.scale.flat:hover,
+toolbar.primary-toolbar.horizontal > toolitem > grid.horizontal > button.scale.flat:hover:active {
 	padding: 0px 8px;
 }
 
-RBDisplayPageTree.frame {
-    border-width: 0px 1px 1px 0px;
-}
-
-RBDisplayPageTree .cell,
-RBDisplayPageTree .cell:hover {
-    /* background-image: none; */
-    background-color: @sidebar_background;
-}
-
-RBSource .toolbar {
-    background-image: none;
-    background-color: transparent;
-    padding: 2px 4px;
-}
-
-RBSource .toolbar .button {
-    padding: 0px 3px;
-    color:  shade(@theme_fg_color, 0.95);
-    text-shadow: 0 1px @theme_shadow_color;
-}
-
-RBSource .toolbar .button *:hover {
-    color:  shade(@theme_text_color, 0.95);
-    text-shadow: 0 1px @theme_shadow_color;
-}
-
-RBSource .toolbar .button *:active,
-RBSource .toolbar .button *:active:hover,
-RBSource .toolbar .button *:checked,
-RBSource .toolbar .button *:checked:hover {
-    color:  shade(@theme_text_color, 0.95);
-    text-shadow: 0 1px @theme_shadow_color;
-}
-
-ApDocView, /* Abiword */
-EogScrollView, /* Eog */
-CheeseThumbView /* Cheese */
-{
-    background-color: @chrome_bg_color;
-}
-
-.documents-counter {
-    background-image: url('assets/dnd-counter.svg');
-    background-size: contain;
-    background-color: transparent;
-    color: @theme_base_color;
-    font: bold;
-}
-
-RemminaConnectionWindow .toolbar,
-RemminaMain .toolbar {
-    background-image: -gtk-gradient (linear,
-                                     left top, left bottom,
-                                     from (shade(@theme_bg_dark_color, 1.00)),
-                                     to   (shade(@theme_bg_dark_color, 0.95)));
-}
-
-RemminaMain .toolbar {
-    border-bottom-color:  shade(@theme_bg_dark_color, 0.73);
-    border-image: none;
-}
-
-RemminaConnectionWindow .toolbar {
-    border-width: 0px;
-    border-style: none;
-    border-image: none;
-}
-
-/* dconf editor sidebar */
-DConfDirView.view {
-    background-color: shade (@theme_bg_color, 1.08);
-}
-
-/* yelp without headerbar, since gtk+-3.18 */
-
-YelpWindow .horizontal.toolbar.primary-toolbar {
-    padding: 3px;
-}
-
-YelpWindow .horizontal.toolbar.primary-toolbar .button.image-button {
-    padding: 6px;
-}
-
-YelpWindow .horizontal.toolbar.primary-toolbar .button.image-button:focus {
-    box-shadow: none;
-}
-
-YelpWindow .horizontal.toolbar.primary-toolbar .button.image-button:hover {
-    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
-                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
-}
-
-YelpWindow .horizontal.toolbar.primary-toolbar .button.image-button:first-child {
-    border-radius: 5px 0px 0px 5px;
-    border-right-width: 0px;
-}
-
-YelpWindow .horizontal.toolbar.primary-toolbar .button.image-button:last-child {
-    border-radius: 0px 5px 5px 0px;
-    border-left-width: 0px;
-}
-
 /* gnome-weather */
-Gjs_WeatherWidget.frame.flat GtkStack GtkScrolledWindow .frame {
+#weather-page {
+    padding: 0px;
+    margin: -2px -2px -2px 0px;
+}
+
+#weather-page > frame {
+    border-radius: 0px;
+    margin: 0px 0px 0px -1px;
+    border-color: transparent;
+}
+
+#weather-page stack > scrolledwindow > .frame {
     background-color: transparent;
     background-image: linear-gradient(to bottom,
                                       alpha(shade(@theme_selected_bg_color, 1.2), 0.1),
@@ -373,25 +43,21 @@ Gjs_WeatherWidget.frame.flat GtkStack GtkScrolledWindow .frame {
     border-color: @osd_button_border;
 }
 
-Gjs_WeatherWidget.frame.flat .frame.flat.weather-clear .linked.stack-switcher.osd .button:hover,
-Gjs_WeatherWidget.frame.flat .frame.flat.weather-clear .linked.stack-switcher.osd .button:checked,
-Gjs_WeatherWidget.frame.flat .frame.flat.weather-fog .linked.stack-switcher.osd .button:checked,
-Gjs_WeatherWidget.frame.flat .frame.flat.weather-few-clouds .linked.stack-switcher.osd .button:checked,
-Gjs_WeatherWidget.frame.flat .frame.flat.weather-clear GtkStack GtkScrolledWindow .frame {
+#weather-page frame.weather-clear stack > scrolledwindow > .frame {
     color: @theme_fg_color;
     text-shadow: none;
 }
 
-Gjs_WeatherWidget.frame.flat .frame.flat.weather-clear .linked.stack-switcher.osd .button:hover {
+#weather-page frame.weather-few-clouds-night .linked.stack-switcher.osd > button:checked,
+#weather-page frame.weather-few-clouds-night stack > scrolledwindow > .frame label,
+#weather-page frame.weather-clear-night .linked.stack-switcher.osd > button:checked,
+#weather-page frame.weather-clear-night stack > scrolledwindow > .frame label,
+#weather-page frame.weather-storm .linked.stack-switcher.osd > button:checked,
+#weather-page frame.weather-storm stack > scrolledwindow > .frame label,
+#weather-page frame.weather-showers .linked.stack-switcher.osd > button:checked,
+#weather-page frame.weather-showers stack > scrolledwindow > .frame label,
+#weather-page frame.weather-overcast .linked.stack-switcher.osd > button:checked,
+#weather-page frame.weather-overcast stack > scrolledwindow > .frame label {
     color: @osd_button_fg_hover;
-}
-
-Gjs_WeatherWidget.frame.flat .frame.flat.weather-clear-night .linked.stack-switcher.osd .button:hover,
-Gjs_WeatherWidget.frame.flat .frame.flat.weather-clear-night GtkStack GtkScrolledWindow .frame,
-Gjs_WeatherWidget.frame.flat .frame.flat.weather-storm GtkStack GtkScrolledWindow .frame,
-Gjs_WeatherWidget.frame.flat .frame.flat.weather-showers GtkStack GtkScrolledWindow .frame,
-Gjs_WeatherWidget.frame.flat .frame.flat.weather-few-clouds-night GtkStack GtkScrolledWindow .frame,
-Gjs_WeatherWidget.frame.flat .frame.flat.weather-overcast GtkStack GtkScrolledWindow .frame {
-    color: @osd_button_fg_active;
 }
 
