@@ -4794,21 +4794,24 @@ GtkOverlay.osd {
 
 .osd.toolbar .button,
 .osd.toolbar .button:hover,
-.osd.toolbar .linked .button {
+.osd.toolbar .linked .button,
+.osd.toolbar .linked .button:focus:hover:active {
     padding: 6px;
     border-width: 1px;
     border-radius: 5px;
 }
 
 .osd.toolbar .button:first-child,
-.osd.toolbar .linked .button:first-child {
+.osd.toolbar .linked .button:first-child,
+.osd.toolbar .linked .button:focus:hover:active:first-child {
     border-radius: 5px 0 0 5px;
     border-width: 1px 0 1px 1px;
     box-shadow: inset -1px 0 @osd_button_inset;
 }
 
 .osd.toolbar .button:last-child,
-.osd.toolbar .linked .button:last-child {
+.osd.toolbar .linked .button:last-child,
+.osd.toolbar .linked .button:focus:hover:active:last-child {
     box-shadow: none;
     border-radius: 0 5px 5px 0;
     border-width: 1px 1px 1px 0;
@@ -4816,6 +4819,7 @@ GtkOverlay.osd {
 
 .osd.toolbar .button:only-child,
 .osd.toolbar .linked .button:only-child,
+.osd.toolbar .linked .button:focus:hover:active:only-child,
 .osd.toolbar GtkToolButton .button,
 .osd.toolbar GtkToolButton:only-child .button,
 .osd.toolbar GtkToolButton:last-child .button,
@@ -4971,6 +4975,13 @@ GtkProgressBar.osd.progressbar {
     box-shadow: 0 1px 5px @wm_shadow;
     text-shadow: none;
     icon-shadow: none;
+}
+
+.popover .label,
+.popover .label:hover,
+.popover .label:focus {
+    color: @theme_fg_dark_color;
+    text-shadow: none;
 }
 
 .popover > .list,
