@@ -3261,6 +3261,28 @@ GtkOverlay.osd {
 		);
 }
 
+/* ie. gnome-weather */
+.linked.stack-switcher.osd .button {
+    border-width: 1px 1px 1px 0px;
+    border-radius: 5px;
+    color: @theme_fg_color;
+    text-shadow: none;
+}
+
+.linked.stack-switcher.osd .button:checked {
+	color: @osd_button_fg_active;
+}
+
+.linked.stack-switcher.osd .button:first-child {
+    border-width: 1px;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.linked.stack-switcher.osd .button:last-child {
+    border-width: 1px 1px 1px 0px;
+    border-radius: 0px 5px 5px 0px;
+}
+
 /* left/right button box */
 .osd.toolbar .horizontal.linked {
     background-image: linear-gradient(to left,

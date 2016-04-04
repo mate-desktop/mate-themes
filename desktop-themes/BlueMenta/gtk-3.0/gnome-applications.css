@@ -53,3 +53,20 @@
 	padding: 0px 6px;
 }
 
+/*****************
+ * gnome-weather *
+ *****************/
+
+#weather-page .frame.weather-few-clouds-night .linked.stack-switcher.osd > .button,
+#weather-page .frame.weather-few-clouds-night Gtkstack .frame .label,
+#weather-page .frame.weather-clear-night .linked.stack-switcher.osd > .button,
+#weather-page .frame.weather-clear-night Gtkstack .frame .label,
+#weather-page .frame.weather-storm .linked.stack-switcher.osd > .button,
+#weather-page .frame.weather-storm Gtkstack .frame .label,
+#weather-page .frame.weather-showers .linked.stack-switcher.osd > .button,
+#weather-page .frame.weather-showers Gtkstack .frame .label,
+#weather-page .frame.weather-overcast .linked.stack-switcher.osd > .button,
+#weather-page .frame.weather-overcast Gtkstack .frame .label {
+	color: @osd_button_fg;
+}
+
