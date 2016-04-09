@@ -309,3 +309,7 @@ na-tray-applet {
     border-width: 2px;
 }
 
+.lock-dialog notebook {
+    background-color: shade (@theme_bg_color, 1.0);
+}
+
