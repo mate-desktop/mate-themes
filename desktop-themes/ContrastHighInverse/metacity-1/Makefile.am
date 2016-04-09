@@ -1,4 +1,4 @@
-THEME_NAME=HighContrastInverse
+THEME_NAME=ContrastHighInverse
 
 themedir = $(datadir)/themes/$(THEME_NAME)/metacity-1
 

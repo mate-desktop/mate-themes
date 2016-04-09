@@ -6,9 +6,9 @@ SUBDIRS = \
 	BlackMATE \
 	BlueMenta \
 	Blue-Submarine \
+	ContrastHighInverse \
 	$(greenlaguna_SUBDIR) \
 	Green-Submarine \
-	HighContrastInverse \
 	Menta \
 	TraditionalGreen \
 	TraditionalOk
@@ -17,9 +17,9 @@ DIST_SUBDIRS = \
 	BlackMATE \
 	BlueMenta \
 	Blue-Submarine \
+	ContrastHighInverse \
 	GreenLaguna \
 	Green-Submarine \
-	HighContrastInverse \
 	Menta \
 	TraditionalGreen \
 	TraditionalOk
