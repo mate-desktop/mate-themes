@@ -832,3 +832,22 @@ EomThumbNav .button.flat:hover:last-child {
 EomThumbNav .button.flat:disabled {
     background-image: none;
 }
+
+/* mate-screensaver lock dialog */
+
+.lock-dialog,
+.lock-dialog frame {
+    border-radius: 6px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: @wm_csd_solid_border_color;
+    /* not sure if box-shadow works here */
+    box-shadow: 0 0 0 1px @wm_border, 0 2px 8px 3px @wm_shadow;
+    margin: 4px;
+}
+
+.lock-dialog notebook {
+    border-style: none;
+    background-color: shade (@theme_bg_color, 1.0);
+}
+
