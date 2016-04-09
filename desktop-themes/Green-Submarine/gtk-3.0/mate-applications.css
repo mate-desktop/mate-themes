@@ -907,3 +907,24 @@ GvcMixerDialog notebook.frame box.vertical box.horizontal box.horizontal frame b
     border-color: transparent;
 }
 
+/* mate-screensaver lock dialog */
+
+.lock-dialog {
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: shade(@button_border, 1.0);
+    /* not sure if box-shadow works here */
+    box-shadow: 0 0 0 1px @wm_border, 0 2px 8px 3px @wm_shadow;
+}
+
+.lock-dialog frame {
+    border-radius: 10px;
+    border-style: none;
+    border-width: 0px;
+}
+
+.lock-dialog notebook {
+    background-color: shade (@theme_bg_color, 1.0);
+}
+
