@@ -24,3 +24,21 @@
     background-color: @theme_base_color;
 }
 
+/* workaround for broken first/last-child logic with linked buttons
+   in pathbar since gtk+-3.18 */
+
+.nemo-window widget.raised.linked > button,
+.nemo-window widget.raised.linked > button:first-child,
+.nemo-window widget.raised.linked > button:last-child,
+.nemo-window widget.raised.linked > button:hover,
+.nemo-window widget.raised.linked > button:hover:first-child,
+.nemo-window widget.raised.linked > button:hover:last-child {
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: solid;
+    padding: 3px;
+    border-image: none;
+    border-color: @border_color;
+    margin: 0px 1px;
+}
+

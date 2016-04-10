@@ -394,7 +394,17 @@ button.flat:hover,
 toolbar.primary-toolbar button:checked,
 .titlebar button.titlebutton:hover,
 toolbar.primary-toolbar button.raised,
-toolbar.primary-toolbar .raised button,
+toolbar.primary-toolbar .linked button.raised,
+toolbar.primary-toolbar .linked button.raised:hover,
+toolbar.primary-toolbar .linked button.raised:focus,
+toolbar.primary-toolbar .linked button.raised:focus:hover,
+toolbar.primary-toolbar .linked button.raised:focus:hover:active,
+toolbar.primary-toolbar .raised.linked button,
+toolbar.primary-toolbar .raised.linked button:hover,
+toolbar.primary-toolbar .raised.linked button:focus,
+toolbar.primary-toolbar .raised.linked button:focus:hover,
+toolbar.primary-toolbar .raised.linked button:focus:hover:active,
+toolbar.primary-toolbar .raised.raised button:disabled,
 toolbar.primary-toolbar combobox button,
 /* primary toolbar - generic element borders */
 toolbar.primary-toolbar entry,
@@ -548,6 +558,63 @@ toolbar.inline-toolbar toolbutton button :only-child:disabled {
     border-width: 1px 1px 2px 1px;
     border-style: solid;
     border-color: transparent;
+}
+
+/* Middle button */
+toolbar.primary-toolbar .linked button.raised,
+toolbar.primary-toolbar .linked button.raised:hover,
+toolbar.primary-toolbar .linked button.raised:focus,
+toolbar.primary-toolbar .linked button.raised:focus:hover,
+toolbar.primary-toolbar .linked button.raised:focus:hover:active,
+toolbar.primary-toolbar .raised.linked button,
+toolbar.primary-toolbar .raised.linked button:hover,
+toolbar.primary-toolbar .raised.linked button:focus,
+toolbar.primary-toolbar .raised.linked button:focus:hover,
+toolbar.primary-toolbar .raised.linked button:focus:hover:active,
+toolbar.primary-toolbar .raised.linked button:disabled {
+    border-image-width: 3px 0px 4px 0px;
+    border-radius: 0;
+    border-width: 1px 0px 1px 0px;
+    border-color: @border_color;
+    padding: 4px 3px;
+}
+
+/* Leftmost button */
+toolbar.primary-toolbar .linked button.raised:first-child,
+toolbar.primary-toolbar .linked button.raised:hover:first-child,
+toolbar.primary-toolbar .linked button.raised:focus:first-child,
+toolbar.primary-toolbar .linked button.raised:focus:hover:first-child,
+toolbar.primary-toolbar .linked button.raised:focus:hover:active:first-child,
+toolbar.primary-toolbar .raised.linked button:first-child,
+toolbar.primary-toolbar .raised.linked button:hover:first-child,
+toolbar.primary-toolbar .raised.linked button:focus:first-child,
+toolbar.primary-toolbar .raised.linked button:focus:hover:first-child,
+toolbar.primary-toolbar .raised.linked button:focus:hover:active:first-child,
+toolbar.primary-toolbar .raised.linked button:disabled:first-child {
+    border-image-width: 3px 0px 4px 3px;
+    border-radius: 3px 0 0 3px;
+    border-width: 1px 0px 1px 1px;
+    border-color: @border_color;
+    padding: 4px 3px;
+}
+
+/* Rightmost button */
+toolbar.primary-toolbar .linked button.raised:last-child,
+toolbar.primary-toolbar .linked button.raised:hover:last-child,
+toolbar.primary-toolbar .linked button.raised:focus:last-child,
+toolbar.primary-toolbar .linked button.raised:focus:hover:last-child,
+toolbar.primary-toolbar .linked button.raised:focus:hover:active:last-child,
+toolbar.primary-toolbar .raised.linked button:last-child,
+toolbar.primary-toolbar .raised.linked button:hover:last-child,
+toolbar.primary-toolbar .raised.linked button:focus:last-child,
+toolbar.primary-toolbar .raised.linked button:focus:hover:last-child,
+toolbar.primary-toolbar .raised.linked button:focus:hover:active:last-child,
+toolbar.primary-toolbar .raised.linked button:disabled:last-child {
+    border-image-width: 3px 3px 4px 0px;
+    border-radius: 0 3px 3px 0;
+    border-width: 1px 1px 1px 0px;
+    border-color: @border_color;
+    padding: 4px 3px;
 }
 
 /* generic disabled element borders */
