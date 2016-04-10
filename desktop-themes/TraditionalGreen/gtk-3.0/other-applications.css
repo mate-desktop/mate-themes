@@ -1,10 +1,12 @@
-/* Parole media player needs more testing!
- hopefully do not set other stuff */
+/* Parole media player */
 
-/* background control panel */
-GtkPaned.horizontal .vertical GtkOverlay GtkRevealer.bottom .background.horizontal.osd {
-    background-color: @theme_bg_color;
-    color: @theme_fg_color;
+.osd #ParoleScale.horizontal {
+    background-color: transparent;
+}
+
+.osd #ParoleScale.horizontal trough {
+    min-height: 4px;
+    margin: 0px;
 }
 
 /* rhythmbox */

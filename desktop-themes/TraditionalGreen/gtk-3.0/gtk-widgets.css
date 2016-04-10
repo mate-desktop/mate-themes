@@ -841,10 +841,27 @@ button {
 
 button,
 button.menuitem.menubar,
-toolbar.inline-toolbar button,
 .titlebar .linked.raised button,
 .titlebar .linked.raised button:checked {
     padding: 5px 5px 6px; /* larger values makes the button arrow smaller*/
+}
+
+toolbar.inline-toolbar button,
+toolbar.inline-toolbar button.image-button,
+toolbar.inline-toolbar button.text-button,
+toolbar.inline-toolbar button:checked,
+toolbar.inline-toolbar button.image-button:checked,
+toolbar.inline-toolbar button.text-button:checked {
+    padding: 3px;
+}
+
+toolbar.inline-toolbar button box.horizontal,
+toolbar.inline-toolbar button.image-button box.horizontal,
+toolbar.inline-toolbar button.text-button box.horizontal,
+toolbar.inline-toolbar button box.horizontal image,
+toolbar.inline-toolbar button.image-button box.horizontal image,
+toolbar.inline-toolbar button.text-button box.horizontal  image {
+    border-image: none;
 }
 
 toolbar.horizontal button,
@@ -953,20 +970,20 @@ toolbar.primary-toolbar button {
     border-color: transparent;
 }
 
-toolbar.primary-toolbar button *:active,
-toolbar.inline-toolbar button *:active,
-button *:active,
-button *:active:focus,
-button *:focus {
+toolbar.primary-toolbar button:checked,
+toolbar.inline-toolbar button:checked,
+button:checked,
+button:checked:focus,
+button:focus {
     color: @button_active_text_color;
 }
 
-button *:disabled,
-button *:active:disabled {
+button:disabled,
+button:checked:disabled {
     color: @insensitive_fg_color;
 }
 
-button .separator {
+button separator {
     color: shade(@internal_element_color, 1.30);
 }
 
@@ -2331,7 +2348,7 @@ toolbar.inline-toolbar {
     border-radius: 0;
     border-style: solid;
     -GtkToolbar-button-relief: normal;
-    padding: 4px;
+    padding: 2px;
 }
 
 toolbar.inline-toolbar:last-child {
@@ -2437,7 +2454,7 @@ dialog filechooser placessidebar.sidebar.frame viewport.frame list row.activatab
     background-color: @osd_bg;
 }
 
-GtkOverlay.osd {
+overlay.osd {
     background-color: transparent;
 }
 
@@ -2447,11 +2464,17 @@ GtkOverlay.osd {
 }
 
 .osd button,
+.osd button:hover,
 .osd button:checked {
     border-width: 1px;
     border-style: solid;
     border-image: none;
     border-radius: 5px;
+}
+
+.osd .horizontal > button {
+    padding: 4px 6px;
+    margin: 0px 1px;
 }
 
 .osd button {
@@ -2477,19 +2500,28 @@ GtkOverlay.osd {
     -gtk-icon-shadow: 0 -1px @osd_button_shadow;
 }
 
-.osd.button {
+button.osd {
     padding: 8px;
 }
 
-.osd.button,
-.osd.button:checked {
+button.osd,
+button.osd:checked {
     border-color: transparent;
 }
 
-.osd.button,
-.osd.button:hover,
-.osd.button:checked {
+button.osd,
+button.osd:hover,
+button.osd:checked {
     background-color: shade(@osd_bg, 1.10);
+}
+
+button.osd {
+    background-image: none;
+    border-image: none;
+}
+
+button.osd:focus:hover:active {
+    border-image: none;
 }
 
 .osd button,
@@ -2498,34 +2530,29 @@ GtkOverlay.osd {
     background-color: transparent;
 }
 
-.osd.button:disabled,
+button.osd:disabled,
 .osd button:disabled {
     background-image: none;
     background-color: @osd_button_bg_insensitive;
 }
 
-.osd.button:checked:disabled,
+button.osd:checked:disabled,
 .osd button:checked:disabled {
     background-image: none;
     background-color: @osd_button_bg_insensitive_active;
 }
 
-.osd.button:hover,
-.osd button:hover {
-    color: @osd_button_fg_hover;
-}
-
-.osd.button:hover:active,
+button.osd:hover:active,
 .osd button:hover:active,
-.osd.button:checked,
-.osd.button:checked:hover,
+button.osd:checked,
+button.osd:checked:hover,
 .osd button:checked,
 .osd button:checked:hover {
     color: @osd_button_fg_active;
 }
 
-.osd.button:disabled,
-.osd.button:checked:disabled,
+button.osd:disabled,
+button.osd:checked:disabled,
 .osd button:disabled,
 .osd button:checked:disabled {
     color: @osd_button_fg_insensitive;
@@ -2533,16 +2560,19 @@ GtkOverlay.osd {
     -gtk-icon-shadow: none;
 }
 
-.osd.button:hover,
+button.osd:hover,
 .osd button:hover {
+    color: @osd_button_fg_hover;
     background-image: linear-gradient(to bottom,
                                       @osd_button_bg_hover_a,
                                       @osd_button_bg_hover_b 68%,
                                       @osd_button_bg_hover_c);
+    border-image: none;
 }
 
-.osd.button:checked,
-.osd.button:checked:hover,
+button.osd:checked,
+button.osd:checked:hover,
+button.osd:focus:hover:active,
 .osd button:checked,
 .osd button:checked:hover,
 .osd GtkMenuButton.menu-button:checked {
