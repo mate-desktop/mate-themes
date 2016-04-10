@@ -102,3 +102,17 @@ toolbar.primary-toolbar.horizontal > toolitem > grid.horizontal > button.scale.f
 	padding: 0px 8px;
 }
 
+/* gnome-weather */
+
+#weather-page frame.weather-clear .linked.stack-switcher.osd > button,
+#weather-page frame.weather-overcast .linked.stack-switcher.osd > button,
+#weather-page frame.weather-overcast stack > scrolledwindow > .frame label {
+    color: @theme_fg_color;
+    text-shadow: none;
+}
+
+#weather-page frame.weather-clear .linked.stack-switcher.osd > button:checked,
+#weather-page frame.weather-overcast .linked.stack-switcher.osd > button:checked {
+    color: @osd_button_fg_active;
+}
+
