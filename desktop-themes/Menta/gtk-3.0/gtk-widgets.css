@@ -2159,7 +2159,6 @@ notebook tab.reorderable-page:hover {
 /* close button styling */
 notebook button.flat,
 notebook button.flat.small-button {
-    color: mix (@theme_fg_color, @theme_bg_color, 0.85);
     border-image: none;
     background-image: none;
     background-color: transparent;
