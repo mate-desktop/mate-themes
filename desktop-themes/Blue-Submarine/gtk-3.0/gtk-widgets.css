@@ -1893,6 +1893,7 @@ GtkColorButton.button {
 
 /* Middle button */
 .inline-toolbar.toolbar .button,
+.inline-toolbar.toolbar .button:focus:hover:active,
 .inline-toolbar.toolbar .button:checked,
 .inline-toolbar.toolbar .button:insensitive,
 .inline-toolbar.toolbar GtkToolButton > .button,
@@ -1912,6 +1913,7 @@ GtkColorButton.button {
 }
 
 .inline-toolbar.toolbar .button:hover:active,
+.inline-toolbar.toolbar .button:focus:hover:active,
 .inline-toolbar.toolbar .button:checked,
 .inline-toolbar.toolbar .button:checked:hover,
 .inline-toolbar.toolbar .button:checked:hover:active,
@@ -1931,6 +1933,7 @@ GtkColorButton.button {
 
 /* Leftmost button */
 .inline-toolbar.toolbar .button:first-child,
+.inline-toolbar.toolbar .button:focus:hover:active:first-child,
 .inline-toolbar.toolbar .button:checked:first-child,
 .inline-toolbar.toolbar .button:insensitive:first-child,
 .inline-toolbar.toolbar GtkToolButton:first-child > .button,
@@ -1945,6 +1948,7 @@ GtkColorButton.button {
 }
 
 .inline-toolbar.toolbar .button:hover:active:first-child,
+.inline-toolbar.toolbar .button:focus:hover:active:first-child,
 .inline-toolbar.toolbar .button:checked:first-child,
 .inline-toolbar.toolbar .button:checked:hover:first-child,
 .inline-toolbar.toolbar .button:checked:hover:active:first-child,
@@ -1963,6 +1967,7 @@ GtkColorButton.button {
 
 /* Rightmost button */
 .inline-toolbar.toolbar .button:last-child,
+.inline-toolbar.toolbar .button:focus:hover:active:last-child,
 .inline-toolbar.toolbar .button:checked:last-child,
 .inline-toolbar.toolbar .button:insensitive:last-child,
 .inline-toolbar.toolbar GtkToolButton:last-child > .button,
@@ -1979,6 +1984,7 @@ GtkColorButton.button {
 }
 
 .inline-toolbar.toolbar .button:hover:active:last-child,
+.inline-toolbar.toolbar .button:focus:hover:active:last-child,
 .inline-toolbar.toolbar .button:checked:last-child,
 .inline-toolbar.toolbar .button:checked:hover:last-child,
 .inline-toolbar.toolbar .button:checked:hover:active:last-child,
@@ -2000,6 +2006,8 @@ GtkColorButton.button {
 
 /* Single button */
 .inline-toolbar.toolbar .button:only-child,
+.inline-toolbar.toolbar .button:hover:active:only-child,
+.inline-toolbar.toolbar .button:focus:hover:active:only-child,
 .inline-toolbar.toolbar .button:checked:only-child,
 .inline-toolbar.toolbar .button:insensitive:only-child,
 .inline-toolbar.toolbar GtkToolButton:only-child > .button,
@@ -2014,6 +2022,7 @@ GtkColorButton.button {
 }
 
 .inline-toolbar.toolbar .button:hover:active:only-child,
+.inline-toolbar.toolbar .button:focus:hover:active:only-child,
 .inline-toolbar.toolbar .button:checked:only-child,
 .inline-toolbar.toolbar .button:checked:hover:only-child,
 .inline-toolbar.toolbar .button:checked:hover:active:only-child,
