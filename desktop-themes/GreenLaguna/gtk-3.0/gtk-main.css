@@ -104,8 +104,8 @@
  * OSD *
  *******/
 @define-color osd_highlight #ffffff;
-@define-color osd_lowlight #515251;
-@define-color osd_base #252621;
+@define-color osd_lowlight alpha (shade(@theme_selected_bg_color, 1.15), 0.7);
+@define-color osd_base alpha (shade(@theme_selected_bg_color, 1.05), 0.7);
 
 @define-color osd_fg #EBEDEB;
 @define-color osd_bg alpha(@osd_base, 0.80);
