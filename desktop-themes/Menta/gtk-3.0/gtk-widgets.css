@@ -4134,6 +4134,30 @@ textview,
 	color: shade (@theme_selected_bg_color, 0.35);
 }
 
+/* for firefox and probably other apps */
+label:selected,
+label selection,
+label selection:focus,
+label selection:hover {
+  background-color: @theme_selected_bg_color;
+  color: @theme_selected_fg_color;
+}
+
+label:disabled:selected,
+label selection:disabled {
+	color: @insensitive_fg_color;
+}
+
+label:backdrop:selected,
+label selection:backdrop {
+	color: @theme_fg_color;
+}
+
+label:backdrop:disabled:selected,
+label selection:backdrop:disabled {
+	color: @insensitive_fg_color;
+}
+
 .cell {
 	padding: 2px;
 	text-shadow: none;
