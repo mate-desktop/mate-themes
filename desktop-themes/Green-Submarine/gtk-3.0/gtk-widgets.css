@@ -4072,7 +4072,7 @@ view text selection:focus,
     text-shadow: none;
 }
 
-/* ie. coloe of selected icons if unfocused */
+/* ie. color of selected icons if unfocused */
 .view:active {
     background-color: shade(@theme_bg_color, 0.8);
 }
@@ -4080,6 +4080,30 @@ view text selection:focus,
 .view text selection:focus,
 .view:selected:focus {
     text-shadow: 0px 1px @theme_selected_shadow_color;
+}
+
+/* for firefox and probably other apps */
+label:selected,
+label selection,
+label selection:focus,
+label selection:hover {
+  background-color: @theme_selected_bg_color;
+  color: @theme_selected_fg_color;
+}
+
+label:disabled:selected,
+label selection:disabled {
+	color: @insensitive_fg_color;
+}
+
+label:backdrop:selected,
+label selection:backdrop {
+	color: @theme_fg_color;
+}
+
+label:backdrop:disabled:selected,
+label selection:backdrop:disabled {
+	color: @insensitive_fg_color;
 }
 
 treeview,
