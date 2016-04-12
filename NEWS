@@ -1,5 +1,16 @@
 3.16.1 (GTK 3.16)
 
+- Translation update
+- Fix Changelog generation
+- GTK3 all themes: style lock-screen
+- GTK+-3.18 Menta themes: reduce border-radius of panel buttons
+- GTK+-3.18 TOK themes: don't use a border-radius for menubar menuitems
+- GTK+-3.18 TOKTest: adjust panel settings
+- GTK+-3.18 BlackMate: fix cpufreq applet label problem
+- Ship a HighContrast metacity-theme-1.xml
+- Don't install po files, all translations are already stored in index.theme files
+- BlackMATE: notification name is "coco", not "Coco"
+
 3.16.0 (GTK 3.16)
 
 - GTK3 all themes: follow canvas-item changes with caja-1.13.0
