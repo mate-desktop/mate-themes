@@ -2741,6 +2741,25 @@ toolbar.osd separator {
     background-color: transparent;
 }
 
+/* spinbuttons in color selection */
+.osd.popover spinbutton button {
+    border-radius: 0px;
+    border-width: 0px;
+    border-image: none;
+    padding: 6px;
+}
+
+.osd.popover spinbutton button:last-child {
+    border-radius: 0px 3px 3px 0px;
+}
+
+.osd.popover spinbutton button:focus:active {
+    background-image: linear-gradient(to bottom,
+                                      @osd_button_bg_active_a,
+                                      @osd_button_bg_active_b 20%,
+                                      @osd_button_bg_active_c);
+}
+
 .osd progressbar,
 progressbar .osd {
     padding: 0;
