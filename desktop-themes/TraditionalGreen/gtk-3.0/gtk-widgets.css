@@ -793,6 +793,8 @@ frame.flat {
    border-style:none;
 }
 
+filechooser .sidebar,
+filechooser scrolledwindow,
 scrolledwindow.frame {
     border-style: solid;
     border-color: @border_color;
@@ -801,6 +803,8 @@ scrolledwindow.frame {
     padding: 0;
 }
 
+#pathbarbox,
+filechooser scrolledwindow,
 scrolledwindow viewport {
     background-color: @theme_bg_color;
 }
