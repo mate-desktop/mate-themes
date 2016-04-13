@@ -1391,6 +1391,131 @@ toolbar.primary-toolbar button:focus:hover {
                       @pt_button_focus_hover_gradient_d);
 }
 
+/* Stack switcher */
+stackswitcher > button > label,
+headerbar stackswitcher > button.titlebutton > label,
+headerbar.titlebar stackswitcher > button.titlebutton > label,
+calendar.header stackswitcher > button.titlebutton > label {
+	padding-left: 6px;
+	padding-right: 6px;
+}
+
+stackswitcher > button > image,
+headerbar stackswitcher > button.titlebutton > image,
+headerbar.titlebar stackswitcher > button.titlebutton > image,
+calendar.header stackswitcher > button.titlebutton > image {
+	padding-left: 6px;
+	padding-right: 6px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+stackswitcher > button.text-button {
+	padding: 5px 10px 6px;
+}
+
+stackswitcher > button.image-button,
+headerbar stackswitcher > button.titlebutton,
+headerbar.titlebar stackswitcher > button.titlebutton,
+calendar.header stackswitcher > button.titlebutton {
+	padding: 5px 2px;
+}
+
+stackswitcher > button.needs-attention > label,
+stackswitcher > button.needs-attention > image {
+	background-color: @theme_bg_color; /* FIXME: ? */
+	background-size: 6px 6px, 6px 6px;
+	background-repeat: no-repeat;
+	background-position: right 3px, right 4px;
+}
+
+stackswitcher > button.needs-attention > label:backdrop,
+stackswitcher > button.needs-attention > image:backdrop {
+	background-size: 6px 6px, 0 0;
+}
+
+stackswitcher > button.needs-attention > label:dir(rtl),
+stackswitcher > button.needs-attention > image:dir(rtl) {
+	background-position: left 3px, left 4px;
+}
+
+stackswitcher > button.needs-attention:active > label,
+stackswitcher > button.needs-attention:active > image,
+stackswitcher > button.needs-attention:checked > label,
+stackswitcher > button.needs-attention:checked > image {
+	animation: none;
+	background-image: none;
+}
+
+stackswitcher  > button:dir(ltr).text-button.radio,
+stackswitcher  > button:dir(ltr).text-button.radio:focus,
+stackswitcher  > button:dir(ltr).text-button.radio:hover,
+stackswitcher  > button:dir(ltr).text-button.radio:hover:active,
+stackswitcher  > button:dir(ltr).text-button.radio:checked,
+stackswitcher  > button:dir(ltr).text-button.radio:checked:hover,
+stackswitcher  > button:dir(ltr).text-button.radio:checked:hover:active  {
+    padding: 5px 10px 6px;
+    border-width: 1px 0px 1px 0px;
+    border-image-width: 3px 0px 4px 0;
+    border-style: solid;
+    border-color: @border_color;
+    border-image: none;
+    border-radius: 0px;
+}
+
+stackswitcher  > button:dir(ltr).text-button.radio:first-child,
+stackswitcher  > button:dir(ltr).text-button.radio:hover:first-child,
+stackswitcher  > button:dir(ltr).text-button.radio:hover:active:first-child,
+stackswitcher  > button:dir(ltr).text-button.radio:checked:first-child,
+stackswitcher  > button:dir(ltr).text-button.radio:checked:hover:first-child,
+stackswitcher  > button:dir(ltr).text-button.radio:checked:hover:active:first-child {
+    border-width: 1px 0px 1px 1px;
+    border-image-width: 3px 0 4px 3px;
+    border-radius: 3px 0px 0px 3px;
+}
+
+stackswitcher  > button:dir(ltr).text-button.radio:last-child,
+stackswitcher  > button:dir(ltr).text-button.radio:hover:last-child,
+stackswitcher  > button:dir(ltr).text-button.radio:hover:active:last-child,
+stackswitcher  > button:dir(ltr).text-button.radio:checked:last-child,
+stackswitcher  > button:dir(ltr).text-button.radio:checked:hover:last-child,
+stackswitcher  > button:dir(ltr).text-button.radio:checked:hover:active:last-child {
+    border-width: 1px 1px 1px 0px;
+    border-image-width: 3px 3px 4px 0;
+    border-radius: 0px 3px 3px 0px;
+}
+
+stackswitcher  > button:dir(ltr).text-button.radio,
+stackswitcher  > button:dir(ltr).text-button.radio:focus  {
+    background-image: -gtk-gradient (linear,
+                      left top,
+                      left bottom,
+                      from (@button_gradient_a),
+                      to (@button_gradient_d));
+    background-color: transparent;
+}
+
+stackswitcher  > button:dir(ltr).text-button:hover  {
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                      @button_hover_gradient_a 5%,
+                      @button_hover_gradient_b 95%,
+                      @button_hover_gradient_c);
+}
+
+stackswitcher  > button:dir(ltr).text-button:checked,
+stackswitcher  > button:dir(ltr).text-button:checked:focus,
+stackswitcher  > button:dir(ltr).text-button:checked:hover  {
+    background-image: linear-gradient(to bottom,
+                      @button_active_gradient_a,
+                      @button_active_gradient_b 3px,
+                      @button_active_gradient_c 4px,
+                      @button_active_gradient_d 50%,
+                      @button_active_gradient_e 50%,
+                      @button_active_gradient_f);
+    background-color: transparent;
+}
+
 /*****************
  * Notebooks and *
  * tabs          *
