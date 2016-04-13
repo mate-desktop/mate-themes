@@ -147,11 +147,14 @@ expander {
  ***********/
 sidebar *,
 sidebar .view,
+stacksidebar,
+stacksidebar .view,
 placessidebar .view{
     -gtk-icon-style: regular;
     background-color: shade (@theme_bg_color, 1.08);
 }
 
+stacksidebar label,
 placessidebar label   {
 	color:@theme_text_color;
     padding: 8px 1px 8px 1px;
@@ -176,6 +179,8 @@ placessidebar button{
 	border-image:none;	
 }  
 
+stacksidebar list row:selected,
+stacksidebar list row:active,
 placessidebar list row:selected, 
 placessidebar list row:active, 
 placessidebar list row:selected *,
