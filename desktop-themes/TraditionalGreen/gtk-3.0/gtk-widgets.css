@@ -1,32 +1,13 @@
 * {
-/*    engine: none; */
     padding: 0;
-
     background-clip: padding-box;
-
     -GtkToolButton-icon-spacing: 4;
-
     -GtkTextView-error-underline-color: @error_color;
-
-/*    -GtkPaned-handle-size: 5; deprecated */
-
-/*    -GtkCheckButton-indicator-size: 16; deprecated */
-/*    -GtkCheckMenuItem-indicator-size: 10; deprecated */
-
-    -GtkScrolledWindow-scrollbar-spacing: 3;
-/*    -GtkScrolledWindow-scrollbars-within-bevel: 0; deprecated */
-
+    -GtkScrolledWindow-scrollbar-spacing: 0;
     -GtkToolItemGroup-expander-size: 11;
-/*    -GtkExpander-expander-size: 14; deprecated */
-
-/*    -GtkMenu-horizontal-padding: 0; */
-/*    -GtkMenu-vertical-padding: 0; */
-
     -GtkIMHtml-hyperlink-color: @link_color;
     -GtkHTML-link-color: @link_color;
-
     -WnckTasklist-fade-overlay-rect: 0;
-
     outline-color: @focus_border_color;
     outline-style: dashed;
     outline-offset: -2px;
