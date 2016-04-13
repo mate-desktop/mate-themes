@@ -793,8 +793,8 @@ frame.flat {
    border-style:none;
 }
 
-filechooser .sidebar,
-filechooser scrolledwindow,
+.sidebar,
+scrolledwindow,
 scrolledwindow.frame {
     border-style: solid;
     border-color: @border_color;
