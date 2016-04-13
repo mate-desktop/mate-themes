@@ -46,3 +46,11 @@
     border-width: 1px 1px 0px 1px;
 }
 
+.nemo-properties-dialog frame.view {
+   border-color: transparent;
+}
+
+.nemo-properties-dialog frame.view stack scrolledwindow viewport.frame {
+    background-color: @notebook_bg_color;
+}
+
