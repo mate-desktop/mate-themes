@@ -3532,22 +3532,6 @@ headerbar {
     padding: 5px 4px 4px 4px;
 }
 
-headerbar.titlebar > stackswitcher.linked.stack-switcher > button,
-headerbar.titlebar > stackswitcher.linked.stack-switcher > button:checked:hover {
-    padding: 6px 22px;
-    border-width: 1px 1px 1px 0px;
-}
-
-headerbar.titlebar > stackswitcher.linked.stack-switcher > button:first-child,
-headerbar.titlebar > stackswitcher.linked.stack-switcher > button:checked:hover:first-child {
-    border-width: 1px;
-}
-
-headerbar.titlebar > stackswitcher.linked.stack-switcher > button:last-child,
-headerbar.titlebar > stackswitcher.linked.stack-switcher > button:checked:hover:last-child {
-    border-width: 1px 1px 1px 0px;
-}
-
 /*************
  * Popovers *
  *************/
