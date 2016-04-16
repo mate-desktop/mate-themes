@@ -110,7 +110,7 @@ EShellWindow .button *:active {
 	color: @theme_fg_color;
 }
 
-EShellSidebar *.cell:insensitive { /* removes the "flash" when quitting */
+EShellSidebar *.cell:disabled { /* removes the "flash" when quitting */
 	background-color: @theme_bg_color;
 }
 
@@ -170,7 +170,7 @@ NautilusView .view {
 	                                  shade(@theme_bg_color, 0.9));
 }
 
-.nautilus-inactive-pane .notebook .scrollbar.button:insensitive {
+.nautilus-inactive-pane .notebook .scrollbar.button:disabled {
 	background-color: shade(@theme_bg_color, 0.9);
 	border-radius: 0px;
 }
@@ -197,7 +197,7 @@ NautilusView .expander column:sorted:selected:hover {
 
 /* the small line between sidebar and view */
 NautilusWindow GtkPaned.horizontal {
-    -GtkPaned-handle-size: 3px;
+/*    -GtkPaned-handle-size: 3px;*/
     border-style: solid;
     border-width: 1px;
     border-color: shade(@toolbar_gradient_base, 0.98);
@@ -306,7 +306,7 @@ NautilusDesktopWindow GtkPaned.horizontal {
 }
 
 .nautilus-desktop.nautilus-canvas-item:active,
-.nautilus-desktop.nautilus-canvas-item:prelight,
+.nautilus-desktop.nautilus-canvas-item:hover,
 .nautilus-desktop.nautilus-canvas-item:selected {
 	text-shadow: none;
 }
