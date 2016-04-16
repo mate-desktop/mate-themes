@@ -37,7 +37,7 @@ DConfWindow DConfKeyView.view row:hover {
 
 /* the small line between sidebar and view */
 DConfWindow GtkPaned.horizontal {
-    -GtkPaned-handle-size: 3px;
+/*    -GtkPaned-handle-size: 3px;*/
     border-color: transparent;
     background-color: @theme_bg_color;
 }
@@ -74,7 +74,7 @@ NemoView .view row {
 	                                  shade(@theme_bg_color, 0.9));
 }
 
-.nemo-inactive-pane .notebook .scrollbar.button:insensitive {
+.nemo-inactive-pane .notebook .scrollbar.button:disabled {
 	background-color: shade(@theme_bg_color, 0.9);
 	border-radius: 0px;
 }
@@ -101,7 +101,7 @@ NemoView .expander column:sorted:selected:hover {
 
 /* the small line between sidebar and view */
 NemoWindow GtkPaned.horizontal {
-    -GtkPaned-handle-size: 3px;
+/*    -GtkPaned-handle-size: 3px;*/
     border-style: solid;
     border-width: 1px;
     border-color: shade(@toolbar_gradient_base, 0.98);
@@ -216,7 +216,7 @@ NemoWindow .notebook NemoQueryEditor .toolbar {
 }
 
 .nemo-desktop.nemo-canvas-item:active,
-.nemo-desktop.nemo-canvas-item:prelight,
+.nemo-desktop.nemo-canvas-item:hover,
 .nemo-desktop.nemo-canvas-item:selected {
 	text-shadow: none;
 }

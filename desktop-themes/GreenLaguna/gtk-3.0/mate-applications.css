@@ -34,14 +34,14 @@ CajaNavigationWindow CajaNotebook .vertical .vertical FMIconView.frame {
 	                                  shade(@theme_bg_color, 0.9));
 }
 
-.caja-inactive-pane .notebook .scrollbar.button:insensitive {
+.caja-inactive-pane .notebook .scrollbar.button:disabled {
 	background-color: shade(@theme_bg_color, 0.9);
 	border-radius: 0px;
 }
 
 /* the small line between sidebar and view */
 CajaWindow GtkPaned.horizontal {
-    -GtkPaned-handle-size: 3px;
+/*    -GtkPaned-handle-size: 3px;*/
     border-color: transparent;
     background-color: @theme_bg_color;
 }
@@ -231,7 +231,7 @@ CajaDesktopWindow.background .caja-canvas-item:selected {
 }
 
 CajaDesktopWindow.background .caja-canvas-item:active,
-CajaDesktopWindow.background .caja-canvas-item:prelight,
+CajaDesktopWindow.background .caja-canvas-item:hover,
 CajaDesktopWindow.background .caja-canvas-item:selected {
 	text-shadow: none;
 }
@@ -567,7 +567,7 @@ MatePanelApplet .horizontal .vertical .frame {
     margin: 0px;
 }
 
-.mate-panel-applet-slider .frame .button:insensitive {
+.mate-panel-applet-slider .frame .button:disabled {
     color: @insensitive_fg_color;
     background-image: none;
     border-image: none;
@@ -610,14 +610,14 @@ PlumaWindow .notebook tab .button.flat:hover {
     background-image: none;
     box-shadow: inset 0 1px rgba(255,255,255,0), 0 1px rgba(255,255,255,0);
     text-shadow: none;
-    icon-shadow: none;
+    -gtk-icon-shadow: none;
     border-image: none;
 }
 
 PlumaCloseButton.button.flat,
 PlumaCloseButton.button.flat:hover,
-PlumaCloseButton:prelight.button.flat,
-PlumaCloseButton:prelight.button.flat:hover {
+PlumaCloseButton:hover.button.flat,
+PlumaCloseButton:hover.button.flat:hover {
     padding: 0px;
 }
 
@@ -774,7 +774,7 @@ EomThumbNav .button.flat:hover:last-child {
                                       @button_hover_gradient_color_b);
 }
 
-EomThumbNav .button.flat:insensitive {
+EomThumbNav .button.flat:disabled {
     background-image: none;
     border-color: transparent;
 }
