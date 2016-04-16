@@ -49,7 +49,7 @@ headerbar.titlebar .right button.minimize.titlebutton:backdrop,
 headerbar.titlebar .right:dir(rtl) button.minimize.titlebutton:backdrop,
 headerbar.titlebar .left button.minimize.titlebutton:backdrop,
 headerbar.titlebar .left:dir(rtl) button.minimize.titlebutton:backdrop {
-	background-image: url('window-controls/unfocused.png');
+	background-image: url('window-controls/unfocus.png');
 }
 /*
 headerbar.titlebar .right button.minimize.titlebutton:backdrop:hover,
@@ -153,9 +153,14 @@ headerbar.titlebar .button.menu-button.titlebutton:active {
 }
 */
 
-/* application adjustments */
+headerbar.titlebar button.close.titlebutton,
+headerbar.titlebar button.minimize.titlebutton,
+headerbar.titlebar button.maximize.titlebutton {
+    border-width: 0px;
+    border-image: none;
+    background-color: transparent;
+}
 
-/* gtk+-3.20 */
 headerbar.titlebar button.close.titlebutton image,
 headerbar.titlebar button.minimize.titlebutton image,
 headerbar.titlebar button.maximize.titlebutton image {

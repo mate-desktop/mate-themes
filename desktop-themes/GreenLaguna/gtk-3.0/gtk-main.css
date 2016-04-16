@@ -51,6 +51,12 @@
 
 @define-color scale_fill_a #A1AF9C;
 @define-color scale_fill_b #70816A;
+@define-color scale_border_a @internal_element_color;
+@define-color scale_border_b shade (@internal_element_color, 1.25);
+@define-color osd_scale_border alpha (shade (@theme_bg_color, 1.25), 0.4);
+@define-color scale_highlight_border @theme_selected_bg_color;
+@define-color scale_highlight_bg @theme_selected_bg_color;
+@define-color scale_highlight_shadow alpha(white, 0.50);
 
 /*@define-color menu_color #655b56;*/
 @define-color menu_controls_color #ffffff;
