@@ -395,6 +395,19 @@ dialog view  {
 	color: @theme_text_color;
 }
 
+iconview.view:selected,
+iconview.view:selected:hover {
+	background-color: shade(@theme_selected_bg_color, 1.0);
+	color: @theme_selected_fg_color;
+    border-radius: 4px;
+}
+
+iconview.view:hover {
+	background-color: shade(@theme_selected_bg_color, 1.8);
+	color: @theme_text_color;
+    border-radius: 4px;
+}
+
 textview text selection, textview text selection:focus {
     background-color: @theme_selected_bg_color;
     color: @theme_selected_fg_color;
@@ -2337,9 +2350,10 @@ toolbar entry progressbar {
 /*******************
  * Inline toolbars *
  *******************/
+
 toolbar.inline-toolbar {
 	border-width: 1px;
-	border-radius: 3px;
+	border-radius: 0px;
 	border-style: solid;
 	border-color: darker (@theme_bg_color);
 	background-image: linear-gradient(to bottom,
@@ -2444,6 +2458,7 @@ button.osd:checked,
 
 button.osd,
 .osd button {
+    margin: 0px 1px;
 	padding: 4px;
 	background-image: linear-gradient(to bottom,
 	                                  @osd_button_bg_a,
@@ -2540,14 +2555,6 @@ toolbar.osd {
                                       alpha (shade(@theme_selected_bg_color, 0.95), 0.7));
     background-color: transparent;
     -GtkToolbar-button-relief: normal;
-}
-
-/* left/right button box */
-toolbar.osd .horizontal.linked {
-    background-image: linear-gradient(to left,
-	                                  shade(@theme_selected_bg_color, 1.1),
-	                                  shade(@theme_selected_bg_color, 0.95));
-    border-radius: 5px;
 }
 
 toolbar.osd button,
@@ -2709,9 +2716,9 @@ popover.background {
 	border-width: 1px;
 	border-style: solid;
 	border-radius: 6px;
-	background-color: shade(@theme_selected_bg_color, 0.8);
-	background-image: linear-gradient(to bottom,
-	                                  shade(@theme_selected_bg_color, 1.1),
+	background-color: transparent;
+	background-image: linear-gradient(to right,
+	                                  shade(@theme_selected_bg_color, 1.0),
 	                                  shade(@theme_selected_bg_color, 0.65));
 	box-shadow: 0 1px 5px @wm_shadow;
 	text-shadow: none;
@@ -2871,6 +2878,45 @@ modelbutton.flat:selected {
 	border-radius: 3px;
 }
 
+modelbutton.flat {
+  min-height: 22px;
+}
+
+modelbutton arrow {
+	background-color: transparent;
+    padding: 0px 4px 0px 0px;
+    min-height: 20px;
+    min-width: 20px;
+}
+
+modelbutton.flat arrow.left {
+    -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+}
+
+modelbutton.flat arrow.right {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+
+modelbutton check,
+modelbutton radio {
+    min-height: 16px;
+    min-width: 16px;
+	background-color: transparent;
+}
+
+modelbutton arrow:hover,
+modelbutton check:hover,
+modelbutton radio:hover,
+modelbutton arrow:disabled,
+modelbutton check:disabled,
+modelbutton radio:disabled {
+	background-color: transparent;
+}
+
+modelbutton label {
+    padding: 0px 0px 0px 4px
+}
+
 popover separator {
 	font-size: 80%;
 	font-weight: bold;
@@ -2885,6 +2931,12 @@ popover .horizontal label {
     color: @theme_selected_fg_color;
 }
 
+.linked button.image-button.model {
+    min-height: 28px;
+    margin: 0px 1px;
+}
+
+.linked button.image-button.model,
 popover button.default.suggested-action.text-button {
     background-color: transparent;
     background-image: none;
@@ -2894,6 +2946,7 @@ popover button.default.suggested-action.text-button {
     border-radius: 2px;
 }
 
+.linked button.image-button.model:hover,
 popover button.default.suggested-action.text-button:hover {
 	color: @theme_selected_fg_color;
 	background-image:  linear-gradient(to bottom,
@@ -3318,8 +3371,8 @@ window.background.popup menu menuitem radio {
 	padding: 0px 6px 0px 0px;
     background-repeat: no-repeat;
     background-position: center;
-	min-height: 12px;
-	min-width: 12px;
+	min-height: 16px;
+	min-width: 16px;
     background-color: transparent;
 }
 
@@ -3376,43 +3429,51 @@ treeview.view.expander:checked {
     -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
 }
 
+/*************
+ * Expanders *
+ *************/
+
 expander arrow {
-    -gtk-icon-style: regular;
+	min-height: 16px;
+    min-width: 16px;
     -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
 }
 
 expander arrow:dir(rtl) {
+	min-height: 16px;
+    min-width: 16px;
     -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
 }
 
 expander arrow:hover {
-    color: @internal_element_color;
+	color: @theme_fg_color;
 }
 
 expander arrow:checked {
+	min-height: 16px;
+    min-width: 16px;
     -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
 }
 
-expander {
+expander title {
 	border-style: solid;
 	border-width: 1px;
 	border-radius: 2px;
 	border-color: @internal_element_color;
-	color: @internal_element_color;
-
+	color: @theme_fg_color;
 	background-image: none;
 	background-color: transparent;
 }
 
-expander:active {
+expander title:active {
 	border-color: @internal_element_color;
-	color: @internal_element_color;
+	color: @theme_fg_color;
 	background-color: transparent;
 }
 
-expander:hover {
+expander title:hover {
 	border-color: @internal_element_color;
-	color: @internal_element_color;
+	color: @theme_fg_color;
 }
 
 expander row {

@@ -111,7 +111,7 @@
  *******/
 @define-color osd_highlight #ffffff;
 @define-color osd_lowlight #515251;
-@define-color osd_base #252621;
+@define-color osd_base @selected_bg_color;
 
 @define-color osd_fg #EBEDEB;
 @define-color osd_bg alpha(@osd_base, 0.80);
