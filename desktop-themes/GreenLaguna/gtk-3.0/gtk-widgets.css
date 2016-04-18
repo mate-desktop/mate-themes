@@ -52,17 +52,17 @@
 }
 
 *:hover {
-	background-color: shade(@theme_bg_color, 1.02);
+/*	background-color: shade(@theme_bg_color, 1.02);*/
 	color: @theme_fg_color;
 }
 
 *:selected {
-	background-color: shade(@theme_selected_bg_color, 1.23);
+/*	background-color: shade(@theme_selected_bg_color, 1.23);*/
 	color: @theme_selected_fg_color;
 }
 
 *:selected:focus {
-	background-color: @theme_selected_bg_color;
+/*	background-color: @theme_selected_bg_color;*/
 	color: @theme_selected_fg_color;
 }
 
@@ -73,13 +73,13 @@
 
 *:disabled {
 	/* no need to a different background */
-	background-color: @theme_bg_color; /*@insensitive_bg_color;*/
+/*	background-color: @theme_bg_color; *//*@insensitive_bg_color;*/
 	color: @insensitive_fg_color;
 	border-color: @insensitive_border_color;
 }
 
 *:active {
-	background-color: shade(@theme_bg_color, 0.915);
+/*	background-color: shade(@theme_bg_color, 0.915);*/
 }
 
 .gtkstyle-fallback {
@@ -1523,8 +1523,9 @@ scale.horizontal slider {
 }
 
 /* scale.horizontal.scale-has-marks-below */
-scale.horizontal contents:first-child:not(:only-child) slider{
-    min-height: 22px
+scale.horizontal contents:first-child:not(:only-child) slider {
+    min-height: 22px;
+    min-width: 14px;
 }
 
 scale.horizontal.fine-tune slider:active,
@@ -1567,7 +1568,7 @@ scale.scale-has-marks-below.color trough {
 
 scale.vertical.scale-has-marks-below.color slider {
     min-height: 20px;
-    min-width: 22px;
+    min-width: 20px;
     padding: 0px;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -1576,8 +1577,8 @@ scale.vertical.scale-has-marks-below.color slider {
 }
 
 scale.horizontal.scale-has-marks-above.color slider {
-    min-height: 14px;
-    min-width: 20px;
+    min-height: 12px;
+    min-width: 16px;
     margin: 0px 0px 0px 0px;
     padding: 5px 0px;
     background-size: 100%;
@@ -1588,6 +1589,7 @@ scale.horizontal.scale-has-marks-above.color slider {
 scale.horizontal.scale-has-marks-above.color slider:hover,
 scale.vertical.scale-has-marks-below.color slider:hover {
     background-size: 105%;
+    background-color: transparent;
 }
 
 /**************
@@ -1772,14 +1774,6 @@ button.default {
 
 button.default:hover {
 	border-image: none;
-}
-
-button.color {
-    min-height: 27px;
-}
-
-button.color > colorswatch.activatable {
-   padding: 5px;
 }
 
 /******************
@@ -2513,7 +2507,8 @@ button.osd:checked:disabled,
 }
 
 button.osd:hover,
-.osd button:hover {
+.osd button:hover,
+.osd.popover spinbutton button:hover {
 	background-image: linear-gradient(to bottom,
 	                                  @osd_button_bg_hover_a,
 	                                  @osd_button_bg_hover_b 68%,
@@ -2525,7 +2520,8 @@ button.osd:checked,
 .osd .menuitem.button:checked,
 button.osd:active:hover,
 .osd button:active:hover,
-.osd .menuitem.button:active:hover {
+.osd .menuitem.button:active:hover,
+.osd.popover spinbutton button:active {
 	background-image: linear-gradient(to bottom,
 	                                  @osd_button_bg_active_a,
 	                                  @osd_button_bg_active_b 68%,
@@ -2546,7 +2542,7 @@ toolbar.osd {
     color: @osd_fg;
     text-shadow: 0 1px @osd_text_shadow;
     padding: 10px;
-    border-radius: 1px;
+    border-width: 1px;
     border-style: solid;
     border-radius: 7px;
     border-color: shade (@theme_selected_bg_color, 0.9);
@@ -2692,6 +2688,49 @@ progressbar.osd {
 	border-color: @osd_button_fg;
 
 	outline-color: transparent;
+}
+
+/* ie. colorchooser */
+.osd.popover {
+    background-image: linear-gradient(to left,
+                                      alpha (shade(@theme_selected_bg_color, 1.05), 0.5),
+                                      alpha (shade(@theme_selected_bg_color, 0.95), 0.3));
+	border-width: 1px;
+	border-style: solid;
+	border-image: none;
+    border-color: shade (@theme_selected_bg_color, 0.9);
+	border-radius: 3px;
+    padding: 0px;
+}
+
+.osd.popover label {
+	color: @osd_fg;
+}
+
+.osd.popover spinbutton entry,
+.osd.popover spinbutton entry:focus,
+.osd.popover spinbutton button,
+.osd.popover spinbutton button:focus {
+    min-width: 16px;
+    min-height: 16px;
+    border-width: 1px;
+    border-style: none;
+    border-radius: 0px;
+    box-shadow: none;
+    padding: 8px;
+	color: @theme_fg_color;
+}
+
+/* ie. parole control bar */
+revealer.bottom > box.background.horizontal.osd {
+    background-color: transparent;
+    background-image: linear-gradient(to left,
+                                      alpha (shade(@theme_selected_bg_color, 1.05), 0.3),
+                                      alpha (shade(@theme_selected_bg_color, 0.95), 0.1));
+    border-width: 1px;
+    border-style: solid;
+    border-color: shade (@theme_selected_bg_color, 0.9);
+    color: @osd_fg;
 }
 
 /* used by Documents */
@@ -3302,40 +3341,87 @@ treeview.view.separator:hover {
  * Color Chooser *
  *****************/
 
-colorswatch,
-colorswatch:selected {
-	background-color: transparent;
-	border-radius: 3px;
-
+button.color {
+    min-height: 27px;
 }
 
-colorswatch.color-dark:hover {
-	background-image: linear-gradient(to bottom,
-	                                  alpha(white, 0) 40%,
-	                                  alpha(white, 0.3));
-
+button.color > colorswatch.activatable {
+   padding: 5px;
 }
 
-colorswatch.color-light:hover {
-	background-image: linear-gradient(to top,
-	                                  alpha(black, 0) 40%,
-	                                  alpha(black, 0.1));
-
+colorchooser {
+    border-style: solid;
+    border-color: @notebook_border;
+    border-width: 1px;
+    border-radius: 4px;
+    background-color: shade (@theme_bg_color, 1.03);
+    color: @theme_fg_color;
+    box-shadow: none;
 }
 
-colorswatch:selected {
-	border-style: solid;
-	border-color: alpha(black, 0.2);
-	border-width: 1px;
+colorchooser box.vertical {
+    padding: 6px;
 }
 
-colorswatch:selected:hover {
-	border-color: alpha(black, 0.5);
+colorchooser #editor-color-sample,
+colorchooser colorswatch.activatable,
+colorchooser colorswatch.activatable:selected {
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    border-color: @notebook_border;
+    background-color: transparent;
+    background-clip: border-box;
+}
+
+colorchooser #editor-color-sample:hover,
+colorchooser colorswatch.activatable:hover {
+    border-color: alpha(black, 0.45);
+}
+
+colorchooser #editor-color-sample.dark:hover,
+colorchooser colorswatch.activatable.dark:hover {
+    background-image: linear-gradient(to bottom,
+                                      alpha(white, 0) 40%,
+                                      alpha(white, 0.3));
+}
+
+colorchooser #editor-color-sample.light:hover,
+colorchooser colorswatch.activatable.light:hover {
+    background-image: linear-gradient(to top,
+                                      alpha(black, 0) 40%,
+                                      alpha(black, 0.1));
+}
+
+colorchooser colorswatch.activatable:selected:hover {
+    background-image: none;
+}
+
+colorchooser colorswatch {
+    border-radius: 3px;
+}
+
+colorchooser #add-color-button {
+    background-clip: padding-box;
+    border-color: mix(@borders, @theme_bg_color, 0.3);
+    background-color: mix(@borders, @theme_bg_color, 0.8);
+}
+
+colorchooser #add-color-button:hover {
+    border-color: @borders;
+    background-color: @borders;
+    color: @theme_base_color;
+}
+
+/* GtkColorEditor */
+colorchooser box.horizontal {
+    padding: 6px;
 }
 
 /***************************
  * Radio and Check Buttons *
  ***************************/
+
 radio,
 check,
 radio:selected,

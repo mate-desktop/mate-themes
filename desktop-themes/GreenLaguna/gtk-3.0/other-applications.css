@@ -221,3 +221,16 @@ NemoWindow .notebook NemoQueryEditor .toolbar {
 	text-shadow: none;
 }
 
+/* parole madia list, hopefuly that styles no other things */
+paned.horizontal > notebook  box.horizontal > box.vertical > notebook,
+paned.horizontal > notebook  box.horizontal > box.vertical > notebook  scrolledwindow.frame {
+	border-style: none;
+	border-width: 0px;
+	border-radius: 0px;
+	padding: 0;
+}
+
+paned.horizontal > notebook box.horizontal > box.vertical > toolbar.horizontal.inline-toolbar {
+	border-width: 1px 0px 0px  0px;
+	padding: 0;
+}
