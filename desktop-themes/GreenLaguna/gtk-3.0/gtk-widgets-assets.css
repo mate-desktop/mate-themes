@@ -21,15 +21,20 @@ scale.vertical slider:disabled {
 	background-image: url("assets/scale-slider-vertical-insensitive.svg");
 }
 
-scale.horizontal.scale-has-marks-below slider {
+scale.horizontal contents:first-child:not(:only-child) slider,
+scale.horizontal contents:first-child:not(:only-child) slider:hover,
+scale.horizontal.scale-has-marks-below slider,
+scale.horizontal.scale-has-marks-below slider:hover {
 	background-image: url("assets/scale-slider-marks-below-horizontal.svg");
 }
 
+scale.horizontal contents:first-child:not(:only-child) slider:disabled,
 scale.horizontal.scale-has-marks-below slider:disabled {
 	background-image: url("assets/scale-slider-marks-below-horizontal-insensitive.svg");
 }
 
-scale.vertical.scale-has-marks-below slider {
+scale.vertical.scale-has-marks-below slider,
+scale.vertical.scale-has-marks-below slider:hover {
 	background-image: url("assets/scale-slider-marks-below-vertical.svg");
 }
 
@@ -37,7 +42,8 @@ scale.vertical.scale-has-marks-below slider:disabled {
 	background-image: url("assets/scale-slider-marks-below-vertical-insensitive.svg");
 }
 
-scale.horizontal.scale-has-marks-above slider {
+scale.horizontal.scale-has-marks-above slider,
+scale.horizontal.scale-has-marks-above slider:hover {
 	background-image: url("assets/scale-slider-marks-above-horizontal.svg");
 }
 
