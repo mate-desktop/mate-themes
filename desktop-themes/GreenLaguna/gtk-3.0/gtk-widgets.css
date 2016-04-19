@@ -355,8 +355,9 @@ undershoot.right {
 
 view,
 .view,
+.view.frame,
 .view:disabled {
-	background-color: shade(@base_color, 1.02);
+	background-color: shade(@base_color, 1.06);
 	color: @theme_text_color;
 	border-radius: 0px;
 	/*border-width: 3px;*/
@@ -778,6 +779,13 @@ scrolledwindow viewport.frame {
 	border-style: none;
 }
 
+/* remove useless paddings */
+stack frame,
+stacksidebar.sidebar > scrolledwindow,
+stacksidebar.sidebar > scrolledwindow > viewport.frame {
+    padding: 0px;
+}
+
 /***************
  * GtkLevelBar *
  ***************/
@@ -1012,11 +1020,23 @@ paned.horizontal > paned.vertical > notebook > header button.flat {
 }
 
 /* other notebooks */
-paned.horizontal > notebook {
-    border-width: 1px 1px 1px 1px;
+stack frame > paned.horizontal > notebook {
+    border-width: 0px;
     border-style: solid;
     border-color: @notebook_border;
     border-radius: 3px 3px 0px 0px;
+}
+
+stack frame > paned.horizontal > notebook:first-child {
+    border-width: 0px 1px 0px 0px;
+}
+
+stack frame > paned.horizontal > notebook:last-child {
+    border-width: 0px 0px 0px 1px;
+}
+
+stack frame > paned.horizontal > notebook:only-child {
+    border-width: 0px 1px 0px 1px;
 }
 
 paned.horizontal > notebook > header {
@@ -1263,11 +1283,10 @@ notebook paned separator.vertical {
  * treeview *
  ***************/
 
-treeview {
-	background-color: @theme_main_color;
-/*	-GtkWidget-wide-separators: false; *//* avoid padding issue in file-chooser open */
+treeview,
+treeview.view {
+	background-color: shade(@theme_bg_color, 1.06);
 	-GtkTreeView-vertical-separator: 0;
-/*	-GtkWidget-focus-padding: 1;*/
 }
 
 treeview:selected {
@@ -1318,7 +1337,8 @@ treeview header button label {
 }
 
 row {
-	border-width: 0px;
+    border-width: 0px;
+    min-height: 22px;
 }
 
 list row {
@@ -1345,6 +1365,10 @@ list row.activatable:hover {
     background-image: linear-gradient(to bottom,
 	                                  @button_hover_gradient_color_a,
 	                                  @button_hover_gradient_color_b);
+}
+
+list row.activatable label {
+    padding: 0px 4px;
 }
 
 .cell {
@@ -1774,6 +1798,10 @@ button.default {
 
 button.default:hover {
 	border-image: none;
+}
+
+button.image-button.radio {
+    margin: 0px 1px;
 }
 
 /******************
@@ -2356,13 +2384,16 @@ toolbar.inline-toolbar {
 }
 
 /* Stack switcher */
-stackswitcher > button > label, headerbar stackswitcher > button.titlebutton > label,
+stackswitcher > button > label,
+headerbar stackswitcher > button.titlebutton > label,
 .titlebar stackswitcher > button.titlebutton > label,
 calendar.header stackswitcher > button.titlebutton > label {
 	padding-left: 6px;
 	padding-right: 6px;
 }
-stackswitcher > button > image, headerbar stackswitcher > button.titlebutton > image,
+
+stackswitcher > button > image,
+headerbar stackswitcher > button.titlebutton > image,
 .titlebar stackswitcher > button.titlebutton > image,
 calendar.header stackswitcher > button.titlebutton > image {
 	padding-left: 6px;
@@ -2370,28 +2401,43 @@ calendar.header stackswitcher > button.titlebutton > image {
 	padding-top: 3px;
 	padding-bottom: 3px;
 }
+
+stackswitcher > button {
+	margin: 0px 1px;
+}
+
 stackswitcher > button.text-button {
 	padding: 5px 10px 6px;
 }
-stackswitcher > button.image-button, headerbar stackswitcher > button.titlebutton,
+
+stackswitcher > button.image-button,
+headerbar stackswitcher > button.titlebutton,
 .titlebar stackswitcher > button.titlebutton,
 calendar.header stackswitcher > button.titlebutton {
 	padding: 5px 2px;
 }
-stackswitcher > button.needs-attention > label, stackswitcher > button.needs-attention > image {
+
+stackswitcher > button.needs-attention > label,
+stackswitcher > button.needs-attention > image {
 	animation: needs_attention 150ms ease-in;
 	background-color: @theme_bg_color; /* FIXME: ? */
 	background-size: 6px 6px, 6px 6px;
 	background-repeat: no-repeat;
 	background-position: right 3px, right 4px;
 }
-stackswitcher > button.needs-attention > label:backdrop, stackswitcher > button.needs-attention > image:backdrop {
+
+stackswitcher > button.needs-attention > label:backdrop,
+stackswitcher > button.needs-attention > image:backdrop {
 	background-size: 6px 6px, 0 0;
 }
-stackswitcher > button.needs-attention > label:dir(rtl), stackswitcher > button.needs-attention > image:dir(rtl) {
+stackswitcher > button.needs-attention > label:dir(rtl),
+stackswitcher > button.needs-attention > image:dir(rtl) {
 	background-position: left 3px, left 4px;
 }
-stackswitcher > button.needs-attention:active > label, stackswitcher > button.needs-attention:active > image, stackswitcher > button.needs-attention:checked > label, stackswitcher > button.needs-attention:checked > image {
+stackswitcher > button.needs-attention:active > label,
+stackswitcher > button.needs-attention:active > image,
+stackswitcher > button.needs-attention:checked > label,
+stackswitcher > button.needs-attention:checked > image {
 	animation: none;
 	background-image: none;
 }
@@ -3034,11 +3080,12 @@ popover button.default.suggested-action.text-button:hover {
     color: @theme_fg_color;
 }
 
+.titlebar button,
 .titlebar button.image-button.popup,
 .titlebar button.toggle.popup.titlebutton,
 headerbar.frame.titlebar button.image-button.titlebutton,
 button.text-button.titlebutton {
-	padding: 4px;
+	padding: 2px;
 }
 
 .titlebar button.toggle.popup.titlebutton:hover,
@@ -3300,12 +3347,15 @@ grid:disabled {
 
 viewport,
 iconView {
-	border-radius: 3px;
+	border-radius: 0px;
 	padding: 0px;
 }
 
-viewport {
-	background-color: shade(@theme_bg_color, 1.02);
+viewport,
+viewport.frame {
+	border-radius: 0px;
+	background-color: shade(@theme_bg_color, 1.06);
+	padding: 0px;
 }
 
 iconView.view.cell:selected,
@@ -3462,26 +3512,15 @@ window.background.popup menu menuitem radio {
     background-color: transparent;
 }
 
-treeview check,
-treeview radio,
-treeview check:hover,
-treeview radio:hover,
-treeview check:checked,
-treeview radio:checked,
-treeview check:backdrop,
-treeview radio:backdrop,
-treeview check:backdrop:hover,
-treeview radio:backdrop:hover,
-treeview check:backdrop:checked,
-treeview radio:backdrop:checked,
-treeview check:focus,
-treeview radio:focus,
-treeview check:focus:hover,
-treeview radio:focus:hover,
-treeview check:focus:checked,
-treeview radio:focus:checked,
-treeview check:focus:checked:hover,
-treeview radio:focus:checked:hover {
+/* kill unwanted bg colors */
+treeview.view check,
+treeview.view radio,
+treeview.view check:selected,
+treeview.view radio:selected,
+treeview.view check:backdrop:checked,
+treeview.view radio:backdrop:checked,
+treeview.view check:selected:focus,
+treeview.view radio:selected:focus {
     background-color: transparent;
     background-image: none;
 }
@@ -3871,14 +3910,20 @@ entry.error:focus,
 	text-shadow: none;
 }
 
+popover .dim-label {
+	color: @theme_selected_fg_color;
+}
+
 /***********
  * Sidebar *
  ***********/
 
 .sidebar,
-placessidebar.sidebar .view {
+.sidebar treeview.view,
+placessidebar.sidebar {
     -gtk-icon-style: regular;
 	background-color: shade(@theme_bg_color, 1.02);
+    padding: 0px;
 }
 
 .sidebar:backdrop {
@@ -3886,40 +3931,41 @@ placessidebar.sidebar .view {
 }
 
 .sidebar .frame {
+	background-color: transparent;
     border-style: none;
 }
 
 /* dialog open */
-filechooser placessidebar.sidebar.frame .frame GtkListBox.sidebar.list,
-filechooser placessidebar.sidebar.frame .frame .sidebar.list list row.activatable.sidebar-row {
+filechooser placessidebar.sidebar.frame > viewport.frame > list > row.activatable.sidebar-row {
     background-color: shade(@theme_bg_color, 1.02);
-    border-radius: 2px;
+    border-radius: 0px;
+    padding: 0px 0px 0px 6px;
 }
 
-filechooser placessidebar.sidebar.frame .frame .sidebar.list list row.activatable.sidebar-row:selected,
-filechooser placessidebar.sidebar.frame .frame .sidebar.list list row.activatable.sidebar-row:selected:hover {
+filechooser placessidebar.sidebar.frame > viewport.frame > list > row.activatable.sidebar-row:selected,
+filechooser placessidebar.sidebar.frame > viewport.frame > list > row.activatable.sidebar-row:selected:hover {
     background-image:  linear-gradient(to bottom,
-                                       shade(@theme_bg_color, 1.3),
-                                       shade(@theme_bg_color, 0.73));
-    color: @theme_fg_color;
+                                       shade(@theme_selected_bg_color, 1.3),
+                                       shade(@theme_selected_bg_color, 0.73));
+    color: @theme_selected_fg_color;
 }
 
-filechooser placessidebar.sidebar.frame .frame .sidebar.list list row.activatable.sidebar-row:hover {
-	background-image:  linear-gradient(to bottom,
-	                                  @theme_bg_color,
-	                                  shade(@theme_bg_color, 0.80));
-	color: shade (@theme_selected_bg_color, 0.35);
+filechooser placessidebar.sidebar.frame > viewport.frame > list > row.activatable.sidebar-row:hover {
+    background-image:  linear-gradient(to bottom,
+                                       shade(@theme_selected_bg_color, 1.8),
+                                       shade(@theme_selected_bg_color, 1.53));
+	color: shade (@theme_fg_color, 1.0);
 }
 
-filechooser placessidebar.sidebar.frame .frame .sidebar.list list row.activatable.sidebar-row .sidebar-revealer .sidebar-icon {
+filechooser placessidebar.sidebar.frame > viewport.frame > list > row.activatable.sidebar-row .sidebar-revealer .sidebar-icon {
     padding: 4px 8px 4px 6px;
 }
 
-filechooser placessidebar.sidebar.frame .frame .sidebar.list list row.activatable.sidebar-row .sidebar-revealer .sidebar-label {
+filechooser placessidebar.sidebar.frame > viewport.frame > list > row.activatable.sidebar-row .sidebar-revealer .sidebar-label {
     padding: 4px 0px 4px 1px;
 }
 
-filechooser placessidebar.sidebar.frame .frame .sidebar.list list row.activatable.sidebar-row .sidebar-revealer button.sidebar-button.image-button {
+filechooser list row.activatable button.sidebar-button.image-button {
     background-color: transparent;
     background-image: none;
     border-image:none;
@@ -3928,70 +3974,75 @@ filechooser placessidebar.sidebar.frame .frame .sidebar.list list row.activatabl
     padding: 4px 12px 4px 0px;
 }
 
-filechooser treeview:selected:hover {
-    background-image:  linear-gradient(to bottom,
-                                       shade(@theme_bg_color, 1.3),
-                                       shade(@theme_bg_color, 0.73));
-    color: @theme_fg_color;
-}
-
 .sidebar separator,
 .sidebar separator:hover {
-	color: alpha(@frame_color, 0.6);
+    min-height: 1px;
+    background-image: linear-gradient(to bottom,
+	                                  alpha(@frame_color, 0.6),
+	                                  alpha(@frame_color, 0.6));
 }
 
-.sidebar treeview:hover {
-	background-image:  linear-gradient(to bottom,
-	                                  @theme_bg_color,
-	                                  shade(@theme_bg_color, 0.80));
-	color: shade (@theme_selected_bg_color, 0.35);
-}
-
-/* ie. GtkDialogOpen */
-.sidebar treeview:selected:focus {
-    color: @theme_fg_color;
-}
-
-.sidebar treeview:selected {
-    background-image:  linear-gradient(to bottom,
-                                       shade(@theme_bg_color, 1.3),
-                                       shade(@theme_bg_color, 0.73));
-    color: @theme_fg_color;
-}
-
-.sidebar treeview:focus,
+/* ie. dconf-editor */
+.sidebar treeview:selected,
+.sidebar treeview:focus:selected,
 .sidebar treeview:selected:hover {
-    background-image:  linear-gradient(to top,
-                                       shade(@theme_bg_color, 1.3),
-                                       shade(@theme_bg_color, 0.73));
-    color: @theme_fg_color;
+    background-image:  linear-gradient(to bottom,
+                                       shade(@theme_selected_bg_color, 1.3),
+                                       shade(@theme_selected_bg_color, 0.73));
+    color: @theme_selected_fg_color;
 }
 
 .sidebar treeview:hover {
     background-image:  linear-gradient(to bottom,
-	                                  @theme_bg_color,
-	                                  shade(@theme_bg_color, 0.80));
-    color: @theme_fg_color;
+                                       shade(@theme_selected_bg_color, 1.8),
+                                       shade(@theme_selected_bg_color, 1.53));
+	color: shade (@theme_fg_color, 1.0);
 }
 
 stacksidebar.sidebar scrolledwindow  {
-	background-image: linear-gradient(to bottom,
+	background-image: linear-gradient(to right,
 	                                  shade(@toolbar_gradient_base, 0.94),
 	                                  shade(@theme_bg_color, 1.0));
 	border-style: solid;
 	border-width: 0px 1px 0px 0px;
 	border-color: @borders;
 	border-radius: 2px 0px 0px 2px;
-	padding: 1px;
 }
 
 stacksidebar.sidebar viewport.frame {
  background-color:transparent;
 }
 
-stacksidebar.sidebar viewport.frame list row button {
-    transition: none;
+/***************
+ * Filechooser *
+ ***************/
+
+filechooser #pathbarbox {
+    background-color: shade(@theme_bg_color, 1.02);
+    border-color: @notebook_border;
+    border-width: 1px 1px 0px 1px;
+    border-style: solid;
+    border-radius: 3px 0px 0px 0px;
 }
+
+filechooser #pathbarbox button {
+    margin: 0px 1px;
+    padding: 4px;
+}
+
+/* avoid double borders */
+filechooser placesview stack frame {
+    border-style: none;
+}
+
+filechooser stack scrolledwindow {
+    background-color: shade(@theme_bg_color, 1.02);
+    border-color: @notebook_border;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0px;
+}
+
 
 /****************
  * GtkActionBar *

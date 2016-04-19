@@ -2,6 +2,27 @@
  * Caja *
  ************/
 
+.caja-side-pane > notebook {
+	background-color: shade(@theme_bg_color, 1.02);
+    border-color: @notebook_border;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.caja-side-pane > notebook  scrolledwindow.frame {
+	background-color: transparent;
+    border-style: none;
+}
+
+.caja-side-pane > notebook  scrolledwindow > viewport.frame,
+.caja-side-pane > notebook  scrolledwindow.frame treeview.view {
+	background-color: transparent;
+}
+
+.caja-side-pane  notebook scrolledwindow.frame textview.view {
+	background-color: transparent;
+}
+
 /* background of all views */
 CajaNavigationWindow .view,
 CajaNavigationWindow .view row {
