@@ -53,6 +53,10 @@ DConfKeyView.view .spinbutton .button {
  * Nemo *
  ********/
 
+.nemo-window-pane scrolledwindow {
+	background-color: shade(@base_color, 1.06);
+}
+
 NemoView .view,
 NemoView .view row {
 	background-color: shade(@base_color, 1.04)
