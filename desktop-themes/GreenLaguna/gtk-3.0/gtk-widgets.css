@@ -40,6 +40,7 @@
  ***************/
 .background {
 	color: @theme_fg_color;
+	text-shadow: none;
 	background-color: @theme_bg_color;
 	border-style: none;
 	border-width: 0px;
@@ -52,18 +53,21 @@
 }
 
 *:hover {
-/*	background-color: shade(@theme_bg_color, 1.02);*/
-	color: @theme_fg_color;
+/*	background-color: shade(@theme_bg_color, 1.02);
+	color: @theme_fg_color;*/
+	text-shadow: none;
 }
 
 *:selected {
-/*	background-color: shade(@theme_selected_bg_color, 1.23);*/
-	color: @theme_selected_fg_color;
+/*	background-color: shade(@theme_selected_bg_color, 1.23);
+	color: @theme_selected_fg_color;*/
+	text-shadow: none;
 }
 
 *:selected:focus {
-/*	background-color: @theme_selected_bg_color;*/
-	color: @theme_selected_fg_color;
+/*	background-color: @theme_selected_bg_color;
+	color: @theme_selected_fg_color;*/
+	text-shadow: none;
 }
 
 *:selected:backdrop {
@@ -74,8 +78,8 @@
 *:disabled {
 	/* no need to a different background */
 /*	background-color: @theme_bg_color; *//*@insensitive_bg_color;*/
-	color: @insensitive_fg_color;
-	border-color: @insensitive_border_color;
+/*	color: @insensitive_fg_color;
+	border-color: @insensitive_border_color;*/
 }
 
 *:active {
@@ -112,26 +116,29 @@
  * Tooltips *
  ************/
 
-tooltip {
-	padding: 4px;
-	border-style: none;
-	border-radius: 3px;
-}
-
+tooltip,
 tooltip.background {
-	background-image: linear-gradient(to left,
+    padding: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: @theme_fg_color;
+    border-radius: 3px;
+    background-image: linear-gradient(to left,
 	                                  shade(@theme_selected_bg_color, 1.1),
 	                                  shade(@theme_selected_bg_color, 0.65));
-	color: @theme_selected_fg_color;
+    color: @theme_selected_fg_color;
 }
 
 tooltip decoration {
-    background-color: transparent;
+    background-color: alpha(@theme_selected_bg_color, 0.55);
+    border-style: none;
+    border-width: 0px;
+    border-color: alpha(@theme_fg_color, 0.85);
+    border-radius: 3px;
 }
 
 tooltip * {
-	background-color: transparent;
-	color: @theme_selected_fg_color;
+	padding: 3px;
 }
 
 /*****************
@@ -356,11 +363,13 @@ undershoot.right {
 view,
 .view,
 .view.frame,
-.view:disabled {
-	background-color: shade(@base_color, 1.06);
+.view:disabled,
+iconview.view,
+viewport.frame {
+	background-color: shade(@base_color, 1.04);
 	color: @theme_text_color;
 	border-radius: 0px;
-	/*border-width: 3px;*/
+	padding: 0px;
 }
 
 view:selected,
@@ -389,29 +398,51 @@ view:selected:focus,
 textview text,
 textview.view:disabled,
 calendar.view,
-iconview.view,
 dialog .view,
 dialog view  {
 	background-color: @theme_main_color;
 	color: @theme_text_color;
 }
 
-iconview.view:selected,
-iconview.view:selected:hover {
-	background-color: shade(@theme_selected_bg_color, 1.0);
-	color: @theme_selected_fg_color;
-    border-radius: 4px;
-}
-
-iconview.view:hover {
-	background-color: shade(@theme_selected_bg_color, 1.8);
-	color: @theme_text_color;
-    border-radius: 4px;
-}
-
-textview text selection, textview text selection:focus {
+textview text selection,
+textview text selection:focus {
     background-color: @theme_selected_bg_color;
     color: @theme_selected_fg_color;
+}
+
+/* ie. mate-appearance-properties */
+iconview.view {
+	background-color: shade(@base_color, 1.04);
+	color: @theme_text_color;
+	border-radius: 0px;
+}
+
+iconview.view:selected,
+iconview.view:selected:focus,
+iconview.view:selected:hover,
+iconview.view:selected:focus:hover {
+	background-color: alpha(@theme_selected_bg_color, 0.35);
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 12px;
+	border-color: alpha(@theme_selected_bg_color, 0.75);
+	color: @theme_text_color;
+}
+
+iconview.view:hover,
+iconview.view:hover:focus {
+	background-color: alpha(@theme_selected_bg_color, 0.15);
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 12px;
+	border-color: alpha(@theme_selected_bg_color, 0.35);
+}
+
+/* ie. caja bg properties left side button area */
+viewport {
+	background-color: shade(@theme_bg_color, 1.00);
+	border-radius: 0px;
+	padding: 0px;
 }
 
 /* for firefox and probably other apps */
@@ -423,7 +454,7 @@ label selection:hover {
   color: @theme_selected_fg_color;
 }
 
-label:disabled:selected,
+label:selected:disabled,
 label selection:disabled {
 	color: @insensitive_fg_color;
 }
@@ -739,12 +770,6 @@ progressbar.vertical trough {
  * Frames *
  **********/
 
-frame,
-calendar {
-	padding: 2px;
-}
-
-.frame,
 frame {
 	background-color: shade(@base_color, 1.02);
 	color: lighter (@theme_fg_color);
@@ -752,7 +777,7 @@ frame {
 	border-width: 1px;
 	border-radius: 3px;
 	border-color: alpha(@frame_color, 0.6);
-	padding: 2px;
+	padding: 0px;
 }
 
 .frame.flat
@@ -760,11 +785,7 @@ frame.flat {
 	border-style: none;
 }
 
-action-bar.frame {
-	padding: 6px;
-	border-width: 1px 0 0;
-}
-
+/*scrolledwindow,*/
 scrolledwindow.frame {
 	-gtk-icon-style: regular;
 	border-style: solid;
@@ -777,13 +798,6 @@ scrolledwindow.frame {
 /* no double frames */
 scrolledwindow viewport.frame {
 	border-style: none;
-}
-
-/* remove useless paddings */
-stack frame,
-stacksidebar.sidebar > scrolledwindow,
-stacksidebar.sidebar > scrolledwindow > viewport.frame {
-    padding: 0px;
 }
 
 /***************
@@ -918,16 +932,6 @@ notebook header.right {
     box-shadow: inset  1px  0px alpha(shade(@button_border, 1.00), 0.90);
 }
 
-/*
-paned.horizontal notebook .frame {
-    border-style: none;
-}
-
-notebook.arrow:disabled {
-	color: transparent;
-}
-*/
-
 notebook header tab {
     border-color: transparent;
     border-width: 0px;
@@ -955,14 +959,14 @@ paned.horizontal > box.vertical > notebook > header.top,
 paned.horizontal > paned.vertical > notebook > header.top {
     border-style: solid;
     border-color: @notebook_border;
-    border-width: 1px 1px 1px 1px;
+    border-width: 1px 0px 0px 1px;
     border-radius: 3px 3px 0px 0px;
     box-shadow: none;
 }
 
 paned.horizontal > box.vertical > notebook scrolledwindow.frame,
 paned.horizontal > paned.vertical > notebook scrolledwindow.frame {
-    border-width: 0px 1px 1px 1px;
+    border-width: 1px 1px 1px 1px;
     border-style: solid;
     border-color: @notebook_border;
 }
@@ -1210,6 +1214,7 @@ notebook.frame > header > button.flat.toggle.image-button.popup.circular {
     border-image: none;
 }
 
+notebook button.flat,
 notebook > header button.flat,
 notebook > header button.flat.small-button {
     padding: 0px;
@@ -1285,7 +1290,7 @@ notebook paned separator.vertical {
 
 treeview,
 treeview.view {
-	background-color: shade(@theme_bg_color, 1.06);
+	background-color: shade(@theme_bg_color, 1.04);
 	-GtkTreeView-vertical-separator: 0;
 }
 
@@ -1336,6 +1341,14 @@ treeview header button label {
     padding: 0px 4px 0px 4px;
 }
 
+/* row as a separator, are there separators here with 3.20 ?*/
+treeview.view separator,
+treeview.view separator:hover {
+    min-height: 1px;
+    color: shade(@theme_bg_color, 0.87);
+    background-color: shade(@theme_bg_color, 0.87);
+}
+
 row {
     border-width: 0px;
     min-height: 22px;
@@ -1353,18 +1366,19 @@ list row.activatable {
 
 list row.activatable:selected,
 list row.activatable:selected:hover {
-	color: @theme_fg_color;
     background-color: transparent;
-    background-image: linear-gradient(to bottom,
-                                      @button_gradient_color_a,
-                                      @button_gradient_color_b);
+    background-image:  linear-gradient(to bottom,
+                                       shade(@theme_selected_bg_color, 1.3),
+                                       shade(@theme_selected_bg_color, 0.73));
+    color: @theme_selected_fg_color;
 }
 
 list row.activatable:hover {
     background-color: transparent;
-    background-image: linear-gradient(to bottom,
-	                                  @button_hover_gradient_color_a,
-	                                  @button_hover_gradient_color_b);
+    background-image:  linear-gradient(to bottom,
+                                       shade(@theme_selected_bg_color, 1.8),
+                                       shade(@theme_selected_bg_color, 1.53));
+	color: shade (@theme_fg_color, 1.0);
 }
 
 list row.activatable label {
@@ -1684,7 +1698,6 @@ button.default {
 
 /* ie. mate-control-center */
 button.flat {
-    transition: all 800ms ease-out;
     padding: 0px;
     border-color: transparent;
     background-color: transparent;
@@ -2099,7 +2112,8 @@ scrollbar.horizontal button.down {
  *********/
 
 /* this controls the general appearance of the menubar */
-menubar {
+menubar,
+.menubar {
     background-image: none;
     background-color: @theme_bg_color;
     border-width: 0px;
@@ -2109,20 +2123,32 @@ menubar {
     -GtkWidget-window-dragging: true;
 }
 
-menubar menuitem {
+menubar > menuitem,
+.menubar > menuitem {
     min-height: 20px;
     -gtk-icon-style: regular;
     transition: all 300ms ease-out;
     padding: 3px 7px;
-}
-
-menubar > menuitem {
 	border-width: 0px;
 	border-style: none;
 	background-color: transparent;
 }
 
-menubar > menuitem:hover {
+/* needed for broken firefox, valid transition effects breaks hover state here */
+menubar:hover {
+	background-image: none;
+	background-color: shade(@theme_selected_bg_color, 1.1);
+	border-style: none;
+	border-image: none;
+	/* join menuitem to menu */
+	border-radius: 3px 3px 0px 0px;
+	border-width: 0px;
+	color: @theme_selected_fg_color;
+    transition: none;
+}
+
+menubar > menuitem:hover,
+.menubar > menuitem:hover {
 	background-image: none;
 	background-color: shade(@theme_selected_bg_color, 1.1);
 	border-style: none;
@@ -2133,11 +2159,13 @@ menubar > menuitem:hover {
 	color: @theme_selected_fg_color;
 }
 
-menubar > menuitem:disabled {
+menubar > menuitem:disabled,
+.menubar > menuitem:disabled {
 	color: @theme_fg_color;
 }
 
-menu {
+menu,
+.menu {
 	background-color: transparent;
 	background-image: linear-gradient(to right,
 	                                  shade(@theme_selected_bg_color, 1.0),
@@ -2148,9 +2176,10 @@ menu {
 	border-radius: 0px;
 }
 
-menu > menuitem {
+/* needed for broken firefox, valid transition effects breaks hover state here */
+.menuitem {
     min-height: 22px;
-    transition: all 300ms ease-out;
+    transition: none;
 	background-color: transparent;
     border-color: transparent;
 	border-style: solid;
@@ -2159,102 +2188,157 @@ menu > menuitem {
     padding: 4px;
 }
 
-menu > menuitem,
-menu > menuitem > image {
+menu menuitem,
+.menu menuitem {
+    min-height: 22px;
+    transition: all 300ms ease-out;
+	background-color: transparent;
+    border-color: transparent;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 0px;
+    padding: 4px;
 	color: @theme_selected_fg_color;
 }
 
-menu > menuitem > image:hover {
+menu menuitem:hover,
+.menu menuitem:hover {
+	background-color: transparent;
+	background-image:  linear-gradient(to bottom,
+	                                  shade(@theme_selected_bg_color, 1.4),
+	                                  shade(@theme_selected_bg_color, 0.8));
 	color: @theme_fg_color;
-}
-
-/* scroll arrows */
-menuitem.button {
-	border-image: none;
-	color: @theme_main_color;
-	/*border-color: shade(@theme_selected_bg_color, 0.8);*/
-	background-image: linear-gradient(to bottom,
-	                                  shade(@theme_selected_bg_color, 1.3),
-	                                  shade(@theme_selected_bg_color, 0.5));
-}
-
-menuitem.button:hover {
-	/*border-color: shade(@theme_selected_bg_color, 0.8);*/
-	background-image:  linear-gradient(to bottom,
-	                                  @theme_bg_color,
-	                                  shade(@theme_bg_color, 0.80));
-}
-
-menuitem.button:disabled {
-	background-image: none;
-	background-color: transparent;
-	border-style: none;
-}
-
-menuitem:hover,
-menu menuitem:hover {
-	background-color: transparent;
-	background-image:  linear-gradient(to bottom,
-	                                  shade(@theme_selected_bg_color, 1.6),
-	                                  shade(@theme_selected_bg_color, 0.6));
-	color: @theme_selected_fg_color;
 	border-style: solid;
 	border-width: 1px;
 	border-radius: 3px;
 	border-image: url("assets/menu-border.svg") 2 / 2px stretch;
 }
 
-menu menuitem:disabled {
+menu menuitem:disabled,
+.menu menuitem:disabled {
 	background-color: transparent;
 	border-color: transparent;
 	color: @insensitive_fg_color;
 }
 
-menu separator {
+menu separator,
+.menu separator {
     min-height: 1px;
 	background-image: linear-gradient(to bottom,
 	                                  shade(@theme_selected_bg_color, 1.05),
 	                                  shade(@theme_selected_bg_color, 1.05));
 }
 
+menuitem arrow {
+    min-height: 16px;
+    min-width: 16px;
+    margin-left: 10px;
+}
+
+menu menuitem arrow:dir(ltr),
+.menu menuitem arrow:dir(ltr) {
+	-gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+
+menu menuitem arrow:dir(rtl),
+.menu menuitem arrow:dir(rtl) {
+        -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
+}
+
+menu > arrow.top,
+.menu > arrow.top {
+      -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
+}
+
+menu > arrow.bottom,
+.menu > arrow.bottom {
+      -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
+/* settings for 4 menu level, this is needed to override the menuitem:hover
+   state from previous menu level, as GtkArrow itself don't support states.
+   thanks gtk+ devs for this madness */
+menu > menuitem > arrow,
+menu > menuitem:hover menu > menuitem arrow,
+menu > menuitem:hover menu > menuitem:hover menu > menuitem arrow,
+menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem arrow,
+menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem arrow,
+.menu > menuitem > arrow,
+.menu > menuitem:hover .menu > menuitem arrow,
+.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem arrow,
+.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem arrow,
+.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem arrow  {
+   -gtk-icon-shadow:  0px  1px shade (@theme_fg_color, 0.8),
+                      1px  0px shade (@theme_fg_color, 0.8),
+                     -1px  0px shade (@theme_fg_color, 0.8),
+                      0px -1px shade (@theme_fg_color, 0.8);
+}
+
+menu > menuitem:hover > arrow,
+menu > menuitem:hover menu > menuitem:hover arrow,
+menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover arrow,
+menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover arrow,
+menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover arrow,
+.menu > menuitem:hover > arrow,
+.menu > menuitem:hover .menu > menuitem:hover arrow,
+.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover arrow,
+.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover arrow,
+.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover arrow {
+   -gtk-icon-shadow:  0px  1px shade (@theme_selected_fg_color, 0.8),
+                      1px  0px shade (@theme_selected_fg_color, 0.8),
+                     -1px  0px shade (@theme_selected_fg_color, 0.8),
+                      0px -1px shade (@theme_selected_fg_color, 0.8);
+}
+
 menuitem accelerator,
-menu menuitem accelerator {
+menu menuitem accelerator,
+.menu menuitem accelerator {
 	color: alpha(@theme_main_color, 0.66);
 }
 
 menuitem accelerator:hover,
 menuitem accelerator:active,
 menu menuitem accelerator:hover,
-menu menuitem accelerator:active {
+menu menuitem accelerator:active,
+.menu menuitem accelerator:hover,
+.menu menuitem accelerator:active {
 	color: alpha(@theme_text_color, 0.45);
 }
 
-window.background.popup menuitem arrow {
+/* scroll arrows */
+menu > arrow,
+.menu > arrow {
+    border-color: transparent;
+    background-color: transparent;
+    background-image: none;
     min-height: 16px;
     min-width: 16px;
-    margin-left: 10px;
-    color: @menu_fg_color;
+    padding: 4px;
+    background-color: @theme_selected_bg_color;
 }
 
-window.background.popup menu menuitem arrow:dir(ltr) {
-	-gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+menu > arrow.top,
+.menu > arrow.top {
+    margin-top: -2px;
+    margin-left: -2px;
 }
 
-window.background.popup menu menuitem arrow:dir(rtl) {
-        -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
+menu > arrow.bottom,
+.menu > arrow.bottom {
+    margin-bottom: -2px;
+    margin-left: -2px;
 }
 
-window.background.popup menu arrow.top {
-      -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
+menu > arrow:hover,
+.menu > arrow:hover {
+    background-color: shade(@theme_selected_bg_color, 1.4);
 }
 
-window.background.popup menu arrow.bottom {
-      -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
-}
-
-window.background.popup menu arrow:hover {
-    border-color: @theme_selected_fg_color;
-    color: shade (@theme_selected_bg_color, 1.6);
+menu > arrow:disabled,
+.menu > arrow:disabled {
+    color: transparent;
+    background-color: transparent;
+    border-color: transparent;
 }
 
 /************
@@ -2275,6 +2359,21 @@ toolbar {
 	-GtkToolbar-button-relief: normal;
 }
 
+toolbar.vertical {
+	background-image: linear-gradient(to right,
+	                                  shade(@toolbar_gradient_base, 0.94),
+	                                  shade(@theme_bg_color, 1.0));
+	border-width: 0px 1px 0px 0px;
+}
+
+toolbar.horizontal button {
+    margin: 0px 1px;
+}
+
+toolbar.vertical button {
+    margin: 1px 0px;
+}
+
 toolbar button.text-button {
 	padding: 2px 5px;
 }
@@ -2286,10 +2385,6 @@ toolbar button.image-button {
 /********************
  * Primary Toolbars *
  ********************/
-toolbar:disabled {
-	background-image: none;
-	background-color: shade(@theme_bg_color, 0.97);
-}
 
 /* (primary) toolbar buttons */
 toolbar button,
@@ -2318,8 +2413,6 @@ toolbar.primary-toolbar combobox button.combo {
 
 toolbar button:hover,
 toolbar.primary-toolbar button:hover,
-toolbar button:checked:hover,
-toolbar.primary-toolbar button:checked:hover,
 toolbar button:active:hover,
 toolbar.primary-toolbar button:active:hover,
 toolbar combobox button.combo:hover,
@@ -2339,7 +2432,6 @@ toolbar combobox button.combo:disabled,
 toolbar.primary-toolbar combobox button.combo:disabled {
 	border-image: none;
 	border-style: solid;
-	/*border-radius: 3px;*/
 	border-color: @inactive_frame_color;
 	background-image: linear-gradient(to bottom,
 	                                  @button_hover_gradient_color_a,
@@ -2348,7 +2440,6 @@ toolbar.primary-toolbar combobox button.combo:disabled {
 
 toolbar GtkSeparatorToolItem {
 /*	-GtkWidget-separator-width: 1;*/
-
 	border-style: solid;
 	border-width: 1px;
 	border-color: shade(@theme_bg_color, 0.85);
@@ -2359,13 +2450,11 @@ toolbar entry progressbar {
 	background-image: linear-gradient(to bottom,
 	                                  @trough_bg_color_a,
 	                                  @trough_bg_color_b);
-
 	border-width: 1px;
 	border-radius: 2px;
 	border-style: solid;
 	border-color: shade(@inactive_frame_color, 0.925);
 	border-image: none;
-
 	color: @internal_element_color;
 }
 
@@ -2374,16 +2463,19 @@ toolbar entry progressbar {
  *******************/
 
 toolbar.inline-toolbar {
-	border-width: 1px;
+	border-width: 0px 1px 1px 1px;
 	border-radius: 0px;
 	border-style: solid;
 	border-color: darker (@theme_bg_color);
-	background-image: linear-gradient(to bottom,
+	background-image: linear-gradient(to top,
 	                                  shade(@toolbar_gradient_base, 0.88),
 	                                  shade(@theme_bg_color, 1.5));
 }
 
-/* Stack switcher */
+/******************
+ * Stack switcher *
+ ******************/
+
 stackswitcher > button > label,
 headerbar stackswitcher > button.titlebutton > label,
 .titlebar stackswitcher > button.titlebutton > label,
@@ -2407,7 +2499,7 @@ stackswitcher > button {
 }
 
 stackswitcher > button.text-button {
-	padding: 5px 10px 6px;
+	padding: 4px 10px 5px;
 }
 
 stackswitcher > button.image-button,
@@ -2445,6 +2537,7 @@ stackswitcher > button.needs-attention:checked > image {
 /***************
  * Header bars *
  ***************/
+
 headerbar {
     border-width: 0 0 1px;
     border-style: solid;
@@ -2458,17 +2551,10 @@ headerbar {
     border-color: shade(@theme_bg_color, 0.8);
 }
 
-headerbar button.text-button {
-    padding: 2px 6px;
-}
-
-headerbar button.image-button {
-    padding: 5px 4px 4px 5px;
-}
-
 /*******
  * OSD *
  *******/
+
 .background.osd {
 	color: @osd_fg;
 	background-image: none;
@@ -3002,6 +3088,10 @@ modelbutton label {
     padding: 0px 0px 0px 4px
 }
 
+popover.background.menu button.image-button.model image {
+	color: @theme_selected_fg_color;
+}
+
 popover separator {
 	font-size: 80%;
 	font-weight: bold;
@@ -3051,10 +3141,10 @@ popover button.default.suggested-action.text-button:hover {
 .titlebar:backdrop {
     text-shadow: none;
     background-image: linear-gradient(to bottom,
-                                      shade (@theme_bg_color, 1.50),
+                                      shade (@theme_bg_color, 1.20),
                                       shade (@theme_bg_color, 1.0));
     border-radius: 7px 7px 0 0;
-	padding: 3px;
+	padding: 5px 4px 5px 5px;
 }
 
 .tiled .titlebar {
@@ -3081,35 +3171,27 @@ popover button.default.suggested-action.text-button:hover {
 }
 
 .titlebar button,
+.titlebar button.slider-button,
+.titlebar button.image-button,
 .titlebar button.image-button.popup,
+.titlebar button.toggle.image-button,
+.titlebar button.toggle.image-button.popup,
+.titlebar button.toggle.image-button.text-button,
 .titlebar button.toggle.popup.titlebutton,
 headerbar.frame.titlebar button.image-button.titlebutton,
 button.text-button.titlebutton {
 	padding: 2px;
+    margin: 0px 1px;
 }
 
-.titlebar button.toggle.popup.titlebutton:hover,
-headerbar.frame.titlebar button.image-button.titlebutton:hover,
-button.text-button.titlebutton:hover {
-	background-image: linear-gradient(to bottom,
-	                                  @button_hover_gradient_color_a,
-	                                  @button_hover_gradient_color_b);
+.titlebar stackswitcher button.text-button.radio {
+    padding: 1px 6px;
 }
 
-.titlebar button.toggle.popup.titlebutton:hover:active,
-headerbar.frame.titlebar:hover:active,
-button.image-button.titlebutton:hover:active,
-button.text-button.titlebutton:hover:active,
-.titlebar button.toggle.popup.titlebutton:checked,
-headerbar.frame.titlebar:checked,
-button.image-button.titlebutton:checked,
-button.text-button.titlebutton:checked {
-	color: @theme_fg_color;
-	border-style: solid;
-	background-image: linear-gradient(to bottom,
-	                                  shade(@button_gradient_color_b, 1.0),
-	                                  @theme_bg_color 50%,
-	                                  shade(@button_gradient_color_a, 1.5));
+button.titlebutton.close,
+button.titlebutton.minimize ,
+button.titlebutton.maximize {
+    margin: 0px -5px;
 }
 
 .titlebar separator.vertical.titlebutton {
@@ -3329,62 +3411,19 @@ overlay /* for floating bars */ {
 
 image,
 image:hover,
-image:active,
+image:checked,
 image:hover:active,
 image:disabled,
 label,
 label:hover,
-label:active,
+label:checked,
 label:hover:active,
 label:disabled,
-/* gtk-3.12 */
 box,
 box:disabled,
 grid,
 grid:disabled {
 	background-color: transparent;
-}
-
-viewport,
-iconView {
-	border-radius: 0px;
-	padding: 0px;
-}
-
-viewport,
-viewport.frame {
-	border-radius: 0px;
-	background-color: shade(@theme_bg_color, 1.06);
-	padding: 0px;
-}
-
-iconView.view.cell:selected,
-iconView.view.cell:selected:focus {
-	background-color: transparent;
-	border-style: solid;
-	border-width: 3px;
-	border-radius: 12px;
-	border-color: @theme_selected_bg_color;
-	color: @theme_text_color;
-
-	/* FIXME: this probably needs to be better;
-	 * see https://bugzilla.gnome.org/show_bug.cgi?id=644157
-	 */
-	outline-color: @progressbar_border;
-	outline-style: solid;
-	outline-offset: 3px;
-}
-
-iconView.view.cell:hover,
-iconView.view.cell:hover:focus {
-	border-style: none;
-	border-radius: 12px;
-}
-
-/* row as a separator */
-treeview.view.separator,
-treeview.view.separator:hover {
-	color: shade(@theme_bg_color, 0.87);
 }
 
 /*****************
@@ -3492,6 +3531,7 @@ check:selected:focus,
 /********************************
  * GtkCheckButton GtkRadioButton*
  ********************************/
+
 checkbutton:selected:focus,
 radiobutton:selected:focus {
 	background-color: shade(@theme_bg_color, 0.95);
@@ -3553,10 +3593,6 @@ treeview.view.expander:selected:hover {
 treeview.view.expander:checked {
     -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
 }
-
-/*************
- * Expanders *
- *************/
 
 expander arrow {
 	min-height: 16px;
@@ -3660,19 +3696,19 @@ iconview.content-view.check {
 	background-color: transparent;
 }
 
-iconview.content-view.check:active {
+iconview.content-view.check:checked {
 	background-image: url("assets/grid-selection-checked.svg");
 	background-color: transparent;
 }
 
 .content-view.view.check,
-.content-view.view.check:active {
+.content-view.view.check:checked {
 	background-color: transparent;
 }
 
 iconview.content-view.check:hover,
 iconview.content-view.check:disabled,
-iconview.content-view.check:selected {
+iconview.content-view.check:checked {
 	background-color: transparent;
 }
 
@@ -3894,6 +3930,32 @@ entry.error:focus,
 	color: @error_fg_color;
 }
 
+infobar revealer button {
+    background-image: linear-gradient(to bottom,
+                                      @inherit,
+                                      @button_gradient_color_b);
+    background-color: transparent;
+	color: @theme_selected_fg_color;
+}
+
+infobar revealer button:hover {
+	background-image: linear-gradient(to bottom,
+	                                  @inherit,
+	                                  @button_hover_gradient_color_b);
+    background-color: transparent;
+	color: @theme_selected_fg_color;
+}
+
+infobar revealer button:disabled {
+    background-image: none;
+    background-color: inherit;
+	color: @insensitive_fg_color;
+}
+
+infobar revealer button label {
+	color: @theme_selected_fg_color;
+}
+
 /**************
  * Dim labels *
  **************/
@@ -3926,6 +3988,11 @@ placessidebar.sidebar {
     padding: 0px;
 }
 
+/* ie. nemo */
+.sidebar treeview.view {
+    padding: 2px 0px;
+}
+
 .sidebar:backdrop {
     background-color: shade(@theme_bg_color, 1.02);
 }
@@ -3935,37 +4002,38 @@ placessidebar.sidebar {
     border-style: none;
 }
 
-/* dialog open */
-filechooser placessidebar.sidebar.frame > viewport.frame > list > row.activatable.sidebar-row {
+/* dialog open, nautilus */
+placessidebar.sidebar.frame > viewport.frame > list > row.activatable.sidebar-row {
     background-color: shade(@theme_bg_color, 1.02);
     border-radius: 0px;
     padding: 0px 0px 0px 6px;
 }
 
-filechooser placessidebar.sidebar.frame > viewport.frame > list > row.activatable.sidebar-row:selected,
-filechooser placessidebar.sidebar.frame > viewport.frame > list > row.activatable.sidebar-row:selected:hover {
+placessidebar.sidebar.frame > viewport.frame > list > row.activatable.sidebar-row:selected,
+placessidebar.sidebar.frame > viewport.frame > list > row.activatable.sidebar-row:selected:hover {
     background-image:  linear-gradient(to bottom,
                                        shade(@theme_selected_bg_color, 1.3),
                                        shade(@theme_selected_bg_color, 0.73));
     color: @theme_selected_fg_color;
 }
 
-filechooser placessidebar.sidebar.frame > viewport.frame > list > row.activatable.sidebar-row:hover {
+placessidebar.sidebar.frame > viewport.frame > list > row.activatable.sidebar-row:hover {
     background-image:  linear-gradient(to bottom,
                                        shade(@theme_selected_bg_color, 1.8),
                                        shade(@theme_selected_bg_color, 1.53));
 	color: shade (@theme_fg_color, 1.0);
 }
 
-filechooser placessidebar.sidebar.frame > viewport.frame > list > row.activatable.sidebar-row .sidebar-revealer .sidebar-icon {
+placessidebar.sidebar.frame > viewport.frame > list > row.activatable.sidebar-row .sidebar-revealer .sidebar-icon {
     padding: 4px 8px 4px 6px;
 }
 
-filechooser placessidebar.sidebar.frame > viewport.frame > list > row.activatable.sidebar-row .sidebar-revealer .sidebar-label {
+placessidebar.sidebar.frame > viewport.frame > list > row.activatable.sidebar-row .sidebar-revealer .sidebar-label {
     padding: 4px 0px 4px 1px;
 }
 
-filechooser list row.activatable button.sidebar-button.image-button {
+placesview viewport list row.activatable button.sidebar-button.image-button,
+placessidebar.sidebar.frame > viewport.frame > list row.activatable button.sidebar-button.image-button {
     background-color: transparent;
     background-image: none;
     border-image:none;
@@ -4050,6 +4118,9 @@ filechooser stack scrolledwindow {
 
 actionbar {
     padding: 2px;
+	border-style: solid;
+	border-width: 1px 0px 0px 0px;
+	border-color: alpha(@frame_color, 0.6);
 }
 
 actionbar stackswitcher.horizontal.linked button.image-button.radio  {

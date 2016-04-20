@@ -73,60 +73,40 @@ button {
 
 button:hover,
 button:checked,
-button:hover:active
+button:hover:active,
+toolbar button:hover,
+toolbar button:checked,
+toolbar button:hover:active,
+toolbar.primary-toolbar button:hover,
+toolbar.primary-toolbar button:checked,
+toolbar.primary-toolbar button:hover:active,
 list row button:hover,
 list row button:selected,
 list row button:selected:hover {
-	border-image: url("assets/button-active-border.svg") 3 / 3px stretch;
+	border-image: url("assets/button-active-border.svg") 3 3 3 3 / 3px 3px 3px 3px stretch;
 }
 
 button.default {
-	border-image: url("assets/button-default-border.svg") 3 / 3px stretch;
+	border-image: url("assets/button-default-border.svg") 3 3 3 3 / 3px 3px 3px 3px stretch;
 }
 
 button.default:hover,
 button.default:checked {
-	border-image: url("assets/button-default-active-border.svg") 3 / 3px stretch;
-}
-
-toolbar button:checked,
-toolbar.primary-toolbar button:checked,
-toolbar combobox button,
-toolbar.primary-toolbar combobox button /*,
-toolbar button:hover:active */ {
-	border-image: url("assets/toolbar-button-border.svg") 3 / 3px stretch;
-}
-
-toolbar button:hover,
-toolbar.primary-toolbar button:hover,
-.header-bar.frame.titlebar button.image-button.titlebutton:hover,
-button.text-button.titlebutton:hover,
-toolbar button:hover:active,
-toolbar button:hover:first-child,
-toolbar.primary-toolbar button:hover:first-child,
-.header-bar.frame.titlebar button.image-button.titlebutton:hover:first-child,
-button.text-button.titlebutton:hover:first-child,
-toolbar button:hover:active:first-child,
-toolbar button:hover:last-child,
-toolbar.primary-toolbar button:hover:last-child,
-.header-bar.frame.titlebar button.image-button.titlebutton:hover:last-child,
-button.text-button.titlebutton:hover:last-child,
-toolbar button:hover:active:last-child {
-	border-image: url("assets/button-active-border.svg") 3 / 3px stretch;
+	border-image: url("assets/button-default-active-border.svg") 3 3 3 3 / 3px 3px 3px 3px stretch;
 }
 
 /* overrride for osd */
 toolbar.osd button:hover,
-toolbar.osd button:active,
+toolbar.osd button:checked,
 toolbar.osd button:hover:first-child,
-toolbar.osd button:active:first-child,
+toolbar.osd button:checked:first-child,
 toolbar.osd button:hover:last-child,
-toolbar.osd button:active:last-child {
+toolbar.osd button:checked:last-child {
 	border-image: none;
 }
 
 switch:checked {
-	border-image: url("assets/switch-trough-border-active.svg") 3 / 3px stretch;
+	border-image: url("assets/switch-trough-border-active.svg") 3 3 3 3 / 3px 3px 3px 3px stretch;
 }
 
 popover.scale-popup button.flat.image-button:disabled {
@@ -138,11 +118,11 @@ popover.scale-popup button.flat.image-button:disabled {
 
 popover.scale-popup button.flat.image-button {
    background-image: none;
-   border-image: url("assets/button-border.svg") 3 / 3px stretch;
+   border-image: url("assets/button-border.svg") 3 3 3 3 / 3px 3px 3px 3px stretch;
 }
 
 popover.scale-popup button.flat.image-button:hover {
-   border-image: url("assets/button-active-border.svg") 3 / 3px stretch;
+   border-image: url("assets/button-active-border.svg") 3 3 3 3 / 3px 3px 3px 3px stretch;
 	-gtk-icon-effect: highlight;
 }
 
@@ -271,7 +251,3 @@ radio row:selected:focus:indeterminate:disabled {
 	-gtk-icon-source: -gtk-scaled(url("assets/radio-mixed-insensitive.svg"));
 }
 
-/*.menuitem:active,
-.menuitem:hover {
-	border-image: url("assets/menu-border.svg") 2 / 2px stretch;
-}*/
