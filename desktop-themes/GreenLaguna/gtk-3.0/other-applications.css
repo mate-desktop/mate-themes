@@ -75,6 +75,12 @@
     border-color: alpha(@frame_color, 0.6);
 }
 
+/* remove unwanted border from desktop window */
+.nemo-desktop-window box.nemo-window-pane scrolledwindow {
+    border-width: 0px;
+    border-style: none;
+}
+
 .nemo-canvas-item {
 	border-radius: 5px;
 }
