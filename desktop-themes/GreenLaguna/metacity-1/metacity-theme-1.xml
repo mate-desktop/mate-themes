@@ -274,51 +274,51 @@
 
 <draw_ops name="background">
 
-   <rectangle color="#E9EFE7" x="0" y="0" width="width" height="height" filled="true"/>
+   <rectangle color="#E6EFE3" x="0" y="0" width="width" height="height" filled="true"/>
 
-   <rectangle color="#B4B5B3" x="0" y="0" width="width-1" height="height-1" filled="false"/>
+   <rectangle color="#AAB5A1" x="0" y="0" width="width-1" height="height-1" filled="false"/>
 
-   <rectangle color="#E9EFE7" x="left_width-1" y="top_height-1" 
+   <rectangle color="#E6EFE3" x="left_width-1" y="top_height-1"
 	width="width-left_width-right_width+2" height="height-top_height-bottom_height" filled="true"/>
 
  <!--Title bar gradient--> 
  
     <gradient type="vertical" x="1" y="1" width="width-2" height="top_height-2">
-	<color value="#FFFFFF"/>
-	<color value="#E9EFE7"/>
+	<color value="#EAEFE8"/>
+	<color value="#E6EFE3"/>
     </gradient>
 
-    <line color="#EFEBE7" x1="right_width" y1="top_height-1" x2="width-right_width-2+1" y2="top_height-1" />
+    <line color="#E8EFE5" x1="right_width" y1="top_height-1" x2="width-right_width-2+1" y2="top_height-1" />
 
  <!--Top curves--> 
-    <line color="#B5B5B5" x1="0" y1="5" x2="2" y2="2"/>
-    <line color="#B5B5B5" x1="2" y1="2" x2="5" y2="0"/>
-    <line color="#B5B5B5" x1="width-right_width+1" y1="5" x2="width-right_width-2+1" y2="2"/>
-    <line color="#B5B5B5" x1="width-right_width-2+1" y1="2" x2="width-right_width-5+1" y2="0"/>
+    <line color="#ABB5A8" x1="0" y1="5" x2="2" y2="2"/>
+    <line color="#ABB5A8" x1="2" y1="2" x2="5" y2="0"/>
+    <line color="#ABB5A8" x1="width-right_width+1" y1="5" x2="width-right_width-2+1" y2="2"/>
+    <line color="#ABB5A8" x1="width-right_width-2+1" y1="2" x2="width-right_width-5+1" y2="0"/>
  <!--Bottom curves--> 
-    <line color="#B5B5B5" x1="0" y1="height-bottom_height" x2="2" y2="height-bottom_height+3"/>
-    <line color="#B5B5B5" x1="2" y1="height-bottom_height+3" x2="5" y2="height-bottom_height+5"/>
-    <line color="#B5B5B5" x1="width-right_width+1" y1="height-bottom_height" x2="width-right_width-2+1" y2="height-bottom_height+3"/>
-    <line color="#B5B5B5" x1="width-right_width-2+1" y1="height-bottom_height+3" x2="width-right_width-5+1" y2="height-bottom_height+5"/>
+    <line color="#ABB5A8" x1="0" y1="height-bottom_height" x2="2" y2="height-bottom_height+3"/>
+    <line color="#ABB5A8" x1="2" y1="height-bottom_height+3" x2="5" y2="height-bottom_height+5"/>
+    <line color="#ABB5A8" x1="width-right_width+1" y1="height-bottom_height" x2="width-right_width-2+1" y2="height-bottom_height+3"/>
+    <line color="#ABB5A8" x1="width-right_width-2+1" y1="height-bottom_height+3" x2="width-right_width-5+1" y2="height-bottom_height+5"/>
 </draw_ops>
 
 <draw_ops name="max_background">
 
-   <rectangle color="#E9EFE7" x="0" y="0" width="width" height="height" filled="true"/>
+   <rectangle color="#E6EFE3" x="0" y="0" width="width" height="height" filled="true"/>
 
-   <rectangle color="#E9EFE7" x="0" y="0" width="width-1" height="height-1" filled="false"/>
+   <rectangle color="#E6EFE3" x="0" y="0" width="width-1" height="height-1" filled="false"/>
 
-   <rectangle color="#E9EFE7" x="left_width-1" y="top_height-1" 
+   <rectangle color="#E6EFE3" x="left_width-1" y="top_height-1"
 	width="width-left_width-right_width+2" height="height-top_height-bottom_height" filled="true"/>
 
  <!--Title bar gradient--> 
  
     <gradient type="vertical" x="1" y="1" width="width-2" height="top_height-2">
         <color value="#FFFFFF" />
-	<color value="#E9EFE7" />
+	<color value="#E6EFE3" />
     </gradient>
 
-    <line color="#E9EFE7" x1="right_width" y1="top_height-1" x2="width-right_width-2+1" y2="top_height-1" />
+    <line color="#E6EFE3" x1="right_width" y1="top_height-1" x2="width-right_width-2+1" y2="top_height-1" />
 </draw_ops>
 
 <!--Set up draw_ops for drawing the title text-->
