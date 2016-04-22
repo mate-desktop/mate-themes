@@ -155,13 +155,13 @@
 @define-color overshoot_bg_color alpha (@theme_selected_bg_color, 0.15);
 @define-color overshoot_backdrop_bg_color #C8FA96;
 
-@define-color wm_a shade(@theme_bg_color, 1.3);
+@define-color wm_a shade(@theme_bg_color, 1.05);
 @define-color wm_b @theme_bg_color;
-@define-color wm_util shade(@theme_bg_color, 1.2);
-@define-color wm_unfocus shade(@theme_bg_color, 1.05);
+@define-color wm_util shade(@theme_bg_color, 1.05);
+@define-color wm_unfocus shade(@theme_bg_color, 1.02);
 @define-color wm_shadow alpha(black, 0.5);
 /* csd border */
-@define-color wm_csd_solid_bg shade(@theme_bg_color, 1.05);
+@define-color wm_csd_solid_bg shade(@theme_bg_color, 1.02);
 @define-color wm_csd_border_color shade (#B4B5B3, 1.35);
 @define-color wm_csd_solid_border_color shade (#B4B5B3, 1.2);
 

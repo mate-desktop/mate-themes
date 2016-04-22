@@ -800,6 +800,19 @@ scrolledwindow viewport.frame {
 	border-style: none;
 }
 
+/* ie, dconf-editor, nautilus view */
+.background.csd scrolledwindow,
+.gedit-bottom-panel-paned > grid > notebook scrolledwindow,
+.background.solid-csd > grid > paned.horizontal scrolledwindow {
+    background-color: shade(@base_color, 1.04);
+	-gtk-icon-style: regular;
+	border-style: solid;
+	border-color: alpha(@frame_color, 0.6);
+	border-width: 0px 1px 1px 1px;
+	border-radius: 2px;
+	padding: 0;
+}
+
 /***************
  * GtkLevelBar *
  ***************/
@@ -955,6 +968,8 @@ notebook header tab .active-page label {
 }
 
 /* tabs and header in view areas, ie. pluma-, caja-tabs */
+.gedit-bottom-panel-paned > grid > notebook > header.top,
+window.background > notebook > header.top, /* nautilus preferences */
 paned.horizontal > box.vertical > notebook > header.top,
 paned.horizontal > paned.vertical > notebook > header.top {
     border-style: solid;
@@ -971,6 +986,8 @@ paned.horizontal > paned.vertical > notebook scrolledwindow.frame {
     border-color: @notebook_border;
 }
 
+.gedit-bottom-panel-paned > grid > notebook > header tab,
+window.background > notebook > header tab,
 paned.horizontal > notebook > header tab,
 paned.horizontal > box.vertical > notebook > header tab,
 paned.horizontal > paned.vertical > notebook > header tab {
@@ -985,6 +1002,10 @@ paned.horizontal > paned.vertical > notebook > header tab {
     border-color: @notebook_border;
 }
 
+.gedit-bottom-panel-paned > grid > notebook > header tab:checked,
+.gedit-bottom-panel-paned > grid > notebook > header tab:checked:hover,
+window.background > notebook > header.top tab:checked,
+window.background > notebook > header.top tab:checked:hover,
 paned.horizontal > notebook > header.top tab:checked,
 paned.horizontal > notebook > header.top tab:checked:hover,
 paned.horizontal > box.vertical > notebook > header.top tab:checked,
@@ -1003,6 +1024,8 @@ paned.horizontal > paned.vertical > notebook > header.top tab:checked:hover {
     box-shadow: none;
 }
 
+.gedit-bottom-panel-paned > grid > notebook > header tab:hover,
+window.background > notebook > header.top tab:hover,
 paned.horizontal > notebook > header.top tab:hover,
 paned.horizontal > box.vertical > notebook > header.top tab:hover,
 paned.horizontal > paned.vertical > notebook > header.top tab:hover {
@@ -1018,6 +1041,7 @@ paned.horizontal > paned.vertical > notebook > header.top tab:hover {
     box-shadow: none;
 }
 
+.gedit-bottom-panel-paned > grid > notebook > header button.flat.small-button,
 paned.horizontal > box.vertical > notebook > header button.flat,
 paned.horizontal > paned.vertical > notebook > header button.flat {
     padding: 1px;
@@ -2534,23 +2558,6 @@ stackswitcher > button.needs-attention:checked > image {
 	background-image: none;
 }
 
-/***************
- * Header bars *
- ***************/
-
-headerbar {
-    border-width: 0 0 1px;
-    border-style: solid;
-    border-radius: 7px 7px 0 0;
-    padding: 0 1px;
-    padding: 6px;
-    background-color: @theme_bg_color;
-    /*background-image: linear-gradient(to bottom,
-                                        @toolbar_gradient_base,
-                                        shade(@theme_bg_color, 1.6));*/
-    border-color: shade(@theme_bg_color, 0.8);
-}
-
 /*******
  * OSD *
  *******/
@@ -3112,6 +3119,7 @@ popover .horizontal label {
 }
 
 .linked button.image-button.model,
+popover button.text-button,
 popover button.default.suggested-action.text-button {
     background-color: transparent;
     background-image: none;
@@ -3122,6 +3130,7 @@ popover button.default.suggested-action.text-button {
 }
 
 .linked button.image-button.model:hover,
+popover button.text-button:hover,
 popover button.default.suggested-action.text-button:hover {
 	color: @theme_selected_fg_color;
 	background-image:  linear-gradient(to bottom,
@@ -3133,10 +3142,17 @@ popover button.default.suggested-action.text-button:hover {
 	border-radius: 3px;
 }
 
+/***************
+ * Header bars *
+ ***************/
+
+
+
 /*******
  * CSD *
  *******/
 
+headerbar,
 .titlebar,
 .titlebar:backdrop {
     text-shadow: none;
@@ -3145,6 +3161,18 @@ popover button.default.suggested-action.text-button:hover {
                                       shade (@theme_bg_color, 1.0));
     border-radius: 7px 7px 0 0;
 	padding: 5px 4px 5px 5px;
+    border-width: 0 0 1px;
+    border-style: solid;
+    border-color: shade(@theme_bg_color, 0.8);
+}
+
+/* fix for gedit, .titlebar does not match headerbar selector */
+.background.csd > paned.horizontal.titlebar,
+.background.solid-csd > paned.horizontal.titlebar {
+    background-color: transparent;
+    padding: 0px 0px 0px 0px;
+    margin: 0px -2px 0px -2px;
+    border-width: 0px;
 }
 
 .tiled .titlebar {
@@ -4003,6 +4031,12 @@ placessidebar.sidebar {
 }
 
 /* dialog open, nautilus */
+placessidebar.sidebar.frame {
+    border-width: 0px 1px 1px 1px;
+    border-style: solid;
+    border-color: alpha(@frame_color, 0.6);
+}
+
 placessidebar.sidebar.frame > viewport.frame > list > row.activatable.sidebar-row {
     background-color: shade(@theme_bg_color, 1.02);
     border-radius: 0px;
