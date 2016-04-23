@@ -2,32 +2,15 @@
     padding: 0px;
     background-clip: padding-box;
     /* Style properties */
-/*    -GtkButton-child-displacement-x: 1;
-    -GtkButton-child-displacement-y: 1;
-    -GtkButton-default-border: 0;
-    -GtkButton-image-spacing: 4;
-    -GtkButton-interior-focus: true; */
     -GtkToolButton-icon-spacing: 4;
     -GtkTextView-error-underline-color: @error_color;
-/*    -GtkPaned-handle-size: 5;
-    -GtkCheckButton-indicator-size: 16;
-    -GtkCheckButton-indicator-spacing: 0;
-    -GtkCheckMenuItem-indicator-size: 12; */
     -GtkScrolledWindow-scrollbar-spacing: 0;
-/*    -GtkScrolledWindow-scrollbars-within-bevel: 0; */
     -GtkToolItemGroup-expander-size: 12;
-/*    -GtkExpander-expander-size: 12; */
     -GtkTreeView-expander-size: 12; /* arrow size in list/tree views */
     -GtkTreeView-horizontal-separator: 4;
-/*    -GtkMenuBar-shadow-type: none;
-    -GtkMenu-horizontal-padding: 0;
-    -GtkMenu-vertical-padding: 0; */
     -GtkIMHtml-hyperlink-color: @link_color;
     -GtkHTML-link-color: @link_color;
-/*    -GtkWidget-wide-separators: true; */
     -WnckTasklist-fade-overlay-rect: 0;
-/*    -GtkWidget-focus-padding: 2;
-    -GtkWidget-focus-line-width: 0; */
     outline-color: @focus_border;
     outline-style: dashed;
     outline-offset: 2px;
@@ -3371,7 +3354,7 @@ assistant .sidebar {
     border-color: shade(@theme_bg_color, 0.9);
     border-width: 1px;
     border-radius: 3px;
-    color: mix (@theme_fg_color, @theme_bg_color, 0.40); /*?*/
+    color: mix (@theme_fg_color, @theme_bg_color, 0.40);
     background-color: shade(@theme_bg_color, 0.9);
 }
 
