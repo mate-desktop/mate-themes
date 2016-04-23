@@ -1353,6 +1353,7 @@ treeview header button {
     border-style: solid;
     border-color: @button_border;
     min-height: 18px;
+    padding: 0px;
 }
 
 treeview header button:hover {
@@ -1702,7 +1703,7 @@ combobox > box > button.combo > box > arrow:disabled {
 
 button {
     -gtk-icon-style: regular;
-    padding: 0px;
+    padding: 3px;
     border-radius: 3px;
     border-width: 1px;
     border-style: solid;
@@ -1847,16 +1848,20 @@ buttonbox.horizontal.linked.dialog-action-area button {
     margin: 0px 1px;
 }
 
+button.needs-attention label {
+     background-color: @warning_bg_color;
+}
+
 /******************
  * Linked Buttons *
  ******************/
 
 .linked.horizontal combobox .linked.horizontal button.combo {
-     margin: 0px 1px;
+    margin: 0px 1px;
 }
 
 .linked.vertical button {
-     margin: 1px 0px;
+    margin: 1px 0px;
 }
 
 /* We don't make them different. */
@@ -2550,7 +2555,7 @@ calendar.header stackswitcher > button.titlebutton {
 stackswitcher > button.needs-attention > label,
 stackswitcher > button.needs-attention > image {
     animation: needs_attention 150ms ease-in;
-    background-color: @theme_bg_color; /* FIXME: ? */
+    background-color: @warning_bg_color;
     background-size: 6px 6px, 6px 6px;
     background-repeat: no-repeat;
     background-position: right 3px, right 4px;
@@ -3161,7 +3166,7 @@ popover button.default.suggested-action.text-button {
     text-shadow:none;
     border-style: none;
     box-shadow: none;
-    border-radius: 2px;
+    border-radius: 3px;
 }
 
 .linked button.image-button.model:hover,
@@ -3491,12 +3496,8 @@ grid:disabled {
  * Color Chooser *
  *****************/
 
-button.color {
-    min-height: 27px;
-}
-
 button.color > colorswatch.activatable {
-   padding: 5px;
+   padding: 2px;
 }
 
 colorchooser {
