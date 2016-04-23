@@ -1,115 +1,115 @@
 * {
-	padding: 0px;
-	background-clip: padding-box;
-	/* Style properties */
-/*	-GtkButton-child-displacement-x: 1;
-	-GtkButton-child-displacement-y: 1;
-	-GtkButton-default-border: 0;
-	-GtkButton-image-spacing: 4;
-	-GtkButton-interior-focus: true; */
-	-GtkToolButton-icon-spacing: 4;
-	-GtkTextView-error-underline-color: @error_color;
-/*	-GtkPaned-handle-size: 5;
-	-GtkCheckButton-indicator-size: 16;
-	-GtkCheckButton-indicator-spacing: 0;
-	-GtkCheckMenuItem-indicator-size: 12; */
-	-GtkScrolledWindow-scrollbar-spacing: 0;
-/*	-GtkScrolledWindow-scrollbars-within-bevel: 0; */
-	-GtkToolItemGroup-expander-size: 12;
-/*	-GtkExpander-expander-size: 12; */
-	-GtkTreeView-expander-size: 12; /* arrow size in list/tree views */
-	-GtkTreeView-horizontal-separator: 4;
-/*	-GtkMenuBar-shadow-type: none;
-	-GtkMenu-horizontal-padding: 0;
-	-GtkMenu-vertical-padding: 0; */
-	-GtkIMHtml-hyperlink-color: @link_color;
-	-GtkHTML-link-color: @link_color;
-/*	-GtkWidget-wide-separators: true; */
-	-WnckTasklist-fade-overlay-rect: 0;
-/*	-GtkWidget-focus-padding: 2;
-	-GtkWidget-focus-line-width: 0; */
-	outline-color: @focus_border;
-	outline-style: dashed;
-	outline-offset: 2px;
-	outline-width: 0px; /* disable ugly focus-line */
-	/*-gtk-icon-style: regular; *//* no symbolic icons */
+    padding: 0px;
+    background-clip: padding-box;
+    /* Style properties */
+/*    -GtkButton-child-displacement-x: 1;
+    -GtkButton-child-displacement-y: 1;
+    -GtkButton-default-border: 0;
+    -GtkButton-image-spacing: 4;
+    -GtkButton-interior-focus: true; */
+    -GtkToolButton-icon-spacing: 4;
+    -GtkTextView-error-underline-color: @error_color;
+/*    -GtkPaned-handle-size: 5;
+    -GtkCheckButton-indicator-size: 16;
+    -GtkCheckButton-indicator-spacing: 0;
+    -GtkCheckMenuItem-indicator-size: 12; */
+    -GtkScrolledWindow-scrollbar-spacing: 0;
+/*    -GtkScrolledWindow-scrollbars-within-bevel: 0; */
+    -GtkToolItemGroup-expander-size: 12;
+/*    -GtkExpander-expander-size: 12; */
+    -GtkTreeView-expander-size: 12; /* arrow size in list/tree views */
+    -GtkTreeView-horizontal-separator: 4;
+/*    -GtkMenuBar-shadow-type: none;
+    -GtkMenu-horizontal-padding: 0;
+    -GtkMenu-vertical-padding: 0; */
+    -GtkIMHtml-hyperlink-color: @link_color;
+    -GtkHTML-link-color: @link_color;
+/*    -GtkWidget-wide-separators: true; */
+    -WnckTasklist-fade-overlay-rect: 0;
+/*    -GtkWidget-focus-padding: 2;
+    -GtkWidget-focus-line-width: 0; */
+    outline-color: @focus_border;
+    outline-style: dashed;
+    outline-offset: 2px;
+    outline-width: 0px; /* disable ugly focus-line */
+    /*-gtk-icon-style: regular; *//* no symbolic icons */
 }
 
 /***************
  * Base States *
  ***************/
 .background {
-	color: @theme_fg_color;
-	text-shadow: none;
-	background-color: @theme_bg_color;
-	border-style: none;
-	border-width: 0px;
-	border-radius: 0px;
+    color: @theme_fg_color;
+    text-shadow: none;
+    background-color: @theme_bg_color;
+    border-style: none;
+    border-width: 0px;
+    border-radius: 0px;
 }
 
 .background:backdrop {
-	text-shadow: none;
-	-gtk-icon-shadow: none;
+    text-shadow: none;
+    -gtk-icon-shadow: none;
 }
 
 *:hover {
-/*	background-color: shade(@theme_bg_color, 1.02);
-	color: @theme_fg_color;*/
-	text-shadow: none;
+/*    background-color: shade(@theme_bg_color, 1.02);
+    color: @theme_fg_color;*/
+    text-shadow: none;
 }
 
 *:selected {
-/*	background-color: shade(@theme_selected_bg_color, 1.23);
-	color: @theme_selected_fg_color;*/
-	text-shadow: none;
+/*    background-color: shade(@theme_selected_bg_color, 1.23);
+    color: @theme_selected_fg_color;*/
+    text-shadow: none;
 }
 
 *:selected:focus {
-/*	background-color: @theme_selected_bg_color;
-	color: @theme_selected_fg_color;*/
-	text-shadow: none;
+/*    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;*/
+    text-shadow: none;
 }
 
 *:selected:backdrop {
-	text-shadow: none;
-	-gtk-icon-shadow: none;
+    text-shadow: none;
+    -gtk-icon-shadow: none;
 }
 
 *:disabled {
-	/* no need to a different background */
-/*	background-color: @theme_bg_color; *//*@insensitive_bg_color;*/
-/*	color: @insensitive_fg_color;
-	border-color: @insensitive_border_color;*/
+    /* no need to a different background */
+/*    background-color: @theme_bg_color; *//*@insensitive_bg_color;*/
+/*    color: @insensitive_fg_color;
+    border-color: @insensitive_border_color;*/
 }
 
 *:active {
-/*	background-color: shade(@theme_bg_color, 0.915);*/
+/*    background-color: shade(@theme_bg_color, 0.915);*/
 }
 
 .gtkstyle-fallback {
-	background-color: @theme_bg_color;
-	color: @theme_fg_color;
+    background-color: @theme_bg_color;
+    color: @theme_fg_color;
 }
 
 .gtkstyle-fallback:hover {
-	background-color: shade(@theme_bg_color, 1.10);
-	color: @theme_fg_color;
+    background-color: shade(@theme_bg_color, 1.10);
+    color: @theme_fg_color;
 }
 
 .gtkstyle-fallback:active {
-	background-color: shade(@theme_bg_color, 0.915);
-	color: @theme_fg_color;
+    background-color: shade(@theme_bg_color, 0.915);
+    color: @theme_fg_color;
 }
 
 .gtkstyle-fallback:disabled {
-	background-color: @less_dark_color; /*@insensitive_bg_color;*/
-	color: @insensitive_fg_color;
-	border-color: @insensitive_border_color;
+    background-color: @less_dark_color; /*@insensitive_bg_color;*/
+    color: @insensitive_fg_color;
+    border-color: @insensitive_border_color;
 }
 
 .gtkstyle-fallback:selected {
-	background-color: @theme_selected_bg_color;
-	color: @theme_selected_fg_color;
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
 }
 
 /************
@@ -124,8 +124,8 @@ tooltip.background {
     border-color: @theme_fg_color;
     border-radius: 3px;
     background-image: linear-gradient(to left,
-	                                  shade(@theme_selected_bg_color, 1.1),
-	                                  shade(@theme_selected_bg_color, 0.65));
+                                      shade(@theme_selected_bg_color, 1.1),
+                                      shade(@theme_selected_bg_color, 0.65));
     color: @theme_selected_fg_color;
 }
 
@@ -138,7 +138,7 @@ tooltip decoration {
 }
 
 tooltip * {
-	padding: 3px;
+    padding: 3px;
 }
 
 /*****************
@@ -151,11 +151,11 @@ view.rubberband,
 rubberband,
 .view.rubberband,
 .rubberband {
-	background-color: alpha(@theme_selected_bg_color, 0.35);
-	border-color: @theme_selected_bg_color;
-	border-style: solid;
-	border-width: 1px;
-	border-radius: 2px;
+    background-color: alpha(@theme_selected_bg_color, 0.35);
+    border-color: @theme_selected_bg_color;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2px;
 }
 
 /************************
@@ -324,16 +324,16 @@ undershoot.right {
  * Floating Bar *
  ****************/
 .floating-bar {
-	border-radius: 3px;
-	border-width: 0px;
-	border-style: solid;
-	text-shadow: 0 1px @theme_bg_color;
+    border-radius: 3px;
+    border-width: 0px;
+    border-style: solid;
+    text-shadow: 0 1px @theme_bg_color;
 
-	color: @theme_fg_color;
-	background-image: linear-gradient(to bottom,
-	                                  shade(@button_gradient_color_a, 1.5),
-	                                  @theme_bg_color 40%,
-	                                  shade(@button_gradient_color_b, 0.7));
+    color: @theme_fg_color;
+    background-image: linear-gradient(to bottom,
+                                      shade(@button_gradient_color_a, 1.5),
+                                      @theme_bg_color 40%,
+                                      shade(@button_gradient_color_b, 0.7));
 }
 
 .floating-bar.top {
@@ -366,32 +366,32 @@ view,
 .view:disabled,
 iconview.view,
 viewport.frame {
-	background-color: shade(@base_color, 1.04);
-	color: @theme_text_color;
-	border-radius: 0px;
-	padding: 0px;
+    background-color: shade(@base_color, 1.04);
+    color: @theme_text_color;
+    border-radius: 0px;
+    padding: 0px;
 }
 
 view:selected,
 view:active, 
 .view:selected,
 .view:active {
-	background-color: shade(@theme_selected_bg_color, 1.4);
-	color: @theme_selected_fg_color;
+    background-color: shade(@theme_selected_bg_color, 1.4);
+    color: @theme_selected_fg_color;
 }
 
 view:selected:focus, 
 .view:selected:focus {
-	background-color: @theme_selected_bg_color;
-	color: @theme_selected_fg_color;
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
 }
 
 /* ie. pluma open dialog */
 .view row:hover {
-	background-image:  linear-gradient(to bottom,
-	                                  @theme_bg_color,
-	                                  shade(@theme_bg_color, 0.80));
-	color: shade (@theme_selected_bg_color, 0.35);
+    background-image:  linear-gradient(to bottom,
+                                      @theme_bg_color,
+                                      shade(@theme_bg_color, 0.80));
+    color: shade (@theme_selected_bg_color, 0.35);
 }
 
 /* Exceptional views */
@@ -400,8 +400,8 @@ textview.view:disabled,
 calendar.view,
 dialog .view,
 dialog view  {
-	background-color: @theme_main_color;
-	color: @theme_text_color;
+    background-color: @theme_main_color;
+    color: @theme_text_color;
 }
 
 textview text selection,
@@ -412,37 +412,37 @@ textview text selection:focus {
 
 /* ie. mate-appearance-properties */
 iconview.view {
-	background-color: shade(@base_color, 1.04);
-	color: @theme_text_color;
-	border-radius: 0px;
+    background-color: shade(@base_color, 1.04);
+    color: @theme_text_color;
+    border-radius: 0px;
 }
 
 iconview.view:selected,
 iconview.view:selected:focus,
 iconview.view:selected:hover,
 iconview.view:selected:focus:hover {
-	background-color: alpha(@theme_selected_bg_color, 0.35);
-	border-style: solid;
-	border-width: 2px;
-	border-radius: 12px;
-	border-color: alpha(@theme_selected_bg_color, 0.75);
-	color: @theme_text_color;
+    background-color: alpha(@theme_selected_bg_color, 0.35);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 12px;
+    border-color: alpha(@theme_selected_bg_color, 0.75);
+    color: @theme_text_color;
 }
 
 iconview.view:hover,
 iconview.view:hover:focus {
-	background-color: alpha(@theme_selected_bg_color, 0.15);
-	border-style: solid;
-	border-width: 2px;
-	border-radius: 12px;
-	border-color: alpha(@theme_selected_bg_color, 0.35);
+    background-color: alpha(@theme_selected_bg_color, 0.15);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 12px;
+    border-color: alpha(@theme_selected_bg_color, 0.35);
 }
 
 /* ie. caja bg properties left side button area */
 viewport {
-	background-color: shade(@theme_bg_color, 1.00);
-	border-radius: 0px;
-	padding: 0px;
+    background-color: shade(@theme_bg_color, 1.00);
+    border-radius: 0px;
+    padding: 0px;
 }
 
 /* for firefox and probably other apps */
@@ -456,17 +456,17 @@ label selection:hover {
 
 label:selected:disabled,
 label selection:disabled {
-	color: @insensitive_fg_color;
+    color: @insensitive_fg_color;
 }
 
 label:backdrop:selected,
 label selection:backdrop {
-	color: @theme_fg_color;
+    color: @theme_fg_color;
 }
 
 label:backdrop:disabled:selected,
 label selection:backdrop:disabled {
-	color: @insensitive_fg_color;
+    color: @insensitive_fg_color;
 }
 
 /**************
@@ -475,40 +475,40 @@ label selection:backdrop:disabled {
 
 treeview separator,
 separator {
-	color: darker (@theme_bg_color);
+    color: darker (@theme_bg_color);
 }
 
 paned > separator {
-	border-style: none;
-	border-image: none;
-	border-width: 0px;
-	border-radius: 0;
-	background-color: transparent;
-	color: shade(@inactive_frame_color, 0.80);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-image: url("assets/pane-separator-grip.svg");
+    border-style: none;
+    border-image: none;
+    border-width: 0px;
+    border-radius: 0;
+    background-color: transparent;
+    color: shade(@inactive_frame_color, 0.80);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("assets/pane-separator-grip.svg");
 }
 
 paned > separator:hover,
 paned > separator:selected {
-	background-image: url("assets/pane-separator-grip-hover.svg");
+    background-image: url("assets/pane-separator-grip-hover.svg");
 }
 
 paned > separator.vertical {
-	background-image: url("assets/pane-separator-grip-vertical.svg");
+    background-image: url("assets/pane-separator-grip-vertical.svg");
 }
 
 paned > separator.vertical:hover,
 paned > separator.vertical:selected {
-	background-image: url("assets/pane-separator-grip-vertical-hover.svg");
+    background-image: url("assets/pane-separator-grip-vertical-hover.svg");
 }
 
 .dnd {
-	border-width: 1px;
-	border-style: solid;
-	border-color: @theme_selected_bg_color;
-	border-radius: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: @theme_selected_bg_color;
+    border-radius: 0px;
 }
 
 /*********************
@@ -517,22 +517,22 @@ paned > separator.vertical:selected {
 /* This is could be CPU-intensive */
 
 @keyframes spin {
-	to { -gtk-icon-transform: rotate(1turn); }
+    to { -gtk-icon-transform: rotate(1turn); }
 }
 
 spinner {
-	background: none;
-	opacity: 0;
-	-gtk-icon-source: -gtk-icontheme("process-working-symbolic");
+    background: none;
+    opacity: 0;
+    -gtk-icon-source: -gtk-icontheme("process-working-symbolic");
 }
 
 spinner:checked {
-	opacity: 1;
-	animation: spin 1s linear infinite;
+    opacity: 1;
+    animation: spin 1s linear infinite;
 }
 
 spinner:checked:disabled {
-	opacity: 0.5;
+    opacity: 0.5;
 }
 
 /****************
@@ -551,97 +551,97 @@ entry {
 }
 
 entry:focus {
-	box-shadow: inset 1px 2px alpha(@theme_selected_bg_color, 0.1),
-		inset 1px 1px alpha(@theme_selected_bg_color, 0.1),
-		inset -1px -1px alpha(@theme_selected_bg_color, 0.2);
+    box-shadow: inset 1px 2px alpha(@theme_selected_bg_color, 0.1),
+        inset 1px 1px alpha(@theme_selected_bg_color, 0.1),
+        inset -1px -1px alpha(@theme_selected_bg_color, 0.2);
 }
 
 entry:selected,
 entry selection {
-	background-color: shade(@theme_selected_bg_color, 1.0);
-	color: @theme_selected_fg_color;
+    background-color: shade(@theme_selected_bg_color, 1.0);
+    color: @theme_selected_fg_color;
 }
 
 entry:selected:focus,
 entry selection:focus {
-	background-color: shade(@theme_selected_bg_color, 0.8);
+    background-color: shade(@theme_selected_bg_color, 0.8);
 }
 
 entry:disabled {
-	background-image: none;
-	background-color: @insensitive_bg_color;
-	border-image: none;
-	border-style: solid;
-	border-color: @inactive_frame_color;
-	color: @insensitive_fg_color;
+    background-image: none;
+    background-color: @insensitive_bg_color;
+    border-image: none;
+    border-style: solid;
+    border-color: @inactive_frame_color;
+    color: @insensitive_fg_color;
 }
 
 entry:active {
-	background-color: shade(@theme_selected_bg_color, 1.23);
-	color: @theme_selected_fg_color;
+    background-color: shade(@theme_selected_bg_color, 1.23);
+    color: @theme_selected_fg_color;
 }
 
 toolbar entry {
-	background-image: linear-gradient(to bottom,
-	                                  shade(@internal_element_color, 1.45),
-	                                  shade(@internal_element_color, 1.57) 20%,
-	                                  shade(@internal_element_color, 1.7) 50%,
-	                                  @theme_main_color);
+    background-image: linear-gradient(to bottom,
+                                      shade(@internal_element_color, 1.45),
+                                      shade(@internal_element_color, 1.57) 20%,
+                                      shade(@internal_element_color, 1.7) 50%,
+                                      @theme_main_color);
 }
 
 entry progressbar,
 entry progressbar:focus {
-	margin-left: 2px;
-	margin-right: 2px;
-	border-image: none;
-	border-style: none;
-	background-color: transparent;
-	background-image: linear-gradient(to top, 
-	                                  transparent 2px,
-	                                  white 2px,
-	                                  white 3px,
-	                                  @theme_selected_bg_color 3px,
-	                                  @theme_selected_bg_color 5px,
-	                                  transparent 5px);
-	background-size: auto;
+    margin-left: 2px;
+    margin-right: 2px;
+    border-image: none;
+    border-style: none;
+    background-color: transparent;
+    background-image: linear-gradient(to top, 
+                                      transparent 2px,
+                                      white 2px,
+                                      white 3px,
+                                      @theme_selected_bg_color 3px,
+                                      @theme_selected_bg_color 5px,
+                                      transparent 5px);
+    background-size: auto;
 }
 
 entry progressbar.pulse,
 entry progressbar.pulse:focus {
-	background-image: linear-gradient(to top, 
-	                                  transparent 2px,
-	                                  white 2px,
-	                                  white 3px,
-	                                  @borders 3px,
-	                                  @borders 5px,
-	                                  transparent 5px);
+    background-image: linear-gradient(to top,
+                                      transparent 2px,
+                                      white 2px,
+                                      white 3px,
+                                      @borders 3px,
+                                      @borders 5px,
+                                      transparent 5px);
 }
 
 entry.cursor-handle,
 cursor-handle {
-	background-color: transparent;
-	background-image: none;
-	box-shadow: none;
-	border-style: none;
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+    border-style: none;
 }
 
 cursor-handle.top,
 cursor-handle.bottom {
-	background-color:transparent;
-	box-shadow: none;
-	border-style: none;
-	border-radius: 0px;
-	border-width: 0px;
+    background-color:transparent;
+    box-shadow: none;
+    border-style: none;
+    border-radius: 0px;
+    border-width: 0px;
 }
 
 entry.cursor-handle.top,
 cursor-handle.top {
-	-gtk-icon-source: -gtk-icontheme("selection-start-symbolic");
+    -gtk-icon-source: -gtk-icontheme("selection-start-symbolic");
 }
 
 entry.cursor-handle.bottom,
 cursor-handle.bottom {
-	-gtk-icon-source: -gtk-icontheme("selection-end-symbolic");
+    -gtk-icon-source: -gtk-icontheme("selection-end-symbolic");
 }
 
 /*******************
@@ -660,7 +660,7 @@ image:selected:focus,
 .view image:selected:hover,
 .view image:focus,
 .view image:selected:focus {
-	color: shade(@theme_selected_bg_color, 0.75);
+    color: shade(@theme_selected_bg_color, 0.75);
 }
 
 /****************
@@ -668,9 +668,9 @@ image:selected:focus,
  ****************/
 
 progressbar {
-	border-radius: 16px;
-	padding: 0px;
-	font-size: smaller;
+    border-radius: 16px;
+    padding: 0px;
+    font-size: smaller;
 }
 
 progressbar.horizontal {
@@ -726,56 +726,56 @@ progressbar progress.bottom {
 }
 
 progressbar progress {
-	border-style: none;
-	color: @theme_fg_color;
-	background-image: linear-gradient(-45deg,
-	                                  alpha(@progressbar_pattern, 0.15),
-	                                  alpha(@progressbar_pattern, 0.15) 25%,
-	                                  transparent 25%,
-	                                  transparent 50%,
-	                                  alpha(@progressbar_pattern, 0.15) 50%,
-	                                  alpha(@progressbar_pattern, 0.15) 75%,
-	                                  transparent 75%,
-	                                  transparent),
-	                  linear-gradient(to bottom,
-	                                  @progressbar_background_a,
-	                                  shade(@progressbar_background_a, 0.82) 35%,
-	                                  @progressbar_background_b 36%,
-	                                  shade(@progressbar_background_a, 0.98));
+    border-style: none;
+    color: @theme_fg_color;
+    background-image: linear-gradient(-45deg,
+                                      alpha(@progressbar_pattern, 0.15),
+                                      alpha(@progressbar_pattern, 0.15) 25%,
+                                      transparent 25%,
+                                      transparent 50%,
+                                      alpha(@progressbar_pattern, 0.15) 50%,
+                                      alpha(@progressbar_pattern, 0.15) 75%,
+                                      transparent 75%,
+                                      transparent),
+                      linear-gradient(to bottom,
+                                      @progressbar_background_a,
+                                      shade(@progressbar_background_a, 0.82) 35%,
+                                      @progressbar_background_b 36%,
+                                      shade(@progressbar_background_a, 0.98));
 }
 
 progressbar.vertical progress {
-	background-image: linear-gradient(-135deg,
-	                                  alpha(@progressbar_pattern, 0.15),
-	                                  alpha(@progressbar_pattern, 0.15) 25%,
-	                                  transparent 25%,
-	                                  transparent 50%,
-	                                  alpha(@progressbar_pattern, 0.15) 50%,
-	                                  alpha(@progressbar_pattern, 0.15) 75%,
-	                                  transparent 75%,
-	                                  transparent),
-	                  linear-gradient(to right,
-	                                  @progressbar_background_a,
-	                                  shade(@progressbar_background_a, 0.82) 35%,
-	                                  @progressbar_background_b 36%,
-	                                  shade(@progressbar_background_a, 0.98));
+    background-image: linear-gradient(-135deg,
+                                      alpha(@progressbar_pattern, 0.15),
+                                      alpha(@progressbar_pattern, 0.15) 25%,
+                                      transparent 25%,
+                                      transparent 50%,
+                                      alpha(@progressbar_pattern, 0.15) 50%,
+                                      alpha(@progressbar_pattern, 0.15) 75%,
+                                      transparent 75%,
+                                      transparent),
+                      linear-gradient(to right,
+                                      @progressbar_background_a,
+                                      shade(@progressbar_background_a, 0.82) 35%,
+                                      @progressbar_background_b 36%,
+                                      shade(@progressbar_background_a, 0.98));
 }
 
 progressbar trough {
-	background-image: linear-gradient(to bottom,
-	                                  shade(@theme_bg_color, 0.8),
-	                                  @theme_bg_color 70%,
-	                                  shade(@theme_bg_color, 1.8));
-	border-width: 1px;
-	border-style: solid;
-	border-color: shade(@theme_bg_color, 0.9)
+    background-image: linear-gradient(to bottom,
+                                      shade(@theme_bg_color, 0.8),
+                                      @theme_bg_color 70%,
+                                      shade(@theme_bg_color, 1.8));
+    border-width: 1px;
+    border-style: solid;
+    border-color: shade(@theme_bg_color, 0.9)
 }
 
 progressbar.vertical trough {
-	background-image: linear-gradient(to right,
-	                                  shade(@theme_bg_color, 0.8),
-	                                  @theme_bg_color 70%,
-	                                  shade(@theme_bg_color, 1.8));
+    background-image: linear-gradient(to right,
+                                      shade(@theme_bg_color, 0.8),
+                                      @theme_bg_color 70%,
+                                      shade(@theme_bg_color, 1.8));
 }
 
 /**********
@@ -783,18 +783,18 @@ progressbar.vertical trough {
  **********/
 
 frame {
-	background-color: shade(@base_color, 1.02);
-	color: lighter (@theme_fg_color);
-	border-style: solid;
-	border-width: 1px;
-	border-radius: 3px;
-	border-color: alpha(@frame_color, 0.6);
-	padding: 0px;
+    background-color: shade(@base_color, 1.02);
+    color: lighter (@theme_fg_color);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    border-color: alpha(@frame_color, 0.6);
+    padding: 0px;
 }
 
 .frame.flat
 frame.flat {
-	border-style: none;
+    border-style: none;
 }
 
 /* ie, dconf-editor, nautilus view */
@@ -802,29 +802,29 @@ frame.flat {
 .gedit-bottom-panel-paned > grid > notebook scrolledwindow,
 .background.solid-csd > grid > paned.horizontal scrolledwindow {
     background-color: shade(@base_color, 1.04);
-	-gtk-icon-style: regular;
-	border-style: solid;
-	border-color: alpha(@frame_color, 0.6);
-	border-width: 0px 1px 1px 1px;
-	border-radius: 2px;
-	padding: 0;
+    -gtk-icon-style: regular;
+    border-style: solid;
+    border-color: alpha(@frame_color, 0.6);
+    border-width: 0px 1px 1px 1px;
+    border-radius: 2px;
+    padding: 0;
 }
 
 /*scrolledwindow,*/
 scrolledwindow.frame,
 .background.csd scrolledwindow.frame,
 .background.solid-csd scrolledwindow.frame {
-	-gtk-icon-style: regular;
-	border-style: solid;
-	border-color: alpha(@frame_color, 0.6);
-	border-width: 1px;
-	border-radius: 2px;
-	padding: 0;
+    -gtk-icon-style: regular;
+    border-style: solid;
+    border-color: alpha(@frame_color, 0.6);
+    border-width: 1px;
+    border-radius: 2px;
+    padding: 0;
 }
 
 /* no double frames */
 scrolledwindow viewport.frame {
-	border-style: none;
+    border-style: none;
 }
 
 /***************
@@ -842,65 +842,65 @@ levelbar.vertical {
 }
 
 levelbar trough {
-	background-color: transparent;
-	background-image: linear-gradient(to bottom,
-					  shade(@theme_bg_color, 0.7),
-					  shade(@theme_bg_color, 1.2));
-	border-radius: 3px;
-	border-width: 1px;
-	border-style: solid;
-	border-color: @progressbar_border;
-	padding: 1px;
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                      shade(@theme_bg_color, 0.7),
+                      shade(@theme_bg_color, 1.2));
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: @progressbar_border;
+    padding: 1px;
     min-height: 4px;
 
 }
 
 levelbar block.filled {
     min-height: 5px;
-	border-radius: 3px;
-	border-width: 0px;
-	border-style: none;
-	background-image: linear-gradient(to bottom,
-	                                  shade(@link_color, 1.2),
-	                                  shade(@link_color, 0.6));
+    border-radius: 3px;
+    border-width: 0px;
+    border-style: none;
+    background-image: linear-gradient(to bottom,
+                                      shade(@link_color, 1.2),
+                                      shade(@link_color, 0.6));
 }
 
 levelbar.continuous block.filled {
-	padding: 0px;
-	border-radius: 3px;
+    padding: 0px;
+    border-radius: 3px;
 }
 
 levelbar.discrete.horizontal block.filled {
-	margin: 0 1px;
+    margin: 0 1px;
 }
 
 levelbar.discrete.vertical block.filled {
-	margin: 1px 0;
+    margin: 1px 0;
 }
 
 levelbar block.low {
-	background-image: linear-gradient(to bottom,
-	                                  shade(@warning_bg_color, 1.2),
-	                                  shade(@warning_bg_color, 0.7));
+    background-image: linear-gradient(to bottom,
+                                      shade(@warning_bg_color, 1.2),
+                                      shade(@warning_bg_color, 0.7));
 }
 
 levelbar block.high {
-	background-image: linear-gradient(to bottom,
-	                                  shade(@success_color, 1.2),
-	                                  shade(@success_color, 0.7));
+    background-image: linear-gradient(to bottom,
+                                      shade(@success_color, 1.2),
+                                      shade(@success_color, 0.7));
 }
 
 levelbar block.full {
-	background-image: linear-gradient(to bottom,
-	                                  shade(@success_color, 1.2),
-	                                  shade(@success_color, 0.7));
+    background-image: linear-gradient(to bottom,
+                                      shade(@success_color, 1.2),
+                                      shade(@success_color, 0.7));
 }
 
 levelbar block.empty {
-	background-color: transparent;
-	background-image: linear-gradient(to bottom,
-					  shade(@theme_bg_color, 0.7),
-					  shade(@theme_bg_color, 1.2));
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                      shade(@theme_bg_color, 0.7),
+                      shade(@theme_bg_color, 1.2));
 }
 
 /*************
@@ -908,19 +908,19 @@ levelbar block.empty {
  *************/
 
 notebook {
-	padding: 0px;
-	background-clip: border-box;
-	background-color: shade(@base_color, 1.02);
-	color: @theme_fg_color;
-	border-style: none;
+    padding: 0px;
+    background-clip: border-box;
+    background-color: shade(@base_color, 1.02);
+    color: @theme_fg_color;
+    border-style: none;
 }
 
 notebook.frame {
-	border-color: @notebook_border;
-	border-style: solid;
-	border-width: 1px;
-	border-radius: 3px;
-	padding: 0px;
+    border-color: @notebook_border;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    padding: 0px;
 }
 
 notebook header.top {
@@ -1005,9 +1005,9 @@ window.background > notebook > header tab,
 paned.horizontal > notebook > header tab,
 paned.horizontal > box.vertical > notebook > header tab,
 paned.horizontal > paned.vertical > notebook > header tab {
-	background-image: linear-gradient(to bottom,
-	                                  shade(@theme_bg_color, 1.1),
-	                                  shade(@theme_bg_color, 0.77));
+    background-image: linear-gradient(to bottom,
+                                      shade(@theme_bg_color, 1.1),
+                                      shade(@theme_bg_color, 0.77));
     padding: 2px 4px;
     margin: 0px -0px 0px -1px;
     border-width: 0px 1px 0 1px;
@@ -1026,11 +1026,11 @@ paned.horizontal > box.vertical > notebook > header.top tab:checked,
 paned.horizontal > box.vertical > notebook > header.top tab:checked:hover,
 paned.horizontal > paned.vertical > notebook > header.top tab:checked,
 paned.horizontal > paned.vertical > notebook > header.top tab:checked:hover {
-	background-image: linear-gradient(to bottom,
-	                                  shade(@theme_bg_color, 0.9),
-	                                  shade(@theme_bg_color, 0.98) 40%,
-	                                  shade(@theme_bg_color, 1.02) 70%,
-	                                  @theme_bg_color);
+    background-image: linear-gradient(to bottom,
+                                      shade(@theme_bg_color, 0.9),
+                                      shade(@theme_bg_color, 0.98) 40%,
+                                      shade(@theme_bg_color, 1.02) 70%,
+                                      @theme_bg_color);
     border-radius: 3px 3px 0 0;
     border-width: 0px 1px 0 1px;
     border-style: solid;
@@ -1043,11 +1043,11 @@ window.background > notebook > header.top tab:hover,
 paned.horizontal > notebook > header.top tab:hover,
 paned.horizontal > box.vertical > notebook > header.top tab:hover,
 paned.horizontal > paned.vertical > notebook > header.top tab:hover {
-	background-image: linear-gradient(to top,
-	                                  shade(@theme_bg_color, 0.9),
-	                                  shade(@theme_bg_color, 0.98) 40%,
-	                                  shade(@theme_bg_color, 1.02) 70%,
-	                                  @theme_bg_color);
+    background-image: linear-gradient(to top,
+                                      shade(@theme_bg_color, 0.9),
+                                      shade(@theme_bg_color, 0.98) 40%,
+                                      shade(@theme_bg_color, 1.02) 70%,
+                                      @theme_bg_color);
     border-radius: 3px 3px 0 0;
     border-width: 0px 1px 0 1px;
     border-style: solid;
@@ -1112,11 +1112,11 @@ notebook.frame > header.top tab {
 
 notebook.frame > header.top tab:checked,
 notebook.frame > header.top tab:checked:hover {
-	background-image: linear-gradient(to bottom,
-	                                  shade(@theme_bg_color, 0.9),
-	                                  shade(@theme_bg_color, 0.98) 40%,
-	                                  shade(@theme_bg_color, 1.02) 70%,
-	                                  @theme_bg_color);
+    background-image: linear-gradient(to bottom,
+                                      shade(@theme_bg_color, 0.9),
+                                      shade(@theme_bg_color, 0.98) 40%,
+                                      shade(@theme_bg_color, 1.02) 70%,
+                                      @theme_bg_color);
     border-radius: 3px 3px 0px 0px;
     border-width: 0px 1px 0px 1px;
     border-style: solid;
@@ -1124,11 +1124,11 @@ notebook.frame > header.top tab:checked:hover {
 }
 
 notebook.frame > header.top tab:hover {
-	background-image: linear-gradient(to top,
-	                                  shade(@theme_bg_color, 0.9),
-	                                  shade(@theme_bg_color, 0.98) 40%,
-	                                  shade(@theme_bg_color, 1.02) 70%,
-	                                  @theme_bg_color);
+    background-image: linear-gradient(to top,
+                                      shade(@theme_bg_color, 0.9),
+                                      shade(@theme_bg_color, 0.98) 40%,
+                                      shade(@theme_bg_color, 1.02) 70%,
+                                      @theme_bg_color);
     border-radius: 3px 3px 0px 0px;
     border-width: 0px 1px 0px 1px;
     border-style: solid;
@@ -1141,11 +1141,11 @@ notebook.frame > header.bottom tab {
 
 notebook.frame > header.bottom tab:checked,
 notebook.frame > header.bottom tab:checked:hover {
-	background-image: linear-gradient(to top,
-	                                  shade(@theme_bg_color, 0.9),
-	                                  shade(@theme_bg_color, 0.98) 40%,
-	                                  shade(@theme_bg_color, 1.02) 70%,
-	                                  @theme_bg_color);
+    background-image: linear-gradient(to top,
+                                      shade(@theme_bg_color, 0.9),
+                                      shade(@theme_bg_color, 0.98) 40%,
+                                      shade(@theme_bg_color, 1.02) 70%,
+                                      @theme_bg_color);
     border-radius: 0px 0px 3px 3px;
     border-style: solid;
     border-width: 0px 1px 0px 1px;
@@ -1153,11 +1153,11 @@ notebook.frame > header.bottom tab:checked:hover {
 }
 
 notebook.frame > header.bottom tab:hover {
-	background-image: linear-gradient(to top,
-	                                  shade(@theme_bg_color, 0.9),
-	                                  shade(@theme_bg_color, 0.98) 40%,
-	                                  shade(@theme_bg_color, 1.02) 70%,
-	                                  @theme_bg_color);
+    background-image: linear-gradient(to top,
+                                      shade(@theme_bg_color, 0.9),
+                                      shade(@theme_bg_color, 0.98) 40%,
+                                      shade(@theme_bg_color, 1.02) 70%,
+                                      @theme_bg_color);
     border-radius: 0px 0px 3px 3px;
     border-style: solid;
     border-width: 0px 1px 0px 1px;
@@ -1176,11 +1176,11 @@ notebook.frame > header.right tab {
 
 notebook.frame > header.left tab:checked,
 notebook.frame > header.left tab:checked:hover {
-	background-image: linear-gradient(to right,
-	                                  shade(@theme_bg_color, 0.9),
-	                                  shade(@theme_bg_color, 0.98) 40%,
-	                                  shade(@theme_bg_color, 1.02) 70%,
-	                                  @theme_bg_color);
+    background-image: linear-gradient(to right,
+                                      shade(@theme_bg_color, 0.9),
+                                      shade(@theme_bg_color, 0.98) 40%,
+                                      shade(@theme_bg_color, 1.02) 70%,
+                                      @theme_bg_color);
     border-style: solid;
     border-width: 1px 0px 1px 0px;
     border-color: @notebook_border;
@@ -1188,11 +1188,11 @@ notebook.frame > header.left tab:checked:hover {
 }
 
 notebook.frame > header.left tab:hover {
-	background-image: linear-gradient(to left,
-	                                  shade(@theme_bg_color, 0.9),
-	                                  shade(@theme_bg_color, 0.98) 40%,
-	                                  shade(@theme_bg_color, 1.02) 70%,
-	                                  @theme_bg_color);
+    background-image: linear-gradient(to left,
+                                      shade(@theme_bg_color, 0.9),
+                                      shade(@theme_bg_color, 0.98) 40%,
+                                      shade(@theme_bg_color, 1.02) 70%,
+                                      @theme_bg_color);
     border-style: solid;
     border-width: 1px 0px 1px 0px;
     border-color: @notebook_border;
@@ -1201,11 +1201,11 @@ notebook.frame > header.left tab:hover {
 
 notebook.frame > header.right tab:checked,
 notebook.frame > header.right tab:checked:hover {
-	background-image: linear-gradient(to left,
-	                                  shade(@theme_bg_color, 0.9),
-	                                  shade(@theme_bg_color, 0.98) 40%,
-	                                  shade(@theme_bg_color, 1.02) 70%,
-	                                  @theme_bg_color);
+    background-image: linear-gradient(to left,
+                                      shade(@theme_bg_color, 0.9),
+                                      shade(@theme_bg_color, 0.98) 40%,
+                                      shade(@theme_bg_color, 1.02) 70%,
+                                      @theme_bg_color);
     border-style: solid;
     border-width: 1px 0px 1px 0px;
     border-color: @notebook_border;
@@ -1213,11 +1213,11 @@ notebook.frame > header.right tab:checked:hover {
 }
 
 notebook.frame > header.right tab:hover {
-	background-image: linear-gradient(to right,
-	                                  shade(@theme_bg_color, 0.9),
-	                                  shade(@theme_bg_color, 0.98) 40%,
-	                                  shade(@theme_bg_color, 1.02) 70%,
-	                                  @theme_bg_color);
+    background-image: linear-gradient(to right,
+                                      shade(@theme_bg_color, 0.9),
+                                      shade(@theme_bg_color, 0.98) 40%,
+                                      shade(@theme_bg_color, 1.02) 70%,
+                                      @theme_bg_color);
     border-style: solid;
     border-width: 1px 0px 1px 0px;
     border-color: @notebook_border;
@@ -1225,22 +1225,22 @@ notebook.frame > header.right tab:hover {
 }
 
 notebook tab.reorderable-page:hover {
-	background-image: linear-gradient(to top,
-	                                  shade(@theme_bg_color, 0.9),
-	                                  shade(@theme_bg_color, 0.98) 40%,
-	                                  shade(@theme_bg_color, 1.02) 70%,
-	                                  @theme_bg_color);
+    background-image: linear-gradient(to top,
+                                      shade(@theme_bg_color, 0.9),
+                                      shade(@theme_bg_color, 0.98) 40%,
+                                      shade(@theme_bg_color, 1.02) 70%,
+                                      @theme_bg_color);
     border-radius: 0;
     box-shadow: inset 1px 0 alpha(@borders, 0.6), inset -1px 0 alpha(@borders, 0.6);
     border-style: none;
 }
 
 notebook tab.reorderable-page:checked {
-	background-image: linear-gradient(to bottom,
-	                                  shade(@theme_bg_color, 0.9),
-	                                  shade(@theme_bg_color, 0.98) 40%,
-	                                  shade(@theme_bg_color, 1.02) 70%,
-	                                  @theme_bg_color);
+    background-image: linear-gradient(to bottom,
+                                      shade(@theme_bg_color, 0.9),
+                                      shade(@theme_bg_color, 0.98) 40%,
+                                      shade(@theme_bg_color, 1.02) 70%,
+                                      @theme_bg_color);
     border-radius: 3px 3px 0 0;
     box-shadow: none;
     border-style: solid;
@@ -1260,7 +1260,7 @@ notebook > header button.flat.small-button {
     border-image: none;
     border-style: none;
     background-image: none;
-	background-color: transparent;
+    background-color: transparent;
 }
 
 notebook > header button.flat:hover,
@@ -1314,16 +1314,16 @@ notebook header tabs arrow:backdrop:disabled {
 }
 
 notebook paned separator {
-	background-image: linear-gradient(to right,
-	                                  shade(@theme_bg_color, 1.5),
-	                                  shade(@theme_bg_color, 0.85));
-	color: shade(@theme_selected_bg_color, 2.0);
+    background-image: linear-gradient(to right,
+                                      shade(@theme_bg_color, 1.5),
+                                      shade(@theme_bg_color, 0.85));
+    color: shade(@theme_selected_bg_color, 2.0);
 }
 
 notebook paned separator.vertical {
-	background-image: linear-gradient(to bottom,
-	                                  shade(@theme_bg_color, 1.5),
-	                                  shade(@theme_bg_color, 0.85));
+    background-image: linear-gradient(to bottom,
+                                      shade(@theme_bg_color, 1.5),
+                                      shade(@theme_bg_color, 0.85));
 }
 
 /***************
@@ -1332,38 +1332,38 @@ notebook paned separator.vertical {
 
 treeview,
 treeview.view {
-	background-color: shade(@theme_bg_color, 1.04);
-	-GtkTreeView-vertical-separator: 0;
+    background-color: shade(@theme_bg_color, 1.04);
+    -GtkTreeView-vertical-separator: 0;
 }
 
 treeview:selected {
-	background-image: linear-gradient(to bottom,
-	                                  shade(@theme_selected_bg_color, 1.45),
-	                                  shade(@theme_selected_bg_color, 0.95));
+    background-image: linear-gradient(to bottom,
+                                      shade(@theme_selected_bg_color, 1.45),
+                                      shade(@theme_selected_bg_color, 0.95));
 }
 
 treeview:selected:focus {
-	background-image: linear-gradient(to bottom,
-	                                  shade(@theme_selected_bg_color, 0.9),
-	                                  shade(@theme_selected_bg_color, 1.3));
+    background-image: linear-gradient(to bottom,
+                                      shade(@theme_selected_bg_color, 0.9),
+                                      shade(@theme_selected_bg_color, 1.3));
 }
 
 treeview:selected:disabled {
-	color: @theme_selected_fg_color;
+    color: @theme_selected_fg_color;
 }
 
 treeview:hover {
-	background-color: shade(@treeview_even_row, 0.93);
+    background-color: shade(@treeview_even_row, 0.93);
 }
 
 treeview header {
-	padding: 1px 2px;
+    padding: 1px 2px;
 }
 
 treeview header button {
     background-image: linear-gradient(to bottom,
-	                                  @button_gradient_color_a,
-	                                  shade(@button_gradient_color_b, 0.98));
+                                      @button_gradient_color_a,
+                                      shade(@button_gradient_color_b, 0.98));
     border-image: none;
     border-width: 0px 1px 1px 0px;
     border-radius: 0px;
@@ -1373,9 +1373,9 @@ treeview header button {
 }
 
 treeview header button:hover {
-	background-image: linear-gradient(to bottom,
-	                                  shade(@button_gradient_color_a, 0.95),
-	                                  shade(@button_gradient_color_b, 1.07));
+    background-image: linear-gradient(to bottom,
+                                      shade(@button_gradient_color_a, 0.95),
+                                      shade(@button_gradient_color_b, 1.07));
     border-image: none;
 }
 
@@ -1420,7 +1420,7 @@ list row.activatable:hover {
     background-image:  linear-gradient(to bottom,
                                        shade(@theme_selected_bg_color, 1.8),
                                        shade(@theme_selected_bg_color, 1.53));
-	color: shade (@theme_fg_color, 1.0);
+    color: shade (@theme_fg_color, 1.0);
 }
 
 list row.activatable label {
@@ -1428,15 +1428,15 @@ list row.activatable label {
 }
 
 .cell {
-	padding: 2px;
-	border-width: 0px;
+    padding: 2px;
+    border-width: 0px;
 }
 
 .cell:selected,
 .cell:selected:focus,
 .cell.image:selected,
 .cell.image:selected:focus {
-	color: @theme_selected_fg_color;
+    color: @theme_selected_fg_color;
 }
 
 /************
@@ -1677,9 +1677,9 @@ scale.vertical.scale-has-marks-below.color slider:hover {
  **************/
 
 combobox {
-	/* align with side buttons */
-	padding: 0;
-	color: @theme_fg_color;
+    /* align with side buttons */
+    padding: 0;
+    color: @theme_fg_color;
 }
 
 combobox separator {
@@ -1694,7 +1694,7 @@ combobox button.combo cellview {
 }
 
 #gtk-combobox-popup-menu menuitem {
-	color: @theme_selected_fg_color;
+    color: @theme_selected_fg_color;
     border-width: 1px;
     border-style: solid;
     border-color: transparent;
@@ -1709,7 +1709,7 @@ combobox > box > button.combo > box > arrow {
 }
 
 combobox > box > button.combo > box > arrow:disabled {
-	color: @insensitive_fg_color;
+    color: @insensitive_fg_color;
     background-color: transparent;
 }
 
@@ -1735,7 +1735,7 @@ button {
 button.default {
     text-shadow: none;
     color: @theme_fg_color;
-	border-color: shade(@button_border, 1.1);
+    border-color: shade(@button_border, 1.1);
 }
 
 /* ie. mate-control-center */
@@ -1758,7 +1758,7 @@ button.flat:hover {
 button.flat.image-button,
 button.flat.image-button:hover,
 button.scale.flat {
-	padding: 4px;
+    padding: 4px;
 }
 
 button.combo,
@@ -1786,74 +1786,74 @@ button label:hover,
 button label:checked,
 button label:hover:active,
 button label:disabled {
-	background-color: transparent;
+    background-color: transparent;
 }
 
 button label {
-	color: @fg_color;
+    color: @fg_color;
 }
 
 button image,
 button image:hover,
 button image:checked,
 button image:hover:active {
-	color: shade(@theme_selected_bg_color, 0.75);
+    color: shade(@theme_selected_bg_color, 0.75);
 }
 
 button image:disabled {
-	color: @insensitive_fg_color;
+    color: @insensitive_fg_color;
 }
 
 button:hover,
 button.flat:hover {
-	border-image: none;
-	border-style: solid;
-	border-color: shade(@button_border, 1.1);
-	background-image: linear-gradient(to bottom,
-	                                  @button_hover_gradient_color_a,
-	                                  @button_hover_gradient_color_b);
+    border-image: none;
+    border-style: solid;
+    border-color: shade(@button_border, 1.1);
+    background-image: linear-gradient(to bottom,
+                                      @button_hover_gradient_color_a,
+                                      @button_hover_gradient_color_b);
 }
 
 button:checked,
 button.default:checked,
 button:hover:active {
-	border-style: solid;
-	background-image: linear-gradient(to bottom,
-	                                  @button_gradient_color_b,
-	                                  @button_gradient_color_a);
+    border-style: solid;
+    background-image: linear-gradient(to bottom,
+                                      @button_gradient_color_b,
+                                      @button_gradient_color_a);
 }
 
 button:disabled {
-	background-color: transparent;
-	background-image: linear-gradient(to bottom,
-	                                  alpha(@button_gradient_color_a, 0.5),
-	                                  alpha(@button_gradient_color_b, 0.6));
-	border-image: none;
-	border-style: solid;
-	border-color: shade(@button_border, 1.2);
-	color: @insensitive_fg_color;
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      alpha(@button_gradient_color_a, 0.5),
+                                      alpha(@button_gradient_color_b, 0.6));
+    border-image: none;
+    border-style: solid;
+    border-color: shade(@button_border, 1.2);
+    color: @insensitive_fg_color;
 }
 
 /* insensitive active toggle buttons */
 button:checked:disabled {
-	background-image: linear-gradient(to bottom,
-	                                  alpha(@button_gradient_color_b, 0.5),
-	                                  alpha(@button_gradient_color_a, 0.4));
-	border-image: none;
-	border-style: solid;
-	border-color: shade(@button_border, 1.2);
-	color: @insensitive_fg_color
+    background-image: linear-gradient(to bottom,
+                                      alpha(@button_gradient_color_b, 0.5),
+                                      alpha(@button_gradient_color_a, 0.4));
+    border-image: none;
+    border-style: solid;
+    border-color: shade(@button_border, 1.2);
+    color: @insensitive_fg_color
 }
 
 button.default {
-	background-image: linear-gradient(to bottom,
-	                                  #ffffff,
-	                                  shade(@theme_bg_color, 0.9) 50%,
-	                                  shade(@button_gradient_color_b, 0.78));
+    background-image: linear-gradient(to bottom,
+                                      #ffffff,
+                                      shade(@theme_bg_color, 0.9) 50%,
+                                      shade(@button_gradient_color_b, 0.78));
 }
 
 button.default:hover {
-	border-image: none;
+    border-image: none;
 }
 
 button.image-button.radio {
@@ -1897,36 +1897,36 @@ spinbutton.vertical {
 }
 
 spinbutton.horizontal entry {
-	border-image: none;
-	border-width: 0px;
-	border-style: none;
-	border-radius: 3px 0px 0px 3px;
+    border-image: none;
+    border-width: 0px;
+    border-style: none;
+    border-radius: 3px 0px 0px 3px;
         box-shadow: none;
     padding: 3px 10px 3px 3px;
 }
 
 spinbutton button:disabled {
-	color: @internal_element_insensitive;
+    color: @internal_element_insensitive;
     background-image: none;
     background-color: @insensitive_bg_color;
-	border-image: none;
+    border-image: none;
 }
 
 spinbutton button:active,
 spinbutton button:hover {
-	color: @internal_element_prelight;
+    color: @internal_element_prelight;
 }
 
 spinbutton.horizontal button {
-	border-radius: 0px;
-	border-image: none;
+    border-radius: 0px;
+    border-image: none;
     border-width: 0px 0px 0px 1px;
     border-color: shade(@selected_bg_color, 1.7);
     padding: 0px 2px;
 }
 
 spinbutton.horizontal button:last-child {
-	border-radius: 0 3px 3px 0;
+    border-radius: 0 3px 3px 0;
 }
 
 spinbutton.vertical entry {
@@ -1940,25 +1940,25 @@ spinbutton.vertical entry {
 
 spinbutton.vertical button {
     border-image: none;
-	box-shadow: none;
-	padding: 4px;
-	-gtk-icon-shadow: 0 1px @button_text_shadow;
+    box-shadow: none;
+    padding: 4px;
+    -gtk-icon-shadow: 0 1px @button_text_shadow;
 }
 
 spinbutton.vertical button:active,
 spinbutton.horizontal button:active {
-	background-image: linear-gradient(to bottom,
-	                                  @button_gradient_color_b,
-	                                  @button_gradient_color_a);
+    background-image: linear-gradient(to bottom,
+                                      @button_gradient_color_b,
+                                      @button_gradient_color_a);
 }
 
 spinbutton.vertical button {
-	border-width: 0px;
-	border-radius: 4px 4px 0px 0px;
+    border-width: 0px;
+    border-radius: 4px 4px 0px 0px;
 }
 
 spinbutton.vertical button:last-child {
-	border-radius:  0px 0px 4px 4px;
+    border-radius:  0px 0px 4px 4px;
 }
 
 /**************
@@ -1966,8 +1966,8 @@ spinbutton.vertical button:last-child {
  **************/
 
 scrollbar {
-	background-image: none;
-	border-style: none;
+    background-image: none;
+    border-style: none;
     -GtkScrollbar-has-backward-stepper: true;
     -GtkScrollbar-has-forward-stepper: true;
     -GtkScrollbar-activate-slider: 1;
@@ -1985,100 +1985,100 @@ scrollbar.horizontal {
 }
 
 scrollbar trough {
-	background-color: shade(@theme_bg_color, 0.95);
-	background-image: none;
-	border-style: solid;
+    background-color: shade(@theme_bg_color, 0.95);
+    background-image: none;
+    border-style: solid;
     border-color: shade(@theme_bg_color, 0.75);
-	border-radius: 0px;
+    border-radius: 0px;
 }
 
 scrollbar trough:hover {
-	background-color: shade(@theme_bg_color, 0.95);
+    background-color: shade(@theme_bg_color, 0.95);
 }
 
 scrollbar.vertical trough {
     min-width: 13px;
-	border-width: 0px 0px 0px 1px;
+    border-width: 0px 0px 0px 1px;
 }
 
 scrollbar.horizontal trough {
     min-height: 13px;
-	border-width: 1px 0px 0px 0px;
+    border-width: 1px 0px 0px 0px;
 }
 
 scrollbar slider {
-	border-width: 1px;
-	border-radius: 6px;
+    border-width: 1px;
+    border-radius: 6px;
     border-style: solid;
-	border-color: transparent;
+    border-color: transparent;
 }
 
 scrollbar.vertical slider {
     min-width: 11px;
     min-height: 31px;
-	background-image: linear-gradient(to top,
-	                                  shade(@toolbar_gradient_base, 0.82),
-	                                  white);
+    background-image: linear-gradient(to top,
+                                      shade(@toolbar_gradient_base, 0.82),
+                                      white);
 }
 
 scrollbar.horizontal slider {
     min-width: 31px;
     min-height: 13px;
-	background-image: linear-gradient(to left,
-	                                  shade(@toolbar_gradient_base, 0.82),
-	                                  white);
+    background-image: linear-gradient(to left,
+                                      shade(@toolbar_gradient_base, 0.82),
+                                      white);
 }
 
 scrollbar slider:hover,
 scrollbar slider:hover:active {
-	border-color: shade(@button_border, 1.1);
+    border-color: shade(@button_border, 1.1);
 }
 
 scrollbar.vertical slider:hover {
-	background-image: linear-gradient(to top,
-	                                  shade(@toolbar_gradient_base, 0.88),
-	                                  shade(@theme_bg_color, 1.6));
+    background-image: linear-gradient(to top,
+                                      shade(@toolbar_gradient_base, 0.88),
+                                      shade(@theme_bg_color, 1.6));
 }
 
 scrollbar.horizontal slider:hover {
-	background-image: linear-gradient(to left,
-	                                  shade(@toolbar_gradient_base, 0.88),
-	                                  shade(@theme_bg_color, 1.6));
+    background-image: linear-gradient(to left,
+                                      shade(@toolbar_gradient_base, 0.88),
+                                      shade(@theme_bg_color, 1.6));
 }
 
 scrollbar.vertical slider:hover:active {
-	background-image: linear-gradient(to top,
-	                                  shade(@theme_bg_color, 1.5),
-	                                  shade(@theme_bg_color, 0.9));
+    background-image: linear-gradient(to top,
+                                      shade(@theme_bg_color, 1.5),
+                                      shade(@theme_bg_color, 0.9));
 }
 
 scrollbar.horizontal slider:hover:active {
-	background-image: linear-gradient(to left,
-	                                  shade(@theme_bg_color, 1.5),
-	                                  shade(@theme_bg_color, 0.9));
+    background-image: linear-gradient(to left,
+                                      shade(@theme_bg_color, 1.5),
+                                      shade(@theme_bg_color, 0.9));
 }
 
 scrollbar slider:disabled {
-	background-image: none;
+    background-image: none;
     background-color: @insensitive_bg_color;
 }
 
 scrollbar slider.fine-tune:hover:active {
-	background-image: url("assets/slider_fine_horizontal.svg"),
-	                  linear-gradient(to top,
-	                                  shade(@theme_bg_color, 1.5),
-	                                  shade(@theme_bg_color, 0.9));
-	background-repeat: no-repeat;
-	background-position: center;
+    background-image: url("assets/slider_fine_horizontal.svg"),
+                      linear-gradient(to top,
+                                      shade(@theme_bg_color, 1.5),
+                                      shade(@theme_bg_color, 0.9));
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 scrollbar.vertical slider.fine-tune:hover:active {
-	background-image: url("assets/slider_fine_vertical.svg"),
-	                  linear-gradient(to left,
-	                                  shade(@theme_bg_color, 1.5),
-	                                  shade(@theme_bg_color, 0.9));
-	background-repeat: no-repeat;
-	background-position: center;
+    background-image: url("assets/slider_fine_vertical.svg"),
+                      linear-gradient(to left,
+                                      shade(@theme_bg_color, 1.5),
+                                      shade(@theme_bg_color, 0.9));
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 /* Buttons */
@@ -2097,13 +2097,13 @@ scrollbar.horizontal button {
 scrollbar button,
 scrollbar button.vertical,
 scrollbar button.horizontal {
-	color: @theme_fg_color;
-	border-image: none;
-	border-style: solid;
+    color: @theme_fg_color;
+    border-image: none;
+    border-style: solid;
     border-color: shade(@theme_bg_color, 0.75);
-	border-radius: 0px;
-	background-image: none;
-	background-color: shade(@theme_bg_color, 0.9);
+    border-radius: 0px;
+    background-image: none;
+    background-color: shade(@theme_bg_color, 0.9);
 }
 
 scrollbar button:hover,
@@ -2140,25 +2140,25 @@ scrollbar button:disabled {
 scrollbar.vertical button.up {
     -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
     -gtk-icon-effect: highlight;
-	border-width: 0px 0px 0px 1px;
+    border-width: 0px 0px 0px 1px;
 }
 
 scrollbar.vertical button.down {
     -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
     -gtk-icon-effect: highlight;
-	border-width: 0px 0px 0px 1px;
+    border-width: 0px 0px 0px 1px;
 }
 
 scrollbar.horizontal button.up {
     -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
     -gtk-icon-effect: highlight;
-	border-width: 1px 0px 0px 0px;
+    border-width: 1px 0px 0px 0px;
 }
 
 scrollbar.horizontal button.down {
     -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
     -gtk-icon-effect: highlight;
-	border-width: 1px 0px 0px 0px;
+    border-width: 1px 0px 0px 0px;
 }
 
 
@@ -2184,62 +2184,62 @@ menubar > menuitem,
     -gtk-icon-style: regular;
     transition: all 300ms ease-out;
     padding: 3px 7px;
-	border-width: 0px;
-	border-style: none;
-	background-color: transparent;
+    border-width: 0px;
+    border-style: none;
+    background-color: transparent;
 }
 
 /* needed for broken firefox, valid transition effects breaks hover state here */
 menubar:hover {
-	background-image: none;
-	background-color: shade(@theme_selected_bg_color, 1.1);
-	border-style: none;
-	border-image: none;
-	/* join menuitem to menu */
-	border-radius: 3px 3px 0px 0px;
-	border-width: 0px;
-	color: @theme_selected_fg_color;
+    background-image: none;
+    background-color: shade(@theme_selected_bg_color, 1.1);
+    border-style: none;
+    border-image: none;
+    /* join menuitem to menu */
+    border-radius: 3px 3px 0px 0px;
+    border-width: 0px;
+    color: @theme_selected_fg_color;
     transition: none;
 }
 
 menubar > menuitem:hover,
 .menubar > menuitem:hover {
-	background-image: none;
-	background-color: shade(@theme_selected_bg_color, 1.1);
-	border-style: none;
-	border-image: none;
-	/* join menuitem to menu */
-	border-radius: 3px 3px 0px 0px;
-	border-width: 0px;
-	color: @theme_selected_fg_color;
+    background-image: none;
+    background-color: shade(@theme_selected_bg_color, 1.1);
+    border-style: none;
+    border-image: none;
+    /* join menuitem to menu */
+    border-radius: 3px 3px 0px 0px;
+    border-width: 0px;
+    color: @theme_selected_fg_color;
 }
 
 menubar > menuitem:disabled,
 .menubar > menuitem:disabled {
-	color: @theme_fg_color;
+    color: @theme_fg_color;
 }
 
 menu,
 .menu {
-	background-color: transparent;
-	background-image: linear-gradient(to right,
-	                                  shade(@theme_selected_bg_color, 1.0),
-	                                  shade(@theme_selected_bg_color, 0.65));
+    background-color: transparent;
+    background-image: linear-gradient(to right,
+                                      shade(@theme_selected_bg_color, 1.0),
+                                      shade(@theme_selected_bg_color, 0.65));
     transition: none;
-	border-style: none;
-	border-width: 0px;
-	border-radius: 0px;
+    border-style: none;
+    border-width: 0px;
+    border-radius: 0px;
 }
 
 /* needed for broken firefox, valid transition effects breaks hover state here */
 .menuitem {
     min-height: 22px;
     transition: none;
-	background-color: transparent;
+    background-color: transparent;
     border-color: transparent;
-	border-style: solid;
-	border-width: 1px;
-	border-radius: 0px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0px;
     padding: 4px;
 }
 
@@ -2247,41 +2247,41 @@ menu menuitem,
 .menu menuitem {
     min-height: 22px;
     transition: all 300ms ease-out;
-	background-color: transparent;
+    background-color: transparent;
     border-color: transparent;
-	border-style: solid;
-	border-width: 1px;
-	border-radius: 0px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0px;
     padding: 4px;
-	color: @theme_selected_fg_color;
+    color: @theme_selected_fg_color;
 }
 
 menu menuitem:hover,
 .menu menuitem:hover {
-	background-color: transparent;
-	background-image:  linear-gradient(to bottom,
-	                                  shade(@theme_selected_bg_color, 1.4),
-	                                  shade(@theme_selected_bg_color, 0.8));
-	color: @theme_fg_color;
-	border-style: solid;
-	border-width: 1px;
-	border-radius: 3px;
-	border-image: url("assets/menu-border.svg") 2 / 2px stretch;
+    background-color: transparent;
+    background-image:  linear-gradient(to bottom,
+                                      shade(@theme_selected_bg_color, 1.4),
+                                      shade(@theme_selected_bg_color, 0.8));
+    color: @theme_fg_color;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    border-image: url("assets/menu-border.svg") 2 / 2px stretch;
 }
 
 menu menuitem:disabled,
 .menu menuitem:disabled {
-	background-color: transparent;
-	border-color: transparent;
-	color: @insensitive_fg_color;
+    background-color: transparent;
+    border-color: transparent;
+    color: @insensitive_fg_color;
 }
 
 menu separator,
 .menu separator {
     min-height: 1px;
-	background-image: linear-gradient(to bottom,
-	                                  shade(@theme_selected_bg_color, 1.05),
-	                                  shade(@theme_selected_bg_color, 1.05));
+    background-image: linear-gradient(to bottom,
+                                      shade(@theme_selected_bg_color, 1.05),
+                                      shade(@theme_selected_bg_color, 1.05));
 }
 
 menuitem arrow {
@@ -2292,7 +2292,7 @@ menuitem arrow {
 
 menu menuitem arrow:dir(ltr),
 .menu menuitem arrow:dir(ltr) {
-	-gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
 }
 
 menu menuitem arrow:dir(rtl),
@@ -2348,7 +2348,7 @@ menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuite
 menuitem accelerator,
 menu menuitem accelerator,
 .menu menuitem accelerator {
-	color: alpha(@theme_main_color, 0.66);
+    color: alpha(@theme_main_color, 0.66);
 }
 
 menuitem accelerator:hover,
@@ -2357,7 +2357,7 @@ menu menuitem accelerator:hover,
 menu menuitem accelerator:active,
 .menu menuitem accelerator:hover,
 .menu menuitem accelerator:active {
-	color: alpha(@theme_text_color, 0.45);
+    color: alpha(@theme_text_color, 0.45);
 }
 
 /* scroll arrows */
@@ -2400,25 +2400,25 @@ menu > arrow:disabled,
  * Toolbars *
  ************/
 toolbar {
-	background-image: linear-gradient(to bottom,
-	                                  shade(@toolbar_gradient_base, 0.94),
-	                                  shade(@theme_bg_color, 1.0));
-	border-style: solid;
-	border-width: 0;
-	border-bottom-width: 1px;
-	border-color: shade(@toolbar_gradient_base, 0.98);
-	border-radius: 0px;
-	padding: 1px;
+    background-image: linear-gradient(to bottom,
+                                      shade(@toolbar_gradient_base, 0.94),
+                                      shade(@theme_bg_color, 1.0));
+    border-style: solid;
+    border-width: 0;
+    border-bottom-width: 1px;
+    border-color: shade(@toolbar_gradient_base, 0.98);
+    border-radius: 0px;
+    padding: 1px;
 
-	-GtkWidget-window-dragging: true;
-	-GtkToolbar-button-relief: normal;
+    -GtkWidget-window-dragging: true;
+    -GtkToolbar-button-relief: normal;
 }
 
 toolbar.vertical {
-	background-image: linear-gradient(to right,
-	                                  shade(@toolbar_gradient_base, 0.94),
-	                                  shade(@theme_bg_color, 1.0));
-	border-width: 0px 1px 0px 0px;
+    background-image: linear-gradient(to right,
+                                      shade(@toolbar_gradient_base, 0.94),
+                                      shade(@theme_bg_color, 1.0));
+    border-width: 0px 1px 0px 0px;
 }
 
 toolbar.horizontal button {
@@ -2430,11 +2430,11 @@ toolbar.vertical button {
 }
 
 toolbar button.text-button {
-	padding: 2px 5px;
+    padding: 2px 5px;
 }
 
 toolbar button.image-button {
-	padding: 5px 4px 4px 5px;
+    padding: 5px 4px 4px 5px;
 }
 
 /********************
@@ -2448,22 +2448,22 @@ toolbar button:disabled,
 toolbar.primary-toolbar button:disabled,
 toolbar button:disabled:hover,
 toolbar.primary-toolbar button:disabled:hover {
-	border-style: solid;
-	border-width: 1px;
-	border-image: none;
-	border-color: transparent;
-	background-image: none;
-	background-color: transparent;
+    border-style: solid;
+    border-width: 1px;
+    border-image: none;
+    border-color: transparent;
+    background-image: none;
+    background-color: transparent;
 }
 
 toolbar button:checked,
 toolbar.primary-toolbar button:checked,
 toolbar combobox button.combo,
 toolbar.primary-toolbar combobox button.combo {
-	border-radius: 3px;
-	background-image: none;
-	/*border-color: shade(@button_border, 1.12);*/
-	/*border-image is defined in gtk-widgets-assets.css*/
+    border-radius: 3px;
+    background-image: none;
+    /*border-color: shade(@button_border, 1.12);*/
+    /*border-image is defined in gtk-widgets-assets.css*/
 }
 
 toolbar button:hover,
@@ -2472,12 +2472,12 @@ toolbar button:active:hover,
 toolbar.primary-toolbar button:active:hover,
 toolbar combobox button.combo:hover,
 toolbar.primary-toolbar combobox button.combo:hover {
-	border-image: none;
-	border-style: solid;
-	border-color: shade(@theme_main_color, 0.8);
-	background-image: linear-gradient(to bottom,
-	                                  @button_hover_gradient_color_a,
-	                                  @button_hover_gradient_color_b);
+    border-image: none;
+    border-style: solid;
+    border-color: shade(@theme_main_color, 0.8);
+    background-image: linear-gradient(to bottom,
+                                      @button_hover_gradient_color_a,
+                                      @button_hover_gradient_color_b);
 }
 
 toolbar button:checked:disabled,
@@ -2485,32 +2485,32 @@ toolbar.primary-toolbar button:checked:disabled,
 toolbar button:active:disabled,
 toolbar combobox button.combo:disabled,
 toolbar.primary-toolbar combobox button.combo:disabled {
-	border-image: none;
-	border-style: solid;
-	border-color: @inactive_frame_color;
-	background-image: linear-gradient(to bottom,
-	                                  @button_hover_gradient_color_a,
-	                                  @button_hover_gradient_color_b);
+    border-image: none;
+    border-style: solid;
+    border-color: @inactive_frame_color;
+    background-image: linear-gradient(to bottom,
+                                      @button_hover_gradient_color_a,
+                                      @button_hover_gradient_color_b);
 }
 
 toolbar GtkSeparatorToolItem {
-/*	-GtkWidget-separator-width: 1;*/
-	border-style: solid;
-	border-width: 1px;
-	border-color: shade(@theme_bg_color, 0.85);
+/*    -GtkWidget-separator-width: 1;*/
+    border-style: solid;
+    border-width: 1px;
+    border-color: shade(@theme_bg_color, 0.85);
 }
 
 /* progressbars on primary toolbar entries are special */
 toolbar entry progressbar {
-	background-image: linear-gradient(to bottom,
-	                                  @trough_bg_color_a,
-	                                  @trough_bg_color_b);
-	border-width: 1px;
-	border-radius: 2px;
-	border-style: solid;
-	border-color: shade(@inactive_frame_color, 0.925);
-	border-image: none;
-	color: @internal_element_color;
+    background-image: linear-gradient(to bottom,
+                                      @trough_bg_color_a,
+                                      @trough_bg_color_b);
+    border-width: 1px;
+    border-radius: 2px;
+    border-style: solid;
+    border-color: shade(@inactive_frame_color, 0.925);
+    border-image: none;
+    color: @internal_element_color;
 }
 
 /*******************
@@ -2518,13 +2518,13 @@ toolbar entry progressbar {
  *******************/
 
 toolbar.inline-toolbar {
-	border-width: 0px 1px 1px 1px;
-	border-radius: 0px;
-	border-style: solid;
-	border-color: darker (@theme_bg_color);
-	background-image: linear-gradient(to top,
-	                                  shade(@toolbar_gradient_base, 0.88),
-	                                  shade(@theme_bg_color, 1.5));
+    border-width: 0px 1px 1px 1px;
+    border-radius: 0px;
+    border-style: solid;
+    border-color: darker (@theme_bg_color);
+    background-image: linear-gradient(to top,
+                                      shade(@toolbar_gradient_base, 0.88),
+                                      shade(@theme_bg_color, 1.5));
 }
 
 /******************
@@ -2535,58 +2535,58 @@ stackswitcher > button > label,
 headerbar stackswitcher > button.titlebutton > label,
 .titlebar stackswitcher > button.titlebutton > label,
 calendar.header stackswitcher > button.titlebutton > label {
-	padding-left: 6px;
-	padding-right: 6px;
+    padding-left: 6px;
+    padding-right: 6px;
 }
 
 stackswitcher > button > image,
 headerbar stackswitcher > button.titlebutton > image,
 .titlebar stackswitcher > button.titlebutton > image,
 calendar.header stackswitcher > button.titlebutton > image {
-	padding-left: 6px;
-	padding-right: 6px;
-	padding-top: 3px;
-	padding-bottom: 3px;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 
 stackswitcher > button {
-	margin: 0px 1px;
+    margin: 0px 1px;
 }
 
 stackswitcher > button.text-button {
-	padding: 4px 10px 5px;
+    padding: 4px 10px 5px;
 }
 
 stackswitcher > button.image-button,
 headerbar stackswitcher > button.titlebutton,
 .titlebar stackswitcher > button.titlebutton,
 calendar.header stackswitcher > button.titlebutton {
-	padding: 5px 2px;
+    padding: 5px 2px;
 }
 
 stackswitcher > button.needs-attention > label,
 stackswitcher > button.needs-attention > image {
-	animation: needs_attention 150ms ease-in;
-	background-color: @theme_bg_color; /* FIXME: ? */
-	background-size: 6px 6px, 6px 6px;
-	background-repeat: no-repeat;
-	background-position: right 3px, right 4px;
+    animation: needs_attention 150ms ease-in;
+    background-color: @theme_bg_color; /* FIXME: ? */
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+    background-position: right 3px, right 4px;
 }
 
 stackswitcher > button.needs-attention > label:backdrop,
 stackswitcher > button.needs-attention > image:backdrop {
-	background-size: 6px 6px, 0 0;
+    background-size: 6px 6px, 0 0;
 }
 stackswitcher > button.needs-attention > label:dir(rtl),
 stackswitcher > button.needs-attention > image:dir(rtl) {
-	background-position: left 3px, left 4px;
+    background-position: left 3px, left 4px;
 }
 stackswitcher > button.needs-attention:active > label,
 stackswitcher > button.needs-attention:active > image,
 stackswitcher > button.needs-attention:checked > label,
 stackswitcher > button.needs-attention:checked > image {
-	animation: none;
-	background-image: none;
+    animation: none;
+    background-image: none;
 }
 
 /*******
@@ -2594,18 +2594,18 @@ stackswitcher > button.needs-attention:checked > image {
  *******/
 
 .background.osd {
-	color: @osd_fg;
-	background-image: none;
-	background-color: @osd_bg;
+    color: @osd_fg;
+    background-image: none;
+    background-color: @osd_bg;
 }
 
 overlay.osd {
-	background-color: transparent;
+    background-color: transparent;
 }
 
 .osd.frame {
-	background-clip: border-box;
-	background-origin: border-box;
+    background-clip: border-box;
+    background-origin: border-box;
 }
 
 button.osd,
@@ -2615,74 +2615,74 @@ button.osd:checked,
 .osd button:checked,
 .osd button.flat:hover,
 .osd button:checked:hover {
-	border-width: 1px;
-	border-style: solid;
-	border-image: none;
-	border-color: @osd_button_border;
-	border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-image: none;
+    border-color: @osd_button_border;
+    border-radius: 5px;
 }
 
 button.osd,
 .osd button {
     margin: 0px 1px;
-	padding: 4px;
-	background-image: linear-gradient(to bottom,
-	                                  @osd_button_bg_a,
-	                                  @osd_button_bg_b 68%,
-	                                  @osd_button_bg_c);
-	color: @osd_button_fg;
-	text-shadow: 0 -1px @osd_button_shadow;
-	-gtk-icon-shadow: 0 -1px @osd_button_shadow;
+    padding: 4px;
+    background-image: linear-gradient(to bottom,
+                                      @osd_button_bg_a,
+                                      @osd_button_bg_b 68%,
+                                      @osd_button_bg_c);
+    color: @osd_button_fg;
+    text-shadow: 0 -1px @osd_button_shadow;
+    -gtk-icon-shadow: 0 -1px @osd_button_shadow;
 }
 
 button.osd,
 button.osd:hover,
 button.osd:checked {
-	background-color: shade(@osd_bg, 1.10);
+    background-color: shade(@osd_bg, 1.10);
 }
 
 .osd button,
 .osd button:hover,
 .osd button:checked {
-	background-color: transparent;
+    background-color: transparent;
 }
 
 button.osd:disabled,
 .osd button:disabled {
-	background-image: none;
-	background-color: @osd_button_bg_insensitive;
+    background-image: none;
+    background-color: @osd_button_bg_insensitive;
 }
 
 button.osd:checked:disabled,
 .osd button:checked:disabled {
-	background-image: none;
-	background-color: @osd_button_bg_insensitive_active;
+    background-image: none;
+    background-color: @osd_button_bg_insensitive_active;
 }
 
 button.osd:hover,
 .osd button:hover {
-	color: @osd_button_fg_hover;
+    color: @osd_button_fg_hover;
 }
 
 button.osd:checked,
 .osd button:checked {
-	color: @osd_button_fg_active;
+    color: @osd_button_fg_active;
 }
 
 button.osd:disabled,
 button.osd:checked:disabled,
 .osd button:disabled,
 .osd button:checked:disabled {
-	color: @osd_button_fg_insensitive;
+    color: @osd_button_fg_insensitive;
 }
 
 button.osd:hover,
 .osd button:hover,
 .osd.popover spinbutton button:hover {
-	background-image: linear-gradient(to bottom,
-	                                  @osd_button_bg_hover_a,
-	                                  @osd_button_bg_hover_b 68%,
-	                                  @osd_button_bg_hover_c);
+    background-image: linear-gradient(to bottom,
+                                      @osd_button_bg_hover_a,
+                                      @osd_button_bg_hover_b 68%,
+                                      @osd_button_bg_hover_c);
 }
 
 button.osd:checked,
@@ -2692,10 +2692,10 @@ button.osd:active:hover,
 .osd button:active:hover,
 .osd .menuitem.button:active:hover,
 .osd.popover spinbutton button:active {
-	background-image: linear-gradient(to bottom,
-	                                  @osd_button_bg_active_a,
-	                                  @osd_button_bg_active_b 68%,
-	                                  @osd_button_bg_active_c);
+    background-image: linear-gradient(to bottom,
+                                      @osd_button_bg_active_a,
+                                      @osd_button_bg_active_b 68%,
+                                      @osd_button_bg_active_c);
 }
 
 .osd .menuitem.button:checked {
@@ -2738,15 +2738,15 @@ toolbar.osd button:hover {
 }
 
 toolbar.osd button:first-child {
-	border-radius: 5px 0 0 5px;
-	border-width: 1px 0 1px 1px;
-	box-shadow: inset -1px 0 @osd_button_inset;
+    border-radius: 5px 0 0 5px;
+    border-width: 1px 0 1px 1px;
+    box-shadow: inset -1px 0 @osd_button_inset;
 }
 
 toolbar.osd button:last-child {
-	box-shadow: none;
-	border-radius: 0 5px 5px 0;
-	border-width: 1px 1px 1px 0;
+    box-shadow: none;
+    border-radius: 0 5px 5px 0;
+    border-width: 1px 1px 1px 0;
 }
 
 toolbar.osd button:only-child,
@@ -2754,11 +2754,11 @@ toolbar.osd toolitem button,
 toolbar.osd toolitem:only-child button,
 toolbar.osd toolitem:last-child button,
 toolbar.osd toolitem:first-child button {
-	border-width: 1px;
-	border-radius: 5px;
-	border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-style: solid;
 
-	box-shadow: none;
+    box-shadow: none;
 }
 
 toolbar.osd button.flat.image-button {
@@ -2766,7 +2766,7 @@ toolbar.osd button.flat.image-button {
 }
 
 toolbar.osd separator {
-	color: shade(@osd_lowlight, 0.80);
+    color: shade(@osd_lowlight, 0.80);
 }
 
 /* ie. parole media-player */
@@ -2795,87 +2795,85 @@ toolbar.osd separator {
 }
 
 .osd progressbar {
-	background-color: @osd_fg;
+    background-color: @osd_fg;
 }
 
 .osd scale trough {
-	border: 1px solid rgba(0,0,0,0.1);
-	border-image: none;
-	background-image: linear-gradient(to bottom,
-	                                  shade(@osd_button_border, 0.70),
-	                                  shade(@osd_button_border, 0.90));
-	background-color: transparent;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-image: none;
+    background-image: linear-gradient(to bottom,
+                                      shade(@osd_button_border, 0.70),
+                                      shade(@osd_button_border, 0.90));
+    background-color: transparent;
 }
 
 .osd scale trough.highlight {
-	background-image: none;
-	background-color: @theme_selected_bg_color;
+    background-image: none;
+    background-color: @theme_selected_bg_color;
 }
 
 .osd scale trough:disabled,
 .osd scale trough.highlight:disabled {
-	background-image: none;
-	background-color: transparent;
+    background-image: none;
+    background-color: transparent;
 }
 
 .osd progressbar,
 progressbar.osd {
-	padding: 0;
-/*	-GtkProgressBar-xspacing: 0;
-	-GtkProgressBar-yspacing: 3px;
-	-GtkProgressBar-min-horizontal-bar-height: 3px;*/
+    padding: 0;
+    min-height: 3px;
 }
 
 .osd progressbar trough,
 progressbar.osd trough {
-	padding: 0;
-	border-image: none;
-	border-style: none;
-	border-width: 0;
-	background-image: none;
-	background-color: transparent;
-	border-radius: 0;
+    padding: 0;
+    border-image: none;
+    border-style: none;
+    border-width: 0;
+    background-image: none;
+    background-color: transparent;
+    border-radius: 0;
 }
 
 .osd progressbar,
 progressbar.osd {
-	border-style: none;
-	background-color: @theme_selected_bg_color;
-	background-image: none;
-	border-radius: 0;    
+    border-style: none;
+    background-color: @theme_selected_bg_color;
+    background-image: none;
+    border-radius: 0;
 }
 
 .osd .view,
 .osd.view {
-	background-color: @osd_view_bg;
+    background-color: @osd_view_bg;
 }
 
 .osd scrollbar trough {
-	background-color: @osd_scrollbar_trough;
+    background-color: @osd_scrollbar_trough;
 }
 
 .osd scrollbar slider {
-	background-color: @osd_scrollbar_slider;
+    background-color: @osd_scrollbar_slider;
 }
 
 .osd scrollbar slider:hover {
-	background-color: @osd_scrollbar_slider_prelight;
+    background-color: @osd_scrollbar_slider_prelight;
 }
 
 .osd scrollbar slider:active {
-	background-color: @osd_scrollbar_slider_active;
+    background-color: @osd_scrollbar_slider_active;
 }
 
 .osd iconview.cell:selected,
 .osd iconview.cell:selected:focus {
-	background-color: transparent;
+    background-color: transparent;
 
-	border-style: solid;
-	border-radius: 15px;
-	border-width: 3px;
-	border-color: @osd_button_fg;
+    border-style: solid;
+    border-radius: 15px;
+    border-width: 3px;
+    border-color: @osd_button_fg;
 
-	outline-color: transparent;
+    outline-color: transparent;
 }
 
 /* ie. colorchooser */
@@ -2883,16 +2881,16 @@ progressbar.osd {
     background-image: linear-gradient(to left,
                                       alpha (shade(@theme_selected_bg_color, 1.05), 0.5),
                                       alpha (shade(@theme_selected_bg_color, 0.95), 0.3));
-	border-width: 1px;
-	border-style: solid;
-	border-image: none;
+    border-width: 1px;
+    border-style: solid;
+    border-image: none;
     border-color: shade (@theme_selected_bg_color, 0.9);
-	border-radius: 3px;
+    border-radius: 3px;
     padding: 0px;
 }
 
 .osd.popover label {
-	color: @osd_fg;
+    color: @osd_fg;
 }
 
 .osd.popover spinbutton entry,
@@ -2906,7 +2904,7 @@ progressbar.osd {
     border-radius: 0px;
     box-shadow: none;
     padding: 8px;
-	color: @theme_fg_color;
+    color: @theme_fg_color;
 }
 
 /* ie. parole control bar */
@@ -2923,12 +2921,12 @@ revealer.bottom > box.background.horizontal.osd {
 
 /* used by Documents */
 .osd .page-thumbnail {
-	border-style: solid;
-	border-width: 1px;
-	border-color: @osd_lowlight;
+    border-style: solid;
+    border-width: 1px;
+    border-color: @osd_lowlight;
 
-	/* when there's no pixbuf yet */
-	background-color: @osd_bg;
+    /* when there's no pixbuf yet */
+    background-color: @osd_bg;
 }
 
 /*************
@@ -2936,20 +2934,20 @@ revealer.bottom > box.background.horizontal.osd {
  *************/
 
 popover.background {
-	background-clip: initial;
-	margin: 10px;
-	padding: 2px;
-	border-color: shade(@theme_bg_color, 0.8);
-	border-width: 1px;
-	border-style: solid;
-	border-radius: 6px;
-	background-color: transparent;
-	background-image: linear-gradient(to right,
-	                                  shade(@theme_selected_bg_color, 1.0),
-	                                  shade(@theme_selected_bg_color, 0.65));
-	box-shadow: 0 1px 5px @wm_shadow;
-	text-shadow: none;
-	-gtk-icon-shadow: none;
+    background-clip: initial;
+    margin: 10px;
+    padding: 2px;
+    border-color: shade(@theme_bg_color, 0.8);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 6px;
+    background-color: transparent;
+    background-image: linear-gradient(to right,
+                                      shade(@theme_selected_bg_color, 1.0),
+                                      shade(@theme_selected_bg_color, 0.65));
+    box-shadow: 0 1px 5px @wm_shadow;
+    text-shadow: none;
+    -gtk-icon-shadow: none;
 }
 
 popover > list,
@@ -2970,36 +2968,36 @@ popover > .toolbar popover.osd > .location-bar,
 popover > toolbar.inline-toolbar popover.osd > .location-bar,
 popover > searchbar popover.osd > .location-bar,
 popover > .location-bar popover.osd > .location-bar {
-	border-style: none;
-	background-color: transparent;
+    border-style: none;
+    background-color: transparent;
 }
 
 popover separator {
-	font-size: 80%;
-	font-weight: bold;
-	color: alpha(@theme_fg_color,0.1);
-	text-shadow: none;
-	background-color: transparent;
-	-gtk-icon-shadow: none;
-	border: 0;
+    font-size: 80%;
+    font-weight: bold;
+    color: alpha(@theme_fg_color,0.1);
+    text-shadow: none;
+    background-color: transparent;
+    -gtk-icon-shadow: none;
+    border: 0;
 }
 
 popover.osd {
-	background-image: none;
-	background-color: alpha(shade(#3E403D, 0.85), 0.75);
-	border: 1px solid black;
-	box-shadow: none;
-	color: @theme_selected_fg_color;
+    background-image: none;
+    background-color: alpha(shade(#3E403D, 0.85), 0.75);
+    border: 1px solid black;
+    box-shadow: none;
+    color: @theme_selected_fg_color;
 }
 popover.osd toolbar {
-	background-image: none;
-	background-color: transparent;
-	border: none;
-	box-shadow: none;
+    background-image: none;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
 }
 popover.osd button {
-	text-shadow: 0 -1px @osd_text_shadow;
-	-gtk-icon-shadow: 0 -1px @osd_text_shadow;
+    text-shadow: 0 -1px @osd_text_shadow;
+    -gtk-icon-shadow: 0 -1px @osd_text_shadow;
 }
 
 popover.osd button:checked {
@@ -3007,7 +3005,7 @@ popover.osd button:checked {
 }
 
 popover.osd button:disabled {
-	color: alpha(@theme_selected_fg_color, 0.4);
+    color: alpha(@theme_selected_fg_color, 0.4);
 }
 
 /* volume +- buttons */
@@ -3022,8 +3020,8 @@ popover.scale-popup button.flat.image-button {
 
 popover.scale-popup button.flat.image-button:hover {
     background-image: linear-gradient(to left,
-	                                  shade(@theme_selected_bg_color, 1.1),
-	                                  shade(@theme_selected_bg_color, 0.95));
+                                      shade(@theme_selected_bg_color, 1.1),
+                                      shade(@theme_selected_bg_color, 0.95));
 }
 
 .osd popover.background.scale-popup {
@@ -3053,16 +3051,16 @@ popover.scale-popup button.flat.image-button:hover {
 }
 
 popover list {
-	background-color: @theme_base_color;
+    background-color: @theme_base_color;
 }
 
 popover button label {
-	color: @theme_selected_fg_color;
+    color: @theme_selected_fg_color;
 }
 
 modelbutton {
-	color: @theme_selected_fg_color;
-	border-radius: 3px;
+    color: @theme_selected_fg_color;
+    border-radius: 3px;
 }
 
 modelbutton,
@@ -3079,14 +3077,14 @@ modelbutton.flat,
 modelbutton.flat:focus,
 modelbutton.flat:focus:active,
 modelbutton.flat:focus:checked {
-	color: @theme_selected_fg_color;
-	background-color: transparent;
-	background-image: none;
-	border-color: @button_border;
-	border-image: none;
-	border-style: none;
-	box-shadow: none;
-	border-radius: 3px;
+    color: @theme_selected_fg_color;
+    background-color: transparent;
+    background-image: none;
+    border-color: @button_border;
+    border-image: none;
+    border-style: none;
+    box-shadow: none;
+    border-radius: 3px;
 }
 
 modelbutton:hover:active,
@@ -3095,14 +3093,14 @@ modelbutton:selected,
 modelbutton.flat:hover:active,
 modelbutton.flat:hover,
 modelbutton.flat:selected {
-	color: @theme_selected_fg_color;
-	background-image:  linear-gradient(to bottom,
-	                                  shade(@theme_selected_bg_color, 1.6),
-	                                  shade(@theme_selected_bg_color, 0.6));
-	text-shadow: none;
-	border-width: 0;
-	border-color: transparent;
-	border-radius: 3px;
+    color: @theme_selected_fg_color;
+    background-image:  linear-gradient(to bottom,
+                                      shade(@theme_selected_bg_color, 1.6),
+                                      shade(@theme_selected_bg_color, 0.6));
+    text-shadow: none;
+    border-width: 0;
+    border-color: transparent;
+    border-radius: 3px;
 }
 
 modelbutton.flat {
@@ -3110,7 +3108,7 @@ modelbutton.flat {
 }
 
 modelbutton arrow {
-	background-color: transparent;
+    background-color: transparent;
     padding: 0px 4px 0px 0px;
     min-height: 20px;
     min-width: 20px;
@@ -3128,7 +3126,7 @@ modelbutton check,
 modelbutton radio {
     min-height: 16px;
     min-width: 16px;
-	background-color: transparent;
+    background-color: transparent;
 }
 
 modelbutton arrow:hover,
@@ -3137,7 +3135,7 @@ modelbutton radio:hover,
 modelbutton arrow:disabled,
 modelbutton check:disabled,
 modelbutton radio:disabled {
-	background-color: transparent;
+    background-color: transparent;
 }
 
 modelbutton label {
@@ -3145,17 +3143,17 @@ modelbutton label {
 }
 
 popover.background.menu button.image-button.model image {
-	color: @theme_selected_fg_color;
+    color: @theme_selected_fg_color;
 }
 
 popover separator {
-	font-size: 80%;
-	font-weight: bold;
-	color: alpha(@theme_text_color,0.4);
-	text-shadow: none;
-	background-color: transparent;
-	-gtk-icon-shadow: none;
-	border: 0;
+    font-size: 80%;
+    font-weight: bold;
+    color: alpha(@theme_text_color,0.4);
+    text-shadow: none;
+    background-color: transparent;
+    -gtk-icon-shadow: none;
+    border: 0;
 }
 
 popover .horizontal label {
@@ -3186,14 +3184,14 @@ popover button.default.suggested-action.text-button {
 .linked button.image-button.model:hover,
 popover button.text-button:hover,
 popover button.default.suggested-action.text-button:hover {
-	color: @theme_selected_fg_color;
-	background-image:  linear-gradient(to bottom,
-	                                  shade(@theme_selected_bg_color, 1.6),
-	                                  shade(@theme_selected_bg_color, 0.6));
-	text-shadow: none;
-	border-width: 0;
-	border-color: transparent;
-	border-radius: 3px;
+    color: @theme_selected_fg_color;
+    background-image:  linear-gradient(to bottom,
+                                      shade(@theme_selected_bg_color, 1.6),
+                                      shade(@theme_selected_bg_color, 0.6));
+    text-shadow: none;
+    border-width: 0;
+    border-color: transparent;
+    border-radius: 3px;
 }
 
 /***************
@@ -3212,7 +3210,7 @@ headerbar,
                                       shade (@theme_bg_color, 1.20),
                                       shade (@theme_bg_color, 1.0));
     border-radius: 7px 7px 0 0;
-	padding: 5px 4px 5px 5px;
+    padding: 5px 4px 5px 5px;
     border-width: 0 0 1px;
     border-style: solid;
     border-color: shade(@theme_bg_color, 0.8);
@@ -3260,7 +3258,7 @@ headerbar,
 .titlebar button.toggle.popup.titlebutton,
 headerbar.frame.titlebar button.image-button.titlebutton,
 button.text-button.titlebutton {
-	padding: 2px;
+    padding: 2px;
     margin: 0px 1px;
 }
 
@@ -3275,9 +3273,9 @@ button.titlebutton.maximize {
 }
 
 .titlebar separator.vertical.titlebutton {
-	background-image: linear-gradient(to right,
-	                                  shade(@theme_bg_color, 0.85),
-	                                  shade(@theme_bg_color, 0.85));
+    background-image: linear-gradient(to right,
+                                      shade(@theme_bg_color, 0.85),
+                                      shade(@theme_bg_color, 0.85));
 }
 
 /* workaround to avoid unwanted black frames if switching compositor on/off */
@@ -3355,26 +3353,26 @@ messagedialog.csd decoration {
  ****************/
 
 assistant .sidebar highlight {
-	color: @theme_text_color;
-	background-color: shade(@theme_bg_color, 0.9);
-	border-style: none;
-	padding: 5px 8px;
-	border-radius: 5px;
-	box-shadow: inset 0 2px 1px alpha(black, 0.2),
-	            inset 1px 1px 1px alpha(black, 0.3),
+    color: @theme_text_color;
+    background-color: shade(@theme_bg_color, 0.9);
+    border-style: none;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: inset 0 2px 1px alpha(black, 0.2),
+                inset 1px 1px 1px alpha(black, 0.3),
 
-	            inset 0 -2px 1px alpha(white, 0.4),
-	            inset -1px -1px 1px alpha(white, 0.6);
+                inset 0 -2px 1px alpha(white, 0.4),
+                inset -1px -1px 1px alpha(white, 0.6);
 }
 
 assistant .sidebar {
-	padding: 12px;
-	border-style: solid;
-	border-color: shade(@theme_bg_color, 0.9);
-	border-width: 1px;
-	border-radius: 3px;
-	color: mix (@theme_fg_color, @theme_bg_color, 0.40); /*?*/
-	background-color: shade(@theme_bg_color, 0.9);
+    padding: 12px;
+    border-style: solid;
+    border-color: shade(@theme_bg_color, 0.9);
+    border-width: 1px;
+    border-radius: 3px;
+    color: mix (@theme_fg_color, @theme_bg_color, 0.40); /*?*/
+    background-color: shade(@theme_bg_color, 0.9);
 }
 
 /*************
@@ -3385,63 +3383,63 @@ switch,
 switch:backdrop {
     font-weight: bold;
     font-size: smaller;
-	font: bold condensed;
-	color: @internal_element_color;
-	border-radius: 3px;
-	border-width: 1px;
-	border-image: none;
-	border-style: solid;
-	border-color: shade(@frame_color, 1.22);
-	background-image: linear-gradient(to bottom,
-	                                  @trough_bg_color_a,
-	                                  @trough_bg_color_b);
+    font: bold condensed;
+    color: @internal_element_color;
+    border-radius: 3px;
+    border-width: 1px;
+    border-image: none;
+    border-style: solid;
+    border-color: shade(@frame_color, 1.22);
+    background-image: linear-gradient(to bottom,
+                                      @trough_bg_color_a,
+                                      @trough_bg_color_b);
 }
 
 switch:checked,
 switch:backdrop:checked {
-	color: @theme_main_color;
-	border-style: solid;
-	/*border-image is defined in gtk-widgets-assets.css*/
-	background-image: linear-gradient(to bottom,
-	                                  @active_switch_bg_color_a,
-	                                  @active_switch_bg_color_b);
+    color: @theme_main_color;
+    border-style: solid;
+    /*border-image is defined in gtk-widgets-assets.css*/
+    background-image: linear-gradient(to bottom,
+                                      @active_switch_bg_color_a,
+                                      @active_switch_bg_color_b);
 }
 
 switch:disabled,
 switch:backdrop:disabled {
-	background-image: none;
-	background-color: shade(@theme_bg_color, 0.9);
-	border-color: shade(@inactive_frame_color, 0.845);
-	border-image: none;
+    background-image: none;
+    background-color: shade(@theme_bg_color, 0.9);
+    border-color: shade(@inactive_frame_color, 0.845);
+    border-image: none;
 }
 
 switch slider,
 switch slider:backdrop {
     min-width: 45px;
-	border-width: 1px;
-	border-radius: 2px;
-	border-color: shade(@frame_color, 1.31);
-	border-style: solid;
-	padding: 2px;
-	color: shade(@switch_slider_color, 0.8);
-	background-image: url("assets/switch-slider-grip.svg"),
-	                  linear-gradient(to bottom,
-	                                  @button_gradient_color_a,
-	                                  @switch_slider_color);
-	background-repeat: no-repeat;
-	background-position: center;
+    border-width: 1px;
+    border-radius: 2px;
+    border-color: shade(@frame_color, 1.31);
+    border-style: solid;
+    padding: 2px;
+    color: shade(@switch_slider_color, 0.8);
+    background-image: url("assets/switch-slider-grip.svg"),
+                      linear-gradient(to bottom,
+                                      @button_gradient_color_a,
+                                      @switch_slider_color);
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 switch slider:checked,
 switch slider:backdrop:checked {
-	border-color: @switch_slider_border;
+    border-color: @switch_slider_border;
 }
 
 switch slider:disabled,
 switch slider:backdrop:disabled {
-	border-style: none;
-	background-image: none;
-	background-color: shade(@insensitive_bg_color, 1.02);
+    border-style: none;
+    background-image: none;
+    background-color: shade(@insensitive_bg_color, 1.02);
 }
 
 switch slider:disabled > label,
@@ -3475,9 +3473,9 @@ list row:selected switch slider:checked {
  *****************/
 
 statusbar {
-	padding: 0px;
-	color: @theme_fg_color;
-	font-size: smaller;
+    padding: 0px;
+    color: @theme_fg_color;
+    font-size: smaller;
 }
 
 statusbar frame {
@@ -3486,7 +3484,7 @@ statusbar frame {
 
 scrolledwindow,
 overlay /* for floating bars */ {
-	background-color: transparent;
+    background-color: transparent;
 }
 
 image,
@@ -3503,7 +3501,7 @@ box,
 box:disabled,
 grid,
 grid:disabled {
-	background-color: transparent;
+    background-color: transparent;
 }
 
 /*****************
@@ -3614,7 +3612,7 @@ check:selected:focus,
 
 checkbutton:selected:focus,
 radiobutton:selected:focus {
-	background-color: shade(@theme_bg_color, 0.95);
+    background-color: shade(@theme_bg_color, 0.95);
 }
 
 /* move label to the right, min-height/width makes image visible in menus*/
@@ -3624,11 +3622,11 @@ window.background.popup menuitem check,
 window.background.popup menuitem radio,
 window.background.popup menu menuitem check,
 window.background.popup menu menuitem radio {
-	padding: 0px 6px 0px 0px;
+    padding: 0px 6px 0px 0px;
     background-repeat: no-repeat;
     background-position: center;
-	min-height: 16px;
-	min-width: 16px;
+    min-height: 16px;
+    min-width: 16px;
     background-color: transparent;
 }
 
@@ -3675,51 +3673,51 @@ treeview.view.expander:checked {
 }
 
 expander arrow {
-	min-height: 16px;
+    min-height: 16px;
     min-width: 16px;
     -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
 }
 
 expander arrow:dir(rtl) {
-	min-height: 16px;
+    min-height: 16px;
     min-width: 16px;
     -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
 }
 
 expander arrow:hover {
-	color: @theme_fg_color;
+    color: @theme_fg_color;
 }
 
 expander arrow:checked {
-	min-height: 16px;
+    min-height: 16px;
     min-width: 16px;
     -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
 }
 
 expander title {
-	border-style: solid;
-	border-width: 1px;
-	border-radius: 2px;
-	border-color: @internal_element_color;
-	color: @theme_fg_color;
-	background-image: none;
-	background-color: transparent;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2px;
+    border-color: @internal_element_color;
+    color: @theme_fg_color;
+    background-image: none;
+    background-color: transparent;
 }
 
 expander title:active {
-	border-color: @internal_element_color;
-	color: @theme_fg_color;
-	background-color: transparent;
+    border-color: @internal_element_color;
+    color: @theme_fg_color;
+    background-color: transparent;
 }
 
 expander title:hover {
-	border-color: @internal_element_color;
-	color: @theme_fg_color;
+    border-color: @internal_element_color;
+    color: @theme_fg_color;
 }
 
 expander row {
-	border-color: @internal_element_color;
-	color: @internal_element_color;
+    border-color: @internal_element_color;
+    color: @internal_element_color;
 }
 
 expander row:selected,
@@ -3728,68 +3726,68 @@ expander row:nth-child(odd):selected,
 expander row:nth-child(even):selected,
 expander row:nth-child(odd):focus,
 expander row:nth-child(even):focus {
-	border-image: none;
-	border-color: @expander_row_selected_color;
-	color: @expander_row_selected_color;
-	background-image: none;
-	background-color: transparent;
+    border-image: none;
+    border-color: @expander_row_selected_color;
+    color: @expander_row_selected_color;
+    background-image: none;
+    background-color: transparent;
 }
 
 expander row:selected:hover,
 expander row:nth-child(odd):selected:hover,
 expander row:nth-child(even):selected:hover {
-	background-color: transparent;
+    background-color: transparent;
 }
 
 expander column:sorted:selected,
 expander column:sorted:selected:hover {
-	background-image: none;
-	background-color: transparent;
+    background-image: none;
+    background-color: transparent;
 }
 
 /****************
  * Content view *
  ****************/
 .content-view.view {
-	background-color: @content_view_bg;
+    background-color: @content_view_bg;
 }
 
 .content-view.view:hover {
-	background-color: shade(@content_view_bg, 1.1);
+    background-color: shade(@content_view_bg, 1.1);
 }
 
 .content-view.view:selected,
 .content-view.view:active {
-	background-color: @theme_selected_bg_color;
+    background-color: @theme_selected_bg_color;
 }
 
 .content-view.view:disabled {
-	background-color: @theme_unfocused_base_color;
+    background-color: @theme_unfocused_base_color;
 }
 
 GdMainIconView.content-view {
-	-GdMainIconView-icon-size: 40;
+    -GdMainIconView-icon-size: 40;
 }
 
 iconview.content-view.check {
-	background-image: url("assets/grid-selection-unchecked.svg");
-	background-color: transparent;
+    background-image: url("assets/grid-selection-unchecked.svg");
+    background-color: transparent;
 }
 
 iconview.content-view.check:checked {
-	background-image: url("assets/grid-selection-checked.svg");
-	background-color: transparent;
+    background-image: url("assets/grid-selection-checked.svg");
+    background-color: transparent;
 }
 
 .content-view.view.check,
 .content-view.view.check:checked {
-	background-color: transparent;
+    background-color: transparent;
 }
 
 iconview.content-view.check:hover,
 iconview.content-view.check:disabled,
 iconview.content-view.check:checked {
-	background-color: transparent;
+    background-color: transparent;
 }
 
 /******************
@@ -3805,17 +3803,17 @@ dialog.background .vertical.dialog-vbox  grid.vertical {
  *********************/
 .app-notification,
 .app-notification.frame {
-	border-style: solid;
-	border-color: rgba(112, 129, 106, 0.9);
-	border-width: 0 1px 1px 1px;
-	border-radius: 0 0 5px 5px;
-	padding: 8px;
+    border-style: solid;
+    border-color: rgba(112, 129, 106, 0.9);
+    border-width: 0 1px 1px 1px;
+    border-radius: 0 0 5px 5px;
+    padding: 8px;
     background-color: rgba(112, 129, 106, 0.3);
     background-image: linear-gradient(to bottom,
                                       rgba(112, 129, 106, 0.2),
                                       transparent 2px);
     background-clip: padding-box;
-	color: @theme_fg_color;
+    color: @theme_fg_color;
 }
 
 .app-notification:backdrop,
@@ -3934,41 +3932,41 @@ calendar.header .app-notification.frame button.titlebutton {
  *************/
 
 calendar {
-	border-radius: 3px;
-	border-style: solid;
-	border-width: 1px;
-	border-color: alpha(@frame_color, 0.6);
-	padding: 1px;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: alpha(@frame_color, 0.6);
+    padding: 1px;
 }
 
 calendar.header {
-	border-radius: 3px 3px 0px 0px;
-	background-image: linear-gradient(to bottom,
-	                                  shade(@theme_bg_color, 1.1),
-	                                  shade(@theme_bg_color, 0.86));
-	border-width: 0px 0px 1px 0px;
+    border-radius: 3px 3px 0px 0px;
+    background-image: linear-gradient(to bottom,
+                                      shade(@theme_bg_color, 1.1),
+                                      shade(@theme_bg_color, 0.86));
+    border-width: 0px 0px 1px 0px;
 }
 
 calendar.button {
-	background-image: linear-gradient(to bottom,
-	                                  rgba (0, 0, 0, 0),
-	                                  rgba (0, 0, 0, 0));
+    background-image: linear-gradient(to bottom,
+                                      rgba (0, 0, 0, 0),
+                                      rgba (0, 0, 0, 0));
 }
 
 calendar.highlight {
-	background-color: @theme_selected_bg_color;
-	color: @theme_selected_fg_color;
-	border-radius: 0px;
-	padding: 0px;
-	border-width: 0px;
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+    border-radius: 0px;
+    padding: 0px;
+    border-width: 0px;
 }
 
 /**************
  * GtkInfoBar *
  **************/
 infobar {
-	border-width: 0;
-	border-style: none;
+    border-width: 0;
+    border-style: none;
 }
 
 entry.info,
@@ -3986,28 +3984,28 @@ entry.error:focus,
 .error button,
 .error button:disabled,
 .error button:checked {
-	border-image: none;
-	border-style: none;
+    border-image: none;
+    border-style: none;
 }
 
 .info {
-	background-color: @info_bg_color;
-	color: @info_fg_color;
+    background-color: @info_bg_color;
+    color: @info_fg_color;
 }
 
 .warning {
-	background-color: @warning_bg_color;
-	color: @warning_fg_color;
+    background-color: @warning_bg_color;
+    color: @warning_fg_color;
 }
 
 .question {
-	background-color: @question_bg_color;
-	color: @question_fg_color;
+    background-color: @question_bg_color;
+    color: @question_fg_color;
 }
 
 .error {
-	background-color: @error_bg_color;
-	color: @error_fg_color;
+    background-color: @error_bg_color;
+    color: @error_fg_color;
 }
 
 infobar revealer button {
@@ -4015,25 +4013,25 @@ infobar revealer button {
                                       @inherit,
                                       @button_gradient_color_b);
     background-color: transparent;
-	color: @theme_selected_fg_color;
+    color: @theme_selected_fg_color;
 }
 
 infobar revealer button:hover {
-	background-image: linear-gradient(to bottom,
-	                                  @inherit,
-	                                  @button_hover_gradient_color_b);
+    background-image: linear-gradient(to bottom,
+                                      @inherit,
+                                      @button_hover_gradient_color_b);
     background-color: transparent;
-	color: @theme_selected_fg_color;
+    color: @theme_selected_fg_color;
 }
 
 infobar revealer button:disabled {
     background-image: none;
     background-color: inherit;
-	color: @insensitive_fg_color;
+    color: @insensitive_fg_color;
 }
 
 infobar revealer button label {
-	color: @theme_selected_fg_color;
+    color: @theme_selected_fg_color;
 }
 
 /**************
@@ -4043,17 +4041,17 @@ infobar revealer button label {
 .dim-label:hover,
 .dim-label:focus,
 .view.dim-label {
-	color: mix (@theme_fg_color, @theme_bg_color, 0.50);
+    color: mix (@theme_fg_color, @theme_bg_color, 0.50);
 }
 
 .dim-label:selected,
 .dim-label:selected:focus {
-	color: mix (@theme_selected_fg_color, @theme_base_color, 0.50);
-	text-shadow: none;
+    color: mix (@theme_selected_fg_color, @theme_base_color, 0.50);
+    text-shadow: none;
 }
 
 popover .dim-label {
-	color: @theme_selected_fg_color;
+    color: @theme_selected_fg_color;
 }
 
 /***********
@@ -4064,7 +4062,7 @@ popover .dim-label {
 .sidebar treeview.view,
 placessidebar.sidebar {
     -gtk-icon-style: regular;
-	background-color: shade(@theme_bg_color, 1.02);
+    background-color: shade(@theme_bg_color, 1.02);
     padding: 0px;
 }
 
@@ -4078,7 +4076,7 @@ placessidebar.sidebar {
 }
 
 .sidebar .frame {
-	background-color: transparent;
+    background-color: transparent;
     border-style: none;
 }
 
@@ -4111,7 +4109,7 @@ placessidebar.sidebar.frame > viewport.frame > list > row.activatable.sidebar-ro
     background-image:  linear-gradient(to bottom,
                                        shade(@theme_selected_bg_color, 1.8),
                                        shade(@theme_selected_bg_color, 1.53));
-	color: shade (@theme_fg_color, 1.0);
+    color: shade (@theme_fg_color, 1.0);
 }
 
 placessidebar.sidebar.frame > viewport.frame > list > row.activatable.sidebar-row .sidebar-revealer .sidebar-icon {
@@ -4136,8 +4134,8 @@ placessidebar.sidebar.frame > viewport.frame > list row.activatable button.sideb
 .sidebar separator:hover {
     min-height: 1px;
     background-image: linear-gradient(to bottom,
-	                                  alpha(@frame_color, 0.6),
-	                                  alpha(@frame_color, 0.6));
+                                      alpha(@frame_color, 0.6),
+                                      alpha(@frame_color, 0.6));
 }
 
 /* ie. dconf-editor */
@@ -4154,17 +4152,17 @@ placessidebar.sidebar.frame > viewport.frame > list row.activatable button.sideb
     background-image:  linear-gradient(to bottom,
                                        shade(@theme_selected_bg_color, 1.8),
                                        shade(@theme_selected_bg_color, 1.53));
-	color: shade (@theme_fg_color, 1.0);
+    color: shade (@theme_fg_color, 1.0);
 }
 
 stacksidebar.sidebar scrolledwindow  {
-	background-image: linear-gradient(to right,
-	                                  shade(@toolbar_gradient_base, 0.94),
-	                                  shade(@theme_bg_color, 1.0));
-	border-style: solid;
-	border-width: 0px 1px 0px 0px;
-	border-color: alpha(@frame_color, 0.6);
-	border-radius: 2px 0px 0px 2px;
+    background-image: linear-gradient(to right,
+                                      shade(@toolbar_gradient_base, 0.94),
+                                      shade(@theme_bg_color, 1.0));
+    border-style: solid;
+    border-width: 0px 1px 0px 0px;
+    border-color: alpha(@frame_color, 0.6);
+    border-radius: 2px 0px 0px 2px;
 }
 
 stacksidebar.sidebar viewport.frame {
@@ -4208,9 +4206,9 @@ filechooser stack scrolledwindow {
 
 actionbar {
     padding: 2px;
-	border-style: solid;
-	border-width: 1px 0px 0px 0px;
-	border-color: alpha(@frame_color, 0.6);
+    border-style: solid;
+    border-width: 1px 0px 0px 0px;
+    border-color: alpha(@frame_color, 0.6);
 }
 
 actionbar stackswitcher.horizontal.linked button.image-button.radio  {
@@ -4218,7 +4216,7 @@ actionbar stackswitcher.horizontal.linked button.image-button.radio  {
 }
 
 actionbar button.toggle.image-button.popup {
-	padding: 5px;
+    padding: 5px;
 }
 
 /* hyperlinks */
