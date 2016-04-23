@@ -1407,6 +1407,7 @@ list row.activatable:hover {
     color: shade (@theme_fg_color, 1.0);
 }
 
+list row label,
 list row.activatable label {
     padding: 0px 4px;
 }
@@ -2164,6 +2165,7 @@ menubar,
     padding: 0px;
     color: @theme_text_color;
     -GtkWidget-window-dragging: true;
+    text-shadow: none;
 }
 
 menubar > menuitem,
@@ -2175,6 +2177,7 @@ menubar > menuitem,
     border-width: 0px;
     border-style: none;
     background-color: transparent;
+    text-shadow: none;
 }
 
 /* needed for broken firefox, valid transition effects breaks hover state here */
@@ -2188,6 +2191,7 @@ menubar:hover {
     border-width: 0px;
     color: @theme_selected_fg_color;
     transition: none;
+    text-shadow: none;
 }
 
 menubar > menuitem:hover,
@@ -2200,11 +2204,13 @@ menubar > menuitem:hover,
     border-radius: 3px 3px 0px 0px;
     border-width: 0px;
     color: @theme_selected_fg_color;
+    text-shadow: none;
 }
 
 menubar > menuitem:disabled,
 .menubar > menuitem:disabled {
     color: @theme_fg_color;
+    text-shadow: none;
 }
 
 menu,
@@ -2217,6 +2223,7 @@ menu,
     border-style: none;
     border-width: 0px;
     border-radius: 0px;
+    text-shadow: none;
 }
 
 /* needed for broken firefox, valid transition effects breaks hover state here */
@@ -2229,6 +2236,7 @@ menu,
     border-width: 1px;
     border-radius: 0px;
     padding: 4px;
+    text-shadow: none;
 }
 
 menu menuitem,
@@ -2242,6 +2250,7 @@ menu menuitem,
     border-radius: 0px;
     padding: 4px;
     color: @theme_selected_fg_color;
+    text-shadow: none;
 }
 
 menu menuitem:hover,
@@ -2255,13 +2264,20 @@ menu menuitem:hover,
     border-width: 1px;
     border-radius: 3px;
     border-image: url("assets/menu-border.svg") 2 / 2px stretch;
+    text-shadow: none;
 }
 
 menu menuitem:disabled,
 .menu menuitem:disabled {
+    text-shadow: none;
     background-color: transparent;
     border-color: transparent;
     color: @insensitive_fg_color;
+}
+
+menu menuitem label {
+    color: @theme_selected_fg_color;
+    text-shadow: none;
 }
 
 menu separator,
@@ -3042,6 +3058,7 @@ popover list {
     background-color: @theme_base_color;
 }
 
+popover label,
 popover button label {
     color: @theme_selected_fg_color;
 }
@@ -3075,20 +3092,48 @@ modelbutton.flat:focus:checked {
     border-radius: 3px;
 }
 
+modelbutton arrow,
+modelbutton:checked arrow,
+modelbutton:focus arrow,
+modelbutton:focus:active arrow,
+modelbutton:focus:checked arrow,
+modelbutton.flat:checked arrow,
+modelbutton.flat arrow,
+modelbutton.flat:focus arrow,
+modelbutton.flat:focus:active arrow,
+modelbutton.flat:focus:checked arrow {
+   -gtk-icon-shadow:  0px  1px shade (@theme_fg_color, 0.8),
+                      1px  0px shade (@theme_fg_color, 0.8),
+                     -1px  0px shade (@theme_fg_color, 0.8),
+                      0px -1px shade (@theme_fg_color, 0.8);
+}
+
 modelbutton:hover:active,
 modelbutton:hover,
 modelbutton:selected,
 modelbutton.flat:hover:active,
 modelbutton.flat:hover,
 modelbutton.flat:selected {
-    color: @theme_selected_fg_color;
+    color: @theme_fg_color;
     background-image:  linear-gradient(to bottom,
-                                      shade(@theme_selected_bg_color, 1.6),
-                                      shade(@theme_selected_bg_color, 0.6));
+                                      shade(@theme_selected_bg_color, 1.4),
+                                      shade(@theme_selected_bg_color, 0.8));
     text-shadow: none;
     border-width: 0;
     border-color: transparent;
     border-radius: 3px;
+}
+
+modelbutton:hover:active arrow,
+modelbutton:hover arrow,
+modelbutton:selected arrow,
+modelbutton.flat:hover:active arrow,
+modelbutton.flat:hover arrow,
+modelbutton.flat:selected arrow {
+   -gtk-icon-shadow:  0px  1px shade (@theme_selected_fg_color, 0.8),
+                      1px  0px shade (@theme_selected_fg_color, 0.8),
+                     -1px  0px shade (@theme_selected_fg_color, 0.8),
+                      0px -1px shade (@theme_selected_fg_color, 0.8);
 }
 
 modelbutton.flat {
@@ -4210,12 +4255,15 @@ actionbar button.toggle.image-button.popup {
   color: @link_color;
 }
 
-button.link,
-button.link:hover,
-button.link:active,
-button.link:active:hover {
+button.link:link,
+button.link:link:focus,
+button.link:link:backdrop,
+button.link:link:focus:hover,
+button.link:link:focus:hover:active {
     transition: all 400ms ease-in;
     text-shadow: none;
+    padding: 4px;
+    border-style: solid;
 }
 
 /******************
