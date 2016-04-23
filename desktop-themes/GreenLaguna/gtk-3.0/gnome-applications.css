@@ -85,3 +85,55 @@ RBSource .cell.image {
 	border-radius: 2px;
 }
 
+/* gnome-weather */
+#weather-page {
+    padding: 0px;
+    margin: -2px -2px -2px 0px;
+}
+
+#weather-page > frame {
+    border-radius: 0px;
+    margin: 0px 0px 0px -1px;
+    border-color: transparent;
+}
+
+#weather-page stack > scrolledwindow > .frame {
+    background-color: transparent;
+}
+
+#weather-page stack > scrolledwindow > .frame > grid > frame {
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      alpha(shade(@theme_selected_bg_color, 1.2), 0.3),
+                                      alpha(shade(@theme_selected_bg_color, 0.95), 0.3));
+    border-color: @osd_button_border;
+}
+
+#weather-page frame.weather-clear stack > scrolledwindow > .frame {
+    color: @theme_fg_color;
+    text-shadow: none;
+}
+
+#weather-page frame.weather-few-clouds-night .linked.stack-switcher.osd > button label,
+#weather-page frame.weather-few-clouds-night .linked.stack-switcher.osd > button:checked,
+#weather-page frame.weather-few-clouds-night stack > scrolledwindow > .frame label,
+#weather-page frame.weather-clear-night .linked.stack-switcher.osd > button label,
+#weather-page frame.weather-clear-night .linked.stack-switcher.osd > button:checked,
+#weather-page frame.weather-clear-night stack > scrolledwindow > .frame label,
+#weather-page frame.weather-storm .linked.stack-switcher.osd > button label,
+#weather-page frame.weather-storm .linked.stack-switcher.osd > button:checked,
+#weather-page frame.weather-storm stack > scrolledwindow > .frame label,
+#weather-page frame.weather-showers .linked.stack-switcher.osd > button label,
+#weather-page frame.weather-showers .linked.stack-switcher.osd > button:checked,
+#weather-page frame.weather-showers stack > scrolledwindow > .frame label,
+#weather-page frame.weather-overcast .linked.stack-switcher.osd > button label,
+#weather-page frame.weather-overcast .linked.stack-switcher.osd > button:checked,
+#weather-page frame.weather-overcast stack > scrolledwindow > .frame label {
+    color: @osd_button_fg_active;
+}
+
+#weather-page button.osd,
+#weather-page frame .linked.stack-switcher.osd > button {
+	border-image: none;
+}
+
