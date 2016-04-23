@@ -5,11 +5,11 @@
 toolbar.primary-toolbar.horizontal > toolitem > grid.horizontal > button.scale.flat,
 toolbar.primary-toolbar.horizontal > toolitem > grid.horizontal > button.scale.flat:hover,
 toolbar.primary-toolbar.horizontal > toolitem > grid.horizontal > button.scale.flat:hover:active {
-	padding: 0px 6px;
+    padding: 0px 6px;
 }
 
 RBSource .cell.image {
-	color: black;
+    color: black;
 }
 
 /************
@@ -32,35 +32,35 @@ RBSource .cell.image {
 }
 
 .nautilus-inactive-pane notebook scrollbar.button:disabled {
-	background-color: shade(@theme_bg_color, 0.9);
-	border-radius: 0px;
+    background-color: shade(@theme_bg_color, 0.9);
+    border-radius: 0px;
 }
 
 .nautilus-window .floating-bar {
-	font: italic;
+    font: italic;
 }
 
 .nautilus-canvas-item {
-	border-radius: 5px;
+    border-radius: 5px;
 }
 
 .nautilus-desktop.nautilus-canvas-item {
-	color: @theme_bg_color;
-	text-shadow: 1px 1px black;
+    color: @theme_bg_color;
+    text-shadow: 1px 1px black;
 }
 
 .nautilus-desktop.nautilus-canvas-item:active {
-	color: @theme_text_color;
+    color: @theme_text_color;
 }
 
 .nautilus-desktop.nautilus-canvas-item:selected {
-	color: @theme_selected_fg_color;
+    color: @theme_selected_fg_color;
 }
 
 .nautilus-desktop.nautilus-canvas-item:active,
 .nautilus-desktop.nautilus-canvas-item:hover,
 .nautilus-desktop.nautilus-canvas-item:selected {
-	text-shadow: none;
+    text-shadow: none;
 }
 
 /*********
@@ -79,10 +79,10 @@ RBSource .cell.image {
 
 .gedit-bottom-panel-paned > grid > notebook scrolledwindow {
     background-color: shade(@base_color, 1.04);
-	border-style: solid;
-	border-color: alpha(@frame_color, 0.6);
-	border-width: 0px 1px 1px 1px;
-	border-radius: 2px;
+    border-style: solid;
+    border-color: alpha(@frame_color, 0.6);
+    border-width: 0px 1px 1px 1px;
+    border-radius: 2px;
 }
 
 /* gnome-weather */
@@ -134,6 +134,6 @@ RBSource .cell.image {
 
 #weather-page button.osd,
 #weather-page frame .linked.stack-switcher.osd > button {
-	border-image: none;
+    border-image: none;
 }
 
