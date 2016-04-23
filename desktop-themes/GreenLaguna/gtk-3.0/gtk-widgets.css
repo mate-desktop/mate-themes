@@ -540,13 +540,14 @@ spinner:checked:disabled {
  ****************/
 
 entry {
-	background-color: shade(@theme_bg_color, 1.09);
-	border-width: 1px;
-	border-style: none;
-	border-radius: 3px;
-	padding: 4px;
-	color: @theme_text_color;
+    background-color: shade(@theme_bg_color, 1.09);
+    border-width: 1px;
+    border-style: none;
+    border-radius: 3px;
+    padding: 4px;
+    color: @theme_text_color;
     min-height: 22px;
+    margin: 0px 1px 0px 0px; /* move button away from entry */
 }
 
 entry:focus {
@@ -693,6 +694,17 @@ progressbar.vertical progress {
     border-radius: 16px;
 }
 
+statusbar progressbar.horizontal {
+    min-height: 13px;
+}
+
+/* progress component */
+statusbar progressbar.horizontal trough,
+statusbar progressbar.horizontal progress {
+    min-height: 13px;
+    border-radius: 6px;
+}
+
 progressbar progress.left {
     border-top-left-radius: 16px;
     border-bottom-left-radius: 16px;
@@ -785,21 +797,6 @@ frame.flat {
 	border-style: none;
 }
 
-/*scrolledwindow,*/
-scrolledwindow.frame {
-	-gtk-icon-style: regular;
-	border-style: solid;
-	border-color: @borders;
-	border-width: 1px;
-	border-radius: 2px;
-	padding: 0;
-}
-
-/* no double frames */
-scrolledwindow viewport.frame {
-	border-style: none;
-}
-
 /* ie, dconf-editor, nautilus view */
 .background.csd scrolledwindow,
 .gedit-bottom-panel-paned > grid > notebook scrolledwindow,
@@ -811,6 +808,23 @@ scrolledwindow viewport.frame {
 	border-width: 0px 1px 1px 1px;
 	border-radius: 2px;
 	padding: 0;
+}
+
+/*scrolledwindow,*/
+scrolledwindow.frame,
+.background.csd scrolledwindow.frame,
+.background.solid-csd scrolledwindow.frame {
+	-gtk-icon-style: regular;
+	border-style: solid;
+	border-color: alpha(@frame_color, 0.6);
+	border-width: 1px;
+	border-radius: 2px;
+	padding: 0;
+}
+
+/* no double frames */
+scrolledwindow viewport.frame {
+	border-style: none;
 }
 
 /***************
@@ -914,7 +928,7 @@ notebook header.top {
     border-width: 0px 0px 1px 0px;
     background-image: linear-gradient(to bottom,
                                       shade(@theme_bg_color, 0.86),
-                                      shade(@theme_bg_color, 1.05));
+                                      shade(@theme_bg_color, 1.00));
     box-shadow: inset  0px -1px alpha(shade(@button_border, 1.00), 0.90);
 }
 
@@ -923,7 +937,7 @@ notebook header.bottom {
     border-width: 1px 0px 0px 0px;
     background-image: linear-gradient(to top,
                                       shade(@theme_bg_color, 0.86),
-                                      shade(@theme_bg_color, 1.05));
+                                      shade(@theme_bg_color, 1.00));
     box-shadow: inset  0px  1px alpha(shade(@button_border, 1.00), 0.90);
 }
 
@@ -932,7 +946,7 @@ notebook header.left {
     border-width: 1px 1px 0px 0px;
     background-image: linear-gradient(to right,
                                       shade(@theme_bg_color, 0.86),
-                                      shade(@theme_bg_color, 1.05));
+                                      shade(@theme_bg_color, 1.00));
     box-shadow: inset -1px  0px alpha(shade(@button_border, 1.00), 0.90);
 }
 
@@ -941,7 +955,7 @@ notebook header.right {
     border-width: 0px 0px 0px 1px;
     background-image: linear-gradient(to left,
                                       shade(@theme_bg_color, 0.86),
-                                      shade(@theme_bg_color, 1.05));
+                                      shade(@theme_bg_color, 1.00));
     box-shadow: inset  1px  0px alpha(shade(@button_border, 1.00), 0.90);
 }
 
@@ -983,7 +997,7 @@ paned.horizontal > box.vertical > notebook scrolledwindow.frame,
 paned.horizontal > paned.vertical > notebook scrolledwindow.frame {
     border-width: 1px 1px 1px 1px;
     border-style: solid;
-    border-color: @notebook_border;
+    border-color: alpha(@frame_color, 0.6);
 }
 
 .gedit-bottom-panel-paned > grid > notebook > header tab,
@@ -1251,7 +1265,11 @@ notebook > header button.flat.small-button {
 
 notebook > header button.flat:hover,
 notebook > header button.flat.small-button:hover {
-	-gtk-icon-effect: highlight;
+    -gtk-icon-effect: highlight;
+    border-image: none;
+    border-style: none;
+    background-image: none;
+    background-color: transparent;
 }
 
 notebook header.top tabs arrow.up,
@@ -1345,7 +1363,7 @@ treeview header {
 treeview header button {
     background-image: linear-gradient(to bottom,
 	                                  @button_gradient_color_a,
-	                                  shade(@button_gradient_color_b, 0.92));
+	                                  shade(@button_gradient_color_b, 0.98));
     border-image: none;
     border-width: 0px 1px 1px 0px;
     border-radius: 0px;
@@ -1786,7 +1804,8 @@ button image:disabled {
 	color: @insensitive_fg_color;
 }
 
-button:hover {
+button:hover,
+button.flat:hover {
 	border-image: none;
 	border-style: solid;
 	border-color: shade(@button_border, 1.1);
@@ -1841,9 +1860,21 @@ button.image-button.radio {
     margin: 0px 1px;
 }
 
+buttonbox.horizontal.linked.dialog-action-area button {
+    margin: 0px 1px;
+}
+
 /******************
  * Linked Buttons *
  ******************/
+
+.linked.horizontal combobox .linked.horizontal button.combo {
+     margin: 0px 1px;
+}
+
+.linked.vertical button {
+     margin: 1px 0px;
+}
 
 /* We don't make them different. */
 
@@ -2581,7 +2612,9 @@ button.osd,
 button.osd:checked,
 .osd button,
 .osd button:hover,
-.osd button:checked {
+.osd button:checked,
+.osd button.flat:hover,
+.osd button:checked:hover {
 	border-width: 1px;
 	border-style: solid;
 	border-image: none;
@@ -2631,8 +2664,6 @@ button.osd:hover,
 	color: @osd_button_fg_hover;
 }
 
-button.osd:hover:active,
-.osd button:hover:active,
 button.osd:checked,
 .osd button:checked {
 	color: @osd_button_fg_active;
@@ -2738,11 +2769,29 @@ toolbar.osd separator {
 	color: shade(@osd_lowlight, 0.80);
 }
 
-/* used by gnome-settings-daemon's media-keys OSD
-   and Epiphany */
-.osd trough {
-	background-color: @osd_trough_bg;
-	border-width: 0;
+/* ie. parole media-player */
+.osd scale trough,
+.osd scale.horizontal trough {
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 1px;
+    background-image: -gtk-gradient (linear,
+                                     left top,
+                                     left bottom,
+                                     from (alpha (#fff, 0.10)),
+                                     color-stop (0.20, alpha (#fff, 0.10)),
+                                     to (alpha (#fff, 0.04)));
+    box-shadow: inset  1px  1px alpha(#000, 0.08),
+                inset -1px -1px alpha(#000, 0.08);
+    border-color: @osd_button_border;
+}
+
+.osd scale.horizontal trough {
+    min-height: 3px;
+}
+
+.osd scale.vertical trough {
+    min-width: 3px;
 }
 
 .osd progressbar {
@@ -3113,6 +3162,11 @@ popover .horizontal label {
     color: @theme_selected_fg_color;
 }
 
+/* ie. gnome-weather */
+popover list row.activatable label {
+    color: @theme_fg_color;
+}
+
 .linked button.image-button.model {
     min-height: 28px;
     margin: 0px 1px;
@@ -3145,8 +3199,6 @@ popover button.default.suggested-action.text-button:hover {
 /***************
  * Header bars *
  ***************/
-
-
 
 /*******
  * CSD *
@@ -3885,7 +3937,7 @@ calendar {
 	border-radius: 3px;
 	border-style: solid;
 	border-width: 1px;
-	border-color: @borders;
+	border-color: alpha(@frame_color, 0.6);
 	padding: 1px;
 }
 
@@ -4037,6 +4089,10 @@ placessidebar.sidebar.frame {
     border-color: alpha(@frame_color, 0.6);
 }
 
+filechooser placessidebar.sidebar.frame {
+    border-width: 1px 1px 1px 1px;
+}
+
 placessidebar.sidebar.frame > viewport.frame > list > row.activatable.sidebar-row {
     background-color: shade(@theme_bg_color, 1.02);
     border-radius: 0px;
@@ -4107,7 +4163,7 @@ stacksidebar.sidebar scrolledwindow  {
 	                                  shade(@theme_bg_color, 1.0));
 	border-style: solid;
 	border-width: 0px 1px 0px 0px;
-	border-color: @borders;
+	border-color: alpha(@frame_color, 0.6);
 	border-radius: 2px 0px 0px 2px;
 }
 
@@ -4121,7 +4177,7 @@ stacksidebar.sidebar viewport.frame {
 
 filechooser #pathbarbox {
     background-color: shade(@theme_bg_color, 1.02);
-    border-color: @notebook_border;
+    border-color: alpha(@frame_color, 0.6);
     border-width: 1px 1px 0px 1px;
     border-style: solid;
     border-radius: 3px 0px 0px 0px;
@@ -4139,7 +4195,7 @@ filechooser placesview stack frame {
 
 filechooser stack scrolledwindow {
     background-color: shade(@theme_bg_color, 1.02);
-    border-color: @notebook_border;
+    border-color: alpha(@frame_color, 0.6);
     border-width: 1px;
     border-style: solid;
     border-radius: 0px;
@@ -4186,7 +4242,7 @@ button.link:active:hover {
 
 /* ie. mate-keyboard-properties option window */
 dialog scrolledwindow.frame {
-    border-color: @notebook_border;
+    border-color: alpha(@frame_color, 0.6);
     border-style: solid;
     border-width: 1px;
     border-radius: 2px;
@@ -4199,8 +4255,44 @@ dialog scrolledwindow.frame viewport .vertical {
 dialog scrolledwindow.frame viewport .vertical expander .vertical {
     background-color: shade (@theme_bg_color, 1.10);
     border-radius: 3px;
-    border-color: @notebook_border;
+    border-color: alpha(@frame_color, 0.6);
     border-style: solid;
     border-width: 1px;
+}
+
+/******************
+ * FlowBox *
+ ******************/
+
+flowbox {
+    background-color: shade(@base_color, 1.02);
+    -gtk-icon-style: regular;
+    border-style: solid;
+    border-color: alpha(@frame_color, 0.6);
+    border-width: 1px 1px 1px 1px;
+    border-radius: 3px;
+    padding: 8px;
+}
+
+flowbox > flowboxchild,
+flowbox > flowboxchild:focus,
+flowbox > flowboxchild:backdrop {
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 3px;
+    border-color: transparent;
+    color: @theme_text_color;
+
+}
+
+flowbox > flowboxchild:selected,
+flowbox > flowboxchild:selected:focus,
+flowbox > flowboxchild:selected:hover,
+flowbox > flowboxchild:selected:focus:hover {
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 3px;
+    border-color: alpha(@theme_selected_bg_color, 0.75);
+    color: @theme_text_color;
 }
 
