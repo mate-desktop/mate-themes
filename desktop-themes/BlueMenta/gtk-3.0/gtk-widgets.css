@@ -111,29 +111,27 @@ textView {
 /************
  * Tooltips *
  ************/
+
 tooltip {
-	padding: 4px;
-	border-style: solid;
-	border-width: 1px;
-	border-color: shade(@theme_tooltip_bg_color, 0.50);
 	border-radius: 2px;
+	border-width: 1px;
+	border-color: @theme_tooltip_fg_color;
+	border-style: solid;
 }
 
 tooltip.background {
 	background-color: @theme_tooltip_bg_color;
-	color: @theme_tooltip_fg_color;
+    background-clip: padding-box;
+}
+
+tooltip label {
 	text-shadow: none;
+	color: @theme_tooltip_fg_color;
+	padding: 8px;
 }
 
 tooltip decoration {
-    background-color: alpha(shade(@theme_selected_bg_color, 1.0), 0.4);
-    border-radius: 4px;
-}
-
-tooltip * {
 	background-color: transparent;
-	color: @theme_tooltip_fg_color;
-	padding: 4px;
 }
 
 /*********************
@@ -1500,49 +1498,31 @@ toolbar.inline-toolbar toolbutton > button:checked:first-child {
 /* Linked button shadows (vertical) */
 .linked.vertical button,
 toolbar.inline-toolbar.vertical button,
-toolbar.inline-toolbar.vertical toolbutton > button,
-.linked.vertical .button,
-.inline-toolbar.toolbar.vertical .button,
-.inline-toolbar.toolbar.vertical GtkToolButton > .button {
+toolbar.inline-toolbar.vertical toolbutton > button {
 	box-shadow: inset 0 1px @inset_light_color, inset 0 -1px @inset_dark_color;
 }
 
 .linked.vertical button:first-child,
 toolbar.inline-toolbar.vertical button:first-child,
-toolbar.inline-toolbar.vertical toolbutton > button:first-child,
-.linked.vertical .button:first-child,
-.inline-toolbar.toolbar.vertical .button:first-child,
-.inline-toolbar.toolbar.vertical GtkToolButton:first-child > .button {
+toolbar.inline-toolbar.vertical toolbutton > button:first-child {
 	box-shadow: inset 0 -1px @inset_dark_color;
 }
 
 .linked.vertical button:last-child,
 toolbar.inline-toolbar.vertical button:last-child,
-toolbar.inline-toolbar.vertical toolbutton > button:last-child,
-.linked.vertical .button:last-child,
-.inline-toolbar.toolbar.vertical .button:last-child,
-.inline-toolbar.toolbar.vertical GtkToolButton:last-child > .button {
+toolbar.inline-toolbar.vertical toolbutton > button:last-child {
 	box-shadow: inset 0 -1px @inset_light_color;
 }
 
 .linked.vertical button:checked,
 toolbar.inline-toolbar.vertical button:checked,
-toolbar.inline-toolbar.vertical toolbutton > button:checked,
-.linked.vertical .button:active,
-.linked.vertical .button:checked,
-.inline-toolbar.toolbar.vertical .button:active,
-.inline-toolbar.toolbar.vertical .button:checked,
-.inline-toolbar.toolbar.vertical GtkToolButton > .button:active,
-.inline-toolbar.toolbar.vertical GtkToolButton > .button:checked {
+toolbar.inline-toolbar.vertical toolbutton > button:checked {
 	box-shadow: inset 0 1px @inset_dark_color, inset 0 -1px @inset_dark_color;
 }
 
 .linked.vertical button:disabled,
 toolbar.inline-toolbar.vertical button:disabled,
-toolbar.inline-toolbar.vertical toolbutton > button:disabled,
-.linked.vertical .button:disabled,
-.inline-toolbar.toolbar.vertical .button:disabled,
-.inline-toolbar.toolbar.vertical GtkToolButton > .button:disabled {
+toolbar.inline-toolbar.vertical toolbutton > button:disabled {
 	box-shadow: inset 0 -1px @inset_dark_color;
 }
 
@@ -1551,26 +1531,15 @@ toolbar.inline-toolbar.vertical toolbutton > button:disabled,
 toolbar.inline-toolbar.vertical button:disabled:last-child,
 toolbar.inline-toolbar.vertical button:only-child,
 toolbar.inline-toolbar.vertical toolbutton > button:disabled:last-child,
-toolbar.inline-toolbar.vertical toolbutton > button:only-child,
-.linked.vertical .button:only-child,
-.linked.vertical .button:disabled:last-child,
-.inline-toolbar.toolbar.vertical .button:disabled:last-child,
-.inline-toolbar.toolbar.vertical .button:only-child,
-.inline-toolbar.toolbar.vertical GtkToolButton:last-child > .button:disabled,
-.inline-toolbar.toolbar.vertical GtkToolButton:only-child > .button {
+toolbar.inline-toolbar.vertical toolbutton > button:only-child {
 	box-shadow: none;
 }
 
 /* remove shadows from linked menu buttons */
-.linked .menuitem.button:checked,
-toolbar .raised.linked .menuitem.button:checked,
-toolbar.inline-toolbar .menuitem.button:checked,
-toolbar.inline-toolbar toolbutton > .menuitem.button:checked,
-.linked GtkMenuButton.menu-button:active,
-.toolbar GtkMenuButton.menu-button.raised.linked:active,
-.toolbar .raised.linked GtkMenuButton.menu-button:active,
-.inline-toolbar.toolbar GtkMenuButton.menu-button:active,
-.inline-toolbar.toolbar GtkToolButton > GtkMenuButton.menu-button:active {
+.linked button.popup:checked,
+toolbar .raised.linked button.popup:checked,
+toolbar.inline-toolbar button.popup:checked,
+toolbar.inline-toolbar toolbutton > button.popup:checked {
 	box-shadow: none;
 }
 
@@ -1812,31 +1781,42 @@ calendar.header stackswitcher > button.titlebutton {
 	padding: 5px 2px;
 }
 
-stackswitcher > button.needs-attention > label,
-stackswitcher > button.needs-attention > image {
-	animation: needs_attention 150ms ease-in;
-	background-color: @theme_bg_color; /* FIXME: ? */
-	background-size: 6px 6px, 6px 6px;
-	background-repeat: no-repeat;
-	background-position: right 3px, right 4px; 
-}
-
-stackswitcher > button.needs-attention > label:backdrop,
-stackswitcher > button.needs-attention > image:backdrop {
-	background-size: 6px 6px, 0 0; 
-}
-
-stackswitcher > button.needs-attention > label:dir(rtl),
-stackswitcher > button.needs-attention > image:dir(rtl) {
-	background-position: left 3px, left 4px; 
-}
-
+/* disable, causes issuses with menuitem:hover state if tooltip pulls in,
+   which is very strange *//*
 stackswitcher > button.needs-attention:active > label,
 stackswitcher > button.needs-attention:active > image,
 stackswitcher > button.needs-attention:checked > label,
 stackswitcher > button.needs-attention:checked > image {
 	animation: none;
-	background-image: none; 
+	background-image: none;
+}
+*/
+
+stackswitcher > button.needs-attention > label,
+stackswitcher > button.needs-attention > image,
+stacksidebar row.needs-attention > label {
+  animation: needs_attention 150ms ease-in;
+  background-image: -gtk-gradient(radial, center center, 0, center center, 0.5,
+                                  to(#4a90d9),
+                                  to(transparent)),
+                                  -gtk-gradient(radial, center center, 0, center center, 0.5,
+                                  to(rgba(255, 255, 255, 0.76923)),
+                                  to(transparent));
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  background-position: right 3px, right 4px;
+}
+
+stackswitcher > button.needs-attention > label:backdrop,
+stackswitcher > button.needs-attention > image:backdrop,
+stacksidebar row.needs-attention > label:backdrop {
+	background-size: 6px 6px, 0 0; 
+}
+
+stackswitcher > button.needs-attention > label:dir(rtl),
+stackswitcher > button.needs-attention > image:dir(rtl),
+stacksidebar row.needs-attention > label:dir(rtl) {
+	background-position: left 3px, left 4px; 
 }
 
 stackswitcher  > button:dir(ltr).text-button.radio,
@@ -2421,7 +2401,7 @@ combobox arrow {
  ********************/
 
 button.font separator,
-filechooserbutton button separator,
+filechooserbutton button.file separator,
 filechooser separator {
 	/* always disable separators */
 	-GtkWidget-horizontal-separator: 0;
@@ -2435,7 +2415,7 @@ button.font label:last-child {
 	color: mix(@theme_fg_color, @theme_bg_color, 0.35);
 }
 
-filechooserbutton button image:last-child {
+filechooserbutton button.file image:last-child {
 	color: @internal_element_color;
 }
 
@@ -2686,100 +2666,121 @@ toolbar button menuitem {
 	text-shadow: none;
 }
 
-menu {
+menu,
+.menu {
 	background-color: @menu_bg_color;
 	color: @menu_fg_color;
 	padding: 0;
 	border: 1px solid @borders;
 	margin: 4px;
+	text-shadow: none;
 }
 
-menu button {
+menu button,
+.menu button {
 	background-image: none;
 	background-color: @theme_base_color;
 	color: @internal_element_color;
 	border-image: none;
 	border-style: none;
+	text-shadow: none;
 }
 
-menu button:hover {
+menu button:hover,
+.menu button:hover {
 	background-image: none;
 	background-color: @theme_base_color;
 	color: @theme_text_color;
 	border-image: none;
 	border-style: none;
+	text-shadow: none;
 }
 
-menu button:disabled {
+menu button:disabled,
+.menu button:disabled {
 	background-color: @theme_base_color;
 	color: lighter(@internal_element_color);
 	border-image: none;
 	border-style: none;
+	text-shadow: none;
 }
 
 /* this controls the general appearance of the menubar */
-menubar {
+menubar,
+.menubar {
     background-image: linear-gradient(to bottom,
                                       @theme_bg_color,
                                       shade (@theme_bg_color, 0.96));
     border-width: 0;
     -GtkWidget-window-dragging: true;
+	text-shadow: none;
 }
 
-menubar menuitem {
+menubar > menuitem,
+.menubar > menuitem {
     min-height: 18px;
 	transition: all 200ms ease-out;
 	-gtk-icon-style: regular;
 	border-style: none;
 	padding: 4px 6px;
-	text-shadow: 0 1px @button_text_shadow;
-}
-
-menubar menuitem:hover {
-    background-image: linear-gradient(to bottom,
-                                      shade (@theme_bg_color, 1.0),
-                                      shade (@theme_bg_color, 0.82));
-}
-
-menubar menuitem:hover {
+	text-shadow: none;
 	color: @menu_fg_color;
 }
 
-menu menuitem {
+menubar > menuitem:hover,
+.menubar > menuitem:hover {
+    background-image: linear-gradient(to bottom,
+                                      shade (@theme_bg_color, 1.0),
+                                      shade (@theme_bg_color, 0.82));
+	text-shadow: none;
+}
+
+menu > menuitem,
+.menu > menuitem {
     min-height: 18px;
     background-color: transparent;
     transition: all 150ms ease-out;
     padding: 6px 5px;
+	text-shadow: none;
+	color: @menu_fg_color;
 }
 
-menu menuitem:hover {
-	border-radius: 0;
+/* fixes for firefox menus */
+.menuitem {
+	transition: none;
+	color: @menu_fg_color;
+	text-shadow: none;
 }
 
-menu menuitem:active,
-menu menuitem:hover {
+/* fixes for firefox menus */
+menuitem:hover,
+menuitem label:hover {
+	color: @theme_selected_fg_color;
+	text-shadow: none;
+}
+
+menu > menuitem:active,
+menu > menuitem:hover,
+.menu > menuitem:active,
+.menu > menuitem:hover {
 	background-color: @theme_selected_bg_color;
 	background-image: linear-gradient(to bottom,
 		shade (@theme_selected_bg_color, 1.0),
 		shade (@theme_selected_bg_color, 0.85));
-	text-shadow: none;
-	border: none;
-}
-
-menu menuitem:disabled {
-	background-color: transparent;
-}
-
-menu menuitem:active,
-menu menuitem:hover {
 	color: @theme_selected_fg_color;
+	text-shadow: none;
+	border-style: none;
+	border-radius: 0px;
 }
 
-menu menuitem *:disabled {
+menu > menuitem:disabled,
+.menu > menuitem:disabled {
+	background-color: transparent;
 	color: mix (@menu_fg_color, @menu_bg_color, 0.6);
 }
 
-menu menuitem accelerator:disabled {
+menu > menuitem accelerator:disabled,
+.menu > menuitem accelerator:disabled {
 	color: mix (@menu_fg_color, @menu_bg_color, 0.7);
 }
 
@@ -2792,27 +2793,139 @@ menuitem accelerator:active {
 	color: alpha (@theme_selected_fg_color, 0.7);
 }
 
-menuitem arrow {
+menuitem > arrow {
     min-height: 16px;
     min-width: 16px;
     margin-left: 10px;
     color: @menu_controls_color;
 }
 
-menu menuitem arrow:dir(ltr) {
+menu > menuitem > arrow:dir(ltr),
+.menu > menuitem > arrow:dir(ltr) {
 	-gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
 }
 
-menu menuitem arrow:dir(rtl) {
+menu > menuitem > arrow:dir(rtl),
+.menu > menuitem > arrow:dir(rtl) {
         -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
 }
 
-menu arrow.top {
+menu > arrow.top,
+.menu > arrow.top {
       -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
 }
 
-menu arrow.bottom {
+menu > arrow.bottom,
+.menu > arrow.bottom {
       -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
+/* settings for 4 menu level, this is needed to override the menuitem:hover
+   state from previous menu level, as GtkArrow itself don't support states very well.
+   thanks gtk+ devs for this madness */
+menu > menuitem > arrow.right,
+menu > menuitem:hover menu > menuitem > arrow.right,
+menu > menuitem:hover menu > menuitem:hover menu > menuitem > arrow.right,
+menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem > arrow.right,
+menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem > arrow.right,
+menu > menuitem > arrow.left,
+menu > menuitem:hover menu > menuitem > arrow.left,
+menu > menuitem:hover menu > menuitem:hover menu > menuitem > arrow.left,
+menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem > arrow.left,
+menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem > arrow.left,
+.menu > menuitem > arrow.right,
+.menu > menuitem:hover .menu > menuitem > arrow.right,
+.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem > arrow.right,
+.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem > arrow.right,
+.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem > arrow.right,
+.menu > menuitem > arrow.left,
+.menu > menuitem:hover .menu > menuitem > arrow.left,
+.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem > arrow.left,
+.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem > arrow.left,
+.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem > arrow.left  {
+   -gtk-icon-shadow:  0px  1px shade (@theme_selected_fg_color, 1.0),
+                      1px  0px shade (@theme_selected_fg_color, 1.0),
+                     -1px  0px shade (@theme_selected_fg_color, 1.0),
+                      0px -1px shade (@theme_selected_fg_color, 1.0);
+}
+
+menu > menuitem:hover > arrow.right,
+menu > menuitem:hover menu > menuitem:hover arrow.right,
+menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover arrow.right,
+menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover arrow.right,
+menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover arrow.right,
+menu > menuitem:hover > arrow.left,
+menu > menuitem:hover menu > menuitem:hover arrow.left,
+menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover arrow.left,
+menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover arrow.left,
+menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover arrow.left,
+.menu > menuitem:hover > arrow.right,
+.menu > menuitem:hover .menu > menuitem:hover arrow.right,
+.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover arrow.right,
+.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover arrow.right,
+.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover arrow.right,
+.menu > menuitem:hover > arrow.left,
+.menu > menuitem:hover .menu > menuitem:hover arrow.left,
+.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover arrow.left,
+.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover arrow.left,
+.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover arrow.left {
+	color: @theme_selected_fg_color;
+   -gtk-icon-shadow:  0px  1px shade (@theme_fg_color, 0.8),
+                      1px  0px shade (@theme_fg_color, 0.8),
+                     -1px  0px shade (@theme_fg_color, 0.8),
+                      0px -1px shade (@theme_fg_color, 0.8);
+}
+
+menu > menuitem:disabled > arrow,
+.menu > menuitem:disabled > arrow {
+	color: mix (@menu_fg_color, @menu_bg_color, 0.6);
+   -gtk-icon-shadow: none;
+}
+
+/* scroll arrows */
+menu > arrow,
+.menu > arrow {
+    border-color: transparent;
+    background-color: transparent;
+    background-image: none;
+    min-height: 16px;
+    min-width: 16px;
+    padding: 4px;
+    color: @menu_controls_color;
+   -gtk-icon-shadow:  0px  1px shade (@theme_selected_fg_color, 1.0),
+                      1px  0px shade (@theme_selected_fg_color, 1.0),
+                     -1px  0px shade (@theme_selected_fg_color, 1.0),
+                      0px -1px shade (@theme_selected_fg_color, 1.0);
+}
+
+menu > arrow.top,
+.menu > arrow.top {
+    margin-top: -2px;
+    margin-left: -2px;
+}
+
+menu > arrow.bottom,
+.menu > arrow.bottom {
+    margin-bottom: -2px;
+    margin-left: -2px;
+}
+
+menu > arrow:hover,
+.menu > arrow:hover {
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+   -gtk-icon-shadow:  0px  1px shade (@theme_fg_color, 0.8),
+                      1px  0px shade (@theme_fg_color, 0.8),
+                     -1px  0px shade (@theme_fg_color, 0.8),
+                      0px -1px shade (@theme_fg_color, 0.8);
+}
+
+menu > arrow:disabled,
+.menu > arrow:disabled {
+    color: mix (@menu_fg_color, @menu_bg_color, 0.6);
+   -gtk-icon-shadow: none;
+    background-color: transparent;
+    border-color: transparent;
 }
 
 menuitem separator {
@@ -2880,11 +2993,11 @@ menuitem radio:checked:disabled {
  * Menu Button *
  ***************/
 
-toolbar .menuitem.button:selected,
-toolbar .raised .menuitem.button:selected,
-.menuitem.button:selected,
-.linked .menuitem.button:selected,
-toolbar .linked.raised .menuitem.button:selected {
+toolbar button.popup:selected,
+toolbar .raised button.popup:selected,
+button.popup:selected,
+.linked button.popup:selected,
+toolbar .linked.raised button.popup:selected {
 /*	background-image: none;
 	background-color: @menu_bg_color;
 	border-image: none;
@@ -2893,25 +3006,25 @@ toolbar .linked.raised .menuitem.button:selected {
 	color: @theme_text_color;*/
 }
 
-.menuitem.button:selected,
-.linked .menuitem.button:selected,
-toolbar .linked.raised .menuitem.button:selected {
+button.popup:selected,
+.linked button.popup:selected,
+toolbar .linked.raised button.popup:selected {
 	text-shadow: none;
 	-gtk-icon-shadow: none;
 	box-shadow: none;
 }
 
-.linked .menuitem.button:selected:last-child,
-toolbar .linked.raised .menuitem.button:selected:last-child {
+.linked button.popup:selected:last-child,
+toolbar .linked.raised button.popup:selected:last-child {
 	border-top-left-radius: 0;
 }
 
-.linked .menuitem.button:selected:first-child,
-toolbar .linked.raised .menuitem.button:selected:first-child {
+.linked button.popup:selected:first-child,
+toolbar .linked.raised button.popup:selected:first-child {
 	border-top-right-radius: 0;
 }
 
-menubar .menuitem.button:selected {
+menubar button.popup:selected {
 	background-image: none;
 	background-color: @menu_bg_color;
 	border-radius: 4px 4px 0 0;
@@ -2921,14 +3034,13 @@ menubar .menuitem.button:selected {
 	border-style: solid;
 }
 
-menubar .menuitem.button:selected,
-.menuitem.button:selected,
-toolbar .menuitem.button:selected,
-.button.menuitem.menubar:active {
+menubar button.popup:selected,
+button.popup:selected,
+toolbar button.popup:selected {
 	color: @theme_text_color;
 }
 
-menu .menuitem.button {
+menu button.popup {
 	text-shadow: none;
 }
 
@@ -3472,12 +3584,12 @@ toolbar.osd button.image-button {
     box-shadow: none;
 }
 
-.osd .menuitem.button:selected {
+.osd button.popup:selected {
 	background-color: transparent;
 	border-color: @osd_button_border;
 }
 
-.osd .menuitem.button:selected {
+.osd button.popup:selected {
 	color: @osd_button_fg_active;
 	text-shadow: 0 -1px @osd_button_shadow;
 }
