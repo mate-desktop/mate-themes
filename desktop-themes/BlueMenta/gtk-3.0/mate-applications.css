@@ -224,6 +224,10 @@
 /* first make all transparent */
 .mate-panel-menu-bar,
 .mate-panel-menu-bar menubar,
+.mate-panel-menu-bar menuitem,
+#PanelPlug,
+#PanelApplet button,
+PanelToplevel.background,
 #PanelApplet-window-menu-applet-button {
     background-color: transparent;
     border-image: none;
@@ -233,7 +237,9 @@
 }
 
 /* let's start it */
-.mate-panel-menu-bar {
+#PanelPlug,
+.mate-panel-menu-bar,
+PanelToplevel.background {
     background-color: @theme_bg_color;
     background-image: none;
     /* normal panel */
@@ -244,12 +250,12 @@
 }
 
 /* workaround to avoid unwanted black frames if switching compositor on/off */
-.mate-panel-menu-bar .window-frame.csd.popup {
+.mate-panel-menu-bar .csd.popup decoration {
     box-shadow: none;
 }
 
 /* hide buttons */
-.mate-panel-menu-bar button {
+PanelToplevel > widget > button {
     background: transparent;
     border-image: none;
     border-radius: 2px;
@@ -258,8 +264,8 @@
     box-shadow: none;
 }
 
-.mate-panel-menu-bar button:hover,
-.mate-panel-menu-bar button:hover:active {
+PanelToplevel > widget > button:hover,
+PanelToplevel > widget > button:hover:active {
     background-image: linear-gradient(to bottom,
                                       shade (@theme_selected_bg_color, 0.86),
                                       shade (@theme_selected_bg_color, 0.26));
@@ -290,13 +296,13 @@ MatePanelAppletFrameDBus {
 
 /* main menu */
 /* set normal menubar button */
-.mate-panel-menu-bar menubar menuitem {
+.mate-panel-menu-bar menubar > menuitem {
     transition: all 200ms ease-out;
     text-shadow: none;
 }
 
 /* set selected menubar button */
-.mate-panel-menu-bar menubar menuitem:hover {
+.mate-panel-menu-bar menubar > menuitem:hover {
     background-image: linear-gradient(to bottom,
                                       shade (@theme_selected_bg_color, 0.86),
                                       shade (@theme_selected_bg_color, 0.26));
@@ -304,12 +310,7 @@ MatePanelAppletFrameDBus {
     text-shadow: none;
     border-style: solid;
     border-width: 0px;
-    border-radius: 5px;
-}
-
-/* set menubar menuitem separator , does not work */
-.mate-panel-menu-bar menubar menu menuitem separator {
-    color: @menu_separator;
+    border-radius: 3px;
 }
 
 /* set normal menubar menuitem */
@@ -415,20 +416,18 @@ PanelApplet.wnck-applet .wnck-pager:hover {
                                       @theme_selected_bg_color);
 }
 
-.mate-panel-menu-bar menubar,
-MatePanelApplet > menubar {
+#clock-applet-button.flat.toggle > box.horizontal > label {
     font: normal;
 }
 
-/* no background for icon-padding area */
-GtkTrayIcon.background {
-    background-color: transparent;
-}
-
-/* na-tray-applet */
-.mate-panel-menu-bar #PanelApplet {
+na-tray-applet {
     -NaTrayApplet-icon-padding: 3px;
     -NaTrayApplet-icon-size: 16;
+}
+
+/* no background for icon-padding area */
+na-tray-applet widget box widget {
+    background-color: transparent;
 }
 
 /* Classic icon style */
