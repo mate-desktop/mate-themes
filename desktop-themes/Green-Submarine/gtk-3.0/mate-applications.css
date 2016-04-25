@@ -292,10 +292,6 @@ paned.horizontal > box.vertical.caja-side-pane > notebook scrolledwindow.frame {
                                      to   (shade(@menu_bg_dark_color, 1.17)));
 }
 
-.caja-navigation-window toolbar.primary-toolbar combobox > .linked > button.combo arrow {
-    color: @theme_selected_fg_color
-}
-
 /* navigation buttons */
 .caja-navigation-window toolbar.primary-toolbar #Back button.image-button,
 .caja-navigation-window toolbar.primary-toolbar #Forward button.image-button {
@@ -430,11 +426,11 @@ PanelToplevel > widget > button:hover:active {
 
 PanelSeparator {
     border-width: 0;
-    background-image: -gtk-gradient (linear, left top, left bottom,
-                                     from (shade (@theme_bg_dark_color, 1.03)),
-                                     to (shade (@theme_bg_dark_color, 0.95)));
-    color: shade (@theme_fg_dark_color, 0.45);
-    text-shadow: none;
+    color: transparent;
+    background-image: -gtk-scaled(url("assets/panel-grid.svg"));
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 /* the grid left from wnckpager and wncktasklist */
@@ -510,8 +506,9 @@ MatePanelAppletFrameDBus {
     padding: 4px 2px;
 }
 
+.mate-panel-menu-bar menu > menuitem,
 .mate-panel-menu-bar menubar > menuitem {
-    padding: 5px 5px;
+    padding: 5px;
 }
 
 #clock-applet-button.flat.toggle > box.horizontal > label {
@@ -564,6 +561,11 @@ PanelApplet.wnck-applet .wnck-pager:hover {
 na-tray-applet {
     -NaTrayApplet-icon-padding: 3px;
     -NaTrayApplet-icon-size: 16;
+}
+
+/* control icon size as previous setting don't work */
+na-tray-applet > widget > box {
+    margin: 4px -16px 4px 0px;
 }
 
 /* system-monitor-applet */
