@@ -1621,21 +1621,26 @@ linkbutton button:active:hover {
 /**************
  * Scrollbars *
  **************/
+
 scrollbar {
 	background-image: none;
+    background-color: @less_dark_color;
 	border-style: solid;
-	/*-GtkRange-trough-border: 0;
-	-GtkScrollbar-has-backward-stepper: true;
-	-GtkScrollbar-has-forward-stepper: true;
-	-GtkRange-stepper-size: 16;
-	-GtkRange-slider-width: 13;    
-	-GtkScrollbar-min-slider-length: 42; 
-	-GtkRange-stepper-spacing: 0;
-	-GtkRange-trough-under-steppers: 1;
- deprecated*/
 }
 
-scrollbars-junction { /* the small square between scrollbars!!! */
+scrollbar.vertical {
+	border-style: solid;
+	border-width: 0px 0px 0px 1px;
+	border-color: shade (@theme_bg_color, 0.94);
+}
+
+scrollbar.horizontal {
+	border-style: solid;
+	border-width: 1px 0px 0px 0px;
+	border-color: shade (@theme_bg_color, 0.94);
+}
+
+scrollbar junction { /* the small square between scrollbars!!! */
     background-image: none;
     background-color: @less_dark_color;
     border-width: 0;
@@ -1649,9 +1654,7 @@ scrollbar.vertical trough {
 	background-image: linear-gradient(to right,
 		@scrollbar_trough,
 		shade (@scrollbar_trough, 1.08));
-	border-left-width: 1px;
-	border-style: solid;
-	border-color: shade (@theme_bg_color, 0.94);
+	border-style: none;
 	border-radius: 0;
 	border-image: none;
 }
@@ -1660,9 +1663,7 @@ scrollbar.horizontal trough {
 	background-image: linear-gradient(to bottom,
 		@scrollbar_trough,
 		shade (@scrollbar_trough, 1.08));
-	border-top-width: 1px;
-	border-style: solid;
-	border-color: shade (@theme_bg_color, 0.94);
+	border-style: none;
 	border-radius: 0;
 	border-image: none;
 }
@@ -2708,20 +2709,6 @@ popover  list {
 	background-color: @theme_base_color;
 }
 
-modelbutton button {
-	background-image: none;
-	background-color: transparent;
-	color: @theme_fg_color;
-	border-radius: 3px;
-}
-
-modelbutton button {
-	background-image: none;
-	background-color: transparent;
-	color: @theme_fg_color;
-	border-radius: 3px;
-}
-
 modelbutton:checked,
 modelbutton:disabled,
 modelbutton:checked:disabled,
@@ -2735,6 +2722,10 @@ modelbutton:focus:active {
 	border-style: none;
 	box-shadow: none;
 	border-radius: 3px;
+}
+
+modelbutton {
+	color: @theme_fg_color;
 }
 
 modelbutton:hover:active,
