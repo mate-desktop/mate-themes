@@ -5,7 +5,7 @@
 	-GtkToolButton-icon-spacing: 4;
 	-textview-error-underline-color: @error_color;
 	-paned-handle-size: 5;
-	-scrolledwindow-scrollbar-spacing: 0;
+	-GtkScrolledWindow-scrollbar-spacing: 0;
 	/* this is more stylish with this theme */;
 	-GtkToolItemGroup-expander-size: 12;
 	-expander-expander-size: 12;
@@ -14,11 +14,6 @@
 	-GtkIMHtml-hyperlink-color: @link_color;
 	-GtkHTML-link-color: @link_color;
 	-WnckTasklist-fade-overlay-rect: 0;
-	/* this makes emacs behave weirdly */
-	/*border-radius: 3px;*/
-	/* disable focusline on active notebook tabs if focused*/
-	-GtkWindow-resize-grip-width: 14;
-	-GtkWindow-resize-grip-height: 12; 
 	outline-color: @focus_border;
 	outline-style: dashed;
 	outline-offset: 2px;
