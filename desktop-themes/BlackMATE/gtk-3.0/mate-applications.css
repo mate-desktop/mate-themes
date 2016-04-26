@@ -395,6 +395,10 @@ MatePanelAppletFrameDBus {
     transition: all 300ms ease-out;
 }
 
+.mate-panel-menu-bar menubar > menuitem {
+    padding: 3px 7px;
+}
+
 /* set selected menubar button */
 .mate-panel-menu-bar menuitem:hover {
 }
