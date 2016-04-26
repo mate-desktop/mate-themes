@@ -261,8 +261,10 @@ GtkHTML { /* For Evolution (not enough; see entries section below) */
 	color: @theme_main_color;
 }
 
-textview text selection, textview text selection:focus {
+textview text selection,
+textview text selection:focus {
 	background-color: @theme_selected_bg_color;
+	color: @theme_selected_fg_color;
 }
 
 /* This is for highlighting the current line in source views. */
