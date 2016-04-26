@@ -508,14 +508,16 @@ progressbar {
 /* Label font color of progressbar*/
 	color: @theme_text_color;
 	/*border-color: @progressbar_border;*/
+	padding: 0px;
+	font-size: smaller;
 }
 
-progressbar progress{   
+progressbar progress {
 	min-height: 19px;
 	border-width: 1px; 
 	border-style:solid;
 	border-color:transparent;
-	border-radius: 3px;
+	border-radius: 16px;
 	background-image: linear-gradient(-45deg,
 	                                  alpha(@progressbar_pattern, 0.09),
 	                                  alpha(@progressbar_pattern, 0.09) 25%,
@@ -533,12 +535,12 @@ progressbar progress{
 	                                  shade(@progressbar_background_a, 0.91));
 }
 
-progressbar.vertical progress{
+progressbar.vertical progress {
 	min-width: 19px;
 	border-width: 1px; 
 	border-style:solid;
 	border-color:transparent;
-	border-radius: 3px;
+	border-radius: 16px;
 	background-image: linear-gradient(-135deg,
 	                                  alpha(@progressbar_pattern, 0.09),
 	                                  alpha(@progressbar_pattern, 0.09) 25%,
@@ -556,27 +558,22 @@ progressbar.vertical progress{
 	                                  shade(@progressbar_background_a, 0.91));
 }
 
-progressbar {
-	border-radius: 16px;
-	padding: 0px;
-	font-size: smaller;
-}
-
 progressbar trough {
 	min-height: 19px;
 	border-width: 0px;
 	border-style: solid;
+	border-radius: 16px;
 	background-image: linear-gradient(to bottom,
 	                                  shade(@theme_bg_color, 0.4),
 	                                  @theme_bg_color 50%,
 	                                  shade(@theme_bg_color, 1.8));
-
 }
 
-progressbar.vertical trough{
+progressbar.vertical trough {
 	min-width: 19px;
 	border-width: 0px;
 	border-style: solid;
+	border-radius: 16px;
 	background-image: linear-gradient(to right,
 	                                  shade(@theme_bg_color, 0.4),
 	                                  @theme_bg_color 50%,
@@ -587,8 +584,6 @@ progressbar trough:selected,
 progressbar trough:selected:focus {
 	border-image: none;
 }
-
-
 
 /**********
  * Frames *
@@ -1189,38 +1184,6 @@ row {
 .view.cell:selected,
 .view.cell:active{
 	background-color:transparent;
-}
-
-.view .progressbar {
- 	background-image: linear-gradient(-45deg,
-	                                  alpha(@progressbar_pattern, 0.09),
-	                                  alpha(@progressbar_pattern, 0.09) 25%,
-	                                  transparent 25%,
-	                                  transparent 50%,
-	                                  alpha(@progressbar_pattern, 0.09) 50%,
-	                                  alpha(@progressbar_pattern, 0.09) 75%,
-	                                  transparent 75%,
-	                                  transparent),
-	                  linear-gradient(to bottom,
-	                                  @progressbar_background_a,
-	                                  shade(@progressbar_background_b, 1.1) 25%,
-	                                  @progressbar_background_b 43%,
-	                                  shade(@progressbar_background_b, 1.08) 44%,
-	                                  shade(@progressbar_background_a, 0.91));
-	border-style:solid;
-	border-width: 0px;
-	margin: 0px;
-}
-
-.view .trough{
-	border-style:solid;
-	border-width: 2px;
-	border-radius: 2px;
-	border-color:@theme_bg_color;
-	background-image: linear-gradient(to bottom,
-	                                  shade(@theme_bg_color, 0.4),
-	                                  @theme_bg_color 50%,
-	                                  shade(@theme_bg_color, 1.8));
 }
 
 /************
