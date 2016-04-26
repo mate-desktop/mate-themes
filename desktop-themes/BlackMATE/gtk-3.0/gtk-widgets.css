@@ -59,9 +59,6 @@
 }
 
 *:disabled {
-	background-color: @less_dark_color; /*@insensitive_bg_color;*/
-	color: @insensitive_fg_color;
-	border-color: @insensitive_border_color;
 }
 
 *:active {
