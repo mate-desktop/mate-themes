@@ -2366,21 +2366,27 @@ menuitem separator {
                                  to (alpha (#000, 0.00))) 1;
 }
 
+/* style classes are for firefox */
 menuitem check,
 menuitem radio,
 menuitem check:hover,
 menuitem radio:hover,
+menuitem check:checked,
+menuitem radio:checked,
 menuitem check:disabled,
-menuitem radio:disabled {
+menuitem radio:disabled,
+menu menuitem .check,
+menu menuitem .radio,
+menu menuitem .check:hover,
+menu menuitem .radio:hover,
+menu menuitem .check:checked,
+menu menuitem .radio:checked,
+menu menuitem .check:disabled,
+menu menuitem .radio:disabled {
     background-image: none;
     background-color: transparent;
     min-height: 12px;
     min-width: 12px;
-}
-
-menuitem check:active,
-menuitem radio:active {
-    background-color: transparent;
 }
 
 /***************
