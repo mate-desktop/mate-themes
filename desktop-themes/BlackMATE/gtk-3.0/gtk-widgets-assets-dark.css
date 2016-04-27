@@ -3,6 +3,7 @@
  *************************/
 
 /* First draw regular check and radio items */
+/* mix of old and new syntax is for broken firefox */
 
 check,
 check row:selected,
@@ -26,7 +27,6 @@ check row:selected:focus:disabled {
 }
 
 check:checked,
-check:active,
 check row:selected:checked,
 check row:selected:active,
 check row:selected:focus:checked,
@@ -40,10 +40,8 @@ notebook check row:selected:focus:checked,
 treeview check:checked,
 treeview check row:selected:checked,
 treeview check row:selected:focus:checked,
-notebook check:active,
 notebook check row:selected:active,
 notebook check row:selected:focus:active,
-treeview check:active,
 treeview check row:selected:active,
 treeview check row:selected:focus:active {
 	-gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked-lessdark.svg"));
@@ -52,7 +50,6 @@ treeview check row:selected:focus:active {
 check:checked:disabled,
 check row:selected:checked:disabled,
 check row:selected:focus:checked:disabled,
-check:active:disabled,
 check row:selected:active:disabled,
 check row:selected:focus:active:disabled
 {
@@ -102,7 +99,6 @@ radio row:selected:focus:disabled {
 }
 
 radio:checked,
-radio:active,
 radio row:selected:checked,
 radio row:selected:active,
 radio row:selected:focus:checked,
@@ -116,10 +112,8 @@ notebook  radio row:selected:focus:checked,
 treeview radio:checked,
 treeview radio row:selected:checked,
 treeview radio row:selected:focus:checked,
-notebook  radio:active,
 notebook  radio row:selected:active,
 notebook  radio row:selected:focus:active,
-treeview radio:active,
 treeview radio row:selected:active,
 treeview radio row:selected:focus:active {
 	-gtk-icon-source: -gtk-scaled(url("assets/radio-selected-lessdark.svg"));
@@ -128,7 +122,6 @@ treeview radio row:selected:focus:active {
 radio:checked:disabled,
 radio row:selected:checked:disabled,
 radio row:selected:focus:checked:disabled,
-radio:active:disabled,
 radio row:selected:active:disabled,
  adio row:selected:focus:active:disabled {
 	-gtk-icon-source: -gtk-scaled(url("assets/radio-selected-insensitive-dark.svg"));
@@ -157,10 +150,7 @@ radio row:selected:focus:indeterminate:disabled {
 
 sidebar radio:checked,
 sidebar radio:checked:focus,
-sidebar radio:checked:hover,
-sidebar radio:active,
-sidebar radio:active:focus,
-sidebar radio:active:hover {
+sidebar radio:checked:hover {
 	-gtk-icon-source: -gtk-scaled(url("assets/sidebar-radio-checked-dark.svg"));
 }
 
@@ -169,9 +159,7 @@ sidebar  radio:hover {
 }
 
 sidebar radio:checked:selected,
-sidebar radio:checked:selected:focus,
-sidebar radio:active:selected,
-sidebar radio:active:selected:focus {
+sidebar radio:checked:selected:focus {
 	-gtk-icon-source: -gtk-scaled(url("assets/sidebar-radio-selected-dark.svg"));
 }
 
@@ -181,13 +169,20 @@ sidebar radio:selected:focus {
 }
 
 /* Now draw menu check and radio items */
+/* mix of old and new syntax is for broken firefox */
 
 menuitem radio,
 menuitem radio:hover,
 menuitem radio:disabled,
 menuitem check,
 menuitem check:hover,
-menuitem check:disabled {
+menuitem check:disabled,
+menu menuitem .radio,
+menu menuitem .radio:hover,
+menu menuitem .radio:disabled,
+menu menuitem .check,
+menu menuitem .check:hover,
+menu menuitem .check:disabled {
 	background-color: transparent;
 	background-image: none;
 	border-style: none;
@@ -196,57 +191,73 @@ menuitem check:disabled {
   	min-width: 12px;
 }
 
+menuitem radio,
+menu menuitem .radio {
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-unselected-lessdark.svg"));
+}
+
 menuitem radio:checked,
-menuitem radio:active {
+menu menuitem .radio:checked {
 	-gtk-icon-source: -gtk-scaled(url("assets/radio-menuitem-checked.svg"));
 }
 
 menuitem radio:checked:hover,
-menuitem radio:active:hover {
+menu menuitem .radio:checked:hover {
 	-gtk-icon-source: -gtk-scaled(url("assets/radio-menuitem-checked-prelight.svg"));
 }
 
 menuitem radio:checked:disabled,
-menuitem radio:active:disabled {
+menu menuitem .radio:checked:disabled {
 	-gtk-icon-source: -gtk-scaled(url("assets/radio-menuitem-checked-insensitive.svg"));
 }
 
-menuitem radio:indeterminate {
+menuitem radio:indeterminate,
+menu menuitem .radio:indeterminate {
 	-gtk-icon-source: -gtk-scaled(url("assets/radio-menuitem-mixed.svg"));
 }
 
-menuitem radio:indeterminate:hover {
+menuitem radio:indeterminate:hover,
+menu menuitem .radio:indeterminate:hover {
 	-gtk-icon-source: -gtk-scaled(url("assets/radio-menuitem-mixed-prelight.svg"));
 }
 
-menuitem radio:indeterminate:disabled {
+menuitem radio:indeterminate:disabled,
+menu menuitem .radio:indeterminate:disabled {
 	-gtk-icon-source: -gtk-scaled(url("assets/radio-menuitem-mixed-insensitive.svg"));
 }
 
+menuitem check,
+menu menuitem .check {
+	-gtk-icon-source: -gtk-scaled(url("assets/checkbox-unchecked-lessdark.svg"));
+}
+
 menuitem check:checked,
-menuitem check:active {
+menu menuitem .check:checked {
 	-gtk-icon-source: -gtk-scaled(url("assets/checkbox-menuitem-checked.svg"));
 }
 
 menuitem check:checked:hover,
-menuitem check:active:hover {
+menu menuitem .check:checked:hover {
 	-gtk-icon-source: -gtk-scaled(url("assets/checkbox-menuitem-checked-prelight.svg"));
 }
 
 menuitem check:checked:disabled,
-menuitem check:active:disabled {
+menu menuitem .check:checked:disabled {
 	-gtk-icon-source: -gtk-scaled(url("assets/checkbox-menuitem-checked-insensitive.svg"));
 }
 
-menuitem check:indeterminate {
+menuitem check:indeterminate,
+menu menuitem .check:indeterminate {
 	-gtk-icon-source: -gtk-scaled(url("assets/checkbox-menuitem-mixed.svg"));
 }
 
-menuitem check:indeterminate:hover {
+menuitem check:indeterminate:hover,
+menu menuitem .check:indeterminate:hover {
 	-gtk-icon-source: -gtk-scaled(url("assets/checkbox-menuitem-mixed-prelight.svg"));
 }
 
- menuitem check:indeterminate:disabled {
+menuitem check:indeterminate:disabled,
+menu menuitem .check:indeterminate:disabled {
 	-gtk-icon-source: -gtk-scaled(url("assets/checkbox-menuitem-mixed-insensitive.svg"));
 }
 
