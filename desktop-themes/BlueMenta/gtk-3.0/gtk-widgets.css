@@ -2733,6 +2733,7 @@ menubar > menuitem:hover,
                                       shade (@theme_bg_color, 1.0),
                                       shade (@theme_bg_color, 0.82));
 	text-shadow: none;
+	color: @menu_fg_color;
 }
 
 menu > menuitem,
@@ -2932,12 +2933,22 @@ menuitem separator {
 	color: @menu_separator;
 }
 
+/* mix of old and new syntax is for broken firefox */
 menuitem check,
 menuitem radio,
 menuitem check:hover,
 menuitem radio:hover,
+menuitem check:checked,
 menuitem check:disabled,
-menuitem radio:disabled {
+menuitem radio:disabled,
+menu menuitem .check,
+menu menuitem .radio,
+menu menuitem .check:hover,
+menu menuitem .radio:hover,
+menu menuitem .check:checked,
+menu menuitem .radio:checked,
+menu menuitem .check:disabled,
+menu menuitem .radio:disabled {
 	background-image: none;
 	background-color: transparent;
 	min-height: 12px;
@@ -2946,47 +2957,54 @@ menuitem radio:disabled {
 }
 
 menuitem check:checked,
-menuitem radio:checked {
-	background-color: transparent;
-}
-
-menuitem check:checked {
+menu menuitem .check:checked {
 	-gtk-icon-source: -gtk-scaled(url("assets/menuitem-checkbox-checked.svg"));
 }
 
-menuitem check:checked:hover {
+menuitem check:checked:hover,
+menu menuitem .check:checked:hover {
 	-gtk-icon-source: -gtk-scaled(url("assets/menuitem-checkbox-checked-selected.svg"));
 }
 
-menuitem check:checked:disabled {
+menuitem check:checked:disabled,
+menu menuitem .check:checked:disabled {
 	-gtk-icon-source: -gtk-scaled(url("assets/menuitem-checkbox-checked-insensitive.svg"));
 }
 
+menuitem radio:checked,
+menu menuitem .radio:checked {
+	-gtk-icon-source: -gtk-scaled(url("assets/menuitem-radio-checked.svg"));
+}
+
+menuitem radio:checked:hover,
+menu menuitem .radio:checked:hover {
+	-gtk-icon-source: -gtk-scaled(url("assets/menuitem-radio-checked-selected.svg"));
+}
+
+menuitem radio:checked:disabled,
+menu menuitem .radio:checked:disabled {
+	-gtk-icon-source: -gtk-scaled(url("assets/menuitem-radio-checked-insensitive.svg"));
+}
+
 menuitem check:indeterminate,
-menuitem radio:indeterminate {
+menuitem radio:indeterminate,
+menu menuitem .check:indeterminate,
+menu menuitem .radio:indeterminate {
 	-gtk-icon-source: -gtk-scaled(url("assets/menuitem-checkbox-mixed.svg"));
 }
 
 menuitem check:indeterminate:disabled,
-menuitem radio:indeterminate:disabled {
+menuitem radio:indeterminate:disabled,
+menu menuitem .check:indeterminate:disabled,
+menu menuitem .radio:indeterminate:disabled {
 	-gtk-icon-source: -gtk-scaled(url("assets/menuitem-checkbox-mixed-insensitive.svg"));
 }
 
 menuitem check:indeterminate:hover,
-menuitem radio:indeterminate:hover {
+menuitem radio:indeterminate:hover,
+menu menuitem .check:indeterminate:hover,
+menu menuitem .radio:indeterminate:hover {
 	-gtk-icon-source: -gtk-scaled(url("assets/menuitem-checkbox-mixed-selected.svg"));
-}
-
-menuitem radio:checked {
-	-gtk-icon-source: -gtk-scaled(url("assets/menuitem-radio-checked.svg"));
-}
-
-menuitem radio:checked:hover {
-	-gtk-icon-source: -gtk-scaled(url("assets/menuitem-radio-checked-selected.svg"));
-}
-
-menuitem radio:checked:disabled {
-	-gtk-icon-source: -gtk-scaled(url("assets/menuitem-radio-checked-insensitive.svg"));
 }
 
 /***************

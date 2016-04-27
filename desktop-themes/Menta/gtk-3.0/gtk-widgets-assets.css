@@ -36,15 +36,18 @@ headerbar > box > separator.vertical {
  *************************/
 
 /* draw regular check and radio items using our SVG assets */
+/* old syntax is for broken firefox */
 
 check,
+.check,
 check .view.cell {
 	-gtk-icon-source: -gtk-scaled(url("assets/check-normal.png"));
 	background-repeat: no-repeat;
 	background-position: center;
 }
 
-check:disabled {
+check:disabled,
+.check {
 	-gtk-icon-source: -gtk-scaled(url("assets/check-normal-ins.png"));
 }
 
@@ -52,14 +55,11 @@ check row:disabled {
 	background-color: transparent;
 }
 
-check:active,
 check:checked,
-.view.cell check:active,
 .view.cell check:checked {
 	-gtk-icon-source: -gtk-scaled(url("assets/check-active.png"));
 }
 
-check:active:disabled,
 check:checked:disabled {
 	-gtk-icon-source: -gtk-scaled(url("assets/check-active-ins.png"));
 }
@@ -73,13 +73,15 @@ check:indeterminate:disabled {
 }
 
 radio,
+.radio,
 .view.cell radio {
 	-gtk-icon-source: -gtk-scaled(url("assets/radio-normal.png"));
 	background-repeat: no-repeat;
 	background-position: center;
 }
 
-radio:disabled {
+radio:disabled,
+.radio {
 	-gtk-icon-source: -gtk-scaled(url("assets/radio-normal-ins.png"));
 }
 
@@ -87,14 +89,11 @@ radio row:disabled {
 	background-color: transparent;
 }
 
-radio:active,
-.view.cell radio:active,
 radio:checked,
 .view.cell radio:checked {
 	-gtk-icon-source: -gtk-scaled(url("assets/radio-active.png"));
 }
 
-radio:active:disabled,
 radio:checked:disabled {
 	-gtk-icon-source: -gtk-scaled(url("assets/radio-active-ins.png"));
 }
