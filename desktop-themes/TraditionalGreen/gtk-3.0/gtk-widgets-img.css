@@ -84,126 +84,126 @@ scrollbar.horizontal slider:hover {
  *************************/
 
 check,
+.check,
 check row:selected,
 check row:selected:focus {
     -gtk-icon-source: url("img/checkbox-unchecked.png");
 }
 
 check:hover,
+.check:hover,
 check row:selected:hover,
 check row:selected:focus:hover {
     -gtk-icon-source: url("img/checkbox-unchecked-hover.png");
 }
 
 check:disabled,
+.check:disabled,
 check row:selected:disabled,
 check row:selected:focus:disabled {
     -gtk-icon-source: url("img/checkbox-unchecked-insensitive.png");
 }
 
 check:checked,
+.check:checked,
 check row:selected:checked,
-check row:selected:focus:checked,
-check:active,
-check row:selected:active,
-check row:selected:focus:active {
+check row:selected:focus:checked {
     -gtk-icon-source: url("img/checkbox-checked.png");
 }
 
 check:checked:hover,
+.check:checked:hover,
 check row:selected:checked:hover,
-check row:selected:focus:checked:hover,
-check:active:hover,
-check row:selected:active:hover,
-check row:selected:focus:active:hover {
+check row:selected:focus:checked:hover {
     -gtk-icon-source: url("img/checkbox-checked-hover.png");
 }
 
 check:checked:disabled,
+.check:checked:disabled,
 check row:selected:checked:disabled,
-check row:selected:focus:checked:disabled,
-check:active:disabled,
-check row:selected:active:disabled,
-check row:selected:focus:active:disabled {
+check row:selected:focus:checked:disabled {
     -gtk-icon-source: url("img/checkbox-checked-insensitive.png");
  }
 
 check:indeterminate,
+.check:indeterminate,
 check row:selected:indeterminate,
 check row:selected:focus:indeterminate {
     -gtk-icon-source: url("img/checkbox-mixed.png");
 }
 
 check:indeterminate:hover,
+.check:indeterminate:hover,
 check row:selected:indeterminate:hover,
 check row:selected:focus:indeterminate:hover {
     -gtk-icon-source: url("img/checkbox-mixed-hover.png");
 }
 
 check:indeterminate:disabled,
+.check:indeterminate:disabled,
 check row:selected:indeterminate:disabled,
 check row:selected:focus:indeterminate:disabled {
     -gtk-icon-source: url("img/checkbox-mixed-insensitive.png");
 }
 
 radio,
+.radio,
 radio row:selected,
 radio row:selected:focus {
     -gtk-icon-source: url("img/radio-unchecked.png");
 }
 
 radio:hover,
+.radio:hover,
 radio row:selected:hover,
 radio row:selected:focus:hover {
     -gtk-icon-source: url("img/radio-unchecked-hover.png");
 }
 
 radio:disabled,
+.radio:disabled,
 radio row:selected:disabled,
 radio row:selected:focus:disabled {
     -gtk-icon-source: url("img/radio-unchecked-insensitive.png");
 }
 
 radio:checked,
+.radio:checked,
 radio row:selected:checked,
-radio row:selected:focus:checked,
-radio:active,
-radio row:selected:active,
-radio row:selected:focus:active {
+radio row:selected:focus:checked {
     -gtk-icon-source: url("img/radio-checked.png");
 }
 
 radio:checked:hover,
+.radio:checked:hover,
 radio row:selected:checked:hover,
-radio row:selected:focus:checked:hover,
-radio:active:hover,
-radio row:selected:active:hover,
-radio row:selected:focus:active:hover {
+radio row:selected:focus:checked:hover {
     -gtk-icon-source: url("img/radio-checked-hover.png");
 }
  
 radio:checked:disabled,
+.radio:checked:disabled,
 radio row:selected:checked:disabled,
-radio row:selected:focus:checked:disabled,
-radio:active:disabled,
-radio row:selected:active:disabled,
-radio row:selected:focus:active:disabled {
+radio row:selected:focus:checked:disabled {
     -gtk-icon-source: url("img/radio-checked-insensitive.png");
 }
  
 radio:indeterminate,
+.radio:indeterminate,
 radio row:selected:indeterminate,
 radio row:selected:focus:indeterminate {
     -gtk-icon-source: url("img/radio-mixed.png");
 }
  
 radio:indeterminate:hover,
+.radio:indeterminate:hover,
 radio row:selected:indeterminate:hover,
 radio row:selected:focus:indeterminate:hover {
     -gtk-icon-source: url("img/radio-mixed-hover.png");
 }
  
 radio:indeterminate:disabled,
+.radio:indeterminate:disabled,
 radio row:selected:indeterminate:disabled,
 radio row:selected:focus:indeterminate:disabled {
     -gtk-icon-source: url("img/radio-mixed-insensitive.png");
