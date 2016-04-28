@@ -1610,7 +1610,9 @@ scrollbar junction { /* the small square between scrollbars!!! */
 }
 
 scrollbar trough,
-scrollbar.vertical trough {
+scrollbar.vertical trough,
+scrollbar .trough,
+scrollbar.vertical .trough  {
 	background-image: linear-gradient(to right,
 		@scrollbar_trough,
 		shade (@scrollbar_trough, 1.08));
@@ -1619,7 +1621,8 @@ scrollbar.vertical trough {
 	border-image: none;
 }
 
-scrollbar.horizontal trough {
+scrollbar.horizontal trough,
+scrollbar.horizontal .trough{
 	background-image: linear-gradient(to bottom,
 		@scrollbar_trough,
 		shade (@scrollbar_trough, 1.08));
@@ -1629,8 +1632,11 @@ scrollbar.horizontal trough {
 }
 
 scrollbar button,
+scrollbar .button,
 scrollbar.horizontal button,
-scrollbar.vertical button {
+scrollbar.horizontal .button,
+scrollbar.vertical button,
+scrollbar.vertical .button {
 	color: @theme_fg_color; /*@internal_element_color*/
 	border-image: none;
 	border-style: none;
@@ -1643,7 +1649,10 @@ scrollbar.vertical button {
 
 scrollbar button:hover,
 scrollbar button.horizontal:hover,
-scrollbar button.vertical:hover {
+scrollbar button.vertical:hover,
+scrollbar .button:hover,
+scrollbar .button.horizontal:hover,
+scrollbar .button.vertical:hover {
 	background-image: none;
 	background-color: shade(@less_dark_color, 1.4);
 	/*border-color: shade(@highlighted_border, 1.1);*/
@@ -1657,7 +1666,10 @@ scrollbar button.vertical:hover {
 
 scrollbar button:hover:active,
 scrollbar.vertical button:hover:active,
-scrollbar.horizontal button:hover:active {
+scrollbar.horizontal button:hover:active,
+scrollbar .button:hover:active,
+scrollbar.vertical .button:hover:active,
+scrollbar.horizontal .button:hover:active {
 	background-color: @less_dark_color;
 	background-image: linear-gradient(to top,
 	                                  shade(@less_dark_color, 1.5),
@@ -1670,7 +1682,10 @@ scrollbar.horizontal button:hover:active {
 
 scrollbar button:disabled,
 scrollbar button.horizontal:disabled,
-scrollbar button.vertical:disabled {
+scrollbar button.vertical:disabled,
+scrollbar .button:disabled,
+scrollbar .button.horizontal:disabled,
+scrollbar .button.vertical:disabled {
 	background-image: none;
 	background-color: transparent;
 	color: @insensitive_fg_color;
@@ -1679,7 +1694,8 @@ scrollbar button.vertical:disabled {
 	border-width: 0px;
 }
 
-scrollbar slider {
+scrollbar slider,
+scrollbar .slider {
 	background-color: transparent;
 	background-image: linear-gradient(to top,
 	                                  shade(@scroll_slider_color, 0.6),
@@ -1691,7 +1707,8 @@ scrollbar slider {
 	border-image: none;
 }
 
-scrollbar.vertical slider {
+scrollbar.vertical slider,
+scrollbar.vertical .slider {
 	border-width: 1px;
 	background-image: linear-gradient(to top,
 	                                  shade(@scroll_slider_color, 0.6),
@@ -1701,7 +1718,8 @@ scrollbar.vertical slider {
 	min-height: 42px;
 }
 
-scrollbar.horizontal slider {
+scrollbar.horizontal slider,
+scrollbar.horizontal .slider {
 	border-width: 1px;
 	background-image: linear-gradient(to left,
 	                                  shade(@scroll_slider_color, 0.6),
@@ -1711,35 +1729,29 @@ scrollbar.horizontal slider {
 	min-width: 42px;
 }
 
-scrollbar slider:hover {
+scrollbar slider:hover,
+scrollbar .slider:hover {
 	border-width: 1px;
 	border-color: @scroll_slider_color;
 	border-radius: 6px;
 }
 
-scrollbar.vertical slider:hover {
+scrollbar.vertical slider:hover,
+scrollbar.vertical .slider:hover {
 	border-width: 1px;
 	border-color: @scroll_slider_color;
 	border-radius: 6px;
 }
 
-scrollbar.horizontal slider:hover {
+scrollbar.horizontal slider:hover,
+scrollbar.horizontal .slider:hover {
 	border-width: 1px;
 	border-color: @scroll_slider_color;
 	border-radius: 6px;
 }
 
-scrollbar slider:hover:active {
-	border-width: 1px;
-	border-color: @scroll_slider_color;
-	border-radius: 6px;
-	background-image: linear-gradient(to top,
-	                                  shade(@scroll_slider_color, 2.0),
-	                                  shade(@scroll_slider_color, 1.6) 55%,
-	                                  shade(@scroll_slider_color, 0.6));
-}
-
-scrollbar.vertical slider:hover:active {
+scrollbar slider:hover:active,
+scrollbar .slider:hover:active {
 	border-width: 1px;
 	border-color: @scroll_slider_color;
 	border-radius: 6px;
@@ -1749,7 +1761,19 @@ scrollbar.vertical slider:hover:active {
 	                                  shade(@scroll_slider_color, 0.6));
 }
 
-scrollbar.horizontal slider:hover:active {
+scrollbar.vertical slider:hover:active,
+scrollbar.vertical .slider:hover:active {
+	border-width: 1px;
+	border-color: @scroll_slider_color;
+	border-radius: 6px;
+	background-image: linear-gradient(to top,
+	                                  shade(@scroll_slider_color, 2.0),
+	                                  shade(@scroll_slider_color, 1.6) 55%,
+	                                  shade(@scroll_slider_color, 0.6));
+}
+
+scrollbar.horizontal slider:hover:active,
+scrollbar.horizontal .slider:hover:active {
 	border-width: 1px;
 	border-color: @scroll_slider_color;
 	border-radius: 6px;
@@ -1759,12 +1783,14 @@ scrollbar.horizontal slider:hover:active {
 	                                  shade(@scroll_slider_color, 0.6));
 }
 
-scrollbar slider:disabled {
+scrollbar slider:disabled,
+scrollbar .slider:disabled {
 	background-image: none;
 	background-color: shade(@theme_bg_color, 1.5);
 }
 
-scrollbar slider.fine-tune:hover:active {
+scrollbar slider.fine-tune:hover:active,
+scrollbar .slider.fine-tune:hover:active {
 	background-image: url("assets/slider_fine_horizontal.svg"),
 	                  linear-gradient(to top,
 	                                  shade(@scroll_slider_color, 3.3),
@@ -1774,7 +1800,8 @@ scrollbar slider.fine-tune:hover:active {
 	background-position: center;
 }
 
-scrollbar.vertical slider.fine-tune:hover:active {
+scrollbar.vertical slider.fine-tune:hover:active,
+scrollbar.vertical .slider.fine-tune:hover:active {
 	background-image: url("assets/slider_fine_vertical.svg"),
 	                  linear-gradient(to left,
 	                                  shade(@scroll_slider_color, 3.3),
@@ -3206,6 +3233,12 @@ radio:selected,
 check:selected,
 radio:selected:focus,
 check:selected:focus,
+.radio,
+.check,
+.radio:selected,
+.check:selected,
+.radio:selected:focus,
+.check:selected:focus,
 cell.radio,
 cell.check,
 cell.radio:selected,
@@ -3220,7 +3253,11 @@ cell.check:selected:focus {
 check:hover,
 check:selected:hover,
 radio:hover,
-radio:selected:hover {
+radio:selected:hover,
+.check:hover,
+.check:selected:hover,
+.radio:hover,
+.radio:selected:hover {
 	background-color: transparent;
 }
 
