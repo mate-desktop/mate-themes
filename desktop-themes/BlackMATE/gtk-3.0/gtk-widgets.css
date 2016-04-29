@@ -2241,14 +2241,14 @@ inline-toolbar toolbar {
  ******************/
 
 stack-switcher >  button > label,
-header-bar  stack-switcher >  button.titlebutton > label,
+headerbar  stack-switcher >  button.titlebutton > label,
 titlebar  stack-switcher >  button.titlebutton > label,
 calendar.header  stack-switcher >  button.titlebutton > label {
 	padding-left: 6px;
 	padding-right: 6px;
 }
 stack-switcher >  button > image,
-header-bar stack-switcher >  button.titlebutton > image,
+headerbar stack-switcher >  button.titlebutton > image,
 titlebar stack-switcher >  button.titlebutton > image,
 calendar.header stack-switcher >  button.titlebutton > image {
 	padding-left: 6px;
@@ -2260,7 +2260,7 @@ stack-switcher >  button.text-button {
 	padding: 5px 10px 6px;
 }
 stack-switcher >  button.image-button,
-header-bar stack-switcher > titlebutton button,
+headerbar stack-switcher > titlebutton button,
 titlebar stack-switcher > titlebutton button,
 calendar.header stack-switcher > .titlebutton button {
 	padding: 5px 2px;
@@ -2290,7 +2290,7 @@ stack-switcher >  button.needs-attention:active > image, stack-switcher >  butto
 /***************
  * Header bars *
  ***************/
-header-bar {
+headerbar {
     border-width: 0 0 1px;
     border-style: solid;
     padding: 0 1px;
@@ -2300,11 +2300,11 @@ header-bar {
     border-color: shade(@theme_bg_color, 0.8);
 }
 
-header-bar  button.text-button {
+headerbar  button.text-button {
     padding: 2px 16px;
 }
 
-header-bar  button.image-button {
+headerbar  button.image-button {
     padding: 5px 4px 4px 5px;
 }
 
@@ -2784,7 +2784,7 @@ decoration:backdrop {
 }
 
 .titlebar .titlebutton,
-header-bar.frame titlebar  button.image-button.titlebutton,
+headerbar.frame titlebar  button.image-button.titlebutton,
 button.text-button.titlebutton {
 	padding: 4px 4px 4px 4px;
 	border-radius: 3px;
@@ -2809,7 +2809,7 @@ button.text-button.titlebutton {
 }
  
 .titlebar .titlebutton:hover,
-header-bar.frame titlebar  button.image-button.titlebutton:hover,
+headerbar.frame titlebar  button.image-button.titlebutton:hover,
 button.text-button.titlebutton:hover {
 	border-image: none;
 	border-style: solid;
@@ -2830,16 +2830,16 @@ button.text-button.titlebutton:hover {
 
 .titlebar .titlebutton:active,
 .titlebar .titlebutton:active:hover,
-header-bar.frame titlebar:active,
-header-bar.frame titlebar:active:hover,
+headerbar.frame titlebar:active,
+headerbar.frame titlebar:active:hover,
 button.image-button.titlebutton:active,
 button.image-button.titlebutton:active:hover,
 button.text-button.titlebutton:active,
 button.text-button.titlebutton:active:hover,
 .titlebar .titlebutton:checked,
 .titlebar .titlebutton:checked:hover,
-header-bar.frame titlebar:checked,
-header-bar.frame titlebar:checked:hover,
+headerbar.frame titlebar:checked,
+headerbar.frame titlebar:checked:hover,
 button.image-button.titlebutton:checked,
 button.image-button.titlebutton:checked:hover,
 button.text-button.titlebutton:checked,
@@ -2866,8 +2866,8 @@ button.text-button.titlebutton:checked:hover {
  
 .titlebar .titlebutton:backdrop,
 .titlebar .titlebutton:hover:backdrop,
-header-bar.frame titlebar  button.image-button.titlebutton:backdrop,
-header-bar.frame titlebar  button.image-button.titlebutton:hover:backdrop {
+headerbar.frame titlebar  button.image-button.titlebutton:backdrop,
+headerbar.frame titlebar  button.image-button.titlebutton:hover:backdrop {
     background: none;
     color: @theme_main_color;
     border-image: none;
@@ -2875,7 +2875,7 @@ header-bar.frame titlebar  button.image-button.titlebutton:hover:backdrop {
 }
 
 .titlebar .titlebutton:hover:backdrop,
-header-bar.frame titlebar  button.image-button.titlebutton:hover:backdrop {
+headerbar.frame titlebar  button.image-button.titlebutton:hover:backdrop {
 	color: #747473;
 }
 
@@ -3386,8 +3386,8 @@ app-notification.frame:backdrop {
 }
 
 app-notification  button,
-app-notification  header-bar  button.titlebutton,
- header-bar .app-notification  button.titlebutton,
+app-notification  headerbar  button.titlebutton,
+ headerbar .app-notification  button.titlebutton,
 app-notification  titlebar  button.titlebutton,
  titlebar .app-notification  button.titlebutton,
 app-notification calendar.header  button.titlebutton,
@@ -3407,15 +3407,15 @@ app-notification.frame  button {
 }
 
 app-notification  button.flat,
-app-notification  header-bar .titlebutton button,
-header-bar .app-notification .titlebutton button,
+app-notification  headerbar .titlebutton button,
+headerbar .app-notification .titlebutton button,
 app-notification  titlebar .titlebutton button,
 titlebar .app-notification .titlebutton button,
 app-notification calendar.header .titlebutton button,
 calendar.header .app-notification .titlebutton button,
 app-notification.frame  button.flat,
-app-notification.frame  header-bar .titlebutton button,
-header-bar .app-notification.frame .titlebutton button,
+app-notification.frame  headerbar .titlebutton button,
+headerbar .app-notification.frame .titlebutton button,
 app-notification.frame  titlebar .titlebutton button,
 titlebar .app-notification.frame .titlebutton button,
 app-notification.frame calendar.header .titlebutton button,
