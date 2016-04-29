@@ -150,12 +150,13 @@ headerbar.titlebar .left:dir(rtl) button.close.titlebutton:backdrop:hover {
     -gtk-icon-style: requested;
 }
 
-/* gtk+-3.20 */
+/* gtk+-3.20 */  /*this breaks window controls in Gedit, possibly others
 .titlebar button.close.titlebutton image,
 .titlebar button.minimize.titlebutton image,
 .titlebar button.maximize.titlebutton image {
         color: transparent;
 }
+*/
 
 /* Menu button when fallback kicks in (XFCE, Cinnamon etc.) *//*
 
@@ -171,4 +172,3 @@ headerbar.titlebar .left:dir(rtl) button.close.titlebutton:backdrop:hover {
 	background-image: url('window-controls/menu-button-pressed.png');
 }
 */
-
