@@ -827,7 +827,13 @@ button {
 button,
 button.menuitem.menubar,
 .titlebar .linked.raised button,
-.titlebar .linked.raised button:checked {
+.titlebar .linked.raised button:hover,
+.titlebar .linked.raised button:focus,
+.titlebar .linked.raised button:checked,
+.titlebar .linked.raised button:disabled,
+.titlebar .linked.raised button:backdrop,
+.titlebar .linked.raised button:focus:hover,
+.titlebar .linked.raised button:focus:hover:active {
     padding: 5px 5px 6px; /* larger values makes the button arrow smaller*/
 }
 
@@ -2547,12 +2553,16 @@ placessidebar .view {
     border-style: none;
 }
 
-/* dialog open */
+/* dialog open, nautilus */
+placessidebar.sidebar.frame viewport.frame list,
+placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row,
 dialog filechooser placessidebar.sidebar.frame viewport.frame list,
 dialog filechooser placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row {
     background-color: @theme_base_color;
 }
 
+placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row:selected,
+placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row:selected:hover,
 dialog filechooser placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row:selected,
 dialog filechooser placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row:selected:hover {
     border-style: none;
@@ -2566,6 +2576,7 @@ dialog filechooser placessidebar.sidebar.frame viewport.frame list row.activatab
                       to (@menubar_menuitem_hover_gradient_d));
 }
 
+placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row:hover,
 dialog filechooser placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row:hover {
     background-image: linear-gradient(to bottom,
                       shade(@button_active_gradient_a, 1.20),
@@ -2577,14 +2588,17 @@ dialog filechooser placessidebar.sidebar.frame viewport.frame list row.activatab
     background-color: transparent;
 }
 
+placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row revealer.sidebar-revealer image.sidebar-icon,
 dialog filechooser placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row revealer.sidebar-revealer image.sidebar-icon {
     padding: 4px 8px 4px 6px;
 }
 
+placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row revealer.sidebar-revealer label.sidebar-label,
 dialog filechooser placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row revealer.sidebar-revealer label.sidebar-label {
     padding: 4px 0px 4px 1px;
 }
 
+placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row revealer.sidebar-revealer button.image-button.sidebar-button,
 dialog filechooser placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row revealer.sidebar-revealer button.image-button.sidebar-button {
     background-color: transparent;
     background-image: none;
@@ -2594,21 +2608,19 @@ dialog filechooser placessidebar.sidebar.frame viewport.frame list row.activatab
     padding: 4px 12px 4px 0px;
 }
 
-/* workaround for broken first/last-child logic with linked buttons
-   in pathbar with gtk+-3.18 *//*
-.path-bar.linked button.text-button {
-    border-right-width: 1px;
-    border-left-width: 1px;
-    border-radius: 2px;
-    padding: 4px;
-}
-*/
-
 .sidebar radio,
 .sidebar radio:focus,
 .sidebar radio:selected {
     background-image: none;
     background-color: transparent;
+}
+
+/* other locations nautilus, filechooser */
+placesview actionbar,
+placesview stack frame,
+.nautilus-window headerbar.titlebar {
+    border-width: 0px;
+    border-style: none;
 }
 
 /*******
@@ -3479,10 +3491,15 @@ infobar:last-child,
     color: mix (@theme_selected_fg_color, @theme_base_color, 0.50);
 }
 
+/**************
+ * Header bar *
+ **************/
+
 /************
  * Titlebar *
  ************/
 
+headerbar,
 .titlebar {
     background-image: linear-gradient(to bottom,
                       @theme_base_color,
@@ -3494,8 +3511,13 @@ infobar:last-child,
     padding: 5px 4px 4px 4px;
 }
 
-.titlebar > * {
-    background: none;
+/* fix for gedit, .titlebar does not match headerbar selector */
+.background.csd > paned.horizontal.titlebar,
+.background.solid-csd > paned.horizontal.titlebar {
+    background-color: transparent;
+    padding: 0px;
+    margin: -2px 0px -2px 0px;
+    border-width: 0px;
 }
 
 .tiled .titlebar {
@@ -3506,14 +3528,12 @@ infobar:last-child,
     border-radius: 0;
 }
 
+headerbar .title,
 .titlebar .title {
     font: Bold;
 }
 
-/*.titlebar :first-child {*/
-/*    padding: 5px 5px 6px 5px;*/
-/*}*/
-
+headerbar button.titlebutton,
 .titlebar button.titlebutton {
     background: none;
     border-image: none;
@@ -3579,14 +3599,6 @@ actionbar {
     border-style:solid;
     border-color: rgb(162,158,155);
     padding: 7px 7px 3px 7px;
-}
-
-/**************
- * Header bar *
- **************/
-
-headerbar {
-    padding: 5px 4px 4px 4px;
 }
 
 /*************
