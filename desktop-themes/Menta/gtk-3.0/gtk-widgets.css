@@ -3147,40 +3147,6 @@ toolbar menubar {
 }
 
 /***************
- * Header bars *
- ***************/
-
-.titlebar, calendar.header,
-headerbar {
-	border-width: 0 0 1px;
-	border-style: solid;
-	border-color: shade(@borders, 0.90);
-	box-shadow: inset 0 -1px shade(@wm_bg_b, 0.95);
-	background-color: @theme_bg_color;
-	padding: 6px;
-}
-
-headerbar button.text-button {
-	padding: 2px 16px;
-}
-
-headerbar button.image-button {
-    padding: 4px 5px;
-}
-
-.titlebar .title, calendar.header .title,
-headerbar .title {
-	font: Bold;
-	padding: 0px 12px;
-}
-
-.titlebar .subtitle, calendar.header .subtitle,
-headerbar .subtitle {
-	font-size: smaller;
-	padding: 0px 12px;
-}
-
-/***************
  * Action bars *
  ***************/
 
@@ -4700,11 +4666,25 @@ calendar.view {
 }
 
 calendar.header {
-	border-radius: 0;
+	border-width: 0 0 1px;
+	border-style: solid;
+	border-color: shade(@borders, 0.90);
+	background-color: @theme_bg_color;
 	background-image: linear-gradient(to bottom,
 		shade(@theme_bg_color, 1.04),
 		shade(@theme_bg_color, 0.89));
-	border-width: 0;
+	box-shadow: inset 0 -1px shade(@wm_bg_b, 0.95);
+	padding: 6px;
+}
+
+calendar.header .title {
+	font: Bold;
+	padding: 0px 12px;
+}
+
+calendar.header .subtitle {
+	font-size: smaller;
+	padding: 0px 12px;
 }
 
 /* this makes no sense for gtk+-3.20 :) */
@@ -5061,18 +5041,36 @@ cursor-handle.bottom {
     color: @menu_controls_color;
 }
 
+/***************
+ * Header bars *
+ ***************/
+
 /*******
  * CSD *
  *******/
 
+headerbar,
 .titlebar {
     text-shadow: 0 1px @wm_title_shadow;
+	background-color: @theme_bg_color;
     background-image: linear-gradient(to bottom,
                                       @wm_bg_a,
                                       @wm_bg_b);
     border-radius: 6px 6px 0px 0px;
+	border-width: 0 0 1px;
+	border-style: solid;
     box-shadow: inset 0 -1px alpha(@theme_base_color, 0.4);
     border-color: @borders;
+	padding: 6px;
+}
+
+/* fix for gedit, .titlebar does not match headerbar selector */
+.background.csd > paned.horizontal.titlebar,
+.background.solid-csd > paned.horizontal.titlebar {
+    background-color: transparent;
+    padding: 0px 0px 0px 0px;
+    margin: 0px -2px 0px -2px;
+    border-width: 0px;
 }
 
 .tiled .titlebar {
@@ -5092,8 +5090,16 @@ cursor-handle.bottom {
     box-shadow: none;
 }
 
-.titlebar .title {
-    font: Bold 10;
+.titlebar .title,
+headerbar .title {
+	font: Bold;
+	padding: 0px 12px;
+}
+
+.titlebar .subtitle,
+headerbar .subtitle {
+	font-size: smaller;
+	padding: 0px 12px;
 }
 
 .titlebar:backdrop {
@@ -5107,6 +5113,16 @@ cursor-handle.bottom {
 .titlebar button.titlebutton:backdrop {
     color: @wm_unfocused_title;
     -gtk-icon-shadow: none;
+}
+
+headerbar button.text-button,
+.titlebar button.text-button {
+	padding: 2px 16px;
+}
+
+headerbar button.image-button,
+.titlebar button.image-button {
+    padding: 4px 5px;
 }
 
 /* use icons from window-crontrols */
