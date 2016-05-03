@@ -3639,195 +3639,6 @@ radiobutton.text-button {
   outline-offset: 0;
 }
 
-/***************
- * Header bars *
- ***************/
-
-headerbar {
-    border-width: 0 0 1px;
-    border-style: solid;
-    border-color: shade(@borders, 0.90);
-    border-radius: 7px 7px 0px 0px;
-    box-shadow: inset 0 -1px shade(@wm_bg_b, 0.95);
-    background-color: @theme_bg_dark_color;
-    padding: 6px 6px 5px 6px;
-}
-
-headerbar:backdrop {
-    border-image: linear-gradient(to top,
-                                  @unfocused_borders,
-                                  @unfocused_borders 1px,
-                                  @theme_unfocused_bg_color 1px) 0 0 2;
-    box-shadow: none;
-    background-color: @theme_bg_dark_color;
-}
-
-headerbar button,
-headerbar button:last-child,
-headerbar button:first-child,
-headerbar button:only-child,
-headerbar .linked button,
-headerbar .linked button:last-child,
-headerbar .linked button:first-child,
-headerbar .linked button:only-child {
-    background-image: none;
-    text-shadow: none;
-    -gtk-icon-shadow: none;
-    color: @theme_fg_dark_color;
-    border-width: 1px;
-    border-radius: 5px;
-    box-shadow: none;
-}
-
-headerbar:backdrop button {
-    border-width: 1px;
-    border-radius: 5px;
-    padding-left:  4px;
-    padding-right: 4px;
-    color: @theme_text_dark_color;
-    background-image: -gtk-gradient (linear,
-                                     left top, left bottom,
-                                     from (shade(@theme_unfocused_bg_color, 1.05)),
-                                     to   (shade(@theme_unfocused_bg_color, 0.85)));
-}
-
-headerbar button:hover,
-headerbar button:checked,
-headerbar button:hover:active,
-headerbar button.text-button:hover:active,
-headerbar button:checked:hover,
-headerbar button:checked:hover:active,
-headerbar button:hover:first-child,
-headerbar button:checked:first-child,
-headerbar button:hover:active:first-child,
-headerbar button:checked:hover:first-child,
-headerbar button:checked:hover:active:first-child,
-headerbar button:hover:last-child,
-headerbar button:checked:last-child,
-headerbar button:hover:active:last-child,
-headerbar button:checked:hover:last-child,
-headerbar button:checked:hover:active:last-child,
-headerbar button:hover:only-child,
-headerbar button:checked:only-child,
-headerbar button:hover:active:last-child,
-headerbar button:checked:hover:only-child,
-headerbar button:checked:hover:active:only-child,
-headerbar .linked button:hover,
-headerbar .linked button:checked,
-headerbar .linked button:hover:active,
-headerbar .linked button:checked:hover,
-headerbar .linked button:checked:hover:active,
-headerbar .linked button:hover:first-child,
-headerbar .linked button:checked:first-child,
-headerbar .linked button:hover:active:first-child,
-headerbar .linked button:checked:hover:first-child,
-headerbar .linked button:checked:hover:active:first-child,
-headerbar .linked button:hover:last-child,
-headerbar .linked button:checked:last-child,
-headerbar .linked button:hover:active:last-child,
-headerbar .linked button:checked:hover:last-child,
-headerbar .linked button:checked:hover:active:last-child,
-headerbar .linked button:hover:only-child,
-headerbar .linked button:checked:only-child,
-headerbar .linked button:hover:active:last-child,
-headerbar .linked button:checked:hover:only-child,
-headerbar .linked button:checked:hover:active:only-child {
-    color: shade (@theme_selected_bg_color, 1.6);
-    border-width: 1px;
-    border-radius: 5px;
-    background-image: -gtk-gradient (linear,
-                                     left top, left bottom,
-                                     from (shade(@menu_bg_dark_color, 2.03)),
-                                     to   (shade(@menu_bg_dark_color, 1.17)));
-    border-top-color: shade(@button_raised_gradient_color_a, 0.50);
-    border-bottom-color: shade(@button_raised_gradient_color_a, 0.50);
-    border-right-color: shade(@button_raised_gradient_color_a, 0.50);
-    border-left-color: shade(@button_raised_gradient_color_a, 0.50);
-    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
-                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
-                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
-}
-
-headerbar button:disabled,
-headerbar button:disabled:last-child,
-headerbar button:disabled:first-child {
-    color: @theme_text_dark_color;
-    background-image: none;
-    background-color: @theme_bg_dark_color;
-    border-color: @theme_button_border_dark;
-    box-shadow: none;
-    text-shadow: none;
-    -gtk-icon-shadow: none;
-}
-
-headerbar > button:disabled {
-    background-color: transparent;
-    text-shadow: none;
-    -gtk-icon-shadow: none;
-}
-
-headerbar > button.text-button:hover,
-headerbar > button.text-button:focus,
-headerbar > button.text-button,
-headerbar > button.text-button.radio,
-headerbar > .linked > button.text-button,
-headerbar > .linked > button.text-button.radio {
-    padding: 4px 6px;
-}
- 
-headerbar > button.image-button,
-headerbar > button.image-button:focus {
-    padding: 5px 5px 6px 5px;
-}
-
-headerbar > stackswitcher.linked.stack-switcher > button.text-button.radio {
-    border-right-width: 0px;
-    border-left-width:  0px;
-    border-radius: 0px;
-}
-
-headerbar > stackswitcher.linked.stack-switcher > button.text-button.radio:first-child {
-    border-radius: 6px 0 0 6px;
-    border-width: 1px;
-    border-right-width: 0px;
-}
-
-headerbar > stackswitcher.linked.stack-switcher > button.text-button.radio:last-child {
-    border-radius: 0 6px 6px 0;
-    border-width: 1px;
-    border-left-width: 0px;
-}
-
-headerbar.titlebar > stackswitcher.linked.stack-switcher > button.text-button.radio.needs-attention >  label {
-    background-color: transparent;
-    color: @theme_dark_fg_color;
-    border-radius: 3px;
-    box-shadow: inset  0px  1px shade (@info_fg_color, 1.3),
-                inset  1px  0px shade (@info_fg_color, 1.3),
-                inset -1px  0px shade (@info_fg_color, 1.3),
-                inset  0px -1px shade (@info_fg_color, 1.3);
-}
-
-headerbar title {
-    font: Bold 11;
-    color: @theme_text_dark_color;
-}
- 
-headerbar .subtitle {
-    font: 9;
-    color: @theme_text_dark_color;
-}
-
-headerbar toolitem separator,
-headerbar separator,
-headerbar separator:disabled,
-headerbar paned > separator {
-    border-color: alpha (shade(@theme_bg_dark_color, 0.2), 0.24);
-    border-bottom-color: @theme_bg_dark_color;
-    border-right-color:  @theme_bg_dark_color; 
-}
-
 /****************
  * GtkAssistant *
  ****************/
@@ -5670,17 +5481,225 @@ entry.cursor-handle.bottom,
     -gtk-icon-source: -gtk-icontheme("selection-end-symbolic");
 }
 
-/*******
- * CSD *
- *******/
+/***************
+ * Header bars *
+ ***************/
 
+headerbar,
 .titlebar {
+    border-width: 0 0 1px;
+    border-style: solid;
+    border-color: shade(@borders, 0.90);
+    border-radius: 7px 7px 0px 0px;
+    box-shadow: inset 0 -1px shade(@wm_bg_b, 0.95);
+    background-color: @theme_bg_dark_color;
+    padding: 6px 6px 5px 6px;
     text-shadow: 0 1px @wm_title_shadow;
     background-image: linear-gradient(to bottom,
                                       @wm_bg_a,
                                       @wm_bg_b);
-    border-radius: 7px 7px 0px 0px;
 }
+
+/* fix for gedit, .titlebar does not match headerbar selector */
+.background.csd > paned.horizontal.titlebar,
+.background.solid-csd > paned.horizontal.titlebar {
+    background-color: transparent;
+    padding: 0px;
+    margin: -2px -2px -2px -2px;
+    border-width: 0px;
+}
+
+headerbar:backdrop,
+.titlebar:backdrop {
+    border-image: linear-gradient(to top,
+                                  @unfocused_borders,
+                                  @unfocused_borders 1px,
+                                  @theme_unfocused_bg_color 1px) 0 0 2;
+    background-color: @theme_bg_dark_color;
+    text-shadow: none;
+    background-image: none;
+    box-shadow: none;
+}
+
+headerbar button,
+headerbar button:last-child,
+headerbar button:first-child,
+headerbar button:only-child,
+headerbar .linked button,
+headerbar .linked button:last-child,
+headerbar .linked button:first-child,
+headerbar .linked button:only-child,
+headerbar .linked button:focus,
+headerbar .linked button:focus:last-child,
+headerbar .linked button:focus:first-child,
+headerbar .linked button:focus:only-child,
+headerbar .linked button:backdrop,
+headerbar .linked button:backdrop:last-child,
+headerbar .linked button:backdrop:first-child,
+headerbar .linked button:backdrop:only-child {
+    background-image: none;
+    text-shadow: none;
+    -gtk-icon-shadow: none;
+    color: @theme_fg_dark_color;
+    border-width: 1px;
+    border-radius: 5px;
+    box-shadow: none;
+}
+
+headerbar:backdrop button {
+    border-width: 1px;
+    border-radius: 5px;
+    padding-left:  4px;
+    padding-right: 4px;
+    color: @theme_text_dark_color;
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@theme_unfocused_bg_color, 1.05)),
+                                     to   (shade(@theme_unfocused_bg_color, 0.85)));
+}
+
+headerbar button:hover,
+headerbar button:checked,
+headerbar button:hover:active,
+headerbar button.text-button:hover:active,
+headerbar button:checked:hover,
+headerbar button:checked:hover:active,
+headerbar button:hover:first-child,
+headerbar button:checked:first-child,
+headerbar button:hover:active:first-child,
+headerbar button:checked:hover:first-child,
+headerbar button:checked:hover:active:first-child,
+headerbar button:hover:last-child,
+headerbar button:checked:last-child,
+headerbar button:hover:active:last-child,
+headerbar button:checked:hover:last-child,
+headerbar button:checked:hover:active:last-child,
+headerbar button:hover:only-child,
+headerbar button:checked:only-child,
+headerbar button:hover:active:last-child,
+headerbar button:checked:hover:only-child,
+headerbar button:checked:hover:active:only-child,
+headerbar .linked button:hover,
+headerbar .linked button:checked,
+headerbar .linked button:hover:active,
+headerbar .linked button:checked:hover,
+headerbar .linked button:checked:hover:active,
+headerbar .linked button:hover:first-child,
+headerbar .linked button:checked:first-child,
+headerbar .linked button:hover:active:first-child,
+headerbar .linked button:checked:hover:first-child,
+headerbar .linked button:checked:hover:active:first-child,
+headerbar .linked button:hover:last-child,
+headerbar .linked button:checked:last-child,
+headerbar .linked button:hover:active:last-child,
+headerbar .linked button:checked:hover:last-child,
+headerbar .linked button:checked:hover:active:last-child,
+headerbar .linked button:hover:only-child,
+headerbar .linked button:checked:only-child,
+headerbar .linked button:hover:active:last-child,
+headerbar .linked button:checked:hover:only-child,
+headerbar .linked button:checked:hover:active:only-child {
+    color: shade (@theme_selected_bg_color, 1.6);
+    border-width: 1px;
+    border-radius: 5px;
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@menu_bg_dark_color, 2.03)),
+                                     to   (shade(@menu_bg_dark_color, 1.17)));
+    border-top-color: shade(@button_raised_gradient_color_a, 0.50);
+    border-bottom-color: shade(@button_raised_gradient_color_a, 0.50);
+    border-right-color: shade(@button_raised_gradient_color_a, 0.50);
+    border-left-color: shade(@button_raised_gradient_color_a, 0.50);
+    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
+                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+}
+
+headerbar button:disabled,
+headerbar button:disabled:last-child,
+headerbar button:disabled:first-child {
+    color: @theme_text_dark_color;
+    background-image: none;
+    background-color: @theme_bg_dark_color;
+    border-color: @theme_button_border_dark;
+    box-shadow: none;
+    text-shadow: none;
+    -gtk-icon-shadow: none;
+}
+
+headerbar > button:disabled {
+    background-color: transparent;
+    text-shadow: none;
+    -gtk-icon-shadow: none;
+}
+
+headerbar > button.text-button:hover,
+headerbar > button.text-button:focus,
+headerbar > button.text-button,
+headerbar > button.text-button.radio,
+headerbar > .linked > button.text-button,
+headerbar > .linked > button.text-button.radio {
+    padding: 4px 6px;
+}
+
+headerbar > button.image-button,
+headerbar > button.image-button:focus,
+headerbar > button.image-button:hover,
+headerbar > button.image-button:backdrop {
+    padding: 5px 5px 6px 5px;
+}
+
+headerbar > stackswitcher.linked.stack-switcher > button.text-button.radio {
+    border-right-width: 0px;
+    border-left-width:  0px;
+    border-radius: 0px;
+}
+
+headerbar > stackswitcher.linked.stack-switcher > button.text-button.radio:first-child {
+    border-radius: 6px 0 0 6px;
+    border-width: 1px;
+    border-right-width: 0px;
+}
+
+headerbar > stackswitcher.linked.stack-switcher > button.text-button.radio:last-child {
+    border-radius: 0 6px 6px 0;
+    border-width: 1px;
+    border-left-width: 0px;
+}
+
+headerbar.titlebar > stackswitcher.linked.stack-switcher > button.text-button.radio.needs-attention >  label {
+    background-color: transparent;
+    color: @theme_dark_fg_color;
+    border-radius: 3px;
+    box-shadow: inset  0px  1px shade (@info_fg_color, 1.3),
+                inset  1px  0px shade (@info_fg_color, 1.3),
+                inset -1px  0px shade (@info_fg_color, 1.3),
+                inset  0px -1px shade (@info_fg_color, 1.3);
+}
+
+headerbar title {
+    font: Bold 11;
+    color: @theme_text_dark_color;
+}
+
+headerbar .subtitle {
+    font: 9;
+    color: @theme_text_dark_color;
+}
+
+headerbar toolitem separator,
+headerbar separator,
+headerbar separator:disabled,
+headerbar paned > separator {
+    border-color: alpha (shade(@theme_bg_dark_color, 0.2), 0.24);
+    border-bottom-color: @theme_bg_dark_color;
+    border-right-color:  @theme_bg_dark_color;
+}
+
+/*******
+ * CSD *
+ *******/
 
 .tiled .titlebar {
     border-radius: 0;
@@ -5703,13 +5722,6 @@ entry.cursor-handle.bottom,
     font: Bold 10;
     background: none;
     color: @theme_text_dark_color;
-}
-
- /* Colour when unfocused? */
-.titlebar:backdrop {
-    text-shadow: none;
-    background-image: none;
-    background-color: @theme_bg_dark_color;
 }
 
 .titlebar button.titlebutton,
