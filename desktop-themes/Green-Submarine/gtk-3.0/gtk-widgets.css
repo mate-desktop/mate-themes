@@ -124,28 +124,6 @@ label:disabled {
     background-color: transparent;
 }
 
-tooltip,
-tooltip.background {
-    padding: 4px 4px;
-    color: shade(@theme_tooltip_fg_color, 0.90);
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 3px;
-/*    border-color: @theme_fg_color; */
-    background-color: alpha(@theme_tooltip_bg_color, 0.90);
-    background-clip: padding-box;
-    box-shadow: 0 1px 5px shade (@theme_selected_bg_color, 1.3);
-}
-
-tooltip decoration {
-    background-color: transparent;
-}
-
-tooltip * {
-    background-color: transparent;
-    padding: 4px 4px;
-}
-
 .grip {
     background-color: transparent;
     background-image: url("assets/resize-grip.svg");
@@ -161,6 +139,60 @@ rubberband,
     border-style: solid;
     border-width: 1px;
     border-radius: 2px;    
+}
+
+/************
+ * Tooltips *
+ ************/
+
+tooltip,
+.tooltip {
+    border-width: 0px;
+    border-style: none;
+    border-radius: 2px;
+    border-color: transparent;
+}
+
+tooltip.background,
+.tooltip.background {
+    background-color: alpha(@theme_tooltip_bg_color, 1.00);
+    background-clip: padding-box;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 2px;
+    border-color: @theme_fg_color;
+}
+
+tooltip label,
+.tooltip label {
+    color: shade(@theme_tooltip_fg_color, 0.90);
+	text-shadow: none;
+/* this controls the tooltip size */
+    padding: 6px;
+}
+
+/* needed for override CSD setting */
+tooltip decoration,
+.tooltip decoration,
+tooltip.csd decoration,
+.tooltip.csd decoration,
+tooltip.ssd decoration,
+.tooltip.ssd decoration,
+tooltip.solid-csd decoration,
+.tooltip.solid-csd decoration,
+tooltip.background.csd decoration,
+.tooltip.background.csd decoration,
+tooltip.background.ssd decoration,
+.tooltip.background.ssd decoration,
+tooltip.background.solid-csd decoration,
+.tooltip.background.solid-csd decoration {
+    background-color: alpha(shade(@theme_selected_bg_color, 1.3), 0.6);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 2px;
+    border-color: @theme_fg_color;
+    box-shadow: 0 1px 5px shade (@theme_selected_bg_color, 1.3);
+    padding: 1px;
 }
 
 /*************
@@ -6004,12 +6036,6 @@ decoration:backdrop {
 .csd.popup decoration {
     border-radius: 0;
     box-shadow: none;
-}
-
-tooltip.csd decoration {
-    border-radius: 3px;
-    box-shadow: 0 1px 5px shade (@theme_selected_bg_color, 1.3);
-    padding: 4px 4px;
 }
 
 messagedialog.csd decoration {
