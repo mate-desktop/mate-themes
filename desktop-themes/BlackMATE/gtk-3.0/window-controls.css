@@ -1,15 +1,15 @@
-headerbar.titlebar .right button.minimize.titlebutton,
-headerbar.titlebar .right:dir(rtl) button.minimize.titlebutton,
-headerbar.titlebar .left button.minimize.titlebutton,
-headerbar.titlebar .left:dir(rtl) button.minimize.titlebutton,
-headerbar.titlebar .right button.maximize.titlebutton,
-headerbar.titlebar .right:dir(rtl) button.maximize.titlebutton,
-headerbar.titlebar .left button.maximize.titlebutton,
-headerbar.titlebar .left:dir(rtl) button.maximize.titlebutton,
-headerbar.titlebar .right button.close.titlebutton,
-headerbar.titlebar .right:dir(rtl) button.close.titlebutton,
-headerbar.titlebar .left button.close.titlebutton,
-headerbar.titlebar .left:dir(rtl) button.close.titlebutton {
+headerbar .right button.minimize.titlebutton,
+headerbar .right:dir(rtl) button.minimize.titlebutton,
+headerbar .left button.minimize.titlebutton,
+headerbar .left:dir(rtl) button.minimize.titlebutton,
+headerbar .right button.maximize.titlebutton,
+headerbar .right:dir(rtl) button.maximize.titlebutton,
+headerbar .left button.maximize.titlebutton,
+headerbar .left:dir(rtl) button.maximize.titlebutton,
+headerbar .right button.close.titlebutton,
+headerbar .right:dir(rtl) button.close.titlebutton,
+headerbar .left button.close.titlebutton,
+headerbar .left:dir(rtl) button.close.titlebutton {
 	color: transparent;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -24,123 +24,123 @@ headerbar.titlebar .left:dir(rtl) button.close.titlebutton {
 
 /* minimize */
 
-headerbar.titlebar .right button.minimize.titlebutton,
-headerbar.titlebar .right:dir(rtl) button.minimize.titlebutton,
-headerbar.titlebar .left button.minimize.titlebutton,
-headerbar.titlebar .left:dir(rtl) button.minimize.titlebutton {
+headerbar .right button.minimize.titlebutton,
+headerbar .right:dir(rtl) button.minimize.titlebutton,
+headerbar .left button.minimize.titlebutton,
+headerbar .left:dir(rtl) button.minimize.titlebutton {
 	background-image: url('window-controls/neutral.png');
 }
 
-headerbar.titlebar .right button.minimize.titlebutton:hover,
-headerbar.titlebar .right:dir(rtl) button.minimize.titlebutton:hover,
-headerbar.titlebar .left button.minimize.titlebutton:hover,
-headerbar.titlebar .left:dir(rtl) button.minimize.titlebutton:hover {
+headerbar .right button.minimize.titlebutton:hover,
+headerbar .right:dir(rtl) button.minimize.titlebutton:hover,
+headerbar .left button.minimize.titlebutton:hover,
+headerbar .left:dir(rtl) button.minimize.titlebutton:hover {
 	background-image: url('window-controls/button-min-focus.png');
 }
 
-headerbar.titlebar .right button.minimize.titlebutton:active,
-headerbar.titlebar .right:dir(rtl) button.minimize.titlebutton:active,
-headerbar.titlebar .left button.minimize.titlebutton:active,
-headerbar.titlebar .left:dir(rtl) button.minimize.titlebutton:active,
-headerbar.titlebar .right button.minimize.titlebutton:checked,
-headerbar.titlebar .right:dir(rtl) button.minimize.titlebutton:checked,
-headerbar.titlebar .left button.minimize.titlebutton:checked,
-headerbar.titlebar .left:dir(rtl) button.minimize.titlebutton:checked {
+headerbar .right button.minimize.titlebutton:active,
+headerbar .right:dir(rtl) button.minimize.titlebutton:active,
+headerbar .left button.minimize.titlebutton:active,
+headerbar .left:dir(rtl) button.minimize.titlebutton:active,
+headerbar .right button.minimize.titlebutton:checked,
+headerbar .right:dir(rtl) button.minimize.titlebutton:checked,
+headerbar .left button.minimize.titlebutton:checked,
+headerbar .left:dir(rtl) button.minimize.titlebutton:checked {
 	background-image: url('window-controls/neutral.png');
 }
 
-headerbar.titlebar .right button.minimize.titlebutton:backdrop,
-headerbar.titlebar .right:dir(rtl) button.minimize.titlebutton:backdrop,
-headerbar.titlebar .left button.minimize.titlebutton:backdrop,
-headerbar.titlebar .left:dir(rtl) button.minimize.titlebutton:backdrop {
+headerbar .right button.minimize.titlebutton:backdrop,
+headerbar .right:dir(rtl) button.minimize.titlebutton:backdrop,
+headerbar .left button.minimize.titlebutton:backdrop,
+headerbar .left:dir(rtl) button.minimize.titlebutton:backdrop {
 	background-image: url('window-controls/unfocused.png');
 }
 /*
-headerbar.titlebar .right button.minimize.titlebutton:backdrop:hover,
-headerbar.titlebar .right:dir(rtl) button.minimize.titlebutton:backdrop:hover,
-headerbar.titlebar .left button.minimize.titlebutton:backdrop:hover,
-headerbar.titlebar .left:dir(rtl) button.minimize.titlebutton:backdrop:hover {
+headerbar .right button.minimize.titlebutton:backdrop:hover,
+headerbar .right:dir(rtl) button.minimize.titlebutton:backdrop:hover,
+headerbar .left button.minimize.titlebutton:backdrop:hover,
+headerbar .left:dir(rtl) button.minimize.titlebutton:backdrop:hover {
 	background-image: url('window-controls/minimize_unfocused_prelight.png');
 }
 */
 /* maximize */
-headerbar.titlebar .right button.maximize.titlebutton,
-headerbar.titlebar .right:dir(rtl) button.maximize.titlebutton,
-headerbar.titlebar .left button.maximize.titlebutton,
-headerbar.titlebar .left:dir(rtl) button.maximize.titlebutton {
+headerbar .right button.maximize.titlebutton,
+headerbar .right:dir(rtl) button.maximize.titlebutton,
+headerbar .left button.maximize.titlebutton,
+headerbar .left:dir(rtl) button.maximize.titlebutton {
 	background-image: url('window-controls/neutral.png');
 }
 
-headerbar.titlebar .right button.maximize.titlebutton:hover,
-headerbar.titlebar .right:dir(rtl) button.maximize.titlebutton:hover,
-headerbar.titlebar .left button.maximize.titlebutton:hover,
-headerbar.titlebar .left:dir(rtl) button.maximize.titlebutton:hover {
+headerbar .right button.maximize.titlebutton:hover,
+headerbar .right:dir(rtl) button.maximize.titlebutton:hover,
+headerbar .left button.maximize.titlebutton:hover,
+headerbar .left:dir(rtl) button.maximize.titlebutton:hover {
 	background-image: url('window-controls/button-max-focus.png');
 }
 
-headerbar.titlebar .right button.maximize.titlebutton:active,
-headerbar.titlebar .right:dir(rtl) button.maximize.titlebutton:active,
-headerbar.titlebar .left button.maximize.titlebutton:active,
-headerbar.titlebar .left:dir(rtl) button.maximize.titlebutton:active,
-headerbar.titlebar .right button.maximize.titlebutton:checked,
-headerbar.titlebar .right:dir(rtl) button.maximize.titlebutton:checked,
-headerbar.titlebar .left button.maximize.titlebutton:checked,
-headerbar.titlebar .left:dir(rtl) button.maximize.titlebutton:checked {
+headerbar .right button.maximize.titlebutton:active,
+headerbar .right:dir(rtl) button.maximize.titlebutton:active,
+headerbar .left button.maximize.titlebutton:active,
+headerbar .left:dir(rtl) button.maximize.titlebutton:active,
+headerbar .right button.maximize.titlebutton:checked,
+headerbar .right:dir(rtl) button.maximize.titlebutton:checked,
+headerbar .left button.maximize.titlebutton:checked,
+headerbar .left:dir(rtl) button.maximize.titlebutton:checked {
 	background-image: url('window-controls/neutral.png');
 }
 
-headerbar.titlebar .right button.maximize.titlebutton:backdrop,
-headerbar.titlebar .right:dir(rtl) button.maximize.titlebutton:backdrop,
-headerbar.titlebar .left button.maximize.titlebutton:backdrop,
-headerbar.titlebar .left:dir(rtl) button.maximize.titlebutton:backdrop {
+headerbar .right button.maximize.titlebutton:backdrop,
+headerbar .right:dir(rtl) button.maximize.titlebutton:backdrop,
+headerbar .left button.maximize.titlebutton:backdrop,
+headerbar .left:dir(rtl) button.maximize.titlebutton:backdrop {
 	background-image: url('window-controls/unfocus.png');
 }
 /*
-headerbar.titlebar .right button.maximize.titlebutton:backdrop:hover,
-headerbar.titlebar .right:dir(rtl) button.maximize.titlebutton:backdrop:hover,
-headerbar.titlebar .left button.maximize.titlebutton:backdrop:hover,
-headerbar.titlebar .left:dir(rtl) button.maximize.titlebutton:backdrop:hover {
+headerbar .right button.maximize.titlebutton:backdrop:hover,
+headerbar .right:dir(rtl) button.maximize.titlebutton:backdrop:hover,
+headerbar .left button.maximize.titlebutton:backdrop:hover,
+headerbar .left:dir(rtl) button.maximize.titlebutton:backdrop:hover {
 	background-image: url('window-controls/maximize_unfocused_prelight.png');
 }
 */
 /* close */
-headerbar.titlebar .right button.close.titlebutton,
-headerbar.titlebar .right:dir(rtl) button.close.titlebutton,
-headerbar.titlebar .left button.close.titlebutton,
-headerbar.titlebar .left:dir(rtl) button.close.titlebutton {
+headerbar .right button.close.titlebutton,
+headerbar .right:dir(rtl) button.close.titlebutton,
+headerbar .left button.close.titlebutton,
+headerbar .left:dir(rtl) button.close.titlebutton {
 	background-image: url('window-controls/neutral.png');
 	/*padding: 2px 6px 3px 3px;*/ /* FIXME: Uncomment this shit when using the Faenza icon theme and maybe some other icon themes */
 }
 
-headerbar.titlebar .right button.close.titlebutton:hover,
-headerbar.titlebar .right:dir(rtl) button.close.titlebutton:hover,
-headerbar.titlebar .left button.close.titlebutton:hover,
-headerbar.titlebar .left:dir(rtl) button.close.titlebutton:hover {
+headerbar .right button.close.titlebutton:hover,
+headerbar .right:dir(rtl) button.close.titlebutton:hover,
+headerbar .left button.close.titlebutton:hover,
+headerbar .left:dir(rtl) button.close.titlebutton:hover {
 	background-image: url('window-controls/button-close-focus.png');
 }
 
-headerbar.titlebar .right button.close.titlebutton:active,
-headerbar.titlebar .right:dir(rtl) button.close.titlebutton:active,
-headerbar.titlebar .left button.close.titlebutton:active,
-headerbar.titlebar .left:dir(rtl) button.close.titlebutton:active,
-headerbar.titlebar .right button.close.titlebutton:checked,
-headerbar.titlebar .right:dir(rtl) button.close.titlebutton:checked,
-headerbar.titlebar .left button.close.titlebutton:checked,
-headerbar.titlebar .left:dir(rtl) button.close.titlebutton:checked {
+headerbar .right button.close.titlebutton:active,
+headerbar .right:dir(rtl) button.close.titlebutton:active,
+headerbar .left button.close.titlebutton:active,
+headerbar .left:dir(rtl) button.close.titlebutton:active,
+headerbar .right button.close.titlebutton:checked,
+headerbar .right:dir(rtl) button.close.titlebutton:checked,
+headerbar .left button.close.titlebutton:checked,
+headerbar .left:dir(rtl) button.close.titlebutton:checked {
 	background-image: url('window-controls/neutral.png');
 }
 
-headerbar.titlebar .right button.close.titlebutton:backdrop,
-headerbar.titlebar .right:dir(rtl) button.close.titlebutton:backdrop,
-headerbar.titlebar .left button.close.titlebutton:backdrop,
-headerbar.titlebar .left:dir(rtl) button.close.titlebutton:backdrop {
+headerbar .right button.close.titlebutton:backdrop,
+headerbar .right:dir(rtl) button.close.titlebutton:backdrop,
+headerbar .left button.close.titlebutton:backdrop,
+headerbar .left:dir(rtl) button.close.titlebutton:backdrop {
 	background-image: url('window-controls/unfocus.png');
 }
 /*
-headerbar.titlebar .right button.close.titlebutton:backdrop:hover,
-headerbar.titlebar .right:dir(rtl) button.close.titlebutton:backdrop:hover,
-headerbar.titlebar .left button.close.titlebutton:backdrop:hover,
-headerbar.titlebar .left:dir(rtl) button.close.titlebutton:backdrop:hover {
+headerbar .right button.close.titlebutton:backdrop:hover,
+headerbar .right:dir(rtl) button.close.titlebutton:backdrop:hover,
+headerbar .left button.close.titlebutton:backdrop:hover,
+headerbar .left:dir(rtl) button.close.titlebutton:backdrop:hover {
 	background-image: url('window-controls/close_unfocused_prelight.png');
 }
 */
@@ -150,13 +150,12 @@ headerbar.titlebar .left:dir(rtl) button.close.titlebutton:backdrop:hover {
     -gtk-icon-style: requested;
 }
 
-/* gtk+-3.20 */  /*this breaks window controls in Gedit, possibly others
+/* gtk+-3.20 */ 
 .titlebar button.close.titlebutton image,
 .titlebar button.minimize.titlebutton image,
 .titlebar button.maximize.titlebutton image {
         color: transparent;
 }
-*/
 
 /* Menu button when fallback kicks in (XFCE, Cinnamon etc.) *//*
 
