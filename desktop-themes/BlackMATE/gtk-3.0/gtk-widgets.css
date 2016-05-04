@@ -96,21 +96,45 @@
  ************/
 
 tooltip,
-tooltip.background {
-	padding: 4px 4px;
-	border-style: solid;
-	border-width: 2px;
-	border-radius: 3px;
-	border-color: #888a85; 
-	background-color: @theme_tooltip_bg_color;
-	color: @theme_tooltip_fg_color;
+tooltip.background,
+.tooltip,
+.tooltip.background {
+    padding: 4px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 3px;
+    border-color: #888a85;
+    background-color: @theme_tooltip_bg_color;
+    color: @theme_tooltip_fg_color;
+    text-shadow: none;
 }
 
-tooltip * {
-	background-color: @theme_tooltip_bg_color;
-	color: @theme_tooltip_fg_color;
+tooltip label,
+.tooltip label {
+    color: @theme_tooltip_fg_color;
+    padding: 4px;
+    text-shadow: none;
 }
 
+/* needed for override CSD setting */
+tooltip decoration,
+.tooltip decoration,
+tooltip.csd decoration,
+.tooltip.csd decoration,
+tooltip.ssd decoration,
+.tooltip.ssd decoration,
+tooltip.solid-csd decoration,
+.tooltip.solid-csd decoration,
+tooltip.background.csd decoration,
+.tooltip.background.csd decoration,
+tooltip.background.ssd decoration,
+.tooltip.background.ssd decoration,
+tooltip.background.solid-csd decoration,
+.tooltip.background.solid-csd decoration {
+    border-radius: 3px;
+    box-shadow: 0 1px 5px @wm_shadow;
+    padding: 0px;
+}
 
 /*****************
  * Miscellaneous *
@@ -1610,9 +1634,7 @@ scrollbar junction { /* the small square between scrollbars!!! */
 }
 
 scrollbar trough,
-scrollbar.vertical trough,
-scrollbar .trough,
-scrollbar.vertical .trough  {
+scrollbar.vertical trough {
 	background-image: linear-gradient(to right,
 		@scrollbar_trough,
 		shade (@scrollbar_trough, 1.08));
@@ -1621,8 +1643,7 @@ scrollbar.vertical .trough  {
 	border-image: none;
 }
 
-scrollbar.horizontal trough,
-scrollbar.horizontal .trough{
+scrollbar.horizontal trough {
 	background-image: linear-gradient(to bottom,
 		@scrollbar_trough,
 		shade (@scrollbar_trough, 1.08));
@@ -1632,11 +1653,8 @@ scrollbar.horizontal .trough{
 }
 
 scrollbar button,
-scrollbar .button,
 scrollbar.horizontal button,
-scrollbar.horizontal .button,
-scrollbar.vertical button,
-scrollbar.vertical .button {
+scrollbar.vertical button {
 	color: @theme_fg_color; /*@internal_element_color*/
 	border-image: none;
 	border-style: none;
@@ -1649,10 +1667,7 @@ scrollbar.vertical .button {
 
 scrollbar button:hover,
 scrollbar button.horizontal:hover,
-scrollbar button.vertical:hover,
-scrollbar .button:hover,
-scrollbar .button.horizontal:hover,
-scrollbar .button.vertical:hover {
+scrollbar button.vertical:hover {
 	background-image: none;
 	background-color: shade(@less_dark_color, 1.4);
 	/*border-color: shade(@highlighted_border, 1.1);*/
@@ -1666,10 +1681,7 @@ scrollbar .button.vertical:hover {
 
 scrollbar button:hover:active,
 scrollbar.vertical button:hover:active,
-scrollbar.horizontal button:hover:active,
-scrollbar .button:hover:active,
-scrollbar.vertical .button:hover:active,
-scrollbar.horizontal .button:hover:active {
+scrollbar.horizontal button:hover:active {
 	background-color: @less_dark_color;
 	background-image: linear-gradient(to top,
 	                                  shade(@less_dark_color, 1.5),
@@ -1682,10 +1694,7 @@ scrollbar.horizontal .button:hover:active {
 
 scrollbar button:disabled,
 scrollbar button.horizontal:disabled,
-scrollbar button.vertical:disabled,
-scrollbar .button:disabled,
-scrollbar .button.horizontal:disabled,
-scrollbar .button.vertical:disabled {
+scrollbar button.vertical:disabled {
 	background-image: none;
 	background-color: transparent;
 	color: @insensitive_fg_color;
@@ -1694,8 +1703,7 @@ scrollbar .button.vertical:disabled {
 	border-width: 0px;
 }
 
-scrollbar slider,
-scrollbar .slider {
+scrollbar slider {
 	background-color: transparent;
 	background-image: linear-gradient(to top,
 	                                  shade(@scroll_slider_color, 0.6),
@@ -1707,8 +1715,7 @@ scrollbar .slider {
 	border-image: none;
 }
 
-scrollbar.vertical slider,
-scrollbar.vertical .slider {
+scrollbar.vertical slider {
 	border-width: 1px;
 	background-image: linear-gradient(to top,
 	                                  shade(@scroll_slider_color, 0.6),
@@ -1718,8 +1725,7 @@ scrollbar.vertical .slider {
 	min-height: 42px;
 }
 
-scrollbar.horizontal slider,
-scrollbar.horizontal .slider {
+scrollbar.horizontal slider {
 	border-width: 1px;
 	background-image: linear-gradient(to left,
 	                                  shade(@scroll_slider_color, 0.6),
@@ -1729,29 +1735,25 @@ scrollbar.horizontal .slider {
 	min-width: 42px;
 }
 
-scrollbar slider:hover,
-scrollbar .slider:hover {
+scrollbar slider:hover {
 	border-width: 1px;
 	border-color: @scroll_slider_color;
 	border-radius: 6px;
 }
 
-scrollbar.vertical slider:hover,
-scrollbar.vertical .slider:hover {
+scrollbar.vertical slider:hover {
 	border-width: 1px;
 	border-color: @scroll_slider_color;
 	border-radius: 6px;
 }
 
-scrollbar.horizontal slider:hover,
-scrollbar.horizontal .slider:hover {
+scrollbar.horizontal slider:hover {
 	border-width: 1px;
 	border-color: @scroll_slider_color;
 	border-radius: 6px;
 }
 
-scrollbar slider:hover:active,
-scrollbar .slider:hover:active {
+scrollbar slider:hover:active {
 	border-width: 1px;
 	border-color: @scroll_slider_color;
 	border-radius: 6px;
@@ -1761,8 +1763,7 @@ scrollbar .slider:hover:active {
 	                                  shade(@scroll_slider_color, 0.6));
 }
 
-scrollbar.vertical slider:hover:active,
-scrollbar.vertical .slider:hover:active {
+scrollbar.vertical slider:hover:active {
 	border-width: 1px;
 	border-color: @scroll_slider_color;
 	border-radius: 6px;
@@ -1772,8 +1773,7 @@ scrollbar.vertical .slider:hover:active {
 	                                  shade(@scroll_slider_color, 0.6));
 }
 
-scrollbar.horizontal slider:hover:active,
-scrollbar.horizontal .slider:hover:active {
+scrollbar.horizontal slider:hover:active {
 	border-width: 1px;
 	border-color: @scroll_slider_color;
 	border-radius: 6px;
@@ -1783,14 +1783,12 @@ scrollbar.horizontal .slider:hover:active {
 	                                  shade(@scroll_slider_color, 0.6));
 }
 
-scrollbar slider:disabled,
-scrollbar .slider:disabled {
+scrollbar slider:disabled {
 	background-image: none;
 	background-color: shade(@theme_bg_color, 1.5);
 }
 
-scrollbar slider.fine-tune:hover:active,
-scrollbar .slider.fine-tune:hover:active {
+scrollbar slider.fine-tune:hover:active {
 	background-image: url("assets/slider_fine_horizontal.svg"),
 	                  linear-gradient(to top,
 	                                  shade(@scroll_slider_color, 3.3),
@@ -1800,8 +1798,7 @@ scrollbar .slider.fine-tune:hover:active {
 	background-position: center;
 }
 
-scrollbar.vertical slider.fine-tune:hover:active,
-scrollbar.vertical .slider.fine-tune:hover:active {
+scrollbar.vertical slider.fine-tune:hover:active {
 	background-image: url("assets/slider_fine_vertical.svg"),
 	                  linear-gradient(to left,
 	                                  shade(@scroll_slider_color, 3.3),
@@ -2241,14 +2238,14 @@ inline-toolbar toolbar {
  ******************/
 
 stack-switcher >  button > label,
-headerbar  stack-switcher >  button.titlebutton > label,
+header-bar  stack-switcher >  button.titlebutton > label,
 titlebar  stack-switcher >  button.titlebutton > label,
 calendar.header  stack-switcher >  button.titlebutton > label {
 	padding-left: 6px;
 	padding-right: 6px;
 }
 stack-switcher >  button > image,
-headerbar stack-switcher >  button.titlebutton > image,
+header-bar stack-switcher >  button.titlebutton > image,
 titlebar stack-switcher >  button.titlebutton > image,
 calendar.header stack-switcher >  button.titlebutton > image {
 	padding-left: 6px;
@@ -2260,7 +2257,7 @@ stack-switcher >  button.text-button {
 	padding: 5px 10px 6px;
 }
 stack-switcher >  button.image-button,
-headerbar stack-switcher > titlebutton button,
+header-bar stack-switcher > titlebutton button,
 titlebar stack-switcher > titlebutton button,
 calendar.header stack-switcher > .titlebutton button {
 	padding: 5px 2px;
@@ -2290,7 +2287,7 @@ stack-switcher >  button.needs-attention:active > image, stack-switcher >  butto
 /***************
  * Header bars *
  ***************/
-headerbar {
+header-bar {
     border-width: 0 0 1px;
     border-style: solid;
     padding: 0 1px;
@@ -2300,11 +2297,11 @@ headerbar {
     border-color: shade(@theme_bg_color, 0.8);
 }
 
-headerbar  button.text-button {
+header-bar  button.text-button {
     padding: 2px 16px;
 }
 
-headerbar  button.image-button {
+header-bar  button.image-button {
     padding: 5px 4px 4px 5px;
 }
 
@@ -2784,7 +2781,7 @@ decoration:backdrop {
 }
 
 .titlebar .titlebutton,
-headerbar.frame titlebar  button.image-button.titlebutton,
+header-bar.frame titlebar  button.image-button.titlebutton,
 button.text-button.titlebutton {
 	padding: 4px 4px 4px 4px;
 	border-radius: 3px;
@@ -2809,7 +2806,7 @@ button.text-button.titlebutton {
 }
  
 .titlebar .titlebutton:hover,
-headerbar.frame titlebar  button.image-button.titlebutton:hover,
+header-bar.frame titlebar  button.image-button.titlebutton:hover,
 button.text-button.titlebutton:hover {
 	border-image: none;
 	border-style: solid;
@@ -2830,16 +2827,16 @@ button.text-button.titlebutton:hover {
 
 .titlebar .titlebutton:active,
 .titlebar .titlebutton:active:hover,
-headerbar.frame titlebar:active,
-headerbar.frame titlebar:active:hover,
+header-bar.frame titlebar:active,
+header-bar.frame titlebar:active:hover,
 button.image-button.titlebutton:active,
 button.image-button.titlebutton:active:hover,
 button.text-button.titlebutton:active,
 button.text-button.titlebutton:active:hover,
 .titlebar .titlebutton:checked,
 .titlebar .titlebutton:checked:hover,
-headerbar.frame titlebar:checked,
-headerbar.frame titlebar:checked:hover,
+header-bar.frame titlebar:checked,
+header-bar.frame titlebar:checked:hover,
 button.image-button.titlebutton:checked,
 button.image-button.titlebutton:checked:hover,
 button.text-button.titlebutton:checked,
@@ -2866,8 +2863,8 @@ button.text-button.titlebutton:checked:hover {
  
 .titlebar .titlebutton:backdrop,
 .titlebar .titlebutton:hover:backdrop,
-headerbar.frame titlebar  button.image-button.titlebutton:backdrop,
-headerbar.frame titlebar  button.image-button.titlebutton:hover:backdrop {
+header-bar.frame titlebar  button.image-button.titlebutton:backdrop,
+header-bar.frame titlebar  button.image-button.titlebutton:hover:backdrop {
     background: none;
     color: @theme_main_color;
     border-image: none;
@@ -2875,7 +2872,7 @@ headerbar.frame titlebar  button.image-button.titlebutton:hover:backdrop {
 }
 
 .titlebar .titlebutton:hover:backdrop,
-headerbar.frame titlebar  button.image-button.titlebutton:hover:backdrop {
+header-bar.frame titlebar  button.image-button.titlebutton:hover:backdrop {
 	color: #747473;
 }
 
@@ -2923,11 +2920,6 @@ headerbar.frame titlebar  button.image-button.titlebutton:hover:backdrop {
 .tiled decoration {
     border-radius: 0;
     background-color: @theme_bg_color;
-}
-
-tooltip.csd decoration {
-    border-radius: 0px;
-    box-shadow: none;
 }
 
 messagedialog.csd decoration {
@@ -3233,12 +3225,6 @@ radio:selected,
 check:selected,
 radio:selected:focus,
 check:selected:focus,
-.radio,
-.check,
-.radio:selected,
-.check:selected,
-.radio:selected:focus,
-.check:selected:focus,
 cell.radio,
 cell.check,
 cell.radio:selected,
@@ -3253,11 +3239,7 @@ cell.check:selected:focus {
 check:hover,
 check:selected:hover,
 radio:hover,
-radio:selected:hover,
-.check:hover,
-.check:selected:hover,
-.radio:hover,
-.radio:selected:hover {
+radio:selected:hover {
 	background-color: transparent;
 }
 
@@ -3386,8 +3368,8 @@ app-notification.frame:backdrop {
 }
 
 app-notification  button,
-app-notification  headerbar  button.titlebutton,
- headerbar .app-notification  button.titlebutton,
+app-notification  header-bar  button.titlebutton,
+ header-bar .app-notification  button.titlebutton,
 app-notification  titlebar  button.titlebutton,
  titlebar .app-notification  button.titlebutton,
 app-notification calendar.header  button.titlebutton,
@@ -3407,15 +3389,15 @@ app-notification.frame  button {
 }
 
 app-notification  button.flat,
-app-notification  headerbar .titlebutton button,
-headerbar .app-notification .titlebutton button,
+app-notification  header-bar .titlebutton button,
+header-bar .app-notification .titlebutton button,
 app-notification  titlebar .titlebutton button,
 titlebar .app-notification .titlebutton button,
 app-notification calendar.header .titlebutton button,
 calendar.header .app-notification .titlebutton button,
 app-notification.frame  button.flat,
-app-notification.frame  headerbar .titlebutton button,
-headerbar .app-notification.frame .titlebutton button,
+app-notification.frame  header-bar .titlebutton button,
+header-bar .app-notification.frame .titlebutton button,
 app-notification.frame  titlebar .titlebutton button,
 titlebar .app-notification.frame .titlebutton button,
 app-notification.frame calendar.header .titlebutton button,
