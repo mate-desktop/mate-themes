@@ -58,8 +58,11 @@ GtkGrid:disabled {
 /************
  * Tooltips *
  ************/
+
 tooltip,
-tooltip.background {
+tooltip.background,
+.tooltip,
+.tooltip.background {
     padding: 4px;
     border-style: solid;
     border-width: 1px;
@@ -67,10 +70,31 @@ tooltip.background {
     border-radius: 0px;
     background-color: @theme_tooltip_bg_color;
     color: @theme_tooltip_fg_color;
+    text-shadow: none;
 }
 
-tooltip * {
-    background-color: transparent;
+tooltip *,
+.tooltip * {
+    text-shadow: none;
+}
+
+/* needed for override CSD setting */
+tooltip decoration,
+.tooltip decoration,
+tooltip.csd decoration,
+.tooltip.csd decoration,
+tooltip.ssd decoration,
+.tooltip.ssd decoration,
+tooltip.solid-csd decoration,
+.tooltip.solid-csd decoration,
+tooltip.background.csd decoration,
+.tooltip.background.csd decoration,
+tooltip.background.ssd decoration,
+.tooltip.background.ssd decoration,
+tooltip.background.solid-csd decoration,
+.tooltip.background.solid-csd decoration {
+    border-radius: 0px;
+    box-shadow: 0 1px 5px @wm_shadow;
 }
 
 /*********************
@@ -3588,11 +3612,6 @@ decoration:backdrop {
 .csd.popup decoration {
     border-radius: 0;
     box-shadow: none;
-}
-
-tooltip.csd decoration {
-    border-radius: 5px;
-    box-shadow: 0 1px 5px @wm_shadow;
 }
 
 messagedialog.csd decoration {
