@@ -2034,35 +2034,42 @@ scrollbar.vertical trough {
 }
 
 /* Buttons */
-scrollbar.vertical button {
+scrollbar.vertical button,
+scrollbar.vertical .button {
     min-width: 14px;
     min-height: 16px;
     padding: 1px 0px;
 }
 
-scrollbar.horizontal button {
+scrollbar.horizontal button,
+scrollbar.horizontal .button {
     min-width: 16px;
     min-height: 14px;
     padding: 0px 1px;
 }
 
-scrollbar.vertical button.up {
+scrollbar.vertical button.up,
+scrollbar.vertical .button.up {
     -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
 }
 
-scrollbar.vertical button.down {
+scrollbar.vertical button.down,
+scrollbar.vertical .button.down {
     -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
 }
 
-scrollbar.horizontal button.up {
+scrollbar.horizontal button.up,
+scrollbar.horizontal .button.up {
     -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
 }
 
-scrollbar.horizontal button.down {
+scrollbar.horizontal button.down,
+scrollbar.horizontal .button.down {
     -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
 }
 
-scrollbar button {
+scrollbar button,
+scrollbar .button {
     border-image: none;
     border-style: none;
     border-width: 0px;
@@ -2071,14 +2078,16 @@ scrollbar button {
     background-color: transparent;
 }
 
-scrollbar button:hover {
+scrollbar button:hover,
+scrollbar .button:hover {
     border-image: none;
     border-style: none;
     border-width: 0px;
     border-radius: 0px;
 }
 
-scrollbar button:disabled {
+scrollbar button:disabled,
+scrollbar .button:disabled {
     color: @scrollbar_button_insensitive_color;
     border-image: none;
     border-style: none;
@@ -2086,7 +2095,8 @@ scrollbar button:disabled {
     border-radius: 0px;
 }
 
-scrollbar.horizontal button {
+scrollbar.horizontal button,
+scrollbar.horizontal .button {
     background-image: -gtk-gradient (linear,
                       left top,
                       left bottom,
@@ -2094,7 +2104,8 @@ scrollbar.horizontal button {
                       to (@scrollbar_button_gradient_d));
 }
 
-scrollbar.horizontal button:hover {
+scrollbar.horizontal button:hover,
+scrollbar.horizontal .button:hover {
     background-image: -gtk-gradient (linear,
                       left bottom,
                       left top,
@@ -2102,7 +2113,8 @@ scrollbar.horizontal button:hover {
                       to (@scrollbar_button_hover_gradient_d));
 }
 
-scrollbar.horizontal button:hover:active {
+scrollbar.horizontal button:hover:active,
+scrollbar.horizontal .button:hover:active {
     background-image: -gtk-gradient (linear,
                       left top,
                       left bottom,
@@ -2110,7 +2122,8 @@ scrollbar.horizontal button:hover:active {
                       to (@scrollbar_button_active_gradient_d));
 }
 
-scrollbar.vertical button {
+scrollbar.vertical button,
+scrollbar.vertical .button {
     background-image: -gtk-gradient (linear,
                       left top,
                       left bottom,
@@ -2118,7 +2131,8 @@ scrollbar.vertical button {
                       to (@scrollbar_button_gradient_d));
 }
 
-scrollbar.vertical button:hover {
+scrollbar.vertical button:hover,
+scrollbar.vertical .button:hover {
     background-image: -gtk-gradient (linear,
                       left top,
                       left bottom,
@@ -2126,7 +2140,8 @@ scrollbar.vertical button:hover {
                       to (@scrollbar_button_hover_gradient_a));
 }
 
-scrollbar.vertical button:hover:active {
+scrollbar.vertical button:hover:active,
+scrollbar.vertical .button:hover:active {
     background-image: -gtk-gradient (linear,
                       left top,
                       right top,
@@ -2136,19 +2151,22 @@ scrollbar.vertical button:hover:active {
                       to (@scrollbar_button_active_gradient_d));
 }
 
-scrollbar.vertical slider {
+scrollbar.vertical slider,
+scrollbar.vertical .slider {
     min-width: 14px;
     min-height: 42px;
     margin: 0px -1px 0px -1px;
 }
 
-scrollbar.horizontal slider {
+scrollbar.horizontal slider,
+scrollbar.horizontal .slider {
     min-width: 42px;
     min-height: 14px;
     margin: -1px 0px -1px 0px;
 }
 
-scrollbar slider {
+scrollbar slider,
+scrollbar .slider {
     background-color: @scrollbar_slider_bg_color;
     background-image: none;
     border-radius: 0;
@@ -2158,7 +2176,8 @@ scrollbar slider {
     border-width: 1px;
 }
 
-scrollbar slider:hover {
+scrollbar slider:hover,
+scrollbar .slider:hover {
     background-color: @scrollbar_slider_hover_bg_color;
 }
 
