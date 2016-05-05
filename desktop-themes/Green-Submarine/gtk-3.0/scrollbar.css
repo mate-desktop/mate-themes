@@ -47,7 +47,8 @@ scrollbar trough:disabled {
 }
 
 /* Sliders */
-scrollbar.vertical slider {
+scrollbar.vertical slider,
+scrollbar.vertical .slider {
     min-width: 11px;
     min-height: 31px;
     background-image: -gtk-gradient (linear, left top, left bottom,
@@ -60,14 +61,17 @@ scrollbar.vertical slider {
 }
 
 scrollbar.vertical slider:hover,
-scrollbar.vertical slider:hover:active {
+scrollbar.vertical slider:hover:active,
+scrollbar.vertical .slider:hover,
+scrollbar.vertical .slider:hover:active {
     background-image: -gtk-gradient (linear, left top, left bottom,
                                      from (shade (@theme_bg_color, 0.7)),
                                      to (shade (@theme_bg_color, 0.85)));
     border-color: shade (@theme_bg_color, 0.85);
 }
 
-scrollbar.horizontal slider {
+scrollbar.horizontal slider,
+scrollbar.horizontal .slider {
     min-width: 31px;
     min-height: 13px;
     background-image: -gtk-gradient (linear, left top, right top,
@@ -80,25 +84,30 @@ scrollbar.horizontal slider {
 }
 
 scrollbar.horizontal slider:hover,
-scrollbar.horizontal slider:hover:active {
+scrollbar.horizontal slider:hover:active,
+scrollbar.horizontal .slider:hover,
+scrollbar.horizontal .slider:hover:active {
     background-image: -gtk-gradient (linear, left top, right top,
                                      from (shade (@theme_bg_color, 0.7)),
                                      to (shade (@theme_bg_color, 0.85)));
     border-color: shade (@theme_bg_color, 0.85);
 }
 
-scrollbar slider:disabled {
+scrollbar slider:disabled,
+scrollbar .slider:disabled {
     background-color: shade (@theme_bg_color, 0.9);
 }
 
 /* Buttons */
-scrollbar.vertical button {
+scrollbar.vertical button,
+scrollbar.vertical .button {
     min-width:13px;
     min-height: 16px;
     padding: 0px;
 }
 
-scrollbar.horizontal button {
+scrollbar.horizontal button,
+scrollbar.horizontal .button {
     min-width:16px;
     min-height: 13px;
     padding: 0px;
@@ -107,7 +116,11 @@ scrollbar.horizontal button {
 scrollbar button,
 scrollbar button:hover,
 scrollbar button:hover:active,
-scrollbar button:disabled {
+scrollbar button:disabled,
+scrollbar .button,
+scrollbar .button:hover,
+scrollbar .button:hover:active,
+scrollbar .button:disabled {
     box-shadow: none;
     border-style: none;
     border-image: none;
@@ -116,45 +129,56 @@ scrollbar button:disabled {
 }
 
 scrollbar button:hover,
-scrollbar button:hover:active {
+scrollbar button:hover:active,
+scrollbar .button:hover,
+scrollbar .button:hover:active {
     background-color: alpha(shade(@scrollbar_trough, 0.8), 0.5);
 }
 
-scrollbar.vertical button.up {
+scrollbar.vertical button.up,
+scrollbar.vertical .button.up {
     -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
     -gtk-icon-effect: highlight;
 }
 
-scrollbar.vertical button.down {
+scrollbar.vertical button.down,
+scrollbar.vertical .button.down {
     -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
     -gtk-icon-effect: highlight;
 }
 
-scrollbar.horizontal button.up {
+scrollbar.horizontal button.up,
+scrollbar.horizontal .button.up {
     -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
     -gtk-icon-effect: highlight;
 }
 
-scrollbar.horizontal button.down {
+scrollbar.horizontal button.down,
+scrollbar.horizontal .button.down {
     -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
     -gtk-icon-effect: highlight;
 }
 
-scrollbar button {
+scrollbar button,
+scrollbar .button {
     color: @theme_fg_color;
 }
 
 scrollbar button:hover,
-scrollbar button:hover:active {
+scrollbar button:hover:active,
+scrollbar .button:hover,
+scrollbar .button:hover:active {
     color: @theme_selected_bg_color;
 }
 
-scrollbar button:disabled {
+scrollbar button:disabled,
+scrollbar .button:disabled {
     background-color: @insensitive_bg_color;
     color: @insensitive_fg_color;
 }
 
-scrollbar.fine-tune slider:hover:active {
+scrollbar.fine-tune slider:hover:active,
+scrollbar.fine-tune .slider:hover:active {
     background-image: url("assets/slider_fine_horizontal.svg"),
                       linear-gradient(to top,
                                       shade(@scrollbar_slider, 0.9),
@@ -168,7 +192,8 @@ scrollbar.fine-tune slider:hover:active {
     border-width: 1px;
 }
 
-scrollbar.vertical.fine-tune slider:hover:active {
+scrollbar.vertical.fine-tune slider:hover:active,
+scrollbar.vertical.fine-tune .slider:hover:active {
     background-image: url("assets/slider_fine_vertical.svg"),
                       linear-gradient(to left,
                                       shade(@scrollbar_slider, 0.9),
