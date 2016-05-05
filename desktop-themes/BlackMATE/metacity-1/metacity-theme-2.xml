@@ -28,11 +28,17 @@
 <!--Normal geometry-->
 
 <frame_geometry name="normal_small_borders" rounded_top_left="false" rounded_top_right="false" rounded_bottom_left="false" rounded_bottom_right="false" parent="normal">
-  <distance name="left_width" value="0"/>
-  <distance name="right_width" value="0"/>
-  <distance name="bottom_height" value="0"/>
-  <distance name="left_titlebar_edge" value="0"/>
-  <distance name="right_titlebar_edge" value="0"/>
+  <distance name="left_width" value="0" />
+  <distance name="right_width" value="0" />
+  <distance name="bottom_height" value="0" />
+  <distance name="left_titlebar_edge" value="4"/>
+  <distance name="right_titlebar_edge" value="4"/>
+  <distance name="title_vertical_pad" value="9"/> <!--
+                            This needs to be 1 less then the
+                            title_vertical_pad on normal state
+                            or you'll have bigger buttons -->
+  <border name="title_border" left="10" right="10" top="1" bottom="2"/>
+  <border name="button_border" left="0" right="0" top="0" bottom="2"/>
 </frame_geometry>
 
 <!--Utility windows-->
