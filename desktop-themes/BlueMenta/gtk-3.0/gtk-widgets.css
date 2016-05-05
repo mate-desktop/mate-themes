@@ -1896,6 +1896,13 @@ notebook.frame {
     border-radius: 4px 4px 0px 0px;
 }
 
+printdialog > box.view.vertical.dialog-vbox > box.vertical > notebook {
+    border-radius: 0px;
+    border-style: solid;
+    border-color: @borders;
+    border-width: 0px 0px 1px 0px;
+}
+
 notebook :hover {
     -gtk-icon-effect: highlight;
     color: @theme_fg_color;
@@ -1912,6 +1919,10 @@ notebook header.top {
     border-radius: 4px 4px 0px 0px;
     box-shadow: inset  0px  1px 0 0 alpha(@borders, 0.4),
                 inset  0px -1px 0 0 alpha(@borders, 0.4);
+}
+
+printdialog notebook header.top {
+    border-radius: 0px;
 }
 
 notebook header.bottom {
@@ -1999,6 +2010,7 @@ paned.horizontal notebook header.top tab {
 
 /* tabs ie. preferences windows */
 /* horizontal tabs */
+printdialog notebook > header.top tab,
 notebook.frame header.top tab,
 notebook.frame header.bottom tab {
     padding: 6px 21px 4px;
@@ -5182,8 +5194,8 @@ messagedialog.csd decoration {
 }
 
 /* print dialog */
-printdialog.background .vertical.view.dialog-vbox {
-    background-color: shade (@theme_bg_color, 1.1)
+printdialog.background > box.view.vertical.dialog-vbox {
+    background-color: shade (@theme_bg_color, 1.0);
 }
 
 /* filechooser dialog */
