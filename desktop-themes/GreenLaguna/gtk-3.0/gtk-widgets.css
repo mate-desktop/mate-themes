@@ -2033,14 +2033,16 @@ scrollbar.horizontal trough {
     border-width: 1px 0px 0px 0px;
 }
 
-scrollbar slider {
+scrollbar slider,
+scrollbar .slider {
     border-width: 1px;
     border-radius: 6px;
     border-style: solid;
     border-color: transparent;
 }
 
-scrollbar.vertical slider {
+scrollbar.vertical slider,
+scrollbar.vertical .slider {
     min-width: 11px;
     min-height: 31px;
     background-image: linear-gradient(to top,
@@ -2048,7 +2050,8 @@ scrollbar.vertical slider {
                                       white);
 }
 
-scrollbar.horizontal slider {
+scrollbar.horizontal slider,
+scrollbar.horizontal .slider {
     min-width: 31px;
     min-height: 13px;
     background-image: linear-gradient(to left,
@@ -2057,40 +2060,48 @@ scrollbar.horizontal slider {
 }
 
 scrollbar slider:hover,
-scrollbar slider:hover:active {
+scrollbar slider:hover:active,
+scrollbar .slider:hover,
+scrollbar .slider:hover:active {
     border-color: shade(@button_border, 1.1);
 }
 
-scrollbar.vertical slider:hover {
+scrollbar.vertical slider:hover,
+scrollbar.vertical .slider:hover {
     background-image: linear-gradient(to top,
                                       shade(@toolbar_gradient_base, 0.88),
                                       shade(@theme_bg_color, 1.6));
 }
 
-scrollbar.horizontal slider:hover {
+scrollbar.horizontal slider:hover,
+scrollbar.horizontal .slider:hover {
     background-image: linear-gradient(to left,
                                       shade(@toolbar_gradient_base, 0.88),
                                       shade(@theme_bg_color, 1.6));
 }
 
-scrollbar.vertical slider:hover:active {
+scrollbar.vertical slider:hover:active,
+scrollbar.vertical .slider:hover:active {
     background-image: linear-gradient(to top,
                                       shade(@theme_bg_color, 1.5),
                                       shade(@theme_bg_color, 0.9));
 }
 
-scrollbar.horizontal slider:hover:active {
+scrollbar.horizontal slider:hover:active,
+scrollbar.horizontal .slider:hover:active {
     background-image: linear-gradient(to left,
                                       shade(@theme_bg_color, 1.5),
                                       shade(@theme_bg_color, 0.9));
 }
 
-scrollbar slider:disabled {
+scrollbar slider:disabled,
+scrollbar .slider:disabled {
     background-image: none;
     background-color: @insensitive_bg_color;
 }
 
-scrollbar slider.fine-tune:hover:active {
+scrollbar slider.fine-tune:hover:active,
+scrollbar .slider.fine-tune:hover:active {
     background-image: url("assets/slider_fine_horizontal.svg"),
                       linear-gradient(to top,
                                       shade(@theme_bg_color, 1.5),
@@ -2099,7 +2110,8 @@ scrollbar slider.fine-tune:hover:active {
     background-position: center;
 }
 
-scrollbar.vertical slider.fine-tune:hover:active {
+scrollbar.vertical slider.fine-tune:hover:active,
+scrollbar.vertical .slider.fine-tune:hover:active {
     background-image: url("assets/slider_fine_vertical.svg"),
                       linear-gradient(to left,
                                       shade(@theme_bg_color, 1.5),
@@ -2109,13 +2121,15 @@ scrollbar.vertical slider.fine-tune:hover:active {
 }
 
 /* Buttons */
-scrollbar.vertical button {
+scrollbar.vertical button,
+scrollbar.vertical .button {
     min-width:13px;
     min-height: 16px;
     padding: 0px;
 }
 
-scrollbar.horizontal button {
+scrollbar.horizontal button,
+scrollbar.horizontal .button {
     min-width:16px;
     min-height: 13px;
     padding: 0px;
@@ -2123,7 +2137,10 @@ scrollbar.horizontal button {
 
 scrollbar button,
 scrollbar button.vertical,
-scrollbar button.horizontal {
+scrollbar button.horizontal,
+scrollbar .button,
+scrollbar .button.vertical,
+scrollbar .button.horizontal {
     color: @theme_fg_color;
     border-image: none;
     border-style: solid;
@@ -2135,13 +2152,18 @@ scrollbar button.horizontal {
 
 scrollbar button:hover,
 scrollbar button.horizontal:hover,
-scrollbar button.vertical:hover {
+scrollbar button.vertical:hover,
+scrollbar .button:hover,
+scrollbar .button.horizontal:hover,
+scrollbar .button.vertical:hover {
     color: @theme_selected_bg_color;
     border-image: none;
 }
 
 scrollbar button:hover:active,
-scrollbar button.horizontal:hover:active {
+scrollbar button.horizontal:hover:active,
+scrollbar .button:hover:active,
+scrollbar .button.horizontal:hover:active {
     background-image: linear-gradient(to top,
                                     shade(@theme_bg_color, 1.6),
                                      shade(@toolbar_gradient_base, 0.88));
@@ -2149,7 +2171,8 @@ scrollbar button.horizontal:hover:active {
     border-image: none;
 }
 
-scrollbar button.vertical:hover:active {
+scrollbar button.vertical:hover:active,
+scrollbar .button.vertical:hover:active {
     background-image: linear-gradient(to left,
                                       shade(@theme_bg_color, 1.6),
                                       shade(@toolbar_gradient_base, 0.88));
@@ -2157,32 +2180,37 @@ scrollbar button.vertical:hover:active {
     border-image: none;
 }
 
-scrollbar button:disabled {
+scrollbar button:disabled,
+scrollbar .button:disabled {
     background-image: none;
     background-color: @insensitive_bg_color;
     border-color: @insensitive_border_color;
     color: @insensitive_fg_color;
 }
 
-scrollbar.vertical button.up {
+scrollbar.vertical button.up,
+scrollbar.vertical .button.up {
     -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
     -gtk-icon-effect: highlight;
     border-width: 0px 0px 0px 1px;
 }
 
-scrollbar.vertical button.down {
+scrollbar.vertical button.down,
+scrollbar.vertical .button.down {
     -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
     -gtk-icon-effect: highlight;
     border-width: 0px 0px 0px 1px;
 }
 
-scrollbar.horizontal button.up {
+scrollbar.horizontal button.up,
+scrollbar.horizontal .button.up {
     -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
     -gtk-icon-effect: highlight;
     border-width: 1px 0px 0px 0px;
 }
 
-scrollbar.horizontal button.down {
+scrollbar.horizontal button.down,
+scrollbar.horizontal .button.down {
     -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
     -gtk-icon-effect: highlight;
     border-width: 1px 0px 0px 0px;
