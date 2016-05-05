@@ -365,7 +365,7 @@ PanelSeparator {
 
 .wnck-pager {
     background-image: none;
-    border-color: transparent;
+    color: shade (@theme_selected_bg_color, 1.15);
     background-color: transparent;
     text-shadow: none;
 }
