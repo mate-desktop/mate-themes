@@ -1561,6 +1561,13 @@ notebook {
     border-radius: 3px 3px 0px 0px;
 }
 
+printdialog > box.view.vertical.dialog-vbox > box.vertical > notebook {
+    border-radius: 0px;
+    border-style: solid;
+    border-color: @border_color;
+    border-width: 1px 0px 1px 0px;
+}
+
 /* view areas, ie. pluma-, caja-tabs */
 paned.horizontal notebook {
     border-style: none;
@@ -1581,6 +1588,9 @@ notebook header.top {
     box-shadow: inset  0px -1px 0 0 @border_color;
 }
 
+printdialog > box.view.vertical.dialog-vbox > box.vertical > notebook > header.top {
+    border-radius: 0px;
+}
 
 notebook header.bottom {
     border-width: 1px 1px 0px 0px;
@@ -3980,6 +3990,11 @@ dialog scrolledwindow.frame viewport .vertical expander .vertical {
     border-color: @border_color;
     border-style: solid;
     border-width: 1px;
+}
+
+/* print dialog */
+printdialog.background > box.view.vertical.dialog-vbox {
+    background-color: shade (@theme_bg_color, 1.0);
 }
 
 /******************
