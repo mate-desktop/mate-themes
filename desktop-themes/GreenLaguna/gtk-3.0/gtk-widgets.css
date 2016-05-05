@@ -927,6 +927,13 @@ notebook.frame {
     padding: 0px;
 }
 
+printdialog > box.view.vertical.dialog-vbox > box.vertical > notebook {
+    border-radius: 0px;
+    border-style: solid;
+    border-color: @notebook_border;
+    border-width: 0px 0px 1px 0px;
+}
+
 notebook header.top {
     border-radius: 3px 3px 0px 0px;
     border-width: 0px 0px 1px 0px;
@@ -934,6 +941,10 @@ notebook header.top {
                                       shade(@theme_bg_color, 0.86),
                                       shade(@theme_bg_color, 1.00));
     box-shadow: inset  0px -1px alpha(shade(@button_border, 1.00), 0.90);
+}
+
+printdialog notebook header.top {
+    border-radius: 0px;
 }
 
 notebook header.bottom {
@@ -1102,6 +1113,7 @@ paned.horizontal > notebook > header button.flat.small-button {
 
 /* tabs in dialog windows */
 /* horizontal tabs */
+printdialog notebook > header.top tab,
 notebook.frame > header.top tab,
 notebook.frame > header.bottom tab {
     margin: 0px 0px 0px -1px;
@@ -1110,10 +1122,13 @@ notebook.frame > header.bottom tab {
     border-color: transparent;
 }
 
+printdialog notebook > header.top tab,
 notebook.frame > header.top tab {
     padding: 4px 10px 5px;
 }
 
+printdialog notebook > header.top tab:checked,
+printdialog notebook > header.top tab:checked:hover,
 notebook.frame > header.top tab:checked,
 notebook.frame > header.top tab:checked:hover {
     background-image: linear-gradient(to bottom,
@@ -1127,6 +1142,7 @@ notebook.frame > header.top tab:checked:hover {
     border-color: @notebook_border;
 }
 
+printdialog notebook > header.top tab:hover,
 notebook.frame > header.top tab:hover {
     background-image: linear-gradient(to top,
                                       shade(@theme_bg_color, 0.9),
@@ -4305,6 +4321,11 @@ dialog scrolledwindow.frame viewport .vertical expander .vertical {
     border-color: alpha(@frame_color, 0.6);
     border-style: solid;
     border-width: 1px;
+}
+
+/* print dialog */
+printdialog.background > box.view.vertical.dialog-vbox {
+    background-color: shade (@theme_bg_color, 1.0);
 }
 
 /******************
