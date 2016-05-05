@@ -389,6 +389,7 @@ MatePanelAppletFrameDBus {
 
 /* WnckPager */
 PanelApplet.wnck-applet .wnck-pager {
+    color: shade (@theme_selected_bg_color, 1.05);
     background-image: none;
     background-color: transparent;
     text-shadow: none;
