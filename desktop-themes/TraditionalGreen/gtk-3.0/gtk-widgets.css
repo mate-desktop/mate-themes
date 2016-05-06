@@ -2288,20 +2288,17 @@ menubar menuitem:hover,
     color: @menubar_menuitem_hover_color;
 }
 
-menu menuitem,
-menu menuitem:disabled,
-.menu menuitem,
-.menu menuitem:disabled {
+menu > menuitem,
+.menu > menuitem {
     border-width: 1px 0px;
     border-style: solid;
     border-color: transparent;
     padding: 4px;
-    background-color: @menu_bg_color;
-    color: @theme_text_color;
 }
 
 menu > menuitem,
 .menu > menuitem {
+    background-color: @menu_bg_color;
     color: @theme_text_color;
 }
 
@@ -2334,7 +2331,9 @@ menu menuitem:hover,
 
 menu menuitem:disabled,
 .menu menuitem:disabled {
+    background-color: @menu_bg_color;
     color: mix (@menu_fg_color, @menu_bg_color, 0.6);
+    border-color: transparent;
 }
 
 menu menuitem accelerator:disabled,
@@ -2350,11 +2349,10 @@ menuitem accelerator:hover {
     color: alpha (@menu_fg_color, 0.3);
 }
 
-menuitem arrow {
+menuitem > arrow {
     min-height: 16px;
     min-width: 16px;
     margin-left: 10px;
-    color: @menu_controls_color;
 }
 
 menu menuitem arrow:dir(ltr),
@@ -2377,39 +2375,100 @@ menu arrow.bottom,
     -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
 }
 
-menu arrow:hover,
-.menu arrow:hover {
-    border-color: @theme_selected_fg_color;
-    color: shade (@theme_selected_bg_color, 1.6);
-}
-
 /* settings for 4 menu level, this is needed to override the menuitem:hover
    state from previous menu level, as GtkArrow itself don't support states.
    thanks gtk+ devs for this madness */
-menu > menuitem > arrow,
-menu > menuitem:hover menu > menuitem arrow,
-menu > menuitem:hover menu > menuitem:hover menu > menuitem arrow,
-menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem arrow,
-menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem arrow,
-.menu > menuitem > arrow,
-.menu > menuitem:hover .menu > menuitem arrow,
-.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem arrow,
-.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem arrow,
-.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem arrow  {
+menu > menuitem > arrow.right,
+menu > menuitem:hover menu > menuitem > arrow.right,
+menu > menuitem:hover menu > menuitem:hover menu > menuitem > arrow.right,
+menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem > arrow.right,
+menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem > arrow.right,
+menu > menuitem > arrow.left,
+menu > menuitem:hover menu > menuitem > arrow.left,
+menu > menuitem:hover menu > menuitem:hover menu > menuitem > arrow.left,
+menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem > arrow.left,
+menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem > arrow.left,
+.menu > menuitem > arrow.right,
+.menu > menuitem:hover .menu > menuitem > arrow.right,
+.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem > arrow.right,
+.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem > arrow.right,
+.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem > arrow.right,
+.menu > menuitem > arrow.left,
+.menu > menuitem:hover .menu > menuitem > arrow.left,
+.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem > arrow.left,
+.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem > arrow.left,
+.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem > arrow.left  {
     color: @theme_text_color;
 }
 
-menu > menuitem:hover > arrow,
-menu > menuitem:hover menu > menuitem:hover arrow,
-menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover arrow,
-menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover arrow,
-menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover arrow,
-.menu > menuitem:hover > arrow,
-.menu > menuitem:hover .menu > menuitem:hover arrow,
-.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover arrow,
-.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover arrow,
-.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover arrow {
-    color: @menubar_menuitem_hover_color;
+menu > menuitem:hover > arrow.right,
+menu > menuitem:hover menu > menuitem:hover arrow.right,
+menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover arrow.right,
+menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover arrow.right,
+menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover arrow.right,
+menu > menuitem:hover > arrow.left,
+menu > menuitem:hover menu > menuitem:hover arrow.left,
+menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover arrow.left,
+menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover arrow.left,
+menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover arrow.left,
+.menu > menuitem:hover > arrow.right,
+.menu > menuitem:hover .menu > menuitem:hover arrow.right,
+.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover arrow.right,
+.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover arrow.right,
+.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover arrow.right,
+.menu > menuitem:hover > arrow.left,
+.menu > menuitem:hover .menu > menuitem:hover arrow.left,
+.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover arrow.left,
+.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover arrow.left,
+.menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover .menu > menuitem:hover arrow.left {
+    color: @theme_text_color;
+}
+
+/* scroll arrows */
+menu > arrow,
+.menu > arrow {
+    border-width: 0px;
+    border-style: none;
+    border-radius: 0px;
+    background-color: transparent;
+    background-image: none;
+    min-height: 16px;
+    min-width: 16px;
+    padding: 2px 4px;
+    color: @theme_fg_color;
+}
+
+menu > arrow.top,
+.menu > arrow.top {
+    margin-top: -2px;
+    margin-left: -1px;
+    margin-right: -1px;
+}
+
+menu > arrow.bottom,
+.menu > arrow.bottom {
+    margin-bottom: -2px;
+    margin-left: -1px;
+    margin-right: -1px;
+}
+
+menu > arrow:hover,
+.menu > arrow:hover {
+    background-image: -gtk-gradient (linear,
+                      left top,
+                      left bottom,
+                      from (@menubar_menuitem_hover_gradient_a),
+                      color-stop (0.50, @menubar_menuitem_hover_gradient_b),
+                      color-stop (0.50, @menubar_menuitem_hover_gradient_c),
+                      to (@menubar_menuitem_hover_gradient_d));
+    color: @theme_text_color;
+}
+
+menu > arrow:disabled,
+.menu > arrow:disabled {
+    color: mix (@menu_fg_color, @menu_bg_color, 0.6);
+    background-color: transparent;
+    background-image: none;
 }
 
 menu separator,
