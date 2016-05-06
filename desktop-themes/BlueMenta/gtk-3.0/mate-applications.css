@@ -732,3 +732,22 @@ GvcMixerDialog notebook.frame box.vertical box.horizontal box.horizontal frame b
     background-color: shade (@theme_bg_color, 1.0);
 }
 
+/* mate-appearance-properties, UI tab */
+
+.appearance-window > box.vertical.dialog-vbox > notebook.frame  box.vertical > box.vertical > box.horizontal > box.vertical menubar {
+    border-style: solid;
+    border-width: 1px 1px 0px 1px;
+    border-color: darker (@theme_bg_color);
+	-GtkToolbar-button-relief: normal;
+}
+
+.appearance-window > box.vertical.dialog-vbox > notebook.frame  box.vertical > box.vertical > box.horizontal > box.vertical toolbar {
+    border-style: solid;
+    border-width: 1px;
+	border-color: darker (@theme_bg_color);
+    background-color: transparent;
+    -GtkToolbar-button-relief: normal;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
