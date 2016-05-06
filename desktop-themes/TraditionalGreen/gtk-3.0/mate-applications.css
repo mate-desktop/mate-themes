@@ -389,3 +389,26 @@ EggToolbarEditor.vertical scrolledwindow {
     border-style: none;
 }
 
+/* mate-appearance-properties, UI tab */
+
+.appearance-window > box.vertical.dialog-vbox > notebook.frame  box.vertical > box.vertical > box.horizontal > box.vertical menubar {
+    border-style: solid;
+    border-width: 1px 1px 0px 1px;
+    border-color: darker (@theme_bg_color);
+    -GtkToolbar-button-relief: normal;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.appearance-window > box.vertical.dialog-vbox > notebook.frame  box.vertical > box.vertical > box.horizontal > box.vertical toolbar {
+    border-style: solid;
+    border-width: 1px;
+    border-color: @toolbar_border_top_color;
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                      @toolbar_gradient_a 2px,
+                      @toolbar_gradient_b 50%,
+                      @toolbar_gradient_c 50%,
+                      @toolbar_gradient_d);
+}
+
