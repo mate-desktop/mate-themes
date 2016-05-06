@@ -153,6 +153,11 @@ menu menuitem .check:disabled {
     min-width: 12px;
 }
 
+menuitem radio,
+menu menuitem .radio {
+    -gtk-icon-source: -gtk-scaled(url("assets/radio-menuitem-unselected.svg"));
+}
+
 menuitem radio:checked,
 menu menuitem .radio:checked {
     -gtk-icon-source: -gtk-scaled(url("assets/radio-menuitem-checked.svg"));
@@ -185,7 +190,7 @@ menu menuitem .radio:indeterminate:disabled {
 
 menuitem check,
 menu menuitem .check {
-	-gtk-icon-source: -gtk-scaled(url("assets/checkbox-unchecked.svg"));
+	-gtk-icon-source: -gtk-scaled(url("assets/checkbox-menuitem-unchecked.svg"));
 }
 
 menuitem check:checked,
@@ -196,6 +201,11 @@ menu menuitem .check:checked {
 menuitem check:checked:hover,
 menu menuitem .check:checked:hover {
     -gtk-icon-source: -gtk-scaled(url("assets/checkbox-menuitem-checked-prelight.svg"));
+}
+
+menuitem check:disabled,
+menu menuitem .check:disabled {
+    -gtk-icon-source: -gtk-scaled(url("assets/checkbox-menuitem-unchecked-insensitive.svg"));
 }
 
 menuitem check:checked:disabled,
