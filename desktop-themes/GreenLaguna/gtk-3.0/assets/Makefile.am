@@ -15,6 +15,8 @@ theme_DATA = \
 	checkbox-menuitem-mixed-insensitive.svg \
 	checkbox-menuitem-mixed-prelight.svg \
 	checkbox-menuitem-mixed.svg \
+	checkbox-menuitem-unchecked.svg \
+	checkbox-menuitem-unchecked-insensitive.svg \
 	checkbox-mixed-insensitive.svg \
 	checkbox-mixed.svg \
 	checkbox-unchecked-insensitive.svg \
@@ -34,6 +36,7 @@ theme_DATA = \
 	radio-menuitem-mixed-insensitive.svg \
 	radio-menuitem-mixed-prelight.svg \
 	radio-menuitem-mixed.svg \
+	radio-menuitem-unselected.svg \
 	radio-mixed-insensitive.svg \
 	radio-mixed.svg \
 	radio-selected-insensitive.svg \
