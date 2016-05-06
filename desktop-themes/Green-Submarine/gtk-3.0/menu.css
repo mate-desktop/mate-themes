@@ -80,11 +80,13 @@ menubar > menuitem,
     min-height: 18px;
 }
 
+/* for firefox */
+menubar:hover,
 menubar > menuitem:hover,
 .menubar > menuitem:hover {
     background-color: shade (@theme_bg_dark_color, 1.2);
     border-radius: 6px;
-    color: shade (@theme_selected_bg_color, 1.6);
+    color: shade (@theme_selected_bg_color, 1.2);
     text-shadow: none;
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
@@ -117,7 +119,7 @@ menu > menuitem,
 /* fixes for firefox menus */
 menuitem:hover,
 menuitem label:hover {
-    color: shade (@theme_selected_bg_color, 1.6);
+    color: shade (@theme_selected_bg_color, 1.2);
     text-shadow: none;
 }
 
@@ -130,7 +132,7 @@ menu > menuitem:hover,
                                      left top, left bottom,
                                      from (shade(@menu_bg_dark_color, 2.03)),
                                      to   (shade(@menu_bg_dark_color, 1.17)));
-    color: shade (@theme_selected_bg_color, 1.6);
+    color: shade (@theme_selected_bg_color, 1.2);
     text-shadow: none;
     border-radius: 6px;
     border-width: 1px;
@@ -345,12 +347,22 @@ menuitem check:checked,
 menuitem radio:checked,
 menuitem check:disabled,
 menuitem radio:disabled,
-menuitem check:active:disabled,
-menuitem radio:active:disabled,
 menuitem check:checked:disabled,
 menuitem radio:checked:disabled,
 menuitem check:indeterminate:disabled,
-menuitem radio:indeterminate:disabled {
+menuitem radio:indeterminate:disabled,
+menuitem .check,
+menuitem .radio,
+menuitem .check:hover,
+menuitem .radio:hover,
+menuitem .check:checked,
+menuitem .radio:checked,
+menuitem .check:disabled,
+menuitem .radio:disabled,
+menuitem .check:checked:disabled,
+menuitem .radio:checked:disabled,
+menuitem .check:indeterminate:disabled,
+menuitem .radio:indeterminate:disabled {
     border-width: 0px;
     border-style: none;
     background-image: none;
@@ -363,12 +375,16 @@ menuitem radio:indeterminate:disabled {
 
 menuitem check:disabled,
 menuitem radio:disabled,
-menuitem check:active:disabled,
-menuitem radio:active:disabled,
 menuitem check:checked:disabled,
 menuitem radio:checked:disabled,
 menuitem check:indeterminate:disabled,
-menuitem radio:indeterminate:disabled {
+menuitem radio:indeterminate:disabled,
+menuitem .check:disabled,
+menuitem .radio:disabled,
+menuitem .check:checked:disabled,
+menuitem .radio:checked:disabled,
+menuitem .check:indeterminate:disabled,
+menuitem .radio:indeterminate:disabled {
     color: mix (@menu_fg_dark_color, @menu_bg_dark_color, 0.6);
     text-shadow: none;
 }
