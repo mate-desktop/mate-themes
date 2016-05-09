@@ -1944,7 +1944,10 @@ notebook header.top {
                 inset  0px -1px 0 0 alpha(@borders, 0.4);
 }
 
-printdialog notebook header.top {
+printdialog notebook header.top,
+dialog.background.csd > box.vertical.dialog-vbox > notebook > header.top,
+dialog.background.ssd > box.vertical.dialog-vbox > notebook > header.top,
+dialog.background.solid-csd > box.vertical.dialog-vbox > notebook > header.top {
     border-radius: 0px;
 }
 
@@ -2032,8 +2035,11 @@ paned.horizontal notebook header.top tab {
 }
 
 /* tabs ie. preferences windows */
-printdialog notebook > header.top tab,
 /* horizontal tabs */
+dialog.background.csd > box.vertical.dialog-vbox > notebook > header.top tab, /* meld preferences */
+dialog.background.ssd > box.vertical.dialog-vbox > notebook > header.top tab,
+dialog.background.solid-csd > box.vertical.dialog-vbox > notebook > header.top tab,
+printdialog notebook > header.top tab,
 notebook.frame header.top tab,
 notebook.frame header.bottom tab {
     padding: 6px 21px 4px;
@@ -3251,6 +3257,22 @@ dialog scrolledwindow viewport .vertical expander .vertical {
     border-color: @borders;
     border-style: solid;
     border-width: 1px;
+}
+
+/* ie. meld */
+dialog.background.csd notebook toolbar.horizontal,
+dialog.background.ssd notebook toolbar.horizontal,
+dialog.background.solid-csd notebook toolbar.horizontal {
+    border-style: solid;
+    border-color: @borders;
+    border-width: 0px 1px 1px 1px;
+    border-radius: 0px;
+}
+
+dialog.background.csd notebook scrolledwindow.frame treeview.view header button,
+dialog.background.ssd notebook scrolledwindow.frame treeview.view header button,
+dialog.background.solid-csd notebook scrolledwindow.frame treeview.view header button {
+    margin-top: -2px;
 }
 
 /* middle buttons */
@@ -5111,6 +5133,13 @@ headerbar,
     padding: 0px 0px 0px 0px;
     margin: 0px -2px 0px -2px;
     border-width: 0px;
+}
+
+/* ie. meld */
+dialog.background.csd > headerbar.titlebar,
+dialog.background.ssd > headerbar.titlebar,
+dialog.background.solid-csd > headerbar.titlebar  {
+	padding:  4px 6px 5px 6px;
 }
 
 .tiled .titlebar {
