@@ -3290,6 +3290,9 @@ notebook header.top {
     box-shadow: inset  0px -1px alpha(shade(@button_border, 1.00), 0.90);
 }
 
+dialog.background.csd > box.vertical.dialog-vbox > notebook > header.top,
+dialog.background.ssd > box.vertical.dialog-vbox > notebook > header.top,
+dialog.background.solid-csd > box.vertical.dialog-vbox > notebook > header.top,
 printdialog notebook header.top {
     border-radius: 0px;
 }
@@ -3429,6 +3432,9 @@ paned.horizontal > notebook > header button.flat.small-button {
 
 /* tabs in dialog windows */
 /* horizontal tabs */
+dialog.background.csd > box.vertical.dialog-vbox > notebook > header.top tab, /* meld preferences */
+dialog.background.ssd > box.vertical.dialog-vbox > notebook > header.top tab,
+dialog.background.solid-csd > box.vertical.dialog-vbox > notebook > header.top tab,
 printdialog notebook > header tab,
 notebook.frame > header.top tab,
 notebook.frame > header.bottom tab {
@@ -3439,6 +3445,12 @@ notebook.frame > header.bottom tab {
     border-color: transparent;
 }
 
+dialog.background.csd > box.vertical.dialog-vbox > notebook > header.top tab:checked,
+dialog.background.ssd > box.vertical.dialog-vbox > notebook > header.top tab:checked,
+dialog.background.solid-csd > box.vertical.dialog-vbox > notebook > header.top tab:checked,
+dialog.background.csd > box.vertical.dialog-vbox > notebook > header.top tab:checked:hover,
+dialog.background.ssd > box.vertical.dialog-vbox > notebook > header.top tab:checked:hover,
+dialog.background.solid-csd > box.vertical.dialog-vbox > notebook > header.top tab:checked:hover,
 printdialog notebook > header.top tab:checked,
 printdialog notebook > header.top tab:checked:hover,
 notebook.frame > header.top tab:checked,
@@ -3452,6 +3464,9 @@ notebook.frame > header.top tab:checked:hover {
     border-color: @notebook_border;
 }
 
+dialog.background.csd > box.vertical.dialog-vbox > notebook > header.top tab:hover,
+dialog.background.ssd > box.vertical.dialog-vbox > notebook > header.top tab:hover,
+dialog.background.solid-csd > box.vertical.dialog-vbox > notebook > header.top tab:hover,
 printdialog notebook > header.top tab:hover,
 notebook.frame > header.top tab:hover {
     background-image: linear-gradient(to bottom,
@@ -5550,6 +5565,13 @@ headerbar,
     padding: 0px;
     margin: -2px -2px -2px -2px;
     border-width: 0px;
+}
+
+/* ie. meld */
+dialog.background.csd > headerbar.titlebar,
+dialog.background.ssd > headerbar.titlebar,
+dialog.background.solid-csd > headerbar.titlebar  {
+	padding:  4px 6px 5px 6px;
 }
 
 headerbar:backdrop,
