@@ -309,11 +309,43 @@ window.background box.vertical notebook box.horizontal box.vertical notebook {
 
 /* meld */
 
+#meldapp > box.vertical > notebook.frame {
+    border-width: 0px;
+    background-color: shade (@theme_bg_color, 1.0);
+}
+
+#meldapp > box.vertical > notebook.frame > header.top {
+    border-radius: 0px;
+}
+
+#meldapp > box.vertical > notebook.frame > header.top tab {
+    padding: 2px 4px;
+}
+
+#meldapp > box.vertical > notebook.frame > header.top tab:checked,
+#meldapp > box.vertical > notebook.frame > header.top tab:checked:hover {
+    background-image: linear-gradient(to bottom,
+                                      shade(@theme_bg_color, 1.18),
+                                      shade(@theme_bg_color, 1.0));
+}
+
+/* FIXME, does not work */
+#meldapp box.vertical notebook.frame box.vertical grid.horizontal toolbar.horizontal.meld-notebook-toolbar {
+    border-width: 0px;
+    border-style: none;
+    border-color: rgba(0,0,0,0);
+}
+
 .meld-notebook-toolbar > toolitem > filechooserbutton > button.file > box > label {
     color:             @theme_fg_color;
     text-shadow: none;
 }
 
+.meld-notebook-toolbar > toolbutton > button.flat {
+    padding: 6px;
+}
+
+.meld-notebook-toolbar > toolbutton > button.flat,
 .meld-notebook-toolbar > toolitem > filechooserbutton > button.file {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
@@ -334,6 +366,7 @@ window.background box.vertical notebook box.horizontal box.vertical notebook {
                 inset  0px -1px alpha(shade(@button_border, 0.88), 0.90);
 }
 
+.meld-notebook-toolbar > toolbutton > button.flat:hover,
 .meld-notebook-toolbar > toolitem > filechooserbutton > button.file:hover {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
@@ -360,5 +393,36 @@ window.background box.vertical notebook box.horizontal box.vertical notebook {
                 inset  1px  0px shade (@theme_selected_bg_color, 1.3),
                 inset -1px  0px shade (@theme_selected_bg_color, 1.3),
                 inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+}
+
+.meld-notebook-toolbar > toolbutton > button.flat:disabled {
+    background-image: none;
+    background-color: @insensitive_bg_color;
+    border-color: @insensitive_border_color;
+    border-image: none;
+    box-shadow: inset  0px  1px @insensitive_border_color,
+                inset  1px  0px @insensitive_border_color,
+                inset -1px  0px @insensitive_border_color,
+                inset  0px -1px @insensitive_border_color;
+}
+
+#meldapp > box.vertical > notebook.frame box.vertical > grid.horizontal > box.vertical {
+    border-width: 1px;
+    border-style: solid;
+    border-color: @notebook_border;
+}
+
+#meldapp > box.vertical > notebook.frame box.vertical > grid.horizontal > box.vertical > scrolledwindow {
+    border-width: 1px 0px 0px 0px;
+    border-style: solid;
+    border-color: @notebook_border;
+}
+
+#meldapp > box.vertical > notebook.frame box.vertical > grid.horizontal > box.vertical > scrolledwindow > scrollbar.vertical.left {
+    border-width: 0px 1px 1px 0px;
+}
+
+#meldapp > box.vertical > notebook.frame box.vertical > grid.horizontal > box.vertical > scrolledwindow > scrollbar.vertical.right {
+    border-width: 0px 0px 1px 1px;
 }
 
