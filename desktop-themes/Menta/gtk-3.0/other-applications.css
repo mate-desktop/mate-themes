@@ -310,3 +310,104 @@ OsScrollbar:disabled {
 	border-top-width: 0;
 }
 
+/* meld */
+
+#meldapp > box.vertical > notebook.frame {
+    border-width: 0px;
+    background-color: shade (@theme_bg_color, 1.00);
+}
+
+#meldapp > box.vertical > notebook.frame > header.top {
+    border-radius: 0px;
+}
+
+#meldapp > box.vertical > notebook.frame > header.top tab {
+    padding: 2px 4px;
+}
+
+#meldapp > box.vertical > notebook.frame > header.top tab:checked,
+#meldapp > box.vertical > notebook.frame > header.top tab:checked:hover {
+    background-image: linear-gradient(to bottom,
+                                      shade(@theme_bg_color, 1.18),
+                                      shade(@theme_bg_color, 1.00));
+}
+
+/* FIXME, does not work */
+#meldapp box.vertical notebook.frame box.vertical grid.horizontal toolbar.horizontal.meld-notebook-toolbar {
+    border-width: 0px;
+    border-style: none;
+    border-color: rgba(0,0,0,0);
+    background-color: shade (@theme_bg_color, 1.00);
+}
+
+.meld-notebook-toolbar > toolbutton > button.flat {
+	background-image: linear-gradient(to bottom,
+		@button_gradient_color_a,
+		@button_gradient_color_b);
+	background-color: transparent;
+	border-image: url("borders/button.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
+	border-radius: 4px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+.meld-notebook-toolbar > toolbutton > button.flat:hover {
+	background-color: transparent;
+	background-image: linear-gradient(to bottom,
+		@button_hover_gradient_color_a,
+		@button_hover_gradient_color_b);
+	border-radius: 4px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+.meld-notebook-toolbar > toolbutton > button.flat:disabled {
+	background-image: none;
+	background-color: @insensitive_bg_color;
+	border-image: url("borders/button-ins.png") 3 4 5 4 / 3px 4px 5px 4px stretch;
+	border-radius: 4px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+#meldapp > box.vertical > notebook.frame box.vertical > grid.horizontal > box.vertical {
+    border-width: 0px 1px 1px 1px;
+    border-style: solid;
+    border-color: @borders;
+}
+
+/* FIXME, does not work */
+#meldapp > box.vertical > notebook box.vertical > grid.horizontal > link-map {
+    background-color: shade (@theme_bg_color, 1.05);
+}
+
+#meldapp > box.vertical > notebook.frame box.vertical > grid.horizontal > box.vertical > scrolledwindow {
+    border-width: 1px 0px 0px 0px;
+    border-style: solid;
+    border-color: @borders;
+}
+
+#meldapp > box.vertical > notebook.frame box.vertical > grid.horizontal > box.vertical > scrolledwindow > scrollbar.vertical.left {
+    border-width: 0px 1px 1px 0px;
+}
+
+#meldapp > box.vertical > notebook.frame box.vertical > grid.horizontal > box.vertical > scrolledwindow > scrollbar.vertical.right {
+    border-width: 0px 0px 1px 1px;
+}
+
+#meldapp > box.vertical > notebook.frame box.vertical > grid.horizontal > box.vertical > scrolledwindow > scrollbar.horizontal.bottom {
+    border-width: 1px 0px 0px 0px;
+}
+
+#meldapp > box.vertical > notebook.frame box.vertical > grid.horizontal > box.vertical > scrolledwindow > scrollbar.horizontal.bottom trough {
+    border-width: 1px 1px 0px 1px;
+	border-color: shade (@theme_bg_color, 0.94);
+}
+
+#meldapp > box.vertical > notebook.frame box.vertical > grid.horizontal infobar {
+	-gtk-icon-style: regular;
+}
+
