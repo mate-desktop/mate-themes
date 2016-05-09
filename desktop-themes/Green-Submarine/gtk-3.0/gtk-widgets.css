@@ -119,6 +119,10 @@ window {
  * GtkLabel *
  *********/
 
+label {
+    transition: all 400ms ease-out;
+}
+
 label,
 label:disabled {
     background-color: transparent;
@@ -882,8 +886,7 @@ button {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (@button_gradient1),
-                                     color-stop (0.48, @button_gradient2),
-                                     color-stop (0.52, @button_gradient3),
+                                     color-stop (0.50, @button_gradient3),
                                      to   (@button_gradient4));
     border-width: 1px;
     border-radius: 6px;
@@ -939,8 +942,7 @@ button:hover {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (shade(@button_gradient1, 1.03)),
-                                     color-stop (0.48, shade(@button_gradient2, 1.03)),
-                                     color-stop (0.52, shade(@button_gradient3, 1.03)),
+                                     color-stop (0.50, shade(@button_gradient3, 1.03)),
                                      to   (shade(@button_gradient4, 1.01)));
     box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
                 inset  1px  0px shade(@selected_bg_color, 0.97),
@@ -957,7 +959,7 @@ button:checked:hover:active {
                                      left top, left bottom,
                                      from (shade (@theme_bg_color, 1.20)),
                                      color-stop (0.50, shade (@theme_bg_color, 1.00)),
-                                     color-stop (0.50, shade (@theme_bg_color, 0.95)),
+                                     color-stop (0.50, shade (@theme_bg_color, 0.99)),
                                      to (shade (@theme_bg_color, 0.80)));
     border-radius: 6px;
     box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
@@ -1539,8 +1541,7 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (@button_gradient1),
-                                     color-stop (0.48, @button_gradient2),
-                                     color-stop (0.52, @button_gradient3),
+                                     color-stop (0.50, @button_gradient3),
                                      to   (@button_gradient4));
 
 }
@@ -1553,8 +1554,7 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (shade(@button_gradient1, 1.03)),
-                                     color-stop (0.48, shade(@button_gradient2, 1.03)),
-                                     color-stop (0.52, shade(@button_gradient3, 1.03)),
+                                     color-stop (0.50, shade(@button_gradient3, 1.03)),
                                      to   (shade(@button_gradient4, 1.01)));
 }
 
@@ -1566,7 +1566,7 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
                                      left top, left bottom,
                                      from (shade (@theme_bg_color, 1.20)),
                                      color-stop (0.50, shade (@theme_bg_color, 1.00)),
-                                     color-stop (0.50, shade (@theme_bg_color, 0.95)),
+                                     color-stop (0.50, shade (@theme_bg_color, 0.99)),
                                      to (shade (@theme_bg_color, 0.80)));
 }
 
@@ -2925,8 +2925,8 @@ toolbar.inline-toolbar {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (shade(@button_base, 1.00)),
-                                     color-stop (0.48, shade(@button_base, 0.96)),
-                                     color-stop (0.52, shade(@button_base, 0.93)),
+                                     color-stop (0.50, shade(@button_base, 0.96)),
+                                     color-stop (0.50, shade(@button_base, 0.95)),
                                      to (shade(@button_base, 0.94))); 
     border-width: 0 1px 1px 0px;
     border-style: solid;
@@ -2946,8 +2946,8 @@ toolbar.inline-toolbar button {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (shade(@button_base, 1.00)),
-                                     color-stop (0.48, shade(@button_base, 0.96)),
-                                     color-stop (0.52, shade(@button_base, 0.93)),
+                                     color-stop (0.50, shade(@button_base, 0.96)),
+                                     color-stop (0.50, shade(@button_base, 0.95)),
                                      to (shade(@button_base, 0.94)));
     border-width: 0px;
     border-radius: 0px;
@@ -2981,8 +2981,8 @@ toolbar.inline-toolbar button:hover {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (shade(@button_base, 1.03)),
-                                     color-stop (0.48, shade(@button_base, 0.99)),
-                                     color-stop (0.52, shade(@button_base, 0.96)),
+                                     color-stop (0.50, shade(@button_base, 0.99)),
+                                     color-stop (0.50, shade(@button_base, 0.98)),
                                      to (shade(@button_base, 0.97)));
     color: @theme_text_color;
 }
@@ -3131,8 +3131,7 @@ spinbutton > button:hover {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (shade(@button_gradient1, 1.03)),
-                                     color-stop (0.48, shade(@button_gradient2, 1.03)),
-                                     color-stop (0.52, shade(@button_gradient3, 1.03)),
+                                     color-stop (0.50, shade(@button_gradient3, 1.03)),
                                      to   (shade(@button_gradient4, 1.01)));
 }
 
@@ -3140,8 +3139,7 @@ spinbutton > button:active {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (shade (@theme_bg_color, 1.20)),
-                                     color-stop (0.50, shade (@theme_bg_color, 1.00)),
-                                     color-stop (0.50, shade (@theme_bg_color, 0.95)),
+                                     color-stop (0.50, shade (@theme_bg_color, 0.99)),
                                      to (shade (@theme_bg_color, 0.80)));
 }
 
@@ -4033,8 +4031,8 @@ treeview.view > header > button:focus {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (shade(@button_base, 1.00)),
-                                     color-stop (0.48, shade(@button_base, 0.96)),
-                                     color-stop (0.52, shade(@button_base, 0.92)),
+                                     color-stop (0.50, shade(@button_base, 0.96)),
+                                     color-stop (0.50, shade(@button_base, 0.95)),
                                      to (shade(@button_base, 0.93)));
     border-width: 0px 1px 1px 0px;
     border-style: solid;
@@ -4054,8 +4052,7 @@ treeview.view > header > button:hover {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (shade(@button_gradient1, 1.03)),
-                                     color-stop (0.48, shade(@button_gradient2, 1.03)),
-                                     color-stop (0.52, shade(@button_gradient3, 1.03)),
+                                     color-stop (0.50, shade(@button_gradient3, 1.03)),
                                      to   (shade(@button_gradient4, 1.01)));
     border-style: solid;
     border-radius: 0px;
@@ -4075,7 +4072,7 @@ treeview.view > header > button:focus:hover:active {
                                      left top, left bottom,
                                      from (shade (@theme_bg_color, 1.20)),
                                      color-stop (0.50, shade (@theme_bg_color, 1.00)),
-                                     color-stop (0.50, shade (@theme_bg_color, 0.95)),
+                                     color-stop (0.50, shade (@theme_bg_color, 0.99)),
                                      to (shade (@theme_bg_color, 0.80)));
     border-radius: 0px;
     box-shadow: none;
@@ -4700,8 +4697,7 @@ dialog scrolledwindow.frame viewport .vertical expander .vertical {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (@button_gradient1),
-                                     color-stop (0.48, @button_gradient2),
-                                     color-stop (0.52, @button_gradient3),
+                                     color-stop (0.50, @button_gradient3),
                                      to   (@button_gradient4));
     box-shadow: inset  0px  1px alpha(shade(@button_border, 1.00), 0.70),
                 inset  1px  0px alpha(shade(@button_border, 0.94), 0.80),
@@ -4720,8 +4716,7 @@ dialog scrolledwindow.frame viewport .vertical expander .vertical {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (shade(@button_gradient1, 1.03)),
-                                     color-stop (0.48, shade(@button_gradient2, 1.03)),
-                                     color-stop (0.52, shade(@button_gradient3, 1.03)),
+                                     color-stop (0.50, shade(@button_gradient3, 1.03)),
                                      to   (shade(@button_gradient4, 1.01)));
     box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
                 inset  1px  0px shade(@selected_bg_color, 0.97),
@@ -4734,7 +4729,7 @@ dialog scrolledwindow.frame viewport .vertical expander .vertical {
                                      left top, left bottom,
                                      from (shade (@theme_bg_color, 1.20)),
                                      color-stop (0.50, shade (@theme_bg_color, 1.00)),
-                                     color-stop (0.50, shade (@theme_bg_color, 0.95)),
+                                     color-stop (0.50, shade (@theme_bg_color, 0.99)),
                                      to (shade (@theme_bg_color, 0.80)));
     box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
                 inset  1px  0px shade(@selected_bg_color, 0.97),
@@ -6385,8 +6380,7 @@ stack .linked.vertical spinbutton.horizontal button:focus:hover:last-child {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (shade(@button_gradient1, 1.03)),
-                                     color-stop (0.48, shade(@button_gradient2, 1.03)),
-                                     color-stop (0.52, shade(@button_gradient3, 1.03)),
+                                     color-stop (0.50, shade(@button_gradient3, 1.03)),
                                      to   (shade(@button_gradient4, 1.01)));
 }
 
@@ -6396,7 +6390,7 @@ stack .linked.vertical spinbutton.horizontal button:active:last-child {
                                      left top, left bottom,
                                      from (shade (@theme_bg_color, 1.20)),
                                      color-stop (0.50, shade (@theme_bg_color, 1.00)),
-                                     color-stop (0.50, shade (@theme_bg_color, 0.95)),
+                                     color-stop (0.50, shade (@theme_bg_color, 0.99)),
                                      to (shade (@theme_bg_color, 0.80)));
 }
 
