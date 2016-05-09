@@ -994,9 +994,6 @@ button:disabled {
                 inset  1px  0px @insensitive_border_color,
                 inset -1px  0px @insensitive_border_color,
                 inset  0px -1px @insensitive_border_color;
-}
-
-button:disabled {
     color: @insensitive_fg_color;
     text-shadow: none;
 }
