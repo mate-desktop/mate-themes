@@ -1174,29 +1174,34 @@ row {
 	border-width: 0px;
 }
 
- list-row {
+list-row {
     transition: all 400ms ease-out;
 }
 
- list-row.activatable {
+list row.activatable {
     background-image: none;
     border-image: none;
     border-color: transparent
 }
 
- list-row.activatable:selected,
- list-row.activatable:selected:hover {
+list row.activatable:selected,
+list row.activatable:selected:hover {
     background-color: transparent;
     background-image: linear-gradient(to bottom,
                                       @button_gradient_color_a,
                                       @button_gradient_color_b);
 }
 
- list-row.activatable:hover {
+list row.activatable:hover {
     background-color: transparent;
     background-image: linear-gradient(to bottom,
 	                                  @button_hover_gradient_color_a,
 	                                  @button_hover_gradient_color_b);
+}
+
+list row scale.horizontal trough {
+    background-image: none;
+    background-color: transparent;
 }
 
 .cell {
@@ -1291,6 +1296,7 @@ scale:disabled trough {
 	margin-left: 8px;
 	margin-right: 8px;
 }
+
 scale.vertical:disabled trough {
 	background-image: linear-gradient(to right,
                                       @theme_bg_color,
@@ -1308,11 +1314,13 @@ scale.horizontal mark indicator {
     min-height: 8px;
     min-width: 1px; 
 }
+
 scale.vertical mark indicator {
 	background-color: shade(@theme_bg_color, 0.56);
     min-height: 1px;
     min-width: 8px; 
 }
+
 scale highlight,
 scale:hover highlight{
 	background-image: linear-gradient(to bottom,
@@ -1338,12 +1346,13 @@ scale.vertical:hover highlight{
 	border-color: @progressbar_border;
 	background-color: transparent;
 }
+
 scale:disabled highlight {
 	background-color:transparent;
 }
 
 
-scale progress{
+scale progress {
 	background-image: linear-gradient(to bottom,
 	                                  shade(@theme_bg_color, 1.4),
 	                                  shade(@theme_bg_color, 0.8));
@@ -3072,24 +3081,24 @@ switch slider:backdrop:disabled {
 	background-color: shade(@switch_slider_color, 0.6);
 }
 
-list-row switch,
-list-row switch:backdrop,
-list-row:selected switch,
-list-row:selected switch:backdrop {
+list row switch,
+list row switch:backdrop,
+list row:selected switch,
+list row:selected switch:backdrop {
    box-shadow: none;
     border-color: shade(@button_border, 1.0);
 }
 
-list-row:selected switchslider:dir(rtl) {
+list row:selected switchslider:dir(rtl) {
     border-left-color: @borders;
 }
 
-list-row:selected switchslider:dir(ltr) {
+list row:selected switchslider:dir(ltr) {
     border-right-color: @borders;
 }
 
-list-row:selected switchslider,
-list-row:selected switchslider:active {
+list row:selected switchslider,
+list row:selected switchslider:active {
     border-color: shade(@button_border, 1.0);
 }
 
