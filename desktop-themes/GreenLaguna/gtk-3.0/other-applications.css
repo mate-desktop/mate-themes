@@ -153,3 +153,80 @@ paned.horizontal > notebook box.horizontal > box.vertical > toolbar.horizontal.i
     border-width: 1px 0px 0px  0px;
     padding: 0;
 }
+
+/* meld */
+
+#meldapp > box.vertical > notebook.frame {
+    background-color: shade (@theme_bg_color, 1.0);
+    border-radius: 0px 0px 6px 6px;
+}
+
+#meldapp > box.vertical > notebook.frame > header.top {
+    border-radius: 0px;
+}
+
+.meld-notebook-toolbar > toolbutton > button.flat,
+.meld-notebook-toolbar > toolitem > filechooserbutton > button.file {
+    background-image: linear-gradient(to bottom,
+                                      @button_gradient_color_a,
+                                      @button_gradient_color_b);
+    border-image: url("assets/button-border.svg") 3 / 3px stretch;
+}
+
+.meld-notebook-toolbar > toolbutton > button.flat:hover,
+.meld-notebook-toolbar > toolitem > filechooserbutton > button.file:hover {
+    border-style: solid;
+    border-color: shade(@button_border, 1.1);
+    background-image: linear-gradient(to bottom,
+                                      @button_hover_gradient_color_a,
+                                      @button_hover_gradient_color_b);
+    border-image: url("assets/button-active-border.svg") 3 3 3 3 / 3px 3px 3px 3px stretch;
+}
+
+.meld-notebook-toolbar > toolbutton > button.flat:disabled {
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      alpha(@button_gradient_color_a, 0.5),
+                                      alpha(@button_gradient_color_b, 0.5));
+    border-image: none;
+    border-style: solid;
+    border-color: shade(@button_border, 1.2);
+    color: @insensitive_fg_color;
+}
+
+#meldapp > box.vertical > notebook.frame box.vertical > grid.horizontal > box.vertical {
+    border-width: 0px 1px 1px 1px;
+    border-style: solid;
+    border-color: @notebook_border;
+}
+
+#meldapp > box.vertical > notebook.frame box.vertical > grid.horizontal > box.vertical > scrolledwindow {
+    border-width: 1px 0px 0px 0px;
+    border-style: solid;
+    border-color: @notebook_border;
+}
+
+#meldapp > box.vertical > notebook.frame box.vertical > grid.horizontal > box.vertical > scrolledwindow > scrollbar {
+    border-style: solid;
+    border-color: shade(@theme_bg_color, 0.75);
+}
+
+#meldapp > box.vertical > notebook.frame box.vertical > grid.horizontal > box.vertical > scrolledwindow > scrollbar.vertical.left {
+    border-width: 0px 1px 1px 0px;
+}
+
+#meldapp > box.vertical > notebook.frame box.vertical > grid.horizontal > box.vertical > scrolledwindow > scrollbar.vertical.right {
+    border-width: 0px 0px 1px 1px;
+}
+
+#meldapp > box.vertical > notebook.frame box.vertical > grid.horizontal > box.vertical > scrolledwindow > scrollbar.horizontal {
+    border-width: 1px 0px 0px 0px;
+}
+
+#meldapp > box.vertical > notebook.frame box.vertical > grid.horizontal > box.vertical > scrolledwindow > scrollbar.vertical trough,
+#meldapp > box.vertical > notebook.frame box.vertical > grid.horizontal > box.vertical > scrolledwindow > scrollbar.vertical button,
+#meldapp > box.vertical > notebook.frame box.vertical > grid.horizontal > box.vertical > scrolledwindow > scrollbar.horizontal trough ,
+#meldapp > box.vertical > notebook.frame box.vertical > grid.horizontal > box.vertical > scrolledwindow > scrollbar.horizontal button {
+    border-width: 0px;
+}
+
