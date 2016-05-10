@@ -2087,11 +2087,7 @@ toolbar.primary-toolbar combobox cellview {
 
 .primary-toolbar toolbar combobox cellview:hover,
 toolbar.primary-toolbar combobox cellview:hover {
-    color: shade (@theme_selected_bg_color, 1.6);
-}
-
-toolbar.primary-toolbar combobox cellview:hover {
-    color: shade (@theme_selected_bg_color, 1.6);
+    color: shade (@theme_selected_bg_color, 1.1);
 }
 
 toolbar combobox entry.combo,
@@ -2408,7 +2404,7 @@ toolbar combobox button.combo:checked,
 toolbar combobox button.combo:hover,
 toolbar.primary-toolbar combobox button.combo:checked,
 toolbar.primary-toolbar combobox button.combo:hover {
-    color: shade (@theme_selected_bg_color, 1.6);
+    color: shade (@theme_selected_bg_color, 1.1);
    -gtk-icon-shadow:  0px  1px shade (@menu_fg_dark_color, 1.0),
                       1px  0px shade (@menu_fg_dark_color, 1.0),
                      -1px  0px shade (@menu_fg_dark_color, 1.0),
@@ -2428,7 +2424,7 @@ toolbar combobox button.combo arrow {
 }
 
 toolbar combobox button.combo:hover arrow {
-    color: shade (@theme_selected_bg_color, 1.6);
+    color: shade (@theme_selected_bg_color, 1.1);
 }
 
 /************
@@ -2457,6 +2453,10 @@ toolbar.vertical {
 
 toolbar button.flat.image-button label {
     color: @menu_fg_dark_color;
+}
+
+toolbar button.flat.image-button:hover label {
+    color: shade (@theme_selected_bg_color, 1.1);
 }
 
 toolbar toolitem combobox button.combo,
@@ -2642,7 +2642,7 @@ toolbar button:hover,
 toolbar button:checked,
 toolbar button:hover label,
 toolbar button:checked label {
-    color: shade (@theme_selected_bg_color, 1.6);
+    color: shade (@theme_selected_bg_color, 1.1);
     text-shadow: none;
     transition: all 400ms ease-out;
 }
@@ -2653,7 +2653,7 @@ toolbar.primary-toolbar button:hover,
 toolbar.primary-toolbar button:hover:active,
 toolbar.primary-toolbar button:checked,
 toolbar.primary-toolbar button:checked:hover {
-    color: shade (@theme_selected_bg_color, 1.6);
+    color: shade (@theme_selected_bg_color, 1.1);
     text-shadow: none;
 }
 
@@ -5414,7 +5414,7 @@ modelbutton.flat:selected {
                                      from (shade(@menu_bg_dark_color, 2.03)),
                                      to   (shade(@menu_bg_dark_color, 1.17)));
     background-color: shade (@theme_bg_dark_color, 1.2);
-    color: shade (@theme_selected_bg_color, 1.6);
+    color: shade (@theme_selected_bg_color, 1.1);
     text-shadow: none;
     border-width: 0;
     border-color: transparent;
@@ -5662,7 +5662,7 @@ headerbar .linked button:checked:only-child,
 headerbar .linked button:hover:active:last-child,
 headerbar .linked button:checked:hover:only-child,
 headerbar .linked button:checked:hover:active:only-child {
-    color: shade (@theme_selected_bg_color, 1.6);
+    color: shade (@theme_selected_bg_color, 1.1);
     border-width: 1px;
     border-radius: 5px;
     background-image: -gtk-gradient (linear,
