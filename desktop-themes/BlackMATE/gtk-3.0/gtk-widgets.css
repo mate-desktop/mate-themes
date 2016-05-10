@@ -2237,72 +2237,60 @@ inline-toolbar toolbar {
  * Stack switcher *
  ******************/
 
-stack-switcher >  button > label,
-header-bar  stack-switcher >  button.titlebutton > label,
-titlebar  stack-switcher >  button.titlebutton > label,
-calendar.header  stack-switcher >  button.titlebutton > label {
+stack-switcher > button > label,
+headerbar stack-switcher > button.titlebutton > label,
+.titlebar stack-switcher > button.titlebutton > label,
+calendar.header stack-switcher > button.titlebutton > label {
 	padding-left: 6px;
 	padding-right: 6px;
 }
-stack-switcher >  button > image,
-header-bar stack-switcher >  button.titlebutton > image,
-titlebar stack-switcher >  button.titlebutton > image,
-calendar.header stack-switcher >  button.titlebutton > image {
+
+stack-switcher > button > image,
+headerbar stack-switcher > button.titlebutton > image,
+.titlebar stack-switcher > button.titlebutton > image,
+calendar.header stack-switcher > button.titlebutton > image {
 	padding-left: 6px;
 	padding-right: 6px;
 	padding-top: 3px;
 	padding-bottom: 3px;
 }
-stack-switcher >  button.text-button {
+
+stack-switcher > button.text-button {
 	padding: 5px 10px 6px;
 }
-stack-switcher >  button.image-button,
-header-bar stack-switcher > titlebutton button,
-titlebar stack-switcher > titlebutton button,
+
+stack-switcher > button.image-button,
+headerbar stack-switcher > titlebutton button,
+.titlebar stack-switcher > titlebutton button,
 calendar.header stack-switcher > .titlebutton button {
 	padding: 5px 2px;
 }
-stack-switcher >  button.needs-attention > label,
-stack-switcher >  button.needs-attention > image {
+
+stack-switcher > button.needs-attention > label,
+stack-switcher > button.needs-attention > image {
 	animation: needs_attention 150ms ease-in;
 	background-color: transparent;
 	background-size: 6px 6px, 6px 6px;
 	background-repeat: no-repeat;
 	background-position: right 3px, right 4px;
 }
-stack-switcher >  button.needs-attention > label:backdrop,
-stack-switcher >  button.needs-attention > image:backdrop {
+
+stack-switcher > button.needs-attention > label:backdrop,
+stack-switcher > button.needs-attention > image:backdrop {
 	background-size: 6px 6px, 0 0;
 }
-stack-switcher >  button.needs-attention > label:dir(rtl),
-stack-switcher >  button.needs-attention > image:dir(rtl) {
+
+stack-switcher > button.needs-attention > label:dir(rtl),
+stack-switcher > button.needs-attention > image:dir(rtl) {
 	background-position: left 3px, left 4px;
 }
-stack-switcher >  button.needs-attention:active > label,
-stack-switcher >  button.needs-attention:active > image, stack-switcher >  button.needs-attention:checked > label,  stack-switcher >  button.needs-attention:checked > image {
+
+stack-switcher > button.needs-attention:active > label,
+stack-switcher > button.needs-attention:active > image,
+stack-switcher >  button.needs-attention:checked > label,
+stack-switcher >  button.needs-attention:checked > image {
 	animation: none;
 	background-image: none;
-}
-
-/***************
- * Header bars *
- ***************/
-header-bar {
-    border-width: 0 0 1px;
-    border-style: solid;
-    padding: 0 1px;
-    border-radius: 7px 7px 0 0;
-    padding: 6px;
-    background-color: @theme_bg_color;
-    border-color: shade(@theme_bg_color, 0.8);
-}
-
-header-bar  button.text-button {
-    padding: 2px 16px;
-}
-
-header-bar  button.image-button {
-    padding: 5px 4px 4px 5px;
 }
 
 /*******
@@ -2735,18 +2723,50 @@ popover .separator {
 	border: 0;
 }
 
+/***************
+ * Header bars *
+ ***************/
+
 /*******
  * CSD *
  *******/
 
-decoration,
-.titlebar  {
+headerbar,
+.titlebar {
+    border-width: 0 0 1px;
+    border-style: solid;
+    padding: 0 1px;
+    border-radius: 7px 7px 0 0;
+    padding: 6px;
+    background-color: @theme_bg_color;
+    border-color: shade(@theme_bg_color, 0.8);
     text-shadow: none;
     background-image: linear-gradient(to bottom,
                                       shade (@theme_bg_color, 1.50),
                                       shade (@theme_bg_color, 1.0));
-    border-radius: 7px 7px 0 0;
-	padding: 3px;
+}
+
+/* fix for gedit, .titlebar does not match headerbar selector */
+.background.csd > paned.horizontal.titlebar,
+.background.ssd > paned.horizontal.titlebar,
+.background.solid-csd > paned.horizontal.titlebar {
+    background-color: transparent;
+    padding: 0px;
+    margin: 0px;
+    border-width: 0px;
+}
+
+.background.csd > paned.horizontal.titlebar > headerbar,
+.background.ssd > paned.horizontal.titlebar > headerbar,
+.background.solid-csd > paned.horizontal.titlebar > headerbar {
+    padding: 0px 6px;
+}
+
+/* ie. meld */
+dialog.background.csd > headerbar.titlebar,
+dialog.background.ssd > headerbar.titlebar,
+dialog.background.solid-csd > headerbar.titlebar  {
+    padding: 0px 6px;
 }
 
 .tiled  .titlebar {
@@ -2761,19 +2781,19 @@ decoration,
  * when client-side decorations are in use and the application
  * did not set a custom titlebar.
  */
-decoration {
+.titlebar.default-decoration {
     border: none;
     box-shadow: none;
 }
  
-.titlebar .title {
-    font: Bold 10;
+.titlebar .title,
+headerbar .title {
+    font: Bold 12;
     background: none;
     color: #D9D9D9;
 }
 
- /* Colour when unfocused? does this work?*/
-decoration:backdrop {
+.titlebar:backdrop {
     color: #747473;
     text-shadow: none;
     background-image: none;
@@ -2781,7 +2801,7 @@ decoration:backdrop {
 }
 
 .titlebar .titlebutton,
-header-bar.frame titlebar  button.image-button.titlebutton,
+headerbar.titlebar  button.image-button.titlebutton,
 button.text-button.titlebutton {
 	padding: 4px 4px 4px 4px;
 	border-radius: 3px;
@@ -2806,7 +2826,7 @@ button.text-button.titlebutton {
 }
  
 .titlebar .titlebutton:hover,
-header-bar.frame titlebar  button.image-button.titlebutton:hover,
+headerbar.titlebar  button.image-button.titlebutton:hover,
 button.text-button.titlebutton:hover {
 	border-image: none;
 	border-style: solid;
@@ -2825,22 +2845,14 @@ button.text-button.titlebutton:hover {
     background-color: transparent;
 }
 
-.titlebar .titlebutton:active,
-.titlebar .titlebutton:active:hover,
-header-bar.frame titlebar:active,
-header-bar.frame titlebar:active:hover,
-button.image-button.titlebutton:active,
-button.image-button.titlebutton:active:hover,
-button.text-button.titlebutton:active,
-button.text-button.titlebutton:active:hover,
+.titlebar .titlebutton:hover:active,
+headerbar.titlebar:hover:active,
+button.image-button.titlebutton:hover:active,
+button.text-button.titlebutton:hover:active,
 .titlebar .titlebutton:checked,
-.titlebar .titlebutton:checked:hover,
-header-bar.frame titlebar:checked,
-header-bar.frame titlebar:checked:hover,
+headerbar.titlebar:checked,
 button.image-button.titlebutton:checked,
-button.image-button.titlebutton:checked:hover,
-button.text-button.titlebutton:checked,
-button.text-button.titlebutton:checked:hover {
+button.text-button.titlebutton:checked {
 	color: @theme_fg_color;
 	border-style: solid;
 	background-image: linear-gradient(to bottom,
@@ -2863,8 +2875,8 @@ button.text-button.titlebutton:checked:hover {
  
 .titlebar .titlebutton:backdrop,
 .titlebar .titlebutton:hover:backdrop,
-header-bar.frame titlebar  button.image-button.titlebutton:backdrop,
-header-bar.frame titlebar  button.image-button.titlebutton:hover:backdrop {
+headerbar.titlebar  button.image-button.titlebutton:backdrop,
+headerbar.titlebar  button.image-button.titlebutton:hover:backdrop {
     background: none;
     color: @theme_main_color;
     border-image: none;
@@ -2872,8 +2884,18 @@ header-bar.frame titlebar  button.image-button.titlebutton:hover:backdrop {
 }
 
 .titlebar .titlebutton:hover:backdrop,
-header-bar.frame titlebar  button.image-button.titlebutton:hover:backdrop {
+headerbar.titlebar  button.image-button.titlebutton:hover:backdrop {
 	color: #747473;
+}
+
+headerbar button.text-button,
+.titlebar button.text-button {
+    padding: 2px 16px;
+}
+
+headerbar button.image-button,
+.titlebar button.image-button {
+    padding: 5px 4px 4px 5px;
 }
 
 
@@ -3367,13 +3389,13 @@ app-notification.frame:backdrop {
     background-image: none;
 }
 
-app-notification  button,
-app-notification  header-bar  button.titlebutton,
- header-bar .app-notification  button.titlebutton,
-app-notification  titlebar  button.titlebutton,
- titlebar .app-notification  button.titlebutton,
-app-notification calendar.header  button.titlebutton,
-calendar.header .app-notification  button.titlebutton,
+app-notification button,
+app-notification headerbar button.titlebutton,
+headerbar .app-notification button.titlebutton,
+app-notification .titlebar button.titlebutton,
+.titlebar .app-notification button.titlebutton,
+app-notification calendar.header button.titlebutton,
+calendar.header .app-notification button.titlebutton,
 app-notification.frame  button {
     color: @theme_fg_color;
     border-color: rgba(75, 89, 112, 0.7);
@@ -3388,26 +3410,26 @@ app-notification.frame  button {
     padding: 0 0px 2px 0px;
 }
 
-app-notification  button.flat,
-app-notification  header-bar .titlebutton button,
-header-bar .app-notification .titlebutton button,
-app-notification  titlebar .titlebutton button,
-titlebar .app-notification .titlebutton button,
+app-notification button.flat,
+app-notification headerbar .titlebutton button,
+headerbar .app-notification .titlebutton button,
+app-notification .titlebar .titlebutton button,
+.titlebar .app-notification .titlebutton button,
 app-notification calendar.header .titlebutton button,
 calendar.header .app-notification .titlebutton button,
-app-notification.frame  button.flat,
-app-notification.frame  header-bar .titlebutton button,
-header-bar .app-notification.frame .titlebutton button,
-app-notification.frame  titlebar .titlebutton button,
-titlebar .app-notification.frame .titlebutton button,
+app-notification.frame button.flat,
+app-notification.frame headerbar .titlebutton button,
+headerbar .app-notification.frame .titlebutton button,
+app-notification.frame .titlebar .titlebutton button,
+.titlebar .app-notification.frame .titlebutton button,
 app-notification.frame calendar.header .titlebutton button,
 calendar.header .app-notification.frame .titlebutton button {
     -gtk-icon-shadow: 0 1px black;
     text-shadow: 0 1px black;
 }
 
-app-notification  button:hover,
-app-notification.frame  button:hover {
+app-notification button:hover,
+app-notification.frame button:hover {
     color: white;
     border-color: rgba(0, 0, 0, 0.7);
     background-image: linear-gradient(to bottom,
@@ -3421,14 +3443,10 @@ app-notification.frame  button:hover {
     padding: 0 0px 2px 0px;
 }
 
-app-notification  button:active,
-app-notification  button:checked,
-app-notification  button:backdrop:active,
-app-notification  button:backdrop:checked,
-app-notification.frame  button:active,
-app-notification.frame  button:checked,
-app-notification.frame  button:backdrop:active,
-app-notification.frame  button:backdrop:checked {
+app-notification button:checked,
+app-notification button:backdrop:checked,
+app-notification.frame button:checked,
+app-notification.frame button:backdrop:checked {
     color: white;
     border-color: rgba(0, 0, 0, 0.7);
     background-image: linear-gradient(to bottom,
@@ -3441,10 +3459,10 @@ app-notification.frame  button:backdrop:checked {
     border-radius: 3px;
 }
 
-app-notification  button:disabled,
-app-notification  button:backdrop:disabled,
-app-notification.frame  button:disabled,
-app-notification.frame  button:backdrop:disabled {
+app-notification button:disabled,
+app-notification button:backdrop:disabled,
+app-notification.frame button:disabled,
+app-notification.frame button:backdrop:disabled {
     color: #878989;
     border-color: rgba(0, 0, 0, 0.7);
     background-image: linear-gradient(to bottom,
@@ -3457,8 +3475,8 @@ app-notification.frame  button:backdrop:disabled {
     padding: 0px;
 }
 
-app-notification  button:backdrop,
-app-notification.frame  button:backdrop {
+app-notification button:backdrop,
+app-notification.frame button:backdrop {
     color: #eeeeec;
     border-color: rgba(0, 0, 0, 0.7);
     background-image: linear-gradient(to bottom,
