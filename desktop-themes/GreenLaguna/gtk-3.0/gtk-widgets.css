@@ -943,6 +943,9 @@ notebook header.top {
     box-shadow: inset  0px -1px alpha(shade(@button_border, 1.00), 0.90);
 }
 
+dialog.background.csd > box.vertical.dialog-vbox > notebook > header.top,
+dialog.background.ssd > box.vertical.dialog-vbox > notebook > header.top,
+dialog.background.solid-csd > box.vertical.dialog-vbox > notebook > header.top,
 printdialog notebook header.top {
     border-radius: 0px;
 }
@@ -1113,20 +1116,32 @@ paned.horizontal > notebook > header button.flat.small-button {
 
 /* tabs in dialog windows */
 /* horizontal tabs */
+dialog.background.csd > box.vertical.dialog-vbox > notebook > header.top tab, /* meld preferences */
+dialog.background.ssd > box.vertical.dialog-vbox > notebook > header.top tab,
+dialog.background.solid-csd > box.vertical.dialog-vbox > notebook > header.top tab,
 printdialog notebook > header.top tab,
 notebook.frame > header.top tab,
 notebook.frame > header.bottom tab {
     margin: 0px 0px 0px -1px;
-    border-width: 0px 1px 0px 1px;
+    border-width: 0px 1px 1px 1px;
     border-style: solid;
     border-color: transparent;
 }
 
+dialog.background.csd > box.vertical.dialog-vbox > notebook > header.top tab,
+dialog.background.ssd > box.vertical.dialog-vbox > notebook > header.top tab,
+dialog.background.solid-csd > box.vertical.dialog-vbox > notebook > header.top tab,
 printdialog notebook > header.top tab,
 notebook.frame > header.top tab {
     padding: 4px 10px 5px;
 }
 
+dialog.background.csd > box.vertical.dialog-vbox > notebook > header.top tab:checked,
+dialog.background.ssd > box.vertical.dialog-vbox > notebook > header.top tab:checked,
+dialog.background.solid-csd > box.vertical.dialog-vbox > notebook > header.top tab:checked,
+dialog.background.csd > box.vertical.dialog-vbox > notebook > header.top tab:checked:hover,
+dialog.background.ssd > box.vertical.dialog-vbox > notebook > header.top tab:checked:hover,
+dialog.background.solid-csd > box.vertical.dialog-vbox > notebook > header.top tab:checked:hover,
 printdialog notebook > header.top tab:checked,
 printdialog notebook > header.top tab:checked:hover,
 notebook.frame > header.top tab:checked,
@@ -1142,15 +1157,18 @@ notebook.frame > header.top tab:checked:hover {
     border-color: @notebook_border;
 }
 
+dialog.background.csd > box.vertical.dialog-vbox > notebook > header.top tab:hover,
+dialog.background.ssd > box.vertical.dialog-vbox > notebook > header.top tab:hover,
+dialog.background.solid-csd > box.vertical.dialog-vbox > notebook > header.top tab:hover,
 printdialog notebook > header.top tab:hover,
 notebook.frame > header.top tab:hover {
     background-image: linear-gradient(to top,
                                       shade(@theme_bg_color, 0.9),
                                       shade(@theme_bg_color, 0.98) 40%,
                                       shade(@theme_bg_color, 1.02) 70%,
-                                      @theme_bg_color);
+                                      shade(@base_color, 1.02));
     border-radius: 3px 3px 0px 0px;
-    border-width: 0px 1px 0px 1px;
+    border-width: 0px 1px 1px 1px;
     border-style: solid;
     border-color: @notebook_border;
 }
@@ -1829,7 +1847,6 @@ button image:disabled {
 
 button:hover,
 button.flat:hover {
-    border-image: none;
     border-style: solid;
     border-color: shade(@button_border, 1.1);
     background-image: linear-gradient(to bottom,
@@ -3309,7 +3326,7 @@ headerbar,
                                       shade (@theme_bg_color, 1.20),
                                       shade (@theme_bg_color, 1.0));
     border-radius: 7px 7px 0 0;
-    padding: 5px 4px 5px 5px;
+    padding: 5px;
     border-width: 0 0 1px;
     border-style: solid;
     border-color: shade(@theme_bg_color, 0.8);
@@ -3322,6 +3339,13 @@ headerbar,
     padding: 0px 0px 0px 0px;
     margin: 0px -2px 0px -2px;
     border-width: 0px;
+}
+
+/* ie. meld */
+dialog.background.csd > headerbar.titlebar,
+dialog.background.ssd > headerbar.titlebar,
+dialog.background.solid-csd > headerbar.titlebar  {
+    padding: 1px 5px;
 }
 
 .tiled .titlebar {
@@ -4057,23 +4081,15 @@ calendar.highlight {
 infobar {
     border-width: 0;
     border-style: none;
+	-gtk-icon-style: regular;
 }
 
 entry.info,
 entry.info:focus,
-.info button,
-.info button:disabled,
-.info button:checked,
 entry.warning,
 entry.warning:focus,
-.warning button,
-.warning button:disabled,
-.warning button:checked,
 entry.error,
-entry.error:focus,
-.error button,
-.error button:disabled,
-.error button:checked {
+entry.error:focus {
     border-image: none;
     border-style: none;
 }
@@ -4100,28 +4116,26 @@ entry.error:focus,
 
 infobar revealer button {
     background-image: linear-gradient(to bottom,
-                                      @inherit,
-                                      @button_gradient_color_b);
+                                      alpha(shade(@button_gradient_color_a, 1.0), 0.5),
+                                      alpha(shade(@button_gradient_color_b, 1.0), 0.5));
     background-color: transparent;
-    color: @theme_selected_fg_color;
 }
 
 infobar revealer button:hover {
     background-image: linear-gradient(to bottom,
-                                      @inherit,
-                                      @button_hover_gradient_color_b);
+                                      alpha(shade(@button_hover_gradient_color_a, 1.0), 0.5),
+                                      alpha(shade(@button_hover_gradient_color_b, 1.0), 0.5));
     background-color: transparent;
-    color: @theme_selected_fg_color;
 }
 
 infobar revealer button:disabled {
     background-image: none;
-    background-color: inherit;
+    background-color: @insensitive_bg_color;
     color: @insensitive_fg_color;
 }
 
 infobar revealer button label {
-    color: @theme_selected_fg_color;
+    color: shade(@theme_selected_fg_color, 0.3);
 }
 
 /**************
@@ -4354,6 +4368,22 @@ dialog scrolledwindow.frame viewport .vertical expander .vertical {
 /* print dialog */
 printdialog.background > box.view.vertical.dialog-vbox {
     background-color: shade (@theme_bg_color, 1.0);
+}
+
+/* ie. meld */
+dialog.background.csd notebook toolbar.horizontal,
+dialog.background.ssd notebook toolbar.horizontal,
+dialog.background.solid-csd notebook toolbar.horizontal {
+    border-style: solid;
+    border-color: @borders;
+    border-width: 0px 1px 1px 1px;
+    border-radius: 0px;
+}
+
+dialog.background.csd notebook scrolledwindow.frame treeview.view header button:last-child,
+dialog.background.ssd notebook scrolledwindow.frame treeview.view header button:last-child,
+dialog.background.solid-csd notebook scrolledwindow.frame treeview.view header button:last-child {
+    border-width: 0px;
 }
 
 /******************
