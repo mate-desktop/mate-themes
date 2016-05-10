@@ -103,6 +103,7 @@ tooltip,
 tooltip.background,
 .tooltip,
 .tooltip.background {
+    color: @theme_selected_fg_color;
     padding: 3px;
     border-style: solid;
     border-width: 1px;
