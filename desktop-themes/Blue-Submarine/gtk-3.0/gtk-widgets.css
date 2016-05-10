@@ -2455,6 +2455,10 @@ toolbar button.flat.image-button label {
     color: @menu_fg_dark_color;
 }
 
+toolbar button.flat.image-button:hover label {
+    color: shade (@theme_selected_bg_color, 1.6);
+}
+
 toolbar toolitem combobox button.combo,
 toolbar toolbutton button.flat.toggle.popup:focus,
 toolbar toolbutton button.flat.toggle.popup:disabled,
