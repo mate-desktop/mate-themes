@@ -934,17 +934,6 @@ notebook  toolbar .entry {
 	                                  mix(#ffffff, @less_dark_color, 0.75));
 }
 
-notebook spinbutton button,
-notebook spinbutton button:disabled,
-notebook spinbutton button:hover,
-notebook spinbutton button:active,
-notebook spinbutton button:focus {
-	background-image: none;
-	background-color: transparent;
-	border-style: none;
-	border-image: none;
-}
-
 notebook  scrollbar button,
 notebook  scrollbar button.horizontal,
 notebook  scrollbar button.vertical {
@@ -1570,31 +1559,139 @@ colorbutton button {
 /*****************
  * GtkSpinButton *
  *****************/
-spinbutton button,
-spinbutton button:disabled,
-spinbutton button:hover,
-spinbutton button:active,
-spinbutton button:focus {
-	background-image: none;
-	background-color: transparent;
-	/*border-width: 1px;*/
-	border-style: none;
-	border-image: none;
-	padding: 0px 4px 0px 0px;
+
+spinbutton,
+spinbutton:focus,
+spinbutton:backdrop,
+spinbutton.vertical,
+spinbutton.vertical:focus,
+spinbutton.vertical:backdrop {
+    border-color: @less_dark_color;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    padding: 0px;
 }
 
-spinbutton button,
-spinbutton button:focus {
-	color: shade(@insensitive_fg_color, 1.1);
+spinbutton.horizontal > entry,
+spinbutton.horizontal > entry:focus,
+spinbutton.horizontal > entry:backdrop {
+    padding: 4px 10px 4px 4px;
+    box-shadow: none;
+    border-radius: 3px 0px 0px 3px;
+    border-style: none;
 }
 
-spinbutton button:hover,
-spinbutton button:active {
-	color: @theme_text_color;
+spinbutton > button:disabled {
+    color: shade(@insensitive_fg_color, 0.7);
+    background-image: none;
 }
 
-spinbutton button:disabled {
-	color: shade(@insensitive_fg_color, 0.7);
+spinbutton > button,
+spinbutton > button:focus,
+spinbutton > button:backdrop {
+    border-image: none;
+    color: shade(@insensitive_fg_color, 1.1);
+}
+
+spinbutton > button:hover,
+spinbutton > button:active {
+    color: @theme_text_color;
+}
+
+spinbutton > button:hover {
+    border-image: none;
+    border-style: solid;
+    border-color: shade(@button_border, 1.1);
+    background-image: -gtk-gradient (radial,
+                                     0.5 -2.0, 2.0,
+                                     0.5 -2.0, 3.0,
+                                     from (shade(@button_gradient_color_a, 1.5)),
+                                     color-stop (0.42, shade(@button_gradient_color_a, 0.7)),
+                                     color-stop (0.43, @theme_bg_color),
+                                     to (shade(@button_gradient_color_b, 0.7)));
+}
+
+spinbutton > button:active {
+    border-image: none;
+    border-style: solid;
+    background-image: linear-gradient(to bottom,
+                                      shade(@button_gradient_color_b, 0.7),
+                                      @theme_bg_color 50%,
+                                      shade(@button_gradient_color_a, 1.5));
+}
+
+spinbutton.horizontal > button,
+spinbutton.horizontal > button:focus,
+spinbutton.horizontal > button:backdrop,
+spinbutton.horizontal > button:hover,
+spinbutton.horizontal > button:active,
+spinbutton.horizontal > button:disabled {
+    min-height: 10px;
+    min-width: 10px;
+    padding: 5px 4px;
+    box-shadow: none;
+    border-style: solid;
+    border-color: @less_dark_color;
+}
+
+spinbutton.horizontal > button.down,
+spinbutton.horizontal > button.down:focus,
+spinbutton.horizontal > button.down:backdrop,
+spinbutton.horizontal > button.down:hover,
+spinbutton.horizontal > button.down:active,
+spinbutton.horizontal > button.down:disabled {
+    border-radius: 0px;
+    border-width: 0px 1px 0px 1px;
+}
+
+spinbutton.horizontal > button.up,
+spinbutton.horizontal > button.up:focus,
+spinbutton.horizontal > button.up:backdrop,
+spinbutton.horizontal > button.up:hover,
+spinbutton.horizontal > button.up:active,
+spinbutton.horizontal > button.up:disabled {
+    border-radius: 0 3px 3px 0;
+    border-width: 0px;
+}
+
+spinbutton.vertical > entry {
+    border-style: none;
+    border-radius: 0;
+    padding: 5px 1px;
+    box-shadow: none;
+}
+
+spinbutton.vertical > button,
+spinbutton.vertical > button:focus,
+spinbutton.vertical > button:backdrop,
+spinbutton.vertical > button:hover,
+spinbutton.vertical > button:active,
+spinbutton.vertical > button:disabled  {
+    border-color: @less_dark_color;
+    border-image: none;
+    border-style: solid;
+    padding: 6px 0px;
+}
+
+spinbutton.vertical > button.up,
+spinbutton.vertical > button.up:focus,
+spinbutton.vertical > button.up:backdrop,
+spinbutton.vertical > button.up:hover,
+spinbutton.vertical > button.up:active,
+spinbutton.vertical > button.up:disabled {
+    border-width: 0px 0px 1px 0px;
+    border-radius: 3px 3px 0px 0px;
+}
+
+spinbutton.vertical > button.down,
+spinbutton.vertical > button.down:focus,
+spinbutton.vertical > button.down:backdrop,
+spinbutton.vertical > button.down:hover,
+spinbutton.vertical > button.down:active,
+spinbutton.vertical > button.down:disabled {
+    border-width: 1px 0px 0px 0px;
+    border-radius: 0px 0px 3px 3px;
 }
 
 /* ie. yelp */
@@ -2529,6 +2626,43 @@ toolbar.osd separator {
 
 .osd popover.background.scale-popup button.flat.image-button:disabled {
     border-color: alpha (@osd_button_border, 0.0);
+}
+
+/* ie. colorchooser */
+.osd.popover {
+    background-image: none;
+    background-color: alpha(shade(#3D3E40, 0.85), 0.35);
+    border: 1px solid black;
+    border-radius: 2px;
+    color: @theme_fg_color;
+}
+
+.osd.popover spinbutton entry,
+.osd.popover spinbutton entry:focus,
+.osd.popover spinbutton button,
+.osd.popover spinbutton button:focus {
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      @osd_button_bg_a,
+                                      @osd_button_bg_b 68%,
+                                      @osd_button_bg_c);
+    color: @osd_button_fg;
+    text-shadow: none;
+    -gtk-icon-shadow: 0 -1px @osd_button_shadow;
+}
+
+.osd.popover spinbutton button:hover {
+    background-image: linear-gradient(to bottom,
+                                      @osd_button_bg_hover_a,
+                                      @osd_button_bg_hover_b 68%,
+                                      @osd_button_bg_hover_c);
+}
+
+.osd.popover spinbutton button:active {
+    background-image: linear-gradient(to bottom,
+                                      @osd_button_bg_active_a,
+                                      @osd_button_bg_active_b 68%,
+                                      @osd_button_bg_active_c);
 }
 
 .osd progressbar,
