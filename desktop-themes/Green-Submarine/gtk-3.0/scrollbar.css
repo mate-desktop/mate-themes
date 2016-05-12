@@ -12,6 +12,19 @@ scrollbar {
     -GtkScrolledWindow-scrollbar-spacing: 0;
 }
 
+/* broken firefox ignore background of trough */
+scrollbar.horizontal {
+    background-image: -gtk-gradient (linear, left top, right top,
+                                     from (shade (@theme_bg_color, 0.98)),
+                                     to (shade (@theme_bg_color, 1.06)));
+}
+
+scrollbar.vertical {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@theme_bg_color, 0.98)),
+                                     to (shade (@theme_bg_color, 1.06)));
+}
+
 scrollbar.vertical {
     border-width: 0px 0px 0px 1px;
     min-width: 10px;
@@ -126,6 +139,15 @@ scrollbar .button:disabled {
     border-image: none;
     border-radius: 0;
     background-color: transparent;
+}
+
+/* broken firefox */
+scrollbar .button {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (@button_gradient1),
+                                     color-stop (0.50, @button_gradient3),
+                                     to   (@button_gradient4));
 }
 
 scrollbar button:hover,
