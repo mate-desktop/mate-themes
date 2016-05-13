@@ -230,3 +230,14 @@ paned.horizontal > notebook box.horizontal > box.vertical > toolbar.horizontal.i
     border-width: 0px;
 }
 
+/*************
+ * Yumex-DNF *
+ *************/
+
+/* list sidebar row */
+window.background.yumex-dnf-window > box.vertical > box.vertical > box.horizontal > paned.vertical > stack > box.vertical > box.horizontal > box.vertical list.sidebar {
+    border-color: @notebook_border;
+    border-style: solid;
+    border-width: 1px 0px 0px 0px;
+}
+

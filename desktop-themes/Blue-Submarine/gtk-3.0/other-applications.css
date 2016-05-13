@@ -1,4 +1,6 @@
-/* nemo */
+/********
+ * Nemo *
+ ********/
 
 /* NemoTrashBar, NemoXContentBar, NemoQueryEditor */
 .nemo-window-pane > notebook box.vertical box.vertical infobar.horizontal.info revealer .horizontal,
@@ -237,7 +239,9 @@
     border-radius: 4px;
 }
 
-/* Cinnamon-Settings */
+/*********************
+ * Cinnamon-Settings *
+ *********************/
 
 toolbar.cs-header {
     background-color: transparent;
@@ -259,7 +263,9 @@ toolbar.cs-header {
     margin: -2px  -2px  0px  -2px;
 }
 
-/* CompizConfigManager */
+/***********************
+ * CompizConfigManager *
+ ***********************/
 
 .ccsm-window notebook.frame scrolledwindow viewport widget.notebook {
     background-color: shade (@theme_bg_color, 1.1);
@@ -307,7 +313,9 @@ window.background box.vertical notebook box.horizontal box.vertical notebook {
     border-style: none;
 }
 
-/* meld */
+/********
+ * Meld *
+ ********/
 
 #meldapp > box.vertical > notebook.frame {
     border-width: 0px;
@@ -424,5 +432,129 @@ window.background box.vertical notebook box.horizontal box.vertical notebook {
 
 #meldapp > box.vertical > notebook.frame box.vertical > grid.horizontal > box.vertical > scrolledwindow > scrollbar.vertical.right {
     border-width: 0px 0px 1px 1px;
+}
+
+/*************
+ * Yumex-DNF *
+ *************/
+
+window.background.yumex-dnf-window > box.vertical > box.horizontal {
+   background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@theme_bg_dark_color, 1.00)),
+                                     to   (shade(@theme_bg_dark_color, 0.95)));
+    border-width: 0px 0px 1px 0px;
+    border-style: solid;
+    border-color: @primay-toolbar-border;
+}
+
+window.background.yumex-dnf-window > box.vertical > box.horizontal button,
+window.background.yumex-dnf-window > box.vertical > box.horizontal stackswitcher.linked.stack-switcher > button.text-button.radio {
+    background-image: none;
+    text-shadow: none;
+    -gtk-icon-shadow: none;
+    color: @theme_fg_dark_color;
+    border-width: 1px;
+    border-radius: 5px;
+    box-shadow: none;
+}
+
+window.background.yumex-dnf-window > box.vertical > box.horizontal button:hover,
+window.background.yumex-dnf-window > box.vertical > box.horizontal button:checked,
+window.background.yumex-dnf-window > box.vertical > box.horizontal button:hover:active,
+window.background.yumex-dnf-window > box.vertical > box.horizontal button:checked:hover,
+window.background.yumex-dnf-window > box.vertical > box.horizontal button:checked:hover:active,
+window.background.yumex-dnf-window > box.vertical > box.horizontal stackswitcher.linked.stack-switcher > button.text-button.radio:hover,
+window.background.yumex-dnf-window > box.vertical > box.horizontal stackswitcher.linked.stack-switcher > button.text-button.radio:checked,
+window.background.yumex-dnf-window > box.vertical > box.horizontal stackswitcher.linked.stack-switcher > button.text-button.radio:hover:active,
+window.background.yumex-dnf-window > box.vertical > box.horizontal stackswitcher.linked.stack-switcher > button.text-button.radio:checked:hover,
+window.background.yumex-dnf-window > box.vertical > box.horizontal stackswitcher.linked.stack-switcher > button.text-button.radio:checked:hover:active {
+    color: shade (@theme_selected_bg_color, 1.6);
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@menu_bg_dark_color, 2.03)),
+                                     to   (shade(@menu_bg_dark_color, 1.17)));
+    border-top-color: shade(@button_raised_gradient_color_a, 0.50);
+    border-bottom-color: shade(@button_raised_gradient_color_a, 0.50);
+    border-right-color: shade(@button_raised_gradient_color_a, 0.50);
+    border-left-color: shade(@button_raised_gradient_color_a, 0.50);
+    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
+                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+}
+
+window.background.yumex-dnf-window > box.vertical > box.horizontal stackswitcher.linked.stack-switcher > button.text-button.radio {
+    border-right-width: 0px;
+    border-left-width:  0px;
+    border-radius: 0px;
+}
+
+window.background.yumex-dnf-window > box.vertical > box.horizontal stackswitcher.linked.stack-switcher > button.text-button.radio:first-child {
+    border-radius: 6px 0 0 6px;
+    border-width: 1px;
+    border-right-width: 0px;
+}
+
+window.background.yumex-dnf-window > box.vertical > box.horizontal stackswitcher.linked.stack-switcher > button.text-button.radio:last-child {
+    border-radius: 0 6px 6px 0;
+    border-width: 1px;
+    border-left-width: 0px;
+}
+
+window.background.yumex-dnf-window > box.vertical > box.horizontal button:disabled {
+    color: @theme_text_dark_color;
+    background-color: transparent;
+    background-image: none;
+    background-color: @theme_bg_dark_color;
+    border-color: @theme_button_border_dark;
+    box-shadow: none;
+    text-shadow: none;
+    -gtk-icon-shadow: none;
+}
+
+/* info sidebar */
+window.background.yumex-dnf-window > box.vertical > box.vertical > box.horizontal > paned.vertical > box.horizontal > box.vertical list.sidebar row.activatable {
+   background-image: none;
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+window.background.yumex-dnf-window > box.vertical > box.vertical > box.horizontal > paned.vertical > box.horizontal > box.vertical list.sidebar row.activatable:hover {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@button_gradient1, 1.03)),
+                                     color-stop (0.50, shade(@button_gradient3, 1.03)),
+                                     to   (shade(@button_gradient4, 1.01)));
+    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
+                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+}
+
+window.background.yumex-dnf-window > box.vertical > box.vertical > box.horizontal > paned.vertical > box.horizontal > box.vertical list.sidebar row.activatable:hover:active {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade (@theme_bg_color, 1.20)),
+                                     color-stop (0.50, shade (@theme_bg_color, 1.00)),
+                                     color-stop (0.50, shade (@theme_bg_color, 0.99)),
+                                     to (shade (@theme_bg_color, 0.80)));
+    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
+                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+}
+
+/* list sidebar row */
+window.background.yumex-dnf-window > box.vertical > box.vertical > box.horizontal > paned.vertical > stack > box.vertical > box.horizontal > box.vertical list.sidebar {
+    background-color: shade (@theme_bg_color, 1.08);
+    border-color: @notebook_border;
+    border-style: solid;
+    border-width: 1px 0px 0px 0px;
+}
+
+window.background.yumex-dnf-window > box.vertical > box.vertical > box.horizontal > paned.vertical > stack > box.vertical > box.horizontal > box.vertical list.sidebar row.activatable {
+    background-color: shade (@theme_bg_color, 1.08);
+    border-radius: 4px;
 }
 
