@@ -2343,37 +2343,37 @@ inline-toolbar toolbar {
  * Stack switcher *
  ******************/
 
-stack-switcher > button > label,
-headerbar stack-switcher > button.titlebutton > label,
-.titlebar stack-switcher > button.titlebutton > label,
-calendar.header stack-switcher > button.titlebutton > label {
+stackswitcher > button > label,
+headerbar stackswitcher > button.titlebutton > label,
+.titlebar stackswitcher > button.titlebutton > label,
+calendar.header stackswitcher > button.titlebutton > label {
 	padding-left: 6px;
 	padding-right: 6px;
 }
 
-stack-switcher > button > image,
-headerbar stack-switcher > button.titlebutton > image,
-.titlebar stack-switcher > button.titlebutton > image,
-calendar.header stack-switcher > button.titlebutton > image {
+stackswitcher > button > image,
+headerbar stackswitcher > button.titlebutton > image,
+.titlebar stackswitcher > button.titlebutton > image,
+calendar.header stackswitcher > button.titlebutton > image {
 	padding-left: 6px;
 	padding-right: 6px;
 	padding-top: 3px;
 	padding-bottom: 3px;
 }
 
-stack-switcher > button.text-button {
+stackswitcher > button.text-button {
 	padding: 5px 10px 6px;
 }
 
-stack-switcher > button.image-button,
-headerbar stack-switcher > titlebutton button,
-.titlebar stack-switcher > titlebutton button,
-calendar.header stack-switcher > .titlebutton button {
+stackswitcher > button.image-button,
+headerbar stackswitcher > titlebutton button,
+.titlebar stackswitcher > titlebutton button,
+calendar.header stackswitcher > .titlebutton button {
 	padding: 5px 2px;
 }
 
-stack-switcher > button.needs-attention > label,
-stack-switcher > button.needs-attention > image {
+stackswitcher > button.needs-attention > label,
+stackswitcher > button.needs-attention > image {
 	animation: needs_attention 150ms ease-in;
 	background-color: transparent;
 	background-size: 6px 6px, 6px 6px;
@@ -2381,20 +2381,20 @@ stack-switcher > button.needs-attention > image {
 	background-position: right 3px, right 4px;
 }
 
-stack-switcher > button.needs-attention > label:backdrop,
-stack-switcher > button.needs-attention > image:backdrop {
+stackswitcher > button.needs-attention > label:backdrop,
+stackswitcher > button.needs-attention > image:backdrop {
 	background-size: 6px 6px, 0 0;
 }
 
-stack-switcher > button.needs-attention > label:dir(rtl),
-stack-switcher > button.needs-attention > image:dir(rtl) {
+stackswitcher > button.needs-attention > label:dir(rtl),
+stackswitcher > button.needs-attention > image:dir(rtl) {
 	background-position: left 3px, left 4px;
 }
 
-stack-switcher > button.needs-attention:active > label,
-stack-switcher > button.needs-attention:active > image,
-stack-switcher >  button.needs-attention:checked > label,
-stack-switcher >  button.needs-attention:checked > image {
+stackswitcher > button.needs-attention:active > label,
+stackswitcher > button.needs-attention:active > image,
+stackswitcher >  button.needs-attention:checked > label,
+stackswitcher >  button.needs-attention:checked > image {
 	animation: none;
 	background-image: none;
 }
@@ -3941,7 +3941,7 @@ actionbar .frame.action-bar  button.image-button {
     padding: 6px;
 }
 
-actionbar .frame.action-bar .horizontal stack-switcher.linked  button.image-button  {
+actionbar .frame.action-bar .horizontal stackswitcher.linked  button.image-button  {
     padding: 4px 2px;
 }
 
