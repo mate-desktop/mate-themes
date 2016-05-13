@@ -54,3 +54,17 @@
     background-color: @notebook_bg_color;
 }
 
+/*************
+ * Yumex-DNF *
+ *************/
+
+/* list sidebar row */
+window.background.yumex-dnf-window > box.vertical > box.vertical > box.horizontal > paned.vertical > stack > box.vertical > box.horizontal > box.vertical list.sidebar {
+    border-width: 1px 0px 1px 1px;
+}
+
+/* info sidebar */
+window.background.yumex-dnf-window > box.vertical > box.vertical > box.horizontal > paned.vertical > box.horizontal > box.vertical list.sidebar {
+    border-width: 1px 0px 1px 1px;
+}
+

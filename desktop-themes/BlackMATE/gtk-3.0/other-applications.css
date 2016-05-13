@@ -275,24 +275,39 @@ NemoQueryEditor .toolbar .entry:focus {
    border-radius: 2px;
 }
 
-/****************
- * Dconf-editor *
- ****************/
+/*************
+ * Yumex-DNF *
+ *************/
 
-DConfWindow GtkTreeView.view {
-    background-color: shade (@theme_bg_color, 1.08);
+window.background.yumex-dnf-window > box.vertical > box.horizontal > box.horizontal > button {
+    padding: 4px;
 }
 
-DConfWindow GtkTreeView.view row:hover {
-    background-color: alpha(@theme_selected_bg_color, 0.2);
+window.background.yumex-dnf-window > box.vertical > box.horizontal stackswitcher.linked.stack-switcher > button.text-button.radio {
+    padding: 2px 16px;
 }
 
-DConfWindow DConfKeyView.view {
-    background-color: @less_dark_color;
+window.background.yumex-dnf-window > box.vertical > box.horizontal > box.horizontal > button:disabled {
+	background-color: @insensitive_bg_color;
+	background-image: none;
 }
 
-/* the small line between sidebar and view */
-DConfWindow GtkPaned.horizontal {
-    border-color: transparent;
-    background-color: @theme_bg_color;
+/* list sidebar row */
+window.background.yumex-dnf-window > box.vertical > box.vertical > box.horizontal > paned.vertical > stack > box.vertical > box.horizontal > box.vertical list.sidebar {
+    background-image: linear-gradient(to right,
+                                                             @toolbar_gradient_base,
+                                                             @toolbar_gradient_bottom);
+    border-color: @less_dark_color;
+    border-style: solid;
+    border-width: 1px 0px 0px 0px;
 }
+
+window.background.yumex-dnf-window > box.vertical > box.vertical > box.horizontal > paned.vertical > stack > box.vertical > box.horizontal > box.vertical list.sidebar row.activatable {
+    background-color: transparent;
+    border-radius: 2px;
+}
+
+#YumexPackageView.view {
+    background-color: shade(@less_dark_color, 2.4);
+}
+
