@@ -3147,7 +3147,7 @@ switch,
 switch:backdrop {
     font-weight: bold;
     font-size: smaller;
-	font-stretch:  condensed;
+	font-stretch: condensed;
 	color: @internal_element_color;
 	border-radius: 3px;
 	border-width: 1px;
@@ -3539,11 +3539,10 @@ calendar.header .app-notification button.titlebutton,
 .app-notification.frame  button {
     color: @theme_fg_color;
     border-color: rgba(75, 89, 112, 0.7);
-   /*FIXME: This is deprecated
- 	background-image: linear-gradient(to bottom,
-                                      rgba(101, 101, 104, 0.7)); */
-
-	background-color: rgba(101, 101, 104, 0.7); /*works for now*/
+	/*FIXME-this is deprecated 
+    background-image: linear-gradient(to bottom,
+                                      rgba(101, 101, 104, 0.7));*/
+	background-color:rgba(101, 101, 104, 0.7); /*Use this for now*/
     background-clip: padding-box;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
     text-shadow: none;
@@ -3575,10 +3574,10 @@ calendar.header .app-notification.frame .titlebutton button {
 .app-notification.frame button:hover {
     color: white;
     border-color: rgba(0, 0, 0, 0.7);
-	/*FIXME-this is deprecated 
+    /*FIXME-this is deprecated 
     background-image: linear-gradient(to bottom,
                                       rgba(47, 47, 48, 0.7));*/
-	background-color: rgba(47, 47, 48, 0.7); /*Use this for now */
+    background-color:  rgba(47, 47, 48, 0.7); /*Use this for now*/
     background-clip: padding-box;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
     text-shadow: none;
@@ -3594,11 +3593,10 @@ calendar.header .app-notification.frame .titlebutton button {
 .app-notification.frame button:backdrop:checked {
     color: white;
     border-color: rgba(0, 0, 0, 0.7);
-
-	/*FIXME-this is deprecated 
+    /*FIXME-this is deprecated 
     background-image: linear-gradient(to bottom,
                                       rgba(65, 106, 175, 0.7));*/
-	background-color:  rgba(65, 106, 175, 0.7); /*use this for now*/
+	background-color: rgba(65, 106, 175, 0.7); /*Use this for now*/
     background-clip: padding-box;
     box-shadow: none;
     text-shadow: none;
@@ -3613,12 +3611,10 @@ calendar.header .app-notification.frame .titlebutton button {
 .app-notification.frame button:backdrop:disabled {
     color: #878989;
     border-color: rgba(0, 0, 0, 0.7);
-
 	/*FIXME-this is deprecated 
     background-image: linear-gradient(to bottom,
                                       rgba(52, 57, 57, 0.5));*/
-
-	background-color: rgba(52, 57, 57, 0.5); /*use this for now*/
+    background-color:rgba(52, 57, 57, 0.5); /*Use this for now*/
     background-clip: padding-box;
     box-shadow: none;
     text-shadow: none;
@@ -3634,8 +3630,7 @@ calendar.header .app-notification.frame .titlebutton button {
 	/*FIXME-this is deprecated 
     background-image: linear-gradient(to bottom,
                                       rgba(47, 51, 54, 0.7));*/
-
-	background-color: rgba(47, 51, 54, 0.7); /*use this for now*/
+	background-color: rgba(47, 51, 54, 0.7);
     background-clip: padding-box;
     box-shadow: none;
     text-shadow: none;
