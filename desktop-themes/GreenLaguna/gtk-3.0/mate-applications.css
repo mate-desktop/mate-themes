@@ -575,6 +575,10 @@ MatePanelApplet .horizontal .vertical .frame {
 
 }
 
+CalendarWindow#MatePanelPopupWindow {
+	border-radius: 3px;
+}
+
 /****************
  * Mate-Terminal *
  ****************/
@@ -778,8 +782,6 @@ EomThumbNav .button.flat:insensitive {
     background-image: none;
     border-color: transparent;
 }
-
-/* mate-screensaver lock dialog */
 
 .lock-dialog {
     border-radius: 3px;
