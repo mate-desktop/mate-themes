@@ -301,6 +301,10 @@ NaTrayApplet {
     color: @theme_fg_color;
 }
 
+CalendarWindow#MatePanelPopupWindow {
+	border-radius: 3px;
+}
+
 /***********************
  * Mate-Control-Center *
  ***********************/
@@ -504,7 +508,6 @@ EomThumbNav .button.flat:insensitive {
 }
 
 /* mate-screensaver lock dialog */
-
 .lock-dialog {
     border-radius: 3px;
     border-style: solid;
