@@ -3102,19 +3102,25 @@ GtkCalendar.header .app-notification.frame .titlebutton.button {
 /*************
  * Calendars *
  *************/
+
+GtkCalendar {
+    padding: 1px;
+}
+
 GtkCalendar.view {
-	border-radius: 3px;
-	border-style: solid;
-	border-width: 1px;
-	padding: 2px;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: @notebook_border;
+    padding: 0px;
 }
 
 GtkCalendar.header {
-	border-radius: 0px;
-	background-image: linear-gradient(to bottom,
-	                                  shade(@theme_bg_color, 1.1),
-	                                  shade(@theme_bg_color, 0.86));
-	border-width: 1px;
+    border-radius: 3px 3px 0px 0px;
+    background-image: linear-gradient(to bottom,
+                                      shade(@theme_bg_color, 1.1),
+                                      shade(@theme_bg_color, 0.86));
+    border-width: 0px;
 }
 
 GtkCalendar.button {
