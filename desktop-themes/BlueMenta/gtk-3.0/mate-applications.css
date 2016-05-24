@@ -702,6 +702,17 @@ NaTrayApplet {
     color: @theme_fg_color;
 }
 
+CalendarWindow#MatePanelPopupWindow {
+	border-radius: 3px;
+}
+
+/* FIXME, does not work */
+CalendarWindow#MatePanelPopupWindow ClockMap {
+	border-style: solid;
+	border-width: 1px;
+    border-color: @borders;
+}
+
 /****************
  * Mate-Terminal *
  ****************/
@@ -929,8 +940,6 @@ EomThumbNav .button.flat:hover {
 EomThumbNav .button.flat:insensitive {
     border-color: transparent;
 }
-
-/* mate-screensaver lock dialog */
 
 .lock-dialog {
     border-radius: 3px;
