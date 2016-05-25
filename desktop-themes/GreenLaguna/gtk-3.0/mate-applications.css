@@ -394,6 +394,11 @@ na-tray-applet {
     -NaTrayApplet-icon-size: 16;
 }
 
+/* control icon size as previous setting don't work */
+na-tray-applet > widget > box {
+    margin: 2px 2px 2px 0px;
+}
+
 /* volume applet, brightness applet */
 .mate-panel-applet-slider {
     background: transparent;
