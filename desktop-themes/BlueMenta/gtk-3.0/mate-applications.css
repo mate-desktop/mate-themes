@@ -426,6 +426,11 @@ na-tray-applet {
     -NaTrayApplet-icon-size: 16;
 }
 
+/* control icon size as previous setting don't work */
+na-tray-applet > widget > box {
+    margin: 2px 2px 2px 0px;
+}
+
 /* no background for icon-padding area */
 na-tray-applet widget box widget {
     background-color: transparent;
