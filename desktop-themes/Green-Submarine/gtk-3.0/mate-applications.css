@@ -632,8 +632,7 @@ na-tray-applet > widget > box {
     border-color: @menu_bg_dark_color;
 }
 
-/* Background mate-terminal, this isn't the normal way to style that! */
-.mate-terminal vte {
+vte-terminal {
     -TerminalWindow-background-darkness: 0.95;
     background-color: @terminal_background_color;
     color: @selected_fg_color;
