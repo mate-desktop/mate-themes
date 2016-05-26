@@ -436,7 +436,7 @@ na-tray-applet > widget > box {
  * Mate-Terminal *
  ****************/
 
-.mate-terminal vte {
+vte-terminal {
     -TerminalWindow-background-darkness: 0.95;
     background-color: @selected_fg_color;
     color: @theme_text_color;
