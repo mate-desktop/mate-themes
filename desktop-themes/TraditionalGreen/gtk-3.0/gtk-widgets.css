@@ -212,11 +212,14 @@ treeview.view.separator {
 }
 
 treeview.view separator,
-treeview.view .separator, /* why ?*/
+treeview.view .separator,
 treeview separator,
 separator,
-separator:hover {
+separator:hover,
+.separator,
+.separator:hover {
     color: shade(@border_color, 1.30);
+    background-color: shade(@border_color, 1.30);
 }
 
 /*********
