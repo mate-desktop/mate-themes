@@ -479,8 +479,10 @@ label selection:backdrop:disabled {
  **************/
 
 treeview separator,
-separator {
+separator,
+.separator {
     color: darker (@theme_bg_color);
+	background-color: darker (@theme_bg_color);
 }
 
 paned > separator {
