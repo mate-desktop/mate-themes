@@ -213,7 +213,7 @@
 /* misc */
 /* do we have this style class? */
 .caja-cluebar-label {
-    font: normal;
+    font-weight: normal;
     text-shadow: 0 1px shade (@cluebar_color, 1.06);
 }
 
@@ -418,7 +418,7 @@ PanelApplet.wnck-applet .wnck-pager:hover {
 }
 
 #clock-applet-button.flat.toggle > box.horizontal > label {
-    font: normal;
+    font-weight: normal;
 }
 
 na-tray-applet {

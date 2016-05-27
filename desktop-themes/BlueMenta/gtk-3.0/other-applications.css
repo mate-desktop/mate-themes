@@ -160,8 +160,8 @@
 /* Misc */
 
 .nemo-cluebar-label {
-	font: normal;
-	text-shadow: 0 1px shade (@cluebar_color, 1.06);
+    font-weight: normal;
+    text-shadow: 0 1px shade (@cluebar_color, 1.06);
 }
 
 .nemo-window-pane infobar.info {
