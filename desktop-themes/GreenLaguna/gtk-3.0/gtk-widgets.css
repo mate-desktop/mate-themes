@@ -3369,7 +3369,8 @@ dialog.background.solid-csd > headerbar.titlebar  {
 }
  
 .titlebar .title {
-    font: Bold 10;
+    font-weight: bold;
+    font-size: 10pt;
     background: none;
     color: @theme_fg_color;
 }
@@ -3504,7 +3505,7 @@ switch,
 switch:backdrop {
     font-weight: bold;
     font-size: smaller;
-    font: bold condensed;
+    font-stretch:  condensed;
     color: @internal_element_color;
     border-radius: 3px;
     border-width: 1px;
@@ -3950,6 +3951,7 @@ calendar.header .app-notification button.titlebutton,
     border-color: rgba(112, 129, 106, 0.9);
     border-image: none;
     background-image: linear-gradient(to bottom,
+                                      rgba(177, 204, 168, 0.9),
                                       rgba(177, 204, 168, 0.9));
     background-clip: padding-box;
     box-shadow: inset 0 1px rgba(0, 0, 0, 0.1);
@@ -3986,6 +3988,7 @@ calendar.header .app-notification.frame button.titlebutton {
     border-image: none;
     background-color: transparent;
     background-image: linear-gradient(to bottom,
+                                      rgba(177, 204, 168, 0.1),
                                       rgba(177, 204, 168, 0.1));
     background-clip: padding-box;
     box-shadow: inset 0 1px rgba(0, 0, 0, 0.1);
@@ -4005,6 +4008,7 @@ calendar.header .app-notification.frame button.titlebutton {
     border-color: rgba(112, 129, 106, 0.7);
     background-color: transparent;
     background-image: linear-gradient(to bottom,
+                                      rgba(170, 196, 161, 0.9),
                                       rgba(170, 196, 161, 0.9));
     background-clip: padding-box;
     box-shadow: none;
@@ -4021,6 +4025,7 @@ calendar.header .app-notification.frame button.titlebutton {
     color: #878989;
     border-color: rgba(112, 129, 106, 0.7);
     background-image: linear-gradient(to bottom,
+                                      rgba(198, 207, 181, 0.5),
                                       rgba(198, 207, 181, 0.5));
     background-clip: padding-box;
     box-shadow: none;
@@ -4035,6 +4040,7 @@ calendar.header .app-notification.frame button.titlebutton {
     color: #eeeeec;
     border-color: rgba(112, 129, 106, 0.7);
     background-image: linear-gradient(to bottom,
+                                      rgba(172, 205, 138, 0.7),
                                       rgba(172, 205, 138, 0.7));
     background-clip: padding-box;
     box-shadow: none;
