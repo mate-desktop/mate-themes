@@ -3200,13 +3200,14 @@ actionbar button.image-button {
 }
 
 actionbar .title {
-	font: Bold 10;
-	padding: 0px 12px 0px 12px;
+    font-weight: bold;
+    font-size: 10pt;
+    padding: 0px 12px 0px 12px;
 }
 
 actionbar .subtitle {
-	font: 9;
-	padding: 0px 12px 0px 12px;
+    font-size: 9pt;
+    padding: 0px 12px 0px 12px;
 }
 
 /***************
@@ -4100,14 +4101,13 @@ toolbar.selection-mode button.selection-menu menuitem {
  ****************/
 
 assistant .sidebar highlight {
-	background-color: transparent;
-	color: @theme_fg_color;
-	font: bold;
+    background-color: transparent;
+    color: @theme_fg_color;
+    font-weight: bold;
 }
 
 assistant .sidebar {
 	padding: 12px 18px 12px;
-
 	border-width: 0 1px 0 0;
 	border-radius: 0px;
 	border-style: solid;
@@ -4724,7 +4724,7 @@ calendar.header {
 }
 
 calendar.header .title {
-	font: Bold;
+	font-weight: bold;
 	padding: 0px 12px;
 }
 
@@ -5145,7 +5145,7 @@ dialog.background.solid-csd > headerbar.titlebar  {
 
 .titlebar .title,
 headerbar .title {
-	font: Bold;
+	font-weight: bold;
 	padding: 0px 12px;
 }
 
