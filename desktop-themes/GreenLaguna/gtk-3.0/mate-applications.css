@@ -389,6 +389,11 @@ PanelSeparator {
     font-weight: normal;
 }
 
+/* calendar window */
+#MatePanelPopupWindow {
+	border-radius: 3px;
+}
+
 na-tray-applet {
     -NaTrayApplet-icon-padding: 3px;
     -NaTrayApplet-icon-size: 16;
