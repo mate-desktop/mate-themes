@@ -421,6 +421,24 @@ PanelApplet.wnck-applet .wnck-pager:hover {
     font: normal;
 }
 
+#MatePanelPopupWindow {
+	border-radius: 3px;
+}
+
+#MatePanelPopupWindow frame {
+	border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: shade(@borders, 0.95);
+}
+
+/* FIXME, does not work */
+#MatePanelPopupWindow ClockMap {
+	border-style: solid;
+	border-width: 1px;
+    border-color: @borders;
+}
+
 na-tray-applet {
     -NaTrayApplet-icon-padding: 3px;
     -NaTrayApplet-icon-size: 16;
