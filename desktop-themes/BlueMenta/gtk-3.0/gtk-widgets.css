@@ -4561,6 +4561,10 @@ expander arrow {
     min-height: 16px;
     -gtk-icon-style: regular;
 	-gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+    -gtk-icon-shadow:  0px  1px shade (@theme_selected_fg_color, 1.0),
+                       1px  0px shade (@theme_selected_fg_color, 1.0),
+                      -1px  0px shade (@theme_selected_fg_color, 1.0),
+                       0px -1px shade (@theme_selected_fg_color, 1.0);
 }
 
 expander arrow:dir(rtl) {
@@ -4568,11 +4572,29 @@ expander arrow:dir(rtl) {
 }
 
 expander arrow:hover {
-	color: @internal_element_color;
+	color: shade(@theme_selected_fg_color, 1.0);
+    -gtk-icon-shadow:  0px  1px shade (@theme_fg_color, 0.8),
+                       1px  0px shade (@theme_fg_color, 0.8),
+                      -1px  0px shade (@theme_fg_color, 0.8),
+                       0px -1px shade (@theme_fg_color, 0.8);
 }
 
 expander arrow:checked {
 	-gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+	color: shade(@theme_selected_fg_color, 1.0);
+    -gtk-icon-shadow:  0px  1px shade (@theme_fg_color, 0.8),
+                       1px  0px shade (@theme_fg_color, 0.8),
+                      -1px  0px shade (@theme_fg_color, 0.8),
+                       0px -1px shade (@theme_fg_color, 0.8);
+}
+
+expander arrow:checked:hover {
+	-gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+	color: shade(@theme_fg_color, 1.0);
+    -gtk-icon-shadow:  0px  1px shade (@theme_selected_fg_color, 1.0),
+                       1px  0px shade (@theme_selected_fg_color, 1.0),
+                      -1px  0px shade (@theme_selected_fg_color, 1.0),
+                       0px -1px shade (@theme_selected_fg_color, 1.0);
 }
 
 expander {
@@ -4705,25 +4727,26 @@ list > row > button:hover {
  **************/
 
 calendar {
-	padding: 2px;
-    border-color: @borders;
+	padding: 1px;
 }
 
 calendar.view {
 	border-radius: 3px;
 	border-style: solid;
 	border-width: 1px;
-	padding: 2px;
+    border-color: @borders;
+	padding: 0px;
 }
 
 calendar.header {
-	border-width: 0 0 1px;
+	border-radius: 3px 3px 0px 0px;
 	border-style: solid;
 	border-color: shade(@borders, 0.90);
 	background-color: @theme_bg_color;
 	background-image: linear-gradient(to bottom,
 		shade(@theme_bg_color, 1.04),
 		shade(@theme_bg_color, 0.89));
+	border-width: 0px;
 	box-shadow: inset 0 -1px shade(@wm_bg_b, 0.95);
 	padding: 6px;
 }
@@ -4738,7 +4761,6 @@ calendar.header .subtitle {
 	padding: 0px 12px;
 }
 
-/* this makes no sense for gtk+-3.20 :) */
 calendar.button {
   background-image: none;
 }
@@ -4753,9 +4775,9 @@ highlight,
 calendar.highlight {
 	background-color: @theme_selected_bg_color;
 	color: @theme_selected_fg_color;
-	border-radius: 0;
-	padding: 0;
-	border-width: 0;
+	border-radius: 0px;
+	padding: 0px;
+	border-width: 0px;
 }
 
 /**************
