@@ -3812,15 +3812,22 @@ expander arrow:checked {
 }
 
 expander title {
-    border-style: solid;
+    padding: 4px;
+    border-radius: 3px;
     border-width: 1px;
-    border-radius: 2px;
+    border-style: solid;
     border-color: @internal_element_color;
+    border-image: url("assets/button-border.svg") 3 / 3px stretch;
+    background-image: linear-gradient(to bottom,
+                                      @button_gradient_color_a,
+                                      @button_gradient_color_b);
+    transition: all 400ms ease-out;
     color: @theme_fg_color;
-    background-image: none;
-    background-color: transparent;
+    min-height: 22px;
+    min-width: 22px;
 }
 
+/* does that work? */
 expander title:active {
     border-color: @internal_element_color;
     color: @theme_fg_color;
@@ -3828,7 +3835,12 @@ expander title:active {
 }
 
 expander title:hover {
-    border-color: @internal_element_color;
+    border-style: solid;
+    border-color: shade(@button_border, 1.1);
+    background-image: linear-gradient(to bottom,
+                                      @button_hover_gradient_color_a,
+                                      @button_hover_gradient_color_b);
+    border-image: url("assets/button-active-border.svg") 3 3 3 3 / 3px 3px 3px 3px stretch;
     color: @theme_fg_color;
 }
 
@@ -4049,11 +4061,15 @@ calendar.header .app-notification.frame button.titlebutton {
  *************/
 
 calendar {
+    padding: 1px;
+}
+
+calendar.view {
     border-radius: 3px;
     border-style: solid;
     border-width: 1px;
-    border-color: alpha(@frame_color, 0.6);
-    padding: 1px;
+    border-color: @notebook_border;
+    padding: 0px;
 }
 
 calendar.header {
@@ -4061,7 +4077,7 @@ calendar.header {
     background-image: linear-gradient(to bottom,
                                       shade(@theme_bg_color, 1.1),
                                       shade(@theme_bg_color, 0.86));
-    border-width: 0px 0px 1px 0px;
+    border-width: 0px;
 }
 
 calendar.button {
