@@ -112,25 +112,41 @@ textView {
  * Tooltips *
  ************/
 
-tooltip {
+tooltip,
+.tooltip {
 	border-radius: 2px;
 	border-width: 1px;
 	border-color: @theme_tooltip_fg_color;
 	border-style: solid;
 }
 
-tooltip.background {
+tooltip.background,
+.tooltip.background {
 	background-color: @theme_tooltip_bg_color;
     background-clip: padding-box;
 }
 
-tooltip label {
+tooltip label,
+.tooltip label {
 	text-shadow: none;
 	color: @theme_tooltip_fg_color;
 	padding: 8px;
 }
 
-tooltip decoration {
+tooltip decoration,
+.tooltip decoration,
+tooltip.csd decoration,
+.tooltip.csd decoration,
+tooltip.ssd decoration,
+.tooltip.ssd decoration,
+tooltip.solid-csd decoration,
+.tooltip.solid-csd decoration,
+tooltip.background.csd decoration,
+.tooltip.background.csd decoration,
+tooltip.background.ssd decoration,
+.tooltip.background.ssd decoration,
+tooltip.background.solid-csd decoration,
+.tooltip.background.solid-csd decoration {
 	background-color: transparent;
 }
 
