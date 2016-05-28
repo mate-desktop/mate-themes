@@ -532,6 +532,14 @@ MatePanelAppletFrameDBus {
     color: @menu_fg_dark_color;
 }
 
+#MatePanelPopupWindow frame label {
+     text-shadow: 1px 1px alpha (#000000, 0.8);
+}
+
+#MatePanelPopupWindow frame image {
+     -gtk-icon-shadow: 1px 1px alpha (#000000, 0.8);
+}
+
 #MatePanelPopupWindow calendar.view {
     border-color: shade(@theme_selected_bg_color, 1.3);
 }
@@ -579,11 +587,6 @@ MatePanelAppletFrameDBus {
 #MatePanelPopupWindow frame expander {
     color: @menu_fg_dark_color;
     text-shadow: 1px 1px alpha (#000000, 0.8);
-}
-
-#MatePanelPopupWindow frame expander label:hover,
-#MatePanelPopupWindow frame expander arrow:hover {
-    color: shade (@theme_selected_bg_color, 1.3);
 }
 
 /* drivebutton */
