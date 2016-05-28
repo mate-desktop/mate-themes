@@ -3490,7 +3490,7 @@ expander toolbar.inline-toolbar {
 
 /* Calendars */
 calendar {
-    padding: 2px;
+    padding: 1px;
     border-style:none;
 }
 
@@ -3499,11 +3499,11 @@ calendar.view {
     border-style: solid;
     border-width: 1px;
     border-color: rgb(162,158,155);
-    padding: 2px;
+    padding: 0px;
 }
 
 calendar.header {
-    border-radius: 0;
+    border-radius: 3px 3px 0px 0px;
     background-image: -gtk-gradient (linear,
                       left top,
                       left bottom,
