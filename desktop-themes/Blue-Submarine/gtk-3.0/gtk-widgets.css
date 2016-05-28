@@ -4151,6 +4151,15 @@ treeview.view.expander:selected:hover {
 }
 
 expander arrow {
+    color: @menu_fg_dark_color;
+    text-shadow: 1px 1px alpha (#000000, 0.8);
+   -gtk-icon-shadow:  0px  1px shade (@menu_bg_dark_color, 1.0),
+                      1px  0px shade (@menu_bg_dark_color, 1.0),
+                     -1px  0px shade (@menu_bg_dark_color, 1.0),
+                      0px -1px shade (@menu_bg_dark_color, 1.0);
+}
+
+expander arrow {
     -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
 }
 
@@ -4159,11 +4168,29 @@ expander arrow:dir(rtl) {
 }
 
 expander arrow:hover {
-    color: @internal_element_color;
+    color: shade (@theme_selected_bg_color, 1.2);
+    -gtk-icon-shadow:  0px  1px shade (@menu_fg_dark_color, 1.0),
+                       1px  0px shade (@menu_fg_dark_color, 1.0),
+                      -1px  0px shade (@menu_fg_dark_color, 1.0),
+                       0px -1px shade (@menu_fg_dark_color, 1.0);
 }
 
 expander arrow:checked {
     -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+    color: shade (@theme_selected_bg_color, 1.2);
+    -gtk-icon-shadow:  0px  1px shade (@menu_fg_dark_color, 1.0),
+                       1px  0px shade (@menu_fg_dark_color, 1.0),
+                      -1px  0px shade (@menu_fg_dark_color, 1.0),
+                       0px -1px shade (@menu_fg_dark_color, 1.0);
+}
+
+expander arrow:checked:hover {
+    color: @menu_fg_dark_color;
+    text-shadow: 1px 1px alpha (#000000, 0.8);
+   -gtk-icon-shadow:  0px  1px shade (@menu_bg_dark_color, 1.0),
+                      1px  0px shade (@menu_bg_dark_color, 1.0),
+                     -1px  0px shade (@menu_bg_dark_color, 1.0),
+                      0px -1px shade (@menu_bg_dark_color, 1.0);
 }
 
 /* why this weird padding, possible issue with gtk+-3.18 ? */
