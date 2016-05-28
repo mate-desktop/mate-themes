@@ -4430,20 +4430,19 @@ calendar.header .app-notification.frame button.titlebutton {
  **************/
 
 calendar {
-    border-radius: 3px;
-    border-color: @notebook_border;
-    padding: 1px 1px 3px 1px;
+    padding: 1px;
 }
 
 calendar.view {
-    border-radius: 3px;
+    border-radius: 4px;
     border-style: solid;
     border-width: 1px;
+    border-color: @notebook_border;
     padding: 2px;
 }
 
 calendar.header {
-    border-radius: 3px 3px 0px 0px;
+    border-radius: 4px 4px 0px 0px;
     background-image: linear-gradient(to bottom,
                                       shade(@theme_bg_color, 1.04),
                                       shade(@theme_bg_color, 0.89));
