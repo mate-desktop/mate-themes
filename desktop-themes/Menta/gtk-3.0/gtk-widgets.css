@@ -112,25 +112,41 @@ textView {
  * Tooltips *
  ************/
 
-tooltip {
+tooltip,
+.tooltip {
 	border-radius: 2px;
 	border-width: 1px;
 	border-color: @theme_tooltip_fg_color;
 	border-style: solid;
 }
 
-tooltip.background {
+tooltip.background,
+.tooltip.background {
 	background-color: @theme_tooltip_bg_color;
     background-clip: padding-box;
 }
 
-tooltip label {
+tooltip label,
+.tooltip label {
 	text-shadow: none;
 	color: @theme_tooltip_fg_color;
 	padding: 8px;
 }
 
-tooltip decoration {
+tooltip decoration,
+.tooltip decoration,
+tooltip.csd decoration,
+.tooltip.csd decoration,
+tooltip.ssd decoration,
+.tooltip.ssd decoration,
+tooltip.solid-csd decoration,
+.tooltip.solid-csd decoration,
+tooltip.background.csd decoration,
+.tooltip.background.csd decoration,
+tooltip.background.ssd decoration,
+.tooltip.background.ssd decoration,
+tooltip.background.solid-csd decoration,
+.tooltip.background.solid-csd decoration {
 	background-color: transparent;
 }
 
@@ -3216,13 +3232,14 @@ actionbar button.image-button {
 }
 
 actionbar .title {
-	font: Bold 10;
-	padding: 0px 12px 0px 12px;
+    font-weight: bold;
+    font-size: 10pt;
+    padding: 0px 12px 0px 12px;
 }
 
 actionbar .subtitle {
-	font: 9;
-	padding: 0px 12px 0px 12px;
+    font-size: 9pt;
+    padding: 0px 12px 0px 12px;
 }
 
 /***************
@@ -4118,7 +4135,7 @@ toolbar.selection-mode button.selection-menu menuitem {
 assistant .sidebar highlight {
 	background-color: transparent;
 	color: @theme_fg_color;
-	font: bold;
+	font-weight: bold;
 }
 
 assistant .sidebar {
@@ -4450,6 +4467,7 @@ calendar.header .app-notification button.titlebutton,
     color: @theme_fg_color;
     border-color: rgba(89, 112, 75, 0.7);
     background-image: linear-gradient(to bottom,
+                                      rgba(172, 205, 138, 0.7),
                                       rgba(172, 205, 138, 0.7));
     background-clip: padding-box;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
@@ -4483,6 +4501,7 @@ calendar.header .app-notification.frame button.titlebutton {
     color: white;
     border-color: rgba(0, 0, 0, 0.7);
     background-image: linear-gradient(to bottom,
+                                      rgba(119, 158, 79, 0.7),
                                       rgba(119, 158, 79, 0.7));
     background-clip: padding-box;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
@@ -4499,6 +4518,7 @@ calendar.header .app-notification.frame button.titlebutton {
     color: white;
     border-color: rgba(0, 0, 0, 0.7);
     background-image: linear-gradient(to bottom,
+                                      rgba(105, 175, 65, 0.7),
                                       rgba(105, 175, 65, 0.7));
     background-clip: padding-box;
     box-shadow: none;
@@ -4515,6 +4535,7 @@ calendar.header .app-notification.frame button.titlebutton {
     color: #878989;
     border-color: rgba(0, 0, 0, 0.7);
     background-image: linear-gradient(to bottom,
+                                      rgba(52, 57, 57, 0.5),
                                       rgba(52, 57, 57, 0.5));
     background-clip: padding-box;
     box-shadow: none;
@@ -4529,6 +4550,7 @@ calendar.header .app-notification.frame button.titlebutton {
     color: #eeeeec;
     border-color: rgba(0, 0, 0, 0.7);
     background-image: linear-gradient(to bottom,
+                                      rgba(172, 205, 138, 0.7),
                                       rgba(172, 205, 138, 0.7));
     background-clip: padding-box;
     box-shadow: none;
@@ -4763,7 +4785,7 @@ calendar.header {
 }
 
 calendar.header .title {
-	font: Bold;
+	font-weight: bold;
 	padding: 0px 12px;
 }
 
@@ -5184,7 +5206,7 @@ dialog.background.solid-csd > headerbar.titlebar  {
 
 .titlebar .title,
 headerbar .title {
-	font: Bold;
+	font-weight: bold;
 	padding: 0px 12px;
 }
 
