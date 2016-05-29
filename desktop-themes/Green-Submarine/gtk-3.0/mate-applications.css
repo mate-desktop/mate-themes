@@ -418,12 +418,6 @@ PanelToplevel > widget > button:hover:active {
     border-style: none;
 }
 
-/* dictionary applet */
-#PanelApplet entry {
-    border-width: 1px;
-    margin: 3px 0px;
-}
-
 PanelSeparator {
     border-width: 0;
     color: transparent;
@@ -439,6 +433,19 @@ MatePanelAppletFrameDBus {
     background-color: transparent;
     background-repeat: no-repeat;
     background-position: left;
+}
+
+/* this makes text readable with all kind of wallpapers if using a transparent panel */
+#PanelApplet label,
+.mate-panel-menu-bar menubar > menuitem {
+    color: @menu_fg_dark_color;
+    text-shadow: 1px 1px alpha (#000000, 0.8);
+}
+
+/* dictionary applet */
+#PanelApplet entry {
+    border-width: 1px;
+    margin: 3px 0px;
 }
 
 /* most applets */
