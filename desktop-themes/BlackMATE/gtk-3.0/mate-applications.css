@@ -333,6 +333,14 @@ CajaQueryEditor .toolbar .entry:focus {
     box-shadow: none;
 }
 
+/* this makes text readable with all kind of wallpapers if using a transparent panel */
+/*Limit this to the panel itself, keeping it off the menus*/
+#PanelApplet label,
+.mate-panel-menu-bar menubar > menuitem {
+    color: @menu_fg_dark_color;
+    text-shadow: 1px 1px alpha (#000000, 0.8);
+}
+
 /* panel grip */
 .mate-panel-menu-bar.background {
     border-radius: 3px;
