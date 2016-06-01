@@ -423,6 +423,14 @@ MatePanelAppletFrameDBus {
     background-position: left;
 }
 
+/* this makes text readable with all kind of wallpapers if using a transparent panel */
+/*Limit this to the panel itself, keeping it off the menus*/
+#PanelApplet .label,
+.mate-panel-menu-bar .menubar > .menuitem,
+.mate-panel-menu-bar .menubar > .menuitem > .label {
+    text-shadow: 1px 1px alpha (#000000, 0.8);
+}
+
 /* set normal menubar button */
 PanelMenuBar.menubar .menuitem {
     transition: all 300ms ease-out;
