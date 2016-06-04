@@ -2,9 +2,6 @@
  * NEMO File manager *
  *********************/
 
-/* workaround for broken first/last-child logic with linked buttons
-   in pathbar since gtk+-3.18 */
-
 .nemo-window widget.raised.linked > button:nth-child(first) widget {
     -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
 }
@@ -14,34 +11,13 @@
 }
 
 .nemo-window widget.raised.linked > button:nth-child(first) {
-   margin: 0px -5px 0px -1px;
+   margin: 0px 0px 0px -1px;
    padding: 0px;
 }
 
 .nemo-window widget.raised.linked > button:nth-child(last) {
-   margin: 0px -1px 0px -5px;
+   margin: 0px -1px 0px 0px;
    padding: 0px;
-}
-
-.nemo-window widget.raised.linked > button.text-button.toggle {
-    border-width: 1px;
-    border-image-width: 3px 3px 4px 3px;
-    border-radius: 4px;
-    border-style: solid;
-    margin: 0px -8px 0px 0px;
-}
-
-.nemo-window widget.raised.linked > button.text-button.toggle:nth-child(first) {
-    margin: 0px -1px 0px 0px;
-}
-
-.nemo-window widget.raised.linked > button.text-button.toggle:nth-child(last) {
-    margin: 0px 0px 0px -1px;
-}
-
-.nemo-window widget.raised.linked > button.text-button.toggle label,
-.nemo-window widget.raised.linked > button.text-button.toggle image {
-   padding: 0px 4px;
 }
 
 /* For Places Sidebar diskfull indicators */
