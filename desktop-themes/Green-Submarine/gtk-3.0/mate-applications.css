@@ -485,8 +485,8 @@ MatePanelAppletFrameDBus {
 #PanelApplet button.flat.toggle:checked,
 #PanelApplet button.flat.toggle:checked:hover{
     background-image: none;
-    border-color: shade (@theme_selected_bg_color, 1.30);
-    background-color: shade (@theme_selected_bg_color, 0.90);
+    border-color: shade (@theme_selected_bg_color, 1.10);
+    background-color: shade (@theme_selected_bg_color, 0.70);
     border-radius: 5px;
     border-width: 1px;
     color: shade (@theme_text_dark_color, 0.90);
@@ -499,8 +499,8 @@ MatePanelAppletFrameDBus {
 #PanelApplet button.toggle:hover,
 #PanelApplet button.flat.toggle:hover {
     background-image: none;
-    border-color: shade (@theme_selected_bg_color, 1.50);
-    background-color: shade (@theme_selected_bg_color, 1.10);
+    border-color: shade (@theme_selected_bg_color, 1.30);
+    background-color: shade (@theme_selected_bg_color, 0.90);
     border-radius: 5px;
     border-width: 1px;
     color: @selected_fg_color;
