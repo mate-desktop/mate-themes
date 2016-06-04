@@ -292,6 +292,7 @@ MatePanelAppletFrameDBus {
 .mate-panel-menu-bar menubar menuitem {
     transition: all 200ms ease-out;
     text-shadow: none;
+    font-weight: 600;
 }
 
 /* set selected menubar button */
@@ -310,6 +311,7 @@ MatePanelAppletFrameDBus {
 .mate-panel-menu-bar menubar menu menuitem {
     transition: all 150ms ease-out;
     padding: 6px;
+    font-weight: normal;
 }
 
 /* set selected menubar menuitem */
