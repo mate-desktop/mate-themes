@@ -28,8 +28,8 @@
 	<distance name="left_titlebar_edge" value="4"/>
 	<distance name="right_titlebar_edge" value="1"/>
 	<distance name="title_vertical_pad" value="10"/>
-	<border name="title_border" left="10" right="10" top="1" bottom="2"/>
-	<border name="button_border" left="0" right="0" top="1" bottom="2"/>
+	<border name="title_border" left="2" right="2" top="0" bottom="0"/>
+	<border name="button_border" left="0" right="0" top="2" bottom="2"/>
 	<aspect_ratio name="button" value="1"/>
 </frame_geometry>
 
@@ -635,7 +635,7 @@
 	<button function="unstick" state="pressed"><draw_ops></draw_ops></button>
 </frame_style>
 
-<frame_style name="dialog_focused" geometry="small">
+<frame_style name="dialog_focused" geometry="normal">
 	<piece position="entire_background" draw_ops="entire_background_focused" />
 	<piece position="titlebar" draw_ops="rounded_titlebar_focused" />
 	<piece position="title" draw_ops="title_focused" />
@@ -667,7 +667,7 @@
 	<button function="unstick" state="pressed"><draw_ops></draw_ops></button>
 </frame_style>
 
-<frame_style name="dialog_unfocused" geometry="small_unfocused">
+<frame_style name="dialog_unfocused" geometry="normal_unfocused">
 	<piece position="entire_background" draw_ops="entire_background_unfocused" />
 	<piece position="titlebar" draw_ops="titlebar_unfocused" />
 	<piece position="title" draw_ops="title_unfocused" />
@@ -698,7 +698,7 @@
 	<button function="unstick" state="pressed"><draw_ops></draw_ops></button>
 </frame_style>
 
-<frame_style name="modal_dialog_focused" geometry="modal">
+<frame_style name="modal_dialog_focused" geometry="normal">
 	<piece position="entire_background" draw_ops="entire_background_focused" />
 	<piece position="titlebar" draw_ops="rounded_titlebar_focused" />
 	<piece position="title" draw_ops="title_focused" />
@@ -729,7 +729,7 @@
 	<button function="unstick" state="normal"><draw_ops></draw_ops></button><button function="unstick" state="pressed"><draw_ops></draw_ops></button>
 </frame_style>
 
-<frame_style name="modal_dialog_unfocused" geometry="modal">
+<frame_style name="modal_dialog_unfocused" geometry="normal_unfocused">
 	<piece position="entire_background" draw_ops="entire_background_unfocused" />
 	<piece position="titlebar" draw_ops="rounded_titlebar_unfocused" />
 	<piece position="title" draw_ops="title_unfocused" />
@@ -762,7 +762,7 @@
 	<button function="unstick" state="pressed"><draw_ops></draw_ops></button>
 </frame_style>
 
-<frame_style name="utility_focused" geometry="small">
+<frame_style name="utility_focused" geometry="normal">
 	<piece position="entire_background" draw_ops="entire_background_focused" />
 	<piece position="titlebar" draw_ops="titlebar_focused_alt" />
 	<piece position="title" draw_ops="title_focused" />
@@ -794,7 +794,7 @@
 	<button function="unstick" state="pressed"><draw_ops></draw_ops></button>
 </frame_style>
 
-<frame_style name="utility_unfocused" geometry="small_unfocused">
+<frame_style name="utility_unfocused" geometry="normal_unfocused">
 	<piece position="entire_background" draw_ops="entire_background_unfocused" />
 	<piece position="titlebar" draw_ops="titlebar_unfocused" />
 	<piece position="title" draw_ops="title_unfocused" />
