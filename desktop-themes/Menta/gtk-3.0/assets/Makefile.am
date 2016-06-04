@@ -48,9 +48,9 @@ theme_DATA = \
 	sidebar-radio-prelight.svg \
 	sidebar-radio-selected-prelight.svg \
 	sidebar-radio-selected.svg \
-	slider-hover.png \
-	slider-ins.png \
-	slider.png \
+	slider-hover.svg \
+	slider-ins.svg \
+	slider.svg \
 	switch-off-ins.png \
 	switch-off-ins.svg \
 	switch-off.png \
