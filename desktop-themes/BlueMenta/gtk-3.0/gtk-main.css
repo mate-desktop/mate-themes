@@ -97,6 +97,7 @@
 @define-color scale_trough_bg_b shade(@theme_bg_color, 0.76);
 @define-color scale_shadow alpha(white, 0.50);
 @define-color scale_progress_fill @theme_selected_bg_color;
+@define-color scale_trough_border shade(@borders, 0.83);
 @define-color scale_highlight_border @theme_selected_bg_color;
 @define-color scale_highlight_bg @theme_selected_bg_color;
 @define-color scale_highlight_shadow alpha(white, 0.50);
