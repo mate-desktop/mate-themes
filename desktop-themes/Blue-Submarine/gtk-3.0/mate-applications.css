@@ -444,10 +444,14 @@ MatePanelAppletFrameDBus {
     text-shadow: 1px 1px alpha (#000000, 0.8);
 }
 
-/* dictionary applet */
-#PanelApplet entry {
-    border-width: 1px;
-    margin: 3px 0px;
+/* menubar */
+.mate-panel-menu-bar menu > menuitem,
+.mate-panel-menu-bar menubar > menuitem {
+    padding: 5px;
+}
+
+.mate-panel-menu-bar menubar > menuitem:hover {
+    color: shade (@theme_selected_bg_color, 1.6);
 }
 
 /* most applets */
@@ -515,9 +519,10 @@ MatePanelAppletFrameDBus {
     padding: 4px 2px;
 }
 
-.mate-panel-menu-bar menu > menuitem,
-.mate-panel-menu-bar menubar > menuitem {
-    padding: 5px;
+/* dictionary applet */
+#PanelApplet entry {
+    border-width: 1px;
+    margin: 3px 0px;
 }
 
 /* clock-applet */
