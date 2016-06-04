@@ -158,115 +158,111 @@ switch:checked:disabled {
 /*********************
  * GtkScale's slider *
  *********************/
+
 scale.horizontal contents:only-child > trough > slider,
 scale slider {
-	background-image: url("assets/slider.png");
+	background-image: url("assets/slider.svg");
     background-repeat: no-repeat;
 }
 
 scale slider:hover {
-	background-image: url("assets/slider-hover.png");
+	background-image: url("assets/slider-hover.svg");
     background-repeat: no-repeat;
 }
 
 scale slider:disabled,
 scale slider:disabled:hover {
-	background-image: url("assets/slider-ins.png");
+	background-image: url("assets/slider-ins.svg");
     background-repeat: no-repeat;
 }
 
-scale.horizontal.scale-has-marks-above.color slider,
-scale.horizontal.scale-has-marks-above slider {
+scale.horizontal.color.marks-before slider,
+scale.horizontal.marks-before slider {
 	background-image: url("assets/scale-slider-marks-above-horizontal.png");
     background-repeat: no-repeat;
 }
 
-scale.horizontal.scale-has-marks-above.color slider:hover,
-scale.horizontal.scale-has-marks-above slider:hover {
+scale.horizontal.color.marks-before slider:hover,
+scale.horizontal.marks-before slider:hover {
 	background-image: url("assets/scale-slider-marks-above-horizontal-active.png");
     background-repeat: no-repeat;
 }
 
-scale.horizontal.scale-has-marks-above.color slider:active,
-scale.horizontal.scale-has-marks-above.color slider:active:hover,
-scale.horizontal.scale-has-marks-above slider:active,
-scale.horizontal.scale-has-marks-above slider:active:hover {
+scale.horizontal.color.marks-before slider:active,
+scale.horizontal.color.marks-before slider:active:hover,
+scale.horizontal.marks-before slider:active,
+scale.horizontal.marks-before slider:active:hover {
 	background-image: url("assets/scale-slider-marks-above-horizontal-active.png");
     background-repeat: no-repeat;
 }
 
-scale.horizontal.scale-has-marks-above.color slider:disabled,
-scale.horizontal.scale-has-marks-above slider:disabled {
+scale.horizontal.color.marks-before slider:disabled,
+scale.horizontal.marks-before slider:disabled {
 	background-image: url("assets/scale-slider-marks-above-horizontal-insensitive.png");
     background-repeat: no-repeat;
 }
 
-scale.vertical.scale-has-marks-above slider {
+scale.vertical.marks-before slider {
 	background-image: url("assets/scale-slider-marks-above-vertical.png");
     background-repeat: no-repeat;
 }
 
-scale.vertical.scale-has-marks-above slider:hover {
+scale.vertical.marks-before slider:hover {
 	background-image: url("assets/scale-slider-marks-above-vertical-active.png");
     background-repeat: no-repeat;
 }
 
-scale.vertical.scale-has-marks-above slider:active,
-scale.vertical.scale-has-marks-above slider:active:hover {
+scale.vertical.marks-before slider:active,
+scale.vertical.marks-before slider:active:hover {
 	background-image: url("assets/scale-slider-marks-above-vertical-active.png");
     background-repeat: no-repeat;
 }
 
-scale.vertical.scale-has-marks-above slider:disabled,
-scale.vertical.scale-has-marks-above slider:disabled:hover {
+scale.vertical.marks-before slider:disabled,
+scale.vertical.marks-before slider:disabled:hover {
 	background-image: url("assets/scale-slider-marks-above-vertical-insensitive.png");
     background-repeat: no-repeat;
 }
 
-scale.horizontal contents:first-child:not(:only-child) slider,
-scale.horizontal.scale-has-marks-below slider {
+scale.horizontal.marks-after slider {
 	background-image: url("assets/scale-slider-marks-below-horizontal.png");
     background-repeat: no-repeat;
 }
 
-scale.horizontal contents:first-child:not(:only-child) slider:hover,
-scale.horizontal.scale-has-marks-below slider:hover {
+scale.horizontal.marks-after slider:hover {
 	background-image: url("assets/scale-slider-marks-below-horizontal-active.png");
     background-repeat: no-repeat;
 }
 
-scale.horizontal contents:first-child:not(:only-child) slider:hover,
-scale.horizontal contents:first-child:not(:only-child) slider:active:hover,
-scale.horizontal.scale-has-marks-below slider:active,
-scale.horizontal.scale-has-marks-below slider:active:hover {
+scale.horizontal.marks-after slider:active,
+scale.horizontal.marks-after slider:active:hover {
 	background-image: url("assets/scale-slider-marks-below-horizontal-active.png");
     background-repeat: no-repeat;
 }
 
-scale.horizontal contents:first-child:not(:only-child) slider:disabled,
-scale.horizontal.scale-has-marks-below slider:disabled:hover {
+scale.horizontal.marks-after slider:disabled:hover {
 	background-image: url("assets/scale-slider-marks-below-horizontal-active.png");
     background-repeat: no-repeat;
 }
 
-scale.vertical.scale-has-marks-below slider {
+scale.vertical.marks-after slider {
 	background-image: url("assets/scale-slider-marks-below-vertical.png");
     background-repeat: no-repeat;
 }
 
-scale.vertical.scale-has-marks-below slider:hover {
+scale.vertical.marks-after slider:hover {
 	background-image: url("assets/scale-slider-marks-below-vertical-active.png");
     background-repeat: no-repeat;
 }
 
-scale.vertical.scale-has-marks-below slider:active,
-scale.vertical.scale-has-marks-below slider:active:hover {
+scale.vertical.marks-after slider:active,
+scale.vertical.marks-after slider:active:hover {
 	background-image: url("assets/scale-slider-marks-below-vertical-active.png");
     background-repeat: no-repeat;
 }
 
-scale.vertical.scale-has-marks-below slider:disabled,
-scale.vertical.scale-has-marks-below slider:disabled:hover {
+scale.vertical.marks-after slider:disabled,
+scale.vertical.marks-after slider:disabled:hover {
 	background-image: url("assets/scale-slider-marks-below-vertical-insensitive.png");
     background-repeat: no-repeat;
 }
