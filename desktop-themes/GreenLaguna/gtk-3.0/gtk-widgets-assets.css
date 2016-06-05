@@ -21,41 +21,38 @@ scale.vertical slider:disabled {
     background-image: url("assets/scale-slider-vertical-insensitive.svg");
 }
 
-scale.horizontal contents:first-child:not(:only-child) slider,
-scale.horizontal contents:first-child:not(:only-child) slider:hover,
-scale.horizontal.scale-has-marks-below slider,
-scale.horizontal.scale-has-marks-below slider:hover {
+scale.horizontal.marks-after slider,
+scale.horizontal.marks-after slider:hover {
     background-image: url("assets/scale-slider-marks-below-horizontal.svg");
 }
 
-scale.horizontal contents:first-child:not(:only-child) slider:disabled,
-scale.horizontal.scale-has-marks-below slider:disabled {
+scale.horizontal.marks-after slider:disabled {
     background-image: url("assets/scale-slider-marks-below-horizontal-insensitive.svg");
 }
 
-scale.vertical.scale-has-marks-below slider,
-scale.vertical.scale-has-marks-below slider:hover {
+scale.vertical.marks-after slider,
+scale.vertical.marks-after slider:hover {
     background-image: url("assets/scale-slider-marks-below-vertical.svg");
 }
 
-scale.vertical.scale-has-marks-below slider:disabled {
+scale.vertical.marks-after slider:disabled {
     background-image: url("assets/scale-slider-marks-below-vertical-insensitive.svg");
 }
 
-scale.horizontal.scale-has-marks-above slider,
-scale.horizontal.scale-has-marks-above slider:hover {
+scale.horizontal.marks-before slider,
+scale.horizontal.marks-before slider:hover {
     background-image: url("assets/scale-slider-marks-above-horizontal.svg");
 }
 
-scale.horizontal.scale-has-marks-above slider:disabled {
+scale.horizontal.marks-before slider:disabled {
     background-image: url("assets/scale-slider-marks-above-horizontal-insensitive.svg");
 }
 
-scale.vertical.scale-has-marks-above slider {
+scale.vertical.marks-before slider {
     background-image: url("assets/scale-slider-marks-above-vertical.svg");
 }
 
-scale.vertical.scale-has-marks-above slider:disabled {
+scale.vertical.marks-before slider:disabled {
     background-image: url("assets/scale-slider-marks-above-vertical-insensitive.svg");
 }
 

@@ -1646,8 +1646,7 @@ scale.horizontal slider {
     margin: -9px 0px -9px 0px;
 }
 
-/* scale.horizontal.scale-has-marks-below */
-scale.horizontal contents:first-child:not(:only-child) slider {
+scale.horizontal.marks-after slider {
     min-height: 22px;
     min-width: 14px;
 }
@@ -1677,8 +1676,8 @@ scale.vertical.fine-tune slider:hover:active {
     background-position: center;
 }
 
-scale.horizontal.scale-has-marks-above.color,
-scale.vertical.scale-has-marks-below.color {
+scale.horizontal.color.marks-before,
+scale.vertical.color.marks-after {
     margin: 0px 0px 0px 0px;
     padding: 0px;
 }
@@ -1690,7 +1689,7 @@ scale.scale-has-marks-below.color trough {
       background-repeat: no-repeat;
 }
 
-scale.vertical.scale-has-marks-below.color slider {
+scale.vertical.color.marks-after slider {
     min-height: 20px;
     min-width: 20px;
     padding: 0px;
@@ -1700,7 +1699,7 @@ scale.vertical.scale-has-marks-below.color slider {
     margin: 0px 0px 0px 0px;
 }
 
-scale.horizontal.scale-has-marks-above.color slider {
+scale.horizontal.color.marks-before slider {
     min-height: 12px;
     min-width: 16px;
     margin: 0px 0px 0px 0px;
@@ -1710,8 +1709,8 @@ scale.horizontal.scale-has-marks-above.color slider {
     background-position: center;
 }
 
-scale.horizontal.scale-has-marks-above.color slider:hover,
-scale.vertical.scale-has-marks-below.color slider:hover {
+scale.horizontal.color.marks-before slider:hover,
+scale.vertical.color.marks-after slider:hover {
     background-size: 105%;
     background-color: transparent;
 }
