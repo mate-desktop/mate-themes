@@ -210,59 +210,52 @@ menuitem .check:indeterminate:disabled {
     -gtk-icon-source: -gtk-scaled(url("assets/checkbox-menuitem-mixed-insensitive.svg"));
 }
 
-scale slider,
-scale.horizontal slider,
+scale.vertical slider,
+scale.horizontal slider {
+    background-image: -gtk-scaled(url("assets/scale-slider.svg"));
+}
+
+scale.vertical slider:hover,
 scale.horizontal slider:hover {
-    background-image: -gtk-scaled(url("assets/scale-slider-hor.svg"));
+    background-image: -gtk-scaled(url("assets/scale-slider-hover.svg"));
 }
 
-scale slider:disabled,
+scale.vertical slider:disabled,
 scale.horizontal slider:disabled {
-    background-image: -gtk-scaled(url("assets/scale-slider-insensitive-hor.svg"));
+    background-image: -gtk-scaled(url("assets/scale-slider-insensitive.svg"));
 }
 
-scale.vertical slider {
-    background-image: -gtk-scaled(url("assets/scale-slider-ver.svg"));
-}
-
-scale.vertical slider:disabled {
-    background-image: -gtk-scaled(url("assets/scale-slider-insensitive-ver.svg"));
-}
-
-scale.horizontal.scale-has-marks-above slider,
-scale.horizontal.scale-has-marks-above slider:hover {
+scale.horizontal.marks-before slider,
+scale.horizontal.marks-before slider:hover {
     background-image: -gtk-scaled(url("assets/scale-slider-marks-above-horizontal.png"));
 }
 
-scale.horizontal.scale-has-marks-above slider:disabled {
+scale.horizontal.marks-before slider:disabled {
     background-image: -gtk-scaled(url("assets/scale-slider-marks-above-horizontal-insensitive.png"));
 }
 
-scale.vertical.scale-has-marks-above slider {
+scale.vertical.marks-before slider {
     background-image: -gtk-scaled(url("assets/scale-slider-marks-above-vertical.png"));
 }
 
-scale.vertical.scale-has-marks-above slider:disabled {
+scale.vertical.marks-before slider:disabled {
     background-image: -gtk-scaled(url("assets/scale-slider-marks-above-vertical-insensitive.png"));
 }
 
-scale.horizontal contents:first-child:not(:only-child) slider,
-scale.horizontal contents:first-child:not(:only-child) slider:hover,
-scale.horizontal.scale-has-marks-below slider,
-scale.horizontal.scale-has-marks-below slider:hover {
+scale.horizontal.marks-after slider,
+scale.horizontal.marks-after slider:hover {
     background-image: -gtk-scaled(url("assets/scale-slider-marks-below-horizontal.png"));
 }
 
-scale.horizontal contents:first-child:not(:only-child) slider:disabled,
-scale.horizontal.scale-has-marks-below slider:disabled {
+scale.horizontal.marks-after slider:disabled {
     background-image: -gtk-scaled(url("assets/scale-slider-marks-below-horizontal-insensitive.png"));
 }
 
-scale.vertical.scale-has-marks-below slider {
+scale.vertical.marks-after slider {
     background-image: -gtk-scaled(url("assets/scale-slider-marks-below-vertical.png"));
 }
 
-scale.vertical.scale-has-marks-below slider:disabled {
+scale.vertical.marks-after slider:disabled {
     background-image: -gtk-scaled(url("assets/scale-slider-marks-below-vertical-insensitive.png"));
 }
 
