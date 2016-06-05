@@ -42,8 +42,15 @@
 }
 
 /* view */
-.nemo-window-pane notebook scrolledwindow {
-	background-color: @theme_base_color;
+/* this sets the bg color for scrolledwindow junction, the little square beside the scrollbars */
+.nemo-window .nemo-window-pane > notebook box.vertical > overlay scrolledwindow {
+    background-color: @theme_bg_color;
+}
+
+/* treewiew, view and compact view */
+.nemo-window .nemo-window-pane > notebook box.vertical > overlay > scrolledwindow.view,
+.nemo-window .nemo-window-pane > notebook box.vertical > overlay > scrolledwindow > treeview.view {
+    background-color: @theme_base_color;
 }
 
 .nemo-window-pane treeview.view {
