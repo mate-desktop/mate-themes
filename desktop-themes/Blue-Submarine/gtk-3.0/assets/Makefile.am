@@ -38,12 +38,9 @@ theme_DATA = \
 	radio-unselected.png \
 	radio-unselected.svg \
 	resize-grip.svg \
-	scale-slider-hor-dark.svg \
-	scale-slider-horizontal-insensitive.svg \
-	scale-slider-horizontal.svg \
-	scale-slider-hor.svg \
-	scale-slider-insensitive-hor.svg \
-	scale-slider-insensitive-ver.svg \
+	scale-slider.svg \
+	scale-slider-hover.svg \
+	scale-slider-insensitive.svg \
 	scale-slider-marks-above-horizontal-insensitive.png \
 	scale-slider-marks-above-horizontal.png \
 	scale-slider-marks-above-vertical-insensitive.png \
@@ -52,26 +49,12 @@ theme_DATA = \
 	scale-slider-marks-below-horizontal.png \
 	scale-slider-marks-below-vertical-insensitive.png \
 	scale-slider-marks-below-vertical.png \
-	scale-slider-marks-above-horizontal-insensitive.svg \
-	scale-slider-marks-above-horizontal.svg \
-	scale-slider-marks-above-vertical-insensitive.svg \
-	scale-slider-marks-above-vertical.svg \
-	scale-slider-marks-below-horizontal-insensitive.svg \
-	scale-slider-marks-below-horizontal.svg \
-	scale-slider-marks-below-vertical-insensitive.svg \
-	scale-slider-marks-below-vertical.svg \
-	scale-slider.svg \
-	scale-slider-ver.svg \
-	scale-slider-vertical-insensitive.svg \
-	scale-slider-vertical.svg \
 	sidebar-radio-checked.svg \
 	sidebar-radio-prelight.svg \
 	sidebar-radio-selected-prelight.svg \
 	sidebar-radio-selected.svg \
     slider_fine_horizontal.svg \
 	slider_fine_vertical.svg \
-	slider-horizontal.png \
-	slider-vertical.png \
 	switch-dark-off-disabled.svg \
 	switch-dark-off.svg \
 	switch-dark-on-disabled.svg \
