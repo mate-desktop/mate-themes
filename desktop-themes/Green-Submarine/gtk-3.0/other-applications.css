@@ -56,50 +56,53 @@
 }
 
 /* pathbar */
-.nemo-window widget.raised.linked > button:nth-child(first) widget {
+.nemo-window toolbar.primary-toolbar widget.raised.linked > button:first-child widget {
     -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
     color: @menu_fg_dark_color;
 }
 
-.nemo-window widget.raised.linked > button:nth-child(last) widget {
+.nemo-window toolbar.primary-toolbar widget.raised.linked > button:last-child widget {
     -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
     color: @menu_fg_dark_color;
 }
 
-.nemo-window widget.raised.linked > button:nth-child(first) widget:disabled,
-.nemo-window widget.raised.linked > button:nth-child(last) widget:disabled {
+.nemo-window toolbar.primary-toolbar widget.raised.linked > button:disabled:first-child widget,
+.nemo-window toolbar.primary-toolbar widget.raised.linked > button:disabled:last-child widget {
     color: @insensitive_fg_color;
 }
 
-.nemo-window widget.raised.linked > button:nth-child(first),
-.nemo-window widget.raised.linked > button:nth-child(first):hover,
-.nemo-window widget.raised.linked > button:nth-child(first):focus,
-.nemo-window widget.raised.linked > button:nth-child(first):backdrop,
-.nemo-window widget.raised.linked > button:nth-child(first):disabled,
-.nemo-window widget.raised.linked > button:nth-child(first):focus:hover:active {
-   margin: 0px -1px 0px -1px;
+.nemo-window toolbar.primary-toolbar widget.raised.linked > button:hover:first-child widget,
+.nemo-window toolbar.primary-toolbar widget.raised.linked > button:hover:last-child widget {
+    color: shade (@theme_selected_bg_color, 1.2);
+   -gtk-icon-shadow:  0px  1px shade (@menu_fg_dark_color, 1.0),
+                      1px  0px shade (@menu_fg_dark_color, 1.0),
+                     -1px  0px shade (@menu_fg_dark_color, 1.0),
+                      0px -1px shade (@menu_fg_dark_color, 1.0);
+}
+
+/* this makes the arrow a bit bigger */
+.nemo-window toolbar.primary-toolbar widget.raised.linked > button:first-child {
+   margin: 0px 0px 0px -1px;
    padding: 0px;
 }
 
-.nemo-window widget.raised.linked > button:nth-child(last),
-.nemo-window widget.raised.linked > button:nth-child(last):hover,
-.nemo-window widget.raised.linked > button:nth-child(last):focus,
-.nemo-window widget.raised.linked > button:nth-child(last):backdrop,
-.nemo-window widget.raised.linked > button:nth-child(last):disabled,
-.nemo-window widget.raised.linked > button:nth-child(last):focus:hover:active {
-   margin: 0px -1px 0px -1px;
+.nemo-window toolbar.primary-toolbar widget.raised.linked > button:last-child {
+   margin: 0px -1px 0px 0px;
    padding: 0px;
 }
 
-.nemo-window widget.raised.linked > button.text-button.toggle,
-.nemo-window widget.raised.linked > button.text-button.toggle:nth-child(first) {
-    margin: 0px 0px 0px 0px;
-    padding: 0px 6px;
-}
-
-.nemo-window widget.raised.linked > button.text-button.toggle:nth-child(last) {
-    margin: 0px 0px 0px 0px;
-    padding: 0px 6px;
+.nemo-window toolbar.primary-toolbar widget.raised.linked > button.text-button.toggle,
+.nemo-window toolbar.primary-toolbar widget.raised.linked > button.text-button.toggle:hover,
+.nemo-window toolbar.primary-toolbar widget.raised.linked > button.text-button.toggle:focus,
+.nemo-window toolbar.primary-toolbar widget.raised.linked > button.text-button.toggle:backdrop,
+.nemo-window toolbar.primary-toolbar widget.raised.linked > button.text-button.toggle:checked,
+.nemo-window toolbar.primary-toolbar widget.raised.linked > button.text-button.toggle:checked:hover,
+.nemo-window toolbar.primary-toolbar widget.raised.linked > button.text-button.toggle:checked:hover:active,
+.nemo-window toolbar.primary-toolbar widget.raised.linked > button.text-button.toggle:disabled,
+.nemo-window toolbar.primary-toolbar widget.raised.linked > button.text-button.toggle:focus:hover:active {
+   margin: 0px 0px 0px 0px;
+   padding: 0px;
+   padding: 0px 6px;
 }
 
 /* Nemo statusbar */
