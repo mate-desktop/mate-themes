@@ -13,6 +13,17 @@
     padding: 0px;
 }
 
+/* this sets the bg color for scrolledwindow junction, the little square besides the scrollbars */
+.nemo-window .nemo-window-pane > notebook box.vertical > overlay scrolledwindow {
+    background-color: rgba(204,221,199,1.0);
+}
+
+/* treewiew, view and compact view */
+.nemo-window .nemo-window-pane > notebook box.vertical > overlay > scrolledwindow.view,
+.nemo-window .nemo-window-pane > notebook box.vertical > overlay > scrolledwindow > treeview.view {
+    background-color: rgba(241,246,239,1.0);
+}
+
 /* inactive pane */
 /* bug in gtk+, .view writes no bg color in all browsers */
 .nemo-inactive-pane .view,
