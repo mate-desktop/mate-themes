@@ -2967,6 +2967,38 @@ progressbar.osd {
 
 /* ie. colorchooser */
 .osd.popover {
+    background-image: none;
+    background-color: alpha(shade(#3E403D, 0.85), 0.35);
+    border: 1px solid black;
+    box-shadow: none;
+    color: @theme_selected_fg_color;
+}
+
+.osd.popover > grid {
+    text-shadow: 1px 1px alpha (#000000, 0.8);
+}
+
+.osd.popover toolbar {
+    background-image: none;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.osd.popover button {
+    text-shadow: 0 -1px @osd_text_shadow;
+    -gtk-icon-shadow: 0 -1px @osd_text_shadow;
+}
+
+.osd.popover button:checked {
+        box-shadow: none;
+}
+
+.osd.popover button:disabled {
+    color: alpha(@theme_selected_fg_color, 0.4);
+}
+
+.osd.popover {
     background-image: linear-gradient(to left,
                                       alpha (shade(@theme_selected_bg_color, 1.05), 0.5),
                                       alpha (shade(@theme_selected_bg_color, 0.95), 0.3));
@@ -2982,18 +3014,64 @@ progressbar.osd {
     color: @osd_fg;
 }
 
+.osd.popover > grid > spinbutton {
+    text-shadow: none;
+    color: @theme_fg_color;
+}
+
 .osd.popover spinbutton entry,
 .osd.popover spinbutton entry:focus,
+.osd.popover spinbutton entry:backdrop {
+    border-width: 1px;
+    border-style: none;
+    border-radius: 0px;
+    box-shadow: none;
+    padding: 4px 10px 4px 3px;
+    color: @theme_fg_color;
+}
+
+.osd.popover spinbutton,
+.osd.popover spinbutton:focus,
+.osd.popover spinbutton:backdrop {
+    color: @theme_fg_color;
+}
+
 .osd.popover spinbutton button,
-.osd.popover spinbutton button:focus {
+.osd.popover spinbutton button:focus
+.osd.popover spinbutton button:backdrop {
     min-width: 16px;
     min-height: 16px;
     border-width: 1px;
     border-style: none;
     border-radius: 0px;
     box-shadow: none;
-    padding: 8px;
-    color: @theme_fg_color;
+    padding: 4px;
+}
+
+.osd popover.background.scale-popup {
+    color: @osd_fg;
+    text-shadow: none;
+    border-color: shade (@theme_selected_bg_color, 0.9);
+    border-radius: 5px;
+    background-image: linear-gradient(to left,
+                                      alpha (shade(@theme_selected_bg_color, 1.05), 0.7),
+                                      alpha (shade(@theme_selected_bg_color, 0.95), 0.7));
+    background-color: transparent;
+}
+
+.osd popover.background.scale-popup button.flat.image-button,
+.osd popover.background.scale-popup button.flat.image-button:hover {
+    background-color: transparent;
+    border-image: none;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: @osd_button_border;
+    padding: 2px;
+}
+
+.osd popover.background.scale-popup button.flat.image-button:disabled {
+    border-color: alpha (@osd_button_border, 0.0);
 }
 
 /* ie. parole control bar */
@@ -3071,32 +3149,6 @@ popover separator {
     border: 0;
 }
 
-popover.osd {
-    background-image: none;
-    background-color: alpha(shade(#3E403D, 0.85), 0.75);
-    border: 1px solid black;
-    box-shadow: none;
-    color: @theme_selected_fg_color;
-}
-popover.osd toolbar {
-    background-image: none;
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-}
-popover.osd button {
-    text-shadow: 0 -1px @osd_text_shadow;
-    -gtk-icon-shadow: 0 -1px @osd_text_shadow;
-}
-
-popover.osd button:checked {
-        box-shadow: none;
-}
-
-popover.osd button:disabled {
-    color: alpha(@theme_selected_fg_color, 0.4);
-}
-
 /* volume +- buttons */
 popover.scale-popup button.flat.image-button {
     padding: 0px;
@@ -3111,32 +3163,6 @@ popover.scale-popup button.flat.image-button:hover {
     background-image: linear-gradient(to left,
                                       shade(@theme_selected_bg_color, 1.1),
                                       shade(@theme_selected_bg_color, 0.95));
-}
-
-.osd popover.background.scale-popup {
-    color: @osd_fg;
-    text-shadow: none;
-    border-color: shade (@theme_selected_bg_color, 0.9);
-    border-radius: 5px;
-    background-image: linear-gradient(to left,
-                                      alpha (shade(@theme_selected_bg_color, 1.05), 0.7),
-                                      alpha (shade(@theme_selected_bg_color, 0.95), 0.7));
-    background-color: transparent;
-}
-
-.osd popover.background.scale-popup button.flat.image-button,
-.osd popover.background.scale-popup button.flat.image-button:hover {
-    background-color: transparent;
-    border-image: none;
-    border-radius: 4px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: @osd_button_border;
-    padding: 2px;
-}
-
-.osd popover.background.scale-popup button.flat.image-button:disabled {
-    border-color: alpha (@osd_button_border, 0.0);
 }
 
 popover list {
