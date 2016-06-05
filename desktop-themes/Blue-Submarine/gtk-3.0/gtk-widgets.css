@@ -3104,7 +3104,7 @@ spinbutton.vertical:focus {
 }
 
 spinbutton.horizontal > entry {
-    padding: 6px 10px 6px 3px;
+    padding: 5px 10px 5px 3px;
     box-shadow: none;
     border-radius: 3px 0px 0px 3px;
     border-style: none;
@@ -5173,17 +5173,63 @@ progressbar .osd {
 }
 
 /* ie. colorchooser */
+.osd.popover {
+    background-image: none;
+    background-color: alpha(shade(#3D3E40, 0.85), 0.35);
+    border: 1px solid black;
+    box-shadow: none;
+    color: @theme_selected_fg_color;
+}
+
+.osd.popover > grid {
+    text-shadow: 1px 1px alpha (#000000, 0.8);
+}
+
+.osd.popover toolbar {
+    background-image: none;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.osd.popover button {
+    text-shadow: none;
+    -gtk-icon-shadow: 0 -1px @osd_text_shadow;
+}
+
+.osd.popover button:checked {
+    box-shadow: none;
+}
+
+.osd.popover button:disabled {
+    color: alpha(@theme_selected_fg_color, 0.4);
+}
+
+.osd.popover > grid > spinbutton {
+    text-shadow: none;
+    color: @theme_fg_color;
+}
+
 .osd.popover spinbutton entry,
 .osd.popover spinbutton entry:focus,
+.osd.popover spinbutton entry:backdrop {
+    border-width: 1px;
+    border-style: none;
+    border-radius: 0px;
+    box-shadow: none;
+    padding: 5px 10px 5px 3px;
+}
+
 .osd.popover spinbutton button,
-.osd.popover spinbutton button:focus {
+.osd.popover spinbutton button:focus
+.osd.popover spinbutton button:backdrop {
     min-width: 16px;
     min-height: 16px;
     border-width: 1px;
     border-style: none;
     border-radius: 0px;
     box-shadow: none;
-    padding: 8px;
+    padding: 5px;
 }
 
 .osd.popover spinbutton button:hover {
@@ -5256,34 +5302,6 @@ popover separator {
     background-color: transparent;
     -gtk-icon-shadow: none;
     border: 0;
-}
-
-popover.osd {
-    background-image: none;
-    background-color: alpha(shade(#3D3E40, 0.85), 0.75);
-    border: 1px solid black;
-    box-shadow: none;
-    color: @theme_selected_fg_color;
-}
-
-popover.osd toolbar {
-    background-image: none;
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-}
-
-popover.osd button {
-    text-shadow: none;
-    -gtk-icon-shadow: 0 -1px @osd_text_shadow;
-}
-
-popover.osd button:checked {
-    box-shadow: none;
-}
-
-popover.osd button:disabled {
-    color: alpha(@theme_selected_fg_color, 0.4);
 }
 
 popover.background.scale-popup button.flat.image-button:disabled {
