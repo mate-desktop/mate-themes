@@ -665,7 +665,7 @@ scale.horizontal trough {
     margin: 8px 0;
 }
 
-scale.horizontal contents:first-child:not(:only-child) trough {
+scale.horizontal.marks-after trough {
     min-height: 3px;
 }
 
@@ -741,7 +741,7 @@ scale.vertical slider {
     margin: 0px -9px 0px -9px;
 }
 
-scale.horizontal contents:first-child:not(:only-child) slider {
+scale.horizontal.marks-after slider {
     background-repeat: no-repeat;
     min-height: 22px;
     background-size: 90%;
@@ -756,46 +756,46 @@ scale.horizontal slider {
 
 scale.vertical slider:hover,
 scale.horizontal slider:hover,
-scale.horizontal contents:first-child:not(:only-child) slider:hover {
+scale.horizontal.marks-after slider:hover {
     background-size: 95%;
 }
 
 scale.vertical.fine-tune slider,
 scale.horizontal.fine-tune slider,
-scale.horizontal.fine-tune contents:first-child:not(:only-child) slider {
+scale.horizontal.marks-after.fine-tune slider {
 	background-size: 80%;
 }
 
-scale.horizontal.scale-has-marks-above.color trough {
-    min-height: 28px;
+scale.horizontal.color.marks-before trough {
+    min-height: 16px;
     margin: 0px 0px 0px 0px;
     padding: 0px;
     border-radius: 3px;
 }
 
-scale.horizontal.scale-has-marks-above.color slider {
+scale.horizontal.color.marks-before slider {
     min-height: 20px;
     min-width: 30px;
     background-size: 90%;
 }
 
-scale.horizontal.scale-has-marks-above.color slider:hover,
-scale.vertical.scale-has-marks-below.color slider:hover {
+scale.horizontal.color.marks-before slider:hover,
+scale.vertical.color.marks-after slider:hover {
     background-size: 95%;
 }
 
-scale.horizontal.fine-tune.scale-has-marks-above.color slider,
-scale.vertical.fine-tune.scale-has-marks-below.color slider {
+scale.horizontal.color.marks-before.fine-tune slider,
+scale.vertical.color.marks-after.fine-tune slider {
     background-size: 80%;
 }
 
-scale.vertical.scale-has-marks-below.color trough {
-    min-width: 28px;
+scale.vertical.color.marks-after trough {
+    min-width: 16px;
     padding: 0px;
     border-radius: 3px;
 }
 
-scale.vertical.scale-has-marks-below.color slider {
+scale.vertical.color.marks-after slider {
     background-size: 90%;
 }
 
