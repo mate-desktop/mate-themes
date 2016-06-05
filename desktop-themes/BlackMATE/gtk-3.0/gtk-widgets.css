@@ -2404,16 +2404,19 @@ stackswitcher >  button.needs-attention:checked > image {
 /*******
  * OSD *
  *******/
+.osd,
 .background.osd {
 	color: @osd_fg;
 	background-image: none;
 	background-color: @osd_bg;
+	border-radius:20px;
 }
 
 overlay.osd {
 	background-color: transparent;
 }
 
+.osd.frame,
 osd.frame {
 	background-clip: border-box;
 	background-origin: border-box;
@@ -2582,6 +2585,7 @@ toolbar.osd separator {
 	background-color: @osd_trough_bg;
 }
 
+.osd .progressbar,
 .osd progressbar {
 	background-color: @osd_fg;
 }
@@ -2667,6 +2671,7 @@ toolbar.osd separator {
                                       @osd_button_bg_active_c);
 }
 
+.osd .progressbar,
 .osd progressbar,
 progressbar .osd {
 	padding: 0;
@@ -2681,11 +2686,13 @@ progressbar .osd {
 	border-radius: 0; 
 }
 
+.osd .progressbar.horizontal,
 .osd progressbar.horizontal,
 progressbar.horizontal .osd {
     min-height: 3px;
 }
 
+.osd .progressbar trough,
 .osd progressbar trough,
 progressbar .osd trough {
 	padding: 0;
