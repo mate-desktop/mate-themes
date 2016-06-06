@@ -84,7 +84,7 @@
 </draw_ops>
 
 <draw_ops name="minimize_button">
-  <line color="gtk:fg[NORMAL]"
+  <line color="gtk:bg[NORMAL]"
         x1="ButtonIPad"
         y1="height - ButtonIPad - ThickLineWidth + 1"
         x2="width - ButtonIPad"
@@ -97,9 +97,9 @@
 </draw_ops>
 
 <draw_ops name="maximize_button">
-  <rectangle color="gtk:fg[NORMAL]" filled="false"
+  <rectangle color="gtk:bg[NORMAL]" filled="false"
              x="ButtonIPad" y="ButtonIPad" width="width-ButtonIPad*2-1" height="height-ButtonIPad*2-1"/>
-  <line color="gtk:fg[NORMAL]" width="3"
+  <line color="gtk:bg[NORMAL]" width="3"
         x1="ButtonIPad" y1="ButtonIPad+1" x2="width-ButtonIPad" y2="ButtonIPad+1"/>
 </draw_ops>
 
@@ -108,11 +108,11 @@
 </draw_ops>
 
 <draw_ops name="mini_window_icon">
-  <rectangle color="gtk:bg[NORMAL]" filled="true"
+  <rectangle color="gtk:fg[NORMAL]" filled="true"
              x="0" y="0" width="width-1" height="height-1"/>
-  <rectangle color="gtk:fg[NORMAL]" filled="false"
+  <rectangle color="gtk:bg[NORMAL]" filled="false"
              x="0" y="0" width="width-1" height="height-1"/>
-  <line color="gtk:fg[NORMAL]" width="2"
+  <line color="gtk:bg[NORMAL]" width="2"
         x1="0" y1="1" x2="width" y2="1"/>
 </draw_ops>
 
@@ -132,11 +132,11 @@
 </draw_ops>
 
 <draw_ops name="close_button">
-  <line color="gtk:fg[NORMAL]"
+  <line color="gtk:bg[NORMAL]"
         x1="ButtonIPad" y1="ButtonIPad"
         x2="width - ButtonIPad - 1" y2="height - ButtonIPad - 1"
         width="1"/>
-  <line color="gtk:fg[NORMAL]"
+  <line color="gtk:bg[NORMAL]"
         x1="ButtonIPad" y1="height - ButtonIPad - 1"
         x2="width - ButtonIPad - 1" y2="ButtonIPad"
 	width="1"/>
@@ -164,7 +164,7 @@
 </draw_ops>
 
 <draw_ops name="focus_outline">
-  <rectangle color="gtk:fg[NORMAL]"
+  <rectangle color="gtk:bg[NORMAL]"
              x="left_width-1" y="top_height-1"
              width="width-left_width-right_width+1"
              height="height-top_height-bottom_height+1"/>
@@ -212,7 +212,7 @@
 
 <draw_ops name="title_text_with_icon">
   <clip x="0" y="0" width="width-SpacerWidth" height="height"/>
-  <title color="gtk:fg[NORMAL]"
+  <title color="gtk:bg[NORMAL]"
          x="(0 `max` (width-title_width-mini_icon_width-IconTitleSpacing)) / 2 + mini_icon_width + IconTitleSpacing"
          y="((height - title_height) / 2) `max` 0"/>
   <icon  x="(0 `max` (width-title_width-mini_icon_width-IconTitleSpacing)) / 2"
