@@ -349,6 +349,13 @@ PanelToplevel.background.horizontal {
 
 .mate-panel-menu-bar GtkMenuItem,
 .mate-panel-menu-bar .menuitem{
+	 padding: 6px;
+}
+
+/*Keep above from removing padding from menus*/
+
+.mate-panel-menu-bar GtkMenuItem,
+.mate-panel-menu-bar .menuitem{
 	padding: 3px 7px;
 }
 
