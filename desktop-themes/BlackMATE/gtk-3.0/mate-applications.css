@@ -345,6 +345,13 @@ PanelToplevel.background.horizontal {
 	padding: 0px;
 }
 
+/*Keep above from removing padding from menus*/
+
+.mate-panel-menu-bar GtkMenuItem,
+.mate-panel-menu-bar .menuitem{
+	 padding: 6px;
+}
+
 /* workaround to avoid unwanted black frames if switching compositor on/off */
 .mate-panel-menu-bar .window-frame.csd.popup {
     box-shadow: none;
