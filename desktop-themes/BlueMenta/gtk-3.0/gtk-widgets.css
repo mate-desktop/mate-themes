@@ -1907,10 +1907,10 @@ notebook {
     padding: 0;
     background-clip: border-box;
     border-style: none;
-    background-color: shade (@theme_bg_color, 1.1);
 }
 
 notebook.frame {
+    background-color: shade (@theme_bg_color, 1.1);
     border-style: solid;
     border-color: @borders;
     border-width: 1px;
@@ -1918,10 +1918,17 @@ notebook.frame {
 }
 
 printdialog > box.view.vertical.dialog-vbox > box.vertical > notebook {
+    background-color: shade (@theme_bg_color, 1.1);
     border-radius: 0px;
     border-style: solid;
     border-color: @borders;
     border-width: 0px 0px 1px 0px;
+}
+
+dialog.background.csd > box.vertical.dialog-vbox > notebook, /* meld preferences */
+dialog.background.ssd > box.vertical.dialog-vbox > notebook,
+dialog.background.solid-csd > box.vertical.dialog-vbox > notebook {
+    background-color: shade (@theme_bg_color, 1.1);
 }
 
 notebook :hover {
