@@ -1557,7 +1557,11 @@ stackswitcher  > button:dir(ltr).text-button:checked:hover  {
 notebook {
     padding: 0;
     background-clip: border-box;
+}
+
+notebook.frame {
     background-color: @notebook_bg_color;
+    background-clip: border-box;
     border-color: @border_color;
     border-style: solid;
     border-width: 1px;
@@ -1565,10 +1569,17 @@ notebook {
 }
 
 printdialog > box.view.vertical.dialog-vbox > box.vertical > notebook {
+    background-color: @notebook_bg_color;
     border-radius: 0px;
     border-style: solid;
     border-color: @border_color;
     border-width: 1px 0px 1px 0px;
+}
+
+dialog.background.csd > box.vertical.dialog-vbox > notebook, /* meld preferences */
+dialog.background.ssd > box.vertical.dialog-vbox > notebook,
+dialog.background.solid-csd > box.vertical.dialog-vbox > notebook {
+    background-color: @notebook_bg_color;
 }
 
 /* view areas, ie. pluma-, caja-tabs */
