@@ -757,6 +757,7 @@ levelbar block.empty:backdrop {
 notebook {
 	background-color: transparent;
 	border-radius: 3px;
+	padding: 1px 0px 1px 1px;
 }
 
 
@@ -768,16 +769,16 @@ notebook header {
     border-width: 0px;
 }
 
-notebook,
-notebook {
-	padding: 1px 0px 1px 1px;
+notebook.frame,
+printdialog > box.view.vertical.dialog-vbox > box.vertical > notebook,
+dialog.background.csd > box.vertical.dialog-vbox > notebook, /* eg. meld preferences */
+dialog.background.ssd > box.vertical.dialog-vbox > notebook,
+dialog.background.solid-csd > box.vertical.dialog-vbox > notebook {
 	background-color: @less_dark_color;
-	/*background-clip: border-box;*/
-	color: @theme_fg_color; /* gdebi bug? */
 	border-color: @less_dark_color;
 	border-style: solid;
 	border-width: 0px 1px 0px 1px;
-
+	color: @theme_fg_color;
 }
 
 notebook.arrow:disabled {
