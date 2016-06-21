@@ -3271,11 +3271,11 @@ button.flat.link.text-button {
 notebook {
     padding: 0;
     background-clip: border-box;
-    background-color: shade (@theme_bg_color, 1.1);
     border-style: none;
 }
 
 notebook.frame {
+    background-color: shade (@theme_bg_color, 1.1);
     border-style: solid;
     border-color: @notebook_border;
     border-width: 1px;
@@ -3283,10 +3283,17 @@ notebook.frame {
 }
 
 printdialog > box.view.vertical.dialog-vbox > box.vertical > notebook {
+    background-color: shade (@theme_bg_color, 1.1);
     border-radius: 0px 0px 4px 4px;
     border-style: solid;
     border-color: @notebook_border;
     border-width: 0px 0px 1px 0px;
+}
+
+dialog.background.csd > box.vertical.dialog-vbox > notebook, /* meld preferences */
+dialog.background.ssd > box.vertical.dialog-vbox > notebook,
+dialog.background.solid-csd > box.vertical.dialog-vbox > notebook {
+    background-color: shade (@theme_bg_color, 1.1);
 }
 
 notebook header.top {
