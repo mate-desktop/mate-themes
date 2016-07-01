@@ -6604,6 +6604,14 @@ printdialog.background .vertical.view.dialog-vbox notebook button.combo {
     border-radius: 4px;
 }
 
+printdialog.background paper {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0px;
+    border-color: @notebook_border;
+    background-color: @theme_base_color;
+}
+
 /******************
  * GtkFileChooser *
  ******************/
