@@ -507,6 +507,21 @@ EggToolbarEditor.vertical scrolledwindow .frame {
     border-color: transparent;
 }
 
+/*********
+ * Atril *
+ *********/
+
+/* broken text selection */
+.atril-window scrolledwindow.frame > widget:selected {
+	background-color: @theme_selected_bg_color;
+	color: @theme_selected_fg_color;
+}
+
+.atril-window scrolledwindow.frame > widget:active {
+	background-color: shade(@theme_unfocused_bg_color, 0.94);
+	color: @theme_fg_color;
+}
+
 /* Mate Font Viewer */
 
 .font-viewer notebook.frame {
