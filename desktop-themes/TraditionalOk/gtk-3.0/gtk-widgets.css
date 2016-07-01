@@ -1989,6 +1989,11 @@ toolbar.primary-toolbar combobox > .linked > button.combo:only-child {
     border-width: 0px 1px 1px 1px;
 }
 
+/* ie. filechooser dialog */
+combobox .popup menu menuitem:hover cellview {
+    color: @theme_selected_fg_color;
+}
+
 /**************
  * Scrollbars *
  **************/
