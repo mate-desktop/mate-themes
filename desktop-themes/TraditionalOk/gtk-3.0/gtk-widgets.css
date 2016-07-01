@@ -4104,6 +4104,14 @@ printdialog.background > box.view.vertical.dialog-vbox {
     background-color: shade (@theme_bg_color, 1.0);
 }
 
+printdialog.background paper {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0px;
+    border-color: @border_color;
+    background-color: @theme_base_color;
+}
+
 /******************
  * GtkAboutDialog *
  ******************/
