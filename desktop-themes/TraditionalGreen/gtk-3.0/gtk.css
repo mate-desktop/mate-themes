@@ -56,6 +56,8 @@
 @define-color internal_element_hover_color @theme_text_color;
 @define-color internal_element_insensitive_color @insensitive_fg_color;
 
+@define-color theme_unfocused_bg_color @theme_bg_color;
+
 /* border */
 
 @define-color border_color shade(@core_color_b, 0.67);
