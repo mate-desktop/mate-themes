@@ -91,6 +91,8 @@
 @define-color sidebar_selected_bg shade(@theme_selected_bg_color,1.00);
 @define-color sidebar_fg_color @theme_text_color;
 
+@define-color theme_light_unfocused_bg_color @theme_bg_color;
+
 @define-color button_base shade(@theme_bg_color, 1.15);
 @define-color button_gradient1 shade(@button_base, 0.98);
 @define-color button_gradient2 shade(@button_base, 0.95);
