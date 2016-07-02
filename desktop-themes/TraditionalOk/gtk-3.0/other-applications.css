@@ -42,6 +42,13 @@
     background-color: @notebook_bg_color;
 }
 
+/* kill unwanted borders */
+.nemo-desktop-window .nemo-window-pane > notebook box > overlay > scrolledwindow {
+    border-style: none;
+    border-width: 0px;
+    padding: 0px;
+}
+
 /*************
  * Yumex-DNF *
  *************/
