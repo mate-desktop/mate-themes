@@ -758,6 +758,17 @@ EomThumbNav .button.flat:disabled {
     background-image: none;
 }
 
+/*********
+ * Atril *
+ *********/
+
+/* broken text selection */
+.atril-window scrolledwindow.frame > widget:active,
+.atril-window scrolledwindow.frame > widget:selected {
+	background-color: shade(@theme_selected_bg_color, 1.23);
+	color: @theme_selected_fg_color;
+}
+
 /* mate-screensaver lock dialog */
 
 .lock-dialog,
