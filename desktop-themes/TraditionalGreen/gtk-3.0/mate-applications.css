@@ -428,3 +428,30 @@ EggToolbarEditor.vertical scrolledwindow {
                       @toolbar_gradient_d);
 }
 
+/* multimedia OSD */
+MsdOsdWindow.background.osd {
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(0,0,0,0.6);
+    background-image: linear-gradient(to bottom,
+                                      @osd_toolbar_bg_a,
+                                      @osd_toolbar_bg_b 63%,
+                                      @osd_toolbar_bg_c);
+    background-color: transparent;
+}
+
+MsdOsdWindow.background.osd .trough {
+	background-color: @osd_trough_bg;
+    border-radius: 3px;
+    border-width: 1px;
+    border-color: rgba(0,0,0,0.6);
+}
+
+MsdOsdWindow.background.osd .progressbar {
+    border-width: 1px;
+    border-radius: 3px;
+    border-color: rgba(0,0,0,0.4);
+    background-color: @osd_scale_trough_bg_color;
+}
+
