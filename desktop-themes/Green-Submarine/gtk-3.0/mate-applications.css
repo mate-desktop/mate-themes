@@ -1026,3 +1026,38 @@ GvcMixerDialog notebook.frame box.vertical box.horizontal box.horizontal frame b
     background-color: shade (@theme_bg_color, 1.0);
 }
 
+/* multimedia OSD */
+MsdOsdWindow.background.osd {
+    border-radius: 30px;
+    border-style: solid;
+    border-width: 1px;
+}
+
+MsdOsdWindow.background.osd .trough {
+    background-color: @osd_trough_bg;
+    border-radius: 2px;
+}
+
+MsdOsdWindow.background.osd .progressbar {
+    background-color: transparent;
+    border-radius: 2px;
+    border-color: transparent;
+    background-image: linear-gradient(to right,
+                                      alpha (#000, 0.00),
+                                      alpha (#000, 0.00) 48%,
+                                      alpha (#004, 0.12) 48%,
+                                      alpha (#004, 0.12) 50%,
+                                      alpha (#000, 0.00) 50%,
+                                      alpha (#000, 0.00) 98%,
+                                      alpha (#004, 0.12) 98%,
+                                      alpha (#004, 0.12)),
+                      linear-gradient(to bottom,
+                                      alpha (#000, 0.20),
+                                      alpha (#000, 0.05) 50%,
+                                      alpha (#000, 0.00)),
+                      linear-gradient(to right,
+                                      @progressbar_fill_a,
+                                      @progressbar_fill_b);
+    background-size: 40px auto, auto, auto;
+}
+

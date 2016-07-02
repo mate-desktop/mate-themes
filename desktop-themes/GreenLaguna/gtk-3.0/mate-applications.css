@@ -554,3 +554,27 @@ EggToolbarEditor.vertical scrolledwindow .frame {
 	padding-bottom: 3px;
 }
 
+/* multimedia OSD */
+MsdOsdWindow.background.osd {
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(97,112,92,0.8);
+}
+
+MsdOsdWindow.background.osd .trough {
+    border: 1px solid rgba(97,112,92,0.8);
+    border-image: none;
+    background-image: linear-gradient(to bottom,
+                                      shade(@osd_button_border, 0.70),
+                                      shade(@osd_button_border, 0.90));
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+MsdOsdWindow.background.osd .progressbar {
+    border-radius: 3px;
+    border-color: transparent;
+    border-width: 0px;
+}
+
