@@ -1437,7 +1437,7 @@ button {
 }
 
 button.text-button,
-fontbutton button,
+button.font,
 filechooser  button {
     padding: 3px;
 }
@@ -1548,8 +1548,8 @@ button:active:disabled {
 	color: @insensitive_fg_color;
 }
 
-fontbutton button,
-colorbutton button {
+button.font,
+button.color {
     padding: 4px 3px;
 }
 
@@ -2953,7 +2953,8 @@ dialog.background.solid-csd > headerbar.titlebar  {
  
 .titlebar .title,
 headerbar .title {
-    font: Bold 12;
+    font-weight: bold;
+    font-size: 120%;
     background: none;
     color: #D9D9D9;
 }
@@ -3168,16 +3169,16 @@ switch,
 switch:backdrop {
     font-weight: bold;
     font-size: smaller;
-	font: bold condensed;
-	color: @internal_element_color;
-	border-radius: 3px;
-	border-width: 1px;
-	border-image: none;
-	border-style: solid;
-	border-color: @frame_color;
-	background-image: linear-gradient(to bottom,
-	                                  @trough_bg_color_a,
-	                                  @trough_bg_color_b);
+    font: condensed;
+    color: @internal_element_color;
+    border-radius: 3px;
+    border-width: 1px;
+    border-image: none;
+    border-style: solid;
+    border-color: @frame_color;
+    background-image: linear-gradient(to bottom,
+                                      @trough_bg_color_a,
+                                      @trough_bg_color_b);
 }
 
 switch:checked,

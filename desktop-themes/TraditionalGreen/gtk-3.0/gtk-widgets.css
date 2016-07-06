@@ -2215,7 +2215,7 @@ treemenu menuitem {
 
 menu,
 .menu {
-    font: normal;
+    font-weight: normal;
     background-color: @menu_bg_color;
     color: @menu_fg_color;
     padding: 1px;
@@ -3170,7 +3170,7 @@ progressbar .osd {
 
 assistant .sidebar highlight {
     color: @theme_fg_color;
-    font: bold;
+    font-weight: bold;
 }
 
 assistant .sidebar {
@@ -3670,7 +3670,7 @@ headerbar,
 
 headerbar .title,
 .titlebar .title {
-    font: Bold;
+    font-weight: bold;
 }
 
 headerbar button.titlebutton,

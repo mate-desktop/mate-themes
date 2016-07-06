@@ -3735,7 +3735,7 @@ radiobutton.text-button {
 
 assistant .sidebar highlight {
     color: @theme_text_color;
-    font: bold;
+    font-weight: bold;
 }
 
 assistant .sidebar {
@@ -5824,12 +5824,13 @@ headerbar.titlebar > stackswitcher.linked.stack-switcher > button.text-button.ra
 }
 
 headerbar title {
-    font: Bold 11;
+    font-size: 110%;
+    font-weight: bold;
     color: @theme_text_dark_color;
 }
 
 headerbar .subtitle {
-    font: 9;
+    font-size: 90%;
     color: @theme_text_dark_color;
 }
 
@@ -5864,7 +5865,8 @@ headerbar paned > separator {
 }
 
 .titlebar .title {
-    font: Bold 10;
+    font-size: 100%;
+    font-weight: bold;
     background: none;
     color: @theme_text_dark_color;
 }

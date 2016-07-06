@@ -3394,7 +3394,8 @@ dialog.background.solid-csd > headerbar.titlebar  {
 }
  
 .titlebar .title {
-    font: Bold 10;
+    font-weight: bold;
+    font-size: 100%;
     background: none;
     color: @theme_fg_color;
 }
@@ -3529,7 +3530,7 @@ switch,
 switch:backdrop {
     font-weight: bold;
     font-size: smaller;
-    font: bold condensed;
+    font: condensed;
     color: @internal_element_color;
     border-radius: 3px;
     border-width: 1px;
