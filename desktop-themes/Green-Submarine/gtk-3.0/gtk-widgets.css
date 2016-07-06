@@ -5827,13 +5827,13 @@ headerbar.titlebar > stackswitcher.linked.stack-switcher > button.text-button.ra
 }
 
 headerbar title {
+    font-size: 110%;
     font-weight: bold;
-    font-size: 11pt;
     color: @theme_text_dark_color;
 }
 
 headerbar .subtitle {
-    font-size: 9pt;
+    font-size: 90%;
     color: @theme_text_dark_color;
 }
 
@@ -5868,8 +5868,8 @@ headerbar paned > separator {
 }
 
 .titlebar .title {
+    font-size: 100%;
     font-weight: bold;
-    font-size: 10pt;
     background: none;
     color: @theme_text_dark_color;
 }
