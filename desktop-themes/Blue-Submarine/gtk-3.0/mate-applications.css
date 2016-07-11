@@ -447,7 +447,7 @@ MatePanelAppletFrameDBus {
 /* menubar */
 .mate-panel-menu-bar menu > menuitem,
 .mate-panel-menu-bar menubar > menuitem {
-    padding: 5px;
+    padding: 4px;
 }
 
 .mate-panel-menu-bar menubar > menuitem:hover {
@@ -652,9 +652,9 @@ na-tray-applet {
     -NaTrayApplet-icon-size: 16;
 }
 
-/* control icon size as previous setting don't work */
+/* remove right space a bit */
 na-tray-applet > widget > box {
-    margin: 3px 3px 3px 0px;
+    margin: 0px 3px 0px 0px;
 }
 
 /* system-monitor-applet */
