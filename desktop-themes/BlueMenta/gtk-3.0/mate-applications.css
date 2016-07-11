@@ -300,6 +300,7 @@ MatePanelAppletFrameDBus {
     transition: all 200ms ease-out;
     text-shadow: none;
     font-weight: 600;
+    padding: 4px;
 }
 
 /* set selected menubar button */
@@ -446,9 +447,9 @@ na-tray-applet {
     -NaTrayApplet-icon-size: 16;
 }
 
-/* control icon size as previous setting don't work */
+/* remove right space a bit */
 na-tray-applet > widget > box {
-    margin: 2px 2px 2px 0px;
+    margin: 0px 2px 0px 0px;
 }
 
 /* no background for icon-padding area */
