@@ -809,3 +809,13 @@ MsdOsdWindow.background.osd .progressbar {
     border-color: rgba(0,0,0,0.4);
 }
 
+/*****************
+ * mate-terminal *
+ *****************/
+
+/* override for pavu-control */
+window.background.mate-terminal > box.vertical > notebook {
+    border-style: none;
+    border-width: 0px;
+}
+

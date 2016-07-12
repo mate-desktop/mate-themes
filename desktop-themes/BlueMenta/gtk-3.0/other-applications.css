@@ -465,3 +465,54 @@ window.background.yumex-dnf-window > box.vertical > box.vertical > box.horizonta
     background-color: @theme_bg_color;
 }
 
+/****************
+ * pavu-control *
+ ****************/
+
+window.background > box.vertical > notebook button.flat.toggle,
+window.background.csd > box.vertical > notebook button.flat.toggle,
+window.background.ssd > box.vertical > notebook button.flat.toggle,
+window.background.solid-csd > box.vertical > notebook button.flat.toggle {
+    border-radius: 4px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: transparent;
+    background-color: transparent;
+}
+
+window.background > box.vertical > notebook button.flat.toggle:checked,
+window.background.csd > box.vertical > notebook button.flat.toggle:checked,
+window.background.ssd > box.vertical > notebook button.flat.toggle:checked,
+window.background.solid-csd > box.vertical > notebook button.flat.toggle:checked {
+    border-image: url("borders/button-active-focus.png") 3 4 5 4 / 3px 4px 5px 4px stretch;
+    background-image: linear-gradient(to bottom,
+                                      @button_active_gradient_color_a,
+                                      @button_active_gradient_color_b);
+}
+
+window.background > box.vertical > notebook button.flat.toggle:checked:focus,
+window.background.csd > box.vertical > notebook button.flat.toggle:checked:focus,
+window.background.ssd > box.vertical > notebook button.flat.toggle:checked:focus,
+window.background.solid-csd > box.vertical > notebook button.flat.toggle:checked:focus {
+    border-image: url("borders/button-focus.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
+    background-image: linear-gradient(to bottom,
+                                      @button_active_gradient_color_a,
+                                      @button_active_gradient_color_b);
+}
+
+window.background > box.vertical > notebook scrolledwindow,
+window.background.csd > box.vertical > notebook scrolledwindow viewport,
+window.background.ssd > box.vertical > notebook scrolledwindow viewport,
+window.background.solid-csd > box.vertical > notebook scrolledwindow viewport {
+    border-style: solid;
+    border-color: @borders;
+    border-width: 1px;
+}
+
+window.background > box.vertical > notebook scrolledwindow viewport,
+window.background.csd > box.vertical > notebook scrolledwindow viewport,
+window.background.ssd > box.vertical > notebook scrolledwindow viewport,
+window.background.solid-csd > box.vertical > notebook scrolledwindow viewport {
+    background-color: shade (@theme_bg_color, 1.12);
+}
+
