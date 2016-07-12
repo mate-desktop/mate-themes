@@ -252,3 +252,32 @@ window.background.yumex-dnf-window > box.vertical > box.vertical > box.horizonta
     border-width: 1px 0px 0px 0px;
 }
 
+/****************
+ * pavu-control *
+ ****************/
+
+window.background > box.vertical > notebook button.flat.toggle,
+window.background.csd > box.vertical > notebook button.flat.toggle,
+window.background.ssd > box.vertical > notebook button.flat.toggle,
+window.background.solid-csd > box.vertical > notebook button.flat.toggle {
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+}
+
+window.background > box.vertical > notebook scrolledwindow,
+window.background.csd > box.vertical > notebook scrolledwindow viewport,
+window.background.ssd > box.vertical > notebook scrolledwindow viewport,
+window.background.solid-csd > box.vertical > notebook scrolledwindow viewport {
+    border-style: solid;
+    border-color: @notebook_border;
+    border-width: 1px;
+}
+
+window.background > box.vertical > notebook scrolledwindow viewport,
+window.background.csd > box.vertical > notebook scrolledwindow viewport,
+window.background.ssd > box.vertical > notebook scrolledwindow viewport,
+window.background.solid-csd > box.vertical > notebook scrolledwindow viewport {
+    background-color: shade (@theme_bg_color, 1.04);
+}
+
