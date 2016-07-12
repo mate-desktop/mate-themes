@@ -1064,3 +1064,13 @@ MsdOsdWindow.background.osd .progressbar {
     background-size: 40px auto, auto, auto;
 }
 
+/*****************
+ * mate-terminal *
+ *****************/
+
+/* override for pavu-control */
+window.background.mate-terminal > box.vertical > notebook {
+    border-style: none;
+    border-width: 0px;
+}
+
