@@ -560,3 +560,61 @@ window.background.yumex-dnf-window > box.vertical > box.vertical > box.horizonta
     border-radius: 4px;
 }
 
+/****************
+ * pavu-control *
+ ****************/
+
+window.background > box.vertical > notebook button.flat.toggle:focus,
+window.background.csd > box.vertical > notebook button.flat.toggle:focus,
+window.background.ssd > box.vertical > notebook button.flat.toggle:focus,
+window.background.solid-csd > box.vertical > notebook button.flat.toggle:focus {
+    box-shadow: none;
+}
+
+window.background > box.vertical > notebook button.flat.toggle:checked,
+window.background.csd > box.vertical > notebook button.flat.toggle:checked,
+window.background.ssd > box.vertical > notebook button.flat.toggle:checked,
+window.background.solid-csd > box.vertical > notebook button.flat.toggle:checked {
+    border-top-color:    transparent;
+    border-left-color:   alpha (#000, 0.01);
+    border-right-color:  alpha (#000, 0.01);
+    border-bottom-color: alpha (#000, 0.03);
+    box-shadow: inset  0px  1px alpha(shade(@button_border, 1.00), 0.70),
+                inset  1px  0px alpha(shade(@button_border, 0.94), 0.80),
+                inset -1px  0px alpha(shade(@button_border, 0.94), 0.80),
+                inset  0px -1px alpha(shade(@button_border, 0.88), 0.90);
+}
+
+window.background > box.vertical > notebook button.flat.toggle:checked:focus,
+window.background.csd > box.vertical > notebook button.flat.toggle:checked:focus,
+window.background.ssd > box.vertical > notebook button.flat.toggle:checked:focus,
+window.background.solid-csd > box.vertical > notebook button.flat.toggle:checked:focus {
+    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
+                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+}
+
+window.background > box.vertical > notebook scrolledwindow,
+window.background.csd > box.vertical > notebook button.flat.toggle:checked:focus,
+window.background.ssd > box.vertical > notebook button.flat.toggle:checked:focus,
+window.background.solid-csd > box.vertical > notebook button.flat.toggle:checked:focus {
+    background-color: shade (@theme_bg_color, 1.1);
+}
+
+window.background > box.vertical > notebook scrolledwindow,
+window.background.csd > box.vertical > notebook scrolledwindow viewport,
+window.background.ssd > box.vertical > notebook scrolledwindow viewport,
+window.background.solid-csd > box.vertical > notebook scrolledwindow viewport {
+    border-style: solid;
+    border-color: @notebook_border;
+    border-width: 1px;
+}
+
+window.background > box.vertical > notebook scrolledwindow viewport,
+window.background.csd > box.vertical > notebook scrolledwindow viewport,
+window.background.ssd > box.vertical > notebook scrolledwindow viewport,
+window.background.solid-csd > box.vertical > notebook scrolledwindow viewport {
+    background-color: shade (@theme_bg_color, 1.15);
+}
+
