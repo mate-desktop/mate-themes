@@ -1909,6 +1909,10 @@ notebook {
     border-style: none;
 }
 
+window.background > box.vertical > notebook, /* pavu-control */
+window.background.csd > box.vertical > notebook,
+window.background.ssd > box.vertical > notebook,
+window.background.solid-csd > box.vertical > notebook,
 notebook.frame {
     background-color: shade (@theme_bg_color, 1.1);
     border-style: solid;
@@ -2041,6 +2045,10 @@ paned.horizontal notebook header.top tab {
 
 /* tabs ie. preferences windows */
 /* horizontal tabs */
+window.background > box.vertical > notebook > header.top tab, /* pavu-control */
+window.background.csd > box.vertical > notebook > header.top tab,
+window.background.ssd > box.vertical > notebook > header.top tab,
+window.background.solid-csd > box.vertical > notebook > header.top tab,
 dialog.background.csd > box.vertical.dialog-vbox > notebook > header.top tab, /* meld preferences */
 dialog.background.ssd > box.vertical.dialog-vbox > notebook > header.top tab,
 dialog.background.solid-csd > box.vertical.dialog-vbox > notebook > header.top tab,
@@ -2055,6 +2063,10 @@ notebook.frame header.bottom tab {
     border-color: @borders;
 }
 
+window.background > box.vertical > notebook > header.top tab, /* pavu-control */
+window.background.csd > box.vertical > notebook > header.top tab,
+window.background.ssd > box.vertical > notebook > header.top tab,
+window.background.solid-csd > box.vertical > notebook > header.top tab,
 notebook.frame header.top tab {
     border-radius: 4px 4px 0px 0px;
 }
