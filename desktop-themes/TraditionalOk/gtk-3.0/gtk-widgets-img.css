@@ -381,15 +381,15 @@ paned.vertical > separator {
 entry,
 combobox entry,
 combobox entry button,
-button:active,
+button:checked,
 trough,
 trough highlight,
 switch,
 /* generic button borders */
 button,
-button.flat:active,
+button.flat:checked,
 button.flat:hover,
-.menu-button:active,
+.menu-button:checked,
 .titlebar button.titlebutton:hover,
 toolbar.primary-toolbar button:checked,
 .titlebar button.titlebutton:hover,
@@ -644,7 +644,7 @@ list row button:hover {
 /* focused element borders */
 entry:focus,
 combobox entry:focus,
-button.flat:focus:active,
+button.flat:focus:checked,
 button:focus:active,
 button.default:active,
 /* focused button borders */

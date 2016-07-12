@@ -1559,6 +1559,10 @@ notebook {
     background-clip: border-box;
 }
 
+window.background > box.vertical > notebook, /* pavu-control */
+window.background.csd > box.vertical > notebook,
+window.background.ssd > box.vertical > notebook,
+window.background.solid-csd > box.vertical > notebook,
 notebook.frame {
     background-color: @notebook_bg_color;
     background-clip: border-box;
