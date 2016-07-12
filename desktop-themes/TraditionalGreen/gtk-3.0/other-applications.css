@@ -63,3 +63,18 @@ window.background.yumex-dnf-window > box.vertical > box.vertical > box.horizonta
     border-width: 1px 0px 1px 1px;
 }
 
+/****************
+ * pavu-control *
+ ****************/
+
+window.background > box.vertical > notebook scrolledwindow viewport,
+window.background.csd > box.vertical > notebook scrolledwindow viewport,
+window.background.ssd > box.vertical > notebook scrolledwindow viewport,
+window.background.solid-csd > box.vertical > notebook scrolledwindow viewport,
+window.background > box.vertical > notebook scrolledwindow viewport scale,
+window.background.csd > box.vertical > notebook scrolledwindow viewport scale,
+window.background.ssd > box.vertical > notebook scrolledwindow viewport scale,
+window.background.solid-csd > box.vertical > notebook scrolledwindow viewport scale {
+    background-color: shade (@theme_bg_color, 1.03);
+}
+
