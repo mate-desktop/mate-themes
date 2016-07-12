@@ -578,3 +578,13 @@ MsdOsdWindow.background.osd .progressbar {
     border-width: 0px;
 }
 
+/*****************
+ * mate-terminal *
+ *****************/
+
+/* override for pavu-control */
+window.background.mate-terminal > box.vertical > notebook {
+    border-style: none;
+    border-width: 0px;
+}
+
