@@ -455,3 +455,13 @@ MsdOsdWindow.background.osd .progressbar {
     background-color: @osd_scale_trough_bg_color;
 }
 
+/*****************
+ * mate-terminal *
+ *****************/
+
+/* override for pavu-control */
+window.background.mate-terminal > box.vertical > notebook {
+    border-style: none;
+    border-width: 0px;
+}
+
