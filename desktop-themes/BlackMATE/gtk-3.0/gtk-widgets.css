@@ -538,7 +538,9 @@ progressbar {
 	font-size: smaller;
 }
 
-progressbar progress {
+progressbar progress, /*for most horizontal progressbars*/ 
+.view .progressbar,   /*for progressbars in treeviews, these are always horizontal*/
+.view:focus .progressbar  {   /*override selected:focus default*/
 	min-height: 19px;
 	border-width: 1px; 
 	border-style:solid;
@@ -584,7 +586,9 @@ progressbar.vertical progress {
 	                                  shade(@progressbar_background_a, 0.91));
 }
 
-progressbar trough {
+progressbar trough,  /*for most horizontal progressbars*/ 
+.view .trough,       /*for progressbars in treeviews, these are always horizontal*/
+.view:focus .trough{  /*override selected:focus default*/    
 	min-height: 19px;
 	border-width: 0px;
 	border-style: solid;
