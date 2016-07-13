@@ -870,6 +870,40 @@ row trough,
 		mix(@trough_bg_color_b, @theme_selected_bg_color, 0.25));
 }
 
+treeview.view.progressbar {
+      color: @theme_selected_fg_color;
+      border: 1px solid @progressbar_border;
+      border-radius: 4px;
+      background-image: linear-gradient(to left,
+                                        @progressbar_background_a,
+                                        @progressbar_background_b);
+      box-shadow: inset 1px 1px alpha(white, 0.2), inset -1px -1px alpha(white, 0.1);
+}
+
+treeview.view.progressbar:selected {
+      background-image: linear-gradient(to left,
+                                        shade(@progressbar_background_a, 0.8),
+                                        shade(@progressbar_background_b, 0.8));
+      border-color: shade(@progressbar_border, 0.85);
+}
+
+treeview.view.progressbar:backdrop {
+      color: @theme_fg_color;
+      border-color: shade(@sidebar_bg_unfocused, 0.85);
+      background-color: @sidebar_scrollbar_trough_backdrop;
+}
+
+treeview.view.trough {
+    background-color: rgba(102, 153, 204, 0.3);
+    border-radius: 4px;
+    border: 1px solid rgba(102, 153, 204, 0.6);
+}
+
+treeview.view.trough:selected {
+    background-color: rgba(102, 153, 204, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
 /****************
  * Level Bar *
  ****************/
