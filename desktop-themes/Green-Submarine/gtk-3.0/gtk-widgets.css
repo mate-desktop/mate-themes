@@ -72,8 +72,6 @@ window {
 *:hover:disabled {
 }
 
-}
-
 *:disabled {
     /* inherit the color from parent by default */
     background-color: inherit;
@@ -416,6 +414,8 @@ progressbar progress.bottom {
     border-bottom-left-radius: 3px;
 }
 
+treeview.view.progressbar,
+treeview.view.progressbar:hover,
 progressbar.horizontal progress {
     background-image: linear-gradient(to right,
                                       alpha (#000, 0.00),
@@ -438,6 +438,34 @@ progressbar.horizontal progress {
                 inset  1px  0px alpha(black, 0.03),
                 inset -1px  0px alpha(black, 0.03),
                 inset  0px -1px alpha(white, 0.10);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    border-top-color:    shade(@button_border_active, 0.80);
+    border-left-color:   shade(@button_border_active, 0.85);
+    border-right-color:  shade(@button_border_active, 0.85);
+    border-bottom-color: shade(@button_border_active, 1.00);
+}
+
+treeview.view.progressbar:selected,
+treeview.view.progressbar:selected:hover {
+    background-image: linear-gradient(to right,
+                                      alpha (#000, 0.00),
+                                      alpha (#000, 0.00) 48%,
+                                      alpha (#004, 0.12) 48%,
+                                      alpha (#004, 0.12) 50%,
+                                      alpha (#000, 0.00) 50%,
+                                      alpha (#000, 0.00) 98%,
+                                      alpha (#004, 0.12) 98%,
+                                      alpha (#004, 0.12)),
+                      linear-gradient(to bottom,
+                                      alpha (#000, 0.20),
+                                      alpha (#000, 0.05) 50%,
+                                      alpha (#000, 0.00)),
+                      linear-gradient(to right,
+                                      shade(@progressbar_fill_a, 1.29),
+                                      shade(@progressbar_fill_b, 1.29));
+    background-size: 40px auto, auto, auto;
     border-width: 1px;
     border-style: solid;
     border-radius: 3px;
@@ -478,6 +506,19 @@ progressbar.vertical progress {
     border-bottom-color: shade(@button_border_active, 0.85);
 }
 
+treeview.view.progressbar,
+treeview.view.progressbar:hover,
+notebook treeview.view.progressbar:hover {
+      color: @theme_selected_fg_color;
+}
+
+treeview.view.progressbar:hover,
+treeview.view.progressbar:selected,
+treeview.view.progressbar:selected:hover {
+      color: @theme_fg_color;
+}
+
+treeview.view.trough,
 progressbar trough {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
@@ -488,6 +529,27 @@ progressbar trough {
     border-width: 0px;
     border-radius: 2px;
     padding: 0 0 1px 0;
+    box-shadow: inset  1px  1px alpha(#000, 0.15),
+                inset -1px -1px alpha(#000, 0.15);
+    text-shadow: none;
+}
+
+treeview.view.trough:selected,
+notebook treeview.view.trough:selected:hover {
+    background-image: -gtk-gradient(linear,
+                                    left top, left bottom,
+                                    from       (shade(@theme_base_color, 0.80)),
+                                    color-stop (0.15, shade(@theme_base_color, 0.90)),
+                                    color-stop (0.50, shade(@theme_base_color, 0.92)),
+                                    to         (shade(@theme_base_color, 0.94)));
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    border-top-color:    shade(@button_border_active, 0.80);
+    border-left-color:   shade(@button_border_active, 0.85);
+    border-right-color:  shade(@button_border_active, 0.85);
+    border-bottom-color: shade(@button_border_active, 1.00);
+    padding: 0 0 0px 0;
     box-shadow: inset  1px  1px alpha(#000, 0.15),
                 inset -1px -1px alpha(#000, 0.15);
     text-shadow: none;
