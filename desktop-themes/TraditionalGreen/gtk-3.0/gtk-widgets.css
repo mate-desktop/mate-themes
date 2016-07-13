@@ -591,6 +591,8 @@ progressbar progress.bottom {
     border-bottom-left-radius: 3px;
 }
 
+treeview.view.progressbar,
+treeview.view.progressbar:hover,
 progressbar.horizontal progress,
 row progressbar progress,
 row:hover progressbar progress,
@@ -646,6 +648,19 @@ row:selected:focus progressbar trough {
                       left top, left bottom,
                       from (mix (@trough_gradient_a, @theme_selected_bg_color, 0.25)),
                       to (mix (@trough_gradient_b, @theme_selected_bg_color, 0.25)));
+}
+
+treeview.view.trough,
+treeview.view.trough:hover {
+    background-image: -gtk-gradient (linear,
+                      left top, left bottom,
+                      from (mix (@trough_gradient_a, @theme_selected_bg_color, 0.25)),
+                      to (mix (@trough_gradient_b, @theme_selected_bg_color, 0.25)));
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: @progressbar_border_color;
+    padding: 0px;
 }
 
 /************
