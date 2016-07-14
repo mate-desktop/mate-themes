@@ -651,7 +651,8 @@ row:selected:focus progressbar trough {
 }
 
 treeview.view.trough,
-treeview.view.trough:hover {
+treeview.view.trough:hover,
+treeview.view.trough:selected {
     background-image: -gtk-gradient (linear,
                       left top, left bottom,
                       from (mix (@trough_gradient_a, @theme_selected_bg_color, 0.25)),
