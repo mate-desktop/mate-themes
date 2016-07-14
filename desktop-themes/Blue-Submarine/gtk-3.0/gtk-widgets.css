@@ -549,6 +549,7 @@ notebook treeview.view.trough:selected:hover {
     box-shadow: inset  1px  1px alpha(#000, 0.15),
                 inset -1px -1px alpha(#000, 0.15);
     text-shadow: none;
+    color: @theme_fg_color;
 }
 
 progressbar.vertical trough {

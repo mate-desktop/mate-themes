@@ -774,7 +774,8 @@ progressbar trough {
                                       shade(@theme_bg_color, 1.0));
     border-width: 1px;
     border-style: solid;
-    border-color: shade(@theme_bg_color, 0.7)
+    border-color: shade(@theme_bg_color, 0.7);
+    color: @theme_fg_color;
 }
 
 treeview.view.trough {
@@ -787,7 +788,7 @@ progressbar.vertical trough {
                                       shade(@theme_bg_color, 1.0));
     border-width: 1px;
     border-style: solid;
-    border-color: shade(@theme_bg_color, 0.7)
+    border-color: shade(@theme_bg_color, 0.7);
 }
 
 /**********
