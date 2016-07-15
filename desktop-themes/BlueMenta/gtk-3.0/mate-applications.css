@@ -17,30 +17,24 @@
                                       @button_hover_gradient_color_b);
 }
 
-.caja-navigation-window .caja-side-pane button.flat:first-child {
-    border-radius: 3px 0 0 3px;
-    border-right-width: 0;
-/* remove right border */
-    border-image: url("borders/button.png") 3 4 4 3 / 3px 0px 4px 3px stretch;
-}
-
-.caja-navigation-window .caja-side-pane button.flat:last-child {
-    border-radius: 0 3px 3px 0;
-    border-left-width: 0;
-/* remove left border */
-    border-image: url("borders/button.png") 3 3 4 4 / 3px 3px 4px 0px stretch;
-}
-
+.caja-navigation-window .caja-side-pane button.flat:first-child,
 .caja-navigation-window .caja-side-pane button.flat:hover:first-child {
-    border-radius: 6px 0 0 6px;
-    border-right-width: 0;
-    border-image: url("borders/button.png") 3 3 4 3 / 3px 0px 4px 3px stretch;
+    border-image: url("borders/button.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
+    border-radius: 3px 0 0 3px;
+    /* remove right border */
+    border-width: 2px 0px 2px 2px;
+	border-image-width: 3px 0 4px 4px;
+	box-shadow: inset -1px 0 @inset_dark_color;
 }
 
-.caja-navigation-window .caja-side-pane button.flat:hover:last-child  {
-    border-radius: 0 6px 6px 0;
-    border-left-width: 0;
-    border-image: url("borders/button.png") 3 3 4 3 / 3px 3px 4px 0px stretch;
+.caja-navigation-window .caja-side-pane button.flat:last-child,
+.caja-navigation-window .caja-side-pane button.flat:hover:last-child {
+    border-image: url("borders/button.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
+    border-radius: 0 3px 3px 0;
+    /* remove left border */
+    border-width: 2px 2px 2px 0px;
+	border-image-width: 3px 4px 4px 0px;
+	box-shadow: inset 1px 0 @inset_light_color;
 }
 
 /* ComboBox views */
@@ -48,37 +42,65 @@
     padding: 6px 4px;
 }
 
+/* pathpar toggle button */
+.caja-navigation-window button.toggle.image-button,
+.caja-navigation-window button.toggle.image-button:checked {
+    padding: 5px;
+    border-radius: 3px;
+}
+
 /* pathbar */
+/* pathbar buttons */
+.caja-pathbar button {
+    padding: 4px;
+}
+
 /* arrow button */
-.caja-pathbar button:nth-child(odd) widget {
-    -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+.caja-pathbar button.slider-button:focus {
+	border-image: url("borders/button.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
 }
 
-.caja-pathbar button:nth-child(odd) {
-   margin: 0px -7px 0px 0px;
-   padding: 0px;
+.caja-pathbar button.slider-button:nth-child(odd) {
+    border-radius: 3px 0px 0px 3px;
+    /* remove right border */
+    border-width: 2px 0px 2px 2px;
+	border-image-width: 3px 0 4px 4px;
+    margin: 0px -1px 0px 1px;
+	box-shadow: inset -1px 0 @inset_dark_color;
 }
 
-.caja-pathbar button:nth-child(even) widget {
-    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+.caja-pathbar button.slider-button:nth-child(even) {
+    border-radius: 0 3px 3px 0;
+    /* remove left border */
+    border-width: 2px 2px 2px 0px;
+	border-image-width: 3px 4px 4px 0;
+    margin: 0px 1px 0px -1px;
+	box-shadow: inset 1px 0 @inset_light_color;
 }
 
-.caja-pathbar button:nth-child(even) {
-   margin: 0px 0px 0px -7px;
-  padding: 0px;
+/* remove box shadow from last-child */
+.caja-pathbar button.slider-button:disabled:nth-child(even) {
+	box-shadow: none;
 }
 
 /* folder buttons */
-.caja-pathbar button.toggle {
-   margin: 0px -8px 0px 0px;
+.caja-pathbar button.toggle.text-button,
+.caja-pathbar button.toggle.text-button.image-button {
+    border-width: 2px 0px;
+	border-image-width: 3px 0 4px 0;
+	border-radius: 0;
+    margin: 0px -2px 0px -2px;
+	box-shadow: inset 1px 0 @inset_light_color, inset -1px 0 @inset_dark_color;
 }
 
-.caja-pathbar button.toggle image {
-   padding: 0px 4px 0px 5px;
+.caja-pathbar button.toggle.text-button:checked,
+.caja-pathbar button.toggle.text-button.image-button:checked {
+	box-shadow: inset 1px 0 @inset_dark_color;
 }
 
-.caja-pathbar button.toggle label {
-   padding: 0px 5px;
+.caja-pathbar button.toggle.text-button:disabled,
+.caja-pathbar button.toggle.text-button.image-button:disabled {
+	box-shadow: inset -1px 0 @inset_dark_color;
 }
 
 /* places, treeview, history, information, emblems and notes */

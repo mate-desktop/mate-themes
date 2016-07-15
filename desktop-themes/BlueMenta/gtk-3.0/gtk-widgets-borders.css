@@ -166,8 +166,8 @@ toolbar.primary-toolbar button:checked,
 toolbar.primary-toolbar .raised button:checked,
 toolbar.inline-toolbar .button:checked,
 toolbar.primary-toolbar switch trough {
-	border-image: url("borders/button-active.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
-	border-radius: 4px;
+	border-image: url("borders/button-active.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
+	border-radius: 3px;
 	border-width: 2px;
 	border-style: solid;
 	border-color: transparent;
@@ -178,8 +178,8 @@ toolbar.primary-toolbar .raised button.default:disabled,
 toolbar.primary-toolbar switch trough:disabled,
 toolbar.primary-toolbar switch trough:checked:disabled,
 toolbar.primary-toolbar combobox button.combo:disabled {
-	border-image: url("borders/button-active-ins.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
-	border-radius: 4px;
+	border-image: url("borders/button-active-ins.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
+	border-radius: 3px;
 	border-width: 2px;
 	border-style: solid;
 	border-color: transparent;
@@ -191,7 +191,7 @@ toolbar.primary-toolbar entry:focus,
 toolbar.primary-toolbar combobox entry.combo:focus,
 toolbar.primary-toolbar .raised button.default:checked,
 toolbar.inline-toolbar button.default:checked {
-	border-image: url("borders/button-active-focus.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
+	border-image: url("borders/button-active-focus.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
 	border-radius: 3px;
 	border-width: 2px;
 	border-style: solid;
@@ -202,8 +202,8 @@ toolbar.inline-toolbar button.default:checked {
 toolbar.primary-toolbar .raised button,
 toolbar.inline-toolbar button,
 toolbar.primary-toolbar combobox button.combo {
-	border-image: url("borders/button.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
-	border-radius: 4px;
+	border-image: url("borders/button.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
+	border-radius: 3px;
 	border-width: 2px;
 	border-style: solid;
 	border-color: transparent;
@@ -212,8 +212,8 @@ toolbar.primary-toolbar combobox button.combo {
 /* primary toolbar - focused button borders */
 toolbar.primary-toolbar .raised button.default,
 toolbar.inline-toolbar button.default {
-	border-image: url("borders/button-focus.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
-	border-radius: 4px;
+	border-image: url("borders/button-focus.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
+	border-radius: 3px;
 	border-width: 2px;
 	border-style: solid;
 	border-color: transparent;

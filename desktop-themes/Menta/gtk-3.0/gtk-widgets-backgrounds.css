@@ -75,6 +75,8 @@ button:hover,
 toolbar button:hover,
 toolbar .raised button:hover,
 toolbar combobox button.combo:hover,
+combobox button.combo:hover,
+toolbar.primary-toolbar combobox button.combo:hover,
 toolbar.primary-toolbar.horizontal > toolitem > .linked > button.raised.image-button:hover {
 	background-color: transparent;
 	background-image: linear-gradient(to bottom,
@@ -111,9 +113,7 @@ toolbar combobox button.combo:checked:disabled {
 
 /* Entry background */
 entry,
-combobox button.combo:hover,
 toolbar.primary-toolbar combobox entry.combo,
-toolbar.primary-toolbar combobox button.combo:hover,
 levelbar trough {
 	background-image: linear-gradient(to bottom,
 		@entry_background_a,
