@@ -103,9 +103,13 @@ paned.horizontal > box.vertical.caja-side-pane > notebook scrolledwindow.frame {
     padding: 3px;
 }
 
+.caja-side-pane button.flat.toggle {
+    padding: 0px 3px 0px 6px;
+}
+
 .caja-side-pane button.flat.toggle:first-child {
-    border-radius: 6px 0 0 6px;
-    border-right-width: 0;
+    border-radius: 4px 0 0 4px;
+    border-width: 1px 0px 1px 1px;
 /* remove left shadow */
     box-shadow: inset  0px  2px alpha(#fff, 0.11),
                 inset  2px  0px alpha(#fff, 0.09),
@@ -118,9 +122,8 @@ paned.horizontal > box.vertical.caja-side-pane > notebook scrolledwindow.frame {
 }
 
 .caja-side-pane button.flat:last-child {
-    border-radius: 0 6px 6px 0;
-    border-left-width: 0;
-    border-left-color: @theme_bg_color;
+    border-radius: 0 4px 4px 0;
+    border-width: 1px 1px 1px 0px;
     box-shadow: inset  0px  2px alpha(#fff, 0.11),
                 inset  2px  0px alpha(#fff, 0.09),
                 inset -2px  0px alpha(#fff, 0.09),
@@ -150,7 +153,7 @@ paned.horizontal > box.vertical.caja-side-pane > notebook scrolledwindow.frame {
 }
 
 .caja-side-pane button.flat.toggle:hover:first-child,
-.caja-side-pane button.flat.toggle:checked:checked:first-child {
+.caja-side-pane button.flat.toggle:checked:first-child {
     box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
                 inset  1px  0px shade (@theme_selected_bg_color, 1.3),
                 inset -1px  0px rgba(255,255,255,0), 0 1px rgba(255,255,255,0),
@@ -158,7 +161,7 @@ paned.horizontal > box.vertical.caja-side-pane > notebook scrolledwindow.frame {
 }
 
 .caja-side-pane button.flat:hover:last-child,
-.caja-side-pane button.flat:checked:checked:last-child {
+.caja-side-pane button.flat:checked:last-child {
     box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
                 inset  1px  0px shade (@theme_selected_bg_color, 1.3),
                 inset -1px  0px shade (@theme_selected_bg_color, 1.3),
@@ -166,54 +169,59 @@ paned.horizontal > box.vertical.caja-side-pane > notebook scrolledwindow.frame {
 }
 
 /* pathpar toggle button */
-.caja-navigation-window button.toggle.image-button {
-    padding: 4px;
+.caja-navigation-window button.toggle.image-button,
+.caja-navigation-window button.toggle.image-button:checked {
+    padding: 4px 4px;
+    border-radius: 5px;
 }
 
 /* pathbar buttons */
-.caja-pathbar button,
-.caja-pathbar button:hover,
-.caja-pathbar button:checked {
-    border-image: none;
-    padding: 3px;
-    border-width: 1px;
-    border-radius: 3px;
-    border-color: transparent;
+.caja-pathbar button {
+    padding: 4px;
 }
 
 /* arrow button */
-.caja-pathbar button:nth-child(odd) widget {
-    -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+.caja-pathbar button.slider-button:focus {
+    box-shadow: inset  0px  1px alpha(shade(@button_border, 1.00), 0.70),
+                inset  1px  0px alpha(shade(@button_border, 0.94), 0.80),
+                inset -1px  0px alpha(shade(@button_border, 0.94), 0.80),
+                inset  0px -1px alpha(shade(@button_border, 0.88), 0.90);
 }
 
-.caja-pathbar button:nth-child(odd) {
-    margin: 0px -7px 0px 0px;
-    padding: 0px;
-    border-radius: 5px 3px 3px 5px;
+.caja-pathbar button.slider-button:hover {
+    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
+                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
 }
 
-.caja-pathbar button:nth-child(even) widget {
-    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+.caja-pathbar button.slider-button:nth-child(odd) {
+    border-radius: 5px 0px 0px 5px;
+    border-width: 1px 0px 1px 1px;
+    margin: 0px -2px 0px 3px;
 }
 
-.caja-pathbar button:nth-child(even) {
-    margin: 0px 0px 0px -7px;
-    padding: 0px;
-    border-radius: 3px 5px 5px 3px;
+.caja-pathbar button.slider-button:nth-child(even) {
+    border-radius:  0px 5px 5px 0px;
+    border-width: 1px 1px 1px 0px;
+    margin: 0px 3px 0px -2px;
 }
 
 /* folder buttons */
-.caja-pathbar button.toggle {
-    margin: 0px -6px 0px 0px;
-    border-radius: 3px;
+.caja-pathbar button.toggle.text-button:hover,
+.caja-pathbar button.toggle.text-button.image-button:hover {
+    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
+                inset  1px  0px alpha(shade(@button_border, 0.94), 0.80),
+                inset -1px  0px alpha(shade(@button_border, 0.94), 0.80),
+                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
 }
 
-.caja-pathbar button.toggle image {
-    padding: 0px 4px 0px 5px;
-}
-
-.caja-pathbar button.toggle label {
-    padding: 0px 6px 0px 5px;
+.caja-pathbar button.toggle.text-button,
+.caja-pathbar button.toggle.text-button.image-button {
+    margin: 0px -2px 0px -2px;
+    border-width: 1px 0px;
+    border-radius: 0px;
+    padding: 4px 6px;
 }
 
 .caja-search-bar entry,
