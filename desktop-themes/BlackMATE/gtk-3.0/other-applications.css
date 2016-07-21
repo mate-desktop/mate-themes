@@ -47,6 +47,11 @@ NemoView .view .entry:focus {
 	background-color: shade(@theme_selected_bg_color, 0.3);
 }
 
+NemoView .view .entry:selected {
+    background-color: @selected_bg_color;
+    color: @selected_fg_color;
+}
+
 /**** Window ***/
 
 NemoWindow .view {
