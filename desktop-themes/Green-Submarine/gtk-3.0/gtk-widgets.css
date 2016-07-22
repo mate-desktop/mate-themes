@@ -3354,15 +3354,21 @@ notebook {
     border-style: none;
 }
 
-window.background > box.vertical > notebook, /* pavu-control */
-window.background.csd > box.vertical > notebook,
-window.background.ssd > box.vertical > notebook,
-window.background.solid-csd > box.vertical > notebook,
 notebook.frame {
     background-color: shade (@theme_bg_color, 1.1);
     border-style: solid;
     border-color: @notebook_border;
     border-width: 1px;
+    border-radius: 4px 4px 0px 0px;
+}
+
+window.background > box.vertical > notebook, /* pavu-control */
+window.background.csd > box.vertical > notebook,
+window.background.ssd > box.vertical > notebook,
+window.background.solid-csd > box.vertical > notebook {
+    background-color: shade (@theme_bg_color, 1.1);
+    border-style: none;
+    border-width: 0px;
     border-radius: 4px 4px 0px 0px;
 }
 
@@ -3553,6 +3559,10 @@ window.background > box.vertical > notebook > header.top tab:checked, /* pavu-co
 window.background.csd > box.vertical > notebook > header.top tab:checked,
 window.background.ssd > box.vertical > notebook > header.top tab:checked,
 window.background.solid-csd > box.vertical > notebook > header.top tab:checked,
+window.background > box.vertical > notebook > header.top tab:checked:hover,
+window.background.csd > box.vertical > notebook > header.top tab:checked:hover,
+window.background.ssd > box.vertical > notebook > header.top tab:checked:hover,
+window.background.solid-csd > box.vertical > notebook > header.top tab:checked:hover,
 dialog.background.csd > box.vertical.dialog-vbox > notebook > header.top tab:checked,
 dialog.background.ssd > box.vertical.dialog-vbox > notebook > header.top tab:checked,
 dialog.background.solid-csd > box.vertical.dialog-vbox > notebook > header.top tab:checked,
