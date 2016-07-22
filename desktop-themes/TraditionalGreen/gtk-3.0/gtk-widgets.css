@@ -1575,16 +1575,23 @@ notebook {
     background-clip: border-box;
 }
 
-window.background > box.vertical > notebook, /* pavu-control */
-window.background.csd > box.vertical > notebook,
-window.background.ssd > box.vertical > notebook,
-window.background.solid-csd > box.vertical > notebook,
 notebook.frame {
     background-color: @notebook_bg_color;
     background-clip: border-box;
     border-color: @border_color;
     border-style: solid;
     border-width: 1px;
+    border-radius: 3px 3px 0px 0px;
+}
+
+window.background > box.vertical > notebook, /* pavu-control */
+window.background.csd > box.vertical > notebook,
+window.background.ssd > box.vertical > notebook,
+window.background.solid-csd > box.vertical > notebook {
+    background-color: @notebook_bg_color;
+    background-clip: border-box;
+    border-style: none;
+    border-width: 0px;
     border-radius: 3px 3px 0px 0px;
 }
 

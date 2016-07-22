@@ -78,3 +78,14 @@ window.background.solid-csd > box.vertical > notebook scrolledwindow viewport sc
     background-color: shade (@theme_bg_color, 1.03);
 }
 
+/****************
+ * virt-manager *
+ ****************/
+
+window.background > box.vertical > notebook,
+window.background > box.vertical > notebook overlay > scrolledwindow,
+window.background > box.vertical > notebook overlay > scrolledwindow viewport {
+    border-style: none;
+    border-width: 0px;
+}
+
