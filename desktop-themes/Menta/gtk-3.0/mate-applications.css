@@ -509,8 +509,10 @@ na-tray-applet widget box widget {
     background-color: @theme_bg_color;
 }
 
-.mate-terminal notebook header.top tab,
-.mate-terminal notebook header.top tab:checked:hover {
+/* override settings for pavu-control */
+window.background.mate-terminal > box.vertical > notebook > header.top tab,
+window.background.mate-terminal > box.vertical > notebook > header.top tab:checked,
+window.background.mate-terminal > box.vertical > notebook > header.top tab:checked:hover {
     border-radius: 4px 4px 0px 0px;
     padding: 2px 2px 2px 6px;
     margin: 0px 0px 0px -1px;
