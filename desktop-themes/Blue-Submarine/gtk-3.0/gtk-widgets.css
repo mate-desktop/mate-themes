@@ -36,7 +36,7 @@ window {
     color: @theme_fg_color;
 }
 
-.background {
+.background:not(widget) {
     color: @theme_fg_color;
     background-color: @theme_bg_color;
 }
@@ -130,6 +130,9 @@ rubberband,
 .view.rubberband,
 .rubberband {
     background-color: alpha (@theme_selected_bg_color, 0.35);
+    background-image: linear-gradient(to bottom,
+                                      alpha (@theme_selected_bg_color, 0.35),
+                                      alpha (@theme_selected_bg_color, 0.35));
     border-color: @theme_selected_bg_color;
     border-style: solid;
     border-width: 1px;
@@ -3359,13 +3362,17 @@ notebook.frame {
     border-radius: 4px 4px 0px 0px;
 }
 
-window.background > box.vertical > notebook, /* pavu-control */
-window.background.csd > box.vertical > notebook,
-window.background.ssd > box.vertical > notebook,
-window.background.solid-csd > box.vertical > notebook {
-    background-color: shade (@theme_bg_color, 1.1);
+notebook.frame frame {
     border-style: none;
     border-width: 0px;
+}
+
+/* pavu-control */
+window.background > box.vertical > notebook:not(.frame),
+window.background.csd > box.vertical > notebook:not(.frame),
+window.background.ssd > box.vertical > notebook:not(.frame),
+window.background.solid-csd > box.vertical > notebook:not(.frame) {
+    background-color: shade (@theme_bg_color, 1.1);
     border-radius: 4px 4px 0px 0px;
 }
 

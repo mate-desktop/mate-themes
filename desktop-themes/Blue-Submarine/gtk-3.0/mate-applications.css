@@ -676,7 +676,8 @@ na-tray-applet > widget > box {
 }
 
 /* volume applet */
-.mate-panel-applet-slider {
+.mate-panel-applet-slider,
+.mate-panel-applet-slider.background {
     background: transparent;
 }
 
@@ -719,6 +720,151 @@ na-tray-applet > widget > box {
                                      left top, left bottom,
                                      from (alpha(shade(@theme_selected_bg_color, 1.43) ,0.6)),
                                      to   (alpha(shade(@menu_bg_dark_color, 0.57) ,0.6)));
+}
+
+/* mate-menu */
+#mate-menu.background {
+    background-color: @menu_bg_dark_color;
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@menu_bg_dark_color, 1.03)),
+                                     to   (shade(@menu_bg_dark_color, 0.97)));
+    border-color: shade(@menu_fg_dark_color, 0.3);
+    border-width: 1px;
+    border-style: solid;
+    border-radius:2px;
+}
+
+#mate-menu.background viewport,
+#mate-menu.background > widget > box > widget > box {
+    background-color: @menu_bg_dark_color;
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@menu_bg_dark_color, 1.03)),
+                                     to   (shade(@menu_bg_dark_color, 0.97)));
+}
+
+#mate-menu.background viewport,
+#mate-menu.background notebook  {
+    color: @menu_fg_dark_color;
+    border-radius: 0px;
+    border-width: 0px;
+    border-style: none;
+}
+
+#mate-menu.background scrolledwindow {
+    border-color: shade(@menu_fg_dark_color, 0.3);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0px;
+}
+
+#mate-menu.background label,
+#mate-menu.background button,
+#mate-menu.background button.flat {
+    color: @menu_fg_dark_color;
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+}
+
+#mate-menu.background button:hover label,
+#mate-menu.background button:hover,
+#mate-menu.background button.flat:hover {
+    color: shade (@theme_selected_bg_color, 2.0);
+}
+
+#mate-menu.background button:hover,
+#mate-menu.background button.flat:hover {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (alpha(shade(@menu_bg_dark_color, 2.03), 0.6)),
+                                     to   (alpha(shade(@menu_bg_dark_color, 1.17), 0.6)));
+    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
+                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+}
+
+#mate-menu.background widget notebook viewport grid widget separator {
+    border-width: 1px 0px 0px 0px;
+    min-height: 1px;
+    background-color: shade(@menu_fg_dark_color, 0.3);
+    border-image: -gtk-gradient (linear,
+                                 left top, right top,
+                                 from (alpha (#000, 0.00)),
+                                 color-stop (0.25, alpha (#000, 0.03)),
+                                 color-stop (0.85, alpha (#000, 0.03)),
+                                 to (alpha (#000, 0.00))) 1;
+}
+
+#mate-menu.background scrollbar {
+    background-image: none;
+    border-style: solid;
+    border-color: shade(@menu_fg_dark_color, 0.3);
+}
+
+#mate-menu.background scrollbar.vertical trough {
+    background-image: none;
+}
+
+#mate-menu.background scrollbar.vertical slider {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@menu_bg_dark_color, 1.75)),
+                                     to (shade (@menu_bg_dark_color, 1.3)));
+    border-color: shade(@menu_fg_dark_color, 0.3);
+}
+
+#mate-menu.background scrollbar.vertical slider:hover,
+#mate-menu.background scrollbar.vertical slider:hover:active {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@menu_bg_dark_color, 1.3)),
+                                     to (shade (@menu_bg_dark_color, 1.75)));
+    border-color: shade(@menu_fg_dark_color, 0.3);
+}
+
+#mate-menu.background scrollbar.vertical.fine-tune slider:hover:active,
+#mate-menu.background scrollbar.vertical.fine-tune .slider:hover:active {
+    background-image: url("assets/slider_fine_vertical.svg"),
+                      linear-gradient(to left,
+                                      shade(@menu_bg_dark_color, 1.75),
+                                      shade(@menu_bg_dark_color, 1.525) 55%,
+                                      shade(@menu_bg_dark_color, 1.3));
+    background-repeat: no-repeat;
+    background-position: center;
+    border-color: shade(@menu_fg_dark_color, 0.3);
+}
+
+#mate-menu.background scrollbar.vertical button:disabled {
+    background-color: transparent;
+    color: shade (@insensitive_fg_color, 0.6);
+}
+
+#mate-menu.background entry {
+    background-color: transparent;
+    background-image: -gtk-gradient(linear,
+                                    left top, left bottom,
+                                    from       (shade(@menu_bg_dark_color, 1.16)),
+                                    color-stop (0.15, shade(@menu_bg_dark_color, 1.26)),
+                                    color-stop (0.50, shade(@menu_bg_dark_color, 1.28)),
+                                    to         (shade(@menu_bg_dark_color, 1.30)));
+    color: shade (@menu_fg_dark_color, 1.0);
+}
+
+#mate-menu.background entry,
+#mate-menu.background entry:focus {
+    box-shadow: inset  0px  1px shade(@menu_fg_dark_color, 0.3),
+                inset  1px  0px shade(@menu_fg_dark_color, 0.3),
+                inset -1px  0px shade(@menu_fg_dark_color, 0.3),
+                inset  0px -1px shade(@menu_fg_dark_color, 0.3);
+    /* color of the cursor */
+	caret-color: shade (@menu_fg_dark_color, 1.0);
+}
+
+#mate-menu.background entry selection,
+#mate-menu.background entry selection:focus {
+    background-color: shade(@menu_fg_dark_color, 0.4);
+    color: shade (@menu_fg_dark_color, 1.2);
 }
 
 /****************
@@ -954,10 +1100,6 @@ GvcMixerDialog box.horizontal box.horizontal frame label {
 
 GvcMixerDialog notebook.frame:nth-child(even) {
     border-radius: 3px 3px 0px 0px;
-}
-
-GvcMixerDialog notebook.frame frame {
-    border-style: none;
 }
 
 /* fix weird borders in application page */
