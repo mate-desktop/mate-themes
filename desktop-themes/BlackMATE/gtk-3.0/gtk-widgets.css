@@ -2024,6 +2024,11 @@ menu menuitem:disabled,
     border-color: transparent;
 }
 
+menu menuitem:disabled label,
+.menu menuitem:disabled label{
+    color: shade(@insensitive_fg_color, 0.8);
+}
+
 /* fixes for firefox menus, and menuitem arrows */
 .menuitem {
     color: @theme_fg_color;
