@@ -2387,7 +2387,9 @@ menu menuitem:hover,
 }
 
 menu menuitem:disabled,
-.menu menuitem:disabled {
+.menu menuitem:disabled,
+menu menuitem:disabled label,
+.menu menuitem:disabled label {
     text-shadow: none;
     background-color: transparent;
     border-color: transparent;
