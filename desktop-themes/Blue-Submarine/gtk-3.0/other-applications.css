@@ -639,6 +639,9 @@ window.background > box.vertical > notebook overlay > scrolledwindow viewport {
  * Lightdm *
  ***********/
 
+/* 2.0 */
+.lightdm-gtk-greeter #login_window.background,
+/* 1.8.5 */
 #login_window.background.lightdm-gtk-greeter,
 #login_window.background.lightdm-gtk-greeter box.vertical {
     border-radius: 10px;
@@ -650,6 +653,10 @@ window.background > box.vertical > notebook overlay > scrolledwindow viewport {
     background-color: @bg_dark_color;
 }
 
+/* 2.0 */
+.lightdm-gtk-greeter #login_window.background #content_frame,
+.lightdm-gtk-greeter #login_window.background #buttonbox_frame,
+/* 1.8.5 */
 #login_window.background.lightdm-gtk-greeter #content_frame,
 #login_window.background.lightdm-gtk-greeter #buttonbox_frame {
     border-radius: 0px;
@@ -657,23 +664,21 @@ window.background > box.vertical > notebook overlay > scrolledwindow viewport {
     border-width: 0px;
 }
 
+/* 2.0 */
+.lightdm-gtk-greeter #login_window.background #user_image_border,
+/* 1.8.5 */
 #login_window.background.lightdm-gtk-greeter #user_image_border {
     border-style: solid;
     border-width: 1px;
     border-color: shade(@bg_dark_color, 1.4);
 }
 
-
-#panel_window.background.menubar.lightdm-gtk-greeter {
-    /* not sure if box-shadow works here */
-    box-shadow: 0 0 0 1px @wm_border, 0 2px 8px 3px @wm_shadow;
-    background-color: @bg_dark_color;
-}
-
-#panel_window.background.menubar.lightdm-gtk-greeter label {
-    color: @fg_dark_color;
-}
-
+/* 2.0 */
+.lightdm-gtk-greeter #login_window.background #content_frame #user_combobox .linked button.combo,
+.lightdm-gtk-greeter #login_window.background #content_frame #user_combobox .linked button.combo:focus,
+.lightdm-gtk-greeter #login_window.background #buttonbox_frame button,
+.lightdm-gtk-greeter #login_window.background #buttonbox_frame button:focus,
+/* 1.8.5 */
 #login_window.background.lightdm-gtk-greeter #content_frame #user_combobox .linked button.combo,
 #login_window.background.lightdm-gtk-greeter #content_frame #user_combobox .linked button.combo:focus,
 #login_window.background.lightdm-gtk-greeter #buttonbox_frame button,
@@ -686,17 +691,31 @@ window.background > box.vertical > notebook overlay > scrolledwindow viewport {
     color: @menu_fg_dark_color;
 }
 
+/* 2.0 */
+.lightdm-gtk-greeter #login_window.background #content_frame #user_combobox .linked button.combo cellview,
+.lightdm-gtk-greeter #login_window.background #content_frame #user_combobox .linked button.combo:focus cellview,
+/* 1.8.5 */
 #login_window.background.lightdm-gtk-greeter #content_frame #user_combobox .linked button.combo cellview,
 #login_window.background.lightdm-gtk-greeter #content_frame #user_combobox .linked button.combo:focus cellview {
     color: @menu_fg_dark_color;
     text-shadow: none;
 }
 
+/* 2.0 */
+.lightdm-gtk-greeter #login_window.background #content_frame #user_combobox .linked button.combo arrow,
+.lightdm-gtk-greeter #login_window.background #content_frame #user_combobox .linked button.combo:focus arrow,
+/* 1.8.5 */
 #login_window.background.lightdm-gtk-greeter #content_frame #user_combobox .linked button.combo arrow,
 #login_window.background.lightdm-gtk-greeter #content_frame #user_combobox .linked button.combo:focus arrow {
     color: @menu_fg_dark_color;
 }
 
+/* 2.0 */
+.lightdm-gtk-greeter #login_window.background #content_frame #user_combobox .linked button.combo:hover,
+.lightdm-gtk-greeter #login_window.background #content_frame #user_combobox .linked button.combo:hover:active,
+.lightdm-gtk-greeter #login_window.background #buttonbox_frame button:hover,
+.lightdm-gtk-greeter #login_window.background #buttonbox_frame button:hover:active,
+/* 1.8.5 */
 #login_window.background.lightdm-gtk-greeter #content_frame #user_combobox .linked button.combo:hover,
 #login_window.background.lightdm-gtk-greeter #content_frame #user_combobox .linked button.combo:hover:active,
 #login_window.background.lightdm-gtk-greeter #buttonbox_frame button:hover,
@@ -711,6 +730,10 @@ window.background > box.vertical > notebook overlay > scrolledwindow viewport {
                 inset  0px -1px shade (@theme_selected_bg_color, 1.3);
 }
 
+/* 2.0 */
+.lightdm-gtk-greeter #login_window.background #content_frame #prompt_entry,
+.lightdm-gtk-greeter #login_window.background #content_frame #prompt_entry:focus,
+/* 1.8.5 */
 #login_window.background.lightdm-gtk-greeter #content_frame #prompt_entry,
 #login_window.background.lightdm-gtk-greeter #content_frame #prompt_entry:focus {
     background-color: transparent;
@@ -729,12 +752,20 @@ window.background > box.vertical > notebook overlay > scrolledwindow viewport {
 	caret-color: shade (@menu_fg_dark_color, 1.0);
 }
 
+/* 2.0 */
+.lightdm-gtk-greeter #login_window.background #content_frame #prompt_entry selection,
+.lightdm-gtk-greeter #login_window.background #content_frame #prompt_entry selection:focus,
+/* 1.8.5 */
 #login_window.background.lightdm-gtk-greeter #content_frame #prompt_entry selection,
 #login_window.background.lightdm-gtk-greeter #content_frame #prompt_entry selection:focus {
     background-color: shade(@menu_fg_dark_color, 0.4);
     color: shade (@menu_fg_dark_color, 1.2);
 }
 
+/* 2.0 */
+.lightdm-gtk-greeter #restart_dialog,
+.lightdm-gtk-greeter #shutdown_dialog,
+/* 1.8.5 */
 #restart_dialog.lightdm-gtk-greeter,
 #shutdown_dialog.lightdm-gtk-greeter {
     border-radius: 10px;
@@ -746,12 +777,20 @@ window.background > box.vertical > notebook overlay > scrolledwindow viewport {
     background-color: @bg_dark_color;
 }
 
+/* 2.0 */
+.lightdm-gtk-greeter #restart_dialog box.vertical,
+.lightdm-gtk-greeter #shutdown_dialog box.vertical,
+/* 1.8.5 */
 #restart_dialog.lightdm-gtk-greeter .dialog-vbox,
 #shutdown_dialog.lightdm-gtk-greeter .dialog-vbox {
     background-color: transparent;
     color: shade (@menu_fg_dark_color, 1.0);
 }
 
+/* 2.0 */
+.lightdm-gtk-greeter #restart_dialog button,
+.lightdm-gtk-greeter #shutdown_dialog button,
+/* 1.8.5 */
 #restart_dialog.lightdm-gtk-greeter .linked button,
 #shutdown_dialog.lightdm-gtk-greeter .linked button {
     background-image: -gtk-gradient (linear,
@@ -763,6 +802,12 @@ window.background > box.vertical > notebook overlay > scrolledwindow viewport {
     margin: 0px 0px 0px -1px;
 }
 
+/* 2.0 */
+.lightdm-gtk-greeter #restart_dialog button:hover,
+.lightdm-gtk-greeter #shutdown_dialog button:hover,
+.lightdm-gtk-greeter #restart_dialog button:hover:active,
+.lightdm-gtk-greeter #shutdown_dialog button:hover:active,
+/* 1.8.5 */
 #restart_dialog.lightdm-gtk-greeter .linked button:hover:first-child,
 #shutdown_dialog.lightdm-gtk-greeter .linked button:hover:first-child,
 #restart_dialog.lightdm-gtk-greeter .linked button:hover:active:first-child,
@@ -779,5 +824,28 @@ window.background > box.vertical > notebook overlay > scrolledwindow viewport {
                 inset  1px  0px shade (@theme_selected_bg_color, 1.3),
                 inset -1px  0px shade (@theme_selected_bg_color, 1.3),
                 inset  0px -1px shade (@theme_selected_bg_color, 1.3);;
+}
+
+/* 2.0 */
+.lightdm-gtk-greeter #panel_window.background menubar,
+/* 1.8.5 */
+#panel_window.background.menubar.lightdm-gtk-greeter {
+    /* not sure if box-shadow works here */
+    box-shadow: 0 0 0 1px @wm_border, 0 2px 8px 3px @wm_shadow;
+    background-color: @bg_dark_color;
+}
+
+/* 2.0 */
+.lightdm-gtk-greeter #panel_window.background menubar label,
+/* 1.8.5 */
+#panel_window.background.menubar.lightdm-gtk-greeter label {
+    color: @fg_dark_color;
+}
+
+/* the weird panel */
+/* 2.0 */
+.lightdm-gtk-greeter #panel_window.background menubar separator {
+    border-style: none;
+    border-width: 0px;
 }
 
