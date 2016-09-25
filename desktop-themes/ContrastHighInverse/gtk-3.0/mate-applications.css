@@ -4,7 +4,7 @@
 
 .caja-cluebar-label {
     color: @theme_selected_fg_color;
-    font: bold;
+    font-weight: bold;
 }
 
 /* view and desktop mode */
@@ -180,7 +180,7 @@ MatePanelAppletFrameDBus {
 }
 
 #clock-applet-button.flat.toggle > box.horizontal > label {
-    font: normal;
+    font-weight: normal;
 }
 
 /* drivebutton */
