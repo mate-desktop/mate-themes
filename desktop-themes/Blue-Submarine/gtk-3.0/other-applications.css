@@ -754,8 +754,8 @@ DConfKeyView.view .spinbutton .button:hover:last-child {
 }
 
 /* 1.8.5 */
-#login_window.background.lightdm-gtk-greeter #content_frame #user_combobox .the-button-in-the-combobox,
-#login_window.background.lightdm-gtk-greeter #content_frame #user_combobox .the-button-in-the-combobox:focus,
+#login_window.background.lightdm-gtk-greeter #content_frame #user_combobox .button,
+#login_window.background.lightdm-gtk-greeter #content_frame #user_combobox .button:focus,
 #login_window.background.lightdm-gtk-greeter #buttonbox_frame .button,
 #login_window.background.lightdm-gtk-greeter #buttonbox_frame .button:focus {
     background-image: -gtk-gradient (linear,
@@ -767,21 +767,21 @@ DConfKeyView.view .spinbutton .button:hover:last-child {
 }
 
 /* 1.8.5 */
-#login_window.background.lightdm-gtk-greeter #content_frame #user_combobox .the-button-in-the-combobox GtkCellView,
-#login_window.background.lightdm-gtk-greeter #content_frame #user_combobox .the-button-in-the-combobox:focus GtkCellView {
+#login_window.background.lightdm-gtk-greeter #content_frame #user_combobox GtkCellView,
+#login_window.background.lightdm-gtk-greeter #content_frame #user_combobox GtkCellView:focus {
     color: @menu_fg_dark_color;
     text-shadow: none;
 }
 
 /* 1.8.5 */
-#login_window.background.lightdm-gtk-greeter #content_frame #user_combobox .the-button-in-the-combobox GtkImage,
-#login_window.background.lightdm-gtk-greeter #content_frame #user_combobox .the-button-in-the-combobox:focus GtkImage {
+#login_window.background.lightdm-gtk-greeter #content_frame #user_combobox .button GtkImage,
+#login_window.background.lightdm-gtk-greeter #content_frame #user_combobox .button:focus GtkImage {
     color: @menu_fg_dark_color;
 }
 
 /* 1.8.5 */
-#login_window.background.lightdm-gtk-greeter #content_frame #user_combobox .the-button-in-the-combobox:hover,
-#login_window.background.lightdm-gtk-greeter #content_frame #user_combobox .the-button-in-the-combobox:hover:active,
+#login_window.background.lightdm-gtk-greeter #content_frame #user_combobox .button:hover,
+#login_window.background.lightdm-gtk-greeter #content_frame #user_combobox .button:hover:active,
 #login_window.background.lightdm-gtk-greeter #buttonbox_frame .button:hover,
 #login_window.background.lightdm-gtk-greeter #buttonbox_frame .button:hover:active {
     background-image: -gtk-gradient (linear,
