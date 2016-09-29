@@ -539,14 +539,14 @@ MatePanelAppletFrameDBus {
 }
 
 #MatePanelPopupWindow {
-    border-radius: 0px 0px 4px 4px;
+    border-radius: 4px 4px 4px 4px;
     border-style: none;
     border-width: 0px;
     background-color: rgba(0,0,0,0.5);
 }
 
 #MatePanelPopupWindow frame {
-    border-radius: 0px 0px 4px 4px;
+    border-radius: 4px 4px 4px 4px;
     border-style: solid;
     border-width: 1px;
     border-color: shade(@theme_selected_bg_color, 1.5);
@@ -566,7 +566,7 @@ MatePanelAppletFrameDBus {
     border-color: shade(@theme_selected_bg_color, 1.5);
 }
 
-#MatePanelPopupWindow calendar.header {
+#MatePanelPopupWindow calendar .header {
     background-color:transparent;
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
@@ -574,14 +574,14 @@ MatePanelAppletFrameDBus {
                                      to   (alpha(shade(@theme_bg_dark_color, 0.95) ,0.8)));
 }
 
-#MatePanelPopupWindow calendar.header arrow,
-#MatePanelPopupWindow calendar.header label {
+#MatePanelPopupWindow calendar .header {  /* month/year label */
     color: @menu_fg_dark_color;
     text-shadow: 1px 1px alpha (#000000, 0.8);
 }
 
 #MatePanelPopupWindow calendar.button {
     color: @menu_fg_dark_color;
+    -gtk-icon-shadow: 1px 1px alpha (#000000, 0.8);
 }
 
 #MatePanelPopupWindow calendar.button:hover {
