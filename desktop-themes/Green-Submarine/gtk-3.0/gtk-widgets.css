@@ -4629,6 +4629,15 @@ calendar.button:hover:last-child {
                 inset  0px -1px shade(@selected_bg_color, 0.93);
 }
 
+calendar {
+    color: @theme_fg_color;
+    text-shadow: none;
+}
+
+calendar:indeterminate {
+    color: alpha(@theme_fg_color, 0.4);
+}
+
 highlight,
 calendar.highlight {
     background-color: @theme_selected_bg_color;
