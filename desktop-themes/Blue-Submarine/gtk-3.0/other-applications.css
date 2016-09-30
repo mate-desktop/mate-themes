@@ -733,8 +733,6 @@ DConfKeyView.view .spinbutton .button:hover:last-child {
     border-style: solid;
     border-width: 2px;
     border-color: shade(@bg_dark_color, 0.8);
-    /* not sure if box-shadow works here */
-    box-shadow: 0 0 0 1px @wm_border, 0 2px 8px 3px @wm_shadow;
     background-color: @bg_dark_color;
 }
 
