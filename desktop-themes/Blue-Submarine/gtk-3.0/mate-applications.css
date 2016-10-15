@@ -786,7 +786,12 @@ na-tray-applet > widget > box {
                 inset  0px -1px shade (@theme_selected_bg_color, 1.3);
 }
 
-#mate-menu.background widget notebook viewport grid widget separator {
+#mate-menu.background button,
+#mate-menu.background button.flat {
+    padding: 4px;
+}
+
+#mate-menu.background separator {
     border-width: 1px 0px 0px 0px;
     min-height: 1px;
     background-color: shade(@menu_fg_dark_color, 0.3);
@@ -833,6 +838,10 @@ na-tray-applet > widget > box {
     background-repeat: no-repeat;
     background-position: center;
     border-color: shade(@menu_fg_dark_color, 0.3);
+}
+
+#mate-menu.background scrollbar.vertical button {
+    padding: 0px;
 }
 
 #mate-menu.background scrollbar.vertical button:disabled {
