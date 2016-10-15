@@ -122,6 +122,13 @@ PanelSeparator {
     text-shadow: none;
 }
 
+/* main menu */
+/* set normal menubar button */
+.mate-panel-menu-bar menubar {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
 /* all applets */
 .mate-panel-menu-bar #PanelApplet button,
 .mate-panel-menu-bar #PanelApplet button.flat,
