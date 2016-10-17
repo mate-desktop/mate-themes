@@ -1543,6 +1543,13 @@ button:disabled {
 	color: @insensitive_fg_color;
 }
 
+button:disabled image,
+.button:disabled image,
+button:active:disabled image,
+.button:active:disabled image{
+	 opacity: 0.5;
+}
+
 button:active:disabled {
 	background-color: transparent;
 	background-image: linear-gradient(to bottom,
@@ -1990,6 +1997,13 @@ menubar menuitem:hover,
 menubar menuitem:disabled,
 .menubar menuitem:disabled {
 	color: @insensitive_fg_color;
+}
+
+menuitem:disabled image,
+.menuitem:disabled image,
+menuitem:active:disabled image,
+.menuitem:active:disabled image{
+	 opacity: 0.5;
 }
 
 menu,
