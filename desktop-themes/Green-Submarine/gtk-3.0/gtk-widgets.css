@@ -1063,6 +1063,13 @@ button:disabled {
     text-shadow: none;
 }
 
+button:disabled image,
+.button:disabled image,
+button:active:disabled image,
+.button:active:disabled image{
+	 opacity: 0.5;
+}
+
 toolbar.vertical > button.image-button.flat {
     padding: 5px;
 }
