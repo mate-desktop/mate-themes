@@ -993,6 +993,13 @@ button * {
     background-color: transparent;
 }
 
+button:disabled image,
+.button:disabled image,
+button:active:disabled image,
+.button:active:disabled image{
+	 opacity: 0.4;
+}
+
 /* We may want a background for focused buttons, but in the meantime let's remove it too */
 GtkMenuToolButton *,
 toolbar.primary-toolbar button,
@@ -2386,6 +2393,14 @@ menu menuitem:disabled,
     color: mix (@menu_fg_color, @menu_bg_color, 0.6);
     border-color: transparent;
 }
+
+menuitem:disabled image,
+.menuitem:disabled image,
+menuitem:active:disabled image,
+.menuitem:active:disabled image{
+	 opacity: 0.5;
+}
+
 
 menu menuitem accelerator:disabled,
 .menu menuitem accelerator:disabled {

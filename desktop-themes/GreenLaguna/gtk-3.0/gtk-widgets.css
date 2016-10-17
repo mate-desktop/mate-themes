@@ -1910,6 +1910,13 @@ button:disabled {
     color: @insensitive_fg_color;
 }
 
+button:disabled image,
+.button:disabled image,
+button:active:disabled image,
+.button:active:disabled image{
+	 opacity: 0.5;
+}
+
 /* insensitive active toggle buttons */
 button:checked:disabled {
     background-image: linear-gradient(to bottom,
@@ -2395,6 +2402,14 @@ menu menuitem:disabled label,
     border-color: transparent;
     color: @insensitive_fg_color;
 }
+
+menuitem:disabled image,
+.menuitem:disabled image,
+menuitem:active:disabled image,
+.menuitem:active:disabled image{
+	 opacity: 0.6;
+}
+
 
 menu menuitem label {
     color: @theme_selected_fg_color;
