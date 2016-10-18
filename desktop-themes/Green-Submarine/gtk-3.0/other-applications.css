@@ -640,8 +640,8 @@ window.background > box.vertical > notebook overlay > scrolledwindow viewport {
     border-radius: 10px;
     border-style: solid;
     border-width: 2px;
-    border-color: shade(@bg_dark_color, 0.8);
-    background-color: @bg_dark_color;
+    border-color: shade(@theme_dark_dialog_bg_color, 0.8);
+    background-color: @theme_dark_dialog_bg_color;
 }
 
 /* 2.0 */
@@ -661,7 +661,7 @@ window.background > box.vertical > notebook overlay > scrolledwindow viewport {
 #login_window.background.lightdm-gtk-greeter #user_image_border {
     border-style: solid;
     border-width: 1px;
-    border-color: shade(@bg_dark_color, 1.4);
+    border-color: shade(@theme_dark_dialog_bg_color, 1.4);
 }
 
 /* 2.0 */
@@ -730,15 +730,15 @@ window.background > box.vertical > notebook overlay > scrolledwindow viewport {
     background-color: transparent;
     background-image: -gtk-gradient(linear,
                                     left top, left bottom,
-                                    from       (shade(@menu_bg_dark_color, 1.16)),
-                                    color-stop (0.15, shade(@menu_bg_dark_color, 1.26)),
-                                    color-stop (0.50, shade(@menu_bg_dark_color, 1.28)),
-                                    to         (shade(@menu_bg_dark_color, 1.30)));
+                                    from       (shade(@theme_dark_dialog_bg_color, 1.16)),
+                                    color-stop (0.15, shade(@theme_dark_dialog_bg_color, 1.26)),
+                                    color-stop (0.50, shade(@theme_dark_dialog_bg_color, 1.28)),
+                                    to         (shade(@theme_dark_dialog_bg_color, 1.30)));
     color: shade (@menu_fg_dark_color, 1.0);
-    box-shadow: inset  0px  1px shade(@menu_fg_dark_color, 0.3),
-                inset  1px  0px shade(@menu_fg_dark_color, 0.3),
-                inset -1px  0px shade(@menu_fg_dark_color, 0.3),
-                inset  0px -1px shade(@menu_fg_dark_color, 0.3);
+    box-shadow: inset  0px  1px shade(@theme_dark_dialog_bg_color, 1.6),
+                inset  1px  0px shade(@theme_dark_dialog_bg_color, 1.6),
+                inset -1px  0px shade(@theme_dark_dialog_bg_color, 1.6),
+                inset  0px -1px shade(@theme_dark_dialog_bg_color, 1.6);
     /* color of the cursor */
 	caret-color: shade (@menu_fg_dark_color, 1.0);
 }
@@ -762,10 +762,8 @@ window.background > box.vertical > notebook overlay > scrolledwindow viewport {
     border-radius: 10px;
     border-style: solid;
     border-width: 2px;
-    border-color: shade(@bg_dark_color, 0.8);
-    /* not sure if box-shadow works here */
-    box-shadow: 0 0 0 1px @wm_border, 0 2px 8px 3px @wm_shadow;
-    background-color: @bg_dark_color;
+    border-color: shade(@theme_dark_dialog_bg_color, 0.8);
+    background-color: @theme_dark_dialog_bg_color;
 }
 
 /* 2.0 */
@@ -821,9 +819,7 @@ window.background > box.vertical > notebook overlay > scrolledwindow viewport {
 .lightdm-gtk-greeter #panel_window.background menubar,
 /* 1.8.5 */
 #panel_window.background.menubar.lightdm-gtk-greeter {
-    /* not sure if box-shadow works here */
-    box-shadow: 0 0 0 1px @wm_border, 0 2px 8px 3px @wm_shadow;
-    background-color: @bg_dark_color;
+    background-color: @theme_dark_dialog_bg_color;
 }
 
 /* 2.0 */
