@@ -37,7 +37,7 @@
 @define-color theme_path_active_color shade(@theme_bg_dark_color, 0.78);
 @define-color theme_mdi_bg_color shade(@theme_bg_dark_color, 0.90);
 @define-color theme_mdi_border_color shade(@theme_bg_dark_color, 0.70);
-
+@define-color theme_dark_dialog_bg_color #1C2723;
 @define-color menu_bg_dark_color shade(@theme_bg_dark_color, 0.95);
 @define-color menu_fg_dark_color shade(@theme_fg_dark_color, 1.00);
 @define-color menu_shadow_dark_color alpha(#000, 0.30);
