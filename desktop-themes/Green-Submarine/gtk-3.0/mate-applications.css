@@ -1171,15 +1171,16 @@ GvcMixerDialog notebook.frame box.vertical box.horizontal box.horizontal frame b
     border-color: transparent;
 }
 
-/* mate-screensaver lock dialog */
+/********************************
+ * mate-screensaver lock dialog *
+ ********************************/
 
-.lock-dialog {
+.lock-dialog.background {
     border-radius: 10px;
     border-style: solid;
     border-width: 2px;
-    border-color: shade(@button_border, 1.0);
-    /* not sure if box-shadow works here */
-    box-shadow: 0 0 0 1px @wm_border, 0 2px 8px 3px @wm_shadow;
+    border-color: shade(@theme_dark_dialog_bg_color, 0.8);
+    background-color: @theme_dark_dialog_bg_color;
 }
 
 .lock-dialog frame {
@@ -1189,10 +1190,77 @@ GvcMixerDialog notebook.frame box.vertical box.horizontal box.horizontal frame b
 }
 
 .lock-dialog notebook {
-    background-color: shade (@theme_bg_color, 1.0);
+    background-color: @theme_dark_dialog_bg_color;
+    color: @theme_text_dark_color;
 }
 
-/* multimedia OSD */
+.lock-dialog entry,
+.lock-dialog entry:focus,
+.lock-dialog textview text {
+    background-color: transparent;
+    background-image: -gtk-gradient(linear,
+                                    left top, left bottom,
+                                    from       (shade(@theme_dark_dialog_bg_color, 1.16)),
+                                    color-stop (0.15, shade(@theme_dark_dialog_bg_color, 1.26)),
+                                    color-stop (0.50, shade(@theme_dark_dialog_bg_color, 1.28)),
+                                    to         (shade(@theme_dark_dialog_bg_color, 1.30)));
+    color: shade (@menu_fg_dark_color, 1.0);
+    box-shadow: inset  0px  1px shade(@theme_dark_dialog_bg_color, 1.6),
+                inset  1px  0px shade(@theme_dark_dialog_bg_color, 1.6),
+                inset -1px  0px shade(@theme_dark_dialog_bg_color, 1.6),
+                inset  0px -1px shade(@theme_dark_dialog_bg_color, 1.6);
+    /* color of the cursor */
+    caret-color: shade (@theme_text_dark_color, 1.0);
+}
+
+.lock-dialog button,
+.lock-dialog button:focus {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@bg_dark_color, 2.03)),
+                                     to   (shade(@bg_dark_color, 1.17)));
+    box-shadow: none;
+    color: @theme_text_dark_color;
+}
+
+.lock-dialog button:hover,
+.lock-dialog button.default,
+.lock-dialog button:hover:active {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@bg_dark_color, 2.03)),
+                                     to   (shade(@bg_dark_color, 1.17)));
+    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
+                inset  1px  0px shade(@selected_bg_color, 0.97),
+                inset -1px  0px shade(@selected_bg_color, 0.93),
+                inset  0px -1px shade(@selected_bg_color, 0.93);
+}
+
+.lock-dialog button,
+.lock-dialog button:hover:active {
+    border-radius: 0px;
+    border-width: 1px 0px 1px 0px;
+    margin: 0px -3px 0px -2px;
+}
+
+.lock-dialog button:nth-child(first),
+.lock-dialog button:nth-child(first):hover:active {
+    border-radius: 5px 0px 0px 5px;
+    border-width: 1px 1px 1px 1px;
+    margin: 0px -4px 0px 0px;
+}
+
+.lock-dialog button:nth-child(last),
+.lock-dialog button:nth-child(last):hover:active {
+    border-radius:  0px 5px 5px 0px;
+    border-width: 1px 1px 1px 1px;
+    margin: 0px 0px 0px -3px;
+}
+
+/******************
+ * multimedia OSD *
+ ******************/
+
 MsdOsdWindow.background.osd {
     border-radius: 30px;
     border-style: solid;
