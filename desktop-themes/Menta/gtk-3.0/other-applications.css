@@ -234,27 +234,55 @@ paned overlay revealer.bottom .background.horizontal.osd button.flat.image-butto
  * Lightdm *
  ***********/
 
-#login_window.background.lightdm-gtk-greeter {
-	border-radius: 10px;
-}
-
+/* 2.0 */
+.lightdm-gtk-greeter #login_window.background,
+/* 1.8.5 */
 #login_window.background.lightdm-gtk-greeter,
 #login_window.background.lightdm-gtk-greeter box.vertical {
 	border-radius: 10px;
     border-style: solid;
-    border-width: 2px;
-    border-color: black;
+    border-width: 1px;
+    border-color: shade(@theme_bg_color, 0.4);
 }
 
-#login_window.background.lightdm-gtk-greeter frame {
-	border-style: none;
+/* 2.0 */
+.lightdm-gtk-greeter #login_window.background #content_frame,
+.lightdm-gtk-greeter #login_window.background #buttonbox_frame,
+/* 1.8.5 */
+#login_window.background.lightdm-gtk-greeter #content_frame,
+#login_window.background.lightdm-gtk-greeter #buttonbox_frame {
+    border-radius: 0px;
+    border-style: none;
+    border-width: 0px;
 }
 
+/* 2.0 */
+.lightdm-gtk-greeter #login_window.background #user_image_border,
+/* 1.8.5 */
+#login_window.background.lightdm-gtk-greeter #user_image_border {
+    border-style: solid;
+    border-width: 1px;
+    border-color: shade(@theme_bg_color, 0.8);
+}
+
+/* 2.0 */
+.lightdm-gtk-greeter #login_window.background #prompt_entry,
+.lightdm-gtk-greeter #login_window.background button.combo,
+.lightdm-gtk-greeter #login_window.background button.text-button,
+.lightdm-gtk-greeter #login_window.background button.text-button.default,
+/* 1.8.5 */
 #login_window.background.lightdm-gtk-greeter #prompt_entry,
 #login_window.background.lightdm-gtk-greeter button.combo,
 #login_window.background.lightdm-gtk-greeter button.text-button,
 #login_window.background.lightdm-gtk-greeter button.text-button.default {
-	padding: 8px 4px;
+	padding: 6px 4px;
+}
+
+/* 2.0 */
+.lightdm-gtk-greeter #panel_window.background menubar separator {
+    background-color: @theme_bg_color;
+    background-image: none;
+    color: @theme_fg_color;
 }
 
 /*****************
