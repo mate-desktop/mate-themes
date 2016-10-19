@@ -69,6 +69,11 @@ GtkClutterOffscreen {
     color: @theme_selected_fg_color;
 }
 
+/* Fix for applications that have issues finding a default monospace font */
+.monospace {
+  font-family: Monospace;
+}
+
 /********
  * Misc *
  ********/

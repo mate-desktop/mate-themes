@@ -68,6 +68,11 @@ GtkWindow {
 	border-color: @insensitive_border_color;
 }
 
+/* Fix for applications that have issues finding a default monospace font */
+.monospace {
+  font-family: Monospace;
+}
+
 GtkImage,
 GtkImage:insensitive,
 GtkLabel,
