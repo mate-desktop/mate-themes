@@ -2638,8 +2638,7 @@ toolbar.primary-toolbar combobox button.combo:disabled {
                                       @button_hover_gradient_color_b);
 }
 
-toolbar GtkSeparatorToolItem {
-/*    -GtkWidget-separator-width: 1;*/
+toolbar separator {
     border-style: solid;
     border-width: 1px;
     border-color: shade(@theme_bg_color, 0.85);

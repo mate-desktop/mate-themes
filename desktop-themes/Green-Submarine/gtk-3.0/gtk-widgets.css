@@ -1953,9 +1953,9 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
 toolbar.inline-toolbar button,
 toolbar.inline-toolbar button:checked,
 toolbar.inline-toolbar button:disabled,
-toolbar.inline-toolbar GtkToolButton > button,
-toolbar.inline-toolbar GtkToolButton > button:checked,
-toolbar.inline-toolbar GtkToolButton > button:disabled {
+toolbar.inline-toolbar toolbutton > button,
+toolbar.inline-toolbar toolbutton > button:checked,
+toolbar.inline-toolbar toolbutton > button:disabled {
     /* outer */
     border-width: 0px;
     border-right-width: 0px;
@@ -1973,7 +1973,7 @@ toolbar.inline-toolbar button:hover:active,
 toolbar.inline-toolbar button:checked,
 toolbar.inline-toolbar button:checked:hover,
 toolbar.inline-toolbar button:checked:hover:active,
-toolbar.inline-toolbar GtkToolButton > button:checked {
+toolbar.inline-toolbar toolbutton > button:checked {
     background-color: transparent;
     box-shadow: inset  0px  1px alpha(#000, 0.05),
                 inset  2px  0px alpha(#000, 0.03),
@@ -1983,7 +1983,7 @@ toolbar.inline-toolbar GtkToolButton > button:checked {
 }
 
 toolbar.inline-toolbar button:disabled,
-toolbar.inline-toolbar GtkToolButton > button:disabled {
+toolbar.inline-toolbar toolbutton > button:disabled {
     box-shadow: inset  1px  0px shade(@button_border, 1.10);
 }
 
@@ -1991,9 +1991,9 @@ toolbar.inline-toolbar GtkToolButton > button:disabled {
 toolbar.inline-toolbar button:first-child,
 toolbar.inline-toolbar button:checked:first-child,
 toolbar.inline-toolbar button:disabled:first-child,
-toolbar.inline-toolbar GtkToolButton:first-child > button,
-toolbar.inline-toolbar GtkToolButton:first-child > button:checked,
-toolbar.inline-toolbar GtkToolButton:first-child > button:disabled {
+toolbar.inline-toolbar toolbutton:first-child > button,
+toolbar.inline-toolbar toolbutton:first-child > button:checked,
+toolbar.inline-toolbar toolbutton:first-child > button:disabled {
     border-width: 0px;
     border-radius: 0px;
     box-shadow: inset  0px  1px alpha(#fff, 0.09),
@@ -2006,7 +2006,7 @@ toolbar.inline-toolbar button:hover:active:first-child,
 toolbar.inline-toolbar button:checked:first-child,
 toolbar.inline-toolbar button:checked:hover:first-child,
 toolbar.inline-toolbar button:checked:hover:active:first-child,
-toolbar.inline-toolbar GtkToolButton:first-child > button:checked {
+toolbar.inline-toolbar toolbutton:first-child > button:checked {
     background-color: transparent;
     box-shadow: inset  0px  1px alpha(#000, 0.05),
                 inset  1px  0px alpha(#000, 0.03),
@@ -2015,7 +2015,7 @@ toolbar.inline-toolbar GtkToolButton:first-child > button:checked {
 }
 
 toolbar.inline-toolbar button:disabled:first-child,
-toolbar.inline-toolbar GtkToolButton:first-child > button:disabled {
+toolbar.inline-toolbar toolbutton:first-child > button:disabled {
     box-shadow: none;
 }
 
@@ -2023,9 +2023,9 @@ toolbar.inline-toolbar GtkToolButton:first-child > button:disabled {
 toolbar.inline-toolbar button:last-child,
 toolbar.inline-toolbar button:checked:last-child,
 toolbar.inline-toolbar button:disabled:last-child,
-toolbar.inline-toolbar GtkToolButton:last-child > button,
-toolbar.inline-toolbar GtkToolButton:last-child > button:checked,
-toolbar.inline-toolbar GtkToolButton:last-child > button:disabled {
+toolbar.inline-toolbar toolbutton:last-child > button,
+toolbar.inline-toolbar toolbutton:last-child > button:checked,
+toolbar.inline-toolbar toolbutton:last-child > button:disabled {
     border-width: 0px;
     border-radius: 0px;
     box-shadow: inset  0px  1px alpha(#fff, 0.09),
@@ -2040,7 +2040,7 @@ toolbar.inline-toolbar button:hover:active:last-child,
 toolbar.inline-toolbar button:checked:last-child,
 toolbar.inline-toolbar button:checked:hover:last-child,
 toolbar.inline-toolbar button:checked:hover:active:last-child,
-toolbar.inline-toolbar GtkToolButton:last-child > button:checked {
+toolbar.inline-toolbar toolbutton:last-child > button:checked {
     background-color: transparent;
     box-shadow: inset  0px  1px alpha(#000, 0.05),
                 inset  2px  0px alpha(#000, 0.03),
@@ -2051,7 +2051,7 @@ toolbar.inline-toolbar GtkToolButton:last-child > button:checked {
 }
 
 toolbar.inline-toolbar button:disabled:last-child,
-toolbar.inline-toolbar GtkToolButton:last-child > button:disabled {
+toolbar.inline-toolbar toolbutton:last-child > button:disabled {
     box-shadow: inset  1px  0px shade(@button_border, 1.10),
                 inset -1px  0px shade(@button_border, 1.10);
 }
@@ -2060,9 +2060,9 @@ toolbar.inline-toolbar GtkToolButton:last-child > button:disabled {
 toolbar.inline-toolbar button:only-child,
 toolbar.inline-toolbar button:checked:only-child,
 toolbar.inline-toolbar button:disabled:only-child,
-toolbar.inline-toolbar GtkToolButton:only-child > button,
-toolbar.inline-toolbar GtkToolButton:only-child > button:checked,
-toolbar.inline-toolbar GtkToolButton:only-child > button:disabled {
+toolbar.inline-toolbar toolbutton:only-child > button,
+toolbar.inline-toolbar toolbutton:only-child > button:checked,
+toolbar.inline-toolbar toolbutton:only-child > button:disabled {
     border-radius: 0px;
     border-width: 0px;
     box-shadow: inset  0px  1px alpha(#fff, 0.09),
@@ -2075,7 +2075,7 @@ toolbar.inline-toolbar button:hover:active:only-child,
 toolbar.inline-toolbar button:checked:only-child,
 toolbar.inline-toolbar button:checked:hover:only-child,
 toolbar.inline-toolbar button:checked:hover:active:only-child,
-toolbar.inline-toolbar GtkToolButton:only-child > button:checked {
+toolbar.inline-toolbar toolbutton:only-child > button:checked {
     background-color: transparent;
     box-shadow: inset  0px  1px alpha(#000, 0.05),
                 inset -1px  0px alpha(#000, 0.03),
@@ -2084,7 +2084,7 @@ toolbar.inline-toolbar GtkToolButton:only-child > button:checked {
 }
 
 toolbar.inline-toolbar button:disabled:only-child,
-toolbar.inline-toolbar GtkToolButton:only-child > button:disabled {
+toolbar.inline-toolbar toolbutton:only-child > button:disabled {
     box-shadow: inset  1px  0px shade(@button_border, 1.10);
 }
 
@@ -2529,7 +2529,6 @@ toolbar combobox button.combo:hover arrow {
  * Toolbars *
  ************/
 
-GtkHandleBox,
 toolbar  {
     padding: 2px 4px;
     background-color: @toolbar_gradient_base;
@@ -3320,29 +3319,25 @@ spinbutton.vertical > entry:focus {
 }
 
 /* volume button */
-GtkGrid button,
-GtkGrid button.flat {
+button.scale.flat {
     transition: all 400ms ease-out;
 }
 
-GtkGrid button,
-GtkGrid button.flat,
-GtkGrid button:hover,
-GtkGrid button:disabled,
-GtkGrid button.flat:hover,
-GtkGrid button.flat:disabled {
+button.scale.flat,
+button.scale.flat:hover,
+button.scale.flat:disabled {
     padding: 5px 4px;
     border-radius: 6px;
     border-color: transparent;
     background-color: transparent;
 }
 
-GtkFlowBox .grid-child {
+flowbox flowboxchild {
     padding: 3px;
     border-radius: 3px;
 }
 
-GtkFlowBox .grid-child:selected {
+flowbox flowboxchild:selected {
     outline-offset: -2px;
 }
 
@@ -4979,7 +4974,7 @@ dialog scrolledwindow.frame viewport .vertical expander .vertical {
     background-color: alpha(shade(@theme_selected_bg_color, 1.0), 0.4);
 }
 
-GtkOverlay.osd {
+overlay.osd {
     background-color: transparent;
 }
 
@@ -5070,7 +5065,7 @@ button.osd:hover,
 .osd button:checked:hover:active,
 .osd button:hover:active,
 .osd button:focus:hover:active,
-.osd button.menu-button:checked,
+.osd button.popup:checked,
 button.osd:checked,
 button.osd:checked:hover,
 button.osd:checked:hover:active,
@@ -5085,7 +5080,7 @@ button.osd.menu-button:checked {
     text-shadow: none;
 }
 
-.osd button.menu-button:checked {
+.osd button.popup:checked {
     background-color: transparent;
     border-color: @osd_button_border;
 }

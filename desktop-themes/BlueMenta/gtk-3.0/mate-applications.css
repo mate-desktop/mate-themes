@@ -554,11 +554,6 @@ window.background.mate-terminal > box.vertical > notebook > header.top tab:check
     padding: 0px;
 }
 
-.pluma-window statusbar.horizontal frame button.flat.toggle GtkArrow {
-    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
-    -GtkArrow-arrow-scaling: 1.0; /* deprecated, but ignored */
-}
-
 /* Printpreview */
 .pluma-print-preview toolbar.horizontal {
     background-image: linear-gradient(to bottom,

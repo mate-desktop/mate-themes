@@ -1267,8 +1267,8 @@ headerbar {
   headerbar .subtitle {
     font-size: 80%;
     padding: 0 12px; }
-  .titlebar > GtkBox > separator.vertical,
-  headerbar > GtkBox > separator.vertical {
+  .titlebar > box > separator.vertical,
+  headerbar > box > separator.vertical {
     border-width: 0 1px;
     border-color: #fff;
     border-style: solid; }
