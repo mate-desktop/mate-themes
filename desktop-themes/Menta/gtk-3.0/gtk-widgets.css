@@ -1571,19 +1571,13 @@ toolbar.inline-toolbar.vertical toolbutton > button,
 
 .linked.vertical button:first-child,
 toolbar.inline-toolbar.vertical button:first-child,
-toolbar.inline-toolbar.vertical toolbutton > button:first-child,
-.linked.vertical .button:first-child,
-.inline-toolbar.toolbar.vertical .button:first-child,
-.inline-toolbar.toolbar.vertical GtkToolButton:first-child > .button {
+toolbar.inline-toolbar.vertical toolbutton > button:first-child {
 	box-shadow: inset 0 -1px @inset_dark_color;
 }
 
 .linked.vertical button:last-child,
 toolbar.inline-toolbar.vertical button:last-child,
-toolbar.inline-toolbar.vertical toolbutton > button:last-child,
-.linked.vertical .button:last-child,
-.inline-toolbar.toolbar.vertical .button:last-child,
-.inline-toolbar.toolbar.vertical GtkToolButton:last-child > .button {
+toolbar.inline-toolbar.vertical toolbutton > button:last-child {
 	box-shadow: inset 0 -1px @inset_light_color;
 }
 
@@ -1591,20 +1585,13 @@ toolbar.inline-toolbar.vertical toolbutton > button:last-child,
 toolbar.inline-toolbar.vertical button:checked,
 toolbar.inline-toolbar.vertical toolbutton > button:checked,
 .linked.vertical .button:active,
-.linked.vertical .button:checked,
-.inline-toolbar.toolbar.vertical .button:active,
-.inline-toolbar.toolbar.vertical .button:checked,
-.inline-toolbar.toolbar.vertical GtkToolButton > .button:active,
-.inline-toolbar.toolbar.vertical GtkToolButton > .button:checked {
+.linked.vertical .button:checked {
 	box-shadow: inset 0 1px @inset_dark_color, inset 0 -1px @inset_dark_color;
 }
 
 .linked.vertical button:disabled,
 toolbar.inline-toolbar.vertical button:disabled,
-toolbar.inline-toolbar.vertical toolbutton > button:disabled,
-.linked.vertical .button:disabled,
-.inline-toolbar.toolbar.vertical .button:disabled,
-.inline-toolbar.toolbar.vertical GtkToolButton > .button:disabled {
+toolbar.inline-toolbar.vertical toolbutton > button:disabled {
 	box-shadow: inset 0 -1px @inset_dark_color;
 }
 
@@ -1613,13 +1600,7 @@ toolbar.inline-toolbar.vertical toolbutton > button:disabled,
 toolbar.inline-toolbar.vertical button:disabled:last-child,
 toolbar.inline-toolbar.vertical button:only-child,
 toolbar.inline-toolbar.vertical toolbutton > button:disabled:last-child,
-toolbar.inline-toolbar.vertical toolbutton > button:only-child,
-.linked.vertical .button:only-child,
-.linked.vertical .button:disabled:last-child,
-.inline-toolbar.toolbar.vertical .button:disabled:last-child,
-.inline-toolbar.toolbar.vertical .button:only-child,
-.inline-toolbar.toolbar.vertical GtkToolButton:last-child > .button:disabled,
-.inline-toolbar.toolbar.vertical GtkToolButton:only-child > .button {
+toolbar.inline-toolbar.vertical toolbutton > button:only-child {
 	box-shadow: none;
 }
 
@@ -1627,12 +1608,7 @@ toolbar.inline-toolbar.vertical toolbutton > button:only-child,
 .linked button.popup:checked,
 toolbar .raised.linked button.popup:checked,
 toolbar.inline-toolbar button.popup:checked,
-toolbar.inline-toolbar toolbutton > button.popup:checked,
-.linked GtkMenuButton.menu-button:active,
-.toolbar GtkMenuButton.menu-button.raised.linked:active,
-.toolbar .raised.linked GtkMenuButton.menu-button:active,
-.inline-toolbar.toolbar GtkMenuButton.menu-button:active,
-.inline-toolbar.toolbar GtkToolButton > GtkMenuButton.menu-button:active {
+toolbar.inline-toolbar toolbutton > button.popup:checked {
 	box-shadow: none;
 }
 
@@ -4299,7 +4275,7 @@ calendar.header .path-bar button.titlebutton {
 	padding-left: 0;
 }
 
-.path-bar button GtkImage,
+.path-bar button image,
 .path-bar headerbar button.titlebutton image,
 headerbar .path-bar button.titlebutton image,
 .path-bar .titlebar button.titlebutton image,

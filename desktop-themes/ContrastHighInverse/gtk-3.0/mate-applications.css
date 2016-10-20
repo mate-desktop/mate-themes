@@ -218,11 +218,6 @@ PanelApplet.wnck-applet .wnck-pager:hover {
 }
 
 
-/* no background for icon-padding area */
-GtkTrayIcon.background {
-    background-color: transparent;
-}
-
 na-tray-applet {
     -NaTrayApplet-icon-padding: 4;
     -NaTrayApplet-icon-size: 16;

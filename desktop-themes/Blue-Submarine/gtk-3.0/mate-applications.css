@@ -943,14 +943,6 @@ vte-terminal {
     padding: 2px 5px;
 }
 
-/* FIXME , does not work anymore since GtkArrow is widget *//*
-#pluma-status-combo-button.flat.toggle box.horizontal widget {
-    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
-    min-height: 16px
-    min-width: 16px;
-}
-*/
-
 /* Printpreview */
 .pluma-print-preview toolbar.horizontal {
    background-image: -gtk-gradient (linear,

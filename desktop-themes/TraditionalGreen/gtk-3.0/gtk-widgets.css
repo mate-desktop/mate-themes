@@ -14,8 +14,6 @@
     outline-width: 0px; /* disable ugly focus-line */
     -gtk-outline-radius: 2px;
     -gtk-icon-style: regular; /* disable symbolic icons */
-    -GtkWindow-resize-grip-width: 11;
-    -GtkWindow-resize-grip-height: 11;
 }
 
 /***************
@@ -55,8 +53,8 @@ label,
 label:disabled,
 box,
 box:disabled,
-GtkGrid,
-GtkGrid:disabled {
+grid,
+grid:disabled {
     background-color: transparent;
 }
 
@@ -544,8 +542,8 @@ colorchooser #add-color-button:selected:hover {
     color: @color_active_badge_dark_color;
 }
 
-GtkColorEditor colorswatch.color-light:hover,
-GtkColorEditor colorswatch.color-dark:hover {
+colorswatch.color-light:hover,
+colorswatch.color-dark:hover {
     background-image: none;
 }
 
@@ -2942,7 +2940,7 @@ button.osd:checked:hover,
 button.osd:focus:hover:active,
 .osd button:checked,
 .osd button:checked:hover,
-.osd GtkMenuButton.menu-button:checked {
+.osd button.popup:checked {
     background-image: linear-gradient(to bottom,
                                       @osd_button_bg_active_a,
                                       @osd_button_bg_active_b 20%,
@@ -2957,7 +2955,7 @@ button.osd:focus:hover:active,
     border-right-width: 1px;
 }
 
-.osd GtkMenuButton.menu-button:checked {
+.osd button.popup:checked {
     background-color: transparent;
     border-color: @osd_button_border;
     color: @osd_button_fg_active;
@@ -3047,10 +3045,10 @@ toolbar.osd button:hover:only-child,
 toolbar.osd button:checked:only-child,
 toolbar.osd button:hover:active:only-child,
 toolbar.osd button:focus:hover:active:only-child,
-toolbar.osd GtkToolButton button,
-toolbar.osd GtkToolButton:only-child button,
-toolbar.osd GtkToolButton:last-child button,
-toolbar.osd GtkToolButton:first-child button {
+toolbar.osd toolbutton button,
+toolbar.osd toolbutton:only-child button,
+toolbar.osd toolbutton:last-child button,
+toolbar.osd toolbutton:first-child button {
     border-width: 1px;
     border-radius: 3px;
     border-style: solid;
