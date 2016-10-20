@@ -11,9 +11,9 @@
 
 /* rhythmbox */
 
-.primary-toolbar.toolbar.horizontal RBHeader.horizontal GtkVolumeButton.button.flat,
-.primary-toolbar.toolbar.horizontal RBHeader.horizontal GtkVolumeButton.button.flat:checked,
-.primary-toolbar.toolbar.horizontal RBHeader.horizontal GtkVolumeButton.button.flat:hover {
+.primary-toolbar.toolbar.horizontal RBHeader.horizontal button.scale.flat,
+.primary-toolbar.toolbar.horizontal RBHeader.horizontal button.scale.flat:checked,
+.primary-toolbar.toolbar.horizontal RBHeader.horizontal button.scale.flat:hover {
     padding: 0px 6px;
 }
 
