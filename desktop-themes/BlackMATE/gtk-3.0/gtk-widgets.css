@@ -2223,7 +2223,7 @@ menu menuitem accelerator:active,
  * Menu Button *
  ***************/
 /* compensation for combo shadow */
-menubutton  menu {
+button.popup  menu {
     text-shadow: none;
 }
 
@@ -2260,17 +2260,14 @@ toolbar:disabled {
 
 /* (primary) toolbar buttons */
  toolbar  button,
-primary-toolbar  button,
-primary-toolbar  toolbar  button,
-primary-toolbar toolbar  button,
+.primary-toolbar  button,
+.primary-toolbar toolbar  button,
 toolbar  button:disabled,
-primary-toolbar  button:disabled,
-primary-toolbar  toolbar  button:disabled,
-primary-toolbar toolbar  button:disabled,
+.primary-toolbar  button:disabled,
+.primary-toolbar toolbar  button:disabled,
 toolbar  button:disabled:hover,
-primary-toolbar  button:disabled:hover,
-primary-toolbar  toolbar  button:disabled:hover,
-primary-toolbar toolbar  button:disabled:hover {
+.primary-toolbar  button:disabled:hover,
+.primary-toolbar toolbar  button:disabled:hover {
     border-style: solid;
     border-width: 1px;
     border-image: none;
@@ -2280,9 +2277,8 @@ primary-toolbar toolbar  button:disabled:hover {
 }
 
 toolbar  button:hover,
-primary-toolbar  button:hover,
-primary-toolbar  toolbar  button:hover,
-primary-toolbar toolbar  button:hover {
+.primary-toolbar  button:hover,
+.primary-toolbar toolbar  button:hover {
     border-style: solid;
     border-color: shade(@button_border, 1.1);
     border-radius: 3px;
@@ -2296,31 +2292,25 @@ primary-toolbar toolbar  button:hover {
 }
 
 toolbar  button:checked,
-primary-toolbar  button:checked,
-primary-toolbar  toolbar  button:checked,
-primary-toolbar toolbar  button:checked,
+.primary-toolbar  button:checked,
+.primary-toolbar toolbar  button:checked,
 toolbar  button:active,
-primary-toolbar  button:active,
-primary-toolbar  toolbar  button:active,
-primary-toolbar toolbar  button:active,
+.primary-toolbar  button:active,
+.primary-toolbar toolbar  button:active,
 toolbar combobox button,
-primary-toolbar  toolbar combobox button,
-primary-toolbar toolbar combobox button {
+.primary-toolbar toolbar combobox button {
     border-radius: 3px;
     background-image: none;
 }
 
 toolbar  button:checked:hover,
-primary-toolbar  button:checked:hover,
-primary-toolbar  toolbar  button:checked:hover,
-primary-toolbar toolbar  button:checked:hover,
+.primary-toolbar  button:checked:hover,
+.primary-toolbar toolbar  button:checked:hover,
 toolbar  button:active:hover,
-primary-toolbar  button:active:hover,
-primary-toolbar  toolbar  button:active:hover,
-primary-toolbar toolbar  button:active:hover,
+.primary-toolbar  button:active:hover,
+.primary-toolbar toolbar  button:active:hover,
 toolbar combobox button:hover,
-primary-toolbar  toolbar combobox button:hover,
-primary-toolbar toolbar combobox button:hover {
+.primary-toolbar toolbar combobox button:hover {
     border-image: none;
     border-style: solid;
     border-color: shade(@button_border, 1.1);
@@ -2334,16 +2324,13 @@ primary-toolbar toolbar combobox button:hover {
 }
 
 toolbar  button:checked:disabled,
-primary-toolbar  button:checked:disabled,
-primary-toolbar  toolbar  button:checked:disabled,
-primary-toolbar toolbar  button:checked:disabled,
+.primary-toolbar  button:checked:disabled,
+.primary-toolbar toolbar  button:checked:disabled,
 toolbar  button:active:disabled,
-primary-toolbar  button:active:disabled,
-primary-toolbar  toolbar  button:active:disabled,
-primary-toolbar toolbar  button:active:disabled,
+.primary-toolbar  button:active:disabled,
+.primary-toolbar toolbar  button:active:disabled,
 toolbar combobox button:disabled,
-primary-toolbar  toolbar combobox button:disabled,
-primary-toolbar toolbar combobox button:disabled {
+.primary-toolbar toolbar combobox button:disabled {
     border-image: none;
     border-style: solid;
     border-color: @inactive_frame_color;
