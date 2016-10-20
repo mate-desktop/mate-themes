@@ -127,7 +127,7 @@
 	background-image: none;
 }
 
-.nemo-window GtkStatusbar,
+.nemo-window statusbar,
 .nemo-window .floating-bar {
 	font-style: italic;
 }
@@ -267,12 +267,6 @@ NemoQueryEditor .toolbar .entry:focus {
 .nemo-desktop.nemo-canvas-item:hover,
 .nemo-desktop.nemo-canvas-item:selected {
 	text-shadow: none;
-}
-
-/* redhat's abrt, hopefully this styles not anything else, damn python app! */
-.background .vertical GtkPaned.horizontal .vertical GtkNotebook GtkGrid.horizontal GtkGrid.horizontal {
-   background-color: @less_dark_color;
-   border-radius: 2px;
 }
 
 /*************

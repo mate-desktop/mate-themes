@@ -159,15 +159,15 @@ headerbar .left:dir(rtl) button.close.titlebutton:backdrop:hover {
 
 /* Menu button when fallback kicks in (XFCE, Cinnamon etc.) *//*
 
-.titlebar .button.menu-button.titlebutton {
+.titlebar .button.popup.titlebutton {
 	background-image: url('window-controls/neutral.png');
 }
 
-.titlebar .button.menu-button.titlebutton:hover {
+.titlebar .button.popup.titlebutton:hover {
 	background-image: url('window-controls/yellow.png');
 }
 
-.titlebar .button.menu-button.titlebutton:active {
+.titlebar .button.popup.titlebutton:active {
 	background-image: url('window-controls/menu-button-pressed.png');
 }
 */

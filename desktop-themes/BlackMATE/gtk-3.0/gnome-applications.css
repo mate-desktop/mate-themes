@@ -1,3 +1,5 @@
+/* FIXME, this does not work anymore with >= gtk+-3.20 */
+
 /****************
  * Applications *
  ****************/
@@ -427,8 +429,8 @@ NautilusDesktopWindow GtkPaned {
  * rhythmbox *
  *************/
 
-.primary-toolbar.toolbar.horizontal RBHeader.horizontal GtkVolumeButton.button.flat,
-.primary-toolbar.toolbar.horizontal RBHeader.horizontal GtkVolumeButton.button.flat:active,
-.primary-toolbar.toolbar.horizontal RBHeader.horizontal GtkVolumeButton.button.flat:hover {
+toolbar.primary-toolbar.horizontal RBHeader.horizontal button.scale.flat,
+toolbar.primary-toolbar.horizontal RBHeader.horizontal button.scale.flat:active,
+toolbar.primary-toolbar.horizontal RBHeader.horizontal button.scale.flat:hover {
 	padding: 0px 6px;
 }
