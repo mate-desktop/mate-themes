@@ -61,3 +61,23 @@ toolbar.primary-toolbar.horizontal > toolitem > grid.horizontal > button.scale.f
     color: @osd_button_fg_hover;
 }
 
+/****************
+ * dconf-editor *
+ ****************/
+
+window.background.dconf-editor popover.menu {
+    background-color: @bg_dark_color;
+    background: @bg_dark_color;
+}
+
+/* the slash */
+.dconf-editor headerbar.titlebar .pathbar {
+    color: @menu_fg_dark_color;
+}
+
+.dconf-editor .properties-list row.activatable:hover {
+    background-image: none;
+    box-shadow: none;
+    border-radius: 0px;
+}
+
