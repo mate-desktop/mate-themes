@@ -830,7 +830,7 @@ scale progressbar {
  * Frames *
  **********/
 
-frame {
+.frame {
     border-width: 1px;
     border-color: @border_color;
     border-style: solid;
@@ -839,7 +839,7 @@ frame {
     padding: 0;
 }
 
-frame.flat {
+.frame.flat {
    border-style:none;
 }
 
