@@ -125,8 +125,7 @@ PanelSeparator {
 /* main menu */
 /* set normal menubar button */
 .mate-panel-menu-bar menubar {
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding: 0px;
 }
 
 /* all applets */
@@ -481,5 +480,23 @@ window.background.mate-terminal > box.vertical > notebook > header.top tab:check
     border-style: solid;
     border-color: @border_color;
     border-width: 1px;
+}
+
+/***********************
+ * mate-volume-control *
+ ***********************/
+
+/* application notebook page */
+GvcMixerDialog notebook.frame scrolledwindow.frame {
+    border-style: none;
+}
+
+/* override previous setting */
+GvcMixerDialog notebook.frame box scrolledwindow.frame {
+    border-style: solid;
+    border-color: @border_color;
+    border-width: 1px;
+    border-radius: 2px;
+    padding: 0;
 }
 
