@@ -210,12 +210,16 @@
 
 .caja-desktop .entry,
 .caja-navigation-window .view .entry{
+/* Keep the caret visible with Caja's hardcoded renaming label style*/
+	caret-color: #000000;
+/*  This is overridden by caja.css, without which 3ed party themes don't work
 	border-radius: 4px;	
 	background-image: linear-gradient(to bottom,
 	                                  shade(@less_dark_color, 0.2),
 	                                  shade(@less_dark_color, 0.5) 10%,
 	                                  @less_dark_color 50%,
 	                                  shade(@less_dark_color, 1.5));
+*/
 }
 
 /****************
