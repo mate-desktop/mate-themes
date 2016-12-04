@@ -216,6 +216,7 @@
 	                                  shade(@less_dark_color, 0.5) 10%,
 	                                  @less_dark_color 50%,
 	                                  shade(@less_dark_color, 1.5));
+   color: @theme_fg_color;
 }
 
 /****************
