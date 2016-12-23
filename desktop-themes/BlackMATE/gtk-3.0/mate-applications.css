@@ -731,6 +731,15 @@ pluma-print-preview.vertical toolbar.horizontal button.flat.text-button {
     background-color: shade (@theme_bg_color, 1.0);
 }
 
+/****************
+ * Mate-settings-daemon *
+ ****************/
+
+/*For mate-settings-daemon noncomposited osd windows*/
+.msd-osd-window-solid {
+	border-radius:0px;
+}
+
 /* mate-keyboard-layout-view, mate-keyboard-layout-chooser */
 /* this way it styles only the border of the keys, the bg of the map itself
    use the .view class, and use old and new selectors for a while */
