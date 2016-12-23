@@ -700,3 +700,11 @@ pluma-print-preview.vertical toolbar.horizontal button.flat.text-button {
     background-color: shade (@theme_bg_color, 1.0);
 }
 
+/****************
+ * Mate-settings-daemon *
+ ****************/
+
+/*For mate-settings-daemon noncomposited osd windows*/
+.msd-osd-window-solid {
+	border-radius:0px;
+}
