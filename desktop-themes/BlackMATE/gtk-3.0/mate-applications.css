@@ -736,8 +736,21 @@ pluma-print-preview.vertical toolbar.horizontal button.flat.text-button {
  ****************/
 
 /*For mate-settings-daemon noncomposited osd windows*/
-.msd-osd-window-solid {
-	border-radius:0px;
+.msd-osd-window-solid,
+.osd.msd-osd-window-solid,
+.background.osd.msd-osd-window-solid {
+	border-radius: 0px;
+	border-width: 2px;
+	border-style:solid;
+	border-color: rgb(64, 64, 67);
+}
+
+.msd-osd-window-solid progressbar{
+	background-image: linear-gradient(to bottom,
+	                                  shade(@theme_bg_color, 0.4),
+	                                  @theme_bg_color 50%,
+	                                  shade(@theme_bg_color, 1.8));
+	border-radius: 11px;
 }
 
 /* mate-keyboard-layout-view, mate-keyboard-layout-chooser */
