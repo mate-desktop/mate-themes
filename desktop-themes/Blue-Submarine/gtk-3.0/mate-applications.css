@@ -1283,6 +1283,19 @@ MsdOsdWindow.background.osd .progressbar {
     background-size: 40px auto, auto, auto;
 }
 
+/*For mate-settings-daemon noncomposited osd windows*/
+MsdOsdWindow.background.osd.msd-osd-window-solid {
+	border-radius: 0px;
+	border-width: 2px;
+	border-style:solid;
+	border-color: shade(@button_border_active, 1.20);
+}
+
+MsdOsdWindow.background.osd.msd-osd-window-solid progressbar,
+MsdOsdWindow.background.osd.msd-osd-window-solid progressbar trough {
+	border-radius: 3px;
+}
+
 /*****************
  * mate-terminal *
  *****************/
