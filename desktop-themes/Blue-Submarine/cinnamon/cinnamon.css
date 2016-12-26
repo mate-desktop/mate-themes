@@ -153,6 +153,8 @@ StScrollBar StButton#vhandle:hover {
 /* ===================================================================
  * PopupMenu (popupMenu.js) 
  * ===================================================================*/
+/* .popup-menu-boxpointer and .popup-menu are kept for compatibility
+    with cinnamon version under 3.2. Use .menu in version 3.2 and above */
 .popup-menu-boxpointer {
 	/* Keeping arrow style for extra effect and less "warning junk" in .xsession-errors */
 	/* Border seems to behave strange with single background-color. Background-gradient fixes it. */
@@ -173,6 +175,19 @@ StScrollBar StButton#vhandle:hover {
 .popup-menu {
 	color: #fff;
 	min-width: 85px;
+}
+
+.menu {
+	border-radius: 0px;
+	background-color: rgba(48,48,48,0.0);
+	border-color: rgba(255,255,255,0.0);
+	border: 2px solid rgba(255,255,255,0.6);
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(32,32,32,1.0);
+	background-gradient-end: rgba(32,32,32,1.0);
+	box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.5);
+    color: #fff;
+    min-width: 85px;
 }
 
 .popup-submenu-menu-item:open {
@@ -1815,10 +1830,12 @@ StScrollBar StButton#vhandle:hover {
 /* ===================================================================
  * Panel Launchers Applet (panelLaunchers.js)
  * ===================================================================*/
-#panel-launchers-box {
+
+.panel-launchers {
 	spacing: 2px;
 }
 
+.launcher,
 .panel-launcher {
 	border: 1px solid rgba(255,255,255,0);
 	border-top: 0px;
@@ -1828,6 +1845,7 @@ StScrollBar StButton#vhandle:hover {
 	transition-duration: 200;
 }
 
+.launcher:hover,
 .panel-launcher:hover {
 	border: 1px solid rgba(255,255,255,0.4);
 	border-top: 0px;
