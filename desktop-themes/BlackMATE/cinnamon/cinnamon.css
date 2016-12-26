@@ -152,7 +152,8 @@ StScrollBar StButton#hhandle:hover
 /* ===================================================================
  * PopupMenu (popupMenu.js) 
  * ===================================================================*/
-
+/* .popup-menu-boxpointer and .popup-menu are kept for compatibility
+    with cinnamon version under 3.2. Use .menu in version 3.2 and above */
 .popup-menu-boxpointer {
 	-arrow-border-radius: 16px;
 	-arrow-background-color: rgba(0,0,0,0.0);
@@ -171,6 +172,22 @@ StScrollBar StButton#hhandle:hover
 	border-radius: 5px;
 	padding: 4px;
 }
+
+.menu {
+	background-color: rgba(0,0,0,0.0);
+	border-color: rgba(0,0,0,0.0);
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(50,50,50,0.7);
+	background-gradient-end: rgba(0,0,0,0.7);
+	box-shadow: 1px 4px 10px 4px rgba(0,0,0,0.6);
+	padding: 2px 0px 0px 2px;
+	color: #ffffff;
+	font-size: 8pt;
+	min-width: 85px;
+	border-radius: 5px;
+	padding: 4px;
+}
+
 
 .popup-submenu-menu-item:open {
 	background-color: transparent;
@@ -1944,10 +1961,12 @@ StScrollBar StButton#hhandle:hover
  * Panel Launchers Applet (panelLaunchers.js)
  * ===================================================================*/
 
-#panel-launchers-box {
+.panel-launchers {
+	spacing: 2px;
 	padding-left: 0px;
 }
 
+.launcher,
 .panel-launcher {
 	margin: 0px;
 	padding-right: 4px;
@@ -1955,6 +1974,7 @@ StScrollBar StButton#hhandle:hover
 	transition-duration: 100;
 }
 
+.launcher:hover,
 .panel-launcher:hover {
 	background-gradient-direction: vertical;
 	background-gradient-start: rgba(255,255,255,0.4);
