@@ -55,8 +55,6 @@ row trough {
 entry:focus,
 button:checked:focus,
 button.default:checked,
-combobox entry.combo:focus,
-combobox button.combo:focus,
 toolbar.inline-toolbar.vertical button:focus:checked,
 toolbar.inline-toolbar.vertical button.default:checked {
 	border-image: url("borders/button-active-focus.png") 3 4 5 4 / 3px 4px 5px 4px stretch;
@@ -96,7 +94,13 @@ toolbar.inline-toolbar.vertical button {
 
 /* focused button borders */
 button.default,
-button:focus {
+button:focus,
+toolbar.inline-toolbar.horizontal button.text-button:focus,
+combobox entry.combo:focus,
+combobox button.combo:focus,
+combobox .linked button.combo:focus,
+.primary-toolbar button:focus,
+statusbar button.flat.toggle:focus {
 	border-image: url("borders/button-focus.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
 	border-radius: 4px;
 	border-width: 2px;

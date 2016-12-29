@@ -27,6 +27,16 @@
 	box-shadow: inset -1px 0 @inset_dark_color;
 }
 
+.caja-navigation-window .caja-side-pane button.flat:focus:first-child {
+    border-image: url("borders/button-focus.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
+    border-radius: 3px 0 0 3px;
+    /* remove right border */
+    border-width: 2px 0px 2px 2px;
+	border-image-width: 3px 0 4px 4px;
+	box-shadow: inset -1px 0 @treeview_focus_border;
+    outline-style: none;
+}
+
 .caja-navigation-window .caja-side-pane button.flat:last-child,
 .caja-navigation-window .caja-side-pane button.flat:hover:last-child {
     border-image: url("borders/button.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
@@ -35,6 +45,16 @@
     border-width: 2px 2px 2px 0px;
 	border-image-width: 3px 4px 4px 0px;
 	box-shadow: inset 1px 0 @inset_light_color;
+}
+
+.caja-navigation-window .caja-side-pane button.flat:focus:last-child {
+    border-image: url("borders/button-focus.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
+    border-radius: 0 3px 3px 0;
+    /* remove left border */
+    border-width: 2px 2px 2px 0px;
+	border-image-width: 3px 4px 4px 0px;
+	box-shadow: inset 1px 0 @treeview_focus_border;
+    outline-style: none;
 }
 
 /* ComboBox views */
@@ -152,6 +172,12 @@
 /* icon and compat mode */
 .caja-navigation-window .caja-notebook scrolledwindow.view.frame  {
     background-color: @theme_base_color;
+}
+
+/* color of selected icons if unfocused */
+/* For some reasons this needs to be set here again */
+.caja-navigation-window .caja-notebook .view:active {
+    background-color: shade(@theme_unfocused_bg_color, 0.94);
 }
 
 /* listview mode */
@@ -316,6 +342,16 @@ MatePanelAppletFrameDBus {
     background-position: left;
 }
 
+/* outlines */
+window.background, /* selector where outlines are writen on GtkTrayIcon */
+.mate-panel-menu-bar menubar,
+.mate-panel-menu-bar button,
+.mate-panel-menu-bar PanelApplet {
+    outline-style: solid;
+    outline-offset: -2px;
+    outline-color: shade (@theme_selected_bg_color, 1.0);
+}
+
 /* main menu */
 /* set normal menubar button */
 .mate-panel-menu-bar menubar > menuitem {
@@ -426,6 +462,8 @@ PanelApplet.wnck-applet .wnck-pager {
     background-image: none;
     background-color: transparent;
     text-shadow: none;
+    outline-offset: -1px;
+    outline-color: shade (@theme_selected_bg_color, 1.0);
 }
 
 /* selected WnckPager */
@@ -465,7 +503,7 @@ PanelApplet.wnck-applet .wnck-pager:hover {
 }
 
 na-tray-applet {
-    -NaTrayApplet-icon-padding: 3px;
+    -NaTrayApplet-icon-padding: 1px; /*any more and outlines get cut off*/
     -NaTrayApplet-icon-size: 16;
 }
 
@@ -552,6 +590,10 @@ window.background.mate-terminal > box.vertical > notebook > header.top tab:check
 .pluma-window statusbar.horizontal frame button.flat.toggle {
     border-image: url("borders/button.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
     padding: 0px;
+}
+
+.pluma-window statusbar.horizontal frame button.flat.toggle:focus {
+	border-image: url("borders/button-focus.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
 }
 
 /* Printpreview */

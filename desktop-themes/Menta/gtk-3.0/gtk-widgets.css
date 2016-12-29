@@ -12,10 +12,10 @@
 	-GtkIMHtml-hyperlink-color: @link_color;
 	-GtkHTML-link-color: @link_color;
 	-WnckTasklist-fade-overlay-rect: 0;
-	outline-color: alpha(@theme_text_color, 0.3);
+	outline-color: alpha(currentColor, 0.3);
 	outline-style: dashed;
-	outline-offset: -3px; /* 2px */
-	outline-width: 0px; /* disable ugly focus-line */
+	outline-offset: -3px;
+	outline-width: 1px;
 	-gtk-outline-radius: 2px;
 /*	-gtk-icon-style: regular;*//* disable symbolic icons */
 }
@@ -210,6 +210,7 @@ statusbar frame {
 
 statusbar frame button.flat {
     padding: 0px;
+    outline-style: none;
 }
 
 .dnd {
@@ -538,6 +539,11 @@ spinbutton:disabled {
     background-color: @insensitive_bg_color;
     background-image: none;
     border-color: @borders;
+}
+
+spinbutton:focus {
+    border-color: shade (@treeview_focus_border, 1.0);
+    transition: all 400ms ease-out;
 }
 
 spinbutton button,
@@ -2241,6 +2247,39 @@ notebook tab.reorderable-page:hover {
     border-style: none;
 }
 
+/* outlines */
+notebook header tab:checked {
+    outline-color: @button_default_border_color;
+}
+
+notebook header.top tab:checked {
+    -gtk-outline-top-left-radius: 4px;
+    -gtk-outline-top-right-radius: 4px;
+    -gtk-outline-bottom-left-radius: 0px;
+    -gtk-outline-bottom-right-radius: 0px;
+}
+
+notebook header.bottom tab:checked {
+    -gtk-outline-top-left-radius: 0px;
+    -gtk-outline-top-right-radius: 0px;
+    -gtk-outline-bottom-left-radius: 4px;
+    -gtk-outline-bottom-right-radius: 4px;
+}
+
+notebook header.left tab:checked {
+    -gtk-outline-top-left-radius: 4px;
+    -gtk-outline-top-right-radius: 0px;
+    -gtk-outline-bottom-left-radius: 0px;
+    -gtk-outline-bottom-right-radius: 4px;
+}
+
+notebook header.right tab:checked {
+    -gtk-outline-top-left-radius: 0px;
+    -gtk-outline-top-right-radius: 4px;
+    -gtk-outline-bottom-left-radius: 4px;
+    -gtk-outline-bottom-right-radius: 0px;
+}
+
 /* close button styling */
 notebook button.flat,
 notebook button.flat.small-button {
@@ -2362,6 +2401,10 @@ toolbar.primary-toolbar combobox button.combo {
 	border-image-width: 3px 3px 4px 3px;
 	border-radius: 3px;
 	border-width: 2px;
+}
+
+combobox button.combo {
+    outline-style: none;
 }
 
 combobox > .horizontal.linked > button.combo,
@@ -3340,6 +3383,10 @@ dialog.background.solid-csd notebook scrolledwindow.frame treeview.view header b
     margin-top: -2px;
 }
 
+.dialog-action-area.linked button {
+    outline-width: 0px;
+}
+
 /* middle buttons */
 .dialog-action-area.linked button,
 .dialog-action-area.linked button:hover:active,
@@ -3358,11 +3405,15 @@ dialog.background.solid-csd notebook scrolledwindow.frame treeview.view header b
 .dialog-action-area.linked button.default:checked,
 .dialog-action-area.linked button.default:disabled,
 .dialog-action-area.linked button:focus {
-	border-style: solid;
-	border-radius: 0;
+    border-style: solid;
+    border-radius: 0;
     border-width: 1px;
     border-left-width:  0px;
-	border-color: @theme_selected_bg_color;
+    border-color: @button_default_border_color;
+    box-shadow: inset  0px  1px @button_default_box_shadow_color,
+                inset  1px  0px @button_default_box_shadow_color,
+                inset -1px  0px @button_default_box_shadow_color,
+                inset  0px -1px @button_default_box_shadow_color;
 }
 
 /* left button */
@@ -3382,10 +3433,14 @@ dialog.background.solid-csd notebook scrolledwindow.frame treeview.view header b
 .dialog-action-area.linked button.default:checked:first-child,
 .dialog-action-area.linked button.default:disabled:first-child,
 .dialog-action-area.linked button:focus:first-child {
-	border-style: solid;
+    border-style: solid;
     border-width: 1px;
-	border-radius: 3px 0 0px 3px;
-	border-color: @theme_selected_bg_color;
+    border-radius: 3px 0 0px 3px;
+    border-color: @button_default_border_color;
+    box-shadow: inset  0px  1px @button_default_box_shadow_color,
+                inset  1px  0px @button_default_box_shadow_color,
+                inset -1px  0px @button_default_box_shadow_color,
+                inset  0px -1px @button_default_box_shadow_color;
 }
 
 /* right button */
@@ -3406,11 +3461,15 @@ dialog.background.solid-csd notebook scrolledwindow.frame treeview.view header b
 .dialog-action-area.linked button.default:checked:last-child,
 .dialog-action-area.linked button.default:disabled:last-child,
 .dialog-action-area.linked button:focus:last-child {
-	border-style: solid;
+    border-style: solid;
     border-width: 1px;
     border-left-width: 0px;
-	border-radius: 0 3px 3px 0;
-	border-color: @theme_selected_bg_color;
+    border-radius: 0 3px 3px 0;
+    border-color: @button_default_border_color;
+    box-shadow: inset  0px  1px @button_default_box_shadow_color,
+                inset  1px  0px @button_default_box_shadow_color,
+                inset -1px  0px @button_default_box_shadow_color,
+                inset  0px -1px @button_default_box_shadow_color;
 }
 
 /* single button */
@@ -3435,7 +3494,11 @@ dialog.background.solid-csd notebook scrolledwindow.frame treeview.view header b
     padding-right: 6px;
     border-width: 1px;
     border-radius: 3px;
-	border-color: @theme_selected_bg_color;
+    border-color: @button_default_border_color;
+    box-shadow: inset  0px  1px @button_default_box_shadow_color,
+                inset  1px  0px @button_default_box_shadow_color,
+                inset -1px  0px @button_default_box_shadow_color,
+                inset  0px -1px @button_default_box_shadow_color;
 }
 
 .dialog-action-area.linked button.suggested-action,
@@ -3505,6 +3568,11 @@ toolbar.primary-toolbar entry.progressbar {
 	color: @theme_text_color;
 }
 
+toolbar button,
+toolbar.primary-toolbar button {
+    outline-style: none;
+}
+
 /*******************
  * Inline toolbars *
  *******************/
@@ -3525,6 +3593,14 @@ toolbar.inline-toolbar:last-child {
 toolbar.inline-toolbar.vertical:last-child {
 	border-left-width: 0;
 	border-radius: 0;
+}
+
+/* preferences windows */
+notebook toolbar.inline-toolbar.horizontal toolitem button.text-button {
+	border-width: 2px;
+	border-image-width: 3px 4px 4px 4px;
+	border-radius: 4px;
+	box-shadow: none;
 }
 
 /***********
@@ -4291,7 +4367,7 @@ calendar.header .path-bar button.titlebutton image {
 
 treeview.view {
 	-GtkTreeView-vertical-separator: 0;
-	outline-color: alpha(@theme_text_color, 0.6);
+	outline-color: alpha(currentColor, 0.6);
 }
 
 treeview {
@@ -4324,16 +4400,17 @@ viewport {
 }
 
 iconview .cell:selected,
-iconview .cell:selected:focus {
-	border-radius: 4px;
-	outline-color: @treeview_focus_border;
-	outline-style: solid;
-	outline-offset: 3px;
-}
-
+iconview .cell:selected:focus,
 iconview .cell:hover,
 iconview .cell:hover:focus {
 	border-radius: 4px;
+}
+
+iconview .cell:selected:focus {
+    border-radius: 4px;
+    border-color: alpha(@theme_text_color, 0.6);
+    border-width: 1px;
+    border-style: dashed;
 }
 
 .view text,
@@ -4365,6 +4442,11 @@ textview,
 .view:selected:backdrop {
 	background-color: shade(@theme_unfocused_bg_color, 0.94);
 	color: @theme_fg_color;
+}
+
+/* color of selected icons if unfocused */
+.view:active {
+    background-color: shade(@theme_unfocused_bg_color, 0.94);
 }
 
 /* ie. filechooser dialog */
