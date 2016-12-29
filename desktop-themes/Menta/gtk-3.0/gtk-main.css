@@ -51,6 +51,9 @@
 @define-color button_hover_gradient_color_a shade(@button_gradient_color_a, 1.11);
 @define-color button_hover_gradient_color_b shade(@button_gradient_color_b, 1.06);
 
+@define-color button_default_border_color #3AC5A0;
+@define-color button_default_box_shadow_color #00A25D;
+
 @define-color insensitive_bg_color shade(@theme_bg_color, 0.95);
 @define-color insensitive_fg_color shade(@theme_bg_color, 0.6);
 @define-color insensitive_borders shade(@internal_element_color, 1.37);
