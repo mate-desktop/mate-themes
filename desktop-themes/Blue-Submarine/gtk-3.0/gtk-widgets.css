@@ -21,10 +21,10 @@
     -GtkTreeView-vertical-separator: 4;
     -WnckTasklist-fade-overlay-rect: 0;
     /* Highlight drag-drop destination */
-    outline-color: alpha(@theme_selected_bg_color, 0.3);
+    outline-color: alpha(currentColor, 0.3);
     outline-style: dashed;
-    outline-offset: -3px; /* 2px */
-    outline-width: 0px; /* disable ugly focus-line */
+    outline-offset: -3px;
+    outline-width: 1px;
     -gtk-outline-radius: 2px;
     -gtk-icon-style: regular; /* no symbolic icons */
 }
@@ -970,6 +970,7 @@ button {
 /* box-shadow: [ inset ] horizontal_offset vertical_offset [ blur_radius ] [ spread ] color */
     color:             @theme_fg_color;
     text-shadow: none;
+    outline-style: none;
 }
 
 button.default {
@@ -2145,6 +2146,14 @@ combobox button.combo:hover {
     color: @theme_text_color;
 }
 
+combobox button.combo:focus,
+combobox .linked button.combo:focus {
+    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
+                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
+}
+
 toolbar combobox cellview {
     /* color combobox read-only */
     color: shade(@toolbar_fg_color, 0.94);
@@ -2567,6 +2576,7 @@ toolbar toolbutton button.flat.toggle.popup:focus {
 
 }
 
+toolbar toolitem combobox button.combo:focus,
 toolbar toolbutton button.flat.text-button:focus:hover,
 toolbar toolbutton button.flat.toggle.popup:focus:hover,
 toolbar toolitem combobox button.combo:hover {
@@ -2578,10 +2588,6 @@ toolbar toolitem combobox button.combo:hover {
                 inset  1px  0px shade(@selected_bg_color, 1.3),
                 inset -1px  0px shade(@selected_bg_color, 1.3),
                 inset  0px -1px shade(@selected_bg_color, 1.3);
-}
-
-toolbar toolbutton button.flat.text-button:focus {
-    box-shadow: none;
 }
 
 /********************
@@ -2673,10 +2679,6 @@ toolbar.primary-toolbar button {
     text-shadow: none;
 }
 
-toolbar.primary-toolbar .linked button:focus {
-   box-shadow: none;
-}
-
 toolbar button:disabled,
 toolbar.primary-toolbar button:disabled {
     background-image: none;
@@ -2694,6 +2696,7 @@ toolbar.primary-toolbar button:disabled {
     text-shadow: none;
 }
 
+toolbar button:focus,
 toolbar button:hover,
 toolbar button:hover:active,
 toolbar button:focus:hover:active,
@@ -2714,6 +2717,7 @@ toolbar button:checked:hover:active {
                 inset  0px -1px shade (@theme_selected_bg_color, 1.3);
 }
 
+toolbar.primary-toolbar button:focus,
 toolbar.primary-toolbar button:hover,
 toolbar.primary-toolbar button:hover:active,
 toolbar.primary-toolbar button:checked,
@@ -2758,6 +2762,11 @@ toolbar.primary-toolbar button:checked:disabled {
     border-color: transparent;
     -gtk-icon-shadow: none;
     text-shadow: none;
+}
+
+/* ie. atril */
+.primary-toolbar toolbar toolitem combobox .linked button.combo {
+    padding: 8px 4px;
 }
 
 toolbar label {
@@ -3100,6 +3109,98 @@ toolbar.inline-toolbar button:checked {
     color: @theme_selected_fg_color;
     text-shadow: none;
     -gtk-icon-shadow: 1px 1px @theme_selected_shadow_color;
+}
+
+/* eg. pluma preferences */
+notebook toolbar.horizontal.inline-toolbar {
+    border-width: 0 1px 1px 1px;
+}
+
+notebook toolbar.inline-toolbar toolitem button.text-button label {
+    color:       @theme_fg_color;
+    text-shadow: none;
+}
+
+notebook toolbar.inline-toolbar toolitem button.text-button:disabled label {
+    color: @insensitive_fg_color;
+    text-shadow: none;
+}
+
+notebook toolbar.inline-toolbar toolitem button.text-button {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (@button_gradient1),
+                                     color-stop (0.50, @button_gradient3),
+                                     to   (@button_gradient4));
+    border-width: 1px;
+    border-radius: 4px;
+    border-style: solid;
+    border-top-color:    transparent;
+    border-left-color:   alpha (#000, 0.01);
+    border-right-color:  alpha (#000, 0.01);
+    border-bottom-color: alpha (#000, 0.03);
+    box-shadow: inset  0px  1px alpha(shade(@button_border, 1.00), 0.70),
+                inset  1px  0px alpha(shade(@button_border, 0.94), 0.80),
+                inset -1px  0px alpha(shade(@button_border, 0.94), 0.80),
+                inset  0px -1px alpha(shade(@button_border, 0.88), 0.90);
+    color:             @theme_fg_color;
+    text-shadow: none;
+}
+
+notebook toolbar.inline-toolbar toolitem button.text-button:hover {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@button_gradient1, 1.03)),
+                                     color-stop (0.50, shade(@button_gradient3, 1.03)),
+                                     to   (shade(@button_gradient4, 1.01)));
+    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.3),
+                inset  1px  0px shade(@selected_bg_color, 1.3),
+                inset -1px  0px shade(@selected_bg_color, 1.3),
+                inset  0px -1px shade(@selected_bg_color, 1.3);
+}
+
+notebook toolbar.inline-toolbar toolitem button.text-button:disabled {
+    border-width: 1px;
+    border-radius: 4px;
+    border-style: solid;
+    background-image: none;
+    background-color: @insensitive_bg_color;
+    border-color: alpha (#000, 0.00);
+    border-bottom-color: alpha (#000, 0.00);
+    border-image: none;
+    box-shadow: inset  0px  1px @insensitive_border_color,
+                inset  1px  0px @insensitive_border_color,
+                inset -1px  0px @insensitive_border_color,
+                inset  0px -1px @insensitive_border_color;
+    color: @insensitive_fg_color;
+    text-shadow: none;
+}
+
+notebook toolbar.inline-toolbar toolitem button.text-button,
+notebook toolbar.inline-toolbar toolitem button.text-button:focus,
+notebook toolbar.inline-toolbar toolitem button.text-button:hover {
+    padding: 2px 6px;
+}
+
+notebook toolbar.inline-toolbar toolitem button.text-button:focus {
+    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.3),
+                inset  1px  0px shade(@selected_bg_color, 1.3),
+                inset -1px  0px shade(@selected_bg_color, 1.3),
+                inset  0px -1px shade(@selected_bg_color, 1.3);
+}
+
+notebook toolbar.inline-toolbar toolitem button.text-button:focus:hover:active {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade (@theme_bg_color, 1.20)),
+                                     color-stop (0.50, shade (@theme_bg_color, 1.00)),
+                                     color-stop (0.50, shade (@theme_bg_color, 0.99)),
+                                     to (shade (@theme_bg_color, 0.80)));
+    border-radius: 4px;
+    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
+                inset  1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset -1px  0px shade (@theme_selected_bg_color, 1.3),
+                inset  0px -1px shade (@theme_selected_bg_color, 1.3);
 }
 
 /******************
@@ -3702,6 +3803,35 @@ notebook tab.reorderable-page:checked {
     border-style: solid;
 }
 
+/* outlines */
+notebook header.top tab:checked {
+    -gtk-outline-top-left-radius: 4px;
+    -gtk-outline-top-right-radius: 4px;
+    -gtk-outline-bottom-left-radius: 0px;
+    -gtk-outline-bottom-right-radius: 0px;
+}
+
+notebook header.bottom tab:checked {
+    -gtk-outline-top-left-radius: 0px;
+    -gtk-outline-top-right-radius: 0px;
+    -gtk-outline-bottom-left-radius: 4px;
+    -gtk-outline-bottom-right-radius: 4px;
+}
+
+notebook header.left tab:checked {
+    -gtk-outline-top-left-radius: 4px;
+    -gtk-outline-top-right-radius: 0px;
+    -gtk-outline-bottom-left-radius: 0px;
+    -gtk-outline-bottom-right-radius: 4px;
+}
+
+notebook header.right tab:checked {
+    -gtk-outline-top-left-radius: 0px;
+    -gtk-outline-top-right-radius: 4px;
+    -gtk-outline-bottom-left-radius: 4px;
+    -gtk-outline-bottom-right-radius: 0px;
+}
+
 /* close button styling */
 
 notebook > header button.flat,
@@ -4053,6 +4183,12 @@ iconview.view.cell:hover:focus {
     border-radius: 4px;
 }
 
+iconview.view.cell:selected:focus {
+    border-color: alpha(@theme_text_color, 0.6);
+    border-width: 1px;
+    border-style: dashed;
+}
+
 view,
 .view, 
 view text,
@@ -4119,6 +4255,7 @@ label selection:backdrop:disabled {
 treeview,
 treeview.view {
     padding: 1px 4px;
+	outline-color: alpha(currentColor, 0.6);
 }
 
 treeview.dnd {

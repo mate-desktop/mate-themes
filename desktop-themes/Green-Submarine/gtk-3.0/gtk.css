@@ -102,6 +102,9 @@
 @define-color button_border shade(@theme_bg_color, 0.70);
 @define-color button_border_active shade(@button_bg_active, 0.95);
 
+@define-color button_default_border_color shade(@selected_bg_color, 0.87);
+@define-color button_default_box_shadow_color shade(@selected_bg_color, 0.87);
+
 @define-color insensitive_bg_color shade(@bg_color, 0.93);
 @define-color insensitive_fg_color shade(@bg_color, 0.70);
 @define-color insensitive_border_color shade(@bg_color, 0.80);
