@@ -385,6 +385,8 @@ list-row button:selected:hover {
 	border-image: url("assets/button-active-border-dark.svg") 3 / 3px stretch;
 }
 
+button:focus,
+notebook  button:focus,
 button.default,
 notebook  button.default {
 	border-image: url("assets/button-default-border-dark.svg") 3 / 3px stretch;

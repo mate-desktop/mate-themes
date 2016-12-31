@@ -376,6 +376,12 @@ MatePanelAppletFrameDBus {
     box-shadow: none;
 }
 
+/*outline focussed buttons for keyboard use */
+.mate-panel-menu-bar button, .gnome-panel-menu-bar button{
+	outline-offset: -2px;
+	outline-width: 2px;
+}
+
 /* Mate menu button normal */
 /* makes the arrow visible, nothing more works */
 .mate-panel-menu-bar menu menuitem button {
@@ -521,6 +527,19 @@ MatePanelApplet > menubar {
     font-weight: normal;
 }
 
+#clock-applet-button{
+	padding: 4px; /*any less and outlines touch text or get cut off */
+}
+
+#PanelApplet {
+	outline-offset: -2px;
+}
+
+#PanelApplet widget {
+	padding-left: 2px;
+	padding-right: 4px;
+}
+
 /*WnckPager is unnamed in GTK inspector so try this*/
 PanelApplet.wnck-applet .wnck-pager {
     background-image: none;
@@ -549,7 +568,7 @@ na-tray-applet widget box widget {
 }
 
 na-tray-applet {
-    -NaTrayApplet-icon-padding: 3px;
+    -NaTrayApplet-icon-padding: 1px; /*any more and outlines get cut off*/
     -NaTrayApplet-icon-size: 16;
 }
 

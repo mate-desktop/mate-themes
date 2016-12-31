@@ -14,10 +14,10 @@
 	-GtkIMHtml-hyperlink-color: @link_color;
 	-GtkHTML-link-color: @link_color;
 	-WnckTasklist-fade-overlay-rect: 0;
-	outline-color: @focus_border;
-	outline-style: dashed;
-	outline-offset: 2px;
-	outline-width: 0px; /* disable ugly focus-line */
+	outline-color: alpha(@focus_border, 0.6);
+	outline-style: dotted;
+	outline-offset: -3px;
+	outline-width: 2px;
 	-gtk-icon-style: regular; /* no symbolic icons */
     text-shadow: none;
 }
@@ -447,6 +447,7 @@ entry:focus {
 	border-image: none;
 	box-shadow: inset 0 -2px alpha(@entry_shadow, 0.05),
 	            inset 0 -1px alpha(@entry_shadow, 0.07);
+
 }
 
 entry:disabled {
@@ -1188,6 +1189,14 @@ list row.activatable {
     border-color: transparent
 }
 
+list row.activatable:focus{
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      alpha(@button_gradient_color_a, 0.5),
+                                      alpha(@button_gradient_color_b, 0.5));
+	outline-width: 0px;
+}
+
 list row.activatable:selected,
 list row.activatable:selected:hover {
     background-color: transparent;
@@ -1448,19 +1457,6 @@ button {
     transition: all 400ms ease-out;
 }
 
-button.text-button,
-button.font,
-filechooser  button {
-    padding: 3px;
-}
-
-button.default {
-    transition: all 400ms ease-out;
-    text-shadow: none;
-    color: @theme_fg_color;
-	padding: 1px;
-}
-
 /* ie. mate-control-center */
 button.flat {
     transition: all 400ms ease-out;
@@ -1472,6 +1468,10 @@ button.flat {
     text-shadow: none;
     -gtk-icon-shadow: none;
     border-image: none;
+}
+
+button:focus{
+	outline-width: 0px;
 }
 
 button.flat:hover {
@@ -1512,6 +1512,10 @@ button label:disabled {
 	background-color: transparent;
 }
 
+button label:disabled {
+	color: shade(@theme_fg_color, 0.6);
+}
+
 button:hover {
 	border-image: none;
 	border-style: solid;
@@ -1538,11 +1542,12 @@ button:hover:active {
 	                                  shade(@button_gradient_color_a, 1.5));
 }
 
-button:disabled {
+button:disabled,
+button.default:disabled {
 	background-color: transparent;
 	background-image: linear-gradient(to bottom,
-	                                  alpha(@button_gradient_color_a, 0.5),
-	                                  alpha(@button_gradient_color_b, 0.6));
+	                                  alpha(@button_gradient_color_a, 0.2),
+	                                  alpha(@button_gradient_color_b, 0.3));
 	border-image: none;
 	border-style: solid;
 	border-color: alpha(@button_border, 0.3); /*shade(@button_border, 1.2)*/
@@ -2248,6 +2253,20 @@ toolbar button.text-button {
 
 toolbar button.image-button {
 	padding: 5px 4px 4px 5px;
+}
+
+toolbar button:focus,
+primary-toolbar button:focus{
+	outline-width: 2px;
+}
+
+/*use only outlines for focus on toolbar buttons */
+
+toolbar button:focus:not(:hover),
+toolbar.primary-toolbar button:focus:not(:hover),
+toolbar.primary-toolbar button.text-button:focus:not(:hover),
+toolbar.primary-toolbar toolbar button:focus:not(:hover){
+	border-image: none;
 }
 
 /********************
@@ -3211,6 +3230,16 @@ switch:backdrop:checked {
 	                                  @active_switch_bg_color_b);
 }
 
+
+switch:checked:hover {
+	color: @theme_main_color;
+	border-image: none;
+	border-color: shade(@frame_color, 1.22);
+	background-image: linear-gradient(to bottom,
+	                                  shade(@active_switch_bg_color_a, 1.1),
+	                                  shade(@active_switch_bg_color_b, 1.1));
+}
+
 switch:disabled,
 switch:backdrop:disabled {
 	background-image: none;
@@ -3258,8 +3287,14 @@ list row switch,
 list row switch:backdrop,
 list row:selected switch,
 list row:selected switch:backdrop {
-   box-shadow: none;
+	box-shadow: none;
     border-color: shade(@button_border, 1.0);
+}
+
+list row  switch:focus slider {
+	outline-offset: 1px;
+	outline-style: solid;
+	outline-color: alpha(@focus_border, 0.6);
 }
 
 list row:selected switchslider:dir(rtl) {
