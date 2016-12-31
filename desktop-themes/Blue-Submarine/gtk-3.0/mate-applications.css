@@ -152,6 +152,7 @@ paned.horizontal > box.vertical.caja-side-pane > notebook scrolledwindow.frame {
                                      to   (shade(@button_gradient4, 1.01)));
 }
 
+.caja-side-pane button.flat.toggle:focus:first-child,
 .caja-side-pane button.flat.toggle:hover:first-child,
 .caja-side-pane button.flat.toggle:checked:first-child {
     box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
@@ -160,6 +161,7 @@ paned.horizontal > box.vertical.caja-side-pane > notebook scrolledwindow.frame {
                 inset  0px -1px shade (@theme_selected_bg_color, 1.3);
 }
 
+.caja-side-pane button.flat:focus:last-child,
 .caja-side-pane button.flat:hover:last-child,
 .caja-side-pane button.flat:checked:last-child {
     box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 1.3),
@@ -452,6 +454,16 @@ MatePanelAppletFrameDBus {
     text-shadow: 1px 1px alpha (#000000, 0.8);
 }
 
+/* outlines */
+window.background, /* selector where outlines are writen on GtkTrayIcon */
+.mate-panel-menu-bar menubar,
+.mate-panel-menu-bar button,
+.mate-panel-menu-bar PanelApplet {
+    outline-style: solid;
+    outline-offset: -2px;
+    outline-color: shade (@theme_selected_bg_color, 1.6);
+}
+
 /* menubar */
 .mate-panel-menu-bar menu > menuitem,
 .mate-panel-menu-bar menubar > menuitem {
@@ -639,6 +651,8 @@ PanelApplet.wnck-applet .wnck-pager {
     border-color: transparent;
     background-color: transparent;
     text-shadow: none;
+    outline-offset: -1px;
+    outline-color: shade (@theme_selected_bg_color, 1.6);
 }
 
 /* selected WnckPager */
@@ -656,7 +670,7 @@ PanelApplet.wnck-applet .wnck-pager:hover {
 }
 
 na-tray-applet {
-    -NaTrayApplet-icon-padding: 3px;
+    -NaTrayApplet-icon-padding: 1px; /*any more and outlines get cut off*/
     -NaTrayApplet-icon-size: 16;
 }
 
