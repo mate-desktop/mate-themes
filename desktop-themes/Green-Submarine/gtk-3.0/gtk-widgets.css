@@ -4785,8 +4785,9 @@ messagedialog {
     padding: 0;
 }
 
-/* ie. mate-keyboard-properties option window */
-dialog notebook.frame box.vertical > box.vertical > scrolledwindow.frame {
+/* ie. mate-keyboard-properties option window or pluma preferences */
+dialog notebook.frame box.vertical > box.vertical > scrolledwindow.frame,
+dialog notebook.frame box.vertical > box.vertical > box.horizontal box.vertical > scrolledwindow.frame {
     border-color: @notebook_border;
     border-style: solid;
     border-width: 1px;
