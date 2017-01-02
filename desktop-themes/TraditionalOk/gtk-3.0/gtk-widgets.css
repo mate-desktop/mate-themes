@@ -10,8 +10,8 @@
     -WnckTasklist-fade-overlay-rect: 0;
     outline-color: @focus_border_color;
     outline-style: dashed;
-    outline-offset: -2px;
-    outline-width: 0px; /* disable ugly focus-line */
+    outline-offset: -3px;
+    outline-width: 1px;
     -gtk-outline-radius: 2px;
     -gtk-icon-style: regular; /* disable symbolic icons */
 }
@@ -872,6 +872,7 @@ scrolledwindow viewport.frame {
 button {
     min-height: 16px;
     min-width: 16px;
+    outline-style: none;
 }
 
 button,
@@ -1173,6 +1174,15 @@ button separator {
     border-width: 1px 1px 1px 0px;
 }
 
+.dialog-action-area.linked button.default,
+.dialog-action-area.linked button:focus {
+    border-color: @button_default_border_color;
+    box-shadow: inset  0px  1px @button_default_box_shadow_color,
+                inset  1px  0px @button_default_box_shadow_color,
+                inset -1px  0px @button_default_box_shadow_color,
+                inset  0px -1px @button_default_box_shadow_color;
+}
+
 /* Leftmost button */
 .dialog-action-area.linked button:first-child,
 .dialog-action-area.linked button:hover:first-child,
@@ -1185,6 +1195,15 @@ button separator {
 .dialog-action-area.linked button:disabled:first-child {
     padding: 4px 6px;
     border-width: 1px 1px 1px 1px;
+}
+
+.dialog-action-area.linked button.default:first-child,
+.dialog-action-area.linked button:focus:first-child {
+    border-color: @button_default_border_color;
+    box-shadow: inset  0px  1px @button_default_box_shadow_color,
+                inset  1px  0px @button_default_box_shadow_color,
+                inset -1px  0px @button_default_box_shadow_color,
+                inset  0px -1px @button_default_box_shadow_color;
 }
 
 /* Rightmost button */
@@ -1201,6 +1220,25 @@ button separator {
     border-width: 1px 1px 1px 0px;
 }
 
+.dialog-action-area.linked button.default:last-child,
+.dialog-action-area.linked button:focus:last-child {
+    border-color: @button_default_border_color;
+    box-shadow: inset  0px  1px @button_default_box_shadow_color,
+                inset  1px  0px @button_default_box_shadow_color,
+                inset -1px  0px @button_default_box_shadow_color,
+                inset  0px -1px @button_default_box_shadow_color;
+}
+
+/* single button */
+.dialog-action-area.linked button.default:only-child,
+.dialog-action-area.linked button:focus:only-child {
+    border-color: @button_default_border_color;
+    box-shadow: inset  0px  1px @button_default_box_shadow_color,
+                inset  1px  0px @button_default_box_shadow_color,
+                inset -1px  0px @button_default_box_shadow_color,
+                inset  0px -1px @button_default_box_shadow_color;
+}
+
 /*****************
  * GtkSpinButton *
  *****************/
@@ -1213,6 +1251,10 @@ spinbutton:focus {
     border-radius: 3px;
     border-style: solid;
     border-color: @spinbutton_border_color;
+}
+
+spinbutton:focus {
+    border-color: shade (@theme_selected_bg_color, 1.0);
 }
 
 spinbutton.horizontal > entry,
@@ -1235,6 +1277,11 @@ spinbutton > button:focus:active {
     border-style: solid;
     border-color: @spinbutton_border_color;
     border-image: none;
+}
+
+spinbutton > button.default,
+spinbutton > button:focus {
+    box-shadow: none;
 }
 
 spinbutton > button:disabled {
@@ -1405,6 +1452,7 @@ toolbar .raised button:hover,
 toolbar combobox button.combo:hover,
 toolbar.primary-toolbar button:hover,
 toolbar.primary-toolbar combobox button.combo:hover,
+toolbar.primary-toolbar combobox button.combo:focus:hover,
 colorchooser #add-color-button:hover {
     background-color: transparent;
     background-image: linear-gradient(to bottom,
@@ -1437,7 +1485,9 @@ toolbar combobox button.combo:checked:disabled {
 }
 
 /* Focused primary toolbar button background */
-toolbar.primary-toolbar button:focus {
+toolbar button:focus,
+toolbar.primary-toolbar button:focus,
+toolbar.primary-toolbar combobox button.combo:focus {
     background-image: linear-gradient(to bottom,
                       @pt_button_focus_gradient_a,
                       @pt_button_focus_gradient_b 50%,
@@ -1446,6 +1496,7 @@ toolbar.primary-toolbar button:focus {
 }
 
 /* Focused + prelit primary toolbar button background */
+toolbar button:focus:hover,
 toolbar.primary-toolbar button:focus:hover {
     background-image: linear-gradient(to bottom,
                       @pt_button_focus_hover_gradient_a,
@@ -1786,6 +1837,39 @@ notebook header.left tab:checked {
                       @notebook_active_tab_strip_border_bottom_color 4px,
                       @notebook_active_tab_gradient_a 4px,
                       @notebook_active_tab_gradient_b);
+}
+
+/* outlines */
+notebook header tab:checked {
+    outline-color: @button_default_border_color;
+}
+
+notebook header.top tab:checked {
+    -gtk-outline-top-left-radius: 4px;
+    -gtk-outline-top-right-radius: 4px;
+    -gtk-outline-bottom-left-radius: 0px;
+    -gtk-outline-bottom-right-radius: 0px;
+}
+
+notebook header.bottom tab:checked {
+    -gtk-outline-top-left-radius: 0px;
+    -gtk-outline-top-right-radius: 0px;
+    -gtk-outline-bottom-left-radius: 4px;
+    -gtk-outline-bottom-right-radius: 4px;
+}
+
+notebook header.left tab:checked {
+    -gtk-outline-top-left-radius: 4px;
+    -gtk-outline-top-right-radius: 0px;
+    -gtk-outline-bottom-left-radius: 0px;
+    -gtk-outline-bottom-right-radius: 4px;
+}
+
+notebook header.right tab:checked {
+    -gtk-outline-top-left-radius: 0px;
+    -gtk-outline-top-right-radius: 4px;
+    -gtk-outline-bottom-left-radius: 4px;
+    -gtk-outline-bottom-right-radius: 0px;
 }
 
 /* close button styling */
@@ -2634,6 +2718,12 @@ checkbutton:selected:focus {
     background-color: transparent;
 }
 
+checkbutton.text-button,
+radiobutton.text-button {
+	padding: 1px 2px 4px;
+	outline-offset: 0;
+}
+
 /************
  * Toolbars *
  ************/
@@ -3267,6 +3357,7 @@ switch slider {
     border-style: solid;
     border-color: @switch_slider_border_color;
     padding: 4px;
+    outline-color: @curent_color;
 }
 
 switch slider:disabled {
@@ -3290,6 +3381,13 @@ iconview.view.cell:selected:focus {
     background-color: @theme_selected_bg_color;
     color: @theme_selected_fg_color;
     border-radius: 4px;
+}
+
+iconview.cell:selected:focus {
+    border-radius: 3px;
+    border-color: alpha(@theme_text_color, 0.6);
+    border-width: 1px;
+    border-style: dashed;
 }
 
 list,
@@ -3356,6 +3454,7 @@ label selection:backdrop:disabled {
 treeview {
     -GtkTreeView-vertical-separator: 0;
     -GtkTreeView-expander-size: 13;
+    outline-color: alpha(currentColor, 0.6);
 }
 
 treeview.dnd {
@@ -3363,6 +3462,10 @@ treeview.dnd {
     border-radius: 2px;
     border-width: 1px;
     border-style: solid;
+}
+
+treeview.view:selected:focus {
+	outline-color: mix(@theme_selected_fg_color, @theme_selected_bg_color, 0.30);
 }
 
 /* column-headers */
