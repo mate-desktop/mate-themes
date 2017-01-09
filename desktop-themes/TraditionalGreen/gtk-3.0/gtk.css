@@ -65,6 +65,9 @@
 @define-color button_gradient_c shade(@core_color_b, 1.04);
 @define-color button_gradient_d shade(@core_color_b, 0.98);
 
+@define-color button_default_border_color #b4bba3;
+@define-color button_default_box_shadow_color #779933;
+
 /* hover */
 
 @define-color button_hover_gradient_a @theme_base_color;

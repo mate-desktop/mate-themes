@@ -646,6 +646,7 @@ entry:focus,
 combobox entry:focus,
 button.flat:focus:checked,
 button:focus:active,
+button:focus,
 button.default:active,
 /* focused button borders */
 button.flat:focus,
@@ -664,12 +665,19 @@ toolbar.primary-toolbar button.raised:focus,
 toolbar.primary-toolbar button.raised.default,
 toolbar.primary-toolbar .raised button:focus,
 toolbar.primary-toolbar .raised button.default,
-toolbar.primary-toolbar combobox button:focus {
+toolbar.primary-toolbar combobox button:focus,
+toolbar.inline-toolbar.horizontal button.text-button:focus,
+combobox button.combo:focus,
+combobox .linked button.combo:focus {
     border-image: url("img/border-focused.svg") 3 3 4 3 / 3px 3px 4px 3px repeat;
     border-radius: 3px;
     border-width: 1px 1px 2px 1px;
     border-style: solid;
-    border-color: transparent;
+    border-color: @button_default_border_color;
+    box-shadow: inset  0px  1px @button_default_box_shadow_color,
+                inset  1px  0px @button_default_box_shadow_color,
+                inset -1px  0px @button_default_box_shadow_color,
+                inset  0px -1px @button_default_box_shadow_color;
 }
 
 /* focused primary toolbar button borders */
