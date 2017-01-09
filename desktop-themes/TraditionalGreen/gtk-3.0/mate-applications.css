@@ -33,7 +33,13 @@
 
 /* ComboBox views */
 .caja-navigation-window toolbar.primary-toolbar combobox button.combo {
-    padding: 4px 4px;
+    padding: 5px;
+    border-image: none;
+}
+
+.caja-navigation-window toolbar.primary-toolbar combobox button.combo:hover {
+    padding: 5px;
+    box-shadow: none;
 }
 
 .caja-canvas-item {
@@ -123,6 +129,27 @@ PanelSeparator {
     text-shadow: none;
 }
 
+/* outlines */
+window.background, /* selector where outlines are writen on GtkTrayIcon */
+.mate-panel-menu-bar menubar,
+.mate-panel-menu-bar PanelApplet,
+.mate-panel-menu-bar button,
+#PanelApplet > #clock-applet-button.flat.toggle,
+#PanelApplet > #showdesktop-button,
+#PanelApplet > wnck-tasklist > button,
+PanelApplet.wnck-applet .wnck-pager {
+    outline-offset: -2px;
+    outline-style: solid;
+    outline-color: shade (@theme_selected_bg_color, 0.8);
+    outline-width: 2px;
+}
+
+.mate-panel-menu-bar button {
+    -gtk-outline-radius: 3px;
+    box-shadow: none;
+    border-image: none;
+}
+
 /* main menu */
 /* set normal menubar button */
 .mate-panel-menu-bar menubar {
@@ -184,6 +211,12 @@ PanelSeparator {
                       @button_hover_gradient_c);
 }
 
+/* use only outlines if focused */
+.mate-panel-menu-bar #PanelApplet button:focus {
+    box-shadow: none;
+    border-image: none;
+}
+
 #PanelApplet > #clock-applet-button.flat.toggle {
    background-color: transparent;
    background-image: none;
@@ -216,6 +249,11 @@ PanelSeparator {
     border-image: none;
 }
 
+/* use only outlines if focused */
+#PanelApplet > #clock-applet-button.flat.toggle:focus {
+    box-shadow: none;
+    border-image: none;
+}
 
 #clock-applet-button.flat.toggle > box.horizontal > label {
     font-weight: normal;
@@ -261,7 +299,7 @@ na-tray-applet {
     background-color: transparent;
     padding: 0;
     text-shadow: none;
-    -NaTrayApplet-icon-padding: 3;
+    -NaTrayApplet-icon-padding: 1px; /*any more and outlines get cut off*/
     -NaTrayApplet-icon-size: 16;
 }
 
@@ -499,5 +537,13 @@ GvcMixerDialog notebook.frame box scrolledwindow.frame {
     border-width: 1px;
     border-radius: 2px;
     padding: 0;
+}
+
+/***********************
+ * mate-control-center *
+ ***********************/
+
+#MyControlCenter button.flat {
+    outline-style: dashed;
 }
 
