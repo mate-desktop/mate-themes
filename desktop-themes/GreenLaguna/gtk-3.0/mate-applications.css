@@ -264,6 +264,14 @@ PanelSeparator {
     text-shadow: none;
 }
 
+/* outlines */
+window.background, /* selector where outlines are writen on GtkTrayIcon */
+.mate-panel-menu-bar menubar,
+.mate-panel-menu-bar button,
+.mate-panel-menu-bar PanelApplet {
+    outline-offset: -2px;
+}
+
 /* main menu */
 .mate-panel-menu-bar menubar > menuitem {
     text-shadow: none;
@@ -368,6 +376,7 @@ PanelSeparator {
     color: shade (@theme_selected_bg_color, 1.15);
     background-color: transparent;
     text-shadow: none;
+    outline-offset: -1px;
 }
 
 /* selected WnckPager */
@@ -395,7 +404,7 @@ PanelSeparator {
 }
 
 na-tray-applet {
-    -NaTrayApplet-icon-padding: 3px;
+    -NaTrayApplet-icon-padding: 1px; /*any more and outlines get cut off*/
     -NaTrayApplet-icon-size: 16;
 }
 
