@@ -5038,10 +5038,10 @@ dialog scrolledwindow.frame viewport .vertical expander .vertical {
 }
 
 .dialog-action-area.linked > button.text-button:focus {
-    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
-                inset  1px  0px shade(@selected_bg_color, 0.97),
-                inset -1px  0px shade(@selected_bg_color, 0.93),
-                inset  0px -1px shade(@selected_bg_color, 0.93);
+    box-shadow: inset  0px  1px shade(rgb(0,204,133), 1.00),
+                inset  1px  0px shade(rgb(0,204,133), 1.00),
+                inset -1px  0px shade(rgb(0,204,133), 1.00),
+                inset  0px -1px shade(rgb(0,204,133), 1.00);
 }
 
 .dialog-action-area.linked > button.text-button:hover {
