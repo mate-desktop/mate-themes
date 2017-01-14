@@ -1075,6 +1075,8 @@ vte-terminal {
     border-image: none;
     border-radius: 6px;
     padding: 4px;
+    outline-style: dashed;
+    outline-color: shade (@theme_selected_bg_color, 0.8);
 }
 
 /*********
