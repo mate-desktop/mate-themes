@@ -195,18 +195,12 @@ paned.horizontal > box.vertical.caja-side-pane > notebook scrolledwindow.frame {
 }
 
 /* arrow button */
-.caja-pathbar button.slider-button:focus {
-    box-shadow: inset  0px  1px alpha(shade(@button_border, 1.00), 0.70),
-                inset  1px  0px alpha(shade(@button_border, 0.94), 0.80),
-                inset -1px  0px alpha(shade(@button_border, 0.94), 0.80),
-                inset  0px -1px alpha(shade(@button_border, 0.88), 0.90);
-}
-
+.caja-pathbar button.slider-button:focus,
 .caja-pathbar button.slider-button:hover {
-    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
-                inset  1px  0px shade(@selected_bg_color, 0.97),
-                inset -1px  0px shade(@selected_bg_color, 0.93),
-                inset  0px -1px shade(@selected_bg_color, 0.93);
+    box-shadow: inset  0px  1px shade(rgb(0,204,133), 1.00),
+                inset  1px  0px shade(rgb(0,204,133), 1.00),
+                inset -1px  0px shade(rgb(0,204,133), 1.00),
+                inset  0px -1px shade(rgb(0,204,133), 1.00);
 }
 
 .caja-pathbar button.slider-button:nth-child(odd) {
@@ -222,12 +216,14 @@ paned.horizontal > box.vertical.caja-side-pane > notebook scrolledwindow.frame {
 }
 
 /* folder buttons */
+.caja-pathbar button.toggle.text-button:focus,
+.caja-pathbar button.toggle.text-button.image-button:focus,
 .caja-pathbar button.toggle.text-button:hover,
 .caja-pathbar button.toggle.text-button.image-button:hover {
-    box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
-                inset  1px  0px alpha(shade(@button_border, 0.94), 0.80),
-                inset -1px  0px alpha(shade(@button_border, 0.94), 0.80),
-                inset  0px -1px shade(@selected_bg_color, 0.93);
+    box-shadow: inset  0px  1px shade(rgb(0,204,133), 1.00),
+                inset  1px  0px shade(rgb(0,204,133), 1.00),
+                inset -1px  0px shade(rgb(0,204,133), 1.00),
+                inset  0px -1px shade(rgb(0,204,133), 1.00);
 }
 
 .caja-pathbar button.toggle.text-button,
@@ -1075,6 +1071,14 @@ vte-terminal {
     border-image: none;
     border-radius: 6px;
     padding: 4px;
+    outline-style: solid;
+    outline-color: shade(@theme_selected_bg_color, 0.93);
+    -gtk-outline-radius: 5px;
+    outline-offset: -2px;
+}
+
+#MyControlCenter button.flat:focus {
+    box-shadow: none;
 }
 
 /*********
@@ -1231,8 +1235,7 @@ GvcMixerDialog notebook.frame box.vertical box.horizontal box.horizontal frame b
     caret-color: shade (@theme_text_dark_color, 1.0);
 }
 
-.lock-dialog button,
-.lock-dialog button:focus {
+.lock-dialog button {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (shade(@bg_dark_color, 2.03)),
@@ -1243,7 +1246,8 @@ GvcMixerDialog notebook.frame box.vertical box.horizontal box.horizontal frame b
 
 .lock-dialog button:hover,
 .lock-dialog button.default,
-.lock-dialog button:hover:active {
+.lock-dialog button:hover:active,
+.lock-dialog button:focus {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (shade(@bg_dark_color, 2.03)),
