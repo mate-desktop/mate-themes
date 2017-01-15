@@ -24,6 +24,12 @@
 	                                  shade(@less_dark_color, 1.3),
 	                                  shade(@less_dark_color, 0.4));
 }
+/*don't overrride focus borders*/
+.caja-navigation-window paned>box>box>button:focus,
+.caja-navigation-window paned>box>box>button.flat:focus {
+	border-image: url("assets/button-default-border-dark.svg") 3 / 3px stretch;
+	outline-width: 0px; /*works here but NOT in the general case */
+}
 
 .caja-navigation-window paned>box>box>button:hover {
 	background-image: -gtk-gradient (radial,
@@ -648,13 +654,8 @@ pluma-print-preview.vertical toolbar.horizontal button.flat.text-button {
     background-color: @less_dark_color;
 }
 
-#MyControlCenter.background frame scrolledwindow button.flat {
+#MyControlCenter.background frame scrolledwindow button.flat:not(:hover):not(:focus) {
     border-image: none;
-}
-
-/* button hover of applications */
-#MyControlCenter.background frame scrolledwindow button.flat:hover {
-    border-radius: 8px;
 }
 
 /*******
