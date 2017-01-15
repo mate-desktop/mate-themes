@@ -1474,6 +1474,11 @@ button:focus{
 	outline-width: 0px;
 }
 
+/*Borders don't always work here*/
+button.flat:focus{
+	outline-width: 2px;
+}
+
 button.flat:hover {
     border-radius: 3px;
 }
