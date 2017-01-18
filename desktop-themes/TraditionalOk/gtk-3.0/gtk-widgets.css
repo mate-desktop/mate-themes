@@ -1105,6 +1105,28 @@ button separator {
     padding: 4px;
 }
 
+/* Single button */
+.linked entry:only-child,
+.linked button:only-child,
+.linked button:hover:only-child,
+.linked button:focus:only-child,
+.linked button:focus:hover:only-child,
+.linked button:focus:hover:active:only-child,
+.linked button:checked:only-child,
+.linked button:checked:hover:only-child,
+.linked button:checked:hover:active:only-child,
+.linked button:disabled:only-child {
+    border-image: none;
+    border-radius: 3px;
+    border-color: @border_color;
+    border-width: 1px;
+    padding: 4px 3px;
+}
+
+.linked entry:only-child {
+    padding: 4px;
+}
+
 /* vertical */
 
 /* Middle button */
@@ -1229,7 +1251,20 @@ button separator {
                 inset  0px -1px @button_default_box_shadow_color;
 }
 
-/* single button */
+/* Single button */
+.dialog-action-area.linked button:only-child,
+.dialog-action-area.linked button:hover:only-child,
+.dialog-action-area.linked button:focus:only-child,
+.dialog-action-area.linked button:focus:hover:only-child,
+.dialog-action-area.linked button:focus:hover:active:only-child,
+.dialog-action-area.linked button:checked:only-child,
+.dialog-action-area.linked button:checked:hover:only-child,
+.dialog-action-area.linked button:checked:hover:active:only-child,
+.dialog-action-area.linked button:disabled:only-child {
+    padding: 4px 6px;
+    border-width: 1px;
+}
+
 .dialog-action-area.linked button.default:only-child,
 .dialog-action-area.linked button:focus:only-child {
     border-color: @button_default_border_color;
