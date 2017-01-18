@@ -5023,6 +5023,7 @@ dialog scrolledwindow.frame viewport .vertical expander .vertical {
 .dialog-action-area.linked > button.text-button:disabled:last-child {
     border-width: 1px;
     border-image-width: 1px;
+    border-radius: 6px;
 }
 
 .dialog-action-area.linked > button.text-button {
