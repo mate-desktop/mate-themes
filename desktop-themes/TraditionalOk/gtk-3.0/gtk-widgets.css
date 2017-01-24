@@ -1722,10 +1722,16 @@ notebook header.top {
     border-radius: 3px 3px 0px 0px;
     background-image: linear-gradient(to bottom,
                       shade(@notebook_tab_gradient_a, 1.05),
-                      shade(@notebook_tab_gradient_b, 1.05) 50%,
-                      shade(@notebook_tab_gradient_c, 1.05) 50%,
+                      shade(@notebook_tab_gradient_b, 1.04) 50%,
+                      shade(@notebook_tab_gradient_c, 1.06) 50%,
                       shade(@notebook_tab_gradient_d, 1.05));
     box-shadow: inset  0px -1px 0 0 @border_color;
+}
+
+paned.horizontal notebook header.top {
+    border-width: 0px 0px 0px 1px;
+    border-style: solid;
+    border-color: @border_color;
 }
 
 printdialog > box.view.vertical.dialog-vbox > box.vertical > notebook > header.top {
@@ -1736,8 +1742,8 @@ notebook header.bottom {
     border-width: 1px 1px 0px 0px;
     background-image: linear-gradient(to top,
                       shade(@notebook_tab_gradient_a, 1.05),
-                      shade(@notebook_tab_gradient_b, 1.05) 50%,
-                      shade(@notebook_tab_gradient_c, 1.05) 50%,
+                      shade(@notebook_tab_gradient_b, 1.04) 50%,
+                      shade(@notebook_tab_gradient_c, 1.06) 50%,
                       shade(@notebook_tab_gradient_d, 1.05));
     box-shadow: inset  0px  1px 0 0 @border_color;
 }
@@ -1746,8 +1752,8 @@ notebook header.left {
     border-width: 0px 1px 0px 0px;
     background-image: linear-gradient(to right,
                       shade(@notebook_tab_gradient_a, 1.05),
-                      shade(@notebook_tab_gradient_b, 1.05) 50%,
-                      shade(@notebook_tab_gradient_c, 1.05) 50%,
+                      shade(@notebook_tab_gradient_b, 1.04) 50%,
+                      shade(@notebook_tab_gradient_c, 1.06) 50%,
                       shade(@notebook_tab_gradient_d, 1.05));
     box-shadow: inset -1px  0px 0 0 @border_color;
 }
@@ -1756,8 +1762,8 @@ notebook header.right {
     border-width: 0px 0px 0px 1px;
     background-image: linear-gradient(to left,
                       shade(@notebook_tab_gradient_a, 1.05),
-                      shade(@notebook_tab_gradient_b, 1.05) 50%,
-                      shade(@notebook_tab_gradient_c, 1.05) 50%,
+                      shade(@notebook_tab_gradient_b, 1.04) 50%,
+                      shade(@notebook_tab_gradient_c, 1.06) 50%,
                       shade(@notebook_tab_gradient_d, 1.05));
     box-shadow: inset  1px  0px 0 0 @border_color;
 }
@@ -1765,12 +1771,12 @@ notebook header.right {
 /* tabs in view areas, ie. pluma-, caja-tabs */
 paned.horizontal notebook header.top tab {
     padding: 4px 2px 4px 2px;
-    border-width: 0px 1px 1px 1px;
+    border-width: 1px 1px 0px 1px;
 }
 
 paned.horizontal notebook header.top tab:checked {
     padding: 4px 2px 4px 2px;
-    border-width: 0px 1px 0px 1px;
+    border-width: 1px 1px 0px 1px;
 }
 
 notebook header tab {
@@ -1782,95 +1788,69 @@ notebook header tab {
 
 notebook header.top tab {
     margin: 0px 0px 0px -1px;
-	padding: 4px 2px 0 2px;
+	padding: 6px;
     border-width: 0px 1px 1px 1px;
     border-radius: 3px 3px 0px 0px;
     background-image: linear-gradient(to bottom,
                       @notebook_tab_gradient_a,
-                      @notebook_tab_gradient_b 50%,
-                      @notebook_tab_gradient_c 50%,
                       @notebook_tab_gradient_d);
 }
 
 notebook header.top tab:checked {
-    border-top-color: @notebook_active_tab_border;
     border-width: 0px 1px 0px 1px;
     background-image: linear-gradient(to bottom,
-                      @notebook_active_tab_strip_gradient_a,
-                      @notebook_active_tab_strip_gradient_b 3px,
-                      @notebook_active_tab_strip_border_bottom_color 4px,
-                      @notebook_active_tab_gradient_a 4px,
+                      @notebook_active_tab_gradient_a,
                       @notebook_active_tab_gradient_b);
 }
 
 notebook header.right tab {
     margin: -1px 0px 0px 0px;
-    padding: 2px 4px 2px 1px;
+    padding: 6px;
     border-width: 1px 0px 1px 1px;
     border-radius: 0px 3px 3px 0px;
     background-image: linear-gradient(to left,
                       @notebook_tab_gradient_a,
-                      @notebook_tab_gradient_b 50%,
-                      @notebook_tab_gradient_c 50%,
                       @notebook_tab_gradient_d);
 }
 
 notebook header.right tab:checked {
-    padding: 2px 4px 2px 2px;
     border-width: 1px 0px 1px 0px;
-    border-right-color: @notebook_active_tab_border;
     background-image: linear-gradient(to left,
-                      @notebook_active_tab_strip_gradient_a,
-                      @notebook_active_tab_strip_gradient_b 3px,
-                      @notebook_active_tab_strip_border_bottom_color 4px,
-                      @notebook_active_tab_gradient_a 4px,
+                      @notebook_active_tab_gradient_a,
                       @notebook_active_tab_gradient_b);
 }
 
 notebook header.bottom tab {
     margin: 0px 0px 0px -1px;
-    padding: 0px 2px 4px 2px;
+    padding: 6px;
     border-width: 1px 1px 0px 1px;
     border-radius: 0px 0px 3px 3px;
     background-image: linear-gradient(to top,
                       @notebook_tab_gradient_a,
-                      @notebook_tab_gradient_b 50%,
-                      @notebook_tab_gradient_c 50%,
                       @notebook_tab_gradient_d);
 }
 
 notebook header.bottom tab:checked {
-    padding: 1px 2px 4px 2px;
     border-width: 0px 1px 0px 1px;
-    border-bottom-color: @notebook_active_tab_border;
     background-image: linear-gradient(to top,
-                      @notebook_active_tab_strip_gradient_a,
-                      @notebook_active_tab_strip_gradient_b 3px,
-                      @notebook_active_tab_strip_border_bottom_color 4px,
-                      @notebook_active_tab_gradient_a 4px,
+                      @notebook_active_tab_gradient_a,
                       @notebook_active_tab_gradient_b);
 }
 
 notebook header.left tab {
     margin: -1px 0px 0px 0px;
-    padding: 2px 1px 2px 4px;
+    padding: 6px;
     border-width: 1px 1px 1px 0px;
     border-radius: 3px 0px 0px 3px;
     background-image: linear-gradient(to right,
                       @notebook_tab_gradient_a,
-                      @notebook_tab_gradient_b 50%,
-                      @notebook_tab_gradient_c 50%,
                       @notebook_tab_gradient_d);
 }
 
 notebook header.left tab:checked {
     border-width: 1px 0px 1px 0px;
-    border-left-color: @notebook_active_tab_border;
     background-image: linear-gradient(to right,
-                      @notebook_active_tab_strip_gradient_a,
-                      @notebook_active_tab_strip_gradient_b 3px,
-                      @notebook_active_tab_strip_border_bottom_color 4px,
-                      @notebook_active_tab_gradient_a 4px,
+                      @notebook_active_tab_gradient_a,
                       @notebook_active_tab_gradient_b);
 }
 
@@ -1896,15 +1876,15 @@ notebook header.bottom tab:checked {
 notebook header.left tab:checked {
     -gtk-outline-top-left-radius: 4px;
     -gtk-outline-top-right-radius: 0px;
-    -gtk-outline-bottom-left-radius: 0px;
-    -gtk-outline-bottom-right-radius: 4px;
+    -gtk-outline-bottom-left-radius: 4px;
+    -gtk-outline-bottom-right-radius: 0px;
 }
 
 notebook header.right tab:checked {
     -gtk-outline-top-left-radius: 0px;
     -gtk-outline-top-right-radius: 4px;
-    -gtk-outline-bottom-left-radius: 4px;
-    -gtk-outline-bottom-right-radius: 0px;
+    -gtk-outline-bottom-left-radius: 0px;
+    -gtk-outline-bottom-right-radius: 4px;
 }
 
 /* close button styling */
