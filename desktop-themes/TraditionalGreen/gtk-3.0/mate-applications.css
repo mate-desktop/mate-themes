@@ -308,7 +308,7 @@ na-tray-applet {
     background: transparent;
 }
 
-.mate-panel-applet-slider .frame {
+.mate-panel-applet-slider frame {
     background-color: @theme_bg_color;
     border-image: none;
     border-style: solid;
@@ -317,13 +317,13 @@ na-tray-applet {
     margin: 0px;
 }
 
-.mate-panel-applet-slider .frame .frame{
+.mate-panel-applet-slider frame frame{
     background-color:transparent;
     border-style: none;
     box-shadow: none;
 }
 
-.mate-panel-applet-slider .frame .button {
+.mate-panel-applet-slider frame button {
     color: @theme_fg_color;
 }
 
