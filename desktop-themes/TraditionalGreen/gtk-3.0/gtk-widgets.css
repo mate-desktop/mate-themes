@@ -3319,7 +3319,7 @@ progressbar .osd {
  * GtkAssistant *
  ****************/
 
-assistant .sidebar highlight {
+assistant .sidebar .highlight {
     color: @theme_fg_color;
     font-weight: bold;
 }
@@ -3331,8 +3331,7 @@ assistant .sidebar {
     border-style: solid;
     border-color: @gtkassistant_sidebar_border_color;
     color: mix (@theme_fg_color, @theme_bg_color, 0.40);
-    background-color: shade (@theme_bg_color, 0.97);
-    /* shall we make it like sidebars in general? */
+    background-color: @sidebar_bg_color;
 }
 
 /*************
@@ -3706,7 +3705,6 @@ calendar:indeterminate {
     color: alpha(@theme_fg_color, 0.4);
 }
 
-highlight,
 calendar.highlight {
     background-color: @theme_selected_bg_color;
     color: @theme_selected_fg_color;
