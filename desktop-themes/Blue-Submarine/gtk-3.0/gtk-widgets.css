@@ -3967,19 +3967,20 @@ radiobutton.text-button {
  * GtkAssistant *
  ****************/
 
-assistant .sidebar highlight {
-    color: @theme_text_color;
-    font-weight: bold;
-}
-
 assistant .sidebar {
     padding: 5px;
-    background-color: shade (@theme_bg_color, 0.97);
+    background-color: @sidebar_background;
     border-width: 0px 1px 0px 0px;
     border-radius: 0px;
     border-style: solid;
     border-right-color: @inactive_frame_color;
     color: mix (@theme_fg_color, @theme_bg_color, 0.40);
+}
+
+assistant .sidebar highlight,
+assistant .sidebar label.highlight { /* ie. caja-actions import dialog */
+    color: @theme_text_color;
+    font-weight: bold;
 }
 
 /**********
@@ -4122,6 +4123,11 @@ viewport.frame {
     border-width: 0px;
     border-style: none;
     padding: 0px;
+}
+
+/* ie. export-assistant caja-actions */
+viewport.frame {
+    background-color: shade(@theme_base_color, 1.00);
 }
 
 GdMainIconView.content-view {
