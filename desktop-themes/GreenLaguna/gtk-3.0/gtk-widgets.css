@@ -3585,7 +3585,7 @@ messagedialog.csd decoration {
  * GtkAssistant *
  ****************/
 
-assistant .sidebar highlight {
+assistant .sidebar .highlight {
     color: @theme_text_color;
     background-color: shade(@theme_bg_color, 0.9);
     border-style: none;
@@ -3605,7 +3605,7 @@ assistant .sidebar {
     border-width: 1px;
     border-radius: 3px;
     color: mix (@theme_fg_color, @theme_bg_color, 0.40);
-    background-color: shade(@theme_bg_color, 0.9);
+    background-color: shade(@theme_bg_color, 1.02);
 }
 
 /*************
