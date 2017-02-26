@@ -3776,21 +3776,16 @@ entry.error:focus,
 }
 
 infobar,
-infobar:first-child,
-infobar:only-child {
+.info,
+.warning,
+.question,
+.error {
     border-width: 1px;
     border-style: solid;
 }
 
-infobar:last-child,
-.info:last-child,
-.warning:last-child,
-.question:last-child,
-.error:last-child {
-    /* only apply a border on the last infobar if
-     * there's more than one packed in */
-    border-bottom-width: 1px;
-    border-style: solid;
+infobar {
+    border-color: shade(@border_color, 0.9);
 }
 
 .info,
