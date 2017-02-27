@@ -216,6 +216,15 @@ PanelApplet.wnck-applet .wnck-pager {
     border-image: none;
 }
 
+/* 1.18 changings for gtk+-3.22 warning fixes*/
+.mate-panel-menu-bar #PanelApplet #drive-button,
+.mate-panel-menu-bar #PanelApplet #drive-button:hover,
+.mate-panel-menu-bar #PanelApplet #charpick-applet-button,
+.mate-panel-menu-bar #PanelApplet #showdesktop-button:checked {
+    border-image: url("img/border.svg") 3 3 4 3 / 3px 3px 4px 3px repeat;
+    border-width: 0px;
+}
+
 #PanelApplet > #clock-applet-button.flat.toggle {
    background-color: transparent;
    background-image: none;
