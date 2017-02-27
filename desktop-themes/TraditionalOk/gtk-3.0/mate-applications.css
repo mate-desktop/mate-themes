@@ -518,7 +518,15 @@ window.background.mate-terminal > box.vertical > notebook {
 }
 
 /* override settings for pavu-control */
-window.background.mate-terminal > box.vertical > notebook > header.top tab,
+window.background.mate-terminal > box.vertical > notebook > header.top tab {
+    border-radius: 3px 3px 0px 0px;
+    padding: 4px 2px 4px 6px;
+    margin: 0px 0px 0px -1px;
+    border-style: solid;
+    border-color: @border_color;
+    border-width: 1px;
+}
+
 window.background.mate-terminal > box.vertical > notebook > header.top tab:checked,
 window.background.mate-terminal > box.vertical > notebook > header.top tab:checked:hover {
     border-radius: 3px 3px 0px 0px;
@@ -526,6 +534,7 @@ window.background.mate-terminal > box.vertical > notebook > header.top tab:check
     margin: 0px 0px 0px -1px;
     border-style: solid;
     border-color: @border_color;
+    border-top-color: @notebook_active_tab_border;
     border-width: 1px;
 }
 
