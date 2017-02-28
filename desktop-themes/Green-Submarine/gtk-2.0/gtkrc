@@ -9,14 +9,16 @@
 
 # NOTE: Uncommenting means to delete the "#" at the beginning of a line. Commenting means to add a "#" at the beginning of a line. The "#" tells the theme wether to ignore the specified line or not.
 
-# These are the defined colors for the theme, you can change them in GNOME's appearance preferences.
-gtk_color_scheme = "bg_color:#CBD9D4\nselected_bg_color:#72B49D\nbase_color:#FFF" # Background, base.
-gtk_color_scheme = "fg_color:#101010\nselected_fg_color:#FFF\ntext_color:#1A1A1A" # Foreground, text.
-gtk_color_scheme = "tooltip_bg_color:#DBFFF3\ntooltip_fg_color:#000000" # Tooltips.
-gtk_color_scheme = "link_color:#00CC85" # Hyperlinks
-gtk_color_scheme = "menu_color:#1F2724" # Color for menus.
-gtk_color_scheme = "bg_color_dark:#1F2724\nfg_color_dark:#cccccc\ntext_color_dark:#E6E6E6" # Dark colors
-gtk-color-scheme = "sidebar_background:#D2DFDA"
+# These are the defined colors for the theme, you can change them in MATE's appearance preferences.
+gtk-color-scheme = "base_color:#FFF\nfg_color:#101010\ntooltip_fg_color:#000000\nselected_bg_color:#72B49D\nselected_fg_color:#FFF\ntext_color:#1A1A1A\nbg_color:#CBD9D4\ntooltip_bg_color:#DBFFF3\nlink_color:#00CC85\nmenu_color:#1F2724\nbg_color_dark:#1F2724\nfg_color_dark:#cccccc\ntext_color_dark:#E6E6E6\nsidebar_background:#D2DFDA"
+
+#gtk_color_scheme = "bg_color:#CBD9D4\nselected_bg_color:#72B49D\nbase_color:#FFF" # Background, base.
+#gtk_color_scheme = "fg_color:#101010\nselected_fg_color:#FFF\ntext_color:#1A1A1A" # Foreground, text.
+#gtk_color_scheme = "tooltip_bg_color:#DBFFF3\ntooltip_fg_color:#000000" # Tooltips.
+#gtk_color_scheme = "link_color:#00CC85" # Hyperlinks
+#gtk_color_scheme = "menu_color:#1F2724" # Color for menus.
+#gtk_color_scheme = "bg_color_dark:#1F2724\nfg_color_dark:#cccccc\ntext_color_dark:#E6E6E6" # Dark colors
+#gtk-color-scheme = "sidebar_background:#D2DFDA"
 
 ### MISC ###
 gtk-icon-sizes		= "gtk-button=16,16" # This makes button icons smaller.
