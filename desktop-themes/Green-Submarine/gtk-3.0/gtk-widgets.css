@@ -2773,7 +2773,7 @@ toolbar.primary-toolbar button:checked:disabled {
 }
 
 toolbar label {
-    color: shade(@theme_fg_color, 1.10);
+    color: shade(@toolbar_fg_color, 1.00);
     text-shadow: none;
 }
 
