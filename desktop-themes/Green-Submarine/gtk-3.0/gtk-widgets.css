@@ -36,7 +36,7 @@ window {
     color: @theme_fg_color;
 }
 
-.background:not(widget) {
+.background:not(widget):not(.rubberband) {
     color: @theme_fg_color;
     background-color: @theme_bg_color;
 }
