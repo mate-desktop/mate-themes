@@ -31,6 +31,16 @@ a:visited[class="symlink"] {
 }
 /*------------- end -------------*/
 
+Also, create '~/.mozilla/firefox/<YOUR_PROFILE>/chrome/userChrome.css' and paste these lines in it:
+
+/*------------ start ------------*/
+
+.autocomplete-richlistbox richlistitem .ac-url,
+.autocomplete-richlistbox richlistitem .ac-separator {
+	color: #2EB8E6 !important;
+}
+/*------------- end -------------*/
+
 Seamonkey
 ==========
 Do the same thing for Seamonkey. The difference is just your profile folder, which is inside '~/.mozilla/seamonkey/'.
