@@ -20,7 +20,9 @@ input, textarea, select {
 
 a[class="file"],
 a[class="dir"],
-a[class="symlink"] {
+a[class="symlink"],
+.autocomplete-richlistbox richlistitem .ac-url,
+.autocomplete-richlistbox richlistitem .ac-separator {
 	color: #2EB8E6 !important;
 }
 
