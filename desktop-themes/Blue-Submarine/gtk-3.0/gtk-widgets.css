@@ -36,7 +36,7 @@ window {
     color: @theme_fg_color;
 }
 
-.background:not(widget):not(.rubberband) {
+.background {
     color: @theme_fg_color;
     background-color: @theme_bg_color;
 }
@@ -45,13 +45,6 @@ window {
     text-shadow: none;
     -gtk-icon-shadow: none;
 }
-
-/* Ugly hack to fix unexpected background colours (e.g. combo box arrow)
- * we should just set it above, but that loses our background on fullscreen)
- */
-/* * {
- background-color: transparent;
-}*/
 
 *:active {
 /*    background-color: alpha(shade(@theme_selected_bg_color, 1.90), 0.015);*/
