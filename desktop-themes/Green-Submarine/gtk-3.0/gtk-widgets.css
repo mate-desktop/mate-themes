@@ -48,7 +48,6 @@ window {
 
 *:active {
 /*    background-color: alpha(shade(@theme_selected_bg_color, 1.90), 0.015);*/
-
 }
 
 *:hover:active:disabled {
@@ -244,10 +243,6 @@ statusbar {
     margin: -2px 0 -2px 0;
     color: @theme_fg_color;
     font-size: smaller;
-}
-
-statusbar frame {
-    border-style: none;
 }
 
 .dnd {
@@ -901,26 +896,20 @@ scale.vertical.color.marks-after.fine-tune slider {
  * Frames *
  **********/
 
-frame {
-    padding: 2px;
+.frame,
+frame > border { /* firefox location entry */
+    padding: 0px;
     border-width: 1px;
     border-radius: 4px;
     border-style: solid;
-    border-color: shade (@theme_bg_color, 0.85);
-    border-top-color:    shade(@notebook_border, 1.25);
-    border-left-color:   shade(@notebook_border, 1.25);
-    border-right-color:  shade(@notebook_border, 1.25);
-    border-bottom-color: shade(@notebook_border, 1.25);
+    border-color:  shade (@theme_bg_color, 0.85);
     color: mix(@theme_selected_bg_color, @theme_fg_color, 0.70);
 }
 
-/* only render frames in a GtkScrolledWindow */
-scrolledwindow.frame {
-    border-width:  1px;
-    border-radius: 0;
-    border-style:  solid;
-    border-color:  shade (@theme_bg_color, 0.85);
-    padding: 0px;
+.frame.flat,
+frame > border.flat,
+overlay > frame > border {
+    border-style: none;
 }
 
 /***********
@@ -3464,11 +3453,6 @@ notebook.frame {
     border-radius: 4px 4px 0px 0px;
 }
 
-notebook.frame frame {
-     border-style: none;
-     border-width: 0px;
-}
-
 /* pavu-control */
 window.background > box.vertical > notebook:not(.frame),
 window.background.csd > box.vertical > notebook:not(.frame),
@@ -4919,20 +4903,9 @@ messagedialog {
     padding: 0;
 }
 
-/* ie. mate-keyboard-properties option window or pluma preferences */
-dialog notebook.frame box.vertical > box.vertical > scrolledwindow.frame,
-dialog notebook.frame box.vertical > box.vertical > box.horizontal box.vertical > scrolledwindow.frame {
-    border-color: @notebook_border;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 2px;
-}
-
 /* ie. caja properties-window notes tab */
-dialog notebook.frame scrolledwindow.frame {
+dialog notebook.frame > stack > scrolledwindow.frame {
     border-style: none;
-    border-width: 0px;
-    border-radius: 0px;
 }
 
 /* credits in GtkAbout windows */
@@ -6621,10 +6594,16 @@ undershoot.right {
  * GtkStack *
  ************/
 
-stack .horizontal .vertical frame {
+stack > .horizontal > .vertical > frame > border {
     background-color: shade (@theme_bg_color, 1.1);
-    border-width: 1px;
-    border-color: @notebook_border;
+    border-radius: 4px;
+}
+
+stacksidebar.sidebar,
+stacksidebar.sidebar > scrolledwindow,
+stacksidebar.sidebar > scrolledwindow > viewport.frame,
+stacksidebar.sidebar > scrolledwindow > viewport.frame list {
+    border-radius: 4px 0px 0px 4px;
 }
 
 stacksidebar.sidebar list row.activatable:hover {
