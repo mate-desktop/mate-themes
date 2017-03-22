@@ -3462,6 +3462,24 @@ window.background.solid-csd > box.vertical > notebook:not(.frame) {
     border-radius: 4px 4px 0px 0px;
 }
 
+window.background > box.vertical > notebook:not(.frame) > stack > box,
+window.background.csd > box.vertical > notebook:not(.frame) > stack > box,
+window.background.ssd > box.vertical > notebook:not(.frame) > stack > box,
+window.background.solid-csd > box.vertical > notebook:not(.frame) > stack > box {
+    border-style: solid;
+    border-width: 0px 1px 1px 1px;
+    border-color: @notebook_border;
+}
+
+window.background > box.vertical > notebook:not(.frame) > header.top,
+window.background.csd > box.vertical > notebook:not(.frame) > header.top,
+window.background.ssd > box.vertical > notebook:not(.frame) > header.top,
+window.background.solid-csd > box.vertical > notebook:not(.frame) > header.top {
+    border-style: solid;
+    border-width: 1px 1px 0px 1px;
+    border-color: @notebook_border;
+}
+
 printdialog > box.view.vertical.dialog-vbox > box.vertical > notebook {
     background-color: shade (@theme_bg_color, 1.1);
     border-radius: 0px 0px 4px 4px;
@@ -3603,7 +3621,7 @@ paned.horizontal > paned.vertical notebook > header button.flat {
     padding: 1px;
 }
 
-/* other notebooks */
+/* closable-page */
 paned.horizontal > notebook {
     border-width: 1px 1px 1px 1px;
     border-style: solid;
@@ -3624,6 +3642,10 @@ paned.horizontal > notebook > header label {
 
 paned.horizontal > notebook > header button.flat.small-button {
     padding: 1px;
+}
+
+paned.horizontal > notebook > stack > box {
+    background-color: shade (@theme_bg_color, 1.1);
 }
 
 /* tabs in dialog windows */
