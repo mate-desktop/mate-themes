@@ -1971,6 +1971,24 @@ window.background.solid-csd > box.vertical > notebook:not(.frame) {
     border-radius: 4px 4px 0px 0px;
 }
 
+window.background > box.vertical > notebook:not(.frame) > stack > box,
+window.background.csd > box.vertical > notebook:not(.frame) > stack > box,
+window.background.ssd > box.vertical > notebook:not(.frame) > stack > box,
+window.background.solid-csd > box.vertical > notebook:not(.frame) > stack > box {
+    border-style: solid;
+    border-width: 0px 1px 1px 1px;
+    border-color: @borders;
+}
+
+window.background > box.vertical > notebook:not(.frame) > header.top,
+window.background.csd > box.vertical > notebook:not(.frame) > header.top,
+window.background.ssd > box.vertical > notebook:not(.frame) > header.top,
+window.background.solid-csd > box.vertical > notebook:not(.frame) > header.top {
+    border-style: solid;
+    border-width: 1px 1px 0px 1px;
+    border-color: @borders;
+}
+
 printdialog > box.view.vertical.dialog-vbox > box.vertical > notebook {
     background-color: shade (@theme_bg_color, 1.1);
     border-radius: 0px;
@@ -2077,7 +2095,6 @@ paned.horizontal notebook header.top {
     border-style: solid;
     border-color: @borders;
     border-width: 1px 1px 0px 1px;
-    box-shadow: none;
 }
 
 paned.horizontal notebook header.top tab {
@@ -2087,6 +2104,18 @@ paned.horizontal notebook header.top tab {
     border-width: 0px 1px 0px 1px;
     border-color: @borders;
     border-radius: 4px 4px 0px 0px;
+}
+
+/* closable-page */
+paned.horizontal > notebook > header > tabs > tab > label {
+    min-height: 20px;
+}
+
+paned.horizontal > notebook > stack > box {
+    background-color: shade (@theme_bg_color, 1.1);
+    border-style: solid;
+    border-color: @borders;
+    border-width: 0px 1px 1px 1px;
 }
 
 /* tabs ie. preferences windows */
@@ -2238,6 +2267,10 @@ notebook tab.reorderable-page:hover {
     border-radius: 0;
     box-shadow: inset 1px 0 alpha(@borders, 0.6), inset -1px 0 alpha(@borders, 0.6);
     border-style: none;
+}
+
+notebook.frame > header.top > button.circular.flat.image-button.popup.toggle {
+    padding: 0px;
 }
 
  /* ie. caja properties-window notes tab */
@@ -3629,8 +3662,8 @@ notebook toolbar.inline-toolbar.horizontal toolitem button.text-button {
  ***********/
 
 treeview.view.sidebar, /*shotwell */
-.sidebar.view,
-placessidebar.view,
+.sidebar .view,
+placessidebar .view,
 .sidebar {
     -gtk-icon-style: regular;
 	background-color: @sidebar_bg;
