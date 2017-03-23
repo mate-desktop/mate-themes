@@ -205,6 +205,9 @@ statusbar frame {
 
 statusbar frame {
 	padding: 1px;
+}
+
+statusbar frame border {
     border-style: none;
 }
 
@@ -1156,38 +1159,31 @@ scale.horizontal.fine-tune slider:hover:active {
  * Frames *
  **********/
 
-frame,
-.frame {
+.frame,
+frame > border,  /* firefox location entry */
+filechooser stack > box > scrolledwindow {
 	border-width: 1px;
 	border-color: @borders;
 	border-style: solid;
 	padding: 0;
 }
 
-frame > border,
+.frame.flat,
 frame > border.flat,
-.frame.flat {
-	border-style: none; 
+overlay > frame > border {
+    border-style: none;
 }
 
 scrolledwindow.frame {
     -gtk-icon-style: regular;
-	border-style: solid;
-	border-color: @borders;
-	border-width: 1px;
 	border-radius: 2px;
-	padding: 0;
 }
 
 /* avoid double borders when a viewport is 
  * packed into a GtkScrolledWindow, + avoid double borders in general */
-scrolledwindow viewport.frame,
-frame box stack scrolledwindow {
+scrolledwindow > viewport.frame,
+frame > box > stack > scrolledwindow {
 	border-style: none;
-}
-
-frame box.vertical scrolledwindow.frame {
-    border-width: 1px 0px 1px 0px;
 }
 
 /***********
@@ -2079,12 +2075,8 @@ paned.horizontal notebook header.top {
     border-radius: 4px 4px 0px 0px;
     border-style: solid;
     border-color: @borders;
-    border-width: 1px 1px 1px 1px;
+    border-width: 1px 1px 0px 1px;
     box-shadow: none;
-}
-
-paned.horizontal notebook scrolledwindow.frame {
-    border-width: 0px 1px 1px 1px;
 }
 
 paned.horizontal notebook header.top tab {
@@ -2245,6 +2237,11 @@ notebook tab.reorderable-page:hover {
     border-radius: 0;
     box-shadow: inset 1px 0 alpha(@borders, 0.6), inset -1px 0 alpha(@borders, 0.6);
     border-style: none;
+}
+
+ /* ie. caja properties-window notes tab */
+dialog notebook.frame > stack > scrolledwindow.frame {
+     border-style: none;
 }
 
 /* outlines */
@@ -2590,11 +2587,11 @@ scrollbar.horizontal {
 }
 
 scrollbar trough,
-scrollbar trough.vertical,
+scrollbar.vertical trough,
 .sidebar scrollbar trough,
-.sidebar scrollbar trough.vertical,
-placessidebar scrollbar.trough,
-placessidebar scrollbar.trough.vertical {
+.sidebar scrollbar.vertical trough,
+placessidebar scrollbar trough,
+placessidebar scrollbar.vertical trough {
     min-width: 13px;
 	background-image: linear-gradient(to right,
 		@scrollbar_trough,
@@ -2606,9 +2603,9 @@ placessidebar scrollbar.trough.vertical {
 	border-image: none;
 }
 
-scrollbar trough.horizontal,
-.sidebar scrollbar trough.horizontal,
-placessidebar scrollbar trough.horizontal {
+scrollbar.horizontal trough,
+.sidebar scrollbar.horizontal trough,
+placessidebar scrollbar.horizontal trough {
     min-width: 13px;
 	background-image: linear-gradient(to bottom,
 		@scrollbar_trough,
@@ -2799,13 +2796,12 @@ scrollbar.fine-tune .slider:hover:active {
 }
 
  /* the small square between scrollbars!!! */
-scrolledwindow junction {
+scrolledwindow junction,
+scrolledwindow.frame junction {
 	background-image: none;
-	background-color: @theme_bg_color;
-	border-width: 0;
+	background-color: inherit;
+	border-style: none;
 	border-radius: 0;
-	border-image: none;
-	box-shadow: none;
 }
 
 /* junction does not work here */
@@ -3346,14 +3342,6 @@ messagedialog,
 	padding: 0;
 }
 
-/* ie. mate-keyboard-properties option window */
-dialog scrolledwindow {
-    border-color: @borders;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 2px;
-}
-
 /* credits in GtkAbout windows */
 dialog .dialog-vbox scrolledwindow.frame > viewport.view.frame {
     background-color: shade (@theme_bg_color, 1.14);
@@ -3507,6 +3495,31 @@ dialog.background.solid-csd notebook scrolledwindow.frame treeview.view header b
 	box-shadow: none;
 }
 
+/* print dialog */
+printdialog.background > box.view.vertical.dialog-vbox {
+    background-color: shade (@theme_bg_color, 1.0);
+}
+
+printdialog.background paper {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0px;
+    border-color: @borders;
+    background-color: @theme_base_color;
+}
+
+/* filechooser dialog */
+filechooser revealer .vertical.view {
+    background-color: @theme_bg_color;
+    border-style: solid;
+    border-width: 1px 1px 0px 1px;
+    border-color: @borders;
+}
+
+filechooser actionbar {
+    border-width: 0px 1px 1px 1px;
+}
+
 /***************
  * Search bars *
  ***************/
@@ -3607,6 +3620,7 @@ notebook toolbar.inline-toolbar.horizontal toolitem button.text-button {
  * Sidebar *
  ***********/
 
+treeview.view.sidebar, /*shotwell */
 .sidebar .view,
 placessidebar .view,
 .sidebar {
@@ -4414,37 +4428,43 @@ iconview .cell:selected:focus {
 
 .view text,
 textview,
-.view {
+.view,
+treeview.view {
 	background-color: @theme_base_color;
 	color: @theme_text_color;
 }
 
 .view text selection:disabled,
-.view:disabled {
+.view:disabled,
+treeview.view:disabled {
 	background-color: @insensitive_bg_color;
 	color: @insensitive_fg_color;
 }
 
 .view text selection,
-.view:selected {
+.view:selected,
+treeview.view:selected {
 	background-color: @theme_selected_bg_color;
 	color: @theme_selected_fg_color;
 }
 
 .view text selection:hover,
-.view:hover {
+.view:hover,
+treeview.view:hover {
 	background-color: shade (@theme_selected_bg_color, 1.30);
 	color: shade (@theme_selected_bg_color, 0.35);
 }
 
 .view text selection:backdrop,
-.view:selected:backdrop {
+.view:selected:backdrop,
+treeview.view:backdrop {
 	background-color: shade(@theme_unfocused_bg_color, 0.94);
 	color: @theme_fg_color;
 }
 
 /* color of selected icons if unfocused */
-.view:active {
+.view:active,
+treeview.view:active {
     background-color: shade(@theme_unfocused_bg_color, 0.94);
 }
 
@@ -5446,31 +5466,6 @@ tooltip.csd decoration {
 messagedialog.csd decoration {
     border-radius: 7px;
     box-shadow: 0 1px 5px @wm_shadow;
-}
-
-/* print dialog */
-printdialog.background > box.view.vertical.dialog-vbox {
-    background-color: shade (@theme_bg_color, 1.0);
-}
-
-printdialog.background paper {
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 0px;
-    border-color: @borders;
-    background-color: @theme_base_color;
-}
-
-/* filechooser dialog */
-filechooser revealer .vertical.view {
-    background-color: @theme_bg_color;
-    border-style: solid;
-    border-width: 1px 1px 0px 1px;
-    border-color: @borders;
-}
-
-filechooser placessidebar.sidebar.frame {
-    border-style: solid;
 }
 
 /*********
