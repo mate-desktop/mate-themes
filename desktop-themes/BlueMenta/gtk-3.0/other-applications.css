@@ -51,6 +51,9 @@
 .nemo-window .nemo-window-pane > notebook box.vertical > overlay > scrolledwindow.view,
 .nemo-window .nemo-window-pane > notebook box.vertical > overlay > scrolledwindow > treeview.view {
     background-color: @theme_base_color;
+	border-width: 1px 1px 0px 1px;
+	border-style: solid;
+	border-color: @borders;
 }
 
 .nemo-window-pane treeview.view {
@@ -62,19 +65,20 @@
 	background-color: alpha (@theme_selected_bg_color, 0.35);
 }
 
+.nemo-window .nemo-window-pane > notebook > header.top {
+	border-width: 1px 0px 0px 1px;
+}
+
 /* sidebar */
 .nemo-window .sidebar .view {
 	background-color: shade (@theme_bg_color, 1.08);
 	color: @theme_fg_color;
 }
 
-.nemo-window .sidebar scrolledwindow.frame {
-	border-right-width: 1px;
+.nemo-window .sidebar scrolledwindow.frame.nemo-places-sidebar {
+	border-width: 1px 1px 0px 1px;
 	border-style: solid;
-	border-color: shade (@theme_bg_color, 0.90);
-	border-left: none;
-	border-top: none;
-	border-bottom: none;
+	border-color: @borders;
 }
 
 .nemo-window .sidebar treeview .cell:selected {

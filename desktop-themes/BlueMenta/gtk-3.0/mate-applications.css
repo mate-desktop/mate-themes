@@ -156,19 +156,7 @@
     min-width: 8px;
 }
 
-.caja-side-pane notebook {
-    border-color: @borders;
-    border-style: solid;
-    border-radius: 0px;
-    border-width: 1px 0px 0px 0px;
-}
-
-/* views */
-/* scrolledwindow junction and top border for list view */
-.caja-navigation-window .caja-notebook scrolledwindow.frame {
-	background-color: @theme_bg_color;
-}
-
+/* view modes */
 /* icon and compat mode */
 .caja-navigation-window .caja-notebook scrolledwindow.view.frame  {
     background-color: @theme_base_color;
@@ -198,6 +186,11 @@
 .caja-notebook treeview.view:hover {
     background-color: shade (@theme_selected_bg_color, 1.55);
     color: shade (@theme_selected_bg_color, 0.35);
+}
+
+/* no double borders if tabs are used */
+.caja-navigation-window .caja-notebook > header.top {
+	border-width: 1px 0px 0px 1px;
 }
 
 /* window and desktop mode */
@@ -241,12 +234,13 @@
    text-shadow: none;
 }
 
-/* statusbar */
-.caja-navigation-window statusbar frame {
-    border-style: none;
+/* search, etc */
+/* needed as this is used for firefox locationbar, to avoid double borders */
+.caja-notebook box.vertical > frame > border {
+    border-style: solid;
+    border-width: 1px 1px 0px 1px;
 }
 
-/* search, etc */
 #caja-extra-view-widget {
     background-color: shade (@theme_bg_color, 1.04);
     background-color: @cluebar_color;
@@ -256,6 +250,11 @@
     border-width: 0px;
     border-color: @borders;
     color: @theme_fg_color;
+}
+
+/* emblems and background dialog */
+.caja-property-browser > box > box > box > scrolledwindow.frame > viewport.frame {
+    background-color: shade (@theme_bg_color, 1.08);
 }
 
 /* misc */
@@ -488,8 +487,8 @@ PanelApplet.wnck-applet .wnck-pager:hover {
 	border-radius: 3px;
 }
 
-#MatePanelPopupWindow frame {
-	border-radius: 3px;
+#MatePanelPopupWindow frame border {
+    border-radius: 3px;
     border-style: solid;
     border-width: 1px;
     border-color: shade(@borders, 0.95);
@@ -526,22 +525,27 @@ na-tray-applet widget box widget {
     background: transparent;
 }
 
-.mate-panel-applet-slider frame {
+.mate-panel-applet-slider > frame {
     background-color: @theme_bg_color;
+    border-radius:3px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.mate-panel-applet-slider > frame > border {
     border-image: none;
     border-style: solid;
     border-radius:3px;
     padding: 2px;
-    margin: 0px;
 }
 
-.mate-panel-applet-slider frame frame{
+.mate-panel-applet-slider > frame > frame > border {
     background-color:transparent;
     border-style: none;
     box-shadow: none;
 }
 
-.mate-panel-applet-slider frame button {
+.mate-panel-applet-slider > frame > button {
     color: @theme_fg_color;
 }
 
@@ -715,12 +719,15 @@ window.background.mate-terminal > box.vertical > notebook > header.top tab:check
 }
 
 /* atril and eom */
-EggToolbarEditor.vertical scrolledwindow viewport.frame {
-    background-color: shade (@theme_base_color, 1.0);
+EggToolbarEditor.vertical scrolledwindow {
     border-color: @borders;
     border-width: 1px;
     border-radius: 0px;
     border-style: solid;
+}
+
+EggToolbarEditor.vertical scrolledwindow viewport.frame {
+    background-color: shade (@theme_base_color, 1.0);
 }
 
 /*******
@@ -894,5 +901,21 @@ MsdOsdWindow.background.osd.msd-osd-window-solid progressbar trough {
 window.background.mate-terminal > box.vertical > notebook {
     border-style: none;
     border-width: 0px;
+}
+
+/*************************
+ * mate-power-statistics *
+ *************************/
+
+.mpm-statistics notebook.frame > stack > scrolledwindow.frame {
+     border-style: solid;
+}
+
+/************
+ * engrampa *
+ ************/
+
+.engrampa-window > grid > paned > box > frame > border {
+    border-style: none;
 }
 
