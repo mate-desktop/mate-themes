@@ -4,6 +4,7 @@
 entry,combobox entry.combo,
 combobox button.combo:checked,
 button:checked,
+button.flat:checked,
 toolbar.inline-toolbar.vertical button:checked {
 	border-image: url("borders/button-active.png") 3 4 5 4 / 3px 4px 5px 4px stretch;
 	border-radius: 4px;
