@@ -2776,9 +2776,11 @@ toolbar separator:disabled {
     primary toolbar raised buttons
 *************************************/
 
-/* ie. cimnnamon-settings (button.raised) */
+/* ie. cimnnamon-settings (button.raised), mate-font-viewer toolbar info button */
 toolbar .raised button,
-toolbar button.raised {
+toolbar button.raised,
+toolbar button.raised:hover,
+toolbar button.raised:focus {
     padding: 6px;
 }
 
