@@ -61,3 +61,11 @@ toolbar.primary-toolbar.horizontal > toolitem > grid.horizontal > button.scale.f
     color: @osd_button_fg_hover;
 }
 
+/*********
+ * gedit *
+ *********/
+
+.gedit-side-panel-paned.horizontal > box.vertical > statusbar.horizontal {
+    padding: 4px;
+}
+
