@@ -81,3 +81,11 @@ window.background.dconf-editor popover.menu {
     border-radius: 0px;
 }
 
+/*********
+ * gedit *
+ *********/
+
+.gedit-side-panel-paned.horizontal > box.vertical > statusbar.horizontal {
+    padding: 4px;
+}
+
