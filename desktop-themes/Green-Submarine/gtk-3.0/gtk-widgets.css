@@ -5073,14 +5073,16 @@ dialog scrolledwindow.frame viewport .vertical expander .vertical {
 .view.dim-label,
 .dim-label,
 .dim-label:hover,
-.dim-label:focus {
+.dim-label:focus,
+list row.activatable .dim-label {
     color: mix (@theme_fg_color, @theme_bg_color, 0.27);
     text-shadow: none;
 }
 
 .dim-label:selected,
-.dim-label:selected:focus {
-    color: @theme_selected_fg_color;
+.dim-label:selected:focus,
+list row.activatable:selected .dim-label {
+    color: shade (@theme_selected_fg_color, 0.7);
     text-shadow: none;
 }
 
