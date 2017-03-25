@@ -535,6 +535,8 @@ window.background.mate-terminal > box.vertical > notebook > header.top tab:check
     border-style: solid;
     border-color: @border_color;
     border-top-color: @notebook_active_tab_border;
+    border-left-color: @notebook_active_tab_border;
+    border-right-color: @notebook_active_tab_border;
     border-width: 1px;
 }
 
