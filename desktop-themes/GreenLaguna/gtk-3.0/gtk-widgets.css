@@ -48,9 +48,10 @@
     text-shadow: none;
 }
 
+/* seems like firefox needs this stupid wildcard in several places */
 *:selected:focus {
-/*    background-color: @theme_selected_bg_color;
-    color: @theme_selected_fg_color;*/
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
     text-shadow: none;
 }
 
@@ -99,6 +100,17 @@
 /* Fix for applications that have issues finding a default monospace font */
 .monospace {
   font-family: Monospace;
+}
+
+image,
+image:disabled,
+label,
+label:disabled,
+box,
+box:disabled,
+grid,
+grid:disabled {
+	background-color: transparent;
 }
 
 /************
@@ -490,8 +502,8 @@ label selection:backdrop:disabled {
 treeview separator,
 separator,
 .separator {
-    color: darker (@theme_bg_color);
-	background-color: darker (@theme_bg_color);
+    color: alpha(@frame_color, 0.6);
+	background-color: alpha(@frame_color, 0.6);
 }
 
 paned > separator {
@@ -804,7 +816,9 @@ progressbar.vertical trough {
  * Frames *
  **********/
 
-frame {
+.frame,
+frame > border,  /* firefox location entry */
+filechooser stack > box > scrolledwindow {
     background-color: shade(@base_color, 1.02);
     color: lighter (@theme_fg_color);
     border-style: solid;
@@ -814,39 +828,23 @@ frame {
     padding: 0px;
 }
 
-.frame.flat
-frame.flat {
+.frame.flat,
+frame > border.flat,
+overlay > frame > border {
     border-style: none;
-}
-
-/* ie, dconf-editor, nautilus view */
-.background.csd scrolledwindow,
-.gedit-bottom-panel-paned > grid > notebook scrolledwindow,
-.background.solid-csd > grid > paned.horizontal scrolledwindow {
-    background-color: shade(@base_color, 1.04);
-    -gtk-icon-style: regular;
-    border-style: solid;
-    border-color: alpha(@frame_color, 0.6);
-    border-width: 0px 1px 1px 1px;
-    border-radius: 2px;
-    padding: 0;
 }
 
 /*scrolledwindow,*/
-scrolledwindow.frame,
-.background.csd scrolledwindow.frame,
-.background.solid-csd scrolledwindow.frame {
+scrolledwindow.frame {
     -gtk-icon-style: regular;
-    border-style: solid;
-    border-color: alpha(@frame_color, 0.6);
-    border-width: 1px;
     border-radius: 2px;
-    padding: 0;
 }
 
-/* no double frames */
-scrolledwindow viewport.frame {
-    border-style: none;
+/* avoid double borders when a viewport is 
+ * packed into a GtkScrolledWindow, + avoid double borders in general */
+scrolledwindow > viewport.frame,
+scrolledwindow.frame > viewport.frame {
+	border-style: none;
 }
 
 /***************
@@ -1036,13 +1034,6 @@ paned.horizontal > paned.vertical > notebook > header.top {
     border-width: 1px 0px 0px 1px;
     border-radius: 3px 3px 0px 0px;
     box-shadow: none;
-}
-
-paned.horizontal > box.vertical > notebook scrolledwindow.frame,
-paned.horizontal > paned.vertical > notebook scrolledwindow.frame {
-    border-width: 1px 1px 1px 1px;
-    border-style: solid;
-    border-color: alpha(@frame_color, 0.6);
 }
 
 .gedit-bottom-panel-paned > grid > notebook > header tab,
@@ -1325,6 +1316,11 @@ notebook tab.reorderable-page:checked {
     border-radius: 3px 3px 0 0;
     box-shadow: none;
     border-style: solid;
+}
+
+ /* ie. caja properties-window notes tab */
+dialog notebook.frame > stack > scrolledwindow.frame {
+     border-style: none;
 }
 
 /* outlines */
@@ -1832,6 +1828,7 @@ combobox > box > button.combo > box > arrow:disabled {
 
 button {
     -gtk-icon-style: regular;
+    -gtk-outline-radius: 3px;
     padding: 3px;
     border-radius: 3px;
     border-width: 1px;
@@ -3711,32 +3708,6 @@ statusbar {
     font-size: smaller;
 }
 
-statusbar frame {
-    border-style: none;
-}
-
-scrolledwindow,
-overlay /* for floating bars */ {
-    background-color: transparent;
-}
-
-image,
-image:hover,
-image:checked,
-image:hover:active,
-image:disabled,
-label,
-label:hover,
-label:checked,
-label:hover:active,
-label:disabled,
-box,
-box:disabled,
-grid,
-grid:disabled {
-    background-color: transparent;
-}
-
 /*****************
  * Color Chooser *
  *****************/
@@ -4290,13 +4261,15 @@ infobar revealer button label {
 .dim-label,
 .dim-label:hover,
 .dim-label:focus,
-.view.dim-label {
+.view.dim-label,
+list row.activatable .dim-label {
     color: mix (@theme_fg_color, @theme_bg_color, 0.50);
 }
 
 .dim-label:selected,
-.dim-label:selected:focus {
-    color: mix (@theme_selected_fg_color, @theme_base_color, 0.50);
+.dim-label:selected:focus,
+list row.activatable:selected .dim-label {
+    color: mix (@theme_selected_bg_color, @theme_base_color, 0.60);
     text-shadow: none;
 }
 
@@ -4331,16 +4304,6 @@ placessidebar.sidebar {
 }
 
 /* dialog open, nautilus */
-placessidebar.sidebar.frame {
-    border-width: 0px 1px 1px 1px;
-    border-style: solid;
-    border-color: alpha(@frame_color, 0.6);
-}
-
-filechooser placessidebar.sidebar.frame {
-    border-width: 1px 1px 1px 1px;
-}
-
 placessidebar.sidebar.frame > viewport.frame > list > row.activatable.sidebar-row {
     background-color: shade(@theme_bg_color, 1.02);
     border-radius: 0px;
@@ -4383,9 +4346,6 @@ placessidebar.sidebar.frame > viewport.frame > list row.activatable button.sideb
 .sidebar separator,
 .sidebar separator:hover {
     min-height: 1px;
-    background-image: linear-gradient(to bottom,
-                                      alpha(@frame_color, 0.6),
-                                      alpha(@frame_color, 0.6));
 }
 
 /* ie. dconf-editor */
@@ -4436,11 +4396,6 @@ filechooser #pathbarbox button {
     padding: 4px;
 }
 
-/* avoid double borders */
-filechooser placesview stack frame {
-    border-style: none;
-}
-
 filechooser stack scrolledwindow {
     background-color: shade(@theme_bg_color, 1.02);
     border-color: alpha(@frame_color, 0.6);
@@ -4449,6 +4404,9 @@ filechooser stack scrolledwindow {
     border-radius: 0px;
 }
 
+filechooser actionbar {
+    border-width: 0px 1px 1px 1px;
+}
 
 /****************
  * GtkActionBar *
@@ -4490,14 +4448,6 @@ button.link:link:focus:hover:active {
 /******************
  * Dialog Windows *
  ******************/
-
-/* ie. mate-keyboard-properties option window */
-dialog scrolledwindow.frame {
-    border-color: alpha(@frame_color, 0.6);
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 2px;
-}
 
 dialog scrolledwindow.frame viewport .vertical {
     background-color: shade (@theme_bg_color, 1.03);

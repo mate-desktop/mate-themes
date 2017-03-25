@@ -59,10 +59,9 @@
     font: italic;
 }
 
-.nemo-window box.toolbar.horizontal {
-    border-style: solid;
-    border-width: 0 1px 0 0;
-    border-color: shade(@toolbar_gradient_base, 0.98);
+/* weird line between views and statusbar */
+.nemo-window grid.vertical separator {
+    background-color: transparent;
 }
 
 .nemo-window-pane .question,
