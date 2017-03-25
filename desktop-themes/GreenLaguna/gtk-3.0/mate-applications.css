@@ -85,17 +85,15 @@
 }
 
 /* eventbars, ie. search results */
-.caja-notebook box.vertical frame {
-    background-color: shade (@theme_bg_color, 1.02);
-    border-style: none;
-    border-radius: 0px;
+/* needed as this is used for firefox locationbar, to avoid double borders */
+.caja-notebook box.vertical > frame > border {
+    border-style: solid;
+    border-width: 1px 1px 0px 1px;
+    border-radius: 3px 3px 0px 0px;
 }
 
 .caja-notebook #caja-extra-view-widget {
     background-color: shade (@theme_bg_color, 1.02);
-    border-color: @notebook_border;
-    border-width: 1px 1px 0px 1px;
-    border-style: solid;
     border-radius: 3px 3px 0px 0px;
 }
 
@@ -464,15 +462,6 @@ vte-terminal {
     background-color: @theme_bg_color;
 }
 
-/* atril and eom */
-EggToolbarEditor.vertical scrolledwindow .frame {
-    background-color: shade(@base_color, 1.04);
-    border-color: @borders;
-    border-width: 1px;
-    border-radius: 0px;
-    border-style: solid;
-}
-
 /*******
  * Eom *
  *******/
@@ -519,6 +508,14 @@ EggToolbarEditor.vertical scrolledwindow .frame {
  * Atril *
  *********/
 
+.atril-window .primary-toolbar toolbar entry {
+    padding: 0px;
+}
+
+.atril-window paned.horizontal > box.vertical > scrolledwindow.frame {
+    border-width: 0px 1px 1px 1px;
+}
+
 /* broken text selection */
 .atril-window scrolledwindow.frame > widget:selected {
 	background-color: @theme_selected_bg_color;
@@ -530,7 +527,26 @@ EggToolbarEditor.vertical scrolledwindow .frame {
 	color: @theme_fg_color;
 }
 
-/* Mate Font Viewer */
+/* sidebar */
+.atril-window paned.horizontal > box.vertical > box.horizontal button {
+    padding: 3px;
+    border-radius: 3px;
+    -gtk-outline-radius: 3px;
+}
+
+/* atril and eom */
+EggToolbarEditor.vertical scrolledwindow {
+    background-color: shade(@base_color, 1.04);
+    border-color: alpha(@frame_color, 0.6);
+    border-width: 1px;
+    border-radius: 0px;
+    border-style: solid;
+}
+
+
+/********************
+ * Mate Font Viewer *
+ ********************/
 
 .font-viewer notebook.frame {
     border-style: none;
@@ -620,5 +636,20 @@ MsdOsdWindow.background.osd.msd-osd-window-solid progressbar trough {
 window.background.mate-terminal > box.vertical > notebook {
     border-style: none;
     border-width: 0px;
+}
+
+/***********************
+ * mate-volume-control *
+ ***********************/
+
+GvcMixerDialog > box.vertical.dialog-vbox > box.horizontal > box.horizontal > frame {
+    border-color: alpha(@frame_color, 0.6);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px
+}
+
+GvcMixerDialog > box.vertical.dialog-vbox > notebook.frame scrolledwindow.frame {
+    border-style: none;
 }
 
