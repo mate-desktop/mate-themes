@@ -1815,6 +1815,8 @@ notebook header.top tab {
 
 notebook header.top tab:checked {
     border-top-color: @notebook_active_tab_border;
+    border-left-color: @notebook_active_tab_border;
+    border-right-color: @notebook_active_tab_border;
     border-width: 1px 1px 0px 1px;
     background-image: linear-gradient(to bottom,
                       @notebook_active_tab_strip_gradient_b 1px,
@@ -1834,6 +1836,8 @@ notebook header.right tab {
 notebook header.right tab:checked {
     border-width: 1px 1px 1px 0px;
     border-right-color: @notebook_active_tab_border;
+    border-top-color: @notebook_active_tab_border;
+    border-bottom-color: @notebook_active_tab_border;
     background-image: linear-gradient(to left,
                       @notebook_active_tab_strip_gradient_b 1px,
                       @notebook_active_tab_gradient_b 8px);
@@ -1852,6 +1856,8 @@ notebook header.bottom tab {
 notebook header.bottom tab:checked {
     border-width: 0px 1px 1px 1px;
     border-bottom-color: @notebook_active_tab_border;
+    border-left-color: @notebook_active_tab_border;
+    border-right-color: @notebook_active_tab_border;
     background-image: linear-gradient(to top,
                       @notebook_active_tab_strip_gradient_b 1px,
                       @notebook_active_tab_gradient_b 8px);
@@ -1870,6 +1876,8 @@ notebook header.left tab {
 notebook header.left tab:checked {
     border-width: 1px 0px 1px 1px;
     border-left-color: @notebook_active_tab_border;
+    border-top-color: @notebook_active_tab_border;
+    border-bottom-color: @notebook_active_tab_border;
     background-image: linear-gradient(to right,
                       @notebook_active_tab_strip_gradient_b 1px,
                       @notebook_active_tab_gradient_b 8px);
