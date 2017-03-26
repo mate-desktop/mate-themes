@@ -1735,6 +1735,7 @@ paned.horizontal notebook header {
 }
 
 notebook header.top {
+    margin: -1px -1px 0px 0px;
     border-width: 0px 0px 1px 0px;
     border-radius: 3px 3px 0px 0px;
     background-image: linear-gradient(to bottom,
@@ -1746,6 +1747,7 @@ notebook header.top {
 }
 
 paned.horizontal notebook header.top {
+    margin: 0px;
     border-width: 0px 0px 0px 1px;
     border-style: solid;
     border-color: @border_color;
@@ -1756,6 +1758,7 @@ printdialog > box.view.vertical.dialog-vbox > box.vertical > notebook > header.t
 }
 
 notebook header.bottom {
+    margin: 0px -1px -1px 0px;
     border-width: 1px 1px 0px 0px;
     background-image: linear-gradient(to top,
                       shade(@notebook_tab_gradient_a, 1.05),
@@ -1766,6 +1769,7 @@ notebook header.bottom {
 }
 
 notebook header.left {
+    margin: 0px 0px -1px -1px;
     border-width: 0px 1px 0px 0px;
     background-image: linear-gradient(to right,
                       shade(@notebook_tab_gradient_a, 1.05),
@@ -1776,6 +1780,7 @@ notebook header.left {
 }
 
 notebook header.right {
+    margin: 0px -1px -1px 0px;
     border-width: 0px 0px 0px 1px;
     background-image: linear-gradient(to left,
                       shade(@notebook_tab_gradient_a, 1.05),
@@ -1806,7 +1811,7 @@ notebook header tab {
 notebook header.top tab {
     margin: 0px 0px 0px -1px;
     padding: 4px 6px 2px 6px;
-    border-width: 0px 1px 1px 1px;
+    border-width: 1px;
     border-radius: 3px 3px 0px 0px;
     background-image: linear-gradient(to bottom,
                       @notebook_tab_gradient_a,
@@ -1826,7 +1831,7 @@ notebook header.top tab:checked {
 notebook header.right tab {
     margin: -1px 0px 0px 0px;
     padding: 6px 4px 6px 2px;
-    border-width: 1px 0px 1px 1px;
+    border-width: 1px;
     border-radius: 0px 3px 3px 0px;
     background-image: linear-gradient(to left,
                       @notebook_tab_gradient_a,
@@ -1846,7 +1851,7 @@ notebook header.right tab:checked {
 notebook header.bottom tab {
     margin: 0px 0px 0px -1px;
     padding: 2px 6px 4px 6px;
-    border-width: 1px 1px 0px 1px;
+    border-width: 1px;
     border-radius: 0px 0px 3px 3px;
     background-image: linear-gradient(to top,
                       @notebook_tab_gradient_a,
@@ -1866,7 +1871,7 @@ notebook header.bottom tab:checked {
 notebook header.left tab {
     margin: -1px 0px 0px 0px;
     padding: 6px 2px 6px 4px;
-    border-width: 1px 1px 1px 0px;
+    border-width: 1px;
     border-radius: 3px 0px 0px 3px;
     background-image: linear-gradient(to right,
                       @notebook_tab_gradient_a,
