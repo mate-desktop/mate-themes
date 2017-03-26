@@ -513,8 +513,8 @@ MsdOsdWindow.background.osd .progressbar {
 
 /* override for pavu-control */
 window.background.mate-terminal > box.vertical > notebook {
-    border-style: none;
-    border-width: 0px;
+    border-style: solid;
+    border-width: 0.4px;
 }
 
 /* override settings for pavu-control */
