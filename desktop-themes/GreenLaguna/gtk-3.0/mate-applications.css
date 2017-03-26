@@ -11,7 +11,6 @@
 
 .caja-side-pane > notebook scrolledwindow.frame {
     background-color: transparent;
-    border-style: none;
 }
 
 .caja-side-pane > notebook scrolledwindow > viewport.frame,
@@ -21,10 +20,6 @@
 
 .caja-side-pane  notebook scrolledwindow.frame textview.view {
     background-color: transparent;
-}
-
-.caja-side-pane scrolledwindow {
-        margin: -1px;
 }
 
 /* Caja places bar */
@@ -46,6 +41,14 @@
 .caja-side-pane notebook viewport.frame,
 .caja-side-pane notebook widget .vertical {
     background-color: shade(@theme_bg_color, 1.02);
+}
+
+/* emblem and info sidebar */
+.caja-side-pane > notebook widget.view > box.vertical,
+.caja-side-pane > notebook box.vertical > scrolledwindow {
+    border-style: solid;
+    border-width: 1px;
+    border-color: alpha(@frame_color, 0.6);
 }
 
 /* View toogle button */
