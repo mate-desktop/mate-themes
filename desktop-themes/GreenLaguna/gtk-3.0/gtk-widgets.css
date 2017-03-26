@@ -2291,6 +2291,20 @@ scrollbar.horizontal .button.down {
     border-width: 1px 0px 0px 0px;
 }
 
+ /* the small square between scrollbars!!! */
+scrolledwindow junction,
+scrolledwindow.frame junction {
+	background-image: none;
+	background-color: shade(@theme_bg_color, 0.9);
+	border-style: none;
+	border-radius: 0;
+}
+
+/* junction does not work here */
+filechooser paned.horizontal box.vertical box.horizontal .view box.vertical {
+	background-color: shade(@theme_bg_color, 0.9);
+}
+
 
 /*********
  * Menus *
