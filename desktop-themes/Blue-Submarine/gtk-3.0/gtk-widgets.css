@@ -63,6 +63,12 @@ window {
 *:hover:disabled {
 }
 
+/* seems like firefox needs this stupid wildcard in several places */
+*:selected:focus {
+        background-color: @theme_selected_bg_color;
+        color: @theme_selected_fg_color;
+}
+
 *:disabled {
     /* inherit the color from parent by default */
     background-color: inherit;
