@@ -3601,7 +3601,7 @@ switch:backdrop {
     border-width: 1px;
     border-image: none;
     border-style: solid;
-    border-color: shade(@frame_color, 1.22);
+    border-color: shade(@frame_color, 0.9);
     background-image: linear-gradient(to bottom,
                                       @trough_bg_color_a,
                                       @trough_bg_color_b);
