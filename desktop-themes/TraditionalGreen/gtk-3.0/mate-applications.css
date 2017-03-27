@@ -113,6 +113,13 @@ MatePanelApplet {
     text-shadow: none;
 }
 
+MatePanelAppletFrameDBus {
+    background-image: -gtk-scaled(url("img/panel-grid.svg"));
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
 /* workaround to avoid unwanted black frames if switching compositor on/off */
 .mate-panel-menu-bar .window-frame.csd.popup {
     box-shadow: none;
