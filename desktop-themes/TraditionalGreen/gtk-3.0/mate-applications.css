@@ -547,6 +547,13 @@ window.background.mate-terminal > box.vertical > notebook > header.top tab:check
     border-width: 1px;
 }
 
+window.background.mate-terminal > box.vertical > notebook:not(.frame){
+    margin: 0px;
+    border-style: solid;
+    border-color:@border_color;
+    border-width: 0px 0px 0px 1px;
+}
+
 /***********************
  * mate-volume-control *
  ***********************/
