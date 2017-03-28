@@ -1730,11 +1730,12 @@ window.background.solid-csd > box.vertical > notebook:not(.frame) > header.top {
 }
 
 printdialog > box.view.vertical.dialog-vbox > box.vertical > notebook {
+    margin: 5px;
     background-color: @notebook_bg_color;
-    border-radius: 0px;
+    border-radius: 3px 0px 0px 0px;
     border-style: solid;
     border-color: @border_color;
-    border-width: 1px 0px 1px 0px;
+    border-width: 0px 1px 1px 1px;
 }
 
 dialog.background.csd > box.vertical.dialog-vbox > notebook, /* meld preferences */
@@ -4335,6 +4336,7 @@ dialog scrolledwindow.frame viewport .vertical expander .vertical {
 
 /* print dialog */
 printdialog.background > box.view.vertical.dialog-vbox {
+    margin: 7px;
     background-color: shade (@theme_bg_color, 1.0);
 }
 
