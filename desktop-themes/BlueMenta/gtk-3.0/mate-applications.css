@@ -570,6 +570,13 @@ window.background.mate-terminal > box.vertical > notebook > header.top tab:check
     border-width: 1px;
 }
 
+window.background.mate-terminal > box.vertical > notebook:not(.frame) {
+    border-radius: 4px 0px 0px 0px;
+    border-style: solid;
+    border-color: @borders;
+    border-width: 0px 0px 0px 1px;
+}
+
 /****************
  * Pluma *
  ****************/
