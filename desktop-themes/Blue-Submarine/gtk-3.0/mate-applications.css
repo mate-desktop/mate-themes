@@ -900,6 +900,14 @@ na-tray-applet > widget > box {
     border-color: @menu_bg_dark_color;
 }
 
+/* override for pavu-control */
+window.background.mate-terminal > box.vertical > notebook,
+window.background.mate-terminal > box.vertical > notebook > header.top,
+window.background.mate-terminal > box.vertical > notebook > stack > box {
+    border-style: none;
+    border-width: 0px;
+}
+
 vte-terminal {
     -TerminalWindow-background-darkness: 0.95;
     background-color: @terminal_background_color;
@@ -1318,15 +1326,5 @@ MsdOsdWindow.background.osd.msd-osd-window-solid {
 MsdOsdWindow.background.osd.msd-osd-window-solid progressbar,
 MsdOsdWindow.background.osd.msd-osd-window-solid progressbar trough {
 	border-radius: 3px;
-}
-
-/*****************
- * mate-terminal *
- *****************/
-
-/* override for pavu-control */
-window.background.mate-terminal > box.vertical > notebook {
-    border-style: none;
-    border-width: 0px;
 }
 

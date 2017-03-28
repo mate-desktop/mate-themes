@@ -518,6 +518,13 @@ window.background.mate-terminal > box.vertical > notebook {
 }
 
 /* override settings for pavu-control */
+window.background.mate-terminal > box.vertical > notebook > header.top,
+window.background.mate-terminal > box.vertical > notebook > stack > box {
+    border-style: none;
+    margin: 0px;
+}
+
+/* override settings for pavu-control */
 window.background.mate-terminal > box.vertical > notebook > header.top tab {
     border-radius: 3px 3px 0px 0px;
     padding: 4px 2px 4px 6px;
