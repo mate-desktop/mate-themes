@@ -1211,7 +1211,7 @@ GvcMixerDialog notebook.frame box.vertical box.horizontal box.horizontal frame b
     background-color: @theme_dark_dialog_bg_color;
 }
 
-.lock-dialog frame {
+.lock-dialog frame border {
     border-radius: 10px;
     border-style: none;
     border-width: 0px;
