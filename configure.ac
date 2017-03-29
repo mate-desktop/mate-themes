@@ -93,6 +93,7 @@ desktop-themes/ContrastHighInverse/Makefile
 desktop-themes/ContrastHighInverse/gtk-2.0/Makefile
 desktop-themes/ContrastHighInverse/gtk-2.0/gtkrc
 desktop-themes/ContrastHighInverse/gtk-3.0/Makefile
+desktop-themes/ContrastHighInverse/gtk-3.0/assets/Makefile
 desktop-themes/ContrastHighInverse/metacity-1/Makefile
 desktop-themes/ContrastHighInverse/pixmaps/Makefile
 desktop-themes/GreenLaguna/Makefile
