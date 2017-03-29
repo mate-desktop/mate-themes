@@ -5907,8 +5907,8 @@ headerbar,
     box-shadow: inset 0 -1px shade(@wm_bg_b, 0.95);
 }
 
-+headerbar.titlebar,
-+.background.ssd > paned.horizontal.titlebar,
+headerbar.titlebar,
+.background.ssd > paned.horizontal.titlebar,
 .background.csd > paned.horizontal.titlebar,
 .background.solid-csd > paned.horizontal.titlebar {
     border-width: 0px 0px 1px 0px;
