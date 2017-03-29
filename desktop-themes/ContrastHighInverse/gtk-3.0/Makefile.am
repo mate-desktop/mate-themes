@@ -10,4 +10,7 @@ theme_DATA = \
 	other-applications.css \
 	settings.ini
 
+SUBDIRS =      \
+	assets
+
 EXTRA_DIST = $(theme_DATA)
