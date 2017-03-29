@@ -920,6 +920,14 @@ window.background.mate-terminal > box.vertical > notebook > stack > box {
     border-width: 0px;
 }
 
+window.background.mate-terminal > box.vertical > notebook > header.top tab,
+window.background.mate-terminal > box.vertical > notebook > header.top tab:hover,
+window.background.mate-terminal > box.vertical > notebook > header.top tab:checked,
+window.background.mate-terminal > box.vertical > notebook > header.top tab:checked:hover {
+    margin: 0px -1px 0px -1px;
+    border-width: 1px 1px 0 1px;
+}
+
 vte-terminal {
     -TerminalWindow-background-darkness: 0.95;
     background-color: @terminal_background_color;
