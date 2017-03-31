@@ -927,3 +927,9 @@ window.background.mate-terminal > box.vertical > notebook > header.top {
     border-style: none;
 }
 
+/* mate-keyboard-layout-view */
+
+.gswitchit-layout-view box.dialog-vbox box.vertical widget {
+    background-color: shade (@theme_bg_color, 1.1);
+}
+

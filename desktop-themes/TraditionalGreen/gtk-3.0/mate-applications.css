@@ -582,3 +582,9 @@ GvcMixerDialog notebook.frame box scrolledwindow.frame {
     outline-style: dashed;
 }
 
+/* mate-keyboard-layout-view */
+
+.gswitchit-layout-view box.dialog-vbox box.vertical widget {
+    background-color: shade (@notebook_bg_color, 1.05);
+}
+
