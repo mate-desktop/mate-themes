@@ -1352,9 +1352,9 @@ MsdOsdWindow.background.osd.msd-osd-window-solid progressbar trough {
 	border-radius: 3px;
 }
 
-/*****************
- * mate-terminal *
- *****************/
+/* mate-keyboard-layout-view */
 
-
+.gswitchit-layout-view box.dialog-vbox box.vertical widget {
+    background-color: shade (@theme_bg_color, 1.1);
+}
 
