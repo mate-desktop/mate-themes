@@ -716,3 +716,9 @@ pluma-print-preview.vertical toolbar.horizontal button.flat.text-button {
     background-color: shade (@theme_bg_color, 1.0);
 }
 
+/* mate-keyboard-layout-view */
+
+.gswitchit-layout-view box.dialog-vbox box.vertical widget {
+    background-color: @less_dark_color;
+}
+

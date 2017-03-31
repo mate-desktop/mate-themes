@@ -667,3 +667,9 @@ GvcMixerDialog > box.vertical.dialog-vbox > notebook.frame scrolledwindow.frame 
     border-style: none;
 }
 
+/* mate-keyboard-layout-view */
+
+.gswitchit-layout-view box.dialog-vbox box.vertical widget {
+    background-color: shade(@base_color, 1.02);
+}
+
