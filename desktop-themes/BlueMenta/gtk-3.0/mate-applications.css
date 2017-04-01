@@ -550,27 +550,6 @@ na-tray-applet widget box widget {
 }
 
 /****************
- * Mate-Terminal *
- ****************/
-
-/* how strange is that? a bg above the header bg? This solves non colored pixels*/
-.mate-terminal notebook header.top tabs {
-    background-color: @theme_bg_color;
-}
-
-/* override settings for pavu-control */
-window.background.mate-terminal > box.vertical > notebook > header.top tab,
-window.background.mate-terminal > box.vertical > notebook > header.top tab:checked,
-window.background.mate-terminal > box.vertical > notebook > header.top tab:checked:hover {
-    border-radius: 4px 4px 0px 0px;
-    padding: 2px 2px 2px 6px;
-    margin: 0px 0px 0px -1px;
-    border-style: solid;
-    border-color: @borders;
-    border-width: 1px;
-}
-
-/****************
  * Pluma *
  ****************/
 
@@ -907,6 +886,23 @@ window.background.mate-terminal > box.vertical > notebook > stack > box {
 window.background.mate-terminal > box.vertical > notebook > header.top {
     border-width: 0px 0px 0px 1px;
     border-color: @theme_bg_color;
+}
+
+/* how strange is that? a bg above the header bg? This solves non colored pixels*/
+window.background.mate-terminal > box.vertical > notebook > header.top tabs {
+    background-color: @theme_bg_color;
+}
+
+/* override settings for pavu-control */
+window.background.mate-terminal > box.vertical > notebook > header.top tab,
+window.background.mate-terminal > box.vertical > notebook > header.top tab:checked,
+window.background.mate-terminal > box.vertical > notebook > header.top tab:checked:hover {
+    border-radius: 4px 4px 0px 0px;
+    padding: 2px 2px 2px 6px;
+    margin: 0px 0px 0px -1px;
+    border-style: solid;
+    border-color: @borders;
+    border-width: 1px;
 }
 
 /*************************
