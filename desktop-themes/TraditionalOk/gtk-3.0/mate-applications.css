@@ -530,7 +530,12 @@ window.background.mate-terminal > box.vertical > notebook > header.top {
     border-radius: 3px 0px 0px 0px;
     margin: 0px;
     border-style: solid;
-    border-color: @border_color;
+    border-image: linear-gradient(to bottom,
+                  shade(@notebook_tab_gradient_a, 1.05),
+                  shade(@notebook_tab_gradient_b, 1.04) 50%,
+                  shade(@notebook_tab_gradient_c, 1.06) 50%,
+                  shade(@notebook_tab_gradient_d, 1.05)) 0 100%;
+    box-shadow: inset  0px -1px 0 0 @border_color;
     border-width: 0px 0px 0px 1px;
 }
 
@@ -539,7 +544,7 @@ window.background.mate-terminal > box.vertical > notebook > header.top tab {
     padding: 4px 2px 4px 6px;
     margin: 0px 0px 0px -1px;
     border-style: solid;
-    border-color: @theme_bg_color;
+    border-color: @border_color;
     border-width: 1px;
 }
 
