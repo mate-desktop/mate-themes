@@ -1352,9 +1352,15 @@ MsdOsdWindow.background.osd.msd-osd-window-solid progressbar trough {
 	border-radius: 3px;
 }
 
-/* mate-keyboard-layout-view */
+/* mate-keyboard-layout-view, mate-keyboard-layout-chooser */
+/* this way it styles only the border of the keys, the bg of the map itself
+   use the .view class */
+.gswitchit-layout-view > box.dialog-vbox > box.vertical > widget,
+#xkb-layout-chooser > box.dialog-vbox > box.vertical > box.vertical > frame > widget {
+    background-color: shade (@theme_bg_color, 1.0);
+}
 
-.gswitchit-layout-view box.dialog-vbox box.vertical widget {
-    background-color: shade (@theme_bg_color, 1.1);
+#xkb-layout-chooser > box.dialog-vbox > box.vertical > box.vertical > frame > border {
+    border-radius: 0px;
 }
 
