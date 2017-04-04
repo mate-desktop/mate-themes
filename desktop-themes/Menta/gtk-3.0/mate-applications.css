@@ -548,6 +548,19 @@ na-tray-applet widget box widget {
     color: @theme_fg_color;
 }
 
+/* mate-menu, mintmenu fork */
+#mate-menu.background {
+    border-color: @borders;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#mate-menu.background button,
+#mate-menu.background button.flat {
+    padding: 3px 1px;
+    border-width: 2px;
+}
+
 /****************
  * Pluma *
  ****************/

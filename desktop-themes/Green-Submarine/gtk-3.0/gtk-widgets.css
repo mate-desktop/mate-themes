@@ -36,9 +36,15 @@ window {
     color: @theme_fg_color;
 }
 
-.background {
-    color: @theme_fg_color;
-    background-color: @theme_bg_color;
+/* exclude widget for mate-menu */
+.background:not(widget) {
+	color: @theme_fg_color;
+	background-color: @theme_bg_color;
+}
+
+/* override previous setting for rubberband of mate-screenshot */
+.background.rubberband {
+	background-color: transparent;
 }
 
 .background:backdrop {

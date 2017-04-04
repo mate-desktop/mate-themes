@@ -446,6 +446,20 @@ na-tray-applet > widget > box {
 
 }
 
+/* mate-menu, mintmenu fork */
+#mate-menu.background {
+    border-color: @borders;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#mate-menu.background button,
+#mate-menu.background button.flat {
+    padding: 3px 1px;
+    border-width: 1px;
+    border-style: solid;
+}
+
 /****************
  * Mate-Terminal *
  ****************/
