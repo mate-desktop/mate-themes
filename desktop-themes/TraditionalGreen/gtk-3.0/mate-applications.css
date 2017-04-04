@@ -342,6 +342,13 @@ na-tray-applet {
     color: @theme_fg_color;
 }
 
+/* mate-menu, mintmenu fork */
+#mate-menu.background {
+    border-color: @border_color;
+    border-style: solid;
+    border-width: 1px;
+}
+
 /****************
  * Pluma *
  ****************/
