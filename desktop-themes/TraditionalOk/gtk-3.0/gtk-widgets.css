@@ -1706,6 +1706,7 @@ window.background > box.vertical > notebook:not(.frame),
 window.background.csd > box.vertical > notebook:not(.frame),
 window.background.ssd > box.vertical > notebook:not(.frame),
 window.background.solid-csd > box.vertical > notebook:not(.frame) {
+    margin: 0px;
     background-color: @notebook_bg_color;
     background-clip: border-box;
     border-radius: 3px 3px 0px 0px;
@@ -1715,7 +1716,7 @@ window.background > box.vertical > notebook:not(.frame) > stack > box,
 window.background.csd > box.vertical > notebook:not(.frame) > stack > box,
 window.background.ssd > box.vertical > notebook:not(.frame) > stack > box,
 window.background.solid-csd > box.vertical > notebook:not(.frame) > stack > box {
-    margin:-1px -1px 0px 0px ;
+    margin: 0px;
     border-style: solid;
     border-width: 0px 0.4px 0.4px 0.4px;
     border-color: @notebook_border;
@@ -1725,6 +1726,7 @@ window.background > box.vertical > notebook:not(.frame) > header.top,
 window.background.csd > box.vertical > notebook:not(.frame) > header.top,
 window.background.ssd > box.vertical > notebook:not(.frame) > header.top,
 window.background.solid-csd > box.vertical > notebook:not(.frame) > header.top {
+    margin: 0px;
     border-style: solid;
     border-width: 0px 0px 0px 1px;
     border-color: @notebook_border;
