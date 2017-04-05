@@ -1772,7 +1772,11 @@ paned.horizontal notebook header.top {
     margin: 0px;
     border-width: 0px 0px 0px 1px;
     border-style: solid;
-    border-color: @border_color;
+    border-image: linear-gradient(to bottom,
+                  shade(@notebook_tab_gradient_a, 1.05),
+                  shade(@notebook_tab_gradient_b, 1.04) 50%,
+                  shade(@notebook_tab_gradient_c, 1.06) 50%,
+                  shade(@notebook_tab_gradient_d, 1.05)) 0 100%;
 }
 
 printdialog > box.view.vertical.dialog-vbox > box.vertical > notebook > header.top {
