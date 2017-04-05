@@ -105,6 +105,11 @@ PanelToplevel.background {
     box-shadow: none;
 }
 
+/* hide buttons */
+PanelToplevel > grid > button {
+    padding: 0px;
+}
+
 #PanelApplet {
     border-width: 0;
 }
