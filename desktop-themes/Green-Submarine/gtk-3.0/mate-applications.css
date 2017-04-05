@@ -405,36 +405,51 @@ PanelToplevel.background {
 }
 
 /* panel grip */
+/* FIXME, border-radius doesn't work any more */
 PanelToplevel.background {
     border-radius: 3px;
 }
 
 /* hide buttons */
-PanelToplevel > widget > button {
+/* horizontal panel */
+PanelToplevel.horizontal > grid > button:first-child {
+    border-radius: 3px 0px 0px 3px;
+}
+
+PanelToplevel.horizontal > grid > button {
+    border-radius: 0px 3px 3px 0px;
+}
+
+/* vertical panel */
+PanelToplevel.vertical > grid > button:first-child {
+    border-radius: 3px 3px 0px 0px;
+}
+
+PanelToplevel.vertical > grid > button {
+    border-radius: 0px 0px 3px 3px;
+}
+
+PanelToplevel > grid > button {
     color: @menu_fg_dark_color;
     background-image: none;
     background: transparent;
     border-style: none;
     border-radius: 3px;
     padding: 0px;
-    box-shadow: inset  0px  2px alpha(#fff, 0.11),
-                inset  2px  0px alpha(#fff, 0.09),
-                inset -2px  0px alpha(#fff, 0.09),
-                inset  0px -2px alpha(#fff, 0.07),
-                inset  0px  1px alpha(shade(@button_border, 1.00), 0.70),
-                inset  1px  0px alpha(shade(@button_border, 0.94), 0.80),
-                inset -1px  0px alpha(shade(@button_border, 0.94), 0.80),
-                inset  0px -1px alpha(shade(@button_border, 0.88), 0.90);
+    box-shadow: inset  0px  1px alpha(shade(@menu_fg_dark_color, 0.70), 0.80),
+                inset  1px  0px alpha(shade(@menu_fg_dark_color, 0.70), 0.80),
+                inset -1px  0px alpha(shade(@menu_fg_dark_color, 0.70), 0.80),
+                inset  0px -1px alpha(shade(@menu_fg_dark_color, 0.70), 0.80);
 }
 
-PanelToplevel > widget > button:hover,
-PanelToplevel > widget > button:hover:active {
+PanelToplevel > grid > button:hover,
+PanelToplevel > grid > button:hover:active {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (shade(@menu_bg_dark_color, 2.03)),
                                      to   (shade(@menu_bg_dark_color, 1.17)));
     text-shadow: none;
-    color: shade (@theme_selected_bg_color, 1.3);
+    color: shade (@theme_selected_bg_color, 1.6);
     box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
                 inset  1px  0px shade(@selected_bg_color, 0.97),
                 inset -1px  0px shade(@selected_bg_color, 0.93),
