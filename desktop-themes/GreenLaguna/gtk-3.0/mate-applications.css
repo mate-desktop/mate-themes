@@ -211,19 +211,19 @@ PanelToplevel.background {
 }
 
 /* hide buttons */
-PanelToplevel > widget > button {
+PanelToplevel > grid > button {
     color: @theme_fg_color;
     background: transparent;
     border-image: none;
-    border-radius: 3px;
+    border-radius: 0px;
     border-style: solid;
     border-color: transparent;
     padding: 0px;
     box-shadow: none;
 }
 
-PanelToplevel > widget > button:hover {
-    border-radius: 3px;
+PanelToplevel > grid > button:hover {
+    border-radius: 0px;
     border-image: none;
     border-style: solid;
     padding: 0px;
@@ -234,8 +234,8 @@ PanelToplevel > widget > button:hover {
                                       shade(@button_gradient_color_a, 1.5));
 }
 
-PanelToplevel > widget > button:hover:active {
-    border-radius: 3px;
+PanelToplevel > grid > button:hover:active {
+    border-radius: 0px;
     color: @theme_fg_color;
     border-style: solid;
     background-image: linear-gradient(to bottom,

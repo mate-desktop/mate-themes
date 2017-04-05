@@ -125,6 +125,12 @@ MatePanelAppletFrameDBus {
     box-shadow: none;
 }
 
+/* hide buttons */
+PanelToplevel > grid > button {
+    padding: 0px;
+    border-radius: 0px;
+}
+
 #PanelApplet {
     border-width: 0;
 }
