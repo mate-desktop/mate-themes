@@ -35,14 +35,17 @@
 }
 
 *:selected,
-*:selected:focus {
+*:selected:focus,
+*:selected:backdrop {
 	background-color: @theme_selected_bg_color;
 	color: @theme_selected_fg_color;
 }
 
+/*
 *:selected:backdrop {
 	color: @theme_fg_color;
 }
+*/
 
 *:disabled {
 	/*background-color: @insensitive_bg_color;*/
@@ -254,7 +257,8 @@ toolbar .separator {
  ************************/
 
 /* displays at end of mouse scrolling */
-overshoot.top {
+overshoot.top,
+overshoot.top:backdrop {
     background-image: -gtk-gradient(radial,
                                     center top, 0,
                                     center top, 0.5,
@@ -273,6 +277,7 @@ overshoot.top {
     box-shadow: none;
 }
 
+/*
 overshoot.top:backdrop {
     background-image: -gtk-gradient(radial,
                                     center top, 0,
@@ -286,8 +291,10 @@ overshoot.top:backdrop {
     border: none;
     box-shadow: none;
 }
+*/
 
-overshoot.bottom {
+overshoot.bottom,
+overshoot.bottom:backdrop {
     background-image: -gtk-gradient(radial,
                                     center bottom, 0,
                                     center bottom, 0.5,
@@ -306,6 +313,7 @@ overshoot.bottom {
     box-shadow: none;
 }
 
+/*
 overshoot.bottom:backdrop {
     background-image: -gtk-gradient(radial,
                                     center bottom, 0,
@@ -319,8 +327,10 @@ overshoot.bottom:backdrop {
     border: none;
     box-shadow: none;
 }
+*/
 
-overshoot.left {
+overshoot.left,
+overshoot.left:backdrop {
     background-image: -gtk-gradient(radial,
                                     left center, 0,
                                     left center, 0.5,
@@ -339,6 +349,7 @@ overshoot.left {
     box-shadow: none;
 }
 
+/*
 overshoot.left:backdrop {
     background-image: -gtk-gradient(radial,
                                     left center, 0,
@@ -352,8 +363,10 @@ overshoot.left:backdrop {
     border: none;
     box-shadow: none;
 }
+*/
 
-overshoot.right {
+overshoot.right,
+overshoot.right:backdrop {
     background-image: -gtk-gradient(radial,
                                     right center, 0,
                                     right center, 0.5,
@@ -372,6 +385,7 @@ overshoot.right {
     box-shadow: none;
 }
 
+/*
 overshoot.right:backdrop {
     background-image: -gtk-gradient(radial,
                                     right center, 0,
@@ -385,6 +399,7 @@ overshoot.right:backdrop {
     border: none;
     box-shadow: none;
 }
+*/
 
 /* result is disable undershoot */
 undershoot.top {
@@ -887,7 +902,8 @@ row trough,
 		mix(@trough_bg_color_b, @theme_selected_bg_color, 0.25));
 }
 
-treeview.view.progressbar {
+treeview.view.progressbar,
+treeview.view.progressbar:backdrop {
       color: @theme_selected_fg_color;
       border: 1px solid @progressbar_border;
       border-radius: 4px;
@@ -904,11 +920,13 @@ treeview.view.progressbar:selected {
       border-color: shade(@progressbar_border, 0.85);
 }
 
+/*
 treeview.view.progressbar:backdrop {
       color: @theme_fg_color;
       border-color: shade(@sidebar_bg_unfocused, 0.85);
       background-color: @sidebar_scrollbar_trough_backdrop;
 }
+*/
 
 treeview.view.trough {
     background-color: rgba(102, 153, 204, 0.3);
@@ -1873,11 +1891,13 @@ stacksidebar row.needs-attention > label {
   background-position: right 3px, right 4px;
 }
 
+/*
 stackswitcher > button.needs-attention > label:backdrop,
 stackswitcher > button.needs-attention > image:backdrop,
 stacksidebar row.needs-attention > label:backdrop {
 	background-size: 6px 6px, 0 0; 
 }
+*/
 
 stackswitcher > button.needs-attention > label:dir(rtl),
 stackswitcher > button.needs-attention > image:dir(rtl),
@@ -2378,7 +2398,8 @@ notebook header.right tabs arrow.down {
     color: @menu_controls_color;
 }
 
-notebook header tabs arrow {
+notebook header tabs arrow,
+notebook header tabs arrow:backdrop {
     color: shade(@theme_fg_color, 2.6);
 }
 
@@ -2394,9 +2415,11 @@ notebook header tabs arrow:disabled {
     color: rgba(141, 144, 145, 0.3);
 }
 
+/*
 notebook header tabs arrow:backdrop {
     color: rgba(84, 89, 90, 0.4);
 }
+*/
 
 notebook header tabs arrow:disabled {
     color: #c7c7c7;
@@ -4470,7 +4493,8 @@ iconview .cell:selected:focus {
 .view text,
 textview,
 .view,
-treeview.view {
+treeview.view,
+treeview.view:backdrop {
 	background-color: @theme_base_color;
 	color: @theme_text_color;
 }
@@ -4483,7 +4507,9 @@ treeview.view:disabled {
 }
 
 .view text selection,
+.view text selection:backdrop,
 .view:selected,
+.view:selected:backdrop,
 treeview.view:selected {
 	background-color: @theme_selected_bg_color;
 	color: @theme_selected_fg_color;
@@ -4496,12 +4522,14 @@ treeview.view:hover {
 	color: shade (@theme_selected_bg_color, 0.35);
 }
 
+/*
 .view text selection:backdrop,
 .view:selected:backdrop,
 treeview.view:backdrop {
 	background-color: shade(@theme_unfocused_bg_color, 0.94);
 	color: @theme_fg_color;
 }
+*/
 
 /* color of selected icons if unfocused */
 .view:active,
@@ -4520,16 +4548,21 @@ treeview.view:active {
 label:selected,
 label selection,
 label selection:focus,
-label selection:hover {
+label selection:hover,
+label:backdrop:selected,
+label selection:backdrop {
   background-color: @theme_selected_bg_color;
   color: @theme_selected_fg_color;
 }
 
 label:disabled:selected,
-label selection:disabled {
+label selection:disabled,
+label:backdrop:disabled:selected,
+label selection:backdrop:disabled {
 	color: @insensitive_fg_color;
 }
 
+/*
 label:backdrop:selected,
 label selection:backdrop {
 	color: @theme_fg_color;
@@ -4539,6 +4572,7 @@ label:backdrop:disabled:selected,
 label selection:backdrop:disabled {
 	color: @insensitive_fg_color;
 }
+*/
 
 .cell {
 	padding: 2px;
@@ -4546,22 +4580,28 @@ label selection:backdrop:disabled {
 }
 
 .cell:selected,
-.cell:selected:focus {
+.cell:selected:focus,
+.cell:selected:backdrop,
+.cell:selected:focus:backdrop {
 	background-color: @theme_selected_bg_color;
 	color: @theme_selected_fg_color;
 }
 
+/*
 .cell:selected:backdrop,
 .cell:selected:focus:backdrop {
 	color: @theme_fg_color;
 }
+*/
 
 row {
     min-height: 22px;
 }
 
 row:selected,
-row:selected:focus {
+row:selected:focus,
+row:selected:backdrop,
+row:selected:focus:backdrop {
 	border-width: 1px 0 1px 0;
 	border-style: solid;
 	border-color: shade (@theme_selected_bg_color, 0.85);
@@ -4571,10 +4611,12 @@ row:selected:focus {
 	box-shadow: none;
 }
 
+/*
 row:selected:backdrop,
 row:selected:focus:backdrop {
 	color: @theme_fg_color;
 }
+*/
 
 .sidebar treeview.view:hover {
 	background-color: shade (@theme_selected_bg_color, 1.15);
@@ -4642,10 +4684,12 @@ treeview header.button.dnd {
     background-clip: padding-box;
 }
 
+/*
 .app-notification:backdrop,
 .app-notification.frame:backdrop {
     background-image: none;
 }
+*/
 
 .app-notification button,
 .app-notification headerbar button.titlebutton,
@@ -4736,6 +4780,7 @@ calendar.header .app-notification.frame button.titlebutton {
     padding: 0px;
 }
 
+/*
 .app-notification button:backdrop,
 .app-notification.frame button:backdrop {
     color: #eeeeec;
@@ -4750,6 +4795,7 @@ calendar.header .app-notification.frame button.titlebutton {
     border-radius: 3px;
     padding: 0px;
 }
+*/
 
 /*************
  * Expanders *
@@ -4880,7 +4926,11 @@ list row.activatable:hover {
 list row:selected,
 list row:selected:hover,
 list row.activatable:selected,
-list row.activatable:selected:hover {
+list row.activatable:selected:hover,
+list row:selected:backdrop,
+list row:selected:backdrop:hover,
+list row.activatable:selected:backdrop,
+list row.activatable:selected:backdrop:hover {
     padding: 2px;
     border-width: 0;
     border-style: solid;
@@ -4893,6 +4943,7 @@ list row.activatable:selected:hover {
     color: @theme_selected_fg_color;
 }
 
+/*
 list row:selected:backdrop,
 list row:selected:backdrop:hover,
 list row.activatable:selected:backdrop,
@@ -4904,6 +4955,7 @@ list row.activatable:selected:backdrop:hover {
     text-shadow: none;
     box-shadow: none;
 }
+*/
 
 list > row > button {
 	border-color: transparent;
@@ -5414,18 +5466,23 @@ headerbar .subtitle {
 	padding: 0px 12px;
 }
 
+/*
 .titlebar:backdrop {
     color: @theme_unfocused_fg_color;
 }
+*/
 
-.titlebar button.titlebutton {
+.titlebar button.titlebutton,
+.titlebar button.titlebutton:backdrop {
     color: @wm_title;
 }
 
+/*
 .titlebar button.titlebutton:backdrop {
     color: @wm_unfocused_title;
     -gtk-icon-shadow: none;
 }
+*/
 
 headerbar button.text-button,
 .titlebar button.text-button {

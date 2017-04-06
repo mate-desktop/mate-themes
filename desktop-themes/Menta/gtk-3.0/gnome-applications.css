@@ -16,7 +16,8 @@
 	color: @theme_text_color;
 }
 
-.nautilus-desktop.nautilus-canvas-item:selected {
+.nautilus-desktop.nautilus-canvas-item:selected,
+.nautilus-desktop.nautilus-canvas-item:selected:backdrop {
 	color: @theme_selected_fg_color;
 }
 
@@ -26,9 +27,11 @@
 	text-shadow: none;
 }
 
+/*
 .nautilus-desktop.nautilus-canvas-item:selected:backdrop {
 	color: @theme_unfocused_selected_fg_color;
 }
+*/
 
 /* workaround for jumping buttons in nautilus */
 .nautilus-window headerbar.titlebar .linked.path-bar > button,
