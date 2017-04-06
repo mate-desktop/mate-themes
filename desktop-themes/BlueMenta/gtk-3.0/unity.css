@@ -43,13 +43,14 @@ UnityDecoration.top {
 }
 
 /* Top decoration for inactive windows */
+/*
 UnityDecoration.top:backdrop {
 	border: 0px solid @theme_bg_color;
 	border-bottom-width: 0;
 	background-color: @theme_bg_color;
 	color: @theme_unfocused_fg_color;
 }
-
+*/
 /* Left decoration, it themes only the space at the left of the window */
 UnityDecoration.left,
 /* Right decoration, it themes only the space at the right of the window */
@@ -60,8 +61,10 @@ UnityDecoration.bottom {
 }
 
 /* Left, right and bottom decorations themes for inactive windows */
+/*
 UnityDecoration.left:backdrop,
 UnityDecoration.right:backdrop,
 UnityDecoration.bottom:backdrop {
 	background-color: @theme_bg_color;
 }
+*/
