@@ -3553,3 +3553,12 @@ stackswitcher button.text-button {
 stackswitcher button.circular {
   min-width: 0px; }
 
+/* print dialog */
+
+printdialog.background paper {
+    border-style: solid;
+    border-width: 0.9px;
+    border-radius: 0px;
+    border-color: white;
+    background-color: #737373;
+}
