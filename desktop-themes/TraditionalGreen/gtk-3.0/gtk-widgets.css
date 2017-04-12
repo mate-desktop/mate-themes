@@ -1835,7 +1835,7 @@ notebook header tab {
 
 notebook header.top tab {
     margin: 0px 0px 0px -1px;
-    padding: 4px 6px 2px 6px;
+    padding: 4px 6px 4px 6px;
     border-width: 1px;
     border-radius: 3px 3px 0px 0px;
     background-image: linear-gradient(to bottom,
@@ -1855,7 +1855,7 @@ notebook header.top tab:checked {
 
 notebook header.right tab {
     margin: -1px 0px 0px 0px;
-    padding: 6px 4px 6px 2px;
+    padding: 6px 4px 6px 4px;
     border-width: 1px;
     border-radius: 0px 3px 3px 0px;
     background-image: linear-gradient(to left,
@@ -1875,7 +1875,7 @@ notebook header.right tab:checked {
 
 notebook header.bottom tab {
     margin: 0px 0px 0px -1px;
-    padding: 2px 6px 4px 6px;
+    padding: 4px 6px 4px 6px;
     border-width: 1px;
     border-radius: 0px 0px 3px 3px;
     background-image: linear-gradient(to top,
@@ -1895,7 +1895,7 @@ notebook header.bottom tab:checked {
 
 notebook header.left tab {
     margin: -1px 0px 0px 0px;
-    padding: 6px 2px 6px 4px;
+    padding: 6px 4px 6px 4px;
     border-width: 1px;
     border-radius: 3px 0px 0px 3px;
     background-image: linear-gradient(to right,
