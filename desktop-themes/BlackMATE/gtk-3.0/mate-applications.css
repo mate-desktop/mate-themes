@@ -727,7 +727,8 @@ pluma-print-preview.vertical toolbar.horizontal button.flat.text-button {
 
 /* mate-keyboard-layout-view, mate-keyboard-layout-chooser */
 /* this way it styles only the border of the keys, the bg of the map itself
-   use the .view class */
+   use the .view class, and use old and new selectors for a while */
+matekbd-keyboard-drawing,
 .gswitchit-layout-view > box.dialog-vbox > box.vertical > widget,
 #xkb-layout-chooser > box.dialog-vbox > box.vertical > box.vertical > frame > widget {
     background-color: shade (@theme_bg_color, 1.0);

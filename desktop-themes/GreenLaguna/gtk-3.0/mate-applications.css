@@ -682,15 +682,12 @@ GvcMixerDialog > box.vertical.dialog-vbox > notebook.frame scrolledwindow.frame 
 }
 
 /* mate-keyboard-layout-view, mate-keyboard-layout-chooser */
-.gswitchit-layout-view box.dialog-vbox box.vertical widget,
-#xkb-layout-chooser box.dialog-vbox box.vertical box.vertical frame widget {
-    background-color: shade(@base_color, 1.03);
-}
-
-/* this way it styles only the border of the keys */
+/* this way it styles only the border of the keys, the bg of the map itself
+   use the .view class, and use old and new selectors for a while */
+matekbd-keyboard-drawing,
 .gswitchit-layout-view > box.dialog-vbox > box.vertical > widget,
 #xkb-layout-chooser > box.dialog-vbox > box.vertical > box.vertical > frame > widget {
-    background-color: shade (@theme_bg_color, 1.0);
+    background-color: shade (@theme_bg_color, 1.03);
 }
 
 #xkb-layout-chooser > box.dialog-vbox > box.vertical > box.vertical > frame > border {
