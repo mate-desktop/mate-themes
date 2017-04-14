@@ -51,23 +51,22 @@
 <constant name="ButtonIPad" value="3"/>
 
 <draw_ops name="inner_window_border">
-  <gradient type="vertical" x="left_width-1" y="top_height-1" width="1" height="height-bottom_height-top_height+2">
+  <gradient type="vertical" x="0" y="top_height-1" width="3" height="height-bottom_height-top_height+2">
     <color value="#303030"/>
-    <color value="#CBD5D9"/>
-    <color value="#CBD5D9"/>
+    <color value="#303030"/>
+    <color value="#303030"/>
   </gradient>
-  <gradient type="vertical" x="width-right_width" y="top_height-1" width="1" height="height-bottom_height-top_height+2">
+  <gradient type="vertical" x="width-right_width" y="top_height-1" width="3" height="height-bottom_height-top_height+2">
     <color value="#303030"/>
-    <color value="#CBD5D9"/>
-    <color value="#CBD5D9"/>
+    <color value="#303030"/>
+    <color value="#303030"/>
   </gradient>
 
-	<line color="#303030" 
-	x1="left_width" y1="top_height-1" x2="width-right_width"
-	y2="top_height-1" />
-	<line color="#CBD5D9"
-	x1="left_width" y1="height-bottom_height" x2="width-right_width"
-	y2="height-bottom_height" />
+  <gradient type="horizontal" x="0" y="height-bottom_height" width="width" height="3">
+    <color value="#303030"/>
+    <color value="#303030"/>
+    <color value="#303030"/>
+  </gradient>
 </draw_ops>
 
 <!-- ** stripes ** -->
