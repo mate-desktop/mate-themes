@@ -4509,8 +4509,10 @@ treeview.view:disabled {
 .view text selection,
 .view text selection:backdrop,
 .view:selected,
+.view:selected:hover,
 .view:selected:backdrop,
-treeview.view:selected {
+treeview.view:selected,
+treeview.view:selected:hover {
 	background-color: @theme_selected_bg_color;
 	color: @theme_selected_fg_color;
 }

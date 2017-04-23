@@ -17,6 +17,11 @@
     background-color: @theme_bg_color;
 }
 
+/* ie. inactive-pane caja */
+.caja-notebook .view:disabled {
+    background-color: @inactive-pane_bg_color;
+}
+
 
 .caja-navigation-window paned>box>box>button {
 	border-image: url("assets/button-border-dark1.svg") 3 / 3px stretch;

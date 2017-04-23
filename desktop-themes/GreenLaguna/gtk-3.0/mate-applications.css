@@ -161,6 +161,11 @@
     text-shadow: none;
 }
 
+/* inactive-pane caja */
+.caja-notebook .view:disabled {
+    background-color: @inactive-pane_bg_color;
+}
+
 /****************
  * Mate-Panel *
  ****************/
