@@ -15,6 +15,11 @@
     padding: 0px;
 }
 
+/* inactive-pane caja */
+.caja-notebook .view:disabled {
+    background-color: @inactive-pane_bg_color;
+}
+
 /* to avoid white pixels from base color */
 .caja-notebook {
     background-color: @theme_bg_color;
