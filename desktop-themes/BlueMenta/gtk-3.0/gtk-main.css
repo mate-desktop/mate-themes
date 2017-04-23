@@ -231,6 +231,9 @@
 /* csd border */
 @define-color wm_csd_solid_border_color shade (#3c3c3c, 1.2);
 
+/* inactive-pane caja */
+@define-color inactive-pane_bg_color #DEDEDE;
+
 @import url("gtk-main-common.css");
 @import url("gtk-widgets-backgrounds.css");
 @import url("gtk-widgets-borders.css");

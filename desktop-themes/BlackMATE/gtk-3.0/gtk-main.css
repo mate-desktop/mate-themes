@@ -172,6 +172,9 @@
 @define-color overshoot_bg_color alpha (@theme_selected_bg_color, 0.35);
 @define-color overshoot_backdrop_bg_color #F57900;
 
+/* inactive-pane caja */
+@define-color inactive-pane_bg_color #606060;
+
 @import url("gtk-widgets.css");
 @import url("gtk-widgets-assets-dark.css");
 @import url("unity.css");
