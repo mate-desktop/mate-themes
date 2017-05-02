@@ -324,6 +324,13 @@ ShellWindow GtkScrolledWindow .button.flat:hover {
     padding: 3px;
 }
 
+/* mate-indicator-applet */
+/* needed for a transparent panel */
+#fast-user-switch-applet > #fast-user-switch-menubar {
+    background-color: transparent;
+    background-image: none;
+}
+
 /****************
  * Pluma *
  ****************/
