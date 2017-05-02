@@ -355,6 +355,13 @@ na-tray-applet {
     border-width: 1px;
 }
 
+/* mate-indicator-applet */
+/* needed for a transparent panel */
+#fast-user-switch-applet > #fast-user-switch-menubar {
+    background-color: transparent;
+    background-image: none;
+}
+
 /****************
  * Pluma *
  ****************/
