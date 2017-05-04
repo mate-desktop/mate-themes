@@ -4327,11 +4327,16 @@ button.flat.link.text-button:hover:active {
  ******************/
 
 /* ie. mate-keyboard-properties option window */
-dialog scrolledwindow.frame {
+dialog > .vertical.dialog-vbox > scrolledwindow.frame {
     border-color: @border_color;
     border-style: solid;
     border-width: 1px;
     border-radius: 2px;
+}
+
+dialog > .vertical.dialog-vbox > scrolledwindow.frame > viewport.view > box.vertical > expander {
+    border-style: none;
+    background-color: transparent;
 }
 
 /* credits in GtkAbout windows */
@@ -4345,6 +4350,12 @@ dialog scrolledwindow.frame viewport .vertical expander .vertical {
     border-color: @border_color;
     border-style: solid;
     border-width: 1px;
+}
+
+/* ie. caja fm-properties-window notes tab */
+dialog > .vertical.dialog-vbox > notebook.frame > stack > scrolledwindow,
+dialog > .vertical.dialog-vbox > notebook.frame > stack > scrolledwindow.frame {
+    border-style: none;
 }
 
 /* print dialog */
