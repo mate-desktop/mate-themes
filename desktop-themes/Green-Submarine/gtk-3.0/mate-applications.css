@@ -770,7 +770,8 @@ na-tray-applet > widget > box {
                                      to   (alpha(shade(@menu_bg_dark_color, 0.57) ,0.6)));
 }
 
-/* mate-menu */
+/* mate-menu, mintmenu */
+#mintmenu.background,
 #mate-menu.background {
     background-color: @menu_bg_dark_color;
     background-image: -gtk-gradient (linear,
@@ -783,6 +784,8 @@ na-tray-applet > widget > box {
     border-radius:2px;
 }
 
+#mintmenu.background viewport,
+#mintmenu.background > widget > box > widget > box,
 #mate-menu.background viewport,
 #mate-menu.background > widget > box > widget > box {
     background-color: @menu_bg_dark_color;
@@ -792,6 +795,8 @@ na-tray-applet > widget > box {
                                      to   (shade(@menu_bg_dark_color, 0.97)));
 }
 
+#mintmenu.background viewport,
+#mintmenu.background notebook,
 #mate-menu.background viewport,
 #mate-menu.background notebook  {
     color: @menu_fg_dark_color;
@@ -800,6 +805,7 @@ na-tray-applet > widget > box {
     border-style: none;
 }
 
+#mintmenu.background scrolledwindow,
 #mate-menu.background scrolledwindow {
     border-color: shade(@menu_fg_dark_color, 0.3);
     border-width: 1px;
@@ -807,7 +813,13 @@ na-tray-applet > widget > box {
     border-radius: 0px;
 }
 
-#mate-menu.background label,
+#mintmenu.background label,
+#mate-menu.background label {
+    color: @menu_fg_dark_color;
+}
+
+#mintmenu.background button,
+#mintmenu.background button.flat,
 #mate-menu.background button,
 #mate-menu.background button.flat {
     color: @menu_fg_dark_color;
@@ -816,12 +828,23 @@ na-tray-applet > widget > box {
     box-shadow: none;
 }
 
+#mintmenu.background viewport button:not(.flat) label,
+#mintmenu.background button:hover label,
+#mintmenu.background viewport button:not(.flat),
+#mintmenu.background button:hover,
+#mintmenu.background button.flat:hover,
+#mate-menu.background viewport button:not(.flat) label,
 #mate-menu.background button:hover label,
+#mate-menu.background viewport button:not(.flat),
 #mate-menu.background button:hover,
 #mate-menu.background button.flat:hover {
     color: shade (@theme_selected_bg_color, 2.0);
 }
 
+#mintmenu.background viewport button:not(.flat),
+#mintmenu.background button:hover,
+#mintmenu.background button.flat:hover,
+#mate-menu.background viewport button:not(.flat),
 #mate-menu.background button:hover,
 #mate-menu.background button.flat:hover {
     background-image: -gtk-gradient (linear,
@@ -834,11 +857,14 @@ na-tray-applet > widget > box {
                 inset  0px -1px shade(@selected_bg_color, 0.93);
 }
 
+#mintmenu.background button,
+#mintmenu.background button.flat,
 #mate-menu.background button,
 #mate-menu.background button.flat {
     padding: 4px;
 }
 
+#mintmenu.background separator,
 #mate-menu.background separator {
     border-width: 1px 0px 0px 0px;
     min-height: 1px;
@@ -851,16 +877,19 @@ na-tray-applet > widget > box {
                                  to (alpha (#000, 0.00))) 1;
 }
 
+#mintmenu.background scrollbar,
 #mate-menu.background scrollbar {
     background-image: none;
     border-style: solid;
     border-color: shade(@menu_fg_dark_color, 0.3);
 }
 
+#mintmenu.background scrollbar.vertical trough,
 #mate-menu.background scrollbar.vertical trough {
     background-image: none;
 }
 
+#mintmenu.background scrollbar.vertical slider,
 #mate-menu.background scrollbar.vertical slider {
     background-image: -gtk-gradient (linear, left top, left bottom,
                                      from (shade (@menu_bg_dark_color, 1.75)),
@@ -868,6 +897,8 @@ na-tray-applet > widget > box {
     border-color: shade(@menu_fg_dark_color, 0.3);
 }
 
+#mintmenu.background scrollbar.vertical slider:hover,
+#mintmenu.background scrollbar.vertical slider:hover:active,
 #mate-menu.background scrollbar.vertical slider:hover,
 #mate-menu.background scrollbar.vertical slider:hover:active {
     background-image: -gtk-gradient (linear, left top, left bottom,
@@ -876,6 +907,8 @@ na-tray-applet > widget > box {
     border-color: shade(@menu_fg_dark_color, 0.3);
 }
 
+#mintmenu.background scrollbar.vertical.fine-tune slider:hover:active,
+#mintmenu.background scrollbar.vertical.fine-tune .slider:hover:active,
 #mate-menu.background scrollbar.vertical.fine-tune slider:hover:active,
 #mate-menu.background scrollbar.vertical.fine-tune .slider:hover:active {
     background-image: url("assets/slider_fine_vertical.svg"),
@@ -888,15 +921,18 @@ na-tray-applet > widget > box {
     border-color: shade(@menu_fg_dark_color, 0.3);
 }
 
+#mintmenu.background scrollbar.vertical button,
 #mate-menu.background scrollbar.vertical button {
     padding: 0px;
 }
 
+#mintmenu.background scrollbar.vertical button:disabled,
 #mate-menu.background scrollbar.vertical button:disabled {
     background-color: transparent;
     color: shade (@insensitive_fg_color, 0.6);
 }
 
+#mintmenu.background entry,
 #mate-menu.background entry {
     background-color: transparent;
     background-image: -gtk-gradient(linear,
@@ -908,6 +944,8 @@ na-tray-applet > widget > box {
     color: shade (@menu_fg_dark_color, 1.0);
 }
 
+#mintmenu.background entry,
+#mintmenu.background entry:focus,
 #mate-menu.background entry,
 #mate-menu.background entry:focus {
     box-shadow: inset  0px  1px shade(@menu_fg_dark_color, 0.3),
@@ -918,10 +956,22 @@ na-tray-applet > widget > box {
 	caret-color: shade (@menu_fg_dark_color, 1.0);
 }
 
+#mintmenu.background entry selection,
+#mintmenu.background entry selection:focus,
 #mate-menu.background entry selection,
 #mate-menu.background entry selection:focus {
     background-color: shade(@menu_fg_dark_color, 0.4);
     color: shade (@menu_fg_dark_color, 1.2);
+}
+
+#mintmenu.background entry menuitem:hover label,
+#mate-menu.background entry menuitem:hover label {
+    color: shade (@theme_selected_bg_color, 2.0);
+}
+
+#mintmenu.background entry menuitem:disabled label,
+#mate-menu.background entry menuitem:disabled label {
+    color: mix (@menu_fg_dark_color, @menu_bg_dark_color, 0.4);
 }
 
 /****************
