@@ -556,17 +556,38 @@ na-tray-applet widget box widget {
     color: @theme_fg_color;
 }
 
-/* mate-menu, mintmenu fork */
+/* mate-menu, mintmenu */
+#mintmenu.background,
 #mate-menu.background {
     border-color: @borders;
     border-style: solid;
     border-width: 1px;
 }
 
+#mintmenu.background button,
+#mintmenu.background button.flat,
 #mate-menu.background button,
 #mate-menu.background button.flat {
     padding: 3px 1px;
     border-width: 2px;
+}
+
+#mintmenu.background scrollbar.vertical button,
+#mate-menu.background scrollbar.vertical button {
+    padding: 1px 0px;
+}
+
+#mintmenu.background scrolledwindow,
+#mate-menu.background scrolledwindow {
+    border-color: @borders;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0px;
+}
+
+#mintmenu.background notebook.frame scrolledwindow,
+#mate-menu.background notebook.frame scrolledwindow {
+    border-style: none;
 }
 
 /****************
