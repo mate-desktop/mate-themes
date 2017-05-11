@@ -1,6 +1,10 @@
 AC_PREREQ(2.53)
 
+<<<<<<< HEAD
 AC_INIT([mate-themes], [3.22.9], [http://www.mate-desktop.org])
+=======
+AC_INIT([mate-themes], [3.22.11], [http://www.mate-desktop.org])
+>>>>>>> b8765a9a... release 3.22.11
 AC_CONFIG_SRCDIR([icon-themes])
 
 AM_INIT_AUTOMAKE([1.9 tar-ustar dist-xz no-dist-gzip check-news])
