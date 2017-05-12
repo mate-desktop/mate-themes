@@ -1087,7 +1087,7 @@ vte-terminal {
 }
 
 /* sidebar file-browser */
-.pluma-window paned.horizontal box.vertical {
+.pluma-window > box.vertical > paned.horizontal > box.vertical {
     background-image: linear-gradient(to bottom,
                                       shade(@theme_bg_color, 1.14),
                                       shade(@theme_bg_color, 1.1));
