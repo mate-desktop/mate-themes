@@ -1110,18 +1110,23 @@ vte-terminal {
     box-shadow: none;
 }
 
-.pluma-window paned.horizontal notebook.frame {
+.pluma-window > box.vertical > paned.horizontal > box.vertical > notebook.frame {
     border-radius: 0px;
     border-style: none;
 }
 
-.pluma-window paned.horizontal toolbar.horizontal button {
+/* document notebook */
+.pluma-window > box.vertical > paned.horizontal > box.vertical > notebook.frame > stack > box.vertical > scrolledwindow.frame {
+    border-bottom-style: none;
+}
+
+.pluma-window > box.vertical > paned.horizontal > box.vertical > notebook.frame > stack > box.vertical > toolbar.horizontal button {
     padding: 6px 3px ;
     box-shadow: none;
     border-style:none;
 }
 
-.pluma-window paned.horizontal toolbar.horizontal button:hover {
+.pluma-window > box.vertical > paned.horizontal > box.vertical > notebook.frame > stack > box.vertical > toolbar.horizontal button:hover {
     border-style:none;
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
