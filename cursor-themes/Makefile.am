@@ -25,6 +25,7 @@ cursor_DATA = \
 	bottom_tee \
 	c7088f0f3e6c8088236ef8e1e3e70000 \
 	circle \
+	color-picker \
 	copy \
 	cross \
 	crossed_circle \
