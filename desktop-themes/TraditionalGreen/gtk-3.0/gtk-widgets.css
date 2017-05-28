@@ -1763,11 +1763,7 @@ notebook header.top {
     margin: -1px -1px 0px 0px;
     border-width: 0px 0px 1px 0px;
     border-radius: 3px 3px 0px 0px;
-    background-image: linear-gradient(to bottom,
-                      shade(@notebook_tab_gradient_a, 1.05),
-                      shade(@notebook_tab_gradient_b, 1.04) 50%,
-                      shade(@notebook_tab_gradient_c, 1.06) 50%,
-                      shade(@notebook_tab_gradient_d, 1.05));
+    background-color: @theme_bg_color;
     box-shadow: inset  0px -1px 0 0 @border_color;
 }
 
@@ -1789,33 +1785,21 @@ printdialog > box.view.vertical.dialog-vbox > box.vertical > notebook > header.t
 notebook header.bottom {
     margin: 0px -1px -1px 0px;
     border-width: 1px 1px 0px 0px;
-    background-image: linear-gradient(to top,
-                      shade(@notebook_tab_gradient_a, 1.05),
-                      shade(@notebook_tab_gradient_b, 1.04) 50%,
-                      shade(@notebook_tab_gradient_c, 1.06) 50%,
-                      shade(@notebook_tab_gradient_d, 1.05));
+    background-color: @theme_bg_color;
     box-shadow: inset  0px  1px 0 0 @border_color;
 }
 
 notebook header.left {
     margin: 0px 0px -1px -1px;
     border-width: 0px 1px 0px 0px;
-    background-image: linear-gradient(to right,
-                      shade(@notebook_tab_gradient_a, 1.05),
-                      shade(@notebook_tab_gradient_b, 1.04) 50%,
-                      shade(@notebook_tab_gradient_c, 1.06) 50%,
-                      shade(@notebook_tab_gradient_d, 1.05));
+    background-color: @theme_bg_color;
     box-shadow: inset -1px  0px 0 0 @border_color;
 }
 
 notebook header.right {
     margin: 0px -1px -1px 0px;
     border-width: 0px 0px 0px 1px;
-    background-image: linear-gradient(to left,
-                      shade(@notebook_tab_gradient_a, 1.05),
-                      shade(@notebook_tab_gradient_b, 1.04) 50%,
-                      shade(@notebook_tab_gradient_c, 1.06) 50%,
-                      shade(@notebook_tab_gradient_d, 1.05));
+    background-color: @theme_bg_color;
     box-shadow: inset  1px  0px 0 0 @border_color;
 }
 
@@ -4376,4 +4360,3 @@ printdialog.background paper {
 dialog.background dialog-vbox.vertical .vertical {
     background: transparent;
 }
-
