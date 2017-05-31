@@ -2946,7 +2946,6 @@ headerbar,
     border-style: solid;
     padding: 0 1px;
     border-radius: 7px 7px 0 0;
-    padding: 6px;
     background-color: @theme_bg_color;
     border-color: shade(@theme_bg_color, 0.8);
     text-shadow: none;
@@ -2991,29 +2990,41 @@ dialog.background.solid-csd > headerbar.titlebar  {
  * did not set a custom titlebar.
  */
 .titlebar.default-decoration {
-    border: none;
-    box-shadow: none;
+	border: none;
+	box-shadow: none;
 }
  
 .titlebar .title,
 headerbar .title {
-    font-weight: bold;
-    font-size: 120%;
-    background: none;
-    color: #D9D9D9;
+	font-weight: bold;
+	font-size: 120%;
+	background: none;
+	color: #D9D9D9;
 }
 
+/*This does not respond to .titlebar or headerbar */
+/*So we are forced to rely on nothing else being called label.title */
+box.vertical>label.title{
+    padding: 0px;
+}
+
+.titlebar separator,
+headerbar separator {
+	background-color: transparent;
+	background-image: none;
+}
+
+headerbar:backdrop,
 .titlebar:backdrop {
     color: #747473;
     text-shadow: none;
     background-image: none;
-    background-color: #747473;
+    background-color: #606060;
 }
 
 .titlebar .titlebutton,
 headerbar.titlebar  button.image-button.titlebutton,
 button.text-button.titlebutton {
-	padding: 4px 4px 4px 4px;
 	border-radius: 3px;
 	border-width: 1px;
 	border-style: solid;
@@ -3024,6 +3035,24 @@ button.text-button.titlebutton {
 	                                  @button_hover_gradient_color_b);
 }
 
+headerbar:backdrop button,
+.titlebar:backdrop button {
+    background-image: linear-gradient(to bottom,
+	                                  alpha(@button_hover_gradient_color_a, 0.3),
+	                                  alpha(@button_hover_gradient_color_b, 0.3));
+	background-color:transparent;
+}
+
+headerbar button:not(.appmenu):not(.titlebutton){
+	padding: 4px;
+}
+
+/*Keep the size of decorations down in ssd apps on Metacity/Mutter/Gnome-shell etc*/
+headerbar button.appmenu, .csd button.titlebutton{
+	padding: 0px 4px;
+	margin: 0px;
+}
+
 .titlebar .titlebutton {
     /* fake request for hardcoded icons,
      to avoid usage of regular window-close button*/
@@ -3032,7 +3061,6 @@ button.text-button.titlebutton {
 	border-style: none;
     border-image-source: none;
 	background-image: none;
-	padding: 4px 0px 4px 0px;
 }
  
 .titlebar .titlebutton:hover,
@@ -3083,6 +3111,11 @@ button.text-button.titlebutton:checked {
 .titlebar .left .titlebutton:first-child {
 }
  
+.titlebar .titlebutton:hover:backdrop,
+headerbar.titlebar  button.image-button.titlebutton:hover:backdrop {
+	color: #747473;
+}
+
 .titlebar .titlebutton:backdrop,
 .titlebar .titlebutton:hover:backdrop,
 headerbar.titlebar  button.image-button.titlebutton:backdrop,
@@ -3093,37 +3126,19 @@ headerbar.titlebar  button.image-button.titlebutton:hover:backdrop {
     -gtk-icon-shadow: none;
 }
 
-.titlebar .titlebutton:hover:backdrop,
-headerbar.titlebar  button.image-button.titlebutton:hover:backdrop {
-	color: #747473;
-}
-
-headerbar button.text-button,
-.titlebar button.text-button {
-    padding: 2px 16px;
-}
-
-headerbar button.image-button,
-.titlebar button.image-button {
-    padding: 5px 4px 4px 5px;
-}
-
-
 .background.csd decoration {
     border-radius: 7px 7px 0px 0px;
     border-width: 0px;
     box-shadow: 0 0 0 2px @wm_csd_border_color, 0 2px 8px 3px @wm_shadow;
     /* this is used for the resize cursor area */
-   margin: 10px;
+    margin: 10px;
 }
 
 .background.csd decoration:backdrop {
     background: @theme_bg_color;
     border-style: solid;
     border-radius: 7px 7px 0px 0px;
-    border-width: 1px;
     border-color: #595959;
-    padding: 0px;
 }
 
 .background.ssd decoration {
