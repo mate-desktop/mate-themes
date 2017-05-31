@@ -7,17 +7,29 @@ headerbar button.maximize.titlebutton:backdrop,
 headerbar button.close.titlebutton:backdrop,
 /*other WMs*/
 headerbar .right button.minimize.titlebutton,
+headerbar .right button.minimize.titlebutton:backdrop,
 headerbar .right:dir(rtl) button.minimize.titlebutton,
+headerbar .right:dir(rtl) button.minimize.titlebutton:backdrop,
 headerbar .left button.minimize.titlebutton,
+headerbar .left button.minimize.titlebutton:backdrop,
 headerbar .left:dir(rtl) button.minimize.titlebutton,
+headerbar .left:dir(rtl) button.minimize.titlebutton:backdrop,
 headerbar .right button.maximize.titlebutton,
+headerbar .right button.maximize.titlebutton:backdrop,
 headerbar .right:dir(rtl) button.maximize.titlebutton,
+headerbar .right:dir(rtl) button.maximize.titlebutton:backdrop,
 headerbar .left button.maximize.titlebutton,
+headerbar .left button.maximize.titlebutton:backdrop,
 headerbar .left:dir(rtl) button.maximize.titlebutton,
+headerbar .left:dir(rtl) button.maximize.titlebutton:backdrop,
 headerbar .right button.close.titlebutton,
+headerbar .right button.close.titlebutton:backdrop,
 headerbar .right:dir(rtl) button.close.titlebutton,
+headerbar .right:dir(rtl) button.close.titlebutton:backdrop,
 headerbar .left button.close.titlebutton,
-headerbar .left:dir(rtl) button.close.titlebutton {
+headerbar .left button.close.titlebutton:backdrop,
+headerbar .left:dir(rtl) button.close.titlebutton,
+headerbar .left:dir(rtl) button.close.titlebutton:backdrop {
 	color: transparent;
 	background-position: center;
 	background-repeat: no-repeat;
