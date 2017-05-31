@@ -1,3 +1,11 @@
+/*left & right not set for ssd by metacity,mutter, g-s, include this case*/
+headerbar button.minimize.titlebutton,
+headerbar button.maximize.titlebutton,
+headerbar button.close.titlebutton,
+headerbar button.minimize.titlebutton:backdrop,
+headerbar button.maximize.titlebutton:backdrop,
+headerbar button.close.titlebutton:backdrop,
+/*other WMs*/
 headerbar .right button.minimize.titlebutton,
 headerbar .right:dir(rtl) button.minimize.titlebutton,
 headerbar .left button.minimize.titlebutton,
@@ -24,6 +32,7 @@ headerbar .left:dir(rtl) button.close.titlebutton {
 
 /* minimize */
 
+headerbar  button.minimize.titlebutton,
 headerbar .right button.minimize.titlebutton,
 headerbar .right:dir(rtl) button.minimize.titlebutton,
 headerbar .left button.minimize.titlebutton,
@@ -31,6 +40,7 @@ headerbar .left:dir(rtl) button.minimize.titlebutton {
 	background-image: url('window-controls/neutral.png');
 }
 
+headerbar button.minimize.titlebutton:hover,
 headerbar .right button.minimize.titlebutton:hover,
 headerbar .right:dir(rtl) button.minimize.titlebutton:hover,
 headerbar .left button.minimize.titlebutton:hover,
@@ -38,6 +48,7 @@ headerbar .left:dir(rtl) button.minimize.titlebutton:hover {
 	background-image: url('window-controls/button-min-focus.png');
 }
 
+headerbar button.minimize.titlebutton:active,
 headerbar .right button.minimize.titlebutton:active,
 headerbar .right:dir(rtl) button.minimize.titlebutton:active,
 headerbar .left button.minimize.titlebutton:active,
@@ -49,13 +60,15 @@ headerbar .left:dir(rtl) button.minimize.titlebutton:checked {
 	background-image: url('window-controls/neutral.png');
 }
 
+headerbar  button.minimize.titlebutton:backdrop,
 headerbar .right button.minimize.titlebutton:backdrop,
 headerbar .right:dir(rtl) button.minimize.titlebutton:backdrop,
 headerbar .left button.minimize.titlebutton:backdrop,
 headerbar .left:dir(rtl) button.minimize.titlebutton:backdrop {
-	background-image: url('window-controls/unfocused.png');
+	background-image: url('window-controls/unfocus.png');
 }
 /*
+headerbar button.minimize.titlebutton:backdrop:hover,
 headerbar .right button.minimize.titlebutton:backdrop:hover,
 headerbar .right:dir(rtl) button.minimize.titlebutton:backdrop:hover,
 headerbar .left button.minimize.titlebutton:backdrop:hover,
@@ -64,6 +77,7 @@ headerbar .left:dir(rtl) button.minimize.titlebutton:backdrop:hover {
 }
 */
 /* maximize */
+headerbar button.maximize.titlebutton,
 headerbar .right button.maximize.titlebutton,
 headerbar .right:dir(rtl) button.maximize.titlebutton,
 headerbar .left button.maximize.titlebutton,
@@ -71,6 +85,7 @@ headerbar .left:dir(rtl) button.maximize.titlebutton {
 	background-image: url('window-controls/neutral.png');
 }
 
+headerbar button.maximize.titlebutton:hover,
 headerbar .right button.maximize.titlebutton:hover,
 headerbar .right:dir(rtl) button.maximize.titlebutton:hover,
 headerbar .left button.maximize.titlebutton:hover,
@@ -78,6 +93,7 @@ headerbar .left:dir(rtl) button.maximize.titlebutton:hover {
 	background-image: url('window-controls/button-max-focus.png');
 }
 
+headerbar button.maximize.titlebutton:active,
 headerbar .right button.maximize.titlebutton:active,
 headerbar .right:dir(rtl) button.maximize.titlebutton:active,
 headerbar .left button.maximize.titlebutton:active,
@@ -89,6 +105,7 @@ headerbar .left:dir(rtl) button.maximize.titlebutton:checked {
 	background-image: url('window-controls/neutral.png');
 }
 
+headerbar button.maximize.titlebutton:backdrop,
 headerbar .right button.maximize.titlebutton:backdrop,
 headerbar .right:dir(rtl) button.maximize.titlebutton:backdrop,
 headerbar .left button.maximize.titlebutton:backdrop,
@@ -96,6 +113,7 @@ headerbar .left:dir(rtl) button.maximize.titlebutton:backdrop {
 	background-image: url('window-controls/unfocus.png');
 }
 /*
+headerbar button.maximize.titlebutton:backdrop:hover,
 headerbar .right button.maximize.titlebutton:backdrop:hover,
 headerbar .right:dir(rtl) button.maximize.titlebutton:backdrop:hover,
 headerbar .left button.maximize.titlebutton:backdrop:hover,
@@ -104,6 +122,9 @@ headerbar .left:dir(rtl) button.maximize.titlebutton:backdrop:hover {
 }
 */
 /* close */
+
+
+headerbar button.close.titlebutton,  /*Include Metacity/Mutter/G-S close button  */
 headerbar .right button.close.titlebutton,
 headerbar .right:dir(rtl) button.close.titlebutton,
 headerbar .left button.close.titlebutton,
@@ -112,6 +133,7 @@ headerbar .left:dir(rtl) button.close.titlebutton {
 	/*padding: 2px 6px 3px 3px;*/ /* FIXME: Uncomment this shit when using the Faenza icon theme and maybe some other icon themes */
 }
 
+headerbar button.close.titlebutton:hover,
 headerbar .right button.close.titlebutton:hover,
 headerbar .right:dir(rtl) button.close.titlebutton:hover,
 headerbar .left button.close.titlebutton:hover,
@@ -119,6 +141,7 @@ headerbar .left:dir(rtl) button.close.titlebutton:hover {
 	background-image: url('window-controls/button-close-focus.png');
 }
 
+headerbar button.close.titlebutton:active,
 headerbar .right button.close.titlebutton:active,
 headerbar .right:dir(rtl) button.close.titlebutton:active,
 headerbar .left button.close.titlebutton:active,
@@ -130,6 +153,7 @@ headerbar .left:dir(rtl) button.close.titlebutton:checked {
 	background-image: url('window-controls/neutral.png');
 }
 
+headerbar button.close.titlebutton:backdrop,
 headerbar .right button.close.titlebutton:backdrop,
 headerbar .right:dir(rtl) button.close.titlebutton:backdrop,
 headerbar .left button.close.titlebutton:backdrop,
@@ -137,6 +161,7 @@ headerbar .left:dir(rtl) button.close.titlebutton:backdrop {
 	background-image: url('window-controls/unfocus.png');
 }
 /*
+headerbar button.close.titlebutton:backdrop:hover,
 headerbar .right button.close.titlebutton:backdrop:hover,
 headerbar .right:dir(rtl) button.close.titlebutton:backdrop:hover,
 headerbar .left button.close.titlebutton:backdrop:hover,
