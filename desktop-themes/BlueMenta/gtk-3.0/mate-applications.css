@@ -368,36 +368,10 @@ window.background, /* selector where outlines are writen on GtkTrayIcon */
     padding: 4px;
 }
 
-/* set selected menubar button */
-.mate-panel-menu-bar menubar > menuitem:hover {
-    background-image: linear-gradient(to bottom,
-                                      shade (@theme_selected_bg_color, 0.86),
-                                      shade (@theme_selected_bg_color, 0.26));
-    color: shade (@theme_selected_fg_color, 1.00);
-    text-shadow: none;
-    border-style: solid;
-    border-width: 0px;
-    border-radius: 3px;
-}
-
 /* set normal menubar menuitem */
 .mate-panel-menu-bar menubar menu menuitem {
     padding: 6px;
     font-weight: normal;
-}
-
-/* set selected menubar menuitem */
-.mate-panel-menu-bar menubar menu menuitem:checked:hover,
-.mate-panel-menu-bar menubar menu menuitem:active:hover,
-.mate-panel-menu-bar menubar menu menuitem:hover {
-    background-image: linear-gradient(to bottom,
-                                      shade (@theme_selected_bg_color, 1.0),
-                                      shade (@theme_selected_bg_color, 0.85));
-    color: shade (@theme_selected_fg_color, 1.00);
-    text-shadow: none;
-    border-style: none;
-    border-width: 0px;
-    border-radius: 0px;
 }
 
 /* all applets */
