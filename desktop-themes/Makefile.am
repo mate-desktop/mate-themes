@@ -5,6 +5,7 @@ SUBDIRS = \
 	ContrastHighInverse \
 	GreenLaguna \
 	Green-Submarine \
+	MATE-Openbox \
 	Menta \
 	TraditionalGreen \
 	TraditionalOk

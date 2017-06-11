@@ -1,0 +1,41 @@
+/* Default dark color scheme */
+@define-color base_color #323536;
+@define-color bg_color #565656; /*#525252; #4F5152;*/
+@define-color text_color #dddddd;
+@define-color fg_color #e3e3e3;
+@define-color selected_bg_color #626262;
+@define-color selected_fg_color #dddddd;
+@define-color entry_color shade (@text_color, 0.8); /*#999999 in gtk2*/
+@define-color less_dark_color #3F4142;
+@define-color fm_bg_color #414647; /*#474B52;*/
+@define-color fm_sidebar_color @base_color;
+@define-color fm_selected_color #6C7273;
+
+@define-color tooltip_bg_color #125166; /*#104759; #000000*/
+@define-color tooltip_fg_color @text_color; /*#eeeeeee*/
+@define-color theme_tooltip_bg_color @tooltip_bg_color;
+@define-color theme_tooltip_fg_color @tooltip_fg_color;
+
+@define-color button_border alpha(@base_color, 0.7);
+@define-color button_gradient_base #595959;
+
+@define-color frame_color #787878;
+@define-color light_frame_color #909090;
+@define-color inactive_frame_color shade(@bg_color, 0.8);
+
+@define-color insensitive_bg_color alpha(#0b0b0b, 0.2);
+@define-color insensitive_fg_color alpha(#ababab, 0.7);
+@define-color insensitive_border_color alpha(#717171, 0.50);
+
+@define-color switch_slider_color #737373;
+@define-color switch_slider_border #666666;
+
+@define-color progressbar_background_a @less_dark_color;
+@define-color progressbar_background_b #636363;
+@define-color progressbar_border #a1a1a1;
+@define-color progressbar_pattern #000000;
+@define-color progressbar_color #6586aa;
+
+/*@define-color entry_shadow #CCCCCC;*/
+
+@import url("common.css");
