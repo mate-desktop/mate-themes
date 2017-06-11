@@ -382,7 +382,6 @@ window.background, /* selector where outlines are writen on GtkTrayIcon */
 
 /* set normal menubar menuitem */
 .mate-panel-menu-bar menubar menu menuitem {
-    transition: all 150ms ease-out;
     padding: 6px;
     font-weight: normal;
 }
