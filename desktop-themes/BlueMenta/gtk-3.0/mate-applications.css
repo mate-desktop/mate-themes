@@ -375,16 +375,22 @@ window.background, /* selector where outlines are writen on GtkTrayIcon */
 }
 
 /* all applets */
+/* needed for mate-menu/mintmenu/wnck-tasklist to override a wildcard at line 37 gtk-widgets.css */
+#PanelApplet:selected,
+#PanelApplet #tasklist-button * {
+    color: shade (@theme_fg_color, 1.00);
+}
+
 .mate-panel-menu-bar #PanelApplet button,
 .mate-panel-menu-bar #PanelApplet button.flat,
 .mate-panel-menu-bar #PanelApplet button.toggle,
 .mate-panel-menu-bar #PanelApplet button.flat.toggle {
+    color: shade (@theme_fg_color, 1.00);
     transition: all 400ms ease-out;
     background-image: none;
     background-color: transparent;
-/*    color: @theme_selected_fg_color;*/
     border-image: none;
-    border-style: solid;
+    border-style: none;
     border-width: 0px;
     border-radius: 0px;
     text-shadow: none;
@@ -405,17 +411,9 @@ window.background, /* selector where outlines are writen on GtkTrayIcon */
 .mate-panel-menu-bar #PanelApplet button.flat.toggle:checked:hover,
 .mate-panel-menu-bar #PanelApplet button.flat.toggle:hover:active {
     background-image: linear-gradient(to bottom,
-                                      shade (@theme_selected_bg_color, 0.86),
-                                      shade (@theme_selected_bg_color, 0.26));
-    background-color: transparent;
-    color: shade (@theme_selected_fg_color, 1.00);
-    border-image: none;
-    border-style: solid;
-    border-width: 0px;
-    border-radius: 3px;
-    text-shadow: none;
-    -GtkWidget-window-dragging: true;
-    padding: 4px 4px 4px 4px;
+                                      shade (@theme_bg_color, 1.0),
+                                      shade (@theme_bg_color, 0.82));
+    color: shade (@theme_fg_color, 1.00);
 }
 
 .mate-panel-menu-bar #PanelApplet button:hover,
@@ -423,17 +421,9 @@ window.background, /* selector where outlines are writen on GtkTrayIcon */
 .mate-panel-menu-bar #PanelApplet button.toggle:hover,
 .mate-panel-menu-bar #PanelApplet button.flat.toggle:hover {
     background-image: linear-gradient(to bottom,
-                                      @theme_bg_color,
-                                      shade (@theme_selected_bg_color, 0.86));
-    background-color: transparent;
-    color: shade (@theme_text_color, 1.0);
-    border-image: none;
-    border-style: solid;
-    border-width: 0px;
-    border-radius: 3px;
-    text-shadow: none;
-    -GtkWidget-window-dragging: true;
-    padding: 4px 4px 4px 4px;
+                                      shade (@theme_bg_color, 1.14),
+                                      shade (@theme_bg_color, 0.96));
+    color: shade (@theme_fg_color, 1.00);
 }
 
 /* WnckPager */
