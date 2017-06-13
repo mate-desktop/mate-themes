@@ -2945,8 +2945,8 @@ menubar,
 	text-shadow: none;
 }
 
-menubar menuitem,
-.menubar menuitem {
+menubar > menuitem,
+.menubar > menuitem {
     min-height: 18px;
     transition: all 300ms ease-out;
     -gtk-icon-style: regular;
@@ -2957,8 +2957,8 @@ menubar menuitem,
 	color: @menu_fg_color;
 }
 
-menubar menuitem:hover,
-.menubar menuitem:hover {
+menubar > menuitem:hover,
+.menubar > menuitem:hover {
     background-image: linear-gradient(to bottom,
                                       shade (@theme_bg_color, 1.0),
                                       shade (@theme_bg_color, 0.82));
@@ -2966,8 +2966,8 @@ menubar menuitem:hover,
 	text-shadow: none;
 }
 
-menu menuitem,
-.menu menuitem {
+menu > menuitem,
+.menu > menuitem {
     min-height: 18px;
     background-color: transparent;
     padding: 6px 5px;
@@ -2982,10 +2982,10 @@ menu menuitem,
 	text-shadow: none;
 }
 
-menu menuitem:active,
-menu menuitem:hover,
-.menu menuitem:active,
-.menu menuitem:hover {
+menu > menuitem:active,
+menu > menuitem:hover,
+.menu > menuitem:active,
+.menu > menuitem:hover {
 	background-color: @theme_selected_bg_color;
 	background-image: linear-gradient(to bottom,
 		shade (@theme_selected_bg_color, 1.0),
@@ -2996,14 +2996,14 @@ menu menuitem:hover,
 	border-radius: 0px;
 }
 
-menu menuitem:disabled,
-.menu menuitem:disabled {
+menu > menuitem:disabled,
+.menu > menuitem:disabled {
 	background-color: transparent;
 	color: mix (@menu_fg_color, @menu_bg_color, 0.6);
 }
 
-menu menuitem accelerator:disabled,
-.menu menuitem accelerator:disabled {
+menu > menuitem accelerator:disabled,
+.menu > menuitem accelerator:disabled {
 	color: mix (@menu_fg_color, @menu_bg_color, 0.7);
 }
 
@@ -3016,30 +3016,30 @@ menuitem accelerator:active {
 	color: alpha (@theme_selected_fg_color, 0.7);
 }
 
-menuitem arrow {
+menuitem > arrow {
     min-height: 16px;
     min-width: 16px;
     margin-left: 10px;
     color: @menu_controls_color;
 }
 
-menu menuitem arrow:dir(ltr),
-.menu menuitem arrow:dir(ltr) {
+menu > menuitem > arrow:dir(ltr),
+.menu > menuitem > arrow:dir(ltr) {
 	-gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
 }
 
-menu menuitem arrow:dir(rtl),
-.menu menuitem arrow:dir(rtl) {
+menu > menuitem > arrow:dir(rtl),
+.menu > menuitem > arrow:dir(rtl) {
         -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
 }
 
-menu arrow.top,
-.menu arrow.top {
+menu > arrow.top,
+.menu > arrow.top {
       -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
 }
 
-menu arrow.bottom,
-.menu arrow.bottom {
+menu > arrow.bottom,
+.menu > arrow.bottom {
       -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
 }
 
