@@ -278,7 +278,6 @@ view:selected:focus,
 }
 
 /* It's better not to have too bright text views. */
-textview.view, /* url bar google chrome, firefox */
 textview text,
 textview.view:disabled,
 GtkHTML { /* For Evolution (not enough; see entries section below) */
