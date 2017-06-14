@@ -872,15 +872,15 @@ notebook frame {
 
 notebook button {
 	background-image: linear-gradient(to bottom,
-									  shade(@less_dark_color, 1.3),
-									  shade(@less_dark_color, 0.4));
+									  @button_gradient_color_a,
+									  @button_gradient_color_b);
 	border-color: shade(@button_border, 1.4);
 }
 
 notebook button:hover {
 	background-image: linear-gradient(to bottom,
-									  shade(@less_dark_color, 1.7),
-									  shade(@less_dark_color, 0.7));
+									  shade(@button_gradient_color_a, 1.2),
+									  shade(@button_gradient_color_b, 1.2));
 	/* this should be defined here to be overridden
 	by the style of toolbar buttons below */
 	border-image: none;
@@ -890,7 +890,9 @@ notebook button:checked,
 notebook button:hover:checked,
 notebook button:active,
 notebook button:hover:active {
-	border-image: none;
+	background-image: linear-gradient(to bottom,
+									  shade(@button_gradient_color_a, 1.1),
+									  shade(@button_gradient_color_b, 1.1));
 }
 
 notebook toolbar,
@@ -1377,7 +1379,8 @@ button:hover:active {
 									  shade(@button_gradient_color_b, 1.1));
 }
 
-button:disabled {
+button:disabled,
+notebook button:disabled {
 	background-color: transparent;
 	background-image: linear-gradient(to bottom,
 									  alpha(@button_gradient_color_a, 0.5),
