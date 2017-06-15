@@ -316,6 +316,6 @@ window.background.yumex-dnf-window > box.vertical > box.vertical > box.horizonta
 }
 
 .chromium menubar:not(:backdrop) {
-    background-color: #000000;
+    background-color: shade(@theme_bg_color, 0.65);
 }
 
