@@ -1,0 +1,109 @@
+!! Menu settings
+
+menu.title.bg: flat gradient vertical bevel1
+menu.title.bg.color: #c1c1c1
+menu.title.bg.colorTo: #909090
+menu.title.text.color: #fcfcfc
+menu.title.text.justify: center
+
+menu.items.bg: raised solid bevel1
+!! menu.items.bg.color: #000000
+menu.items.bg.color: #666666
+menu.items.text.color: #c1c1c1
+menu.items.disabled.text.color: #3b3b3b
+
+menu.items.active.bg: flat gradient vertical bevel1
+menu.items.active.bg.color: #afafaf
+menu.items.active.bg.colorTo: #838383
+menu.items.active.text.color: #ffffff
+
+
+!! Window settings
+
+window.label.text.justify: center
+
+window.active.title.bg: flat gradient vertical bevel1
+window.active.title.bg.color: #828282
+window.active.title.bg.colorTo: #565656
+!!window.active.title.bg.color: #606060
+!!window.active.title.bg.colorTo: #404040
+
+window.active.handle.bg: flat solid
+window.active.handle.bg.color: #565656
+window.active.grip.bg: parentrelative
+
+window.active.label.bg: parentrelative
+window.active.label.bg.color: #000000
+window.active.label.bg.colorTo: #000000
+window.active.label.text.color: #ffffff
+
+window.active.button.unpressed.bg: parentrelative
+window.active.button.unpressed.image.color: #f2f2f2
+
+window.active.button.pressed.bg: sunken solid bevel1
+window.active.button.pressed.bg.color: #7f7f7f
+
+window.active.button.disabled.bg: flat border
+window.active.button.disabled.bg.color: #585858
+window.active.button.disabled.image.color: #f2f2f2
+window.active.button.disabled.bg.border.color: #f2f2f2
+
+window.active.button.toggled.bg: parentrelative
+window.active.button.toggled.image.color: #f1f1f1
+
+window.inactive.title.bg: flat gradient vertical bevel1
+window.inactive.title.bg.color: #606060
+window.inactive.title.bg.colorTo: #404040
+!!window.inactive.title.bg.color: #828282
+!!window.inactive.title.bg.colorTo: #565656
+
+window.inactive.handle.bg: flat solid
+window.inactive.handle.bg.color: #565656
+window.inactive.grip.bg: parentrelative
+
+window.inactive.label.bg: parentrelative
+window.inactive.label.text.color: #c2c2c2
+
+window.inactive.button.unpressed.bg: parentrelative
+window.inactive.button.unpressed.image.color: #ffffff
+
+window.inactive.button.pressed.bg: sunken solid bevel1
+window.inactive.button.pressed.bg.color: #cdcdcd
+window.inactive.button.pressed.bg.colorTo: #000000
+
+window.inactive.button.pressed.bg: flat gradient vertical bevel1
+window.inactive.button.pressed.bg.color: #919191
+window.inactive.button.pressed.bg.colorTo: #5a5a5a
+window.inactive.button.pressed.bg.border.color: #000000
+
+window.inactive.button.disabled.bg: flat border solid
+window.inactive.button.disabled.bg.color: #c4c4c4
+window.inactive.button.disabled.image.color:  #ffffff
+window.inactive.button.disabled.bg.border.color: #ffffff
+
+window.inactive.button.toggled.bg: parentrelative
+window.active.button.toggled.image.color: #f1f1f1
+
+window.inactive.client.color: #a8a8a8
+window.active.client.color: #a8a8a8
+
+window.inactive.border.color: #707070
+window.active.border.color: #707070
+
+
+!! Global width settings
+
+!!border.width: 1
+!!padding.width: 3
+!!padding.height: 3
+!!window.handle.width: 6
+window.client.padding.width: 0
+window.client.padding.height: 0
+
+
+!! Font settings
+
+window.active.label.text.font:Bitstream Vera Sans:bold:pixelsize=10:shadow=y:shadowoffset=1:shadowtint=60
+window.inactive.label.text.font:Bitstream Vera Sans:bold:pixelsize=10
+menu.items.font: Bitstream Vera Sans:pixelsize=11
+menu.title.text.font: Bitstream Vera Sans:bold:pixelsize=10:shadow=y:shadowoffset=1:shadowtint=60
