@@ -130,7 +130,10 @@ tooltip,
 
 tooltip.background,
 .tooltip.background {
-	background-color: @theme_tooltip_bg_color;
+/* FIXME, use a hardcoded color value for current eclipse version
+   see https://github.com/mate-desktop/mate-themes/issues/165
+	background-color: @theme_tooltip_bg_color;*/
+	background-color: #F5F5B5;
     background-clip: padding-box;
 }
 
