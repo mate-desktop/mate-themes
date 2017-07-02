@@ -89,6 +89,7 @@ desktop-themes/Blue-Submarine/gtk-2.0/assets/Makefile
 desktop-themes/Blue-Submarine/gtk-3.0/Makefile
 desktop-themes/Blue-Submarine/gtk-3.0/assets/Makefile
 desktop-themes/Blue-Submarine/metacity-1/Makefile
+desktop-themes/ContrastHigh/Makefile
 desktop-themes/ContrastHighInverse/Makefile
 desktop-themes/ContrastHighInverse/gtk-2.0/Makefile
 desktop-themes/ContrastHighInverse/gtk-2.0/gtkrc
