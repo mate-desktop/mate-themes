@@ -290,6 +290,11 @@ PanelApplet.wnck-applet .wnck-pager {
 	border-style: none;
 }
 
+/* Weird, this sets the border color of the clockmap */
+#MatePanelPopupWindow > frame > box > box > box > widget {
+    color: @border_color;
+}
+
 PanelApplet.wnck-applet .wnck-pager {
     background-image: none;
     color: shade (@theme_selected_bg_color, 1.30);
