@@ -542,6 +542,22 @@ MatePanelApplet > menubar {
 	padding: 4px; /*any less and outlines touch text or get cut off */
 }
 
+/* Weird, this sets the border color of the clockmap */
+#MatePanelPopupWindow > frame > box > box > box > widget {
+    color: @less_dark_color;
+}
+
+/*fix oversize calendar window locations icons and jump */
+#MatePanelPopupWindow > frame > box > box > box > box > widget image,
+#MatePanelPopupWindow > frame > box > box > box > box > widget label {
+    padding: 0px;
+}
+
+/* for buttons the 3px padding from gtk-widgets.css is OK */
+#MatePanelPopupWindow > frame > box > box > box > box > widget button > label {
+    padding: 3px;
+}
+
 #PanelApplet {
 	outline-offset: -2px;
 }
