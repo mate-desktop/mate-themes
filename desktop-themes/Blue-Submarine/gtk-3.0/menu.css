@@ -107,20 +107,6 @@ menu > menuitem,
     min-height: 18px;
 }
 
-/* fixes for firefox menus */
-.menuitem {
-	transition: none;
-    color: @menu_fg_dark_color;
-	text-shadow: none;
-}
-
-/* fixes for firefox menus */
-menuitem:hover,
-menuitem label:hover {
-    color: shade (@theme_selected_bg_color, 1.6);
-    text-shadow: none;
-}
-
 menu > menuitem:active,
 menu > menuitem:hover,
 .menu > menuitem:active,
