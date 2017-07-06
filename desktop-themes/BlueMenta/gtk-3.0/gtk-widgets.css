@@ -3016,6 +3016,7 @@ menuitem > arrow {
     min-width: 16px;
     margin-left: 10px;
     color: @menu_controls_color;
+    transition: all 200ms ease-out;
 }
 
 menu > menuitem > arrow:dir(ltr),
