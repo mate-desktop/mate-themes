@@ -2327,25 +2327,11 @@ menubar > menuitem,
 .menubar > menuitem {
     min-height: 20px;
     -gtk-icon-style: regular;
-    transition: all 300ms ease-out;
+    transition: all 100ms ease-out;
     padding: 3px 7px;
     border-width: 0px;
     border-style: none;
     background-color: transparent;
-    text-shadow: none;
-}
-
-/* needed for broken firefox, valid transition effects breaks hover state here */
-menubar:hover {
-    background-image: none;
-    background-color: shade(@theme_selected_bg_color, 1.1);
-    border-style: none;
-    border-image: none;
-    /* join menuitem to menu */
-    border-radius: 3px 3px 0px 0px;
-    border-width: 0px;
-    color: @theme_selected_fg_color;
-    transition: none;
     text-shadow: none;
 }
 
@@ -2374,23 +2360,9 @@ menu,
     background-image: linear-gradient(to right,
                                       shade(@theme_selected_bg_color, 1.0),
                                       shade(@theme_selected_bg_color, 0.65));
-    transition: none;
     border-style: none;
     border-width: 0px;
     border-radius: 0px;
-    text-shadow: none;
-}
-
-/* needed for broken firefox, valid transition effects breaks hover state here */
-.menuitem {
-    min-height: 22px;
-    transition: none;
-    background-color: transparent;
-    border-color: transparent;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 0px;
-    padding: 4px;
     text-shadow: none;
 }
 
@@ -2414,7 +2386,7 @@ menu menuitem:hover,
     background-image:  linear-gradient(to bottom,
                                       shade(@theme_selected_bg_color, 1.4),
                                       shade(@theme_selected_bg_color, 0.8));
-    color: @theme_fg_color;
+    color: @theme_selected_fg_color;
     border-style: solid;
     border-width: 1px;
     border-radius: 3px;
@@ -4439,8 +4411,8 @@ button.link:link,
 button.link:link:focus,
 button.link:link:backdrop,
 button.link:link:focus:hover,
+button.flat.link:link:hover,
 button.link:link:focus:hover:active {
-    transition: all 400ms ease-in;
     text-shadow: none;
     padding: 4px;
     border-style: solid;
