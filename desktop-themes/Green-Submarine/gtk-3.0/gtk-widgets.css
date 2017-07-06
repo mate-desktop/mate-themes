@@ -121,10 +121,6 @@ window {
  * GtkLabel *
  *********/
 
-label {
-    transition: all 400ms ease-out;
-}
-
 label,
 label:disabled {
     background-color: transparent;
