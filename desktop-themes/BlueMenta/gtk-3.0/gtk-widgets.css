@@ -2977,20 +2977,6 @@ menu > menuitem,
 	color: @menu_fg_color;
 }
 
-/* fixes for firefox menus */
-.menuitem {
-	transition: none;
-	color: @menu_fg_color;
-	text-shadow: none;
-}
-
-/* fixes for firefox menus */
-menuitem:hover,
-menuitem label:hover {
-	color: @theme_selected_fg_color;
-	text-shadow: none;
-}
-
 menu > menuitem:active,
 menu > menuitem:hover,
 .menu > menuitem:active,

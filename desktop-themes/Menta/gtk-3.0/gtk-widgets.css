@@ -2978,13 +2978,6 @@ menu > menuitem,
 	color: @menu_fg_color;
 }
 
-/* fix for firefox menus */
-.menuitem {
-	transition: none;
-	color: @menu_fg_color;
-	text-shadow: none;
-}
-
 menu > menuitem:active,
 menu > menuitem:hover,
 .menu > menuitem:active,
