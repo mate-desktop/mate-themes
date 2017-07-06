@@ -80,8 +80,6 @@ menubar > menuitem,
     min-height: 18px;
 }
 
-/* for firefox */
-menubar:hover,
 menubar > menuitem:hover,
 .menubar > menuitem:hover {
     background-color: shade (@theme_bg_dark_color, 1.2);
@@ -107,20 +105,6 @@ menu > menuitem,
     text-shadow: none;
     padding: 5px 5px;
     min-height: 18px;
-}
-
-/* fixes for firefox menus */
-.menuitem {
-	transition: none;
-    color: @menu_fg_dark_color;
-	text-shadow: none;
-}
-
-/* fixes for firefox menus */
-menuitem:hover,
-menuitem label:hover {
-    color: shade (@theme_selected_bg_color, 1.2);
-    text-shadow: none;
 }
 
 menu > menuitem:active,
