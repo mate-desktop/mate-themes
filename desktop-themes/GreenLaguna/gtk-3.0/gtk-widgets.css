@@ -1748,7 +1748,7 @@ GtkFileChooserButton .button {
 
 .menubar .menuitem {
     -gtk-icon-style: regular;
-    transition: all 300ms ease-out;
+    transition: all 100ms ease-out;
     padding: 3px 7px;
 }
 
@@ -1777,6 +1777,7 @@ GtkFileChooserButton .button {
 }
 
 .menubar .menuitem:hover {
+	color: @theme_selected_fg_color;
 	background-image: none;
 	background-color: shade(@theme_selected_bg_color, 1.1);
 	border-style: none;
