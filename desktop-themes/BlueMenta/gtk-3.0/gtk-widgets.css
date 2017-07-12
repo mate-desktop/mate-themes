@@ -2449,7 +2449,7 @@ GtkTreeMenu .menuitem,
     -GtkWidget-window-dragging: true;
 }
 
-.menubar .menuitem {
+.menubar > .menuitem {
 	transition: all 200ms ease-out;
 	-gtk-icon-style: regular;
 	border-style: none;
@@ -2470,7 +2470,6 @@ GtkTreeMenu .menuitem,
 .menu .menuitem {
     background-color: transparent;
     -GtkMenuItem-arrow-scaling: 0.6;
-    transition: all 150ms ease-out;
     padding: 6px 5px;
 }
 
