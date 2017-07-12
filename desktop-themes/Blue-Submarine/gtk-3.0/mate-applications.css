@@ -1109,6 +1109,11 @@ CalendarWindow#MatePanelPopupWindow .frame GtkExpander:checked:hover {
                       0px -1px shade (@menu_bg_dark_color, 1.0);
 }
 
+/* Weird, this sets the border color of the clockmap */
+#MatePanelPopupWindow > .frame > GtkBox > GtkBox > GtkBox > ClockMap {
+    color: shade(@theme_selected_bg_color, 1.5);
+}
+
 /****************
  * Mate-terminal *
  ****************/

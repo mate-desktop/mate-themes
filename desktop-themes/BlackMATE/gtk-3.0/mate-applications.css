@@ -696,6 +696,11 @@ NaTrayApplet {
     margin: 0px;
 }
 
+/* Weird, this sets the border color of the clockmap */
+#MatePanelPopupWindow > .frame > GtkBox > GtkBox > GtkBox > ClockMap {
+	color: @less_dark_color;
+}
+
 /*********
  * Pluma *
  *********/
