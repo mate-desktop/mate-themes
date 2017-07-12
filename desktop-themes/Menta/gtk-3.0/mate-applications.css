@@ -497,34 +497,20 @@ MatePanelApplet .button.flat:checked,
 MatePanelApplet .button.flat:active,
 MatePanelApplet .button.flat:checked:hover,
 MatePanelApplet .button.flat:active:hover {
-    background-image: linear-gradient(to bottom,
-                                      shade (@theme_selected_bg_color, 0.86),
-                                      shade (@theme_selected_bg_color, 0.26));
     background-color: transparent;
-    color: shade (@theme_selected_fg_color, 1.00);
-    border-image: none;
-    border-style: solid;
-    border-width: 0px;
-    border-radius: 3px;
-    text-shadow: none;
-    -GtkWidget-window-dragging: true;
-    padding: 4px 4px 4px 4px;
+    background-image: linear-gradient(to bottom,
+                                      shade (@theme_bg_color, 1.0),
+                                      shade (@theme_bg_color, 0.82));
+    color: shade (@theme_fg_color, 1.00);
 }
 
 MatePanelApplet .button:hover,
 MatePanelApplet .button.flat:hover {
-    background-image: linear-gradient(to bottom,
-                                      @theme_bg_color,
-                                      shade (@theme_selected_bg_color, 0.86));
     background-color: transparent;
-    color: shade (@theme_text_color, 1.0);
-    border-image: none;
-    border-style: solid;
-    border-width: 0px;
-    border-radius: 3px;
-    text-shadow: none;
-    -GtkWidget-window-dragging: true;
-    padding: 4px 4px 4px 4px;
+    background-image: linear-gradient(to bottom,
+                                      shade (@theme_bg_color, 1.14),
+                                      shade (@theme_bg_color, 0.96));
+    color: shade (@theme_fg_color, 1.00);
 }
 
 /*Wncklist */
@@ -547,67 +533,20 @@ WnckTasklist .button:checked:hover,
 WnckTasklist .button:checked,
 WnckTasklist .button:active:hover,
 WnckTasklist .button:active {
-    background-image: linear-gradient(to bottom,
-                                      shade (@theme_selected_bg_color, 0.86),
-                                      shade (@theme_selected_bg_color, 0.26));
     background-color: transparent;
-    color: shade (@theme_selected_fg_color, 1.00);
-    border-image: none;
-    border-style: solid;
-    border-width: 0px;
-    border-radius: 3px;
-    text-shadow: none;
-    -GtkWidget-window-dragging: true;
+    background-image: linear-gradient(to bottom,
+                                      shade (@theme_bg_color, 1.0),
+                                      shade (@theme_bg_color, 0.82));
+    color: shade (@theme_fg_color, 1.00);
 }
 
 WnckTasklist .button:hover,
 WnckTasklist .button.flat:hover {
-    background-image: linear-gradient(to bottom,
-                                      @theme_bg_color,
-                                      shade (@theme_selected_bg_color, 0.86));
     background-color: transparent;
-    color: shade (@theme_text_color, 1.0);
-    border-image: none;
-    border-style: solid;
-    border-width: 0px;
-    border-radius: 3px;
-    text-shadow: none;
-    -GtkWidget-window-dragging: true;
-}
-
-/* set selected button WnckSelector */
-WnckSelector.menubar .menuitem:hover {
     background-image: linear-gradient(to bottom,
-                                      shade (@theme_selected_bg_color, 0.86),
-                                      shade (@theme_selected_bg_color, 0.26));
-    background-color: transparent;
-    border-style: solid;
-    border-width: 0px;
-    border-radius: 3px;
-}
-
-/* set WnckSelector normal menuitem */
-WnckSelector.menubar .menu .menuitem {
-    background-color: @menu_bg_color;
-    background-image: none;
+                                      shade (@theme_bg_color, 1.14),
+                                      shade (@theme_bg_color, 0.96));
     color: shade (@theme_fg_color, 1.00);
-    text-shadow: none;
-}
-
-/* set WnckSelector selected menuitem */
-WnckSelector.menubar .menu .menuitem:hover {
-    background-color: transparent;
-    background-image: linear-gradient(to bottom,
-                                      shade (@theme_selected_bg_color, 1.0),
-                                      shade (@theme_selected_bg_color, 0.85));
-    color: shade (@theme_selected_fg_color, 1.00);
-    text-shadow: none;
-    border-radius: 0px;
-}
-
-/* set WnckSelector menuitem separator */WnckSelector.menubar .menu .menuitem.separator {
-    color: @menu_separator;
-    -GtkMenuItem-horizontal-padding: 0;
 }
 
 /* WnckPager */
