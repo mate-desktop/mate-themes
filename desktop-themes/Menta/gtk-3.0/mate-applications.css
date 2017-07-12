@@ -613,11 +613,9 @@ CalendarWindow#MatePanelPopupWindow {
 	border-radius: 3px;
 }
 
-/* FIXME, does not work */
-CalendarWindow#MatePanelPopupWindow ClockMap {
-	border-style: solid;
-	border-width: 1px;
-    border-color: @borders;
+/* Weird, this sets the border color of the clockmap */
+#MatePanelPopupWindow > .frame > GtkBox > GtkBox > GtkBox > ClockMap {
+    color: @borders;
 }
 
 /****************
