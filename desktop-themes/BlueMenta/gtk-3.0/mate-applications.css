@@ -423,7 +423,7 @@ MatePanelAppletFrameDBus {
 
 /* main menu */
 /* set normal menubar button */
-PanelMenuBar.menubar .menuitem {
+PanelMenuBar.menubar > .menuitem {
     transition: all 200ms ease-out;
     text-shadow: none;
 }
@@ -448,7 +448,6 @@ PanelMenuBar.menubar .menu .menuitem.separator {
 
 /* set normal menubar menuitem */
 PanelMenuBar.menubar .menu .menuitem {
-    transition: all 150ms ease-out;
     padding: 6px;
 }
 
