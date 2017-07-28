@@ -683,18 +683,21 @@ scale.horizontal {
 }
 
 scale.horizontal trough {
-   min-height: 3px;
+    min-height: 3px;
     margin: 8px 0;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 scale.horizontal.marks-after trough {
     min-height: 3px;
 }
 
-scale trough,
 scale.vertical trough {
     min-width: 3px;
     margin: 0 6px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 scale trough {
