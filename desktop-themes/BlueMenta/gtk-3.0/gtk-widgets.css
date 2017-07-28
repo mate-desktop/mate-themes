@@ -1028,13 +1028,16 @@ scale.horizontal trough {
     min-height: 3px;
     margin: 8px 0;
     border-radius: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
 }
 
-scale trough,
 scale.vertical trough {
     min-width: 3px;
     margin: 0 6px;
     border-radius: 6px;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 scale trough,
