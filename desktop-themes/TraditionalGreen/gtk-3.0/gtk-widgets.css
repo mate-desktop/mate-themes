@@ -2707,26 +2707,35 @@ menuitem separator {
 }
 
 /* style classes are for firefox */
+
 menuitem check,
-menuitem radio,
 menuitem check:hover,
-menuitem radio:hover,
 menuitem check:checked,
-menuitem radio:checked,
 menuitem check:disabled,
-menuitem radio:disabled,
 menu menuitem .check,
-menu menuitem .radio,
 menu menuitem .check:hover,
-menu menuitem .radio:hover,
 menu menuitem .check:checked,
-menu menuitem .radio:checked,
-menu menuitem .check:disabled,
-menu menuitem .radio:disabled {
+menu menuitem .check:disabled {
+    margin: 0px 0px 0px 3px;
     background-image: none;
     background-color: transparent;
-    min-height: 12px;
-    min-width: 12px;
+    min-height: 13px;
+    min-width: 13px;
+}
+
+menuitem radio,
+menuitem radio:hover,
+menuitem radio:checked,
+menuitem radio:disabled,
+menu menuitem .radio,
+menu menuitem .radio:hover,
+menu menuitem .radio:checked,
+menu menuitem .radio:disabled {
+    margin: 1px 0px 0px 4px;
+    background-image: none;
+    background-color: transparent;
+    min-height: 14px;
+    min-width: 14px;
 }
 
 /***************
