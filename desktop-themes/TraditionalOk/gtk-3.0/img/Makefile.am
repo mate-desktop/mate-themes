@@ -34,6 +34,9 @@ theme_DATA = \
 	menuitem-radio-checked.png \
 	menuitem-radio-hover.png \
 	menuitem-radio-insensitive.png \
+	menuitem-radio-mixed-hover.png \
+	menuitem-radio-mixed-insensitive.png \
+	menuitem-radio-mixed.png \
 	menuitem-radio.png \
 	panel-grid.svg \
 	pane-separator-grip-horz.png \

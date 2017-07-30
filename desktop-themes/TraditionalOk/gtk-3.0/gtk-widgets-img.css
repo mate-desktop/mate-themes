@@ -319,18 +319,15 @@ menu menuitem check:active:disabled {
     -gtk-icon-source: url("img/menuitem-checkbox-checked-insensitive.png");
 }
 
-menu menuitem check:indeterminate,
-menu menuitem radio:indeterminate {
+menu menuitem check:indeterminate {
     -gtk-icon-source: url("img/menuitem-checkbox-mixed.png");
 }
 
-menu menuitem check:indeterminate:hover,
-menu menuitem radio:indeterminate:hover {
+menu menuitem check:indeterminate:hover {
     -gtk-icon-source: url("img/menuitem-checkbox-mixed-hover.png");
 }
 
-menu menuitem check:indeterminate:disabled,
-menu menuitem radio:indeterminate:disabled {
+menu menuitem check:indeterminate:disabled {
     -gtk-icon-source: url("img/menuitem-checkbox-mixed-insensitive.png");
 }
 
@@ -359,6 +356,18 @@ menu menuitem radio:active:hover {
 menu menuitem radio:checked:disabled,
 menu menuitem radio:active:disabled {
     -gtk-icon-source: url("img/menuitem-radio-checked-insensitive.png");
+}
+
+menu menuitem radio:indeterminate {
+    -gtk-icon-source: url("img/menuitem-radio-mixed.png");
+}
+
+menu menuitem radio:indeterminate:hover {
+    -gtk-icon-source: url("img/menuitem-radio-mixed-hover.png");
+}
+
+menu menuitem radio:indeterminate:disabled {
+    -gtk-icon-source: url("img/menuitem-radio-mixed-insensitive.png");
 }
 
 /*********
