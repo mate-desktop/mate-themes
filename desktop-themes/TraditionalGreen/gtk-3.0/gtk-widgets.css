@@ -2646,6 +2646,12 @@ menu > menuitem:hover menu > menuitem:hover menu > menuitem:hover menu > menuite
     color: @theme_text_color;
 }
 
+menu > menuitem:disabled > arrow,
+.menu > menuitem:disabled > arrow {
+    color: mix (@menu_fg_color, @menu_bg_color, 0.6);
+   -gtk-icon-shadow: none;
+}
+
 /* scroll arrows */
 menu > arrow,
 .menu > arrow {
