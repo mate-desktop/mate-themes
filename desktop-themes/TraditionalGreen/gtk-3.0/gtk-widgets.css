@@ -484,6 +484,15 @@ entry:disabled {
                       @entry_insensitive_bg_color 3px);
 }
 
+
+entry image.left {
+	padding-right: 6px;
+}
+
+entry image.right {
+	padding-left: 6px;
+}
+
 /*******************
  * Symbolic images *
  *******************/

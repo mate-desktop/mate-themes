@@ -672,6 +672,14 @@ cursor-handle.bottom {
     -gtk-icon-source: -gtk-icontheme("selection-end-symbolic");
 }
 
+entry image.left {
+	padding-right: 6px;
+}
+
+entry image.right {
+	padding-left: 6px;
+}
+
 /*******************
  * Symbolic images *
  *******************/
