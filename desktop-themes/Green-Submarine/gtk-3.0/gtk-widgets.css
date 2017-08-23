@@ -5939,6 +5939,11 @@ headerbar.titlebar,
     box-shadow: none;
 }
 
+/* fix for ie. gthumb */
+.titlebar > headerbar {
+    border-radius: 7px 7px 0 0;
+}
+
 .background.ssd > paned.horizontal.titlebar > separator, /* gedit */
 .background.csd > paned.horizontal.titlebar > separator,
 .background.solid-csd > paned.horizontal.titlebar > separator {
