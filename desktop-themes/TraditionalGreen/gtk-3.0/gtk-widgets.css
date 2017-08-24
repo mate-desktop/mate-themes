@@ -2567,16 +2567,18 @@ menuitem:active:disabled image,
 	 opacity: 0.5;
 }
 
-menu menuitem accelerator:disabled,
-.menu menuitem accelerator:disabled {
-    color: mix (@menu_fg_color, @menu_bg_color, 0.7);
-}
-
-menuitem accelerator {
+menu > menuitem accelerator,
+.menu > menuitem accelerator {
     color: alpha (@menu_fg_color, 0.4);
 }
 
-menuitem accelerator:hover {
+menu > menuitem:disabled > label > accelerator,
+.menu > menuitem:disabled > label > accelerator {
+    color: mix (@menu_fg_color, @menu_bg_color, 0.7);
+}
+
+menu > menuitem:hover > label > accelerator,
+.menu > menuitem:hover > label > accelerator {
     color: alpha (@menu_fg_color, 0.3);
 }
 
