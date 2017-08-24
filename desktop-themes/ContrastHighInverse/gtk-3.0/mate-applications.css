@@ -123,7 +123,7 @@ PanelSeparator {
 }
 
 /* the grid left from wnckpager and wncktasklist */
-MatePanelAppletFrameDBus {
+MatePanelAppletFrameDBus > MatePanelAppletFrameDBus {
     background-image: -gtk-scaled(url("panel-grid.svg"));
     background-color: transparent;
     background-repeat: no-repeat;

@@ -112,7 +112,7 @@ MatePanelApplet {
     text-shadow: none;
 }
 
-MatePanelAppletFrameDBus {
+MatePanelAppletFrameDBus > MatePanelAppletFrameDBus {
     background-image: -gtk-scaled(url("img/panel-grid.svg"));
     background-color: transparent;
     background-repeat: no-repeat;
