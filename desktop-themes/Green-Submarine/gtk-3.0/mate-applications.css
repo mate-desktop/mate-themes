@@ -10,6 +10,11 @@
     border-style: none;
 }
 
+/* override for previous setting */
+.caja-notebook scrolledwindow.frame .view.dnd {
+    border-style: solid;
+}
+
 /* list view */
 .caja-notebook treeview.view {
     padding: 0px;
