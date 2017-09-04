@@ -68,7 +68,7 @@ paned.horizontal > box.vertical.caja-side-pane > notebook scrolledwindow.frame {
                                      color-stop (0.40, shade (@sidebar_selected_bg, 0.98)),
                                      to (shade(@sidebar_selected_bg, 1.05)));
     color:  @theme_selected_fg_color;
-    border-radius: 6px;
+    border-radius: 3px;
     border-style: solid;
     border-width: 1px 0px 0px 0px;
     border-color: shade (@sidebar_selected_bg, 0.90) #bbb shade (@sidebar_selected_bg, 1.05);
@@ -88,7 +88,7 @@ paned.horizontal > box.vertical.caja-side-pane > notebook scrolledwindow.frame {
                 inset -1px  0px shade(@selected_bg_color, 0.93),
                 inset  0px -1px shade(@selected_bg_color, 0.93);
     color: shade (@theme_fg_color, 0.90);
-    border-radius: 6px;
+    border-radius: 3px;
     text-shadow: none;
 }
 
