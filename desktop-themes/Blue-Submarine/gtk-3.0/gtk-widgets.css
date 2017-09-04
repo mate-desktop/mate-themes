@@ -3295,6 +3295,7 @@ spinbutton,
 spinbutton:focus,
 spinbutton.vertical,
 spinbutton.vertical:focus {
+    color:  @theme_text_color;
     border-color: @button_border;
     border-width: 1px;
     border-style: solid;
