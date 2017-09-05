@@ -381,20 +381,6 @@ paned.horizontal > box.vertical.caja-side-pane > notebook scrolledwindow.frame {
  * Mate-Panel *
  ****************/
 
-/* first make all transparent */
-.mate-panel-menu-bar,
-.mate-panel-menu-bar menubar,
-.mate-panel-menu-bar menuitem,
-#PanelPlug,
-#PanelApplet button,
-PanelToplevel.background {
-    background-color: transparent;
-    background-image: none;
-    border-color: transparent;
-    box-shadow: none;
-    padding: 0px;
-}
-
 /* let's started */
 /* the panel bar itself */
 #PanelPlug,
@@ -502,6 +488,11 @@ window.background, /* selector where outlines are writen on GtkTrayIcon */
 }
 
 /* menubar */
+/* drop some unwanted stuff for transparency */
+.mate-panel-menu-bar menubar {
+    border-color: transparent;
+    box-shadow: none;
+}
 .mate-panel-menu-bar menu > menuitem,
 .mate-panel-menu-bar menubar > menuitem {
     padding: 4px;
