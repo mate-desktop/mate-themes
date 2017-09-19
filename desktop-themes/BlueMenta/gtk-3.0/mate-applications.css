@@ -278,8 +278,22 @@
  * Mate-Panel *
  ****************/
 
+/* first make all transparent */
+.mate-panel-menu-bar,
+.mate-panel-menu-bar menubar,
+.mate-panel-menu-bar menuitem,
+#PanelPlug,
+#PanelApplet button,
+PanelToplevel.background,
+#PanelApplet-window-menu-applet-button {
+    background-color: transparent;
+    border-image: none;
+    background-image: none;
+    background-color: transparent;
+    box-shadow: none;
+}
+
 /* let's start it */
-/* the panel bar itself */
 #PanelPlug,
 .mate-panel-menu-bar,
 PanelToplevel.background {
@@ -314,6 +328,10 @@ PanelToplevel > grid > button:hover:active {
                                       shade (@theme_selected_bg_color, 0.26));
     color: shade (@theme_selected_fg_color, 1.00);
     border-width: 0px;
+}
+
+#PanelApplet {
+    border-width: 0;
 }
 
 PanelSeparator {
