@@ -2088,21 +2088,6 @@ scrollbar {
     -GtkScrolledWindow-scrollbar-spacing: 0;
 }
 
-/* workarround for broken yelp, w/o that yelp window have redraw issues
-   for displaying the horizontal scrollbar,
-   probably an issue with webkitgtk4 or yelp */
-scrollbar.horizontal {
-	-GtkScrollbar-has-backward-stepper: false;
-	-GtkScrollbar-has-forward-stepper: false;
-
-}
-/* override for normal applications */
-scrolledwindow > scrollbar.horizontal {
-	-GtkScrollbar-has-backward-stepper: true;
-	-GtkScrollbar-has-forward-stepper: true;
-
-}
-
 scrollbar.vertical {
     border-width: 0px;
     min-width: 10px;
