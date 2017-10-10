@@ -1849,6 +1849,26 @@ scrollbar button.vertical:disabled {
 	border-width: 0px;
 }
 
+/*Workaround for Yelp scrollbar redraw bug caused my minumum height */
+/*Compromise for working steppers in Libreoffice, partial horiz scrollbar display in Yelp*/
+scrollbar.horizontal button{
+	min-height: 8px;
+	min-width: 14px;
+}
+
+/*Keep this off as many scrollbars as possible */
+/*Also ensure arrow icons same size vertical and horizontal */
+scrollbar.horizontal button{
+	min-height: 8px;
+	min-width: 14px;
+}
+
+scrollbar.vertical button{
+	min-height: 14px;
+	min-width: 14px;
+}
+
+
 scrollbar slider,
 scrollbar .slider {
 	background-color: transparent;
