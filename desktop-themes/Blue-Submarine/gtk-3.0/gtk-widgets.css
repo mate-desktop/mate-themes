@@ -6099,6 +6099,16 @@ headerbar.titlebar .linked button.image-button:disabled {
     box-shadow: none;
 }
 
+/* ie. gitg */
+headerbar.titlebar button.default.text-button.suggested-action,
+headerbar.titlebar button.default.text-button.suggested-action:focus {
+    color: @theme_fg_dark_color;
+}
+
+headerbar.titlebar button.default.text-button.suggested-action:hover {
+    color: shade (@theme_selected_bg_color, 1.6);
+}
+
 headerbar > button.text-button:hover,
 headerbar > button.text-button:focus,
 headerbar > button.text-button,
