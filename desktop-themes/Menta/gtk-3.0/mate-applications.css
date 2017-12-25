@@ -941,3 +941,14 @@ matekbd-keyboard-drawing,
     border-radius: 0px;
 }
 
+/* fix for some maximized windows 
+   https://github.com/mate-desktop/mate-desktop/issues/291
+   FIXME Sadly pluma ignore doesn't show the maximised style class */
+
+window.background.maximized.engrampa-window > grid.horizontal > paned.horizontal > scrolledwindow.frame,
+window.background.maximized.atril-window > box.vertical > paned.horizontal > box.vertical > scrolledwindow.frame,
+window.background.pluma-window > box.vertical > paned.horizontal > paned.vertical > notebook box.vertical > scrolledwindow.frame,
+window.background.maximized.logview-window > box.vertical > paned.horizontal > box.vertical > scrolledwindow.frame {
+    border-right-width: 0px;
+}
+
