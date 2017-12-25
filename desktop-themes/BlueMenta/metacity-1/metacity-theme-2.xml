@@ -39,16 +39,16 @@
 </frame_geometry>
 
 <frame_geometry name="max" title_scale="medium" parent="normal" rounded_top_left="false" rounded_top_right="false">
-    <distance name="left_width" value="1" />
-    <distance name="right_width" value="1" />
+    <distance name="left_width" value="0" />
+    <distance name="right_width" value="0" />
     <distance name="bottom_height" value="1" />
-    <distance name="left_titlebar_edge" value="4"/>
-    <distance name="right_titlebar_edge" value="1"/>
-    <distance name="title_vertical_pad" value="9"/> <!--
+    <distance name="left_titlebar_edge" value="5"/>
+    <distance name="right_titlebar_edge" value="0"/>
+    <distance name="title_vertical_pad" value="8"/> <!--
                             This needs to be 1 less then the
                             title_vertical_pad on normal state
                             or you'll have bigger buttons -->
-    <border name="title_border" left="10" right="10" top="1" bottom="2"/>
+    <border name="title_border" left="10" right="10" top="2" bottom="2"/>
     <border name="button_border" left="0" right="0" top="0" bottom="2"/>
 </frame_geometry>
 
@@ -252,15 +252,11 @@
 <draw_ops name="max_border_focused">
     <line color="C_border_focused" x1="0" y1="0" x2="width-1" y2="0" />
     <line color="C_border_focused" x1="0" y1="height-1" x2="width-1" y2="height-1" />
-    <line color="C_border_focused" x1="0" y1="0" x2="0" y2="height-2" />
-    <line color="C_border_focused" x1="width-1" y1="0" x2="width-1" y2="height-2" />
 </draw_ops>
 
 <draw_ops name="max_border_unfocused">
     <line color="C_border_unfocused" x1="0" y1="0" x2="width-1" y2="0" />
     <line color="C_border_unfocused" x1="0" y1="height-1" x2="width-1" y2="height-1" />
-    <line color="C_border_unfocused" x1="0" y1="0" x2="0" y2="height-2" />
-    <line color="C_border_unfocused" x1="width-1" y1="0" x2="width-1" y2="height-2" />
 </draw_ops>
 
 <!-- button icons-->
