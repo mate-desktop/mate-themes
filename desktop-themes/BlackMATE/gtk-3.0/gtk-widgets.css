@@ -1781,19 +1781,15 @@ linkbutton button:active:hover {
 scrollbar {
 	background-image: none;
     background-color: @less_dark_color;
-	border-style: solid;
+	border-style: none;
 }
 
 scrollbar.vertical {
-	border-style: solid;
-	border-width: 0px 0px 0px 1px;
-	border-color: shade (@theme_bg_color, 0.94);
+	border-style: none;
 }
 
 scrollbar.horizontal {
-	border-style: solid;
-	border-width: 1px 0px 0px 0px;
-	border-color: shade (@theme_bg_color, 0.94);
+	border-style: none;
 }
 
 scrollbar junction { /* the small square between scrollbars!!! */
@@ -1810,18 +1806,22 @@ scrollbar.vertical trough {
 	background-image: linear-gradient(to right,
 		@scrollbar_trough,
 		shade (@scrollbar_trough, 1.08));
-	border-style: none;
+	border-style: solid;
 	border-radius: 0;
 	border-image: none;
+	border-width: 0px 0px 0px 1px;
+	border-color: shade (@theme_bg_color, 0.94);
 }
 
 scrollbar.horizontal trough {
 	background-image: linear-gradient(to bottom,
 		@scrollbar_trough,
 		shade (@scrollbar_trough, 1.08));
-	border-style: none;
+	border-style: solid;
 	border-radius: 0;
 	border-image: none;
+	border-width: 1px 0px 0px 0px;
+	border-color: shade (@theme_bg_color, 0.94);
 }
 
 scrollbar button,
