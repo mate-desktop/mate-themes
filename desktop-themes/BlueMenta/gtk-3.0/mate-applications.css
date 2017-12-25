@@ -944,7 +944,8 @@ matekbd-keyboard-drawing,
 window.background.maximized.engrampa-window > grid.horizontal > paned.horizontal > scrolledwindow.frame,
 window.background.maximized.atril-window > box.vertical > paned.horizontal > box.vertical > scrolledwindow.frame,
 window.background.pluma-window > box.vertical > paned.horizontal > paned.vertical > notebook box.vertical > scrolledwindow.frame,
-window.background.maximized.logview-window > box.vertical > paned.horizontal > box.vertical > scrolledwindow.frame {
+window.background.maximized.logview-window > box.vertical > paned.horizontal > box.vertical > scrolledwindow.frame,
+window.background.maximized.caja-navigation-window notebook.caja-notebook scrolledwindow.frame {
     border-right-width: 0px;
 }
 
