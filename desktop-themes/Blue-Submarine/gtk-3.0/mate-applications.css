@@ -50,12 +50,9 @@ paned.horizontal > box.vertical.caja-side-pane > notebook scrolledwindow.frame {
    border-width: 0px;
 }
 
-/* to avoid overlap with eject buttons */
-.caja-side-pane scrolledwindow scrollbar.vertical.left.overlay-indicator,
-.caja-side-pane scrolledwindow scrollbar.vertical.left.overlay-indicator trough,
-.caja-side-pane scrolledwindow scrollbar.vertical.left.overlay-indicator slider,
-.caja-side-pane scrolledwindow scrollbar.vertical.left.overlay-indicator button {
-    min-width: 8px;
+.caja-side-pane treeview,
+.caja-side-pane treeview > header > button {
+    padding: 0px 0px 0px 0px;
 }
 
 /* selected item in sidebar */
@@ -90,11 +87,6 @@ paned.horizontal > box.vertical.caja-side-pane > notebook scrolledwindow.frame {
     color: shade (@theme_fg_color, 0.90);
     border-radius: 3px;
     text-shadow: none;
-}
-
-/* moved eject button to left better for overlay scrollbars */
-.caja-side-pane treeview {
-    padding: 0px 4px 0px 0px;
 }
 
 /* Caja places bar */
