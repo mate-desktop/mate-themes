@@ -1451,3 +1451,11 @@ window.background.maximized.caja-navigation-window notebook.caja-notebook scroll
     border-right-width: 0px;
 }
 
+/************
+ * engrampa *
+ ************/
+
+.engrampa-window toolbar toolitem entry:disabled {
+    box-shadow: none;
+}
+
