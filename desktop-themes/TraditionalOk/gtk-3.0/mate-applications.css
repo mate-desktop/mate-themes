@@ -536,7 +536,7 @@ MsdOsdWindow.background.osd .progressbar {
     border-width: 1px;
     border-radius: 3px;
     border-color: rgba(0,0,0,0.4);
-    background-color: @osd_scale_trough_bg_color;
+	background-color: alpha(shade(@theme_selected_bg_color, 1.0), 0.9);
 }
 
 /*****************
