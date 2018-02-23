@@ -325,3 +325,43 @@ window.background.maximized.caja-navigation-window notebook.caja-notebook scroll
     border-right-width: 0px;
 }
 
+/* multimedia OSD */
+MsdOsdWindow.background.osd {
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 3px;
+	outline-color: rgba(255, 255, 255, 0.3);
+}
+
+MsdOsdWindow.background.osd .trough {
+	background-color: transparent;
+	min-height: 2px;
+    border-radius: 3px;
+    border-width: 1px;
+    border-color: rgba(0,0,0,0.4);
+}
+
+MsdOsdWindow.background.osd .progressbar {
+    border-width: 1px;
+    border-radius: 3px;
+    border-color: rgba(0,0,0,0.4);
+	background-color: alpha(shade(@theme_selected_bg_color, 1.0), 0.6);
+}
+
+/*For mate-settings-daemon noncomposited osd windows*/
+MsdOsdWindow.background.osd.msd-osd-window-solid {
+	border-radius: 0px;
+	border-width: 2px;
+	border-style:solid;
+	border-color: rgb(64, 64, 67);
+}
+
+MsdOsdWindow.background.osd.msd-osd-window-solid progressbar,
+MsdOsdWindow.background.osd.msd-osd-window-solid progressbar trough {
+	border-radius: 10px;
+}
+
+MsdOsdWindow.background.osd.msd-osd-window-solid progressbar trough {
+    border: 1px solid rgb(102, 153, 204);
+}
+
