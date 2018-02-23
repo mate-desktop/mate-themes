@@ -3928,6 +3928,7 @@ toolbar.osd separator {
 	border-width: 0;
 }
 
+.osd .progressbar,
 .osd progressbar {
 	background-color: @osd_fg;
 }
@@ -3976,17 +3977,20 @@ toolbar.osd separator {
     background-image: none;
 }
 
+.osd .progressbar,
 .osd progressbar,
 progressbar .osd {
 	padding: 0;
 	min-height: 3px;
 }
 
+.osd .progressbar.horizontal,
 .osd progressbar.horizontal,
 progressbar.horizontal .osd {
 	min-height: 3px;
 }
 
+.osd .progressbar trough,
 .osd progressbar trough,
 progressbar .osd trough {
 	padding: 0;
@@ -3998,10 +4002,11 @@ progressbar .osd trough {
 	border-radius: 0;
 }
 
+.osd .progressbar,
 .osd progressbar,
 progressbar .osd {
 	border-style: none;
-	background-color: @theme_selected_bg_color;
+	background-color: alpha(shade(@theme_selected_bg_color, 0.8), 0.6);
 	background-image: none;
 	border-radius: 0;	
 }
