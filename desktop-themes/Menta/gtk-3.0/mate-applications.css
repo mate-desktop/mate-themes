@@ -17,6 +17,13 @@
                                       @button_hover_gradient_color_b);
 }
 
+.caja-navigation-window .caja-side-pane button.flat:backdrop {
+    background-color: transparent;
+    background-image: linear-gradient(to bottom, 
+                                      @button_gradient_backdrop_color_a,
+                                      @button_gradient_backdrop_color_b);
+}
+
 .caja-navigation-window .caja-side-pane button.flat:first-child,
 .caja-navigation-window .caja-side-pane button.flat:hover:first-child {
     border-image: url("borders/button.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
@@ -143,6 +150,21 @@
     color: shade (@theme_selected_fg_color, 1.00);
 }
 
+/* unfocused window */
+.caja-side-pane notebook treeview.view:backdrop,
+.caja-side-pane notebook textview.view text:backdrop,
+.caja-side-pane notebook viewport.frame:backdrop,
+.caja-side-pane notebook widget .vertical:backdrop {
+    background-color: shade(@theme_bg_color, 1.02);
+    color: @theme_unfocused_fg_color;
+}
+
+.caja-side-pane treeview.view:selected:backdrop,
+.caja-side-pane treeview.view:selected:hover:backdrop {
+    background-color: shade(@backdrop_selected_color, 0.92);
+    color: @theme_unfocused_fg_color;
+}
+
 /* treeview rows */
 .caja-side-pane treeview.view {
     padding: 2px 0px;
@@ -165,7 +187,7 @@
 /* color of selected icons if unfocused */
 /* For some reasons this needs to be set here again */
 .caja-navigation-window .caja-notebook .view:active {
-    background-color: shade(@theme_unfocused_bg_color, 0.94);
+    background-color: shade(@backdrop_selected_color, 1.00);
 }
 
 /* listview mode */
@@ -193,6 +215,35 @@
     color: shade (@theme_selected_bg_color, 0.35);
 }
 
+/* unfocused window */
+.caja-navigation-window .caja-notebook scrolledwindow.view.frame:backdrop .view,
+.caja-navigation-window .caja-notebook .view:backdrop {
+    background-color: shade(@backdrop_color, 1.00);
+    color: @theme_unfocused_fg_color;
+}
+
+.caja-navigation-window .caja-notebook scrolledwindow.view.frame:backdrop .view:selected,
+.caja-navigation-window .caja-notebook .view:selected:backdrop {
+    background-color: shade(@backdrop_selected_color, 1.00);
+    color: @theme_unfocused_fg_color;
+}
+
+.caja-navigation-window .caja-notebook treeview.view:selected:backdrop,
+.caja-navigation-window .caja-notebook treeview.view:selected:hover:backdrop {
+    background-image: linear-gradient(to bottom,
+                                      shade (@backdrop_selected_color, 1.00),
+                                      shade (@backdrop_selected_color, 1.00));
+}
+
+.caja-desktop.view .entry:backdrop,
+.caja-navigation-window .view .entry:backdrop {
+    background-image: linear-gradient(to bottom,
+                                      shade (@backdrop_selected_color, 1.02),
+                                      shade (@backdrop_color, 1.02));
+    color: @theme_unfocused_fg_color;
+    border-color: shade (@backdrop_selected_color, 0.85);
+}
+
 /* ie. inactive-pane caja */
 .caja-notebook .view:disabled {
     background-color: @inactive-pane_bg_color;
@@ -210,8 +261,6 @@
 }
 
 .caja-desktop.caja-canvas-item:selected,
-.caja-desktop.caja-canvas-item:active,
-.caja-navigation-window .caja-canvas-item:active,
 .caja-navigation-window .caja-canvas-item:selected {
     color: @theme_selected_fg_color;
     background-color: @theme_selected_bg_color;
@@ -242,6 +291,12 @@
    border-image: none;
    border-width: 1px;
    text-shadow: none;
+}
+
+.caja-desktop.caja-canvas-item:active,
+.caja-desktop.view:selected:backdrop {
+    background-color: shade(@backdrop_selected_color, 0.75);
+    color: @theme_unfocused_fg_color;
 }
 
 /* search, etc */
@@ -964,5 +1019,35 @@ window.background.pluma-window > box.vertical > paned.horizontal > paned.vertica
 window.background.maximized.logview-window > box.vertical > paned.horizontal > box.vertical > scrolledwindow.frame,
 window.background.maximized.caja-navigation-window notebook.caja-notebook scrolledwindow.frame {
     border-right-width: 0px;
+}
+
+/********************
+ * mate-font-viewer *
+ ********************/
+
+.font-viewer iconview.view > .cell,
+.font-viewer iconview.view > .cell:backdrop {
+    background-color: transparent;
+}
+
+.font-viewer iconview > .cell:hover {
+    background-color: shade (@theme_selected_bg_color, 1.55);
+    color: shade (@theme_selected_bg_color, 0.35);
+}
+
+/* SushiFontViewer, does not work!, only with gtk3-inspector */
+.font-viewer viewport:backdrop > widget.view:backdrop {
+    background-color: shade(@backdrop_color, 1.00);
+    color: @theme_unfocused_fg_color;
+}
+
+.font-viewer iconview.view:backdrop {
+    background-color: shade(@backdrop_color, 0.95);
+    color: @theme_unfocused_fg_color;
+}
+
+.font-viewer iconview.view > .cell,
+.font-viewer viewport > .view {
+    transition: all 400ms ease-out;
 }
 
