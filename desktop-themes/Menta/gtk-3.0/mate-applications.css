@@ -652,6 +652,56 @@ na-tray-applet widget box widget {
     border-style: none;
 }
 
+/* fixes for backdrop state */
+
+#clock-applet-button.flat.toggle:backdrop  label {
+    color: @theme_fg_color;
+}
+
+#PanelApplet:backdrop > #clock-applet-button.flat.toggle:backdrop:checked:hover {
+    background-image: linear-gradient(to bottom,
+                                      shade (@theme_bg_color, 1.14),
+                                      shade (@theme_bg_color, 0.96));
+}
+
+#MatePanelPopupWindow:backdrop frame box label,
+#MatePanelPopupWindow:backdrop frame box calendar {
+   color: @theme_fg_color;
+}
+
+#MatePanelPopupWindow:backdrop frame box calendar:indeterminate {
+    color: alpha(@theme_fg_color, 0.4);
+}
+
+#MatePanelPopupWindow:backdrop frame box calendar.highlight,
+#MatePanelPopupWindow:backdrop frame box calendar:selected {
+	background-color: @theme_selected_bg_color;
+	color: @theme_selected_fg_color;
+}
+
+#MatePanelPopupWindow:backdrop frame box button {
+	background-image: linear-gradient(to bottom, 
+		@button_gradient_color_a,
+		@button_gradient_color_b);
+}
+
+#MatePanelPopupWindow:backdrop frame box button:hover,
+#MatePanelPopupWindow:backdrop frame box calendar.button:hover {
+	background-image: linear-gradient(to bottom,
+		@button_hover_gradient_color_a,
+		@button_hover_gradient_color_b);
+}
+
+#MatePanelPopupWindow:backdrop frame box button:hover:active {
+	background-image: linear-gradient(to bottom,
+		shade (@button_active_gradient_color_a, 1.05),
+		shade (@button_active_gradient_color_b, 1.05));
+}
+
+.mate-panel-menu-bar:backdrop menubar > menuitem > label {
+    color: @theme_fg_color;
+}
+
 /****************
  * Pluma *
  ****************/
