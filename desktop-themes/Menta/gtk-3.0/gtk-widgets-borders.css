@@ -77,12 +77,14 @@ toolbar.inline-toolbar.vertical button.default:checked {
 }
 
 button,
+button.default:backdrop,
+button.suggested-action:backdrop,
 combobox button.combo {
-	border-image: url("borders/button.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
-	border-radius: 4px;
-	border-width: 2px;
-	border-style: solid;
-	border-color: transparent;
+    border-image: url("borders/button.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
+    border-radius: 4px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: transparent;
 }
 
 toolbar.inline-toolbar.vertical button {
