@@ -2842,11 +2842,13 @@ scrollbar.left .button:hover {
 }
 
 scrollbar button,
-scrollbar .button {
-	background-image: linear-gradient(to bottom,
-		shade (@button_active_gradient_color_a, 1.12),
-		shade (@button_active_gradient_color_b, 1.12));
-	background-color: transparent;
+scrollbar .button,
+scrollbar button:backdrop,
+scrollbar .button:backdrop {
+    background-image: linear-gradient(to bottom,
+                                      shade (@button_active_gradient_color_a, 1.12),
+                                      shade (@button_active_gradient_color_b, 1.12));
+                                      background-color: transparent;
 }
 
 scrollbar button:hover,
@@ -2870,6 +2872,13 @@ scrollbar .button:checked {
 
 scrollbar button:backdrop {
     color: @theme_unfocused_fg_color;
+}
+
+scrollbar slider,
+scrollbar .slider,
+scrollbar button,
+scrollbar .button {
+    transition: all 400ms ease-out;
 }
 
 scrollbar.vertical slider,
@@ -2898,6 +2907,14 @@ scrollbar.vertical .slider:hover:active {
 	border-image: none;
 	border-color: shade(@scrollbar_slider, 0.65);
 	border-width: 1px;
+}
+
+scrollbar.vertical:backdrop slider,
+scrollbar.vertical:backdrop .slider {
+    background-image: linear-gradient(to right,
+                                      shade(@scrollbar_slider, 0.96),
+                                      shade(@scrollbar_slider, 0.88));
+    border-color: shade(@scrollbar_slider, 0.78);
 }
 
 scrollbar.horizontal slider,
@@ -2935,6 +2952,14 @@ scrollbar .slider:disabled {
 	border-image: none;
 	border-color: shade(@scrollbar_slider, 0.75);
 	border-width: 1px;
+}
+
+scrollbar.horizontal slider,
+scrollbar.horizontal .slider {
+    background-image: linear-gradient(to bottom,
+                                      shade(@scrollbar_slider, 0.96),
+                                      shade(@scrollbar_slider, 0.88));
+    border-color: shade(@scrollbar_slider, 0.78);
 }
 
 scrollbar.fine-tune slider:hover:active,
