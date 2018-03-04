@@ -33,6 +33,26 @@
 }
 */
 
+/* icon & list view */
+
+.nautilus-window notebook overlay > scrolledwindow,
+.nautilus-window notebook overlay > scrolledwindow:backdrop widget.view {
+    transition: all 400ms ease-out;
+}
+
+.nautilus-window notebook overlay > scrolledwindow {
+    background-color: @theme_base_color;
+}
+
+.nautilus-window notebook overlay > scrolledwindow:backdrop {
+    background-color: shade(@backdrop_color, 1.00);
+    color: @theme_unfocused_fg_color;
+}
+
+.nautilus-window notebook overlay > scrolledwindow:backdrop widget.view {
+    color: @theme_unfocused_fg_color;
+}
+
 /* workaround for jumping buttons in nautilus */
 .nautilus-window headerbar.titlebar .linked.path-bar > button,
 .nautilus-window headerbar.titlebar .linked.path-bar > button.text-button.toggle {
