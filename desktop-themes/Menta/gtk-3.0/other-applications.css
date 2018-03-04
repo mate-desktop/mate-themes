@@ -426,126 +426,12 @@ OsScrollbar:disabled {
 	-gtk-icon-style: regular;
 }
 
-/*************
- * Yumex-DNF *
- *************/
-
-window.background.yumex-dnf-window > box.vertical > box.vertical > searchbar {
-    border-width: 0px;
+#meldapp > box.vertical > notebook.frame box.vertical > label {
+    transition: all 400ms ease-out;
 }
 
-/* list sidebar row */
-window.background.yumex-dnf-window > box.vertical > box.vertical > box.horizontal > paned.vertical > stack > box.vertical > box.horizontal > box.vertical list.sidebar {
-    background-color: @sidebar_bg;
-    border-color: @borders;
-    border-style: solid;
-    border-width: 1px 0px 0px 0px;
-}
-
-window.background.yumex-dnf-window > box.vertical > box.vertical > box.horizontal > paned.vertical > stack > box.vertical > box.horizontal > box.vertical list.sidebar row.activatable {
-    background-color: @sidebar_bg;
-    border-radius: 3px;
-}
-
-/* info sidebar */
-window.background.yumex-dnf-window > box.vertical > box.vertical > box.horizontal > paned.vertical > box.horizontal > box.vertical list.sidebar {
-    background-color: @theme_bg_color;
-    border-color: @borders;
-    border-style: solid;
-    border-width: 1px 0px 0px 0px;
-    padding: 3px;
-}
-
-window.background.yumex-dnf-window > box.vertical > box.vertical > box.horizontal > paned.vertical > box.horizontal > box.vertical list.sidebar row.activatable {
-    background-image: none;
-    background-color: @theme_bg_color;
-    border-radius: 4px;
-	border-width: 2px;
-}
-
-window.background.yumex-dnf-window > box.vertical > box.vertical > box.horizontal > paned.vertical > box.horizontal > box.vertical list.sidebar row.activatable:selected {
-	background-image: linear-gradient(to bottom,
-		@button_gradient_color_a,
-		@button_gradient_color_b);
-	background-color: transparent;
-	border-image: url("borders/button-active.png") 3 4 4 4 / 3px 3px 4px 3px stretch;
-    border-radius: 4px;
-	border-width: 2px;
-}
-
-window.background.yumex-dnf-window > box.vertical > box.vertical > box.horizontal > paned.vertical > box.horizontal > box.vertical list.sidebar row.activatable:hover {
-	border-image: url("borders/button.png") 3 4 4 4 / 3px 3px 4px 3px stretch;
-	border-radius: 4px;
-	border-width: 2px;
-	border-style: solid;
-	border-color: transparent;
-    background-color: @theme_bg_color;
-	background-image: linear-gradient(to bottom,
-		@button_hover_gradient_color_a,
-		@button_hover_gradient_color_b);
-}
-
-window.background.yumex-dnf-window > box.vertical > box.vertical > box.horizontal > paned.vertical > box.horizontal > box.vertical list.sidebar row.activatable:hover:active {
-	border-image: url("borders/button.png") 3 4 4 4 / 3px 3px 4px 3px stretch;
-	border-radius: 4px;
-	border-width: 2px;
-	border-style: solid;
-	border-color: transparent;
-	background-image: linear-gradient(to bottom,
-		shade (@button_active_gradient_color_a, 1.05),
-		shade (@button_active_gradient_color_b, 1.05));
-    background-color: @theme_bg_color;
-}
-
-/****************
- * pavu-control *
- ****************/
-
-window.background > box.vertical > notebook button.flat.toggle,
-window.background.csd > box.vertical > notebook button.flat.toggle,
-window.background.ssd > box.vertical > notebook button.flat.toggle,
-window.background.solid-csd > box.vertical > notebook button.flat.toggle {
-    border-radius: 4px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: transparent;
+#meldapp > box.vertical > notebook.frame widget > box.vertical > widget > box.vertical > notebook:backdrop {
     background-color: transparent;
-}
-
-window.background > box.vertical > notebook button.flat.toggle:checked,
-window.background.csd > box.vertical > notebook button.flat.toggle:checked,
-window.background.ssd > box.vertical > notebook button.flat.toggle:checked,
-window.background.solid-csd > box.vertical > notebook button.flat.toggle:checked {
-    border-image: url("borders/button-active-focus.png") 3 4 5 4 / 3px 4px 5px 4px stretch;
-    background-image: linear-gradient(to bottom,
-                                      @button_active_gradient_color_a,
-                                      @button_active_gradient_color_b);
-}
-
-window.background > box.vertical > notebook button.flat.toggle:checked:focus,
-window.background.csd > box.vertical > notebook button.flat.toggle:checked:focus,
-window.background.ssd > box.vertical > notebook button.flat.toggle:checked:focus,
-window.background.solid-csd > box.vertical > notebook button.flat.toggle:checked:focus {
-    border-image: url("borders/button-focus.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
-    background-image: linear-gradient(to bottom,
-                                      @button_active_gradient_color_a,
-                                      @button_active_gradient_color_b);
-}
-
-window.background > box.vertical > notebook scrolledwindow,
-window.background.csd > box.vertical > notebook scrolledwindow viewport,
-window.background.ssd > box.vertical > notebook scrolledwindow viewport,
-window.background.solid-csd > box.vertical > notebook scrolledwindow viewport {
-    border-style: solid;
-    border-color: @borders;
-    border-width: 1px;
-}
-
-window.background > box.vertical > notebook scrolledwindow viewport,
-window.background.csd > box.vertical > notebook scrolledwindow viewport,
-window.background.ssd > box.vertical > notebook scrolledwindow viewport,
-window.background.solid-csd > box.vertical > notebook scrolledwindow viewport {
-    background-color: shade (@theme_bg_color, 1.12);
 }
 
 /****************
@@ -556,5 +442,21 @@ window.background > box.vertical > notebook overlay > scrolledwindow,
 window.background > box.vertical > notebook overlay > scrolledwindow viewport {
     border-style: none;
     border-width: 0px;
+}
+
+/**************
+ * blivet-gui *
+ **************/
+
+#bg-visualization > button.radio:checked:backdrop {
+    background-color: shade(@backdrop_selected_color, 0.90);
+}
+
+#bg-visualization > button.radio:checked:backdrop > box > label {
+    color: @theme_unfocused_fg_color;
+}
+
+#bg-visualization > button.radio > box > label {
+    transition: all 400ms ease-out;
 }
 
