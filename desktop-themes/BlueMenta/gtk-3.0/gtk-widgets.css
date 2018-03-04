@@ -35,17 +35,15 @@
 }
 
 *:selected,
-*:selected:focus,
-*:selected:backdrop {
-	background-color: @theme_selected_bg_color;
-	color: @theme_selected_fg_color;
+*:selected:focus {
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
 }
 
-/*
 *:selected:backdrop {
-	color: @theme_fg_color;
+    color: @theme_unfocused_fg_color;
+    background-color: shade (@backdrop_selected_color, 1.00);
 }
-*/
 
 *:disabled {
 	/*background-color: @insensitive_bg_color;*/
@@ -255,13 +253,22 @@ toolbar .separator {
 	color: transparent;
 }
 
+/* eg. atril, evince */
+.content-view {
+    transition: all 400ms ease-out;
+}
+
+.content-view:backdrop {
+    background-color: shade(@backdrop_color, 1.00);
+    color: @theme_unfocused_fg_color;
+}
+
 /************************
  * overshoot/undershoot *
  ************************/
 
 /* displays at end of mouse scrolling */
-overshoot.top,
-overshoot.top:backdrop {
+overshoot.top {
     background-image: -gtk-gradient(radial,
                                     center top, 0,
                                     center top, 0.5,
@@ -280,7 +287,6 @@ overshoot.top:backdrop {
     box-shadow: none;
 }
 
-/*
 overshoot.top:backdrop {
     background-image: -gtk-gradient(radial,
                                     center top, 0,
@@ -294,10 +300,8 @@ overshoot.top:backdrop {
     border: none;
     box-shadow: none;
 }
-*/
 
-overshoot.bottom,
-overshoot.bottom:backdrop {
+overshoot.bottom {
     background-image: -gtk-gradient(radial,
                                     center bottom, 0,
                                     center bottom, 0.5,
@@ -316,7 +320,6 @@ overshoot.bottom:backdrop {
     box-shadow: none;
 }
 
-/*
 overshoot.bottom:backdrop {
     background-image: -gtk-gradient(radial,
                                     center bottom, 0,
@@ -330,10 +333,8 @@ overshoot.bottom:backdrop {
     border: none;
     box-shadow: none;
 }
-*/
 
-overshoot.left,
-overshoot.left:backdrop {
+overshoot.left {
     background-image: -gtk-gradient(radial,
                                     left center, 0,
                                     left center, 0.5,
@@ -352,7 +353,6 @@ overshoot.left:backdrop {
     box-shadow: none;
 }
 
-/*
 overshoot.left:backdrop {
     background-image: -gtk-gradient(radial,
                                     left center, 0,
@@ -366,10 +366,8 @@ overshoot.left:backdrop {
     border: none;
     box-shadow: none;
 }
-*/
 
-overshoot.right,
-overshoot.right:backdrop {
+overshoot.right {
     background-image: -gtk-gradient(radial,
                                     right center, 0,
                                     right center, 0.5,
@@ -388,7 +386,6 @@ overshoot.right:backdrop {
     box-shadow: none;
 }
 
-/*
 overshoot.right:backdrop {
     background-image: -gtk-gradient(radial,
                                     right center, 0,
@@ -402,7 +399,6 @@ overshoot.right:backdrop {
     border: none;
     box-shadow: none;
 }
-*/
 
 /* result is disable undershoot */
 undershoot.top {
@@ -462,6 +458,7 @@ entry {
     color: @entry_text_color;
     background-color: @theme_base_color;
     box-shadow: inset 0px 2px 3px 0px alpha(@theme_fg_color, 0.15);
+    transition: all 400ms ease-out;
 }
 
 entry image.left {
@@ -481,6 +478,17 @@ entry:focus {
 	box-shadow: inset 1px 2px alpha(@theme_selected_bg_color, 0.1),
 		inset 1px 1px alpha(@theme_selected_bg_color, 0.1),
 		inset -1px -1px alpha(@theme_selected_bg_color, 0.2);
+}
+
+entry selection,
+entry:selected {
+    transition: all 400ms ease-out;
+}
+
+entry selection:backdrop,
+entry:selected:backdrop {
+    background-color: shade(@backdrop_selected_color, 1.00);
+    color: @theme_unfocused_fg_color;
 }
 
 entry progressbar,
@@ -524,8 +532,8 @@ entry:disabled {
 }
 
 entry:active {
-	color: @theme_unfocused_selected_fg_color;
-	background-color: @theme_unfocused_selected_bg_color;
+    color: @theme_unfocused_selected_fg_color;
+    background-color: shade(@backdrop_selected_color, 1.00);
 }
 
 .cursor-handle.top,
@@ -544,8 +552,7 @@ entry:active {
  * GtkSpinButton *
  *****************/
 
-spinbutton,
-spinbutton:focus {
+spinbutton {
     background-image: linear-gradient(to bottom,
                                       @entry_background_a,
                                       @entry_background_b);
@@ -554,6 +561,7 @@ spinbutton:focus {
     border-style: solid;
     border-radius: 3px;
     padding: 0px;
+    transition: all 400ms ease-out;
 }
 
 spinbutton:disabled {
@@ -564,7 +572,6 @@ spinbutton:disabled {
 
 spinbutton:focus {
     border-color: shade (@treeview_focus_border, 1.0);
-    transition: all 400ms ease-out;
 }
 
 spinbutton button,
@@ -661,6 +668,14 @@ spinbutton.vertical entry:focus {
     border-width: 1px 0px 1px 0px;
     border-color: @borders;
     border-radius: 0px;
+}
+
+spinbutton:backdrop > entry {
+    border-radius: 0px;
+}
+
+spinbutton:backdrop {
+    color: @theme_unfocused_fg_color;
 }
 
 spinbutton.vertical button,
@@ -849,6 +864,10 @@ progressbar.vertical progress {
     border-radius: 10px;
 }
 
+progressbar progress {
+    transition: all 400ms ease-out;
+}
+
 progressbar progress.left {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -891,6 +910,12 @@ row:selected:focus progressbar,
 	border-color: shade(@progressbar_border, 0.85);
 }
 
+progressbar:backdrop progress,
+row progressbar:backdrop progress,
+row:selected progressbar:backdrop progress {
+    border-color: shade (@backdrop_selected_color, 0.76);
+}
+
 /* for progressbars in cell renderers */
 row trough,
 .trough row {
@@ -905,8 +930,7 @@ row trough,
 		mix(@trough_bg_color_b, @theme_selected_bg_color, 0.25));
 }
 
-treeview.view.progressbar,
-treeview.view.progressbar:backdrop {
+treeview.view.progressbar {
       color: @theme_selected_fg_color;
       border: 1px solid @progressbar_border;
       border-radius: 4px;
@@ -923,13 +947,14 @@ treeview.view.progressbar:selected {
       border-color: shade(@progressbar_border, 0.85);
 }
 
-/*
 treeview.view.progressbar:backdrop {
-      color: @theme_fg_color;
-      border-color: shade(@sidebar_bg_unfocused, 0.85);
-      background-color: @sidebar_scrollbar_trough_backdrop;
+    color: @theme_unfocused_fg_color;
+    border-color: shade (@backdrop_selected_color, 0.76);
+    background-image: linear-gradient(to bottom, 
+                                      shade (@button_gradient_backdrop_color_a, 0.90),
+                                      shade (@button_gradient_backdrop_color_b, 0.90));
+    background-color: transparent;
 }
-*/
 
 treeview.view.trough {
     background-color: rgba(102, 153, 204, 0.3);
@@ -941,6 +966,11 @@ treeview.view.trough:selected {
     background-color: shade(@theme_selected_bg_color, 1.3);
     border: 1px solid rgba(0, 0, 0, 0.3);
     color: @theme_fg_color;
+}
+
+treeview.view.trough:backdrop {
+    background-color: shade(@backdrop_selected_color, 1.00);
+    border-color: shade (@backdrop_selected_color, 0.76);
 }
 
 /****************
@@ -965,6 +995,10 @@ levelbar trough {
 		@trough_bg_color_b);
 	background-color: transparent;
 	box-shadow: none;
+}
+
+levelbar block {
+    transition: all 400ms ease-out;
 }
 
 levelbar block.filled {
@@ -1012,9 +1046,25 @@ levelbar block.empty {
 	border-color: alpha(@theme_fg_color, 0.1);
 }
 
+levelbar:backdrop block.filled,
+levelbar:backdrop block.filled.high,
+levelbar:backdrop block.filled.low {
+    border-color: shade(@backdrop_selected_color, 0.97);
+    background-image: linear-gradient(to bottom,
+                                      shade(@backdrop_color, 0.87),
+                                      shade(@backdrop_color, 0.87));
+}
+
 /************
  * GtkScale *
  ************/
+
+scale value,
+scale trough,
+scale trough highlight,
+scale marks indicator {
+    transition: all 400ms ease-out;
+}
 
 scale.vertical {
     min-width: 10px;
@@ -1077,9 +1127,33 @@ scale.vertical trough highlight:disabled {
 	background-image: none;
 }
 
+scale:backdrop value {
+    color: @theme_unfocused_fg_color;
+}
+
+scale.horizontal trough:backdrop,
+scale.vertical trough:backdrop {
+    background-color: shade(@insensitive_bg_color, 0.96);
+    border-color: shade(@insensitive_scale_borders, 0.75);
+    box-shadow: none;
+    background-image: none;
+}
+
+scale.horizontal trough highlight:backdrop,
+scale.vertical trough highlight:backdrop {
+    background-color: shade(@backdrop_selected_color, 0.92);
+    border-color: shade(@backdrop_selected_color, 0.92);
+    box-shadow: none;
+    background-image: none;
+}
+
 /* defines the color of the actuall marks on the scale */
 scale marks indicator {
 	color: alpha(@theme_fg_color, 0.3);
+}
+
+scale:backdrop marks indicator {
+    color: alpha(@theme_unfocused_fg_color, 0.3);
 }
 
 /* this makes marks visible */
@@ -1278,6 +1352,11 @@ button.flat:hover {
 	border-radius: 1px;
 }
 
+button.flat:disabled:backdrop  {
+    background-image: none;
+    background-color: transparent;
+}
+
 button.image-button.circular-button {
     border-image: none;
     border-width: 1px;
@@ -1329,6 +1408,10 @@ button:disabled,
 button:checked:disabled {
 	color: @insensitive_fg_color;
 	text-shadow: none;
+}
+
+button:backdrop {
+    color: @theme_unfocused_fg_color;
 }
 
 toolbar .raised button,
@@ -1872,17 +1955,6 @@ calendar.header stackswitcher > button.titlebutton {
 	padding: 5px 2px;
 }
 
-/* disable, causes issuses with menuitem:hover state if tooltip pulls in,
-   which is very strange *//*
-stackswitcher > button.needs-attention:active > label,
-stackswitcher > button.needs-attention:active > image,
-stackswitcher > button.needs-attention:checked > label,
-stackswitcher > button.needs-attention:checked > image {
-	animation: none;
-	background-image: none;
-}
-*/
-
 stackswitcher > button.needs-attention > label,
 stackswitcher > button.needs-attention > image,
 stacksidebar row.needs-attention > label {
@@ -1898,13 +1970,11 @@ stacksidebar row.needs-attention > label {
   background-position: right 3px, right 4px;
 }
 
-/*
 stackswitcher > button.needs-attention > label:backdrop,
 stackswitcher > button.needs-attention > image:backdrop,
 stacksidebar row.needs-attention > label:backdrop {
 	background-size: 6px 6px, 0 0; 
 }
-*/
 
 stackswitcher > button.needs-attention > label:dir(rtl),
 stackswitcher > button.needs-attention > image:dir(rtl),
@@ -1981,12 +2051,21 @@ notebook {
     border-style: none;
 }
 
+notebook,
+notebook header tab {
+    transition: all 400ms ease-out;
+}
+
 notebook.frame {
     background-color: shade (@theme_bg_color, 1.1);
     border-style: solid;
     border-color: @borders;
     border-width: 1px;
     border-radius: 4px 4px 0px 0px;
+}
+
+notebook:backdrop {
+    background-color: shade(@backdrop_color, 0.97);
 }
 
 /* pavu-control */
@@ -2101,6 +2180,10 @@ notebook header tab {
 notebook header tab label {
     color: mix (@theme_fg_color, @theme_bg_color, 0.40);
     font-weight: normal;
+}
+
+notebook header tab label:backdrop {
+    color: @theme_unfocused_fg_color;
 }
 
 /* notebooks, view, header and tabs in caja and pluma view */
@@ -2277,6 +2360,11 @@ notebook header.right tab:hover {
     border-color: @borders;
 }
 
+notebook header tab:checked:backdrop {
+    background-color: shade(@backdrop_color, 0.97);
+    background-image: none;
+}
+
 notebook tab.reorderable-page:checked,
 notebook tab.reorderable-page:checked:hover {
     background-image: linear-gradient(to bottom,
@@ -2405,8 +2493,7 @@ notebook header.right tabs arrow.down {
     color: @menu_controls_color;
 }
 
-notebook header tabs arrow,
-notebook header tabs arrow:backdrop {
+notebook header tabs arrow {
     color: shade(@theme_fg_color, 2.6);
 }
 
@@ -2422,11 +2509,9 @@ notebook header tabs arrow:disabled {
     color: rgba(141, 144, 145, 0.3);
 }
 
-/*
 notebook header tabs arrow:backdrop {
     color: rgba(84, 89, 90, 0.4);
 }
-*/
 
 notebook header tabs arrow:disabled {
     color: #c7c7c7;
@@ -2783,6 +2868,10 @@ scrollbar .button:checked {
 	color: @theme_fg_color;
 }
 
+scrollbar button:backdrop {
+    color: @theme_unfocused_fg_color;
+}
+
 scrollbar.vertical slider,
 scrollbar.vertical .slider {
     min-width: 12px;
@@ -2970,6 +3059,11 @@ menubar > menuitem:hover,
                                       shade (@theme_bg_color, 0.82));
 	text-shadow: none;
 	color: @menu_fg_color;
+}
+
+/* transition effect for labels looks weird for menus or popups */
+menu > menuitem > label {
+    transition: none;
 }
 
 menu > menuitem,
@@ -3292,7 +3386,9 @@ menu button.popup {
 check,
 radio,
 check:disabled,
-radio:disabled {
+radio:disabled,
+check:backdrop,
+radio:backdrop {
 	background-color: transparent;
 	border-style: none;
 }
@@ -3692,8 +3788,13 @@ placessidebar .view,
 	border-style: none;
 }
 
-.sidebar:backdrop {
-    background-color: @sidebar_bg;
+.sidebar:backdrop,
+.sidebar:backdrop .view { /* eg. seahorse */
+    background-color: shade(@theme_bg_color, 1.02);
+}
+
+.sidebar:backdrop .view:selected {  /* eg. seahorse */
+    background-color: shade(@backdrop_selected_color, 0.92);
 }
 
 /* dialog open, nautilus, etc. */
@@ -3709,6 +3810,18 @@ placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row:hove
 
 placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row:selected:hover {
     color: shade (@theme_selected_fg_color, 1.00);
+}
+
+placessidebar.sidebar.frame viewport.frame list:backdrop,
+placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row:backdrop {
+    background-color: shade(@theme_bg_color, 1.02);
+    color: @theme_unfocused_fg_color;
+}
+
+placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row:selected:backdrop {
+    background-color: shade(@backdrop_selected_color, 0.92);
+    color: @theme_unfocused_fg_color;
+    background-image: none;
 }
 
 placessidebar.sidebar.frame viewport.frame list row.activatable.sidebar-row revealer.sidebar-revealer image.sidebar-icon {
@@ -4107,6 +4220,16 @@ button.suggested-action:checked:disabled {
 	border: 1px solid @insensitive_borders;
 }
 
+toolbar button.suggested-action:backdrop,
+button.suggested-action:backdrop {
+    background-image: linear-gradient(to bottom, 
+                                      @button_gradient_backdrop_color_a,
+                                      @button_gradient_backdrop_color_b);
+    background-color: transparent;
+    color: @theme_unfocused_fg_color;
+    text-shadow: none;
+}
+
 button.suggested-action label:disabled {
 	color: @insensitive_fg_color;
 	text-shadow: none;
@@ -4477,47 +4600,61 @@ treeview.view:selected:focus {
 	outline-color: mix(@theme_selected_fg_color, @theme_selected_bg_color, 0.30);
 }
 
-iconview,
-viewport {
-    /* avoid resizing theme thumbnails in mate-appearance-properties */
-    padding: 0px;
+iconview:backdrop {
+    background-color: shade(@backdrop_color, 1.00);
+    color: @theme_unfocused_fg_color;
 }
 
-iconview .cell:selected,
-iconview .cell:selected:focus,
-iconview .cell:hover,
-iconview .cell:hover:focus {
-	border-radius: 4px;
+iconview .cell {
+    background: transparent;
+    border-radius: 4px;
 }
 
 iconview .cell:selected:focus {
-    border-radius: 4px;
     border-color: alpha(@theme_text_color, 0.6);
     border-width: 1px;
     border-style: dashed;
 }
 
+iconview .cell:selected,
+iconview .cell:selected:focus,
+iconview .cell:selected:hover,
+iconview .cell:selected:hover:focus {
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+}
+
+iconview .cell:hover,
+iconview .cell:hover:focus {
+    background-color: shade (@theme_selected_bg_color, 1.55);
+    color: shade (@theme_selected_bg_color, 0.35);
+}
+
+iconview .cell:selected:backdrop,
+iconview .cell:selected:hover:backdrop {
+    background-color: shade(@backdrop_selected_color, 1.00);
+    color: @theme_unfocused_fg_color;
+}
+
 .view text,
 textview,
 .view,
-treeview.view,
-treeview.view:backdrop {
+treeview.view {
 	background-color: @theme_base_color;
 	color: @theme_text_color;
 }
 
 .view text selection:disabled,
 .view:disabled,
-treeview.view:disabled {
+treeview.view:disabled,
+treeview.view:disabled:backdrop {
 	background-color: @insensitive_bg_color;
 	color: @insensitive_fg_color;
 }
 
 .view text selection,
-.view text selection:backdrop,
 .view:selected,
 .view:selected:hover,
-.view:selected:backdrop,
 treeview.view:selected,
 treeview.view:selected:hover {
 	background-color: @theme_selected_bg_color;
@@ -4531,20 +4668,21 @@ treeview.view:hover {
 	color: shade (@theme_selected_bg_color, 0.35);
 }
 
-/*
-.view text selection:backdrop,
-.view:selected:backdrop,
-treeview.view:backdrop {
-	background-color: shade(@theme_unfocused_bg_color, 0.94);
-	color: @theme_fg_color;
+iconview,
+textview text {
+    transition: all 400ms ease-out;
 }
-*/
 
-/* color of selected icons if unfocused */
-.view:active,
-treeview.view:active {
-    background-color: shade(@theme_unfocused_bg_color, 0.94);
-	color: @theme_fg_color;
+textview:backdrop text,
+treeview.view:backdrop {
+    background-color: shade(@backdrop_color, 1.00);
+    color: @theme_unfocused_fg_color;
+}
+
+.view text selection:backdrop,
+.view:selected:backdrop {
+    background-color: shade(@backdrop_selected_color, 1.00);
+    color: @theme_unfocused_fg_color;
 }
 
 /* ie. filechooser dialog */
@@ -4557,31 +4695,31 @@ treeview.view:active {
 label:selected,
 label selection,
 label selection:focus,
-label selection:hover,
-label:backdrop:selected,
-label selection:backdrop {
+label selection:hover {
   background-color: @theme_selected_bg_color;
   color: @theme_selected_fg_color;
 }
 
 label:disabled:selected,
-label selection:disabled,
-label:backdrop:disabled:selected,
-label selection:backdrop:disabled {
+label selection:disabled {
 	color: @insensitive_fg_color;
 }
 
-/*
+label,
+textview selection {
+    transition: all 400ms ease-out;
+}
+
+label:backdrop,
 label:backdrop:selected,
 label selection:backdrop {
-	color: @theme_fg_color;
+    color: @theme_unfocused_fg_color;
 }
 
 label:backdrop:disabled:selected,
 label selection:backdrop:disabled {
-	color: @insensitive_fg_color;
+    color: @insensitive_fg_color;
 }
-*/
 
 .cell {
 	padding: 2px;
@@ -4589,28 +4727,21 @@ label selection:backdrop:disabled {
 }
 
 .cell:selected,
-.cell:selected:focus,
-.cell:selected:backdrop,
-.cell:selected:focus:backdrop {
+.cell:selected:focus {
 	background-color: @theme_selected_bg_color;
 	color: @theme_selected_fg_color;
 }
 
-/*
-.cell:selected:backdrop,
-.cell:selected:focus:backdrop {
-	color: @theme_fg_color;
+.cell:selected:backdrop {
+    color: @theme_unfocused_fg_color;
 }
-*/
 
 row {
     min-height: 22px;
 }
 
 row:selected,
-row:selected:focus,
-row:selected:backdrop,
-row:selected:focus:backdrop {
+row:selected:focus {
 	border-width: 1px 0 1px 0;
 	border-style: solid;
 	border-color: shade (@theme_selected_bg_color, 0.85);
@@ -4620,12 +4751,9 @@ row:selected:focus:backdrop {
 	box-shadow: none;
 }
 
-/*
-row:selected:backdrop,
-row:selected:focus:backdrop {
-	color: @theme_fg_color;
+row:selected:backdrop {
+	color: @theme_unfocused_fg_color;
 }
-*/
 
 .sidebar treeview.view:hover {
 	background-color: shade (@theme_selected_bg_color, 1.15);
@@ -4693,12 +4821,10 @@ treeview header.button.dnd {
     background-clip: padding-box;
 }
 
-/*
 .app-notification:backdrop,
 .app-notification.frame:backdrop {
     background-image: none;
 }
-*/
 
 .app-notification button,
 .app-notification headerbar button.titlebutton,
@@ -4756,9 +4882,7 @@ calendar.header .app-notification.frame button.titlebutton {
 }
 
 .app-notification button:checked,
-.app-notification button:backdrop:checked,
-.app-notification.frame button:checked,
-.app-notification.frame button:backdrop:checked {
+.app-notification.frame button:checked {
     color: white;
     border-color: rgba(0, 0, 0, 0.7);
     background-image: linear-gradient(to bottom,
@@ -4773,9 +4897,7 @@ calendar.header .app-notification.frame button.titlebutton {
 }
 
 .app-notification button:disabled,
-.app-notification button:backdrop:disabled,
-.app-notification.frame button:disabled,
-.app-notification.frame button:backdrop:disabled {
+.app-notification.frame button:disabled {
     color: #878989;
     border-color: rgba(0, 0, 0, 0.7);
     background-image: linear-gradient(to bottom,
@@ -4789,7 +4911,6 @@ calendar.header .app-notification.frame button.titlebutton {
     padding: 0px;
 }
 
-/*
 .app-notification button:backdrop,
 .app-notification.frame button:backdrop {
     color: #eeeeec;
@@ -4804,7 +4925,6 @@ calendar.header .app-notification.frame button.titlebutton {
     border-radius: 3px;
     padding: 0px;
 }
-*/
 
 /*************
  * Expanders *
@@ -4916,10 +5036,15 @@ list {
 	background-color: @list_box_bg;
 }
 
+list,
+list row,
+list row.activatable {
+    transition: all 400ms ease-in;
+}
+
 list row,
 list row.activatable {
     padding: 2px;
-    transition: all 200ms ease-in;
     background-image: none;
     background-color: @theme_base_color;
 }
@@ -4935,11 +5060,7 @@ list row.activatable:hover {
 list row:selected,
 list row:selected:hover,
 list row.activatable:selected,
-list row.activatable:selected:hover,
-list row:selected:backdrop,
-list row:selected:backdrop:hover,
-list row.activatable:selected:backdrop,
-list row.activatable:selected:backdrop:hover {
+list row.activatable:selected:hover {
     padding: 2px;
     border-width: 0;
     border-style: solid;
@@ -4952,7 +5073,23 @@ list row.activatable:selected:backdrop:hover {
     color: @theme_selected_fg_color;
 }
 
-/*
+list:backdrop,
+list row:backdrop,
+list row.activatable:backdrop {
+    background-color: shade(@backdrop_color, 1.00);
+}
+
+/* gnome-calculater, sadly pretty ignored */
+viewport.frame > list:backdrop {
+    background-color: shade(@backdrop_color, 1.05);
+}
+
+list row:selected:backdrop,
+list row:selected.activatable:backdrop {
+    background-color: shade(@backdrop_selected_color, 1.00);
+    background-image: none;
+}
+
 list row:selected:backdrop,
 list row:selected:backdrop:hover,
 list row.activatable:selected:backdrop,
@@ -4960,11 +5097,10 @@ list row.activatable:selected:backdrop:hover {
     padding: 2px;
     border-width: 0;
     border-style: none;
-    color: @theme_fg_color;
+    color: @theme_unfocused_fg_color;
     text-shadow: none;
     box-shadow: none;
 }
-*/
 
 list > row > button {
 	border-color: transparent;
@@ -5046,12 +5182,10 @@ calendar.header .subtitle {
 	padding: 0px 12px;
 }
 
-calendar.button {
-  background-image: none;
-}
-
-calendar button,
-calendar button:disabled {
+calendar.button,
+calendar.button:disabled,
+calendar.button:backdrop,
+calendar.button:disabled:backdrop {
 	background-image: none;
 	background-color: transparent;
 }
@@ -5071,6 +5205,17 @@ calendar.highlight {
 	border-radius: 0px;
 	padding: 0px;
 	border-width: 0px;
+}
+
+calendar:backdrop {
+    background-color: shade(@backdrop_color, 1.00);
+    color: @theme_unfocused_fg_color;
+}
+
+calendar.highlight:backdrop,
+calendar:selected:backdrop {
+    background-color: shade(@backdrop_selected_color, 1.00);
+    color: @theme_unfocused_fg_color;
 }
 
 /**************
@@ -5291,6 +5436,11 @@ modelbutton.flat,
     padding: 0px 4px 0px 4px;
 }
 
+/* transition effect for labels looks weird for menus or popups */
+modelbutton.flat > box > label {
+    transition: none;
+}
+
 modelbutton.flat arrow.left {
     -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
 }
@@ -5474,23 +5624,18 @@ paned.horizontal.titlebar > separator,
 	background-color: transparent;
 }
 
-/*
 .titlebar:backdrop {
     color: @theme_unfocused_fg_color;
 }
-*/
 
-.titlebar button.titlebutton,
-.titlebar button.titlebutton:backdrop {
+.titlebar button.titlebutton {
     color: @wm_title;
 }
 
-/*
 .titlebar button.titlebutton:backdrop {
     color: @wm_unfocused_title;
     -gtk-icon-shadow: none;
 }
-*/
 
 headerbar button.text-button,
 .titlebar button.text-button {
