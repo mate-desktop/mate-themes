@@ -152,6 +152,12 @@
 @define-color suggested_action_button_fg @theme_base_color;
 @define-color suggested_action_button_shadow shade(@suggested_action_button_border, 1.15);
 
+@define-color button_gradient_backdrop_color_a shade(@theme_bg_color, 1.10);
+@define-color button_gradient_backdrop_color_b shade(@theme_bg_color, 1.00);
+@define-color button_gradient_backdrop_color_c shade(@theme_bg_color, 1.02);
+@define-color backdrop_color shade(@theme_base_color, 0.96);
+@define-color backdrop_selected_color shade(@theme_base_color, 0.89);
+
 /**************************
  * Selection Mode classes *
  **************************/
