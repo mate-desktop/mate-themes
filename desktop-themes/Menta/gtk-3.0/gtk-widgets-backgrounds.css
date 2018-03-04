@@ -95,9 +95,12 @@ toolbar.primary-toolbar button:hover {
 /* Insensitive button background */
 button:disabled,
 toolbar combobox button.combo:disabled,
-toolbar .raised button:disabled {
-	background-image: none;
-	background-color: @insensitive_bg_color;
+toolbar .raised button:disabled,
+button:disabled:backdrop,
+toolbar combobox button.combo:disabled:backdrop,
+toolbar .raised button:disabled:backdrop {
+    background-image: none;
+    background-color: @insensitive_bg_color;
 }
 
 /* Pushed + Insensitive button background */
@@ -111,15 +114,26 @@ toolbar combobox button.combo:checked:disabled {
 	background-color: transparent;
 }
 
+button:backdrop,
+combobox button.combo:backdrop,
+toolbar .raised button:backdrop,
+toolbar combobox button.combo:backdrop,
+toolbar.primary-toolbar .linked button:backdrop,
+toolbar.primary-toolbar .raised button:backdrop {
+    background-image: linear-gradient(to bottom, 
+                                      @button_gradient_backdrop_color_a,
+                                      @button_gradient_backdrop_color_b);
+    background-color: transparent;
+}
+
 /* Entry background */
 entry,
-toolbar.primary-toolbar combobox entry.combo,
-levelbar trough {
-	background-image: linear-gradient(to bottom,
-		@entry_background_a,
-		@entry_background_b);
-	box-shadow: inset 0 1px @entry_inset, 
-		inset 0 2px alpha(@entry_inset, 0.4);
+toolbar.primary-toolbar combobox entry.combo {
+    background-image: linear-gradient(to bottom,
+                                      @entry_background_a,
+                                      @entry_background_b);
+    box-shadow: inset 0 1px @entry_inset, 
+    inset 0 2px alpha(@entry_inset, 0.4);
 }
 
 /* Entry pushed button background */
@@ -140,8 +154,7 @@ treeview header button {
 	box-shadow: inset 0 2px 0 0 alpha(@borders, 0.3);
 }
 
-/* ie. yumex-dnf */
-stack treeview header button {
+treeview header button {
     background-image: linear-gradient(to bottom,
                                       shade(@theme_bg_color, 1.18),
                                       shade(@theme_bg_color, 1.1));
@@ -169,10 +182,22 @@ treeview header button:hover:active {
 /* Insensitive entry background */
 entry:disabled,
 combobox button.combo:disabled,
-levelbar trough:disabled {
-	background-color: @insensitive_bg_color;
-	background-image: none;
-	box-shadow: none;
+levelbar trough:disabled,
+entry:disabled:backdrop,
+combobox button.combo:disabled:backdrop,
+levelbar trough:disabled:backdrop {
+    background-color: @insensitive_bg_color;
+    background-image: none;
+    box-shadow: none;
+}
+
+/* unfocused entry background */
+entry:backdrop,
+toolbar.primary-toolbar combobox entry.combo:backdrop {
+    background-image: linear-gradient(to bottom,
+                                      shade (@backdrop_selected_color, 1.02),
+                                      shade (@backdrop_color, 1.02));
+    color: @theme_unfocused_fg_color;
 }
 
 /* Primary and inline toolbars background */
@@ -257,3 +282,36 @@ progressbar.vertical progress {
 		@progressbar_background_a,
 		@progressbar_background_b);
 }
+
+progressbar:backdrop progress,
+row progressbar:backdrop progress,
+row:selected progressbar:backdrop progress {
+    background-image: linear-gradient(to left top,
+                                      alpha (@progressbar_pattern, 0.25),
+                                      alpha (@progressbar_pattern, 0.25) 25%,
+                                      transparent 25%,
+                                      transparent 50%,
+                                      alpha (@progressbar_pattern, 0.25) 50%,
+                                      alpha (@progressbar_pattern, 0.25) 75%,
+                                      transparent 75%,
+                                      transparent),
+                                      linear-gradient(to bottom,
+                                      shade (@backdrop_color, 0.8),
+                                      shade (@backdrop_selected_color, 0.8));
+}
+
+progressbar.vertical:backdrop progress {
+    background-image: linear-gradient(to right top,
+                                      alpha (@progressbar_pattern, 0.25),
+                                      alpha (@progressbar_pattern, 0.25) 25%,
+                                      transparent 25%,
+                                      transparent 50%,
+                                      alpha (@progressbar_pattern, 0.25) 50%,
+                                      alpha (@progressbar_pattern, 0.25) 75%,
+                                      transparent 75%,
+                                      transparent),
+                                      linear-gradient(to right,
+                                      shade (@backdrop_color, 0.8),
+                                      shade (@backdrop_selected_color, 0.8));
+}
+
