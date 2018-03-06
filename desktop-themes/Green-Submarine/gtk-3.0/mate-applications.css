@@ -721,13 +721,17 @@ na-tray-applet > widget > box {
 }
 
 /* system-monitor-applet */
-#PanelApplet > box.horizontal > box.vertical > frame {
-    box-shadow: inset  0px  1px shade (@menu_bg_dark_color, 1.5),
-                inset  1px  0px shade (@menu_bg_dark_color, 1.5),
-                inset -1px  0px shade (@menu_bg_dark_color, 1.5),
-                inset  0px -1px shade (@menu_bg_dark_color, 1.5);
-    border-style: none;
-    border-radius: 6px;
+.multiload-applet > box.horizontal > box.vertical > frame {
+    box-shadow: inset  0px  1px shade (@menu_bg_dark_color, 1.4),
+                inset  1px  0px shade (@menu_bg_dark_color, 1.4),
+                inset -1px  0px shade (@menu_bg_dark_color, 1.4),
+                inset  0px -1px shade (@menu_bg_dark_color, 1.4);
+    border-radius: 3px;
+}
+
+/* kill light frame border */
+.multiload-applet > box.horizontal > box.vertical > frame > border {
+    border-color: transparent;
 }
 
 /* volume applet */
