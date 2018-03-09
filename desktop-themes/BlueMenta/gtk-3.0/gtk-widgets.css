@@ -254,11 +254,7 @@ toolbar .separator {
 }
 
 /* eg. atril, evince */
-.content-view {
-    transition: all 400ms ease-out;
-}
-
-.content-view:backdrop {
+.content-view:backdrop:not(:selected) {
     background-color: shade(@backdrop_color, 1.00);
     color: @theme_unfocused_fg_color;
 }
