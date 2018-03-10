@@ -254,9 +254,18 @@ toolbar .separator {
 }
 
 /* eg. atril, evince */
-.content-view:backdrop:not(:selected) {
+.content-view {
+    transition: all 400ms ease-out;
+}
+
+.content-view:backdrop {
     background-color: shade(@backdrop_color, 1.00);
     color: @theme_unfocused_fg_color;
+}
+
+arrow,
+#gtk-toolbar-arrow {
+    transition: all 200ms ease-out;
 }
 
 /************************
@@ -1372,6 +1381,11 @@ button.toggle.popup image {
 #gtk-toolbar-arrow:disabled,
 button.toggle.popup image:disabled {
     color: @insensitive_fg_color;
+}
+
+#gtk-toolbar-arrow:backdrop,
+button.toggle.popup image:backdrop {
+    color: @theme_unfocused_fg_color;
 }
 
 /* We may want a background for focused buttons, but in the meantime let's remove it too */
@@ -2505,8 +2519,8 @@ notebook header tabs arrow:disabled {
     color: rgba(141, 144, 145, 0.3);
 }
 
-notebook header tabs arrow:backdrop {
-    color: rgba(84, 89, 90, 0.4);
+notebook:backdrop header tabs arrow:backdrop {
+    color: @theme_unfocused_fg_color;
 }
 
 notebook header tabs arrow:disabled {
@@ -2684,6 +2698,10 @@ combobox arrow {
     color: @menu_controls_color;
     min-height: 16px;
     min-width: 16px;
+}
+
+combobox arrow:backdrop {
+    color: @theme_unfocused_fg_color;
 }
 
 /********************
@@ -5015,6 +5033,11 @@ expander arrow:checked:hover {
                        1px  0px shade (@theme_base_color, 1.0),
                       -1px  0px shade (@theme_base_color, 1.0),
                        0px -1px shade (@theme_base_color, 1.0);
+}
+
+expander arrow:backdrop {
+    color: @theme_unfocused_fg_color;
+    -gtk-icon-shadow:  none;
 }
 
 expander {
