@@ -16,6 +16,8 @@ cursor_DATA = \
 	640fb0e74195791501fd1ed57b41487f \
 	9081237383d90e509aa00f00170e968f \
 	9d800788f1b08800ae810202380a0822 \
+	alias \
+	all-scroll \
 	arrow \
 	AUTHORS \
 	bd_double_arrow \
@@ -23,20 +25,23 @@ cursor_DATA = \
 	bottom_right_corner \
 	bottom_side \
 	bottom_tee \
-	c7088f0f3e6c8088236ef8e1e3e70000 \
+	cell \
 	circle \
 	color-picker \
+	col-resize \
+	context-menu \
 	copy \
 	cross \
 	crossed_circle \
 	crosshair \
 	cross_reverse \
-	d9ce0ab605698f320427677b458ad60b \
+	default \
 	diamond_cross \
 	dnd-ask \
 	dnd-copy \
 	dnd-link \
 	dnd-move \
+	dnd-no-drop \
 	dnd-none \
 	dotbox \
 	dot_box_mask \
@@ -44,10 +49,12 @@ cursor_DATA = \
 	draft_large \
 	draft_small \
 	draped_box \
-	e29285e634086352946a0e7090d73106 \
+	e-resize \
+	ew-resize \
 	fcf1c3c7cd4491d801f1e1c78f100000 \
 	fd_double_arrow \
 	fleur \
+	grab \
 	grabbing \
 	hand \
 	hand1 \
@@ -64,21 +71,42 @@ cursor_DATA = \
 	ll_angle \
 	lr_angle \
 	move \
+	ne-resize \
+	nesw-resize \
+	no-drop \
+	not-allowed \
+	n-resize \
+	ns-resize \
+	nw-resize \
+	nwse-resize \
 	pencil \
 	pirate \
 	plus \
+	pointer \
+	pointer-move \
+	progress \
 	question_arrow \
 	right_ptr \
 	right_side \
 	right_tee \
+	row-resize \
 	sb_down_arrow \
 	sb_h_double_arrow \
 	sb_left_arrow \
 	sb_right_arrow \
 	sb_up_arrow \
 	sb_v_double_arrow \
+	se-resize \
+	size_all \
+	size_bdiag \
+	size_fdiag \
+	size_hor \
+	size_ver \
+	s-resize \
+	sw-resize \
 	target \
 	tcross \
+	text \
 	top_left_arrow \
 	top_left_corner \
 	top_right_corner \
@@ -87,9 +115,14 @@ cursor_DATA = \
 	ul_angle \
 	ur_angle \
 	v_double_arrow \
+	vertical-text \
+	wait \
 	watch \
+	w-resize \
 	X_cursor \
-	xterm
+	xterm \
+	zoom-in \
+	zoom-out
 
 EXTRA_DIST = $(cursor_DATA)
 
