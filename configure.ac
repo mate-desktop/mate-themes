@@ -45,6 +45,10 @@ AC_CONFIG_FILES([
 Makefile
 common/Makefile
 cursor-themes/Makefile
+cursor-themes/mate-white/Makefile
+cursor-themes/mate-white/cursors/Makefile
+cursor-themes/mate-black/Makefile
+cursor-themes/mate-black/cursors/Makefile
 desktop-themes/Makefile
 desktop-themes/BlackMATE/Makefile
 desktop-themes/BlackMATE/apps/Makefile
