@@ -976,6 +976,11 @@ na-tray-applet > widget > box {
     color: mix (@menu_fg_dark_color, @menu_bg_dark_color, 0.4);
 }
 
+/* globalmenu (vala-panel-appmenu) */
+#PanelApplet > .-vala-panel-appmenu-core > scrolledwindow > viewport.frame {
+    background-color: transparent;
+}
+
 /****************
  * Mate-terminal *
  ****************/

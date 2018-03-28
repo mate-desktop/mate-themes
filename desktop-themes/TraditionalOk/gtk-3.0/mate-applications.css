@@ -367,6 +367,15 @@ na-tray-applet {
     background-image: none;
 }
 
+/* globalmenu (vala-panel-appmenu) */
+#PanelApplet > .-vala-panel-appmenu-core > scrolledwindow > viewport.frame {
+    background-color: transparent;
+}
+
+#PanelApplet > .-vala-panel-appmenu-core > scrolledwindow {
+    border-style: none;
+}
+
 /****************
  * Pluma *
  ****************/

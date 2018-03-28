@@ -465,6 +465,11 @@ na-tray-applet > widget > box {
     border-style: solid;
 }
 
+/* globalmenu (vala-panel-appmenu) */
+#PanelApplet > .-vala-panel-appmenu-core > scrolledwindow > viewport.frame {
+    background-color: transparent;
+}
+
 /****************
  * Mate-Terminal *
  ****************/
