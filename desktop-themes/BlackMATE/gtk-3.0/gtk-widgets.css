@@ -3549,6 +3549,8 @@ cell.check:selected:focus {
 	background-color: transparent;
 	border-width: 0px;
 	border-style: none;
+	min-height: 12px;
+  	min-width: 12px;
 }
 
 check:hover,

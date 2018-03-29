@@ -1252,6 +1252,7 @@ button {
 	border-style: solid;
 	border-color: transparent;
 	text-shadow: 0 1px @button_text_shadow;
+	color: @theme_fg_color;
 }
 
 button.default {
@@ -3299,6 +3300,8 @@ radio:disabled {
 check,
 radio {
 	padding: 0px 6px 0px 0px;
+	min-height: 12px;
+	min-width: 12px;
 }
 
 checkbutton:hover,

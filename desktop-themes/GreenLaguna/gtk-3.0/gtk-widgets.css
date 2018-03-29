@@ -1827,6 +1827,7 @@ button {
     border-radius: 3px;
     border-width: 1px;
     border-style: solid;
+    color: @theme_fg_color;
     /*border-image is defined in gtk-widgets-assets.css*/
     background-image: linear-gradient(to bottom,
                                       @button_gradient_color_a,

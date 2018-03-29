@@ -3954,6 +3954,8 @@ check:disabled,
 radio:disabled {
     background-color: transparent;
     border-style: none;
+	min-height: 12px;
+	min-width: 12px;
 }
 
 /* move label to the right */
