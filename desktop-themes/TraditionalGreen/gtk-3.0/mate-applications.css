@@ -92,21 +92,7 @@
  * mate-panel *
  ***************/
 
-.mate-panel-menu-bar,
-MatePanelApplet > menubar,
-PanelToplevel.background,
-PanelWidget,
-PanelFrame,
-PanelAppletFrame,
-MatePanelAppletFrameDBus,
-MatePanelAppletContainer,
-MatePanelApplet {
-    background-image: -gtk-gradient (linear,
-                      left top,
-                      left bottom,
-                      from (@menubar_gradient_a),
-                      color-stop (0.50, @menubar_gradient_b),
-                      to (@menubar_gradient_c));
+.mate-panel-menu-bar {
     background-color: @theme_bg_color;
     padding: 0px;
     color: @theme_fg_color;
@@ -167,6 +153,7 @@ PanelApplet.wnck-applet .wnck-pager {
 /* set normal menubar button */
 .mate-panel-menu-bar menubar {
     padding: 0px;
+    background-image: none;
 }
 
 /* all applets */
