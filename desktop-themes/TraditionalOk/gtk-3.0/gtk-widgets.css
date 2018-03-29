@@ -2769,6 +2769,8 @@ check:disabled,
 radio:disabled {
     background-color: transparent;
     border-style: none;
+    min-height: 13px;
+    min-width: 13px;
 }
 
 check,
