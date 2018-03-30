@@ -278,7 +278,6 @@ view:selected:focus,
 }
 
 /* It's better not to have too bright text views. */
-textview.view, /* url bar google chrome, firefox */
 textview text,
 textview.view:disabled,
 GtkHTML { /* For Evolution (not enough; see entries section below) */
@@ -645,14 +644,40 @@ calendar {
 frame {
 	color: lighter (@theme_fg_color);
 	border-style: solid;
-	border-width: 1px;
-	border-color: alpha(@frame_color, 0.6);
 	padding: 0px;
 	border-radius: 3px;
 }
 
-.frame.flat
-frame.flat {
+.frame,
+frame> border{
+	box-shadow: none;
+	margin: 0;
+	padding: 0;
+	border-radius: 3px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: alpha(@frame_color, 0.6);
+}
+
+frame.border-inset> border,
+frame.border-outset> border,
+frame.border-ridge> border,
+frame.border-groove> border,
+.frame.border-inset> border,
+.frame.border-outset> border,
+.frame.border-ridge> border,
+.frame.border-groove> border{
+	box-shadow: none;
+	margin: 0;
+	padding: 0;
+	border-radius: 3px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: shade(@theme_bg_color, 1.3);
+}
+
+frame > border.flat,
+.frame.flat {
 	border-style: none;
 }
 
@@ -1868,6 +1893,7 @@ scrollbar.vertical button{
 	min-height: 14px;
 	min-width: 14px;
 }
+
 
 scrollbar slider,
 scrollbar .slider {
