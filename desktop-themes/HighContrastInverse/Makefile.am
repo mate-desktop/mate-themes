@@ -1,4 +1,4 @@
-THEME_NAME=ContrastHighInverse
+THEME_NAME=HighContrastInverse
 THEME_IN_FILES=index.theme.in
 
 @INTLTOOL_THEME_RULE@ 
@@ -9,7 +9,6 @@ theme_DATA = index.theme
 
 SUBDIRS =      \
 	gtk-2.0	   \
-	gtk-3.0	   \
 	metacity-1 \
 	pixmaps
 
