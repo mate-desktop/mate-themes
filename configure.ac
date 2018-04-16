@@ -94,13 +94,6 @@ desktop-themes/Blue-Submarine/gtk-3.0/Makefile
 desktop-themes/Blue-Submarine/gtk-3.0/assets/Makefile
 desktop-themes/Blue-Submarine/metacity-1/Makefile
 desktop-themes/ContrastHigh/Makefile
-desktop-themes/ContrastHighInverse/Makefile
-desktop-themes/ContrastHighInverse/gtk-2.0/Makefile
-desktop-themes/ContrastHighInverse/gtk-2.0/gtkrc
-desktop-themes/ContrastHighInverse/gtk-3.0/Makefile
-desktop-themes/ContrastHighInverse/gtk-3.0/assets/Makefile
-desktop-themes/ContrastHighInverse/metacity-1/Makefile
-desktop-themes/ContrastHighInverse/pixmaps/Makefile
 desktop-themes/GreenLaguna/Makefile
 desktop-themes/GreenLaguna/gtk-2.0/Makefile
 desktop-themes/GreenLaguna/gtk-2.0/Styles/Makefile
@@ -120,6 +113,11 @@ desktop-themes/Green-Submarine/gtk-2.0/assets/Makefile
 desktop-themes/Green-Submarine/gtk-3.0/Makefile
 desktop-themes/Green-Submarine/gtk-3.0/assets/Makefile
 desktop-themes/Green-Submarine/metacity-1/Makefile
+desktop-themes/HighContrastInverse/Makefile
+desktop-themes/HighContrastInverse/gtk-2.0/Makefile
+desktop-themes/HighContrastInverse/gtk-2.0/gtkrc
+desktop-themes/HighContrastInverse/metacity-1/Makefile
+desktop-themes/HighContrastInverse/pixmaps/Makefile
 desktop-themes/Menta/Makefile
 desktop-themes/Menta/cinnamon/Makefile
 desktop-themes/Menta/emerald/Makefile
