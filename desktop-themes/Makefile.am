@@ -3,9 +3,9 @@ SUBDIRS = \
 	BlueMenta \
 	Blue-Submarine \
 	ContrastHigh \
-	ContrastHighInverse \
 	GreenLaguna \
 	Green-Submarine \
+	HighContrastInverse \
 	Menta \
 	TraditionalGreen \
 	TraditionalOk
