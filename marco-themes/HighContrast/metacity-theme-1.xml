@@ -72,11 +72,18 @@
 </draw_ops>
 
 <draw_ops name="menu_button">
-  <gtk_arrow state="normal" shadow="out" arrow="down"
-             x="ArrowSpacer `min` (width-MinArrowSize)/2"
-             y="ArrowSpacer `min` (height-MinArrowSize)/2"
-             width="(width-(ArrowSpacer*2)) `max` MinArrowSize"
-             height="(height-(ArrowSpacer*2)) `max` MinArrowSize"/>
+  <line color="gtk:bg[NORMAL]"
+             x1="ArrowSpacer `min` (width-MinArrowSize)/2"
+	     y1="ArrowSpacer `min` (height-MinArrowSize)/2"
+	     x2="width/2"
+	     y2="(height - ArrowSpacer) `max` (height - (height-MinArrowSize)/2)"
+	     width="3"/>
+  <line color="gtk:bg[NORMAL]"
+             x1="(width - ArrowSpacer) `max` (width - (width-MinArrowSize)/2)"
+	     y1="ArrowSpacer `min` (height-MinArrowSize)/2"
+	     x2="width/2"
+	     y2="(height - ArrowSpacer) `max` (height - (height-MinArrowSize)/2)"
+	     width="3"/>
 </draw_ops>
 
 <draw_ops name="menu_button_pressed">
@@ -135,11 +142,11 @@
   <line color="gtk:bg[NORMAL]"
         x1="ButtonIPad" y1="ButtonIPad"
         x2="width - ButtonIPad - 1" y2="height - ButtonIPad - 1"
-        width="1"/>
+        width="3"/>
   <line color="gtk:bg[NORMAL]"
         x1="ButtonIPad" y1="height - ButtonIPad - 1"
         x2="width - ButtonIPad - 1" y2="ButtonIPad"
-	width="1"/>
+	width="3"/>
 </draw_ops>
 
 <draw_ops name="close_button_pressed">
@@ -147,7 +154,7 @@
 </draw_ops>
 
 <draw_ops name="outer_bevel">
-  <rectangle color="gtk:fg[NORMAL]"
+  <rectangle color="gtk:fg[NORMAL]" filled="true"
              x="0" y="0" width="width-1" height="height-1"/>
   <line color="gtk:light[NORMAL]"
         x1="1" y1="1" x2="1" y2="height-2"/>

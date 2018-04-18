@@ -135,11 +135,11 @@
   <line color="gtk:fg[NORMAL]"
         x1="ButtonIPad" y1="ButtonIPad"
         x2="width - ButtonIPad - 1" y2="height - ButtonIPad - 1"
-        width="1"/>
+        width="3"/>
   <line color="gtk:fg[NORMAL]"
         x1="ButtonIPad" y1="height - ButtonIPad - 1"
         x2="width - ButtonIPad - 1" y2="ButtonIPad"
-	width="1"/>
+	width="3"/>
 </draw_ops>
 
 <draw_ops name="close_button_pressed">
@@ -147,7 +147,9 @@
 </draw_ops>
 
 <draw_ops name="outer_bevel">
-  <rectangle color="gtk:fg[NORMAL]"
+  <rectangle color="gtk:bg[NORMAL]" filled="true"
+             x="1" y="1" width="width-3" height="height-3"/>
+  <rectangle color="gtk:fg[NORMAL]" filled="false"
              x="0" y="0" width="width-1" height="height-1"/>
   <line color="gtk:light[NORMAL]"
         x1="1" y1="1" x2="1" y2="height-2"/>
