@@ -2491,8 +2491,8 @@ menubar menuitem:hover,
     color: @menubar_menuitem_hover_color;
 }
 
-menu menuitem,
-.menu menuitem {
+menu > menuitem,
+.menu > menuitem {
     border-width: 1px 0px;
     border-style: solid;
     border-color: transparent;
