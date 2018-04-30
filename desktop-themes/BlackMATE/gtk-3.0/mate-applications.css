@@ -297,6 +297,11 @@
                 inset  0px -1px shade (@theme_selected_bg_color, 1.3); */
 }
 
+/* checkboxes in applet popup menu */
+.mate-panel-menu-bar menu > menuitem > box > menuitem {
+    padding: 0px 0px 0px 3px;
+}
+
 /* Keep rounded applet borders from renderin with darker corners */
 
 #PanelPlug {

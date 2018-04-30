@@ -225,6 +225,11 @@ PanelApplet.wnck-applet .wnck-pager {
     border-width: 0px;
 }
 
+/* checkboxes in applet popup menu */
+.mate-panel-menu-bar menu > menuitem > box > menuitem {
+    padding: 0px 0px 0px 4px;
+}
+
 #PanelApplet > #clock-applet-button.flat.toggle {
    background-color: transparent;
    background-image: none;

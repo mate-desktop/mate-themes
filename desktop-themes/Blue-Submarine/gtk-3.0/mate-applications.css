@@ -389,6 +389,11 @@ PanelToplevel.background {
     text-shadow: none;
 }
 
+/* checkboxes in applet popup menu */
+.mate-panel-menu-bar menu > menuitem > box > menuitem {
+    padding: 0px 0px 0px 4px;
+}
+
 /* workaround to avoid unwanted black frames if switching compositor on/off */
 .mate-panel-menu-bar .csd.popup decoration {
     box-shadow: none;

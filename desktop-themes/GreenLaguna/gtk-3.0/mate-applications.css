@@ -289,6 +289,11 @@ window.background, /* selector where outlines are writen on GtkTrayIcon */
     padding: 3px 6px;
 }
 
+/* checkboxes in applet popup menu */
+.mate-panel-menu-bar menu > menuitem > box > menuitem {
+    padding: 0px 0px 0px 3px;
+}
+
 /* most applets */
 #PanelApplet button,
 #PanelApplet button.flat,
