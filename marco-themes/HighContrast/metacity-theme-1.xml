@@ -22,9 +22,9 @@
 
 <!-- strip borders off the normal geometry -->
 <frame_geometry name="normal_small_borders" parent="normal">
-  <distance name="left_width" value="0"/>
-  <distance name="right_width" value="0"/>
-  <distance name="bottom_height" value="0"/>
+  <distance name="left_width" value="2"/>
+  <distance name="right_width" value="3"/>
+  <distance name="bottom_height" value="3"/>
   <distance name="left_titlebar_edge" value="0"/>
   <distance name="right_titlebar_edge" value="0"/>
 </frame_geometry>
@@ -72,13 +72,13 @@
 </draw_ops>
 
 <draw_ops name="menu_button">
-  <line color="gtk:bg[NORMAL]"
+  <line color="gtk:fg[NORMAL]"
              x1="ArrowSpacer `min` (width-MinArrowSize)/2"
 	     y1="ArrowSpacer `min` (height-MinArrowSize)/2"
 	     x2="width/2"
 	     y2="(height - ArrowSpacer) `max` (height - (height-MinArrowSize)/2)"
 	     width="3"/>
-  <line color="gtk:bg[NORMAL]"
+  <line color="gtk:fg[NORMAL]"
              x1="(width - ArrowSpacer) `max` (width - (width-MinArrowSize)/2)"
 	     y1="ArrowSpacer `min` (height-MinArrowSize)/2"
 	     x2="width/2"
@@ -91,7 +91,7 @@
 </draw_ops>
 
 <draw_ops name="minimize_button">
-  <line color="gtk:bg[NORMAL]"
+  <line color="gtk:fg[NORMAL]"
         x1="ButtonIPad"
         y1="height - ButtonIPad - ThickLineWidth + 1"
         x2="width - ButtonIPad"
@@ -104,9 +104,9 @@
 </draw_ops>
 
 <draw_ops name="maximize_button">
-  <rectangle color="gtk:bg[NORMAL]" filled="false"
+  <rectangle color="gtk:fg[NORMAL]" filled="false"
              x="ButtonIPad" y="ButtonIPad" width="width-ButtonIPad*2-1" height="height-ButtonIPad*2-1"/>
-  <line color="gtk:bg[NORMAL]" width="3"
+  <line color="gtk:fg[NORMAL]" width="3"
         x1="ButtonIPad" y1="ButtonIPad+1" x2="width-ButtonIPad" y2="ButtonIPad+1"/>
 </draw_ops>
 
@@ -115,11 +115,11 @@
 </draw_ops>
 
 <draw_ops name="mini_window_icon">
-  <rectangle color="gtk:fg[NORMAL]" filled="true"
+  <rectangle color="gtk:bg[NORMAL]" filled="true"
              x="0" y="0" width="width-1" height="height-1"/>
-  <rectangle color="gtk:bg[NORMAL]" filled="false"
+  <rectangle color="gtk:fg[NORMAL]" filled="false"
              x="0" y="0" width="width-1" height="height-1"/>
-  <line color="gtk:bg[NORMAL]" width="2"
+  <line color="gtk:fg[NORMAL]" width="2"
         x1="0" y1="1" x2="width" y2="1"/>
 </draw_ops>
 
@@ -139,11 +139,11 @@
 </draw_ops>
 
 <draw_ops name="close_button">
-  <line color="gtk:bg[NORMAL]"
+  <line color="gtk:fg[NORMAL]"
         x1="ButtonIPad" y1="ButtonIPad"
         x2="width - ButtonIPad - 1" y2="height - ButtonIPad - 1"
         width="3"/>
-  <line color="gtk:bg[NORMAL]"
+  <line color="gtk:fg[NORMAL]"
         x1="ButtonIPad" y1="height - ButtonIPad - 1"
         x2="width - ButtonIPad - 1" y2="ButtonIPad"
 	width="3"/>
@@ -154,8 +154,16 @@
 </draw_ops>
 
 <draw_ops name="outer_bevel">
-  <rectangle color="gtk:fg[NORMAL]" filled="true"
+  <rectangle color="gtk:bg[NORMAL]" filled="true"
+             x="2" y="2" width="width-4" height="top_height-3"/>
+  <rectangle color="gtk:fg[NORMAL]" filled="false"
              x="0" y="0" width="width-1" height="height-1"/>
+  <rectangle color="gtk:bg[NORMAL]" filled="true"
+             x="2" y="top_height-1" width="left_width-3" height="height-top_height-bottom_height+2"/>
+  <rectangle color="gtk:bg[NORMAL]" filled="true"
+             x="width-right_width+1" y="top_height-1" width="right_width-3" height="height-top_height-bottom_height+2"/>
+  <rectangle color="gtk:bg[NORMAL]" filled="true"
+             x="2" y="height-bottom_height+1" width="width-4" height="bottom_height-3"/>
   <line color="gtk:light[NORMAL]"
         x1="1" y1="1" x2="1" y2="height-2"/>
   <line color="gtk:light[NORMAL]"
@@ -189,13 +197,15 @@
 
 <draw_ops name="title_gradient">
   <gradient type="diagonal" x="0" y="0" width="width-SpacerWidth" height="height">
-    <color value="blend/gtk:bg[NORMAL]/gtk:bg[SELECTED]/0.6"/>
+    <color value="blend/gtk:bg[NORMAL]/gtk:fg[SELECTED]/0.25"/>
     <color value="gtk:bg[SELECTED]"/>
   </gradient>
 </draw_ops>
 
 <draw_ops name="title_spacer">
-  <gtk_vline state="normal" x="width+1-SpacerWidth/2"
+  <line color="gtk:fg[NORMAL]"
+       	x1="width+1-SpacerWidth/2"
+       	x2="width+1-SpacerWidth/2"
 	y1="SpacerOffset"
         y2="height - SpacerOffset"/>
 </draw_ops>
@@ -219,7 +229,7 @@
 
 <draw_ops name="title_text_with_icon">
   <clip x="0" y="0" width="width-SpacerWidth" height="height"/>
-  <title color="gtk:bg[NORMAL]"
+  <title color="gtk:fg[NORMAL]"
          x="(0 `max` (width-title_width-mini_icon_width-IconTitleSpacing)) / 2 + mini_icon_width + IconTitleSpacing"
          y="((height - title_height) / 2) `max` 0"/>
   <icon  x="(0 `max` (width-title_width-mini_icon_width-IconTitleSpacing)) / 2"
@@ -235,23 +245,23 @@
 </draw_ops>
 
 <draw_ops name="title_normal">
+  <include name="title_gradient"/>
   <include name="title_spacer"/>
   <include name="title_text_with_icon"/>
 </draw_ops>
 
 <draw_ops name="title_focused">
-  <include name="title_gradient"/>
   <include name="title_spacer"/>
   <include name="title_text_focused_with_icon"/>
 </draw_ops>
 
 <draw_ops name="title_utility">
+  <include name="title_gradient"/>
   <include name="title_spacer"/>
   <include name="title_text_no_icon"/>
 </draw_ops>
 
 <draw_ops name="title_utility_focused">
-  <include name="title_gradient"/>
   <include name="title_spacer"/>
   <include name="title_text_focused_no_icon"/>
 </draw_ops>
