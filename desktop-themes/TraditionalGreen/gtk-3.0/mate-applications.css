@@ -345,6 +345,12 @@ na-tray-applet {
     color: @theme_fg_color;
 }
 
+/* xrandr applet */
+.mate-panel-menu-bar menuitem.xrandr-applet:disabled > box > label {
+    color: @menu_fg_color;
+    text-shadow: none;
+}
+
 /* mate-menu, mintmenu fork */
 #mate-menu.background {
     border-color: @border_color;

@@ -36,7 +36,7 @@ window {
 }
 
 *:disabled {
-    background-color: @insensitive_bg_color;
+/*    background-color: @insensitive_bg_color;*/
     color: @insensitive_fg_color;
     text-shadow: 1px 1px @insensitive_text_shadow_color;
     border-color: @insensitive_border_color;
@@ -49,8 +49,8 @@ window {
 
 image,
 image:disabled,
-label,
-label:disabled,
+/*label,
+label:disabled,*/
 box,
 box:disabled,
 grid,
