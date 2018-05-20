@@ -777,6 +777,13 @@ na-tray-applet > widget > box {
                                      to   (alpha(shade(@menu_bg_dark_color, 0.57) ,0.6)));
 }
 
+/* xrandr applet */
+.mate-panel-menu-bar menuitem.xrandr-applet:disabled > box > label {
+	background-color: transparent;
+    color: @menu_fg_dark_color;
+    border-color: transparent;
+}
+
 /* mate-menu, mintmenu */
 #mintmenu.background,
 #mate-menu.background {

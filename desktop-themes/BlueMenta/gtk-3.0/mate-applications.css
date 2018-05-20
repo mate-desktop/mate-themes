@@ -286,7 +286,6 @@
 #PanelApplet button,
 PanelToplevel.background,
 #PanelApplet-window-menu-applet-button {
-    background-color: transparent;
     border-image: none;
     background-image: none;
     background-color: transparent;
@@ -514,13 +513,34 @@ na-tray-applet widget box widget {
 }
 
 .mate-panel-applet-slider > frame > frame > border {
-    background-color:transparent;
+    background-color: transparent;
     border-style: none;
     box-shadow: none;
 }
 
 .mate-panel-applet-slider > frame > button {
     color: @theme_fg_color;
+}
+
+/* xrandr applet */
+.mate-panel-menu-bar menuitem.xrandr-applet:disabled > box > label {
+    background-color: transparent;
+    color: @menu_selected_fg_color;
+    border-color: shade (@theme_selected_bg_color, 0.50);
+    background-image: linear-gradient(to right,
+                                      shade (@theme_selected_bg_color, 0.98),
+                                      shade (@theme_selected_bg_color, 0.64));
+    text-shadow: 1px 1px alpha (shade (@theme_selected_bg_color, 0.24), 0.8);
+}
+
+.mate-panel-menu-bar menuitem.xrandr-applet.monitor-off:disabled > box > label {
+    background-color: transparent;
+    color: shade (@insensitive_fg_color, 0.75);
+    border-color: shade (@theme_selected_bg_color, 0.50);
+    background-image: linear-gradient(to right,
+                                      alpha (shade (@theme_selected_bg_color, 0.98), 0.6),
+                                      alpha (shade (@theme_selected_bg_color, 0.64), 0.6));
+    text-shadow: 1px 1px alpha (shade (@theme_selected_bg_color, 1.44), 0.8);
 }
 
 /* mate-menu, mintmenu */

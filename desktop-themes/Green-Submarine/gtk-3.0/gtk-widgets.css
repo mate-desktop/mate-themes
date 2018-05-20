@@ -78,7 +78,7 @@ window {
 
 *:disabled {
     /* inherit the color from parent by default */
-    background-color: inherit;
+/*    background-color: inherit;*/
     color: @insensitive_fg_color;
     border-color: @insensitive_border_color;
     box-shadow: none;
@@ -120,12 +120,12 @@ window {
 /*********
  * GtkLabel *
  *********/
-
+/*
 label,
 label:disabled {
     background-color: transparent;
 }
-
+*/
 .grip {
     background-color: transparent;
     background-image: url("assets/resize-grip.svg");

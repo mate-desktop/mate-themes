@@ -456,6 +456,11 @@ na-tray-applet > widget > box {
 
 }
 
+/* xrandr applet */
+.mate-panel-menu-bar menuitem.xrandr-applet:disabled > box > label {
+    color: @menu_controls_color;
+}
+
 /* mate-menu, mintmenu fork */
 #mate-menu.background {
     border-color: @borders;
