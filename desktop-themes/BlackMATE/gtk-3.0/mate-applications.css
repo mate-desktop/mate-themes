@@ -636,6 +636,12 @@ na-tray-applet {
     margin: 0px;
 }
 
+/* xrandr applet */
+.mate-panel-menu-bar menuitem.xrandr-applet:disabled > box > label {
+    color: @menu_controls_color;
+    border-color: transparent;
+}
+
 /* mate-menu, mintmenu fork */
 #mate-menu.background {
     background-color: @theme_bg_color;
