@@ -1473,3 +1473,13 @@ window.background.maximized.caja-navigation-window notebook.caja-notebook scroll
     box-shadow: none;
 }
 
+/***************************
+ * mate-display-properties *
+ ***************************/
+
+foo-scroll-area:selected,
+foo-scroll-area:selected:focus,
+foo-scroll-area:selected:backdrop {
+	background-color: @theme_selected_bg_color;
+}
+
