@@ -62,8 +62,9 @@ scrollbar trough:disabled {
 /* Sliders */
 scrollbar.vertical slider,
 scrollbar.vertical .slider {
-    min-width: 11px;
+    min-width: 13px;
     min-height: 31px;
+    margin: 1px -1px 1px -1px;
     background-image: -gtk-gradient (linear, left top, left bottom,
                                      from (shade (@theme_bg_color, 0.95)),
                                      to (shade (@theme_bg_color, 0.8)));
