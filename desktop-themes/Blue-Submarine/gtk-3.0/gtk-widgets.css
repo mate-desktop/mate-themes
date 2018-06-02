@@ -3589,14 +3589,14 @@ paned.horizontal > box.vertical notebook > header.top,
 paned.horizontal > paned.vertical notebook > header.top {
     border-style: solid;
     border-color: @notebook_border;
-    border-width: 1px 1px 1px 1px;
+    border-width: 1px 1px 0px 1px;
     border-radius: 4px 4px 0px 0px;
     box-shadow: none;
 }
 
 paned.horizontal > box.vertical notebook scrolledwindow.frame,
 paned.horizontal > paned.vertical notebook scrolledwindow.frame {
-    border-width: 0px 1px 1px 1px;
+    border-width: 1px 1px 1px 1px;
     border-style: solid;
     border-color: @notebook_border;
 }
