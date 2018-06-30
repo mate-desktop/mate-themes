@@ -3960,6 +3960,7 @@ decoration:backdrop {
     box-shadow: none;
 }
 
+/* workaround to avoid unwanted black frames if switching compositor on/off */
 .csd.popup decoration {
     border-radius: 0;
     box-shadow: none;
