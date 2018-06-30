@@ -99,16 +99,28 @@
     text-shadow: none;
 }
 
-MatePanelAppletFrameDBus > MatePanelAppletFrameDBus {
-    background-image: -gtk-scaled(url("img/panel-grid.svg"));
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-position: left;
+PanelToplevel.horizontal.top > grid {
+    border-style: outset;
+    border-width: 0px 0px 1px 0px;
+    border-color: rgba(0, 0, 0, 0.23);
 }
 
-/* workaround to avoid unwanted black frames if switching compositor on/off */
-.mate-panel-menu-bar .window-frame.csd.popup {
-    box-shadow: none;
+PanelToplevel.horizontal.bottom > grid {
+    border-style: outset;
+    border-width: 1px 0px 0px 0px;
+    border-color: rgba(0, 0, 0, 0.23);
+}
+
+PanelToplevel.vertical.left > grid {
+    border-style: outset;
+    border-width: 0px 1px 0px 0px;
+    border-color: rgba(0, 0, 0, 0.23);
+}
+
+PanelToplevel.vertical.right > grid {
+    border-style: outset;
+    border-width: 0px 0px 0px 1px;
+    border-color: rgba(0, 0, 0, 0.23);
 }
 
 /* hide buttons */
@@ -126,6 +138,13 @@ PanelSeparator {
     background-image: none;
     color: shade (@theme_bg_color, 0.75);
     text-shadow: none;
+}
+
+MatePanelAppletFrameDBus > MatePanelAppletFrameDBus {
+    background-image: -gtk-scaled(url("img/panel-grid.svg"));
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: left;
 }
 
 /* outlines */
