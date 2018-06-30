@@ -400,14 +400,28 @@ PanelToplevel.background {
     text-shadow: none;
 }
 
-/* checkboxes in applet popup menu */
-.mate-panel-menu-bar menu > menuitem > box > menuitem {
-    padding: 0px 0px 0px 4px;
+PanelToplevel.horizontal.top > grid {
+    border-style: outset;
+    border-width: 0px 0px 1px 0px;
+    border-color: rgba(102, 102, 102, 0.33);
 }
 
-/* workaround to avoid unwanted black frames if switching compositor on/off */
-.mate-panel-menu-bar .csd.popup decoration {
-    box-shadow: none;
+PanelToplevel.horizontal.bottom > grid {
+    border-style: outset;
+    border-width: 1px 0px 0px 0px;
+    border-color: rgba(102, 102, 102, 0.33);
+}
+
+PanelToplevel.vertical.left > grid {
+    border-style: outset;
+    border-width: 0px 1px 0px 0px;
+    border-color: rgba(102, 102, 102, 0.33);
+}
+
+PanelToplevel.vertical.right > grid {
+    border-style: outset;
+    border-width: 0px 0px 0px 1px;
+    border-color: rgba(102, 102, 102, 0.33);
 }
 
 /* panel grip */
@@ -505,6 +519,11 @@ window.background, /* selector where outlines are writen on GtkTrayIcon */
 
 .mate-panel-menu-bar menubar > menuitem:hover {
     color: shade (@theme_selected_bg_color, 1.3);
+}
+
+/* checkboxes in applet popup menu */
+.mate-panel-menu-bar menu > menuitem > box > menuitem {
+    padding: 0px 0px 0px 4px;
 }
 
 /* most applets */

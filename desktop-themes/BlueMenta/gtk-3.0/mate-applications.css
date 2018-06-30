@@ -305,9 +305,28 @@ PanelToplevel.background {
     text-shadow: none;
 }
 
-/* workaround to avoid unwanted black frames if switching compositor on/off */
-.mate-panel-menu-bar .csd.popup decoration {
-    box-shadow: none;
+PanelToplevel.horizontal.top > grid {
+    border-style: outset;
+    border-width: 0px 0px 1px 0px;
+    border-color: rgba(0, 0, 0, 0.23);
+}
+
+PanelToplevel.horizontal.bottom > grid {
+    border-style: outset;
+    border-width: 1px 0px 0px 0px;
+    border-color: rgba(0, 0, 0, 0.23);
+}
+
+PanelToplevel.vertical.left > grid {
+    border-style: outset;
+    border-width: 0px 1px 0px 0px;
+    border-color: rgba(0, 0, 0, 0.23);
+}
+
+PanelToplevel.vertical.right > grid {
+    border-style: outset;
+    border-width: 0px 0px 0px 1px;
+    border-color: rgba(0, 0, 0, 0.23);
 }
 
 /* hide buttons */

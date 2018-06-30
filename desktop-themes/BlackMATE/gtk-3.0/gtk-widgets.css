@@ -3241,6 +3241,7 @@ headerbar.titlebar  button.image-button.titlebutton:hover:backdrop {
 	padding: 0px;
 }
 
+/* workaround to avoid unwanted black frames if switching compositor on/off */
 .csd.popup decoration {
     border-radius: 0;
     box-shadow: none;

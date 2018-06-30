@@ -247,6 +247,30 @@
     text-shadow: none;
 }
 
+PanelToplevel.horizontal.top > grid {
+    border-style: outset;
+    border-width: 0px 0px 1px 0px;
+    border-color: rgba(102, 102, 102, 0.33);
+}
+
+PanelToplevel.horizontal.bottom > grid {
+    border-style: outset;
+    border-width: 1px 0px 0px 0px;
+    border-color: rgba(102, 102, 102, 0.33);
+}
+
+PanelToplevel.vertical.left > grid {
+    border-style: outset;
+    border-width: 0px 1px 0px 0px;
+    border-color: rgba(102, 102, 102, 0.33);
+}
+
+PanelToplevel.vertical.right > grid {
+    border-style: outset;
+    border-width: 0px 0px 0px 1px;
+    border-color: rgba(102, 102, 102, 0.33);
+}
+
 /*stop panel from being spaced above bottom of screen,
   stop failure of cpufreq-appet to show all labels*/
 
@@ -261,13 +285,6 @@
 .mate-panel-menu-bar .menuitem{
 	padding: 6px;
 }
-
-
-/* workaround to avoid unwanted black frames if switching compositor on/off */
-.mate-panel-menu-bar .window-frame.csd.popup {
-    box-shadow: none;
-}
-
 
 .mate-panel-menu-bar menubar,
 .mate-panel-menu-bar menubar menuitem,
