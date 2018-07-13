@@ -2593,6 +2593,11 @@ toolbar toolitem combobox button.combo:hover {
                 inset  0px -1px shade(@selected_bg_color, 0.93);
 }
 
+/* lightdm-settings */
+toolbar.horizontal.cs-header > toolitem > label {
+    color: @theme_fg_color;
+}
+
 /********************
  * Menubar Toolbars *
  ********************/
