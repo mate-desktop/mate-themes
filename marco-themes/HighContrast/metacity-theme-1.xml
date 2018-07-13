@@ -29,19 +29,6 @@
   <distance name="right_titlebar_edge" value="0"/>
 </frame_geometry>
 
-<frame_geometry name="utility" title_scale="xx-small">
-  <distance name="left_width" value="3"/>
-  <distance name="right_width" value="3"/>
-  <distance name="bottom_height" value="4"/>
-  <distance name="left_titlebar_edge" value="3"/>
-  <distance name="right_titlebar_edge" value="3"/>
-  <distance name="button_width" value="11"/>
-  <distance name="button_height" value="11"/>
-  <distance name="title_vertical_pad" value="1"/>
-  <border name="title_border" left="3" right="4" top="3" bottom="3"/>
-  <border name="button_border" left="0" right="0" top="1" bottom="1"/>
-</frame_geometry>
-
 <frame_geometry name="border" has_title="false">
   <distance name="left_width" value="4"/>
   <distance name="right_width" value="4"/>
@@ -305,11 +292,11 @@
   <button function="maximize" state="pressed" draw_ops="restore_button_pressed"/>
 </frame_style>
 
-<frame_style name="utility_unfocused" geometry="utility" parent="normal_unfocused">
+<frame_style name="utility_unfocused" geometry="normal" parent="normal_unfocused">
   <piece position="title" draw_ops="title_utility"/>
 </frame_style>
 
-<frame_style name="utility_focused" geometry="utility" parent="normal_focused">
+<frame_style name="utility_focused" geometry="normal" parent="normal_focused">
   <piece position="title" draw_ops="title_utility_focused"/>
 </frame_style>
 
