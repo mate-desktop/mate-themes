@@ -539,48 +539,6 @@ vte-terminal {
     background-color: @theme_bg_color;
 }
 
-/*******
- * Eom *
- *******/
-
-.eom-window .vertical .vertical .vertical .horizontal button.flat {
-    border-color: @borders;
-    border-image: none;
-}
-
-.eom-window .vertical .vertical .vertical .horizontal button.flat:first-child {
-    border-radius: 4px 0px 0px 4px;
-    border-width: 1px 0px 1px 1px;
-    background-image: linear-gradient(to left,
-                                      @button_gradient_color_a,
-                                      @button_gradient_color_b);
-}
-
-.eom-window .vertical .vertical .vertical .horizontal button.flat:last-child {
-    border-radius: 0px 4px 4px 0px;
-    border-width: 1px 1px 1px 0px;
-    background-image: linear-gradient(to right,
-                                      @button_gradient_color_a,
-                                      @button_gradient_color_b);
-}
-
-.eom-window .vertical .vertical .vertical .horizontal button.flat:hover:first-child {
-    background-image: linear-gradient(to left,
-                                      @button_hover_gradient_color_a,
-                                      @button_hover_gradient_color_b);
-}
-
-.eom-window .vertical .vertical .vertical .horizontal button.flat:hover:last-child {
-    background-image: linear-gradient(to right,
-                                      @button_hover_gradient_color_a,
-                                      @button_hover_gradient_color_b);
-}
-
-.eom-window .vertical .vertical .vertical .horizontal button.flat:disabled {
-    background-image: none;
-    border-color: transparent;
-}
-
 /*********
  * Atril *
  *********/
