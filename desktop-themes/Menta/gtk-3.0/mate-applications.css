@@ -757,38 +757,6 @@ EggToolbarEditor.vertical scrolledwindow viewport.frame {
     background-color: shade (@theme_base_color, 1.0);
 }
 
-/*******
- * Eom *
- *******/
-
-.eom-window .vertical .vertical .vertical .horizontal button.flat:first-child {
-    border-radius: 4px 0px 0px 4px;
-    border-width: 1px 0px 1px 1px;
-}
-
-.eom-window .vertical .vertical .vertical .horizontal button.flat:last-child {
-    border-radius: 0px 4px 4px 0px;
-    border-width: 1px 1px 1px 0px;
-}
-
-.eom-window .vertical .vertical .vertical .horizontal button.flat {
-    border-image: none;
-    border-color: @unfocused_borders;
-}
-
-.eom-window .vertical .vertical .vertical .horizontal button.flat:hover {
-    border-image: none;
-    border-color: @menu_combobox_border;
-}
-
-.eom-window .vertical .vertical .vertical .horizontal button.flat:disabled {
-    border-color: transparent;
-}
-
-.eom-window .vertical statusbar.horizontal frame {
-    border-style: none;
-}
-
 /**************
  * mate-media *
  **************/
