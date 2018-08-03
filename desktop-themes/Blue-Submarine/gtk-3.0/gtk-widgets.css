@@ -3238,6 +3238,7 @@ calendar.header stackswitcher > button.titlebutton > image {
 
 toolbar .raised stackswitcher.linked.stack-switcher > button.text-button.radio,
 stackswitcher.linked.stack-switcher > button.text-button.radio,
+stackswitcher.linked.stack-switcher > button.image-button.radio:hover:active,
 stackswitcher.linked.stack-switcher > button.image-button.radio:checked:hover,
 stackswitcher > button.text-button.radio,
 stackswitcher > .linked.stackswitcher > button.text-button.radio,
@@ -6021,6 +6022,11 @@ headerbar.titlebar:backdrop {
     box-shadow: none;
 }
 
+headerbar button {
+    padding-left:  4px;
+    padding-right: 4px;
+}
+
 headerbar button,
 headerbar button:last-child,
 headerbar button:first-child,
@@ -6029,6 +6035,10 @@ headerbar .linked button,
 headerbar .linked button:last-child,
 headerbar .linked button:first-child,
 headerbar .linked button:only-child,
+headerbar .linked button:disabled,
+headerbar .linked button:disabled:last-child,
+headerbar .linked button:disabled:first-child,
+headerbar .linked button:disabled:only-child
 headerbar .linked button:focus,
 headerbar .linked button:focus:last-child,
 headerbar .linked button:focus:first-child,
@@ -6046,11 +6056,39 @@ headerbar .linked button:backdrop:only-child {
     box-shadow: none;
 }
 
-headerbar:backdrop button {
+headerbar .linked entry,
+headerbar .linked button,
+headerbar .linked button:disabled,
+headerbar .linked button:focus,
+headerbar .linked button:backdrop {
+    border-radius: 0px;
+
+}
+
+headerbar .linked button:first-child,
+headerbar .linked button:disabled:first-child,
+headerbar .linked button:focus:first-child,
+headerbar .linked button:backdrop:first-child {
+    border-radius: 5px 0px 0px 5px;
+}
+
+headerbar .linked button:last-child,
+headerbar .linked button:disabled:last-child,
+headerbar .linked button:focus:last-child,
+headerbar .linked button:backdrop:last-child {
+    border-radius: 0px 5px 5px 0px;
+}
+
+headerbar .linked button:only-child,
+headerbar .linked button:disabled:only-child
+headerbar .linked button:focus:only-child,
+headerbar .linked button:backdrop:only-child {
+    border-radius: 5px;
+}
+
+headerbar button:backdrop {
     border-width: 1px;
     border-radius: 5px;
-    padding-left:  4px;
-    padding-right: 4px;
     color: @theme_text_dark_color;
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
@@ -6102,7 +6140,6 @@ headerbar .linked button:checked:hover:only-child,
 headerbar .linked button:checked:hover:active:only-child {
     color: shade (@theme_selected_bg_color, 1.6);
     border-width: 1px;
-    border-radius: 5px;
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (shade(@menu_bg_dark_color, 2.03)),
@@ -6120,16 +6157,19 @@ headerbar .linked button:checked:hover:active:only-child {
 headerbar button:disabled,
 headerbar button:disabled:last-child,
 headerbar button:disabled:first-child,
+headerbar .linked entry:disabled,
 headerbar .linked button:disabled,
 headerbar .linked button:disabled:last-child,
-headerbar .linked button:disabled:first-child {
-    color: @theme_text_dark_color;
+headerbar .linked button:disabled:first-child,
+headerbar .linked entry:backdrop:disabled {
+    color: mix (@menu_fg_dark_color, @menu_bg_dark_color, 0.4);
     background-image: none;
     background-color: @theme_bg_dark_color;
     border-color: @theme_button_border_dark;
     box-shadow: none;
     text-shadow: none;
     -gtk-icon-shadow: none;
+    -gtk-icon-effect: dim;
 }
 
 headerbar > button:disabled {
@@ -6154,9 +6194,11 @@ headerbar.titlebar button.default.text-button.suggested-action:hover {
 
 headerbar > button.text-button:hover,
 headerbar > button.text-button:focus,
+headerbar > button.text-button:focus:hover:active,
 headerbar > button.text-button,
 headerbar > button.text-button.radio,
 headerbar > .linked > button.text-button,
+headerbar > .linked > button.text-button:focus:hover:active,
 headerbar > .linked > button.text-button.radio {
     padding: 4px 6px;
 }
