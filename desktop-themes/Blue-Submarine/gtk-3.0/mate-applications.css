@@ -194,13 +194,13 @@ paned.horizontal > box.vertical.caja-side-pane > notebook scrolledwindow.frame {
 }
 
 .caja-pathbar button.slider-button:nth-child(odd) {
-    border-radius: 5px 0px 0px 5px;
+    border-radius: 4px 0px 0px 4px;
     border-width: 1px 0px 1px 1px;
     margin: 0px -2px 0px 3px;
 }
 
 .caja-pathbar button.slider-button:nth-child(even) {
-    border-radius:  0px 5px 5px 0px;
+    border-radius:  0px 4px 4px 0px;
     border-width: 1px 1px 1px 0px;
     margin: 0px 3px 0px -2px;
 }
@@ -306,13 +306,13 @@ paned.horizontal > box.vertical.caja-side-pane > notebook scrolledwindow.frame {
 /* navigation buttons */
 .caja-navigation-window toolbar.primary-toolbar #Back button.image-button,
 .caja-navigation-window toolbar.primary-toolbar #Forward button.image-button {
-    border-radius: 6px 0px 0px 6px;
+    border-radius: 5px 0px 0px 5px;
     border-width: 1px 0px 1px 1px;
 }
 
 /* navigation dropdown-menu buttons */
 .caja-navigation-window toolbar.primary-toolbar toolbutton button.toggle.popup {
-    border-radius: 0px  6px 6px 0px;
+    border-radius: 0px  5px 5px 0px;
     border-width: 1px 1px 1px 0px;
 }
 
@@ -1208,7 +1208,7 @@ vte-terminal {
 
 #MyControlCenter button.flat {
     border-image: none;
-    border-radius: 6px;
+    border-radius: 5px;
     padding: 4px;
     outline-style: solid;
     outline-color: shade (@theme_selected_bg_color, 1.3);

@@ -961,7 +961,7 @@ button {
                                      color-stop (0.50, @button_gradient3),
                                      to   (@button_gradient4));
     border-width: 1px;
-    border-radius: 6px;
+    border-radius: 5px;
     border-style: solid;
     /* outer */
     border-top-color:    transparent;
@@ -987,7 +987,7 @@ button.default {
 /* ie. mate-control-center */
 button.flat {
     transition: all 400ms ease-out;
-    border-radius: 6px;
+    border-radius: 5px;
     padding: 4px;
     border-color: transparent;
     background-color: transparent;
@@ -1034,7 +1034,7 @@ button:checked:hover:active {
                                      color-stop (0.50, shade (@theme_bg_color, 1.00)),
                                      color-stop (0.50, shade (@theme_bg_color, 0.99)),
                                      to (shade (@theme_bg_color, 0.80)));
-    border-radius: 6px;
+    border-radius: 5px;
     box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
                 inset  1px  0px shade(@selected_bg_color, 0.97),
                 inset -1px  0px shade(@selected_bg_color, 0.93),
@@ -1274,7 +1274,7 @@ toolbar.primary-toolbar .linked button:checked:hover:active:first-child,
 toolbar.primary-toolbar .linked button:disabled:first-child,
 toolbar.primary-toolbar .linked entry:disabled:first-child {
     padding: 2px 4px 4px 2px;
-    border-radius: 6px 0px 0px 6px;
+    border-radius: 5px 0px 0px 5px;
     border-width: 1px 0px 1px 1px;
 }
 
@@ -1373,7 +1373,7 @@ toolbar.primary-toolbar .linked button:checked:hover:active:last-child,
 toolbar.primary-toolbar .linked button:disabled:last-child,
 toolbar.primary-toolbar .linked entry:disabled:last-child {
     padding: 2px 4px 4px 2px;
-    border-radius: 0px 6px 6px  0px;
+    border-radius: 0px 5px 5px  0px;
     border-width: 1px 1px 1px 0px;
 }
 
@@ -1467,7 +1467,7 @@ toolbar.primary-toolbar .linked button:checked:hover:active:only-child,
 toolbar.primary-toolbar .linked entry:disabled:only-child,
 toolbar.primary-toolbar .linked button:disabled:only-child {
     border-width: 1px;
-    border-radius: 6px;
+    border-radius: 5px;
     padding: 2px 4px 4px 2px;
 }
 
@@ -1580,7 +1580,7 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
 .linked button:disabled {
     background-color: transparent;
     border-width: 1px;
-    border-radius: 6px;
+    border-radius: 5px;
     color: @theme_fg_color;
     text-shadow: none;
     box-shadow: none;
@@ -1714,7 +1714,7 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
                 inset  1px  0px alpha(shade(@button_border, 0.94), 0.80),
                 inset -1px  0px rgba(255,255,255,0), 0 1px rgba(255,255,255,0),
                 inset  0px -1px alpha(shade(@button_border, 0.88), 0.90);
-    border-radius: 6px 0 0 6px;
+    border-radius: 5px 0 0 5px;
     border-width: 1px 0px 1px 1px;
 }
 
@@ -1729,7 +1729,7 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
                 inset  1px  0px shade(@selected_bg_color, 1.3),
                 inset -1px  0px rgba(255,255,255,0), 0 1px rgba(255,255,255,0),
                 inset  0px -1px shade(@selected_bg_color, 1.3);
-    border-radius: 6px 0 0 6px;
+    border-radius: 5px 0 0 5px;
     border-width: 1px 0px 1px 1px;
 }
 
@@ -1739,7 +1739,7 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
                 inset  1px  0px @insensitive_border_color,
                 inset -1px  0px rgba(255,255,255,0), 0 1px rgba(255,255,255,0),
                 inset  0px -1px @insensitive_border_color;
-    border-radius: 6px 0 0 6px;
+    border-radius: 5px 0 0 5px;
     border-width: 1px 0px 1px 1px;
 }
 
@@ -1751,7 +1751,7 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
                  inset  1px  0px alpha(shade(@button_border, 0.94), 0.80),
                  inset -1px  0px alpha(shade(@button_border, 0.94), 0.80),
                  inset  0px -1px alpha(shade(@button_border, 0.88), 0.90);
-    border-radius: 0 6px 6px 0;
+    border-radius: 0 5px 5px 0;
     border-width: 1px 1px 1px 0px;
 }
 
@@ -1766,7 +1766,7 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
                 inset  1px  0px shade(@selected_bg_color, 0.97),
                 inset -1px  0px shade(@selected_bg_color, 0.93),
                 inset  0px -1px shade(@selected_bg_color, 0.93);
-    border-radius: 0 6px 6px 0;
+    border-radius: 0 5px 5px 0;
     border-width: 1px 1px 1px 0px;
 }
 
@@ -1785,7 +1785,7 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
 .linked button:checked:only-child,
 .linked button:focus:only-child,
 .linked button:focus:hover:only-child {
-    border-radius: 6px;
+    border-radius: 5px;
     border-width: 1px;
 }
 
@@ -1799,7 +1799,7 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
                 inset  1px  0px shade(@selected_bg_color, 0.97),
                 inset -1px  0px shade(@selected_bg_color, 0.93),
                 inset  0px -1px shade(@selected_bg_color, 0.93);
-    border-radius: 6px;
+    border-radius: 5px;
 }
 
 /* Linked single button disabled */
@@ -1808,7 +1808,7 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
                 inset  1px  0px @insensitive_border_color,
                 inset -1px  0px @insensitive_border_color,
                 inset  0px -1px @insensitive_border_color;
-    border-radius: 6px;
+    border-radius: 5px;
 }
 
 /* vertical */
@@ -1854,7 +1854,7 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
     box-shadow: inset  0px  1px alpha(shade(@button_border, 1.00), 0.70),
                 inset  1px  0px alpha(shade(@button_border, 0.94), 0.90),
                 inset  -1px 0px alpha(shade(@button_border, 0.88), 0.90);
-    border-radius: 6px 6px 0 0;
+    border-radius: 5px 5px 0 0;
     border-width: 1px 1px 1px 1px;
 }
 
@@ -1868,7 +1868,7 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
     box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
                 inset  1px  0px shade(@selected_bg_color, 0.97),
                 inset  -1px 0px shade(@selected_bg_color, 0.93);
-    border-radius: 6px 6px 0 0;
+    border-radius: 5px 5px 0 0;
     border-width: 1px 1px 1px 1px;
 }
 
@@ -1876,7 +1876,7 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
     box-shadow: inset  0px  1px @insensitive_border_color,
                 inset  1px  0px @insensitive_border_color,
                 inset -1px  0px @insensitive_border_color;
-    border-radius: 6px 6px 0 0;
+    border-radius: 5px 5px 0 0;
     border-width: 1px 1px 1px 1px;
 }
 
@@ -1887,7 +1887,7 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
      box-shadow: inset  1px  0px alpha(shade(@button_border, 0.94), 0.90),
                  inset -1px  0px alpha(shade(@button_border, 0.94), 0.90),
                  inset  0px -1px alpha(shade(@button_border, 0.88), 0.70);
-    border-radius: 0 0 6px 6px;
+    border-radius: 0 0 5px 5px;
     border-width: 0px 1px 1px 1px;
 }
 
@@ -1901,7 +1901,7 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
     box-shadow: inset  1px  0px shade(@selected_bg_color, 0.97),
                 inset -1px  0px shade(@selected_bg_color, 0.93),
                 inset  0px -1px shade(@selected_bg_color, 0.93);
-    border-radius: 0 0 6px 6px;
+    border-radius: 0 0 5px 5px;
     border-width: 0px 1px 1px 1px;
 }
 
@@ -1909,7 +1909,7 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
     box-shadow: inset  1px  0px @insensitive_border_color,
                 inset -1px  0px @insensitive_border_color,
                 inset  0px -1px @insensitive_border_color;
-    border-radius: 0 0 6px 6px;
+    border-radius: 0 0 5px 5px;
     border-width: 0px 1px 1px 1px;
 }
 
@@ -1921,7 +1921,7 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
                 inset  1px  0px alpha(shade(@button_border, 0.94), 0.90),
                 inset -1px  0px alpha(shade(@button_border, 0.94), 0.90),
                 inset  0px -1px alpha(shade(@button_border, 0.94), 0.90);
-    border-radius: 6px;
+    border-radius: 5px;
     border-width: 1px;
 }
 
@@ -1936,7 +1936,7 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
                 inset  1px  0px shade(@selected_bg_color, 0.97),
                 inset -1px  0px shade(@selected_bg_color, 0.93),
                 inset  0px -1px shade(@selected_bg_color, 0.93);
-    border-radius: 6px;
+    border-radius: 5px;
     border-width: 1px;
 }
 
@@ -1945,7 +1945,7 @@ toolbar .raised.linked:nth-child(last) button:checked:hover {
                 inset  1px  0px @insensitive_border_color,
                 inset -1px  0px @insensitive_border_color,
                 inset  0px -1px @insensitive_border_color;
-    border-radius: 6px;
+    border-radius: 5px;
     border-width: 1px;
 }
 
@@ -2115,7 +2115,7 @@ combobox separator {
 combobox entry.combo,
 combobox entry.combo:nth-child(first) {
     border-width: 1px 0px 1px 1px; /* remove right-outer */
-    border-radius: 6px 0px 0px 6px;
+    border-radius: 5px 0px 0px 5px;
     /* remove right-border */
     box-shadow: inset  0px  3px alpha(#000, 0.03),
                 inset  0px  2px alpha(#000, 0.05),
@@ -2141,7 +2141,7 @@ combobox entry.combo:focus {
 /* for RTL languages */
 combobox entry.combo:nth-child(last) {
     border-width: 1px 1px 1px 0px;
-    border-radius: 0px 6px 6px 0px;
+    border-radius: 0px 5px 5px 0px;
 }
 
 combobox button.combo {
@@ -2252,7 +2252,7 @@ toolbar.primary-toolbar combobox button.combo:hover,
 toolbar.primary-toolbar combobox button.combo:checked,
 toolbar.primary-toolbar combobox button.combo:disabled,
 toolbar.primary-toolbar combobox button.combo:nth-child(last) {
-    border-radius: 6px;
+    border-radius: 5px;
     border-width: 1px 1px 1px 1px;
     padding: 8px 6px;
 }
@@ -2267,7 +2267,7 @@ combobox > button.combo:checked:hover,
 combobox > button.combo:checked:hover:active,
 combobox > button.combo:disabled {
     border-width: 1px;
-    border-radius: 6px;
+    border-radius: 5px;
     border-width: 1px;
     padding: 5px 4px;
 }
@@ -2285,7 +2285,7 @@ combobox > .horizontal.linked button.combo:first-child,
 combobox > .horizontal.linked entry.combo:first-child,
 .linked.horizontal > combobox:first-child > .linked.horizontal > button.combo:first-child,
 .linked.horizontal > combobox:first-child > .linked.horizontal > button.combo:focus:first-child {
-    border-radius: 6px 0px 0px 6px;
+    border-radius: 5px 0px 0px 5px;
     border-width: 1px 0px 1px 1px;
 }
 
@@ -2293,7 +2293,7 @@ combobox > .horizontal.linked button.combo:last-child,
 combobox > .horizontal.linked entry.combo:last-child,
 .linked.horizontal > combobox:last-child > .linked.horizontal > button.combo:last-child,
 .linked.horizontal > combobox:last-child > .linked.horizontal > button.combo:focus:last-child {
-    border-radius: 0px 6px 6px 0px;
+    border-radius: 0px 5px 5px 0px;
     border-width: 1px 1px 1px 0px;
 }
 
@@ -2301,7 +2301,7 @@ combobox > .horizontal.linked button.combo:only-child,
 combobox > .horizontal.linked entry.combo:only-child,
 .linked.horizontal > combobox:only-child > .linked.horizontal > button.combo:only-child,
 .linked.horizontal > combobox:only-child > .linked.horizontal > button.combo:focus:only-child {
-    border-radius: 6px;
+    border-radius: 5px;
     border-width: 1px;
 }
 
@@ -2436,7 +2436,7 @@ combobox > .linked button.combo:checked {
     box-shadow: inset  0px  1px alpha(shade(@button_border, 1.00), 0.70),
                 inset  1px  0px alpha(shade(@button_border, 0.94), 0.90),
                 inset  -1px 0px alpha(shade(@button_border, 0.88), 0.90);
-    border-radius: 6px 6px 0 0;
+    border-radius: 5px 5px 0 0;
     border-width: 1px 1px 1px 1px;
 }
 
@@ -2460,7 +2460,7 @@ combobox > .linked button.combo:checked {
      box-shadow: inset  1px  0px alpha(shade(@button_border, 0.94), 0.90),
                  inset -1px  0px alpha(shade(@button_border, 0.94), 0.90),
                  inset  0px -1px alpha(shade(@button_border, 0.88), 0.70);
-    border-radius: 0 0 6px 6px;
+    border-radius: 0 0 5px 5px;
     border-width: 0px 1px 1px 1px;
 }
 
@@ -2485,7 +2485,7 @@ combobox > .linked button.combo:checked {
                 inset  1px  0px alpha(shade(@button_border, 0.94), 0.90),
                 inset -1px  0px alpha(shade(@button_border, 0.94), 0.90),
                 inset  0px -1px alpha(shade(@button_border, 0.94), 0.90);
-    border-radius: 6px;
+    border-radius: 5px;
     border-width: 1px;
 }
 
@@ -3439,7 +3439,7 @@ button.scale.flat,
 button.scale.flat:hover,
 button.scale.flat:disabled {
     padding: 5px 4px;
-    border-radius: 6px;
+    border-radius: 5px;
     border-color: transparent;
     background-color: transparent;
 }
@@ -5012,7 +5012,7 @@ dialog scrolledwindow.frame viewport .vertical expander .vertical {
 .dialog-action-area.linked > button.text-button:checked:hover:first-child,
 .dialog-action-area.linked > button.text-button:checked:hover:active:first-child,
 .dialog-action-area.linked > button.text-button:disabled:first-child {
-    border-radius: 6px 0 0 6px;
+    border-radius: 5px 0 0 5px;
     border-width: 1px 1px 1px 1px;
 }
 
@@ -5029,7 +5029,7 @@ dialog scrolledwindow.frame viewport .vertical expander .vertical {
 .dialog-action-area.linked > button.text-button:disabled:last-child {
     margin: 0px 0px 0px -2px;
     border-width: 1px 1px 1px 0px;
-    border-radius: 0 6px 6px 0;
+    border-radius: 0 5px 5px 0;
 }
 
 /* single button */
@@ -5045,7 +5045,7 @@ dialog scrolledwindow.frame viewport .vertical expander .vertical {
 .dialog-action-area.linked > button.text-button:disabled:last-child {
     border-width: 1px;
     border-image-width: 1px;
-    border-radius: 6px;
+    border-radius: 5px;
 }
 
 .dialog-action-area.linked > button.text-button {
@@ -5699,7 +5699,7 @@ popover > box > button.text-button:focus { /* ie. gedit menu button popover */
 popover > box > button.text-button { /* ie. gedit menu button popover */
     background-image: none;
     color: @theme_fg_dark_color;
-    border-radius: 6px;
+    border-radius: 5px;
 }
 
 modelbutton.flat,
@@ -5722,7 +5722,7 @@ modelbutton.flat:last-child,
 modelbutton.flat:only-child {
     background-image: none;
     color: @theme_fg_dark_color;
-    border-radius: 6px;
+    border-radius: 5px;
     padding: 6px 0px 6px 6px;
     outline-style: none;
 }
@@ -5760,7 +5760,7 @@ popover > box > button.text-button { /* ie. gedit menu button popover */
     border-image: none;
     border-style: none;
     box-shadow: none;
-    border-radius: 6px;
+    border-radius: 5px;
 }
 
 /* use box-shadow for outlines */
@@ -5812,7 +5812,7 @@ popover > box > button.text-button:checked:hover:active {
     text-shadow: none;
     border-width: 0;
     border-color: transparent;
-    border-radius: 6px;
+    border-radius: 5px;
     box-shadow: inset  0px  1px shade(@selected_bg_color, 1.05),
                 inset  1px  0px shade(@selected_bg_color, 0.97),
                 inset -1px  0px shade(@selected_bg_color, 0.93),
@@ -5882,7 +5882,7 @@ popover .linked button:focus:hover,
 .linked button.image-button.model:checked:hover:first-child,
 .linked button.image-button.model:checked:hover:active:first-child {
     border-right-width: 0px;
-    border-radius: 6px 0 0 6px;
+    border-radius: 5px 0 0 5px;
 }
 
 /* right button*/
@@ -5891,7 +5891,7 @@ popover .linked button:focus:hover,
 .linked button.image-button.model:checked:hover:last-child,
 .linked button.image-button.model:checked:hover:active:last-child {
     border-left-width:  0px;
-    border-radius: 0 6px 6px 0;
+    border-radius: 0 5px 5px 0;
 }
 
 popover > box > button.text-button:disabled {
@@ -6217,13 +6217,13 @@ headerbar > stackswitcher.linked.stack-switcher > button.text-button.radio {
 }
 
 headerbar > stackswitcher.linked.stack-switcher > button.text-button.radio:first-child {
-    border-radius: 6px 0 0 6px;
+    border-radius: 5px 0 0 5px;
     border-width: 1px;
     border-right-width: 0px;
 }
 
 headerbar > stackswitcher.linked.stack-switcher > button.text-button.radio:last-child {
-    border-radius: 0 6px 6px 0;
+    border-radius: 0 5px 5px 0;
     border-width: 1px;
     border-left-width: 0px;
 }
@@ -6293,6 +6293,7 @@ headerbar paned > separator {
     -gtk-icon-shadow: 0px 1px @theme_shadow_dark_color;
     color: @wm_title;
     background: none;
+    background-color: transparent;
     padding: 5px 5px 6px 5px;
     border-width: 1px;
     border-radius: 5px;
@@ -6303,19 +6304,6 @@ headerbar paned > separator {
                 inset  1px  0px shade(@theme_bg_dark_color, 0.97),
                 inset  0px -1px shade(@theme_bg_dark_color, 0.93),
                 inset -1px  0px shade(@theme_bg_dark_color, 0.93);
-}
-
-.titlebar button.titlebutton {
-    -gtk-icon-shadow: 0px 1px @theme_shadow_dark_color;
-    color: @wm_title;
-    padding: 5px 5px 6px 5px;
-    border-style: solid;
-    border-image: none;
-    border-radius: 5px;
-    border-width: 1px;
-    border-color: transparent;
-    background: none;
-    background-color: transparent;
 }
 
 .titlebar button.titlebutton:hover,
