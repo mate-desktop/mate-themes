@@ -210,7 +210,7 @@
 .nemo-properties-dialog box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:focus:first-child,
 .nemo-properties-dialog box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:hover:first-child,
 .nemo-properties-dialog box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:checked:first-child {
-    border-radius: 6px 0 0 6px;
+    border-radius: 5px 0 0 5px;
     border-width: 1px;
     border-right-width: 0px;
 }
@@ -220,7 +220,7 @@
 .nemo-properties-dialog box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:focus:last-child,
 .nemo-properties-dialog box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:hover:last-child,
 .nemo-properties-dialog box.vertical.dialog-vbox toolbar.horizontal.primary-toolbar stackswitcher.horizontal.linked.stack-switcher button.text-button.radio:checked:last-child {
-    border-radius: 0 6px 6px 0;
+    border-radius: 0 5px 5px 0;
     border-width: 1px;
     border-left-width: 0px;
 }
@@ -370,7 +370,7 @@ window.background box.vertical notebook box.horizontal box.vertical notebook {
                                      color-stop (0.50, @button_gradient3),
                                      to   (@button_gradient4));
     border-width: 1px;
-    border-radius: 6px;
+    border-radius: 5px;
     border-style: solid;
     /* outer */
     border-top-color:    transparent;
@@ -500,13 +500,13 @@ window.background.yumex-dnf-window > box.vertical > box.horizontal stackswitcher
 }
 
 window.background.yumex-dnf-window > box.vertical > box.horizontal stackswitcher.linked.stack-switcher > button.text-button.radio:first-child {
-    border-radius: 6px 0 0 6px;
+    border-radius: 5px 0 0 5px;
     border-width: 1px;
     border-right-width: 0px;
 }
 
 window.background.yumex-dnf-window > box.vertical > box.horizontal stackswitcher.linked.stack-switcher > button.text-button.radio:last-child {
-    border-radius: 0 6px 6px 0;
+    border-radius: 0 5px 5px 0;
     border-width: 1px;
     border-left-width: 0px;
 }

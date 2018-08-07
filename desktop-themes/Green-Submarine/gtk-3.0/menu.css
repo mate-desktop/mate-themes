@@ -83,7 +83,7 @@ menubar > menuitem,
 menubar > menuitem:hover,
 .menubar > menuitem:hover {
     background-color: shade (@theme_bg_dark_color, 1.2);
-    border-radius: 6px;
+    border-radius: 4px;
     color: shade (@theme_selected_bg_color, 1.2);
     text-shadow: none;
     background-image: -gtk-gradient (linear,
@@ -118,7 +118,7 @@ menu > menuitem:hover,
                                      to   (shade(@menu_bg_dark_color, 1.17)));
     color: shade (@theme_selected_bg_color, 1.2);
     text-shadow: none;
-    border-radius: 6px;
+    border-radius: 4px;
     border-width: 1px;
     border-image: none;
     padding: 5px 5px;
