@@ -119,3 +119,11 @@ toolbar.primary-toolbar.horizontal > toolitem > grid.horizontal > button.scale.f
     color: @osd_button_fg_active;
 }
 
+/**********************
+ * gnome-disk-utility *
+ **********************/
+
+/* fixes for backdrop/foreground state */
+window.background.csd > box > paned > notebook box > widget > box > box > box widget:backdrop:selected {
+	color: @theme_fg_color;
+}

@@ -5566,7 +5566,7 @@ popover.background {
     color: @theme_fg_dark_color;
     margin: 10px;
     padding: 2px;
-    border-color: @borders;
+    border-color: @borders_headerbar;
     border-width: 1px;
     border-style: solid;
     border-radius: 6px;
@@ -5972,7 +5972,7 @@ headerbar.titlebar,
 .background.solid-csd > paned.horizontal.titlebar {
     border-width: 0px 0px 1px 0px;
     border-style: solid;
-    border-color: shade(@borders, 0.90);
+    border-color: shade(@borders_headerbar, 0.90);
     border-radius: 7px 7px 0px 0px;
     padding: 6px 6px 5px 6px;
 }
@@ -6013,8 +6013,8 @@ dialog.background.solid-csd > headerbar.titlebar  {
 headerbar.titlebar:backdrop {
 
     border-image: linear-gradient(to top,
-                                  @unfocused_borders,
-                                  @unfocused_borders 1px,
+                                  @unfocused_borders_headerbar,
+                                  @unfocused_borders_headerbar 1px,
                                   @theme_unfocused_bg_color 1px) 0 0 2;
     background-color: @theme_bg_dark_color;
     text-shadow: none;

@@ -256,8 +256,8 @@
 @define-color osd_popover_bg alpha(@osd_base, 0.90);
 
 /* GTKHeaderBar colours */
-@define-color borders @theme_bg_dark_color;
-@define-color unfocused_borders @theme_bg_dark_color;
+@define-color borders_headerbar @theme_bg_dark_color;
+@define-color unfocused_borders_headerbar @theme_bg_dark_color;
 @define-color theme_unfocused_bg_color @theme_bg_dark_color;
 @define-color button_hover_gradient_color_a @button_raised_gradient_color_a;
 @define-color button_hover_gradient_color_b @button_raised_gradient_color_b;
@@ -266,6 +266,14 @@
 @define-color wm_title_shadow @wm_shadow;
 @define-color wm_bg_a @theme_bg_dark_color;
 @define-color wm_bg_b @theme_bg_dark_color;
+
+@define-color borders shade(@theme_bg_color, 0.75);
+@define-color theme_unfocused_selected_bg_color shade(@theme_bg_color, 0.95);
+@define-color theme_unfocused_selected_fg_color @theme_selected_fg_color;
+@define-color unfocused_borders @borders;
+@define-color unfocused_insensitive_borders mix(@theme_unfocused_bg_color, @unfocused_borders, 0.5);
+@define-color unfocused_insensitive_fg_color mix(@theme_unfocused_bg_color, @theme_unfocused_fg_color, 0.5);
+@define-color unfocused_insensitive_bg_color mix(@theme_unfocused_bg_color, @theme_unfocused_base_color, 0.5);
 
 /* terminal view color*/
 @define-color terminal_background_color #343B27;

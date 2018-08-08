@@ -89,3 +89,16 @@ window.background.dconf-editor popover.menu {
     padding: 4px;
 }
 
+/**********************
+ * gnome-disk-utility *
+ **********************/
+
+/* fixes for backdrop/foreground state */
+window.background.csd > box > paned > notebook box > widget > box > box > box widget:selected {
+	color: @theme_selected_fg_color;
+}
+
+window.background.csd > box > paned > notebook box > widget > box > box > box widget:backdrop:selected {
+	color: @theme_fg_color;
+}
+
