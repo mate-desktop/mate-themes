@@ -88,3 +88,37 @@ window.background > box.vertical > notebook overlay > scrolledwindow viewport {
     border-width: 0px;
 }
 
+/***********
+ * Lightdm *
+ ***********/
+
+/* 2.0 */
+.lightdm-gtk-greeter #login_window.background,
+/* 1.8.5 */
+#login_window.background.lightdm-gtk-greeter,
+#login_window.background.lightdm-gtk-greeter box.vertical {
+	border-radius: 6px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: shade(@theme_bg_color, 0.4);
+}
+
+/* 2.0 */
+.lightdm-gtk-greeter #login_window.background #user_image_border,
+/* 1.8.5 */
+#login_window.background.lightdm-gtk-greeter #user_image_border {
+    border-style: solid;
+    border-width: 1px;
+    border-color: shade(@theme_bg_color, 0.8);
+}
+
+/* 2.0 */
+.lightdm-gtk-greeter #panel_window.background,
+.lightdm-gtk-greeter #panel_window.background menubar separator,
+/* 1.8.5 */
+#panel_window.background.lightdm-gtk-greeter,
+#panel_window.background.lightdm-gtk-greeter menubar separator {
+    background-color: transparent;
+    color: @theme_fg_color;
+}
+
