@@ -12,7 +12,7 @@ To fix the second issue for Firefox, create '~/.mozilla/firefox/<YOUR_PROFILE>/c
  
 /*------------ start ------------*/
 
-input, textarea, select {
+input[type=text], textarea, select {
 	-moz-appearance: none !important;
 	background-color: white;
 	color: black;
