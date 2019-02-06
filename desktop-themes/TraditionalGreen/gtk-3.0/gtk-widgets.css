@@ -2454,6 +2454,8 @@ menubar menuitem,
     border-color: transparent;
     padding: 3px 5px;
     background-color: transparent;
+    color: @menu_fg_color;
+    text-shadow: none;
 }
 
 menubar menuitem:hover,
