@@ -1,20 +1,31 @@
+### 3.22.19 (GTK 3.22)
+
+  * Translations update
+  * add Travis-CI support
+  * TOK/TG: fix menubar view for LibreOffice
+  * Menta metacity: synchronize frame_geometry
+  * BlackMATE: fix invisible checkboxes in Firefox content when userChrome.css is used
+  * Trad. and Menta themes: fix menu accelerator
+  * submarine: fix font-color headerbar button.default
+  * Trad. and GreenLaguna: fix lightdm-gtk panel
+
 ### 3.22.18 (GTK 3.22)
 
-    sync with transifex
-    Menta/Submarine: fix backdrop/focus state with gnome-disk-utility
-    submarine: reduce button radius
-    submarine: fix headerbar backdrop state button jumping
-    some themes: drop styling for eom sidebar buttons
-    submarine: give emoji-picker popup a nicer look
-    submarine: few fixes for buttons in titlebar and popovers
-    submarine: fix font color in lightdm-settings
-    highcontrast: Use normal titlebar size for utility windows
-    all themes: add a thiny border to the panel
-    submarine: fix borders in filechooser placessidebar
+  * Translations update
+  * Menta/Submarine: fix backdrop/focus state with gnome-disk-utility
+  * submarine: reduce button radius
+  * submarine: fix headerbar backdrop state button jumping
+  * some themes: drop styling for eom sidebar buttons
+  * submarine: give emoji-picker popup a nicer look
+  * submarine: few fixes for buttons in titlebar and popovers
+  * submarine: fix font color in lightdm-settings
+  * highcontrast: Use normal titlebar size for utility windows
+  * all themes: add a thiny border to the panel
+  * submarine: fix borders in filechooser placessidebar
 
 ### 3.22.17 (GTK 3.22)
 
-  * sync with transifex
+  * Translations update
   * submarine: drop double border of scrollbar sliders
   * Submarine: some border fixes for caja notebook
   * all themes: xrandr-applet menu styling
@@ -48,7 +59,7 @@
 
 3.22.15 (GTK 3.22)
 
-  * sync with transifex
+  * Translations update
   * Submarine themes: remove a box-shadow at engrampa toolbar
   * submarine themes: remove padding from caja-sidebar treeview
   * all themes caja: remove right-border from scrolledwindow.frame
@@ -61,7 +72,7 @@
 
 3.22.14 (GTK 3.22)
 
-  * Sync with transifex
+  * Translations update
   * TOK/TG: sliders: keep the original size
   * Gtk+-3.20 submarine: reduce border radius for treeview.selected/hover in sidebars
   * Gtk+-3.20 submarine: set font color for spinbutton entry
