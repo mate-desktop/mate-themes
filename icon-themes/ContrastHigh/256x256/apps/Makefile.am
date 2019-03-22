@@ -42,7 +42,6 @@ icon_DATA= \
 	gnome-documents.png \
 	gnome-freecell.png \
 	gnome-nettool.png \
-	gnome-power-manager.png \
 	gnome-tweak-tool.png \
 	goa-panel.png \
 	gtranslator.png \
@@ -60,6 +59,7 @@ icon_DATA= \
 	libreoffice-startcenter.png \
 	libreoffice-writer.png \
 	mate-brightness-applet.png \
+	mate-power-manager.png \
 	mate-netspeed-applet.png \
 	miro.png \
 	multimedia-volume-control.png \
