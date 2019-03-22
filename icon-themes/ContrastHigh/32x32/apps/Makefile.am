@@ -52,7 +52,6 @@ icon_DATA= \
 	gnome-documents.png \
 	gnome-freecell.png \
 	gnome-nettool.png \
-	gnome-power-manager.png \
 	gnome-tweak-tool.png \
 	goa-panel.png \
 	gok.png \
@@ -86,6 +85,7 @@ icon_DATA= \
 	mate-panel-window-list.png \
 	mate-panel-window-menu.png \
 	mate-panel-workspace-switcher.png \
+	mate-power-manager.png \
 	mate-preferences-desktop-display.png \
 	mate-session-properties.png \
 	miro.png \
