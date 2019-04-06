@@ -4390,7 +4390,8 @@ switch slider:hover {
 }
 
 /* disable on/off characters */
-switch:disabled image {
+switch:disabled image,
+switch:hover image {
     color: transparent;
 }
 
