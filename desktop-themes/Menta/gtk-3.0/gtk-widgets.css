@@ -4389,6 +4389,11 @@ switch slider:hover {
 	border-image: none;
 }
 
+/* disable on/off characters */
+switch:disabled image {
+    color: transparent;
+}
+
 /************
  * Pathbars *
  ************/
