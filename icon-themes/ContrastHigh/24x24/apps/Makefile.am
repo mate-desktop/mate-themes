@@ -77,7 +77,6 @@ icon_DATA= \
 	mate-logo-icon-transparent.png \
 	mate-log.png \
 	mate-netspeed-applet.png \
-	mate-network-properties.png \
 	mate-notification-properties.png \
 	mate-panel-clock.png \
 	mate-panel-drawer.png \
@@ -87,7 +86,6 @@ icon_DATA= \
 	mate-panel-window-menu.png \
 	mate-panel-workspace-switcher.png \
 	mate-power-manager.png \
-	mate-preferences-desktop-display.png \
 	mate-session-properties.png \
 	miro.png \
 	mozo.png \
