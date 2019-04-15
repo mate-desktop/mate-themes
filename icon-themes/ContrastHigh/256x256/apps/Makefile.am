@@ -59,6 +59,8 @@ icon_DATA= \
 	libreoffice-startcenter.png \
 	libreoffice-writer.png \
 	mate-brightness-applet.png \
+	mate-desktop.png \
+	mate-logo-icon-transparent.png \
 	mate-power-manager.png \
 	mate-netspeed-applet.png \
 	miro.png \

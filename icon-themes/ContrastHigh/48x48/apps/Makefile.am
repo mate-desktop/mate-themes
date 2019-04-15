@@ -72,6 +72,7 @@ icon_DATA= \
 	libreoffice-writer.png \
 	mate-application-generic.png \
 	mate-brightness-applet.png \
+	mate-desktop.png \
 	mate-invest-applet.png \
 	mate-logo-icon-transparent.png \
 	mate-log.png \
