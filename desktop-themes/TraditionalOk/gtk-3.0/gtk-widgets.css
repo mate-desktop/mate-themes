@@ -3897,16 +3897,24 @@ headerbar,
     border-radius: 7px 7px 0 0;
     border-bottom: 1px solid;
     border-color: shade(@border_color, 1.30);
-    padding: 5px 4px 4px 4px;
+    padding: 3px 4px;
 }
 
-/* fix for gedit, .titlebar does not match headerbar selector */
-.background.csd > paned.horizontal.titlebar,
-.background.solid-csd > paned.horizontal.titlebar {
-    background-color: transparent;
-    padding: 0px;
-    margin: -2px 0px -2px 0px;
-    border-width: 0px;
+.horizontal.titlebar headerbar:first-child,
+paned.horizontal.titlebar headerbar:first-child {
+	border-top-right-radius: 0px;
+}
+
+.horizontal.titlebar headerbar:last-child,
+paned.horizontal.titlebar headerbar:last-child {
+	border-top-left-radius: 0px;
+}
+
+paned.horizontal.titlebar separator,
+.horizontal.titlebar separator.vertical.tilix-title-separator {
+	background-color: transparent;
+	background-image: none;
+	color: transparent;
 }
 
 .tiled .titlebar {

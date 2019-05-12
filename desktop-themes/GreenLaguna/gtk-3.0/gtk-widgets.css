@@ -3418,26 +3418,10 @@ headerbar,
                                       shade (@theme_bg_color, 1.20),
                                       shade (@theme_bg_color, 1.0));
     border-radius: 7px 7px 0 0;
-    padding: 5px;
+    padding: 3px 5px;
     border-width: 0 0 1px;
     border-style: solid;
     border-color: shade(@theme_bg_color, 0.8);
-}
-
-/* fix for gedit, .titlebar does not match headerbar selector */
-.background.csd > paned.horizontal.titlebar,
-.background.solid-csd > paned.horizontal.titlebar {
-    background-color: transparent;
-    padding: 0px 0px 0px 0px;
-    margin: 0px -2px 0px -2px;
-    border-width: 0px;
-}
-
-/* ie. meld */
-dialog.background.csd > headerbar.titlebar,
-dialog.background.ssd > headerbar.titlebar,
-dialog.background.solid-csd > headerbar.titlebar  {
-    padding: 1px 5px;
 }
 
 .tiled .titlebar {
@@ -3446,6 +3430,23 @@ dialog.background.solid-csd > headerbar.titlebar  {
 
 .maximized .titlebar {
     border-radius: 0;
+}
+
+.horizontal.titlebar headerbar:first-child,
+paned.horizontal.titlebar headerbar:first-child {
+	border-top-right-radius: 0px;
+}
+
+.horizontal.titlebar headerbar:last-child,
+paned.horizontal.titlebar headerbar:last-child {
+	border-top-left-radius: 0px;
+}
+
+paned.horizontal.titlebar separator,
+.horizontal.titlebar separator.vertical.tilix-title-separator {
+	background-color: transparent;
+	background-image: none;
+	color: transparent;
 }
 
 /* this is the default titlebar that is added by GTK

@@ -3038,6 +3038,29 @@ headerbar,
     border-width: 0px;
 }
 
+.horizontal.titlebar headerbar:first-child,
+paned.horizontal.titlebar headerbar:first-child {
+	border-top-right-radius: 0px;
+}
+
+.horizontal.titlebar headerbar:last-child,
+paned.horizontal.titlebar headerbar:last-child {
+	border-top-left-radius: 0px;
+}
+
+paned.horizontal.titlebar separator,
+.horizontal.titlebar separator.vertical.tilix-title-separator {
+	background-color: transparent;
+	background-image: none;
+	color: transparent;
+}
+
+paned.horizontal.titlebar separator:backdrop,
+.horizontal.titlebar separator.vertical.tilix-title-separator:backdrop {
+    min-width: 5px;
+    background-color: darker (@theme_bg_color);
+}
+
 .background.csd > paned.horizontal.titlebar > headerbar,
 .background.ssd > paned.horizontal.titlebar > headerbar,
 .background.solid-csd > paned.horizontal.titlebar > headerbar {
