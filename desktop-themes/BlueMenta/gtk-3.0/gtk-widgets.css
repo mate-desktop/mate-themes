@@ -5427,23 +5427,7 @@ headerbar,
 	border-style: solid;
     box-shadow: inset 0 -1px alpha(@theme_base_color, 0.4);
     border-color: @borders;
-	padding: 6px;
-}
-
-/* fix for gedit, .titlebar does not match headerbar selector */
-.background.csd > paned.horizontal.titlebar,
-.background.solid-csd > paned.horizontal.titlebar {
-    background-color: transparent;
-    padding: 0px 0px 0px 0px;
-    margin: 0px -2px 0px -2px;
-    border-width: 0px;
-}
-
-/* ie. meld */
-dialog.background.csd > headerbar.titlebar,
-dialog.background.ssd > headerbar.titlebar,
-dialog.background.solid-csd > headerbar.titlebar  {
-	padding:  4px 6px 5px 6px;
+    padding: 3px 6px;
 }
 
 .tiled .titlebar {
@@ -5473,6 +5457,21 @@ headerbar .title {
 headerbar .subtitle {
 	font-size: smaller;
 	padding: 0px 12px;
+}
+
+.horizontal.titlebar headerbar:first-child,
+paned.horizontal.titlebar headerbar:first-child {
+	border-top-right-radius: 0px;
+}
+
+.horizontal.titlebar headerbar:last-child,
+paned.horizontal.titlebar headerbar:last-child {
+	border-top-left-radius: 0px;
+}
+
+paned.horizontal.titlebar > separator,
+.horizontal.titlebar > separator.vertical.tilix-title-separator {
+	background-color: transparent;
 }
 
 /*
