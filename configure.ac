@@ -26,24 +26,8 @@ PKG_CHECK_MODULES(THEME_ENGINE,
  [gtk+-2.0 >= 2.0.0 dnl
   gdk-pixbuf-2.0 >= 2.0.0 ])
 
-GTK_VERSION=`$PKG_CONFIG --variable=gtk_binary_version gtk+-2.0`
-AC_SUBST(GTK_VERSION)
-
-dnl used to substitute in common sections of theme gtkrc files
-gtk_stock_icons_rc=${srcdir}/common/gtk-stock-icons.rc
-panel_stock_icons_rc=${srcdir}/common/panel-stock-icons.rc
-media_stock_icons_rc=${srcdir}/common/media-stock-icons.rc
-capplet_stock_icons_rc=${srcdir}/common/capplet-stock-icons.rc
-marco_stock_icons_rc=${srcdir}/common/marco-stock-icons.rc
-AC_SUBST_FILE(gtk_stock_icons_rc)
-AC_SUBST_FILE(panel_stock_icons_rc)
-AC_SUBST_FILE(media_stock_icons_rc)
-AC_SUBST_FILE(capplet_stock_icons_rc)
-AC_SUBST_FILE(marco_stock_icons_rc)
-
 AC_CONFIG_FILES([
 Makefile
-common/Makefile
 cursor-themes/Makefile
 cursor-themes/mate-white/Makefile
 cursor-themes/mate-white/cursors/Makefile
