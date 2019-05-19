@@ -3,7 +3,6 @@ SUBDIRS = \
 	icon-themes \
 	desktop-themes \
 	cursor-themes \
-	common \
 	po
 
 EXTRA_DIST = \
