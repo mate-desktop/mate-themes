@@ -66,6 +66,8 @@ desktop-themes/BlueMenta/gtk-3.0/window-controls/Makefile
 desktop-themes/BlueMenta/metacity-1/Makefile
 desktop-themes/BlueMenta/unity/Makefile
 desktop-themes/BlueMenta/xfwm4/Makefile
+desktop-themes/BlueMenta-border/Makefile
+desktop-themes/BlueMenta-border/metacity-1/Makefile
 desktop-themes/Blue-Submarine/Makefile
 desktop-themes/Blue-Submarine/cinnamon/Makefile
 desktop-themes/Blue-Submarine/emerald/Makefile
@@ -123,6 +125,8 @@ desktop-themes/Menta/gtk-3.0/window-controls/Makefile
 desktop-themes/Menta/metacity-1/Makefile
 desktop-themes/Menta/unity/Makefile
 desktop-themes/Menta/xfwm4/Makefile
+desktop-themes/Menta-border/Makefile
+desktop-themes/Menta-border/metacity-1/Makefile
 desktop-themes/TraditionalGreen/Makefile
 desktop-themes/TraditionalGreen/gtk-2.0/Makefile
 desktop-themes/TraditionalGreen/gtk-3.0/Makefile
