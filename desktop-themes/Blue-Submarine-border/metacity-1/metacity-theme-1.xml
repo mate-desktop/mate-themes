@@ -2,7 +2,7 @@
 <!-- 	$Id: metacity-theme-1.xml,v 1.4 2003/12/10 13:57:58 jimmac Exp $	 -->
 <metacity_theme>
 <info>
-  <name>Green-Submarine</name>
+  <name>Blue-Submarine-border</name>
   <author>Wolfgang Ulbrich</author>
   <copyright>&#194; 2013</copyright>
   <date>Apil, 2013</date>
@@ -11,9 +11,9 @@
 </info>
  
 <frame_geometry name="normal" rounded_top_left="true" rounded_top_right="true" rounded_bottom_left="false" rounded_bottom_right="false">
-  <distance name="left_width" value="1"/>
-  <distance name="right_width" value="1"/>
-  <distance name="bottom_height" value="1"/>
+  <distance name="left_width" value="4"/>
+  <distance name="right_width" value="4"/>
+  <distance name="bottom_height" value="4"/>
   <distance name="left_titlebar_edge" value="4"/>
   <distance name="right_titlebar_edge" value="4"/>
   <aspect_ratio name="button" value="1"/>
@@ -35,9 +35,9 @@
 </frame_geometry>
 
 <frame_geometry name="border" has_title="false" rounded_top_left="true" rounded_top_right="true"  rounded_bottom_left="false" rounded_bottom_right="false">
-  <distance name="left_width" value="1"/>
-  <distance name="right_width" value="1"/>
-  <distance name="bottom_height" value="1"/>
+  <distance name="left_width" value="4"/>
+  <distance name="right_width" value="4"/>
+  <distance name="bottom_height" value="4"/>
   <distance name="left_titlebar_edge" value="0"/>
   <distance name="right_titlebar_edge" value="0"/>
   <distance name="button_width" value="0"/>
@@ -51,18 +51,18 @@
 <constant name="ButtonIPad" value="3"/>
 
 <draw_ops name="inner_window_border">
-  <gradient type="vertical" x="0" y="top_height-1" width="1" height="height-bottom_height-top_height+2">
+  <gradient type="vertical" x="0" y="top_height-1" width="4" height="height-bottom_height-top_height+2">
     <color value="#303030"/>
     <color value="#303030"/>
     <color value="#303030"/>
   </gradient>
-  <gradient type="vertical" x="width-right_width" y="top_height-1" width="1" height="height-bottom_height-top_height+2">
+  <gradient type="vertical" x="width-right_width" y="top_height-1" width="4" height="height-bottom_height-top_height+2">
     <color value="#303030"/>
     <color value="#303030"/>
     <color value="#303030"/>
   </gradient>
 
-  <gradient type="horizontal" x="0" y="height-bottom_height" width="width" height="1">
+  <gradient type="horizontal" x="0" y="height-bottom_height" width="width" height="4">
     <color value="#303030"/>
     <color value="#303030"/>
     <color value="#303030"/>
@@ -82,8 +82,8 @@
 <!-- horizontal gradient -->
   <gradient type="horizontal" x="1" y="1" width="width - 2" height="title_height + 10">
     <color value="#1C1B19"/>
-    <color value="blend/#72B49D/#343330/.2"/>
-    <color value="blend/#72B49D/#343330/.2"/>
+    <color value="blend/#255880/#343330/.2"/>
+    <color value="blend/#255880/#343330/.2"/>
     <color value="#1C1B19"/>
   </gradient>
 </draw_ops>
@@ -93,15 +93,15 @@
   <!-- horizontal gradient -->
   <gradient type="horizontal" x="0" y="0" width="width" height="title_height + 10">
     <color value="#1C1B19"/>
-    <color value="blend/#72B49D/#343330/.2"/>
-    <color value="blend/#72B49D/#343330/.2"/>
+    <color value="blend/#255880/#343330/.2"/>
+    <color value="blend/#255880/#343330/.2"/>
     <color value="#1C1B19"/>
   </gradient>
 
   <!-- top highlight -->  
     <gradient type="horizontal" x="10" y="0" width="width - 20" height="1">
       <color value="#1C1B19"/>
-      <color value="blend/#72B49D/#ffffff/.6"/>
+      <color value="blend/#255880/#ffffff/.6"/>
       <color value="#1C1B19"/>
     </gradient>
 
@@ -170,7 +170,7 @@
   <!-- top highlight -->  
     <gradient type="horizontal" x="10" y="1" width="width - 20" height="1">
       <color value="#1C1B19"/>
-      <color value="blend/#72B49D/#ffffff/.6"/>
+      <color value="blend/#255880/#ffffff/.6"/>
       <color value="#1C1B19"/>
     </gradient>
 
@@ -194,7 +194,7 @@
 </draw_ops>
 
 <draw_ops name="title_unfocused">
-  <title color="blend/#101010/#CBD9D4/0.5"
+  <title color="blend/#101010/#CBD5D9/0.5"
          x="(3 `max` (width-title_width)) / 2"
          y="(height - title_height) / 2 + 1"/>
 </draw_ops>
@@ -209,7 +209,7 @@
 </draw_ops>
 
 <draw_ops name="title_max_unfocused">
-  <title color="blend/#101010/#CBD9D4/0.5"
+  <title color="blend/#101010/#CBD5D9/0.5"
          x="(3 `max` (width-title_width)) / 2"
          y="(height - title_height) / 2 + 1"/>
 </draw_ops>
@@ -226,34 +226,34 @@
 
 <draw_ops name="button_bg">
 <!-- kinda looks better without
-	<line color="#72B49D" x1="1" y1="0" x2="width-3" y2="0" />
-	<line color="#72B49D" x1="0" y1="1" x2="0" y2="height-3" />
-	<line color="#72B49D" x1="1" y1="height-2" x2="width-3" y2="height-2" />
-	<line color="#72B49D" x1="width-2" y1="1" x2="width-2" y2="height-3" />
+	<line color="#255880" x1="1" y1="0" x2="width-3" y2="0" />
+	<line color="#255880" x1="0" y1="1" x2="0" y2="height-3" />
+	<line color="#255880" x1="1" y1="height-2" x2="width-3" y2="height-2" />
+	<line color="#255880" x1="width-2" y1="1" x2="width-2" y2="height-3" />
 -->
 </draw_ops>
 
 <draw_ops name="button_bg_prelight">
-	<line color="blend/#72B49D/#ffffff/.2" x1="1" y1="0" x2="width-3" y2="0" />
-	<line color="blend/#72B49D/#ffffff/.2" x1="0" y1="1" x2="0" y2="height-3" />
-	<line color="blend/#72B49D/#ffffff/.2" x1="1" y1="height-2" x2="width-3" y2="height-2" />
-	<line color="blend/#72B49D/#ffffff/.2" x1="width-2" y1="1" x2="width-2" y2="height-3" />
+	<line color="blend/#255880/#ffffff/.2" x1="1" y1="0" x2="width-3" y2="0" />
+	<line color="blend/#255880/#ffffff/.2" x1="0" y1="1" x2="0" y2="height-3" />
+	<line color="blend/#255880/#ffffff/.2" x1="1" y1="height-2" x2="width-3" y2="height-2" />
+	<line color="blend/#255880/#ffffff/.2" x1="width-2" y1="1" x2="width-2" y2="height-3" />
 
   <gradient type="vertical" x="1" y="1" width="width - 3" height="height - 3">
-		<color value="blend/#72B49D/#ffffff/.1"/>
-		<color value="blend/#72B49D/#000000/.1"/>
+		<color value="blend/#255880/#ffffff/.1"/>
+		<color value="blend/#255880/#000000/.1"/>
   </gradient>
 </draw_ops>
 
 <draw_ops name="button_bg_pressed">
-	<line color="blend/#72B49D/#ffffff/.1" x1="1" y1="0" x2="width-3" y2="0" />
-	<line color="blend/#72B49D/#ffffff/.1" x1="0" y1="1" x2="0" y2="height-3" />
-	<line color="blend/#72B49D/#ffffff/.1" x1="1" y1="height-2" x2="width-3" y2="height-2" />
-	<line color="blend/#72B49D/#ffffff/.1" x1="width-2" y1="1" x2="width-2" y2="height-3" />
+	<line color="blend/#255880/#ffffff/.1" x1="1" y1="0" x2="width-3" y2="0" />
+	<line color="blend/#255880/#ffffff/.1" x1="0" y1="1" x2="0" y2="height-3" />
+	<line color="blend/#255880/#ffffff/.1" x1="1" y1="height-2" x2="width-3" y2="height-2" />
+	<line color="blend/#255880/#ffffff/.1" x1="width-2" y1="1" x2="width-2" y2="height-3" />
 	
   <gradient type="vertical" x="1" y="1" width="width - 3" height="height - 3">
-		<color value="blend/#72B49D/#000000/.2"/>
-		<color value="blend/#72B49D/#ffffff/.2"/>
+		<color value="blend/#255880/#000000/.2"/>
+		<color value="blend/#255880/#ffffff/.2"/>
   </gradient>
 </draw_ops>
 
@@ -262,26 +262,26 @@
 </draw_ops>
 
 <draw_ops name="button_bg_unfocused_prelight">
-	<line color="blend/#CBD9D4/#000000/0.1" x1="1" y1="0" x2="width-3" y2="0" />
-	<line color="blend/#CBD9D4/#000000/0.1" x1="0" y1="1" x2="0" y2="height-3" />
-	<line color="blend/#CBD9D4/#000000/0.1" x1="1" y1="height-2" x2="width-3" y2="height-2" />
-	<line color="blend/#CBD9D4/#000000/0.1" x1="width-2" y1="1" x2="width-2" y2="height-3" />
+	<line color="blend/#CBD5D9/#000000/0.1" x1="1" y1="0" x2="width-3" y2="0" />
+	<line color="blend/#CBD5D9/#000000/0.1" x1="0" y1="1" x2="0" y2="height-3" />
+	<line color="blend/#CBD5D9/#000000/0.1" x1="1" y1="height-2" x2="width-3" y2="height-2" />
+	<line color="blend/#CBD5D9/#000000/0.1" x1="width-2" y1="1" x2="width-2" y2="height-3" />
 
   <gradient type="vertical" x="1" y="1" width="width - 3" height="height - 3">
-		<color value="blend/#CBD9D4/#ffffff/.5"/>
-		<color value="blend/#CBD9D4/#000000/0.1"/>
+		<color value="blend/#CBD5D9/#ffffff/.5"/>
+		<color value="blend/#CBD5D9/#000000/0.1"/>
   </gradient>
 </draw_ops>
 
 <draw_ops name="button_bg_unfocused_pressed">
-	<line color="blend/#CBD9D4/#000000/0.1" x1="1" y1="0" x2="width-3" y2="0" />
-	<line color="blend/#CBD9D4/#000000/0.1" x1="0" y1="1" x2="0" y2="height-3" />
-	<line color="blend/#CBD9D4/#000000/0.1" x1="1" y1="height-2" x2="width-3" y2="height-2" />
-	<line color="blend/#CBD9D4/#000000/0.1" x1="width-2" y1="1" x2="width-2" y2="height-3" />
+	<line color="blend/#CBD5D9/#000000/0.1" x1="1" y1="0" x2="width-3" y2="0" />
+	<line color="blend/#CBD5D9/#000000/0.1" x1="0" y1="1" x2="0" y2="height-3" />
+	<line color="blend/#CBD5D9/#000000/0.1" x1="1" y1="height-2" x2="width-3" y2="height-2" />
+	<line color="blend/#CBD5D9/#000000/0.1" x1="width-2" y1="1" x2="width-2" y2="height-3" />
 
   <gradient type="vertical" x="1" y="1" width="width - 3" height="height - 3">
-		<color value="blend/#CBD9D4/#000000/0.1"/>
-		<color value="blend/#CBD9D4/#ffffff/.5"/>
+		<color value="blend/#CBD5D9/#000000/0.1"/>
+		<color value="blend/#CBD5D9/#ffffff/.5"/>
   </gradient>
 </draw_ops>
 
@@ -301,7 +301,7 @@
 </draw_ops>
 
 <draw_ops name="close_button_icon_unfocused">
-	<image filename="icon_close_u.png" x="(width-10)/2" y="(height-10)/2" width="10" height="10" colorize="blend/#101010/#CBD9D4/0.5"/>
+	<image filename="icon_close_u.png" x="(width-10)/2" y="(height-10)/2" width="10" height="10" colorize="blend/#101010/#CBD5D9/0.5"/>
 </draw_ops>
 
 <draw_ops name="close_button_normal">
@@ -334,7 +334,7 @@
 </draw_ops>
 
 <draw_ops name="maximize_button_icon_unfocused">	
-	<image filename="icon_maximize_u.png" x="(width-10)/2" y="(height-10)/2" width="10" height="10" colorize="blend/#101010/#CBD9D4/0.5"/>
+	<image filename="icon_maximize_u.png" x="(width-10)/2" y="(height-10)/2" width="10" height="10" colorize="blend/#101010/#CBD5D9/0.5"/>
 </draw_ops>
 
 <draw_ops name="maximize_button_normal">
@@ -366,7 +366,7 @@
 </draw_ops>
 
 <draw_ops name="restore_button_icon_unfocused">
-	<image filename="icon_restore_u.png" x="(width-10)/2" y="(height-10)/2" width="10" height="10" colorize="blend/#101010/#CBD9D4/0.5"/>
+	<image filename="icon_restore_u.png" x="(width-10)/2" y="(height-10)/2" width="10" height="10" colorize="blend/#101010/#CBD5D9/0.5"/>
 </draw_ops>
 
 <draw_ops name="restore_button_normal">
@@ -398,7 +398,7 @@
 </draw_ops>
 
 <draw_ops name="minimize_button_icon_unfocused">
-	<image filename="icon_minimize_u.png" x="(width-10)/2" y="(height-10)/2" width="10" height="10" colorize="blend/#101010/#CBD9D4/0.5"/></draw_ops>
+	<image filename="icon_minimize_u.png" x="(width-10)/2" y="(height-10)/2" width="10" height="10" colorize="blend/#101010/#CBD5D9/0.5"/></draw_ops>
 
 <draw_ops name="minimize_button_normal">
   <include name="button_bg"/>

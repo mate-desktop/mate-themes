@@ -11,9 +11,9 @@
 </info>
  
 <frame_geometry name="normal" rounded_top_left="true" rounded_top_right="true" rounded_bottom_left="false" rounded_bottom_right="false">
-  <distance name="left_width" value="1"/>
-  <distance name="right_width" value="1"/>
-  <distance name="bottom_height" value="1"/>
+  <distance name="left_width" value="4"/>
+  <distance name="right_width" value="4"/>
+  <distance name="bottom_height" value="4"/>
   <distance name="left_titlebar_edge" value="4"/>
   <distance name="right_titlebar_edge" value="4"/>
   <aspect_ratio name="button" value="1"/>
@@ -35,9 +35,9 @@
 </frame_geometry>
 
 <frame_geometry name="border" has_title="false" rounded_top_left="true" rounded_top_right="true"  rounded_bottom_left="false" rounded_bottom_right="false">
-  <distance name="left_width" value="1"/>
-  <distance name="right_width" value="1"/>
-  <distance name="bottom_height" value="1"/>
+  <distance name="left_width" value="4"/>
+  <distance name="right_width" value="4"/>
+  <distance name="bottom_height" value="4"/>
   <distance name="left_titlebar_edge" value="0"/>
   <distance name="right_titlebar_edge" value="0"/>
   <distance name="button_width" value="0"/>
@@ -51,18 +51,18 @@
 <constant name="ButtonIPad" value="3"/>
 
 <draw_ops name="inner_window_border">
-  <gradient type="vertical" x="0" y="top_height-1" width="1" height="height-bottom_height-top_height+2">
+  <gradient type="vertical" x="0" y="top_height-1" width="4" height="height-bottom_height-top_height+2">
     <color value="#303030"/>
     <color value="#303030"/>
     <color value="#303030"/>
   </gradient>
-  <gradient type="vertical" x="width-right_width" y="top_height-1" width="1" height="height-bottom_height-top_height+2">
+  <gradient type="vertical" x="width-right_width" y="top_height-1" width="4" height="height-bottom_height-top_height+2">
     <color value="#303030"/>
     <color value="#303030"/>
     <color value="#303030"/>
   </gradient>
 
-  <gradient type="horizontal" x="0" y="height-bottom_height" width="width" height="1">
+  <gradient type="horizontal" x="0" y="height-bottom_height" width="width" height="4">
     <color value="#303030"/>
     <color value="#303030"/>
     <color value="#303030"/>

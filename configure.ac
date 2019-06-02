@@ -79,6 +79,8 @@ desktop-themes/Blue-Submarine/gtk-2.0/assets/Makefile
 desktop-themes/Blue-Submarine/gtk-3.0/Makefile
 desktop-themes/Blue-Submarine/gtk-3.0/assets/Makefile
 desktop-themes/Blue-Submarine/metacity-1/Makefile
+desktop-themes/Blue-Submarine-border/Makefile
+desktop-themes/Blue-Submarine-border/metacity-1/Makefile
 desktop-themes/ContrastHigh/Makefile
 desktop-themes/GreenLaguna/Makefile
 desktop-themes/GreenLaguna/gtk-2.0/Makefile
@@ -99,6 +101,8 @@ desktop-themes/Green-Submarine/gtk-2.0/assets/Makefile
 desktop-themes/Green-Submarine/gtk-3.0/Makefile
 desktop-themes/Green-Submarine/gtk-3.0/assets/Makefile
 desktop-themes/Green-Submarine/metacity-1/Makefile
+desktop-themes/Green-Submarine-border/Makefile
+desktop-themes/Green-Submarine-border/metacity-1/Makefile
 desktop-themes/HighContrastInverse/Makefile
 desktop-themes/HighContrastInverse/gtk-2.0/Makefile
 desktop-themes/HighContrastInverse/gtk-2.0/gtkrc
