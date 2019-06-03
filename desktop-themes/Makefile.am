@@ -1,5 +1,6 @@
 SUBDIRS = \
 	BlackMATE \
+	BlackMATE-border \
 	BlueMenta \
 	BlueMenta-border \
 	Blue-Submarine \

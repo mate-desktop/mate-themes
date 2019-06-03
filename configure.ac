@@ -45,6 +45,8 @@ desktop-themes/BlackMATE/gtk-3.0/window-controls/Makefile
 desktop-themes/BlackMATE/metacity-1/Makefile
 desktop-themes/BlackMATE/cinnamon/Makefile
 desktop-themes/BlackMATE/unity/Makefile
+desktop-themes/BlackMATE-border/Makefile
+desktop-themes/BlackMATE-border/metacity-1/Makefile
 desktop-themes/BlueMenta/Makefile
 desktop-themes/BlueMenta/cinnamon/Makefile
 desktop-themes/BlueMenta/emerald/Makefile
