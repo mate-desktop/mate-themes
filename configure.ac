@@ -92,6 +92,8 @@ desktop-themes/GreenLaguna/gtk-3.0/assets/Makefile
 desktop-themes/GreenLaguna/gtk-3.0/window-controls/Makefile
 desktop-themes/GreenLaguna/metacity-1/Makefile
 desktop-themes/GreenLaguna/unity/Makefile
+desktop-themes/GreenLaguna-border/Makefile
+desktop-themes/GreenLaguna-border/metacity-1/Makefile
 desktop-themes/Green-Submarine/Makefile
 desktop-themes/Green-Submarine/cinnamon/Makefile
 desktop-themes/Green-Submarine/emerald/Makefile

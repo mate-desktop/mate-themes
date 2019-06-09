@@ -5,7 +5,7 @@
   <author>Wolfgang Ulbrich</author>
   <copyright>none</copyright>
   <date>Feb 2013</date>
-  <description>A clean green theme inspired by the older versions of Clearlook.</description>
+  <description>A clean green theme with huge borders</description>
 </info>
 
 <!--================-->
@@ -13,9 +13,9 @@
 <!--================-->
 
 <frame_geometry name="normal" rounded_top_left="true" rounded_bottom_left="true" rounded_top_right="true" rounded_bottom_right="true">
-  <distance name="left_width" value="1"/>
-  <distance name="right_width" value="1"/>
-  <distance name="bottom_height" value="1"/>
+  <distance name="left_width" value="6"/>
+  <distance name="right_width" value="6"/>
+  <distance name="bottom_height" value="6"/>
   <distance name="left_titlebar_edge" value="4"/>
   <distance name="right_titlebar_edge" value="4"/>
   <distance name="button_width" value="20"/>
@@ -46,9 +46,9 @@
 <frame_geometry name="utility" title_scale="small" parent="normal"/>
 
 <frame_geometry name="border" has_title="false" rounded_top_left="false" rounded_top_right="false"  rounded_bottom_left="false" rounded_bottom_right="false">
-  <distance name="left_width" value="1"/>
-  <distance name="right_width" value="1"/>
-  <distance name="bottom_height" value="1"/>
+  <distance name="left_width" value="6"/>
+  <distance name="right_width" value="6"/>
+  <distance name="bottom_height" value="6"/>
   <distance name="left_titlebar_edge" value="0"/>
   <distance name="right_titlebar_edge" value="0"/>
   <distance name="button_width" value="0"/>
