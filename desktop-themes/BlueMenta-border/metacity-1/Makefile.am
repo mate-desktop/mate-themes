@@ -1,4 +1,4 @@
-themedir = $(datadir)/themes/BlueMenta/metacity-1
+themedir = $(datadir)/themes/BlueMenta-border/metacity-1
 
 theme_DATA = \
 	close_focused_normal.svg \
