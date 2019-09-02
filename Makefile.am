@@ -1,17 +1,16 @@
 SUBDIRS = \
+	po	\
 	marco-themes \
 	icon-themes \
 	desktop-themes \
-	cursor-themes \
-	po
+	cursor-themes
+
+ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
 EXTRA_DIST = \
-	autogen.sh \
-	intltool-extract.in \
-	intltool-merge.in \
-	intltool-update.in
+	autogen.sh
 
-DISTCLEANFILES=intltool-extract intltool-merge intltool-update
+DISTCLEANFILES=
 
 # Build ChangeLog from GIT  history
 ChangeLog:

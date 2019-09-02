@@ -10,13 +10,9 @@ AM_INIT_AUTOMAKE([1.9 tar-ustar dist-xz no-dist-gzip check-news])
 # configure or passing V=1 to make
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 
-IT_PROG_INTLTOOL([0.35.0])
 PKG_PROG_PKG_CONFIG([0.19])
-
-AM_GLIB_GNU_GETTEXT
-GETTEXT_PACKAGE=AC_PACKAGE_NAME
-AC_SUBST(GETTEXT_PACKAGE)
-AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Gettext package.])
+AM_GNU_GETTEXT_VERSION([0.19.8])
+AM_GNU_GETTEXT([external])
 
 # Workaround to make aclocal get the right flags
 AC_SUBST(ACLOCAL_AMFLAGS, "\${ACLOCAL_FLAGS}")
