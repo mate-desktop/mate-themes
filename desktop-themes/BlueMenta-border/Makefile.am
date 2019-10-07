@@ -1,11 +1,9 @@
 THEME_NAME=BlueMenta-border
-THEME_IN_FILES=index.theme.in
 
 themedir = $(datadir)/themes/$(THEME_NAME)
 
 theme_DATA = \
 	COPYING \
-	index.theme \
 	README
 
 %.theme: %.theme.in
@@ -14,5 +12,3 @@ theme_DATA = \
 SUBDIRS =		\
 	metacity-1
 
-DISTCLEANFILES = index.theme
-EXTRA_DIST = index.theme.in
