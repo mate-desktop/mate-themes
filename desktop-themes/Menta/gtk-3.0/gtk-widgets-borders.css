@@ -79,6 +79,7 @@ toolbar.inline-toolbar.vertical button.default:checked {
 button,
 button.default:backdrop,
 button.suggested-action:backdrop,
+button.destructive-action:backdrop,
 combobox button.combo {
     border-image: url("borders/button.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
     border-radius: 4px;

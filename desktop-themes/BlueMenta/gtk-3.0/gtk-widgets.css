@@ -4270,6 +4270,11 @@ button.suggested-action label:disabled {
 	text-shadow: none;
 }
 
+button.suggested-action label,
+button.destructive-action label {
+   transition: all 50ms ease-out;
+}
+
 /******************************
  * Destructive action buttons *
  ******************************/
@@ -4298,14 +4303,21 @@ button.destructive-action:checked {
 }
 
 button.destructive-action {
-	text-shadow: 0 1px @destructive_action_button_shadow;
 	-gtk-icon-shadow: 0 1px @destructive_action_button_shadow;
 }
 
 button.destructive-action:hover:active,
 button.destructive-action:checked {
-	text-shadow: 0 1px shade(@destructive_action_button_shadow, 1.15);
 	-gtk-icon-shadow: 0 1px shade(@destructive_action_button_shadow, 1.15);
+}
+
+button.destructive-action:backdrop {
+    background-image: linear-gradient(to bottom, 
+                                      @button_gradient_backdrop_color_a,
+                                      @button_gradient_backdrop_color_b);
+    background-color: transparent;
+    color: @theme_unfocused_fg_color;
+    text-shadow: none;
 }
 
 /**************************
@@ -4704,7 +4716,8 @@ treeview.view:hover {
 }
 
 iconview,
-textview text {
+textview text,
+textview selection {
     transition: all 400ms ease-out;
 }
 
@@ -4740,9 +4753,8 @@ label selection:disabled {
 	color: @insensitive_fg_color;
 }
 
-label,
-textview selection {
-    transition: all 400ms ease-out;
+label {
+    transition: all 300ms ease-out;
 }
 
 label:backdrop,
