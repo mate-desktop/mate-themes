@@ -129,8 +129,13 @@ PanelToplevel > grid > button {
     border-radius: 0px;
 }
 
-#PanelApplet {
+#PanelApplet,
+#PanelApplet scrolledwindow {
     border-width: 0;
+}
+
+#PanelApplet scrolledwindow > viewport.frame {
+    background-color: transparent;
 }
 
 PanelSeparator {
