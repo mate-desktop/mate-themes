@@ -667,7 +667,8 @@ na-tray-applet {
     border-width: 1px;
 }
 
-/* globalmenu (vala-panel-appmenu) */
+/* mate-dock-applet, globalmenu (vala-panel-appmenu) */
+#PanelApplet > scrolledwindow > viewport.frame,
 #PanelApplet > .-vala-panel-appmenu-core > scrolledwindow > viewport.frame {
     background-color: transparent;
 }
