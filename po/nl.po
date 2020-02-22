@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR MATE Desktop Environment team
+# This file is distributed under the same license as the mate-themes package.
 # 
 # Translators:
 # Henrik Goijer <henrikgoijer@home.nl>, 2004
 # Kees Lijkendijk <clkndk@gmail.com>, 2016
 # Michael Steenbeek <m.o.steenbeek@gmail.com>, 2012
-# Pjotr <pjotrvertaalt@gmail.com>, 2017-2018
+# Pjotr <pjotrvertaalt@gmail.com>, 2017-2019
 # Reinout van Schouwen <reinout@cs.vu.nl>, 2003
 # Robbie Deighton <deightonrobbie@gmail.com>, 2016
 # Tino Meinen <a.t.meinen@chello.nl>, 2004, 2006
@@ -14,9 +14,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-03 13:36+0200\n"
-"PO-Revision-Date: 2018-06-10 22:26+0000\n"
+"Report-Msgid-Bugs-To: https://mate-desktop.org\n"
+"POT-Creation-Date: 2019-11-20 18:49+0100\n"
+"PO-Revision-Date: 2019-11-20 11:58+0000\n"
 "Last-Translator: Pjotr <pjotrvertaalt@gmail.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/mate/MATE/language/nl/)\n"
 "MIME-Version: 1.0\n"
@@ -25,50 +25,86 @@ msgstr ""
 "Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../cursor-themes/mate-black/index.theme.in.h:1
+#: cursor-themes/mate-black/index.theme.in:3
 msgid "MATE (Black)"
 msgstr "MATE (Zwart)"
 
-#: ../desktop-themes/BlackMATE/index.theme.in.h:1
+#: desktop-themes/BlackMATE/index.theme.in:4
+msgid "BlackMATE"
+msgstr "ZwartMATE"
+
+#: desktop-themes/BlackMATE/index.theme.in:5
 msgid "A clean dark theme"
 msgstr "Een strak donker thema"
 
-#: ../desktop-themes/BlueMenta/index.theme.in.h:1
+#: desktop-themes/BlueMenta/index.theme.in:4
+msgid "BlueMenta"
+msgstr "BlauwMint"
+
+#: desktop-themes/BlueMenta/index.theme.in:5
 msgid "A clean light theme with blue elements"
 msgstr "Een strak licht thema met blauwe elementen"
 
-#: ../desktop-themes/Blue-Submarine/index.theme.in.h:1
+#: desktop-themes/Blue-Submarine/index.theme.in:4
+msgid "Blue-Submarine"
+msgstr "Blauw-Onderzeeër"
+
+#: desktop-themes/Blue-Submarine/index.theme.in:5
 msgid "A medium blue theme with dark menus and panel"
 msgstr "Een middelblauw thema met donkere menu's en paneel"
 
-#: ../desktop-themes/ContrastHigh/index.theme.in.h:1
+#: desktop-themes/ContrastHigh/index.theme.in:4
+msgid "High Contrast"
+msgstr "Hoog contrast"
+
+#: desktop-themes/ContrastHigh/index.theme.in:5
 msgid "High contrast theme"
 msgstr "Hoog-contrast-thema"
 
-#: ../desktop-themes/HighContrastInverse/index.theme.in.h:1
+#: desktop-themes/HighContrastInverse/index.theme.in:4
 msgid "High Contrast Inverse"
 msgstr "Hoog contrast negatief"
 
-#: ../desktop-themes/HighContrastInverse/index.theme.in.h:2
+#: desktop-themes/HighContrastInverse/index.theme.in:5
 msgid "White-on-black text and icons"
 msgstr "Wit-op-zwart tekst en pictogrammen"
 
-#: ../desktop-themes/GreenLaguna/index.theme.in.h:1
+#: desktop-themes/GreenLaguna/index.theme.in:4
+msgid "GreenLaguna"
+msgstr "GroenLaguna"
+
+#: desktop-themes/GreenLaguna/index.theme.in:5
 msgid "A clean light green theme"
 msgstr "Een strak lichtgroen thema"
 
-#: ../desktop-themes/Green-Submarine/index.theme.in.h:1
+#: desktop-themes/Green-Submarine/index.theme.in:4
+msgid "Green-Submarine"
+msgstr "Groen-Onderzeeër"
+
+#: desktop-themes/Green-Submarine/index.theme.in:5
 msgid "A medium green theme with dark menus and panel"
 msgstr "Een middelgroen thema met donkere menu's en paneel"
 
-#: ../desktop-themes/Menta/index.theme.in.h:1
+#: desktop-themes/Menta/index.theme.in:4
+msgid "Menta"
+msgstr "Menta"
+
+#: desktop-themes/Menta/index.theme.in:5
 msgid "A clean light theme with green elements"
 msgstr "Een strak licht thema met groene elementen"
 
-#: ../desktop-themes/TraditionalGreen/index.theme.in.h:1
+#: desktop-themes/TraditionalGreen/index.theme.in:4
+msgid "TraditionalGreen"
+msgstr "TraditioneelGroen"
+
+#: desktop-themes/TraditionalGreen/index.theme.in:5
 msgid "Green port of Clearlooks-Phenix"
 msgstr "Groene editie van Clearlooks-Phenix"
 
-#: ../desktop-themes/TraditionalOk/index.theme.in.h:1
+#: desktop-themes/TraditionalOk/index.theme.in:4
+msgid "TraditionalOk"
+msgstr "TraditionalOk"
+
+#: desktop-themes/TraditionalOk/index.theme.in:5
 msgid "Port of Clearlooks-Phenix"
 msgstr "Editie van Clearlooks-Phenix"

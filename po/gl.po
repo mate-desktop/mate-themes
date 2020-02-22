@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR MATE Desktop Environment team
+# This file is distributed under the same license as the mate-themes package.
 # 
 # Translators:
 # André Rivero Castillo <hab130@gmail.com>, 2016
@@ -9,13 +9,13 @@
 # Ignacio Casal Quinteiro <nacho.resa@gmail.com>, 2005, 2006
 # Mancomún - Centro de Referencia e Servizos de Software Libre <g11n@mancomun.org>, 2009
 # Miguel Anxo Bouzada <mbouzada@gmail.com>, 2013
-# Miguel Anxo Bouzada <mbouzada@gmail.com>, 2018
+# Miguel Anxo Bouzada <mbouzada@gmail.com>, 2018-2019
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-03 13:36+0200\n"
-"PO-Revision-Date: 2019-01-09 17:39+0000\n"
+"Report-Msgid-Bugs-To: https://mate-desktop.org\n"
+"POT-Creation-Date: 2019-11-20 18:49+0100\n"
+"PO-Revision-Date: 2019-11-09 18:49+0000\n"
 "Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
 "Language-Team: Galician (http://www.transifex.com/mate/MATE/language/gl/)\n"
 "MIME-Version: 1.0\n"
@@ -24,50 +24,86 @@ msgstr ""
 "Language: gl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../cursor-themes/mate-black/index.theme.in.h:1
+#: cursor-themes/mate-black/index.theme.in:3
 msgid "MATE (Black)"
 msgstr "MATE (negro)"
 
-#: ../desktop-themes/BlackMATE/index.theme.in.h:1
+#: desktop-themes/BlackMATE/index.theme.in:4
+msgid "BlackMATE"
+msgstr "NegroMATE"
+
+#: desktop-themes/BlackMATE/index.theme.in:5
 msgid "A clean dark theme"
 msgstr "Un tema limpo e escuro"
 
-#: ../desktop-themes/BlueMenta/index.theme.in.h:1
+#: desktop-themes/BlueMenta/index.theme.in:4
+msgid "BlueMenta"
+msgstr "AzulMenta"
+
+#: desktop-themes/BlueMenta/index.theme.in:5
 msgid "A clean light theme with blue elements"
 msgstr "Un tema limpo e claro con elementos azuis"
 
-#: ../desktop-themes/Blue-Submarine/index.theme.in.h:1
+#: desktop-themes/Blue-Submarine/index.theme.in:4
+msgid "Blue-Submarine"
+msgstr "Azul-Submarino"
+
+#: desktop-themes/Blue-Submarine/index.theme.in:5
 msgid "A medium blue theme with dark menus and panel"
 msgstr "Un tema azul medio con menús e panel escuros"
 
-#: ../desktop-themes/ContrastHigh/index.theme.in.h:1
+#: desktop-themes/ContrastHigh/index.theme.in:4
+msgid "High Contrast"
+msgstr "Alto contraste"
+
+#: desktop-themes/ContrastHigh/index.theme.in:5
 msgid "High contrast theme"
 msgstr "Tema de alto contraste"
 
-#: ../desktop-themes/HighContrastInverse/index.theme.in.h:1
+#: desktop-themes/HighContrastInverse/index.theme.in:4
 msgid "High Contrast Inverse"
 msgstr "Alto contraste invertido"
 
-#: ../desktop-themes/HighContrastInverse/index.theme.in.h:2
+#: desktop-themes/HighContrastInverse/index.theme.in:5
 msgid "White-on-black text and icons"
 msgstr "Texto e iconas en branco sobre negro"
 
-#: ../desktop-themes/GreenLaguna/index.theme.in.h:1
+#: desktop-themes/GreenLaguna/index.theme.in:4
+msgid "GreenLaguna"
+msgstr "VerdeLaguna"
+
+#: desktop-themes/GreenLaguna/index.theme.in:5
 msgid "A clean light green theme"
 msgstr "Tema limpo en verde claro"
 
-#: ../desktop-themes/Green-Submarine/index.theme.in.h:1
+#: desktop-themes/Green-Submarine/index.theme.in:4
+msgid "Green-Submarine"
+msgstr "Verde-Submarino"
+
+#: desktop-themes/Green-Submarine/index.theme.in:5
 msgid "A medium green theme with dark menus and panel"
 msgstr "Un tema verde medio con menús e panel escuros"
 
-#: ../desktop-themes/Menta/index.theme.in.h:1
+#: desktop-themes/Menta/index.theme.in:4
+msgid "Menta"
+msgstr "Menta"
+
+#: desktop-themes/Menta/index.theme.in:5
 msgid "A clean light theme with green elements"
 msgstr "Un tema limpo e claro con elementos verdes"
 
-#: ../desktop-themes/TraditionalGreen/index.theme.in.h:1
+#: desktop-themes/TraditionalGreen/index.theme.in:4
+msgid "TraditionalGreen"
+msgstr "VerdeTradicional"
+
+#: desktop-themes/TraditionalGreen/index.theme.in:5
 msgid "Green port of Clearlooks-Phenix"
 msgstr "Versión verde de Clearlooks-Phenix"
 
-#: ../desktop-themes/TraditionalOk/index.theme.in.h:1
+#: desktop-themes/TraditionalOk/index.theme.in:4
+msgid "TraditionalOk"
+msgstr "Conforme tradicional"
+
+#: desktop-themes/TraditionalOk/index.theme.in:5
 msgid "Port of Clearlooks-Phenix"
 msgstr "Versión de Clearlooks-Phenix"

@@ -1,12 +1,13 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR MATE Desktop Environment team
+# This file is distributed under the same license as the mate-themes package.
 # 
 # Translators:
 # Artur Flinta <aflinta@gmail.com>, 2006
 # Darek Witkowski, 2016
 # Marcin Kralka <marcink96@gmail.com>, 2013
-# Piotr Kowalik <pietrasagh@gmail.com>, 2018
+# Merberos Knightmare <merberos.knightmare@gmail.com>, 2019
+# pietrasagh <pietrasagh@gmail.com>, 2018
 # Piotr Drąg <piotrdrag@gmail.com>, 2017
 # Piotr Strębski <strebski@gmail.com>, 2016
 # Przemek P <ppjg@dami.pl>, 2017
@@ -15,10 +16,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-03 13:36+0200\n"
-"PO-Revision-Date: 2018-09-07 21:02+0000\n"
-"Last-Translator: Piotr Kowalik <pietrasagh@gmail.com>\n"
+"Report-Msgid-Bugs-To: https://mate-desktop.org\n"
+"POT-Creation-Date: 2019-11-20 18:49+0100\n"
+"PO-Revision-Date: 2019-11-18 19:29+0000\n"
+"Last-Translator: Merberos Knightmare <merberos.knightmare@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/mate/MATE/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,50 +27,86 @@ msgstr ""
 "Language: pl\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
-#: ../cursor-themes/mate-black/index.theme.in.h:1
+#: cursor-themes/mate-black/index.theme.in:3
 msgid "MATE (Black)"
 msgstr "MATE (Czarny)"
 
-#: ../desktop-themes/BlackMATE/index.theme.in.h:1
+#: desktop-themes/BlackMATE/index.theme.in:4
+msgid "BlackMATE"
+msgstr "BlackMATE"
+
+#: desktop-themes/BlackMATE/index.theme.in:5
 msgid "A clean dark theme"
 msgstr "Czysty ciemny motyw"
 
-#: ../desktop-themes/BlueMenta/index.theme.in.h:1
+#: desktop-themes/BlueMenta/index.theme.in:4
+msgid "BlueMenta"
+msgstr ""
+
+#: desktop-themes/BlueMenta/index.theme.in:5
 msgid "A clean light theme with blue elements"
 msgstr "Czysty lekki motyw z niebieskimi elementami"
 
-#: ../desktop-themes/Blue-Submarine/index.theme.in.h:1
+#: desktop-themes/Blue-Submarine/index.theme.in:4
+msgid "Blue-Submarine"
+msgstr ""
+
+#: desktop-themes/Blue-Submarine/index.theme.in:5
 msgid "A medium blue theme with dark menus and panel"
 msgstr "Stonowany niebieski motyw z ciemnym menu i panelem"
 
-#: ../desktop-themes/ContrastHigh/index.theme.in.h:1
+#: desktop-themes/ContrastHigh/index.theme.in:4
+msgid "High Contrast"
+msgstr "Wysoki kontrast"
+
+#: desktop-themes/ContrastHigh/index.theme.in:5
 msgid "High contrast theme"
 msgstr "Motyw o wysokim kontraście"
 
-#: ../desktop-themes/HighContrastInverse/index.theme.in.h:1
+#: desktop-themes/HighContrastInverse/index.theme.in:4
 msgid "High Contrast Inverse"
 msgstr "Odwrócony wysoki kontrast"
 
-#: ../desktop-themes/HighContrastInverse/index.theme.in.h:2
+#: desktop-themes/HighContrastInverse/index.theme.in:5
 msgid "White-on-black text and icons"
 msgstr "Biały tekst i ikony na czarnym tle"
 
-#: ../desktop-themes/GreenLaguna/index.theme.in.h:1
+#: desktop-themes/GreenLaguna/index.theme.in:4
+msgid "GreenLaguna"
+msgstr ""
+
+#: desktop-themes/GreenLaguna/index.theme.in:5
 msgid "A clean light green theme"
 msgstr "Czysty lekki zielony motyw"
 
-#: ../desktop-themes/Green-Submarine/index.theme.in.h:1
+#: desktop-themes/Green-Submarine/index.theme.in:4
+msgid "Green-Submarine"
+msgstr ""
+
+#: desktop-themes/Green-Submarine/index.theme.in:5
 msgid "A medium green theme with dark menus and panel"
 msgstr "Stonowany zielony motyw z ciemnym menu i panelem"
 
-#: ../desktop-themes/Menta/index.theme.in.h:1
+#: desktop-themes/Menta/index.theme.in:4
+msgid "Menta"
+msgstr ""
+
+#: desktop-themes/Menta/index.theme.in:5
 msgid "A clean light theme with green elements"
 msgstr "Czysty lekki motyw z zielonymi elementami"
 
-#: ../desktop-themes/TraditionalGreen/index.theme.in.h:1
+#: desktop-themes/TraditionalGreen/index.theme.in:4
+msgid "TraditionalGreen"
+msgstr ""
+
+#: desktop-themes/TraditionalGreen/index.theme.in:5
 msgid "Green port of Clearlooks-Phenix"
 msgstr "Zielony port motywu Clearlooks-Phenix"
 
-#: ../desktop-themes/TraditionalOk/index.theme.in.h:1
+#: desktop-themes/TraditionalOk/index.theme.in:4
+msgid "TraditionalOk"
+msgstr "TraditionalOk"
+
+#: desktop-themes/TraditionalOk/index.theme.in:5
 msgid "Port of Clearlooks-Phenix"
 msgstr "Port motywu Clearlooks-Phenix"

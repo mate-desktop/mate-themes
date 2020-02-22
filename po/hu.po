@@ -1,10 +1,10 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR MATE Desktop Environment team
+# This file is distributed under the same license as the mate-themes package.
 # 
 # Translators:
 # Andras Timar <timar@mate.hu>, 2003
-# Balázs Meskó <meskobalazs@gmail.com>, 2018
+# Balázs Meskó <meskobalazs@gmail.com>, 2018,2020
 # Falu <info@falu.me>, 2017
 # Gabor Kelemen <kelemeng@mate.hu>, 2004, 2005, 2006, 2007, 2008, 2009
 # Rezső Páder <rezso@rezso.net>, 2013,2016
@@ -12,9 +12,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-03 13:36+0200\n"
-"PO-Revision-Date: 2018-09-23 13:17+0000\n"
+"Report-Msgid-Bugs-To: https://mate-desktop.org\n"
+"POT-Creation-Date: 2019-11-20 18:49+0100\n"
+"PO-Revision-Date: 2020-02-18 12:14+0000\n"
 "Last-Translator: Balázs Meskó <meskobalazs@gmail.com>\n"
 "Language-Team: Hungarian (http://www.transifex.com/mate/MATE/language/hu/)\n"
 "MIME-Version: 1.0\n"
@@ -23,50 +23,86 @@ msgstr ""
 "Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../cursor-themes/mate-black/index.theme.in.h:1
+#: cursor-themes/mate-black/index.theme.in:3
 msgid "MATE (Black)"
 msgstr "MATE (Fekete)"
 
-#: ../desktop-themes/BlackMATE/index.theme.in.h:1
+#: desktop-themes/BlackMATE/index.theme.in:4
+msgid "BlackMATE"
+msgstr "BlackMATE"
+
+#: desktop-themes/BlackMATE/index.theme.in:5
 msgid "A clean dark theme"
 msgstr "Egy tiszta sötét téma"
 
-#: ../desktop-themes/BlueMenta/index.theme.in.h:1
+#: desktop-themes/BlueMenta/index.theme.in:4
+msgid "BlueMenta"
+msgstr "Kék menta"
+
+#: desktop-themes/BlueMenta/index.theme.in:5
 msgid "A clean light theme with blue elements"
 msgstr "Egy tiszta világos téma, kék elemekkel"
 
-#: ../desktop-themes/Blue-Submarine/index.theme.in.h:1
+#: desktop-themes/Blue-Submarine/index.theme.in:4
+msgid "Blue-Submarine"
+msgstr "Kék tengeralattjáró"
+
+#: desktop-themes/Blue-Submarine/index.theme.in:5
 msgid "A medium blue theme with dark menus and panel"
 msgstr "Egy középkék téma sötét színű menüvel és panellel"
 
-#: ../desktop-themes/ContrastHigh/index.theme.in.h:1
+#: desktop-themes/ContrastHigh/index.theme.in:4
+msgid "High Contrast"
+msgstr "Nagy kontraszt"
+
+#: desktop-themes/ContrastHigh/index.theme.in:5
 msgid "High contrast theme"
 msgstr "Nagy kontrasztú téma"
 
-#: ../desktop-themes/HighContrastInverse/index.theme.in.h:1
+#: desktop-themes/HighContrastInverse/index.theme.in:4
 msgid "High Contrast Inverse"
 msgstr "Nagy kontraszt és inverz"
 
-#: ../desktop-themes/HighContrastInverse/index.theme.in.h:2
+#: desktop-themes/HighContrastInverse/index.theme.in:5
 msgid "White-on-black text and icons"
 msgstr "Fekete alapon fehér szöveg és ikonok"
 
-#: ../desktop-themes/GreenLaguna/index.theme.in.h:1
+#: desktop-themes/GreenLaguna/index.theme.in:4
+msgid "GreenLaguna"
+msgstr "Zöld lagúna"
+
+#: desktop-themes/GreenLaguna/index.theme.in:5
 msgid "A clean light green theme"
 msgstr "Egy tiszta világoszöld téma"
 
-#: ../desktop-themes/Green-Submarine/index.theme.in.h:1
+#: desktop-themes/Green-Submarine/index.theme.in:4
+msgid "Green-Submarine"
+msgstr "Zöld tengeralattjáró"
+
+#: desktop-themes/Green-Submarine/index.theme.in:5
 msgid "A medium green theme with dark menus and panel"
 msgstr "Egy középzöld téma sötét színű menüvel és panellel"
 
-#: ../desktop-themes/Menta/index.theme.in.h:1
+#: desktop-themes/Menta/index.theme.in:4
+msgid "Menta"
+msgstr "Menta"
+
+#: desktop-themes/Menta/index.theme.in:5
 msgid "A clean light theme with green elements"
 msgstr "Egy tiszta világos téma, zöld elemekkel"
 
-#: ../desktop-themes/TraditionalGreen/index.theme.in.h:1
+#: desktop-themes/TraditionalGreen/index.theme.in:4
+msgid "TraditionalGreen"
+msgstr "Hagyományos zöld"
+
+#: desktop-themes/TraditionalGreen/index.theme.in:5
 msgid "Green port of Clearlooks-Phenix"
 msgstr "A Clearlooks-Phenix asztaltéma zöld színű változata"
 
-#: ../desktop-themes/TraditionalOk/index.theme.in.h:1
+#: desktop-themes/TraditionalOk/index.theme.in:4
+msgid "TraditionalOk"
+msgstr "TraditionalOk"
+
+#: desktop-themes/TraditionalOk/index.theme.in:5
 msgid "Port of Clearlooks-Phenix"
 msgstr "A Clearlooks-Phenix asztaltéma egyik változata"

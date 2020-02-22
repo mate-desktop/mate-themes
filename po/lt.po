@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR MATE Desktop Environment team
+# This file is distributed under the same license as the mate-themes package.
 # 
 # Translators:
 # Džiugas Grėbliūnas <dziugas.grebliunas@gmail.com>, 2014,2017
@@ -11,10 +11,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-03 13:36+0200\n"
-"PO-Revision-Date: 2018-06-03 13:30+0000\n"
-"Last-Translator: Moo\n"
+"Report-Msgid-Bugs-To: https://mate-desktop.org\n"
+"POT-Creation-Date: 2019-11-20 18:49+0100\n"
+"PO-Revision-Date: 2019-11-06 20:08+0000\n"
+"Last-Translator: Džiugas Grėbliūnas <dziugas.grebliunas@gmail.com>\n"
 "Language-Team: Lithuanian (http://www.transifex.com/mate/MATE/language/lt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,50 +22,86 @@ msgstr ""
 "Language: lt\n"
 "Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < 11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? 1 : n % 1 != 0 ? 2: 3);\n"
 
-#: ../cursor-themes/mate-black/index.theme.in.h:1
+#: cursor-themes/mate-black/index.theme.in:3
 msgid "MATE (Black)"
 msgstr "MATE (Juoda)"
 
-#: ../desktop-themes/BlackMATE/index.theme.in.h:1
+#: desktop-themes/BlackMATE/index.theme.in:4
+msgid "BlackMATE"
+msgstr ""
+
+#: desktop-themes/BlackMATE/index.theme.in:5
 msgid "A clean dark theme"
 msgstr "Tvarkinga tamsi tema"
 
-#: ../desktop-themes/BlueMenta/index.theme.in.h:1
+#: desktop-themes/BlueMenta/index.theme.in:4
+msgid "BlueMenta"
+msgstr ""
+
+#: desktop-themes/BlueMenta/index.theme.in:5
 msgid "A clean light theme with blue elements"
 msgstr "Tvarkinga šviesi tema su mėlynos spalvos elementais"
 
-#: ../desktop-themes/Blue-Submarine/index.theme.in.h:1
+#: desktop-themes/Blue-Submarine/index.theme.in:4
+msgid "Blue-Submarine"
+msgstr ""
+
+#: desktop-themes/Blue-Submarine/index.theme.in:5
 msgid "A medium blue theme with dark menus and panel"
 msgstr "Saikingai mėlyna tema su tamsiais meniu ir skydeliu"
 
-#: ../desktop-themes/ContrastHigh/index.theme.in.h:1
+#: desktop-themes/ContrastHigh/index.theme.in:4
+msgid "High Contrast"
+msgstr "Kontrastinga"
+
+#: desktop-themes/ContrastHigh/index.theme.in:5
 msgid "High contrast theme"
 msgstr "Kontrastinga tema"
 
-#: ../desktop-themes/HighContrastInverse/index.theme.in.h:1
+#: desktop-themes/HighContrastInverse/index.theme.in:4
 msgid "High Contrast Inverse"
 msgstr "Kontrastinga ir inversinė"
 
-#: ../desktop-themes/HighContrastInverse/index.theme.in.h:2
+#: desktop-themes/HighContrastInverse/index.theme.in:5
 msgid "White-on-black text and icons"
 msgstr "Baltas tekstas ir piktogramos juodame fone"
 
-#: ../desktop-themes/GreenLaguna/index.theme.in.h:1
+#: desktop-themes/GreenLaguna/index.theme.in:4
+msgid "GreenLaguna"
+msgstr ""
+
+#: desktop-themes/GreenLaguna/index.theme.in:5
 msgid "A clean light green theme"
 msgstr "Tvarkinga šviesiai žalia tema"
 
-#: ../desktop-themes/Green-Submarine/index.theme.in.h:1
+#: desktop-themes/Green-Submarine/index.theme.in:4
+msgid "Green-Submarine"
+msgstr ""
+
+#: desktop-themes/Green-Submarine/index.theme.in:5
 msgid "A medium green theme with dark menus and panel"
 msgstr "Saikingai žalia tema su tamsiais meniu ir skydeliu"
 
-#: ../desktop-themes/Menta/index.theme.in.h:1
+#: desktop-themes/Menta/index.theme.in:4
+msgid "Menta"
+msgstr ""
+
+#: desktop-themes/Menta/index.theme.in:5
 msgid "A clean light theme with green elements"
 msgstr "Tvarkinga šviesi tema su žalios temos elementais"
 
-#: ../desktop-themes/TraditionalGreen/index.theme.in.h:1
+#: desktop-themes/TraditionalGreen/index.theme.in:4
+msgid "TraditionalGreen"
+msgstr ""
+
+#: desktop-themes/TraditionalGreen/index.theme.in:5
 msgid "Green port of Clearlooks-Phenix"
 msgstr "Clearlooks-Phenix perkelta į žalią"
 
-#: ../desktop-themes/TraditionalOk/index.theme.in.h:1
+#: desktop-themes/TraditionalOk/index.theme.in:4
+msgid "TraditionalOk"
+msgstr "Įprasta „Ok“"
+
+#: desktop-themes/TraditionalOk/index.theme.in:5
 msgid "Port of Clearlooks-Phenix"
 msgstr "Perkelta Clearlooks-Phenix"
