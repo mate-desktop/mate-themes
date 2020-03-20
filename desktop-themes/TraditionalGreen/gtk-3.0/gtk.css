@@ -485,6 +485,26 @@
 @define-color trough_gradient_a shade(@core_color_b, 0.81);
 @define-color trough_gradient_b shade(@core_color_b, 0.90);
 
+/****************************
+ * suggested action button  *
+ ****************************/
+
+@define-color suggested_action_button_a shade(@theme_selected_bg_color, 0.96);
+@define-color suggested_action_button_b shade(@theme_selected_bg_color, 0.89);
+@define-color suggested_action_button_border shade(@theme_selected_bg_color, 0.82);
+@define-color suggested_action_button_fg @theme_base_color;
+@define-color suggested_action_button_shadow shade(@suggested_action_button_border, 1.15);
+
+/******************************
+ * destructive action button  *
+ ******************************/
+
+@define-color destructive_action_button_a #e03d3d;
+@define-color destructive_action_button_b #ef2929;
+@define-color destructive_action_button_border #9d4242;
+@define-color destructive_action_button_fg #ffffff;
+@define-color destructive_action_button_shadow shade(@destructive_action_button_border, 1.15);
+
 /************************
  * overshoot/undershoot *
  ************************/
