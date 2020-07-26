@@ -165,11 +165,6 @@
     color: @theme_unfocused_fg_color;
 }
 
-/* treeview rows */
-.caja-side-pane treeview.view {
-    padding: 2px 0px;
-}
-
 /* to avoid overlap with eject buttons */
 .caja-side-pane scrolledwindow scrollbar.vertical.left.overlay-indicator,
 .caja-side-pane scrolledwindow scrollbar.vertical.left.overlay-indicator trough,
