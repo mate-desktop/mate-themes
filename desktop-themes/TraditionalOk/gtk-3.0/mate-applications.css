@@ -12,16 +12,6 @@
     color: @theme_fg_color;
 }
 
-/* move whole the frame, to free eject button for overlay scrollbars */
-.caja-side-pane scrolledwindow.frame {
-    padding: 0px;
-    margin: 0px 0px 0px -8px;
-}
-
-.caja-side-pane scrolledwindow.frame treeview.view {
-    padding: 3px 0px 3px 0px;
-}
-
 /* better for overlay scrollbars */
 /* to avoid overlap with eject buttons */
 .caja-side-pane scrolledwindow scrollbar.vertical.right.overlay-indicator,
