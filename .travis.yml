@@ -22,7 +22,7 @@ script:
 
 notifications:
   irc:
-    if: branch = "gtk3.22" AND
+    if: (tag OR branch = "gtk3.22") AND
         repo = "mate-desktop/mate-themes"
     channels:
       - "irc.freenode.org#mate-dev"
