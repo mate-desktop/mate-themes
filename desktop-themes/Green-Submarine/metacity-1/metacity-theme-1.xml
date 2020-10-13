@@ -296,12 +296,60 @@
 </draw_ops>
 
 <!-- ::: ICONS ::: -->
+<!-- BEWARE: all those weird "-(1)" at the ends is to offset 1px to the top
+     left because somehow otherwise we look off to the right.  A proper fix
+     would probably be to move it at an upper hierarchical level, but that way
+     it works nicely with the existing state (including pressed framing) -->
+<!-- Colors are based on the previous images ones:
+     Outlines:
+       - prelight: black at 40% alpha.
+       - normal: 70% alpha on the prelight: 0.4*0.7 = 0.28.
+     Shapes:
+       - prelight: white
+       - normal: 70% alpha on the prelight.  However, as using alpha means we
+         must not overlap strokes, and it's a pain not to on the cross shape,
+         we use a pre-blended 70% white over #1C1B19.  It's slightly wrong as
+         the background is a gradient, but it's close enough as we are on the
+         very right.
+       - unfocused: 50% blend between #101010 and #CBD5D9
+-->
+<constant name="IconPadding" value="3" />
+
 <draw_ops name="close_button_icon">
-	<image filename="icon_close.png" x="(width-10)/2" y="(height-10)/2" width="10" height="10" alpha="0.7"/>
+  <!-- outer shape of the cross: go clockwise from top left corner -->
+  <line color="rgba(0, 0, 0, 0.28)" x1="IconPadding - 1 -(1)" y1="IconPadding -(1)" x2="IconPadding -(1)" y2="IconPadding - 1 -(1)" />
+  <line color="rgba(0, 0, 0, 0.28)" x1="IconPadding + 1 -(1)" y1="IconPadding - 1 -(1)" x2="width / 2 -(1)" y2="height / 2 - 2 -(1)" />
+  <line color="rgba(0, 0, 0, 0.28)" x1="width / 2 + 1 -(1)" y1="height / 2 - 3 -(1)" x2="width - IconPadding - 1 -(1)" y2="IconPadding - 1 -(1)" />
+  <line color="rgba(0, 0, 0, 0.28)" x1="width - IconPadding -(1)" y1="IconPadding - 1 -(1)" x2="width - IconPadding + 1 -(1)" y2="IconPadding -(1)" />
+  <line color="rgba(0, 0, 0, 0.28)" x1="width - IconPadding + 1 -(1)" y1="IconPadding + 1 -(1)" x2="width / 2 + 2 -(1)" y2="height / 2 -(1)" />
+  <line color="rgba(0, 0, 0, 0.28)" x1="width / 2 + 3 -(1)" y1="height / 2 + 1 -(1)" x2="width - IconPadding + 1 -(1)" y2="height - IconPadding - 1 -(1)" />
+  <line color="rgba(0, 0, 0, 0.28)" x1="width - IconPadding + 1 -(1)" y1="height - IconPadding -(1)" x2="width - IconPadding -(1)" y2="height - IconPadding + 1 -(1)" />
+  <line color="rgba(0, 0, 0, 0.28)" x1="width - IconPadding - 1 -(1)" y1="height - IconPadding + 1 -(1)" x2="width / 2 -(1)" y2="height / 2 + 2 -(1)" />
+  <line color="rgba(0, 0, 0, 0.28)" x1="width / 2 - 1 -(1)" y1="height / 2 + 3 -(1)" x2="IconPadding + 1 -(1)" y2="height - IconPadding + 1 -(1)" />
+  <line color="rgba(0, 0, 0, 0.28)" x1="IconPadding -(1)" y1="height - IconPadding + 1 -(1)" x2="IconPadding - 1 -(1)" y2="height - IconPadding -(1)" />
+  <line color="rgba(0, 0, 0, 0.28)" x1="IconPadding - 1 -(1)" y1="height - IconPadding - 1 -(1)" x2="width / 2 - 2 -(1)" y2="height / 2 -(1)" />
+  <line color="rgba(0, 0, 0, 0.28)" x1="width / 2 - 3 -(1)" y1="height / 2 - 1 -(1)" x2="IconPadding - 1 -(1)" y2="IconPadding + 1 -(1)" />
+  <!-- we don't play with line width because we want pointy bits -->
+  <!-- top-left to bottom-right line of the cross -->
+  <line color="blend/#1C1B19/white/0.7" x1="IconPadding -(1)" y1="IconPadding + 1 -(1)" x2="width - IconPadding - 1 -(1)" y2="height - IconPadding -(1)" />
+  <line color="blend/#1C1B19/white/0.7" x1="IconPadding -(1)" y1="IconPadding -(1)" x2="width - IconPadding -(1)" y2="height - IconPadding -(1)" />
+  <line color="blend/#1C1B19/white/0.7" x1="IconPadding + 1 -(1)" y1="IconPadding -(1)" x2="width - IconPadding -(1)" y2="height - IconPadding - 1 -(1)" />
+  <!-- top-right to bottom-left line of the cross -->
+  <line color="blend/#1C1B19/white/0.7" x1="width - IconPadding - 1 -(1)" y1="IconPadding -(1)" x2="IconPadding -(1)" y2="height - IconPadding - 1 -(1)" />
+  <line color="blend/#1C1B19/white/0.7" x1="width - IconPadding -(1)" y1="IconPadding -(1)" x2="IconPadding -(1)" y2="height - IconPadding -(1)" />
+  <line color="blend/#1C1B19/white/0.7" x1="width - IconPadding -(1)" y1="IconPadding + 1 -(1)" x2="IconPadding + 1 -(1)" y2="height - IconPadding -(1)" />
 </draw_ops>
 
 <draw_ops name="close_button_icon_unfocused">
-	<image filename="icon_close_u.png" x="(width-10)/2" y="(height-10)/2" width="10" height="10" colorize="blend/#101010/#CBD9D4/0.5"/>
+  <!-- we don't play with line width because we want pointy bits -->
+  <!-- top-left to bottom-right line of the cross -->
+  <line color="blend/#101010/#CBD9D4/0.5" x1="IconPadding -(1)" y1="IconPadding + 1 -(1)" x2="width - IconPadding - 1 -(1)" y2="height - IconPadding -(1)" />
+  <line color="blend/#101010/#CBD9D4/0.5" x1="IconPadding -(1)" y1="IconPadding -(1)" x2="width - IconPadding -(1)" y2="height - IconPadding -(1)" />
+  <line color="blend/#101010/#CBD9D4/0.5" x1="IconPadding + 1 -(1)" y1="IconPadding -(1)" x2="width - IconPadding -(1)" y2="height - IconPadding - 1 -(1)" />
+  <!-- top-right to bottom-left line of the cross -->
+  <line color="blend/#101010/#CBD9D4/0.5" x1="width - IconPadding - 1 -(1)" y1="IconPadding -(1)" x2="IconPadding -(1)" y2="height - IconPadding - 1 -(1)" />
+  <line color="blend/#101010/#CBD9D4/0.5" x1="width - IconPadding -(1)" y1="IconPadding -(1)" x2="IconPadding -(1)" y2="height - IconPadding -(1)" />
+  <line color="blend/#101010/#CBD9D4/0.5" x1="width - IconPadding -(1)" y1="IconPadding + 1 -(1)" x2="IconPadding + 1 -(1)" y2="height - IconPadding -(1)" />
 </draw_ops>
 
 <draw_ops name="close_button_normal">
@@ -309,8 +357,30 @@
   <include name="close_button_icon"/>
 </draw_ops>
 <draw_ops name="close_button_prelight">
+  <!-- outer shape of the cross: go clockwise from top left corner -->
+  <line color="rgba(0, 0, 0, 0.4)" x1="IconPadding - 1 -(1)" y1="IconPadding -(1)" x2="IconPadding -(1)" y2="IconPadding - 1 -(1)" />
+  <line color="rgba(0, 0, 0, 0.4)" x1="IconPadding + 1 -(1)" y1="IconPadding - 1 -(1)" x2="width / 2 -(1)" y2="height / 2 - 2 -(1)" />
+  <line color="rgba(0, 0, 0, 0.4)" x1="width / 2 + 1 -(1)" y1="height / 2 - 3 -(1)" x2="width - IconPadding - 1 -(1)" y2="IconPadding - 1 -(1)" />
+  <line color="rgba(0, 0, 0, 0.4)" x1="width - IconPadding -(1)" y1="IconPadding - 1 -(1)" x2="width - IconPadding + 1 -(1)" y2="IconPadding -(1)" />
+  <line color="rgba(0, 0, 0, 0.4)" x1="width - IconPadding + 1 -(1)" y1="IconPadding + 1 -(1)" x2="width / 2 + 2 -(1)" y2="height / 2 -(1)" />
+  <line color="rgba(0, 0, 0, 0.4)" x1="width / 2 + 3 -(1)" y1="height / 2 + 1 -(1)" x2="width - IconPadding + 1 -(1)" y2="height - IconPadding - 1 -(1)" />
+  <line color="rgba(0, 0, 0, 0.4)" x1="width - IconPadding + 1 -(1)" y1="height - IconPadding -(1)" x2="width - IconPadding -(1)" y2="height - IconPadding + 1 -(1)" />
+  <line color="rgba(0, 0, 0, 0.4)" x1="width - IconPadding - 1 -(1)" y1="height - IconPadding + 1 -(1)" x2="width / 2 -(1)" y2="height / 2 + 2 -(1)" />
+  <line color="rgba(0, 0, 0, 0.4)" x1="width / 2 - 1 -(1)" y1="height / 2 + 3 -(1)" x2="IconPadding + 1 -(1)" y2="height - IconPadding + 1 -(1)" />
+  <line color="rgba(0, 0, 0, 0.4)" x1="IconPadding -(1)" y1="height - IconPadding + 1 -(1)" x2="IconPadding - 1 -(1)" y2="height - IconPadding -(1)" />
+  <line color="rgba(0, 0, 0, 0.4)" x1="IconPadding - 1 -(1)" y1="height - IconPadding - 1 -(1)" x2="width / 2 - 2 -(1)" y2="height / 2 -(1)" />
+  <line color="rgba(0, 0, 0, 0.4)" x1="width / 2 - 3 -(1)" y1="height / 2 - 1 -(1)" x2="IconPadding - 1 -(1)" y2="IconPadding + 1 -(1)" />
+  <!-- we don't play with line width because we want pointy bits -->
+  <!-- top-left to bottom-right line of the cross -->
+  <line color="white" x1="IconPadding -(1)" y1="IconPadding + 1 -(1)" x2="width - IconPadding - 1 -(1)" y2="height - IconPadding -(1)" />
+  <line color="white" x1="IconPadding -(1)" y1="IconPadding -(1)" x2="width - IconPadding -(1)" y2="height - IconPadding -(1)" />
+  <line color="white" x1="IconPadding + 1 -(1)" y1="IconPadding -(1)" x2="width - IconPadding -(1)" y2="height - IconPadding - 1 -(1)" />
+  <!-- top-right to bottom-left line of the cross -->
+  <line color="white" x1="width - IconPadding - 1 -(1)" y1="IconPadding -(1)" x2="IconPadding -(1)" y2="height - IconPadding - 1 -(1)" />
+  <line color="white" x1="width - IconPadding -(1)" y1="IconPadding -(1)" x2="IconPadding -(1)" y2="height - IconPadding -(1)" />
+  <line color="white" x1="width - IconPadding -(1)" y1="IconPadding + 1 -(1)" x2="IconPadding + 1 -(1)" y2="height - IconPadding -(1)" />
+
   <!--<include name="button_bg_prelight"/>-->
-	<image filename="icon_close.png" x="(width-10)/2" y="(height-10)/2" width="10" height="10" alpha="1" />
 </draw_ops>
 <draw_ops name="close_button_pressed">
   <include name="button_bg_pressed"/>
@@ -330,11 +400,31 @@
 </draw_ops>
 
 <draw_ops name="maximize_button_icon">
-	<image filename="icon_maximize.png" x="(width-10)/2" y="(height-10)/2" width="10" height="10" alpha="0.7"/>
+  <!-- outer border -->
+  <line color="rgba(0, 0, 0, 0.28)" x1="IconPadding - 1 -(1)" y1="IconPadding - 1 -(1)" x2="width - IconPadding + 1 -(1)" y2="IconPadding - 1 -(1)" />
+  <line color="rgba(0, 0, 0, 0.28)" x1="IconPadding - 1 -(1)" y1="height - IconPadding + 1 -(1)" x2="width - IconPadding + 1 -(1)" y2="height - IconPadding + 1 -(1)" />
+  <line color="rgba(0, 0, 0, 0.28)" x1="IconPadding - 1 -(1)" y1="IconPadding -(1)" x2="IconPadding - 1 -(1)" y2="height - IconPadding -(1)" />
+  <line color="rgba(0, 0, 0, 0.28)" x1="width - IconPadding + 1 -(1)" y1="IconPadding -(1)" x2="width - IconPadding + 1 -(1)" y2="height - IconPadding -(1)" />
+  <!-- inner border -->
+  <line color="rgba(0, 0, 0, 0.28)" x1="IconPadding + 1 -(1)" y1="IconPadding + 2 -(1)" x2="width - IconPadding - 1 -(1)" y2="IconPadding + 2 -(1)" />
+  <line color="rgba(0, 0, 0, 0.28)" x1="IconPadding + 1 -(1)" y1="height - IconPadding - 1 -(1)" x2="width - IconPadding - 1 -(1)" y2="height - IconPadding - 1 -(1)" />
+  <line color="rgba(0, 0, 0, 0.28)" x1="IconPadding + 1 -(1)" y1="IconPadding + 3 -(1)" x2="IconPadding + 1 -(1)" y2="height - IconPadding - 2 -(1)" />
+  <line color="rgba(0, 0, 0, 0.28)" x1="width - IconPadding - 1 -(1)" y1="IconPadding + 3 -(1)" x2="width - IconPadding - 1 -(1)" y2="height - IconPadding - 2 -(1)" />
+  <!-- shape -->
+  <line color="blend/#1C1B19/white/0.7" x1="IconPadding -(1)" y1="IconPadding -(1)" x2="width - IconPadding -(1)" y2="IconPadding -(1)" />
+  <line color="blend/#1C1B19/white/0.7" x1="IconPadding -(1)" y1="IconPadding + 1 -(1)" x2="width - IconPadding -(1)" y2="IconPadding + 1 -(1)" />
+  <line color="blend/#1C1B19/white/0.7" x1="IconPadding -(1)" y1="height - IconPadding -(1)" x2="width - IconPadding -(1)" y2="height - IconPadding -(1)" />
+  <line color="blend/#1C1B19/white/0.7" x1="IconPadding -(1)" y1="IconPadding + 2 -(1)" x2="IconPadding -(1)" y2="height - IconPadding - 1 -(1)" />
+  <line color="blend/#1C1B19/white/0.7" x1="width - IconPadding -(1)" y1="IconPadding + 2 -(1)" x2="width - IconPadding -(1)" y2="height - IconPadding - 1 -(1)" />
 </draw_ops>
 
-<draw_ops name="maximize_button_icon_unfocused">	
-	<image filename="icon_maximize_u.png" x="(width-10)/2" y="(height-10)/2" width="10" height="10" colorize="blend/#101010/#CBD9D4/0.5"/>
+<draw_ops name="maximize_button_icon_unfocused">
+  <!-- shape -->
+  <line color="blend/#101010/#CBD9D4/0.5" x1="IconPadding -(1)" y1="IconPadding -(1)" x2="width - IconPadding -(1)" y2="IconPadding -(1)" />
+  <line color="blend/#101010/#CBD9D4/0.5" x1="IconPadding -(1)" y1="IconPadding + 1 -(1)" x2="width - IconPadding -(1)" y2="IconPadding + 1 -(1)" />
+  <line color="blend/#101010/#CBD9D4/0.5" x1="IconPadding -(1)" y1="height - IconPadding -(1)" x2="width - IconPadding -(1)" y2="height - IconPadding -(1)" />
+  <line color="blend/#101010/#CBD9D4/0.5" x1="IconPadding -(1)" y1="IconPadding + 2 -(1)" x2="IconPadding -(1)" y2="height - IconPadding - 1 -(1)" />
+  <line color="blend/#101010/#CBD9D4/0.5" x1="width - IconPadding -(1)" y1="IconPadding + 2 -(1)" x2="width - IconPadding -(1)" y2="height - IconPadding - 1 -(1)" />
 </draw_ops>
 
 <draw_ops name="maximize_button_normal">
@@ -342,8 +432,24 @@
   <include name="maximize_button_icon"/>
 </draw_ops>
 <draw_ops name="maximize_button_prelight">
+  <!-- outer border -->
+  <line color="rgba(0, 0, 0, 0.4)" x1="IconPadding - 1 -(1)" y1="IconPadding - 1 -(1)" x2="width - IconPadding + 1 -(1)" y2="IconPadding - 1 -(1)" />
+  <line color="rgba(0, 0, 0, 0.4)" x1="IconPadding - 1 -(1)" y1="height - IconPadding + 1 -(1)" x2="width - IconPadding + 1 -(1)" y2="height - IconPadding + 1 -(1)" />
+  <line color="rgba(0, 0, 0, 0.4)" x1="IconPadding - 1 -(1)" y1="IconPadding -(1)" x2="IconPadding - 1 -(1)" y2="height - IconPadding -(1)" />
+  <line color="rgba(0, 0, 0, 0.4)" x1="width - IconPadding + 1 -(1)" y1="IconPadding -(1)" x2="width - IconPadding + 1 -(1)" y2="height - IconPadding -(1)" />
+  <!-- inner border -->
+  <line color="rgba(0, 0, 0, 0.4)" x1="IconPadding + 1 -(1)" y1="IconPadding + 2 -(1)" x2="width - IconPadding - 1 -(1)" y2="IconPadding + 2 -(1)" />
+  <line color="rgba(0, 0, 0, 0.4)" x1="IconPadding + 1 -(1)" y1="height - IconPadding - 1 -(1)" x2="width - IconPadding - 1 -(1)" y2="height - IconPadding - 1 -(1)" />
+  <line color="rgba(0, 0, 0, 0.4)" x1="IconPadding + 1 -(1)" y1="IconPadding + 3 -(1)" x2="IconPadding + 1 -(1)" y2="height - IconPadding - 2 -(1)" />
+  <line color="rgba(0, 0, 0, 0.4)" x1="width - IconPadding - 1 -(1)" y1="IconPadding + 3 -(1)" x2="width - IconPadding - 1 -(1)" y2="height - IconPadding - 2 -(1)" />
+  <!-- shape -->
+  <line color="white" x1="IconPadding -(1)" y1="IconPadding -(1)" x2="width - IconPadding -(1)" y2="IconPadding -(1)" />
+  <line color="white" x1="IconPadding -(1)" y1="IconPadding + 1 -(1)" x2="width - IconPadding -(1)" y2="IconPadding + 1 -(1)" />
+  <line color="white" x1="IconPadding -(1)" y1="height - IconPadding -(1)" x2="width - IconPadding -(1)" y2="height - IconPadding -(1)" />
+  <line color="white" x1="IconPadding -(1)" y1="IconPadding + 2 -(1)" x2="IconPadding -(1)" y2="height - IconPadding - 1 -(1)" />
+  <line color="white" x1="width - IconPadding -(1)" y1="IconPadding + 2 -(1)" x2="width - IconPadding -(1)" y2="height - IconPadding - 1 -(1)" />
+
   <!--<include name="button_bg_prelight"/>-->
-	<image filename="icon_maximize.png" x="(width-10)/2" y="(height-10)/2" width="10" height="10"/>
 </draw_ops>
 <draw_ops name="maximize_button_pressed">
   <include name="button_bg_pressed"/>
@@ -362,11 +468,31 @@
 </draw_ops>
 
 <draw_ops name="restore_button_icon">
-	<image filename="icon_restore.png" x="(width-10)/2" y="(height-10)/2" width="10" height="10" alpha="0.7"/>
+  <!-- outer border -->
+  <line color="rgba(0, 0, 0, 0.28)" x1="IconPadding - 1 + (width / 8) -(1)" y1="IconPadding - 1 + (width / 8) -(1)" x2="width - IconPadding + 1 - (width / 8) -(1)" y2="IconPadding - 1 + (width / 8) -(1)" />
+  <line color="rgba(0, 0, 0, 0.28)" x1="IconPadding - 1 + (width / 8) -(1)" y1="height - IconPadding + 1 - (width / 8) -(1)" x2="width - IconPadding + 1 - (width / 8) -(1)" y2="height - IconPadding + 1 - (width / 8) -(1)" />
+  <line color="rgba(0, 0, 0, 0.28)" x1="IconPadding - 1 + (width / 8) -(1)" y1="IconPadding + (width / 8) -(1)" x2="IconPadding - 1 + (width / 8) -(1)" y2="height - IconPadding - (width / 8) -(1)" />
+  <line color="rgba(0, 0, 0, 0.28)" x1="width - IconPadding + 1 - (width / 8) -(1)" y1="IconPadding + (width / 8) -(1)" x2="width - IconPadding + 1 - (width / 8) -(1)" y2="height - IconPadding - (width / 8) -(1)" />
+  <!-- inner border -->
+  <line color="rgba(0, 0, 0, 0.28)" x1="IconPadding + 1 + (width / 8) -(1)" y1="IconPadding + 2 + (width / 8) -(1)" x2="width - IconPadding - (width / 8) - 1 -(1)" y2="IconPadding + 2 + (width / 8) -(1)" />
+  <line color="rgba(0, 0, 0, 0.28)" x1="IconPadding + 1 + (width / 8) -(1)" y1="height - IconPadding - 1 - (width / 8) -(1)" x2="width - IconPadding - 1 - (width / 8) -(1)" y2="height - IconPadding - 1 - (width / 8) -(1)" />
+  <line color="rgba(0, 0, 0, 0.28)" x1="IconPadding + 1 + (width / 8) -(1)" y1="IconPadding + 3 + (width / 8) -(1)" x2="IconPadding + 1 + (width / 8) -(1)" y2="height - IconPadding - 2 - (width / 8) -(1)" />
+  <line color="rgba(0, 0, 0, 0.28)" x1="width - IconPadding - 1 -(1)" y1="IconPadding + 3 + (width / 8) -(1)" x2="width - IconPadding - 1 - (width / 8) -(1)" y2="height - IconPadding - 2 - (width / 8) -(1)" />
+  <!-- shape -->
+  <line color="blend/#1C1B19/white/0.7" x1="IconPadding + (width / 8) -(1)" y1="IconPadding + (width / 8) -(1)" x2="width - IconPadding - (width / 8) -(1)" y2="IconPadding + (width / 8) -(1)" />
+  <line color="blend/#1C1B19/white/0.7" x1="IconPadding + (width / 8) -(1)" y1="IconPadding + 1 + (width / 8) -(1)" x2="width - IconPadding - (width / 8) -(1)" y2="IconPadding + 1 + (width / 8) -(1)" />
+  <line color="blend/#1C1B19/white/0.7" x1="IconPadding + (width / 8) -(1)" y1="height - IconPadding - (width / 8) -(1)" x2="width - IconPadding - (width / 8) -(1)" y2="height - IconPadding - (width / 8) -(1)" />
+  <line color="blend/#1C1B19/white/0.7" x1="IconPadding + (width / 8) -(1)" y1="IconPadding + 2 + (width / 8) -(1)" x2="IconPadding + (width / 8) -(1)" y2="height - IconPadding - 1 - (width / 8) -(1)" />
+  <line color="blend/#1C1B19/white/0.7" x1="width - IconPadding - (width / 8) -(1)" y1="IconPadding + 2 + (width / 8) -(1)" x2="width - IconPadding - (width / 8) -(1)" y2="height - IconPadding - 1 - (width / 8) -(1)" />
 </draw_ops>
 
 <draw_ops name="restore_button_icon_unfocused">
-	<image filename="icon_restore_u.png" x="(width-10)/2" y="(height-10)/2" width="10" height="10" colorize="blend/#101010/#CBD9D4/0.5"/>
+  <!-- shape -->
+  <line color="blend/#101010/#CBD9D4/0.5" x1="IconPadding + (width / 8) -(1)" y1="IconPadding + (width / 8) -(1)" x2="width - IconPadding - (width / 8) -(1)" y2="IconPadding + (width / 8) -(1)" />
+  <line color="blend/#101010/#CBD9D4/0.5" x1="IconPadding + (width / 8) -(1)" y1="IconPadding + 1 + (width / 8) -(1)" x2="width - IconPadding - (width / 8) -(1)" y2="IconPadding + 1 + (width / 8) -(1)" />
+  <line color="blend/#101010/#CBD9D4/0.5" x1="IconPadding + (width / 8) -(1)" y1="height - IconPadding - (width / 8) -(1)" x2="width - IconPadding - (width / 8) -(1)" y2="height - IconPadding - (width / 8) -(1)" />
+  <line color="blend/#101010/#CBD9D4/0.5" x1="IconPadding + (width / 8) -(1)" y1="IconPadding + 2 + (width / 8) -(1)" x2="IconPadding + (width / 8) -(1)" y2="height - IconPadding - 1 - (width / 8) -(1)" />
+  <line color="blend/#101010/#CBD9D4/0.5" x1="width - IconPadding - (width / 8) -(1)" y1="IconPadding + 2 + (width / 8) -(1)" x2="width - IconPadding - (width / 8) -(1)" y2="height - IconPadding - 1 - (width / 8) -(1)" />
 </draw_ops>
 
 <draw_ops name="restore_button_normal">
@@ -374,8 +500,24 @@
   <include name="restore_button_icon"/>
 </draw_ops>
 <draw_ops name="restore_button_prelight">
+  <!-- outer border -->
+  <line color="rgba(0, 0, 0, 0.4)" x1="IconPadding - 1 + (width / 8) -(1)" y1="IconPadding - 1 + (width / 8) -(1)" x2="width - IconPadding + 1 - (width / 8) -(1)" y2="IconPadding - 1 + (width / 8) -(1)" />
+  <line color="rgba(0, 0, 0, 0.4)" x1="IconPadding - 1 + (width / 8) -(1)" y1="height - IconPadding + 1 - (width / 8) -(1)" x2="width - IconPadding + 1 - (width / 8) -(1)" y2="height - IconPadding + 1 - (width / 8) -(1)" />
+  <line color="rgba(0, 0, 0, 0.4)" x1="IconPadding - 1 + (width / 8) -(1)" y1="IconPadding + (width / 8) -(1)" x2="IconPadding - 1 + (width / 8) -(1)" y2="height - IconPadding - (width / 8) -(1)" />
+  <line color="rgba(0, 0, 0, 0.4)" x1="width - IconPadding + 1 - (width / 8) -(1)" y1="IconPadding + (width / 8) -(1)" x2="width - IconPadding + 1 - (width / 8) -(1)" y2="height - IconPadding - (width / 8) -(1)" />
+  <!-- inner border -->
+  <line color="rgba(0, 0, 0, 0.4)" x1="IconPadding + 1 + (width / 8) -(1)" y1="IconPadding + 2 + (width / 8) -(1)" x2="width - IconPadding - (width / 8) - 1 -(1)" y2="IconPadding + 2 + (width / 8) -(1)" />
+  <line color="rgba(0, 0, 0, 0.4)" x1="IconPadding + 1 + (width / 8) -(1)" y1="height - IconPadding - 1 - (width / 8) -(1)" x2="width - IconPadding - 1 - (width / 8) -(1)" y2="height - IconPadding - 1 - (width / 8) -(1)" />
+  <line color="rgba(0, 0, 0, 0.4)" x1="IconPadding + 1 + (width / 8) -(1)" y1="IconPadding + 3 + (width / 8) -(1)" x2="IconPadding + 1 + (width / 8) -(1)" y2="height - IconPadding - 2 - (width / 8) -(1)" />
+  <line color="rgba(0, 0, 0, 0.4)" x1="width - IconPadding - 1 -(1)" y1="IconPadding + 3 + (width / 8) -(1)" x2="width - IconPadding - 1 - (width / 8) -(1)" y2="height - IconPadding - 2 - (width / 8) -(1)" />
+  <!-- shape -->
+  <line color="white" x1="IconPadding + (width / 8) -(1)" y1="IconPadding + (width / 8) -(1)" x2="width - IconPadding - (width / 8) -(1)" y2="IconPadding + (width / 8) -(1)" />
+  <line color="white" x1="IconPadding + (width / 8) -(1)" y1="IconPadding + 1 + (width / 8) -(1)" x2="width - IconPadding - (width / 8) -(1)" y2="IconPadding + 1 + (width / 8) -(1)" />
+  <line color="white" x1="IconPadding + (width / 8) -(1)" y1="height - IconPadding - (width / 8) -(1)" x2="width - IconPadding - (width / 8) -(1)" y2="height - IconPadding - (width / 8) -(1)" />
+  <line color="white" x1="IconPadding + (width / 8) -(1)" y1="IconPadding + 2 + (width / 8) -(1)" x2="IconPadding + (width / 8) -(1)" y2="height - IconPadding - 1 - (width / 8) -(1)" />
+  <line color="white" x1="width - IconPadding - (width / 8) -(1)" y1="IconPadding + 2 + (width / 8) -(1)" x2="width - IconPadding - (width / 8) -(1)" y2="height - IconPadding - 1 - (width / 8) -(1)" />
+
   <!--<include name="button_bg_prelight"/>-->
-	<image filename="icon_restore.png" x="(width-10)/2" y="(height-10)/2" width="10" height="10"/>
 </draw_ops>
 <draw_ops name="restore_button_pressed">
   <include name="button_bg_pressed"/>
@@ -394,19 +536,37 @@
 </draw_ops>
 
 <draw_ops name="minimize_button_icon">
-	<image filename="icon_minimize.png" x="(width-10)/2" y="(height-10)/2" width="10" height="10" alpha="0.7"/>
+  <!-- border -->
+  <line color="rgba(0, 0, 0, 0.28)" x1="IconPadding - 1 -(1)" y1="height - IconPadding - 2 -(1)" x2="width - IconPadding + 1 -(1)" y2="height - IconPadding - 2 -(1)" />
+  <line color="rgba(0, 0, 0, 0.28)" x1="IconPadding - 1 -(1)" y1="height - IconPadding + 1 -(1)" x2="width - IconPadding + 1 -(1)" y2="height - IconPadding + 1 -(1)" />
+  <line color="rgba(0, 0, 0, 0.28)" x1="IconPadding - 1 -(1)" y1="height - IconPadding - 1 -(1)" x2="IconPadding - 1 -(1)" y2="height - IconPadding -(1)" />
+  <line color="rgba(0, 0, 0, 0.28)" x1="width - IconPadding + 1 -(1)" y1="height - IconPadding - 1 -(1)" x2="width - IconPadding + 1 -(1)" y2="height - IconPadding -(1)" />
+  <!-- shape -->
+  <line color="blend/#1C1B19/white/0.7" x1="IconPadding -(1)" y1="height - IconPadding - 1 -(1)" x2="width - IconPadding -(1)" y2="height - IconPadding - 1 -(1)" />
+  <line color="blend/#1C1B19/white/0.7" x1="IconPadding -(1)" y1="height - IconPadding -(1)" x2="width - IconPadding -(1)" y2="height - IconPadding -(1)" />
 </draw_ops>
 
 <draw_ops name="minimize_button_icon_unfocused">
-	<image filename="icon_minimize_u.png" x="(width-10)/2" y="(height-10)/2" width="10" height="10" colorize="blend/#101010/#CBD9D4/0.5"/></draw_ops>
+  <!-- shape -->
+  <line color="blend/#101010/#CBD9D4/0.5" x1="IconPadding -(1)" y1="height - IconPadding - 1 -(1)" x2="width - IconPadding -(1)" y2="height - IconPadding - 1 -(1)" />
+  <line color="blend/#101010/#CBD9D4/0.5" x1="IconPadding -(1)" y1="height - IconPadding -(1)" x2="width - IconPadding -(1)" y2="height - IconPadding -(1)" />
+</draw_ops>
 
 <draw_ops name="minimize_button_normal">
   <include name="button_bg"/>
   <include name="minimize_button_icon"/>
 </draw_ops>
 <draw_ops name="minimize_button_prelight">
+  <!-- border -->
+  <line color="rgba(0, 0, 0, 0.4)" x1="IconPadding - 1 -(1)" y1="height - IconPadding - 2 -(1)" x2="width - IconPadding + 1 -(1)" y2="height - IconPadding - 2 -(1)" />
+  <line color="rgba(0, 0, 0, 0.4)" x1="IconPadding - 1 -(1)" y1="height - IconPadding + 1 -(1)" x2="width - IconPadding + 1 -(1)" y2="height - IconPadding + 1 -(1)" />
+  <line color="rgba(0, 0, 0, 0.4)" x1="IconPadding - 1 -(1)" y1="height - IconPadding - 1 -(1)" x2="IconPadding - 1 -(1)" y2="height - IconPadding -(1)" />
+  <line color="rgba(0, 0, 0, 0.4)" x1="width - IconPadding + 1 -(1)" y1="height - IconPadding - 1 -(1)" x2="width - IconPadding + 1 -(1)" y2="height - IconPadding -(1)" />
+  <!-- shape -->
+  <line color="white" x1="IconPadding -(1)" y1="height - IconPadding - 1 -(1)" x2="width - IconPadding -(1)" y2="height - IconPadding - 1 -(1)" />
+  <line color="white" x1="IconPadding -(1)" y1="height - IconPadding -(1)" x2="width - IconPadding -(1)" y2="height - IconPadding -(1)" />
+
   <!--<include name="button_bg_prelight"/>-->
-	<image filename="icon_minimize.png" x="(width-10)/2" y="(height-10)/2" width="10" height="10"/>
 </draw_ops>
 <draw_ops name="minimize_button_pressed">
   <include name="button_bg_pressed"/>
