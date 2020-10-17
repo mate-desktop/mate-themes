@@ -3021,6 +3021,7 @@ toolbar button menuitem {
 	text-shadow: none;
 }
 
+/* Decouple the font of context menus from their entry/textview */
 .context-menu {
 	font: initial;
 	text-shadow: none;
