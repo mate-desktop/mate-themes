@@ -2396,6 +2396,12 @@ treemenu menuitem {
     padding: 2px;
 }
 
+/* Decouple the font of context menus from their entry/textview */
+.context-menu {
+        font: initial;
+        text-shadow: none;
+}
+
 menu,
 .menu {
     font-weight: normal;

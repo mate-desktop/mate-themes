@@ -2016,6 +2016,12 @@ scrollbar.vertical .slider.fine-tune:hover:active  {
  * Menus *
  *********/
 
+/* Decouple the font of context menus from their entry/textview */
+.context-menu {
+        font: initial;
+        text-shadow: none;
+}
+
 /* this controls the general appearance of the menubar */
 menubar,
 .menubar {
