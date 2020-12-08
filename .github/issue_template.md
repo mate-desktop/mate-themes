@@ -17,4 +17,4 @@
 
 
 
-#### Link to downstream report of your Distribution
+#### Link to bugreport of your Distribution (requirement)
