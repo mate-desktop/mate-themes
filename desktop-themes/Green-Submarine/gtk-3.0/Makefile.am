@@ -12,8 +12,18 @@ theme_DATA = \
 	settings.ini \
 	sidebar.css
 
-EXTRA_DIST = $(theme_DATA)
+%.ini: %.ini.in
+	$(AM_V_GEN) sed -e 's|@bindir[@]|$(bindir)|g' $< > $@
 
-SUBDIRS = assets
+EXTRA_DIST = \
+	$(theme_DATA) \
+	settings.ini.in
 
-DIST_SUBDIRS = assets
+CLEAN = \
+	settings.ini
+
+SUBDIRS = \
+	assets
+
+DIST_SUBDIRS = \
+	assets
