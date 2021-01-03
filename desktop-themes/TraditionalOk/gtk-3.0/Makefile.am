@@ -11,6 +11,15 @@ theme_DATA = \
 	other-applications.css \
 	settings.ini
 
-EXTRA_DIST = $(theme_DATA)
+%.ini: %.ini.in
+	$(AM_V_GEN) sed -e 's|@bindir[@]|$(bindir)|g' $< > $@
 
-SUBDIRS = img
+EXTRA_DIST = \
+	$(theme_DATA) \
+	settings.ini.in
+
+CLEAN = \
+	settings.ini
+
+SUBDIRS = \
+	img

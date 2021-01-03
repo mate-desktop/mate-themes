@@ -16,7 +16,15 @@ theme_DATA = \
 	unity.css \
 	window-controls.css
 
-EXTRA_DIST = $(theme_DATA)
+%.ini: %.ini.in
+	$(AM_V_GEN) sed -e 's|@bindir[@]|$(bindir)|g' $< > $@
+
+EXTRA_DIST = \
+	$(theme_DATA) \
+	settings.ini.in
+
+CLEAN = \
+	settings.ini
 
 SUBDIRS = \
 	assets \
