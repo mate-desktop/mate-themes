@@ -766,22 +766,6 @@ pluma-print-preview.vertical toolbar.horizontal button.flat.text-button {
 	color: @theme_selected_fg_color;
 }
 
-/* mate-screensaver lock dialog */
-
-.lock-dialog,
-.lock-dialog frame {
-    border-radius: 6px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: @wm_csd_solid_border_color;
-    margin: 4px;
-}
-
-.lock-dialog notebook {
-    border-style: none;
-    background-color: shade (@theme_bg_color, 1.0);
-}
-
 /****************
  * Mate-settings-daemon *
  ****************/
