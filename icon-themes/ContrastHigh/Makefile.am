@@ -10,5 +10,10 @@ SUBDIRS = \
 	scalable
 
 indextheme_DATA = index.theme
+indextheme_in_files = $(indextheme_DATA:.theme=.theme.in)
 
-EXTRA_DIST=	$(indextheme_DATA)
+$(indextheme_DATA): $(indextheme_in_files)
+	$(AM_V_GEN) $(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@
+
+CLEANFILES = $(indextheme_DATA)
+EXTRA_DIST = $(indextheme_in_files)
