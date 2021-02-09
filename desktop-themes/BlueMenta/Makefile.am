@@ -1,24 +1,24 @@
-THEME_NAME=BlueMenta
-THEME_IN_FILES=index.theme.in
+THEME_NAME = BlueMenta
 
+theme_in_files = index.theme.in
 themedir = $(datadir)/themes/$(THEME_NAME)
-
-theme_DATA = \
-	COPYING \
-	index.theme \
-	README
+theme_DATA = COPYING index.theme README
 
 %.theme: %.theme.in
+if USE_NLS
 	$(AM_V_GEN) $(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@
+else
+	$(AM_V_GEN) cp -f $< $@
+endif
 
-SUBDIRS =		\
+SUBDIRS = \
 	cinnamon \
 	emerald \
-	gtk-2.0		\
-	gtk-3.0		\
+	gtk-2.0 \
+	gtk-3.0 \
 	metacity-1 \
-	unity	\
+	unity \
 	xfwm4
 
-DISTCLEANFILES = index.theme
-EXTRA_DIST = index.theme.in
+CLEANFILES = index.theme
+EXTRA_DIST = $(theme_in_files)
