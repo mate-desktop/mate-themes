@@ -1,15 +1,15 @@
-THEME_NAME=Menta
-THEME_IN_FILES=index.theme.in
+THEME_NAME = Menta
 
+theme_in_files = index.theme.in
 themedir = $(datadir)/themes/$(THEME_NAME)
-
-theme_DATA = \
-	COPYING \
-	index.theme \
-	README
+theme_DATA = COPYING index.theme README
 
 %.theme: %.theme.in
+if USE_NLS
 	$(AM_V_GEN) $(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@
+else
+	$(AM_V_GEN) cp -f $< $@
+endif
 
 SUBDIRS = \
 	cinnamon \
@@ -20,5 +20,5 @@ SUBDIRS = \
 	unity \
 	xfwm4
 
-DISTCLEANFILES = index.theme
-EXTRA_DIST = index.theme.in
+CLEANFILES = index.theme
+EXTRA_DIST = $(theme_in_files)

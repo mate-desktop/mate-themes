@@ -10,9 +10,10 @@ AM_INIT_AUTOMAKE([1.9 tar-ustar dist-xz no-dist-gzip check-news])
 # configure or passing V=1 to make
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 
+AM_GNU_GETTEXT([external])
 PKG_PROG_PKG_CONFIG([0.19])
 AM_GNU_GETTEXT_VERSION([0.19.8])
-AM_GNU_GETTEXT([external])
+AM_CONDITIONAL([USE_NLS], [test "x${USE_NLS}" = "xyes"])
 
 # Workaround to make aclocal get the right flags
 AC_SUBST(ACLOCAL_AMFLAGS, "\${ACLOCAL_FLAGS}")
@@ -234,8 +235,11 @@ AC_OUTPUT
 
 dnl ==========================================================================
 echo "
-mate-themes-$VERSION:
+Configure summary:
 
-	Installation prefix:	${prefix}
+    ${PACKAGE_STRING}
+    `echo $PACKAGE_STRING | sed "s/./=/g"`
 
+    Installation prefix ........: ${prefix}
+    Native Language support ....: ${USE_NLS}
 "
