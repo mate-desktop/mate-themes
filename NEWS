@@ -1,3 +1,19 @@
+### 3.22.22 (GTK 3.22)
+
+  * Translations update
+  * Traditional themes: fix tooltip shadow on openindiana
+  * The compositor doesn't apply the shadow mask if border-radius is 0
+  * build: allow users to disable gettext support (--disable-nls)
+  * i18n: icon theme ContrastHigh
+  * Set gtk-print-preview-command in settings.ini
+  * Remove the execution bit
+  * Remove USE_MATE2_MACROS from autogen.sh (legacy)
+  * Green-Submarine: Use procedural adaptive-sized icons
+  * Blue-submarine: Use procedural adaptive-sized icons
+  * gtk-widgets.css: Add the missing .context-menu class
+  * Traditional and Menta theme families:  Resolved Caja sidebar display regressions
+  * TraditionalOk/Green: Fix title_border bottom attribute
+
 ### 3.22.21 (GTK 3.22)
 
   * Translations update
