@@ -8,8 +8,7 @@ theme_DATA = \
    check-symbolic.svg \ 
    check-symbolic.symbolic.png \ 
    dash-symbolic.svg \ 
-   dash-symbolic.symbolic.png \ 
-   Makefile.am \ 
+   dash-symbolic.symbolic.png \  
    slider-horz-scale-has-marks-above@2.png \ 
    slider-horz-scale-has-marks-above-active@2.png \ 
    slider-horz-scale-has-marks-above-active-dark@2.png \ 
