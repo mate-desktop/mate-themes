@@ -3,7 +3,7 @@ THEME_NAME=TraditionalOk
 themedir = $(datadir)/themes/$(THEME_NAME)/gtk-3.0
 
 theme_DATA = \
-	gtk.css \ 
+	gtk.css \
 	settings.ini
 
 %.ini: %.ini.in
