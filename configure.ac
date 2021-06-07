@@ -140,7 +140,7 @@ desktop-themes/TraditionalGreen/metacity-1/Makefile
 desktop-themes/TraditionalOk/Makefile
 desktop-themes/TraditionalOk/gtk-2.0/Makefile
 desktop-themes/TraditionalOk/gtk-3.0/Makefile
-desktop-themes/TraditionalOk/gtk-3.0/img/Makefile
+desktop-themes/TraditionalOk/gtk-3.0/assets/Makefile
 desktop-themes/TraditionalOk/metacity-1/Makefile
 desktop-themes/TraditionalOk/openbox-3/Makefile
 desktop-themes/TraditionalOk/xfwm4/Makefile
