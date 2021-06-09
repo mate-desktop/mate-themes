@@ -1,0 +1,124 @@
+/* Parole media player */
+
+.osd #ParoleScale.horizontal {
+    background-color: transparent;
+}
+
+.osd #ParoleScale.horizontal trough {
+    min-height: 4px;
+    margin: 0px;
+}
+
+/* rhythmbox */
+
+.primary-toolbar.toolbar.horizontal RBHeader.horizontal button.scale.flat,
+.primary-toolbar.toolbar.horizontal RBHeader.horizontal button.scale.flat:checked,
+.primary-toolbar.toolbar.horizontal RBHeader.horizontal button.scale.flat:hover {
+    padding: 0px 6px;
+}
+
+/* nemo */
+
+/* this sets the bg color for scrolledwindow junction, the little square beside the scrollbars */
+.nemo-window .nemo-window-pane > notebook box.vertical > overlay scrolledwindow {
+    background-color: @theme_bg_color;
+}
+
+/* treewiew, view and compact view */
+.nemo-window .nemo-window-pane > notebook box.vertical > overlay > scrolledwindow.view,
+.nemo-window .nemo-window-pane > notebook box.vertical > overlay > scrolledwindow > treeview.view {
+    background-color: @theme_base_color;
+}
+
+.nemo-window toolbar.primary-toolbar {
+    border-width: 1px 1px 0px 1px;
+}
+
+.nemo-properties-dialog frame.view {
+   border-color: transparent;
+}
+
+.nemo-properties-dialog frame.view stack scrolledwindow viewport.frame {
+    background-color: @notebook_bg_color;
+}
+
+/* kill unwanted borders */
+.nemo-desktop-window .nemo-window-pane > notebook box > overlay > scrolledwindow {
+    border-style: none;
+    border-width: 0px;
+    padding: 0px;
+}
+
+/*************
+ * Yumex-DNF *
+ *************/
+
+/* list sidebar row */
+window.background.yumex-dnf-window > box.vertical > box.vertical > box.horizontal > paned.vertical > stack > box.vertical > box.horizontal > box.vertical list.sidebar {
+    border-width: 1px 0px 1px 1px;
+}
+
+/* info sidebar */
+window.background.yumex-dnf-window > box.vertical > box.vertical > box.horizontal > paned.vertical > box.horizontal > box.vertical list.sidebar {
+    border-width: 1px 0px 1px 1px;
+}
+
+/****************
+ * pavu-control *
+ ****************/
+
+window.background > box.vertical > notebook scrolledwindow viewport,
+window.background.csd > box.vertical > notebook scrolledwindow viewport,
+window.background.ssd > box.vertical > notebook scrolledwindow viewport,
+window.background.solid-csd > box.vertical > notebook scrolledwindow viewport,
+window.background > box.vertical > notebook scrolledwindow viewport scale,
+window.background.csd > box.vertical > notebook scrolledwindow viewport scale,
+window.background.ssd > box.vertical > notebook scrolledwindow viewport scale,
+window.background.solid-csd > box.vertical > notebook scrolledwindow viewport scale {
+    background-color: shade (@theme_bg_color, 1.03);
+}
+
+/****************
+ * virt-manager *
+ ****************/
+
+window.background > box.vertical > notebook overlay > scrolledwindow,
+window.background > box.vertical > notebook overlay > scrolledwindow viewport {
+    border-style: none;
+    border-width: 0px;
+}
+
+/***********
+ * Lightdm *
+ ***********/
+
+/* 2.0 */
+.lightdm-gtk-greeter #login_window.background,
+/* 1.8.5 */
+#login_window.background.lightdm-gtk-greeter,
+#login_window.background.lightdm-gtk-greeter box.vertical {
+	border-radius: 6px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: shade(@theme_bg_color, 0.4);
+}
+
+/* 2.0 */
+.lightdm-gtk-greeter #login_window.background #user_image_border,
+/* 1.8.5 */
+#login_window.background.lightdm-gtk-greeter #user_image_border {
+    border-style: solid;
+    border-width: 1px;
+    border-color: shade(@theme_bg_color, 0.8);
+}
+
+/* 2.0 */
+.lightdm-gtk-greeter #panel_window.background,
+.lightdm-gtk-greeter #panel_window.background menubar separator,
+/* 1.8.5 */
+#panel_window.background.lightdm-gtk-greeter,
+#panel_window.background.lightdm-gtk-greeter menubar separator {
+    background-color: transparent;
+    color: @theme_fg_color;
+}
+
