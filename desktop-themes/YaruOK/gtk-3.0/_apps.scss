@@ -1001,7 +1001,7 @@ MsdOsdWindow.background.osd {
 iconview {
   border-radius: $button_radius;
   &:hover {
-    background-color: $popover_hover_color;
+    background-color: lighten($selected_bg_color, 10%);
   }
 }
 
