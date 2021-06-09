@@ -1,4 +1,4 @@
-THEME_NAME=TraditionalOk
+THEME_NAME=YaruOk
 
 themedir = $(datadir)/themes/$(THEME_NAME)/xfwm4
 
