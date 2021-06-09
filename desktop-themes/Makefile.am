@@ -14,5 +14,5 @@ SUBDIRS = \
 	Menta \
 	Menta-border \
 	TraditionalGreen \
-	TraditionalOk
+	YaruOk
 

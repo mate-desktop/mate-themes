@@ -1,4 +1,4 @@
-THEME_NAME = TraditionalOk
+THEME_NAME = YaruOk
 
 theme_in_files = index.theme.in
 themedir = $(datadir)/themes/$(THEME_NAME)
