@@ -157,6 +157,7 @@ desktop-themes/YaruGreen/Makefile
 desktop-themes/YaruGreen/gtk-2.0/Makefile
 desktop-themes/YaruGreen/gtk-3.0/Makefile
 desktop-themes/YaruGreen/gtk-3.0/assets/Makefile
+desktop-themes/YaruGreen/metacity-1/Makefile
 marco-themes/Makefile
 icon-themes/Makefile
 icon-themes/ContrastHigh/Makefile
