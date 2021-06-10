@@ -1,4 +1,4 @@
-THEME_NAME=TraditionalGreen
+THEME_NAME=YaruGreen
 
 themedir = $(datadir)/themes/$(THEME_NAME)/metacity-1
 
