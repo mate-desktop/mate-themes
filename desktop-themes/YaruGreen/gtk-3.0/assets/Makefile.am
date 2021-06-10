@@ -1,4 +1,4 @@
-THEME_NAME=YaruOk
+THEME_NAME=YaruGreen
 
 themedir = $(datadir)/themes/$(THEME_NAME)/gtk-3.0/assets
 
