@@ -761,43 +761,43 @@ menubar > item popover.menu popover.menu { padding: 0 0 4px 0; }
 menubar > item popover.menu.background popover.menu.background > contents { margin: 0; border-radius: 6px; }
 
 /************* Notebooks * */
-notebook > header > tabs > tab:checked { outline: 0 solid transparent; outline-offset: 4px; }
+notebook { border-color: #b0b9c9; }
 
-notebook:focus:focus-visible > header > tabs > tab:checked { outline-color: #a29e9b; outline-width: 2px; outline-offset: -2px; }
-
-notebook > header { padding: 1px; border-color: #a29e9b; border-width: 1px; background-color: transparent; }
+notebook > header { padding: 1px; border-color: #a29e9b; box-shadow: 1px 1px #edeceb, 1px -1px #edeceb, -1px -1px #edeceb; border-width: 1px; background-color: transparent; }
 
 notebook > header > tabs { margin: -1px; }
 
 notebook > header.top { border-bottom-style: solid; }
 
-notebook > header.top > tabs { margin-bottom: -2px; }
+notebook > header.top > tabs { margin-bottom: -2px; margin-top: 4px; }
 
-notebook > header.top > tabs > tab:hover { color: #000000; }
+notebook > header.top > tabs > tab { background-image: linear-gradient(to bottom, #f1f1f0, #c0bdba); box-shadow: 0px -1px #a29e9b, 1px 0px #a29e9b, -1px 0px #a29e9b, inset 0px -1px #a29e9b; border-top-left-radius: 3px; border-top-right-radius: 3px; }
 
-notebook > header.top > tabs > tab:checked { background-image: linear-gradient(to bottom, #a4c2e8 3px, #a29e9b 5px, #ffffff 5px, #ffffff); box-shadow: 0px -1px #a29e9b, 1px 0px #a29e9b, -1px 0px #a29e9b; }
+notebook > header.top > tabs > tab:checked { background-image: linear-gradient(to bottom, #a4c2e8 3px, #4373b0 5px, #f4f4f3 5px, #f4f4f3); box-shadow: 0px -1px #4373b0, 1px 0px #a29e9b, -1px 0px #a29e9b; }
 
 notebook > header.bottom { border-top-style: solid; }
 
-notebook > header.bottom > tabs { margin-top: -2px; }
+notebook > header.bottom > tabs { margin-top: -3px; }
 
-notebook > header.bottom > tabs > tab:hover { color: #000000; }
+notebook > header.bottom > tabs > tab { background-image: linear-gradient(to top, #f1f1f0, #c0bdba); box-shadow: 0px 1px #a29e9b, 1px 0px #a29e9b, -1px 0px #a29e9b, inset 0px 1px #a29e9b; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; }
 
-notebook > header.bottom > tabs > tab:checked { background-image: linear-gradient(to top, #a4c2e8 3px, #a29e9b 5px, #ffffff 5px, #ffffff); box-shadow: 0px 1px #a29e9b, 1px 0px #a29e9b, -1px 0px #a29e9b; }
+notebook > header.bottom > tabs > tab:checked { background-image: linear-gradient(to top, #a4c2e8 3px, #4373b0 5px, #f4f4f3 5px, #f4f4f3); box-shadow: 0px 1px #4373b0, 1px 0px #a29e9b, -1px 0px #a29e9b; }
 
 notebook > header.left { border-right-style: solid; }
 
-notebook > header.left > tabs { margin-right: -2px; }
+notebook > header.left > tabs { margin-right: -3px; }
 
-notebook > header.left > tabs > tab:hover { color: #000000; }
+notebook > header.left > tabs > tab { background-image: linear-gradient(to right, #f1f1f0, #c0bdba); box-shadow: 0px 1px #a29e9b, 0px -1px #a29e9b, -1px 0px #a29e9b, inset -1px 0px #a29e9b; border-top-left-radius: 3px; border-bottom-left-radius: 3px; }
 
-notebook > header.left > tabs > tab:checked { background-image: linear-gradient(to right, #a4c2e8 3px, #a29e9b 5px, #ffffff 5px, #ffffff); box-shadow: 0px -1px #a29e9b, 0px 1px #a29e9b; }
+notebook > header.left > tabs > tab:checked { background-image: linear-gradient(to right, #a4c2e8 3px, #4373b0 5px, #f4f4f3 5px, #f4f4f3); box-shadow: -1px 0px #4373b0, 0px -1px #a29e9b, 0px 1px #a29e9b; }
 
 notebook > header.right { border-left-style: solid; }
 
-notebook > header.right > tabs { margin-left: -2px; }
+notebook > header.right > tabs { margin-left: -3px; }
 
-notebook > header.right > tabs > tab:checked { background-image: linear-gradient(to left, #a4c2e8 3px, #a29e9b 5px, #ffffff 5px, #ffffff); box-shadow: 0px -1px #a29e9b, 0px 1px #a29e9b; }
+notebook > header.right > tabs > tab { background-image: linear-gradient(to left, #f1f1f0, #c0bdba); box-shadow: 0px 1px #a29e9b, 0px -1px #a29e9b, 1px 0px #a29e9b, inset 1px 0px #a29e9b; border-top-right-radius: 3px; border-bottom-right-radius: 3px; }
+
+notebook > header.right > tabs > tab:checked { background-image: linear-gradient(to left, #a4c2e8 3px, #4373b0 5px, #f4f4f3 5px, #f4f4f3); box-shadow: 1px 0px #4373b0, 0px -1px #a29e9b, 0px 1px #a29e9b; }
 
 notebook > header.top > tabs > arrow { border-top-style: none; }
 
@@ -847,35 +847,37 @@ notebook > header > tabs > tab button.flat:last-child { margin-left: 4px; margin
 
 notebook > header > tabs > tab button.flat:first-child { margin-left: -4px; margin-right: 4px; }
 
-notebook > header.top > tabs, notebook > header.bottom > tabs { padding-left: 4px; padding-right: 4px; }
+notebook > header.top > tabs, notebook > header.bottom > tabs { padding-left: 0px; padding-right: 0px; }
 
-notebook > header.top > tabs:not(:only-child), notebook > header.bottom > tabs:not(:only-child) { margin-left: 3px; margin-right: 3px; }
+notebook > header.top > tabs:not(:only-child), notebook > header.bottom > tabs:not(:only-child) { margin-left: 1px; margin-right: 1px; }
 
-notebook > header.top > tabs:not(:only-child):first-child, notebook > header.bottom > tabs:not(:only-child):first-child { margin-left: -1px; }
+notebook > header.top > tabs:not(:only-child):first-child, notebook > header.bottom > tabs:not(:only-child):first-child { margin-left: 0px; }
 
 notebook > header.top > tabs:not(:only-child):last-child, notebook > header.bottom > tabs:not(:only-child):last-child { margin-right: -1px; }
 
-notebook > header.top > tabs > tab, notebook > header.bottom > tabs > tab { margin-left: 4px; margin-right: 4px; }
+notebook > header.top > tabs > tab, notebook > header.bottom > tabs > tab { margin-left: 0px; margin-right: 0px; }
 
 notebook > header.top > tabs > tab.reorderable-page, notebook > header.bottom > tabs > tab.reorderable-page { border-style: none solid; }
 
-notebook > header.left > tabs, notebook > header.right > tabs { padding-top: 4px; padding-bottom: 4px; }
+notebook > header.left > tabs, notebook > header.right > tabs { padding-top: 0px; padding-bottom: 0px; }
 
-notebook > header.left > tabs:not(:only-child), notebook > header.right > tabs:not(:only-child) { margin-top: 3px; margin-bottom: 3px; }
+notebook > header.left > tabs:not(:only-child), notebook > header.right > tabs:not(:only-child) { margin-top: 0px; margin-bottom: 0px; }
 
-notebook > header.left > tabs:not(:only-child):first-child, notebook > header.right > tabs:not(:only-child):first-child { margin-top: -1px; }
+notebook > header.left > tabs:not(:only-child):first-child, notebook > header.right > tabs:not(:only-child):first-child { margin-top: 0px; }
 
 notebook > header.left > tabs:not(:only-child):last-child, notebook > header.right > tabs:not(:only-child):last-child { margin-bottom: -1px; }
 
-notebook > header.left > tabs > tab, notebook > header.right > tabs > tab { margin-top: 4px; margin-bottom: 4px; }
+notebook > header.left > tabs > tab, notebook > header.right > tabs > tab { margin-top: 0px; margin-bottom: 0px; }
 
 notebook > header.left > tabs > tab.reorderable-page, notebook > header.right > tabs > tab.reorderable-page { border-style: solid none; }
 
-notebook > header.top > tabs > tab { padding-bottom: 4px; }
+notebook > header.top > tabs > tab { padding-bottom: 1px; }
 
-notebook > header.bottom > tabs > tab { padding-top: 4px; }
+notebook > header.bottom > tabs > tab { padding-top: 1px; }
 
-notebook > stack:not(:only-child) { background-color: #ffffff; }
+notebook > stack:not(:only-child) { background-color: #f4f4f3; }
+
+notebook > stack:not(:only-child):backdrop { background-color: #f4f4f3; }
 
 /************** Scrollbars * */
 scrollbar { background-color: #bebdbc; transition: 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94); }

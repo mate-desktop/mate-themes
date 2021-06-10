@@ -2038,12 +2038,14 @@ menubar {
 /*************
  * Notebooks *
  *************/
-notebook {
-  @include focus-ring("> header > tabs > tab:checked", $offset: -2px, $focus-state: 'focus:focus-visible');
+$notebook_base_color: lighten($bg_color, 3%);
 
+notebook {
+        border-color:#b0b9c9;
   > header {
     padding: 1px;
     border-color: $borders_color;
+    box-shadow: 1px 1px $bg_color,  1px -1px $bg_color, -1px -1px $bg_color; 
     border-width: 1px;
     background-color: transparent; // Yaru change: remove notebook background
 
@@ -2053,16 +2055,21 @@ notebook {
       border-bottom-style: solid;
       > tabs {
         margin-bottom: -2px;
+        margin-top: 4px;
         > tab {
-          &:hover { color: $fg_color;  }  // Yaru change: 4px underlines are too much
+           background-image: linear-gradient(to bottom, gtkshade($bg_color, 1.02), gtkshade($bg_color, 0.8));
+           box-shadow: 0px -1px $borders_color, 1px 0px $borders_color, -1px 0px  $borders_color, inset 0px -1px $borders_color;
+           border-top-left-radius: 3px;
+           border-top-right-radius: 3px;
+          &:hover {  } // Yaru change: 4px underlines are too much
 
 
           &:checked {  background-image: linear-gradient(to bottom,
                       $core_color_a 3px,
-                      $borders_color 5px,
-                      $base_color 5px,
-                      $base_color); 
-                      box-shadow: 0px -1px $borders_color, 1px 0px $borders_color, -1px 0px  $borders_color; } // Yaru change: 4px underlines are too much
+                      desaturate(darken($core_color_a, 30%), 15%) 5px,
+                      $notebook_base_color 5px,
+                      $notebook_base_color); 
+                      box-shadow: 0px -1px desaturate(darken($core_color_a, 30%), 15%), 1px 0px $borders_color, -1px 0px  $borders_color; } // Yaru change: 4px underlines are too much
         }
       }
     }
@@ -2070,16 +2077,21 @@ notebook {
     &.bottom {
       border-top-style: solid;
       > tabs {
-        margin-top: -2px;
+        margin-top: -3px;
         > tab {
-          &:hover { color: $fg_color; } // Yaru change: 4px underlines are too much
+           background-image: linear-gradient(to top, gtkshade($bg_color, 1.02), gtkshade($bg_color, 0.8));
+           box-shadow: 0px 1px $borders_color , 1px 0px $borders_color, -1px 0px  $borders_color, inset 0px 1px $borders_color; 
+           border-bottom-left-radius: 3px;
+           border-bottom-right-radius: 3px;
+          &:hover {  } // Yaru change: 4px underlines are too much
+
 
           &:checked {  background-image: linear-gradient(to top,
                       $core_color_a 3px,
-                      $borders_color 5px,
-                      $base_color 5px,
-                      $base_color);
-                       box-shadow: 0px 1px $borders_color, 1px 0px $borders_color, -1px 0px  $borders_color; } // Yaru change: 4px underlines are too much
+                      desaturate(darken($core_color_a, 30%), 15%) 5px,
+                      $notebook_base_color 5px,
+                      $notebook_base_color); 
+                       box-shadow: 0px 1px desaturate(darken($core_color_a, 30%), 15%) , 1px 0px $borders_color, -1px 0px  $borders_color; } // Yaru change: 4px underlines are too much
         }
       }
     }
@@ -2087,16 +2099,22 @@ notebook {
     &.left {
       border-right-style: solid;
       > tabs {
-        margin-right: -2px;
+        margin-right: -3px;
         > tab {
-          &:hover {  color: $fg_color; }  // Yaru change: 4px underlines are too much
+            background-image: linear-gradient(to right, gtkshade($bg_color, 1.02), gtkshade($bg_color, 0.8));
+            box-shadow: 0px 1px $borders_color , 0px -1px $borders_color,  -1px 0px $borders_color, inset -1px 0px $borders_color; 
+             border-top-left-radius: 3px;
+           border-bottom-left-radius: 3px;
 
-        &:checked {  background-image: linear-gradient(to right,
+          &:hover {  } // Yaru change: 4px underlines are too much
+
+
+          &:checked {  background-image: linear-gradient(to right,
                       $core_color_a 3px,
-                      $borders_color 5px,
-                      $base_color 5px,
-                      $base_color);
-                      box-shadow: 0px -1px $borders_color,0px 1px $borders_color;   } // Yaru change: 4px underlines are too much
+                      desaturate(darken($core_color_a, 30%), 15%) 5px,
+                      $notebook_base_color 5px,
+                      $notebook_base_color);
+                      box-shadow: -1px 0px desaturate(darken($core_color_a, 30%), 15%) , 0px -1px $borders_color,0px 1px $borders_color;   } // Yaru change: 4px underlines are too much
         }
       }
     }
@@ -2104,17 +2122,21 @@ notebook {
     &.right {
       border-left-style: solid;
       > tabs {
-        margin-left: -2px;
+        margin-left: -3px;
         > tab {
+           background-image: linear-gradient(to left, gtkshade($bg_color, 1.02), gtkshade($bg_color, 0.8));
+           box-shadow: 0px 1px $borders_color , 0px -1px $borders_color,  1px 0px $borders_color, inset 1px 0px $borders_color; 
+             border-top-right-radius: 3px;
+           border-bottom-right-radius: 3px;
           &:hover {  } // Yaru change: 4px underlines are too much
 
 
           &:checked { background-image: linear-gradient(to left,
                       $core_color_a 3px,
-                      $borders_color 5px,
-                      $base_color 5px,
-                      $base_color); 
-                     box-shadow: 0px -1px $borders_color,0px 1px $borders_color;} // Yaru change: 4px underlines are too much
+                      desaturate(darken($core_color_a, 30%), 15%) 5px,
+                      $notebook_base_color 5px,
+                      $notebook_base_color); 
+                     box-shadow:1px 0px desaturate(darken($core_color_a, 30%), 15%), 0px -1px $borders_color,0px 1px $borders_color;} // Yaru change: 4px underlines are too much
         }
       }
     }
@@ -2248,20 +2270,20 @@ notebook {
     &.top,
     &.bottom {
       > tabs {
-        padding-left: 4px;
-        padding-right: 4px;
+        padding-left: 0px;
+        padding-right: 0px;
 
         &:not(:only-child) {
-          margin-left: 3px;
-          margin-right: 3px;
+          margin-left: 1px;
+          margin-right: 1px;
 
-          &:first-child { margin-left: -1px; }
+          &:first-child { margin-left: 0px; }
           &:last-child { margin-right: -1px; }
         }
 
         > tab {
-          margin-left: 4px;
-          margin-right: 4px;
+          margin-left: 0px;
+          margin-right: 0px;
 
           &.reorderable-page { border-style: none solid; }
         }
@@ -2271,32 +2293,34 @@ notebook {
     &.left,
     &.right {
       > tabs {
-        padding-top: 4px;
-        padding-bottom: 4px;
+        padding-top: 0px;
+        padding-bottom: 0px;
 
         &:not(:only-child) {
-          margin-top: 3px;
-          margin-bottom: 3px;
+          margin-top: 0px;
+          margin-bottom: 0px;
 
-          &:first-child { margin-top: -1px; }
+          &:first-child { margin-top: 0px; }
           &:last-child { margin-bottom: -1px; }
         }
 
         > tab {
-          margin-top: 4px;
-          margin-bottom: 4px;
+          margin-top: 0px;
+          margin-bottom: 0px;
 
           &.reorderable-page { border-style: solid none; }
         }
       }
     }
 
-    &.top > tabs > tab { padding-bottom: 4px; }
-    &.bottom > tabs > tab { padding-top: 4px; }
+    &.top > tabs > tab { padding-bottom: 1px; }
+    &.bottom > tabs > tab { padding-top: 1px; }
   }
 
   > stack:not(:only-child) { // the :not(:only-child) is for "hidden" notebooks
-    background-color: $base_color;
+    background-color: $notebook_base_color;
+
+    &:backdrop { background-color: $notebook_base_color; }
   }
 }
 
