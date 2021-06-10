@@ -431,7 +431,7 @@ modelbutton.flat, .menuitem.button.flat, modelbutton.flat:backdrop, modelbutton.
 /* menu buttons */
 modelbutton.flat, .menuitem.button.flat { min-height: 26px; padding-left: 5px; padding-right: 5px; border-radius: 4px; outline-offset: -2px; }
 
-modelbutton.flat:hover, .menuitem.button.flat:hover { box-shadow: inset 0px 1px #838b70, inset 0px -1px #838b70; border-style: solid; background-image: linear-gradient(to bottom, #dbe0d1, #d1d6c5 50%, #cdd3c0 50%, #c3c9b4); background-color: #c7cdb9; color: white; }
+modelbutton.flat:hover, .menuitem.button.flat:hover { box-shadow: inset 0px 1px #838b70, inset 0px -1px #838b70; border-style: solid; background-image: linear-gradient(to bottom, #dbe0d1, #d1d6c5 50%, #cdd3c0 50%, #c3c9b4); background-color: #c7cdb9; color: #42453E; }
 
 modelbutton.flat arrow { background: none; }
 
@@ -2559,7 +2559,7 @@ headerbar, .titlebar { background-image: linear-gradient(to bottom, #d6dbcb, #cb
 
 headerbar:backdrop, .titlebar:backdrop { background-image: linear-gradient(to bottom, #ebeae9, #e2e0df 50%, #dddbda 50%, #d4d2d0); }
 
-headerbar .title, headerbar label.title, .titlebar .title, .titlebar label.title { color: #42453E; text-shadow: 0 1px #455d7c,0 -1px #455d7c, -1px 0px #455d7c,  1px 0px #455d7c; }
+headerbar .title, headerbar label.title, .titlebar .title, .titlebar label.title { color: #625e5b; text-shadow: none; }
 
 headerbar .title:backdrop, headerbar label.title:backdrop, .titlebar .title:backdrop, .titlebar label.title:backdrop { color: #7c7874; text-shadow: none; }
 
