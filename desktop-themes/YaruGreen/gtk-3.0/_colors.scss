@@ -41,8 +41,8 @@ $fg_color: #000000;
 $selected_fg_color: #42453E;
 $selected_bg_color: gtkshade($core_color_a,0.9);
 
-$selected_borders_color: gtkshade($core_color_a,0.7);
-$borders_color: gtkshade($core_color_b, 0.67);
+$selected_borders_color: gtkshade($core_color_a,0.61);
+$borders_color: gtkshade($core_color_b, 0.61);
 $alt_borders_color: if($variant == 'light', darken($bg_color, 24%), darken($bg_color, 8%));
 $borders_edge: if($variant == 'light', transparentize(white, 0.2), transparentize($fg_color, 0.93));
 $link_color: #0000ee;
