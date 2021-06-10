@@ -153,6 +153,10 @@ desktop-themes/YaruOk/metacity-1/Makefile
 desktop-themes/YaruOk/openbox-3/Makefile
 desktop-themes/YaruOk/xfwm4/Makefile
 desktop-themes/YaruOk/xfwm4/png/Makefile
+desktop-themes/YaruGreen/Makefile
+desktop-themes/YaruGreen/gtk-2.0/Makefile
+desktop-themes/YaruGreen/gtk-3.0/Makefile
+desktop-themes/YaruGreen/gtk-3.0/assets/Makefile
 marco-themes/Makefile
 icon-themes/Makefile
 icon-themes/ContrastHigh/Makefile
