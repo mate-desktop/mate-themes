@@ -2593,8 +2593,8 @@ notebook {
     }
 
     tab {
-      min-height: 30px;
-      min-width: 30px;
+      min-height: 25px;
+      min-width: 25px;
       padding: 3px 12px;
 
       outline-offset: -5px;
@@ -2790,7 +2790,8 @@ scrollbar {
 } 
 
   &.horizontal slider {
-    background-image: linear-gradient(to bottom,
+    background-position: center center;
+    background-image: url("assets/slider-horz-grip.png"), linear-gradient(to bottom,
                           transparentize($scrollbar_slider_gradient_a, 0.01) 1px,
                          transparentize($scrollbar_slider_gradient_b, 0.01) 50%,
                           transparentize($scrollbar_slider_gradient_c, 0.01) 50%,
@@ -2798,7 +2799,8 @@ scrollbar {
   }
 
   &.vertical slider {
-    background-image: linear-gradient(to right,
+        background-position: center center;
+    background-image: url("assets/slider-vert-grip.png"), linear-gradient(to right,
                           transparentize($scrollbar_slider_gradient_a, 0.01) 1px,
                           transparentize($scrollbar_slider_gradient_b, 0.01) 50%,
                           transparentize($scrollbar_slider_gradient_c, 0.01) 50%,
@@ -2806,7 +2808,8 @@ scrollbar {
   }
 
   &.vertical slider:hover {
-    background-image: linear-gradient(to right,
+    background-position: center center;
+    background-image: url("assets/slider-vert-grip.png"), linear-gradient(to right,
                           $scrollbar_slider_inner_border_color,
                           $scrollbar_slider_hover_gradient_a 1px,
                           $scrollbar_slider_hover_gradient_b 50%,
@@ -2816,7 +2819,8 @@ scrollbar {
 }
 
  &.horizontal slider:hover {
-    background-image: linear-gradient(to bottom,
+    background-position: center center;
+    background-image: url("assets/slider-horz-grip.png"), linear-gradient(to bottom,
                           $scrollbar_slider_inner_border_color,
                           $scrollbar_slider_hover_gradient_a 1px,
                           $scrollbar_slider_hover_gradient_b 50%,
@@ -2829,9 +2833,9 @@ scrollbar {
   slider {
         background-repeat: no-repeat;
     background-position: center center;
-    min-width: 13px;
-    min-height: 13px;
-    border: 1px solid darken($core_color_a , 20%);
+    min-width: 14px;
+    min-height: 14px;
+    border: 1px solid darken($core_color_a , 35%);
     border-radius: 0px;
    // background-clip: padding-box;
    // background-color: $scrollbar_slider_color;
@@ -3765,8 +3769,8 @@ progressbar {
                           repeating-linear-gradient(135deg,
                           gtkalpha($progressbar_pattern_color, 0.0),
                           gtkalpha($progressbar_pattern_color, 0.0) 12px,
-                          gtkalpha($progressbar_pattern_color, 0.5) 12px,
-                          gtkalpha($progressbar_pattern_color, 0.5) 24px),
+                          gtkalpha($progressbar_pattern_color, 0.4) 12px,
+                          gtkalpha($progressbar_pattern_color, 0.4) 24px),
                           linear-gradient(to bottom,
                           gtkalpha($progressbar_gradient_a, 0.7),
                           gtkalpha($progressbar_gradient_b, 0.7) 50%,

@@ -1,8 +1,10 @@
-THEME_NAME=YaruGreen
+THEME_NAME=YaruOk
 
 themedir = $(datadir)/themes/$(THEME_NAME)/gtk-3.0/assets
 
 theme_DATA = \
+   slider-horz-grip.png \
+   slider-vert-grip.png \
    bullet-symbolic.svg \
    bullet-symbolic.symbolic.png \
    check-symbolic.svg \

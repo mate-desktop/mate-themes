@@ -1016,15 +1016,15 @@ scrollbar.horizontal trough { min-height: 14px; border-radius: 0px; border-width
 
 scrollbar.vertical trough { min-height: 14px; border-radius: 0px; border-width: 0px 1px 0px 1px; border-image: none; background-image: linear-gradient(to right, #cdcbc9, #d6d4d2 50%); }
 
-scrollbar.horizontal slider { background-image: linear-gradient(to bottom, rgba(209, 214, 197, 0.99) 1px, rgba(203, 209, 190, 0.99) 50%, rgba(195, 201, 181, 0.99) 50%, rgba(187, 194, 171, 0.99) 95%); }
+scrollbar.horizontal slider { background-position: center center; background-image: url("assets/slider-horz-grip.png"), linear-gradient(to bottom, rgba(209, 214, 197, 0.99) 1px, rgba(203, 209, 190, 0.99) 50%, rgba(195, 201, 181, 0.99) 50%, rgba(187, 194, 171, 0.99) 95%); }
 
-scrollbar.vertical slider { background-image: linear-gradient(to right, rgba(209, 214, 197, 0.99) 1px, rgba(203, 209, 190, 0.99) 50%, rgba(195, 201, 181, 0.99) 50%, rgba(187, 194, 171, 0.99) 95%); }
+scrollbar.vertical slider { background-position: center center; background-image: url("assets/slider-vert-grip.png"), linear-gradient(to right, rgba(209, 214, 197, 0.99) 1px, rgba(203, 209, 190, 0.99) 50%, rgba(195, 201, 181, 0.99) 50%, rgba(187, 194, 171, 0.99) 95%); }
 
-scrollbar.vertical slider:hover { background-image: linear-gradient(to right, #dbdfd1, #d9ddce 1px, #d1d6c5 50%, #cbd1be 50%, #c1c8b2 95%, #dbdfd1); }
+scrollbar.vertical slider:hover { background-position: center center; background-image: url("assets/slider-vert-grip.png"), linear-gradient(to right, #dbdfd1, #d9ddce 1px, #d1d6c5 50%, #cbd1be 50%, #c1c8b2 95%, #dbdfd1); }
 
-scrollbar.horizontal slider:hover { background-image: linear-gradient(to bottom, #dbdfd1, #d9ddce 1px, #d1d6c5 50%, #cbd1be 50%, #c1c8b2 95%, #dbdfd1); }
+scrollbar.horizontal slider:hover { background-position: center center; background-image: url("assets/slider-horz-grip.png"), linear-gradient(to bottom, #dbdfd1, #d9ddce 1px, #d1d6c5 50%, #cbd1be 50%, #c1c8b2 95%, #dbdfd1); }
 
-scrollbar slider { background-repeat: no-repeat; background-position: center center; min-width: 13px; min-height: 13px; border: 1px solid #7f8b61; border-radius: 0px; }
+scrollbar slider { background-repeat: no-repeat; background-position: center center; min-width: 14px; min-height: 14px; border: 1px solid #7f8b61; border-radius: 0px; }
 
 scrollbar slider:hover { background-color: #2f2f2f; }
 
