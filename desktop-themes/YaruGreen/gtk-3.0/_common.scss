@@ -1129,7 +1129,7 @@ modelbutton.flat,
                       $menubar_menuitem_hover_gradient_c 50%,
                       $menubar_menuitem_hover_gradient_d );
                        background-color: $selected_bg_color;
-                       color: white; }
+                       color: $selected_fg_color; }
 
   &:selected { @extend %selected_items; }
 

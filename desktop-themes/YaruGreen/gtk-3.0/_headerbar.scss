@@ -13,8 +13,7 @@ headerbar,
 
   .title,
   label.title {
-    color: $selected_fg_color;
-        text-shadow: 0 1px #455d7c,0 -1px #455d7c, -1px 0px #455d7c,  1px 0px #455d7c;
+    color: darken($borders_color, 25%); text-shadow:none; 
     &:backdrop { color: darken($borders_color, 15%); text-shadow:none; }
   }
 
