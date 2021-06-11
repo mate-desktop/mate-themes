@@ -3,6 +3,7 @@ THEME_NAME=YaruGreen
 themedir = $(datadir)/themes/$(THEME_NAME)/gtk-3.0/assets
 
 theme_DATA = \
+   panel-grid.svg \
    slider-horz-grip.png \
    slider-vert-grip.png \
    bullet-symbolic.svg \
