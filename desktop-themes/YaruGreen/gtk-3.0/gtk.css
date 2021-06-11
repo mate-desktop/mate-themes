@@ -965,27 +965,27 @@ notebook > header tab button.flat:last-child { margin-left: 4px; margin-right: -
 
 notebook > header tab button.flat:first-child { margin-left: -4px; margin-right: 4px; }
 
-notebook > header.top tabs, notebook > header.bottom tabs { padding-left: 1px; padding-right: 1px; }
+notebook > header.top tabs, notebook > header.bottom tabs { padding-left: 0px; padding-right: 0px; }
 
 notebook > header.top tabs:not(:only-child), notebook > header.bottom tabs:not(:only-child) { margin-left: 1px; margin-right: 1px; }
 
-notebook > header.top tabs:not(:only-child):first-child, notebook > header.bottom tabs:not(:only-child):first-child { margin-left: -1px; }
+notebook > header.top tabs:not(:only-child):first-child, notebook > header.bottom tabs:not(:only-child):first-child { margin-left: 0px; }
 
 notebook > header.top tabs:not(:only-child):last-child, notebook > header.bottom tabs:not(:only-child):last-child { margin-right: -1px; }
 
-notebook > header.top tabs tab, notebook > header.bottom tabs tab { margin-left: 1px; margin-right: 1px; }
+notebook > header.top tabs tab, notebook > header.bottom tabs tab { margin-left: 0px; margin-right: 0px; }
 
 notebook > header.top tabs tab.reorderable-page, notebook > header.bottom tabs tab.reorderable-page { border-style: none solid; }
 
-notebook > header.left tabs, notebook > header.right tabs { padding-top: 0px; padding-bottom: 1px; }
+notebook > header.left tabs, notebook > header.right tabs { padding-top: 0px; padding-bottom: 0px; }
 
-notebook > header.left tabs:not(:only-child), notebook > header.right tabs:not(:only-child) { margin-top: 0px; margin-bottom: 1px; }
+notebook > header.left tabs:not(:only-child), notebook > header.right tabs:not(:only-child) { margin-top: 0px; margin-bottom: 0px; }
 
 notebook > header.left tabs:not(:only-child):first-child, notebook > header.right tabs:not(:only-child):first-child { margin-top: 0px; }
 
 notebook > header.left tabs:not(:only-child):last-child, notebook > header.right tabs:not(:only-child):last-child { margin-bottom: -1px; }
 
-notebook > header.left tabs tab, notebook > header.right tabs tab { margin-top: 1px; margin-bottom: 0px; }
+notebook > header.left tabs tab, notebook > header.right tabs tab { margin-top: 0px; margin-bottom: 0px; }
 
 notebook > header.left tabs tab.reorderable-page, notebook > header.right tabs tab.reorderable-page { border-style: solid none; }
 

@@ -2671,20 +2671,20 @@ notebook {
     &.top,
     &.bottom {
       tabs {
-        padding-left: 1px;
-        padding-right: 1px;
+        padding-left: 0px;
+        padding-right: 0px;
 
         &:not(:only-child) {
           margin-left: 1px;
           margin-right: 1px;
 
-          &:first-child { margin-left: -1px; }
+          &:first-child { margin-left: 0px; }
           &:last-child { margin-right: -1px; }
         }
 
         tab {
-          margin-left: 1px;
-          margin-right: 1px;
+          margin-left: 0px;
+          margin-right: 0px;
 
           &.reorderable-page { border-style: none solid; }
         }
@@ -2695,18 +2695,18 @@ notebook {
     &.right {
       tabs {
         padding-top: 0px;
-        padding-bottom: 1px;
+        padding-bottom: 0px;
 
         &:not(:only-child) {
           margin-top: 0px;
-          margin-bottom: 1px;
+          margin-bottom: 0px;
 
           &:first-child { margin-top: 0px; }
           &:last-child { margin-bottom: -1px; }
         }
 
         tab {
-          margin-top: 1px;
+          margin-top: 0px;
           margin-bottom: 0px;
 
           &.reorderable-page { border-style: solid none; }
