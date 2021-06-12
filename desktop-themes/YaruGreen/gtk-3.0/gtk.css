@@ -460,25 +460,25 @@ list row button.image-button:not(.flat):hover { color: #000000; outline-color: #
 list row button.image-button:not(.flat):active, list row button.image-button:not(.flat):checked { color: #000000; outline-color: #94908c; border-color: #94908c; background-image: linear-gradient(to bottom, #cbc9c6, #d6d4d2 3px, #d9d7d5 4px, #cdcbc9 50%, #c9c6c4 50%, #c0bdba); box-shadow: inset 0 1px rgba(255, 255, 255, 0); text-shadow: none; -gtk-icon-shadow: none; }
 
 /********* Links * */
-button:link, button:visited, button:link > label, button:visited > label, *:link { color: #0000ee; }
+button:link, button:visited, button:link > label, button:visited > label, *:link { color: #717c57; }
 
 button:visited, button:link > label:visited, button:visited > label:visited, *:link:visited { color: #551a8b; }
 
 *:selected button:visited, *:selected button:link > label:visited, *:selected button:visited > label:visited, *:selected *:link:visited { color: #4a345d; }
 
-button:hover:link, button:hover:visited, button:link > label:hover, button:visited > label:hover, *:link:hover { color: #2222ff; }
+button:hover:link, button:hover:visited, button:link > label:hover, button:visited > label:hover, *:link:hover { color: #8c996d; }
 
-*:selected button:hover:link, *:selected button:hover:visited, *:selected button:link > label:hover, *:selected button:visited > label:hover, *:selected *:link:hover { color: #3f4251; }
+*:selected button:hover:link, *:selected button:hover:visited, *:selected button:link > label:hover, *:selected button:visited > label:hover, *:selected *:link:hover { color: #494d43; }
 
-button:active:link, button:active:visited, button:link > label:active, button:visited > label:active, *:link:active { color: #0000ee; }
+button:active:link, button:active:visited, button:link > label:active, button:visited > label:active, *:link:active { color: #717c57; }
 
-*:selected button:active:link, *:selected button:active:visited, *:selected button:link > label:active, *:selected button:visited > label:active, *:selected *:link:active { color: #353761; }
+*:selected button:active:link, *:selected button:active:visited, *:selected button:link > label:active, *:selected button:visited > label:active, *:selected *:link:active { color: #4b5043; }
 
-button:disabled:link, button:disabled:visited, button:link > label:disabled, button:visited > label:disabled, button:disabled:backdrop:link, button:disabled:backdrop:visited, button:link > label:disabled:backdrop, button:visited > label:disabled:backdrop, *:link:disabled, *:link:disabled:backdrop { color: rgba(119, 119, 119, 0.8); }
+button:disabled:link, button:disabled:visited, button:link > label:disabled, button:visited > label:disabled, button:disabled:backdrop:link, button:disabled:backdrop:visited, button:link > label:disabled:backdrop, button:visited > label:disabled:backdrop, *:link:disabled, *:link:disabled:backdrop { color: rgba(106, 106, 106, 0.8); }
 
-button:backdrop:backdrop:hover:link, button:backdrop:backdrop:hover:visited, button:link > label:backdrop:backdrop:hover, button:visited > label:backdrop:backdrop:hover, button:backdrop:backdrop:hover:selected:link, button:backdrop:backdrop:hover:selected:visited, button:link > label:backdrop:backdrop:hover:selected, button:visited > label:backdrop:backdrop:hover:selected, button:backdrop:link, button:backdrop:visited, button:link > label:backdrop, button:visited > label:backdrop, *:link:backdrop:backdrop:hover, *:link:backdrop:backdrop:hover:selected, *:link:backdrop { color: rgba(0, 0, 238, 0.9); }
+button:backdrop:backdrop:hover:link, button:backdrop:backdrop:hover:visited, button:link > label:backdrop:backdrop:hover, button:visited > label:backdrop:backdrop:hover, button:backdrop:backdrop:hover:selected:link, button:backdrop:backdrop:hover:selected:visited, button:link > label:backdrop:backdrop:hover:selected, button:visited > label:backdrop:backdrop:hover:selected, button:backdrop:link, button:backdrop:visited, button:link > label:backdrop, button:visited > label:backdrop, *:link:backdrop:backdrop:hover, *:link:backdrop:backdrop:hover:selected, *:link:backdrop { color: rgba(113, 124, 87, 0.9); }
 
-.selection-mode headerbar .subtitle:link, headerbar.selection-mode .subtitle:link, .selection-mode .titlebar .subtitle:link, .titlebar.selection-mode .subtitle:link, button:selected:link, button:selected:visited, button:link > label:selected, button:visited > label:selected, *:selected button:link, *:selected button:visited, *:selected button:link > label, *:selected button:visited > label, *:link:selected, *:selected *:link { color: #353761; }
+.selection-mode headerbar .subtitle:link, headerbar.selection-mode .subtitle:link, .selection-mode .titlebar .subtitle:link, .titlebar.selection-mode .subtitle:link, button:selected:link, button:selected:visited, button:link > label:selected, button:visited > label:selected, *:selected button:link, *:selected button:visited, *:selected button:link > label, *:selected button:visited > label, *:link:selected, *:selected *:link { color: #4b5043; }
 
 button:link, button:visited { text-shadow: none; }
 
@@ -789,7 +789,7 @@ menubar > menuitem, .menubar > menuitem { min-height: 16px; padding: 4px 8px; bo
 
 menubar > menuitem menu:dir(rtl), menubar > menuitem menu:dir(ltr), .menubar > menuitem menu:dir(rtl), .menubar > menuitem menu:dir(ltr) { border-radius: 0; padding: 0; }
 
-menubar > menuitem:hover, .menubar > menuitem:hover { border-width: 1px 1px 0px; border-color: #7d856c; border-style: solid; color: #0000ee; background-image: linear-gradient(to bottom, #d3d8c7, #c9cfbb 50%, #c5cbb7 50%, #bbc2ab); }
+menubar > menuitem:hover, .menubar > menuitem:hover { border-width: 1px 1px 0px; border-color: #7d856c; border-style: solid; color: #717c57; background-image: linear-gradient(to bottom, #d3d8c7, #c9cfbb 50%, #c5cbb7 50%, #bbc2ab); }
 
 menubar > menuitem:disabled, .menubar > menuitem:disabled { color: #a9a5a2; box-shadow: none; }
 
@@ -935,7 +935,7 @@ notebook > header > tabs > arrow:hover:not(:active):not(:backdrop) { background-
 
 notebook > header > tabs > arrow:disabled { border-color: transparent; background-color: transparent; background-image: none; box-shadow: inset 0 1px rgba(255, 255, 255, 0); text-shadow: none; -gtk-icon-shadow: none; }
 
-notebook > header tab { min-height: 25px; min-width: 25px; padding: 3px 12px; outline-offset: -5px; color: #000000; font-weight: normal; border-width: 0px; border-color: transparent; }
+notebook > header tab { min-height: 22px; min-width: 22px; padding: 3px 12px; outline-offset: -5px; color: #000000; font-weight: normal; border-width: 0px; border-color: transparent; }
 
 notebook > header tab:hover { color: #000000; background-color: #e3e2e0; }
 
@@ -1792,7 +1792,7 @@ infobar.info button:backdrop label, infobar.info button:backdrop, infobar.info b
 
 infobar.info selection, infobar.question selection, infobar.warning selection, infobar.error selection { background-color: #d5d3d0; }
 
-infobar.info *:link, infobar.question *:link, infobar.warning *:link, infobar.error *:link { color: #0000ee; }
+infobar.info *:link, infobar.question *:link, infobar.warning *:link, infobar.error *:link { color: #717c57; }
 
 /************ Tooltips * */
 tooltip { padding: 4px; /* not working */ border-radius: 5px; box-shadow: none; text-shadow: 0 1px black; }
@@ -2326,8 +2326,11 @@ PanelApplet.wnck-applet .wnck-pager { outline-style: solid; outline-offset: -1px
 /* clock window */
 #MatePanelPopupWindow { border-radius: 4px; }
 
-/* Weird, this sets the border color of the clockmap */
-#MatePanelPopupWindow > frame > box > box > box > widget { color: #94908c; }
+#PanelApplet > #clock-applet-button.flat.toggle { background-color: transparent; background-image: none; border-color: transparent; border-width: 0px; box-shadow: none; }
+
+#PanelApplet > #clock-applet-button.flat.toggle:hover { box-shadow: inset 0px 1px #94908c, inset 0px -1px #94908c, inset 1px 0px #94908c, inset -1px 0px #94908c; background-image: linear-gradient(to bottom, #ffffff 5%, #f8f8f7 95%, #edeceb); }
+
+#PanelApplet > #clock-applet-button.flat.toggle:checked { box-shadow: inset 0px 1px #94908c, inset 0px -1px #94908c, inset 1px 0px #94908c, inset -1px 0px #94908c; background-image: linear-gradient(to bottom, #cbc9c6, #d6d4d2 3px, #d9d7d5 4px, #cdcbc9 50%, #c9c6c4 50%, #c0bdba); }
 
 /* volume applet */
 .mate-panel-applet-slider, .mate-panel-applet-slider.background { border-radius: 4px; border: 1px solid rgba(0, 0, 0, 0.23); background: transparent; }
@@ -2389,13 +2392,6 @@ iconview { border-radius: 4px; }
 
 iconview:hover { background-color: #d7dbcd; }
 
-/* Brisk menu's panel button */
-.mate-panel-menu-bar #PanelApplet button.flat.toggle.brisk-button, .mate-panel-menu-bar #PanelApplet button.flat.toggle.brisk-button:hover { background-image: none; background-color: transparent; padding: 0px; margin: 0px; border-color: transparent; border-radius: 0; border-image: none; text-shadow: none; }
-
-.mate-panel-menu-bar #PanelApplet button.flat.toggle.brisk-button image, .mate-panel-menu-bar #PanelApplet button.flat.toggle.brisk-button:hover image { margin: 0px; padding: 0px; }
-
-.mate-panel-menu-bar #PanelApplet button.flat.toggle.brisk-button:checked, .mate-panel-menu-bar #PanelApplet button.flat.toggle.brisk-button:hover:checked { box-shadow: inset 0 -3px 0 0 #bfc6b0; }
-
 /* mate-keyboard-layout-view, mate-keyboard-layout-chooser */
 /* this way it styles only the border of the keys, the bg of the map itself use the .view class */
 matekbd-keyboard-drawing { background-color: #edeceb; }
@@ -2433,7 +2429,10 @@ window#Main.background #search { background: #ffffff; color: #000000; box-shadow
 
 window#Main.background #search entry { border-color: #94908c; }
 
-MatePanelAppletFrameDBus > MatePanelAppletFrameDBus { background-image: -gtk-scaled(url("assets/panel-grid.svg")); background-color: transparent; background-repeat: no-repeat; background-position: left; }
+MatePanelAppletFrameDBus > MatePanelAppletFrameDBus { background-image: -gtk-scaled(url("assets/panel-grid.svg")); background-color: transparent; color: #bebebe; background-repeat: no-repeat; background-position: left; }
+
+/* for firefox and probably other apps */
+label:selected, label selection, label selection:focus, label selection:hover { color: #42453E; }
 
 headerbar *, button * { text-shadow: none; }
 
