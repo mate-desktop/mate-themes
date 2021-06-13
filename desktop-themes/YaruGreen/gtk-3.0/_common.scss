@@ -7,9 +7,10 @@ $asset_suffix: if($variant=='dark', '-dark', '');
 $backdrop_transition: 200ms ease-out;
 $button_transition: all 200ms $ease-out-quad;
 $button_radius: 4px; // Yaru change: we want everything to be less round
-$menu_radius: 4px; // Yaru change: we want everything to be less round
+$model_button_radius: 3px; // blx change: we want everything to be less round
+$menu_radius: 3px; // Yaru change: we want everything to be less round
 $window_radius: $button_radius + 3;
-$popover_radius: $button_radius + 2; // Yaru change: we want everything to be less round
+$popover_radius: $button_radius; // Yaru change: we want everything to be less round
 
 // Optional compact sizes for buttons, headerbar and headerbar widgets
 $_sizevariant: 'default'; //compact otherwise
@@ -1116,7 +1117,7 @@ modelbutton.flat,
   min-height: 26px;
   padding-left: 5px;
   padding-right: 5px;
-  border-radius: $button_radius;
+  border-radius: $model_button_radius;
   outline-offset: -2px;
 
   @extend %undecorated_button;
