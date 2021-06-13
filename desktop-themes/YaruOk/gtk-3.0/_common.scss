@@ -1129,7 +1129,7 @@ modelbutton.flat,
                       $menubar_menuitem_hover_gradient_c 50%,
                       $menubar_menuitem_hover_gradient_d );
                        background-color: $selected_bg_color;
-                       color: white; }
+                       color: $selected_fg_color; }
 
   &:selected { @extend %selected_items; }
 
@@ -2593,8 +2593,8 @@ notebook {
     }
 
     tab {
-      min-height: 30px;
-      min-width: 30px;
+      min-height: 22px;
+      min-width: 22px;
       padding: 3px 12px;
 
       outline-offset: -5px;
@@ -2671,20 +2671,20 @@ notebook {
     &.top,
     &.bottom {
       tabs {
-        padding-left: 1px;
-        padding-right: 1px;
+        padding-left: 0px;
+        padding-right: 0px;
 
         &:not(:only-child) {
           margin-left: 1px;
           margin-right: 1px;
 
-          &:first-child { margin-left: -1px; }
+          &:first-child { margin-left: 0px; }
           &:last-child { margin-right: -1px; }
         }
 
         tab {
-          margin-left: 1px;
-          margin-right: 1px;
+          margin-left: 0px;
+          margin-right: 0px;
 
           &.reorderable-page { border-style: none solid; }
         }
@@ -2695,18 +2695,18 @@ notebook {
     &.right {
       tabs {
         padding-top: 0px;
-        padding-bottom: 1px;
+        padding-bottom: 0px;
 
         &:not(:only-child) {
           margin-top: 0px;
-          margin-bottom: 1px;
+          margin-bottom: 0px;
 
           &:first-child { margin-top: 0px; }
           &:last-child { margin-bottom: -1px; }
         }
 
         tab {
-          margin-top: 1px;
+          margin-top: 0px;
           margin-bottom: 0px;
 
           &.reorderable-page { border-style: solid none; }
@@ -2790,7 +2790,8 @@ scrollbar {
 } 
 
   &.horizontal slider {
-    background-image: linear-gradient(to bottom,
+    background-position: center center;
+    background-image: url("assets/slider-horz-grip.png"), linear-gradient(to bottom,
                           transparentize($scrollbar_slider_gradient_a, 0.01) 1px,
                          transparentize($scrollbar_slider_gradient_b, 0.01) 50%,
                           transparentize($scrollbar_slider_gradient_c, 0.01) 50%,
@@ -2798,7 +2799,8 @@ scrollbar {
   }
 
   &.vertical slider {
-    background-image: linear-gradient(to right,
+        background-position: center center;
+    background-image: url("assets/slider-vert-grip.png"), linear-gradient(to right,
                           transparentize($scrollbar_slider_gradient_a, 0.01) 1px,
                           transparentize($scrollbar_slider_gradient_b, 0.01) 50%,
                           transparentize($scrollbar_slider_gradient_c, 0.01) 50%,
@@ -2806,7 +2808,8 @@ scrollbar {
   }
 
   &.vertical slider:hover {
-    background-image: linear-gradient(to right,
+    background-position: center center;
+    background-image: url("assets/slider-vert-grip.png"), linear-gradient(to right,
                           $scrollbar_slider_inner_border_color,
                           $scrollbar_slider_hover_gradient_a 1px,
                           $scrollbar_slider_hover_gradient_b 50%,
@@ -2816,7 +2819,8 @@ scrollbar {
 }
 
  &.horizontal slider:hover {
-    background-image: linear-gradient(to bottom,
+    background-position: center center;
+    background-image: url("assets/slider-horz-grip.png"), linear-gradient(to bottom,
                           $scrollbar_slider_inner_border_color,
                           $scrollbar_slider_hover_gradient_a 1px,
                           $scrollbar_slider_hover_gradient_b 50%,
@@ -2829,9 +2833,9 @@ scrollbar {
   slider {
         background-repeat: no-repeat;
     background-position: center center;
-    min-width: 13px;
-    min-height: 13px;
-    border: 1px solid darken($core_color_a , 20%);
+    min-width: 14px;
+    min-height: 14px;
+    border: 1px solid darken($core_color_a , 35%);
     border-radius: 0px;
    // background-clip: padding-box;
    // background-color: $scrollbar_slider_color;
