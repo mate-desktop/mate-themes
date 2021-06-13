@@ -2593,8 +2593,8 @@ notebook {
     }
 
     tab {
-      min-height: 25px;
-      min-width: 25px;
+      min-height: 22px;
+      min-width: 22px;
       padding: 3px 12px;
 
       outline-offset: -5px;
@@ -2733,17 +2733,17 @@ $scrollbar_trough_gradient_a: gtkshade($core_color_b, 0.86);
 $scrollbar_trough_gradient_b: gtkshade($core_color_b, 0.90);
 
 $scrollbar_slider_bg_color: gtkshade($core_color_a, 0.99);
-$scrollbar_slider_gradient_a: $scrollbar_slider_bg_color;
-$scrollbar_slider_gradient_b: gtkshade($core_color_a, 0.96);
-$scrollbar_slider_gradient_c: gtkshade($core_color_a, 0.92);
-$scrollbar_slider_gradient_d: gtkshade($core_color_a, 0.88);
+$scrollbar_slider_gradient_a: gtkshade($scrollbar_slider_bg_color,0.90);
+$scrollbar_slider_gradient_b: gtkshade($core_color_a, 0.88);
+$scrollbar_slider_gradient_c: gtkshade($core_color_a, 0.85);
+$scrollbar_slider_gradient_d: gtkshade($core_color_a, 0.80);
 $scrollbar_slider_inner_border_color: gtkshade($core_color_a, 1.04);
 
 $scrollbar_slider_hover_bg_color: gtkshade($core_color_a, 1.03);
-$scrollbar_slider_hover_gradient_a: $scrollbar_slider_hover_bg_color;
-$scrollbar_slider_hover_gradient_b: gtkshade($core_color_a, 0.99);
-$scrollbar_slider_hover_gradient_c: gtkshade($core_color_a, 0.96);
-$scrollbar_slider_hover_gradient_d: gtkshade($core_color_a, 0.91);
+$scrollbar_slider_hover_gradient_a: gtkshade($scrollbar_slider_hover_bg_color, 0.93);
+$scrollbar_slider_hover_gradient_b: gtkshade($core_color_a, 0.92);
+$scrollbar_slider_hover_gradient_c: gtkshade($core_color_a, 0.90);
+$scrollbar_slider_hover_gradient_d: gtkshade($core_color_a, 0.86);
 
 scrollbar {
   $_slider_min_length: 40px;
