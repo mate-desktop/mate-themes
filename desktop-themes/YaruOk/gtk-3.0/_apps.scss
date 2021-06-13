@@ -1123,3 +1123,21 @@ window#Main.background {
   
   
 }
+
+
+MatePanelAppletFrameDBus > MatePanelAppletFrameDBus {
+    background-image: -gtk-scaled(url("assets/panel-grid.svg"));
+    background-color: transparent;
+    color: #bebebe;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+/* for firefox and probably other apps */
+label:selected,
+label selection,
+label selection:focus,
+label selection:hover {
+  color: $selected_fg_color;
+}
+
