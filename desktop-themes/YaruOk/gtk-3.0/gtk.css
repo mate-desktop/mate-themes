@@ -431,7 +431,7 @@ modelbutton.flat, .menuitem.button.flat, modelbutton.flat:backdrop, modelbutton.
 /* menu buttons */
 modelbutton.flat, .menuitem.button.flat { min-height: 26px; padding-left: 5px; padding-right: 5px; border-radius: 4px; outline-offset: -2px; }
 
-modelbutton.flat:hover, .menuitem.button.flat:hover { box-shadow: inset 0px 1px #4b6e9b, inset 0px -1px #4b6e9b; border-style: solid; background-image: linear-gradient(to bottom, #a4c2e8, #96b8e2 50%, #91b4df 50%, #84a9d9); background-color: #89addb; color: white; }
+modelbutton.flat:hover, .menuitem.button.flat:hover { box-shadow: inset 0px 1px #4b6e9b, inset 0px -1px #4b6e9b; border-style: solid; background-image: linear-gradient(to bottom, #a4c2e8, #96b8e2 50%, #91b4df 50%, #84a9d9); background-color: #89addb; color: #ffffff; }
 
 modelbutton.flat arrow { background: none; }
 
@@ -935,7 +935,7 @@ notebook > header > tabs > arrow:hover:not(:active):not(:backdrop) { background-
 
 notebook > header > tabs > arrow:disabled { border-color: transparent; background-color: transparent; background-image: none; box-shadow: inset 0 1px rgba(255, 255, 255, 0); text-shadow: none; -gtk-icon-shadow: none; }
 
-notebook > header tab { min-height: 30px; min-width: 30px; padding: 3px 12px; outline-offset: -5px; color: #000000; font-weight: normal; border-width: 0px; border-color: transparent; }
+notebook > header tab { min-height: 22px; min-width: 22px; padding: 3px 12px; outline-offset: -5px; color: #000000; font-weight: normal; border-width: 0px; border-color: transparent; }
 
 notebook > header tab:hover { color: #000000; background-color: #e3e2e0; }
 
@@ -965,27 +965,27 @@ notebook > header tab button.flat:last-child { margin-left: 4px; margin-right: -
 
 notebook > header tab button.flat:first-child { margin-left: -4px; margin-right: 4px; }
 
-notebook > header.top tabs, notebook > header.bottom tabs { padding-left: 1px; padding-right: 1px; }
+notebook > header.top tabs, notebook > header.bottom tabs { padding-left: 0px; padding-right: 0px; }
 
 notebook > header.top tabs:not(:only-child), notebook > header.bottom tabs:not(:only-child) { margin-left: 1px; margin-right: 1px; }
 
-notebook > header.top tabs:not(:only-child):first-child, notebook > header.bottom tabs:not(:only-child):first-child { margin-left: -1px; }
+notebook > header.top tabs:not(:only-child):first-child, notebook > header.bottom tabs:not(:only-child):first-child { margin-left: 0px; }
 
 notebook > header.top tabs:not(:only-child):last-child, notebook > header.bottom tabs:not(:only-child):last-child { margin-right: -1px; }
 
-notebook > header.top tabs tab, notebook > header.bottom tabs tab { margin-left: 1px; margin-right: 1px; }
+notebook > header.top tabs tab, notebook > header.bottom tabs tab { margin-left: 0px; margin-right: 0px; }
 
 notebook > header.top tabs tab.reorderable-page, notebook > header.bottom tabs tab.reorderable-page { border-style: none solid; }
 
-notebook > header.left tabs, notebook > header.right tabs { padding-top: 0px; padding-bottom: 1px; }
+notebook > header.left tabs, notebook > header.right tabs { padding-top: 0px; padding-bottom: 0px; }
 
-notebook > header.left tabs:not(:only-child), notebook > header.right tabs:not(:only-child) { margin-top: 0px; margin-bottom: 1px; }
+notebook > header.left tabs:not(:only-child), notebook > header.right tabs:not(:only-child) { margin-top: 0px; margin-bottom: 0px; }
 
 notebook > header.left tabs:not(:only-child):first-child, notebook > header.right tabs:not(:only-child):first-child { margin-top: 0px; }
 
 notebook > header.left tabs:not(:only-child):last-child, notebook > header.right tabs:not(:only-child):last-child { margin-bottom: -1px; }
 
-notebook > header.left tabs tab, notebook > header.right tabs tab { margin-top: 1px; margin-bottom: 0px; }
+notebook > header.left tabs tab, notebook > header.right tabs tab { margin-top: 0px; margin-bottom: 0px; }
 
 notebook > header.left tabs tab.reorderable-page, notebook > header.right tabs tab.reorderable-page { border-style: solid none; }
 
@@ -1016,15 +1016,15 @@ scrollbar.horizontal trough { min-height: 14px; border-radius: 0px; border-width
 
 scrollbar.vertical trough { min-height: 14px; border-radius: 0px; border-width: 0px 1px 0px 1px; border-image: none; background-image: linear-gradient(to right, #cdcbc9, #d6d4d2 50%); }
 
-scrollbar.horizontal slider { background-image: linear-gradient(to bottom, rgba(161, 192, 231, 0.99) 1px, rgba(153, 186, 227, 0.99) 50%, rgba(142, 177, 222, 0.99) 50%, rgba(132, 169, 217, 0.99) 95%); }
+scrollbar.horizontal slider { background-position: center center; background-image: url("assets/slider-horz-grip.png"), linear-gradient(to bottom, rgba(161, 192, 231, 0.99) 1px, rgba(153, 186, 227, 0.99) 50%, rgba(142, 177, 222, 0.99) 50%, rgba(132, 169, 217, 0.99) 95%); }
 
-scrollbar.vertical slider { background-image: linear-gradient(to right, rgba(161, 192, 231, 0.99) 1px, rgba(153, 186, 227, 0.99) 50%, rgba(142, 177, 222, 0.99) 50%, rgba(132, 169, 217, 0.99) 95%); }
+scrollbar.vertical slider { background-position: center center; background-image: url("assets/slider-vert-grip.png"), linear-gradient(to right, rgba(161, 192, 231, 0.99) 1px, rgba(153, 186, 227, 0.99) 50%, rgba(142, 177, 222, 0.99) 50%, rgba(132, 169, 217, 0.99) 95%); }
 
-scrollbar.vertical slider:hover { background-image: linear-gradient(to right, #afcaec, #adc8eb 1px, #a1c0e7 50%, #99bae3 50%, #8cafdd 95%, #afcaec); }
+scrollbar.vertical slider:hover { background-position: center center; background-image: url("assets/slider-vert-grip.png"), linear-gradient(to right, #afcaec, #adc8eb 1px, #a1c0e7 50%, #99bae3 50%, #8cafdd 95%, #afcaec); }
 
-scrollbar.horizontal slider:hover { background-image: linear-gradient(to bottom, #afcaec, #adc8eb 1px, #a1c0e7 50%, #99bae3 50%, #8cafdd 95%, #afcaec); }
+scrollbar.horizontal slider:hover { background-position: center center; background-image: url("assets/slider-horz-grip.png"), linear-gradient(to bottom, #afcaec, #adc8eb 1px, #a1c0e7 50%, #99bae3 50%, #8cafdd 95%, #afcaec); }
 
-scrollbar slider { background-repeat: no-repeat; background-position: center center; min-width: 13px; min-height: 13px; border: 1px solid #538bd3; border-radius: 0px; }
+scrollbar slider { background-repeat: no-repeat; background-position: center center; min-width: 14px; min-height: 14px; border: 1px solid #2c65ae; border-radius: 0px; }
 
 scrollbar slider:hover { background-color: #2f2f2f; }
 
@@ -2326,8 +2326,11 @@ PanelApplet.wnck-applet .wnck-pager { outline-style: solid; outline-offset: -1px
 /* clock window */
 #MatePanelPopupWindow { border-radius: 4px; }
 
-/* Weird, this sets the border color of the clockmap */
-#MatePanelPopupWindow > frame > box > box > box > widget { color: #a29e9b; }
+#PanelApplet > #clock-applet-button.flat.toggle { background-color: transparent; background-image: none; border-color: transparent; border-width: 0px; box-shadow: none; }
+
+#PanelApplet > #clock-applet-button.flat.toggle:hover { box-shadow: inset 0px 1px #a29e9b, inset 0px -1px #a29e9b, inset 1px 0px #a29e9b, inset -1px 0px #a29e9b; background-image: linear-gradient(to bottom, #ffffff 5%, #f8f8f7 95%, #edeceb); }
+
+#PanelApplet > #clock-applet-button.flat.toggle:checked { box-shadow: inset 0px 1px #a29e9b, inset 0px -1px #a29e9b, inset 1px 0px #a29e9b, inset -1px 0px #a29e9b; background-image: linear-gradient(to bottom, #cbc9c6, #d6d4d2 3px, #d9d7d5 4px, #cdcbc9 50%, #c9c6c4 50%, #c0bdba); }
 
 /* volume applet */
 .mate-panel-applet-slider, .mate-panel-applet-slider.background { border-radius: 4px; border: 1px solid rgba(0, 0, 0, 0.23); background: transparent; }
@@ -2388,13 +2391,6 @@ MsdOsdWindow.background.osd .progressbar { border-radius: 4px; background-color:
 iconview { border-radius: 4px; }
 
 iconview:hover { background-color: #b0c8e7; }
-
-/* Brisk menu's panel button */
-.mate-panel-menu-bar #PanelApplet button.flat.toggle.brisk-button, .mate-panel-menu-bar #PanelApplet button.flat.toggle.brisk-button:hover { background-image: none; background-color: transparent; padding: 0px; margin: 0px; border-color: transparent; border-radius: 0; border-image: none; text-shadow: none; }
-
-.mate-panel-menu-bar #PanelApplet button.flat.toggle.brisk-button image, .mate-panel-menu-bar #PanelApplet button.flat.toggle.brisk-button:hover image { margin: 0px; padding: 0px; }
-
-.mate-panel-menu-bar #PanelApplet button.flat.toggle.brisk-button:checked, .mate-panel-menu-bar #PanelApplet button.flat.toggle.brisk-button:hover:checked { box-shadow: inset 0 -3px 0 0 #89addb; }
 
 /* mate-keyboard-layout-view, mate-keyboard-layout-chooser */
 /* this way it styles only the border of the keys, the bg of the map itself use the .view class */
