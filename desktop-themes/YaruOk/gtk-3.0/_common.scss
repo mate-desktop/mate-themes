@@ -2448,9 +2448,10 @@ notebook {
           &:backdrop { }
 
           &:checked {  background-image: linear-gradient(to bottom,
+                      gtkshade($core_color_a, 0.7),
                       $core_color_a 3px,
                       desaturate(darken($core_color_a, 30%), 15%) 5px,
-                      $notebook_base_color 5px,
+                      lighten($notebook_base_color, 4%) 5px,
                       $notebook_base_color); 
                       box-shadow: 0px -1px desaturate(darken($core_color_a, 30%), 15%), 1px 0px $borders_color, -1px 0px  $borders_color; } // Yaru change: 4px underlines are too much
         }
@@ -2471,9 +2472,10 @@ notebook {
           &:backdrop {  }
 
           &:checked {  background-image: linear-gradient(to top,
+                     gtkshade($core_color_a, 0.7),
                       $core_color_a 3px,
                       desaturate(darken($core_color_a, 30%), 15%) 5px,
-                      $notebook_base_color 5px,
+                      lighten($notebook_base_color, 4%) 5px,
                       $notebook_base_color); 
                        box-shadow: 0px 1px desaturate(darken($core_color_a, 30%), 15%) , 1px 0px $borders_color, -1px 0px  $borders_color; } // Yaru change: 4px underlines are too much
         }
@@ -2492,13 +2494,14 @@ notebook {
 
           &:hover {  } // Yaru change: 4px underlines are too much
 
-          &:backdrop { box-shadow: none; }
+          &:backdrop {  }
 
           &:checked {  background-image: linear-gradient(to right,
+                     gtkshade($core_color_a, 0.7),
                       $core_color_a 3px,
                       desaturate(darken($core_color_a, 30%), 15%) 5px,
-                      $notebook_base_color 5px,
-                      $notebook_base_color);
+                      lighten($notebook_base_color, 4%) 5px,
+                      $notebook_base_color); 
                       box-shadow: -1px 0px desaturate(darken($core_color_a, 30%), 15%) , 0px -1px $borders_color,0px 1px $borders_color;   } // Yaru change: 4px underlines are too much
         }
       }
@@ -2515,12 +2518,13 @@ notebook {
            border-bottom-right-radius: 3px;
           &:hover {  } // Yaru change: 4px underlines are too much
 
-          &:backdrop { box-shadow: none; }
+          &:backdrop {  }
 
           &:checked { background-image: linear-gradient(to left,
+                     gtkshade($core_color_a, 0.7),
                       $core_color_a 3px,
                       desaturate(darken($core_color_a, 30%), 15%) 5px,
-                      $notebook_base_color 5px,
+                      lighten($notebook_base_color, 4%) 5px,
                       $notebook_base_color); 
                      box-shadow:1px 0px desaturate(darken($core_color_a, 30%), 15%), 0px -1px $borders_color,0px 1px $borders_color;} // Yaru change: 4px underlines are too much
         }

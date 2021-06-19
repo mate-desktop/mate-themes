@@ -879,7 +879,7 @@ notebook > header.top > tabs { margin-bottom: -2px; margin-top: 2px; }
 
 notebook > header.top > tabs > tab { background-image: linear-gradient(to bottom, #f1f1f0, #c0bdba); box-shadow: 0px -1px #94908c, 1px 0px #94908c, -1px 0px #94908c, inset 0px -1px #94908c; border-top-left-radius: 3px; border-top-right-radius: 3px; }
 
-notebook > header.top > tabs > tab:checked { background-image: linear-gradient(to bottom, #d3d8c7 3px, #848680 5px, #f4f4f3 5px, #f4f4f3); box-shadow: 0px -1px #848680, 1px 0px #94908c, -1px 0px #94908c; }
+notebook > header.top > tabs > tab:checked { background-image: linear-gradient(to bottom, #979f84, #d3d8c7 3px, #848680 5px, #fefefe 5px, #f4f4f3); box-shadow: 0px -1px #848680, 1px 0px #94908c, -1px 0px #94908c; }
 
 notebook > header.bottom { border-top-style: solid; }
 
@@ -887,7 +887,7 @@ notebook > header.bottom > tabs { margin-top: -2px; margin-bottom: 2px; }
 
 notebook > header.bottom > tabs > tab { background-image: linear-gradient(to top, #f1f1f0, #c0bdba); box-shadow: 0px 1px #94908c, 1px 0px #94908c, -1px 0px #94908c, inset 0px 1px #94908c; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; }
 
-notebook > header.bottom > tabs > tab:checked { background-image: linear-gradient(to top, #d3d8c7 3px, #848680 5px, #f4f4f3 5px, #f4f4f3); box-shadow: 0px 1px #848680, 1px 0px #94908c, -1px 0px #94908c; }
+notebook > header.bottom > tabs > tab:checked { background-image: linear-gradient(to top, #979f84, #d3d8c7 3px, #848680 5px, #fefefe 5px, #f4f4f3); box-shadow: 0px 1px #848680, 1px 0px #94908c, -1px 0px #94908c; }
 
 notebook > header.left { border-right-style: solid; }
 
@@ -895,9 +895,7 @@ notebook > header.left > tabs { margin-right: -2px; }
 
 notebook > header.left > tabs > tab { background-image: linear-gradient(to right, #f1f1f0, #c0bdba); box-shadow: 0px 1px #94908c, 0px -1px #94908c, -1px 0px #94908c, inset -1px 0px #94908c; border-top-left-radius: 3px; border-bottom-left-radius: 3px; }
 
-notebook > header.left > tabs > tab:backdrop { box-shadow: none; }
-
-notebook > header.left > tabs > tab:checked { background-image: linear-gradient(to right, #d3d8c7 3px, #848680 5px, #f4f4f3 5px, #f4f4f3); box-shadow: -1px 0px #848680, 0px -1px #94908c, 0px 1px #94908c; }
+notebook > header.left > tabs > tab:checked { background-image: linear-gradient(to right, #979f84, #d3d8c7 3px, #848680 5px, #fefefe 5px, #f4f4f3); box-shadow: -1px 0px #848680, 0px -1px #94908c, 0px 1px #94908c; }
 
 notebook > header.right { border-left-style: solid; }
 
@@ -905,9 +903,7 @@ notebook > header.right > tabs { margin-left: -2px; }
 
 notebook > header.right > tabs > tab { background-image: linear-gradient(to left, #f1f1f0, #c0bdba); box-shadow: 0px 1px #94908c, 0px -1px #94908c, 1px 0px #94908c, inset 1px 0px #94908c; border-top-right-radius: 3px; border-bottom-right-radius: 3px; }
 
-notebook > header.right > tabs > tab:backdrop { box-shadow: none; }
-
-notebook > header.right > tabs > tab:checked { background-image: linear-gradient(to left, #d3d8c7 3px, #848680 5px, #f4f4f3 5px, #f4f4f3); box-shadow: 1px 0px #848680, 0px -1px #94908c, 0px 1px #94908c; }
+notebook > header.right > tabs > tab:checked { background-image: linear-gradient(to left, #979f84, #d3d8c7 3px, #848680 5px, #fefefe 5px, #f4f4f3); box-shadow: 1px 0px #848680, 0px -1px #94908c, 0px 1px #94908c; }
 
 notebook > header.top > tabs > arrow { border-top-style: none; }
 
@@ -2429,7 +2425,7 @@ window#Main.background #search { background: #ffffff; color: #000000; box-shadow
 
 window#Main.background #search entry { border-color: #94908c; }
 
-MatePanelAppletFrameDBus > MatePanelAppletFrameDBus { background-image: -gtk-scaled(url("assets/panel-grid.svg")); background-color: transparent; color: #bebebe; background-repeat: no-repeat; background-position: left; }
+MatePanelAppletFrameDBus > MatePanelAppletFrameDBus { background-image: -gtk-scaled(url("assets/panel-grid.svg")); background-color: transparent; color: #8f8f8f; background-repeat: no-repeat; background-position: left; }
 
 /* for firefox and probably other apps */
 label:selected, label selection, label selection:focus, label selection:hover { color: #42453E; }
