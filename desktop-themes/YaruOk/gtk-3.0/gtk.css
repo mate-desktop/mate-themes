@@ -799,7 +799,7 @@ menubar .csd.popup decoration, .menubar .csd.popup decoration { border-radius: 0
 
 menu, .menu, .context-menu { margin: 4px; padding: 4px 0px; background-color: white; border: 1px solid #a29e9b; }
 
-.csd menu, .csd .menu, .csd .context-menu { border: none; border-radius: 3px; }
+.csd menu, .csd .menu, .csd .context-menu { border: none; border-radius: 2px; }
 
 menu:backdrop, .menu:backdrop, .context-menu:backdrop { background-color: #fcfcfc; }
 
@@ -823,9 +823,9 @@ menu menuitem label:dir(rtl), menu menuitem label:dir(ltr), .menu menuitem label
 
 menu > arrow, .menu > arrow, .context-menu > arrow { border-color: transparent; background-color: transparent; background-image: none; box-shadow: inset 0 1px rgba(255, 255, 255, 0); text-shadow: none; -gtk-icon-shadow: none; min-height: 16px; min-width: 16px; padding: 4px; background-color: white; border-radius: 0; }
 
-menu > arrow.top, .menu > arrow.top, .context-menu > arrow.top { margin-top: -4px; border-bottom: 1px solid #e6e6e6; border-top-right-radius: 3px; border-top-left-radius: 3px; -gtk-icon-source: -gtk-icontheme("pan-up-symbolic"); }
+menu > arrow.top, .menu > arrow.top, .context-menu > arrow.top { margin-top: -4px; border-bottom: 1px solid #e6e6e6; border-top-right-radius: 2px; border-top-left-radius: 2px; -gtk-icon-source: -gtk-icontheme("pan-up-symbolic"); }
 
-menu > arrow.bottom, .menu > arrow.bottom, .context-menu > arrow.bottom { margin-top: 8px; margin-bottom: -12px; border-top: 1px solid #e6e6e6; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; -gtk-icon-source: -gtk-icontheme("pan-down-symbolic"); }
+menu > arrow.bottom, .menu > arrow.bottom, .context-menu > arrow.bottom { margin-top: 8px; margin-bottom: -12px; border-top: 1px solid #e6e6e6; border-bottom-right-radius: 2px; border-bottom-left-radius: 2px; -gtk-icon-source: -gtk-icontheme("pan-down-symbolic"); }
 
 menu > arrow:hover, .menu > arrow:hover, .context-menu > arrow:hover { background-color: #e6e6e6; }
 
@@ -844,7 +844,7 @@ menuitem check:dir(rtl), menuitem radio:dir(rtl) { margin-left: 7px; }
 /*************** Popovers   * */
 popover.background { padding: 2px; background-color: white; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); }
 
-.csd popover.background, popover.background { border: 1px solid #a29e9b; border-radius: 4px; }
+.csd popover.background, popover.background { border: 1px solid #a29e9b; border-radius: 2px; }
 
 .csd popover.background { background-clip: padding-box; border-color: #a29e9b; }
 
@@ -1890,7 +1890,7 @@ decoration:backdrop { box-shadow: 1px 1px 0px #000000, -1px 1px 0px #000000, 1px
 
 .ssd decoration { box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.23); }
 
-.csd.popup decoration { border-radius: 3px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.13); }
+.csd.popup decoration { border-radius: 2px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.13); }
 
 tooltip.csd decoration { border-radius: 5px; box-shadow: none; }
 
@@ -2266,23 +2266,23 @@ assistant.background scrolledwindow .vertical checkbutton { margin-left: 1px; }
 /* the panel bar itself */
 #PanelPlug, .mate-panel-menu-bar, PanelToplevel.background { background-color: #edeceb; background-image: none; color: #000000; text-shadow: none; }
 
-#PanelPlug menu, .mate-panel-menu-bar menu, PanelToplevel.background menu { border-radius: 3px; padding: 4px 0px; }
+#PanelPlug menu, .mate-panel-menu-bar menu, PanelToplevel.background menu { border-radius: 2px; padding: 4px 0px; }
 
-.csd #PanelPlug menu, .csd .mate-panel-menu-bar menu, .csd PanelToplevel.background menu { border: none; border-radius: 3px; }
+.csd #PanelPlug menu, .csd .mate-panel-menu-bar menu, .csd PanelToplevel.background menu { border: none; border-radius: 2px; }
 
 #PanelPlug menubar { box-shadow: none; }
 
 /* workaround to avoid unwanted black frames behind menus if switching compositor on/off */
 .mate-panel-menu-bar .window-frame.csd.popup { box-shadow: none; }
 
-menubar > menuitem menu:dir(rtl), menubar > menuitem menu:dir(ltr), .menubar > menuitem menu:dir(rtl), .menubar > menuitem menu:dir(ltr) { border-radius: 3px; }
+menubar > menuitem menu:dir(rtl), menubar > menuitem menu:dir(ltr), .menubar > menuitem menu:dir(rtl), .menubar > menuitem menu:dir(ltr) { border-radius: 2px; }
 
-menubar .csd.popup decoration, .menubar .csd.popup decoration { border-radius: 3px; }
+menubar .csd.popup decoration, .menubar .csd.popup decoration { border-radius: 2px; }
 
 /* hide buttons */
 PanelToplevel > widget > button { border-image: none; background-image: none; background: transparent; border-style: none; border-radius: 0px; padding: 0px; box-shadow: none; color: #000000; }
 
-#PanelApplet { border-radius: 3px; }
+#PanelApplet { border-radius: 2px; }
 
 PanelWidget > PanelSeparator { border-width: 0; background-color: transparent; color: #a29e9b; }
 
@@ -2329,9 +2329,9 @@ PanelApplet.wnck-applet .wnck-pager { outline-style: solid; outline-offset: -1px
 #PanelApplet > #clock-applet-button.flat.toggle:checked { box-shadow: inset 0px 1px #a29e9b, inset 0px -1px #a29e9b, inset 1px 0px #a29e9b, inset -1px 0px #a29e9b; background-image: linear-gradient(to bottom, #cbc9c6, #d6d4d2 3px, #d9d7d5 4px, #cdcbc9 50%, #c9c6c4 50%, #c0bdba); }
 
 /* volume applet */
-.mate-panel-applet-slider, .mate-panel-applet-slider.background { border-radius: 3px; border: 1px solid rgba(0, 0, 0, 0.23); background: transparent; }
+.mate-panel-applet-slider, .mate-panel-applet-slider.background { border-radius: 2px; border: 1px solid rgba(0, 0, 0, 0.23); background: transparent; }
 
-.mate-panel-applet-slider frame, .mate-panel-applet-slider.background frame { background-color: #edeceb; border-radius: 3px; padding: 1px; margin: 1px; /* brightness applet */ }
+.mate-panel-applet-slider frame, .mate-panel-applet-slider.background frame { background-color: #edeceb; border-radius: 2px; padding: 1px; margin: 1px; /* brightness applet */ }
 
 .mate-panel-applet-slider frame border, .mate-panel-applet-slider.background frame border { border-image: none; border-style: none; border-radius: 2px; }
 
@@ -2374,7 +2374,7 @@ MsdOsdWindow.background.osd .progressbar { border-radius: 4px; background-color:
 
 .brisk-menu .apps-list, .brisk-menu .categories-list, .brisk-menu entry { margin: 4px; }
 
-.brisk-menu .apps-list, .brisk-menu .categories-list { border-radius: 3px; }
+.brisk-menu .apps-list, .brisk-menu .categories-list { border-radius: 2px; }
 
 .brisk-menu .apps-list row:selected, .brisk-menu .categories-list row:selected { background-color: #89addb; color: #ffffff; }
 
@@ -2454,7 +2454,7 @@ menu menuitem:hover, .menu menuitem:hover, .context-menu menuitem:hover { color:
 
 menubar > menuitem:hover, .menubar > menuitem:hover { color: #ffffff; background-color: #89addb; }
 
-.app-notification, .app-notification.frame { padding: 10px; margin: 12px; color: #1a1a1a; border-radius: 3px; background: none; background-color: white; border: 1px solid #a29e9b; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); text-shadow: none; }
+.app-notification, .app-notification.frame { padding: 10px; margin: 12px; color: #1a1a1a; border-radius: 2px; background: none; background-color: white; border: 1px solid #a29e9b; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); text-shadow: none; }
 
 .app-notification button.text-button, .app-notification button.image-button, .app-notification button, .app-notification button:dir(ltr).text-button, .app-notification button:dir(ltr).image-button, .app-notification button:dir(ltr), .app-notification button:dir(rtl).text-button, .app-notification button:dir(rtl).image-button, .app-notification button:dir(rtl), .app-notification.frame button.text-button, .app-notification.frame button.image-button, .app-notification.frame button, .app-notification.frame button:dir(ltr).text-button, .app-notification.frame button:dir(ltr).image-button, .app-notification.frame button:dir(ltr), .app-notification.frame button:dir(rtl).text-button, .app-notification.frame button:dir(rtl).image-button, .app-notification.frame button:dir(rtl) { color: #000000; outline-color: #a29e9b; border-color: #a29e9b; background-image: linear-gradient(to bottom, #fdfdfc, #fafafa 50%, #f6f5f5 50%, #e9e7e6); text-shadow: 0 1px rgba(255, 255, 255, 0.769231); -gtk-icon-shadow: 0 1px rgba(255, 255, 255, 0.769231); box-shadow: 0 1px rgba(0, 0, 0, 0.05); }
 
