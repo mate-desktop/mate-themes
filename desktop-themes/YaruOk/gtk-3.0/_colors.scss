@@ -1,0 +1,243 @@
+// When color definition differs for dark and light variant
+// it gets @if ed depending on $variant
+
+//  
+
+@function gtkalpha($color, $opacity) {
+  @if $color=="currentColor" {
+    @return unquote("alpha(#{$color}, #{$opacity})");
+  } @else {
+    @return rgba($color, $opacity);
+  }
+}
+
+@function gtkmix($color1, $color2, $multiplier) {
+  $alpha: blend(alpha($color1), alpha($color2), $multiplier);
+  
+  @if $alpha<=0 {
+    @return rgba(0, 0, 0, $alpha);
+  } @else {
+    $red: blend(red($color1) * alpha($color1), red($color2) * alpha($color2), $multiplier) / $alpha;
+    $green: blend(green($color1) * alpha($color1), green($color2) * alpha($color2), $multiplier) / $alpha;
+    $blue: blend(blue($color1) * alpha($color1), blue($color2) * alpha($color2), $multiplier) / $alpha;
+    
+    @return rgba($red, $green, $blue, $alpha);
+  }
+}
+
+@function gtkshade($color, $multiplier) {
+  $new: hsla(hue($color), saturation($color) * $multiplier, lightness($color) * $multiplier, alpha($color));
+  @return $new;
+}
+
+//
+@import 'palette';
+
+$base_color: #ffffff;
+$text_color: #1a1a1a;
+$bg_color: $core_color_b;
+$fg_color: #000000;
+
+$selected_fg_color: #ffffff;
+$selected_bg_color: gtkshade($core_color_a,0.9);
+
+$selected_borders_color: gtkshade($core_color_a,0.7);
+$borders_color: gtkshade($core_color_b, 0.67);
+$alt_borders_color: if($variant == 'light', darken($bg_color, 24%), darken($bg_color, 8%));
+$borders_edge: if($variant == 'light', transparentize(white, 0.2), transparentize($fg_color, 0.93));
+$link_color: #0000ee;
+$link_visited_color: #551a8b;
+$top_hilight: $borders_edge;
+$dark_fill: mix($borders_color, $bg_color, 50%);
+$headerbar_color: if($variant == 'light', lighten($bg_color, 5%), darken($bg_color, 3%));
+$popover_bg_color: gtkshade($core_color_b, 1.1);
+$popover_hover_color: #000000;
+
+$scrollbar_bg_color: if($variant == 'light', mix($bg_color, $fg_color, 80%), mix($base_color, $bg_color, 50%));
+$scrollbar_slider_color: mix($fg_color, $bg_color, 60%);
+$scrollbar_slider_hover_color: mix($fg_color, $bg_color, 80%);
+$scrollbar_slider_active_color: if($variant=='light', darken($selected_bg_color, 10%), lighten($selected_bg_color, 10%));
+
+$warning_color: $yellow;
+$error_color: $red;
+$success_color: lighten($green, 5%);
+$destructive_color: if($variant == 'light', $red, darken($red, 10%));
+
+$osd_fg_color: #eeeeec;
+$osd_text_color: white;
+$osd_bg_color: transparentize(#252621, 0.2);
+$osd_insensitive_bg_color: $osd_bg_color;
+$osd_insensitive_fg_color: $osd_fg_color;
+$osd_borders_color: transparentize(black, 0.3);
+
+$sidebar_bg_color: mix($bg_color, $base_color, 50%);
+$base_hover_color: transparentize($fg_color, 0.95);
+
+$tooltip_borders_color: transparentize(white, 0.9);
+$shadow_color: transparentize(black, 0.9);
+
+$drop_target_color: $success_color;
+
+//insensitive state derived colors
+$insensitive_fg_color: gtkshade($core_color_b, 0.70);
+$insensitive_bg_color: $bg_color;
+$insensitive_borders_color: gtkshade($core_color_b, 0.79);
+
+//colors for the backdrop state, derived from the main colors.
+$backdrop_base_color: if($variant == 'light', darken($base_color, 1%), lighten($base_color, 3%));
+$backdrop_text_color: if($variant == 'light', transparentize($text_color, 0.31), transparentize(white, 0.45));
+$backdrop_bg_color: if($variant == 'light', $bg_color, lighten($bg_color, 3%));
+$backdrop_fg_color: if($variant == 'light', mix($fg_color, $backdrop_bg_color, 80%), transparentize(white, 0.35));
+$backdrop_insensitive_color: if($variant == 'light', darken($backdrop_bg_color, 15%), lighten($backdrop_bg_color, 15%));
+$backdrop_selected_fg_color: if($variant == 'light', $backdrop_base_color, $backdrop_text_color);
+$backdrop_borders_color: mix($borders_color, $bg_color, 80%);
+$backdrop_dark_fill: mix($backdrop_borders_color, $backdrop_bg_color, 35%);
+$backdrop_sidebar_bg_color: mix($backdrop_bg_color, $backdrop_base_color, 50%);
+
+$backdrop_scrollbar_bg_color: darken($backdrop_bg_color, 3%);
+$backdrop_scrollbar_slider_color: mix($backdrop_fg_color, $backdrop_bg_color, 40%);
+
+$backdrop_menu_color: if($variant == 'light', $backdrop_base_color, mix($backdrop_bg_color, $backdrop_base_color, 20%));
+
+//special cased widget colors
+$suggested_bg_color: if($variant == 'light', lighten($green, 5%), darken($green, 5%));
+$suggested_border_color: if($variant=='light', darken($suggested_bg_color, 5%), darken($suggested_bg_color, 10%));
+$progress_bg_color: if($variant== 'light', lighten($secondary_accent_bg_color, 10%), lighten($secondary_accent_bg_color, 5%));
+$progress_border_color: $selected_borders_color;
+$checkradio_bg_color:  darken($core_color_a , 20%);;
+$checkradio_fg_color: $borders_color;
+$checkradio_borders_color:  $borders_color;
+$focus_border_color:  $borders_color;
+$coloured_focus_border_color: transparentize(white, 0.3);
+// Headerbar bg colors for the "mixed" theme
+$headerbar_bg_color: #323030;
+$headerbar_fg_color: $fg_color;
+$headerbar_border_color: $borders_color;
+$headerbar_text_color: $silk;
+$headerbar_insensitive_color: mix($headerbar_fg_color, $headerbar_bg_color, 50%);
+$backdrop_headerbar_bg_color: lighten($headerbar_bg_color, 5%);
+$backdrop_headerbar_fg_color: mix($headerbar_fg_color, $headerbar_bg_color, 70%);
+$backdrop_headerbar_text_color: mix($headerbar_text_color, $backdrop_headerbar_bg_color, 70%);
+$backdrop_headerbar_insensitive_color: mix($headerbar_fg_color, $backdrop_headerbar_bg_color, 70%);
+
+//
+// button
+//
+$button_gradient_a: gtkshade($core_color_b, 1.07);
+$button_gradient_b: gtkshade($core_color_b, 1.06);
+$button_gradient_c: gtkshade($core_color_b, 1.04);
+$button_gradient_d: gtkshade($core_color_b, 0.98);
+
+$button_default_border_color:  gtkshade($core_color_a, 0.5);
+$button_default_box_shadow_color: gtkshade($core_color_a, 1.2);
+
+/* hover */
+
+$button_hover_gradient_a: $base_color;
+$button_hover_gradient_b: gtkshade($core_color_b, 1.05);
+$button_hover_gradient_c: $core_color_b;
+
+/* active */
+
+$button_active_text_color: $fg_color;
+
+$button_active_gradient_a: gtkshade($core_color_b, 0.85);
+$button_active_gradient_b: gtkshade($core_color_b, 0.90);
+$button_active_gradient_c: gtkshade($core_color_b, 0.91);
+$button_active_gradient_d: gtkshade($core_color_b, 0.86);
+$button_active_gradient_e: gtkshade($core_color_b, 0.84);
+$button_active_gradient_f: gtkshade($core_color_b, 0.80);
+
+/* insensitive */
+
+$button_insensitive_inner_border_color: gtkshade($core_color_b, 1.05);
+
+$button_insensitive_gradient_a: gtkshade($core_color_b, 1.04);
+$button_insensitive_gradient_b: gtkshade($core_color_b, 1.01);
+$button_insensitive_gradient_c: gtkshade($core_color_b, 0.99);
+$button_insensitive_gradient_d: gtkshade($core_color_b, 0.96);
+
+/* active insensitive */
+
+$button_active_insensitive_gradient_a: gtkshade($core_color_b, 0.98);
+$button_active_insensitive_gradient_b: gtkshade($core_color_b, 1.02);
+$button_active_insensitive_gradient_c: gtkshade($core_color_b, 1.03);
+$button_active_insensitive_gradient_d: gtkshade($core_color_b, 1.01);
+$button_active_insensitive_gradient_e: gtkshade($core_color_b, 0.99);
+$button_active_insensitive_gradient_f: gtkshade($core_color_b, 0.96);
+
+/* primary toolbar focus */
+
+$pt_button_focus_gradient_a: mix(#fafafa, gtkshade($core_color_a, 1.09), 0.3);
+$pt_button_focus_gradient_b: mix(#ededed, gtkshade($core_color_a, 1.05), 0.3);
+$pt_button_focus_gradient_c: mix(#e8e8e8, gtkshade($core_color_a, 1.01), 0.25);
+$pt_button_focus_gradient_d: mix(#e8e8e8, gtkshade($core_color_a, 0.96), 0.3);
+
+/* primary toolbar focus hover */
+
+$pt_button_focus_hover_gradient_a: mix(#fcfcfc, gtkshade($core_color_a, 1.09), 0.15);
+$pt_button_focus_hover_gradient_b: mix(#fcfcfc, gtkshade($core_color_a, 1.05), 0.15);
+$pt_button_focus_hover_gradient_c: mix(#fcfcfc, gtkshade($core_color_a, 1.01), 0.2);
+$pt_button_focus_hover_gradient_d: mix(#e8e8e8, gtkshade($core_color_a, 0.96), 0.2);
+
+
+
+//
+// entry
+//
+$entry_text_color: $text_color;
+$entry_inner_border_color: gtkshade($core_color_b, 0.96);
+$entry_bg_color: $base_color;
+
+//
+// menu
+//
+$menu_color: gtkshade($core_color_b, 1.1);
+$menu_bg_color: gtkshade($bg_color, 1.04);
+$menu_fg_color: $fg_color;
+$menu_border_color: gtkshade($core_color_b, 0.72);
+
+//
+// menubar
+//
+
+$menubar_gradient_a: gtkshade($core_color_b, 0.99);
+$menubar_gradient_b: gtkshade($core_color_b, 0.98);
+$menubar_gradient_c: gtkshade($core_color_b, 0.96);
+
+
+$menubar_menuitem_hover_color: $selected_fg_color;
+$menubar_menuitem_hover_border_color: gtkshade($core_color_a, 0.58);
+
+$menubar_menuitem_hover_gradient_a: $core_color_a;
+$menubar_menuitem_hover_gradient_b: gtkshade($core_color_a, 0.95);
+$menubar_menuitem_hover_gradient_c: gtkshade($core_color_a, 0.93);
+$menubar_menuitem_hover_gradient_d: gtkshade($core_color_a, 0.88);
+
+//
+// progressbar
+//
+
+$progressbar_border_color: mix(#6a6a6a, gtkshade($core_color_a, 0.75), 0.80);
+$progressbar_pattern_color: $progressbar_border_color;
+
+$progressbar_bg_color: $core_color_a;
+
+$progressbar_gradient_a: $progressbar_bg_color;
+$progressbar_gradient_b: $menubar_menuitem_hover_gradient_b;
+$progressbar_gradient_c: $menubar_menuitem_hover_gradient_c;
+$progressbar_gradient_d: $menubar_menuitem_hover_gradient_d;
+
+//
+// toolbar
+//
+$toolbar_gradient_a: gtkshade($core_color_b, 1.04);
+$toolbar_gradient_b: gtkshade($core_color_b, 1.01);
+$toolbar_gradient_c: $core_color_b;
+$toolbar_gradient_d: gtkshade($core_color_b, 0.97);
+$toolbar_border_top_color: gtkshade($core_color_b, 0.82);
+$toolbar_border_bottom_color: $toolbar_border_top_color;
+
+
+//notebook
+$notebook_base_color: lighten($bg_color, 3%)
