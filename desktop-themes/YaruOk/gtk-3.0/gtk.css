@@ -2425,6 +2425,8 @@ window#Main.background #search { background: #ffffff; color: #000000; box-shadow
 
 window#Main.background #search entry { border-color: #a29e9b; }
 
+window > box.vertical > box.vertical > box.vertical button.text-button { padding-left: 0px; padding-right: 0px; min-width: 2px; margin: 0px; }
+
 MatePanelAppletFrameDBus > MatePanelAppletFrameDBus { background-image: -gtk-scaled(url("assets/panel-grid.svg")); background-color: transparent; color: #8f8f8f; background-repeat: no-repeat; background-position: left; }
 
 /* for firefox and probably other apps */
