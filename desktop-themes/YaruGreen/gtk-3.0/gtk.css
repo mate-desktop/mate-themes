@@ -2000,7 +2000,7 @@ popover.emoji-completion .emoji:hover { background: #000000; }
 list.tweak-categories separator { background: transparent; }
 
 /*********** Nautilus * */
-.nautilus-window { background-image: none; background-color: white; /* dim the icon when not checked */ }
+.nautilus-window { background-image: none; background-color: white; /* .path-bar-box { border-radius: 5px; border: 1px solid if($ambiance, darken($headerbar_bg_color, 9%), $borders_color); &:backdrop { border-color: if($ambiance, $headerbar_bg_color, $backdrop_borders_color);} background-color: if($ambiance, lighten($headerbar_bg_color, 6.5%), $bg_color); padding-right: 6px; &:backdrop { border-color: if($ambiance, darken($inkstone, 9%), $backdrop_borders_color); } } .nautilus-path-bar button { margin: 0px; } .nautilus-path-bar button:first-child { border-width: 0px 1px 0px 0px; border-radius: 3.5px 0px 0px 3.5px; } .nautilus-path-bar button:not(:first-child) { border-width: 0px 1px 0px 1px; border-radius: 0px 0px 0px 0px; } */ /* dim the icon when not checked */ }
 
 .nautilus-window .nautilus-canvas-item.dim-label, .nautilus-window label.nautilus-canvas-item.separator, .nautilus-window .titlebar:not(headerbar) .nautilus-canvas-item.subtitle, .titlebar:not(headerbar) .nautilus-window .nautilus-canvas-item.subtitle, .nautilus-window headerbar .nautilus-canvas-item.subtitle, headerbar .nautilus-window .nautilus-canvas-item.subtitle, .nautilus-window .nautilus-list-dim-label { color: #8d8d8d; }
 
@@ -2049,18 +2049,6 @@ list.tweak-categories separator { background: transparent; }
 .nautilus-window paned > separator:backdrop { background-image: image(rgba(148, 144, 140, 0.3)); }
 
 .nautilus-window entry.search > * { margin: 5px; }
-
-.nautilus-window .path-bar-box { border-radius: 5px; border: 1px solid #1b1a1a; background-color: #434040; padding-right: 6px; }
-
-.nautilus-window .path-bar-box:backdrop { border-color: #323030; }
-
-.nautilus-window .path-bar-box:backdrop { border-color: #262626; }
-
-.nautilus-window .nautilus-path-bar button { margin: 0px; }
-
-.nautilus-window .nautilus-path-bar button:first-child { border-width: 0px 1px 0px 0px; border-radius: 3.5px 0px 0px 3.5px; }
-
-.nautilus-window .nautilus-path-bar button:not(:first-child) { border-width: 0px 1px 0px 1px; border-radius: 0px 0px 0px 0px; }
 
 .nautilus-window .nautilus-path-bar button:not(:checked) image { opacity: 0.8; }
 
@@ -2214,8 +2202,6 @@ headerbar button image ~ window decoration ~ menu separator { background: #94908
 
 /*********** Firefox * */
 #MozillaGtkWidget.background menu, #MozillaGtkWidget.background .menu, #MozillaGtkWidget.background .context-menu { border-radius: 0; }
-
-#MozillaGtkWidget.background menubar, #MozillaGtkWidget.background .menubar, #MozillaGtkWidget.background menubar > menuitem:hover { background-color: #323030; color: #000000; }
 
 #MozillaGtkWidget.background scrollbar { background-color: transparent; border-color: transparent; }
 
