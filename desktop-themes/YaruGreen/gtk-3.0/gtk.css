@@ -2630,13 +2630,13 @@ headerbar switch slider:disabled, headerbar scale slider:disabled, .titlebar swi
 
 .selection-mode headerbar .selection-menu:backdrop .arrow, .selection-mode headerbar .selection-menu .arrow, headerbar.selection-mode .selection-menu:backdrop .arrow, headerbar.selection-mode .selection-menu .arrow, .selection-mode .titlebar .selection-menu:backdrop .arrow, .selection-mode .titlebar .selection-menu .arrow, .titlebar.selection-mode .selection-menu:backdrop .arrow, .titlebar.selection-mode .selection-menu .arrow { -gtk-icon-source: -gtk-icontheme("pan-down-symbolic"); color: rgba(66, 69, 62, 0.5); -gtk-icon-shadow: none; }
 
-headerbar button { background-image: linear-gradient(to bottom, #efefef, #e4e4e4 50%, #e0e0e0 50%, #d4d4d4); border-color: #42443d; }
+headerbar button { background-image: linear-gradient(to bottom, #efefee, #e5e5e4 50%, #e1e1df 50%, #d4d5d3); border-color: #58708d; }
 
-headerbar button:hover { background-image: linear-gradient(to bottom, white, #f9f9f9 50%, #f7f7f7 50%, #e8e8e8); border-color: #42443d; }
+headerbar button:hover { background-image: linear-gradient(to bottom, white, #f9f9f9 50%, #f7f7f7 50%, #e8e8e8); border-color: #58708d; }
 
 headerbar button:backdrop { background-image: linear-gradient(to bottom, white, #f9f9f9 50%, whitesmoke 50%, #e8e8e8); }
 
-headerbar button:backdrop:hover { background-image: linear-gradient(to bottom, white, white 50%, white 50%, #f3f3f3); border-color: #4c4c4c; }
+headerbar button:backdrop:hover { background-image: linear-gradient(to bottom, white, white 50%, white 50%, #f3f3f3); border-color: #868686; }
 
 /* GTK NAMED COLORS ---------------- use responsibly! */
 /*
