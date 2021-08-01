@@ -2540,6 +2540,14 @@ check:checked, radio:checked { border-color: #94908c; color: #000000; }
 
 check:selected, radio:selected { color: #000000; }
 
+XfdesktopIconView.view { background-color: transparent; }
+
+XfdesktopIconView.view.label { color: white; text-shadow: 1px 1px 2px black; }
+
+XfdesktopIconView.view:active { color: white; background-color: rgba(191, 198, 176, 0.5); }
+
+XfdesktopIconView.view.label:active { color: white; text-shadow: 1px 1px 2px black; }
+
 headerbar, .titlebar { background-image: linear-gradient(to bottom, #cdd3c1, #c3c9b4 50%, #bfc6b0 50%, #b4bca4); color: #000000; border-color: #94908c; }
 
 headerbar:backdrop, .titlebar:backdrop { background-image: linear-gradient(to bottom, #ebeae9, #e2e0df 50%, #dddbda 50%, #d4d2d0); }
