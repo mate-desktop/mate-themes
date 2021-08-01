@@ -459,4 +459,12 @@ list row, placessidebar row, sidebar row, .sidebar row {
 check:checked, radio:checked  {border-color:$borders_color;color: $fg_color;};
 check:selected, radio:selected { color: $fg_color;};
 
+// desktop icons of xfce
+
+XfdesktopIconView.view { background-color: rgba(0, 0,0, 0.0);
+&.label{color: white;text-shadow: 1px 1px 2px black;}
+&:active {color: white;background-color:transparentize($selected_bg_color, 0.5)}
+&.label:active{color: white;text-shadow: 1px 1px 2px black;}
+}
+
 
