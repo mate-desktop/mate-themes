@@ -473,13 +473,13 @@ dictionary */
 }
 
 /*Wncklist */
-.mate-panel-menu-bar #tasklist-button {
+.mate-panel-menu-bar #PanelApplet button.flat.toggle {
     transition: all 400ms ease-out;
     padding: 2px;
     border-radius: 3px;
     border-width: 1px;
     border-style: solid;
-	border-color:transparent;
+	border-color: shade(@button_border, 1.1);
     text-shadow: none;
     color: @theme_fg_color;
 	background-image: none;
@@ -493,10 +493,8 @@ dictionary */
                       to (shade(@button_gradient_color_b, 0.7)));
 */
 }
-.mate-panel-menu-bar #tasklist-button:checked:hover,
-.mate-panel-menu-bar #tasklist-button:checked,
-.mate-panel-menu-bar #tasklist-button:active:hover,
-.mate-panel-menu-bar #tasklist-button:active {
+.mate-panel-menu-bar #PanelApplet button.flat.toggle:checked,
+.mate-panel-menu-bar #PanelApplet button.flat.toggle:active {
     border-radius: 3px;
     color: @theme_fg_color;
     border-style: solid;
@@ -506,8 +504,7 @@ dictionary */
                                       shade(@button_gradient_color_a, 1.5));
 }
 
-/* FIXME, this does not work anymore with >= gtk+-3.20 */
-.mate-panel-menu-bar button .button:hover {
+.mate-panel-menu-bar #PanelApplet button.flat.toggle:hover{
     border-radius: 3px;
     border-image: none;
     border-style: solid;
@@ -555,12 +552,20 @@ dictionary */
                                       shade(@theme_selected_bg_color, 0.5));
 }
 
-#clock-applet-button,
+.mate-panel-menu-bar #PanelApplet #clock-applet-button,
 .mate-panel-menu-bar.menubar,
 MatePanelApplet > menubar {
     font-style: normal;
     font-weight: normal;
 }
+
+/*Keep tasklist/charpick/etc borders off of clock applet*/
+.mate-panel-menu-bar #PanelApplet button#clock-applet-button.flat.toggle {
+    border-style: none;
+	border-image: none;
+	border-color: transparent;
+}
+
 
 #clock-applet-button{
 	padding: 4px; /*any less and outlines touch text or get cut off */
