@@ -816,8 +816,7 @@ PanelApplet.wnck-applet .wnck-pager {
 
 /* charpick */
 
-.mate-panel-menu-bar #PanelApplet button.flat.text-button,
-.mate-panel-menu-bar #PanelApplet button.flat.toggle  { 
+.mate-panel-menu-bar #PanelApplet button.flat.text-button { 
 & { 
      @include button(normal);
       background-color: transparent;
@@ -833,7 +832,7 @@ PanelApplet.wnck-applet .wnck-pager {
 }
 
 
-&:hover,&:checked, &:checked:hover,&:hover:active  {
+&:checked, &:checked:hover,&:hover:active  {
 @include button(active);
 background-color: transparent;
       color: $_base_fg_color;
@@ -846,6 +845,10 @@ background-color: transparent;
       padding-left: 2px;
       padding-right: 2px
      }
+
+&:hover {
+ border-color: $core_color_a;
+      }
 }
 
 
