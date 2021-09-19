@@ -814,9 +814,11 @@ PanelApplet.wnck-applet .wnck-pager {
 }
 
 /* charpick */
-.mate-panel-menu-bar #PanelApplet button.flat.text-button { 
-&,&:checked, &:active { 
-      @include button(normal);
+
+.mate-panel-menu-bar #PanelApplet button.flat.text-button,
+.mate-panel-menu-bar #PanelApplet button.flat.toggle  { 
+& { 
+     @include button(normal);
       background-color: transparent;
       color: $_base_fg_color;
       border-radius: 4px;
@@ -826,9 +828,11 @@ PanelApplet.wnck-applet .wnck-pager {
       border-color: rgba(0,0,0,0.0);
       box-shadow: inset 0px 1px $borders_color,inset 0px -1px $borders_color, inset 1px 0px $borders_color,inset -1px 0px $borders_color;
       padding-left: 2px;
-      padding-right: 2px}
+      padding-right: 2px
+}
 
-&:checked:hover, &:hover {
+
+&:hover,&:checked, &:checked:hover,&:hover:active  {
 @include button(active);
 background-color: transparent;
       color: $_base_fg_color;
@@ -839,7 +843,8 @@ background-color: transparent;
       border-color: rgba(0,0,0,0.0);
       box-shadow: inset 0px 1px $borders_color,inset 0px -1px $borders_color, inset 1px 0px $borders_color,inset -1px 0px $borders_color;
       padding-left: 2px;
-      padding-right: 2px}
+      padding-right: 2px
+     }
 }
 
 
