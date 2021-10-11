@@ -30,6 +30,7 @@ headerbar .left button.close.titlebutton,
 headerbar .left button.close.titlebutton:backdrop,
 headerbar .left:dir(rtl) button.close.titlebutton,
 headerbar .left:dir(rtl) button.close.titlebutton:backdrop {
+	padding: 5px;
 	color: transparent;
 	background-position: center;
 	background-repeat: no-repeat;
