@@ -1,6 +1,6 @@
 AC_PREREQ(2.53)
 
-AC_INIT([mate-themes], [3.22.22], [https://mate-desktop.org])
+AC_INIT([mate-themes], [3.22.23], [https://mate-desktop.org])
 AC_CONFIG_SRCDIR([icon-themes])
 
 AM_INIT_AUTOMAKE([1.9 tar-ustar dist-xz no-dist-gzip check-news])
@@ -145,6 +145,19 @@ desktop-themes/TraditionalOk/metacity-1/Makefile
 desktop-themes/TraditionalOk/openbox-3/Makefile
 desktop-themes/TraditionalOk/xfwm4/Makefile
 desktop-themes/TraditionalOk/xfwm4/png/Makefile
+desktop-themes/YaruOk/Makefile
+desktop-themes/YaruOk/gtk-2.0/Makefile
+desktop-themes/YaruOk/gtk-3.0/Makefile
+desktop-themes/YaruOk/gtk-3.0/assets/Makefile
+desktop-themes/YaruOk/metacity-1/Makefile
+desktop-themes/YaruOk/openbox-3/Makefile
+desktop-themes/YaruOk/xfwm4/Makefile
+desktop-themes/YaruOk/xfwm4/png/Makefile
+desktop-themes/YaruGreen/Makefile
+desktop-themes/YaruGreen/gtk-2.0/Makefile
+desktop-themes/YaruGreen/gtk-3.0/Makefile
+desktop-themes/YaruGreen/gtk-3.0/assets/Makefile
+desktop-themes/YaruGreen/metacity-1/Makefile
 marco-themes/Makefile
 icon-themes/Makefile
 icon-themes/ContrastHigh/Makefile

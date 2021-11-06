@@ -3001,7 +3001,7 @@ popover .separator {
  *******/
 
 /*mostly taken from Adwaita except the border radius */
-decoration {
+decoration, window.unified  {
 	border-radius: 7px 7px 0px 0px;
 	border-width: 1px;
 	box-shadow:  0 3px 9px 1px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 0, 0, 0.23);
@@ -3131,6 +3131,7 @@ button.text-button.titlebutton {
 	border-radius: 3px;
 	border-width: 1px;
 	border-style: solid;
+	padding: 7px;
 	text-shadow: none;
 	color: #D9D9D9;
 	background-image: linear-gradient(to bottom,
