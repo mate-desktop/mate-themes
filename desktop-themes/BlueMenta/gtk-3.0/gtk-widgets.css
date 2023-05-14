@@ -5724,7 +5724,8 @@ headerbar button.image-button,
     box-shadow: none;
 }
 
-.background.csd decoration {
+.background.csd decoration,
+window.unified {
     border-radius: 6px 6px 0px 0px;
     border-width: 0px;
     box-shadow: 0 0 0 1px @wm_border, 0 2px 8px 3px @wm_shadow;

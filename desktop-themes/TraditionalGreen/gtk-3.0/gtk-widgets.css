@@ -3945,7 +3945,8 @@ headerbar button.titlebutton,
     box-shadow: none;
 }
 
-.background.csd decoration {
+.background.csd decoration,
+window.unified {
     border-width: 0px;
     border-radius: 7px 7px 0 0;
     border-style: solid;
