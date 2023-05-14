@@ -6291,6 +6291,7 @@ headerbar paned > separator {
     background: none;
     background-color: transparent;
     padding: 5px 5px 6px 5px;
+    margin: 0px -3px 0px -3px;
     border-width: 1px;
     border-radius: 5px;
     border-color: transparent;
@@ -6517,7 +6518,8 @@ headerbar paned > separator {
     box-shadow: none;
 }
 
-.background.csd decoration {
+.background.csd decoration,
+window.unified {
     border-color: darker(@theme_bg_dark_color);
     border-radius: 7px 7px 0 0;
     border-width: 1px;

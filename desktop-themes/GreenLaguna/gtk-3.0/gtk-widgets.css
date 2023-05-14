@@ -3481,7 +3481,7 @@ paned.horizontal.titlebar separator,
 .titlebar button.toggle.popup.titlebutton,
 headerbar.frame.titlebar button.image-button.titlebutton,
 button.text-button.titlebutton {
-    padding: 2px;
+    padding: 3px;
     margin: 0px 1px;
 }
 
@@ -3506,7 +3506,8 @@ button.titlebutton.maximize {
     box-shadow: none;
 }
 
-.background.csd decoration {
+.background.csd decoration,
+window.unified {
     border-radius: 7px 7px 0px 0px;
     border-width: 0px;
     box-shadow: 0 0 0 2px @wm_csd_border_color, 0 2px 8px 3px @wm_shadow;
