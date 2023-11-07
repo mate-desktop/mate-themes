@@ -1,0 +1,298 @@
+/*******************
+ * Pane separators *
+ *******************/
+/*.pane-separator {
+	background-image: url("assets/pane-separator-grip.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.pane-separator:hover {
+	background-image: url("assets/pane-separator-grip-prelight.svg");
+}
+
+.pane-separator.vertical {
+	background-image: url("assets/pane-separator-grip-vertical.svg");
+}
+
+.pane-separator.vertical:hover {
+	background-image: url("assets/pane-separator-grip-vertical-prelight.svg");
+}*/
+
+/*************************
+ * Header bar separator  *
+ *************************/
+
+headerbar > box > separator.vertical {
+	background: transparent;
+	border-width: 0 1px 0 1px;
+	border-style: solid;
+	border-color: transparent;
+	border-image: -gtk-scaled(url("assets/header-separator.png"),url("assets/header-separator@2.png")) 0 1 0 1 / 0 1px 0 1px stretch;
+}
+
+/*************************
+ * Check and Radio items *
+ *************************/
+
+/* draw regular check and radio items using our SVG assets */
+/* old syntax is for broken firefox */
+
+check,
+.check,
+check .view.cell {
+	-gtk-icon-source: -gtk-scaled(url("assets/check-normal.png"));
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+check:disabled,
+.check {
+	-gtk-icon-source: -gtk-scaled(url("assets/check-normal-ins.png"));
+}
+
+check row:disabled {
+	background-color: transparent;
+}
+
+check:checked,
+.view.cell check:checked {
+	-gtk-icon-source: -gtk-scaled(url("assets/check-active.png"));
+}
+
+check:checked:disabled {
+	-gtk-icon-source: -gtk-scaled(url("assets/check-active-ins.png"));
+}
+
+check:indeterminate {
+	-gtk-icon-source: -gtk-scaled(url("assets/check-mixed-active.png"));
+}
+
+check:indeterminate:disabled {
+	-gtk-icon-source: -gtk-scaled(url("assets/check-mixed-active-ins.png"));
+}
+
+radio,
+.radio,
+.view.cell radio {
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-normal.png"));
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+radio:disabled,
+.radio {
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-normal-ins.png"));
+}
+
+radio row:disabled {
+	background-color: transparent;
+}
+
+radio:checked,
+.view.cell radio:checked {
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-active.png"));
+}
+
+radio:checked:disabled {
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-active-ins.png"));
+}
+
+radio:indeterminate {
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-mixed-active.png"));
+}
+
+radio:indeterminate:disabled {
+	-gtk-icon-source: -gtk-scaled(url("assets/radio-mixed-active-ins.png"));
+}
+
+.sidebar view radio:active,
+.sidebar view radio:active:focus,
+.sidebar view radio:active:hover,
+.sidebar view radio:checked,
+.sidebar view radio:checked:focus,
+.sidebar view radio:checked:hover {
+	-gtk-icon-source: -gtk-scaled(url("assets/sidebar-radio-checked.svg"));
+}
+
+.sidebar view radio:hover {
+	-gtk-icon-source: -gtk-scaled(url("assets/sidebar-radio-prelight.svg"));
+}
+
+.sidebar view radio:active:selected,
+.sidebar view radio:active:selected:focus,
+.sidebar view radio:checked:selected,
+.sidebar view radio:checked:selected:focus {
+	-gtk-icon-source: -gtk-scaled(url("assets/sidebar-radio-selected.svg"));
+}
+
+.sidebar view radio:selected:hover,
+.sidebar view radio:selected:focus {
+	-gtk-icon-source: -gtk-scaled(url("assets/sidebar-radio-selected-prelight.svg"));	
+}
+
+/*************
+ * GtkSwitch *
+ *************/
+
+switch {
+ 	background-image: url("assets/switch-off.png");
+    background-repeat: no-repeat;
+}
+
+switch:checked {
+	background-image: url("assets/switch-on.png");
+    background-repeat: no-repeat;
+}
+
+switch:disabled {
+	background-image: url("assets/switch-off-ins.png");
+    background-repeat: no-repeat;
+}
+
+switch:checked:disabled {
+	background-image: url("assets/switch-on-ins.png");
+    background-repeat: no-repeat;
+}
+
+/*********************
+ * GtkScale's slider *
+ *********************/
+
+scale.horizontal contents:only-child > trough > slider,
+scale slider {
+	background-image: url("assets/slider.svg");
+    background-repeat: no-repeat;
+}
+
+scale slider:hover {
+	background-image: url("assets/slider-hover.svg");
+    background-repeat: no-repeat;
+}
+
+scale slider:disabled,
+scale slider:disabled:hover {
+	background-image: url("assets/slider-ins.svg");
+    background-repeat: no-repeat;
+}
+
+scale.horizontal.color.marks-before slider,
+scale.horizontal.marks-before slider {
+	background-image: url("assets/scale-slider-marks-above-horizontal.png");
+    background-repeat: no-repeat;
+}
+
+scale.horizontal.color.marks-before slider:hover,
+scale.horizontal.marks-before slider:hover {
+	background-image: url("assets/scale-slider-marks-above-horizontal-active.png");
+    background-repeat: no-repeat;
+}
+
+scale.horizontal.color.marks-before slider:active,
+scale.horizontal.color.marks-before slider:active:hover,
+scale.horizontal.marks-before slider:active,
+scale.horizontal.marks-before slider:active:hover {
+	background-image: url("assets/scale-slider-marks-above-horizontal-active.png");
+    background-repeat: no-repeat;
+}
+
+scale.horizontal.color.marks-before slider:disabled,
+scale.horizontal.marks-before slider:disabled {
+	background-image: url("assets/scale-slider-marks-above-horizontal-insensitive.png");
+    background-repeat: no-repeat;
+}
+
+scale.vertical.marks-before slider {
+	background-image: url("assets/scale-slider-marks-above-vertical.png");
+    background-repeat: no-repeat;
+}
+
+scale.vertical.marks-before slider:hover {
+	background-image: url("assets/scale-slider-marks-above-vertical-active.png");
+    background-repeat: no-repeat;
+}
+
+scale.vertical.marks-before slider:active,
+scale.vertical.marks-before slider:active:hover {
+	background-image: url("assets/scale-slider-marks-above-vertical-active.png");
+    background-repeat: no-repeat;
+}
+
+scale.vertical.marks-before slider:disabled,
+scale.vertical.marks-before slider:disabled:hover {
+	background-image: url("assets/scale-slider-marks-above-vertical-insensitive.png");
+    background-repeat: no-repeat;
+}
+
+scale.horizontal.marks-after slider {
+	background-image: url("assets/scale-slider-marks-below-horizontal.png");
+    background-repeat: no-repeat;
+}
+
+scale.horizontal.marks-after slider:hover {
+	background-image: url("assets/scale-slider-marks-below-horizontal-active.png");
+    background-repeat: no-repeat;
+}
+
+scale.horizontal.marks-after slider:active,
+scale.horizontal.marks-after slider:active:hover {
+	background-image: url("assets/scale-slider-marks-below-horizontal-active.png");
+    background-repeat: no-repeat;
+}
+
+scale.horizontal.marks-after slider:disabled:hover {
+	background-image: url("assets/scale-slider-marks-below-horizontal-active.png");
+    background-repeat: no-repeat;
+}
+
+scale.vertical.marks-after slider {
+	background-image: url("assets/scale-slider-marks-below-vertical.png");
+    background-repeat: no-repeat;
+}
+
+scale.vertical.marks-after slider:hover {
+	background-image: url("assets/scale-slider-marks-below-vertical-active.png");
+    background-repeat: no-repeat;
+}
+
+scale.vertical.marks-after slider:active,
+scale.vertical.marks-after slider:active:hover {
+	background-image: url("assets/scale-slider-marks-below-vertical-active.png");
+    background-repeat: no-repeat;
+}
+
+scale.vertical.marks-after slider:disabled,
+scale.vertical.marks-after slider:disabled:hover {
+	background-image: url("assets/scale-slider-marks-below-vertical-insensitive.png");
+    background-repeat: no-repeat;
+}
+
+/********************************
+ * Touch text selection handles *
+ ********************************/
+
+cursor-handle.bottom {
+	background-image: url("assets/slider.png");
+}
+
+cursor-handle.top {
+	background-image: url("assets/slider.png");
+}
+
+entry cursor-handle.top,
+cursor-handle.top {
+	-gtk-icon-source: -gtk-icontheme("selection-start-symbolic");
+}
+
+entry cursor-handle.bottom,
+cursor-handle.bottom {
+	-gtk-icon-source: -gtk-icontheme("selection-end-symbolic");
+}
+
+/****************
+ * Content view *
+ ****************/
+.view.content-view,
+.content-view.view {
+	/*background-image: url("assets/noise-texture-light.png");*/
+}
