@@ -15,6 +15,13 @@ before_install:
 
 install:
   - pip3 install PyGithub
+
+  - sudo apt-get install -y python3-pip python3-setuptools
+
+  - sudo pip3 install --upgrade pip
+
+  - sudo pip install PyGithub
+
   - ./docker-build --name ${DISTRO} --config .build.yml --install
 
 script:
