@@ -205,6 +205,13 @@
 <draw_ops name="rounded_titlebar_focused_alt">
 	<include name="titlebar_fill_focused_alt" />
 </draw_ops>
+	<draw_ops name="rounded_titlebar_unfocused">
+	<include name="titlebar_fill_unfocused" />
+	</draw_ops>
+
+	<draw_ops name="rounded_titlebar_unfocused_alt2">
+	<include name="titlebar_fill_unfocused_alt2" />
+	</draw_ops>
 
 <draw_ops name="border_focused">
 	<rectangle color="C_border_focused" x="0" y="0" width="width-1" height="height-1" filled="false" />
@@ -965,7 +972,7 @@
 
 <frame_style name="normal_unfocused" geometry="normal_unfocused">
 	<piece position="entire_background" draw_ops="entire_background_unfocused" />
-	<piece position="titlebar" draw_ops="rounded_titlebar_focused" />
+	<piece position="titlebar" draw_ops="rounded_titlebar_unfocused" />
 	<piece position="title" draw_ops="title_unfocused" />
 	<piece position="overlay" draw_ops="rounded_border_unfocused" />
 	<button function="close" state="normal" draw_ops="close_unfocused"/>
