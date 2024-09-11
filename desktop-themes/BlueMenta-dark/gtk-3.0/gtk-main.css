@@ -88,7 +88,7 @@
 
 @define-color entry_text_color @theme_text_color;
 @define-color entry_background_a shade(@theme_base_color, 0.94);
-@define-color entry_background_b 333333;
+@define-color entry_background_b #333333;
 
 @define-color entry_inset alpha(black, 0.1);
 
