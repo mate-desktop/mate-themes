@@ -1,0 +1,259 @@
+/* Button background */
+button,
+combobox button.combo,
+combobox button.combo:backdrop,
+toolbar .raised button,
+toolbar combobox button.combo,
+toolbar.primary-toolbar .linked button,
+toolbar.primary-toolbar .raised button {
+	background-image: linear-gradient(to bottom, 
+		@button_gradient_color_a,
+		@button_gradient_color_b);
+	background-color: transparent;
+}
+
+/* Pushed button and progressbar through background (checked) */
+button:checked,
+button:focus:checked,
+toolbar button:checked,
+toolbar button:focus:checked,
+toolbar .raised button:checked,
+toolbar .raised button:focus:checked {
+	background-image: linear-gradient(to bottom,
+		@button_active_gradient_color_a,
+		@button_active_gradient_color_b);
+	background-color: transparent; 
+}
+
+trough,
+trough highlight,
+row trough {
+	background-image: linear-gradient(to bottom,
+		@trough_bg_color_a,
+		@trough_bg_color_b);
+	background-color: transparent; 
+}
+
+/* checked hover */
+button:checked:hover,
+button:checked:focus:hover,
+button:checked:focus:hover:active,
+toolbar button:checked:hover,
+toolbar .raised button:checked:hover,
+toolbar button:checked:focus:hover,
+toolbar .raised button:checked:focus:hover,
+toolbar button:checked:focus:hover:active,
+toolbar .raised button:checked:focus:hover:active,
+toolbar.primary-toolbar.horizontal > toolitem > .linked > button.raised.image-button:checked:hover,
+toolbar.primary-toolbar.horizontal > toolitem > .linked > button.raised.image-button:focus:hover:active,
+row trough:hover {
+	background-image: linear-gradient(to bottom,
+		shade (@button_active_gradient_color_a, 1.05),
+		shade (@button_active_gradient_color_b, 1.05));
+	background-color: transparent; 
+}
+
+/* Primary and inline toolbars pushed button background */
+toolbar.primary-toolbar button:checked,
+toolbar.inline-toolbar button:checked {
+	background-image: linear-gradient(to bottom,
+		@button_active_gradient_color_a,
+		@button_active_gradient_color_b);
+	background-color: transparent;
+}
+
+toolbar.primary-toolbar button:checked:hover,
+toolbar.inline-toolbar button:checked:hover {
+	background-image: linear-gradient(to bottom,
+		shade (@button_active_gradient_color_a, 1.05),
+		shade (@button_active_gradient_color_b, 1.05));
+	background-color: transparent;
+}
+
+/* Hover button background */
+button:hover,
+toolbar button:hover,
+toolbar .raised button:hover,
+toolbar combobox button.combo:hover,
+combobox button.combo:hover,
+toolbar.primary-toolbar combobox button.combo:hover,
+toolbar.primary-toolbar.horizontal > toolitem > .linked > button.raised.image-button:hover {
+	background-color: transparent;
+	background-image: linear-gradient(to bottom,
+		@button_hover_gradient_color_a,
+		@button_hover_gradient_color_b);
+}
+
+/* Prelit button on primary toolbar background */
+toolbar.primary-toolbar button:hover {
+	background-color: transparent;
+	background-image: linear-gradient(to bottom,
+		@button_gradient_color_a,
+		@button_gradient_color_b);
+}
+
+/* Insensitive button background */
+button:disabled,
+toolbar combobox button.combo:disabled,
+toolbar .raised button:disabled {
+	background-image: none;
+	background-color: @insensitive_bg_color;
+}
+
+/* Pushed + Insensitive button background */
+button:checked:disabled,
+toolbar button:checked:disabled,
+toolbar combobox button.combo:checked:disabled {
+	background-image: linear-gradient(to bottom,
+		shade(@insensitive_bg_color, 0.95),
+		@insensitive_bg_color 40%,
+		@insensitive_bg_color);
+	background-color: transparent;
+}
+
+/* Entry background */
+entry,
+toolbar.primary-toolbar combobox entry.combo,
+levelbar trough {
+	background-image: linear-gradient(to bottom,
+		@entry_background_a,
+		@entry_background_b);
+	box-shadow: inset 0 1px @entry_inset, 
+		inset 0 2px alpha(@entry_inset, 0.4);
+}
+
+/* Entry pushed button background */
+toolbar.primary-toolbar combobox button.combo:checked,
+combobox button.combo:checked {
+	background-image: linear-gradient(to bottom,
+		shade(@entry_background_a, 0.9),
+		@entry_background_b);
+	background-color: transparent;
+	box-shadow: inset 0 1px @entry_inset, 
+		inset 0 2px alpha(@entry_inset, 0.4);
+}
+
+treeview header button {
+	background-image: linear-gradient(to bottom,
+		shade(@entry_background_a, 1.0),
+		@entry_background_b);
+	box-shadow: inset 0 2px 0 0 alpha(@borders, 0.3);
+}
+
+/* ie. yumex-dnf */
+stack treeview header button {
+    background-image: linear-gradient(to bottom,
+                                      shade(@theme_bg_color, 1.18),
+                                      shade(@theme_bg_color, 1.1));
+}
+
+treeview header button:hover {
+	background-image: linear-gradient(to bottom,
+		shade(@entry_background_a, 0.96),
+		@entry_background_b);
+	box-shadow: inset 0 2px 0 0 alpha(@theme_selected_bg_color, 0.7);
+}
+
+treeview header button:focus,
+treeview header button:checked,
+treeview header button:checked:hover,
+treeview header button:hover:active {
+	background-image: linear-gradient(to bottom,
+		shade(@entry_background_a, 0.92),
+		@entry_background_b);
+	background-color: transparent;
+	box-shadow: inset 0 2px 0 0 alpha(@theme_selected_bg_color, 1.0);
+	border-image: none;
+}
+
+/* Insensitive entry background */
+entry:disabled,
+combobox button.combo:disabled,
+levelbar trough:disabled {
+	background-color: @insensitive_bg_color;
+	background-image: none;
+	box-shadow: none;
+}
+
+/* Primary and inline toolbars background */
+toolbar.primary-toolbar,
+toolbar.inline-toolbar  {
+	background-image: linear-gradient(to bottom,
+		shade (@theme_bg_color, 1.0),
+		shade (@theme_bg_color, 0.96));
+	background-color: transparent;
+}
+
+toolbar.primary-toolbar.vertical,
+toolbar.inline-toolbar.vertical {
+	background-image: linear-gradient(to right,
+		shade (@theme_bg_color, 1.0),
+		shade (@theme_bg_color, 0.96));
+	background-color: transparent;
+}
+
+scale trough {
+	background-image: linear-gradient(to bottom,
+		@scale_trough_bg_a,
+		@scale_trough_bg_b);
+}
+
+scale.vertical trough {
+	background-image: linear-gradient(to right,
+		@scale_trough_bg_a,
+		@scale_trough_bg_b);
+}
+
+/* Active switch background*/
+switch trough:active,
+scale progressbar {
+	background-image: linear-gradient(to bottom,
+		@switch_trough_active_bg_a,
+		@switch_trough_active_bg_b);
+	background-color: transparent;
+}
+
+scale.vertical progressbar {
+	background-image: linear-gradient(to right,
+		@switch_trough_active_bg_a,
+		@switch_trough_active_bg_b);
+	background-color: transparent;
+}
+
+/* Progressbar backgrounds */
+
+progressbar progress,
+row progressbar progress,
+row:hover progressbar progress,
+row:selected progressbar progress,
+row:selected:focus progressbar progress {
+	background-image: linear-gradient(to left top,
+		alpha (@progressbar_pattern, 0.25),
+		alpha (@progressbar_pattern, 0.25) 25%,
+		transparent 25%,
+		transparent 50%,
+		alpha (@progressbar_pattern, 0.25) 50%,
+		alpha (@progressbar_pattern, 0.25) 75%,
+		transparent 75%,
+		transparent),
+		linear-gradient(to bottom,
+		@progressbar_background_a,
+		@progressbar_background_b);
+	background-size: 40px 40px, auto;
+	box-shadow: inset 1px 1px alpha(white, 0.2), inset -1px -1px alpha(white, 0.1);
+}
+
+progressbar.vertical progress {
+	background-image: linear-gradient(to right top,
+		alpha (@progressbar_pattern, 0.25),
+		alpha (@progressbar_pattern, 0.25) 25%,
+		transparent 25%,
+		transparent 50%,
+		alpha (@progressbar_pattern, 0.25) 50%,
+		alpha (@progressbar_pattern, 0.25) 75%,
+		transparent 75%,
+		transparent),
+		linear-gradient(to right,
+		@progressbar_background_a,
+		@progressbar_background_b);
+}

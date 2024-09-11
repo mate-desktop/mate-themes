@@ -1,0 +1,963 @@
+/*********************
+ * CAJA File manager *
+ *********************/
+
+/* Caja places combobox */
+.caja-navigation-window .caja-side-pane button.flat {
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      @button_gradient_color_a,
+                                      @button_gradient_color_b);
+}
+
+.caja-navigation-window .caja-side-pane button.flat:hover {
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      @button_hover_gradient_color_a,
+                                      @button_hover_gradient_color_b);
+}
+
+.caja-navigation-window .caja-side-pane button.flat:first-child,
+.caja-navigation-window .caja-side-pane button.flat:hover:first-child {
+    border-image: url("borders/button.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
+    border-radius: 3px 0 0 3px;
+    /* remove right border */
+    border-width: 2px 0px 2px 2px;
+	border-image-width: 3px 0 4px 4px;
+	box-shadow: inset -1px 0 @inset_dark_color;
+}
+
+.caja-navigation-window .caja-side-pane button.flat:focus:first-child {
+    border-image: url("borders/button-focus.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
+    border-radius: 3px 0 0 3px;
+    /* remove right border */
+    border-width: 2px 0px 2px 2px;
+	border-image-width: 3px 0 4px 4px;
+	box-shadow: inset -1px 0 @treeview_focus_border;
+    outline-style: none;
+}
+
+.caja-navigation-window .caja-side-pane button.flat:last-child,
+.caja-navigation-window .caja-side-pane button.flat:hover:last-child {
+    border-image: url("borders/button.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
+    border-radius: 0 3px 3px 0;
+    /* remove left border */
+    border-width: 2px 2px 2px 0px;
+	border-image-width: 3px 4px 4px 0px;
+	box-shadow: inset 1px 0 @inset_light_color;
+}
+
+.caja-navigation-window .caja-side-pane button.flat:focus:last-child {
+    border-image: url("borders/button-focus.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
+    border-radius: 0 3px 3px 0;
+    /* remove left border */
+    border-width: 2px 2px 2px 0px;
+	border-image-width: 3px 4px 4px 0px;
+	box-shadow: inset 1px 0 @treeview_focus_border;
+    outline-style: none;
+}
+
+/* ComboBox views */
+.caja-navigation-window toolbar.primary-toolbar combobox > button.combo {
+    padding: 6px 4px;
+}
+
+/* pathpar toggle button */
+.caja-navigation-window button.toggle.image-button,
+.caja-navigation-window button.toggle.image-button:checked {
+    padding: 5px;
+    border-radius: 3px;
+}
+
+/* pathbar */
+/* pathbar buttons */
+.caja-pathbar button {
+    padding: 4px;
+}
+
+/* arrow button */
+.caja-pathbar button.slider-button:focus {
+	border-image: url("borders/button.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
+}
+
+.caja-pathbar button.slider-button:nth-child(odd) {
+    border-radius: 3px 0px 0px 3px;
+    /* remove right border */
+    border-width: 2px 0px 2px 2px;
+	border-image-width: 3px 0 4px 4px;
+    margin: 0px -1px 0px 1px;
+	box-shadow: inset -1px 0 @inset_dark_color;
+}
+
+.caja-pathbar button.slider-button:nth-child(even) {
+    border-radius: 0 3px 3px 0;
+    /* remove left border */
+    border-width: 2px 2px 2px 0px;
+	border-image-width: 3px 4px 4px 0;
+    margin: 0px 1px 0px -1px;
+	box-shadow: inset 1px 0 @inset_light_color;
+}
+
+/* remove box shadow from last-child */
+.caja-pathbar button.slider-button:disabled:nth-child(even) {
+	box-shadow: none;
+}
+
+/* folder buttons */
+.caja-pathbar button.toggle.text-button,
+.caja-pathbar button.toggle.text-button.image-button {
+    border-width: 2px 0px;
+	border-image-width: 3px 0 4px 0;
+	border-radius: 0;
+    margin: 0px -2px 0px -2px;
+	box-shadow: inset 1px 0 @inset_light_color, inset -1px 0 @inset_dark_color;
+}
+
+.caja-pathbar button.toggle.text-button:checked,
+.caja-pathbar button.toggle.text-button.image-button:checked {
+	box-shadow: inset 1px 0 @inset_dark_color;
+}
+
+.caja-pathbar button.toggle.text-button:disabled,
+.caja-pathbar button.toggle.text-button.image-button:disabled {
+	box-shadow: inset -1px 0 @inset_dark_color;
+}
+
+/* places, treeview, history, information, emblems and notes */
+.caja-side-pane notebook treeview.view,
+.caja-side-pane notebook textview.view text,
+.caja-side-pane notebook viewport.frame,
+.caja-side-pane notebook widget .vertical {
+    background-color: shade (@theme_bg_color, 1.08);
+    color: @theme_fg_color;
+}
+
+.caja-side-pane treeview.view:selected,
+.caja-side-pane treeview.view:selected:hover {
+    background-color: shade (@theme_selected_bg_color, 1.00);
+    color: shade (@theme_selected_fg_color, 1.00);
+}
+
+.caja-side-pane treeview.view:hover {
+    background-color: shade (@theme_selected_bg_color, 1.15);
+    color: shade (@theme_selected_fg_color, 1.00);
+}
+
+/* treeview rows */
+.caja-side-pane treeview.view {
+    padding: 2px 0px;
+}
+
+/* to avoid overlap with eject buttons */
+.caja-side-pane scrolledwindow scrollbar.vertical.left.overlay-indicator,
+.caja-side-pane scrolledwindow scrollbar.vertical.left.overlay-indicator trough,
+.caja-side-pane scrolledwindow scrollbar.vertical.left.overlay-indicator slider,
+.caja-side-pane scrolledwindow scrollbar.vertical.left.overlay-indicator button {
+    min-width: 8px;
+}
+
+/* view modes */
+/* icon and compat mode */
+.caja-navigation-window .caja-notebook scrolledwindow.view.frame  {
+    background-color: @theme_base_color;
+}
+
+/* color of selected icons if unfocused */
+/* For some reasons this needs to be set here again */
+.caja-navigation-window .caja-notebook .view:active {
+    background-color: shade(@theme_unfocused_bg_color, 0.94);
+}
+
+/* listview mode */
+.caja-navigation-window .caja-notebook .view {
+    background-color: @theme_base_color;
+}
+
+/* rows and header in listview */
+.caja-notebook treeview.view header button {
+    border-width: 1px 1px 1px 0px;
+}
+
+/* background-image is needed for inactiv-pane. bg color don't work here */
+.caja-notebook treeview.view:selected,
+.caja-notebook treeview.view:selected:hover {
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+    background-image: linear-gradient(to bottom,
+                                      shade (@theme_selected_bg_color, 1.00),
+                                      shade (@theme_selected_bg_color, 1.00));
+}
+
+.caja-notebook treeview.view:hover {
+    background-color: shade (@theme_selected_bg_color, 1.55);
+    color: shade (@theme_selected_bg_color, 0.35);
+}
+
+/* ie. inactive-pane caja */
+.caja-notebook .view:disabled {
+    background-color: @inactive-pane_bg_color;
+}
+
+/* no double borders if tabs are used */
+.caja-navigation-window .caja-notebook > header.top {
+	border-width: 1px 0px 0px 1px;
+}
+
+/* window and desktop mode */
+.caja-canvas-item {
+    border-radius: 3px;
+    color: @theme_fg_color;
+}
+
+.caja-desktop.caja-canvas-item:selected,
+.caja-desktop.caja-canvas-item:active,
+.caja-navigation-window .caja-canvas-item:active,
+.caja-navigation-window .caja-canvas-item:selected {
+    color: @theme_selected_fg_color;
+    background-color: @theme_selected_bg_color;
+}
+
+/* window mode, for some reason this needs to be set again here */
+.caja-navigation-window .caja-notebook scrolledwindow.view.frame .rubberband {
+	background-color: alpha (@theme_selected_bg_color, 0.35);
+	border-color: @theme_selected_bg_color;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 0px;
+}
+
+/* desktop mode */
+.caja-desktop.caja-canvas-item {
+    color: @theme_selected_fg_color;
+    text-shadow: 1px 1px alpha (#000000, 0.8);
+}
+
+.caja-desktop.caja-canvas-item:selected,
+.caja-desktop.caja-canvas-item:active,
+.caja-desktop.caja-canvas-item:hover {
+    text-shadow: none;
+}
+
+.caja-desktop EelEditableLabel.entry {
+   border-image: none;
+   border-width: 1px;
+   text-shadow: none;
+}
+
+/* search, etc */
+/* needed as this is used for firefox locationbar, to avoid double borders */
+.caja-notebook box.vertical > frame > border {
+    border-style: solid;
+    border-width: 1px 1px 0px 1px;
+}
+
+#caja-extra-view-widget {
+    background-color: shade (@theme_bg_color, 1.04);
+    background-color: @cluebar_color;
+    border-bottom-color: shade (@cluebar_color, 0.92);
+    border-radius: 0px;
+    border-style: solid;
+    border-width: 0px;
+    border-color: @borders;
+    color: @theme_fg_color;
+}
+
+/* emblems and background dialog */
+.caja-property-browser > box > box > box > scrolledwindow.frame > viewport.frame {
+    background-color: shade (@theme_bg_color, 1.08);
+}
+
+/* misc */
+/* do we have this style class? */
+.caja-cluebar-label {
+    font-weight: normal;
+    text-shadow: 0 1px shade (@cluebar_color, 1.06);
+}
+
+/****************
+ * Mate-Panel *
+ ****************/
+
+/* first make all transparent */
+.mate-panel-menu-bar,
+.mate-panel-menu-bar menubar,
+.mate-panel-menu-bar menuitem,
+#PanelPlug,
+#PanelApplet button,
+PanelToplevel.background,
+#PanelApplet-window-menu-applet-button {
+    border-image: none;
+    background-image: none;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/* let's start it */
+#PanelPlug,
+.mate-panel-menu-bar,
+PanelToplevel.background {
+    background-color: @theme_bg_color;
+    background-image: none;
+    /* normal panel */
+    color: @theme_fg_color;
+    /* transparent panel */
+/*    color: @theme_selected_fg_color; */
+    text-shadow: none;
+}
+
+PanelToplevel.horizontal.top > grid {
+    border-style: outset;
+    border-width: 0px 0px 1px 0px;
+    border-color: rgba(0, 0, 0, 0.23);
+}
+
+PanelToplevel.horizontal.bottom > grid {
+    border-style: outset;
+    border-width: 1px 0px 0px 0px;
+    border-color: rgba(0, 0, 0, 0.23);
+}
+
+PanelToplevel.vertical.left > grid {
+    border-style: outset;
+    border-width: 0px 1px 0px 0px;
+    border-color: rgba(0, 0, 0, 0.23);
+}
+
+PanelToplevel.vertical.right > grid {
+    border-style: outset;
+    border-width: 0px 0px 0px 1px;
+    border-color: rgba(0, 0, 0, 0.23);
+}
+
+/* hide buttons */
+PanelToplevel > grid > button {
+    background: transparent;
+    border-image: none;
+    border-radius: 0px;
+    border-width: 0px;
+    padding: 0px;
+    box-shadow: none;
+}
+
+PanelToplevel > grid > button:hover,
+PanelToplevel > grid > button:hover:active {
+    background-image: linear-gradient(to bottom,
+                                      shade (@theme_selected_bg_color, 0.86),
+                                      shade (@theme_selected_bg_color, 0.26));
+    color: shade (@theme_selected_fg_color, 1.00);
+    border-width: 0px;
+}
+
+#PanelApplet {
+    border-width: 0;
+}
+
+PanelSeparator {
+    border-width: 0;
+    background-color: @theme_bg_color;
+    color: shade (@theme_fg_color, 4.30);
+    text-shadow: none;
+}
+
+/* the grid left from na-tray and wncktasklist */
+MatePanelAppletFrameDBus > MatePanelAppletFrameDBus {
+    background-image: -gtk-scaled(url("assets/panel-grid.svg"));
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+/* outlines */
+window.background, /* selector where outlines are writen on GtkTrayIcon */
+.mate-panel-menu-bar menubar,
+.mate-panel-menu-bar button,
+.mate-panel-menu-bar PanelApplet {
+    outline-style: solid;
+    outline-offset: -2px;
+    outline-color: shade (@theme_selected_bg_color, 1.0);
+}
+
+/* main menu */
+/* set normal menubar button */
+.mate-panel-menu-bar menubar > menuitem {
+    transition: all 300ms ease-out;
+    text-shadow: none;
+    font-weight: normal;
+    padding: 4px;
+}
+
+/* set normal menubar menuitem */
+.mate-panel-menu-bar menubar menu menuitem {
+    padding: 6px;
+    font-weight: normal;
+}
+
+/* all applets */
+/* needed for mate-menu/mintmenu/wnck-tasklist to override a wildcard at line 37 gtk-widgets.css */
+#PanelApplet:selected,
+#PanelApplet #tasklist-button * {
+    color: shade (@theme_fg_color, 1.00);
+}
+
+.mate-panel-menu-bar #PanelApplet button,
+.mate-panel-menu-bar #PanelApplet button.flat,
+.mate-panel-menu-bar #PanelApplet button.toggle,
+.mate-panel-menu-bar #PanelApplet button.flat.toggle {
+    color: shade (@theme_fg_color, 1.00);
+    transition: all 400ms ease-out;
+    background-image: none;
+    background-color: transparent;
+    border-image: none;
+    border-style: none;
+    border-width: 0px;
+    border-radius: 0px;
+    text-shadow: none;
+    -GtkWidget-window-dragging: true;
+    padding: 4px 4px 4px 4px;
+}
+
+.mate-panel-menu-bar #PanelApplet button:checked,
+.mate-panel-menu-bar #PanelApplet button:checked:hover,
+.mate-panel-menu-bar #PanelApplet button:hover:active,
+.mate-panel-menu-bar #PanelApplet button.flat:checked,
+.mate-panel-menu-bar #PanelApplet button.flat:checked:hover,
+.mate-panel-menu-bar #PanelApplet button.flat:hover:active,
+.mate-panel-menu-bar #PanelApplet button.toggle:checked,
+.mate-panel-menu-bar #PanelApplet button.toggle:checked:hover,
+.mate-panel-menu-bar #PanelApplet button.toggle:hover:active,
+.mate-panel-menu-bar #PanelApplet button.flat.toggle:checked,
+.mate-panel-menu-bar #PanelApplet button.flat.toggle:checked:hover,
+.mate-panel-menu-bar #PanelApplet button.flat.toggle:hover:active {
+    background-image: linear-gradient(to bottom,
+                                      shade (@theme_bg_color, 1.0),
+                                      shade (@theme_bg_color, 0.82));
+    color: shade (@theme_fg_color, 1.00);
+}
+
+.mate-panel-menu-bar #PanelApplet button:hover,
+.mate-panel-menu-bar #PanelApplet button.flat:hover,
+.mate-panel-menu-bar #PanelApplet button.toggle:hover,
+.mate-panel-menu-bar #PanelApplet button.flat.toggle:hover {
+    background-image: linear-gradient(to bottom,
+                                      shade (@theme_bg_color, 1.14),
+                                      shade (@theme_bg_color, 0.96));
+    color: shade (@theme_fg_color, 1.00);
+}
+
+/* checkboxes in applet popup menu */
+.mate-panel-menu-bar menu > menuitem > box > menuitem {
+    padding: 0px 0px 0px 4px;
+}
+
+/* WnckPager */
+PanelApplet.wnck-applet .wnck-pager {
+    color: shade (@theme_selected_bg_color, 1.30);
+    background-image: none;
+    background-color: transparent;
+    text-shadow: none;
+    outline-offset: -1px;
+    outline-color: shade (@theme_selected_bg_color, 1.0);
+}
+
+/* selected WnckPager */
+PanelApplet.wnck-applet .wnck-pager:selected {
+    background-image: linear-gradient(to bottom,
+                                      @theme_selected_bg_color,
+                                      shade (@theme_selected_bg_color, 0.36));
+}
+
+/* prelight of WnckPager */
+PanelApplet.wnck-applet .wnck-pager:hover {
+    background-image: linear-gradient(to bottom,
+                                      shade (@theme_selected_bg_color, 0.56),
+                                      @theme_selected_bg_color);
+}
+
+#clock-applet-button.flat.toggle > box.horizontal > label {
+    font-weight: normal;
+}
+
+#MatePanelPopupWindow {
+	border-radius: 3px;
+}
+
+#MatePanelPopupWindow frame border {
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: shade(@borders, 0.95);
+}
+
+/* Weird, this sets the border color of the clockmap */
+#MatePanelPopupWindow > frame > box > box > box > widget {
+    color: @borders;
+}
+
+na-tray-applet {
+    -NaTrayApplet-icon-padding: 1px; /*any more and outlines get cut off*/
+}
+
+/* remove right space a bit */
+na-tray-applet > widget > box {
+    margin: 1px 2px 1px 1px;
+}
+
+/* no background for icon-padding area */
+na-tray-applet widget box widget {
+    background-color: transparent;
+}
+
+/* Classic icon style */
+.mate-panel-menu-bar {
+    -PanelMenuBar-icon-visible: true;
+}
+
+/* volume applet, brightness applet */
+.mate-panel-applet-slider {
+    background: transparent;
+}
+
+.mate-panel-applet-slider > frame {
+    background-color: @theme_bg_color;
+    border-radius:3px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.mate-panel-applet-slider > frame > border {
+    border-image: none;
+    border-style: solid;
+    border-radius:3px;
+    padding: 2px;
+}
+
+.mate-panel-applet-slider > frame > frame > border {
+    background-color: transparent;
+    border-style: none;
+    box-shadow: none;
+}
+
+.mate-panel-applet-slider > frame > button {
+    color: @theme_fg_color;
+}
+
+/* xrandr applet */
+.mate-panel-menu-bar menuitem.xrandr-applet:disabled > box > label {
+    background-color: transparent;
+    color: @menu_selected_fg_color;
+    border-color: shade (@theme_selected_bg_color, 0.50);
+    background-image: linear-gradient(to right,
+                                      shade (@theme_selected_bg_color, 0.98),
+                                      shade (@theme_selected_bg_color, 0.64));
+    text-shadow: 1px 1px alpha (shade (@theme_selected_bg_color, 0.24), 0.8);
+}
+
+.mate-panel-menu-bar menuitem.xrandr-applet.monitor-off:disabled > box > label {
+    background-color: transparent;
+    color: shade (@insensitive_fg_color, 0.75);
+    border-color: shade (@theme_selected_bg_color, 0.50);
+    background-image: linear-gradient(to right,
+                                      alpha (shade (@theme_selected_bg_color, 0.98), 0.6),
+                                      alpha (shade (@theme_selected_bg_color, 0.64), 0.6));
+    text-shadow: 1px 1px alpha (shade (@theme_selected_bg_color, 1.44), 0.8);
+}
+
+/* mate-menu, mintmenu */
+#mintmenu.background,
+#mate-menu.background {
+    border-color: @borders;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#mintmenu.background button,
+#mintmenu.background button.flat,
+#mate-menu.background button,
+#mate-menu.background button.flat {
+    padding: 3px 1px;
+    border-width: 2px;
+}
+
+#mintmenu.background scrollbar.vertical button,
+#mate-menu.background scrollbar.vertical button {
+    padding: 1px 0px;
+}
+
+#mintmenu.background scrolledwindow,
+#mate-menu.background scrolledwindow {
+    border-color: @borders;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0px;
+}
+
+#mintmenu.background notebook.frame scrolledwindow,
+#mate-menu.background notebook.frame scrolledwindow {
+    border-style: none;
+}
+
+/****************
+ * Pluma *
+ ****************/
+
+/* pluma line numbers */
+.pluma-window textview {
+    background-color: shade (@theme_bg_color, 1.07);
+}
+
+/* notebook in view */
+.pluma-window paned.horizontal notebook box.vertical {
+    border-radius: 0px;
+    border-width: 0px
+}
+
+/* Pluma status bar */
+.pluma-window statusbar.horizontal frame {
+    border-style: none;
+}
+
+.pluma-window statusbar.horizontal frame button.flat.toggle {
+    border-image: url("borders/button.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
+    padding: 0px;
+}
+
+.pluma-window statusbar.horizontal frame button.flat.toggle:focus {
+	border-image: url("borders/button-focus.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
+}
+
+/* Printpreview */
+.pluma-print-preview toolbar.horizontal {
+    background-image: linear-gradient(to bottom,
+                                      shade (@theme_bg_color, 1.0),
+                                      shade (@theme_bg_color, 0.96));
+    background-color: transparent;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    border-color: alpha(@borders, 0.4);
+    -GtkWidget-window-dragging: true;
+    box-shadow: inset 0 1px 0 0 alpha(@borders, 0.4);
+    padding: 0px;
+}
+
+.pluma-print-preview toolbar.horizontal entry {
+    padding: 4px 6px;
+}
+
+.pluma-print-preview toolbar.horizontal button.flat.image-button {
+    padding: 0px;
+}
+
+.pluma-print-preview toolbar.horizontal button.flat.text-button {
+    padding: 0px 16px;
+    border-radius: 2px;
+}
+
+.pluma-print-preview toolbar.horizontal toolbutton button.flat.text-button {
+    color: @theme_fg_color;
+    border-image: url("borders/button.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
+    background-image: linear-gradient(to bottom,
+                                      @button_gradient_color_a,
+                                      @button_gradient_color_b);
+}
+
+.pluma-print-preview toolbar.horizontal toolbutton button.flat.text-button:hover {
+    color: @internal_element_prelight;
+    background-image: linear-gradient(to bottom,
+                                      @button_hover_gradient_color_a,
+                                      @button_hover_gradient_color_b);
+}
+
+.pluma-print-preview scrolledwindow {
+    background-color: @theme_base_color;
+}
+
+/* sidebar file-browser */
+.pluma-window paned.horizontal box.vertical {
+    border-radius: 4px 4px 0px 0px;
+    border-width: 1px 0px 0px 0px;
+    border-style: solid;
+    border-color: @borders;
+    box-shadow: none;
+}
+
+.pluma-window paned.horizontal box.vertical notebook.frame box.vertical {
+    background-color: @theme_bg_color;
+}
+
+.pluma-window paned.horizontal box.vertical box.horizontal button.flat {
+    padding: 0px ;
+}
+
+.pluma-window paned.horizontal box.vertical notebook.frame box.vertical toolbar.horizontal {
+    background-image: linear-gradient(to bottom,
+                                      shade (@theme_bg_color, 1.0),
+                                      shade (@theme_bg_color, 0.96));
+    background-color: transparent;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    border-color: alpha(@borders, 0.4);
+    -GtkWidget-window-dragging: true;
+    box-shadow: inset 0 1px 0 0 alpha(@borders, 0.4);
+    padding: 4px 0px;
+}
+
+.pluma-window paned.horizontal box.vertical notebook.frame box.vertical toolbar.horizontal button.flat,
+.pluma-window paned.horizontal box.vertical notebook.frame box.vertical toolbar.horizontal button.flat.menu-button {
+    padding: 4px 2px ;
+}
+
+.pluma-window paned.horizontal box.vertical notebook.frame box.vertical toolbar.horizontal button.flat.image-button {
+    padding: 4px 3px ;
+}
+
+/* color of of expander arrow */
+.pluma-window paned.horizontal box.vertical notebook.frame box.vertical expander:hover {
+    color: @theme_fg_color;
+}
+
+/*********
+ * Atril *
+ *********/
+
+/* size of page entry */
+.atril-window .primary-toolbar toolbar toolitem box.horizontal entry {
+    padding: 2px;
+}
+
+.atril-window .primary-toolbar toolbar button,
+.atril-window .primary-toolbar toolbar button.flat {
+    padding: 5px;
+}
+
+.atril-window .primary-toolbar toolbar button.combo {
+    padding: 6px;
+}
+
+/* broken text selection */
+.atril-window scrolledwindow.frame > widget:selected {
+	background-color: @theme_selected_bg_color;
+	color: @theme_selected_fg_color;
+}
+
+.atril-window scrolledwindow.frame > widget:active {
+	background-color: shade(@theme_unfocused_bg_color, 0.94);
+	color: @theme_fg_color;
+}
+
+/* atril and eom */
+EggToolbarEditor.vertical scrolledwindow {
+    border-color: @borders;
+    border-width: 1px;
+    border-radius: 0px;
+    border-style: solid;
+}
+
+EggToolbarEditor.vertical scrolledwindow viewport.frame {
+    background-color: shade (@theme_base_color, 1.0);
+}
+
+/**************
+ * mate-media *
+ **************/
+
+GvcMixerDialog box.horizontal {
+    margin: 0px -3px 0px -3px;
+}
+
+GvcMixerDialog box.horizontal box.horizontal frame {
+    background-color: shade (@theme_bg_color, 1.1);
+    border-color: @borders;
+    padding: 4px 0px;
+}
+
+GvcMixerDialog box.horizontal box.horizontal frame label {
+    padding: 0px 0px 0px 14px;
+}
+
+GvcMixerDialog notebook.frame frame {
+    border-style: none;
+}
+
+GvcMixerDialog > box.dialog-vbox > notebook.frame > header.top > tabs:nth-child(last) {
+    margin: 0px -1px 0px 0px;
+}
+
+/* fix weird borders in application page */
+GvcMixerDialog notebook.frame scrolledwindow.frame {
+    border-style: none;
+}
+
+GvcMixerDialog notebook.frame scrolledwindow.frame viewport.frame {
+    background-color: shade (@theme_bg_color, 1.1);
+}
+
+ /* needed because of 'border-style: none' for application page */
+GvcMixerDialog notebook.frame box.vertical frame scrolledwindow.frame {
+    border-color: @borders;
+    border-style: solid;
+}
+
+GvcMixerDialog notebook.frame box.vertical box.horizontal frame label {
+    padding: 0px 0px 0px 6px;
+}
+
+GvcMixerDialog notebook.frame box.vertical box.horizontal box.horizontal label {
+    padding: 0px 0px 0px 6px;
+}
+
+GvcMixerDialog notebook.frame box.vertical box.horizontal box.horizontal frame box.horizontal box.horizontal label {
+    padding: 0px 0px 0px 10px;
+}
+
+/* mate-screensaver lock dialog */
+
+.lock-dialog {
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: @wm_csd_solid_border_color;
+    /* not sure if box-shadow works here */
+    box-shadow: 0 0 0 1px @wm_border, 0 2px 8px 3px @wm_shadow;
+}
+
+.lock-dialog frame border {
+    border-radius: 4px;
+    border-style: none;
+    border-width: 0px;
+}
+
+.lock-dialog notebook {
+    background-color: shade (@theme_bg_color, 1.0);
+}
+
+/* mate-appearance-properties, UI tab */
+
+.appearance-window > box.vertical.dialog-vbox > notebook.frame  box.vertical > box.vertical > box.horizontal > box.vertical menubar {
+    border-style: solid;
+    border-width: 1px 1px 0px 1px;
+    border-color: darker (@theme_bg_color);
+	-GtkToolbar-button-relief: normal;
+}
+
+.appearance-window > box.vertical.dialog-vbox > notebook.frame  box.vertical > box.vertical > box.horizontal > box.vertical toolbar {
+    border-style: solid;
+    border-width: 1px;
+	border-color: darker (@theme_bg_color);
+    background-color: transparent;
+    -GtkToolbar-button-relief: normal;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+/* multimedia OSD */
+MsdOsdWindow.background.osd {
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(0,0,0,0.8);
+}
+
+MsdOsdWindow.background.osd .trough {
+	background-color: @osd_trough_bg;
+    border-radius: 3px;
+    border-width: 1px;
+    border-color: rgba(0,0,0,0.4);
+}
+
+MsdOsdWindow.background.osd .progressbar {
+    border-width: 1px;
+    border-radius: 3px;
+    border-color: rgba(0,0,0,0.4);
+}
+
+/*For mate-settings-daemon noncomposited osd windows*/
+MsdOsdWindow.background.osd.msd-osd-window-solid {
+	border-radius: 0px;
+	border-width: 2px;
+	border-style:solid;
+	border-color: rgb(64, 64, 67);
+}
+
+MsdOsdWindow.background.osd.msd-osd-window-solid progressbar,
+MsdOsdWindow.background.osd.msd-osd-window-solid progressbar trough {
+	border-radius: 10px;
+}
+
+MsdOsdWindow.background.osd.msd-osd-window-solid progressbar trough {
+    border: 1px solid rgb(102, 153, 204);
+}
+
+/*****************
+ * mate-terminal *
+ *****************/
+
+/* override for pavu-control */
+window.background.mate-terminal > box.vertical > notebook,
+window.background.mate-terminal > box.vertical > notebook > stack > box {
+    border-style: none;
+    border-width: 0px;
+}
+
+window.background.mate-terminal > box.vertical > notebook > header.top {
+    border-width: 0px 0px 0px 1px;
+    border-color: @theme_bg_color;
+}
+
+/* how strange is that? a bg above the header bg? This solves non colored pixels*/
+window.background.mate-terminal > box.vertical > notebook > header.top tabs {
+    background-color: @theme_bg_color;
+}
+
+/* override settings for pavu-control */
+window.background.mate-terminal > box.vertical > notebook > header.top tab,
+window.background.mate-terminal > box.vertical > notebook > header.top tab:checked,
+window.background.mate-terminal > box.vertical > notebook > header.top tab:checked:hover {
+    border-radius: 4px 4px 0px 0px;
+    padding: 2px 2px 2px 6px;
+    margin: 0px 0px 0px -1px;
+    border-style: solid;
+    border-color: @borders;
+    border-width: 1px;
+}
+
+/*************************
+ * mate-power-statistics *
+ *************************/
+
+.mpm-statistics notebook.frame > stack > scrolledwindow.frame {
+     border-style: solid;
+}
+
+/************
+ * engrampa *
+ ************/
+
+.engrampa-window > grid > paned > box > frame > border {
+    border-style: none;
+}
+
+/* mate-keyboard-layout-view, mate-keyboard-layout-chooser */
+/* this way it styles only the border of the keys, the bg of the map itself
+   use the .view class, and use old and new selectors for a while */
+matekbd-keyboard-drawing,
+.gswitchit-layout-view > box.dialog-vbox > box.vertical > widget,
+#xkb-layout-chooser > box.dialog-vbox > box.vertical > box.vertical > frame > widget {
+    background-color: shade (@theme_bg_color, 1.0);
+}
+
+#xkb-layout-chooser > box.dialog-vbox > box.vertical > box.vertical > frame > border {
+    border-radius: 0px;
+}
+
+/* fix for some maximized windows 
+   https://github.com/mate-desktop/mate-desktop/issues/291
+   FIXME Sadly pluma ignore doesn't show the maximised style class */
+
+window.background.maximized.engrampa-window > grid.horizontal > paned.horizontal > scrolledwindow.frame,
+window.background.maximized.atril-window > box.vertical > paned.horizontal > box.vertical > scrolledwindow.frame,
+window.background.pluma-window > box.vertical > paned.horizontal > paned.vertical > notebook box.vertical > scrolledwindow.frame,
+window.background.maximized.logview-window > box.vertical > paned.horizontal > box.vertical > scrolledwindow.frame,
+window.background.maximized.caja-navigation-window notebook.caja-notebook scrolledwindow.frame {
+    border-right-width: 0px;
+}
+
