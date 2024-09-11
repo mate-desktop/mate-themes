@@ -1,5 +1,5 @@
 /* Default color scheme */
-@define-color theme_base_color #080808;
+@define-color theme_base_color #161616;
 @define-color theme_bg_color #2b2b2b;
 @define-color theme_selected_bg_color #6699CC;
 @define-color theme_text_color #CBCFCD;
@@ -8,7 +8,7 @@
 
 @define-color placeholder_text_color shade(@text_color, 3.5);
 
-@define-color theme_unfocused_base_color @insensitive_bg_color, 1.015; /* I don't want the same color, hope not to hurt usability to much here */
+@define-color theme_unfocused_base_color shade(@insensitive_bg_color, 1.015); /* I don't want the same color, hope not to hurt usability to much here */
 @define-color theme_unfocused_text_color mix(@theme_unfocused_fg_color, @theme_text_color, 0.5); /* Need something darker here to have stuff nicelly readable*/
 @define-color theme_unfocused_fg_color shade(@theme_bg_color, 0.6);
 @define-color theme_unfocused_bg_color @theme_bg_color;
@@ -88,7 +88,7 @@
 
 @define-color entry_text_color @theme_text_color;
 @define-color entry_background_a shade(@theme_base_color, 0.94);
-@define-color entry_background_b @theme_base_color;
+@define-color entry_background_b 333333;
 
 @define-color entry_inset alpha(black, 0.1);
 
