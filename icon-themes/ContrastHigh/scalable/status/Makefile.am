@@ -27,6 +27,7 @@ icon_DATA= \
 	media-playlist-shuffle.svg \
 	network-offline.svg \
 	network-online.svg \
+	nm-no-connection.svg \
 	printer-error.svg \
 	printer-printing.svg \
 	software-update-available.svg \

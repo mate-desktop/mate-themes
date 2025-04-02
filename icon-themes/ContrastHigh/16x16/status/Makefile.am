@@ -99,6 +99,7 @@ icon_DATA= \
 	network-wireless-signal-ok.png \
 	network-wireless-signal-weak.png \
 	nm-device-wired.png \
+	nm-no-connection.png \
 	non-starred.png \
 	printer-error.png \
 	printer-printing.png \
