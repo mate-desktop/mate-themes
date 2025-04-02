@@ -24,8 +24,8 @@ icon_DATA=	\
 	multimedia-player.svg \
 	network-wired.svg \
 	network-wireless.svg \
-        nm-device-wired.svg \
-        nm-device-wireless.svg \
+	nm-device-wired.svg \
+	nm-device-wireless.svg \
 	phone.svg \
 	printer.svg \
 	video-display.svg

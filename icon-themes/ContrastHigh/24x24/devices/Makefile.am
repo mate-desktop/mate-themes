@@ -48,8 +48,8 @@ icon_DATA=	\
 	network-wired.png \
 	network-wireless.png \
 	nm-applet.png \
-        nm-device-wired.png \
-        nm-device-wireless.png \
+	nm-device-wired.png \
+	nm-device-wireless.png \
 	phone-apple-iphone.png \
 	phone.png \
 	printer-network.png \
