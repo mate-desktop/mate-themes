@@ -47,6 +47,8 @@ icon_DATA=	\
 	multimedia-player.png \
 	network-wired.png \
 	network-wireless.png \
+        nm-device-wired.png \
+        nm-device-wireless.png \
 	phone-apple-iphone.png \
 	phone.png \
 	printer-network.png \
