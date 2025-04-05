@@ -1,3 +1,4 @@
 SUBDIRS = \
-	ContrastHigh
+	ContrastHigh \
+	Quid
 

@@ -1,5 +1,6 @@
 THEMES = \
 	Shiny \
+	Quid \
 	HighContrast
 
 THEME_DIR=$(datadir)/themes
