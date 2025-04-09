@@ -1,4 +1,5 @@
 SUBDIRS = \
 	ContrastHigh \
+	Fog \
 	Quid
 
