@@ -1,6 +1,10 @@
 THEMES = \
 	Shiny \
-	HighContrast
+	Quid \
+	HighContrast \
+	Glider \
+	Fog \
+	Aldabra
 
 THEME_DIR=$(datadir)/themes
 THEME_SUBDIR=metacity-1
