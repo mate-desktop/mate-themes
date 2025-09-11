@@ -183,11 +183,7 @@ PanelApplet.wnck-applet .wnck-pager {
     border-color: @border_color;
     color: @theme_fg_color;
     background-color: transparent;
-    background-image: -gtk-gradient (linear,
-                      left top,
-                      left bottom,
-                      from (@button_gradient_a),
-                      to (@button_gradient_d));
+    background-image: none;
 }
 
 .mate-panel-menu-bar #PanelApplet button:checked,
