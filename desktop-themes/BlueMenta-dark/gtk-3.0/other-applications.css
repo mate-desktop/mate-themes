@@ -1,0 +1,560 @@
+/*********************
+ * NEMO File manager *
+ *********************/
+
+.nemo-window widget.raised.linked > button:nth-child(first) widget {
+    -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+}
+
+.nemo-window widget.raised.linked > button:nth-child(last) widget {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+
+.nemo-window widget.raised.linked > button:nth-child(first) {
+   margin: 0px 0px 0px -1px;
+   padding: 0px;
+}
+
+.nemo-window widget.raised.linked > button:nth-child(last) {
+   margin: 0px -1px 0px 0px;
+   padding: 0px;
+}
+
+/* For Places Sidebar diskfull indicators */
+.nemo-window .vertical.sidebar>scrolledwindow.frame>viewport.frame>box.vertical>treeview.view {
+	-NemoPlacesTreeView-disk-full-bg-color: shade(@theme_bg_color, .65);
+	-NemoPlacesTreeView-disk-full-fg-color: shade(@theme_selected_bg_color, 1.0);
+	-NemoPlacesTreeView-disk-full-bar-width: 2px;
+	-NemoPlacesTreeView-disk-full-bar-radius: 1px;
+	-NemoPlacesTreeView-disk-full-bottom-padding: 1px;
+	-NemoPlacesTreeView-disk-full-max-length: 70px;
+}
+
+.nemo-window .vertical.sidebar>scrolledwindow.frame>viewport.frame>box.vertical>treeview.view:selected {
+	-NemoPlacesTreeView-disk-full-bg-color: shade(@theme_bg_color, 2.0);
+	-NemoPlacesTreeView-disk-full-fg-color: shade(@theme_fg_color, 2.0);
+}
+
+.nemo-window .vertical.sidebar>scrolledwindow.frame>viewport.frame>box.vertical>treeview.view:hover {
+}
+
+.nemo-window .vertical.sidebar>scrolledwindow.frame>viewport.frame>box.vertical>treeview.view:selected:hover {
+}
+
+/* view */
+/* this sets the bg color for scrolledwindow junction, the little square beside the scrollbars */
+.nemo-window .nemo-window-pane > notebook box.vertical > overlay scrolledwindow {
+    background-color: @theme_bg_color;
+}
+
+/* treewiew, view and compact view */
+.nemo-window .nemo-window-pane > notebook box.vertical > overlay > scrolledwindow.view,
+.nemo-window .nemo-window-pane > notebook box.vertical > overlay > scrolledwindow > treeview.view {
+    background-color: @theme_base_color;
+	border-width: 1px 1px 0px 1px;
+	border-style: solid;
+	border-color: @borders;
+}
+
+.nemo-window-pane treeview.view {
+    padding: 0px;
+}
+
+.nemo-window .rubberband,
+.nemo-window .view.rubberband {
+	background-color: alpha (@theme_selected_bg_color, 0.35);
+}
+
+.nemo-window .nemo-window-pane > notebook > header.top {
+	border-width: 1px 0px 0px 1px;
+}
+
+/* sidebar */
+.nemo-window .sidebar .view {
+	background-color: shade (@theme_bg_color, 1.08);
+	color: @theme_fg_color;
+}
+
+.nemo-window .sidebar scrolledwindow.frame.nemo-places-sidebar {
+	border-width: 1px 1px 0px 1px;
+	border-style: solid;
+	border-color: @borders;
+}
+
+.nemo-window .sidebar treeview .cell:selected {
+	background-color: @theme_selected_bg_color;
+	color: @theme_selected_fg_color;
+}
+
+.nemo-window .sidebar treeview .cell:hover {
+	background-color: shade (@theme_selected_bg_color, 1.15);
+	color: @theme_selected_fg_color;
+}
+
+.nemo-window .sidebar scrollbar.vertical.left trough {
+	border-width: 0px 0px 0px 1px;
+	border-radius: 0;
+	border-style: solid;
+	border-color: shade (@theme_bg_color, 0.84);
+}
+
+/* desktop mode */
+.nemo-desktop.nemo-canvas-item {
+	color: @theme_bg_color;
+	text-shadow: 1px 1px alpha (#000000, 0.8);
+}
+
+.nemo-desktop.nemo-canvas-item:active {
+	background-image: none;
+	background-color: alpha (@theme_bg_color, 0.84);
+	color: @theme_fg_color;
+}
+
+.nemo-desktop.nemo-canvas-item:selected {
+	background-image: none;
+	background-color: alpha (@theme_selected_bg_color, 0.84);
+	color: @theme_selected_fg_color;
+}
+
+.nemo-desktop.nemo-canvas-item:active,
+.nemo-desktop.nemo-canvas-item:hover,
+.nemo-desktop.nemo-canvas-item:selected {
+	text-shadow: none;
+}
+
+/* inactive pane */
+/* bug in gtk+, .view writes no bg color in all browsers */
+.nemo-inactive-pane .view,
+.nemo-inactive-pane scrolledwindow,
+.nemo-inactive-pane scrolledwindow treeview {
+	background-color: shade(@theme_base_color, 0.9);
+}
+
+/* Primary Toolbar */
+.nemo-window toolbar.primary-toolbar.horizontal button.image-button {
+    padding: 0px 8px;
+}
+
+.nemo-window toolbar.primary-toolbar.horizontal button.text-button {
+    padding: 0px 10px;
+}
+
+/* statusbar */
+.nemo-window box.toolbar.horizontal {
+    padding: 0px;
+}
+
+/* Misc */
+
+.nemo-cluebar-label {
+    font-weight: normal;
+    text-shadow: 0 1px shade (@cluebar_color, 1.06);
+}
+
+.nemo-window-pane infobar.info {
+	background-color: @cluebar_color;
+	border-bottom-color: shade (@cluebar_color, 0.92);
+	border-radius: 0;
+	border-style: solid;
+	border-width: 0px 0px 1px 0px;
+	color: @theme_fg_color;
+}
+
+.nemo-window-pane box.toolbar.primary-toolbar.vertical revealer button.radio.text-button {
+    padding: 6px;
+    border-style: solid;
+}
+
+/* cinnamon-settings */
+
+button.gtkstyle-fallback,
+button.gtkstyle-fallback:focus,
+button.gtkstyle-fallback:backdrop {
+	border-image: url("borders/button.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
+	border-radius: 4px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+button.gtkstyle-fallback:hover,
+button.gtkstyle-fallback:hover:active,
+button.gtkstyle-fallback:backdrop:hover,
+button.gtkstyle-fallback:focus:hover,
+button.gtkstyle-fallback:focus:hover:active {
+	border-image: url("borders/button-active-focus.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
+	border-radius: 4px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+/* Parole media player needs more testing!
+ hopefully do not set other stuff */
+
+paned.horizontal .vertical overlay revealer.bottom .background.horizontal.osd {
+    background-color: @theme_bg_color;
+    color: @theme_fg_color;
+}
+
+paned overlay revealer.bottom button.flat,
+paned overlay revealer.bottom button.flat:hover,
+paned overlay revealer.bottom button.flat:active,
+paned overlay revealer.bottom button.flat:checked,
+paned overlay revealer.bottom button.flat:active:hover,
+paned overlay revealer.bottom button.flat:checked:hover,
+paned overlay revealer.bottom button.flat.image-button,
+paned overlay revealer.bottom button.flat.image-button:hover ,
+paned overlay revealer.bottom button.flat.image-button:active,
+paned overlay revealer.bottom button.flat.image-button:checked,
+paned overlay revealer.bottom button.flat.image-button:active:hover,
+paned overlay revealer.bottom button.flat.image-button:checked:hover,
+paned overlay revealer.bottom .background.horizontal.osd button.flat.image-button:checked,
+paned overlay revealer.bottom .background.horizontal.osd button.flat.image-button:active:hover {
+    border-style: none;
+    border-radius: 4px;
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+    padding: 4px 7px;
+    color: @button_active_text;
+}
+
+paned overlay revealer.bottom .background.horizontal.osd button.flat.image-button:checked,
+paned overlay revealer.bottom .background.horizontal.osd button.flat.image-button:active:hover {
+	background-image: linear-gradient(to bottom,
+		@button_active_gradient_color_a,
+		@button_active_gradient_color_b);
+	box-shadow: inset 1px 0 @inset_dark_color,
+		inset -1px 0 @inset_dark_color,
+		inset 1px 2px alpha(@theme_selected_bg_color, 0.1),
+		inset 1px 1px alpha(@theme_selected_bg_color, 0.1),
+		inset -1px -1px alpha(@theme_selected_bg_color, 0.2);
+    padding: 4px 7px;
+    border-radius: 3px;
+}
+
+/***********
+ * Lightdm *
+ ***********/
+
+/* 2.0 */
+.lightdm-gtk-greeter #login_window.background,
+/* 1.8.5 */
+#login_window.background.lightdm-gtk-greeter,
+#login_window.background.lightdm-gtk-greeter box.vertical {
+	border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: shade(@theme_bg_color, 0.4);
+}
+
+/* 2.0 */
+.lightdm-gtk-greeter #login_window.background #content_frame,
+.lightdm-gtk-greeter #login_window.background #buttonbox_frame,
+/* 1.8.5 */
+#login_window.background.lightdm-gtk-greeter #content_frame,
+#login_window.background.lightdm-gtk-greeter #buttonbox_frame {
+    border-radius: 0px;
+    border-style: none;
+    border-width: 0px;
+}
+
+/* 2.0 */
+.lightdm-gtk-greeter #login_window.background #user_image_border,
+/* 1.8.5 */
+#login_window.background.lightdm-gtk-greeter #user_image_border {
+    border-style: solid;
+    border-width: 1px;
+    border-color: shade(@theme_bg_color, 0.8);
+}
+
+/* 2.0 */
+.lightdm-gtk-greeter #login_window.background #prompt_entry,
+.lightdm-gtk-greeter #login_window.background button.combo,
+.lightdm-gtk-greeter #login_window.background button.text-button,
+.lightdm-gtk-greeter #login_window.background button.text-button.default,
+/* 1.8.5 */
+#login_window.background.lightdm-gtk-greeter #prompt_entry,
+#login_window.background.lightdm-gtk-greeter button.combo,
+#login_window.background.lightdm-gtk-greeter button.text-button,
+#login_window.background.lightdm-gtk-greeter button.text-button.default {
+	padding: 6px 4px;
+}
+
+/* 2.0 */
+.lightdm-gtk-greeter #panel_window.background menubar separator {
+    background-color: @theme_bg_color;
+    background-image: none;
+    color: @theme_fg_color;
+}
+
+/*****************
+ * Ubuntu styles *
+ *****************/
+/* overlay scrollbar */
+OsThumb {
+	color: shade (@theme_fg_color, 1.6);
+}
+
+OsThumb:selected,
+OsScrollbar:selected {
+	background-color: @theme_selected_bg_color;
+}
+
+OsThumb:active,
+OsScrollbar:active {
+	background-color: shade (@theme_bg_color, 0.6);
+}
+
+OsThumb:disabled,
+OsScrollbar:disabled {
+	background-color: shade (@theme_bg_color, 0.85);
+}
+
+/* scrolled window */
+.ubuntu-online-accounts.frame {
+	border-style: solid;
+	border-color: @borders;
+	border-width: 1px;
+	border-radius: 2px;
+	padding: 0;
+}
+
+.ubuntu-online-accounts.frame {
+	border-top-width: 0;
+}
+
+/* meld */
+
+#meldapp > box.vertical > notebook.frame {
+    border-width: 0px;
+    background-color: shade (@theme_bg_color, 1.00);
+}
+
+#meldapp > box.vertical > notebook.frame > header.top {
+    border-radius: 0px;
+}
+
+#meldapp > box.vertical > notebook.frame > header.top tab {
+    padding: 2px 4px;
+}
+
+#meldapp > box.vertical > notebook.frame > header.top tab:checked,
+#meldapp > box.vertical > notebook.frame > header.top tab:checked:hover {
+    background-image: linear-gradient(to bottom,
+                                      shade(@theme_bg_color, 1.18),
+                                      shade(@theme_bg_color, 1.00));
+}
+
+/* FIXME, does not work */
+#meldapp box.vertical notebook.frame box.vertical grid.horizontal toolbar.horizontal.meld-notebook-toolbar {
+    border-width: 0px;
+    border-style: none;
+    border-color: rgba(0,0,0,0);
+    background-color: shade (@theme_bg_color, 1.00);
+}
+
+.meld-notebook-toolbar > toolbutton > button.flat {
+	background-image: linear-gradient(to bottom,
+		@button_gradient_color_a,
+		@button_gradient_color_b);
+	background-color: transparent;
+	border-image: url("borders/button.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
+	border-radius: 4px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+.meld-notebook-toolbar > toolbutton > button.flat:hover {
+	background-color: transparent;
+	background-image: linear-gradient(to bottom,
+		@button_hover_gradient_color_a,
+		@button_hover_gradient_color_b);
+	border-radius: 4px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+.meld-notebook-toolbar > toolbutton > button.flat:disabled {
+	background-image: none;
+	background-color: @insensitive_bg_color;
+	border-image: url("borders/button-ins.png") 3 4 5 4 / 3px 4px 5px 4px stretch;
+	border-radius: 4px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+#meldapp > box.vertical > notebook.frame box.vertical > grid.horizontal > box.vertical {
+    border-width: 0px 1px 1px 1px;
+    border-style: solid;
+    border-color: @borders;
+}
+
+/* FIXME, does not work */
+#meldapp > box.vertical > notebook box.vertical > grid.horizontal > link-map {
+    background-color: shade (@theme_bg_color, 1.05);
+}
+
+#meldapp > box.vertical > notebook.frame box.vertical > grid.horizontal > box.vertical > scrolledwindow {
+    border-width: 1px 0px 0px 0px;
+    border-style: solid;
+    border-color: @borders;
+}
+
+#meldapp > box.vertical > notebook.frame box.vertical > grid.horizontal > box.vertical > scrolledwindow > scrollbar.vertical.left {
+    border-width: 0px 1px 1px 0px;
+}
+
+#meldapp > box.vertical > notebook.frame box.vertical > grid.horizontal > box.vertical > scrolledwindow > scrollbar.vertical.right {
+    border-width: 0px 0px 1px 1px;
+}
+
+#meldapp > box.vertical > notebook.frame box.vertical > grid.horizontal > box.vertical > scrolledwindow > scrollbar.horizontal.bottom {
+    border-width: 1px 0px 0px 0px;
+}
+
+#meldapp > box.vertical > notebook.frame box.vertical > grid.horizontal > box.vertical > scrolledwindow > scrollbar.horizontal.bottom trough {
+    border-width: 1px 1px 0px 1px;
+	border-color: shade (@theme_bg_color, 0.94);
+}
+
+#meldapp > box.vertical > notebook.frame box.vertical > grid.horizontal infobar {
+	-gtk-icon-style: regular;
+}
+
+/*************
+ * Yumex-DNF *
+ *************/
+
+window.background.yumex-dnf-window > box.vertical > box.vertical > searchbar {
+    border-width: 0px;
+}
+
+/* list sidebar row */
+window.background.yumex-dnf-window > box.vertical > box.vertical > box.horizontal > paned.vertical > stack > box.vertical > box.horizontal > box.vertical list.sidebar {
+    background-color: @sidebar_bg;
+    border-color: @borders;
+    border-style: solid;
+    border-width: 1px 0px 0px 0px;
+}
+
+window.background.yumex-dnf-window > box.vertical > box.vertical > box.horizontal > paned.vertical > stack > box.vertical > box.horizontal > box.vertical list.sidebar row.activatable {
+    background-color: @sidebar_bg;
+    border-radius: 3px;
+}
+
+/* info sidebar */
+window.background.yumex-dnf-window > box.vertical > box.vertical > box.horizontal > paned.vertical > box.horizontal > box.vertical list.sidebar {
+    background-color: @theme_bg_color;
+    border-color: @borders;
+    border-style: solid;
+    border-width: 1px 0px 0px 0px;
+    padding: 3px;
+}
+
+window.background.yumex-dnf-window > box.vertical > box.vertical > box.horizontal > paned.vertical > box.horizontal > box.vertical list.sidebar row.activatable {
+    background-image: none;
+    background-color: @theme_bg_color;
+    border-radius: 4px;
+	border-width: 2px;
+}
+
+window.background.yumex-dnf-window > box.vertical > box.vertical > box.horizontal > paned.vertical > box.horizontal > box.vertical list.sidebar row.activatable:selected {
+	background-image: linear-gradient(to bottom,
+		@button_gradient_color_a,
+		@button_gradient_color_b);
+	background-color: transparent;
+	border-image: url("borders/button-active.png") 3 4 4 4 / 3px 3px 4px 3px stretch;
+    border-radius: 4px;
+	border-width: 2px;
+}
+
+window.background.yumex-dnf-window > box.vertical > box.vertical > box.horizontal > paned.vertical > box.horizontal > box.vertical list.sidebar row.activatable:hover {
+	border-image: url("borders/button.png") 3 4 4 4 / 3px 3px 4px 3px stretch;
+	border-radius: 4px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: transparent;
+    background-color: @theme_bg_color;
+	background-image: linear-gradient(to bottom,
+		@button_hover_gradient_color_a,
+		@button_hover_gradient_color_b);
+}
+
+window.background.yumex-dnf-window > box.vertical > box.vertical > box.horizontal > paned.vertical > box.horizontal > box.vertical list.sidebar row.activatable:hover:active {
+	border-image: url("borders/button.png") 3 4 4 4 / 3px 3px 4px 3px stretch;
+	border-radius: 4px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: transparent;
+	background-image: linear-gradient(to bottom,
+		shade (@button_active_gradient_color_a, 1.05),
+		shade (@button_active_gradient_color_b, 1.05));
+    background-color: @theme_bg_color;
+}
+
+/****************
+ * pavu-control *
+ ****************/
+
+window.background > box.vertical > notebook button.flat.toggle,
+window.background.csd > box.vertical > notebook button.flat.toggle,
+window.background.ssd > box.vertical > notebook button.flat.toggle,
+window.background.solid-csd > box.vertical > notebook button.flat.toggle {
+    border-radius: 4px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: transparent;
+    background-color: transparent;
+}
+
+window.background > box.vertical > notebook button.flat.toggle:checked,
+window.background.csd > box.vertical > notebook button.flat.toggle:checked,
+window.background.ssd > box.vertical > notebook button.flat.toggle:checked,
+window.background.solid-csd > box.vertical > notebook button.flat.toggle:checked {
+    border-image: url("borders/button-active-focus.png") 3 4 5 4 / 3px 4px 5px 4px stretch;
+    background-image: linear-gradient(to bottom,
+                                      @button_active_gradient_color_a,
+                                      @button_active_gradient_color_b);
+}
+
+window.background > box.vertical > notebook button.flat.toggle:checked:focus,
+window.background.csd > box.vertical > notebook button.flat.toggle:checked:focus,
+window.background.ssd > box.vertical > notebook button.flat.toggle:checked:focus,
+window.background.solid-csd > box.vertical > notebook button.flat.toggle:checked:focus {
+    border-image: url("borders/button-focus.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
+    background-image: linear-gradient(to bottom,
+                                      @button_active_gradient_color_a,
+                                      @button_active_gradient_color_b);
+}
+
+window.background > box.vertical > notebook scrolledwindow,
+window.background.csd > box.vertical > notebook scrolledwindow viewport,
+window.background.ssd > box.vertical > notebook scrolledwindow viewport,
+window.background.solid-csd > box.vertical > notebook scrolledwindow viewport {
+    border-style: solid;
+    border-color: @borders;
+    border-width: 1px;
+}
+
+window.background > box.vertical > notebook scrolledwindow viewport,
+window.background.csd > box.vertical > notebook scrolledwindow viewport,
+window.background.ssd > box.vertical > notebook scrolledwindow viewport,
+window.background.solid-csd > box.vertical > notebook scrolledwindow viewport {
+    background-color: shade (@theme_bg_color, 1.12);
+}
+
+/****************
+ * virt-manager *
+ ****************/
+
+window.background > box.vertical > notebook overlay > scrolledwindow,
+window.background > box.vertical > notebook overlay > scrolledwindow viewport {
+    border-style: none;
+    border-width: 0px;
+}
+

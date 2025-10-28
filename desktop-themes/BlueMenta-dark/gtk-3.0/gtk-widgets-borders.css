@@ -1,0 +1,316 @@
+/* Borders */
+
+/* generic element borders (checked)*/
+entry,combobox entry.combo,
+combobox button.combo:checked,
+button:checked,
+button.flat:checked,
+toolbar.inline-toolbar.vertical button:checked {
+	border-image: url("borders/button-active.png") 3 4 5 4 / 3px 4px 5px 4px stretch;
+	border-radius: 4px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+trough,
+trough highlight {
+	border: 1px solid @borders;
+}
+
+entry:disabled,
+button:checked:disabled,
+combobox entry.combo:disabled,
+combobox button.combo:disabled,
+toolbar.inline-toolbar.vertical button:disabled,
+toolbar.inline-toolbar.vertical button.default:disabled {
+	border-image: url("borders/button-active-ins.png") 3 4 5 4 / 3px 4px 5px 4px stretch;
+	border-radius: 4px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+button:disabled,
+button.default:disabled,
+toolbar.inline-toolbar button:disabled,
+toolbar.inline-toolbar button.default:disabled,
+toolbar.inline-toolbar.vertical button:disabled,
+toolbar.inline-toolbar.vertical button.default:disabled {
+	border-image: url("borders/button-ins.png") 3 4 5 4 / 3px 4px 5px 4px stretch;
+	border-radius: 4px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+row trough {
+	border-image: url("borders/nohl-generic-border.png") 3 / 3px stretch;
+	border-radius: 4px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+/* focused element borders */
+entry:focus,
+button:checked:focus,
+button.default:checked,
+toolbar.inline-toolbar.vertical button:focus:checked,
+toolbar.inline-toolbar.vertical button.default:checked {
+	border-image: url("borders/button-active-focus.png") 3 4 5 4 / 3px 4px 5px 4px stretch;
+	border-radius: 4px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+.titlebar button:hover,
+.titlebar button:hover:active,
+.titlebar button.titlebutton:hover,
+.titlebar button.titlebutton:hover:active {
+	border-image: url("borders/button-active-focus.png") 3 4 5 4 / 3px 4px 5px 4px stretch;
+	border-radius: 4px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+button,
+combobox button.combo {
+	border-image: url("borders/button.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
+	border-radius: 4px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+toolbar.inline-toolbar.vertical button {
+	border-image: url("borders/button.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
+	border-radius: 4px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+/* focused button borders */
+button.default,
+button:focus,
+toolbar.inline-toolbar.horizontal button.text-button:focus,
+combobox entry.combo:focus,
+combobox button.combo:focus,
+combobox .linked button.combo:focus,
+.primary-toolbar button:focus,
+statusbar button.flat.toggle:focus {
+	border-image: url("borders/button-focus.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
+	border-radius: 4px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+button.flat:hover {
+	border-image: url("borders/button.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
+}
+
+/* overrride for osd */
+toolbar.osd button:hover {
+	border-image: none;
+}
+
+/* primary toolbar button borders */
+/* ie. rhythmbox */
+toolbar.primary-toolbar.horizontal > toolitem > .linked > button.raised.image-button {
+	border-image: url("borders/button.png") 3 4 4 4 / 3px 3px 4px 3px stretch;
+	border-style: solid;
+	border-color: transparent;
+}
+
+toolbar.primary-toolbar button:hover,
+toolbar.primary-toolbar.horizontal > toolitem > .linked > button.raised.image-button:hover {
+	border-image: url("borders/button.png") 3 4 4 4 / 3px 3px 4px 3px stretch;
+	background-color: transparent;
+}
+
+toolbar.primary-toolbar button:checked,
+toolbar.primary-toolbar.horizontal > toolitem > .linked > button.raised.image-button:checked,
+toolbar.primary-toolbar.horizontal > toolitem > .linked > button.raised.image-button:checked:hover,
+toolbar.primary-toolbar.horizontal > toolitem > .linked > button.raised.image-button:focus:hover:active {
+	border-image: url("borders/button-active.png") 3 4 4 4 / 3px 3px 4px 3px stretch;
+	background-color: transparent;
+}
+
+/* tooltip elements borders */
+tooltip entry {
+	border-image: url("borders/button-active.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
+	border-width: 1px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+tooltip button {
+	border-image: url("borders/button.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
+	border-width: 1px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+/* tooltip focused elements borders */
+tooltip entry:focus {
+	border-image: url("borders/button-focus.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
+	border-width: 1px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+/* primary toolbar - generic element borders (checked)*/
+toolbar.primary-toolbar entry,
+toolbar.primary-toolbar combobox entry.combo,
+toolbar.primary-toolbar combobox button.combo:checked,
+toolbar.primary-toolbar button:checked,
+toolbar.primary-toolbar .raised button:checked,
+toolbar.inline-toolbar .button:checked,
+toolbar.primary-toolbar switch trough {
+	border-image: url("borders/button-active.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
+	border-radius: 3px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+toolbar.primary-toolbar .raised button:disabled,
+toolbar.primary-toolbar .raised button.default:disabled,
+toolbar.primary-toolbar switch trough:disabled,
+toolbar.primary-toolbar switch trough:checked:disabled,
+toolbar.primary-toolbar combobox button.combo:disabled {
+	border-image: url("borders/button-active-ins.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
+	border-radius: 3px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+/* primary toolbar - focused element borders */
+toolbar.primary-toolbar button:focus:checked,
+toolbar.primary-toolbar entry:focus,
+toolbar.primary-toolbar combobox entry.combo:focus,
+toolbar.primary-toolbar .raised button.default:checked,
+toolbar.inline-toolbar button.default:checked {
+	border-image: url("borders/button-active-focus.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
+	border-radius: 3px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+/* primary toolbar - generic button borders (normal state)*/
+toolbar.primary-toolbar .raised button,
+toolbar.inline-toolbar button,
+toolbar.primary-toolbar combobox button.combo {
+	border-image: url("borders/button.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
+	border-radius: 3px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+/* primary toolbar - focused button borders */
+toolbar.primary-toolbar .raised button.default,
+toolbar.inline-toolbar button.default {
+	border-image: url("borders/button-focus.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
+	border-radius: 3px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+/* column-headers borders */
+treeview header button,
+treeview header button:active,
+treeview header button:hover:active,
+treeview header button:checked,
+treeview header button:checked:hover,
+treeview header button:disabled {
+	border-width: 0 1px 1px 0;
+	border-radius: 0;
+	border-style: solid;
+	border-color: transparent;
+}
+
+treeview header button,
+treeview header button:active,
+treeview header button:hover:active,
+treeview header button:checked,
+treeview header button:checked:hover,
+treeview header button.dnd {
+	border-image: linear-gradient(to top,
+		alpha(@theme_base_color, 0.0),
+		shade(@borders, 1.0)) 0 1 1 0;
+}
+
+/* ie. yumex-dnf */
+stack treeview header button,
+stack treeview header button:focus {
+    border-width: 0px 1px 1px 0px;
+    border-color: transparent;
+    border-style: solid;
+    border-radius: 0px;
+    border-image: linear-gradient(to bottom,
+                                  alpha(@borders, 0.0),
+                                  shade(@borders, 1.0)) 0 1 1 0;
+}
+
+treeview header button:disabled {
+	border-image: linear-gradient(to top,
+		alpha(@theme_base_color, 0.0),
+		@insensitive_bg_color) 0 1 1 0;
+}
+
+treeview header button:last-child,
+treeview header button:active:last-child,
+treeview header button:hover:active:last-child,
+treeview header button:checked:last-child,
+treeview header button:checked:hover:last-child {
+	border-right-width: 0;
+}
+
+treeview header button:focus {
+	border-image: linear-gradient(to top,
+		alpha(@theme_base_color, 0.0),
+		shade(@borders, 1.0)) 0 1 1 0;
+	border-width: 0 1px 1px 0;
+	border-radius: 0;
+}
+
+/* pushed colored buttons borders */
+toolbar.selection-mode button.suggested-action,
+toolbar.selection-mode toolbutton button.suggested-action {
+	border-image: url("borders/button-focus.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
+	border-radius: 3px;
+	border-width: 0px 0px 2px 0px;
+	border-style: solid;
+	border-color: transparent;
+
+}
+
+/* suggested action buttons borders */
+button.suggested-action,
+button.suggested-action:checked {
+	border-image: url("borders/button-focus.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
+	border-radius: 3px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: transparent;
+	/* Zuki note: figure out the heck it does */
+}
+
+/* destructive action buttons borders */
+button.destructive-action,
+button.destructive-action:checked {
+    border-image: url("borders/button-focus.png") 3 3 4 3 / 3px 3px 4px 3px stretch;
+    border-radius: 3px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: transparent;
+}
+

@@ -1,0 +1,129 @@
+/****************
+ * Applications *
+ ****************/
+
+/* Nautilus desktop */
+.nautilus-canvas-item {
+	border-radius: 5px;
+}
+
+.nautilus-desktop.nautilus-canvas-item {
+	color: @theme_selected_fg_color;
+	text-shadow: 1px 1px black;
+}
+
+.nautilus-desktop.nautilus-canvas-item:active {
+	color: @theme_text_color;
+}
+
+.nautilus-desktop.nautilus-canvas-item:selected,
+.nautilus-desktop.nautilus-canvas-item:selected:backdrop {
+	color: @theme_selected_fg_color;
+}
+
+.nautilus-desktop.nautilus-canvas-item:active,
+.nautilus-desktop.nautilus-canvas-item:hover,
+.nautilus-desktop.nautilus-canvas-item:selected {
+	text-shadow: none;
+}
+
+/*
+.nautilus-desktop.nautilus-canvas-item:selected:backdrop {
+	color: @theme_unfocused_selected_fg_color;
+}
+*/
+
+/* workaround for jumping buttons in nautilus */
+.nautilus-window headerbar.titlebar .linked.path-bar > button,
+.nautilus-window headerbar.titlebar .linked.path-bar > button.text-button.toggle {
+    border: 1px;
+    border-radius: 4px;
+    margin: 0px -4px 0px 0px;
+    padding: 4px;
+	border-image: url("borders/button.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
+	border-width: 2px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+.nautilus-window headerbar.titlebar .linked.path-bar > button:checked:hover,
+.nautilus-window headerbar.titlebar .linked.path-bar > button.text-button.toggle:checked:hover,
+.nautilus-window headerbar.titlebar .linked.path-bar > button:checked,
+.nautilus-window headerbar.titlebar .linked.path-bar > button.text-button.toggle:checked {
+	border-image: url("borders/button-active.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
+}
+
+.nautilus-window headerbar.titlebar .linked.path-bar > button:hover,
+.nautilus-window headerbar.titlebar .linked.path-bar > button.text-button.toggle:hover,
+.nautilus-window headerbar.titlebar .linked.path-bar > button:hover:active,
+.nautilus-window headerbar.titlebar .linked.path-bar > button.text-button.toggle:hover:active {
+	border-image: url("borders/button-active-focus.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
+}
+
+.nautilus-window headerbar.titlebar .linked.path-bar > button:disabled,
+.nautilus-window headerbar.titlebar .linked.path-bar > button.text-button.toggle:disabled {
+	border-image: url("borders/button-ins.png") 3 4 4 4 / 3px 4px 4px 4px stretch;
+}
+
+.nautilus-window headerbar.titlebar .linked.path-bar> button:first-child widget {
+    -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+}
+
+.nautilus-window headerbar.titlebar .linked.path-bar > button:first-child {
+   margin: 0px -4px 0px 0px;
+   padding: 0px;
+}
+
+.nautilus-window headerbar.titlebar .linked.path-bar > button:last-child widget {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+
+.nautilus-window headerbar.titlebar .linked.path-bar> button:last-child {
+   margin: 0px 0px 0px -4px;
+  padding: 0px;
+}
+
+.nautilus-window headerbar.titlebar .linked.path-bar > button.text-button.toggle {
+    margin: 0px -8px 0px 0px;
+}
+
+.nautilus-window headerbar.titlebar .linked.path-bar > button.text-button.toggle.toggle image {
+   padding: 0px 2px;
+}
+
+.nautilus-window headerbar.titlebar .linked.path-bar > button.text-button.toggle.toggle label {
+   padding: 0px 8px 0px 4px;
+}
+
+/*************
+ * rhythmbox *
+ *************/
+
+toolbar.primary-toolbar.horizontal > toolitem > grid.horizontal > button.scale.flat,
+toolbar.primary-toolbar.horizontal > toolitem > grid.horizontal > button.scale.flat:hover,
+toolbar.primary-toolbar.horizontal > toolitem > grid.horizontal > button.scale.flat:hover:active {
+	padding: 0px 8px;
+}
+
+/* gnome-weather */
+
+#weather-page frame.weather-clear .linked.stack-switcher.osd > button,
+#weather-page frame.weather-overcast .linked.stack-switcher.osd > button,
+#weather-page frame.weather-overcast stack > scrolledwindow > .frame label {
+    color: @theme_fg_color;
+    text-shadow: none;
+}
+
+#weather-page frame.weather-clear .linked.stack-switcher.osd > button:checked,
+#weather-page frame.weather-overcast .linked.stack-switcher.osd > button:checked {
+    color: @osd_button_fg_active;
+}
+
+/**********************
+ * gnome-disk-utility *
+ **********************/
+
+/* fixes for backdrop/foreground state */
+window.background.csd > box > paned > notebook box > widget > box > box > box widget:backdrop:selected {
+	color: @theme_fg_color;
+}

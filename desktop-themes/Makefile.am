@@ -1,8 +1,9 @@
 SUBDIRS = \
 	BlackMATE \
 	BlackMATE-border \
-	BlueMenta \
 	BlueMenta-border \
+	BlueMenta \
+	BlueMenta-dark \
 	Blue-Submarine \
 	Blue-Submarine-border \
 	ContrastHigh \
