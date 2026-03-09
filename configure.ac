@@ -19,11 +19,6 @@ AM_CONDITIONAL([USE_NLS], [test "x${USE_NLS}" = "xyes"])
 # Workaround to make aclocal get the right flags
 AC_SUBST(ACLOCAL_AMFLAGS, "\${ACLOCAL_FLAGS}")
 
-# Check GTK+ theme engines
-PKG_CHECK_MODULES(THEME_ENGINE,
- [gtk+-2.0 >= 2.0.0 dnl
-  gdk-pixbuf-2.0 >= 2.0.0 ])
-
 AC_CONFIG_FILES([
 Makefile
 cursor-themes/Makefile
