@@ -34,10 +34,6 @@ jobs:
           ]
         cc: ["gcc"]
         cxx: ["g++"]
-        include:
-          - container: "archlinux:latest"
-            cc: "clang"
-            cxx: "clang++"
 
     env:
       # Speed up build with ccache
