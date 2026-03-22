@@ -4,22 +4,88 @@ project(
   version: '3.22.26',
 )
 
-install_subdir(
-  'marco-themes',
-  install_dir: get_option('datadir'),
-)
+themesdir = join_paths(get_option('datadir'), 'themes')
+iconsdir = join_paths(get_option('datadir'), 'icons')
+excluded_files = [
+  'Makefile',
+  'Makefile.am',
+  'Makefile.in',
+]
 
-install_subdir(
-  'icon-themes',
-  install_dir: get_option('datadir'),
-)
+desktop_theme_dirs = [
+  'BlackMATE',
+  'BlackMATE-border',
+  'Blue-Submarine',
+  'Blue-Submarine-border',
+  'BlueMenta',
+  'BlueMenta-border',
+  'BlueMenta-dark',
+  'ContrastHigh',
+  'Green-Submarine',
+  'Green-Submarine-border',
+  'GreenLaguna',
+  'GreenLaguna-border',
+  'HighContrastInverse',
+  'MateYaru',
+  'MateYaru-dark',
+  'Menta',
+  'Menta-border',
+  'TraditionalGreen',
+  'TraditionalOk',
+  'YaruGreen',
+  'YaruOk',
+]
 
-install_subdir(
-  'desktop-themes',
-  install_dir: get_option('datadir'),
-)
+icon_theme_dirs = [
+  'ContrastHigh',
+  'Fog',
+  'MateYaru',
+  'MateYaru-dark',
+  'Quid',
+]
 
-install_subdir(
-  'cursor-themes',
-  install_dir: get_option('datadir'),
-)
+cursor_theme_dirs = [
+  'mate-black',
+  'mate-white',
+]
+
+marco_theme_dirs = [
+  'Aldabra',
+  'Fog',
+  'Glider',
+  'HighContrast',
+  'Quid',
+  'Shiny',
+]
+
+foreach theme_dir : desktop_theme_dirs
+  install_subdir(
+    join_paths('desktop-themes', theme_dir),
+    install_dir: themesdir,
+    exclude_files: excluded_files,
+  )
+endforeach
+
+foreach theme_dir : icon_theme_dirs
+  install_subdir(
+    join_paths('icon-themes', theme_dir),
+    install_dir: iconsdir,
+    exclude_files: excluded_files,
+  )
+endforeach
+
+foreach theme_dir : cursor_theme_dirs
+  install_subdir(
+    join_paths('cursor-themes', theme_dir),
+    install_dir: iconsdir,
+    exclude_files: excluded_files,
+  )
+endforeach
+
+foreach theme_dir : marco_theme_dirs
+  install_subdir(
+    join_paths('marco-themes', theme_dir),
+    install_dir: themesdir,
+    exclude_files: excluded_files,
+  )
+endforeach
