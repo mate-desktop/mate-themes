@@ -12,7 +12,13 @@ else
 endif
 
 SUBDIRS =      \
-	gtk-2.0	   \
+	metacity-1 \
+	pixmaps
+if ENABLE_GTK2
+SUBDIRS += gtk-2.0
+endif
+DIST_SUBDIRS = \
+	gtk-2.0    \
 	metacity-1 \
 	pixmaps
 
