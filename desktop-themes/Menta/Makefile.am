@@ -14,6 +14,16 @@ endif
 SUBDIRS = \
 	cinnamon \
 	emerald \
+	gtk-3.0	\
+	metacity-1 \
+	unity \
+	xfwm4
+if ENABLE_GTK2
+SUBDIRS += gtk-2.0
+endif
+DIST_SUBDIRS = \
+	cinnamon \
+	emerald \
 	gtk-2.0	\
 	gtk-3.0	\
 	metacity-1 \

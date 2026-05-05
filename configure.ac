@@ -16,6 +16,13 @@ PKG_PROG_PKG_CONFIG([0.19])
 AM_GNU_GETTEXT_VERSION([0.19.8])
 AM_CONDITIONAL([USE_NLS], [test "x${USE_NLS}" = "xyes"])
 
+AC_ARG_ENABLE([gtk2],
+    [AS_HELP_STRING([--enable-gtk2],
+        [Enable GTK2 themes (default: yes)])],
+    [enable_gtk2=$enableval],
+    [enable_gtk2=yes])
+AM_CONDITIONAL([ENABLE_GTK2], [test "x$enable_gtk2" != "xno"])
+
 # Workaround to make aclocal get the right flags
 AC_SUBST(ACLOCAL_AMFLAGS, "\${ACLOCAL_FLAGS}")
 
@@ -368,4 +375,5 @@ Configure summary:
 
     Installation prefix ........: ${prefix}
     Native Language support ....: ${USE_NLS}
+    GTK2 themes ................: ${enable_gtk2}
 "

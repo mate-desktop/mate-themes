@@ -12,6 +12,14 @@ else
 endif
 
 SUBDIRS =		\
+	gtk-3.0		\
+	metacity-1	\
+	openbox-3	\
+	xfwm4
+if ENABLE_GTK2
+SUBDIRS += gtk-2.0
+endif
+DIST_SUBDIRS =		\
 	gtk-2.0		\
 	gtk-3.0		\
 	metacity-1	\
