@@ -3833,6 +3833,17 @@ entry.error:focus,
     border-width: 1px;
 }
 
+entry.info,
+entry.info:focus,
+entry.warning,
+entry.warning:focus,
+entry.question,
+entry.question:focus,
+entry.error,
+entry.error:focus {
+    background-image: none;
+}
+
 infobar,
 .info,
 .warning,
